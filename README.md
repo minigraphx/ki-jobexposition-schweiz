@@ -1,6 +1,6 @@
 ---
 title: KI-Jobexposition Schweiz
-emoji: 🇨🇭
+emoji: 💼
 colorFrom: red
 colorTo: gray
 sdk: docker
