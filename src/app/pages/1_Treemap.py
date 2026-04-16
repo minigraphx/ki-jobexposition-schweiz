@@ -8,7 +8,6 @@ import plotly.express as px
 import streamlit as st
 from pathlib import Path
 
-st.set_page_config(page_title="Treemap", layout="wide")
 st.title("🗺️ KI-Exposition: Alle Schweizer Berufe")
 
 DATA_PATH = Path(__file__).parent.parent.parent.parent / "data" / "processed" / "scores.csv"

@@ -9,7 +9,6 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
-st.set_page_config(page_title="Branchen", layout="wide")
 st.title("🏭 Branchenanalyse Schweiz")
 
 DATA_PATH = Path(__file__).parent.parent.parent.parent / "data" / "processed" / "scores.csv"

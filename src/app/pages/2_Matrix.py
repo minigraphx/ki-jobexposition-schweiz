@@ -8,7 +8,6 @@ import plotly.graph_objects as go
 import streamlit as st
 from pathlib import Path
 
-st.set_page_config(page_title="Matrix", layout="wide")
 st.title("📊 Exposition × Anpassungsfähigkeit")
 
 DATA_PATH = Path(__file__).parent.parent.parent.parent / "data" / "processed" / "scores.csv"

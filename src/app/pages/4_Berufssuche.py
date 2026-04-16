@@ -7,7 +7,6 @@ import plotly.graph_objects as go
 import streamlit as st
 from pathlib import Path
 
-st.set_page_config(page_title="Berufssuche", layout="wide")
 st.title("🔍 Beruf nachschlagen")
 
 DATA_PATH = Path(__file__).parent.parent.parent.parent / "data" / "processed" / "scores.csv"

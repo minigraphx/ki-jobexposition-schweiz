@@ -4,7 +4,6 @@ Seite 5: Methodik & Quellen
 
 import streamlit as st
 
-st.set_page_config(page_title="Methodik & Quellen", layout="wide")
 st.title("Methodik & Quellen")
 
 st.markdown("""
