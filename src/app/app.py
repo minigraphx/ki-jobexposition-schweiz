@@ -77,3 +77,4 @@ st.page_link("pages/1_Treemap.py", label="Treemap: Alle Berufe nach Score", icon
 st.page_link("pages/2_Matrix.py", label="Matrix: Exposition × Anpassungsfähigkeit", icon="📊")
 st.page_link("pages/3_Branchen.py", label="Branchenanalyse", icon="🏭")
 st.page_link("pages/4_Berufssuche.py", label="Beruf nachschlagen", icon="🔍")
+st.page_link("pages/5_Methodik.py", label="Methodik & Quellen", icon="📖")
