@@ -30,7 +30,7 @@ st.sidebar.caption("Welche Berufe trifft der KI-Sturm zuerst?")
 st.sidebar.divider()
 st.sidebar.info(
     "Diese Analyse zeigt den KI-Expositions-Score für ~150 Schweizer Berufe, "
-    "basierend auf der Methodik von Andrej Karpathy (2024), angepasst für den CH-Kontext."
+    "basierend auf der Methodik von Andrej Karpathy (März 2026), angepasst für den CH-Kontext."
 )
 
 # Hauptseite

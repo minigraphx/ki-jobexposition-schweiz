@@ -56,7 +56,7 @@ st.divider()
 st.header("KI-Expositions-Score (0–10)")
 
 st.markdown("""
-Die Scoring-Methodik folgt dem Ansatz von **Andrej Karpathy (2024)** und der
+Die Scoring-Methodik folgt dem Ansatz von **Andrej Karpathy (März 2026)** und der
 **Brookings Institution**, adaptiert für den Schweizer Kontext.
 
 Für jeden Beruf wird Claude (claude-sonnet-4-6) beauftragt, anhand der ESCO-Berufsbeschreibung
@@ -137,7 +137,7 @@ st.divider()
 st.header("Referenzen")
 
 st.markdown("""
-- Karpathy, A. (2024). [AI job exposure treemap](https://x.com/karpathy) — Methodik-Impuls
+- Karpathy, A. (März 2026). [US Job Market Visualizer](https://karpathy.ai/jobs/) — Methodik-Impuls (342 US-Berufe, BLS-Daten, LLM-Scoring)
 - Brookings Institution (2019). *Automation and Artificial Intelligence: How machines are affecting people and places*
 - Webb, A. (2026). *Tech Trends Report* — Convergence-Ansatz für Branchenanalyse
 - BFS (2024). [Schweizerische Arbeitskräfteerhebung (SAKE)](https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/erhebungen/sake.html)
