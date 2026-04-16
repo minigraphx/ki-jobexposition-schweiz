@@ -75,7 +75,7 @@ if "adaptabilitaet" in df.columns:
         hovertemplate="<b>%{text}</b><br>Exposition: %{y:.1f}<br>Anpassung: %{x:.1f}<extra></extra>",
     ))
 else:
-    st.info("Anpassungsfähigkeits-Scores noch nicht berechnet. Kommt in Phase 2.")
+    st.warning("Spalte 'adaptabilitaet' fehlt in scores.csv. Bitte adaptability_scorer.py ausführen.")
 
 fig.update_layout(
     height=650,
