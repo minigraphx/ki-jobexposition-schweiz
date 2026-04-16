@@ -48,19 +48,19 @@ st.divider()
 if df is not None:
     col1, col2, col3, col4 = st.columns(4)
     n_berufe = len(df)
-    n_hoch = int((df["score_ch"] > 7).sum())
+    n_hoch = int((df["score_ch"] > 6).sum())
     n_kritisch = int(((df["score_ch"] > 6) & (df["adaptabilitaet"] < 5)).sum())
-    beschaeftigte_hoch = df.loc[df["score_ch"] > 7, "beschaeftigte_1000"].sum()
+    beschaeftigte_hoch = df.loc[df["score_ch"] > 6, "beschaeftigte_1000"].sum()
 
     with col1:
         st.metric("Analysierte Berufe", n_berufe)
     with col2:
-        st.metric("Stark exponiert (Score > 7)", n_hoch)
+        st.metric("Stark exponiert (Score > 6)", n_hoch)
     with col3:
         st.metric("Kritische Zone", n_kritisch, help="Hoch exponiert UND schwer anpassbar")
     with col4:
         st.metric("Betroffene Beschäftigte", f"{beschaeftigte_hoch:,.0f} Tsd.",
-                  help="Beschäftigte in Berufen mit Score > 7")
+                  help="Beschäftigte in Berufen mit Score > 6")
 
 st.divider()
 
