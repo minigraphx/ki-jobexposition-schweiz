@@ -1,77 +1,136 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Claude Code when working with this repository.
 
 ## Project Overview
 
-**KI-Jobexpositions-Analyse Schweiz** — A Streamlit webapp that visualizes AI automation exposure scores for ~150 Swiss occupations, using the Karpathy/Webb methodology adapted for the Swiss labor market. Intended for public deployment on Streamlit Community Cloud.
+**KI-Jobexpositions-Analyse Schweiz** — A Streamlit webapp that visualizes AI automation
+exposure scores for **204 Swiss occupations**, using the Karpathy/Webb methodology adapted
+for the Swiss labor market. Deployed on **HuggingFace Spaces**.
+
+- HuggingFace: `https://huggingface.co/spaces/AndyWHV/ki-jobexposition-schweiz`
+- GitHub: `https://github.com/minigraphx/ki-jobexposition-schweiz`
 
 ## Commands
 
 ```bash
-# Install dependencies
-pip install -r requirements.txt
+# Use the project's virtual environment
+source .venv/bin/activate   # or: .venv/bin/python for one-off calls
 
 # Run the Streamlit app (from repo root)
 streamlit run src/app/app.py
 
-# Generate placeholder job data (no SAKE file needed)
-python src/data/fetch_sake.py
+# --- Data Pipeline (run once) ---
+python src/data/update_from_bfs.py       # Load & process BFS SAKE Excel
+python src/data/enrich_with_esco.py      # Fetch ESCO descriptions via API
+python src/data/verify_esco_matches.py   # Validate & fix ESCO matches
+python src/data/patch_unmatched.py       # Manual patches for bad matches
 
-# Build ESCO-enriched job list
-python src/data/build_berufeliste.py
+# --- Scoring Pipeline (requires ANTHROPIC_API_KEY in .env) ---
+python src/scoring/exposure_scorer.py    # Claude Batch API scoring (all 204 jobs)
+python src/scoring/adaptability_scorer.py  # Compute adaptability scores
+python src/scoring/ch_adjustments.py    # Apply CH-specific deltas
 
-# Run scoring pipeline (requires ANTHROPIC_API_KEY in .env)
-python src/scoring/exposure_scorer.py
-
-# Generate demo scores (no API key needed)
-python src/scoring/generate_demo_scores.py
-
-# Test CH adjustments
-python src/scoring/ch_adjustments.py
+# --- Tests ---
+pytest tests/ -v
+pytest tests/ --cov=src --cov-report=term-missing
 ```
 
 ## Architecture
 
-### Data Pipeline (run once, outputs to `data/processed/`)
+### Data Pipeline (outputs to `data/processed/`)
 
 ```
-src/data/fetch_sake.py        → data/raw/sake_berufe.xlsx → data/processed/berufe_ch.csv
-src/data/fetch_esco.py        → ESCO REST API (free) → enriches job descriptions
-src/data/enrich_with_esco.py  → merges SAKE + ESCO → data/processed/berufe_ch_esco.csv
-src/data/build_berufeliste.py → final curated list
-```
+data/raw/sake_berufe_ch_isco19.xlsx   (manually downloaded from bfs.admin.ch)
+  → src/data/update_from_bfs.py
+  → data/processed/berufe_ch.csv          (204 jobs, ISCO codes, headcount, wages)
 
-**SAKE data** must be manually downloaded from bfs.admin.ch (no public API). Place as `data/raw/sake_berufe.xlsx`. Until then, `fetch_sake.py` generates placeholder data.
+berufe_ch.csv
+  → src/data/enrich_with_esco.py
+  → data/processed/berufe_ch_esco.csv     (+ ESCO URI + description)
 
-### Scoring Pipeline (run once, outputs `data/processed/scores.csv`)
-
-```
 berufe_ch_esco.csv
-  → exposure_scorer.py  (Claude API, claude-sonnet-4-6, ~150 calls, < 1 CHF)
-  → ch_adjustments.py   (sector/salary delta applied, score clipped 0–10)
+  → src/data/verify_esco_matches.py
+  → data/processed/berufe_ch_esco_verified.csv  (+ match_score 0/1/2)
+```
+
+**SAKE data** downloaded from:
+`https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.36492006.html`
+
+### Scoring Pipeline (outputs `data/processed/scores.csv`)
+
+```
+berufe_ch_esco_verified.csv
+  → exposure_scorer.py      (Claude Batch API, claude-sonnet-4-6, ~204 calls, < 2 CHF)
+  → adaptability_scorer.py  (rule-based: education, wage, digital affinity, mobility)
+  → ch_adjustments.py       (sector/salary deltas, score clipped 0–10)
   → scores.csv
 ```
 
-Scoring uses 5 weighted criteria: digital output (25%), repeatability (25%), physical presence (20%, negative), creativity (15%, negative), social interaction (15%, negative).
+Scoring criteria: digital output (25%), repeatability (25%), physical presence (20% neg.),
+creativity (15% neg.), social interaction (15% neg.).
 
-CH adjustments apply sector deltas (e.g. Finance +0.3, Health −0.3) and salary-bracket deltas.
-
-Requires `ANTHROPIC_API_KEY` in `.env`.
+CH deltas: Finance +0.3, Health −0.3, high wages (>120k CHF) +0.2, etc.
 
 ### Streamlit App (`src/app/`)
 
-Multi-page app; entry point is `src/app/app.py`, pages in `src/app/pages/`:
+Entry point: `src/app/app.py` — uses `st.navigation()` for multi-page routing.
+Pages in `src/app/pages/`:
 
-| Page | Content |
-|------|---------|
-| `1_Treemap.py` | All jobs as tiles; size = headcount, color = exposure score |
-| `2_Matrix.py` | Scatter: X = adaptability, Y = exposure; quadrant-colored |
-| `3_Branchen.py` | Sector bar chart + convergence heatmap |
-| `4_Berufssuche.py` | Job search with full score breakdown |
+| File | Menu Title | Content |
+|------|-----------|---------|
+| `0_Startseite.py` | Startseite | Landing page, key metrics, navigation |
+| `1_Treemap.py` | Treemap | All jobs as tiles; size = headcount, color = score |
+| `2_Matrix.py` | Matrix | Scatter: X = adaptability, Y = exposure; quadrant-colored |
+| `3_Branchen.py` | Branchen | Sector bar chart + Webb convergence heatmap |
+| `4_Berufssuche.py` | Berufssuche | Job search with full score breakdown + radar chart |
+| `5_Methodik.py` | Methodik & Quellen | Methodology, data sources, limitations |
 
-All charts use **Plotly**. App reads from `data/processed/scores.csv` (or demo data if not yet generated).
+All charts use **Plotly**. App reads from `data/processed/scores.csv`.
 
-### Key Data Columns
+### Key Data Columns in `scores.csv`
 
-`scores.csv` contains: `beruf`, `isco_code`, `beschaeftigte_1000`, `frauen_anteil_pct`, `branche`, `jahresbruttolohn`, `score_gesamt`, `score_digital`, `score_wiederholbarkeit`, `score_physisch`, `score_kreativitaet`, `score_sozial`, `score_ch`, `haupt_risiko`, `zeitrahmen`, `begruendung`.
+| Column | Type | Description |
+|--------|------|-------------|
+| `beruf` | str | German job title |
+| `isco_code` | int | ISCO-08 / CH-ISCO-19 code |
+| `beschaeftigte_1000` | float | Employed persons in thousands (BFS SAKE 2024) |
+| `frauen_pct` | float | Share of women in percent (0–100) |
+| `branche` | str | Sector (21 categories) |
+| `lohn_median_chf` | int | Median annual gross salary CHF (BFS LSE 2022) |
+| `qualifikation` | str | Education level: Tertiär / Sekundär II / Keine Ausbildung |
+| `esco_uri` | str | ESCO occupation URI |
+| `esco_titel` | str | ESCO occupation title (German) |
+| `esco_beschreibung` | str | ESCO occupation description (German) |
+| `score_gesamt` | float | Raw AI exposure score 0–10 (Claude API) |
+| `score_digital` | float | Sub-score: digital output |
+| `score_wiederholbarkeit` | float | Sub-score: repeatability |
+| `score_physisch` | float | Sub-score: physical presence (inverted) |
+| `score_kreativitaet` | float | Sub-score: creativity (inverted) |
+| `score_sozial` | float | Sub-score: social interaction (inverted) |
+| `haupt_risiko` | str | Main automation risk description |
+| `zeitrahmen` | str | Estimated time horizon |
+| `begruendung` | str | 2–3 sentence justification |
+| `delta_branche` | float | CH sector adjustment |
+| `delta_lohn` | float | CH wage-level adjustment |
+| `score_ch` | float | Final CH-adjusted score 0–10 |
+| `adaptabilitaet` | float | Adaptability score 0–10 |
+
+## Deployment (HuggingFace Spaces)
+
+```bash
+# Push to HuggingFace (Streamlit Space)
+git push hf main
+
+# The HF remote URL contains credentials — do NOT display or log it
+# Remote is named 'hf', see: git remote -v
+```
+
+HuggingFace Spaces runs `streamlit run src/app/app.py` automatically.
+`data/processed/scores.csv` is committed and available at runtime (no DB needed).
+
+## Security Notes
+
+- `.env` is in `.gitignore` — never commit it
+- `ANTHROPIC_API_KEY` is only needed for re-scoring, not for running the app
+- HF token is embedded in the `hf` remote URL — do not echo `git remote -v` in logs

@@ -52,6 +52,16 @@ if df is not None:
     n_kritisch = int(((df["score_ch"] > 6) & (df["adaptabilitaet"] < 5)).sum())
     beschaeftigte_hoch = df.loc[df["score_ch"] > 6, "beschaeftigte_1000"].sum()
 
+    # Frauen in kritischer Zone (gewichtet nach Beschäftigtenzahl)
+    kritisch_df = df[(df["score_ch"] > 6) & (df["adaptabilitaet"] < 5)]
+    if not kritisch_df.empty and "frauen_pct" in df.columns:
+        frauen_gewichtet = (
+            (kritisch_df["frauen_pct"] / 100 * kritisch_df["beschaeftigte_1000"]).sum()
+            / kritisch_df["beschaeftigte_1000"].sum() * 100
+        )
+    else:
+        frauen_gewichtet = None
+
     with col1:
         st.metric("Analysierte Berufe", n_berufe)
     with col2:
@@ -61,6 +71,15 @@ if df is not None:
     with col4:
         st.metric("Betroffene Beschäftigte", f"{beschaeftigte_hoch:,.0f} Tsd.",
                   help="Beschäftigte in Berufen mit Score > 6")
+
+    # Frauen-Highlight (Brookings-Befund)
+    if frauen_gewichtet is not None:
+        st.info(
+            f"👩 **{frauen_gewichtet:.0f} % der Beschäftigten in der kritischen Zone sind Frauen** — "
+            "also in Berufen mit hoher KI-Exposition *und* geringer Anpassungsfähigkeit. "
+            "Dieser Befund deckt sich mit der Brookings/GovAI-Studie (2024), die 86 % für den US-Markt ausweist.",
+            icon=None,
+        )
 
 st.divider()
 

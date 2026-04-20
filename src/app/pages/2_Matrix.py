@@ -34,6 +34,12 @@ Die Matrix zeigt zwei Dimensionen:
 **Kritische Zone (rot):** Hoch exponiert + schwer anpassbar → höchstes Risiko
 """)
 
+farb_modus = st.radio(
+    "Farbe der Punkte:",
+    ["KI-Expositions-Score", "Frauenanteil (%)"],
+    horizontal=True,
+)
+
 fig = go.Figure()
 
 # Quadranten-Hintergrund
@@ -58,21 +64,48 @@ fig.add_annotation(x=7.5, y=1, text="SICHER", showarrow=False,
 
 # Datenpunkte
 if "adaptabilitaet" in df.columns:
+    if farb_modus == "Frauenanteil (%)" and "frauen_pct" in df.columns:
+        farbe = df["frauen_pct"]
+        colorscale = "RdBu"
+        colorbar_title = "Frauenanteil %"
+        hover_extra = "<br>Frauenanteil: %{marker.color:.0f}%"
+        cmin, cmax = 0, 100
+    else:
+        farbe = df["score_ch"]
+        colorscale = ["#2ecc71", "#f39c12", "#e74c3c"]
+        colorbar_title = "KI-Score"
+        hover_extra = ""
+        cmin, cmax = 0, 10
+
     fig.add_trace(go.Scatter(
         x=df["adaptabilitaet"],
         y=df["score_ch"],
-        mode="markers+text",
+        mode="markers",
         text=df["beruf"],
-        textposition="top center",
         marker=dict(
             size=df["beschaeftigte_1000"].fillna(10) / 5,
-            color=df["score_ch"],
-            colorscale=["#2ecc71", "#f39c12", "#e74c3c"],
+            color=farbe,
+            colorscale=colorscale,
+            cmin=cmin,
+            cmax=cmax,
             showscale=True,
-            colorbar=dict(title="KI-Score"),
+            colorbar=dict(title=colorbar_title),
+            line=dict(width=0.5, color="white"),
         ),
-        hovertemplate="<b>%{text}</b><br>Exposition: %{y:.1f}<br>Anpassung: %{x:.1f}<extra></extra>",
+        hovertemplate=(
+            "<b>%{text}</b><br>"
+            "Exposition: %{y:.1f}<br>"
+            "Anpassung: %{x:.1f}"
+            + hover_extra +
+            "<extra></extra>"
+        ),
     ))
+
+    if farb_modus == "Frauenanteil (%)":
+        st.caption(
+            "🔵 Blau = hoher Frauenanteil, 🔴 Rot = hoher Männeranteil. "
+            "Beobachtung: Die kritische Zone (oben links) enthält überdurchschnittlich viele Frauenberufe."
+        )
 else:
     st.warning("Spalte 'adaptabilitaet' fehlt in scores.csv. Bitte adaptability_scorer.py ausführen.")
 
