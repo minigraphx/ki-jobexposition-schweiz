@@ -1,11 +1,12 @@
 """
-Seite 4: Beruf-Detail-Suche
+Seite 4: Beruf-Detail-Suche mit URL-Permalink via st.query_params
 """
+
+from pathlib import Path
 
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
-from pathlib import Path
 
 st.title("🔍 Beruf nachschlagen")
 
@@ -13,7 +14,7 @@ DATA_PATH = Path(__file__).parent.parent.parent.parent / "data" / "processed" / 
 
 
 @st.cache_data
-def load_data():
+def load_data() -> pd.DataFrame | None:
     if not DATA_PATH.exists():
         return None
     return pd.read_csv(DATA_PATH)
@@ -25,13 +26,21 @@ if df is None:
     st.warning("Noch keine Score-Daten vorhanden.")
     st.stop()
 
-beruf = st.selectbox("Beruf auswählen", sorted(df["beruf"].unique()))
+# ── URL-State / Permalink ───────────────────────────────────────────────────────
+berufe_sorted = sorted(df["beruf"].unique())
+url_beruf = st.query_params.get("beruf", "")
+default_index = berufe_sorted.index(url_beruf) if url_beruf in berufe_sorted else 0
+
+beruf = st.selectbox("Beruf auswählen", berufe_sorted, index=default_index)
+st.query_params["beruf"] = beruf
+
+# ── Daten für ausgewählten Beruf ────────────────────────────────────────────────
 row = df[df["beruf"] == beruf].iloc[0]
 
+# ── Metriken ────────────────────────────────────────────────────────────────────
 col1, col2, col3 = st.columns(3)
 with col1:
     score = row.get("score_ch", row.get("score_gesamt", 0))
-    color = "normal" if score < 5 else ("off" if score > 7 else "normal")
     st.metric("KI-Expositions-Score", f"{score:.1f} / 10")
 with col2:
     st.metric("Beschäftigte CH", f"{row.get('beschaeftigte_1000', '?')} Tsd.")
@@ -40,9 +49,10 @@ with col3:
 
 st.divider()
 
-# Radar-Chart der Teilscores
-if all(c in row.index for c in ["score_digital", "score_wiederholbarkeit", "score_physisch",
-                                  "score_kreativitaet", "score_sozial"]):
+# ── Radar-Chart der Teilscores ──────────────────────────────────────────────────
+radar_cols = ["score_digital", "score_wiederholbarkeit", "score_physisch",
+              "score_kreativitaet", "score_sozial"]
+if all(c in row.index for c in radar_cols):
     kategorien = ["Digital", "Wiederholbarkeit", "Physisch (inv.)", "Kreativität (inv.)", "Sozial (inv.)"]
     werte = [
         row["score_digital"],
@@ -67,3 +77,9 @@ if all(c in row.index for c in ["score_digital", "score_wiederholbarkeit", "scor
 
 st.markdown(f"**Hauptrisiko:** {row.get('haupt_risiko', '–')}")
 st.markdown(f"**Begründung:** {row.get('begruendung', '–')}")
+
+# ── Permalink ──────────────────────────────────────────────────────────────────
+st.divider()
+st.caption(
+    f"🔗 Direktlink zu diesem Beruf: füge `?beruf={beruf}` an die URL an."
+)
