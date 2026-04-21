@@ -130,3 +130,25 @@ class TestApplyCHAdjustments:
         result = apply_ch_adjustments(df)
         assert "lohnklasse" in result.columns
         assert result["lohnklasse"].iloc[0] == "60k–100k CHF"
+
+    def test_mit_lohn_median_chf_spalte(self):
+        """lohn_median_chf (scores.csv-Spaltenname) wird korrekt verarbeitet."""
+        df = pd.DataFrame({
+            "branche": ["Finanzen"],
+            "lohn_median_chf": [160_000],
+            "score_gesamt": [5.0],
+        })
+        result = apply_ch_adjustments(df)
+        assert result["delta_lohn"].iloc[0] == LOHNEFFEKTE["> 150k CHF"]
+        assert result["score_ch"].iloc[0] > 5.0
+
+    def test_lohn_median_chf_hat_vorrang_vor_jahresbruttolohn(self):
+        """lohn_median_chf hat Vorrang wenn beide Spalten vorhanden."""
+        df = pd.DataFrame({
+            "branche": ["ICT"],
+            "lohn_median_chf": [200_000],   # > 150k → +0.4
+            "jahresbruttolohn": [50_000],    # < 60k  → -0.2
+            "score_gesamt": [5.0],
+        })
+        result = apply_ch_adjustments(df)
+        assert result["delta_lohn"].iloc[0] == LOHNEFFEKTE["> 150k CHF"]
