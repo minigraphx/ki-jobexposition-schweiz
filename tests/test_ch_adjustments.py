@@ -108,3 +108,25 @@ class TestApplyCHAdjustments:
         """Alle LOHNEFFEKTE-Werte sind numerisch."""
         for klasse, delta in LOHNEFFEKTE.items():
             assert isinstance(delta, float), f"{klasse}: {delta} ist kein float"
+
+    def test_mit_jahresbruttolohn_spalte(self):
+        """Wenn jahresbruttolohn vorhanden, wird delta_lohn berechnet."""
+        df = pd.DataFrame({
+            "branche": ["Finanzen"],
+            "jahresbruttolohn": [130_000],
+            "score_gesamt": [5.0],
+        })
+        result = apply_ch_adjustments(df)
+        assert result["delta_lohn"].iloc[0] == LOHNEFFEKTE["100k–150k CHF"]
+        assert result["score_ch"].iloc[0] > 5.0
+
+    def test_lohnklasse_spalte_wird_erstellt(self):
+        """Mit jahresbruttolohn entsteht eine lohnklasse-Spalte."""
+        df = pd.DataFrame({
+            "branche": ["ICT"],
+            "jahresbruttolohn": [80_000],
+            "score_gesamt": [5.0],
+        })
+        result = apply_ch_adjustments(df)
+        assert "lohnklasse" in result.columns
+        assert result["lohnklasse"].iloc[0] == "60k–100k CHF"

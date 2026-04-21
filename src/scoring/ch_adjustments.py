@@ -67,7 +67,7 @@ def apply_ch_adjustments(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     test = pd.DataFrame({
         "beruf": ["Buchhalter/in", "Krankenpfleger/in", "Softwareentwickler/in"],
         "branche": ["Finanzen", "Gesundheit", "ICT"],

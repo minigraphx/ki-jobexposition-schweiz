@@ -62,7 +62,7 @@ def berechne_adaptabilitaet(df: pd.DataFrame) -> pd.Series:
     return raw.clip(0, 10).round(1)
 
 
-def main() -> None:
+def main() -> None:  # pragma: no cover
     df = pd.read_csv(SCORES_PATH)
 
     df = df.assign(adaptabilitaet=berechne_adaptabilitaet(df))
@@ -72,5 +72,5 @@ def main() -> None:
     print(df[["beruf", "adaptabilitaet", "score_ch"]].sort_values("adaptabilitaet", ascending=False).head(10).to_string())
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     main()

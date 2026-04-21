@@ -310,7 +310,7 @@ def apply_demo_scores(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     from ch_adjustments import apply_ch_adjustments
 
     df = pd.read_csv(PROCESSED_PATH / "berufe_ch_esco.csv")
