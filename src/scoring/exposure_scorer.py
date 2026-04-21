@@ -66,10 +66,13 @@ def build_batch_requests(jobs_df: pd.DataFrame) -> list[dict]:
     """Batch-Requests für alle Berufe erstellen."""
     requests = []
     for idx, row in jobs_df.iterrows():
-        prompt = SCORING_PROMPT.format(
-            beruf=row["beruf"],
-            beschreibung=row.get("esco_beschreibung", "") or "Keine Beschreibung verfügbar.",
+        raw_beschreibung = row.get("esco_beschreibung", "")
+        beschreibung = (
+            raw_beschreibung
+            if raw_beschreibung and pd.notna(raw_beschreibung)
+            else "Keine Beschreibung verfügbar."
         )
+        prompt = SCORING_PROMPT.format(beruf=row["beruf"], beschreibung=beschreibung)
         requests.append({
             "custom_id": str(idx),
             "params": {
