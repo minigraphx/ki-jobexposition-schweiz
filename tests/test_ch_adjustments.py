@@ -1,12 +1,8 @@
 """Unit Tests für src/scoring/ch_adjustments.py"""
 
-import sys
-from pathlib import Path
-
 import pandas as pd
 import pytest
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "src" / "scoring"))
 from ch_adjustments import apply_ch_adjustments, classify_lohn, BRANCHENEFFEKTE, LOHNEFFEKTE
 
 

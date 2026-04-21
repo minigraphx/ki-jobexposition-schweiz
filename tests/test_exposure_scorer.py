@@ -4,15 +4,11 @@ Alle Anthropic-API-Calls werden gemockt — kein echter API-Key nötig.
 """
 
 import json
-import sys
-from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import MagicMock, call, patch
 
 import pandas as pd
 import pytest
-
-sys.path.insert(0, str(Path(__file__).parent.parent / "src" / "scoring"))
 from exposure_scorer import (
     SCORING_PROMPT,
     build_batch_requests,

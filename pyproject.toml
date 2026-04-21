@@ -1,0 +1,11 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src/scoring", "src/data"]
+
+[tool.coverage.run]
+source = ["src/scoring"]
+omit = ["*/tests/*", "*/__pycache__/*"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true

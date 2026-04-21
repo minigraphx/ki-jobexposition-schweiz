@@ -1,12 +1,8 @@
 """Unit Tests für src/scoring/generate_demo_scores.py"""
 
-import sys
-from pathlib import Path
-
 import pandas as pd
 import pytest
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "src" / "scoring"))
 from generate_demo_scores import apply_demo_scores, SCORE_LOOKUP
 
 
