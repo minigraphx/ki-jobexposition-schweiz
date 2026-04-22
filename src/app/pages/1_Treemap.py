@@ -114,21 +114,14 @@ event = st.plotly_chart(
 )
 
 # ── Klick auf ein Beruf-Feld → direkt zur Berufssuche ─────────────────────────
-def _points(ev) -> list:
-    if not ev:
-        return []
-    sel = ev.get("selection") if isinstance(ev, dict) else getattr(ev, "selection", None)
-    if not sel:
-        return []
-    if isinstance(sel, dict):
-        return sel.get("points", []) or []
-    return list(getattr(sel, "points", []) or [])
-
-
+points = (event or {}).get("selection", {}).get("points", []) if event else []
 berufe_set = set(filtered["beruf"])
-for _p in _points(event):
-    _label_val = _p.get("label") if isinstance(_p, dict) else getattr(_p, "label", None)
+for _p in points:
+    _label_val = _p.get("label")
     if _label_val in berufe_set:
+        # Auswahl konsumieren, sonst triggert der Widget-State bei Rückkehr
+        # zur Treemap-Seite sofort wieder einen Redirect.
+        st.session_state.pop("treemap_select", None)
         st.query_params["beruf"] = _label_val
         st.switch_page("pages/4_Berufssuche.py")
         break
