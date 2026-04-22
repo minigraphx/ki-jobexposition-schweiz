@@ -371,7 +371,8 @@ def find_best_match(client: anthropic.Anthropic, beruf: str,
 # Batch-Verarbeitung
 # ---------------------------------------------------------------------------
 
-def enrich_jobs(jobs_df: pd.DataFrame, client: anthropic.Anthropic) -> pd.DataFrame:
+def enrich_jobs(jobs_df: pd.DataFrame, client: anthropic.Anthropic,
+                df_existing: pd.DataFrame | None = None) -> pd.DataFrame:
     uris, titel_list, beschreibungen = [], [], []
     total = len(jobs_df)
 
@@ -380,13 +381,25 @@ def enrich_jobs(jobs_df: pd.DataFrame, client: anthropic.Anthropic) -> pd.DataFr
         isco = str(row["isco_code"])
         logger.info(f"[{i:3d}/{total}] {beruf}")
 
+        # Vorher-Zustand aus bestehender Datei zeigen
+        if df_existing is not None:
+            prev = df_existing[df_existing["beruf"] == beruf]
+            if not prev.empty:
+                p = prev.iloc[0]
+                prev_titel = str(p.get("esco_titel", "") or "–")
+                prev_desc = str(p.get("esco_beschreibung", "") or "–")
+                logger.info(f"    VORHER  titel: {prev_titel}")
+                logger.info(f"    VORHER  desc:  {prev_desc[:120]}")
+
         uri, titel, beschreibung = find_best_match(client, beruf, isco)
         uris.append(uri)
         titel_list.append(titel)
         beschreibungen.append(beschreibung)
 
-        source = f"ESCO: {titel[:40]}" if uri else "Fallback-Beschreibung"
-        logger.info(f"    → {source} ({len(beschreibung)} Zeichen)")
+        source = f"ESCO: {titel[:40]}" if uri else "Fallback"
+        logger.info(f"    NACHHER quelle: {source}")
+        logger.info(f"    NACHHER titel:  {titel}")
+        logger.info(f"    NACHHER desc:   {beschreibung[:120]}")
         time.sleep(0.4)
 
     result = jobs_df.copy()
@@ -420,9 +433,13 @@ def main():
         target_jobs = df_base["beruf"].tolist()
 
     target_df = df_base[df_base["beruf"].isin(target_jobs)].reset_index(drop=True)
+    not_found = [j for j in target_jobs if j not in df_base["beruf"].values]
+    if not_found:
+        logger.warning(f"Nicht in berufe_ch.csv gefunden: {not_found}")
+
     logger.info(f"Verarbeite {len(target_df)} Berufe mit 6-stufiger Suchstrategie...")
 
-    enriched = enrich_jobs(target_df, client)
+    enriched = enrich_jobs(target_df, client, df_existing)
 
     # Korrekturen in bestehende Datei einpflegen
     df_out = df_existing.copy()
