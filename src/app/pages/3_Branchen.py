@@ -12,6 +12,7 @@ import streamlit as st
 st.title("🏭 Branchenanalyse Schweiz")
 
 DATA_PATH = Path(__file__).parent.parent.parent.parent / "data" / "processed" / "scores.csv"
+BGS_PATH = Path(__file__).parent.parent.parent.parent / "data" / "processed" / "grenzgaenger_anteil_branche.csv"
 
 
 @st.cache_data
@@ -21,7 +22,15 @@ def load_data() -> pd.DataFrame | None:
     return pd.read_csv(DATA_PATH)
 
 
+@st.cache_data
+def load_bgs() -> pd.DataFrame | None:
+    if not BGS_PATH.exists():
+        return None
+    return pd.read_csv(BGS_PATH)
+
+
 df = load_data()
+bgs_df = load_bgs()
 
 st.markdown("""
 Welche Schweizer Branchen sind am stärksten von KI-Automatisierung betroffen?
@@ -47,17 +56,26 @@ if df is not None:
     )
     branche_stats["score_mean"] = branche_stats["score_mean"].round(2)
 
+    # Optionally merge Grenzgänger-Anteil into branche_stats for hover tooltip
+    bar_hover: dict = {"berufe": True, "beschaeftigte": ":.0f", "score_min": ":.1f", "score_max": ":.1f"}
+    bar_labels: dict = {"score_mean": "Ø Score", "branche": "Branche", "berufe": "Berufe", "beschaeftigte": "Beschäftigte (Tsd.)"}
+    bar_stats = branche_stats.copy()
+    if bgs_df is not None:
+        bar_stats = bar_stats.merge(bgs_df[["branche", "grenzgaenger_anteil"]], on="branche", how="left")
+        bar_hover["grenzgaenger_anteil"] = ":.1%"
+        bar_labels["grenzgaenger_anteil"] = "Grenzgänger-Anteil"
+
     fig_bar = px.bar(
-        branche_stats,
+        bar_stats,
         x="score_mean",
         y="branche",
         orientation="h",
         color="score_mean",
         color_continuous_scale=["#2ecc71", "#f39c12", "#e74c3c"],
         range_color=[0, 10],
-        hover_data={"berufe": True, "beschaeftigte": ":.0f", "score_min": ":.1f", "score_max": ":.1f"},
+        hover_data=bar_hover,
         title="Ø KI-Expositions-Score pro Branche (Claude Sonnet 4.6 Scoring)",
-        labels={"score_mean": "Ø Score", "branche": "Branche", "berufe": "Berufe", "beschaeftigte": "Beschäftigte (Tsd.)"},
+        labels=bar_labels,
     )
     fig_bar.update_layout(height=550, coloraxis_showscale=False)
     st.plotly_chart(fig_bar, use_container_width=True)
@@ -76,6 +94,47 @@ if df is not None:
         st.dataframe(bot, hide_index=True, use_container_width=True)
 else:
     st.warning("Noch keine Score-Daten vorhanden.")
+
+# --- Sektion: Grenzgänger-Kontext ---
+if BGS_PATH.exists() and df is not None and bgs_df is not None:
+    merged = branche_stats.merge(bgs_df, on="branche", how="inner")
+
+    if not merged.empty:
+        st.divider()
+        st.subheader("Grenzgänger-Anteil und KI-Exposition")
+        st.markdown(
+            "Branchen mit hohem Grenzgänger-Anteil und hoher KI-Exposition sind doppelt exponiert: "
+            "Automatisierungsdruck trifft überproportional auf ausländische Beschäftigte, "
+            "die weniger von Schweizer Auffangnetzen profitieren."
+        )
+
+        fig_bgs = px.scatter(
+            merged,
+            x="grenzgaenger_anteil",
+            y="score_mean",
+            size="beschaeftigte",
+            text="branche",
+            title="Grenzgänger-Exposition: Branchen mit hohem KI-Score und hohem Grenzgänger-Anteil",
+            labels={
+                "grenzgaenger_anteil": "Grenzgänger-Anteil",
+                "score_mean": "Ø KI-Expositions-Score",
+                "beschaeftigte": "Beschäftigte (Tsd.)",
+            },
+            color="score_mean",
+            color_continuous_scale=["#2ecc71", "#f39c12", "#e74c3c"],
+            range_color=[0, 10],
+            hover_data={"grenzgaenger": ":,", "beschaeftigte": ":.0f"},
+        )
+        fig_bgs.update_traces(textposition="top center")
+        fig_bgs.update_layout(height=500, coloraxis_showscale=False)
+        fig_bgs.update_xaxes(tickformat=".0%")
+        st.plotly_chart(fig_bgs, use_container_width=True)
+        st.caption(
+            "Grenzgänger-Anteil = Grenzgänger in Branche / Beschäftigte in Branche (SAKE). "
+            "Blasengrösse = Beschäftigte in Tsd. "
+            "Datenquelle: BFS BGS (Schätzwerte, Gesamtbestand ~380'000 Grenzgänger, 2023). "
+            "Fliesst nicht in score_ch ein — rein additiver Kontext-Layer."
+        )
 
 st.divider()
 
