@@ -1,12 +1,8 @@
 """Unit Tests für src/scoring/adaptability_scorer.py"""
 
-import sys
-from pathlib import Path
-
 import pandas as pd
 import pytest
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "src" / "scoring"))
 from adaptability_scorer import berechne_adaptabilitaet
 
 
