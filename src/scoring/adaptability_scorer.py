@@ -18,7 +18,8 @@ SCORES_PATH = Path(__file__).parent.parent.parent / "data" / "processed" / "scor
 
 QUALIFIKATION_PUNKTE = {
     "Tertiär": 4.0,
-    "Sekundär II": 2.5,
+    # CH-EFZ grants higher labour-market mobility than US high school; Brookings parametrisation not directly transferable
+    "Sekundär II": 3.0,
     "Keine Ausbildung": 1.0,
 }
 

@@ -163,6 +163,24 @@ st.markdown("""
   berufsindividuellen Erhebungen.
 """)
 
+st.subheader("Weitere CH-spezifische Faktoren (nicht in Score eingeflossen)")
+st.markdown("""
+Folgende Faktoren beeinflussen die KI-Exposition im Schweizer Kontext, sind aber in der
+aktuellen Berechnung **nicht berücksichtigt**:
+
+- **Sprachregionen:** Die SAKE-Daten sind nicht nach Sprachregion × Beruf aufgeschlüsselt.
+  Deutschschweiz, Romandie und Tessin können strukturell unterschiedliche Expositionsmuster
+  aufweisen.
+- **Kantonale/regionale Lohnunterschiede:** Die LSE-Lohndaten sind national aggregiert.
+  Regionale Lohndisparitäten (z.B. Zürich vs. Wallis) fliessen nicht ins Scoring ein.
+- **KMU-Adoptionsgeschwindigkeit:** Kleine und mittlere Unternehmen (KMU, > 99 % der CH-Firmen)
+  adoptieren KI-Technologien typischerweise langsamer als Grossunternehmen. Dies beeinflusst
+  den realen Zeitrahmen der Automatisierung (BFS STATENT als mögliche Datenquelle, Issue #33).
+- **Grenzgänger-Effekte:** Der Schweizer Arbeitsmarkt weist einen hohen Grenzgängeranteil auf.
+  Grenzgänger konzentrieren sich auf bestimmte Branchen und Regionen; KI-Exposition dieser
+  Gruppe kann vom inländischen Muster abweichen (BFS BGS als Datenquelle, Issue #34).
+""")
+
 st.divider()
 
 # ─── Referenzen ───────────────────────────────────────────────────────────────
