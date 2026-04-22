@@ -47,6 +47,9 @@ BRANCHENEFFEKTE: dict[str, float] = {
     "Soziales": -0.3,         # Hoher Empathiebedarf, Schutzinteressen; ähnlich Gesundheit
 }
 
+# ISCO codes where Pharma/Medtech context overrides the generic Industrie delta
+PHARMA_MEDTECH_ISCO_WHITELIST: frozenset[str] = frozenset({"2131", "2145", "2212", "3141", "3212"})
+
 # Lohnklassen-Effekt: Höhere Löhne = stärkerer Automatisierungsdruck
 LOHNEFFEKTE = {
     "< 60k CHF": -0.2,
@@ -148,8 +151,25 @@ def apply_ch_adjustments(df: pd.DataFrame) -> pd.DataFrame:
     """
     df = df.copy()
 
-    # Brancheneffekt
+    # Fail-fast: unbekannte Branchen (non-NaN) sind ein Datenfehler
+    unknown = set(df["branche"].dropna()) - set(BRANCHENEFFEKTE.keys())
+    if unknown:
+        raise ValueError(
+            f"Branchen ohne Delta-Mapping: {sorted(unknown)}. "
+            "Ergänze BRANCHENEFFEKTE in ch_adjustments.py."
+        )
+
+    # Brancheneffekt (NaN-Branchen erhalten 0.0)
     df["delta_branche"] = df["branche"].map(BRANCHENEFFEKTE).fillna(0.0)
+
+    # Pharma/Medtech-Override: bestimmte ISCO-Codes in Industrie erhalten delta 0.0
+    # statt -0.1, da Pharma/Medtech-Kontext die generische Industrie-Schätzung überschreibt
+    if "isco_code" in df.columns:
+        pharma_mask = (
+            (df["branche"] == "Industrie")
+            & df["isco_code"].astype(str).str[:4].isin(PHARMA_MEDTECH_ISCO_WHITELIST)
+        )
+        df.loc[pharma_mask, "delta_branche"] = 0.0
 
     # Lohneffekt — beide Spaltennamen akzeptieren (scores.csv: lohn_median_chf)
     lohn_col = next(

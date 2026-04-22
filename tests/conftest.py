@@ -25,7 +25,7 @@ def edge_case_jobs() -> pd.DataFrame:
     """Edge-Cases: fehlende Werte, Randwerte der Score-Skala."""
     return pd.DataFrame({
         "beruf": ["Beruf A", "Beruf B", "Beruf C"],
-        "branche": ["Finanzen", "Gesundheit", "Unbekannt"],
+        "branche": ["Finanzen", "Gesundheit", "ICT"],
         "lohn_median_chf": [200000, 30000, 75000],
         "qualifikation": ["Tertiär", "Keine Ausbildung", "Sekundär II"],
         "score_gesamt": [9.8, 0.2, 5.0],
