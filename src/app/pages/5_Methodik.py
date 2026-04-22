@@ -56,6 +56,17 @@ Die medianen Jahresbruttolöhne sind Schätzwerte basierend auf:
   auf Basis der ISCO-Berufsgruppe verwendet, nicht berufsindividuelle Werte.
 """)
 
+st.subheader("Grenzgänger-Anteil (Kontext)")
+st.markdown("""
+Der Grenzgänger-Anteil pro Branche dient als zusätzlicher Kontext-Layer in der Branchenanalyse.
+
+- **Quelle:** BFS Grenzgängerstatistik (BGS), Quartalsdaten
+- **Berechnung:** grenzgaenger_anteil = Grenzgänger in Branche / Beschäftigte in Branche (SAKE)
+- **Granularität:** NOGA-Wirtschaftsabteilungen, aggregiert auf die 21 internen Branchen
+- **Wichtig: fliesst nicht in score_ch oder zeitrahmen ein** — rein additiver Kontext-Layer
+- **Limitation:** Kein Pro-Beruf-Mapping möglich; NOGA-Ebene deckt nicht alle Berufe gleichmässig ab
+""")
+
 st.divider()
 
 # ─── Scoring-Methodik ─────────────────────────────────────────────────────────
