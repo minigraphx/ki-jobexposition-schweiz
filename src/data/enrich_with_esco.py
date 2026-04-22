@@ -333,10 +333,16 @@ def _try_esco_candidates(client: anthropic.Anthropic, beruf: str,
 
 def find_best_match(client: anthropic.Anthropic, beruf: str,
                     isco_code: str,
-                    blocked_uris: set[str] | None = None) -> tuple[str, str, str]:
+                    blocked_uris: set[str] | None = None) -> tuple[str, str, str, str]:
     """
-    Gibt (esco_uri, esco_titel, esco_beschreibung) zurück.
+    Gibt (esco_uri, esco_titel, esco_beschreibung, beschreibung_quelle) zurück.
     Durchläuft 6 Suchstufen; Haiku validiert jeden ESCO-Kandidaten.
+
+    beschreibung_quelle-Werte:
+        "ESCO"              — offizielle EU-Klassifikation (Stufen 1–3)
+        "berufsberatung.ch" — offizielle CH-Berufsberatung (Stufe 4)
+        "Wikipedia"         — Wikipedia DE (Stufe 5)
+        "Haiku-generiert"   — KI-generierte Beschreibung, kein externer Match (Stufe 6)
     """
     beruf_clean = beruf.replace("/-", " ").replace("/", " ").replace("EFZ", "").strip()
 
@@ -345,7 +351,7 @@ def find_best_match(client: anthropic.Anthropic, beruf: str,
     result = _try_esco_candidates(client, beruf, esco_search_text(beruf_clean, "de", 5), blocked_uris)
     if result:
         logger.info(f"    ✓ Stufe 1 (ESCO DE): {result[1]}")
-        return result
+        return (*result, "ESCO")
 
     # Stufe 2: ESCO mit Haiku-generierten Alternativen
     logger.debug("  Stufe 2: Haiku-Alternativen")
@@ -357,7 +363,7 @@ def find_best_match(client: anthropic.Anthropic, beruf: str,
             result = _try_esco_candidates(client, beruf, candidates, blocked_uris)
             if result:
                 logger.info(f"    ✓ Stufe 2 (ESCO '{term}' {lang.upper()}): {result[1]}")
-                return result
+                return (*result, "ESCO")
             time.sleep(0.2)
 
     # Stufe 3: ESCO nach ISCO-Code-Gruppe
@@ -365,14 +371,14 @@ def find_best_match(client: anthropic.Anthropic, beruf: str,
     result = _try_esco_candidates(client, beruf, esco_search_isco(isco_code, "de", 10), blocked_uris)
     if result:
         logger.info(f"    ✓ Stufe 3 (ESCO ISCO-{isco_code[:4]}): {result[1]}")
-        return result
+        return (*result, "ESCO")
 
     # Stufe 4: berufsberatung.ch
     logger.debug("  Stufe 4: berufsberatung.ch")
     bb_desc = berufsberatung_search(beruf)
     if len(bb_desc) > 80:
         logger.info(f"    ✓ Stufe 4 (berufsberatung.ch): {len(bb_desc)} Zeichen")
-        return "", beruf, bb_desc
+        return "", beruf, bb_desc, "berufsberatung.ch"
     time.sleep(0.2)
 
     # Stufe 5: Wikipedia DE
@@ -380,13 +386,13 @@ def find_best_match(client: anthropic.Anthropic, beruf: str,
     wiki_desc = wikipedia_description(beruf)
     if len(wiki_desc) > 80:
         logger.info(f"    ✓ Stufe 5 (Wikipedia DE): {len(wiki_desc)} Zeichen")
-        return "", beruf, wiki_desc
+        return "", beruf, wiki_desc, "Wikipedia"
     time.sleep(0.2)
 
     # Stufe 6: Haiku generiert Beschreibung direkt
     logger.info("    → Stufe 6: Haiku generiert Beschreibung (kein externer Match)")
     desc = haiku_generate_description(client, beruf, isco_code)
-    return "", beruf, desc
+    return "", beruf, desc, "Haiku-generiert"
 
 
 # ---------------------------------------------------------------------------
@@ -395,7 +401,7 @@ def find_best_match(client: anthropic.Anthropic, beruf: str,
 
 def enrich_jobs(jobs_df: pd.DataFrame, client: anthropic.Anthropic,
                 df_existing: pd.DataFrame | None = None) -> pd.DataFrame:
-    uris, titel_list, beschreibungen = [], [], []
+    uris, titel_list, beschreibungen, quellen = [], [], [], []
     total = len(jobs_df)
 
     # URIs der nicht neu zu verarbeitenden Berufe als Blacklist aufbauen
@@ -424,15 +430,15 @@ def enrich_jobs(jobs_df: pd.DataFrame, client: anthropic.Anthropic,
                 logger.info(f"    VORHER  titel: {prev_titel}")
                 logger.info(f"    VORHER  desc:  {prev_desc[:120]}")
 
-        uri, titel, beschreibung = find_best_match(client, beruf, isco, blocked_uris=used_uris)
+        uri, titel, beschreibung, quelle = find_best_match(client, beruf, isco, blocked_uris=used_uris)
         if uri:
             used_uris.add(uri)  # neu vergebe URI sofort sperren für folgende Berufe
         uris.append(uri)
         titel_list.append(titel)
         beschreibungen.append(beschreibung)
+        quellen.append(quelle)
 
-        source = f"ESCO: {titel[:40]}" if uri else "Fallback"
-        logger.info(f"    NACHHER quelle: {source}")
+        logger.info(f"    NACHHER quelle: {quelle}")
         logger.info(f"    NACHHER titel:  {titel}")
         logger.info(f"    NACHHER desc:   {beschreibung[:120]}")
         time.sleep(0.4)
@@ -441,6 +447,7 @@ def enrich_jobs(jobs_df: pd.DataFrame, client: anthropic.Anthropic,
     result["esco_uri"] = uris
     result["esco_titel"] = titel_list
     result["esco_beschreibung"] = beschreibungen
+    result["beschreibung_quelle"] = quellen
     return result
 
 
@@ -478,11 +485,17 @@ def main():
 
     # Korrekturen in bestehende Datei einpflegen
     df_out = df_existing.copy()
+    # Spalte anlegen falls noch nicht vorhanden (rückwärtskompatibler Migrationspfad)
+    if "beschreibung_quelle" not in df_out.columns:
+        df_out["beschreibung_quelle"] = df_out["esco_uri"].apply(
+            lambda u: "ESCO" if (pd.notna(u) and str(u).strip()) else "unbekannt"
+        )
     for _, row in enriched.iterrows():
         mask = df_out["beruf"] == row["beruf"]
         df_out.loc[mask, "esco_uri"] = row["esco_uri"]
         df_out.loc[mask, "esco_titel"] = row["esco_titel"]
         df_out.loc[mask, "esco_beschreibung"] = row["esco_beschreibung"]
+        df_out.loc[mask, "beschreibung_quelle"] = row["beschreibung_quelle"]
 
     output_esco = PROCESSED_PATH / "berufe_ch_esco.csv"
     output_verified = PROCESSED_PATH / "berufe_ch_esco_verified.csv"
