@@ -100,6 +100,68 @@ class TestApplyCHAdjustments:
         for branche, delta in BRANCHENEFFEKTE.items():
             assert isinstance(delta, float), f"{branche}: {delta} ist kein float"
 
+    def test_alle_21_branchen_abgedeckt(self):
+        """BRANCHENEFFEKTE muss alle 21 Branchen aus scores.csv enthalten."""
+        expected_branches = {
+            "Industrie", "Finanzen", "Verwaltung", "Gastgewerbe", "Gesundheit",
+            "ICT", "Bau", "Bildung", "Soziales", "Transport", "Detailhandel",
+            "Medien", "Dienstleistungen", "Landwirtschaft", "Öff. Verwaltung",
+            "Versicherungen", "Recht", "Immobilien", "Beratung", "Sicherheit",
+            "Umwelt",
+        }
+        assert expected_branches == set(BRANCHENEFFEKTE.keys()), (
+            f"Fehlende Branchen: {expected_branches - set(BRANCHENEFFEKTE.keys())}"
+        )
+
+    def test_verwaltung_und_oeff_verwaltung_verschieden(self):
+        """'Verwaltung' (privat, +0.1) und 'Öff. Verwaltung' (öffentl., -0.1) haben verschiedene Deltas."""
+        assert BRANCHENEFFEKTE["Verwaltung"] != BRANCHENEFFEKTE["Öff. Verwaltung"]
+        assert BRANCHENEFFEKTE["Verwaltung"] > 0
+        assert BRANCHENEFFEKTE["Öff. Verwaltung"] < 0
+
+    def test_neue_branchen_soziales(self):
+        """Soziales erhält negativen Delta (wie Gesundheit)."""
+        df = pd.DataFrame({
+            "branche": ["Soziales"],
+            "lohn_median_chf": [70000],
+            "score_gesamt": [5.0],
+        })
+        result = apply_ch_adjustments(df)
+        assert result["delta_branche"].iloc[0] < 0
+
+    def test_neue_branchen_bau(self):
+        """Bau erhält negativen Delta (physische Arbeit)."""
+        df = pd.DataFrame({
+            "branche": ["Bau"],
+            "lohn_median_chf": [80000],
+            "score_gesamt": [5.0],
+        })
+        result = apply_ch_adjustments(df)
+        assert result["delta_branche"].iloc[0] < 0
+
+    def test_neue_branchen_beratung(self):
+        """Beratung erhält positiven Delta (Wissensarbeit, KI-augmentierbar)."""
+        df = pd.DataFrame({
+            "branche": ["Beratung"],
+            "lohn_median_chf": [120000],
+            "score_gesamt": [5.0],
+        })
+        result = apply_ch_adjustments(df)
+        assert result["delta_branche"].iloc[0] > 0
+
+    def test_alle_branchen_kein_fehler(self):
+        """Alle 21 bekannten Branchen erzeugen keinen Fehler und haben delta != None."""
+        branches = list(BRANCHENEFFEKTE.keys())
+        df = pd.DataFrame({
+            "branche": branches,
+            "lohn_median_chf": [80000] * len(branches),
+            "score_gesamt": [5.0] * len(branches),
+        })
+        result = apply_ch_adjustments(df)
+        assert result["delta_branche"].notna().all()
+        assert (result["score_ch"] >= 0).all()
+        assert (result["score_ch"] <= 10).all()
+
     def test_alle_lohn_effekte_definiert(self):
         """Alle LOHNEFFEKTE-Werte sind numerisch."""
         for klasse, delta in LOHNEFFEKTE.items():

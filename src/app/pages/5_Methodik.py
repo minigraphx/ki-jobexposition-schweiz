@@ -30,13 +30,20 @@ Es werden Berufe mit mindestens **5'000 Beschäftigten** berücksichtigt.
 st.subheader("Berufsbeschreibungen")
 st.markdown("""
 Für das KI-Scoring benötigt jeder Beruf eine inhaltliche Beschreibung seiner Kerntätigkeiten.
-Diese stammt aus:
+Die Beschreibungen werden in einem mehrstufigen Prozess ermittelt:
 
-- **Quelle:** ESCO (European Skills, Competences, Qualifications and Occupations), Version 1.2
-- **Betreiber:** Europäische Kommission
-- **API:** [esco.ec.europa.eu](https://esco.ec.europa.eu/de/use-esco/esco-api)
+| Stufe | Quelle | Berufe |
+|---|---|---|
+| 1–3 | ESCO API (ISCO-Code + Textsuche, Deutsch/Englisch) | 201 von 204 |
+| 4 | berufsberatung.ch (Fallback bei keinem ESCO-Treffer) | — |
+| 5 | Wikipedia (zweiter Fallback) | — |
+| 6 | Claude Haiku (generierte Beschreibung als letzter Ausweg) | 3 von 204 |
+
+Die verwendete Quelle ist in der Spalte `beschreibung_quelle` gespeichert und
+wird bei der Berufssuche angezeigt.
+
+- **ESCO:** [esco.ec.europa.eu](https://esco.ec.europa.eu/de/use-esco/esco-api), Version 1.2
 - **Sprache:** Deutsch, Fallback Englisch
-- **Matching:** Primär via ISCO-Code, Fallback via Textsuche mit Berufsbezeichnung
 """)
 
 st.subheader("Lohndaten")
@@ -77,16 +84,42 @@ Der **Rohscore** ergibt sich aus der gewichteten Summe dieser Kriterien.
 st.subheader("Schweiz-spezifische Anpassungen")
 st.markdown("""
 Auf den Rohscore werden CH-spezifische Faktoren angewendet, die den lokalen Arbeitsmarktkontext
-berücksichtigen:
+berücksichtigen. Alle 21 Branchen aus dem Datensatz sind explizit bewertet:
 
-| Faktor | Effekt | Begründung |
+**Brancheneffekte** (Deltawert auf den Rohscore):
+
+| Branche | Delta | Begründung |
 |---|---|---|
-| Finanz- & Versicherungssektor | +0.3 | Hoher Automatisierungsdruck, digitaler Reifegrad |
-| Gesundheit & Soziales | −0.3 | Fachkräftemangel, Schutzinteressen, hoher Regulierungsgrad |
-| Öffentliche Verwaltung | −0.2 | Langsame Adoptionsrate, politische Rahmenbedingungen |
-| Bildungssektor | −0.1 | Gesellschaftlicher Konsens über menschliche Lehrvermittlung |
-| Hohe Löhne (> 120'000 CHF) | +0.2 | Stärkerer wirtschaftlicher Anreiz zur Automatisierung |
-| Tiefe Löhne (< 60'000 CHF) | −0.1 | Geringerer ROI für Automatisierungsinvestitionen |
+| Versicherungen | **+0.4** | Sehr standardisierte Prozesse, hoher Digitalisierungsgrad |
+| Finanzen | **+0.3** | Bankplatz CH: hoher Automatisierungsdruck |
+| Beratung | **+0.2** | Wissensarbeit: KI augmentiert Analyse & Strategie |
+| Detailhandel | **+0.2** | E-Commerce-Druck, Self-Checkout, Logistikautomation |
+| Recht | **+0.2** | LegalTech wächst; Dokumentenanalyse automatisierbar |
+| Immobilien | **+0.1** | PropTech, Bewertungs-KI, digitale Plattformen |
+| Medien | **+0.1** | KI-generierte Inhalte, aber Kreativität dämpft |
+| Verwaltung | **+0.1** | Private Administration: strukturierte Büroprozesse |
+| Dienstleistungen | **0.0** | Zu heterogen für einheitlichen Effekt |
+| Transport | **0.0** | Physisch, aber autonomes Fahren mittelfristig |
+| Umwelt | **0.0** | Spezialisiert; Monitoring-KI vs. Feldarbeit neutral |
+| Gastgewerbe | **−0.1** | Serviceorientiert, Kundenkontakt; Buchungs-KI marginal |
+| Industrie | **−0.1** | MEM/Pharma: Fachkräftemangel als Puffer |
+| Landwirtschaft | **−0.1** | Precision Farming wächst, aber physische Arbeit dominiert |
+| Öff. Verwaltung | **−0.1** | Öffentl. Sektor: langsame Adoption, politische Rahmenbedingungen |
+| Sicherheit | **−0.1** | Physische Präsenz erforderlich; Überwachungs-KI ergänzt nur |
+| Bau | **−0.2** | Stark physisch, handwerklich; Digitalisierung langsam |
+| Bildung | **−0.2** | Gesellschaftlicher Konsens über menschliche Lehrvermittlung |
+| ICT | **−0.2** | KI-Fachkräfte adaptiv; treiben Wandel selbst |
+| Gesundheit | **−0.3** | Regulierung, Fachkräftemangel, Pflegekomponente als Bremse |
+| Soziales | **−0.3** | Hoher Empathiebedarf, Schutzinteressen; ähnlich Gesundheit |
+
+**Lohneffekte** (Deltawert auf den Rohscore):
+
+| Lohnklasse (Jahresbruttolohn) | Delta | Begründung |
+|---|---|---|
+| > 150'000 CHF | **+0.4** | Sehr hoher ROI für Automatisierungsinvestitionen |
+| 100'000–150'000 CHF | **+0.2** | Stärkerer wirtschaftlicher Anreiz zur Automatisierung |
+| 60'000–100'000 CHF | **0.0** | Neutral |
+| < 60'000 CHF | **−0.2** | Geringerer ROI; manuelle Arbeit oft günstiger |
 
 Der finale **score_ch** wird auf den Bereich 0–10 begrenzt.
 """)
