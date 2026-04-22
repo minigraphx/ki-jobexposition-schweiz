@@ -53,6 +53,16 @@ KNOWN_WRONG_MATCHES = [
     "Grafiker/in",                         # → Kartograf
     "Hochbauzeichner/in EFZ",              # → 3D-Druck-Techniker
     "Elektroplaner/in EFZ",                # → 3D-Druck-Techniker
+    # Gruppe 1b: Brennschneider-URI (5d46e448) fälschlicherweise zugewiesen
+    "Primarlehrer/in",
+    "Sekundarlehrer/in",
+    "Pflegeassistent/in",
+    "Lastwagenfahrer/in",
+    "Arztpraxisassistent/in",
+    "Lieferwagenfahrer/in",
+    "Hauswirtschaftler/in EFZ",
+    "Telematiker/in EFZ",
+    "Drogist/in",
     # Gruppe 2: falsch nur in berufe_ch_esco.csv (unverifiziert)
     "PR-Spezialist/in",                    # → Preiskalkulation
     "Reinigungspersonal und Hilfskräfte in Privathaushalten",  # → Netzverankerung Aquakultur
@@ -297,12 +307,20 @@ def haiku_generate_description(client: anthropic.Anthropic, beruf: str,
 # ---------------------------------------------------------------------------
 
 def _try_esco_candidates(client: anthropic.Anthropic, beruf: str,
-                          candidates: list[dict]) -> tuple[str, str, str] | None:
-    """Validiert Kandidaten und gibt ersten validen zurück."""
+                          candidates: list[dict],
+                          blocked_uris: set[str] | None = None) -> tuple[str, str, str] | None:
+    """Validiert Kandidaten und gibt ersten validen zurück.
+
+    blocked_uris: URIs die bereits einem anderen Beruf gehören — werden übersprungen
+    um Kreuz-Kontamination (z.B. Brennschneider-URI für Polymechaniker) zu verhindern.
+    """
     for c in candidates:
         uri = c.get("uri", "")
         titel = c.get("title", "")
         if not uri:
+            continue
+        if blocked_uris and uri in blocked_uris:
+            logger.debug(f"    URI geblockt (bereits vergeben): {titel}")
             continue
         beschreibung = esco_get_description(uri)
         time.sleep(0.3)
@@ -314,7 +332,8 @@ def _try_esco_candidates(client: anthropic.Anthropic, beruf: str,
 
 
 def find_best_match(client: anthropic.Anthropic, beruf: str,
-                    isco_code: str) -> tuple[str, str, str]:
+                    isco_code: str,
+                    blocked_uris: set[str] | None = None) -> tuple[str, str, str]:
     """
     Gibt (esco_uri, esco_titel, esco_beschreibung) zurück.
     Durchläuft 6 Suchstufen; Haiku validiert jeden ESCO-Kandidaten.
@@ -323,7 +342,7 @@ def find_best_match(client: anthropic.Anthropic, beruf: str,
 
     # Stufe 1: ESCO DE direkt
     logger.debug(f"  Stufe 1: ESCO DE '{beruf_clean}'")
-    result = _try_esco_candidates(client, beruf, esco_search_text(beruf_clean, "de", 5))
+    result = _try_esco_candidates(client, beruf, esco_search_text(beruf_clean, "de", 5), blocked_uris)
     if result:
         logger.info(f"    ✓ Stufe 1 (ESCO DE): {result[1]}")
         return result
@@ -335,7 +354,7 @@ def find_best_match(client: anthropic.Anthropic, beruf: str,
     for term in alt_terms:
         for lang in ["de", "en"]:
             candidates = esco_search_text(term, lang, 5)
-            result = _try_esco_candidates(client, beruf, candidates)
+            result = _try_esco_candidates(client, beruf, candidates, blocked_uris)
             if result:
                 logger.info(f"    ✓ Stufe 2 (ESCO '{term}' {lang.upper()}): {result[1]}")
                 return result
@@ -343,7 +362,7 @@ def find_best_match(client: anthropic.Anthropic, beruf: str,
 
     # Stufe 3: ESCO nach ISCO-Code-Gruppe
     logger.debug(f"  Stufe 3: ESCO ISCO-Gruppe {isco_code[:4]}")
-    result = _try_esco_candidates(client, beruf, esco_search_isco(isco_code, "de", 10))
+    result = _try_esco_candidates(client, beruf, esco_search_isco(isco_code, "de", 10), blocked_uris)
     if result:
         logger.info(f"    ✓ Stufe 3 (ESCO ISCO-{isco_code[:4]}): {result[1]}")
         return result
@@ -379,6 +398,17 @@ def enrich_jobs(jobs_df: pd.DataFrame, client: anthropic.Anthropic,
     uris, titel_list, beschreibungen = [], [], []
     total = len(jobs_df)
 
+    # URIs der nicht neu zu verarbeitenden Berufe als Blacklist aufbauen
+    # (verhindert Kreuz-Kontamination: kein URI wird zwei verschiedenen Berufen zugewiesen)
+    used_uris: set[str] = set()
+    if df_existing is not None:
+        jobs_being_updated = set(jobs_df["beruf"])
+        for _, r in df_existing.iterrows():
+            if r["beruf"] not in jobs_being_updated:
+                uri = str(r.get("esco_uri", "") or "")
+                if uri:
+                    used_uris.add(uri)
+
     for i, (_, row) in enumerate(jobs_df.iterrows(), 1):
         beruf = row["beruf"]
         isco = str(row["isco_code"])
@@ -394,7 +424,9 @@ def enrich_jobs(jobs_df: pd.DataFrame, client: anthropic.Anthropic,
                 logger.info(f"    VORHER  titel: {prev_titel}")
                 logger.info(f"    VORHER  desc:  {prev_desc[:120]}")
 
-        uri, titel, beschreibung = find_best_match(client, beruf, isco)
+        uri, titel, beschreibung = find_best_match(client, beruf, isco, blocked_uris=used_uris)
+        if uri:
+            used_uris.add(uri)  # neu vergebe URI sofort sperren für folgende Berufe
         uris.append(uri)
         titel_list.append(titel)
         beschreibungen.append(beschreibung)
