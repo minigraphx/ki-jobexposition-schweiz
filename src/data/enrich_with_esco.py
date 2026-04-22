@@ -37,17 +37,26 @@ logger = logging.getLogger(__name__)
 PROCESSED_PATH = Path(__file__).parent.parent.parent / "data" / "processed"
 ESCO_API = "https://ec.europa.eu/esco/api"
 
-# Bekannte falsche ESCO-Matches (aus Audit ermittelt)
+# Bekannte falsche ESCO-Matches (aus Batch-API-Audit und Datenqualitätsprüfung ermittelt)
+# Gruppe 1: Falsche Matches in berufe_ch_esco_verified.csv (9 Jobs)
 KNOWN_WRONG_MATCHES = [
-    "Bankkaufmann/-frau",
-    "Polymechaniker/in EFZ",
-    "Logistiker/in EFZ",
-    "Immobilienbewirtschafter/in",
-    "Automatiker/in EFZ",
-    "Bauführer/in",
-    "Grafiker/in",
-    "Hochbauzeichner/in EFZ",
-    "Elektroplaner/in EFZ",
+    "Bankkaufmann/-frau",                  # → Abfallmakler
+    "Polymechaniker/in EFZ",               # → Brennschneider
+    "Logistiker/in EFZ",                   # → Abfallmakler
+    "Immobilienbewirtschafter/in",          # → Abfallmakler
+    "Automatiker/in EFZ",                  # → 3D-Druck-Techniker
+    "Bauführer/in",                        # → 3D-Druck-Techniker
+    "Grafiker/in",                         # → Kartograf
+    "Hochbauzeichner/in EFZ",              # → 3D-Druck-Techniker
+    "Elektroplaner/in EFZ",                # → 3D-Druck-Techniker
+    # Gruppe 2: Falsche Matches nur in berufe_ch_esco.csv (nie verifiziert)
+    "PR-Spezialist/in",                    # → Spezialist für Preiskalkulation
+    "Reinigungspersonal und Hilfskräfte in Privathaushalten",  # → Hilfskraft Netzverankerung
+    "Leitende Verwaltungsbedienstete",     # → Leitender Hauswirtschafter
+    "Technische Verkaufsfachkräfte (ohne Informations- und Kommunikationstechnologie)",  # → GIS-Experte
+    "Bürokräfte in der Transportwirtschaft und verwandte Berufe",  # → Lebensmitteltechniker
+    "Physiotherapeutische Techniker und Assistenten",  # → Anästhesietechnischer Assistent
+    "Fachkräfte in Personalschulung und -entwicklung",  # → Hydraulik-Fachkraft
 ]
 
 VALIDATE_PROMPT = """Beruf (Schweiz): {beruf}
