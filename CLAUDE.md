@@ -115,11 +115,8 @@ Six stages, first valid match wins (each candidate validated by Haiku before acc
 5. Wikipedia DE — API search
 6. Haiku direct — generates description from job title + ISCO context (fallback)
 
-**URI deduplication**: each ESCO URI can only be assigned to one job. If a candidate URI is
-already used by another job (e.g. Brennschneider URI re-appearing for Polymechaniker), it is
-skipped and the next stage is tried. This prevents cross-contamination between jobs.
-
-`KNOWN_WRONG_MATCHES` in the script lists 25 jobs with confirmed bad ESCO matches.
+Each ESCO URI can only be assigned to one job (deduplication via `blocked_uris`).
+`KNOWN_WRONG_MATCHES` lists 25 confirmed bad matches → see `DATA_QUALITY.md`.
 Run `--fix-wrong` locally to reprocess them. Run `--job "Berufname"` to test a single job.
 
 ### Streamlit App (`src/app/`)
@@ -168,73 +165,8 @@ All charts use **Plotly**. App reads from `data/processed/scores.csv`.
 
 ## Datenqualität
 
-### ESCO-Abdeckung
-
-- **197 / 204** Berufe haben einen ESCO-URI (Stand nach letztem `--fix-wrong`-Lauf).
-- **7 Berufe** haben keine ESCO-URI — ihr Scoring basiert auf dem Berufstitel + Fallback-Beschreibung
-  (Stufe 4–6: berufsberatung.ch, Wikipedia oder Haiku-generiert). Betroffene Berufe:
-  Logistiker/in EFZ, Hauswirtschaftler/in EFZ, Telematiker/in EFZ, Drogist/in,
-  Handelsmakler, Isolierer, Reiseverkehrsfachkräfte.
-- Die genaue Fallback-Stufe (4/5/6) je Beruf ist aktuell nicht persistiert — tracking: Issue #24.
-
-### Bekannte ESCO-Fehlzuordnungen
-
-25 Berufe mit bestätigten ESCO-Fehlmatches (in `KNOWN_WRONG_MATCHES` gelistet):
-
-```
-Bankkaufmann/-frau              → Abfallmakler (korrekt: Bankbediensteter)
-Logistiker/in EFZ               → Abfallmakler
-Grafiker/in                     → Kartograf (korrekt: Grafiker/in)
-Hochbauzeichner/in EFZ          → 3D-Druck-Techniker
-Polymechaniker/in EFZ           → Brennschneider
-Immobilienbewirtschafter/in     → Abfallmakler / Brennschneider
-Automatiker/in EFZ              → 3D-Druck-Techniker / Brennschneider
-Bauführer/in                    → 3D-Druck-Techniker
-Elektroplaner/in EFZ            → 3D-Druck-Techniker
-PR-Spezialist/in                → Preiskalkulation
-Reinigungspersonal...           → Netzverankerung Aquakultur
-Leitende Verwaltungsbedienstete → Leitender Hauswirtschafter
-Technische Verkaufsfachkräfte   → Experte Geoinformationssysteme
-Bürokräfte Transportwirtschaft  → Lebensmitteltechniker
-Physiotherapeut. Techniker...   → Anästhesietechn. Assistent
-Fachkräfte Personal & Schulung  → Hydraulik-Fachkraft
-```
-
-Die Scoring-Inhalte (`haupt_risiko`, `begruendung`) dieser Berufe wurden durch das
-Quality Audit geprüft und sind inhaltlich korrekt — Claude ignorierte falsche ESCO-Beschreibungen
-und bewertete auf Basis des Berufstitels. Die ESCO-Metaspalten (`esco_uri`, `esco_titel`,
-`esco_beschreibung`) in `scores.csv` wurden bereinigt (Issue #22, #21 geschlossen).
-
-### ESCO API — wichtiger Hinweis
-
-Die ESCO REST API (`ec.europa.eu/esco`) ist im **Anthropic Cloud-Environment geblockt**
-(HTTP-Layer-Blockierung trotz erfolgreicher TLS-Verbindung). Folgende Skripte müssen
-**lokal** ausgeführt werden:
-
-- `enrich_with_esco.py` (alle Modi)
-- `verify_esco_matches.py`
-- `patch_unmatched.py`
-
-### Quality Audit Prozess
-
-`full_quality_audit.py` prüft ob `haupt_risiko`/`begruendung` zum Berufstitel passt:
-
-1. **Phase 1 (Haiku)**: Prüft alle 204 Beschreibungen auf inhaltliche Korrektheit
-2. **Phase 2 (Haiku)**: Generiert korrekte Berufsbeschreibung für fehlerhafte Jobs
-3. **Phase 3 (Sonnet)**: Re-Scoring mit korrigierten Beschreibungen
-
-Wann neu ausführen: nach `--fix-wrong`-Lauf oder wenn neue Batch-Scoring-Artefakte vermutet werden.
-Report wird in `data/processed/audit_report.json` gespeichert.
-
-### Nachträgliche Korrekturen (Historie)
-
-| Zeitpunkt | Korrektur | Betroffene Berufe |
-|-----------|-----------|-------------------|
-| 2026-04 | Brennschneider-Kontamination (Batch API Artefakt) | 14 Berufe via `fix_brennschneider_contamination.py` |
-| 2026-04 | Vollständiges Quality Audit | 12 weitere Berufe via `full_quality_audit.py` |
-| 2026-04 | Manuelle Korrektur | Grafiker/in (Score 3.2 → 6.2, war Graveur-Beschreibung) |
-| 2026-04 | Refactor: Batch API → synchron + Hash-Delta | Alle 204 Berufe neu gescort; `beschreibung_hash` eingeführt |
-| 2026-04 | Brennschneider-Kontamination (ESCO-Metadaten) | 9 Berufe in `berufe_ch_esco_verified.csv` + `scores.csv` bereinigt; URI-Duplikat-Schutz in `enrich_with_esco.py` |
+Siehe `DATA_QUALITY.md` für ESCO-Abdeckung, bekannte Fehlzuordnungen (25 Einträge),
+Korrektur-Historie, Quality Audit Prozess und ESCO API Cloud-Blockierung.
 
 ## Deployment (HuggingFace Spaces)
 
