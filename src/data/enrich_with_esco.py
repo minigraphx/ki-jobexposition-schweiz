@@ -284,7 +284,10 @@ def haiku_generate_description(client: anthropic.Anthropic, beruf: str,
         resp = client.messages.create(
             model="claude-haiku-4-5-20251001", max_tokens=300,
             messages=[{"role": "user", "content": prompt}])
-        return resp.content[0].text.strip()
+        text = resp.content[0].text.strip()
+        # Markdown-Überschriften entfernen die Haiku manchmal hinzufügt
+        text = re.sub(r"^#+\s+.+\n+", "", text).strip()
+        return text
     except Exception:
         return ""
 
