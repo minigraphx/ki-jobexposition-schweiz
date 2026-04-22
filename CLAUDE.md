@@ -32,7 +32,10 @@ python src/data/enrich_with_esco.py --fix-wrong
 python src/data/enrich_with_esco.py --job "Bankkaufmann/-frau"
 
 # --- Scoring Pipeline (requires ANTHROPIC_API_KEY in .env) ---
-python src/scoring/exposure_scorer.py       # Claude Batch API, all 204 jobs
+python src/scoring/exposure_scorer.py       # synchronous scoring, hash-based delta (only changed jobs)
+python src/scoring/exposure_scorer.py --force                  # re-score all 204 jobs
+python src/scoring/exposure_scorer.py --force "Buchhalter/in"  # re-score by name
+python src/scoring/exposure_scorer.py --force 2411             # re-score by ISCO prefix
 python src/scoring/adaptability_scorer.py   # rule-based adaptability scores
 python src/scoring/ch_adjustments.py        # CH sector/salary deltas → scores.csv
 
@@ -70,11 +73,14 @@ berufe_ch_esco.csv
 
 ```
 berufe_ch_esco_verified.csv
-  → exposure_scorer.py      (Claude Batch API, claude-sonnet-4-6, ~204 calls, < 2 CHF)
+  → exposure_scorer.py      (claude-sonnet-4-6, synchronous, hash-based delta — only changed jobs)
   → adaptability_scorer.py  (rule-based: education, wage, digital affinity, mobility)
   → ch_adjustments.py       (sector/salary deltas, score clipped 0–10)
   → scores.csv
 ```
+
+`exposure_scorer.py` stores a `beschreibung_hash` (SHA-256[:12] of beruf + description) per job.
+On subsequent runs only jobs with changed descriptions are re-scored. Use `--force` to override.
 
 Scoring criteria: digital output (25%), repeatability (25%), physical presence (20% neg.),
 creativity (15% neg.), social interaction (15% neg.).
@@ -92,7 +98,7 @@ CH wage deltas: <60k CHF −0.2, 60–100k 0.0, 100–150k +0.2, >150k +0.4.
 | `src/data/enrich_with_esco.py` | `berufe_ch.csv` | `berufe_ch_esco.csv` | **Must run locally** (ESCO API blocked in cloud); 6-stage search with Haiku validation |
 | `src/data/verify_esco_matches.py` | `berufe_ch_esco.csv` | `berufe_ch_esco_verified.csv` | Haiku-based match quality scoring 0/1/2 |
 | `src/data/patch_unmatched.py` | `berufe_ch_esco_verified.csv` | `berufe_ch_esco_verified.csv` | Manual overrides for known bad matches |
-| `src/scoring/exposure_scorer.py` | `berufe_ch_esco_verified.csv` | `scores.csv` (partial) | Claude Batch API, async, ~204 jobs |
+| `src/scoring/exposure_scorer.py` | `berufe_ch_esco_verified.csv` | `scores.csv` | Synchronous, hash-based delta; `--force [name\|isco]` for selective re-score |
 | `src/scoring/adaptability_scorer.py` | `scores.csv` | `scores.csv` | Rule-based: education, wage, digital affinity, mobility |
 | `src/scoring/ch_adjustments.py` | `scores.csv` | `scores.csv` | CH sector/wage deltas, clips to 0–10 |
 | `src/data/full_quality_audit.py` | `scores.csv` | `scores.csv` + `audit_report.json` | Phase 1: Haiku audit; Phase 2: Haiku desc generation; Phase 3: Sonnet re-score |
@@ -109,7 +115,11 @@ Six stages, first valid match wins (each candidate validated by Haiku before acc
 5. Wikipedia DE — API search
 6. Haiku direct — generates description from job title + ISCO context (fallback)
 
-`KNOWN_WRONG_MATCHES` in the script lists 16 jobs with confirmed bad ESCO matches.
+**URI deduplication**: each ESCO URI can only be assigned to one job. If a candidate URI is
+already used by another job (e.g. Brennschneider URI re-appearing for Polymechaniker), it is
+skipped and the next stage is tried. This prevents cross-contamination between jobs.
+
+`KNOWN_WRONG_MATCHES` in the script lists 25 jobs with confirmed bad ESCO matches.
 Run `--fix-wrong` locally to reprocess them. Run `--job "Berufname"` to test a single job.
 
 ### Streamlit App (`src/app/`)
@@ -139,9 +149,9 @@ All charts use **Plotly**. App reads from `data/processed/scores.csv`.
 | `branche` | BFS SAKE | Sector (21 categories, manually mapped from ISCO groups) |
 | `lohn_median_chf` | BFS LSE 2022 | Median annual gross salary CHF |
 | `qualifikation` | BFS LSE 2022 | Education level: Tertiär / Sekundär II / Keine Ausbildung |
-| `esco_uri` | ESCO REST API | ESCO occupation URI — empty for 97 of 204 jobs |
+| `esco_uri` | ESCO REST API | ESCO occupation URI — empty for 7 of 204 jobs (fallback description) |
 | `esco_titel` | ESCO REST API | ESCO occupation title (German) |
-| `esco_beschreibung` | ESCO API or Haiku | ESCO description, or Haiku-generated if no ESCO match |
+| `esco_beschreibung` | ESCO API or Haiku | ESCO description (197 jobs) or fallback from berufsberatung.ch / Wikipedia / Haiku (7 jobs) |
 | `score_gesamt` | Claude Sonnet | Raw AI exposure score 0–10 (Batch API) |
 | `score_digital` | Claude Sonnet | Sub-score: digital output (25% weight) |
 | `score_wiederholbarkeit` | Claude Sonnet | Sub-score: repeatability (25% weight) |
@@ -160,13 +170,16 @@ All charts use **Plotly**. App reads from `data/processed/scores.csv`.
 
 ### ESCO-Abdeckung
 
-- **107 / 204** Berufe haben einen ESCO-URI (nach `--fix-wrong`-Lauf lokal: 188/204).
-- **97 Berufe** haben keine ESCO-URI — ihr Scoring basiert auf dem Berufstitel + Haiku-generierter Beschreibung (Stage 6 des 6-stufigen Suchprozesses).
-- `berufe_ch_esco_verified.csv` enthält nur die 107 verifizierten Einträge; die restlichen 97 wurden direkt über `enrich_with_esco.py` behandelt.
+- **197 / 204** Berufe haben einen ESCO-URI (Stand nach letztem `--fix-wrong`-Lauf).
+- **7 Berufe** haben keine ESCO-URI — ihr Scoring basiert auf dem Berufstitel + Fallback-Beschreibung
+  (Stufe 4–6: berufsberatung.ch, Wikipedia oder Haiku-generiert). Betroffene Berufe:
+  Logistiker/in EFZ, Hauswirtschaftler/in EFZ, Telematiker/in EFZ, Drogist/in,
+  Handelsmakler, Isolierer, Reiseverkehrsfachkräfte.
+- Die genaue Fallback-Stufe (4/5/6) je Beruf ist aktuell nicht persistiert — tracking: Issue #24.
 
 ### Bekannte ESCO-Fehlzuordnungen
 
-16 Berufe mit bestätigten ESCO-Fehlmatches (in `KNOWN_WRONG_MATCHES` gelistet):
+25 Berufe mit bestätigten ESCO-Fehlmatches (in `KNOWN_WRONG_MATCHES` gelistet):
 
 ```
 Bankkaufmann/-frau              → Abfallmakler (korrekt: Bankbediensteter)
@@ -189,8 +202,8 @@ Fachkräfte Personal & Schulung  → Hydraulik-Fachkraft
 
 Die Scoring-Inhalte (`haupt_risiko`, `begruendung`) dieser Berufe wurden durch das
 Quality Audit geprüft und sind inhaltlich korrekt — Claude ignorierte falsche ESCO-Beschreibungen
-und bewertete auf Basis des Berufstitels. Die `esco_titel`-Metaspalte in `scores.csv` ist für
-diese Berufe noch veraltet (tracking: Issue #21).
+und bewertete auf Basis des Berufstitels. Die ESCO-Metaspalten (`esco_uri`, `esco_titel`,
+`esco_beschreibung`) in `scores.csv` wurden bereinigt (Issue #22, #21 geschlossen).
 
 ### ESCO API — wichtiger Hinweis
 
@@ -217,9 +230,11 @@ Report wird in `data/processed/audit_report.json` gespeichert.
 
 | Zeitpunkt | Korrektur | Betroffene Berufe |
 |-----------|-----------|-------------------|
-| 2025-04 | Brennschneider-Kontamination (Batch API Artefakt) | 14 Berufe via `fix_brennschneider_contamination.py` |
-| 2025-04 | Vollständiges Quality Audit | 12 weitere Berufe via `full_quality_audit.py` |
-| 2025-04 | Manuelle Korrektur | Grafiker/in (Score 3.2 → 6.2, war Graveur-Beschreibung) |
+| 2026-04 | Brennschneider-Kontamination (Batch API Artefakt) | 14 Berufe via `fix_brennschneider_contamination.py` |
+| 2026-04 | Vollständiges Quality Audit | 12 weitere Berufe via `full_quality_audit.py` |
+| 2026-04 | Manuelle Korrektur | Grafiker/in (Score 3.2 → 6.2, war Graveur-Beschreibung) |
+| 2026-04 | Refactor: Batch API → synchron + Hash-Delta | Alle 204 Berufe neu gescort; `beschreibung_hash` eingeführt |
+| 2026-04 | Brennschneider-Kontamination (ESCO-Metadaten) | 9 Berufe in `berufe_ch_esco_verified.csv` + `scores.csv` bereinigt; URI-Duplikat-Schutz in `enrich_with_esco.py` |
 
 ## Deployment (HuggingFace Spaces)
 
