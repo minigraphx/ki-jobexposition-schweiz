@@ -102,7 +102,36 @@ fig = px.treemap(
     },
 )
 fig.update_layout(height=700, coloraxis_colorbar_title="KI-Score")
-st.plotly_chart(fig, use_container_width=True)
+
+st.caption("💡 Tipp: Klick auf ein Berufsfeld öffnet die Detail-Ansicht.")
+
+event = st.plotly_chart(
+    fig,
+    use_container_width=True,
+    on_select="rerun",
+    selection_mode="points",
+    key="treemap_select",
+)
+
+# ── Klick auf ein Beruf-Feld → direkt zur Berufssuche ─────────────────────────
+def _points(ev) -> list:
+    if not ev:
+        return []
+    sel = ev.get("selection") if isinstance(ev, dict) else getattr(ev, "selection", None)
+    if not sel:
+        return []
+    if isinstance(sel, dict):
+        return sel.get("points", []) or []
+    return list(getattr(sel, "points", []) or [])
+
+
+berufe_set = set(filtered["beruf"])
+for _p in _points(event):
+    _label_val = _p.get("label") if isinstance(_p, dict) else getattr(_p, "label", None)
+    if _label_val in berufe_set:
+        st.query_params["beruf"] = _label_val
+        st.switch_page("pages/4_Berufssuche.py")
+        break
 
 # ── PNG-Export ─────────────────────────────────────────────────────────────────
 try:
