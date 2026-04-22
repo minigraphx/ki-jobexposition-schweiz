@@ -26,16 +26,16 @@ class TestAnteilBerechnung:
         assert (df["grenzgaenger_anteil"] <= 1).all()
 
     def test_berechnung_korrekt(self):
-        # grenzgaenger_anteil = grenzgaenger / beschaeftigte_total
+        # grenzgaenger_anteil ≈ grenzgaenger / beschaeftigte_total
+        # (Toleranz 1e-3: grenzgaenger wird auf int gerundet, anteil auf 4 Dezimalen.)
         df = compute_grenzgaenger_anteil(use_fallback=True)
-        # Only check rows where beschaeftigte_total > 0
         valid = df[df["beschaeftigte_total"] > 0].copy()
         calc = valid["grenzgaenger"] / valid["beschaeftigte_total"]
-        pd.testing.assert_series_equal(
-            valid["grenzgaenger_anteil"].round(6).reset_index(drop=True),
-            calc.round(6).reset_index(drop=True),
-            check_names=False,
-        )
+        diff = (
+            valid["grenzgaenger_anteil"].reset_index(drop=True)
+            - calc.reset_index(drop=True)
+        ).abs()
+        assert (diff < 1e-3).all(), f"Anteil weicht zu stark ab: max={diff.max()}"
 
     def test_output_spalten(self):
         df = compute_grenzgaenger_anteil(use_fallback=True)

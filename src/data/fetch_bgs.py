@@ -1,26 +1,25 @@
 """
 fetch_bgs.py — Grenzgänger-Anteil pro Branche aus BFS BGS (Grenzgängerstatistik)
 
-Quelle: BFS Grenzgängerstatistik (BGS), Quartalsdaten
-        PxWeb-API: https://www.pxweb.bfs.admin.ch/api/v1/de
+Quelle: BFS Grenzgängerstatistik (BGS), Cube DF_GGS_4
+        „Ausländische Grenzgänger/-innen nach Wirtschaftszweig und Erwerbsstatus"
+        Manueller Download als CSV von https://stats.swiss
+        (Dataflow CH1.GGS,DF_GGS_4,1.0.0+all.csv)
 
+Input:  data/raw/bgs_grenzgaenger_noga.csv  (Rohdaten, 2-stelliger NOGA-Code)
 Output: data/processed/grenzgaenger_anteil_branche.csv
 Spalten: branche, grenzgaenger, beschaeftigte_total, grenzgaenger_anteil
 
 Berechnung:
     grenzgaenger_anteil = grenzgaenger_in_branche / beschaeftigte_branche_sake
 
-Hinweis: Falls die PxWeb-API nicht erreichbar ist (z.B. in Cloud-Umgebungen),
-         werden realistische Schätzwerte basierend auf bekannten CH-Statistiken
-         verwendet (Gesamtbestand ~380'000 Grenzgänger).
+Fallback: Falls die Rohdatei fehlt (z.B. in CI), werden realistische
+          Schätzwerte basierend auf bekannten CH-Statistiken verwendet.
 """
 
 from __future__ import annotations
 
-import json
 import logging
-import sys
-import urllib.request
 from pathlib import Path
 
 import pandas as pd
@@ -29,7 +28,10 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
 PROCESSED_DATA_PATH = Path(__file__).parent.parent.parent / "data" / "processed"
+RAW_DATA_PATH = Path(__file__).parent.parent.parent / "data" / "raw"
 SCORES_PATH = PROCESSED_DATA_PATH / "scores.csv"
+KMU_PATH = PROCESSED_DATA_PATH / "kmu_anteil_branche.csv"
+BGS_RAW_PATH = RAW_DATA_PATH / "bgs_grenzgaenger_noga.csv"
 
 # NOGA-Abteilung (2-stellig) → interne Branche
 # Gleiche Zuordnung wie in fetch_statent.py
@@ -167,110 +169,96 @@ BRANCHE_FALLBACK_ANTEIL: dict[str, float] = {
 }
 
 
-def _fetch_bgs_from_pxweb() -> pd.DataFrame | None:
+def _load_bgs_from_csv(path: Path = BGS_RAW_PATH) -> pd.DataFrame | None:
     """
-    Versucht, BGS-Daten (Grenzgänger nach Wirtschaftsabteilung) von der PxWeb-API zu laden.
+    Lädt BGS-Rohdaten (Cube DF_GGS_4) aus dem manuellen CSV-Download von stats.swiss
+    und aggregiert auf interne Branchen.
+
+    Das Rohformat hat eine Zeile pro (NOGA-Abteilung, Erwerbsstatus, Quartal):
+        - NOGA                 2-stelliger Code (z.B. "23"), "_T" = Total
+        - AUFZW                Erwerbsstatus ("_T" = Total, sonst Stati)
+        - TIME_PERIOD          z.B. "2025-Q4"
+        - OBS_VALUE            Anzahl Grenzgänger/-innen (VZÄ-normalisiert, Dezimal)
+
+    Wir filtern auf Erwerbsstatus=Total (_T), aggregieren pro NOGA auf das
+    letzte verfügbare Quartal und mappen NOGA → interne Branche.
 
     Returns:
         DataFrame mit Spalten [branche, grenzgaenger] oder None bei Fehler.
     """
-    # Tabellen-URL: BGS Grenzgänger nach Wirtschaftsabteilung
-    # Primärversuch mit px-x-0302010000_102
-    table_urls = [
-        (
-            "https://www.pxweb.bfs.admin.ch/api/v1/de/"
-            "px-x-0302010000_102/px-x-0302010000_102.px"
-        ),
-    ]
+    if not path.exists():
+        return None
 
-    for url in table_urls:
-        try:
-            # Erst Metadaten abrufen um verfügbare Variablen zu kennen
-            meta_req = urllib.request.Request(url, method="GET")
-            with urllib.request.urlopen(meta_req, timeout=15) as resp:
-                meta = json.loads(resp.read())
+    try:
+        df = pd.read_csv(path, dtype={"NOGA": str, "AUFZW": str}, low_memory=False)
+    except Exception as exc:
+        logger.warning(f"Konnte BGS-Rohdatei nicht lesen: {path}: {exc}")
+        return None
 
-            logger.info(f"BGS-Tabelle erreichbar: {url}")
-            logger.info(f"  Variablen: {[v.get('code') for v in meta.get('variables', [])]}")
+    required_cols = {"NOGA", "AUFZW", "TIME_PERIOD", "OBS_VALUE"}
+    missing = required_cols - set(df.columns)
+    if missing:
+        logger.warning(f"BGS-Rohdatei unvollständig — fehlende Spalten: {missing}")
+        return None
 
-            # Vollständige Abfrage: alle Wirtschaftsabteilungen, letztes Quartal
-            query = {
-                "query": [
-                    {
-                        "code": "Wirtschaftsabteilung",
-                        "selection": {"filter": "all", "values": ["*"]},
-                    },
-                ],
-                "response": {"format": "json"},
-            }
-            payload = json.dumps(query).encode()
-            data_req = urllib.request.Request(
-                url,
-                data=payload,
-                headers={"Content-Type": "application/json"},
-                method="POST",
-            )
-            with urllib.request.urlopen(data_req, timeout=30) as resp:
-                raw_data = json.loads(resp.read())
+    total_mask = (df["AUFZW"] == "_T") & (df["NOGA"] != "_T")
+    snapshot = df[total_mask].copy()
+    if snapshot.empty:
+        logger.warning("BGS-Rohdatei enthält keine Zeilen mit AUFZW=_T.")
+        return None
 
-            rows = raw_data.get("data", [])
-            if not rows:
-                logger.warning("BGS-API: Keine Datenpunkte zurückgegeben.")
-                return None
+    latest_period = sorted(snapshot["TIME_PERIOD"].unique())[-1]
+    latest = snapshot[snapshot["TIME_PERIOD"] == latest_period].copy()
+    latest["branche"] = latest["NOGA"].str.zfill(2).map(NOGA_ZU_BRANCHE)
+    latest = latest.dropna(subset=["branche"])
 
-            records = []
-            for row in rows:
-                # Wirtschaftsabteilung ist i.d.R. der zweite Key-Wert
-                noga = row["key"][-1] if row["key"] else None
-                if noga is None:
-                    continue
-                # Letzter Wert = aktuellster Wert
-                grenzgaenger = 0
-                for v in reversed(row.get("values", [])):
-                    if v and v != ".":
-                        try:
-                            grenzgaenger = int(float(v))
-                            break
-                        except (ValueError, TypeError):
-                            pass
-
-                branche = NOGA_ZU_BRANCHE.get(str(noga).zfill(2))
-                if branche:
-                    records.append({"branche": branche, "grenzgaenger": grenzgaenger})
-
-            if not records:
-                return None
-
-            df = pd.DataFrame(records)
-            result = df.groupby("branche")["grenzgaenger"].sum().reset_index()
-            logger.info(f"BGS-API: {len(result)} Branchen aggregiert.")
-            return result
-
-        except Exception as exc:
-            logger.warning(f"BGS-API nicht erreichbar ({url}): {exc}")
-
-    return None
+    result = (
+        latest.groupby("branche", as_index=False)["OBS_VALUE"]
+        .sum()
+        .rename(columns={"OBS_VALUE": "grenzgaenger"})
+    )
+    logger.info(
+        f"BGS CSV geladen: {len(result)} Branchen aggregiert "
+        f"(Quartal {latest_period}, Total: {int(result['grenzgaenger'].sum()):,} Grenzgänger)"
+    )
+    return result
 
 
 def _load_sake_beschaeftigte() -> dict[str, float]:
     """
-    Lädt die SAKE-Beschäftigtenzahlen pro Branche aus scores.csv.
+    Lädt die Beschäftigten-Totale pro Branche.
+
+    Bevorzugt STATENT (`kmu_anteil_branche.csv`): sektorweite Gesamtbeschäftigung
+    aller Betriebe gemäss BFS BZ/STATENT — korrekter Nenner für den Grenzgänger-Anteil,
+    weil BGS ebenfalls sektorweit zählt. Fallback: Summe der Beschäftigten der 204
+    Berufe aus `scores.csv` (unvollständig, nur als Notbehelf).
 
     Returns:
-        dict: branche → Gesamtbeschäftigte (absolute Zahl, nicht in Tsd.)
+        dict: branche → Gesamtbeschäftigte (absolute Zahl)
     """
+    if KMU_PATH.exists():
+        df = pd.read_csv(KMU_PATH)
+        if "beschaeftigte_total" in df.columns:
+            return dict(zip(df["branche"], df["beschaeftigte_total"].astype(float)))
+        logger.warning(
+            f"{KMU_PATH.name} ohne Spalte 'beschaeftigte_total' — falle auf scores.csv zurück."
+        )
+
     if not SCORES_PATH.exists():
-        logger.warning(f"scores.csv nicht gefunden: {SCORES_PATH} — verwende Platzhalter.")
+        logger.warning(f"Weder {KMU_PATH.name} noch scores.csv gefunden — Nenner fehlt.")
         return {}
 
+    logger.warning(
+        f"{KMU_PATH.name} nicht vorhanden — verwende SAKE-Beschäftigtenzahl aus scores.csv "
+        "(unterschätzt Sektorgesamtheit, Anteil wird zu hoch)."
+    )
     df = pd.read_csv(SCORES_PATH)
-    result = (
+    return (
         df.groupby("branche")["beschaeftigte_1000"]
         .sum()
-        .mul(1000)  # Tsd. → absolute Zahl
+        .mul(1000)
         .to_dict()
     )
-    return result
 
 
 def compute_grenzgaenger_anteil(use_fallback: bool = False) -> pd.DataFrame:
@@ -293,17 +281,16 @@ def compute_grenzgaenger_anteil(use_fallback: bool = False) -> pd.DataFrame:
 
     bgs_df: pd.DataFrame | None = None
     if not use_fallback:
-        bgs_df = _fetch_bgs_from_pxweb()
+        bgs_df = _load_bgs_from_csv()
 
     if bgs_df is not None:
-        # Reale Daten von PxWeb verfügbar
-        logger.info("Verwende reale BGS-Daten von PxWeb.")
+        logger.info("Verwende reale BGS-Daten aus stats.swiss CSV (DF_GGS_4).")
         bgs_map = dict(zip(bgs_df["branche"], bgs_df["grenzgaenger"]))
     else:
         if not use_fallback:
             logger.warning(
-                "BGS PxWeb-API nicht verfügbar — verwende FALLBACK-SCHÄTZWERTE. "
-                "Diese basieren auf bekannten CH-Statistiken (Gesamtbestand ~380'000 Grenzgänger, 2023) "
+                f"BGS-Rohdaten nicht gefunden unter {BGS_RAW_PATH} — verwende FALLBACK-SCHÄTZWERTE. "
+                "Diese basieren auf bekannten CH-Statistiken (~380'000 Grenzgänger) "
                 "und sind KEINE offiziellen BFS-Zahlen."
             )
         bgs_map = None
