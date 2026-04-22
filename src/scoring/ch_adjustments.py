@@ -8,18 +8,35 @@ die den Strukturwandel beschleunigen oder verlangsamen.
 import pandas as pd
 
 
-# Branchenspezifische Adjustierungen (Deltaswert zum Rohscore)
-BRANCHENEFFEKTE = {
-    "Finanzen": +0.3,        # Bankplatz CH: hoher Automatisierungsdruck
-    "Versicherungen": +0.4,  # Sehr hoher Automatisierungsdruck
-    "ICT": -0.2,             # Adaptiv, aber selbst treibend
-    "Gesundheit": -0.3,      # Regulierung + Pflegemangel als Bremse
-    "Bildung": -0.2,         # Langsame Adoption
-    "Verwaltung": +0.1,      # CH-Verwaltung digitalisiert langsam
-    "Industrie": -0.1,       # MEM/Pharma: Fachkräftemangel als Puffer
-    "Detailhandel": +0.2,    # E-Commerce-Druck
-    "Transport": 0.0,        # Physisch, aber autonomes Fahren mittelfristig
-    "Recht": +0.2,           # LegalTech wächst
+# Branchenspezifische Adjustierungen (Deltawert zum Rohscore)
+# Abdeckung: alle 21 Branchen aus scores.csv
+BRANCHENEFFEKTE: dict[str, float] = {
+    # Erhöhter Automatisierungsdruck
+    "Versicherungen": +0.4,   # Sehr standardisierte Prozesse, hoher Digitalisierungsgrad
+    "Finanzen": +0.3,         # Bankplatz CH: hoher Automatisierungsdruck
+    "Beratung": +0.2,         # Wissensarbeit: KI augmentiert Analyse & Strategie
+    "Detailhandel": +0.2,     # E-Commerce-Druck, Self-Checkout, Logistikautomation
+    "Recht": +0.2,            # LegalTech wächst; Dokumentenanalyse automatisierbar
+    "Immobilien": +0.1,       # PropTech, Bewertungs-KI, digitale Plattformen
+    "Medien": +0.1,           # KI-generierte Inhalte, aber Kreativität dämpft
+    "Verwaltung": +0.1,       # Private Administration: strukturierte Büroprozesse
+
+    # Neutral (Sektor zu heterogen oder Effekte gleichen sich aus)
+    "Dienstleistungen": 0.0,  # Zu heterogen für einheitlichen Effekt
+    "Transport": 0.0,         # Physisch, aber autonomes Fahren mittelfristig
+    "Umwelt": 0.0,            # Spezialisiert; Monitoring-KI vs. Feldarbeit neutral
+
+    # Gebremste Automatisierung
+    "Gastgewerbe": -0.1,      # Serviceorientiert, Kundenkontakt; Buchungs-KI marginal
+    "Industrie": -0.1,        # MEM/Pharma: Fachkräftemangel als Puffer
+    "Landwirtschaft": -0.1,   # Precision Farming wächst, aber physische Arbeit dominiert
+    "Öff. Verwaltung": -0.1,  # Öffentl. Sektor: langsame Adoption, polit. Rahmenbedingungen
+    "Sicherheit": -0.1,       # Physische Präsenz erforderlich; Überwachungs-KI ergänzt nur
+    "Bau": -0.2,              # Stark physisch, handwerklich; Digitalisierung langsam
+    "Bildung": -0.2,          # Gesellschaftlicher Konsens über menschliche Lehrvermittlung
+    "ICT": -0.2,              # KI-Fachkräfte adaptiv; treiben Wandel selbst
+    "Gesundheit": -0.3,       # Regulierung, Fachkräftemangel, Pflegekomponente als Bremse
+    "Soziales": -0.3,         # Hoher Empathiebedarf, Schutzinteressen; ähnlich Gesundheit
 }
 
 # Lohnklassen-Effekt: Höhere Löhne = stärkerer Automatisierungsdruck
