@@ -60,7 +60,7 @@ st.subheader("Grenzgänger-Anteil (Kontext)")
 st.markdown("""
 Der Grenzgänger-Anteil pro Branche dient als zusätzlicher Kontext-Layer in der Branchenanalyse.
 
-- **Quelle:** BFS Grenzgängerstatistik (BGS), Cube `DF_GGS_4` —
+- **Quelle:** BFS Grenzgängerstatistik (BGS), Cube [`DF_GGS_4`](https://stats.swiss/vis?lc=de&df[ds]=ds%3Adisseminate&df[id]=DF_GGS_4&df[ag]=CH1.GGS&df[vs]=1.0.0&dq=..Q&lom=LASTNPERIODS&lo=5) —
   „Ausländische Grenzgänger/-innen nach Wirtschaftszweig und Erwerbsstatus",
   letztes verfügbares Quartal (stats.swiss)
 - **Berechnung:** grenzgaenger_anteil = Grenzgänger in Branche / Beschäftigte in Branche

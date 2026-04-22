@@ -3,8 +3,9 @@ fetch_bgs.py — Grenzgänger-Anteil pro Branche aus BFS BGS (Grenzgängerstatis
 
 Quelle: BFS Grenzgängerstatistik (BGS), Cube DF_GGS_4
         „Ausländische Grenzgänger/-innen nach Wirtschaftszweig und Erwerbsstatus"
-        Manueller Download als CSV von https://stats.swiss
-        (Dataflow CH1.GGS,DF_GGS_4,1.0.0+all.csv)
+        Manueller Download als CSV von stats.swiss:
+        https://stats.swiss/vis?lc=de&df[ds]=ds%3Adisseminate&df[id]=DF_GGS_4&df[ag]=CH1.GGS&df[vs]=1.0.0&dq=..Q&lom=LASTNPERIODS&lo=5
+        (Dataflow CH1.GGS,DF_GGS_4,1.0.0 — Download-Button → CSV)
 
 Input:  data/raw/bgs_grenzgaenger_noga.csv  (Rohdaten, 2-stelliger NOGA-Code)
 Output: data/processed/grenzgaenger_anteil_branche.csv
