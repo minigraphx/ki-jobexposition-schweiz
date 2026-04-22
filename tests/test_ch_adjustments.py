@@ -3,7 +3,13 @@
 import pandas as pd
 import pytest
 
-from ch_adjustments import apply_ch_adjustments, classify_lohn, BRANCHENEFFEKTE, LOHNEFFEKTE
+from ch_adjustments import (
+    apply_ch_adjustments,
+    classify_lohn,
+    BRANCHENEFFEKTE,
+    LOHNEFFEKTE,
+    PHARMA_MEDTECH_ISCO_WHITELIST,
+)
 
 
 class TestClassifyLohn:
@@ -70,15 +76,15 @@ class TestApplyCHAdjustments:
         result = apply_ch_adjustments(df)
         assert result["score_ch"].iloc[0] < 5.0
 
-    def test_unbekannte_branche_kein_fehler(self):
-        """Unbekannte Branche → delta_branche = 0.0, kein Absturz."""
+    def test_unbekannte_branche_wirft_valueerror(self):
+        """Unbekannte Branche (non-NaN) ist ein Datenfehler → ValueError."""
         df = pd.DataFrame({
             "branche": ["Raumfahrt"],
             "lohn_median_chf": [80000],
             "score_gesamt": [5.0],
         })
-        result = apply_ch_adjustments(df)
-        assert result["delta_branche"].iloc[0] == 0.0
+        with pytest.raises(ValueError, match="Branchen ohne Delta-Mapping"):
+            apply_ch_adjustments(df)
 
     def test_ohne_lohn_spalte(self):
         """Fehlende lohn_median_chf-Spalte → delta_lohn = 0.0."""
@@ -210,3 +216,102 @@ class TestApplyCHAdjustments:
         })
         result = apply_ch_adjustments(df)
         assert result["delta_lohn"].iloc[0] == LOHNEFFEKTE["> 150k CHF"]
+
+
+class TestPharmaOverride:
+    def test_industrie_pharma_isco_override_zu_null(self):
+        """Industrie + ISCO 2145 (Pharma/Medtech) → delta_branche == 0.0 statt -0.1."""
+        df = pd.DataFrame({
+            "branche": ["Industrie"],
+            "isco_code": ["2145"],
+            "lohn_median_chf": [110_000],
+            "score_gesamt": [5.0],
+        })
+        result = apply_ch_adjustments(df)
+        assert result["delta_branche"].iloc[0] == 0.0
+
+    def test_industrie_nicht_pharma_isco_bleibt_negativ(self):
+        """Industrie + ISCO 7212 (nicht in Whitelist) → delta_branche == -0.1."""
+        df = pd.DataFrame({
+            "branche": ["Industrie"],
+            "isco_code": ["7212"],
+            "lohn_median_chf": [80_000],
+            "score_gesamt": [5.0],
+        })
+        result = apply_ch_adjustments(df)
+        assert result["delta_branche"].iloc[0] == pytest.approx(-0.1)
+
+    def test_nicht_industrie_pharma_isco_unveraendert(self):
+        """Finanzen + ISCO 2145 → Pharma-Override greift nicht, Finanzen-Delta bleibt."""
+        df = pd.DataFrame({
+            "branche": ["Finanzen"],
+            "isco_code": ["2145"],
+            "lohn_median_chf": [100_000],
+            "score_gesamt": [5.0],
+        })
+        result = apply_ch_adjustments(df)
+        assert result["delta_branche"].iloc[0] == pytest.approx(BRANCHENEFFEKTE["Finanzen"])
+
+    def test_ohne_isco_code_spalte_kein_absturz(self):
+        """DataFrame ohne isco_code-Spalte → Pharma-Override wird übersprungen, kein Fehler."""
+        df = pd.DataFrame({
+            "branche": ["Industrie"],
+            "lohn_median_chf": [80_000],
+            "score_gesamt": [5.0],
+        })
+        result = apply_ch_adjustments(df)
+        assert result["delta_branche"].iloc[0] == pytest.approx(BRANCHENEFFEKTE["Industrie"])
+
+    def test_pharma_whitelist_enthaelt_erwartete_codes(self):
+        """PHARMA_MEDTECH_ISCO_WHITELIST enthält die spezifizierten ISCO-Codes."""
+        expected = {"2131", "2145", "2212", "3141", "3212"}
+        assert expected == PHARMA_MEDTECH_ISCO_WHITELIST
+
+    def test_industrie_mit_pharma_isco_delta_null(self):
+        """Industrie-Beruf mit ISCO 2145 → Pharma-Override → delta_branche == 0.0."""
+        df = pd.DataFrame({
+            "branche": ["Industrie"],
+            "isco_code": ["2145"],
+            "lohn_median_chf": [120000],
+            "score_gesamt": [5.0],
+        })
+        result = apply_ch_adjustments(df)
+        assert result["delta_branche"].iloc[0] == 0.0
+
+    def test_industrie_ohne_pharma_isco_delta_minus(self):
+        """Industrie-Beruf mit ISCO 7212 (Schweisser) → kein Override → delta_branche == -0.1."""
+        df = pd.DataFrame({
+            "branche": ["Industrie"],
+            "isco_code": ["7212"],
+            "lohn_median_chf": [80000],
+            "score_gesamt": [5.0],
+        })
+        result = apply_ch_adjustments(df)
+        assert result["delta_branche"].iloc[0] == -0.1
+
+    def test_nicht_industrie_mit_pharma_isco_kein_override(self):
+        """Nicht-Industrie-Beruf mit ISCO 2145 → kein Override → normaler Branchen-Delta."""
+        df = pd.DataFrame({
+            "branche": ["Finanzen"],
+            "isco_code": ["2145"],
+            "lohn_median_chf": [120000],
+            "score_gesamt": [5.0],
+        })
+        result = apply_ch_adjustments(df)
+        assert result["delta_branche"].iloc[0] == pytest.approx(0.3)
+
+    def test_ohne_isco_code_spalte_kein_crash(self):
+        """DataFrame ohne isco_code → kein Crash, normale Brancheneffekte."""
+        df = pd.DataFrame({
+            "branche": ["Industrie"],
+            "lohn_median_chf": [80000],
+            "score_gesamt": [5.0],
+        })
+        result = apply_ch_adjustments(df)
+        assert result["delta_branche"].iloc[0] == -0.1
+
+    def test_pharma_whitelist_nicht_leer(self):
+        """PHARMA_MEDTECH_ISCO_WHITELIST enthält die erwarteten Codes."""
+        assert "2145" in PHARMA_MEDTECH_ISCO_WHITELIST
+        assert "2131" in PHARMA_MEDTECH_ISCO_WHITELIST
+        assert "7212" not in PHARMA_MEDTECH_ISCO_WHITELIST
