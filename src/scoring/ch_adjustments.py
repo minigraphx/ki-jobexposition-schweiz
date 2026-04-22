@@ -46,7 +46,8 @@ def apply_ch_adjustments(df: pd.DataFrame) -> pd.DataFrame:
     """
     CH-Faktoren auf Rohscores anwenden.
 
-    Erwartet Spalten: score_gesamt, branche, jahresbruttolohn (optional)
+    Erwartet Spalten: score_gesamt, branche
+    Optional: lohn_median_chf oder jahresbruttolohn (beide Spaltennamen akzeptiert)
     Gibt DataFrame mit score_ch (adjustierter Score) zurück.
     """
     df = df.copy()
@@ -54,9 +55,12 @@ def apply_ch_adjustments(df: pd.DataFrame) -> pd.DataFrame:
     # Brancheneffekt
     df["delta_branche"] = df["branche"].map(BRANCHENEFFEKTE).fillna(0.0)
 
-    # Lohneffekt (falls vorhanden)
-    if "jahresbruttolohn" in df.columns:
-        df["lohnklasse"] = df["jahresbruttolohn"].apply(classify_lohn)
+    # Lohneffekt — beide Spaltennamen akzeptieren (scores.csv: lohn_median_chf)
+    lohn_col = next(
+        (c for c in ["lohn_median_chf", "jahresbruttolohn"] if c in df.columns), None
+    )
+    if lohn_col:
+        df["lohnklasse"] = df[lohn_col].apply(classify_lohn)
         df["delta_lohn"] = df["lohnklasse"].map(LOHNEFFEKTE).fillna(0.0)
     else:
         df["delta_lohn"] = 0.0
