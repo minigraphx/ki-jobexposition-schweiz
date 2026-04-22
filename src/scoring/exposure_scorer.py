@@ -233,7 +233,7 @@ def score_changed_jobs(
 if __name__ == "__main__":  # pragma: no cover
     import sys
     sys.path.insert(0, str(Path(__file__).parent))
-    from ch_adjustments import apply_ch_adjustments
+    from ch_adjustments import apply_ch_adjustments, adjust_zeitrahmen_fuer_kmu
 
     parser = argparse.ArgumentParser(
         description="KI-Expositions-Scoring für Schweizer Berufe (nur Delta)."
@@ -259,6 +259,7 @@ if __name__ == "__main__":  # pragma: no cover
         raise SystemExit(1)
 
     result = apply_ch_adjustments(result)
+    result = adjust_zeitrahmen_fuer_kmu(result)
     result.to_csv(SCORES_PATH, index=False)
     logger.info(f"scores.csv gespeichert ({len(result)} Berufe).")
 

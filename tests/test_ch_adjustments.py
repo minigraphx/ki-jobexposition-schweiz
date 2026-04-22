@@ -1,9 +1,20 @@
 """Unit Tests für src/scoring/ch_adjustments.py"""
 
+from pathlib import Path
+import tempfile
+
 import pandas as pd
 import pytest
 
-from ch_adjustments import apply_ch_adjustments, classify_lohn, BRANCHENEFFEKTE, LOHNEFFEKTE
+from ch_adjustments import (
+    apply_ch_adjustments,
+    classify_lohn,
+    adjust_zeitrahmen_fuer_kmu,
+    _shift_zeitrahmen,
+    BRANCHENEFFEKTE,
+    LOHNEFFEKTE,
+    ZEITRAHMEN_STUFEN,
+)
 
 
 class TestClassifyLohn:
@@ -139,6 +150,8 @@ class TestApplyCHAdjustments:
         result = apply_ch_adjustments(df)
         assert result["delta_branche"].iloc[0] < 0
 
+    # ─── KMU-Tests folgen unten in eigener Klasse ──────────────────────────────
+
     def test_neue_branchen_beratung(self):
         """Beratung erhält positiven Delta (Wissensarbeit, KI-augmentierbar)."""
         df = pd.DataFrame({
@@ -210,3 +223,158 @@ class TestApplyCHAdjustments:
         })
         result = apply_ch_adjustments(df)
         assert result["delta_lohn"].iloc[0] == LOHNEFFEKTE["> 150k CHF"]
+
+
+# ─── KMU-Adoptions-Faktor ──────────────────────────────────────────────────────
+
+def _make_kmu_csv(tmp_path: Path, rows: list[dict]) -> Path:
+    """Hilfsfunktion: schreibt eine temporäre kmu_anteil_branche.csv."""
+    df = pd.DataFrame(rows)
+    path = tmp_path / "kmu_anteil_branche.csv"
+    df.to_csv(path, index=False)
+    return path
+
+
+class TestShiftZeitrahmen:
+    def test_kein_shift(self):
+        assert _shift_zeitrahmen("3-5 Jahre", 0) == "3-5 Jahre"
+
+    def test_frueher(self):
+        assert _shift_zeitrahmen("5-10 Jahre", -1) == "3-5 Jahre"
+
+    def test_spaeter(self):
+        assert _shift_zeitrahmen("3-5 Jahre", +1) == "5-10 Jahre"
+
+    def test_clip_unten(self):
+        """Kann nicht über '1-2 Jahre' hinaus früher werden."""
+        assert _shift_zeitrahmen("1-2 Jahre", -1) == "1-2 Jahre"
+
+    def test_clip_oben(self):
+        """Kann nicht über '>10 Jahre' hinaus später werden."""
+        assert _shift_zeitrahmen(">10 Jahre", +1) == ">10 Jahre"
+
+    def test_unbekannter_wert_unveraendert(self):
+        assert _shift_zeitrahmen("unbekannt", -1) == "unbekannt"
+
+    def test_alle_stufen_definiert(self):
+        assert len(ZEITRAHMEN_STUFEN) == 4
+
+
+class TestAdjustZeitrahmenFuerKmu:
+    def test_ohne_kmu_datei_unveraendert(self, tmp_path):
+        """Fehlende kmu_anteil_branche.csv → kein Fehler, kein Shift."""
+        df = pd.DataFrame({
+            "beruf": ["Beruf A"],
+            "branche": ["Finanzen"],
+            "zeitrahmen": ["3-5 Jahre"],
+        })
+        result = adjust_zeitrahmen_fuer_kmu(df, kmu_path=tmp_path / "nicht_vorhanden.csv")
+        assert result["zeitrahmen"].iloc[0] == "3-5 Jahre"
+        assert "zeitrahmen_roh" not in result.columns
+
+    def test_zeitrahmen_roh_wird_gespeichert(self, tmp_path):
+        kmu_path = _make_kmu_csv(tmp_path, [
+            {"branche": "Finanzen", "grossfirmen_anteil": 0.28},
+        ])
+        df = pd.DataFrame({
+            "beruf": ["Bankfachmann"],
+            "branche": ["Finanzen"],
+            "zeitrahmen": ["3-5 Jahre"],
+        })
+        result = adjust_zeitrahmen_fuer_kmu(df, kmu_path=kmu_path)
+        assert "zeitrahmen_roh" in result.columns
+        assert result["zeitrahmen_roh"].iloc[0] == "3-5 Jahre"
+
+    def test_immutabilitaet(self, tmp_path):
+        """Original-DataFrame darf nicht verändert werden."""
+        kmu_path = _make_kmu_csv(tmp_path, [
+            {"branche": "Gastgewerbe", "grossfirmen_anteil": 0.02},
+        ])
+        df = pd.DataFrame({
+            "beruf": ["Koch"], "branche": ["Gastgewerbe"], "zeitrahmen": ["3-5 Jahre"],
+        })
+        original_wert = df["zeitrahmen"].iloc[0]
+        adjust_zeitrahmen_fuer_kmu(df, kmu_path=kmu_path)
+        assert df["zeitrahmen"].iloc[0] == original_wert
+
+    def test_anteil_tief_spaeter(self, tmp_path):
+        """Anteil <10 % → +1 Stufe (später)."""
+        kmu_path = _make_kmu_csv(tmp_path, [
+            {"branche": "Gastgewerbe", "grossfirmen_anteil": 0.02},
+        ])
+        df = pd.DataFrame({
+            "beruf": ["Koch"], "branche": ["Gastgewerbe"], "zeitrahmen": ["3-5 Jahre"],
+        })
+        result = adjust_zeitrahmen_fuer_kmu(df, kmu_path=kmu_path)
+        assert result["zeitrahmen"].iloc[0] == "5-10 Jahre"
+        assert result["zeitrahmen_kmu_delta"].iloc[0] == +1
+
+    def test_anteil_hoch_frueher(self, tmp_path):
+        """Anteil ≥40 % → −1 Stufe (früher)."""
+        kmu_path = _make_kmu_csv(tmp_path, [
+            {"branche": "Versicherungen", "grossfirmen_anteil": 0.47},
+        ])
+        df = pd.DataFrame({
+            "beruf": ["Versicherungsexperte"], "branche": ["Versicherungen"],
+            "zeitrahmen": ["5-10 Jahre"],
+        })
+        result = adjust_zeitrahmen_fuer_kmu(df, kmu_path=kmu_path)
+        assert result["zeitrahmen"].iloc[0] == "3-5 Jahre"
+        assert result["zeitrahmen_kmu_delta"].iloc[0] == -1
+
+    def test_neutral_bereich(self, tmp_path):
+        """Anteil 10–40 % → kein Shift."""
+        kmu_path = _make_kmu_csv(tmp_path, [
+            {"branche": "ICT", "grossfirmen_anteil": 0.31},
+        ])
+        df = pd.DataFrame({
+            "beruf": ["Softwareentwickler"], "branche": ["ICT"],
+            "zeitrahmen": ["3-5 Jahre"],
+        })
+        result = adjust_zeitrahmen_fuer_kmu(df, kmu_path=kmu_path)
+        assert result["zeitrahmen"].iloc[0] == "3-5 Jahre"
+        assert result["zeitrahmen_kmu_delta"].iloc[0] == 0
+
+    def test_clip_bei_maximum(self, tmp_path):
+        """Kein Shift über '>10 Jahre' hinaus."""
+        kmu_path = _make_kmu_csv(tmp_path, [
+            {"branche": "Gastgewerbe", "grossfirmen_anteil": 0.02},
+        ])
+        df = pd.DataFrame({
+            "beruf": ["Koch"], "branche": ["Gastgewerbe"], "zeitrahmen": [">10 Jahre"],
+        })
+        result = adjust_zeitrahmen_fuer_kmu(df, kmu_path=kmu_path)
+        assert result["zeitrahmen"].iloc[0] == ">10 Jahre"
+
+    def test_unbekannte_branche_kein_shift(self, tmp_path):
+        """Branche nicht in kmu_anteil_branche.csv → delta = 0."""
+        kmu_path = _make_kmu_csv(tmp_path, [
+            {"branche": "Finanzen", "grossfirmen_anteil": 0.28},
+        ])
+        df = pd.DataFrame({
+            "beruf": ["X"], "branche": ["Raumfahrt"], "zeitrahmen": ["3-5 Jahre"],
+        })
+        result = adjust_zeitrahmen_fuer_kmu(df, kmu_path=kmu_path)
+        assert result["zeitrahmen"].iloc[0] == "3-5 Jahre"
+        assert result["zeitrahmen_kmu_delta"].iloc[0] == 0
+
+    def test_ohne_zeitrahmen_spalte(self, tmp_path):
+        """Fehlende zeitrahmen-Spalte → DataFrame unverändert zurück."""
+        kmu_path = _make_kmu_csv(tmp_path, [
+            {"branche": "ICT", "grossfirmen_anteil": 0.31},
+        ])
+        df = pd.DataFrame({"beruf": ["X"], "branche": ["ICT"]})
+        result = adjust_zeitrahmen_fuer_kmu(df, kmu_path=kmu_path)
+        assert "zeitrahmen" not in result.columns
+
+    def test_grossfirmen_anteil_spalte_vorhanden(self, tmp_path):
+        """grossfirmen_anteil-Spalte wird dem Ergebnis hinzugefügt."""
+        kmu_path = _make_kmu_csv(tmp_path, [
+            {"branche": "Finanzen", "grossfirmen_anteil": 0.28},
+        ])
+        df = pd.DataFrame({
+            "beruf": ["Banker"], "branche": ["Finanzen"], "zeitrahmen": ["3-5 Jahre"],
+        })
+        result = adjust_zeitrahmen_fuer_kmu(df, kmu_path=kmu_path)
+        assert "grossfirmen_anteil" in result.columns
+        assert result["grossfirmen_anteil"].iloc[0] == pytest.approx(0.28)
