@@ -26,12 +26,32 @@ if df is None:
     st.warning("Noch keine Score-Daten vorhanden.")
     st.stop()
 
+# ── Lookup: ESCO-Titel pro Beruf ────────────────────────────────────────────────
+_esco_map: dict[str, str] = {}
+for _, _row in df.iterrows():
+    _t = str(_row.get("esco_titel", "") or "").strip()
+    if _t and _t != "nan":
+        _esco_map[_row["beruf"]] = _t
+
+
+def _label(beruf: str) -> str:
+    esco = _esco_map.get(beruf, "")
+    if esco and esco.lower() != beruf.lower():
+        return f"{beruf}  ·  {esco}"
+    return beruf
+
+
 # ── URL-State / Permalink ───────────────────────────────────────────────────────
 berufe_sorted = sorted(df["beruf"].unique())
 url_beruf = st.query_params.get("beruf", "")
 default_index = berufe_sorted.index(url_beruf) if url_beruf in berufe_sorted else 0
 
-beruf = st.selectbox("Beruf auswählen", berufe_sorted, index=default_index)
+beruf = st.selectbox(
+    "Beruf auswählen  (Schweizer oder ESCO-Bezeichnung)",
+    berufe_sorted,
+    index=default_index,
+    format_func=_label,
+)
 st.query_params["beruf"] = beruf
 
 # ── Daten für ausgewählten Beruf ────────────────────────────────────────────────
@@ -78,8 +98,29 @@ if all(c in row.index for c in radar_cols):
 st.markdown(f"**Hauptrisiko:** {row.get('haupt_risiko', '–')}")
 st.markdown(f"**Begründung:** {row.get('begruendung', '–')}")
 
-# ── Permalink ──────────────────────────────────────────────────────────────────
+# ── Scoring-Grundlage ───────────────────────────────────────────────────────────
 st.divider()
+
+esco_uri = str(row.get("esco_uri", "") or "").strip()
+esco_titel = str(row.get("esco_titel", "") or "").strip()
+esco_desc = str(row.get("esco_beschreibung", "") or "").strip()
+
+if esco_uri and esco_uri != "nan":
+    lbl = f"ESCO-Beschreibung ({esco_titel})" if esco_titel and esco_titel != "nan" else "ESCO-Beschreibung"
+    with st.expander(lbl):
+        if esco_desc and esco_desc != "nan":
+            st.caption(esco_desc)
+        st.caption(f"ESCO URI: {esco_uri}")
+else:
+    with st.expander("Scoring-Grundlage"):
+        st.caption(
+            "Kein ESCO-Match gefunden. Das Scoring basiert auf dem Berufstitel "
+            "und einer KI-generierten Beschreibung."
+        )
+        if esco_desc and esco_desc != "nan":
+            st.caption(esco_desc)
+
+# ── Permalink ──────────────────────────────────────────────────────────────────
 st.caption(
     f"🔗 Direktlink zu diesem Beruf: füge `?beruf={beruf}` an die URL an."
 )
