@@ -102,7 +102,29 @@ fig = px.treemap(
     },
 )
 fig.update_layout(height=700, coloraxis_colorbar_title="KI-Score")
-st.plotly_chart(fig, use_container_width=True)
+
+st.caption("💡 Tipp: Klick auf ein Berufsfeld öffnet die Detail-Ansicht.")
+
+event = st.plotly_chart(
+    fig,
+    use_container_width=True,
+    on_select="rerun",
+    selection_mode="points",
+    key="treemap_select",
+)
+
+# ── Klick auf ein Beruf-Feld → direkt zur Berufssuche ─────────────────────────
+points = (event or {}).get("selection", {}).get("points", []) if event else []
+berufe_set = set(filtered["beruf"])
+for _p in points:
+    _label_val = _p.get("label")
+    if _label_val in berufe_set:
+        # Auswahl konsumieren, sonst triggert der Widget-State bei Rückkehr
+        # zur Treemap-Seite sofort wieder einen Redirect.
+        st.session_state.pop("treemap_select", None)
+        st.query_params["beruf"] = _label_val
+        st.switch_page("pages/4_Berufssuche.py")
+        break
 
 # ── PNG-Export ─────────────────────────────────────────────────────────────────
 try:
