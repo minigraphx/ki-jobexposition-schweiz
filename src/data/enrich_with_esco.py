@@ -215,6 +215,16 @@ def wikipedia_description(beruf: str) -> str:
 # Haiku Hilfsfunktionen
 # ---------------------------------------------------------------------------
 
+def _parse_json(text: str) -> dict:
+    """JSON aus API-Antwort extrahieren – toleriert Markdown-Code-Blöcke."""
+    text = text.strip()
+    if "```json" in text:
+        text = text.split("```json")[1].split("```")[0].strip()
+    elif "```" in text:
+        text = text.split("```")[1].split("```")[0].strip()
+    return json.loads(text)
+
+
 def haiku_validate(client: anthropic.Anthropic, beruf: str,
                    esco_titel: str, esco_beschreibung: str) -> bool:
     prompt = (
@@ -226,9 +236,9 @@ def haiku_validate(client: anthropic.Anthropic, beruf: str,
     )
     try:
         resp = client.messages.create(
-            model="claude-haiku-4-5-20251001", max_tokens=32,
+            model="claude-haiku-4-5-20251001", max_tokens=64,
             messages=[{"role": "user", "content": prompt}])
-        return json.loads(resp.content[0].text.strip()).get("valid", False)
+        return _parse_json(resp.content[0].text).get("valid", False)
     except Exception:
         return False
 
@@ -250,7 +260,7 @@ def haiku_alt_terms(client: anthropic.Anthropic, beruf: str,
         resp = client.messages.create(
             model="claude-haiku-4-5-20251001", max_tokens=120,
             messages=[{"role": "user", "content": prompt}])
-        return json.loads(resp.content[0].text.strip()).get("terms", [])
+        return _parse_json(resp.content[0].text).get("terms", [])
     except Exception:
         return []
 
