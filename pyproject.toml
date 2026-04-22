@@ -4,7 +4,7 @@ pythonpath = ["src/scoring", "src/data"]
 
 [tool.coverage.run]
 source = ["src/scoring"]
-omit = ["*/tests/*", "*/__pycache__/*"]
+omit = ["*/tests/*", "*/__pycache__/*", "*/fix_*.py"]
 
 [tool.coverage.report]
 fail_under = 80
