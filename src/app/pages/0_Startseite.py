@@ -77,7 +77,8 @@ if df is not None:
         st.info(
             f"👩 **{frauen_gewichtet:.0f} % der Beschäftigten in der kritischen Zone sind Frauen** — "
             "also in Berufen mit hoher KI-Exposition *und* geringer Anpassungsfähigkeit. "
-            "Dieser Befund deckt sich mit der Brookings/GovAI-Studie (2024), die 86 % für den US-Markt ausweist.",
+            "Das bestätigt den Befund der Brookings/GovAI-Studie (2024), die für den US-Markt 86 % ausweist — "
+            "Frauen tragen also in beiden Arbeitsmärkten überproportional das KI-Automatisierungsrisiko.",
             icon=None,
         )
 
