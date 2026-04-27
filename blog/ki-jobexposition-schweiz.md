@@ -17,11 +17,14 @@ mit grossen Zahlen und noch grösseren Schlagzeilen. Bei näherer Betrachtung si
 diese Zahlen meist präziser — und vorsichtiger — formuliert, als sie in den
 Medien ankommen:
 
-- Goldman Sachs schreibt von «bis zu **300 Millionen weltweit *exponierten*
-  Vollzeitstellen**» — nicht von 300 Millionen wegfallenden Jobs.[^goldman]
-- Eloundou et al. (OpenAI / University of Pennsylvania) zeigen, dass rund
+- Eine Goldman-Sachs-Studie (2023) schätzt, dass weltweit bis zu **300 Millionen
+  Vollzeitstellen** durch KI *exponiert* sind — also in unterschiedlichem Mass
+  von Automatisierung berührt. Exposition ist dabei nicht dasselbe wie Wegfall;
+  in vielen Schlagzeilen ist diese Unterscheidung verloren gegangen.[^goldman]
+- Eloundou et al. (OpenAI / University of Pennsylvania, 2023) finden, dass rund
   **80 % der US-Beschäftigten in mindestens 10 % ihrer Aufgaben** durch grosse
-  Sprachmodelle berührt sein könnten — also kein «80 % der Berufe gehen weg».[^gptsaregpts]
+  Sprachmodelle betroffen sein könnten — eine Aussage über *Aufgaben*, nicht
+  über ganze Berufe.[^gptsaregpts]
 - McKinsey schätzt, dass bis 2030 **rund 30 % der heute geleisteten Arbeitsstunden
   in den USA automatisierbar sein könnten** — wiederum mit grosser Spannweite.[^mckinsey]
 - Der **WEF Future of Jobs Report 2025** (Januar 2025) erwartet bis 2030 weltweit
@@ -319,8 +322,14 @@ diese Daten *nicht* leisten können.
 [^goldman]: Hatzius, J., Briggs, J., Kodnani, D., Pierdomenico, G. (2023):
     *The Potentially Large Effects of Artificial Intelligence on Economic Growth.*
     Goldman Sachs Economics Research, 26. März 2023. — Kernaussage:
-    «up to 300 million full-time jobs globally could be exposed to automation by AI».
-    Exposition ≠ Wegfall.
+    «up to 300 million full-time jobs globally could be exposed to automation by
+    AI». In der medialen Rezeption wurde «exponiert» häufig zu «ersetzt»,
+    «vernichtet» oder «gefährdet» verkürzt — siehe etwa Berliner Zeitung
+    («Goldman Sachs: 300 Millionen Angestellte könnten durch KI ersetzt werden»,
+    <https://www.berliner-zeitung.de/wirtschaft-verantwortung/goldman-sachs-ki-kunstliche-intelligenz-koennte-300-millionen-jobs-kosten-li.332935>),
+    inside-it.ch («Killt ChatGPT 300 Millionen Arbeitsplätze?»,
+    <https://www.inside-it.ch/killt-chatgpt-300-millionen-arbeitsplaetze-20230330>)
+    oder OnlineMarketing.de («Studie: 300 Millionen Jobs durch KI gefährdet»).
 
 [^gptsaregpts]: Eloundou, T., Manning, S., Mishkin, P., Rock, D. (2023):
     *GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large
