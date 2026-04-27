@@ -439,7 +439,7 @@ diese Daten *nicht* leisten können.
 
 ### Weitere Verweise im Text
 
-[eu-ai-act]: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+[eu-ai-act]: https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng
     "Verordnung (EU) 2024/1689 – AI Act"
 [revdsg]: https://www.fedlex.admin.ch/eli/cc/2022/491/de
     "Bundesgesetz über den Datenschutz (revDSG), in Kraft seit 1. September 2023"

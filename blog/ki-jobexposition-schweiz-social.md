@@ -133,27 +133,27 @@ Vor der Publikation folgende Punkte prüfen:
 
 - [ ] **HuggingFace Space** erreichbar: https://huggingface.co/spaces/AndyWHV/ki-jobexposition-schweiz
 - [ ] **GitHub Repo** erreichbar: https://github.com/minigraphx/ki-jobexposition-schweiz
-- [ ] **EU AI Act** (EUR-Lex): https://eur-lex.europa.eu/eli/reg/2024/1689/oj
-- [ ] **revDSG** (Fedlex): https://www.fedlex.admin.ch/eli/cc/2022/491/de
+- [x] **EU AI Act** (EUR-Lex): https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng *(URL auf `/eng` korrigiert)*
+- [x] **revDSG** (Fedlex): https://www.fedlex.admin.ch/eli/cc/2022/491/de
 - [ ] **BFS SAKE**: https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/erhebungen/sake.html
 - [ ] **ESCO**: https://esco.ec.europa.eu/de
 
-### Schweizer Medien-URLs (liefern meist 403 bei direktem Fetch — im Browser prüfen)
+### Schweizer Medien-URLs (verifiziert via Websearch)
 
-- [ ] Blick: https://www.blick.ch/wirtschaft/grosse-studie-zur-ki-revolution-mehr-als-jeder-zweite-schweizer-fuerchtet-sich-vor-job-verlust-id19927518.html
-- [ ] 20 Minuten: https://www.20min.ch/story/duesteres-szenario-ki-koryphaee-warnt-vor-80-prozent-arbeitslosigkeit-103464159
-- [ ] NZZ: https://www.nzz.ch/wirtschaft/kof-studie-ki-veraendert-den-schweizer-arbeitsmarkt-dramatisch-ld.1905520
+- [x] Blick: https://www.blick.ch/wirtschaft/grosse-studie-zur-ki-revolution-mehr-als-jeder-zweite-schweizer-fuerchtet-sich-vor-job-verlust-id19927518.html
+- [x] 20 Minuten: https://www.20min.ch/story/duesteres-szenario-ki-koryphaee-warnt-vor-80-prozent-arbeitslosigkeit-103464159
+- [x] NZZ: https://www.nzz.ch/wirtschaft/kof-studie-ki-veraendert-den-schweizer-arbeitsmarkt-dramatisch-ld.1905520 *(Paywall, URL gültig)*
 
-### Akademische/institutionelle Quellen
+### Akademische/institutionelle Quellen (alle verifiziert ✓)
 
-- [ ] KOF ETH: https://kof.ethz.ch/news-und-veranstaltungen/kof-news/2025/10/kuenstliche-intelligenz-hinterlaesst-deutliche-spuren-auf-dem-schweizer-arbeitsmarkt.html
-- [ ] Avenir Suisse: https://www.avenir-suisse.ch/publication/zukunftssichere-berufe/
-- [ ] PwC: https://www.pwc.ch/de/presse/AI_Jobs_Barometer_2025.html
-- [ ] WEF: https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf
-- [ ] IMF: https://www.imf.org/-/media/files/publications/sdn/2024/english/sdnea2024001.pdf
-- [ ] arXiv Eloundou: https://arxiv.org/abs/2303.10130
-- [ ] SSRN Webb: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3482150
-- [ ] KOF «richer»: https://kof.ethz.ch/en/publications/kof-insights/articles/2025/12/i-expect-ai-to-make-us-all-richer.html
+- [x] KOF ETH: https://kof.ethz.ch/news-und-veranstaltungen/kof-news/2025/10/kuenstliche-intelligenz-hinterlaesst-deutliche-spuren-auf-dem-schweizer-arbeitsmarkt.html
+- [x] Avenir Suisse: https://www.avenir-suisse.ch/publication/zukunftssichere-berufe/
+- [x] PwC: https://www.pwc.ch/de/presse/AI_Jobs_Barometer_2025.html
+- [x] WEF: https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf
+- [x] IMF: https://www.imf.org/-/media/files/publications/sdn/2024/english/sdnea2024001.pdf
+- [x] arXiv Eloundou: https://arxiv.org/abs/2303.10130
+- [x] SSRN Webb: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3482150
+- [x] KOF «richer»: https://kof.ethz.ch/en/publications/kof-insights/articles/2025/12/i-expect-ai-to-make-us-all-richer.html
 
 ### Inhaltliche Endprüfung
 
