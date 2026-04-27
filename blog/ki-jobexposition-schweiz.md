@@ -80,6 +80,46 @@ das Tool an.
 
 ---
 
+## Drei Schlagzeilen im Reality-Check
+
+Wie kommen diese Befunde in den Schweizer Medien an? Drei Beispiele aus 2025 —
+und was wirklich dahintersteht.
+
+### «Mehr als jeder zweite Schweizer fürchtet sich vor Job-Verlust wegen KI»
+*(Blick, Juli 2025)[^blick]*
+
+Die Schlagzeile beruht auf einer Umfrage. Was sie misst, ist die **Sorge**, nicht
+die tatsächliche Bedrohung. Subjektives Gefühl und faktische KI-Exposition können
+weit auseinanderliegen: Beschäftigte mit eher robusten Berufen können sich grosse
+Sorgen machen, während andere mit hochexponierten Tätigkeiten ihre Lage
+unterschätzen. Die Zahl beschreibt ein Stimmungsbild, keinen Arbeitsmarkt.
+
+### «KI-Koryphäe warnt vor 80 Prozent Arbeitslosigkeit»
+*(20 Minuten, über Stuart Russell)[^russell]*
+
+Russell ist ein renommierter KI-Forscher in Berkeley — aber Arbeitsmarkt­ökonom
+ist er nicht. Solche Maximalprognosen finden sich auf beiden Seiten der Debatte,
+von «KI macht uns alle reicher»[^kof-rich] bis «80 Prozent sind weg». Die seriöse
+empirische Forschung (KOF, IMF, WEF) bewegt sich in einem deutlich engeren
+Korridor. Eine Einzelstimme — egal wie prominent — ersetzt keine Studienlage.
+
+### «KOF-Studie: KI verändert den Schweizer Arbeitsmarkt dramatisch»
+*(NZZ, Oktober 2025)[^nzz-kof]*
+
+Inhaltlich nicht falsch — aber durch das Wort «dramatisch» zugespitzter, als die
+Studie selbst formuliert. Die KOF-Daten zeigen einen *relativen* Anstieg um 27 %
+bei den Stellensuchenden in stark exponierten Berufen, gemessen an wenig
+exponierten Berufen. Das ist eine messbare Verschiebung in einem Teilsegment des
+Arbeitsmarkts, kein Massenphänomen — und die Studienautoren selbst formulieren
+deutlich vorsichtiger.
+
+Solche Verkürzungen sind nicht überraschend, Schlagzeilen müssen funktionieren.
+Aber sie zeigen, warum es eine Datenebene **unter** den Schlagzeilen braucht:
+damit die Diskussion über konkrete Berufe und konkrete Massnahmen geführt werden
+kann, statt zwischen Panik und Beschwichtigung zu pendeln.
+
+---
+
 ## Die Problematik in vier Punkten
 
 ### 1. Niemand spricht über *konkrete* Berufe
@@ -326,6 +366,24 @@ diese Daten *nicht* leisten können.
 [^pwc]: PwC Schweiz (2025): *AI Jobs Barometer 2025.* Pressemitteilung und
     Studienauszug.
     <https://www.pwc.ch/de/presse/AI_Jobs_Barometer_2025.html>
+
+### Schlagzeilen
+
+[^blick]: Blick (2025): *Grosse Studie zur KI-Revolution: Mehr als jeder zweite
+    Schweizer fürchtet sich vor Job-Verlust.*
+    <https://www.blick.ch/wirtschaft/grosse-studie-zur-ki-revolution-mehr-als-jeder-zweite-schweizer-fuerchtet-sich-vor-job-verlust-id19927518.html>
+
+[^russell]: 20 Minuten (2025): *Düsteres Szenario — KI-Koryphäe warnt vor
+    80 Prozent Arbeitslosigkeit.*
+    <https://www.20min.ch/story/duesteres-szenario-ki-koryphaee-warnt-vor-80-prozent-arbeitslosigkeit-103464159>
+
+[^nzz-kof]: NZZ (2025): *KOF-Studie: KI verändert den Schweizer Arbeitsmarkt
+    dramatisch.*
+    <https://www.nzz.ch/wirtschaft/kof-studie-ki-veraendert-den-schweizer-arbeitsmarkt-dramatisch-ld.1905520>
+
+[^kof-rich]: Vgl. demgegenüber den Beitrag *«I expect AI to make us all richer»*
+    der KOF (Dezember 2025).
+    <https://kof.ethz.ch/en/publications/kof-insights/articles/2025/12/i-expect-ai-to-make-us-all-richer.html>
 
 [^webb]: Webb, M. (2020): *The Impact of Artificial Intelligence on the Labor
     Market.* Stanford Working Paper, SSRN.
