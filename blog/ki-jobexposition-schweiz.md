@@ -183,6 +183,37 @@ einsehen.
 
 ---
 
+## Vier Beispiele aus den Daten
+
+Vier von 204 Berufen — als Eindruck, wie konkret die Bewertung wird:
+
+**Stark exponiert**
+
+- **Sachbearbeiter/in Buchhaltung** — Score 8.5, Zeitrahmen 3–5 Jahre. ERP-Systeme
+  wie Abacus, SAP und Bexio sowie KI-gestützte Belegerfassung automatisieren in
+  Schweizer Unternehmen bereits einen grossen Teil der Fakturierung; manueller
+  Aufwand bleibt vor allem für Ausnahmefälle und Kundenkommunikation.
+- **Übersetzer:innen, Dolmetscher:innen und Linguist:innen** — Score 7.3,
+  Zeitrahmen 1–2 Jahre. DeepL und LLM-basierte Tools übernehmen Standardtexte
+  und technische Übersetzungen; literarische, juristische und kulturell nuancierte
+  Texte sowie das Dolmetschen bleiben menschliche Domänen.
+
+**Schwach exponiert**
+
+- **Coiffeur/Coiffeuse EFZ** — Score 1.6, Zeitrahmen über 10 Jahre. Manuelle
+  Geschicklichkeit, direkter Körperkontakt und eine vertrauensbasierte
+  Kundenbeziehung sind für KI extrem schwer zugänglich. KI-Stilberatungs-Apps
+  können die Beratungsphase höchstens ergänzen.
+- **Diplomierte Pflegefachperson** — Score 1.8, Zeitrahmen 5–10 Jahre,
+  rund **130'000 Beschäftigte**. Körperlich-empathische Patientenbetreuung lässt
+  sich nicht automatisieren; KI entlastet eher Dokumentation und Pflegeplanung
+  — was angesichts des Schweizer Fachkräftemangels willkommen ist.
+
+Den vollen Score-Aufbau und die Begründung pro Beruf zeigt die
+[Berufssuche im Tool](https://huggingface.co/spaces/AndyWHV/ki-jobexposition-schweiz).
+
+---
+
 ## Was das Tool *nicht* ist
 
 Damit kein falscher Eindruck entsteht: Diese Plattform ist **kein Orakel** und keine
