@@ -12,6 +12,24 @@ description: >
 
 ## Warum wir endlich eigene Zahlen brauchen
 
+> **Kurz:** Fast alle bekannten KI-Arbeitsmarkt-Studien sind global oder US-zentriert —
+> der Schweizer Kontext fehlt. Das Tool *KI-Jobexposition Schweiz* gibt für 204 Schweizer
+> Berufe einen nachvollziehbaren Expositionsscore, erklärt die Methodik offen und
+> benennt, was die Daten *nicht* leisten können.
+
+**Inhalt**
+
+1. [Und was sagen Schweizer Studien?](#und-was-sagen-schweizer-studien)
+2. [Drei Schlagzeilen im Reality-Check](#drei-schlagzeilen-im-reality-check)
+3. [Die Problematik in vier Punkten](#die-problematik-in-vier-punkten)
+4. [Was das Tool macht](#was-das-tool-macht)
+5. [Vier Beispiele aus den Daten](#vier-beispiele-aus-den-daten)
+6. [Was das Tool nicht ist](#was-das-tool-nicht-ist)
+7. [Für wen das Tool ein Ausgangspunkt sein kann](#für-wen-das-tool-ein-ausgangspunkt-sein-kann)
+8. [Ein Anfang, kein Endpunkt](#ein-anfang-kein-endpunkt)
+
+---
+
 Seit dem Aufstieg generativer KI füllt sich die Debatte über die Zukunft der Arbeit
 mit grossen Zahlen und noch grösseren Schlagzeilen. Bei näherer Betrachtung sind
 diese Zahlen meist präziser — und vorsichtiger — formuliert, als sie in den
@@ -27,9 +45,8 @@ Medien ankommen:
   über ganze Berufe.[^gptsaregpts]
 - McKinsey schätzt, dass bis 2030 **rund 30 % der heute geleisteten Arbeitsstunden
   in den USA automatisierbar sein könnten** — wiederum mit grosser Spannweite.[^mckinsey]
-- Der **WEF Future of Jobs Report 2025** (Januar 2025) erwartet bis 2030 weltweit
-  **11 Millionen neue und 9 Millionen ersetzte Stellen** durch KI und Datenverarbeitung,
-  bei einem **Nettoplus von rund 78 Millionen Jobs** — und einer Verschiebung von
+- Der **WEF Future of Jobs Report 2025** (Januar 2025) erwartet bis 2030 ein
+  **Nettoplus von rund 78 Millionen Jobs** — bei gleichzeitiger Verschiebung von
   **39 % der heutigen Schlüsselqualifikationen**.[^wef]
 
 Was diesen Studien gemeinsam ist: Sie sind **global oder US-zentriert** gerechnet.
@@ -267,15 +284,12 @@ Veränderungen am Arbeitsmarkt werden, hängt von Regulierung, Recht, Tarifpartn
 Kundennachfrage, Investitionsentscheiden und vielen weiteren Faktoren ab, die das
 Modell nicht kennt.
 
-Auch das KI-Modell, das hinter den Scores steht, hat blinde Flecken. Es kennt keine
-Werkstatt von innen, hat noch nie eine Patientin betreut und versteht den Schweizer
-Föderalismus nur über Textquellen. Die Scores sind deshalb mit Begründungen hinterlegt
-— so können Leserinnen und Leser selbst prüfen, ob die Argumentation für ihren Beruf
-trägt, und im Zweifel der eigenen Erfahrung mehr Gewicht geben als dem Wert.
-
-Niemand sollte aufgrund eines Scores eine Berufswahl, eine Kündigung oder eine
-Personalentscheidung treffen. Die Daten sind ein Einstieg in ein Gespräch, kein
-Ersatz dafür.
+Auch das KI-Modell hinter den Scores hat blinde Flecken: Es kennt keine Werkstatt
+von innen und versteht den Schweizer Föderalismus nur aus Textquellen. Die Scores
+sind deshalb mit Begründungen hinterlegt — damit Leserinnen und Leser selbst prüfen
+können, ob die Argumentation für ihren Beruf trägt. Ein Score ist ein Einstieg in ein
+Gespräch, kein Ersatz für Erfahrung und keine Grundlage für Berufswahl oder
+Personalentscheidungen.
 
 ---
 
