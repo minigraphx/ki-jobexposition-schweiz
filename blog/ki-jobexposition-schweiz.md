@@ -24,8 +24,12 @@ Medien ankommen:
   Sprachmodelle berührt sein könnten — also kein «80 % der Berufe gehen weg».[^gptsaregpts]
 - McKinsey schätzt, dass bis 2030 **rund 30 % der heute geleisteten Arbeitsstunden
   in den USA automatisierbar sein könnten** — wiederum mit grosser Spannweite.[^mckinsey]
+- Der **WEF Future of Jobs Report 2025** (Januar 2025) erwartet bis 2030 weltweit
+  **11 Millionen neue und 9 Millionen ersetzte Stellen** durch KI und Datenverarbeitung,
+  bei einem **Nettoplus von rund 78 Millionen Jobs** — und einer Verschiebung von
+  **39 % der heutigen Schlüsselqualifikationen**.[^wef]
 
-Was diesen Studien gemeinsam ist: Sie wurden für den **US-Arbeitsmarkt** gerechnet.
+Was diesen Studien gemeinsam ist: Sie sind **global oder US-zentriert** gerechnet.
 
 Wer in der Schweiz arbeitet, lebt in einer anderen Wirtschaft. Andere Branchenstruktur.
 Andere Lohnniveaus. Ein duales Bildungssystem mit EFZ und Höherer Berufsbildung, das in
@@ -38,6 +42,41 @@ an — ein offenes Tool, das für **204 Schweizer Berufe** einen nachvollziehbar
 Anhaltspunkt liefert, wie stark einzelne Tätigkeiten durch generative KI exponiert
 sein *könnten*. Es ist ausdrücklich keine Prognose darüber, welche Jobs verschwinden
 werden, sondern eine Diskussionsgrundlage.
+
+---
+
+## Und was sagen Schweizer Studien?
+
+Die Diskussion ist 2025 nicht mehr abstrakt — auch in der Schweiz liegen erste
+empirische Befunde vor:
+
+- Die **KOF Konjunkturforschungsstelle der ETH Zürich** hat im Oktober 2025
+  erstmals empirisch gezeigt, dass KI bereits konkrete Spuren auf dem Schweizer
+  Arbeitsmarkt hinterlässt: In stark KI-exponierten Berufen ist die Zahl der bei
+  Schweizer Arbeitsämtern registrierten Stellensuchenden seit November 2022 (also
+  seit dem Aufkommen von ChatGPT) im Schnitt **um 27 % stärker** gestiegen als in
+  wenig exponierten Berufen. Auch die Stellenausschreibungen sind in den
+  exponierten Berufen deutlicher zurückgegangen. Besonders sichtbar: Software-
+  Entwickler:innen, Systemanalystinnen, Programmiererinnen, Journalist:innen
+  sowie Fachleute in Werbung und Marketing.[^kof]
+- **Avenir Suisse** kommt in «Zukunftssichere Berufe?» (2024) zum Schluss, dass
+  Führungskräfte und Berufe mit unstrukturierten Aufgaben tendenziell von KI
+  *unterstützt* werden, während Routine-Bürotätigkeiten unter Druck geraten —
+  und plädiert für gezielte Weiterbildung und höhere berufliche Mobilität.[^avenir]
+- Der **PwC AI Jobs Barometer 2025** zählt rund **20'000 Schweizer
+  Stellenausschreibungen mit explizitem KI-Bezug** — eine Verzehnfachung gegenüber
+  2018, was allerdings noch immer nur **1.4 % des Gesamtmarktes** entspricht. Die
+  Nachfrage steigt, ist aber gemessen am Stellenmarkt noch klein.[^pwc]
+
+International ergänzt die **IMF Staff Discussion Note** (Cazzaniga et al., Januar
+2024) das Bild: **Fortgeschrittene Volkswirtschaften** wie die Schweiz sind
+tendenziell stärker exponiert als Schwellenländer, weil ihr Arbeitsmarkt
+kognitiv-intensiver ist; gleichzeitig sind sie eher in der Lage, die produktiven
+Vorteile zu nutzen.[^imf]
+
+Was diese Studien zeigen: Die Frage ist nicht mehr *ob*, sondern *wo* sich KI
+auf den Arbeitsmarkt auswirkt — und auf welche Berufe konkret. Genau dort setzt
+das Tool an.
 
 ---
 
@@ -57,9 +96,11 @@ Ein paar Beispiele, an denen sich die strukturellen Unterschiede zeigen:
 
 - Der Schweizer **Finanzsektor** ist überdurchschnittlich gross und stark digitalisiert —
   was die KI-Exposition tendenziell erhöhen dürfte.
-- Bei **ICT-Berufen** ist die häufige These «am stärksten betroffen» mindestens
-  diskussionswürdig: Vieles deutet darauf hin, dass sie eher komplementär zur KI
-  arbeiten als von ihr ersetzt zu werden — gesichert ist das nicht.
+- Bei **ICT-Berufen** ist die Lage nicht eindeutig: Lange galt die Annahme, sie
+  seien primär komplementär zur KI — die erste Schweizer Empirie (KOF 2025)
+  relativiert das deutlich. Programmierer:innen und Software-Entwickler:innen
+  gehören zu den Gruppen mit dem stärksten Anstieg an Stellensuchenden seit
+  Ende 2022.[^kof]
 - Im **Gesundheitswesen** und in der **Pflege** dominiert in der Schweiz der demografische
   Druck. Personalmangel und Knappheit sprechen dafür, dass Automatisierung dort eher
   entlastet als verdrängt — die konkrete Wirkung bleibt offen.
@@ -229,6 +270,31 @@ diese Daten *nicht* leisten können.
 [^ilo]: International Labour Organization (2023): *Generative AI and Jobs: A
     global analysis of potential effects on job quantity and quality.*
     ILO Working Paper 96. <https://www.ilo.org/publications>
+
+[^wef]: World Economic Forum (2025): *The Future of Jobs Report 2025.*
+    Insight Report, Januar 2025.
+    <https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf>
+
+[^imf]: Cazzaniga, M., Jaumotte, F., Li, L., Melina, G., Panton, A. J.,
+    Pizzinelli, C., Rockall, E., Tavares, M. M. (2024): *Gen-AI: Artificial
+    Intelligence and the Future of Work.* IMF Staff Discussion Note SDN/2024/001,
+    Januar 2024.
+    <https://www.imf.org/-/media/files/publications/sdn/2024/english/sdnea2024001.pdf>
+
+### Schweiz-spezifische Studien
+
+[^kof]: Klaeui, J., Siegenthaler, M. (2025): *KI und der Schweizer Arbeitsmarkt:
+    Erste Evidenz zu Auswirkungen auf Arbeitslosigkeit und Stellenausschreibungen.*
+    KOF Konjunkturforschungsstelle, ETH Zürich, Oktober 2025.
+    <https://kof.ethz.ch/news-und-veranstaltungen/kof-news/2025/10/kuenstliche-intelligenz-hinterlaesst-deutliche-spuren-auf-dem-schweizer-arbeitsmarkt.html>
+
+[^avenir]: Avenir Suisse (2024): *Zukunftssichere Berufe? Wie künstliche Intelligenz
+    den Schweizer Arbeitsmarkt verändert.*
+    <https://www.avenir-suisse.ch/publication/zukunftssichere-berufe/>
+
+[^pwc]: PwC Schweiz (2025): *AI Jobs Barometer 2025.* Pressemitteilung und
+    Studienauszug.
+    <https://www.pwc.ch/de/presse/AI_Jobs_Barometer_2025.html>
 
 [^webb]: Webb, M. (2020): *The Impact of Artificial Intelligence on the Labor
     Market.* Stanford Working Paper, SSRN.
