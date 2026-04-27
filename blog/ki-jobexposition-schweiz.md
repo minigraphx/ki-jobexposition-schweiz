@@ -1,5 +1,5 @@
 ---
-title: "Welche Schweizer Berufe trifft die KI-Welle? Warum wir endlich eigene Zahlen brauchen"
+title: "Welche Schweizer Berufe trifft die KI-Welle? Ein Versuch mit Schweizer Daten"
 date: 2026-04-26
 tags: [KI, Arbeitsmarkt, Schweiz, Datenanalyse, Automatisierung]
 description: >
@@ -10,12 +10,13 @@ description: >
 
 # Welche Schweizer Berufe trifft die KI-Welle?
 
-## Warum wir endlich eigene Zahlen brauchen
+## Ein Versuch mit Schweizer Daten
 
 > **Kurz:** Fast alle bekannten KI-Arbeitsmarkt-Studien sind global oder US-zentriert —
-> der Schweizer Kontext fehlt. Das Tool *KI-Jobexposition Schweiz* gibt für 204 Schweizer
-> Berufe einen nachvollziehbaren Expositionsscore, erklärt die Methodik offen und
-> benennt, was die Daten *nicht* leisten können.
+> der Schweizer Kontext fehlt. *KI-Jobexposition Schweiz* ist keine wissenschaftliche
+> Studie, sondern ein offenes Tool: Für 204 Schweizer Berufe liefert es eine
+> strukturierte Schätzung der KI-Exposition, legt das Vorgehen offen und benennt,
+> was die Daten *nicht* leisten können.
 
 **Inhalt**
 
@@ -145,10 +146,11 @@ kann, statt zwischen Panik und Beschwichtigung zu pendeln.
 ### 1. Niemand spricht über *konkrete* Berufe
 
 Die meisten Diskussionen bleiben abstrakt: «kreative Berufe», «Wissensarbeit»,
-«Routine-Tätigkeiten». Das ist analytisch wertlos für eine 24-jährige Kauffrau, die
-sich fragt, ob sie sich umorientieren soll, oder für einen Berufsberater, der eine
-Lehrstelle empfehlen will. Was diese Menschen brauchen, ist keine Schlagzeile — sie
-brauchen eine Antwort auf die Frage: **«Wie sieht es bei *meinem* Beruf aus?»**
+«Routine-Tätigkeiten». Das hilft einer 24-jährigen Kauffrau, die sich fragt, ob sie
+sich umorientieren soll, nicht weiter — und auch nicht einem 45-jährigen
+Sachbearbeiter, der überlegt, in welche Weiterbildung er Zeit und Geld investiert.
+Was diese Menschen brauchen, ist keine Schlagzeile — sondern ein erster konkreter
+Anhaltspunkt zur Frage: **«Wie sieht es bei *meinem* Beruf aus?»**
 
 ### 2. Die Schweizer Wirtschaft folgt nicht dem US-Drehbuch
 
@@ -197,25 +199,29 @@ anders oder gar nicht von KI verändert werden, weil rechtliche und sozialpartne
 Leitplanken im Weg stehen. Das Tool kann diese Faktoren nicht modellieren — aber wer
 seine Ergebnisse interpretiert, sollte sie mitdenken.
 
-### 4. Detaildaten und Reproduzierbarkeit fehlen häufig
+### 4. Detaildaten pro Beruf fehlen oft
 
 McKinsey, OECD und das ILO-Arbeitsmarktteam dokumentieren ihre Methodik in der Regel
 in technischen Anhängen oder Working Papers — das ist anzuerkennen.[^mckinsey] [^oecd]
-[^ilo] Was in der Praxis aber häufig fehlt, ist die Ebene darunter: die **Bewertung
-pro einzelner Berufsgruppe** in maschinenlesbarer Form, die genauen Coding-Entscheide
-und reproduzierbarer Code. Damit bleibt es schwierig, einen einzelnen Beruf
-nachzurechnen oder die Annahmen für den eigenen Kontext zu hinterfragen — gerade
-diese Ebene ist es aber, die für Berufsberatung, Branchenverbände und Betroffene
-relevant ist.
+[^ilo] Was in der Praxis häufig fehlt, ist die Ebene darunter: die **Bewertung pro
+einzelner Berufsgruppe** in maschinenlesbarer Form, dazu die Coding-Entscheide und
+der Code. Damit bleibt es schwierig, einen einzelnen Beruf nachzurechnen oder die
+Annahmen für den eigenen Kontext zu hinterfragen — gerade das ist aber die Ebene,
+auf der eine konkrete Diskussion über einzelne Berufe stattfinden müsste. Das Tool
+versucht hier, mehr Transparenz herzustellen — ohne damit den Anspruch zu erheben,
+selbst eine peer-reviewte oder im wissenschaftlichen Sinne reproduzierbare
+Untersuchung zu sein.
 
 ---
 
 ## Was das Tool macht
 
-Die Plattform berechnet pro Beruf einen **Expositionsscore von 0 bis 10** auf Basis
-einer öffentlich dokumentierten Methodik. Der Score misst, wie stark sich die
+Die Plattform berechnet pro Beruf einen **Expositionsscore von 0 bis 10** nach einer
+öffentlich dokumentierten Vorgehensweise. Der Score misst, wie stark sich die
 *Tätigkeiten* eines Berufs grundsätzlich für generative KI eignen — nicht, ob und
-wann der Beruf tatsächlich verändert wird.
+wann ein Beruf tatsächlich verändert wird. Es handelt sich ausdrücklich **nicht um
+eine wissenschaftliche Studie**, sondern um eine strukturierte Schätzung mit offenen
+Annahmen.
 
 1. **Datengrundlage:** 204 Berufe aus der Schweizerischen Arbeitskräfteerhebung
    ([BFS SAKE 2024][bfs-sake]), angereichert mit offiziellen Berufsbeschreibungen
@@ -297,26 +303,27 @@ Personalentscheidungen.
 
 - **Berufstätige**, die für sich selbst eine Diskussionsgrundlage suchen, wie sich
   ihr Tätigkeitsfeld verändern könnte.
-- **Berufsberater:innen und Lehrpersonen**, die Jugendlichen ergänzendes Material zur
-  Berufswahl an die Hand geben wollen — neben den etablierten Quellen.
+- **Lehrpersonen**, die KI und Arbeitsmarkt im Unterricht thematisieren wollen —
+  als Diskussionsanstoss, nicht als Berufswahl-Instrument.
 - **HR und Strategie**, die ein zusätzliches Datenpuzzlestück für Personalplanung
   und Weiterbildung suchen.
 - **Politik und Verbände**, die für ihre Diskussionen über Strukturwandel und
   Weiterbildung neben qualitativen Einschätzungen auch quantitative Anhaltspunkte
   brauchen.
 - **Journalist:innen und Forschende**, die für ihre Beiträge nachvollziehbare
-  Schweizer Zahlen suchen — inklusive der Möglichkeit, der Methodik zu widersprechen.
+  Schweizer Zahlen suchen — inklusive der Möglichkeit, der Vorgehensweise zu
+  widersprechen.
 
 ---
 
 ## Ein Anfang, kein Endpunkt
 
 KI-Jobexposition Schweiz ist ein **offenes Projekt** und ausdrücklich ein Versuch,
-keine fertige Antwort. Die Daten und die Methodik sind unter MIT-Lizenz frei
+keine fertige Antwort. Die Daten und das Vorgehen sind unter MIT-Lizenz frei
 verfügbar, der Code ist öffentlich, jeder Score wird mit Begründung publiziert.
-Wo die Methodik Schwächen hat, sollen sie sichtbar sein — Kritik, Korrekturvorschläge
-und Branchen-Expertise sind ausdrücklich willkommen, über GitHub-Issues oder direkt
-per Mail.
+Wo die Vorgehensweise Schwächen hat, sollen sie sichtbar sein — Kritik,
+Korrekturvorschläge und Branchen-Expertise sind ausdrücklich willkommen, über
+GitHub-Issues oder direkt per Mail.
 
 Wir werden uns in den nächsten Jahren intensiv mit der Frage beschäftigen müssen, was
 generative KI mit unserem Arbeitsmarkt macht. Diese Diskussion verdient eine bessere
@@ -325,7 +332,7 @@ diese Daten *nicht* leisten können.
 
 **👉 [Tool öffnen](https://huggingface.co/spaces/AndyWHV/ki-jobexposition-schweiz)**
 &nbsp;·&nbsp;
-**[Code & Methodik auf GitHub](https://github.com/minigraphx/ki-jobexposition-schweiz)**
+**[Code & Dokumentation auf GitHub](https://github.com/minigraphx/ki-jobexposition-schweiz)**
 
 ---
 
@@ -428,26 +435,6 @@ diese Daten *nicht* leisten können.
 [^seco-sozialpartnerschaft]: SECO — Staatssekretariat für Wirtschaft:
     *Sozialpartnerschaft in der Schweiz.* <https://www.seco.admin.ch>
 
-### Schweizer Datenquellen
-
-[bfs-sake]: https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/erhebungen/sake.html
-    "Schweizerische Arbeitskräfteerhebung (SAKE), Bundesamt für Statistik"
-[bfs-lse]: https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/loehne-erwerbseinkommen-arbeitskosten/lohnniveau-schweiz/lohnstrukturerhebung.html
-    "Lohnstrukturerhebung (LSE) 2022, Bundesamt für Statistik"
-[esco]: https://esco.ec.europa.eu/de
-    "European Skills, Competences, Qualifications and Occupations, Europäische Kommission"
-
-### Weitere Verweise im Text
-
-[eu-ai-act]: https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng
-    "Verordnung (EU) 2024/1689 – AI Act"
-[revdsg]: https://www.fedlex.admin.ch/eli/cc/2022/491/de
-    "Bundesgesetz über den Datenschutz (revDSG), in Kraft seit 1. September 2023"
-[finma]: https://www.finma.ch
-    "Eidgenössische Finanzmarktaufsicht FINMA"
-[swissmedic]: https://www.swissmedic.ch
-    "Swissmedic – Schweizerisches Heilmittelinstitut"
-
 ### Hinweis zu Interpretationen
 
 Einige Aussagen zu Schweizer Spezifika — etwa zur Abfederungswirkung des
@@ -456,3 +443,18 @@ sind plausible Einordnungen der allgemein verfügbaren Datenlage (BFS, Obsan,
 SECO), aber nicht Ergebnis einer eigenen empirischen Untersuchung. Belegte
 Befunde aus der KOF-Studie 2025 und dem PwC AI Jobs Barometer sind mit
 Footnotes gekennzeichnet.
+
+[bfs-sake]: https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/erhebungen/sake.html
+    "Schweizerische Arbeitskräfteerhebung (SAKE), Bundesamt für Statistik"
+[bfs-lse]: https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/loehne-erwerbseinkommen-arbeitskosten/lohnniveau-schweiz/lohnstrukturerhebung.html
+    "Lohnstrukturerhebung (LSE) 2022, Bundesamt für Statistik"
+[esco]: https://esco.ec.europa.eu/de
+    "European Skills, Competences, Qualifications and Occupations, Europäische Kommission"
+[eu-ai-act]: https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng
+    "Verordnung (EU) 2024/1689 – AI Act"
+[revdsg]: https://www.fedlex.admin.ch/eli/cc/2022/491/de
+    "Bundesgesetz über den Datenschutz (revDSG), in Kraft seit 1. September 2023"
+[finma]: https://www.finma.ch
+    "Eidgenössische Finanzmarktaufsicht FINMA"
+[swissmedic]: https://www.swissmedic.ch
+    "Swissmedic – Schweizerisches Heilmittelinstitut"
