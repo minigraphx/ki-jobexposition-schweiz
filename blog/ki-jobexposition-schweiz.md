@@ -436,9 +436,9 @@ diese Daten *nicht* leisten können.
 
 ### Hinweis zu Interpretationen
 
-Mehrere Aussagen zu Schweizer Spezifika — etwa zur Wirkung des EFZ-Systems, zur
-ICT-Komplementarität oder zur demografischen Lage in Pflege und Gesundheitswesen —
-sind plausible Interpretationen der allgemein verfügbaren Datenlage (BFS, OBSAN,
-SECO), aber nicht Ergebnis einer eigenen empirischen Untersuchung. Wer einzelne
-Punkte vertieft prüfen will, findet bei den jeweiligen Bundesämtern detaillierte
-Statistiken.
+Einige Aussagen zu Schweizer Spezifika — etwa zur Abfederungswirkung des
+EFZ-Systems oder zur Bedeutung des demografischen Drucks im Gesundheitswesen —
+sind plausible Einordnungen der allgemein verfügbaren Datenlage (BFS, Obsan,
+SECO), aber nicht Ergebnis einer eigenen empirischen Untersuchung. Belegte
+Befunde aus der KOF-Studie 2025 und dem PwC AI Jobs Barometer sind mit
+Footnotes gekennzeichnet.
