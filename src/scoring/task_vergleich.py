@@ -94,7 +94,8 @@ def _rho(df: pd.DataFrame, a: str, b: str) -> tuple[float, int]:
     d = df[[a, b]].dropna()
     if len(d) < 3:
         return math.nan, len(d)
-    return float(d[a].corr(d[b], method="spearman")), len(d)
+    # Spearman = Pearson auf Rängen (ohne scipy-Abhängigkeit)
+    return float(d[a].rank().corr(d[b].rank())), len(d)
 
 
 def _diff(df: pd.DataFrame, a: str, b: str) -> tuple[float, float]:
