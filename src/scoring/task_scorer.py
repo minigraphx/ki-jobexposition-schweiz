@@ -13,6 +13,13 @@ Provider
              response_mime_type="application/json" + response_json_schema, thinking_level
              (Standard "high"), keine Sampling-Parameter (werden vom Modell ignoriert),
              automatic function calling aus (keine Tools).
+    claude-cli  Claude Code im Print-Modus (``claude -p``) mit dem eigenen Claude-Abo statt API-Key:
+             gleicher System-Prompt (--system-prompt-file), gleiches Schema (--json-schema),
+             --effort, keine Tools, kein CLAUDE.md/Auto-Memory, leeres Arbeitsverzeichnis;
+             API-Keys werden aus der Umgebung des Unterprozesses entfernt (sonst rechnet Claude Code
+             über die API ab). Kein server-seitiger Fallback, kein Batch, kein --count-tokens;
+             der Korrekturversuch wird als ein Prompt mit vorheriger Antwort gestellt.
+             Ergebnisse unter bewertungen/claude-cli/ (getrennt von den API-Läufen).
 
 Ablauf je Lauf: Reihenfolge mit festem Seed gemischt, nur fehlende/veraltete Bewertungen
 (Input-Hash, Modell) werden angefragt (``--force`` = alle). Jede Antwort wird gegen das Schema
@@ -37,9 +44,11 @@ Beispiele
     python src/scoring/task_scorer.py --provider claude --batch collect
     python src/scoring/task_scorer.py --provider claude --batch followup --refusal-sync
     python src/scoring/task_scorer.py --provider claude --only 2411 2512 --force
+    python src/scoring/task_scorer.py --provider claude-cli --pilot --runs 2       # über das Abo
 
 Keys aus .env: ANTHROPIC_API_KEY (claude); GEMINI_API_KEY oder GOOGLE_API_KEY (gemini;
-GOOGLE_API_KEY hat Vorrang, wenn beide gesetzt sind).
+GOOGLE_API_KEY hat Vorrang, wenn beide gesetzt sind). claude-cli braucht keinen Key, sondern ein
+in Claude Code angemeldetes Abo (``claude`` starten, /login).
 """
 from __future__ import annotations
 
@@ -50,7 +59,11 @@ import json
 import logging
 import os
 import random
+import re
+import shutil
+import subprocess
 import sys
+import tempfile
 import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -66,14 +79,23 @@ log = logging.getLogger("task_scorer")
 
 # --------------------------------------------------------------------------- Konfiguration
 
-PROVIDER = ("claude", "gemini")
-MODELL = {"claude": "claude-opus-5-5", "gemini": "gemini-4-argon"}
+PROVIDER = ("claude", "claude-cli", "gemini")
+MODELL = {"claude": "claude-opus-5-5", "claude-cli": "claude-opus-5-5", "gemini": "gemini-4-argon"}
 
 CLAUDE_EFFORT = "high"                      # output_config.effort; Modell-Default wäre "medium"
 CLAUDE_EFFORTS = ("low", "medium", "high", "xhigh", "max")
 CLAUDE_MAX_TOKENS = 64000                   # Thinking + Antwort; Streaming nötig
 CLAUDE_FALLBACK_BETA = "server-side-fallback-2026-07-01"   # gehört zu fallbacks="default"
 CLAUDE_TIMEOUT_S = 900.0
+
+CLAUDE_CLI = "claude"                       # Claude Code (muss im PATH liegen)
+CLAUDE_CLI_TIMEOUT_S = 1800.0
+# aus der Umgebung von `claude -p` entfernt: mit API-Key/-Token oder Cloud-Provider rechnet Claude Code
+# nicht über das Abo ab (ANTHROPIC_API_KEY kommt sonst aus .env)
+CLAUDE_CLI_ENV_ENTFERNEN = ("ANTHROPIC_API_KEY", "ANTHROPIC_AUTH_TOKEN",
+                            "CLAUDE_CODE_USE_BEDROCK", "CLAUDE_CODE_USE_VERTEX", "CLAUDE_CODE_USE_FOUNDRY")
+# nur Rubrik + Input im Kontext: kein CLAUDE.md, keine Auto-Memory
+CLAUDE_CLI_ENV_SETZEN = {"CLAUDE_CODE_DISABLE_CLAUDE_MDS": "1", "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1"}
 
 GEMINI_THINKING = "high"                    # thinking_level; Modell-Default wäre "medium"
 GEMINI_THINKING_LEVELS = ("low", "medium", "high")
@@ -321,6 +343,150 @@ def _retry_after(e: Any) -> float | None:
         return float(e.response.headers.get("retry-after"))
     except (AttributeError, TypeError, ValueError):
         return None
+
+
+# --------------------------------------------------------------------------- Provider: Claude über das Abo (CLI)
+
+_ABO_LIMIT = re.compile(r"usage limit|limit reached|hit your limit|session limit|weekly limit|out of extra usage",
+                        re.IGNORECASE)
+_NICHT_ANGEMELDET = re.compile(r"not logged in|please run /login|/login|invalid api key|authentication|oauth",
+                               re.IGNORECASE)
+_UEBERLASTET = re.compile(r"overloaded|529|internal server error|api error: 5\d\d|timed? ?out|connection",
+                          re.IGNORECASE)
+
+
+class ClaudeCliBewerter:
+    """Claude über ``claude -p`` (Claude Code, eigenes Abo); Prompts, Schema und Validierung wie ClaudeBewerter."""
+    provider = "claude-cli"
+
+    def __init__(self, model: str = MODELL["claude-cli"], effort: str = CLAUDE_EFFORT, programm: str = CLAUDE_CLI,
+                 ausfuehren: Callable[..., Any] = subprocess.run, timeout_s: float = CLAUDE_CLI_TIMEOUT_S):
+        if effort not in CLAUDE_EFFORTS:
+            raise ValueError(f"effort muss einer von {CLAUDE_EFFORTS} sein")
+        self.model, self.effort, self.programm, self.timeout_s = model, effort, programm, timeout_s
+        self._ausfuehren = ausfuehren
+        self._lock = threading.Lock()
+        self._tmp: tempfile.TemporaryDirectory | None = None
+        self._version: str | None = None
+        self.schema_text = json.dumps(tr.schema_fuer_claude(), ensure_ascii=False)
+
+    def _verzeichnisse(self) -> tuple[Path, Path]:
+        """(System-Prompt-Datei, leeres Arbeitsverzeichnis) — einmal je Bewerter angelegt."""
+        with self._lock:
+            if self._tmp is None:
+                self._tmp = tempfile.TemporaryDirectory(prefix="task_scorer_cli_")
+                basis = Path(self._tmp.name)
+                (basis / "leer").mkdir()
+                (basis / "system.md").write_text(tr.system_prompt(), encoding="utf-8")
+            basis = Path(self._tmp.name)
+            return basis / "system.md", basis / "leer"
+
+    def umgebung(self) -> dict[str, str]:
+        env = {k: v for k, v in os.environ.items() if k not in CLAUDE_CLI_ENV_ENTFERNEN}
+        env.update(CLAUDE_CLI_ENV_SETZEN)
+        return env
+
+    def version(self) -> str | None:
+        if self._version is None:
+            try:
+                r = self._ausfuehren([self.programm, "--version"], capture_output=True, text=True,
+                                     encoding="utf-8", timeout=60, env=self.umgebung())
+                self._version = (r.stdout or "").strip() or None
+            except (OSError, subprocess.SubprocessError):
+                self._version = None
+        return self._version
+
+    def einstellungen(self) -> dict:
+        return {"effort": self.effort, "thinking": "adaptive (Claude Code)", "structured_output": "--json-schema",
+                "zugang": "claude -p (Abo)", "cli_version": self.version(), "tools": "keine", "fallbacks": None}
+
+    def befehl(self, system_datei: Path) -> list[str]:
+        return [self.programm, "-p", "--model", self.model, "--effort", self.effort, "--output-format", "json",
+                "--tools", "", "--strict-mcp-config", "--no-session-persistence", "--disable-slash-commands",
+                "--setting-sources", "", "--exclude-dynamic-system-prompt-sections",
+                "--system-prompt-file", str(system_datei), "--json-schema", self.schema_text]
+
+    def start(self, input_rec: dict) -> list[dict]:
+        return [{"role": "user", "text": tr.user_prompt(input_rec)}]
+
+    def weiter(self, verlauf: list[dict], antwort: Antwort, fehler: list[str]) -> list[dict]:
+        return verlauf + [{"role": "assistant", "text": antwort.text},
+                          {"role": "user", "text": tr.korrektur_prompt(fehler)}]
+
+    @staticmethod
+    def prompt(verlauf: list[dict]) -> str:
+        """Ein Prompt je Aufruf: ``claude -p`` ist einstufig; der Korrekturversuch enthält die vorherige Antwort."""
+        if len(verlauf) == 1:
+            return verlauf[0]["text"]
+        teile = [verlauf[0]["text"]]
+        for t in verlauf[1:]:
+            kopf = "Deine bisherige Antwort (JSON):" if t["role"] == "assistant" else "Rückmeldung zur Antwort:"
+            teile.append(f"---\n{kopf}\n{t['text']}")
+        return "\n\n".join(teile)
+
+    def frage(self, verlauf: list[dict]) -> Antwort:
+        system_datei, arbeitsdir = self._verzeichnisse()
+        try:
+            r = self._ausfuehren(self.befehl(system_datei), input=self.prompt(verlauf), capture_output=True,
+                                 text=True, encoding="utf-8", cwd=str(arbeitsdir), env=self.umgebung(),
+                                 timeout=self.timeout_s)
+        except FileNotFoundError as e:
+            raise FatalerFehler(f"Claude Code nicht gefunden («{self.programm}») — installieren und anmelden") from e
+        except subprocess.TimeoutExpired as e:
+            raise _Wiederholbar(None, f"claude -p: Zeitüberschreitung nach {self.timeout_s:.0f} s") from e
+        try:
+            d = json.loads(r.stdout or "")
+        except json.JSONDecodeError:
+            d = None
+        if not isinstance(d, dict):
+            text = ((r.stderr or "") + " " + (r.stdout or "")).strip()[:500]
+            self._fehler(text, None)
+            raise AnfrageFehler(f"claude -p: keine JSON-Ausgabe (Exit-Code {r.returncode}): {text}")
+        if d.get("is_error") or d.get("subtype") != "success":
+            text = str(d.get("result") or d.get("subtype") or "")[:500]
+            self._fehler(text, d.get("api_error_status"))
+            raise AntwortFehler(f"claude -p: {d.get('subtype')}: {text}", self._roh(d))
+        return self._auswerten(d)
+
+    def _fehler(self, text: str, status: Any) -> None:
+        """Abbruch- und Wiederholungsfälle; kehrt zurück, wenn der Fehler nur diesen Eintrag betrifft."""
+        if _ABO_LIMIT.search(text):
+            raise FatalerFehler(f"Abo-Nutzungslimit erreicht ({text}) — später erneut starten; "
+                                "fertige Einträge werden übersprungen")
+        if status in (401, 403) or _NICHT_ANGEMELDET.search(text):
+            raise FatalerFehler(f"Claude Code nicht angemeldet ({text}) — `claude` starten und /login "
+                                "mit dem Abo-Konto ausführen")
+        if status == 429 or (isinstance(status, int) and status >= 500) or _UEBERLASTET.search(text):
+            raise _Wiederholbar(None, f"claude -p: vorübergehender Fehler ({status}): {text}")
+
+    @staticmethod
+    def _modell(d: dict) -> str | None:
+        mu = d.get("modelUsage") or {}
+        if not mu:
+            return None
+        return max(mu, key=lambda k: (mu[k] or {}).get("outputTokens", 0))
+
+    def _roh(self, d: dict) -> dict:
+        usage = {k: v for k, v in (d.get("usage") or {}).items() if k != "iterations"}
+        if isinstance(d.get("total_cost_usd"), (int, float)):
+            usage["api_aequivalent_usd"] = d["total_cost_usd"]     # Listenpreis-Äquivalent, nicht abgerechnet
+        return {"model_served": self._modell(d), "stop_reason": d.get("stop_reason"), "usage": usage,
+                "fallback": None}
+
+    def _auswerten(self, d: dict) -> Antwort:
+        roh = self._roh(d)
+        if roh["stop_reason"] == "refusal":
+            raise AntwortFehler("Refusal (claude -p)", roh)
+        if roh["stop_reason"] == "max_tokens":
+            raise AntwortFehler("Antwort abgeschnitten (max_tokens)", roh)
+        so = d.get("structured_output")
+        text = json.dumps(so, ensure_ascii=False) if so is not None else str(d.get("result") or "")
+        return Antwort(text=text, model_served=roh["model_served"], stop_reason=roh["stop_reason"],
+                       usage=roh["usage"], request_id=d.get("uuid"))
+
+    def zaehle_tokens(self, input_rec: dict) -> int:
+        raise FatalerFehler("--count-tokens gibt es nur mit --provider claude (API); claude-cli schätzt aus "
+                            "gemessenen Läufen")
 
 
 # --------------------------------------------------------------------------- Provider: Gemini
@@ -606,7 +772,7 @@ def braucht_dritten_lauf(d1: dict | None, d2: dict | None, schwelle: float = DRI
 
 def kosten_usd(provider: str, input_tokens: float, output_tokens: float, cache_write: float = 0.0,
                cache_read: float = 0.0, preisliste: str | None = None) -> float:
-    p = PREISE[preisliste or provider]
+    p = PREISE[preisliste or ("claude" if provider == "claude-cli" else provider)]
     return (input_tokens * p["input"] + output_tokens * p["output"]
             + cache_write * p.get("cache_write", p["input"]) + cache_read * p.get("cache_read", p["input"])) / 1e6
 
@@ -620,7 +786,7 @@ def _usage_kennzahlen(provider: str, u: dict) -> tuple[float, float, float]:
     def g(k: str) -> float:
         v = u.get(k)
         return float(v) if isinstance(v, (int, float)) and not isinstance(v, bool) else 0.0
-    if provider == "claude":
+    if provider in ("claude", "claude-cli"):
         system = g("cache_creation_input_tokens") + g("cache_read_input_tokens")
         return g("input_tokens") + system, system, g("output_tokens")
     return g("prompt_token_count"), g("cached_content_token_count"), g("candidates_token_count") + g("thoughts_token_count")
@@ -674,6 +840,8 @@ def schaetze(bewerter: Any, eintraege: list[ti.Eintrag], n_aufrufe: int, n_dritt
     """
     stufe = stufe_von(bewerter)
     gem = gemessene_usage(basis, bewerter.provider, stufe)
+    if gem is None and bewerter.provider == "claude-cli":       # gleiche Prompts → API-Messwerte übertragbar
+        gem = gemessene_usage(basis, "claude", stufe)
     sys_tok = (gem or {}).get("system") or len(tr.system_prompt()) / ZEICHEN_JE_TOKEN
     if zaehlen and eintraege:
         tok = [bewerter.zaehle_tokens(e.input) for e in eintraege]
@@ -695,7 +863,7 @@ def schaetze(bewerter: Any, eintraege: list[ti.Eintrag], n_aufrufe: int, n_dritt
            "cache_ttl_batch": cache_ttl}
     for name, n in (("", n_aufrufe), ("_mit_dritter_max", n_aufrufe + n_dritter_max)):
         tin, tout = mittel_in * n, aus * n
-        if bewerter.provider == "claude":
+        if bewerter.provider in ("claude", "claude-cli"):
             # System-Prompt gecacht: je Aufruf Cache-Lesen, einmal je parallelem Worker Schreiben
             schreib = min(n, MAX_PARALLEL) * sys_tok
             lesen = max(n - MAX_PARALLEL, 0) * sys_tok
@@ -738,6 +906,10 @@ def formatiere_schaetzung(provider: str, model: str, s: dict, batch: bool = Fals
          f"  Output-Tokens je Aufruf (inkl. Thinking; {s['output_methode']}): ~{s['output_tokens_je_aufruf']:,}",
          f"  Summe: ~{s['input_tokens']:,} Input- und ~{s['output_tokens']:,} Output-Tokens"]
     synchron = f"~${s['usd_mit_cache']:.2f} mit Cache · ~${s['usd_ohne_cache']:.2f} ohne Cache"
+    if provider == "claude-cli":
+        z.append("  Kosten: keine API-Kosten — läuft über das Claude-Abo und zählt gegen dessen 5-h- und Wochenlimits")
+        z.append(f"  zum Vergleich API-Listenpreis synchron: {synchron}")
+        return "\n".join(z)
     if batch:
         z.append(f"  Kosten Batch (−{BATCH_RABATT:.0%}): {_batch_zeile(provider, s)}")
         z.append(f"  zum Vergleich synchron: {synchron}")
@@ -839,6 +1011,8 @@ def kandidaten_dritter_lauf(provider: str, eintraege: list[ti.Eintrag], basis: P
 
 
 def erstelle_bewerter(a: argparse.Namespace) -> Any:
+    if a.provider == "claude-cli":
+        return ClaudeCliBewerter(model=a.model or MODELL["claude-cli"], effort=a.effort)
     if a.provider == "claude":
         return ClaudeBewerter(model=a.model or MODELL["claude"], effort=a.effort,
                               max_tokens=a.max_tokens or CLAUDE_MAX_TOKENS, fallback=not a.no_fallback)
@@ -846,7 +1020,8 @@ def erstelle_bewerter(a: argparse.Namespace) -> Any:
                           max_output_tokens=a.max_tokens or GEMINI_MAX_OUTPUT_TOKENS)
 
 
-PAKETE = {"claude": ("anthropic", "anthropic"), "gemini": ("google.genai", "google-genai")}
+PAKETE = {"claude": ("anthropic", "anthropic"), "claude-cli": ("anthropic", "anthropic"),   # cli: transform_schema
+          "gemini": ("google.genai", "google-genai")}
 
 
 def pruefe_pakete(provider: str, importieren: Callable[[str], Any] = importlib.import_module) -> None:
@@ -868,6 +1043,13 @@ def pruefe_pakete(provider: str, importieren: Callable[[str], Any] = importlib.i
 def pruefe_keys(provider: str) -> None:
     if provider == "gemini" and not (os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")):
         raise FatalerFehler("GEMINI_API_KEY (oder GOOGLE_API_KEY) fehlt — in .env eintragen")
+    if provider == "claude-cli":
+        if shutil.which(CLAUDE_CLI) is None:
+            raise FatalerFehler(f"Claude Code («{CLAUDE_CLI}») nicht im PATH — installieren, `claude` starten "
+                                "und /login mit dem Abo-Konto ausführen")
+        if any(os.environ.get(k) for k in CLAUDE_CLI_ENV_ENTFERNEN):
+            log.info("API-Zugangsdaten aus der Umgebung werden für claude -p entfernt (Abrechnung über das Abo)")
+        return
     if provider == "claude" and not os.environ.get("ANTHROPIC_API_KEY"):
         log.warning("ANTHROPIC_API_KEY nicht gesetzt — das SDK versucht andere Anmeldedaten "
                     "(ANTHROPIC_AUTH_TOKEN bzw. `ant auth login`-Profil)")
@@ -892,7 +1074,7 @@ def parse_args(argv: list[str] | None) -> argparse.Namespace:
                     help="mit --dry-run: exakte Input-Tokens über count_tokens (braucht Key, kostenlos)")
     ap.add_argument("--max-parallel", type=int, default=MAX_PARALLEL)
     ap.add_argument("--model", default=None, help="Modell-ID überschreiben")
-    ap.add_argument("--effort", default=CLAUDE_EFFORT, choices=CLAUDE_EFFORTS, help="nur claude")
+    ap.add_argument("--effort", default=CLAUDE_EFFORT, choices=CLAUDE_EFFORTS, help="nur claude / claude-cli")
     ap.add_argument("--thinking-level", default=GEMINI_THINKING, choices=GEMINI_THINKING_LEVELS, help="nur gemini")
     ap.add_argument("--max-tokens", type=int, default=None, help="Obergrenze Thinking + Antwort")
     ap.add_argument("--no-fallback", action="store_true", help="nur claude: kein Refusal-Fallback (synchron)")
@@ -930,6 +1112,9 @@ def main(argv: list[str] | None = None, bewerter: Any = None,
     laeufe = list(range(1, a.runs + 1))
 
     if a.batch:
+        if bewerter.provider == "claude-cli":
+            log.error("--batch gibt es nur für die APIs (claude, gemini), nicht für claude-cli")
+            return 2
         import task_batch as tb
         return tb.ausfuehren(a, bewerter, eintraege, basis, schlafen=schlafen)
 

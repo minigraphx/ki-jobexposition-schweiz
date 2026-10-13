@@ -17,6 +17,9 @@ Spalten «score_physisch_auto» = 10·Σ w·1[P1, p_art physisch], «score_softw
 p_art software (Pilot: score_p_physisch / score_p_software).
 
 Aufruf:  python src/scoring/task_aggregate.py [--provider claude gemini] [--out PFAD] [--include-stale] [--base-dir PFAD]
+                                             [--claude-source claude|claude-cli]
+``--claude-source claude-cli`` nimmt für Claude die Abo-Läufe (bewertungen/claude-cli/) statt der API-Läufe;
+die Spalten heissen weiterhin *_claude, die Herkunft steht in claude_quelle und text_quelle.
 scores.csv und die App werden nicht verändert.
 """
 from __future__ import annotations
@@ -47,7 +50,8 @@ SPALTEN = (["isco_code", "beruf"] + MITTEL
               "score_zeitersparnis_claude", "score_zeitersparnis_gemini",
               "delta_laeufe_claude", "delta_laeufe_gemini", "delta_laeufe", "delta_provider",
               "flag_unsicher", "flag_grund", "zeitrahmen_claude", "zeitrahmen_gemini", "text_quelle",
-              "rubrik_version"])
+              "claude_quelle", "rubrik_version"])
+CLAUDE_QUELLEN = ("claude", "claude-cli")     # Verzeichnis der Claude-Läufe: API bzw. Abo (claude -p)
 
 
 @dataclass
@@ -174,10 +178,13 @@ def zeile(e: ti.Eintrag, je_provider: dict[str, list[Lauf]]) -> dict:
     return z
 
 
-def aggregiere(eintraege: list[ti.Eintrag], laeufe: dict[str, dict[str, list[Lauf]]]) -> pd.DataFrame:
+def aggregiere(eintraege: list[ti.Eintrag], laeufe: dict[str, dict[str, list[Lauf]]],
+               claude_quelle: str = "claude") -> pd.DataFrame:
     """laeufe: provider → (Schlüssel → Läufe). Eine Zeile je Eintrag (auch ohne Bewertung)."""
     zeilen = [zeile(e, {p: laeufe.get(p, {}).get(e.schluessel, []) for p in PROVIDER}) for e in eintraege]
-    return pd.DataFrame(zeilen, columns=SPALTEN)
+    df = pd.DataFrame(zeilen, columns=SPALTEN)
+    df["claude_quelle"] = [claude_quelle if n else None for n in df["n_laeufe_claude"]]
+    return df
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -187,11 +194,15 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--out", default=str(tr.SCORES_AUFGABEN_PATH))
     ap.add_argument("--include-stale", action="store_true",
                     help="auch Bewertungen mit altem Input-Hash verwenden (z. B. nach Datenkorrekturen)")
+    ap.add_argument("--claude-source", choices=CLAUDE_QUELLEN, default="claude",
+                    help="Claude-Läufe aus der API (claude, Standard) oder aus dem Abo (claude-cli)")
     a = ap.parse_args(argv)
     eintraege = ti.baue_eintraege()
     warnungen: list[str] = []
-    laeufe = {p: lade_laeufe(Path(a.base_dir), p, eintraege, warnungen, a.include_stale) for p in a.provider}
-    df = aggregiere(eintraege, laeufe)
+    verzeichnis = {"claude": a.claude_source, "gemini": "gemini"}
+    laeufe = {p: lade_laeufe(Path(a.base_dir), verzeichnis[p], eintraege, warnungen, a.include_stale)
+              for p in a.provider}
+    df = aggregiere(eintraege, laeufe, a.claude_source)
     df.round(4).to_csv(a.out, index=False)
     n_bew = int((df["n_laeufe_claude"] + df["n_laeufe_gemini"] > 0).sum())
     print(f"{len(df)} Einträge ({n_bew} mit mindestens einer gültigen Bewertung) → {a.out}")

@@ -57,6 +57,9 @@ python src/scoring/task_scorer.py --provider claude --only 2512 --runs 1   # syn
 python src/scoring/task_scorer.py --provider claude --pilot --runs 2   # 15 pilot jobs, 2 runs (+ auto run 3 if |Δζ| > 1)
 python src/scoring/task_scorer.py --provider gemini --pilot --runs 2
 python src/scoring/task_scorer.py --provider claude --only 2411 2512 --force   # selected ISCO codes/prefixes, re-ask
+# Claude via own subscription (Claude Code `claude -p`, no API key; results in bewertungen/claude-cli/)
+python src/scoring/task_scorer.py --provider claude-cli --pilot --runs 2
+python src/scoring/task_aggregate.py --claude-source claude-cli   # use subscription runs instead of API runs for Claude
 # Batch mode (recommended for the full run; 50 % cheaper, up to 24 h; state in bewertungen/<provider>/batches/)
 python src/scoring/task_scorer.py --provider claude --runs 2 --batch submit --dry-run   # requests + batch cost
 python src/scoring/task_scorer.py --provider claude --runs 2 --batch submit   # all entries (delta: skips current + open)
@@ -224,7 +227,7 @@ used by the app (`scores.csv` and the app stay unchanged until a separate migrat
 scores.csv (master data only: beruf, isco_code, synonyme, qualifikation, branche, esco_*)
   + esco_kompetenzen.csv (essential/optional, skill/knowledge)
   → task_inputs.py      input JSON per entry (pilot format) + input_hash = SHA-256(rubrik version, schema, input)
-  → task_scorer.py      --provider claude|gemini, --runs 2 (seeded shuffle per run), validation + 1 correction retry,
+  → task_scorer.py      --provider claude|claude-cli|gemini, --runs 2 (seeded shuffle per run), validation + 1 correction retry,
                         auto run 3 if |Δ ζ-score| run1↔run2 > 1.0 (DRITTER_LAUF_SCHWELLE)
                         --batch submit|status|collect|followup → task_batch.py (Message Batches API / Gemini
                         Batch Mode; same prompts/schemas/validation; state bewertungen/<provider>/batches/<id>.json)
@@ -250,6 +253,12 @@ scores.csv (master data only: beruf, isco_code, synonyme, qualifikation, branche
   `gemini-4-argon` via `models.generate_content`, `response_mime_type="application/json"` +
   `response_json_schema` (`schema_fuer_gemini()`: $refs inlined), `thinking_level="high"`,
   `max_output_tokens=65536`, no temperature (ignored by the model), automatic function calling disabled.
+  `claude-cli`: Claude Code print mode (`claude -p --model claude-opus-5-5 --effort high --output-format json
+  --tools "" --strict-mcp-config --no-session-persistence --setting-sources "" --system-prompt-file … --json-schema …`)
+  with the user's own subscription; same prompt/schema/validation, empty temp cwd, `CLAUDE_CODE_DISABLE_CLAUDE_MDS=1`,
+  `ANTHROPIC_API_KEY`/`ANTHROPIC_AUTH_TOKEN` removed from the subprocess env (else billed via API); no fallback,
+  no batch; correction turn sent as one prompt (original + previous answer + errors); subscription limit →
+  `FatalerFehler` (re-run later, delta skips finished entries). Results in `bewertungen/claude-cli/`.
   Before any call the provider SDK import is checked (`pruefe_pakete`, clear message + pip hint).
   Dry-run uses measured means from existing result files (`meta.usage`), else estimates
   (1.8 chars/token, `AUSGABE_TOKENS`, calibrated on the first Claude probe).
@@ -293,9 +302,9 @@ scores.csv (master data only: beruf, isco_code, synonyme, qualifikation, branche
 | `src/scoring/fix_brennschneider_contamination.py` | `scores.csv` | `scores.csv` | One-time fix; kept for reference |
 | `src/scoring/task_rubrik.py` | `rubrik/*_v2_1.*`, `rubrik/*_v2_2.*` | — | Shared: rubric version, system prompt, validation, provider schemas, metrics (ζ, β, Zeitersparnis, …) |
 | `src/scoring/task_inputs.py` | `scores.csv` (master data), `esco_kompetenzen.csv` | (optional) `bewertungen/input/*.json` | Input per entry + input hash; `PILOT_BERUFE` (15); `--pilot`, `--only` |
-| `src/scoring/task_scorer.py` | inputs (in memory), `.env` keys | `bewertungen/<provider>/run<N>/*.json`, `protokoll.jsonl` | **Local only**; `--provider`, `--runs`, `--pilot`/`--only`, `--force`, `--dry-run [--count-tokens]`, `--max-parallel`, `--effort`/`--thinking-level`, `--model`, `--no-fallback`, `--no-third-run`, `--threshold`; batch: `--batch submit\|status\|collect\|followup`, `--batch-id`, `--refusal-sync`, `--cache-ttl` |
+| `src/scoring/task_scorer.py` | inputs (in memory), `.env` keys | `bewertungen/<provider>/run<N>/*.json`, `protokoll.jsonl` | **Local only**; `--provider claude\|claude-cli\|gemini`, `--runs`, `--pilot`/`--only`, `--force`, `--dry-run [--count-tokens]`, `--max-parallel`, `--effort`/`--thinking-level`, `--model`, `--no-fallback`, `--no-third-run`, `--threshold`; batch: `--batch submit\|status\|collect\|followup`, `--batch-id`, `--refusal-sync`, `--cache-ttl` |
 | `src/scoring/task_batch.py` | via `task_scorer.py --batch …` | `bewertungen/<provider>/batches/*.json`, `run<N>/*.json`, `protokoll.jsonl` | Batch mode for both providers (submit/status/collect/followup) |
-| `src/scoring/task_aggregate.py` | `bewertungen/<provider>/run*/` | `scores_aufgaben.csv` | Per provider + combined; `--base-dir`, `--include-stale` |
+| `src/scoring/task_aggregate.py` | `bewertungen/<provider>/run*/` | `scores_aufgaben.csv` | Per provider + combined; `--base-dir`, `--include-stale`, `--claude-source claude\|claude-cli` |
 | `src/scoring/task_vergleich.py` | `bewertungen/pilot_abo/`, API runs, `benchmarks_isco4.csv` | `bewertungen/vergleich.md` | 15 pilot jobs + Spearman vs. benchmarks; `--pilot-runs`, `--base-dir`, `--include-stale` |
 
 ### ESCO Search Strategy (`enrich_with_esco.py`)

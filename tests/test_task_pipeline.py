@@ -12,11 +12,13 @@ import json
 import math
 import re
 import socket
+import subprocess
 import threading
 from collections import Counter
 from pathlib import Path
 from types import SimpleNamespace
 
+import pandas as pd
 import pytest
 
 import task_aggregate as ta
@@ -1235,3 +1237,116 @@ def test_gemini_collect_positionell_und_blockiert(tmp_path, gemini_key):
     assert d1["meta"]["fehler_art"] == "refusal"
     auftraege, refusals, _ = tb.followup_auswahl(g, ti.baue_eintraege(["2411", "2512"]), tmp_path, 1, {}, False, 1.0)
     assert auftraege == [] and [e.datei for e, _ in refusals] == [infos[1]["datei"]]
+
+
+# --------------------------------------------------------------------------- Provider claude-cli (claude -p, Abo)
+
+class FakeCli:
+    """Ersetzt subprocess.run: liefert der Reihe nach Ausgaben von `claude -p --output-format json`."""
+
+    def __init__(self, antworten):
+        self.antworten = list(antworten)
+        self.aufrufe: list[dict] = []
+
+    def __call__(self, cmd, **kw):
+        if cmd[1:] == ["--version"]:
+            return SimpleNamespace(returncode=0, stdout="9.9.9 (Claude Code)\n", stderr="")
+        sys_datei = Path(cmd[cmd.index("--system-prompt-file") + 1])
+        self.aufrufe.append({"cmd": cmd, "system": sys_datei.read_text(encoding="utf-8"),
+                             "cwd_leer": not any(Path(kw["cwd"]).iterdir()), **kw})
+        a = self.antworten.pop(0)
+        if isinstance(a, Exception):
+            raise a
+        return a
+
+
+def cli_resp(structured=None, is_error=False, subtype="success", result="", status=None, stop="tool_use", rc=0):
+    d = {"type": "result", "subtype": subtype, "is_error": is_error, "result": result, "api_error_status": status,
+         "stop_reason": stop, "uuid": "u1", "total_cost_usd": 0.41,
+         "usage": {"input_tokens": 2, "cache_creation_input_tokens": 40934, "cache_read_input_tokens": 0,
+                   "output_tokens": 4177, "iterations": [{"x": 1}]},
+         "modelUsage": {"claude-opus-5-5": {"outputTokens": 4177}, "claude-haiku-5-5": {"outputTokens": 3}}}
+    if structured is not None:
+        d["structured_output"] = structured
+    return SimpleNamespace(returncode=rc, stdout=json.dumps(d), stderr="")
+
+
+def test_cli_aufruf_und_erfolg(eintrag, monkeypatch):
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "darf-nicht-durch")
+    fake = FakeCli([cli_resp(json.loads(_gueltig(eintrag)))])
+    b = ts.ClaudeCliBewerter(ausfuehren=fake)
+    erg = ts.bewerte(b, eintrag, 1, ts.Drossel(), lambda s: None)
+    assert erg.status == "ok"
+    a = fake.aufrufe[0]
+    cmd = a["cmd"]
+    assert cmd[:2] == ["claude", "-p"] and cmd[cmd.index("--model") + 1] == "claude-opus-5-5"
+    assert cmd[cmd.index("--effort") + 1] == "high" and cmd[cmd.index("--tools") + 1] == ""
+    assert cmd[cmd.index("--output-format") + 1] == "json"
+    assert json.loads(cmd[cmd.index("--json-schema") + 1]) == tr.schema_fuer_claude()
+    assert a["system"] == tr.system_prompt() and a["input"] == tr.user_prompt(eintrag.input) and a["cwd_leer"]
+    assert "ANTHROPIC_API_KEY" not in a["env"] and a["env"]["CLAUDE_CODE_DISABLE_CLAUDE_MDS"] == "1"
+    m = erg.meta
+    assert m["provider"] == "claude-cli" and m["model_served"] == "claude-opus-5-5"
+    assert m["einstellungen"]["cli_version"] == "9.9.9 (Claude Code)"
+    assert m["usage"]["cache_creation_input_tokens"] == 40934 and m["usage"]["api_aequivalent_usd"] == 0.41
+    assert "iterations" not in m["usage"]
+
+
+def test_cli_korrektur_enthaelt_vorherige_antwort(eintrag):
+    fake = FakeCli([cli_resp({}), cli_resp(json.loads(_gueltig(eintrag)))])
+    erg = ts.bewerte(ts.ClaudeCliBewerter(ausfuehren=fake), eintrag, 1, ts.Drossel(), lambda s: None)
+    assert erg.status == "ok" and len(fake.aufrufe) == 2
+    p = fake.aufrufe[1]["input"]
+    assert p.startswith(tr.user_prompt(eintrag.input)) and "Deine bisherige Antwort (JSON):\n{}" in p
+    assert "Validierung nicht bestanden" in p
+
+
+def test_cli_fehlerfaelle(eintrag):
+    limit = cli_resp(is_error=True, subtype="success", result="Claude AI usage limit reached|1760000000", status=429)
+    with pytest.raises(ts.FatalerFehler, match="Abo-Nutzungslimit"):
+        ts.bewerte(ts.ClaudeCliBewerter(ausfuehren=FakeCli([limit])), eintrag, 1, ts.Drossel(), lambda s: None)
+    login = SimpleNamespace(returncode=1, stdout="", stderr="Not logged in · Please run /login")
+    with pytest.raises(ts.FatalerFehler, match="/login"):
+        ts.bewerte(ts.ClaudeCliBewerter(ausfuehren=FakeCli([login])), eintrag, 1, ts.Drossel(), lambda s: None)
+    with pytest.raises(ts.FatalerFehler, match="nicht gefunden"):
+        ts.bewerte(ts.ClaudeCliBewerter(ausfuehren=FakeCli([FileNotFoundError("claude")])), eintrag, 1,
+                   ts.Drossel(), lambda s: None)
+    # vorübergehend: überlastet bzw. Zeitüberschreitung → Wiederholung
+    ueber = cli_resp(is_error=True, subtype="success", result="API Error: 529 overloaded_error", status=529)
+    zeit = subprocess.TimeoutExpired("claude", 1)
+    fake = FakeCli([ueber, zeit, cli_resp(json.loads(_gueltig(eintrag)))])
+    erg = ts.bewerte(ts.ClaudeCliBewerter(ausfuehren=fake), eintrag, 1, ts.Drossel(), lambda s: None)
+    assert erg.status == "ok" and len(fake.aufrufe) == 3
+    # Refusal und Abbruch ohne Ergebnis: nur dieser Eintrag scheitert
+    for r in (cli_resp(json.loads(_gueltig(eintrag)), stop="refusal"),
+              cli_resp(is_error=True, subtype="error_max_structured_output_retries", result="")):
+        erg = ts.bewerte(ts.ClaudeCliBewerter(ausfuehren=FakeCli([r])), eintrag, 1, ts.Drossel(), lambda s: None)
+        assert erg.status == "fehlgeschlagen"
+
+
+def test_cli_main_batch_abgelehnt_und_dry_run(tmp_path, capsys):
+    b = ts.ClaudeCliBewerter(ausfuehren=FakeCli([]))
+    assert ts.main(["--provider", "claude-cli", "--only", "2512", "--batch", "submit", "--out", str(tmp_path)],
+                   bewerter=b) == 2
+    assert ts.main(["--provider", "claude-cli", "--only", "2512", "--dry-run", "--out", str(tmp_path)],
+                   bewerter=b) == 0
+    assert "keine API-Kosten" in capsys.readouterr().out
+
+
+def test_cli_laeufe_getrennt_und_aggregation_mit_claude_source(tmp_path, monkeypatch):
+    monkeypatch.setattr(ts.shutil, "which", lambda prog: "/usr/bin/" + prog)
+
+    class CliFake(FakeBewerter):
+        provider = "claude-cli"
+
+    _main(["--provider", "claude-cli", "--only", "2512", "--runs", "1"], CliFake(), tmp_path)
+    assert list((tmp_path / "claude-cli" / "run1").glob("2512_*.json")) and not (tmp_path / "claude").exists()
+    out = tmp_path / "s.csv"
+    assert ta.main(["--base-dir", str(tmp_path), "--out", str(out)]) == 0
+    df = pd.read_csv(out, dtype={"isco_code": str})
+    assert df["n_laeufe_claude"].sum() == 0
+    assert ta.main(["--base-dir", str(tmp_path), "--out", str(out), "--claude-source", "claude-cli"]) == 0
+    df = pd.read_csv(out, dtype={"isco_code": str})
+    z = df[df["isco_code"] == "2512"].iloc[0]
+    assert z["n_laeufe_claude"] == 1 and z["claude_quelle"] == "claude-cli" and z["text_quelle"] == "claude-cli/run1"
+    assert df.loc[df["isco_code"] != "2512", "claude_quelle"].isna().all()
