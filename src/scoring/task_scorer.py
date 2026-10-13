@@ -210,14 +210,18 @@ class ClaudeBewerter:
             raise ValueError(f"effort muss einer von {CLAUDE_EFFORTS} sein")
         self.model, self.effort, self.max_tokens, self.fallback = model, effort, max_tokens, fallback
         self._client = client
+        self._client_lock = threading.Lock()
         self.schema = tr.schema_fuer_claude()
 
     @property
     def client(self):
-        if self._client is None:
-            import anthropic
-            self._client = anthropic.Anthropic(timeout=CLAUDE_TIMEOUT_S, max_retries=2)
-        return self._client
+        # Lock: bei --max-parallel > 1 dürfen nicht zwei Threads je einen Client anlegen (der
+        # überschriebene würde vom GC geschlossen, während er noch eine Anfrage sendet)
+        with self._client_lock:
+            if self._client is None:
+                import anthropic
+                self._client = anthropic.Anthropic(timeout=CLAUDE_TIMEOUT_S, max_retries=2)
+            return self._client
 
     def einstellungen(self) -> dict:
         return {"effort": self.effort, "thinking": "adaptive", "max_tokens": self.max_tokens,
@@ -330,16 +334,27 @@ class GeminiBewerter:
             raise ValueError(f"thinking_level muss einer von {GEMINI_THINKING_LEVELS} sein")
         self.model, self.thinking_level, self.max_output_tokens = model, thinking_level, max_output_tokens
         self._client = client
+        self._client_lock = threading.Lock()
         self.schema = tr.schema_fuer_gemini()
 
     @property
     def client(self):
-        if self._client is None:
-            from google import genai
-            from google.genai import types
-            self._client = genai.Client(http_options=types.HttpOptions(
-                timeout=GEMINI_TIMEOUT_MS, retry_options=types.HttpRetryOptions(attempts=3)))
-        return self._client
+        # Lock: genai.Client schliesst seinen HTTP-Client in __del__; legen zwei Threads gleichzeitig
+        # einen Client an, wird der überschriebene geschlossen, während client.models ihn noch nutzt
+        # («Cannot send a request, as the client has been closed»)
+        with self._client_lock:
+            if self._client is None:
+                from google import genai
+                from google.genai import types
+                self._client = genai.Client(http_options=types.HttpOptions(
+                    timeout=GEMINI_TIMEOUT_MS, retry_options=types.HttpRetryOptions(attempts=3)))
+            return self._client
+
+    def _verwerfe_client(self, alt: Any) -> None:
+        """Geschlossenen Client verwerfen; der nächste Zugriff legt einen neuen an."""
+        with self._client_lock:
+            if self._client is alt:
+                self._client = None
 
     def einstellungen(self) -> dict:
         return {"thinking_level": self.thinking_level, "max_output_tokens": self.max_output_tokens,
@@ -369,8 +384,9 @@ class GeminiBewerter:
 
     def frage(self, verlauf: list) -> Antwort:
         from google.genai import errors
+        client = self.client              # lokale Referenz hält den Client während der Anfrage am Leben
         try:
-            resp = self.client.models.generate_content(model=self.model, contents=verlauf, config=self._config())
+            resp = client.models.generate_content(model=self.model, contents=verlauf, config=self._config())
         except errors.ClientError as e:
             if e.code in (401, 403):
                 raise FatalerFehler(f"Gemini: Zugriff verweigert ({e.code}) — GEMINI_API_KEY/GOOGLE_API_KEY "
@@ -386,6 +402,11 @@ class GeminiBewerter:
             raise _Wiederholbar(None, f"API-Fehler ({e.code}): {e.message}") from e
         except _netzfehler() as e:
             raise _Wiederholbar(None, f"Verbindungsfehler: {e}") from e
+        except RuntimeError as e:
+            if "client has been closed" not in str(e):
+                raise
+            self._verwerfe_client(client)
+            raise _Wiederholbar(None, f"HTTP-Client geschlossen, neuer Client: {e}") from e
         return self._auswerten(resp)
 
     def _auswerten(self, resp: Any) -> Antwort:
@@ -418,11 +439,17 @@ class GeminiBewerter:
 
 
 def _netzfehler() -> tuple:
-    try:
-        import httpx2
-        return (httpx2.TransportError,)
-    except ImportError:          # pragma: no cover
-        return (ConnectionError,)
+    """Transportfehler (Timeout, Verbindungsabbruch, Protokollfehler) des Gemini-SDK.
+
+    google-genai sendet synchron über httpx; httpx2 nur, falls installiert und konfiguriert.
+    """
+    fehler: tuple = (ConnectionError,)
+    for modul in ("httpx", "httpx2"):
+        try:
+            fehler += (importlib.import_module(modul).TransportError,)
+        except (ImportError, AttributeError):
+            pass
+    return fehler
 
 
 # --------------------------------------------------------------------------- Bewertung eines Eintrags
@@ -780,6 +807,14 @@ def fuehre_lauf_aus(bewerter: Any, eintraege: list[ti.Eintrag], lauf: int, basis
                 for f in futures:
                     f.cancel()
                 raise
+            except Exception as exc:     # unerwarteter Fehler: nur dieser Eintrag scheitert, der Lauf geht weiter
+                text = f"unerwarteter Fehler: {type(exc).__name__}: {exc}"
+                protokoll.schreibe({"timestamp": _jetzt(), "lauf": lauf, "datei": e.datei, "status": "fehlgeschlagen",
+                                    "model_served": None, "fallback": False, "usage": {}, "fehler": [text]})
+                bilanz.fehlgeschlagen += 1
+                bilanz.fehler.append(f"run{lauf}/{e.datei}: {text}")
+                log.exception("✗ run%d %s: %s", lauf, e.datei, text)
+                continue
             bilanz.usage.append(erg.meta["usage"])
             if erg.status == "ok":
                 bilanz.ok += 1

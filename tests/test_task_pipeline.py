@@ -520,6 +520,49 @@ def test_gemini_max_tokens_und_429(eintrag):
         ts.bewerte(ts.GeminiBewerter(client=fake), eintrag, 1, ts.Drossel(), lambda s: None)
 
 
+def test_gemini_geschlossener_client_wird_ersetzt(eintrag, monkeypatch):
+    from google import genai
+    alt = FakeGemini([RuntimeError("Cannot send a request, as the client has been closed.")])
+    neu = FakeGemini([gemini_resp(_gueltig(eintrag))])
+    monkeypatch.setattr(genai, "Client", lambda **kw: neu)
+    b = ts.GeminiBewerter(client=alt)
+    erg = ts.bewerte(b, eintrag, 1, ts.Drossel(), lambda s: None)
+    assert erg.status == "ok" and len(alt.aufrufe) == 1 and len(neu.aufrufe) == 1
+    assert b.client is neu
+    # andere RuntimeErrors werden nicht verschluckt
+    with pytest.raises(RuntimeError, match="etwas anderes"):
+        ts.GeminiBewerter(client=FakeGemini([RuntimeError("etwas anderes")])).frage([])
+
+
+def test_gemini_httpx_transportfehler_wird_wiederholt(eintrag):
+    import httpx
+    fake = FakeGemini([httpx.RemoteProtocolError("Server disconnected"), gemini_resp(_gueltig(eintrag))])
+    erg = ts.bewerte(ts.GeminiBewerter(client=fake), eintrag, 1, ts.Drossel(), lambda s: None)
+    assert erg.status == "ok" and len(fake.aufrufe) == 2
+
+
+def test_gemini_client_nur_einmal_angelegt_bei_parallelzugriff(monkeypatch):
+    import time as _time
+
+    from google import genai
+    angelegt = []
+
+    def langsam(**kw):
+        _time.sleep(0.05)
+        angelegt.append(object())
+        return angelegt[-1]
+
+    monkeypatch.setattr(genai, "Client", langsam)
+    b = ts.GeminiBewerter()
+    gesehen = []
+    threads = [threading.Thread(target=lambda: gesehen.append(b.client)) for _ in range(4)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+    assert len(angelegt) == 1 and all(c is angelegt[0] for c in gesehen)
+
+
 # --------------------------------------------------------------------------- Lauf-Steuerung: Delta & dritter Lauf
 
 class FakeBewerter:
@@ -575,6 +618,21 @@ def test_delta_lauf_ueberspringt_aktuelle(tmp_path):
     assert b3.aufrufe == ["2512"]                             # anderes Modell → neu
     zeilen = (tmp_path / "claude" / "protokoll.jsonl").read_text(encoding="utf-8").splitlines()
     assert len(zeilen) == 6
+
+
+def test_unerwarteter_fehler_bricht_lauf_nicht_ab(tmp_path):
+    class Wackelig(FakeBewerter):
+        def frage(self, verlauf):
+            if verlauf[0]["isco_code"] == "2411":
+                raise RuntimeError("kaputt")
+            return super().frage(verlauf)
+
+    b = Wackelig()
+    assert _main(["--provider", "claude", "--only", "2411", "2512", "--runs", "1", "--no-third-run"], b, tmp_path) == 1
+    assert [p.name[:4] for p in (tmp_path / "claude" / "run1").glob("*.json")] == ["2512"]
+    zeilen = [json.loads(z) for z in (tmp_path / "claude" / "protokoll.jsonl").read_text(encoding="utf-8").splitlines()]
+    fehler = [z for z in zeilen if z["status"] == "fehlgeschlagen"]
+    assert len(fehler) == 1 and "RuntimeError: kaputt" in fehler[0]["fehler"][0]
 
 
 def test_veralteter_hash_wird_neu_bewertet(tmp_path, pilot):
