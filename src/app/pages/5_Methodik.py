@@ -487,11 +487,17 @@ Er basiert auf der Methodik der **Brookings Institution** und setzt sich zusamme
 | Kriterium | Max. Punkte | Quelle |
 |---|---|---|
 | Qualifikationsniveau | 4 | BFS SAKE (Bildungsabschluss nach ISCO) |
-| Lohnniveau | 3 | LSE 2024 (höherer Lohn = mehr Ressourcen für Umschulung) |
+| Lohnniveau | 3 | LSE 2024 (höherer Lohn = mehr Ressourcen für Umschulung); feste Skala: 0 Punkte bis 50'000 CHF, linear bis 3 Punkte bei 150'000 CHF, darüber 3 |
 | Digitale Affinität | 2 | KI-Score Teilkriterium «Digitaler Output» |
 | Branchenmobilität | 1 | Schätzung basierend auf Branchencharakteristika |
 
 Skala: 0 = sehr schwer anzupassen, 10 = sehr flexibel
+
+Die Lohnskala ist fest (Lohnpunkte = 3 × (Lohn − 50'000) / 100'000, begrenzt auf 0–3) und
+umschliesst die Spanne der LSE-2024-Mediane der Berufsgruppen (rund 53'000–130'000 CHF).
+Die Lohnpunkte eines Berufs hängen damit nur von seinem eigenen Lohn ab — ein einzelner
+Ausreisser (z. B. ein neuer Höchstlohn) verschiebt die Werte der übrigen Berufe nicht.
+Beispiele: 75'000 CHF → 0.75, 100'000 CHF → 1.5, 125'000 CHF → 2.25 Punkte.
 """)
 
 st.divider()

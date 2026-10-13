@@ -64,6 +64,7 @@ zusammengelegt). Neue bestätigte Fehlzuordnungen dort mit dem aktuellen `beruf`
 | 2026-10 | Beschäftigte ohne Doppelzählung, ISCO-Audit (#51) | 21 ISCO-Codes korrigiert, 22 Zusammenlegungen (204 → 179 Berufe), 2330/5131/5223 über SE-Berufsarten aufgeteilt; `beschaeftigte_1000`/`frauen_pct` in allen CSVs aus SE 2024; Löhne mit neuen Gewichten neu berechnet; Details `docs/audit_isco_codes.md` |
 | 2026-10 | ESCO-Audit und Neuzuordnung (#52, #48) | 83 URIs geändert, 89 Beschreibungen (v1.2.1), deutsche Titel, `beschreibung_quelle` korrigiert; neu `esco_isco_code`, `esco_match_qualitaet`, `esco_kompetenzen.csv`; Stufe 3 + ISCO-Prüfung in `enrich_with_esco.py`; Details `docs/audit_esco_zuordnungen.md` |
 | 2026-10 | Gruppe 22: Verhältniszahlen statt Salarium-Normierung, `lohn_verhaeltnisse.csv` | 2221/2211/2212 `LSE2024_2d+Verhaeltnis` (94'800 / 132'000 / 155'200 CHF); neue Spalte `lohn_unsicher` (2261, 2262); `score_ch` 2212; `adaptabilitaet` 163 Berufe (Min-Max-Skalierung) |
+| 2026-10 | Feste Lohnskala im Anpassungsfähigkeits-Score, `adaptability_scorer.py` | Lohnpunkte 0 bis 50'000 CHF, linear bis 3 bei 150'000 CHF, darüber 3 (statt Min-Max über alle Berufe); `adaptabilitaet` 176 von 179 Werten +0.0 bis +0.2 (Mittel 6.06 → 6.17); 5 Berufe 4.9 → 5.0 (Matrix: Stagnierend → Sicher) |
 
 ## Löhne (LSE 2024)
 
@@ -127,6 +128,8 @@ Folgen in `scores.csv`: Lohnklasse nur bei 2212 (100–150k → >150k, `delta_lo
 `score_ch` 4.1 → 4.3). `adaptabilitaet` skaliert den Lohn min-max über alle Berufe; das neue
 Maximum (2212, 155'200 statt 131'700 CHF) senkt die Lohnpunkte fast aller Berufe: 163 von 179 Werten
 ändern sich (−0.7 bis +0.8, Mittel 6.37 → 6.06), 8 Berufe fallen unter 5.0 (Matrix-Quadrant).
+Seither gilt eine feste Lohnskala (50'000–150'000 CHF → 0–3 Punkte), die solche Verschiebungen
+durch einzelne Ausreisser verhindert.
 Unverändert: alle LLM-Scores, Texte, ESCO-Spalten, `zeitrahmen`, `delta_branche`.
 Präzise wäre nur eine LSE-Sonderauswertung der 3-Steller 221/222/226 (lohn@bfs.admin.ch).
 

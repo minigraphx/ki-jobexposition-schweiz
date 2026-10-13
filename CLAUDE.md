@@ -145,8 +145,9 @@ wage cost per FTE doctors/nursing 2.03–2.07, converted to 40 h/median/dipl. nu
 percentile decomposition 1.57–1.87), split 2211/2212 with ratio 0.85 (BASS 2018: 0.69, weakened —
 assumption) and SE-2024 weights → 2211 = 1.375 (1.117–1.633), 2212 = 1.617 (1.314–1.921). Rows without
 factor (2261 dentists, 2262 pharmacists: no documented ratio) keep the Salarium value and get
-`lohn_unsicher = True`. Note: `adaptabilitaet` min-max-scales wages over all jobs, so a new maximum
-wage (currently 2212) shifts the wage points of all jobs.
+`lohn_unsicher = True`. Note: `adaptabilitaet` uses a fixed wage scale (`LOHN_PUNKTE_MIN_CHF` /
+`LOHN_PUNKTE_MAX_CHF` in `adaptability_scorer.py`: 0 points up to 50k CHF, linear to 3 points at
+150k CHF, constant above), so a job's wage points depend only on its own wage.
 
 **Employment data** = **BFS Strukturerhebung (SE)**, *not* SAKE — table «Ausgeübter Beruf (CH-ISCO-19)
 nach Geschlecht und Staatsangehörigkeit» (asset 36492006, file `su-d-40.02.03.02.01.03.10.xlsx`),
@@ -286,7 +287,7 @@ All charts use **Plotly**. App reads from `data/processed/scores.csv`.
 | `delta_branche` | `ch_adjustments.py` | CH sector adjustment (rule-based) |
 | `delta_lohn` | `ch_adjustments.py` | CH wage-level adjustment (rule-based) |
 | `score_ch` | `ch_adjustments.py` | Final score: score_gesamt + delta_branche + delta_lohn, clipped 0–10 |
-| `adaptabilitaet` | `adaptability_scorer.py` | Adaptability score 0–10 (rule-based) |
+| `adaptabilitaet` | `adaptability_scorer.py` | Adaptability score 0–10 (rule-based; wage points on a fixed 50k–150k CHF scale) |
 | `scores_gemittelt` | `berufe_zusammenlegen.py` | `True` = merged entry, scores are a provisional employment-weighted mean (re-scoring pending) |
 
 ## Datenqualität
