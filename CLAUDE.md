@@ -49,6 +49,18 @@ python src/scoring/exposure_scorer.py --force 2411             # re-score by ISC
 python src/scoring/adaptability_scorer.py   # rule-based adaptability scores
 python src/scoring/ch_adjustments.py        # CH sector/salary deltas → scores.csv
 
+# --- Task-based re-scoring, Rubrik v2.2 (LOCAL ONLY, own keys in .env; see docs/neubewertung_lokal.md) ---
+pip install -r requirements-dev.txt         # includes requirements-scoring.txt (anthropic, google-genai, jsonschema)
+python src/scoring/task_scorer.py --provider claude --pilot --runs 2 --dry-run   # calls + token/cost estimate, no API call
+python src/scoring/task_scorer.py --provider claude --pilot --runs 2 --dry-run --count-tokens  # exact input tokens (free, needs key)
+python src/scoring/task_scorer.py --provider claude --pilot --runs 2   # 15 pilot jobs, 2 runs (+ auto run 3 if |Δζ| > 1)
+python src/scoring/task_scorer.py --provider gemini --pilot --runs 2
+python src/scoring/task_scorer.py --provider claude --runs 2           # all 179 entries (hash delta: only new/changed)
+python src/scoring/task_scorer.py --provider claude --nur 2411 2512 --force   # selected ISCO codes/prefixes, re-ask
+python src/scoring/task_aggregate.py        # → data/processed/scores_aufgaben.csv (per provider + combined)
+python src/scoring/task_vergleich.py        # → data/processed/bewertungen/vergleich.md (pilot vs. API, benchmarks)
+python src/scoring/task_inputs.py --pilot   # optional: write input JSONs for inspection (gitignored)
+
 # --- Quality Assurance (run as needed) ---
 python src/data/full_quality_audit.py       # Haiku audit + Sonnet re-score wrong descriptions
 
@@ -197,6 +209,52 @@ Public admin +0.1, Industry −0.1, Retail +0.2, Legal +0.2.
 
 CH wage deltas: <60k CHF −0.2, 60–100k 0.0, 100–150k +0.2, >150k +0.4.
 
+### Task-based Exposure Pipeline (Rubrik v2.2, outputs `data/processed/scores_aufgaben.csv`)
+
+New method (Eloundou-style task rubric), run **locally** with the user's own API keys; not yet
+used by the app (`scores.csv` and the app stay unchanged until a separate migration step).
+
+```
+scores.csv (master data only: beruf, isco_code, synonyme, qualifikation, branche, esco_*)
+  + esco_kompetenzen.csv (essential/optional, skill/knowledge)
+  → task_inputs.py      input JSON per entry (pilot format) + input_hash = SHA-256(rubrik version, schema, input)
+  → task_scorer.py      --provider claude|gemini, --runs 2 (seeded shuffle per run), validation + 1 correction retry,
+                        auto run 3 if |Δ ζ-score| run1↔run2 > 1.0 (DRITTER_LAUF_SCHWELLE)
+  → data/processed/bewertungen/<provider>/run<N>/<isco>_<slug>.json   {meta, bewertung[, rohantwort]}
+    data/processed/bewertungen/<provider>/protokoll.jsonl            one line per call (status, usage)
+  → task_aggregate.py   ζ, β, Zeitersparnis, Modus-Anteile, P-Scores; per provider + combined; flags
+  → data/processed/scores_aufgaben.csv
+  → task_vergleich.py   pilot (Abo runs, v2.1) vs. API Claude vs. API Gemini + Spearman vs. benchmarks
+  → data/processed/bewertungen/vergleich.md
+```
+
+- **Rubric:** `src/scoring/rubrik/rubrik_aufgaben_v2_2.md` + `schema_v2_2.json` (`RUBRIK_VERSION = "2.2"`
+  in `task_rubrik.py`). v2.2 = v2.1 (pilot, kept unchanged as `*_v2_1.*`) **plus** the block
+  `zusammenfassung` (`haupt_risiko`, `begruendung`, `zeitrahmen` = adoption horizon in ≥ ~1/3 of CH
+  firms); the block does not enter ζ/β/Zeitersparnis. System prompt: `rubrik/bewerter_system_v2_2.md`
+  + full rubric + schema (identical for every call → prompt cache).
+- **Providers / settings** (constants in `task_scorer.py`, overridable via CLI):
+  `claude-opus-5-5`, adaptive thinking, `output_config.effort="high"`, structured output via
+  `output_config.format` (schema derived by `schema_fuer_claude()`: conditionals and type lists rewritten,
+  then `anthropic.transform_schema`), streaming + `get_final_message()`, `max_tokens=64000`, server-side
+  refusal fallback (`fallbacks="default"`, beta `server-side-fallback-2026-07-01`); the serving model is
+  logged in `meta.model_served` / `meta.fallback`.
+  `gemini-4-argon` via `models.generate_content`, `response_mime_type="application/json"` +
+  `response_json_schema` (`schema_fuer_gemini()`: $refs inlined), `thinking_level="high"`,
+  `max_output_tokens=65536`, no temperature (ignored by the model).
+- **Validation:** every answer is checked against the original JSON schema (Draft 2020-12, incl.
+  if/then rules) plus sum of time shares = 100 and isco_code/beruf = input (`task_rubrik.pruefe_bewertung`);
+  mode × residual-time contradictions are only `meta.hinweise`.
+- **Delta:** a result is current if `status == ok`, same `input_hash`, same `rubrik_version`, same
+  `model_requested` → skipped unless `--force`.
+- **Aggregation:** `score_aufgaben` = 10·ζ (mean over all valid runs of both providers),
+  `score_physisch_auto` / `score_software_auto` = 10·Σ w·1[P1, p_art physisch|software];
+  `delta_provider` = |ζ Claude − ζ Gemini|; `flag_unsicher` if delta_provider > 1.0, run spread > 1.0 or
+  < 2 valid runs; `zeitrahmen` = median over runs (tie → later); texts from the run closest to mean ζ.
+- **Pilot results** (subagent runs, rubric v2.1) are versioned in `data/processed/bewertungen/pilot_abo/`.
+- **Benchmarks:** `data/processed/benchmarks_isco4.csv` (ILO 2025 CC BY 4.0, Eloundou MIT, AEI CC-BY;
+  see `benchmarks_isco4.README.md`). einstAIn values are deliberately not included (all rights reserved).
+
 ### Script Reference
 
 | Script | Input | Output | Notes |
@@ -214,6 +272,11 @@ CH wage deltas: <60k CHF −0.2, 60–100k 0.0, 100–150k +0.2, >150k +0.4.
 | `src/scoring/ch_adjustments.py` | `scores.csv` | `scores.csv` | CH sector/wage deltas, clips to 0–10 |
 | `src/data/full_quality_audit.py` | `scores.csv` | `scores.csv` + `audit_report.json` | Phase 1: Haiku audit; Phase 2: Haiku desc generation; Phase 3: Sonnet re-score |
 | `src/scoring/fix_brennschneider_contamination.py` | `scores.csv` | `scores.csv` | One-time fix; kept for reference |
+| `src/scoring/task_rubrik.py` | `rubrik/*_v2_1.*`, `rubrik/*_v2_2.*` | — | Shared: rubric version, system prompt, validation, provider schemas, metrics (ζ, β, Zeitersparnis, …) |
+| `src/scoring/task_inputs.py` | `scores.csv` (master data), `esco_kompetenzen.csv` | (optional) `bewertungen/input/*.json` | Input per entry + input hash; `PILOT_BERUFE` (15); `--pilot`, `--nur` |
+| `src/scoring/task_scorer.py` | inputs (in memory), `.env` keys | `bewertungen/<provider>/run<N>/*.json`, `protokoll.jsonl` | **Local only**; `--provider`, `--runs`, `--pilot`/`--nur`, `--force`, `--dry-run [--count-tokens]`, `--max-parallel`, `--effort`/`--thinking-level`, `--model` |
+| `src/scoring/task_aggregate.py` | `bewertungen/<provider>/run*/` | `scores_aufgaben.csv` | Per provider + combined; `--auch-veraltet` |
+| `src/scoring/task_vergleich.py` | `bewertungen/pilot_abo/`, API runs, `benchmarks_isco4.csv` | `bewertungen/vergleich.md` | 15 pilot jobs + Spearman vs. benchmarks; `--pilot-runs` |
 
 ### ESCO Search Strategy (`enrich_with_esco.py`)
 
@@ -312,4 +375,5 @@ HuggingFace Spaces runs `streamlit run src/app/app.py` automatically.
 
 - `.env` is in `.gitignore` — never commit it
 - `ANTHROPIC_API_KEY` is only needed for re-scoring, not for running the app
+- `GEMINI_API_KEY` (or `GOOGLE_API_KEY`, which wins if both are set) only for `task_scorer.py --provider gemini`
 - HF token is embedded in the `hf` remote URL — do not echo `git remote -v` in logs

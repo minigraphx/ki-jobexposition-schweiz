@@ -1,0 +1,6 @@
+# Aufgabenbasierte Neubewertung über die API (src/scoring/task_*.py) — nur lokal nötig, nicht für die App
+-r requirements.txt
+
+anthropic>=1.13.0     # beta.messages.stream mit fallbacks="default", output_config (effort, format), transform_schema
+google-genai>=2.30.0  # models.generate_content mit response_json_schema und thinking_level
+jsonschema>=4.20.0    # lokale Validierung gegen das Rubrik-Schema (Draft 2020-12)

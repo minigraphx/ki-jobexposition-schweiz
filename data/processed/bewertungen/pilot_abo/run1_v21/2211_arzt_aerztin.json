@@ -1,0 +1,155 @@
+{
+  "isco_code": "2211",
+  "beruf": "Arzt/Ärztin (Allgemeinmedizin)",
+  "taetigkeiten": [
+    {
+      "name": "Anamnese- und Konsultationsgespräche mit Patientinnen und Patienten führen",
+      "zeitanteil_pct": 20,
+      "stufe": "E0",
+      "modus": null,
+      "restzeit_mensch": null,
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "hoch",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [],
+      "begruendung": "Persönliches ärztliches Gespräch in der Praxis; Wert liegt in der Präsenz und Beziehung."
+    },
+    {
+      "name": "Patienten körperlich untersuchen und kleine Eingriffe durchführen (Wundversorgung, Injektionen, Infiltrationen)",
+      "zeitanteil_pct": 20,
+      "stufe": "E0",
+      "modus": null,
+      "restzeit_mensch": null,
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "hoch",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [],
+      "begruendung": "Physische Tätigkeit am Patienten; keine Robotik in relevantem Umfang."
+    },
+    {
+      "name": "Diagnose stellen, Therapie entscheiden und mit dem Patienten besprechen",
+      "zeitanteil_pct": 10,
+      "stufe": "E0",
+      "modus": null,
+      "restzeit_mensch": null,
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "hoch",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [],
+      "begruendung": "Ärztlicher Einzelfallentscheid mit Verantwortung und persönlicher Besprechung; KI-Entscheidungshilfen sparen dabei keine 50 %."
+    },
+    {
+      "name": "Labor-, EKG- und Bildbefunde beurteilen",
+      "zeitanteil_pct": 5,
+      "stufe": "E0",
+      "modus": null,
+      "restzeit_mensch": null,
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "mittel",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [],
+      "begruendung": "Die Beurteilung im klinischen Kontext bleibt ärztliche Arbeit; automatische EKG- und Laborauswertung ist klassische Software und bereits Standard, die Restzeit wird durch KI nicht halbiert."
+    },
+    {
+      "name": "Konsultationen in der elektronischen Krankengeschichte dokumentieren",
+      "zeitanteil_pct": 10,
+      "stufe": "E2",
+      "modus": "delegierend",
+      "restzeit_mensch": "30-50",
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "mittel",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [
+        "regulatorisch"
+      ],
+      "begruendung": "Ambiente Dokumentation bzw. Diktat (auch Schweizerdeutsch) mit Spracherkennung erstellt den KG-Eintrag in der Praxissoftware; die Ärztin prüft und korrigiert jeden Eintrag. Hemmnis: Berufsgeheimnis/Datenschutz bei Cloud-Spracherkennung."
+    },
+    {
+      "name": "Zuweisungsschreiben, Arztberichte, Arztzeugnisse und Berichte an Versicherer (IV, UVG, KVG) verfassen",
+      "zeitanteil_pct": 10,
+      "stufe": "E1",
+      "modus": "delegierend",
+      "restzeit_mensch": "30-50",
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "mittel",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [
+        "regulatorisch"
+      ],
+      "begruendung": "KG-Einträge lassen sich als Text kopieren (Klärung D); das LLM entwirft den Bericht, die Ärztin prüft ihn inhaltlich gegen die Akte und unterschreibt. Hemmnis: Berufsgeheimnis, Haftung."
+    },
+    {
+      "name": "Eingehende Spital- und Facharztberichte sichten und daraus Massnahmen ableiten",
+      "zeitanteil_pct": 5,
+      "stufe": "E0",
+      "modus": null,
+      "restzeit_mensch": null,
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "tief",
+      "sicherheit_begruendung": "KI-Zusammenfassung eingehender PDF-Berichte im Praxissystem könnte gezieltes Lesen ermöglichen; E2 unterstützend (30-50) ist fast ebenso plausibel.",
+      "ch_hemmnis": [],
+      "begruendung": "Die Ärztin muss die Berichte für die Weiterbehandlung selbst lesen und verantworten; KI-Zusammenfassungen sparen nach bester Einschätzung keine 50 %."
+    },
+    {
+      "name": "Medikamente verordnen, Rezepte ausstellen und Interaktionen prüfen",
+      "zeitanteil_pct": 5,
+      "stufe": "E0",
+      "modus": null,
+      "restzeit_mensch": null,
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "mittel",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [],
+      "begruendung": "Verordnungsentscheid ist ärztliche Verantwortung; Rezept und Interaktionscheck laufen bereits über klassische Praxissoftware, LLM spart keine 50 %."
+    },
+    {
+      "name": "Telefonische Rückfragen beantworten, Befunde mitteilen und MPA instruieren",
+      "zeitanteil_pct": 5,
+      "stufe": "E0",
+      "modus": null,
+      "restzeit_mensch": null,
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "hoch",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [],
+      "begruendung": "Direkte Kommunikation mit Patienten und Team; Wert liegt im persönlichen Gespräch."
+    },
+    {
+      "name": "Leistungen nach Tarif erfassen und Abrechnung kontrollieren",
+      "zeitanteil_pct": 5,
+      "stufe": "E0",
+      "modus": null,
+      "restzeit_mensch": null,
+      "physisch_automatisierbar": "P1",
+      "p_art": "software",
+      "sicherheit": "mittel",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [],
+      "begruendung": "Leistungserfassung und Tarifabrechnung über Praxissoftware (Leistungsblöcke, Tarifprüfung) ist klassische Software und übernimmt den Grossteil."
+    },
+    {
+      "name": "Klinische Fragen in Leitlinien und Fachliteratur nachschlagen",
+      "zeitanteil_pct": 5,
+      "stufe": "E2",
+      "modus": "delegierend",
+      "restzeit_mensch": "30-50",
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "mittel",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [],
+      "begruendung": "Medizinische Recherche-Assistenten mit Quellenangaben erstellen die Antwort auf die klinische Frage; die Ärztin prüft sie gegen die verlinkten Leitlinien und den Einzelfall."
+    }
+  ],
+  "unsicherheit": "mittel",
+  "kommentar": "Setting: Hausärztin/Hausarzt in Schweizer Gruppen- oder Einzelpraxis. ESCO liefert nur einen Sammel-Skill, Tätigkeiten und Zeitanteile stammen aus Berufswissen und sind grob geschätzt. Grenzfälle: Sichten eingehender Berichte (E0 vs. E2) und Qualität der ambienten Dokumentation bei Schweizerdeutsch."
+}
