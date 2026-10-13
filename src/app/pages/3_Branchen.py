@@ -129,10 +129,18 @@ if BGS_PATH.exists() and df is not None and bgs_df is not None:
         fig_bgs.update_layout(height=500, coloraxis_showscale=False)
         fig_bgs.update_xaxes(tickformat=".0%")
         st.plotly_chart(fig_bgs, use_container_width=True)
+        bgs_periode = str(bgs_df["bgs_periode"].iloc[0]) if "bgs_periode" in bgs_df else "?"
+        if bgs_periode.isdigit():
+            bgs_periode = f"Jahresmittel {bgs_periode}"
+        statent_jahr = bgs_df["statent_jahr"].iloc[0] if "statent_jahr" in bgs_df else "?"
+        gg_total = f"{int(bgs_df['grenzgaenger'].sum()):,}".replace(",", "'")
         st.caption(
-            "Grenzgänger-Anteil = Grenzgänger in Branche / Beschäftigte in Branche (BFS STATENT/BZ). "
+            "Grenzgänger-Anteil = ausländische Grenzgänger/-innen in den NOGA-Abteilungen der Branche "
+            f"/ Beschäftigte derselben Abteilungen (BFS STATENT {statent_jahr}, arbeitsortbasiert, "
+            "Grenzgänger enthalten). "
+            f"Zähler: BFS Grenzgängerstatistik (GGS), stats.swiss DF_GGS_4, {bgs_periode} "
+            f"(provisorisch), {gg_total} Grenzgänger/-innen in den 21 Branchen. "
             "Blasengrösse = Erwerbstätige der erfassten Berufe in Tsd. (BFS Strukturerhebung 2024). "
-            "Datenquelle: BFS BGS (Schätzwerte, Gesamtbestand ~380'000 Grenzgänger, 2023). "
             "Fliesst nicht in score_ch ein — rein additiver Kontext-Layer."
         )
 

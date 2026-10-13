@@ -30,6 +30,8 @@ python src/data/verify_esco_matches.py      # validate matches → berufe_ch_esc
 python src/data/patch_unmatched.py          # manual fixes for bad matches
 python src/data/update_loehne.py --offline  # LSE 2024 wages (+ stored Salarium profiles) → all CSVs, recomputes score_ch/adaptabilitaet
 python src/data/update_loehne.py            # same, but re-queries Salarium + STATENT online (~15 min, polite)
+python src/data/fetch_bgs.py                # BFS GGS (stats.swiss SDMX) + STATENT online → grenzgaenger_anteil_branche.csv
+python src/data/fetch_bgs.py --offline      # same from the versioned CSVs (no network); --periode 2026-Q2, --dry-run
 
 # Fix known wrong ESCO matches (re-run locally after adding to KNOWN_WRONG_MATCHES):
 python src/data/enrich_with_esco.py --fix-wrong
@@ -79,7 +81,23 @@ data/processed/lohn_profile_salarium.csv  (curated Salarium profile per job, gro
     scores.csv: lohnklasse, delta_lohn, delta_branche, score_ch, adaptabilitaet recomputed
   versioned helper files: lse2024_monatslohn_isco.csv, lohn_salarium_abfragen.csv,
     statent_vzae_grossregion.csv
+
+stats.swiss SDMX DF_GGS_4 (BFS GGS, quarterly, NOGA division)  +  STATENT px-x-0602010000_101
+  → src/data/fetch_bgs.py                 (raw SDMX-CSV → data/raw/bgs_df_ggs_4.csv, gitignored;
+                                           --offline: versioned CSVs below)
+  → data/processed/bgs_grenzgaenger_noga.csv, statent_beschaeftigte_noga.csv (versioned)
+  → data/processed/grenzgaenger_anteil_branche.csv  (context layer in 3_Branchen.py, no score effect)
 ```
+
+**Cross-border commuters** = **BFS Grenzgängerstatistik (GGS)**, dataflow `CH1.GGS,DF_GGS_4,1.0.0`
+«Ausländische Grenzgänger/-innen nach Wirtschaftszweig und Erwerbsstatus» (ZEMIS/AHV, persons,
+values from 2024-Q3 provisional). Endpoint
+`https://disseminate.stats.swiss/rest/data/CH1.GGS,DF_GGS_4,1.0.0/._T.Q?startPeriod=2022-Q1`
+(Accept `application/vnd.sdmx.data+csv;version=1.0.0`; key = NOGA.AUFZW.FREQ). Numerator =
+mean of the four quarters of the latest complete year (2025), latest quarter as extra column.
+Denominator = STATENT 2024 «Beschäftigte», Switzerland total (workplace-based, AHV, includes
+cross-border commuters). Share = Σ GGS / Σ STATENT over the NOGA divisions of a sector
+(`NOGA_ZU_BRANCHE` from `fetch_statent.py`); NOGA 97–99 are not in STATENT and are excluded.
 
 **Wage data** = **BFS LSE 2024**, table T17 «Monatlicher Bruttolohn nach Berufsgruppen, Lebensalter
 und Geschlecht», private and public sector (asset 36355224, `je-d-03.04.01.02.47.xlsx`, sheet `2024`).
@@ -153,6 +171,7 @@ CH wage deltas: <60k CHF −0.2, 60–100k 0.0, 100–150k +0.2, >150k +0.4.
 | `src/data/verify_esco_matches.py` | `berufe_ch_esco.csv` | `berufe_ch_esco_verified.csv` | Haiku-based match quality scoring 0/1/2 |
 | `src/data/patch_unmatched.py` | `berufe_ch_esco_verified.csv` | `berufe_ch_esco_verified.csv` | Manual overrides for known bad matches |
 | `src/data/update_loehne.py` | LSE 2024 T17 (raw or `lse2024_monatslohn_isco.csv`), `lohn_profile_salarium.csv`, `lohn_salarium_abfragen.csv`, `statent_vzae_grossregion.csv` | `berufe_ch*.csv`, `scores.csv` | Sets `lohn_median_chf`/`lohn_quelle`; recomputes wage-dependent rule-based columns in scores.csv; `--offline` (no network), `--dry-run` |
+| `src/data/fetch_bgs.py` | stats.swiss SDMX `DF_GGS_4` + STATENT PxWeb (online) or `bgs_grenzgaenger_noga.csv` + `statent_beschaeftigte_noga.csv` (`--offline`) | `grenzgaenger_anteil_branche.csv` (+ the two versioned inputs when online) | Cross-border commuter share per sector (annual mean of latest full year, latest quarter extra); reads/writes no scores; `--periode JJJJ\|JJJJ-Qn`, `--dry-run` |
 | `src/data/branche_neu_zuordnen.py` | `BRANCHE_MAP` | `berufe_ch*.csv`, `scores.csv` | Re-applies ISCO-prefix sector mapping to non-curated jobs |
 | `src/scoring/exposure_scorer.py` | `berufe_ch_esco_verified.csv` | `scores.csv` | Synchronous, hash-based delta; `--force [name\|isco]` for selective re-score |
 | `src/scoring/adaptability_scorer.py` | `scores.csv` | `scores.csv` | Rule-based: education, wage, digital affinity, mobility |

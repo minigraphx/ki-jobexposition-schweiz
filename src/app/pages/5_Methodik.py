@@ -176,14 +176,31 @@ st.subheader("Grenzgänger-Anteil (Kontext)")
 st.markdown("""
 Der Grenzgänger-Anteil pro Branche dient als zusätzlicher Kontext-Layer in der Branchenanalyse.
 
-- **Quelle:** BFS Grenzgängerstatistik (BGS), Cube [`DF_GGS_4`](https://stats.swiss/vis?lc=de&df[ds]=ds%3Adisseminate&df[id]=DF_GGS_4&df[ag]=CH1.GGS&df[vs]=1.0.0&dq=..Q&lom=LASTNPERIODS&lo=5) —
-  „Ausländische Grenzgänger/-innen nach Wirtschaftszweig und Erwerbsstatus",
-  letztes verfügbares Quartal (stats.swiss)
-- **Berechnung:** grenzgaenger_anteil = Grenzgänger in Branche / Beschäftigte in Branche
-  (BFS STATENT/BZ, sektorweite Gesamtbeschäftigung)
+- **Zähler:** BFS Grenzgängerstatistik (GGS), Dataflow [`DF_GGS_4`](https://stats.swiss/vis?lc=de&df[ds]=ds%3Adisseminate&df[id]=DF_GGS_4&df[ag]=CH1.GGS&df[vs]=1.0.0&dq=..Q&lom=LASTNPERIODS&lo=5) —
+  „Ausländische Grenzgänger/-innen nach Wirtschaftszweig und Erwerbsstatus" (Datenquelle ZEMIS/AHV),
+  automatisch über die SDMX-Schnittstelle von stats.swiss geladen (`src/data/fetch_bgs.py`).
+  Verwendet wird das **Jahresmittel 2025** (Mittel der vier Quartale, Erwerbsstatus total);
+  die BFS-Werte ab 2024-Q3 sind **provisorisch**. Neuestes Quartal (2026-Q2) zum Vergleich in
+  `grenzgaenger_anteil_branche.csv`. Gezählt werden Personen mit ausländischer
+  Staatsangehörigkeit (Grenzgängerbewilligung), keine Vollzeitäquivalente.
+- **Nenner:** BFS STATENT 2024 ([px-x-0602010000_101](https://www.pxweb.bfs.admin.ch/pxweb/de/px-x-0602010000_101/-/px-x-0602010000_101.px/),
+  Stand 20.08.2026, Referenzmonat Dezember), Beobachtungseinheit «Beschäftigte», Schweiz total.
+  STATENT ist **arbeitsortbasiert** und erfasst Beschäftigte über den AHV-pflichtigen Lohn
+  (≥ 2'300 CHF/Jahr) — **Grenzgänger/-innen sind im Nenner enthalten**.
+- **Definition:** Anteil Grenzgänger an den Beschäftigten der Branche =
+  Σ Grenzgänger/-innen der NOGA-Abteilungen einer Branche / Σ STATENT-Beschäftigte derselben
+  Abteilungen. Schweizweit rund 7 %.
 - **Granularität:** NOGA-Wirtschaftsabteilungen (2-stellig), aggregiert auf die 21 internen Branchen
+  (gleiches Mapping wie der KMU-Faktor). NOGA 97–99 (private Haushalte, exterritoriale
+  Organisationen; rund 4'900 Grenzgänger/-innen) fehlen in STATENT und bleiben aussen vor.
 - **Wichtig: fliesst nicht in score_ch oder zeitrahmen ein** — rein additiver Kontext-Layer
-- **Limitation:** Kein Pro-Beruf-Mapping möglich; NOGA-Ebene deckt nicht alle Berufe gleichmässig ab
+- **Limitationen:** Kein Pro-Beruf-Mapping möglich; Zähler (2025) und Nenner (2024) liegen ein
+  Jahr auseinander, bei leicht wachsendem Grenzgängerbestand ist der Anteil daher eher etwas zu
+  hoch. STATENT zählt Personen mit Verträgen bei mehreren Unternehmen mehrfach, die GGS zählt
+  Personen. Grenzgänger/-innen mit Schweizer Pass sind im Zähler nicht enthalten.
+- **Frühere Werte:** Bis Oktober 2026 wurde der Anteil mit dem Nenner der Betriebszählung 2008
+  berechnet (rund 4,2 statt 5,7 Mio. Beschäftigte); die Anteile lagen dadurch je nach Branche bis
+  gut 7 Prozentpunkte zu hoch.
 """)
 
 st.divider()
@@ -425,7 +442,8 @@ aktuellen Berechnung **nicht berücksichtigt**:
   den realen Zeitrahmen der Automatisierung (BFS STATENT als mögliche Datenquelle, Issue #33).
 - **Grenzgänger-Effekte:** Der Schweizer Arbeitsmarkt weist einen hohen Grenzgängeranteil auf.
   Grenzgänger konzentrieren sich auf bestimmte Branchen und Regionen; KI-Exposition dieser
-  Gruppe kann vom inländischen Muster abweichen (BFS BGS als Datenquelle, Issue #34).
+  Gruppe kann vom inländischen Muster abweichen. Der Grenzgänger-Anteil je Branche (BFS GGS 2025 /
+  STATENT 2024) wird in der Branchenanalyse nur als Kontext gezeigt, nicht im Score verrechnet.
 """)
 
 st.divider()
@@ -441,7 +459,8 @@ st.markdown("""
 - Europäische Kommission (2023). [ESCO v1.2](https://esco.ec.europa.eu)
 - BFS (2026). [LSE 2024, T17 — Monatlicher Bruttolohn nach Berufsgruppen, Lebensalter und Geschlecht, privater und öffentlicher Sektor zusammen](https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.36355224.html) · [Über die Lohnstrukturerhebung](https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/loehne-erwerbseinkommen-arbeitskosten/lohnstruktur.html)
 - BFS (2026). [Salarium — Statistischer Lohnrechner (LSE 2024)](https://www.salarium.bfs.admin.ch) — Profilverhältnisse für heterogene Berufsgruppen
-- BFS (2026). [Statistik der Unternehmensstruktur (STATENT) 2024 — Vollzeitäquivalente nach Kanton und Wirtschaftsabteilung](https://www.pxweb.bfs.admin.ch/pxweb/de/px-x-0602010000_101/-/px-x-0602010000_101.px/) — Regionsgewichte
+- BFS (2026). [Statistik der Unternehmensstruktur (STATENT) 2024 — Vollzeitäquivalente nach Kanton und Wirtschaftsabteilung](https://www.pxweb.bfs.admin.ch/pxweb/de/px-x-0602010000_101/-/px-x-0602010000_101.px/) — Regionsgewichte; Beschäftigte je Wirtschaftsabteilung als Nenner des Grenzgänger-Anteils
+- BFS (2026). [Grenzgängerstatistik (GGS) — Ausländische Grenzgänger/-innen nach Wirtschaftszweig und Erwerbsstatus (DF_GGS_4)](https://stats.swiss/vis?lc=de&df[ds]=ds%3Adisseminate&df[id]=DF_GGS_4&df[ag]=CH1.GGS&df[vs]=1.0.0&dq=..Q&lom=LASTNPERIODS&lo=5) · [Über die Grenzgängerstatistik](https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/erhebungen/ggs.html)
 """)
 
 st.subheader("Beobachtete Wirkung — Schweiz")
