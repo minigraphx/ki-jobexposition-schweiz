@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "0e43e6b8f740eb2919fc5628b42ed2974906e58dd4fa480c858a1aba409302c2",
+    "isco_code": "2211",
+    "beruf": "Arzt/Ärztin (Allgemeinmedizin)",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-13T22:17:01+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 65536,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 3205,
+      "prompt_token_count": 54046,
+      "thoughts_token_count": 5501,
+      "total_token_count": 62752
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1602,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1602
+          }
+        ],
+        "prompt_token_count": 23463,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 23463
+          }
+        ],
+        "thoughts_token_count": 5434,
+        "total_token_count": 30499
+      },
+      {
+        "candidates_token_count": 1603,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1603
+          }
+        ],
+        "prompt_token_count": 30583,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 30583
+          }
+        ],
+        "thoughts_token_count": 67,
+        "total_token_count": 32253
+      }
+    ],
+    "request_ids": [
+      "gK3Oaqy5Dp-xvdIPwJaxiQg",
+      "zq3OaofaIMbNvdIPpoy0wAc"
+    ],
+    "versuche": 2,
+    "status": "ok",
+    "fehler": [
+      "Versuch 1: isco_code/beruf weichen vom Input ab: erwartet 2211 / Arzt/Ärztin (Allgemeinmedizin), erhalten 2211 / Arzt/Ärztin (Allgemeinmedizin) "
+    ],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2211",
+    "beruf": "Arzt/Ärztin (Allgemeinmedizin)",
+    "taetigkeiten": [
+      {
+        "name": "Anamnese erheben und Patientinnen und Patienten im Sprechzimmer beraten und aufklären",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das persönliche Gespräch zur Anamnese, Aufklärung und psychosozialen Begleitung lebt von unmittelbarer zwischenmenschlicher Präsenz und Vertrauen vor Ort."
+      },
+      {
+        "name": "Körperliche Untersuchungen, Ultraschall und kleine Eingriffe durchführen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Untersuchung am Körper, Sonografie und kleine Eingriffe wie Wundversorgung sind physische Tätigkeiten ohne verfügbare Automatisierung."
+      },
+      {
+        "name": "Befunde zusammenführen, Differentialdiagnosen abwägen und Therapieentscheide treffen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die klinische Urteilsbildung und Therapieentscheidung am einzelnen Patienten stützt sich stark auf den unmittelbaren klinischen Eindruck; KI-Entscheidungshilfen sparen hier im Praxisalltag keine 50 % der Zeit."
+      },
+      {
+        "name": "Konsultationseinträge und Verlaufsnotizen im Praxisinformationssystem dokumentieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ambiente Spracherkennung bzw. Diktier-KI im Praxisinformationssystem erstellt strukturierte Verlaufseinträge; die Ärztin prüft und korrigiert jeden Eintrag fachlich, wobei Schweizerdeutsch den Prüfaufwand erhöht."
+      },
+      {
+        "name": "Überweisungsschreiben, Arztberichte, Zeugnisse und Versicherungsberichte (IV, UVG, KTG) verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus kopierten Verlaufseinträgen und Befunden entwirft ein Sprachmodell Berichte und beantwortet Versicherungsfragen; der Arzt prüft und verantwortet jedes Dokument inhaltlich vor der Unterschrift."
+      },
+      {
+        "name": "Eingehende Laborwerte, Bildgebung und Facharztberichte sichten und ins Dossier einordnen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Zusammenfassungen und Datenextraktion aus PDF-Facharztberichten über alle Befunde hinweg die 50-%-Zeitschwelle erreichen, da Ärzte Kurzbefunde ohnehin sehr rasch erfassen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Ärztin beurteilt die eingehenden Befunde selbst, während im Praxisinformationssystem integrierte Dokumenten-KI lange Spitalberichte zusammenfasst sowie Diagnosen und Medikationsänderungen vorab extrahiert."
+      },
+      {
+        "name": "Medikamente verordnen, Dosierungen festlegen und Interaktionen prüfen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Elektronische Rezeptierung sowie automatische Interaktions- und Dosierungschecks erfolgen über klassische, regelbasierte Module im Praxisinformationssystem; generative KI spart hier keine 50 % der verbleibenden Zeit."
+      },
+      {
+        "name": "Haus- und Pflegeheimbesuche durchführen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Anfahrt, Untersuchung am Krankenbett und persönliche Betreuung vor Ort im Pflegeheim oder zu Hause erfordern physische Präsenz."
+      },
+      {
+        "name": "Praxisteam (MPA, Assistenzärzte) führen, anleiten und interprofessionell koordinieren",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Personalführung, Supervision von Assistenzärztinnen und Fallbesprechungen mit MPAs oder Spitex sind unmittelbare Präsenz- und Beziehungstätigkeiten."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting ist eine typische Schweizer Hausarztpraxis (Allgemeine Innere Medizin, Einzel- oder Gruppenpraxis). ESCO enthält starkes Rauschen aus der akademischen Forschung und IT (z. B. Open-Source-Software entwickeln, Forschungsdaten verwalten), das für den Praxisalltag ignoriert wurde. Grenzfälle betreffen das Sichten externer Befunde (nahe der 50-%-Schwelle) sowie die Qualität der Spracherkennung bei Arzt-Patienten-Gesprächen in Schweizerdeutsch.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem die Konsultationsdokumentation, das Verfassen von Überweisungs- und Versicherungsberichten sowie die Vorverarbeitung externer Facharztberichte durch KI-Spracherkennung, Textgenerierung und Dokumentenextraktion, während die klinische Arbeit am Patienten unberührt bleibt.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit entfällt auf exponierte Dokumentations- und Berichtstätigkeiten, in denen die KI überwiegend delegierend oder unterstützend wirkt, da Ärztinnen und Ärzte jeden Bericht und Akteneintrag fachlich prüfen und verantworten müssen. In der Schweiz bremsen strenge Anforderungen an das Berufsgeheimnis und den Datenschutz (revDSG), die persönliche Haftung bei Zeugnissen und Gutachten sowie der Korrekturaufwand bei Gesprächen in Mundart eine rasche Vollintegration.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

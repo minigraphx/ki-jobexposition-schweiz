@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "0b6b28913fa2f219d5de50a436bce3c5e0b634dc8e8cf86756fc8a669a311ab0",
+    "isco_code": "2411",
+    "beruf": "Wirtschaftsprüfer, Steuerberater und verwandte Berufe",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-13T22:23:19+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 65536,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 1873,
+      "prompt_token_count": 24421,
+      "thoughts_token_count": 7873,
+      "total_token_count": 34167
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1873,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1873
+          }
+        ],
+        "prompt_token_count": 24421,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 24421
+          }
+        ],
+        "thoughts_token_count": 7873,
+        "total_token_count": 34167
+      }
+    ],
+    "request_ids": [
+      "7K7OapiQC_GW28oPu7uSuQk"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2411",
+    "beruf": "Wirtschaftsprüfer, Steuerberater und verwandte Berufe",
+    "taetigkeiten": [
+      {
+        "name": "Laufende Buchhaltungsunterlagen und Kontierungen von Mandanten prüfen sowie Fehlbuchungen bereinigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Funktionen in ERP- und Treuhandsoftware gleichen Belege mit dem Hauptbuch ab und markieren Fehlbuchungen oder MWST-Abweichungen; die Fachperson führt die Kontrolle selbst durch und klärt komplexe Buchungsfälle."
+      },
+      {
+        "name": "Jahresabschluss erstellen: Abgrenzungen, Abschreibungen, Rückstellungen und Bewertungen ermitteln und buchen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Im Rechnungswesensystem integrierte KI liefert Berechnungs- und Buchungsvorschläge über Neben- und Hauptbücher hinweg; die Mandatsleitung beurteilt jede Bilanzposition nach handels- und steuerrechtlichem Ermessen selbst."
+      },
+      {
+        "name": "Anhang zur Jahresrechnung sowie Erläuterungsberichte zum Jahresabschluss verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus exportierten Saldenlisten, Vorjahresberichten und Stichworten den Entwurf für Anhang und Erläuterungsbericht; die Fachperson prüft jede Zahlenangabe und Pflichtoffenlegung nach OR."
+      },
+      {
+        "name": "Steuererklärungen für Unternehmen und komplexe Mandate samt Steuerrückstellungsberechnung erstellen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung und KI-Integration in der Steuersoftware extrahieren Daten aus Belegen und Jahresrechnung und befüllen die Steuerformulare; die Steuerfachperson prüft jede Position sowie steuerliche Korrekturen fachlich."
+      },
+      {
+        "name": "Komplexe steuerrechtliche Fragestellungen recherchieren sowie Stellungnahmen und Steuerrulings entwerfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "LLM-gestützte Recherchewerkzeuge mit Zugriff auf Schweizer Steuergesetze, ESTV-Kreisschreiben und Rechtsprechung entwerfen Stellungnahmen und Rulings; die Steuerexpertin gibt die Strategie vor und verifiziert jede Rechtsquelle."
+      },
+      {
+        "name": "Revisionsprüfungen durchführen, Stichproben und Belege prüfen sowie Arbeitspapiere dokumentieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI in der Revisionssoftware extrahiert Vertrags- und Belegdaten, markiert Auffälligkeiten in Stichproben und schlägt Dokumentationsbausteine vor, während der Wirtschaftsprüfer die Prüfungshandlungen und das Prüfungsurteil selbst ausführt."
+      },
+      {
+        "name": "Revisionsberichte (Testate) und Management Letters an den Verwaltungsrat verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus den zusammengefassten Prüfungsfeststellungen den Management Letter und individuelle Berichtsteile; der zugelassene Revisionsexperte prüft jeden Punkt inhaltlich und unterzeichnet unter persönlicher Haftung."
+      },
+      {
+        "name": "Finanz-, Ertrags- und Risikoanalysen sowie Budgets, Finanzpläne und Bewertungen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Assistenten in Tabellenkalkulations- und BI-Systemen berechnen Kennzahlen, modellieren Szenarien und liefern Textbausteine; die Fachperson legt die Annahmen fest und interpretiert die Finanz- und Risikolage selbst."
+      },
+      {
+        "name": "Mandanten sowie Geschäftsleitung und Verwaltungsrat in Bilanz-, Steuer- und Finanzfragen persönlich beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratungs- und Bilanzbesprechungen leben von zwischenmenschlicher Präsenz, Vertrauensbildung und situativer Erörterung strategischer Entscheide."
+      },
+      {
+        "name": "Verhandlungen und persönliche Abklärungen mit Steuerbehörden, Banken und Aufsichtsstellen führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlungen über Veranlagungen, Einsprachen oder Finanzierungen erfordern menschliche Präsenz, Überzeugungskraft und Verhandlungsgeschick."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Treuhänder/in, Steuerberater/in bzw. Wirtschaftsprüfer/in auf Tertiärstufe in einer Schweizer Treuhand- und Revisionsgesellschaft (KMU-Mandate) oder im Finanz-/Controllingbereich. Der deutsche ESCO-Titel «Controller/Controllerin» steht für «accountant»; die Bewertung deckt gemäss Kompetenzliste und CH-Berufsgruppe 2411 Abschluss-, Revisions-, Steuer- und Finanzanalysetätigkeiten ab. Laufende Routinebuchhaltung (ISCO 4311/3313) ist hier nur als nachgelagerte Prüfung und Bereinigung durch die Mandatsleitung enthalten.",
+    "zusammenfassung": {
+      "haupt_risiko": "Stark betroffen sind die Erstellung von Steuererklärungen, Steuerrulings, Anhängen und Revisionsberichten sowie die Durchführung von Buchhaltungs-, Abschluss- und Revisionsprüfungen durch in Fachsoftware integrierte KI, Dokumentenextraktion und Chat-LLMs.",
+      "begruendung": "Rund 85 % der Arbeitszeit sind exponiert, jedoch aufgrund der hohen Fach- und Haftungsverantwortung nirgends ersetzend, sondern unterstützend (50 % der Zeit bei Prüfung, Abschlussgestaltung und Finanzanalyse) oder delegierend (35 % bei Steuererklärungen, Rechtsabklärungen und Berichten). Wesentliche Schweizer Hemmnisse sind die strenge Regulatorik (Revisionsaufsicht RAB, OR-Pflichten, Berufs- und Revisionsgeheimnis, Datenschutz nach revDSG) sowie der Föderalismus mit 26 unterschiedlichen kantonalen Steuergesetzen und Formularen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

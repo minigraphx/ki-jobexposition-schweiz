@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "d2b0b4893de29cb56e7016d90bdad529e99e4ffc67e65948df69260df003ce05",
+    "isco_code": "3353",
+    "beruf": "Fachkräfte in Sozialverwaltung und -versicherung",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-13T22:21:31+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 65536,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 1707,
+      "prompt_token_count": 23122,
+      "thoughts_token_count": 4459,
+      "total_token_count": 29288
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1707,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1707
+          }
+        ],
+        "prompt_token_count": 23122,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 23122
+          }
+        ],
+        "thoughts_token_count": 4459,
+        "total_token_count": 29288
+      }
+    ],
+    "request_ids": [
+      "qa7OaozyJO6PvdIPxIy0oAs"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3353",
+    "beruf": "Fachkräfte in Sozialverwaltung und -versicherung",
+    "taetigkeiten": [
+      {
+        "name": "Eingereichte Anträge und amtliche Belege sichten, auf Vollständigkeit prüfen und im Fachsystem erfassen",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM-gestützte Dokumenten- und Bilderkennung mit Systemintegration extrahiert Daten aus heterogenen Belegen (Lohnausweise, Arztzeugnisse, Mietverträge, ausländische Urkunden); die Fachperson bearbeitet nur noch markierte Ausnahmen und Stichproben. Klassische Formularerkennung allein reicht wegen der Belegvielfalt nicht für 50 % Zeitersparnis."
+      },
+      {
+        "name": "Anspruchsvoraussetzungen anhand von Gesetzen, Weisungen und Fallakten materiell prüfen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Falldaten und einschlägige Wegleitungen (z. B. RWL, WEL) lassen sich als Text in ein Chat-LLM eingeben, das die rechtliche Anspruchsprüfung entwirft; die Sachbearbeiterin prüft jede Beurteilung inhaltlich anhand der Akte."
+      },
+      {
+        "name": "Renten-, Taggeld- und Ergänzungsleistungen in der Fachapplikation berechnen und Auszahlungen veranlassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Berechnung von Renten, Taggeldern und Ergänzungsleistungen sowie der Zahlungslauf erfolgen regelbasiert in spezialisierter klassischer Fachsoftware ohne generative KI."
+      },
+      {
+        "name": "Rechtsverbindliche Verfügungen, Vorbescheide und Einspracheentscheide mit Begründung verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus Falldaten und Rechtsgrundlagen die Verfügung samt Begründung; da im Sozialversicherungsrecht ein menschlicher Einzelfallentscheid vorgeschrieben ist, prüft und verantwortet die Fachperson jeden Entscheid fachlich."
+      },
+      {
+        "name": "Standardkorrespondenz erstellen und fehlende Unterlagen bei Versicherten oder Arbeitgebern nachfordern",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "<10",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM erstellt Eingangsbestätigungen, Fristverlängerungen und gezielte Aktennachforderungen aus Stichworten oder Falldaten; die Person gibt die Schreiben nach kurzer Sichtung per Klick frei."
+      },
+      {
+        "name": "Telefonische und schriftliche Standardauskünfte zu Verfahren, Fristen und Fallstatus erteilen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Die Qualität von Voicebots bei Schweizerdeutsch, starken Akzenten und komplexen Sozialversicherungsbegriffen am Telefon ist wenig belegt; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Voice- und Chatbots mit Zugriff auf das Fallführungssystem beantworten Routineanfragen zu Bearbeitungsstand, Formularen und Fristen selbständig; Mitarbeitende übernehmen nur weitergeleitete Spezialfälle."
+      },
+      {
+        "name": "Persönliche Beratungsgespräche mit Versicherten in komplexen Lebenslagen führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Beratung von Angesicht zu Angesicht bei Invalidität, Arbeitslosigkeit oder finanzieller Notlage erfordert unmittelbare menschliche Präsenz, Empathie und Vertrauensaufbau."
+      },
+      {
+        "name": "Komplexe Leistungsfälle mit anderen Sozialversicherungen, Ärzten, Arbeitgebern und Sozialdiensten abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die interinstitutionelle Zusammenarbeit, Fallkonferenzen und die Klärung von Koordinations- oder Regressfragen beruhen auf persönlicher Abstimmung und fachlichem Ermessen."
+      },
+      {
+        "name": "Gesprächsnotizen, Aktenvermerke und Falldokumentationen im Dossier nachführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Stichworten erstellt das LLM strukturierte Aktennotizen; wegen der gesetzlichen Aktenführungspflicht prüft die Sachbearbeiterin jeden Vermerk inhaltlich vor der Ablage im Dossier."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Sachbearbeiter/in bei einer Schweizer Durchführungsstelle der Sozialversicherungen (z. B. AHV/IV-Ausgleichskasse, Arbeitslosenkasse oder EL-Stelle). Die ESCO-Kompetenz «wissenschaftliche Befragung durchführen» wurde als offensichtliches Rauschen ignoriert. Die grösste Unsicherheit besteht bei der telefonischen Auskunftserteilung durch Voicebots angesichts von Schweizerdeutsch und fremdsprachigen Versicherten.",
+    "zusammenfassung": {
+      "haupt_risiko": "Die Belegerfassung, die materielle Vorprüfung von Ansprüchen, das Entwerfen von Verfügungen und Standardbriefen sowie telefonische Routineauskünfte werden durch Dokumenten-KI, Chat-LLMs und Voicebots stark beschleunigt.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind gegenüber generativer KI exponiert, wobei Routineaufgaben wie Belegerfassung, Standardkorrespondenz und einfache Auskünfte im ersetzenden Modus, rechtliche Anspruchsprüfungen und Verfügungen wegen des zwingenden menschlichen Einzelfallentscheids im delegierenden Modus erfolgen. Wesentliche Schweizer Hemmnisse sind das strenge Amtsgeheimnis und der Datenschutz (revDSG/ATSG) bei besonders schützenswerten Personendaten sowie der hohe Anspruch der Bevölkerung an persönliche, mehrsprachige Beratung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "e4bcd175c88322c7aee72cda38a2a933a6269e1df2e050ec1f3e2100b1735dd6",
+    "isco_code": "2642",
+    "beruf": "Journalisten",
+    "lauf": 3,
+    "reihenfolge_seed": 20261016,
+    "timestamp": "2026-10-13T22:26:33+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 65536,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "cached_content_token_count": 22160,
+      "candidates_token_count": 1826,
+      "prompt_token_count": 24209,
+      "thoughts_token_count": 6603,
+      "total_token_count": 32638
+    },
+    "usage_je_versuch": [
+      {
+        "cache_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22160
+          }
+        ],
+        "cached_content_token_count": 22160,
+        "candidates_token_count": 1826,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1826
+          }
+        ],
+        "prompt_token_count": 24209,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 24209
+          }
+        ],
+        "thoughts_token_count": 6603,
+        "total_token_count": 32638
+      }
+    ],
+    "request_ids": [
+      "uq_Oar2EEajzvdIPkoyByQk"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2642",
+    "beruf": "Journalisten",
+    "taetigkeiten": [
+      {
+        "name": "Hintergrundrecherchen durchführen sowie Dokumente, Studien und Medienarchive auswerten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche und Dokumentenanalyse fassen umfangreiche Studien, Behördenberichte und Archivtexte zusammen; die Journalistin steuert die Recherche und ordnet die Ergebnisse selbst ein."
+      },
+      {
+        "name": "Interviews, Hintergrundgespräche und Vor-Ort-Recherchen durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Führen von persönlichen oder telefonischen Interviews sowie das Beobachten vor Ort erfordern unmittelbare menschliche Präsenz, Empathie und spontanes Nachfragen."
+      },
+      {
+        "name": "Aufgezeichnete Interviews und Gespräche transkribieren und verschriftlichen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracherkennungs- und LLM-Software erstellt aus Audioaufnahmen (auch in Schweizerdeutsch) direkt einen hochdeutschen Rohtext; der Journalist prüft die Zitate inhaltlich und korrigiert Hörfehler."
+      },
+      {
+        "name": "Eigene Artikel, Reportagen, Analysen und Kommentare verfassen",
+        "zeitanteil_pct": 20,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Die Journalistin verfasst den Beitrag weiterhin selbst, nutzt das Chat-LLM aber auf Basis eigener Notizen für Strukturvorschläge, Rohentwürfe einzelner Absätze und Kürzungen."
+      },
+      {
+        "name": "Agenturmeldungen und Medienmitteilungen zu Kurznachrichten verarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM formuliert aus eingefügten Medienmitteilungen oder Agenturtexten fertige Kurzmeldungen im Hausstil; die Redaktorin prüft jede Meldung fachlich gegen die Originalquelle."
+      },
+      {
+        "name": "Titel, Leads, Bildlegenden, Teaser und Social-Media-Beiträge erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Sprachmodell generiert aus dem fertigen Artikeltext passende Überschriften, Vorspänne, SEO-Teaser und Social-Media-Posts; der Journalist wählt aus und prüft jede Ausgabe."
+      },
+      {
+        "name": "Fakten, Zahlen und Aussagen verifizieren sowie medienrechtliche Vorgaben prüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Während der Abgleich öffentlicher Daten und Quellen per Recherche-Agent stark beschleunigt wird, bleiben Rückfragen bei Primärquellen und Konfrontationen manuell, weshalb das Erreichen der 50-%-Schwelle unsicher und E0 ebenso plausibel ist.",
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Die Fachperson prüft Fakten, Zitate und Persönlichkeitsrechte selbst, während KI-Agenten mit Webzugriff Zahlen, Daten und öffentliche Quellen abgleichen und Unstimmigkeiten markieren."
+      },
+      {
+        "name": "Texte von Kolleginnen, Kollegen und Freischaffenden redigieren und gegenlesen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Redaktor redigiert und beurteilt die Texte selbst; das Chat-LLM markiert Rechtschreib-, Grammatik- und Stilfehler und liefert Vorschläge für Kürzungen."
+      },
+      {
+        "name": "Nachrichtenlage, Konkurrenzmedien und soziale Medien beobachten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Monitoring-Tools mit Web- und Feed-Anbindung bündeln, übersetzen und fassen relevante Meldungen zusammen, während die Journalistin die Nachrichtenrelevanz selbst einschätzt."
+      },
+      {
+        "name": "An Redaktionssitzungen teilnehmen und Themen- sowie Blattplanung abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Diskussion von Themenvorschlägen, Blattkritik und Koordination in der Redaktionskonferenz ist eine zwischenmenschliche Abstimmungstätigkeit."
+      },
+      {
+        "name": "Beziehungsnetz und Kontakte zu Informantinnen und Auskunftspersonen pflegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Aufbau und die Pflege von Vertrauensbeziehungen zu Quellen und Informanten erfordern persönlichen Kontakt von Mensch zu Mensch."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Redaktor/in bzw. Journalist/in in einer Schweizer Print-/Online-Redaktion (Tageszeitung oder Nachrichtenportal). Die grössten Grenzfälle liegen beim Verfassen anspruchsvoller Eigenbeiträge und bei der Faktenverifikation, wo die 50-%-Zeitersparnisschwelle je nach Ressort und Tiefe der Recherche knapp erreicht wird.",
+    "zusammenfassung": {
+      "haupt_risiko": "Das Umschreiben von Agenturmeldungen, das Erstellen von Titeln und Teasern sowie die Interviewtranskription werden an Sprachmodelle und Spracherkennung delegiert, während Recherche, Textproduktion und Redigieren durch KI-Werkzeuge unterstützt werden.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im unterstützenden Modus bei der Kernarbeit (Recherchieren, Schreiben, Verifizieren, Redigieren) sowie delegierend bei Routineaufgaben wie Kurzmeldungen, Metatexten und Transkriptionen. Nicht exponiert bleiben Vor-Ort-Recherchen, Interviews und die Pflege von Informantennetzwerken. Wesentliche Hemmnisse in der Schweiz sind das Vertrauen des Publikums in menschliche Autorschaft und journalistische Sorgfalt sowie medienrechtliche Vorgaben (Persönlichkeitsschutz, Pressekodex).",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "4b0f55f151e3b7a98117003f09a8b3d08adf4020acfc4bab25eaf6bd645fd129",
+    "isco_code": "8332",
+    "beruf": "Lastwagenfahrer/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-13T22:24:44+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 65536,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 1577,
+      "prompt_token_count": 23385,
+      "thoughts_token_count": 5628,
+      "total_token_count": 30590
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1577,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1577
+          }
+        ],
+        "prompt_token_count": 23385,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 23385
+          }
+        ],
+        "thoughts_token_count": 5628,
+        "total_token_count": 30590
+      }
+    ],
+    "request_ids": [
+      "WK_OaumzD5_5vdIP2rntgQo"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "8332",
+    "beruf": "Lastwagenfahrer/in",
+    "taetigkeiten": [
+      {
+        "name": "Lastwagen im Strassenverkehr lenken und auf Verkehrsgeschehen reagieren",
+        "zeitanteil_pct": 50,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Fahrtätigkeit vor Ort im Strassenverkehr; fahrerloser Lkw-Verkehr ist in der Schweiz 2026 weder zugelassen noch im regulären Einsatz verfügbar."
+      },
+      {
+        "name": "Lastwagen an Laderampen, auf Werkarealen und in engen Zufahrten manövrieren und einparken",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Manövrieren unter wechselnden örtlichen Gegebenheiten bei Kunden und Baustellen; keine kommerziell verfügbare Automatisierung für den regulären Verteilerverkehr."
+      },
+      {
+        "name": "Fracht be- und entladen sowie Verladevorgänge an der Rampe überwachen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit mit Hubwagen, Hebebühne oder Kran sowie persönliche Überwachung vor Ort; automatische Lkw-Verladesysteme sind nur in seltenen Werk-zu-Werk-Speziallösungen einsetzbar."
+      },
+      {
+        "name": "Ladung im Laderaum verteilen und mit Zurrgurten, Ketten oder Sperrbalken sichern",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle, physische Tätigkeit direkt am Fahrzeug und an der Fracht zur Einhaltung der Verkehrssicherheitsvorschriften."
+      },
+      {
+        "name": "Abfahrtskontrolle, Sicherheitsprüfung sowie einfache Wartungs- und Reinigungsarbeiten am Fahrzeug durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer Kontrollrundgang (Reifen, Beleuchtung, Bremsen, Kupplung) und Fahrzeugpflege vor Ort; Borddiagnose und Waschanlagen ersetzen die manuelle Prüfung und Reinigung nicht zu 50 %."
+      },
+      {
+        "name": "Tagesroute und Anfahrtsreihenfolge unter Berücksichtigung von Verkehr, Zeitfenstern und Fahrzeugmassen planen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Routenwahl und Reihenfolge werden durch klassische Dispositions-, Telematik- und Lkw-Navigationssoftware (ohne generative KI) berechnet und laufend an die Verkehrslage angepasst."
+      },
+      {
+        "name": "Frachtbriefe, Lieferscheine und Begleitpapiere prüfen sowie Warenübergabe quittieren lassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abgleich der Ware vor Ort ist physisch, während die Belegabwicklung und Quittierung über klassische mobile Scanner-Apps und digitale Frachtbriefe (e-CMR) ohne LLM automatisierbar ist."
+      },
+      {
+        "name": "Mit Disposition, Kundschaft und Lagerpersonal über Lieferfenster, Verzögerungen und Abladeorte kommunizieren",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Situative Abstimmung vor Ort an der Rampe oder kurze telefonische Rücksprachen aus der Fahrerkabine; generative KI spart der Fahrperson hierbei keine 50 % der Zeit."
+      },
+      {
+        "name": "Tages- und Regierapporte, Standzeitenbegründungen, Schadenmeldungen sowie Spesenbelege erfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe und Bilderkennung in einer Fahrer-App erstellen aus Diktat und Fotos strukturierte Schadenmeldungen, Regierapporte oder Spesenabrechnungen; die Fahrperson prüft und bestätigt jeden Eintrag."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Lastwagenfahrer/in (Strassentransportfachmann/-frau EFZ bzw. Chauffeur/Chauffeuse Kat. C/CE) im regionalen und nationalen Güterverkehr in der Schweiz. Die sehr knappe ESCO-Beschreibung wurde anhand der Kompetenzliste und des typischen Schweizer Berufsalltags konkretisiert. Der Beruf ist durch das physische Führen des Fahrzeugs und den Güterumschlag geprägt; Tourenplanung und digitale Lieferscheine fallen unter klassische Telematik-Software (P1), während generative KI lediglich beim Erfassen von Rapporten und Schadenmeldungen relevant ist.",
+    "zusammenfassung": {
+      "haupt_risiko": "Einzig das Erfassen von Regierapporten, Standzeitenbegründungen, Schadenmeldungen und Spesenbelegen ist durch Spracheingabe und Bilderkennung in Fahrer-Apps exponiert, während die Fahr- und Verladetätigkeiten nicht betroffen sind.",
+      "begruendung": "Nur rund 4 % der Arbeitszeit sind gegenüber generativer KI exponiert, und zwar im delegierenden Modus, bei dem die KI aus Sprachnotizen und Fotos Berichte entwirft und die Fahrperson diese prüft. Über 90 % der Arbeit erfordern physische Präsenz am Steuer und an der Laderampe, während Routenplanung und Belegquittierung über klassische Telematik-Software laufen. Bei der Spracheingabe bremsen zudem Schweizerdeutsch und Nebengeräusche in der Fahrerkabine bzw. auf dem Werkareal die Zeitersparnis.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

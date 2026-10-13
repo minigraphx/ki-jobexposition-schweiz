@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "4459663200c88569919491b3a2fb1e37d3f11ae73b0a03bdd3e0d1e0adc7f122",
+    "isco_code": "2431",
+    "beruf": "Fachkräfte in Marketing und Werbung",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-13T22:19:32+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 65536,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2008,
+      "prompt_token_count": 24035,
+      "thoughts_token_count": 9520,
+      "total_token_count": 35563
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2008,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2008
+          }
+        ],
+        "prompt_token_count": 24035,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 24035
+          }
+        ],
+        "thoughts_token_count": 9520,
+        "total_token_count": 35563
+      }
+    ],
+    "request_ids": [
+      "3q3OaqiGBK2ivdIP7JqGmAs"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2431",
+    "beruf": "Fachkräfte in Marketing und Werbung",
+    "taetigkeiten": [
+      {
+        "name": "Markt-, Wettbewerbs- und Trendanalysen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche und Dokumentenanalyse tragen Informationen zu Konkurrenten, Marktnischen und Trends zusammen und erstellen strukturierte Analyseentwürfe; die Marketingfachperson steuert die Fragestellung und prüft jede Auswertung fachlich auf Quellenqualität und Schweizer Marktkontext."
+      },
+      {
+        "name": "Kundenbefragungen und Zielgruppenstudien konzipieren und auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit",
+          "regulatorisch"
+        ],
+        "begruendung": "LLMs mit Datenanalyse-Werkzeugen entwerfen Fragebögen, codieren offene Freitextantworten und werten Umfragedatensätze statistisch aus; die Fachperson gibt das Studiendesign vor und prüft jede Auswertung methodisch und inhaltlich."
+      },
+      {
+        "name": "Marketingstrategie, Markenpositionierung und Budgetallokation festlegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die grundlegende strategische Positionierung, die Einbindung in die Unternehmensstrategie und die Budgetverteilung erfordern unternehmerisches Ermessen und interne Abstimmung; ein LLM kann als Sparringspartner dienen, spart beim eigentlichen Strategieentscheid aber keine 50 % der Zeit."
+      },
+      {
+        "name": "Kampagnenkonzepte, Redaktionspläne und Agenturbriefings ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Auf Basis eingefügter Strategie- und Produktinformationen erstellt ein reines Chat-LLM vollständige Entwürfe für Kampagnenkonzepte, Kanal- und Redaktionspläne sowie Kreativbriefings; die Fachperson spezifiziert die Vorgaben und überarbeitet jeden Entwurf."
+      },
+      {
+        "name": "Werbetexte, Newsletter, Webseiteninhalte und sprachliche Adaptionen verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Briefings und Tonalitätsvorgaben Entwürfe für Werbemittel, Landingpages und Newsletter sowie deren Übertragung in die Schweizer Landessprachen; die Marketingfachperson steuert den Stil und prüft bzw. redigiert jeden Text vor der Publikation."
+      },
+      {
+        "name": "Social-Media-Beiträge mit Bild/Video, Moodboards und Layoutvarianten erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Generative Bild-, Video- und Designwerkzeuge erzeugen visuelle Varianten, Moodboards und Formatadaptionen samt Begleittext; die Fachperson gibt die kreative Richtung vor, wählt aus und kontrolliert jeden Beitrag auf Einhaltung des Corporate Designs."
+      },
+      {
+        "name": "Digitale Werbekampagnen (SEA, Social Ads) und SEO-Massnahmen einrichten und optimieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Die Fachperson richtet Kampagnenstrukturen, Zielgruppen und Budgets in den Werbeplattformen weiterhin selbst ein, nutzt aber integrierte KI-Funktionen und SEO-Tools für Keyword-Cluster, Anzeigenvarianten und Optimierungsvorschläge."
+      },
+      {
+        "name": "Kampagnen-Performance und Web-Analytics auswerten sowie Reportings erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Analysefunktionen in Analytics- und BI-Systemen fassen Leistungskennzahlen zusammen und erstellen kommentierte Berichte, die von der Fachperson fachlich geprüft werden. Klassische BI- und Dashboard-Software kann bereits den Grossteil der manuellen Datenaufbereitung automatisieren (P1)."
+      },
+      {
+        "name": "Kunden, Geschäftsleitung und Stakeholder beraten sowie Konzepte präsentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung, Präsentation von Strategien, Workshops und Beziehungspflege mit Kundschaft oder Geschäftsleitung beruhen auf unmittelbarer zwischenmenschlicher Präsenz und Überzeugungsarbeit."
+      },
+      {
+        "name": "Externe Agenturen, Dienstleister und Produktionsabläufe koordinieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die laufende Abstimmung, Verhandlung und Terminkoordination mit Kreativ- und Mediaagenturen, Druckereien oder Eventpartnern erfordert persönliche Kommunikation und Urteilsvermögen."
+      },
+      {
+        "name": "Kunden- und Medienanfragen sowie Community-Beiträge auf Kommunikationskanälen beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM formuliert auf Basis von Kampagnen-FAQs und Markenrichtlinien rasch passende Antwortentwürfe in der jeweiligen Landessprache; die Fachperson prüft jede Antwort vor dem Versand auf inhaltliche Korrektheit und Reputationsrisiken."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Marketing- und Werbefachperson (z. B. Marketing Manager oder Digital Marketing Specialist) in der Marketingabteilung eines Schweizer KMU oder in einer Marketing-/Werbeagentur. Das Berufsbild umfasst in der Praxis sowohl strategisch-analytische Aufgaben (wie in ESCO betont) als auch operative Kampagnenplanung, Content-Produktion und Performance-Marketing, weshalb die Zeitanteile über diese typischen Aufgabenbereiche gemittelt wurden.",
+    "zusammenfassung": {
+      "haupt_risiko": "Stark betroffen sind das Verfassen und mehrsprachige Adaptieren von Werbetexten, die Ausarbeitung von Kampagnenkonzepten sowie Markt-, Befragungs- und Performance-Analysen durch Chat-LLMs, Recherche-Agenten und generative Bild- und Analysetools.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit entfallen auf konzeptionelle, textliche, visuelle und analytische Aufgaben, bei denen generative KI überwiegend delegierend und bei der Kampagnensteuerung unterstützend eingesetzt wird, während die Fachperson jede Ausgabe auf Markenkonformität und Qualität prüft. Nicht exponiert bleiben strategische Grundsatzentscheide, die persönliche Beratung von Kundschaft und Geschäftsleitung sowie die Koordination externer Partner. In der Schweiz begünstigt die Mehrsprachigkeit (D/F/I) zwar den KI-Einsatz bei Kampagnenadaptionen, gleichzeitig erfordern regionale Befindlichkeiten, das Datenschutzgesetz (revDSG) bei Kundendaten und das Reputationsrisiko eine konsequente menschliche Fachkontrolle.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}
