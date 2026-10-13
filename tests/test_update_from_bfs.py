@@ -78,7 +78,7 @@ class TestParseArgs:
         assert parse_args([]).blatt == "2024"
 
     def test_blatt_option(self):
-        assert parse_args(["--blatt", "2022-2024"]).blatt == "2022-2024"
+        assert parse_args(["--sheet", "2022-2024"]).blatt == "2022-2024"
 
 
 class TestBrancheFuerIsco:

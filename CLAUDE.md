@@ -22,23 +22,23 @@ streamlit run src/app/app.py
 
 # --- Data Pipeline (run once, in order) ---
 python src/data/update_from_bfs.py          # BFS SE → beschaeftigte_1000/frauen_pct/synonyme in all 4 CSVs (via mapping)
-python src/data/update_from_bfs.py --blatt 2023        # other year sheet (default "2024"; needs data/raw file)
-python src/data/update_from_bfs.py --neue-berufe       # also add new SE Berufsgattungen >= 5000 to berufe_ch.csv + mapping
+python src/data/update_from_bfs.py --sheet 2023        # other year sheet (default "2024"; needs data/raw file)
+python src/data/update_from_bfs.py --add-new           # also add new SE Berufsgattungen >= 5000 to berufe_ch.csv + mapping
 python src/data/berufe_zusammenlegen.py     # one-time #51 migration (ISCO fixes + merges), idempotent, kept for reference
 python src/data/enrich_with_esco.py         # ESCO v1.2.1 → berufe_ch_esco.csv + _verified.csv (only jobs without assignment)
 python src/data/update_loehne.py --offline  # LSE 2024 wages (+ stored Salarium profiles) → all CSVs, recomputes score_ch/adaptabilitaet
 python src/data/update_loehne.py            # same, but re-queries Salarium + STATENT online (~15 min, polite)
 python src/data/fetch_bgs.py                # BFS GGS (stats.swiss SDMX) + STATENT online → grenzgaenger_anteil_branche.csv
-python src/data/fetch_bgs.py --offline      # same from the versioned CSVs (no network); --periode 2026-Q2, --dry-run
+python src/data/fetch_bgs.py --offline      # same from the versioned CSVs (no network); --period 2026-Q2, --dry-run
 python src/data/fetch_statent.py            # BFS STATENT ts-x-06.02.01.01 (DAM API) → statent_groessenklassen_noga.csv + kmu_anteil_branche.csv
 python src/data/fetch_statent.py --offline --apply-scores --dry-run  # preview new zeitrahmen in scores.csv (writes nothing)
 python src/data/fetch_statent.py --offline --apply-scores            # write kmu_anteil_branche.csv + recompute grossfirmen_anteil/zeitrahmen_kmu_delta/zeitrahmen
 
 # Re-match entries listed in KNOWN_WRONG_MATCHES (currently empty, all known errors fixed in #52):
 python src/data/enrich_with_esco.py --fix-wrong
-# Single job / all jobs (--alle overwrites the curated #52 assignments!):
+# Single job / all jobs (--all overwrites the curated #52 assignments!):
 python src/data/enrich_with_esco.py --job "Grafik- und Multimediadesigner"
-python src/data/enrich_with_esco.py --alle
+python src/data/enrich_with_esco.py --all
 # verify_esco_matches.py and patch_unmatched.py are historical (exit immediately), see #52
 
 # --- Scoring Pipeline (requires ANTHROPIC_API_KEY in .env) ---
@@ -51,12 +51,18 @@ python src/scoring/ch_adjustments.py        # CH sector/salary deltas → scores
 
 # --- Task-based re-scoring, Rubrik v2.2 (LOCAL ONLY, own keys in .env; see docs/neubewertung_lokal.md) ---
 pip install -r requirements-dev.txt         # includes requirements-scoring.txt (anthropic, google-genai, jsonschema)
-python src/scoring/task_scorer.py --provider claude --pilot --runs 2 --dry-run   # calls + token/cost estimate, no API call
+python src/scoring/task_scorer.py --provider claude --pilot --runs 2 --dry-run   # calls + token/cost estimate (sync + batch), no API call
 python src/scoring/task_scorer.py --provider claude --pilot --runs 2 --dry-run --count-tokens  # exact input tokens (free, needs key)
+python src/scoring/task_scorer.py --provider claude --only 2512 --runs 1   # synchronous probe (schema check), 1 call
 python src/scoring/task_scorer.py --provider claude --pilot --runs 2   # 15 pilot jobs, 2 runs (+ auto run 3 if |Δζ| > 1)
 python src/scoring/task_scorer.py --provider gemini --pilot --runs 2
-python src/scoring/task_scorer.py --provider claude --runs 2           # all 179 entries (hash delta: only new/changed)
-python src/scoring/task_scorer.py --provider claude --nur 2411 2512 --force   # selected ISCO codes/prefixes, re-ask
+python src/scoring/task_scorer.py --provider claude --only 2411 2512 --force   # selected ISCO codes/prefixes, re-ask
+# Batch mode (recommended for the full run; 50 % cheaper, up to 24 h; state in bewertungen/<provider>/batches/)
+python src/scoring/task_scorer.py --provider claude --runs 2 --batch submit --dry-run   # requests + batch cost
+python src/scoring/task_scorer.py --provider claude --runs 2 --batch submit   # all entries (delta: skips current + open)
+python src/scoring/task_scorer.py --provider claude --batch status            # open batches, status/counts
+python src/scoring/task_scorer.py --provider claude --batch collect           # fetch finished, validate, write run<N>/ (idempotent)
+python src/scoring/task_scorer.py --provider claude --runs 2 --batch followup --refusal-sync  # retries/corrections + run 3 as new batch; refusals sync with fallback
 python src/scoring/task_aggregate.py        # → data/processed/scores_aufgaben.csv (per provider + combined)
 python src/scoring/task_vergleich.py        # → data/processed/bewertungen/vergleich.md (pilot vs. API, benchmarks)
 python src/scoring/task_inputs.py --pilot   # optional: write input JSONs for inspection (gitignored)
@@ -170,7 +176,7 @@ commuters), in 1000. Downloaded from:
 The file has one sheet per year (`2024`, `2023`, …, `2010`, `2000`, `1990`) plus pooled sheets
 (`2022-2024`, `2021-2023`, …). Columns: 0–4 codes by level (4-digit Berufsgattung = column 3,
 5-digit Berufsart = column 4), 5 label, 6 total, 7 men, 8 women; «X» = not published (< 5 obs.),
-number format «(##0)» = < 50 obs. Select the sheet with `--blatt` (default `2024`).
+number format «(##0)» = < 50 obs. Select the sheet with `--sheet` (default `2024`).
 
 **No double counting (Issue #51):** invariant Σ `beschaeftigte_1000` per 4-digit code = SE value
 (tested). Mapping `beruf_berufsart_mapping.csv` (columns `beruf, isco_code, ebene, berufsarten,
@@ -220,6 +226,8 @@ scores.csv (master data only: beruf, isco_code, synonyme, qualifikation, branche
   → task_inputs.py      input JSON per entry (pilot format) + input_hash = SHA-256(rubrik version, schema, input)
   → task_scorer.py      --provider claude|gemini, --runs 2 (seeded shuffle per run), validation + 1 correction retry,
                         auto run 3 if |Δ ζ-score| run1↔run2 > 1.0 (DRITTER_LAUF_SCHWELLE)
+                        --batch submit|status|collect|followup → task_batch.py (Message Batches API / Gemini
+                        Batch Mode; same prompts/schemas/validation; state bewertungen/<provider>/batches/<id>.json)
   → data/processed/bewertungen/<provider>/run<N>/<isco>_<slug>.json   {meta, bewertung[, rohantwort]}
     data/processed/bewertungen/<provider>/protokoll.jsonl            one line per call (status, usage)
   → task_aggregate.py   ζ, β, Zeitersparnis, Modus-Anteile, P-Scores; per provider + combined; flags
@@ -241,10 +249,21 @@ scores.csv (master data only: beruf, isco_code, synonyme, qualifikation, branche
   logged in `meta.model_served` / `meta.fallback`.
   `gemini-4-argon` via `models.generate_content`, `response_mime_type="application/json"` +
   `response_json_schema` (`schema_fuer_gemini()`: $refs inlined), `thinking_level="high"`,
-  `max_output_tokens=65536`, no temperature (ignored by the model).
+  `max_output_tokens=65536`, no temperature (ignored by the model), automatic function calling disabled.
+  Before any call the provider SDK import is checked (`pruefe_pakete`, clear message + pip hint).
+  Dry-run uses measured means from existing result files (`meta.usage`), else estimates
+  (1.8 chars/token, `AUSGABE_TOKENS`, calibrated on the first Claude probe).
 - **Validation:** every answer is checked against the original JSON schema (Draft 2020-12, incl.
   if/then rules) plus sum of time shares = 100 and isco_code/beruf = input (`task_rubrik.pruefe_bewertung`);
   mode × residual-time contradictions are only `meta.hinweise`.
+- **Batch mode** (`task_batch.py`): custom_id `r<run>-<isco>_<slug>` (`^[a-zA-Z0-9_-]{1,64}$`), results
+  matched strictly by custom_id (Gemini: `metadata.custom_id`, positional only if no response carries it).
+  Claude batch requests omit `fallbacks` (rejected by the Batches API) → refusals logged
+  (`meta.fehler_art = "refusal"`) and re-run synchronously with fallback via `followup --refusal-sync`;
+  system prompt cached (`--cache-ttl 5m|1h`, default 5m). Gemini inline batches are split to stay < 20 MB.
+  Results get `meta.modus = "batch"`, `batch_id`, `custom_id`; `collect` never overwrites a current valid
+  file and skips already collected batches. `followup`: correction turn for invalid answers, retry for
+  errored/expired/missing, run 3 for |Δζ| > threshold; entries in open batches are never re-submitted.
 - **Delta:** a result is current if `status == ok`, same `input_hash`, same `rubrik_version`, same
   `model_requested` → skipped unless `--force`.
 - **Aggregation:** `score_aufgaben` = 10·ζ (mean over all valid runs of both providers),
@@ -259,13 +278,13 @@ scores.csv (master data only: beruf, isco_code, synonyme, qualifikation, branche
 
 | Script | Input | Output | Notes |
 |--------|-------|--------|-------|
-| `src/data/update_from_bfs.py` | `data/raw/su-d-40.02.03.02.01.03.10.xlsx` (or `se_berufe.csv`), `beruf_berufsart_mapping.csv` | `berufe_ch*.csv`, `scores.csv`, `se_berufe.csv` | BFS SE 2024: Berufsgattung/Berufsart per mapping, sets `beschaeftigte_1000`, `frauen_pct`, `synonyme`; `--blatt`, `--neue-berufe`, `--dry-run` |
+| `src/data/update_from_bfs.py` | `data/raw/su-d-40.02.03.02.01.03.10.xlsx` (or `se_berufe.csv`), `beruf_berufsart_mapping.csv` | `berufe_ch*.csv`, `scores.csv`, `se_berufe.csv` | BFS SE 2024: Berufsgattung/Berufsart per mapping, sets `beschaeftigte_1000`, `frauen_pct`, `synonyme`; `--sheet`, `--add-new`, `--dry-run` |
 | `src/data/berufe_zusammenlegen.py` | `beruf_berufsart_mapping.csv` | `berufe_ch*.csv`, `scores.csv` | One-time #51 migration: ISCO code fixes + merges (weighted-mean scores); idempotent |
-| `src/data/enrich_with_esco.py` | `berufe_ch.csv`, `berufe_ch_esco.csv` | `berufe_ch_esco.csv`, `berufe_ch_esco_verified.csv` | 6-stage search, hard ISCO consistency check + LLM validation; default: only jobs without `esco_match_qualitaet`; `--job`, `--fix-wrong`, `--alle` |
+| `src/data/enrich_with_esco.py` | `berufe_ch.csv`, `berufe_ch_esco.csv` | `berufe_ch_esco.csv`, `berufe_ch_esco_verified.csv` | 6-stage search, hard ISCO consistency check + LLM validation; default: only jobs without `esco_match_qualitaet`; `--job`, `--fix-wrong`, `--all` |
 | `src/data/verify_esco_matches.py`, `src/data/patch_unmatched.py` | — | — | Historical (2-digit ISCO matching, `iscoGroup` bug); exit immediately, kept for reference |
 | `src/data/update_loehne.py` | LSE 2024 T17 (raw or `lse2024_monatslohn_isco.csv`), `lohn_profile_salarium.csv`, `lohn_salarium_abfragen.csv`, `statent_vzae_grossregion.csv`, `lohn_verhaeltnisse.csv` | `berufe_ch*.csv`, `scores.csv` | Sets `lohn_median_chf`/`lohn_quelle`/`lohn_unsicher`; ratio overrides after Salarium; recomputes wage-dependent rule-based columns in scores.csv; `--offline` (no network), `--dry-run` |
-| `src/data/fetch_bgs.py` | stats.swiss SDMX `DF_GGS_4` + STATENT PxWeb (online) or `bgs_grenzgaenger_noga.csv` + `statent_beschaeftigte_noga.csv` (`--offline`) | `grenzgaenger_anteil_branche.csv` (+ the two versioned inputs when online) | Cross-border commuter share per sector (annual mean of latest full year, latest quarter extra); reads/writes no scores; `--periode JJJJ\|JJJJ-Qn`, `--dry-run` |
-| `src/data/fetch_statent.py` | BFS DAM API `ts-x-06.02.01.01` (online) or `statent_groessenklassen_noga.csv` (`--offline`) | `kmu_anteil_branche.csv` (+ `statent_groessenklassen_noga.csv` when online); with `--apply-scores`: `scores.csv` | Grossfirmen share per sector (enterprises ≥250 employed); `--jahr`, `--dry-run`; `--apply-scores` rewrites only `grossfirmen_anteil`, `zeitrahmen_kmu_delta`, `zeitrahmen` (from `zeitrahmen_roh`) |
+| `src/data/fetch_bgs.py` | stats.swiss SDMX `DF_GGS_4` + STATENT PxWeb (online) or `bgs_grenzgaenger_noga.csv` + `statent_beschaeftigte_noga.csv` (`--offline`) | `grenzgaenger_anteil_branche.csv` (+ the two versioned inputs when online) | Cross-border commuter share per sector (annual mean of latest full year, latest quarter extra); reads/writes no scores; `--period YYYY\|YYYY-Qn`, `--dry-run` |
+| `src/data/fetch_statent.py` | BFS DAM API `ts-x-06.02.01.01` (online) or `statent_groessenklassen_noga.csv` (`--offline`) | `kmu_anteil_branche.csv` (+ `statent_groessenklassen_noga.csv` when online); with `--apply-scores`: `scores.csv` | Grossfirmen share per sector (enterprises ≥250 employed); `--year`, `--dry-run`; `--apply-scores` rewrites only `grossfirmen_anteil`, `zeitrahmen_kmu_delta`, `zeitrahmen` (from `zeitrahmen_roh`) |
 | `src/data/branche_neu_zuordnen.py` | `BRANCHE_MAP` | `berufe_ch*.csv`, `scores.csv` | Re-applies ISCO-prefix sector mapping to non-curated jobs |
 | `src/scoring/exposure_scorer.py` | `berufe_ch_esco_verified.csv` | `scores.csv` | Synchronous, hash-based delta; `--force [name\|isco]` for selective re-score |
 | `src/scoring/adaptability_scorer.py` | `scores.csv` | `scores.csv` | Rule-based: education, wage, digital affinity, mobility |
@@ -273,10 +292,11 @@ scores.csv (master data only: beruf, isco_code, synonyme, qualifikation, branche
 | `src/data/full_quality_audit.py` | `scores.csv` | `scores.csv` + `audit_report.json` | Phase 1: Haiku audit; Phase 2: Haiku desc generation; Phase 3: Sonnet re-score |
 | `src/scoring/fix_brennschneider_contamination.py` | `scores.csv` | `scores.csv` | One-time fix; kept for reference |
 | `src/scoring/task_rubrik.py` | `rubrik/*_v2_1.*`, `rubrik/*_v2_2.*` | — | Shared: rubric version, system prompt, validation, provider schemas, metrics (ζ, β, Zeitersparnis, …) |
-| `src/scoring/task_inputs.py` | `scores.csv` (master data), `esco_kompetenzen.csv` | (optional) `bewertungen/input/*.json` | Input per entry + input hash; `PILOT_BERUFE` (15); `--pilot`, `--nur` |
-| `src/scoring/task_scorer.py` | inputs (in memory), `.env` keys | `bewertungen/<provider>/run<N>/*.json`, `protokoll.jsonl` | **Local only**; `--provider`, `--runs`, `--pilot`/`--nur`, `--force`, `--dry-run [--count-tokens]`, `--max-parallel`, `--effort`/`--thinking-level`, `--model` |
-| `src/scoring/task_aggregate.py` | `bewertungen/<provider>/run*/` | `scores_aufgaben.csv` | Per provider + combined; `--auch-veraltet` |
-| `src/scoring/task_vergleich.py` | `bewertungen/pilot_abo/`, API runs, `benchmarks_isco4.csv` | `bewertungen/vergleich.md` | 15 pilot jobs + Spearman vs. benchmarks; `--pilot-runs` |
+| `src/scoring/task_inputs.py` | `scores.csv` (master data), `esco_kompetenzen.csv` | (optional) `bewertungen/input/*.json` | Input per entry + input hash; `PILOT_BERUFE` (15); `--pilot`, `--only` |
+| `src/scoring/task_scorer.py` | inputs (in memory), `.env` keys | `bewertungen/<provider>/run<N>/*.json`, `protokoll.jsonl` | **Local only**; `--provider`, `--runs`, `--pilot`/`--only`, `--force`, `--dry-run [--count-tokens]`, `--max-parallel`, `--effort`/`--thinking-level`, `--model`, `--no-fallback`, `--no-third-run`, `--threshold`; batch: `--batch submit\|status\|collect\|followup`, `--batch-id`, `--refusal-sync`, `--cache-ttl` |
+| `src/scoring/task_batch.py` | via `task_scorer.py --batch …` | `bewertungen/<provider>/batches/*.json`, `run<N>/*.json`, `protokoll.jsonl` | Batch mode for both providers (submit/status/collect/followup) |
+| `src/scoring/task_aggregate.py` | `bewertungen/<provider>/run*/` | `scores_aufgaben.csv` | Per provider + combined; `--base-dir`, `--include-stale` |
+| `src/scoring/task_vergleich.py` | `bewertungen/pilot_abo/`, API runs, `benchmarks_isco4.csv` | `bewertungen/vergleich.md` | 15 pilot jobs + Spearman vs. benchmarks; `--pilot-runs`, `--base-dir`, `--include-stale` |
 
 ### ESCO Search Strategy (`enrich_with_esco.py`)
 

@@ -49,7 +49,7 @@ Dateien:
 Aufruf:
     python src/data/fetch_statent.py                  # online laden, beide CSVs schreiben
     python src/data/fetch_statent.py --offline        # versionierte Tabelle verwenden
-    python src/data/fetch_statent.py --jahr 2023      # anderes STATENT-Jahr
+    python src/data/fetch_statent.py --year 2023      # anderes STATENT-Jahr
     python src/data/fetch_statent.py --offline --apply-scores --dry-run
         # zeigt, wie sich grossfirmen_anteil / zeitrahmen_kmu_delta / zeitrahmen in
         # scores.csv ändern würden, ohne etwas zu schreiben
@@ -573,7 +573,7 @@ def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[1])
     parser.add_argument("--offline", action="store_true",
                         help="versionierte statent_groessenklassen_noga.csv verwenden (kein Netz)")
-    parser.add_argument("--jahr", type=int, default=None,
+    parser.add_argument("--year", dest="jahr", metavar="YEAR", type=int, default=None,
                         help="STATENT-Jahr (Standard: neuestes verfügbares)")
     parser.add_argument("--apply-scores", action="store_true",
                         help="grossfirmen_anteil, zeitrahmen_kmu_delta, zeitrahmen in "

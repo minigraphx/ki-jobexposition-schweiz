@@ -25,7 +25,7 @@ Zuordnung Beruf → SE (Issue #51), versioniert in data/processed/beruf_berufsar
 Invariante: Σ beschaeftigte_1000 je 4-stelligem Code = SE-Wert der Berufsgattung
 (auf 0.1 gerundet; Rundung je Gattung nach grösstem Rest).
 
-SE-Wert: Blatt «2024» (--blatt). Ist eine Gattung im Jahresblatt nicht publiziert («X»),
+SE-Wert: Blatt «2024» (--sheet). Ist eine Gattung im Jahresblatt nicht publiziert («X»),
 gilt das gepoolte Blatt «2022-2024»; ebenso für den Frauenanteil, wenn die Frauenzahl im
 Jahresblatt fehlt. Die Blätter «2024» und «2022-2024» liegen als data/processed/se_berufe.csv
 versioniert vor, damit die Pipeline ohne Rohdatei läuft.
@@ -35,7 +35,7 @@ Schritte:
 2. Beschäftigte, Frauenanteil und Synonyme in berufe_ch.csv, berufe_ch_esco.csv,
    berufe_ch_esco_verified.csv und scores.csv setzen (nur diese Spalten; übrige Zellen
    bleiben byte-identisch)
-3. Optional (--neue-berufe): neue Berufsgattungen (>= 5000 Erwerbstätige im Jahresblatt,
+3. Optional (--add-new): neue Berufsgattungen (>= 5000 Erwerbstätige im Jahresblatt,
    noch nicht erfasst; ohne Restgruppen «onA»/«a.n.g.» ausser RESTGRUPPEN_AUSNAHMEN) in die
    Mapping-Tabelle und alle CSVs aufnehmen; Branche / Lohn / Qualifikation per ISCO-Gruppe,
    ESCO-Felder und Scores leer. Danach ESCO-Zuordnung und Scoring nötig.
@@ -196,7 +196,7 @@ BRANCHE_MAP = {
 }
 BRANCHE_DEFAULT = "Dienstleistungen"
 
-# --neue-berufe: SE-Berufsgattungen ab dieser Grösse (Tsd., Jahresblatt) aufnehmen
+# --add-new: SE-Berufsgattungen ab dieser Grösse (Tsd., Jahresblatt) aufnehmen
 NEUE_BERUFE_SCHWELLE = 5.0
 # Restgruppen (Bezeichnung enthält einen dieser Begriffe) werden nicht aufgenommen …
 RESTGRUPPEN_BEGRIFFE = ("onA", "anderweitig nicht genannt", "ohne nähere Angabe")
@@ -461,14 +461,17 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         description="BFS Strukturerhebung (SE) einlesen und Beschäftigte aller Berufe setzen."
     )
     parser.add_argument(
-        "--blatt",
+        "--sheet",
+        dest="blatt",
+        metavar="SHEET",
         default=DEFAULT_BLATT,
         help=f'Tabellenblatt der BFS-Datei, z. B. "2024" oder "2022-2024" (Default: "{DEFAULT_BLATT}")',
     )
-    parser.add_argument("--neue-berufe", action="store_true",
+    parser.add_argument("--add-new", dest="neue_berufe", action="store_true",
                         help="neue SE-Berufsgattungen (>= 5000) in berufe_ch.csv aufnehmen")
     parser.add_argument("--dry-run", action="store_true", help="Änderungen nur anzeigen")
-    parser.add_argument("--pfad", type=Path, default=PROCESSED_PATH, help="Verzeichnis der CSVs")
+    parser.add_argument("--data-dir", dest="pfad", metavar="DIR", type=Path, default=PROCESSED_PATH,
+                        help="Verzeichnis der CSVs")
     return parser.parse_args(argv)
 
 

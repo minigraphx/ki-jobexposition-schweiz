@@ -228,7 +228,7 @@ ESCO-Zuordnung und -Beschreibung wurden nicht verändert (separates Audit). Neu 
 Nach den Korrekturen oben fehlten SE-Gattungen ganz, deren bisheriger (falscher) Beruf in eine
 andere Gattung verschoben wurde (z. B. 3123 Poliere: Bauführer/in → 3112). Aufgenommen wurden
 alle 4-stelligen SE-Berufsgattungen mit **≥ 5'000 Erwerbstätigen im Blatt 2024**, die noch keinen
-Eintrag hatten (`python src/data/update_from_bfs.py --neue-berufe`). Titel = SE-Bezeichnung,
+Eintrag hatten (`python src/data/update_from_bfs.py --add-new`). Titel = SE-Bezeichnung,
 ebene «gattung» (voller SE-Wert), Branche über `branche_fuer_isco()`, Lohn = LSE 2024 der
 2-stelligen Gruppe × 12 (keine der neuen Gattungen liegt in den Salarium-Gruppen 11–14/22/24/26),
 Qualifikation über die ISCO-Hauptgruppe. ESCO-Zuordnung siehe `docs/audit_esco_zuordnungen.md`.

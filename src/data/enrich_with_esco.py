@@ -21,7 +21,7 @@ esco_isco_code, esco_match_qualitaet (korrekt / plausibel / fallback).
 
 Verwendung:
   python enrich_with_esco.py                  # nur Berufe ohne Zuordnung (neue Einträge)
-  python enrich_with_esco.py --alle           # alle Berufe neu (überschreibt kuratierte Zuordnungen!)
+  python enrich_with_esco.py --all            # alle Berufe neu (überschreibt kuratierte Zuordnungen!)
   python enrich_with_esco.py --fix-wrong      # Einträge aus KNOWN_WRONG_MATCHES
   python enrich_with_esco.py --job "Grafik- und Multimediadesigner"
 
@@ -620,7 +620,7 @@ def main():
                         help="Nur die Einträge aus KNOWN_WRONG_MATCHES neu suchen")
     parser.add_argument("--job", type=str, default=None,
                         help="Einzelnen Beruf verarbeiten")
-    parser.add_argument("--alle", action="store_true",
+    parser.add_argument("--all", dest="alle", action="store_true",
                         help="Alle Berufe neu (überschreibt kuratierte Zuordnungen)")
     args = parser.parse_args()
 
@@ -644,7 +644,7 @@ def main():
         target_jobs = [b for b in df_base["beruf"] if b not in zugeordnet]
         if not target_jobs:
             logger.info("Alle Berufe haben eine Zuordnung — nichts zu tun "
-                        "(--job, --fix-wrong oder --alle).")
+                        "(--job, --fix-wrong oder --all).")
             return
 
     target_df = df_base[df_base["beruf"].isin(target_jobs)].reset_index(drop=True)

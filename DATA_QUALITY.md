@@ -165,7 +165,7 @@ den vollen SE-Wert (Doppelzählung, Σ 4'488.5 Tsd.), `scores.csv` enthielt eine
   (3123 Poliere 28.8, 3115 Maschinenbau-/Systemtechniker 12.0, 3434 Küchenchefs 9.6,
   7223 Werkzeugmaschineneinrichter 8.6, 3311 Wertpapierhändler 8.5, 3355 Polizeikommissare 8.5 Tsd.)
   sind nicht mehr abgedeckt — Aufnahme über
-  `update_from_bfs.py --neue-berufe` plus ESCO-Anreicherung und Scoring möglich.
+  `update_from_bfs.py --add-new` plus ESCO-Anreicherung und Scoring möglich.
 
 ## Quality Audit Prozess
 

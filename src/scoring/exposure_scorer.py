@@ -241,7 +241,7 @@ if __name__ == "__main__":  # pragma: no cover
     parser.add_argument(
         "--force",
         nargs="*",
-        metavar="BERUF_ODER_ISCO",
+        metavar="OCCUPATION_OR_ISCO",
         help=(
             "Ohne Argumente: alle Berufe neu scoren. "
             "Mit Name(n) oder ISCO-Code(s): nur diese Berufe."

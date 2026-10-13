@@ -98,7 +98,8 @@ def scores_neu_berechnen(text_df: pd.DataFrame, num_df: pd.DataFrame, geaendert:
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--dry-run", action="store_true", help="Änderungen nur anzeigen")
-    parser.add_argument("--pfad", type=Path, default=PROCESSED_PATH, help="Verzeichnis der CSVs")
+    parser.add_argument("--data-dir", dest="pfad", metavar="DIR", type=Path, default=PROCESSED_PATH,
+                        help="Verzeichnis der CSVs")
     args = parser.parse_args(argv)
 
     for name in BASIS_DATEIEN + [SCORES_DATEI]:

@@ -8,7 +8,7 @@ Kompetenzen stammen aus ``data/processed/esco_kompetenzen.csv`` (kein Netzzugrif
 Aufruf (optional, zur Ansicht — der Scorer baut die Inputs selbst):
     python src/scoring/task_inputs.py                       # alle → data/processed/bewertungen/input/
     python src/scoring/task_inputs.py --pilot               # nur die 15 Pilotberufe
-    python src/scoring/task_inputs.py --nur 2411 2512 --out /tmp/inputs
+    python src/scoring/task_inputs.py --only 2411 2512 --out /tmp/inputs
 """
 from __future__ import annotations
 
@@ -232,11 +232,11 @@ def baue_eintraege(nur: list[str] | None = None, pilot: bool = False,
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--nur", nargs="+", metavar="ISCO", help="nur diese ISCO-Codes/-Präfixe")
+    ap.add_argument("--only", nargs="+", metavar="ISCO", help="nur diese ISCO-Codes/-Präfixe")
     ap.add_argument("--pilot", action="store_true", help="nur die 15 Pilotberufe")
     ap.add_argument("--out", default=str(tr.BEWERTUNGEN_DIR / "input"))
     a = ap.parse_args(argv)
-    eintraege = baue_eintraege(a.nur, a.pilot)
+    eintraege = baue_eintraege(a.only, a.pilot)
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
     for e in eintraege:

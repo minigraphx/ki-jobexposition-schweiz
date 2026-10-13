@@ -36,7 +36,7 @@ Dateien:
 Aufruf:
     python src/data/fetch_bgs.py              # GGS + STATENT online laden, alles neu schreiben
     python src/data/fetch_bgs.py --offline    # nur die versionierten CSVs verwenden
-    python src/data/fetch_bgs.py --periode 2026-Q2   # einzelnes Quartal statt Jahresmittel
+    python src/data/fetch_bgs.py --period 2026-Q2   # einzelnes Quartal statt Jahresmittel
     python src/data/fetch_bgs.py --dry-run    # nichts schreiben, nur Vergleich ausgeben
 
 Historie: Bis Oktober 2026 enthielt dieses Skript hart kodierte Schätzanteile
@@ -343,7 +343,7 @@ def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[1])
     parser.add_argument("--offline", action="store_true",
                         help="versionierte CSVs in data/processed/ verwenden (kein Netz)")
-    parser.add_argument("--periode", default=None,
+    parser.add_argument("--period", dest="periode", metavar="PERIOD", default=None,
                         help="JJJJ (Jahresmittel) oder JJJJ-Qn; Standard: neuestes volles Jahr")
     parser.add_argument("--start", default=BGS_START, help="erstes GGS-Quartal beim Abruf")
     parser.add_argument("--dry-run", action="store_true", help="nichts schreiben")
