@@ -100,6 +100,8 @@ CLAUDE_CLI_ENV_SETZEN = {"CLAUDE_CODE_DISABLE_CLAUDE_MDS": "1", "CLAUDE_CODE_DIS
 GEMINI_THINKING = "high"                    # thinking_level; Modell-Default wäre "medium"
 GEMINI_THINKING_LEVELS = ("low", "medium", "high")
 GEMINI_MAX_OUTPUT_TOKENS = 65536            # Standard-Obergrenze synchron (Thinking + Antwort)
+GEMINI_BATCH_MAX_OUTPUT_TOKENS = 32768      # Batch-API: «Decoding continuation is not supported for batch
+                                            # requests, so max_output_tokens cannot exceed 32768» (HTTP 400)
 GEMINI_TIMEOUT_MS = 15 * 60 * 1000          # Doku: Client-Timeout mindestens 15 Minuten
 
 DRITTER_LAUF_SCHWELLE = 1.0     # |Δ ζ-Score| (0–10) zwischen Lauf 1 und 2, ab dem Lauf 3 folgt
@@ -526,14 +528,14 @@ class GeminiBewerter:
         return {"thinking_level": self.thinking_level, "max_output_tokens": self.max_output_tokens,
                 "temperature": None, "structured_output": "response_mime_type + response_json_schema"}
 
-    def _config(self):
+    def _config(self, max_output_tokens: int | None = None):
         from google.genai import types
         return types.GenerateContentConfig(
             system_instruction=tr.system_prompt(),
             response_mime_type="application/json",
             response_json_schema=self.schema,
             thinking_config=types.ThinkingConfig(thinking_level=self.thinking_level),
-            max_output_tokens=self.max_output_tokens,
+            max_output_tokens=max_output_tokens or self.max_output_tokens,
             # keine Tools → automatic function calling (clientseitig im SDK) explizit aus
             automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
         )
@@ -575,7 +577,7 @@ class GeminiBewerter:
             raise _Wiederholbar(None, f"HTTP-Client geschlossen, neuer Client: {e}") from e
         return self._auswerten(resp)
 
-    def _auswerten(self, resp: Any) -> Antwort:
+    def _auswerten(self, resp: Any, max_output_tokens: int | None = None) -> Antwort:
         usage = _als_dict(getattr(resp, "usage_metadata", None)) or {}
         served = getattr(resp, "model_version", None)
         pf = getattr(resp, "prompt_feedback", None)
@@ -590,7 +592,8 @@ class GeminiBewerter:
         stop = getattr(fr, "name", None) or (str(fr) if fr is not None else None)
         roh["stop_reason"] = stop
         if stop == "MAX_TOKENS":
-            raise AntwortFehler(f"Antwort abgeschnitten (max_output_tokens = {self.max_output_tokens})", roh)
+            grenze = max_output_tokens or self.max_output_tokens
+            raise AntwortFehler(f"Antwort abgeschnitten (max_output_tokens = {grenze})", roh)
         if stop not in ("STOP", None):
             raise AntwortFehler(f"Antwort beendet mit finish_reason {stop}", roh)
         text = getattr(resp, "text", None) or ""

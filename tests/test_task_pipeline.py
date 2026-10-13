@@ -1184,13 +1184,14 @@ def test_gemini_batch_submit_teilen_collect(tmp_path, monkeypatch, capsys, gemin
     assert tb.CUSTOM_ID_RE.match(req.metadata["custom_id"])
     cfg = req.config
     assert cfg.system_instruction == tr.system_prompt() and cfg.response_mime_type == "application/json"
-    assert cfg.response_json_schema == tr.schema_fuer_gemini() and cfg.max_output_tokens == 65536
+    assert cfg.response_json_schema == tr.schema_fuer_gemini() and cfg.max_output_tokens == 32768   # Batch-Grenze
     lvl = cfg.thinking_config.thinking_level
     assert str(getattr(lvl, "value", lvl)).upper() == "HIGH"
     assert cfg.automatic_function_calling.disable is True and cfg.temperature is None
     assert req.contents[0].parts[0].text.startswith("Bewerte den folgenden Beruf")
     zust = tb.lade_zustaende(tmp_path, "gemini")
     assert len(zust) == len(fake.erstellt) and all(p.name.startswith("batches_job") for p, _ in zust)
+    assert all(z["einstellungen"]["max_output_tokens"] == 32768 for _, z in zust)
     # erster Job: Antworten mit metadata in umgekehrter Reihenfolge, eine mit Fehler; übrige Jobs unfertig
     z1 = next(z for _, z in zust if z["batch_id"] == "batches/job1")
     antworten = []

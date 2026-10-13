@@ -147,12 +147,17 @@ class GeminiBatchAPI:
     def __init__(self, bewerter: ts.GeminiBewerter):
         self.bewerter = bewerter
 
+    @property
+    def max_output_tokens(self) -> int:
+        return min(self.bewerter.max_output_tokens, ts.GEMINI_BATCH_MAX_OUTPUT_TOKENS)
+
     def einstellungen(self) -> dict:
-        return {**self.bewerter.einstellungen(), "modus": "batch"}
+        return {**self.bewerter.einstellungen(), "max_output_tokens": self.max_output_tokens, "modus": "batch"}
 
     def anfrage(self, cid: str, verlauf: list) -> Any:
         from google.genai import types
-        return types.InlinedRequest(contents=verlauf, config=self.bewerter._config(), metadata={"custom_id": cid})
+        return types.InlinedRequest(contents=verlauf, config=self.bewerter._config(self.max_output_tokens),
+                                    metadata={"custom_id": cid})
 
     @staticmethod
     def groesse(req: Any) -> int:
@@ -213,7 +218,7 @@ class GeminiBatchAPI:
                 yield cid, "succeeded", r.response, zuordnung
 
     def auswerten(self, payload: Any) -> ts.Antwort:
-        return self.bewerter._auswerten(payload)
+        return self.bewerter._auswerten(payload, self.max_output_tokens)
 
     @staticmethod
     def ist_refusal(fehler: str, roh: dict) -> bool:
