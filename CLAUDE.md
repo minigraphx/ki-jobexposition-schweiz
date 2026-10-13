@@ -81,8 +81,9 @@ data/processed/esco_kompetenzen.csv       (versioned; ESCO v1.2.1 CSV download, 
 
 data/raw/je-d-03.04.01.02.47.xlsx         (BFS LSE 2024 T17, optional — parsed copy is versioned)
 data/processed/lohn_profile_salarium.csv  (curated Salarium profile per job, groups 11–14/22/24/26)
+data/processed/lohn_verhaeltnisse.csv     (documented ratio factors to the LSE group median, group 22)
   → src/data/update_loehne.py             (--offline: uses stored Salarium/STATENT values)
-  → lohn_median_chf + lohn_quelle in berufe_ch*.csv and scores.csv;
+  → lohn_median_chf + lohn_quelle + lohn_unsicher in berufe_ch*.csv and scores.csv;
     scores.csv: lohnklasse, delta_lohn, delta_branche, score_ch, adaptabilitaet recomputed
   versioned helper files: lse2024_monatslohn_isco.csv, lohn_salarium_abfragen.csv,
     statent_vzae_grossregion.csv
@@ -133,8 +134,19 @@ special payments → annual wage = monthly × 12. Fallback for groups without LS
 S = Salarium (LSE-2024 model, private sector) median for the job's profile (mandatory education,
 main NOGA division) plus a fixed norm profile (42 y, 8 years tenure, 40 h, no management function),
 FTE-weighted over the 7 Grossregionen (STATENT); `lohn_quelle = LSE2024_2d+Salarium`. Jobs without a
-Salarium value (1112, NOGA 84) get LSE_g × 12 and are excluded from S̄_g. Top wages (doctors,
-management, private banking, law firms) are underestimated.
+Salarium value (1112, NOGA 84) get LSE_g × 12 and are excluded from S̄_g. Top wages (management,
+private banking, law firms) are underestimated.
+**Ratio overrides** (`data/processed/lohn_verhaeltnisse.csv`, applied *after* the Salarium calibration):
+`lohn_j = f_j × LSE_g × 12`, `lohn_quelle = LSE2024_2d+Verhaeltnis`; override jobs are excluded from
+S̄_g (the remaining Salarium jobs of the group are normalised among themselves). Group 22 (estimates,
+band in the table): dipl. Pflege 2221 = 0.987 (BFS LSE 2018 special evaluation for the FOPH, asset
+19087994: 7429/7526); doctors overall = 1.6 × Pflege (band 1.3–1.9; BFS hospital statistics 2018–2022
+wage cost per FTE doctors/nursing 2.03–2.07, converted to 40 h/median/dipl. nursing → 1.53–1.77; LSE-2024
+percentile decomposition 1.57–1.87), split 2211/2212 with ratio 0.85 (BASS 2018: 0.69, weakened —
+assumption) and SE-2024 weights → 2211 = 1.375 (1.117–1.633), 2212 = 1.617 (1.314–1.921). Rows without
+factor (2261 dentists, 2262 pharmacists: no documented ratio) keep the Salarium value and get
+`lohn_unsicher = True`. Note: `adaptabilitaet` min-max-scales wages over all jobs, so a new maximum
+wage (currently 2212) shifts the wage points of all jobs.
 
 **Employment data** = **BFS Strukturerhebung (SE)**, *not* SAKE — table «Ausgeübter Beruf (CH-ISCO-19)
 nach Geschlecht und Staatsangehörigkeit» (asset 36492006, file `su-d-40.02.03.02.01.03.10.xlsx`),
@@ -192,7 +204,7 @@ CH wage deltas: <60k CHF −0.2, 60–100k 0.0, 100–150k +0.2, >150k +0.4.
 | `src/data/berufe_zusammenlegen.py` | `beruf_berufsart_mapping.csv` | `berufe_ch*.csv`, `scores.csv` | One-time #51 migration: ISCO code fixes + merges (weighted-mean scores); idempotent |
 | `src/data/enrich_with_esco.py` | `berufe_ch.csv`, `berufe_ch_esco.csv` | `berufe_ch_esco.csv`, `berufe_ch_esco_verified.csv` | 6-stage search, hard ISCO consistency check + LLM validation; default: only jobs without `esco_match_qualitaet`; `--job`, `--fix-wrong`, `--alle` |
 | `src/data/verify_esco_matches.py`, `src/data/patch_unmatched.py` | — | — | Historical (2-digit ISCO matching, `iscoGroup` bug); exit immediately, kept for reference |
-| `src/data/update_loehne.py` | LSE 2024 T17 (raw or `lse2024_monatslohn_isco.csv`), `lohn_profile_salarium.csv`, `lohn_salarium_abfragen.csv`, `statent_vzae_grossregion.csv` | `berufe_ch*.csv`, `scores.csv` | Sets `lohn_median_chf`/`lohn_quelle`; recomputes wage-dependent rule-based columns in scores.csv; `--offline` (no network), `--dry-run` |
+| `src/data/update_loehne.py` | LSE 2024 T17 (raw or `lse2024_monatslohn_isco.csv`), `lohn_profile_salarium.csv`, `lohn_salarium_abfragen.csv`, `statent_vzae_grossregion.csv`, `lohn_verhaeltnisse.csv` | `berufe_ch*.csv`, `scores.csv` | Sets `lohn_median_chf`/`lohn_quelle`/`lohn_unsicher`; ratio overrides after Salarium; recomputes wage-dependent rule-based columns in scores.csv; `--offline` (no network), `--dry-run` |
 | `src/data/fetch_bgs.py` | stats.swiss SDMX `DF_GGS_4` + STATENT PxWeb (online) or `bgs_grenzgaenger_noga.csv` + `statent_beschaeftigte_noga.csv` (`--offline`) | `grenzgaenger_anteil_branche.csv` (+ the two versioned inputs when online) | Cross-border commuter share per sector (annual mean of latest full year, latest quarter extra); reads/writes no scores; `--periode JJJJ\|JJJJ-Qn`, `--dry-run` |
 | `src/data/fetch_statent.py` | BFS DAM API `ts-x-06.02.01.01` (online) or `statent_groessenklassen_noga.csv` (`--offline`) | `kmu_anteil_branche.csv` (+ `statent_groessenklassen_noga.csv` when online); with `--apply-scores`: `scores.csv` | Grossfirmen share per sector (enterprises ≥250 employed); `--jahr`, `--dry-run`; `--apply-scores` rewrites only `grossfirmen_anteil`, `zeitrahmen_kmu_delta`, `zeitrahmen` (from `zeitrahmen_roh`) |
 | `src/data/branche_neu_zuordnen.py` | `BRANCHE_MAP` | `berufe_ch*.csv`, `scores.csv` | Re-applies ISCO-prefix sector mapping to non-curated jobs |
@@ -249,8 +261,9 @@ All charts use **Plotly**. App reads from `data/processed/scores.csv`.
 | `beschaeftigte_1000` | BFS Strukturerhebung (SE) 2024 | Employed persons in thousands — 4-digit Gattung or assigned 5-digit Berufsarten; Σ per code = SE value |
 | `frauen_pct` | BFS Strukturerhebung (SE) 2024 | Share of women in percent (0–100); pooled 2022–2024 if 2024 is «X» |
 | `branche` | ISCO mapping | Sector (21 categories, manually mapped from ISCO groups) |
-| `lohn_median_chf` | BFS LSE 2024 (T17) | Median annual gross salary CHF = 2-digit group monthly median × 12; for groups 11–14/22/24/26 calibrated with Salarium profiles (`update_loehne.py`) |
-| `lohn_quelle` | `update_loehne.py` | `LSE2024_2d`, `LSE2024_2d+Salarium`, fallback `LSE2024_1d` / `LSE2024_total` |
+| `lohn_median_chf` | BFS LSE 2024 (T17) | Median annual gross salary CHF = 2-digit group monthly median × 12; for groups 11–14/22/24/26 calibrated with Salarium profiles, for 2211/2212/2221 documented ratio factors (`update_loehne.py`) |
+| `lohn_quelle` | `update_loehne.py` | `LSE2024_2d`, `LSE2024_2d+Salarium`, `LSE2024_2d+Verhaeltnis`, fallback `LSE2024_1d` / `LSE2024_total` |
+| `lohn_unsicher` | `lohn_verhaeltnisse.csv` | `True` = no documented wage relation (2261 dentists, 2262 pharmacists) |
 | `qualifikation` | Curated list / ISCO major group | Education level: Tertiär / Sekundär II / Keine Ausbildung |
 | `esco_uri` | ESCO v1.2.1 | ESCO occupation URI — empty for 3 of 179 jobs (fallback description); unique |
 | `esco_titel` | ESCO v1.2.1 | ESCO occupation title (German, from the API); job title for fallbacks |

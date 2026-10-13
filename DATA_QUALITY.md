@@ -63,6 +63,7 @@ zusammengelegt). Neue bestätigte Fehlzuordnungen dort mit dem aktuellen `beruf`
 | 2026-10 | Löhne auf LSE 2024 umgestellt (#45), `update_loehne.py` | Alle 204 Berufe: `lohn_median_chf`, `lohn_quelle`; regelbasiert neu: `lohnklasse`, `delta_lohn`, `score_ch`, `adaptabilitaet` (inkl. Altlasten), `delta_branche` (Pharma-Ausnahme 2131/2145) |
 | 2026-10 | Beschäftigte ohne Doppelzählung, ISCO-Audit (#51) | 21 ISCO-Codes korrigiert, 22 Zusammenlegungen (204 → 179 Berufe), 2330/5131/5223 über SE-Berufsarten aufgeteilt; `beschaeftigte_1000`/`frauen_pct` in allen CSVs aus SE 2024; Löhne mit neuen Gewichten neu berechnet; Details `docs/audit_isco_codes.md` |
 | 2026-10 | ESCO-Audit und Neuzuordnung (#52, #48) | 83 URIs geändert, 89 Beschreibungen (v1.2.1), deutsche Titel, `beschreibung_quelle` korrigiert; neu `esco_isco_code`, `esco_match_qualitaet`, `esco_kompetenzen.csv`; Stufe 3 + ISCO-Prüfung in `enrich_with_esco.py`; Details `docs/audit_esco_zuordnungen.md` |
+| 2026-10 | Gruppe 22: Verhältniszahlen statt Salarium-Normierung, `lohn_verhaeltnisse.csv` | 2221/2211/2212 `LSE2024_2d+Verhaeltnis` (94'800 / 132'000 / 155'200 CHF); neue Spalte `lohn_unsicher` (2261, 2262); `score_ch` 2212; `adaptabilitaet` 163 Berufe (Min-Max-Skalierung) |
 
 ## Löhne (LSE 2024)
 
@@ -75,15 +76,66 @@ Herkunft je Beruf in `lohn_quelle`:
   Salarium hat für Führungskräfte der öffentlichen Verwaltung, NOGA 84, keine konsistenten Werte)
 - `LSE2024_2d+Salarium` — Gruppen 11–14, 22, 24, 26: Gruppenmedian × S_j / S̄_g, wobei S̄_g
   das beschäftigungsgewichtete Mittel der Salarium-Werte der Gruppe ist (gewichtetes Mittel der
-  Löhne = LSE-Gruppenmedian; 43 Berufe; Profile in `lohn_profile_salarium.csv`, Antworten in
+  Löhne = LSE-Gruppenmedian; 40 Berufe; Profile in `lohn_profile_salarium.csv`, Antworten in
   `lohn_salarium_abfragen.csv`) — **Modellschätzung**
+- `LSE2024_2d+Verhaeltnis` — belegte bzw. hergeleitete Verhältniszahl zum LSE-Gruppenmedian
+  aus `lohn_verhaeltnisse.csv` (nach der Salarium-Kalibrierung angewendet; 3 Berufe der Gruppe 22)
+  — **Schätzung mit Band**, siehe unten
 - `LSE2024_1d` / `LSE2024_total` — Fallback für Gruppen ohne LSE-Wert (01–03, 63, 95; derzeit 0 Berufe)
+- Spalte `lohn_unsicher` = `True`: keine belegte Relation, Lohn nur Salarium-Modell (Zahnärzte 2261,
+  Apotheker 2262)
+
+### Gruppe 22: Verhältniszahlen statt Salarium-Normierung (2026-10)
+
+Problem: Die Normierung «beschäftigungsgewichtetes Mittel = LSE-Median» drückt in der stark
+rechtsschiefen Gruppe 22 (LSE 2024: P50 8'000, P90 14'238 CHF/Monat) alle Werte nach unten:
+Pflege 89'800 CHF, Ärzte 109'900 CHF (Ärzte/Pflege 1.22).
+
+| ISCO | Beruf | vorher | neu | Faktor (Band) | Beleg |
+|------|-------|-------:|----:|---------------|-------|
+| 2221 | Dipl. Pflegefachperson | 89'800 | 94'800 | 0.987 | gut: LSE-2018-Spezialauswertung BAG (Asset 19087994), 7'429 / 7'526 |
+| 2211 | Allgemeinmedizin | 109'900 | 132'000 | 1.375 (1.117–1.633 → 107k–157k) | mittel/schwach: R = 1.6 × Pflege, Aufteilung angenommen |
+| 2212 | Fachärzte | 109'900 | 155'200 | 1.617 (1.314–1.921 → 126k–184k) | mittel/schwach: wie 2211; Band überspannt 150k |
+| 2261 | Zahnarzt/-ärztin | 109'900 | 109'900 | – (unsicher) | keine freie Quelle |
+| 2262 | Apotheker/in | 98'400 | 98'400 | – (unsicher) | keine freie Quelle |
+| 2230, 2264 | Komplementärmedizin, Physio | 89'800, 93'300 | unverändert | Salarium | normiert ohne 2211/2212/2221 |
+
+Herleitung Ärzte/dipl. Pflege R (LSE-kompatibel: Median, 40 h): BFS Krankenhausstatistik
+2018–2022, Lohnaufwand pro VZÄ Ärzteschaft ÷ Pflegepersonal 2.03–2.07 (Mittelwerte, Spitäler) ×
+1.058 (ohne Unterassistent/innen, Lohnanteil 10–20 % angenommen) × 0.915 (Pflegemix → dipl. Pflege,
+BFS je-d-14.04.08.03 + LSE-2018-Relationen) × 0.897 (Sollstunden 2'100/2'340, BFS-Medienmitteilung
+25.11.2025) ÷ Mittelwert/Median 1.0–1.15 (BASS) = **1.53–1.77**; unabhängig: Mischungszerlegung der
+LSE-2024-Perzentile Gruppe 22 = 1.57–1.87; Untergrenze aus einer Spital-Lohnskala AA/OA 1.13–1.31.
+Gewählt **R = 1.6 (Band 1.3–1.9)**. Aufteilung: 2211/2212 = 0.85 (BASS 2018, Fachärzt/innen 2014:
+Grundversorgung/Spezialisten 0.69, wegen Assistenzärzten abgeschwächt — **Annahme**), sodass das
+mit SE-2024-Beschäftigten gewichtete Mittel der beiden Faktoren 0.987 × 1.6 ergibt.
+
+Prüfung der Recherche (2026-10): Pflegeanker, Methode A (1.529 / 1.642 / 1.772) und BASS-Relation
+(0.689) nachgerechnet und bestätigt. **Abweichung:** Die Recherche gewichtete 2211 mit 22 Tsd.
+Beschäftigten; die SE 2024 (Berufsgattung 2211, wie in `berufe_ch.csv`) hat 6.7 Tsd. Mit den
+Projektgewichten (6.7 / 36.0) ergeben sich 2211 = 1.375 statt 1.42 und 2212 = 1.617 statt 1.68
+(zentral 132'000 / 155'200 statt 136'700 / 160'800 CHF). Übernommen wurden die korrigierten Werte.
+
+Normierung: Override-Berufe zählen nicht in S̄_22; die übrigen Salarium-Berufe (2230, 2261, 2262,
+2264) werden unter sich normiert (gewichtetes Mittel = 96'000 CHF). Ihre Löhne bleiben dadurch
+(zufällig, auf 100 CHF gerundet) gleich. Folge: Komplementärmedizin (2230) hat dasselbe Salarium-
+Profil (HF, NOGA 86) wie die Pflege, aber 89'800 statt 94'800 CHF — die Pflege ist belegt, 2230 nur
+modelliert. Alternative (nicht umgesetzt): übrige Berufe relativ zum Pflegeanker setzen
+(lohn = 94'800 × S_j / S_Pflege) → 2230 94'800, 2264 98'500, 2262 103'900, 2261 116'000.
+
+Folgen in `scores.csv`: Lohnklasse nur bei 2212 (100–150k → >150k, `delta_lohn` +0.2 → +0.4,
+`score_ch` 4.1 → 4.3). `adaptabilitaet` skaliert den Lohn min-max über alle Berufe; das neue
+Maximum (2212, 155'200 statt 131'700 CHF) senkt die Lohnpunkte fast aller Berufe: 163 von 179 Werten
+ändern sich (−0.7 bis +0.8, Mittel 6.37 → 6.06), 8 Berufe fallen unter 5.0 (Matrix-Quadrant).
+Unverändert: alle LLM-Scores, Texte, ESCO-Spalten, `zeitrahmen`, `delta_branche`.
+Präzise wäre nur eine LSE-Sonderauswertung der 3-Steller 221/222/226 (lohn@bfs.admin.ch).
 
 Bekannte Schwächen: Berufe derselben 2-stelligen Gruppe ausserhalb der Salarium-Gruppen haben
 identische Löhne (z. B. Informatiker/in EFZ = Softwareentwickler/in, Kassierer/in = Detailhandel);
 die Normierung hängt von den Beschäftigtenzahlen der App-Berufe ab (nicht von der vollen Gruppe);
 die Gewichte sind seit #51 in allen CSVs gleich (SE 2024, ohne Doppelzählung);
-Salarium (Privatsektor, ohne Kader im Normprofil) unterschätzt Spitzenlöhne, v. a. Fachärzte.
+Salarium (Privatsektor, ohne Kader im Normprofil) unterschätzt Spitzenlöhne (Fachärzte seit
+2026-10 über Verhältniszahlen, siehe oben).
 Saubere Alternative: BFS-Sonderauswertung 3-/4-stellig (lohn@bfs.admin.ch).
 
 ## Beschäftigtenzahlen und ISCO-Codes (#51)

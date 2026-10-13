@@ -230,11 +230,82 @@ Der mediane Jahresbruttolohn (`lohn_median_chf`) stammt aus der **BFS Lohnstrukt
   Die Werte sind **Modellschätzungen**, keine erhobenen Berufslöhne.
   Ausnahme: Für leitende Verwaltungsbedienstete (öffentliche Verwaltung) liefert Salarium
   keine Werte; sie erhalten den LSE-Gruppenmedian und zählen nicht in die Normierung.
+- **Verhältniszahlen (`LSE2024_2d+Verhaeltnis`, Gruppe 22):** Wo eine belegte Relation zum
+  LSE-Gruppenmedian vorliegt, ersetzt sie nach der Salarium-Kalibrierung den Salarium-Wert:
+  *Lohn = Faktor × LSE-Gruppenmedian × 12* (Tabelle unten, `data/processed/lohn_verhaeltnisse.csv`).
+  Grund: In der stark rechtsschiefen Gruppe 22 drückt die Normierung «Mittel = Median» alle Werte
+  nach unten (Pflege vorher 89'800 statt belegter ~94'800 CHF, Ärzte nur 109'900 CHF).
+  Die übrigen Berufe der Gruppe werden **ohne** die Override-Berufe normiert
+  (ihr gewichtetes Mittel = Gruppenmedian), damit ein Override ihre Löhne nicht verschiebt.
+  Die Werte sind **Schätzungen**; das Band zeigt die plausible Spannweite.
+  Zahnärzte und Apotheker haben keine belegte Relation, behalten den Salarium-Wert und sind
+  als **unsicher** markiert (Spalte `lohn_unsicher`).
 - **Einschränkungen:** nur 2-stellige LSE-Gruppen (eine 3-/4-stellige Auswertung wäre nur
   als kostenpflichtige BFS-Sonderauswertung erhältlich); Salarium bildet nur den
   **Privatsektor** ab; Spitzenlöhne werden unterschätzt (siehe «Einschränkungen & Hinweise»);
   **Selbständige** (z. B. Ärzte mit eigener Praxis, Anwälte, Landwirte) sind in der LSE
   nicht enthalten.
+""")
+
+# ─── Verhältniszahlen Gruppe 22 (aus lohn_verhaeltnisse.csv) ──────────────────
+VERH_PATH = DATA_PATH.parent / "lohn_verhaeltnisse.csv"
+LSE_PATH = DATA_PATH.parent / "lse2024_monatslohn_isco.csv"
+
+
+@st.cache_data
+def load_verhaeltnisse() -> pd.DataFrame | None:
+    if not VERH_PATH.exists() or not LSE_PATH.exists():
+        return None
+    verh = pd.read_csv(VERH_PATH, dtype={"isco_code": str})
+    lse = pd.read_csv(LSE_PATH, dtype={"isco_prefix": str}, keep_default_na=False)
+    lse = dict(zip(lse["isco_prefix"], pd.to_numeric(lse["median_monat"], errors="coerce")))
+    basis = verh["isco_code"].str[:2].map(lse) * 12
+
+    def _chf(x: pd.Series) -> pd.Series:
+        return x.map(lambda v: "" if pd.isna(v) else f"{round(v, -2):,.0f}".replace(",", "'"))
+
+    lohn = verh["faktor_zu_lse_gruppe"] * basis
+    band = _chf(verh["band_unten"] * basis) + " – " + _chf(verh["band_oben"] * basis)
+    scores = pd.read_csv(DATA_PATH, dtype={"isco_code": str}) if DATA_PATH.exists() else None
+    if scores is not None:  # ohne Faktor: Salarium-Wert aus scores.csv
+        salarium = verh.merge(scores[["isco_code", "beruf", "lohn_median_chf"]],
+                              on=["isco_code", "beruf"], how="left")["lohn_median_chf"]
+        sal_text = _chf(salarium.astype(float)).map(lambda t: f"{t} (Salarium)" if t else "Salarium")
+    else:
+        sal_text = pd.Series("Salarium", index=verh.index)
+    lohn_text = _chf(lohn).where(lohn.notna(), sal_text)
+    return pd.DataFrame({
+        "ISCO": verh["isco_code"],
+        "Beruf": verh["beruf"],
+        "Faktor": verh["faktor_zu_lse_gruppe"].map(lambda v: "–" if pd.isna(v) else f"{v:.3f}"),
+        "Lohn (CHF/Jahr)": lohn_text,
+        "Band (CHF/Jahr)": band.where(verh["band_unten"].notna(), "–"),
+        "Unsicher": verh["lohn_unsicher"].map({True: "ja", False: "nein"}),
+        "Bemerkung": verh["bemerkung"].fillna(""),
+    })
+
+
+verh_tab = load_verhaeltnisse()
+if verh_tab is not None and not verh_tab.empty:
+    st.markdown("**Verhältniszahlen Gruppe 22 (Schätzung, Faktor × LSE-Gruppenmedian 96'000 CHF)**")
+    st.dataframe(verh_tab, hide_index=True)
+    st.markdown("""
+- **Dipl. Pflege (0.987):** BFS-LSE-2018-Spezialauswertung für das BAG (Asset 19087994):
+  diplomierte/spezialisierte Pflegefachkraft 7'429 CHF vs. Median Gruppe 22 7'526 CHF.
+  Annahme: Die Relation gilt auch 2024.
+- **Ärzte gesamt ≈ 1.6 × dipl. Pflege (Band 1.3–1.9):** BFS Krankenhausstatistik 2018–2022,
+  Lohnaufwand pro VZÄ Ärzteschaft ÷ Pflegepersonal 2.03–2.07 (Mittelwerte, nur Spitäler),
+  umgerechnet auf 40 h (Sollstunden 2'340 vs. 2'100), ohne Unterassistenten, auf dipl. Pflege
+  und als Median (1.53–1.77); unabhängig gestützt durch eine Zerlegung der LSE-2024-Perzentile
+  der Gruppe 22 (1.57–1.87). Eine Lohnskala allein (Assistenz-/Oberärzte) ergäbe 1.13–1.31
+  (Untergrenze).
+- **Aufteilung Allgemeinmedizin/Fachärzte:** BASS (2018) für das BAG zeigt für angestellte
+  Fachärzt/innen 2014 Grundversorgung/Spezialisten ≈ 0.69; wegen der Assistenzärzte in beiden
+  Gruppen ist 0.85 **angenommen**. Das beschäftigungsgewichtete Mittel (SE 2024) der beiden
+  Faktoren entspricht 1.6 × Pflege.
+- **Grenzen:** Spital-lastig; angestellte Praxisärzte und Selbständige fehlen; das Band der
+  Fachärzte überspannt die Lohnklassengrenze 150k CHF. Präzise wäre nur eine LSE-Sonderauswertung
+  der 3-Steller 221/222/226.
 """)
 
 st.subheader("Branchenzuordnung")
@@ -549,12 +620,13 @@ st.markdown("""
 - **Löhne sind Gruppenwerte bzw. Modellschätzungen.** Die LSE 2024 weist nur 2-stellige
   Berufsgruppen aus (Median). Alle Berufe einer Gruppe haben deshalb denselben Lohn — ausser in
   den Gruppen 11–14, 22, 24 und 26, wo er mit Salarium-Profilen (Ausbildung, Branche)
-  differenziert wird. Berufsindividuelle Löhne wurden nicht erhoben; Selbständige fehlen in der
-  LSE, Salarium deckt nur den Privatsektor ab.
-- **Spitzenlöhne (Ärzteschaft, Kader, Private Banking, Kanzleien) werden unterschätzt:**
-  Salarium kennt keine Facharzt- oder Kaderzuschläge, und das Normprofil enthält keine
-  Kaderfunktion. Präzisere Werte erfordern eine BFS-Sonderauswertung der LSE auf
-  3-/4-stelliger Ebene.
+  differenziert wird; für Pflege und Ärzte (Gruppe 22) gelten geschätzte Verhältniszahlen.
+  Berufsindividuelle Löhne wurden nicht erhoben; Selbständige fehlen in der LSE, Salarium deckt
+  nur den Privatsektor ab. Zahnärzte und Apotheker: Lohn unsicher (keine belegte Relation).
+- **Spitzenlöhne (Kader, Private Banking, Kanzleien) werden unterschätzt:**
+  Salarium kennt keine Kaderzuschläge, und das Normprofil enthält keine Kaderfunktion.
+  Ärztelöhne sind seit Oktober 2026 über Verhältniszahlen geschätzt (Band ±20 %).
+  Präzisere Werte erfordern eine BFS-Sonderauswertung der LSE auf 3-/4-stelliger Ebene.
 """)
 
 st.subheader("Weitere CH-spezifische Faktoren (nicht in Score eingeflossen)")
@@ -591,6 +663,9 @@ st.markdown("""
 - Europäische Kommission (2023). [ESCO v1.2](https://esco.ec.europa.eu)
 - BFS (2026). [LSE 2024, T17 — Monatlicher Bruttolohn nach Berufsgruppen, Lebensalter und Geschlecht, privater und öffentlicher Sektor zusammen](https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.36355224.html) · [Über die Lohnstrukturerhebung](https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/loehne-erwerbseinkommen-arbeitskosten/lohnstruktur.html)
 - BFS (2026). [Salarium — Statistischer Lohnrechner (LSE 2024)](https://www.salarium.bfs.admin.ch) — Profilverhältnisse für heterogene Berufsgruppen
+- BFS. [LSE 2018 — Spezialauswertung Pflegepersonal für das BAG](https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.19087994.html) (cc-d-03.04.01.90.01) — Verhältnis dipl. Pflege zum Median Gruppe 22
+- BFS. Krankenhausstatistik, Standardtabellen 2018–2022 (VZÄ und Lohnaufwand nach Funktion) sowie Medienmitteilung vom 25.11.2025 (Sollstunden je Vollzeitstelle) — Verhältnis Ärzteschaft/Pflege
+- Büro BASS im Auftrag des BAG (2018). *Einkommen der Ärzteschaft in der Schweiz 2009–2014* — Verhältnis Grundversorgung/Spezialisten
 - BFS (2026). [Statistik der Unternehmensstruktur (STATENT) 2024 — Vollzeitäquivalente nach Kanton und Wirtschaftsabteilung](https://www.pxweb.bfs.admin.ch/pxweb/de/px-x-0602010000_101/-/px-x-0602010000_101.px/) — Regionsgewichte; Beschäftigte je Wirtschaftsabteilung als Nenner des Grenzgänger-Anteils
 - BFS (2026). [Statistik der Unternehmensstruktur (STATENT) 2011–2024 — Marktwirtschaftliche Unternehmen nach Wirtschaftsabteilungen und Grössenklasse (ts-x-06.02.01.01)](https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.36734598.html) — Grossfirmen-Anteil je Branche (KMU-Adoptions-Faktor)
 - BFS (2026). [Grenzgängerstatistik (GGS) — Ausländische Grenzgänger/-innen nach Wirtschaftszweig und Erwerbsstatus (DF_GGS_4)](https://stats.swiss/vis?lc=de&df[ds]=ds%3Adisseminate&df[id]=DF_GGS_4&df[ag]=CH1.GGS&df[vs]=1.0.0&dq=..Q&lom=LASTNPERIODS&lo=5) · [Über die Grenzgängerstatistik](https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/erhebungen/ggs.html)

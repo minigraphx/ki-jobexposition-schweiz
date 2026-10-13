@@ -101,3 +101,18 @@ def test_methodik_zeigt_match_qualitaet():
     assert f"**korrekt** ({n})" in texte
     assert "Version 1.2.1" in texte and "CC BY 4.0" in texte
     assert "Haiku" not in texte
+
+
+def test_methodik_zeigt_lohnverhaeltnisse():
+    """Tabelle der Verhältniszahlen Gruppe 22: Werte aus scores.csv, Band, Unsicher-Markierung."""
+    at = _app()
+    at.switch_page("pages/5_Methodik.py")
+    at.run()
+    assert not at.exception
+    tab = next(d.value for d in at.dataframe if "Faktor" in d.value.columns).set_index("ISCO")
+    df = pd.read_csv(SCORES, dtype={"isco_code": str}).set_index("isco_code")
+    for code in ("2211", "2212", "2221"):
+        assert tab.loc[code, "Lohn (CHF/Jahr)"] == f"{df.loc[code, 'lohn_median_chf']:,}".replace(",", "'")
+    assert tab.loc["2212", "Band (CHF/Jahr)"] != "–"
+    assert set(tab.index[tab["Unsicher"] == "ja"]) == {"2261", "2262"}
+    assert "Salarium" in tab.loc["2262", "Lohn (CHF/Jahr)"]

@@ -30,7 +30,19 @@ Methode
    im Salarium-Modell) erhalten S = S̄_g, also LSE_g × 12, und zählen nicht in S̄_g.
    lohn_quelle = "LSE2024_2d+Salarium". Für die Führungskräfte (Salarium-Gruppe 10 =
    ISCO 11–14) wird je LSE-Gruppe 11, 12, 13, 14 separat normiert.
-3. scores.csv: regelbasierte Folgespalten neu berechnen — lohnklasse, delta_lohn,
+3. Verhältnis-Overrides (data/processed/lohn_verhaeltnisse.csv, nach der Salarium-
+   Kalibrierung): Für Berufe mit belegter Verhältniszahl f_j zum LSE-Gruppenmedian gilt
+
+       lohn_j = f_j × LSE_g × 12,   lohn_quelle = "LSE2024_2d+Verhaeltnis"
+
+   (derzeit Gruppe 22: dipl. Pflege 0.987 aus der LSE-2018-Spezialauswertung, Ärzte
+   2211/2212 aus Krankenhausstatistik und LSE-Perzentilen — Schätzung mit Band
+   band_unten–band_oben). Override-Berufe zählen NICHT in S̄_g: die übrigen Salarium-
+   Berufe der Gruppe werden unter sich normiert (ihr gewichtetes Mittel = LSE_g × 12),
+   sonst würde ein Override die Löhne der anderen Berufe verschieben. Zeilen ohne Faktor
+   behalten die Salarium-Kalibrierung; lohn_unsicher (True/False) übernimmt die Markierung
+   der Tabelle (Zahnärzte, Apotheker: keine belegte Relation).
+4. scores.csv: regelbasierte Folgespalten neu berechnen — lohnklasse, delta_lohn,
    delta_branche, score_ch (ch_adjustments.apply_ch_adjustments) und adaptabilitaet
    (adaptability_scorer.berechne_adaptabilitaet). LLM-Scores und Texte bleiben unverändert.
 
@@ -39,6 +51,7 @@ Dateien (data/processed/, versioniert, damit die Pipeline ohne Rohdaten läuft):
     lohn_profile_salarium.csv     Salarium-Profil je Beruf (manuell gepflegt)
     lohn_salarium_abfragen.csv    Salarium-Antworten je Profil und Grossregion
     statent_vzae_grossregion.csv  STATENT-VZÄ je NOGA-Abteilung und Grossregion (Gewichte)
+    lohn_verhaeltnisse.csv        Verhältniszahlen (Faktor zum LSE-Gruppenmedian, Band, Quelle)
 
 Aufruf:
     python src/data/update_loehne.py --offline            # gespeicherte Salarium-Werte
@@ -74,6 +87,7 @@ LSE_CSV = PROCESSED_PATH / "lse2024_monatslohn_isco.csv"
 PROFILE_CSV = PROCESSED_PATH / "lohn_profile_salarium.csv"
 SALARIUM_CSV = PROCESSED_PATH / "lohn_salarium_abfragen.csv"
 STATENT_CSV = PROCESSED_PATH / "statent_vzae_grossregion.csv"
+VERHAELTNIS_CSV = PROCESSED_PATH / "lohn_verhaeltnisse.csv"
 
 BASIS_DATEIEN = ["berufe_ch.csv", "berufe_ch_esco.csv", "berufe_ch_esco_verified.csv"]
 SCORES_DATEI = "scores.csv"
@@ -85,6 +99,7 @@ QUELLE_2D = "LSE2024_2d"
 QUELLE_1D = "LSE2024_1d"
 QUELLE_TOTAL = "LSE2024_total"
 QUELLE_SALARIUM = "LSE2024_2d+Salarium"
+QUELLE_VERHAELTNIS = "LSE2024_2d+Verhaeltnis"
 
 # 2-stellige Gruppen, in denen die Salarium-Profilmethode angewendet wird
 HETEROGENE_GRUPPEN: frozenset[str] = frozenset({"11", "12", "13", "14", "22", "24", "26"})
@@ -350,15 +365,60 @@ def kalibrierter_lohn(lse_monat: float, s_beruf: float, s_mittel: float) -> int:
 
 
 # ---------------------------------------------------------------------------
+# Verhältnis-Overrides
+# ---------------------------------------------------------------------------
+
+def _bool(wert) -> bool:
+    return str(wert).strip().lower() in {"true", "1", "ja"}
+
+
+def lade_verhaeltnisse(path: Path = VERHAELTNIS_CSV) -> pd.DataFrame:
+    """Verhältnistabelle lesen und prüfen; fehlt die Datei → leere Tabelle (keine Overrides).
+
+    faktor_zu_lse_gruppe leer = kein Override (nur Markierung lohn_unsicher).
+    """
+    spalten = ["isco_code", "beruf", "faktor_zu_lse_gruppe", "band_unten", "band_oben",
+               "lohn_unsicher", "quelle", "methode", "bemerkung"]
+    if not path.exists():
+        return pd.DataFrame(columns=spalten)
+    tab = pd.read_csv(path, dtype={"isco_code": str}, keep_default_na=False)
+    fehlend = set(spalten) - set(tab.columns)
+    if fehlend:
+        raise ValueError(f"{path.name}: Spalten fehlen: {sorted(fehlend)}")
+    tab["isco_code"] = tab["isco_code"].str.strip()
+    for spalte in ["faktor_zu_lse_gruppe", "band_unten", "band_oben"]:
+        tab[spalte] = pd.to_numeric(tab[spalte].replace("", pd.NA), errors="raise").astype(float)
+    tab["lohn_unsicher"] = tab["lohn_unsicher"].map(_bool)
+    if tab.duplicated(["isco_code", "beruf"]).any():
+        raise ValueError(f"{path.name}: doppelte Einträge")
+    f, lo, hi = tab["faktor_zu_lse_gruppe"], tab["band_unten"], tab["band_oben"]
+    if (f <= 0).any():
+        raise ValueError(f"{path.name}: Faktor muss > 0 sein")
+    falsch = tab[(lo.notna() & ~(lo <= f)) | (hi.notna() & ~(f <= hi)) | (f.isna() & (lo.notna() | hi.notna()))]
+    if not falsch.empty:
+        raise ValueError(f"{path.name}: Band enthält den Faktor nicht: {falsch['beruf'].tolist()}")
+    if (tab["quelle"].str.strip() == "").any():
+        raise ValueError(f"{path.name}: Quelle fehlt")
+    return tab
+
+
+def verhaeltnis_lohn(lse_monat: float, faktor: float) -> int:
+    """lohn_j = f_j × LSE_g × 12, auf 100 CHF gerundet."""
+    return int(round(faktor * lse_monat * MONATE / 100.0) * 100)
+
+
+# ---------------------------------------------------------------------------
 # Lohn je Beruf
 # ---------------------------------------------------------------------------
 
 def berechne_loehne(df: pd.DataFrame, lse: dict[str, int], profile: pd.DataFrame,
                     abfragen: pd.DataFrame | None, gewichte: pd.DataFrame | None,
-                    beschaeftigte: dict[tuple[str, str], float] | None = None) -> pd.DataFrame:
-    """Je Zeile (beruf, isco_code) → lohn_median_chf, lohn_quelle.
+                    beschaeftigte: dict[tuple[str, str], float] | None = None,
+                    verhaeltnisse: pd.DataFrame | None = None) -> pd.DataFrame:
+    """Je Zeile (beruf, isco_code) → lohn_median_chf, lohn_quelle, lohn_unsicher.
 
     beschaeftigte: Gewichte w_k je (isco_code, beruf); Default = Spalte beschaeftigte_1000 von df.
+    verhaeltnisse: Tabelle aus lade_verhaeltnisse(); None = keine Overrides.
     """
     codes = df["isco_code"].astype(str).str.strip().tolist()
     berufe = df["beruf"].tolist()
@@ -367,6 +427,8 @@ def berechne_loehne(df: pd.DataFrame, lse: dict[str, int], profile: pd.DataFrame
                                  errors="coerce").fillna(0.0)
         beschaeftigte = dict(zip(zip(codes, berufe), w_spalte))
     prof = {(str(r.isco_code), r.beruf): r for r in profile.itertuples()}
+    verh = {} if verhaeltnisse is None else {
+        (str(r.isco_code), r.beruf): r for r in verhaeltnisse.itertuples()}
 
     # 1) Basis LSE und Salarium-Wert S_j je Zeile
     basis, s_j = [], []
@@ -385,21 +447,36 @@ def berechne_loehne(df: pd.DataFrame, lse: dict[str, int], profile: pd.DataFrame
             print(f"  ! Kein Salarium-Profil für {code} {beruf} → {QUELLE_2D}")
         s_j.append(s or None)
 
-    # 2) S̄_g je 2-stelliger LSE-Gruppe (nur Berufe mit Salarium-Wert)
+    # Verhältnis-Faktor f_j je Zeile (nur mit 2-stelligem LSE-Wert)
+    f_j: list[float | None] = []
+    for code, beruf, (_, quelle) in zip(codes, berufe, basis):
+        v = verh.get((code, beruf))
+        f = None if v is None or pd.isna(v.faktor_zu_lse_gruppe) else float(v.faktor_zu_lse_gruppe)
+        if f is not None and quelle != QUELLE_2D:
+            print(f"  ! Verhältnis für {code} {beruf} ignoriert (kein 2-stelliger LSE-Wert)")
+            f = None
+        f_j.append(f)
+
+    # 2) S̄_g je 2-stelliger LSE-Gruppe (nur Berufe mit Salarium-Wert und ohne Override)
     gruppen: dict[str, tuple[list[float], list[float]]] = {}
-    for code, beruf, s in zip(codes, berufe, s_j):
-        if s:
+    for code, beruf, s, f in zip(codes, berufe, s_j, f_j):
+        if s and f is None:
             werte, w = gruppen.setdefault(code[:2], ([], []))
             werte.append(s)
             w.append(float(beschaeftigte.get((code, beruf), 0.0) or 0.0))
     mittel = {g: gruppen_mittel(werte, w) for g, (werte, w) in gruppen.items()}
 
     # 3) lohn_j = LSE_g × 12 × S_j / S̄_g; ohne S_j bleibt LSE_g × 12
+    # 4) danach Overrides: lohn_j = f_j × LSE_g × 12
     out = []
-    for code, (lohn, quelle), s in zip(codes, basis, s_j):
-        if s:
+    for code, beruf, (lohn, quelle), s, f in zip(codes, berufe, basis, s_j, f_j):
+        if f is not None:
+            lohn, quelle = verhaeltnis_lohn(lse[code[:2]], f), QUELLE_VERHAELTNIS
+        elif s:
             lohn, quelle = kalibrierter_lohn(lse[code[:2]], s, mittel[code[:2]]), QUELLE_SALARIUM
-        out.append({"lohn_median_chf": lohn, "lohn_quelle": quelle})
+        v = verh.get((code, beruf))
+        out.append({"lohn_median_chf": lohn, "lohn_quelle": quelle,
+                    "lohn_unsicher": bool(v is not None and v.lohn_unsicher)})
     return pd.DataFrame(out, index=df.index)
 
 
@@ -415,6 +492,9 @@ def _lohn_spalten_setzen(text_df: pd.DataFrame, loehne: pd.DataFrame) -> pd.Data
         pos = out.columns.get_loc("lohn_median_chf") + 1
         out.insert(pos, "lohn_quelle", "")
     out["lohn_quelle"] = loehne["lohn_quelle"]
+    if "lohn_unsicher" not in out.columns:
+        out.insert(out.columns.get_loc("lohn_quelle") + 1, "lohn_unsicher", "")
+    out["lohn_unsicher"] = loehne["lohn_unsicher"].map(lambda b: "True" if b else "False")
     return out
 
 
@@ -455,6 +535,9 @@ def main(argv: list[str] | None = None) -> None:
     lse = lade_lse(raw=LSE_RAW, csv=args.pfad / LSE_CSV.name, schreiben=not args.dry_run)
     print(f"✓ LSE 2024: {len(lse)} Mediane (Total, 1- und 2-stellig)")
     profile = lade_profile(args.pfad / PROFILE_CSV.name)
+    verhaeltnisse = lade_verhaeltnisse(args.pfad / VERHAELTNIS_CSV.name)
+    n_f = int(verhaeltnisse["faktor_zu_lse_gruppe"].notna().sum())
+    print(f"✓ Verhältnisse: {n_f} Overrides, {int(verhaeltnisse['lohn_unsicher'].sum())} als unsicher markiert")
 
     statent_path = args.pfad / STATENT_CSV.name
     salarium_path = args.pfad / SALARIUM_CSV.name
@@ -487,7 +570,7 @@ def main(argv: list[str] | None = None) -> None:
             print(f"– {name}: nicht vorhanden, übersprungen")
             continue
         df = _lesen(path)
-        loehne = berechne_loehne(df, lse, profile, abfragen, gewichte, beschaeftigte)
+        loehne = berechne_loehne(df, lse, profile, abfragen, gewichte, beschaeftigte, verhaeltnisse)
         alt = pd.to_numeric(df["lohn_median_chf"], errors="coerce")
         geaendert = alt != loehne["lohn_median_chf"]
         print(f"✓ {name}: {int(geaendert.sum())} Zeilen mit neuem Lohn")
