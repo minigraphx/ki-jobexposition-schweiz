@@ -316,33 +316,33 @@ class TestIdempotenz:
 
     def test_update_from_bfs(self, kopie):
         vorher = self._inhalte(kopie)
-        ub.main(["--pfad", str(kopie)])
+        ub.main(["--data-dir", str(kopie)])
         assert self._inhalte(kopie) == vorher
 
     def test_update_loehne_offline(self, kopie):
         vorher = self._inhalte(kopie)
-        ul.main(["--offline", "--pfad", str(kopie)])
+        ul.main(["--offline", "--data-dir", str(kopie)])
         assert self._inhalte(kopie) == vorher
 
     def test_berufe_zusammenlegen(self, kopie):
         vorher = self._inhalte(kopie)
-        bz.main(["--pfad", str(kopie)])
+        bz.main(["--data-dir", str(kopie)])
         assert self._inhalte(kopie) == vorher
 
     def test_mapping_fehlt_beruf(self, kopie):
         m = pd.read_csv(kopie / ub.MAPPING_CSV.name, dtype=str, keep_default_na=False)
         m.iloc[1:].to_csv(kopie / ub.MAPPING_CSV.name, index=False)
         with pytest.raises(SystemExit, match="ohne Eintrag"):
-            ub.main(["--pfad", str(kopie), "--dry-run"])
+            ub.main(["--data-dir", str(kopie), "--dry-run"])
 
     def test_neue_berufe_ohne_kandidaten(self, kopie):
         vorher = self._inhalte(kopie)
-        ub.main(["--pfad", str(kopie), "--neue-berufe"])
+        ub.main(["--data-dir", str(kopie), "--add-new"])
         assert self._inhalte(kopie) == vorher
 
 
 # ---------------------------------------------------------------------------
-# Neue Berufsgattungen (--neue-berufe)
+# Neue Berufsgattungen (--add-new)
 # ---------------------------------------------------------------------------
 
 NEUE_CODES = {"3115", "3123", "3311", "3355", "3434", "4419", "7223", "9329"}
@@ -394,7 +394,7 @@ class TestNeueBerufe:
             assert "Restgruppe" in m.at[code, "begruendung"]
 
     def test_aufnahme_auf_kopie(self, tmp_path, monkeypatch):
-        """Eintrag entfernen → --neue-berufe nimmt ihn mit SE-Wert, Branche und Lohn wieder auf."""
+        """Eintrag entfernen → --add-new nimmt ihn mit SE-Wert, Branche und Lohn wieder auf."""
         ziel = tmp_path / "processed"
         shutil.copytree(P, ziel)
         monkeypatch.setattr(ub, "BFS_FILE", tmp_path / "fehlt.xlsx")
@@ -402,7 +402,7 @@ class TestNeueBerufe:
         for name in ub.CSV_DATEIEN + [ub.MAPPING_CSV.name]:
             df = pd.read_csv(ziel / name, dtype=str, keep_default_na=False)
             df[df["beruf"] != beruf].to_csv(ziel / name, index=False)
-        ub.main(["--pfad", str(ziel), "--neue-berufe"])
+        ub.main(["--data-dir", str(ziel), "--add-new"])
         for name in ub.CSV_DATEIEN:
             df = pd.read_csv(ziel / name, dtype=str, keep_default_na=False).set_index("beruf")
             r = df.loc[beruf]
@@ -415,5 +415,5 @@ class TestNeueBerufe:
         assert m.at[beruf, "isco_code"] == "3123" and m.at[beruf, "ebene"] == ub.EBENE_GATTUNG
         # zweiter Lauf: nichts mehr zu ergänzen
         vorher = {p.name: p.read_text(encoding="utf-8") for p in ziel.glob("*.csv")}
-        ub.main(["--pfad", str(ziel), "--neue-berufe"])
+        ub.main(["--data-dir", str(ziel), "--add-new"])
         assert {p.name: p.read_text(encoding="utf-8") for p in ziel.glob("*.csv")} == vorher

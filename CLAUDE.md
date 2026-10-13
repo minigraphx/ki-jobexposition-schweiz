@@ -22,23 +22,23 @@ streamlit run src/app/app.py
 
 # --- Data Pipeline (run once, in order) ---
 python src/data/update_from_bfs.py          # BFS SE → beschaeftigte_1000/frauen_pct/synonyme in all 4 CSVs (via mapping)
-python src/data/update_from_bfs.py --blatt 2023        # other year sheet (default "2024"; needs data/raw file)
-python src/data/update_from_bfs.py --neue-berufe       # also add new SE Berufsgattungen >= 5000 to berufe_ch.csv + mapping
+python src/data/update_from_bfs.py --sheet 2023        # other year sheet (default "2024"; needs data/raw file)
+python src/data/update_from_bfs.py --add-new           # also add new SE Berufsgattungen >= 5000 to berufe_ch.csv + mapping
 python src/data/berufe_zusammenlegen.py     # one-time #51 migration (ISCO fixes + merges), idempotent, kept for reference
 python src/data/enrich_with_esco.py         # ESCO v1.2.1 → berufe_ch_esco.csv + _verified.csv (only jobs without assignment)
 python src/data/update_loehne.py --offline  # LSE 2024 wages (+ stored Salarium profiles) → all CSVs, recomputes score_ch/adaptabilitaet
 python src/data/update_loehne.py            # same, but re-queries Salarium + STATENT online (~15 min, polite)
 python src/data/fetch_bgs.py                # BFS GGS (stats.swiss SDMX) + STATENT online → grenzgaenger_anteil_branche.csv
-python src/data/fetch_bgs.py --offline      # same from the versioned CSVs (no network); --periode 2026-Q2, --dry-run
+python src/data/fetch_bgs.py --offline      # same from the versioned CSVs (no network); --period 2026-Q2, --dry-run
 python src/data/fetch_statent.py            # BFS STATENT ts-x-06.02.01.01 (DAM API) → statent_groessenklassen_noga.csv + kmu_anteil_branche.csv
 python src/data/fetch_statent.py --offline --apply-scores --dry-run  # preview new zeitrahmen in scores.csv (writes nothing)
 python src/data/fetch_statent.py --offline --apply-scores            # write kmu_anteil_branche.csv + recompute grossfirmen_anteil/zeitrahmen_kmu_delta/zeitrahmen
 
 # Re-match entries listed in KNOWN_WRONG_MATCHES (currently empty, all known errors fixed in #52):
 python src/data/enrich_with_esco.py --fix-wrong
-# Single job / all jobs (--alle overwrites the curated #52 assignments!):
+# Single job / all jobs (--all overwrites the curated #52 assignments!):
 python src/data/enrich_with_esco.py --job "Grafik- und Multimediadesigner"
-python src/data/enrich_with_esco.py --alle
+python src/data/enrich_with_esco.py --all
 # verify_esco_matches.py and patch_unmatched.py are historical (exit immediately), see #52
 
 # --- Scoring Pipeline (requires ANTHROPIC_API_KEY in .env) ---
@@ -170,7 +170,7 @@ commuters), in 1000. Downloaded from:
 The file has one sheet per year (`2024`, `2023`, …, `2010`, `2000`, `1990`) plus pooled sheets
 (`2022-2024`, `2021-2023`, …). Columns: 0–4 codes by level (4-digit Berufsgattung = column 3,
 5-digit Berufsart = column 4), 5 label, 6 total, 7 men, 8 women; «X» = not published (< 5 obs.),
-number format «(##0)» = < 50 obs. Select the sheet with `--blatt` (default `2024`).
+number format «(##0)» = < 50 obs. Select the sheet with `--sheet` (default `2024`).
 
 **No double counting (Issue #51):** invariant Σ `beschaeftigte_1000` per 4-digit code = SE value
 (tested). Mapping `beruf_berufsart_mapping.csv` (columns `beruf, isco_code, ebene, berufsarten,
@@ -259,13 +259,13 @@ scores.csv (master data only: beruf, isco_code, synonyme, qualifikation, branche
 
 | Script | Input | Output | Notes |
 |--------|-------|--------|-------|
-| `src/data/update_from_bfs.py` | `data/raw/su-d-40.02.03.02.01.03.10.xlsx` (or `se_berufe.csv`), `beruf_berufsart_mapping.csv` | `berufe_ch*.csv`, `scores.csv`, `se_berufe.csv` | BFS SE 2024: Berufsgattung/Berufsart per mapping, sets `beschaeftigte_1000`, `frauen_pct`, `synonyme`; `--blatt`, `--neue-berufe`, `--dry-run` |
+| `src/data/update_from_bfs.py` | `data/raw/su-d-40.02.03.02.01.03.10.xlsx` (or `se_berufe.csv`), `beruf_berufsart_mapping.csv` | `berufe_ch*.csv`, `scores.csv`, `se_berufe.csv` | BFS SE 2024: Berufsgattung/Berufsart per mapping, sets `beschaeftigte_1000`, `frauen_pct`, `synonyme`; `--sheet`, `--add-new`, `--dry-run` |
 | `src/data/berufe_zusammenlegen.py` | `beruf_berufsart_mapping.csv` | `berufe_ch*.csv`, `scores.csv` | One-time #51 migration: ISCO code fixes + merges (weighted-mean scores); idempotent |
-| `src/data/enrich_with_esco.py` | `berufe_ch.csv`, `berufe_ch_esco.csv` | `berufe_ch_esco.csv`, `berufe_ch_esco_verified.csv` | 6-stage search, hard ISCO consistency check + LLM validation; default: only jobs without `esco_match_qualitaet`; `--job`, `--fix-wrong`, `--alle` |
+| `src/data/enrich_with_esco.py` | `berufe_ch.csv`, `berufe_ch_esco.csv` | `berufe_ch_esco.csv`, `berufe_ch_esco_verified.csv` | 6-stage search, hard ISCO consistency check + LLM validation; default: only jobs without `esco_match_qualitaet`; `--job`, `--fix-wrong`, `--all` |
 | `src/data/verify_esco_matches.py`, `src/data/patch_unmatched.py` | — | — | Historical (2-digit ISCO matching, `iscoGroup` bug); exit immediately, kept for reference |
 | `src/data/update_loehne.py` | LSE 2024 T17 (raw or `lse2024_monatslohn_isco.csv`), `lohn_profile_salarium.csv`, `lohn_salarium_abfragen.csv`, `statent_vzae_grossregion.csv`, `lohn_verhaeltnisse.csv` | `berufe_ch*.csv`, `scores.csv` | Sets `lohn_median_chf`/`lohn_quelle`/`lohn_unsicher`; ratio overrides after Salarium; recomputes wage-dependent rule-based columns in scores.csv; `--offline` (no network), `--dry-run` |
-| `src/data/fetch_bgs.py` | stats.swiss SDMX `DF_GGS_4` + STATENT PxWeb (online) or `bgs_grenzgaenger_noga.csv` + `statent_beschaeftigte_noga.csv` (`--offline`) | `grenzgaenger_anteil_branche.csv` (+ the two versioned inputs when online) | Cross-border commuter share per sector (annual mean of latest full year, latest quarter extra); reads/writes no scores; `--periode JJJJ\|JJJJ-Qn`, `--dry-run` |
-| `src/data/fetch_statent.py` | BFS DAM API `ts-x-06.02.01.01` (online) or `statent_groessenklassen_noga.csv` (`--offline`) | `kmu_anteil_branche.csv` (+ `statent_groessenklassen_noga.csv` when online); with `--apply-scores`: `scores.csv` | Grossfirmen share per sector (enterprises ≥250 employed); `--jahr`, `--dry-run`; `--apply-scores` rewrites only `grossfirmen_anteil`, `zeitrahmen_kmu_delta`, `zeitrahmen` (from `zeitrahmen_roh`) |
+| `src/data/fetch_bgs.py` | stats.swiss SDMX `DF_GGS_4` + STATENT PxWeb (online) or `bgs_grenzgaenger_noga.csv` + `statent_beschaeftigte_noga.csv` (`--offline`) | `grenzgaenger_anteil_branche.csv` (+ the two versioned inputs when online) | Cross-border commuter share per sector (annual mean of latest full year, latest quarter extra); reads/writes no scores; `--period YYYY\|YYYY-Qn`, `--dry-run` |
+| `src/data/fetch_statent.py` | BFS DAM API `ts-x-06.02.01.01` (online) or `statent_groessenklassen_noga.csv` (`--offline`) | `kmu_anteil_branche.csv` (+ `statent_groessenklassen_noga.csv` when online); with `--apply-scores`: `scores.csv` | Grossfirmen share per sector (enterprises ≥250 employed); `--year`, `--dry-run`; `--apply-scores` rewrites only `grossfirmen_anteil`, `zeitrahmen_kmu_delta`, `zeitrahmen` (from `zeitrahmen_roh`) |
 | `src/data/branche_neu_zuordnen.py` | `BRANCHE_MAP` | `berufe_ch*.csv`, `scores.csv` | Re-applies ISCO-prefix sector mapping to non-curated jobs |
 | `src/scoring/exposure_scorer.py` | `berufe_ch_esco_verified.csv` | `scores.csv` | Synchronous, hash-based delta; `--force [name\|isco]` for selective re-score |
 | `src/scoring/adaptability_scorer.py` | `scores.csv` | `scores.csv` | Rule-based: education, wage, digital affinity, mobility |

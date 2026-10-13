@@ -69,7 +69,7 @@ class TestMain:
         path = self._setup(tmp_path, monkeypatch)
         original = pd.read_csv(path, dtype=str, keep_default_na=False)
 
-        bnz.main(["--pfad", str(tmp_path)])
+        bnz.main(["--data-dir", str(tmp_path)])
         result = pd.read_csv(path, dtype=str, keep_default_na=False)
 
         # Nur die erste Zeile (1330) ist betroffen
@@ -89,18 +89,18 @@ class TestMain:
 
     def test_idempotent(self, tmp_path, monkeypatch):
         path = self._setup(tmp_path, monkeypatch)
-        bnz.main(["--pfad", str(tmp_path)])
+        bnz.main(["--data-dir", str(tmp_path)])
         erster_lauf = path.read_bytes()
-        bnz.main(["--pfad", str(tmp_path)])
+        bnz.main(["--data-dir", str(tmp_path)])
         assert path.read_bytes() == erster_lauf
 
     def test_dry_run_schreibt_nicht(self, tmp_path, monkeypatch):
         path = self._setup(tmp_path, monkeypatch)
         vorher = path.read_bytes()
-        bnz.main(["--pfad", str(tmp_path), "--dry-run"])
+        bnz.main(["--data-dir", str(tmp_path), "--dry-run"])
         assert path.read_bytes() == vorher
 
     def test_fehlende_datei_wird_uebersprungen(self, tmp_path, monkeypatch, capsys):
         monkeypatch.setattr(bnz, "BASIS_DATEIEN", ["gibt_es_nicht.csv"])
-        bnz.main(["--pfad", str(tmp_path)])
+        bnz.main(["--data-dir", str(tmp_path)])
         assert "übersprungen" in capsys.readouterr().out

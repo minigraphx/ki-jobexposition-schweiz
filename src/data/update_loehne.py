@@ -529,7 +529,8 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--offline", action="store_true",
                         help="gespeicherte Salarium- und STATENT-Werte verwenden (kein Netz)")
     parser.add_argument("--dry-run", action="store_true", help="Änderungen nur anzeigen")
-    parser.add_argument("--pfad", type=Path, default=PROCESSED_PATH, help="Verzeichnis der CSVs")
+    parser.add_argument("--data-dir", dest="pfad", metavar="DIR", type=Path, default=PROCESSED_PATH,
+                        help="Verzeichnis der CSVs")
     args = parser.parse_args(argv)
 
     lse = lade_lse(raw=LSE_RAW, csv=args.pfad / LSE_CSV.name, schreiben=not args.dry_run)

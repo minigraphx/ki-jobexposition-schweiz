@@ -123,7 +123,8 @@ def zusammenlegen(df: pd.DataFrame, mapping: pd.DataFrame, scores: bool) -> list
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--dry-run", action="store_true", help="Änderungen nur anzeigen")
-    parser.add_argument("--pfad", type=Path, default=PROCESSED_PATH, help="Verzeichnis der CSVs")
+    parser.add_argument("--data-dir", dest="pfad", metavar="DIR", type=Path, default=PROCESSED_PATH,
+                        help="Verzeichnis der CSVs")
     args = parser.parse_args(argv)
     mapping = lade_mapping(args.pfad / MAPPING_CSV.name)
     for name in CSV_DATEIEN:

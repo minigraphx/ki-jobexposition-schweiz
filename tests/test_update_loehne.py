@@ -479,7 +479,7 @@ class TestMainOffline:
     def test_offline_lauf(self, tmp_path, monkeypatch):
         pfad = self._setup(tmp_path, monkeypatch)
         alt = pd.read_csv(pfad / "scores.csv", dtype=str, keep_default_na=False)
-        ul.main(["--offline", "--pfad", str(pfad)])
+        ul.main(["--offline", "--data-dir", str(pfad)])
 
         # S̄_22 = (30·12000 + 10·10000) / 40 = 11500
         erwartet = [str(int(round(96000 * 12000 / 11500, -2))), str(int(round(96000 * 10000 / 11500, -2))),
@@ -511,7 +511,7 @@ class TestMainOffline:
             {"isco_code": "2262", "beruf": "Apotheker/in", "faktor_zu_lse_gruppe": None, "band_unten": None,
              "band_oben": None, "lohn_unsicher": True, "quelle": "Q", "methode": "M", "bemerkung": ""},
         ]).to_csv(pfad / ul.VERHAELTNIS_CSV.name, index=False)
-        ul.main(["--offline", "--pfad", str(pfad)])
+        ul.main(["--offline", "--data-dir", str(pfad)])
         neu = pd.read_csv(pfad / "scores.csv", dtype=str, keep_default_na=False)
         # 2212 = 1.6 × 96'000; 2262 allein normiert → 96'000 (unsicher markiert)
         assert neu["lohn_median_chf"].tolist() == ["153600", "96000", str(4970 * 12)]
@@ -522,5 +522,5 @@ class TestMainOffline:
     def test_dry_run_schreibt_nichts(self, tmp_path, monkeypatch):
         pfad = self._setup(tmp_path, monkeypatch)
         vorher = (pfad / "scores.csv").read_text(encoding="utf-8")
-        ul.main(["--offline", "--dry-run", "--pfad", str(pfad)])
+        ul.main(["--offline", "--dry-run", "--data-dir", str(pfad)])
         assert (pfad / "scores.csv").read_text(encoding="utf-8") == vorher
