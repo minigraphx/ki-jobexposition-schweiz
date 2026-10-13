@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "claude",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "2366bb40609eb87188a87c6c954923e5845e3a9c40c56c2563dbca9a43c2f6db",
+    "isco_code": "2512",
+    "beruf": "Softwareentwickler",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T21:16:55+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive",
+      "max_tokens": 64000,
+      "fallbacks": "default",
+      "structured_output": "output_config.format"
+    },
+    "stop_reason": "end_turn",
+    "stop_details": null,
+    "usage": {
+      "cache_creation_input_tokens": 36937,
+      "cache_read_input_tokens": 0,
+      "input_tokens": 3003,
+      "output_tokens": 4847
+    },
+    "usage_je_versuch": [
+      {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 36937
+        },
+        "cache_creation_input_tokens": 36937,
+        "cache_read_input_tokens": 0,
+        "inference_geo": "global",
+        "input_tokens": 3003,
+        "iterations": [
+          {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 36937
+            },
+            "cache_creation_input_tokens": 36937,
+            "cache_read_input_tokens": 0,
+            "input_tokens": 3003,
+            "model": null,
+            "output_tokens": 4847,
+            "type": "message"
+          }
+        ],
+        "output_tokens": 4847,
+        "output_tokens_details": {
+          "thinking_tokens": 1465
+        },
+        "service_tier": "standard"
+      }
+    ],
+    "request_ids": [],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2512",
+    "beruf": "Softwareentwickler",
+    "taetigkeiten": [
+      {
+        "name": "Neue Funktionen in bestehender Codebasis implementieren (Backend/Frontend, inkl. Schnittstellen und Bibliotheken)",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Coding-Agent mit Repo-Zugriff schreibt Code über mehrere Dateien und lässt Tests laufen; die Entwicklerin spezifiziert, steuert und reviewt jede Änderung vor dem Merge. Bei Altlast-Codebasen oder unklaren Anforderungen kann die Restzeit Richtung 30-50 gehen."
+      },
+      {
+        "name": "Softwarefehler analysieren, reproduzieren und beheben (Debugging)",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erst mit Coding-Agent (Repo-Zugriff, Code-Ausführung, Logs) wird die Schwelle erreicht; der Agent lokalisiert und fixt, der Entwickler steuert die Fehlersuche und prüft jeden Fix. Schwer reproduzierbare Fehler in Produktionsumgebungen halten die Restzeit hoch."
+      },
+      {
+        "name": "Automatisierte Unit- und Integrationstests schreiben und pflegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Coding-Agent erzeugt Testfälle für bestehenden Code und führt sie aus; der Entwickler prüft Abdeckung und Aussagekraft jedes Tests. Klassische Testgeneratoren übernehmen keine 50 % → P0."
+      },
+      {
+        "name": "Pull Requests von Teammitgliedern reviewen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Reviewer führt das Review selbst durch; ein KI-Review-Bot in der Git-Plattform fasst Änderungen zusammen und markiert mögliche Probleme, wodurch das Lesen gezielter wird."
+      },
+      {
+        "name": "Anforderungen mit Kundschaft und Fachbereich in Gesprächen und Workshops ermitteln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Abstimmung, Nachfragen und Aushandeln von Bedürfnissen mit Menschen; der Wert liegt im direkten Austausch."
+      },
+      {
+        "name": "Spezifikationen analysieren und in technische Anforderungen, User Stories und Tickets überführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spezifikation einfügen, LLM leitet technische Anforderungen, Akzeptanzkriterien und Tickets ab; der Entwickler prüft jede Ausgabe gegen Systemwissen und ergänzt Lücken."
+      },
+      {
+        "name": "Softwarearchitektur, Datenmodell und Entwurfsmuster für neue Komponenten festlegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abwägen von Trade-offs im konkreten System- und Organisationskontext; LLM liefert Varianten und Argumente, spart aber nach bester Einschätzung weniger als 50 % der Zeit."
+      },
+      {
+        "name": "Technische Dokumentation, API-Beschreibungen und Flussdiagramme erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Agent mit Repo-Zugriff erstellt Doku und Diagramme (z. B. als Mermaid-Code) aus dem Quellcode; der Entwickler prüft jede Seite auf Korrektheit. Klassische Doku-Generatoren decken nur API-Grundgerüste ab → P0."
+      },
+      {
+        "name": "Datenmigrationen und Migrationsskripte entwickeln und testen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Coding-Agent schreibt Mapping- und Migrationsskripte und führt Testläufe aus; der Entwickler prüft jedes Skript und die Datenqualität sorgfältig. Bei Personen- oder Bankdaten erschweren Datenschutz und Cloud-Restriktionen den KI-Einsatz."
+      },
+      {
+        "name": "Build-, CI/CD-Pipelines und Deployment-Konfigurationen anpassen und Betriebsprobleme untersuchen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Agenten bei umgebungsspezifischen Konfigurations- und Infrastrukturproblemen typischerweise 50 % sparen; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Agent schreibt Pipeline- und Konfigurationsdateien und analysiert Logs; der Entwickler prüft jede Änderung. Die eigentlichen Deployments laufen bereits über klassische CI/CD-Software und sind keine Tätigkeit mehr."
+      },
+      {
+        "name": "An Team-Meetings teilnehmen (Daily, Sprint Planning, Retrospektive) und Aufgaben abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zwischenmenschliche Abstimmung und gemeinsame Planung im Team; Präsenz bzw. Live-Interaktion."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Softwareentwickler/in (FH/Uni oder Informatiker/in EFZ mit Erfahrung) in einem Schweizer Softwarehaus oder einer IT-Abteilung mit agilem Team, Arbeit überwiegend an bestehenden Codebasen. ESCO-Rauschen («Bauprojekte leiten», «technisches Zeichnen», «wissenschaftliche Forschung») wurde nicht übernommen. Grösste Unsicherheiten betreffen die Restzeit-Bänder beim Implementieren und Debugging (Abhängigkeit von Codebasis-Qualität) sowie Architektur- und Betriebsaufgaben nahe der 50 %-Schwelle.",
+    "zusammenfassung": {
+      "haupt_risiko": "Implementieren, Debuggen, Testen, Dokumentieren und Migrationsarbeiten werden von Coding-Agenten mit Repo-Zugriff erledigt, Code-Reviews durch KI-Review-Bots beschleunigt.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind exponiert, überwiegend delegierend: Agenten erstellen Code, Tests und Dokumentation, die Entwickler/innen spezifizieren, steuern und reviewen jede Änderung; Reviews bleiben unterstützend. Nicht exponiert sind Anforderungsgespräche, Teamabstimmung und Architekturentscheide. In der Schweiz bremsen vor allem Datenschutz- und Cloud-Restriktionen in Banken, Versicherungen und Verwaltung, während Softwarehäuser die Werkzeuge rasch einführen.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

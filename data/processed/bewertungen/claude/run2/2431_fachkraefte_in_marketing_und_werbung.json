@@ -1,0 +1,268 @@
+{
+  "meta": {
+    "provider": "claude",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "4459663200c88569919491b3a2fb1e37d3f11ae73b0a03bdd3e0d1e0adc7f122",
+    "isco_code": "2431",
+    "beruf": "Fachkräfte in Marketing und Werbung",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-13T21:35:37+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive",
+      "max_tokens": 64000,
+      "fallbacks": "default",
+      "structured_output": "output_config.format"
+    },
+    "stop_reason": "end_turn",
+    "stop_details": null,
+    "usage": {
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 73874,
+      "input_tokens": 9505,
+      "output_tokens": 9841
+    },
+    "usage_je_versuch": [
+      {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 36937,
+        "inference_geo": "global",
+        "input_tokens": 2960,
+        "iterations": [
+          {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 36937,
+            "input_tokens": 2960,
+            "model": null,
+            "output_tokens": 5711,
+            "type": "message"
+          }
+        ],
+        "output_tokens": 5711,
+        "output_tokens_details": {
+          "thinking_tokens": 2221
+        },
+        "service_tier": "standard"
+      },
+      {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 36937,
+        "inference_geo": "global",
+        "input_tokens": 6545,
+        "iterations": [
+          {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 36937,
+            "input_tokens": 6545,
+            "model": null,
+            "output_tokens": 4130,
+            "type": "message"
+          }
+        ],
+        "output_tokens": 4130,
+        "output_tokens_details": {
+          "thinking_tokens": 392
+        },
+        "service_tier": "standard"
+      }
+    ],
+    "request_ids": [],
+    "versuche": 2,
+    "status": "ok",
+    "fehler": [
+      "Versuch 1: zusammenfassung/begruendung: '' is too short"
+    ],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2431",
+    "beruf": "Fachkräfte in Marketing und Werbung",
+    "taetigkeiten": [
+      {
+        "name": "Markt-, Wettbewerbs- und Umfeldanalysen recherchieren und als Desk Research aufbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent mit Websuche sammelt Quellen zu Markt, Wettbewerbern und Trends und erstellt die Analyse. Die Fachperson gibt Fragestellung und Kontext vor und prüft wegen des Halluzinationsrisikos Fakten und Quellen jedes Berichts."
+      },
+      {
+        "name": "Kundenbefragungen konzipieren, online durchführen und auswerten (inkl. Freitextantworten)",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft den Fragebogen, eine Datenanalyse mit Code-Ausführung wertet die Ergebnisse aus und codiert Freitexte; die Fachperson prüft Methodik und Interpretation. Umfragetools automatisieren nur Versand und Grundauswertungen, nicht ≥ 50 % der Zeit."
+      },
+      {
+        "name": "Marketingstrategie und Positionierung entwickeln: Analysen interpretieren, Optionen abwägen, Ziele und Zielgruppen festlegen",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Strategische Abwägung mit firmeninternem Kontext, Abstimmung mit der Geschäftsleitung und Verantwortung dominieren. KI liefert Ideen, spart aber kaum 50 % der Zeit."
+      },
+      {
+        "name": "Marketingkonzepte, Kampagnenbriefings und Präsentationen ausformulieren und gestalten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten und Analysen erstellt die KI Konzepttexte und Folien, letztere mit KI-Funktionen der Office-Suite. Die Fachperson steuert die Inhalte und überarbeitet jedes Dokument fachlich."
+      },
+      {
+        "name": "Marketingkampagnen und Massnahmenpläne koordinieren: Budget, Zeitplan, Agenturen, Grafiker und Druckereien steuern",
+        "zeitanteil_pct": 13,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Tätigkeit besteht vor allem aus Abstimmung, Verhandlung, Abnahme von Werbemitteln und Entscheiden unter Zeitdruck. Projekttools unterstützen nur; KI spart hier keine 50 %."
+      },
+      {
+        "name": "Marketingtexte verfassen (Website, Newsletter, Social Media, Werbe- und Produkttexte) inkl. Sprachfassungen",
+        "zeitanteil_pct": 12,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Das Chat-LLM schreibt Texte und DE/FR/IT-Fassungen nach Briefing und Tonalität; die Fachperson prüft und schärft jeden Text vor der Publikation. Parallele Sprachfassungen erfordern zusätzliche organisatorische Abstimmung."
+      },
+      {
+        "name": "Social-Media-Posts und einfache Werbemittel mit Bild erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Text- und Bildgeneratoren bzw. generative Designfunktionen erstellen Post und Visual. Die Person wählt aus, passt an das CI an und prüft jeden Post."
+      },
+      {
+        "name": "Kampagnen- und Web-Analytics auswerten und Reportings für Auftraggeber erstellen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Datenanalyse bzw. KI-Funktionen in Analytics-Tools werten Daten aus und formulieren Insights; die Fachperson prüft Zahlen und Schlüsse jedes Reports. Klassische Dashboards (Analytics-/BI-Tools) übernehmen die Datenaufbereitung bereits grösstenteils (P1 software)."
+      },
+      {
+        "name": "SEO-Massnahmen sowie Such- und Social-Ads-Kampagnen einrichten und optimieren",
+        "zeitanteil_pct": 6,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative Funktionen in Ad-Plattformen und SEO-Tools erstellen Anzeigentexte, Keywords und Meta-Texte; die Person prüft und gibt jede Kampagne frei. Automatisches Gebotsmanagement und regelbasierte Optimierung (nicht-generative Software) übernehmen einen grossen Teil der laufenden Optimierung."
+      },
+      {
+        "name": "Kunden bzw. interne Auftraggeber beraten, Bedürfnisse in Gesprächen ermitteln und Konzepte präsentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung, Workshops und Präsentationen von Angesicht zu Angesicht sind Präsenz- und Beziehungstätigkeiten."
+      },
+      {
+        "name": "Anfragen von Kunden, Medien und Partnern per E-Mail beantworten",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Anfrage einfügen, das LLM entwirft die Antwort. Wegen heterogener und teils heikler Anfragen prüft die Person jede Antwort inhaltlich."
+      },
+      {
+        "name": "Projektfortschritt dokumentieren: Sitzungsprotokolle und Statusberichte erstellen",
+        "zeitanteil_pct": 3,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Transkription und Zusammenfassung erstellen Protokolle und Statusberichte; die Person liest kurz gegen und gibt frei. Schweizerdeutsche Sitzungen mit mehreren Personen erhöhen den Korrekturaufwand."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Marketingfachperson (Tertiärstufe) in der Marketingabteilung eines KMU oder Mittelunternehmens bzw. in einer kleinen Agentur, mit einer Mischung aus Strategie, Kampagnenumsetzung und Content. Der ESCO-Input betont die strategische Beratung; operative Content- und Digitaltätigkeiten wurden aus Berufswissen und optionalen Kompetenzen ergänzt. Die grössten Unsicherheiten betreffen die Zeitanteile zwischen Strategie und operativer Umsetzung sowie die Restzeit bei Recherche- und Konzeptarbeit.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Texterstellung, Konzept- und Präsentationsentwürfe, Desk Research, Umfrage- und Analytics-Auswertungen sowie Ads- und Social-Media-Inhalte, die durch Chat-LLM, Recherche-Agenten, KI-Datenanalyse und Bildgeneratoren erstellt werden.",
+      "begruendung": "Rund zwei Drittel der Arbeitszeit sind exponiert, fast durchwegs im Modus delegierend: Die KI erstellt Texte, Analysen, Konzeptentwürfe und Visuals, während die Fachperson steuert und jedes Ergebnis vor Publikation oder Weitergabe prüft. Strategieentwicklung, Kampagnenkoordination und persönliche Beratung bleiben beim Menschen. In der Schweiz bremst vor allem die Mehrsprachigkeit, also parallele DE/FR/IT-Fassungen mit regionaler Tonalität; die nötigen Standard-Tools sind in Agenturen und Marketingabteilungen hingegen bereits breit verfügbar.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

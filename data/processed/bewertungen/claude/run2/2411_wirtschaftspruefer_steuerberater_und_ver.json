@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "provider": "claude",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "0b6b28913fa2f219d5de50a436bce3c5e0b634dc8e8cf86756fc8a669a311ab0",
+    "isco_code": "2411",
+    "beruf": "Wirtschaftsprüfer, Steuerberater und verwandte Berufe",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-13T21:37:18+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive",
+      "max_tokens": 64000,
+      "fallbacks": "default",
+      "structured_output": "output_config.format"
+    },
+    "stop_reason": "end_turn",
+    "stop_details": null,
+    "usage": {
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 36937,
+      "input_tokens": 3537,
+      "output_tokens": 5973
+    },
+    "usage_je_versuch": [
+      {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 36937,
+        "inference_geo": "global",
+        "input_tokens": 3537,
+        "iterations": [
+          {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 36937,
+            "input_tokens": 3537,
+            "model": null,
+            "output_tokens": 5973,
+            "type": "message"
+          }
+        ],
+        "output_tokens": 5973,
+        "output_tokens_details": {
+          "thinking_tokens": 2071
+        },
+        "service_tier": "standard"
+      }
+    ],
+    "request_ids": [],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2411",
+    "beruf": "Wirtschaftsprüfer, Steuerberater und verwandte Berufe",
+    "taetigkeiten": [
+      {
+        "name": "Belege und Bankbewegungen für Mandanten erfassen und kontieren (Kreditoren, Debitoren, Spesen) in der Buchhaltungssoftware",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumentenerkennung mit LLM in Buchhaltungssoftware extrahiert und kontiert heterogene Belege; die Fachperson bearbeitet markierte Ausnahmen und Stichproben. P1, weil camt-Bankimport, QR-Rechnungs-Verarbeitung und Buchungsregeln (klassische Software) bereits den Grossteil übernehmen können."
+      },
+      {
+        "name": "Konten abstimmen, Fehlbuchungen ermitteln und korrigieren (Saldi, Debitoren/Kreditoren, MWST-Abstimmung)",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Fachperson klärt Differenzen selbst; KI-Funktionen im ERP bzw. Datenanalyse-Agenten gleichen Journale ab und markieren auffällige Buchungen. Klassische Abgleichsregeln decken nur einen Teil ab, Ursachenklärung bleibt manuell."
+      },
+      {
+        "name": "Abschlussbuchungen ermitteln und buchen (Abgrenzungen, Rückstellungen, Abschreibungen, Wertberichtigungen)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus exportierter Saldenliste und Belegliste liefert das LLM Berechnungen und Buchungsvorschläge; die Fachperson beurteilt jede Position selbst (Ermessen, steuerliche Zulässigkeit)."
+      },
+      {
+        "name": "Jahresrechnung mit Anhang und Erläuterungen für Mandanten aufbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft Anhang (OR-Angaben) und Kommentar zur Jahresrechnung aus eingefügten Zahlen und Vorjahrestext; die Fachperson prüft jede Angabe gegen die Buchhaltung."
+      },
+      {
+        "name": "Steuererklärungen natürlicher und juristischer Personen vorbereiten: Unterlagen sichten und Daten in die Steuersoftware übertragen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung extrahiert Lohnausweise, Bank- und Wertschriftenauszüge (Scans/PDF) und befüllt die Erfassung; die Fachperson prüft jede Erklärung inhaltlich vor Einreichung. Die eigentliche Steuerberechnung erledigt die kantonale Steuersoftware; Hemmnis Berufsgeheimnis/Datenschutz bei Cloud-Diensten."
+      },
+      {
+        "name": "Steuerrechtliche Fragen abklären und schriftliche Stellungnahmen, Steuerplanungen und Einsprachen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Mit eingefügten Gesetzes-, Kreisschreiben- und Falltexten entwirft das LLM Stellungnahme oder Einsprache; die Fachperson prüft jede Aussage gegen Quellen und kantonale Praxis (Halluzinationsrisiko, Haftung)."
+      },
+      {
+        "name": "Finanz- und Ertragslage analysieren, Kennzahlen, Budgets und Liquiditätsplanungen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Datenanalyse-Agent mit Code-Ausführung berechnet Kennzahlen, erstellt Planrechnungen und Kommentare aus exportierten Daten; die Fachperson gibt Annahmen vor und prüft jede Auswertung."
+      },
+      {
+        "name": "Buchführung und Jahresrechnung prüfen (eingeschränkte Revision: Analysen, Belegprüfung, Befragungen)",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Markierungen und Datenanalyse bei KMU-Revisionen mit Befragungen und Ermessen wirklich 50 % Zeit sparen; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die zugelassene Revisorin prüft selbst; KI-Werkzeuge analysieren Journale, gleichen Belege ab und markieren Auffälligkeiten. Revisionsaufsicht (RAG) und Berufsstandards verlangen eigene Prüfungshandlungen."
+      },
+      {
+        "name": "Prüfungsdokumentation, Arbeitspapiere und Revisionsbericht verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM formuliert Arbeitspapiere und Berichtsentwürfe aus Prüfnotizen und Standardvorlagen; die verantwortliche Person prüft und unterzeichnet jeden Bericht."
+      },
+      {
+        "name": "Mandanten persönlich beraten und Abschluss- bzw. Steuerbesprechungen führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung und Vertrauensbeziehung von Angesicht zu Angesicht; Wert liegt in der Präsenz und im Ermessen."
+      },
+      {
+        "name": "Korrespondenz mit Mandanten und Steuerbehörden führen (Unterlagen anfordern, Rückfragen beantworten, Fristerstreckungen)",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Standard-E-Mails und Briefe entwirft das LLM aus Stichworten bzw. Falldaten; die Fachperson sichtet kurz und gibt frei."
+      },
+      {
+        "name": "MWST-Abrechnungen und Lohnabrechnungen mit Fachsoftware erstellen und einreichen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "MWST-Abrechnung aus den Buchungen, Lohnlauf und ELM-Übermittlung erledigt klassische Buchhaltungs- und Lohnsoftware; kein LLM nötig."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Treuhänder/in mit Fachausweis bzw. Steuerexpert/in in einem Treuhand-KMU mit Buchführung, Abschlüssen, Steuererklärungen und eingeschränkten Revisionen; Controller in Unternehmen und Prüfer in Big-4-Gesellschaften sind nicht das Leitsetting. ESCO-Label passt laut Hinweis auf Accountant und deckt Treuhand/Revision ab. Grösste Unsicherheiten: Zeitersparnis bei Revisionstätigkeit und bei steuerrechtlichen Stellungnahmen (kantonale Praxis, Halluzinationsrisiko).",
+    "zusammenfassung": {
+      "haupt_risiko": "Belegerfassung und Kontierung, Datenübertragung in Steuererklärungen, Abschluss- und Berichtstexte, steuerliche Stellungnahmen sowie Abstimmungen und Analysen werden von Dokumentenerkennung, Chat-LLM und Datenanalyse-Agenten weitgehend erstellt oder vorbereitet.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind exponiert, überwiegend delegierend oder unterstützend: Die KI erstellt Entwürfe, Buchungen und Auswertungen, die Fachperson prüft und verantwortet jedes Ergebnis; nur Belegerfassung und Standardkorrespondenz laufen weitgehend ersetzend. Bremsend wirken Berufsgeheimnis und Datenschutz bei Cloud-Lösungen, die Revisionsaufsicht sowie kantonal unterschiedliches Steuerrecht; persönliche Mandantenberatung bleibt unberührt.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "provider": "claude",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "c7852679b37b03289cc9ea5902bbbfdaeba67280e9e68fd232d5241ab9be4b70",
+    "isco_code": "2166",
+    "beruf": "Grafik- und Multimediadesigner",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-13T21:33:07+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive",
+      "max_tokens": 64000,
+      "fallbacks": "default",
+      "structured_output": "output_config.format"
+    },
+    "stop_reason": "end_turn",
+    "stop_details": null,
+    "usage": {
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 36937,
+      "input_tokens": 2674,
+      "output_tokens": 5176
+    },
+    "usage_je_versuch": [
+      {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 36937,
+        "inference_geo": "global",
+        "input_tokens": 2674,
+        "iterations": [
+          {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 36937,
+            "input_tokens": 2674,
+            "model": null,
+            "output_tokens": 5176,
+            "type": "message"
+          }
+        ],
+        "output_tokens": 5176,
+        "output_tokens_details": {
+          "thinking_tokens": 1922
+        },
+        "service_tier": "standard"
+      }
+    ],
+    "request_ids": [],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2166",
+    "beruf": "Grafik- und Multimediadesigner",
+    "taetigkeiten": [
+      {
+        "name": "Briefings mit Kundschaft führen, Anforderungen klären und Entwürfe persönlich präsentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gespräche, Präsentationen und Abstimmung mit der Kundschaft leben von persönlicher Präsenz und Rückfragen; keine relevante Zeitersparnis durch KI."
+      },
+      {
+        "name": "Zielgruppen, Mitbewerber und visuelle Referenzen recherchieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agent mit Websuche und Bildverständnis fasst Mitbewerberauftritte und Trends zusammen; die Designerin wählt und bewertet die Referenzen selbst."
+      },
+      {
+        "name": "Gestaltungskonzepte und Leitideen (Logo, Corporate Design, Kampagnenidee) entwickeln",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ideenfindung, Markenverständnis und Abstimmung im Kundenprozess dominieren; KI liefert Anregungen, spart aber keine 50 % der Zeit."
+      },
+      {
+        "name": "Moodboards, Gestaltungsvarianten und Scribbles erstellen sowie Handskizzen digitalisieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bildgeneratoren und Sketch-to-Image-Funktionen erzeugen Varianten in einem Bruchteil der Zeit; die Designerin steuert per Prompt, wählt aus und prüft jede Variante."
+      },
+      {
+        "name": "Neue Print- und Online-Layouts nach CI im Detail gestalten (Satz, Typografie, Raster in InDesign/Figma)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Generative Layoutfunktionen entwickeln sich schnell, präzise CI-Umsetzung bleibt aber schwach; E2 unterstützend (30-50) ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Präzise Detailgestaltung nach strengem CI erfordert viele Feinentscheide; generative Layoutvorschläge sparen heute in der typischen Ausführung weniger als 50 % der Zeit."
+      },
+      {
+        "name": "Bestehende Layouts in weitere Formate, Kanäle und Sprachversionen (DE/FR/IT) adaptieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Generative Resize-, Erweiterungs- und Übersetzungsfunktionen in der Grafiksoftware erstellen die Fassungen; die Designerin kontrolliert jede Fassung. Parallele Abstimmung mehrerer Sprachversionen mit der Kundschaft bremst die Einführung."
+      },
+      {
+        "name": "Bilder retuschieren, freistellen, montieren und Illustrationen/Icons erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Generatives Füllen, Freistellen, Retusche und Bildgenerierung (z. B. in Photoshop/Firefly) erstellen das Bild; die Designerin steuert und prüft jedes Ergebnis auf Stil und Qualität. Urheber- und Nutzungsrechte generierter Bilder sind ein Hemmnis."
+      },
+      {
+        "name": "UI-Screens, Wireframes und klickbare Prototypen in Figma erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in Designtools generieren Wireframes und Screens aus Beschreibungen und Designsystemen; die Designerin spezifiziert und prüft jeden Screen auf Usability und Konsistenz."
+      },
+      {
+        "name": "Druckdaten und Web-Assets aufbereiten, exportieren und mit Druckerei abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Preflight, PDF/X-Export und Asset-Export sind klassische Software-Funktionen (Preflight-Profile, Export-Skripte) und kein LLM-Einsatzgebiet."
+      },
+      {
+        "name": "Konzeptbeschriebe, Präsentationstexte und kurze Werbe- bzw. UI-Texte formulieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM verfasst Texte aus Stichworten und Briefing; die Designerin prüft und passt jeden Text an Tonalität und Kunde an."
+      },
+      {
+        "name": "Offerten erstellen, Aufwand budgetieren und Korrekturrunden per E-Mail koordinieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Offerttexte, Aufwandsschätzungen aus Positionslisten und Korrektur-E-Mails; die Designerin prüft Preise und Inhalte jeder Ausgabe."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Grafikdesigner/in (HF/FH) in einer Schweizer Designagentur oder Inhouse-Abteilung (KMU) mit Print-, Digital- und teilweise UX/UI-Aufträgen; Animation/Bewegtbild nicht separat erfasst. Grösster Grenzfall ist die Detail-Layoutgestaltung nach CI (E0 vs. E2 unterstützend), die einen grossen Zeitanteil hat. Der Technikstand generativer Designfunktionen entwickelt sich schnell.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Variantenproduktion und Moodboards, Bildbearbeitung und Illustration, Format- und Sprachadaptionen, UI-Prototypen sowie Begleittexte und Offerten durch Bildgeneratoren, generative Funktionen in Grafik- und Designsoftware und Chat-LLMs.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI erstellt Varianten, Bilder, Adaptionen und Texte, die Designerin steuert und prüft jedes Ergebnis; Recherche läuft unterstützend. Konzeptentwicklung, Kundenabstimmung und die präzise CI-Detailgestaltung bleiben beim Menschen. Bremsend wirken in der Schweiz vor allem unklare Urheber- und Nutzungsrechte bei generierten Bildern sowie die Abstimmung mehrsprachiger Fassungen.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

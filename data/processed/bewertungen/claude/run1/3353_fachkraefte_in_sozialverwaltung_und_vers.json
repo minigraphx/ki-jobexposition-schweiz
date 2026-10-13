@@ -1,0 +1,232 @@
+{
+  "meta": {
+    "provider": "claude",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "d2b0b4893de29cb56e7016d90bdad529e99e4ffc67e65948df69260df003ce05",
+    "isco_code": "3353",
+    "beruf": "Fachkräfte in Sozialverwaltung und -versicherung",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T21:32:23+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive",
+      "max_tokens": 64000,
+      "fallbacks": "default",
+      "structured_output": "output_config.format"
+    },
+    "stop_reason": "end_turn",
+    "stop_details": null,
+    "usage": {
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 36937,
+      "input_tokens": 2030,
+      "output_tokens": 5097
+    },
+    "usage_je_versuch": [
+      {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 36937,
+        "inference_geo": "global",
+        "input_tokens": 2030,
+        "iterations": [
+          {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 36937,
+            "input_tokens": 2030,
+            "model": null,
+            "output_tokens": 5097,
+            "type": "message"
+          }
+        ],
+        "output_tokens": 5097,
+        "output_tokens_details": {
+          "thinking_tokens": 1756
+        },
+        "service_tier": "standard"
+      }
+    ],
+    "request_ids": [],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3353",
+    "beruf": "Fachkräfte in Sozialverwaltung und -versicherung",
+    "taetigkeiten": [
+      {
+        "name": "Eingereichte Anmeldungen, Formulare und Belege (Lohnausweise, Arztzeugnisse, Zivilstandsdokumente) sichten und Daten in die Fachapplikation übertragen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Dokumentenerkennung mit Integration in die Fachapplikation extrahiert und erfasst die Daten; die Fachkraft bearbeitet markierte Ausnahmen und unklare Dokumente. Heterogene Belege machen klassische Formularerkennung allein nicht ausreichend (P0)."
+      },
+      {
+        "name": "Leistungsanspruch anhand Gesetz, Kreisschreiben und Falldaten prüfen und Abklärungsergebnis festhalten",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Falldaten und einschlägige Weisungen werden eingefügt, das LLM erstellt eine strukturierte Anspruchsprüfung; die Fachkraft prüft jede Beurteilung gegen Akte und Rechtsgrundlagen. Datenschutz und Amtsgeheimnis erschweren den Einsatz."
+      },
+      {
+        "name": "Renten, Taggelder und Ergänzungsleistungen in der Fachapplikation berechnen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Leistungsberechnung ist klassische Software (Rentenberechnungs- und EL-Module der Fachapplikationen), keine LLM-Leistung."
+      },
+      {
+        "name": "Verfügungen und Entscheide mit Begründung verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI entwirft Verfügung und Begründung aus Falldaten und Rechtsgrundlagen; menschlicher Einzelfallentscheid ist vorgeschrieben, daher höchstens delegierend mit Prüfung jedes Entwurfs. Begründungspflicht und Rechtsmittel als Hemmnis."
+      },
+      {
+        "name": "Schriftliche Anfragen von Versicherten, Arbeitgebern und Behörden per E-Mail oder Brief beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM entwirft die Antwort aus eingefügter Anfrage und Falldaten; da Auskünfte zu Rechten und Pflichten verbindlich wirken können, prüft die Fachkraft jede Antwort inhaltlich."
+      },
+      {
+        "name": "Standardkorrespondenz erstellen (Eingangsbestätigungen, Unterlagen nachfordern, Abklärungsschreiben an Arbeitgeber und Ärzte)",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "<10",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Standardtexte aus Falldaten werden vom LLM erzeugt und per Klick freigegeben; heutige Textbausteine allein decken individuelle Nachforderungen nicht ab."
+      },
+      {
+        "name": "Telefonische Anfragen von Versicherten und Arbeitgebern beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Ein Voicebot für Standardauskünfte (Fallstatus, fehlende Unterlagen) könnte bei hohem Anteil einfacher Anrufe die Schwelle erreichen; E2 ersetzend ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Ein Grossteil der Anrufe betrifft individuelle, oft emotional belastete Situationen und Beratung in Mundart; Voicebots decken nur einen kleinen Teil zuverlässig ab, sodass über alle Anrufe weniger als 50 % Zeit eingespart wird."
+      },
+      {
+        "name": "Versicherte am Schalter oder im Termin persönlich zu Leistungen und Anmeldung beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung von Angesicht zu Angesicht, deren Wert in der Präsenz und im Vertrauen liegt."
+      },
+      {
+        "name": "Aktennotizen, Gesprächsnotizen und Falldokumentation verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI formuliert die Notiz aus Stichworten; sie enthält fachliche Einschätzungen, die die Fachkraft jedes Mal prüft."
+      },
+      {
+        "name": "Termine koordinieren und Unterlagen an IV-Stellen, Ärzte, Gemeinden und andere Versicherer übermitteln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Online-Terminbuchung und elektronischer Datenaustausch (z. B. sedex, Geschäftsverwaltung mit Regel-Workflows) sind klassische Software; kein LLM nötig."
+      },
+      {
+        "name": "Komplexe Fälle mit Vorgesetzten, Fachdiensten und Team besprechen und Ermessensentscheide treffen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung, Ermessen und Verantwortung im Einzelfall; Präsenz und Urteil dominieren."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Sachbearbeiter/in Leistungen in einer kantonalen Ausgleichskasse bzw. Sozialversicherungsanstalt (AHV/IV/EL/FAK) mit Sozialversicherungs-Fachausweis. ESCO passt gut; der Anteil telefonischer Standardauskünfte und die Rolle von Voicebots bei Mundart sind der grösste Grenzfall, Zeitanteile sind grob geschätzt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Dokumentenerfassung, Anspruchsprüfung, Verfügungsentwürfe sowie schriftliche Korrespondenz und Aktennotizen, die durch KI-Dokumentenerkennung in der Fachapplikation und Chat-LLMs erstellt werden können.",
+      "begruendung": "Rund 60 % der Arbeitszeit sind exponiert, überwiegend delegierend: Die KI entwirft Prüfungen, Verfügungen und Antworten, die Fachkraft prüft jeden Fall, da der Einzelfallentscheid rechtlich vorgeschrieben ist; nur Belegerfassung und Standardbriefe laufen ersetzend. Wesentliche CH-Hemmnisse sind Amtsgeheimnis, Datenschutz und Cloud-Restriktionen in der Verwaltung sowie Verfügungs- und Begründungspflicht; Beratung am Schalter und am Telefon bleibt menschlich.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

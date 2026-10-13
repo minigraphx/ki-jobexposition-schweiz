@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "753c3baa48d6a302e2eaebc3b185a2ec87e64424edc970f87246264c259a177a",
+    "isco_code": "4110",
+    "beruf": "Allgemeine Bürokräfte",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T21:41:21+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 65536,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 1813,
+      "prompt_token_count": 24302,
+      "thoughts_token_count": 7847,
+      "total_token_count": 33962
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1813,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1813
+          }
+        ],
+        "prompt_token_count": 24302,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 24302
+          }
+        ],
+        "thoughts_token_count": 7847,
+        "total_token_count": 33962
+      }
+    ],
+    "request_ids": [
+      "DKXOapeWJKTyvdIPqsLj-AY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "4110",
+    "beruf": "Allgemeine Bürokräfte",
+    "taetigkeiten": [
+      {
+        "name": "Kundenkorrespondenz, geschäftliche E-Mails und interne Mitteilungen verfassen",
+        "zeitanteil_pct": 20,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein reines Chat-LLM erstellt aus kurzen Stichworten oder Vorlagen vollständige Briefe, E-Mails und Mitteilungen; die Bürokraft sichtet den Entwurf kurz und gibt ihn frei."
+      },
+      {
+        "name": "Eingehende E-Mails und digitale Anfragen sichten, klassifizieren und intern weiterleiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM-Funktionen im E-Mail- oder Ticketsystem analysieren Freitext-Anfragen samt Anhängen und leiten sie automatisch weiter; der Mensch bearbeitet nur markierte Ausnahmen."
+      },
+      {
+        "name": "Daten aus Formularen, Bestellungen und Belegen erfassen und in Fachsystemen aktualisieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung mit Systemintegration überträgt Daten aus PDFs und Scans direkt ins ERP oder CRM, wobei der Mensch nur Ausnahmen prüft. Über 50 % lassen sich zudem durch klassische Software wie Online-Formulare, QR-Rechnungen und strukturierte Schnittstellen automatisieren."
+      },
+      {
+        "name": "Tabellen und Listen in Tabellenkalkulationsprogrammen führen, bereinigen und auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "In Office integrierte KI-Assistenten oder Analyse-Agenten bereinigen Daten und erstellen Formeln sowie Auswertungen; die Bürokraft spezifiziert die Anforderungen und prüft jede Tabelle fachlich auf Richtigkeit."
+      },
+      {
+        "name": "Telefonische Anfragen entgegennehmen, Standardauskünfte erteilen und Gespräche vermitteln",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Die Zuverlässigkeit der Echtzeit-Dialekterkennung bei wechselnden Anrufenden sowie der Anteil reiner Standardanfragen im Büroalltag sind unsicher; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Voicebot mit Zugriff auf Verzeichnisse und Standardinformationen beantwortet Routinefragen und verbindet Anrufe; Mitarbeitende übernehmen nur weitergeleitete Spezialfälle."
+      },
+      {
+        "name": "Sitzungstermine koordinieren, Traktandenlisten erstellen und Besprechungsprotokolle verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracherkennung und Office-Integration erstellen aus Sitzungsaufnahmen und Kalenderdaten Protokollentwürfe und Terminvorschläge; wegen Schweizerdeutsch in Gruppengesprächen prüft und korrigiert die Bürokraft jedes Protokoll vollständig."
+      },
+      {
+        "name": "Digitale Dokumente benennen, verschlagworten und im Dokumentenmanagementsystem archivieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI im Dokumentenmanagementsystem liest Inhalte aus, vergibt Metadaten und legt Dateien selbständig ab, sodass nur Stichproben und Ausnahmen bleiben. Für standardisierte Dokumente leisten dies auch klassische regel- und barcodebasierte DMS-Workflows."
+      },
+      {
+        "name": "Kundinnen, Kunden und Gäste am Empfang persönlich begrüssen und vor Ort betreuen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Präsenz- und Beziehungstätigkeit am Empfang; Selbstbedienungs-Terminals erreichen in typischen KMU und Verwaltungen nicht die gleiche Betreuungsqualität."
+      },
+      {
+        "name": "Physische Briefpost, Pakete und Lieferungen öffnen, scannen, verteilen und versandfertig machen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend manuelle, physische Tätigkeit beim Öffnen, Digitalisieren, Frankieren und Verteilen von Post- und Paketsendungen."
+      },
+      {
+        "name": "Büromaterial bewirtschaften sowie Besprechungsräume und Büroeinrichtungen vor- und nachbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit vor Ort wie Material nachfüllen, Sitzungszimmer herrichten und Geräte betriebsbereit halten."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Kaufmännische/r Angestellte/r (Kaufmann/-frau EFZ) im allgemeinen Sekretariat/Backoffice eines Schweizer KMU oder einer öffentlichen Verwaltung. Da das Berufsbild über Branchen und Betriebsgrössen hinweg breit gefächert ist, können die Zeitanteile zwischen Telefon-/Empfangsdienst und reiner Sachbearbeitung variieren. Grösster Grenzfall ist die telefonische Auskunft und Vermittlung wegen Schweizerdeutsch und der Vielfalt der Anliegen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Routinekorrespondenz, E-Mail-Triage, Datenerfassung, Tabellenauswertungen, Protokollierung, digitale Ablage und telefonische Standardauskünfte (zusammen 85 % der Arbeitszeit) werden durch Chat-LLMs, Dokumentenerkennung, Office-KI und Voicebots übernommen oder stark beschleunigt.",
+      "begruendung": "Rund 85 % der Arbeitszeit allgemeiner Bürokräfte entfallen auf digitale Text-, Daten- und Kommunikationsroutinen, bei denen KI überwiegend ersetzend (65 % der Gesamtarbeitszeit, etwa bei Standardkorrespondenz, Belegerfassung und E-Mail-Weiterleitung) und ergänzend delegierend (20 %, bei Protokollen und Tabellen) wirkt. Lediglich physische Post- und Materialarbeiten sowie der persönliche Empfang (15 %) sind nicht exponiert. In der Schweiz bremsen vor allem Datenschutz- und Geheimhaltungsvorschriften (revDSG, Amtsgeheimnis) sowie die Erwartung persönlicher Mundart-Kommunikation am Telefon die vollständige Automatisierung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

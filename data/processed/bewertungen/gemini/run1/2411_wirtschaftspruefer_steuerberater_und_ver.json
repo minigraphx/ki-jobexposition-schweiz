@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "0b6b28913fa2f219d5de50a436bce3c5e0b634dc8e8cf86756fc8a669a311ab0",
+    "isco_code": "2411",
+    "beruf": "Wirtschaftsprüfer, Steuerberater und verwandte Berufe",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T21:56:05+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 65536,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "cached_content_token_count": 22372,
+      "candidates_token_count": 2534,
+      "prompt_token_count": 24421,
+      "thoughts_token_count": 10500,
+      "total_token_count": 37455
+    },
+    "usage_je_versuch": [
+      {
+        "cache_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22372
+          }
+        ],
+        "cached_content_token_count": 22372,
+        "candidates_token_count": 2534,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2534
+          }
+        ],
+        "prompt_token_count": 24421,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 24421
+          }
+        ],
+        "thoughts_token_count": 10500,
+        "total_token_count": 37455
+      }
+    ],
+    "request_ids": [
+      "XKjOatPhB8vavdIP5POc4QY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2411",
+    "beruf": "Wirtschaftsprüfer, Steuerberater und verwandte Berufe",
+    "taetigkeiten": [
+      {
+        "name": "Belege Buchungsvorgängen zuordnen und Kontenabstimmungen im ERP durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumenten-KI in der Buchhaltungssoftware kontiert auch unstrukturierte Belege und stimmt Konten ab, sodass die Fachperson nur noch markierte Ausnahmen und Stichproben bearbeitet. Für standardisierte Belege übernehmen bereits klassische ERP-Funktionen (QR-Rechnung, eBill, camt-Bankdatenabgleich, Buchungsregeln) über 50 % des Aufwands."
+      },
+      {
+        "name": "Jahresabschlüsse erstellen: Abgrenzungen, Rückstellungen und Bewertungen vornehmen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Fachperson beurteilt jede Bilanzposition sowie handels- und steuerrechtliche Bewertungsspielräume selbst; KI-Funktionen im ERP liefern kontübergreifende Abgleiche, Berechnungen und Buchungsvorschläge."
+      },
+      {
+        "name": "Buchführungsunterlagen und Jahresabschlüsse im Rahmen von Revisionen prüfen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Der Wirtschaftsprüfer führt die Prüfungshandlungen und die fachliche Beurteilung selbst durch, während KI-gestützte Audit-Tools Belege mit dem Buchungsjournal abgleichen und Fehlbuchungen oder Anomalien markieren."
+      },
+      {
+        "name": "Anhang zum Jahresabschluss, Erläuterungsberichte und Revisionsberichte verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus exportierten Abschlusszahlen und Prüfungsfeststellungen den Anhang, Erläuterungs- oder Revisionsbericht; die Fachperson prüft jeden Bericht inhaltlich gegen die Akten und verantwortet ihn mit ihrer Unterschrift."
+      },
+      {
+        "name": "Steuerbelege aufbereiten sowie Steuererklärungen und MWST-Abrechnungen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Dokumentenextraktion liest heterogene Kundenbelege (Abschlüsse, Liegenschaftsrechnungen, Verträge, Depotauszüge) aus und befüllt die Steuerformulare; der Steuerberater prüft jede Deklaration und steuerliche Korrekturposition fachlich. Reine Steuerberechnungen laufen bereits über klassische Software, für die zeitintensive Belegaufbereitung reicht diese jedoch nicht aus."
+      },
+      {
+        "name": "Steuer- und bilanzrechtliche Fachfragen abklären sowie Steuerrulings und Stellungnahmen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Recherche-Agent mit Zugriff auf Schweizer Steuer- und Rechtsdatenbanken sucht einschlägige Gesetze, Kreisschreiben und Entscheide und entwirft die Stellungnahme oder das Steuerruling; die Fachperson spezifiziert den Sachverhalt und prüft jede Rechtsquelle und Argumentation im Detail."
+      },
+      {
+        "name": "Finanz- und Ertragslage analysieren sowie Budgets, Finanzprognosen und Risikoanalysen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Fachperson legt Planungsannahmen fest und interpretiert Kennzahlen sowie Geschäftsrisiken selbst, während KI-Analysewerkzeuge in der Tabellenkalkulation oder im ERP Abweichungsanalysen, Szenarien und Textbausteine generieren."
+      },
+      {
+        "name": "Mandanten zu Jahresabschluss, Steuerplanung und Prüfungsfeststellungen persönlich beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Abschluss-, Steuer- und Revisionsbesprechungen mit Geschäftsleitungen, Verwaltungsräten oder Privatkunden sowie Verhandlungen mit Steuerbehörden erfordern unmittelbare menschliche Präsenz und Vertrauensbildung."
+      },
+      {
+        "name": "Rechnungslegungsverfahren, Kontenpläne und interne Kontrollsysteme (IKS) entwerfen und dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Hoher Anteil an betriebsspezifischen Prozessaufnahmen und Abstimmungen vor Ort beim Kunden; E0 (unter 50 % Zeitersparnis) ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Fachperson konzipiert die Abläufe und Kontrollen massgeschneidert für den Betrieb, nutzt aber ein Chat-LLM zur raschen Erstellung von Kontenplänen, Rechnungslegungshandbüchern und IKS-Kontrollmatrizen."
+      },
+      {
+        "name": "Laufende Mandatskorrespondenz, Behördeneingaben und Aktennotizen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM formuliert aus kurzen Stichworten Kundenbriefe, Fristerstreckungsgesuche, Begleitschreiben und Aktennotizen; die Fachperson liest jedes Schreiben vor der Freigabe kurz gegen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Wirtschaftsprüfer/in, Steuerberater/in bzw. dipl. Treuhandexperte/-expertin in einer Schweizer Treuhand- und Revisionsgesellschaft (KMU-Mandate). Der deutsche ESCO-Titel «Controller/Controllerin» ist eine Fehlübersetzung von «accountant»; bewertet wurden gemäss ISCO 2411 und Kompetenzliste Abschluss-, Revisions-, Steuer- und Finanzberatungstätigkeiten. Die grösste Unsicherheit besteht beim Zeitanteil für Vor-Ort-Prozessaufnahmen bei der IKS-Konzeption.",
+    "zusammenfassung": {
+      "haupt_risiko": "Stark exponiert sind die Beleg- und Steuerdatenaufbereitung, das Verfassen von Revisions-, Abschluss- und Steuerruling-Berichten sowie die Vorprüfung von Buchhaltungsdaten durch Dokumenten-KI, Audit-Software und Sprachmodelle.",
+      "begruendung": "Rund 90 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI wegen der hohen Fach- und Haftungsanforderungen überwiegend unterstützend (bei Abschlussgestaltung, Revision und Finanzanalyse) oder delegierend mit vollständiger Einzelprüfung (bei Berichten, Steuererklärungen und Rechtsabklärungen) eingesetzt wird. Lediglich bei der Belegkontierung und Standardabstimmung wirkt die Technik ersetzend, während gesetzliche Revisions- und Formvorschriften (OR, RAG), 26 kantonale Steuergesetze sowie das Berufsgeheimnis und der Datenschutz (revDSG) eine unkontrollierte Automatisierung verhindern.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

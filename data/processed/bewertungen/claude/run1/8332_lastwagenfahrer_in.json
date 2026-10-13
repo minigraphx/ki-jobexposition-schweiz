@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "claude",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "4b0f55f151e3b7a98117003f09a8b3d08adf4020acfc4bab25eaf6bd645fd129",
+    "isco_code": "8332",
+    "beruf": "Lastwagenfahrer/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T21:29:13+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive",
+      "max_tokens": 64000,
+      "fallbacks": "default",
+      "structured_output": "output_config.format"
+    },
+    "stop_reason": "end_turn",
+    "stop_details": null,
+    "usage": {
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 36937,
+      "input_tokens": 2100,
+      "output_tokens": 4357
+    },
+    "usage_je_versuch": [
+      {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 36937,
+        "inference_geo": "global",
+        "input_tokens": 2100,
+        "iterations": [
+          {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 36937,
+            "input_tokens": 2100,
+            "model": null,
+            "output_tokens": 4357,
+            "type": "message"
+          }
+        ],
+        "output_tokens": 4357,
+        "output_tokens_details": {
+          "thinking_tokens": 1569
+        },
+        "service_tier": "standard"
+      }
+    ],
+    "request_ids": [],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "8332",
+    "beruf": "Lastwagenfahrer/in",
+    "taetigkeiten": [
+      {
+        "name": "Lastwagen bzw. Sattelzug im regulären Strassennetz fahren (Verteil- und Fernverkehr)",
+        "zeitanteil_pct": 55,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit am Steuer; generative KI spielt keine Rolle. Fahrerloser Lkw-Verkehr ist in der Schweiz weder zugelassen noch verfügbar, Assistenzsysteme ersetzen die Fahrperson nicht."
+      },
+      {
+        "name": "Lastwagen rangieren, an Rampen andocken und an engen Lieferstellen einparken",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Manövrieren vor Ort; automatisches Rangieren von Lkw im regulären Betrieb nicht verfügbar."
+      },
+      {
+        "name": "Ware mit Hebebühne, Hubwagen, Stapler oder Ladekran auf- und abladen",
+        "zeitanteil_pct": 11,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit an wechselnden Lieferorten; Robotik übernimmt dies ausserhalb automatisierter Rampen nicht in relevantem Umfang."
+      },
+      {
+        "name": "Ladung sichern, Gewichtsverteilung prüfen und Verladen/Entladen beaufsichtigen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Kontrolle und Anbringen von Gurten, Sperrbalken usw. vor Ort; keine verfügbare Automatisierung."
+      },
+      {
+        "name": "Abfahrtskontrolle durchführen und Fahrzeug pflegen (Reifen, Licht, Flüssigkeiten, Reinigung)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sichtprüfung und Handgriffe am Fahrzeug; Bordelektronik meldet einzelne Fehler, ersetzt die Kontrolle aber nicht zu 50 %."
+      },
+      {
+        "name": "Ware beim Kunden übergeben und Empfang auf Scanner bzw. Lieferschein quittieren lassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Übergabe vor Ort; die elektronische Quittierung ist bereits klassische Software und kostet kaum Zeit."
+      },
+      {
+        "name": "Route anhand von Tourenplan, Navigationsgerät und Verkehrsmeldungen wählen und anpassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Touren werden meist von der Disposition vorgegeben, die Routenwahl übernimmt Lkw-Navigationssoftware mit Verkehrsdaten (klassische Software); ein LLM spart hier nichts Relevantes."
+      },
+      {
+        "name": "Mit Disposition und Empfängern per Telefon oder Flotten-App Verspätungen und Änderungen abstimmen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze Echtzeit-Absprachen, oft während der Fahrt und in Mundart; generative KI spart dabei kaum 50 % der Zeit."
+      },
+      {
+        "name": "Transport- und Begleitpapiere kontrollieren, Fahrtenschreiber bedienen und Grenzformalitäten erledigen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der digitale Fahrtenschreiber zeichnet bereits automatisch auf, Zolldeklarationen erstellt der Spediteur; beim Fahrer bleiben Vorweisen und Kontrollieren vor Ort, was weder ein LLM noch weitere Software zur Hälfte übernimmt."
+      },
+      {
+        "name": "Schadens-, Unfall- und Abweichungsmeldungen mit Fotos und Beschreibung erfassen",
+        "zeitanteil_pct": 2,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Spracheingabe und Bildbeschreibung in Flotten-Apps bei Dialekt und Lärm wirklich 50 % sparen; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Fotos und gesprochene Schilderung werden von einer App mit Bildverständnis und Transkription zur Meldung verarbeitet; der Fahrer prüft und ergänzt jede Meldung."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Lastwagenführer/in Kat. C/CE in einem Schweizer Transport-KMU im Verteil- und Regionalverkehr. ESCO-Beschreibung sehr knapp, Tätigkeiten aus Kompetenzliste und CH-Berufspraxis abgeleitet. Einziger Grenzfall sind die Schadens- und Abweichungsmeldungen mit kleinem Zeitanteil.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen ist praktisch nur das Erfassen von Schadens- und Abweichungsmeldungen per App mit Spracheingabe und Bilderkennung; Fahren, Laden und Ladungssicherung sind nicht exponiert.",
+      "begruendung": "Nur ein sehr kleiner Teil der Arbeitszeit ist gegenüber generativer KI exponiert, und zwar delegierend: Die App erstellt die Meldung, der Fahrer prüft jede. Der Kern des Berufs ist physisches Fahren und Laden; autonomes Fahren ist in der Schweiz nicht zugelassen, und Dialekt sowie Lärm in der Kabine erschweren die Spracheingabe.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

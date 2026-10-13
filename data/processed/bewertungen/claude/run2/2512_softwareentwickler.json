@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "provider": "claude",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "2366bb40609eb87188a87c6c954923e5845e3a9c40c56c2563dbca9a43c2f6db",
+    "isco_code": "2512",
+    "beruf": "Softwareentwickler",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-13T21:32:59+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive",
+      "max_tokens": 64000,
+      "fallbacks": "default",
+      "structured_output": "output_config.format"
+    },
+    "stop_reason": "end_turn",
+    "stop_details": null,
+    "usage": {
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 36937,
+      "input_tokens": 3003,
+      "output_tokens": 4287
+    },
+    "usage_je_versuch": [
+      {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 36937,
+        "inference_geo": "global",
+        "input_tokens": 3003,
+        "iterations": [
+          {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 36937,
+            "input_tokens": 3003,
+            "model": null,
+            "output_tokens": 4287,
+            "type": "message"
+          }
+        ],
+        "output_tokens": 4287,
+        "output_tokens_details": {
+          "thinking_tokens": 1014
+        },
+        "service_tier": "standard"
+      }
+    ],
+    "request_ids": [],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2512",
+    "beruf": "Softwareentwickler",
+    "taetigkeiten": [
+      {
+        "name": "Neue Funktionen und Features in bestehender Codebasis implementieren",
+        "zeitanteil_pct": 25,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Coding-Agent mit Repo-Zugriff schreibt Code über mehrere Dateien und führt Tests aus; die Entwicklerin spezifiziert, steuert und reviewt jede Änderung vor dem Merge. Hemmnis: Code-Vertraulichkeit und Cloud-Restriktionen bei Banken, Versicherungen und Verwaltung."
+      },
+      {
+        "name": "Fehler analysieren, debuggen und beheben, inkl. Regressionstests",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Erst mit Coding-Agent (Repo-Zugriff, Code-Ausführung, Logs) wird die Schwelle erreicht; der Entwickler steuert die Fehlersuche, reproduziert und prüft jeden Fix. Komplexe Fehler in Produktionsumgebungen halten die Restzeit hoch."
+      },
+      {
+        "name": "Unit- und Integrationstests schreiben und pflegen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Coding-Agent erzeugt Testfälle im Repository und führt sie aus; die Entwicklerin prüft Abdeckung und Sinnhaftigkeit jedes Tests. Klassische Testgeneratoren decken keine 50 % ab."
+      },
+      {
+        "name": "Pull Requests von Teammitgliedern reviewen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Reviewer führt das Review selbst durch; ein KI-Review-Bot in der Git-Plattform fasst Änderungen zusammen und markiert Probleme, wodurch gezielter geprüft wird."
+      },
+      {
+        "name": "Anforderungen mit Kunden und Fachbereich in Workshops und Gesprächen klären",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Abstimmung, Nachfragen und Aushandeln von Prioritäten mit Stakeholdern; Präsenz- und Beziehungstätigkeit."
+      },
+      {
+        "name": "Spezifikationen analysieren und technische Anforderungen bzw. User Stories ausformulieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus eingefügten Notizen und Spezifikationen erstellt ein Chat-LLM User Stories, Akzeptanzkriterien und Lückenlisten; die Entwicklerin prüft und korrigiert jede Ausgabe fachlich."
+      },
+      {
+        "name": "Softwarearchitektur, Schnittstellen und Datenmodelle entwerfen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Architekturentscheide hängen von Systemlandschaft, Betriebs- und Organisationskontext ab; KI liefert Varianten und Argumente, spart aber nach bester Einschätzung weniger als 50 % der Zeit."
+      },
+      {
+        "name": "Technische Dokumentation, API-Beschreibungen und Flussdiagramme erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI mit Repo-Zugriff erzeugt Dokumentation und Diagramme (z. B. als Mermaid-Text) direkt aus dem Code; die Entwicklerin prüft jede Fassung auf Korrektheit."
+      },
+      {
+        "name": "Build-, CI/CD-Pipelines und Datenmigrationsskripte konfigurieren und betreuen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Agent schreibt Pipeline-Konfigurationen und Migrationsskripte und testet sie; Entwickler prüft jede Änderung, da Fehler Produktivsysteme betreffen. Die laufende Pipeline selbst ist bereits klassische Automatisierung und keine Tätigkeit mehr."
+      },
+      {
+        "name": "An agilen Teammeetings teilnehmen und Arbeit im Team abstimmen (Daily, Planning, Retro)",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Synchrone Abstimmung und Teaminteraktion; Wert liegt in der Präsenz und gemeinsamen Entscheidungsfindung."
+      },
+      {
+        "name": "Software-Prototypen und Proof-of-Concepts entwickeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Coding-Agenten erstellen lauffähige Prototypen aus kurzen Beschreibungen sehr schnell; die Entwicklerin steuert iterativ und prüft jede Version, Qualitätsanforderungen sind geringer als im Produktivcode."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Softwareentwickler/in (FH/Uni bzw. Informatiker/in EFZ) in einem Schweizer ICT-Dienstleister oder einer internen IT-Abteilung, Arbeit an bestehenden Business-Applikationen. ESCO-Rauschen («Bauprojekte leiten», «Software für technisches Zeichnen verwenden», «wissenschaftliche Forschung betreiben») nicht übernommen. Grösste Unsicherheiten: Restzeitbänder bei Feature-Entwicklung und Debugging in komplexen Altlast-Codebasen sowie die Abgrenzung beim Architekturentwurf (E0 vs. unterstützend).",
+    "zusammenfassung": {
+      "haupt_risiko": "Implementierung von Features, Debugging, Testerstellung, Prototyping, Dokumentation und Pipeline-Konfiguration werden von Coding-Agenten mit Repo-Zugriff weitgehend erstellt, Code-Reviews durch KI-Review-Bots beschleunigt.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind exponiert, überwiegend im Modus delegierend: Die KI schreibt Code, Tests und Dokumentation, die Entwicklerin spezifiziert, steuert und reviewt jede Änderung; Reviews bleiben unterstützend, Anforderungsklärung, Architektur und Teamabstimmung nicht exponiert. Wesentliches CH-Hemmnis ist regulatorisch (Code-Vertraulichkeit, FINMA-/Datenschutz- und Cloud-Vorgaben bei Banken, Versicherungen und Verwaltung), was dort On-Premise- oder speziell freigegebene Lösungen erfordert.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

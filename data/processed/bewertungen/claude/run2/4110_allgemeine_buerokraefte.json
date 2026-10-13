@@ -1,0 +1,241 @@
+{
+  "meta": {
+    "provider": "claude",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "753c3baa48d6a302e2eaebc3b185a2ec87e64424edc970f87246264c259a177a",
+    "isco_code": "4110",
+    "beruf": "Allgemeine Bürokräfte",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-13T21:35:06+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive",
+      "max_tokens": 64000,
+      "fallbacks": "default",
+      "structured_output": "output_config.format"
+    },
+    "stop_reason": "end_turn",
+    "stop_details": null,
+    "usage": {
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 36937,
+      "input_tokens": 3343,
+      "output_tokens": 5905
+    },
+    "usage_je_versuch": [
+      {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 36937,
+        "inference_geo": "global",
+        "input_tokens": 3343,
+        "iterations": [
+          {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 36937,
+            "input_tokens": 3343,
+            "model": null,
+            "output_tokens": 5905,
+            "type": "message"
+          }
+        ],
+        "output_tokens": 5905,
+        "output_tokens_details": {
+          "thinking_tokens": 2198
+        },
+        "service_tier": "standard"
+      }
+    ],
+    "request_ids": [],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "4110",
+    "beruf": "Allgemeine Bürokräfte",
+    "taetigkeiten": [
+      {
+        "name": "Geschäftsbriefe und E-Mails an Kundschaft und Partner aus Stichworten oder Vorgaben verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten den fertigen Brief bzw. die E-Mail in DE/FR/IT. Die Bürokraft sichtet ihn kurz und gibt ihn frei; bei Standardkorrespondenz ist keine inhaltliche Einzelprüfung nötig."
+      },
+      {
+        "name": "Eingehende E-Mails und Anfragen im Sammelpostfach sichten, triagieren und an zuständige Stellen weiterleiten",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Funktionen im E-Mail- bzw. Ticketsystem klassifizieren Nachrichten, fassen sie zusammen und schlagen die Weiterleitung vor. Der Mensch bearbeitet nur unklare Fälle. In der Verwaltung bremsen Datenschutz und Amtsgeheimnis."
+      },
+      {
+        "name": "Telefonanrufe entgegennehmen, Auskünfte geben und Anrufe weiterverbinden",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Voicebots könnten Routing und Standardauskünfte übernehmen; wegen der sehr gemischten Anliegen und Schweizerdeutsch am Telefon ist aber auch E2 (ersetzend, 10-30) plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Anrufe einer allgemeinen Bürokraft sind heterogen und oft in Mundart, häufig mit Rückfragen und persönlichem Ermessen. Ein Voicebot spart nach bester Einschätzung im typischen Fall keine 50 %."
+      },
+      {
+        "name": "Besucherinnen und Kundschaft am Empfang begrüssen, anmelden und betreuen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Tätigkeit beruht auf persönlicher Präsenz vor Ort. Self-Check-in-Terminals übernehmen sie in typischen Büros nicht zu 50 %."
+      },
+      {
+        "name": "Adressen, Aufträge und Mutationen aus Formularen, Belegen und E-Mails in ERP, CRM oder Fachapplikation erfassen und nachführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung und LLM-Extraktion übertragen die Daten aus heterogenen Eingängen mit Integration ins System. Der Mensch bearbeitet markierte Ausnahmen. Klassische Formularerkennung allein reicht bei Freitext-Eingängen nicht für 50 %."
+      },
+      {
+        "name": "Formulare, Bestätigungen und Standarddokumente aus Vorlagen und Systemdaten ausfüllen",
+        "zeitanteil_pct": 6,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI im Office- bzw. Fachsystem füllt Formulare aus vorhandenen Daten; die Bürokraft gibt sie frei. Unabhängig davon decken Serienbrief- und Vorlagenfunktionen klassischer Software den Grossteil standardisierter Dokumente ab (P1)."
+      },
+      {
+        "name": "Termine und Sitzungen koordinieren, Kalender führen und Räume reservieren",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein KI-Assistent in der Office-Suite schlägt Termine vor, entwirft Einladungen und Abstimmungsmails mit Kalenderzugriff. Die Bürokraft steuert und prüft jeden Vorschlag, weil Prioritäten und Rücksichten oft nur im Kopf bestehen."
+      },
+      {
+        "name": "Sitzungsprotokolle und Aktennotizen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Transkription und Zusammenfassung erstellen den Protokollentwurf. Weil Sitzungen oft in Schweizerdeutsch mit mehreren Personen stattfinden, prüft und korrigiert die Bürokraft jedes Protokoll inhaltlich."
+      },
+      {
+        "name": "Digitale Dokumente im DMS bzw. Dossier ablegen, benennen, verschlagworten und Akten nachführen",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Klassifikation im DMS erkennt Dokumenttyp und Dossier und vergibt Metadaten. Der Mensch kontrolliert nur markierte Unsicherheiten. Regelbasierte Ablage allein deckt die heterogenen Dokumente nicht zu 50 % ab."
+      },
+      {
+        "name": "Briefpost öffnen, scannen und verteilen, Pakete annehmen, Versand vorbereiten und Büromaterial auffüllen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Tätigkeit ist überwiegend physisch. Frankiermaschinen nehmen nur Teilschritte ab, und Poststrassen lohnen sich in typischen KMU nicht."
+      },
+      {
+        "name": "Listen, Tabellen und einfache Auswertungen in Excel erstellen und aktualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM liefert Formeln, Strukturen und Auswertungslogik aus beschriebenen bzw. eingefügten Daten. Die Bürokraft übernimmt sie und prüft jedes Resultat."
+      },
+      {
+        "name": "Verkaufsrechnungen im ERP ausstellen und Zahlungseingänge kontrollieren",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fakturierung aus Aufträgen und der Zahlungsabgleich per QR-Referenz sind klassische ERP- und Buchhaltungsfunktionen ohne LLM."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: kaufmännische Angestellte EFZ bzw. Sachbearbeiter/in im allgemeinen Sekretariat eines KMU oder einer Gemeindeverwaltung. ESCO passt gut; die Zeitanteile sind grob geschätzt, weil der Beruf je Betrieb stark variiert. Grösste Unsicherheit ist das Telefon (Voicebot mit Mundart, E0 oder E2); weitere Grenzfälle sind die Bandgrenze der Restzeit bei Datenerfassung und Ablage.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Korrespondenz, E-Mail-Triage, Datenerfassung aus Eingängen, Formulare, Ablage, Terminkoordination und Protokolle: Chat-LLMs, Dokumentenerkennung und KI-Funktionen in Office- und Fachsoftware übernehmen sie weitgehend.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind exponiert, überwiegend ersetzend: Standardbriefe, Datenerfassung und Ablage laufen mit Freigabe bzw. Ausnahmebearbeitung. Termine, Protokolle und Auswertungen sind delegierend und werden einzeln geprüft. Telefon, Empfang und physische Postarbeit bleiben beim Menschen. In der öffentlichen Verwaltung bremsen Datenschutz, Amtsgeheimnis und Cloud-Restriktionen die Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}
