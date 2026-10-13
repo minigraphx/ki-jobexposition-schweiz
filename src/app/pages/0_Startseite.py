@@ -18,7 +18,16 @@ def load_data() -> pd.DataFrame | None:
 
 
 df = load_data()
+offen = None
+if df is not None:
+    # Neu aufgenommene Berufe ohne Exposure-Bewertung zählen in den Kennzahlen nicht mit
+    offen = df[df["score_ch"].isna()]
+    df = df[df["score_ch"].notna()]
 n_text = f"{len(df)}" if df is not None else "rund 180"
+offen_text = ""
+if offen is not None and not offen.empty:
+    offen_text = (f" Weitere {len(offen)} Berufe ({offen['beschaeftigte_1000'].sum():,.0f} Tsd. "
+                  "Erwerbstätige) sind neu erfasst und noch nicht bewertet.")
 
 st.title("KI & Jobmarkt Schweiz")
 st.subheader("Welche Berufe verändert die künstliche Intelligenz am stärksten?")
@@ -30,7 +39,7 @@ in ein Sprachmodell einspeisen, fünf Kriterien bewerten, Score 0–10 berechnen
 
 **Diese App überträgt diesen Ansatz auf die Schweiz.** Sie zeigt für {n_text} Schweizer Berufe —
 basierend auf amtlichen BFS-Daten (Strukturerhebung 2024) — wie stark jede Berufsgruppe von
-KI-Automatisierung betroffen sein könnte. Ergänzt wird die reine Exposition durch eine zweite
+KI-Automatisierung betroffen sein könnte.{offen_text} Ergänzt wird die reine Exposition durch eine zweite
 Dimension: die **Anpassungsfähigkeit** der Berufsangehörigen. Denn ob ein exponierter Beruf
 verschwindet oder sich wandelt, hängt massgeblich davon ab, wie gut sich Betroffene neu
 orientieren können.

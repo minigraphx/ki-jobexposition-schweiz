@@ -35,9 +35,10 @@ Schritte:
 2. Beschäftigte, Frauenanteil und Synonyme in berufe_ch.csv, berufe_ch_esco.csv,
    berufe_ch_esco_verified.csv und scores.csv setzen (nur diese Spalten; übrige Zellen
    bleiben byte-identisch)
-3. Optional (--neue-berufe): neue Berufsgattungen (>= 5000 Beschäftigte, noch nicht
-   erfasst) in berufe_ch.csv und die Mapping-Tabelle aufnehmen; Branche / Lohn /
-   Qualifikation per ISCO-Gruppe. Danach ESCO-Anreicherung und Scoring nötig.
+3. Optional (--neue-berufe): neue Berufsgattungen (>= 5000 Erwerbstätige im Jahresblatt,
+   noch nicht erfasst; ohne Restgruppen «onA»/«a.n.g.» ausser RESTGRUPPEN_AUSNAHMEN) in die
+   Mapping-Tabelle und alle CSVs aufnehmen; Branche / Lohn / Qualifikation per ISCO-Gruppe,
+   ESCO-Felder und Scores leer. Danach ESCO-Zuordnung und Scoring nötig.
 Danach: python src/data/update_loehne.py --offline (Lohngewichte = neue Beschäftigte).
 """
 
@@ -194,6 +195,21 @@ BRANCHE_MAP = {
     "961": "Umwelt",            # Abfallentsorgung (NOGA 38)
 }
 BRANCHE_DEFAULT = "Dienstleistungen"
+
+# --neue-berufe: SE-Berufsgattungen ab dieser Grösse (Tsd., Jahresblatt) aufnehmen
+NEUE_BERUFE_SCHWELLE = 5.0
+# Restgruppen (Bezeichnung enthält einen dieser Begriffe) werden nicht aufgenommen …
+RESTGRUPPEN_BEGRIFFE = ("onA", "anderweitig nicht genannt", "ohne nähere Angabe")
+# … ausser sie sind gross und inhaltlich klar (Begründung → Mapping, docs/audit_isco_codes.md)
+RESTGRUPPEN_AUSNAHMEN: dict[str, str] = {
+    "4419": ("SE-Berufsgattung (automatisch ergänzt) → voller SE-Wert; Restgruppe «a.n.g.», "
+             "aber inhaltlich klar: 84 % Berufsart 44192 Bürokräfte Verkauf "
+             "(Verkaufsinnendienst), dazu 44191 Marketing und Werbung"),
+    "9329": ("SE-Berufsgattung (automatisch ergänzt) → voller SE-Wert; Restgruppe «a.n.g.», "
+             "aber inhaltlich klar: einzige Berufsart 93290, Hilfsarbeiter in der Produktion "
+             "(ISCO-Untergruppe 932 hat sonst nur 9321 Verpackung)"),
+}
+NEUE_BERUFE_BEGRUENDUNG = "SE-Berufsgattung (automatisch ergänzt) → voller SE-Wert"
 
 # Löhne: BFS LSE 2024 (2-stellige Gruppe × 12, Fallback 1-stellig/Total) aus
 # update_loehne.py. Die frühere, geschätzte LOHN_MAP («LSE 2022, geschätzt») ist entfernt.
@@ -509,32 +525,64 @@ def beschaeftigte_setzen(pfad: Path, werte: pd.DataFrame, mapping: pd.DataFrame,
             df.to_csv(path, index=False)
 
 
+def ist_restgruppe(bezeichnung: str) -> bool:
+    """Restgruppe der SE («onA», «anderweitig nicht genannt», «ohne nähere Angabe»)?"""
+    return any(b in str(bezeichnung) for b in RESTGRUPPEN_BEGRIFFE)
+
+
+def neue_kandidaten(se: pd.DataFrame, mapping: pd.DataFrame, blatt: str = DEFAULT_BLATT,
+                    schwelle: float = NEUE_BERUFE_SCHWELLE) -> pd.DataFrame:
+    """SE-Berufsgattungen >= schwelle (Tsd., Jahresblatt), die noch keinen Beruf haben.
+
+    Restgruppen sind ausgeschlossen, ausser sie stehen in RESTGRUPPEN_AUSNAHMEN.
+    Returns: DataFrame mit code, bezeichnung, total (nach Code sortiert).
+    """
+    g = _se_index(se, blatt, 4).reset_index()
+    neu = g[(g["total"] >= schwelle) & ~g["code"].isin(set(mapping["isco_code"]))]
+    rest = neu["bezeichnung"].map(ist_restgruppe) & ~neu["code"].isin(set(RESTGRUPPEN_AUSNAHMEN))
+    return neu.loc[~rest, ["code", "bezeichnung", "total"]].sort_values("code").reset_index(drop=True)
+
+
 def neue_berufe_aufnehmen(pfad: Path, se: pd.DataFrame, mapping: pd.DataFrame, blatt: str,
                           mapping_path: Path, dry_run: bool = False) -> pd.DataFrame:
-    """Neue Berufsgattungen (>= 5000, ohne onA/a.n.g.) in berufe_ch.csv und Mapping aufnehmen."""
-    bfs = _se_index(se, blatt, 4).reset_index()
-    exclude_terms = ["onA", "anderweitig nicht genannt", "ohne nähere Angabe"]
-    kandidaten = bfs[(bfs["total"] >= 5.0) & (~bfs["code"].isin(set(mapping["isco_code"])))
-                     & (~bfs["bezeichnung"].str.contains("|".join(exclude_terms), na=False))]
+    """Neue Berufsgattungen (neue_kandidaten) in das Mapping und alle CSVs aufnehmen.
+
+    Beruf = SE-Bezeichnung, ebene «gattung». Branche, Qualifikation und LSE-Basislohn folgen
+    aus dem ISCO-Code; Beschäftigte/Frauenanteil setzt danach beschaeftigte_setzen(). ESCO-Felder
+    und Scores bleiben leer (beschreibung_hash leer) — die App zeigt solche Einträge als
+    «noch nicht bewertet». Danach: ESCO-Zuordnung, update_loehne.py --offline, Scoring.
+    """
+    kandidaten = neue_kandidaten(se, mapping, blatt)
     if kandidaten.empty:
         print("✓ keine neuen Berufsgattungen")
         return mapping
-    basis = _lesen(pfad / "berufe_ch.csv")
-    neue, neue_map = [], []
+    doppelt = set(kandidaten["bezeichnung"]) & set(mapping["beruf"])
+    if doppelt:
+        raise SystemExit(f"Neue Berufsgattung mit bestehendem Berufstitel: {sorted(doppelt)}")
+    zeilen, neue_map = [], []
     for _, row in kandidaten.iterrows():
-        code = str(row["code"])
+        code, beruf = str(row["code"]), row["bezeichnung"]
         branche, qualifikation, lohn = assign_metadata(code)
-        neue.append({"beruf": row["bezeichnung"], "isco_code": code, "branche": branche,
-                     "lohn_median_chf": str(lohn), "lohn_quelle": lse_basislohn(code, _lse())[1],
-                     "qualifikation": qualifikation})
-        neue_map.append({"beruf": row["bezeichnung"], "isco_code": code, "ebene": EBENE_GATTUNG,
-                         "begruendung": "automatisch ergänzte SE-Berufsgattung (>= 5000 Beschäftigte)"})
-        print(f"  + {code} {row['bezeichnung']}")
+        zeilen.append({"beruf": beruf, "isco_code": code, "branche": branche,
+                       "lohn_median_chf": str(lohn), "lohn_quelle": lse_basislohn(code, _lse())[1],
+                       "lohn_unsicher": "False", "qualifikation": qualifikation,
+                       "scores_gemittelt": "False"})
+        neue_map.append({"beruf": beruf, "isco_code": code, "ebene": EBENE_GATTUNG,
+                         "begruendung": RESTGRUPPEN_AUSNAHMEN.get(code, NEUE_BERUFE_BEGRUENDUNG)})
+        print(f"  + {code} {beruf} ({row['total']:.1f} Tsd., {branche})")
     mapping = pd.concat([mapping, pd.DataFrame(neue_map)], ignore_index=True).fillna("")
-    basis = pd.concat([basis, pd.DataFrame(neue)], ignore_index=True).fillna("")
-    print(f"✓ {len(neue)} neue Berufe — danach ESCO-Anreicherung und Scoring ausführen")
+    for name in CSV_DATEIEN:
+        path = pfad / name
+        if not path.exists():
+            continue
+        df = _lesen(path)
+        neu = pd.DataFrame(zeilen).reindex(columns=df.columns).fillna("")
+        df = pd.concat([df, neu], ignore_index=True)
+        if not dry_run:
+            df.to_csv(path, index=False)
+    print(f"✓ {len(zeilen)} neue Berufe — danach ESCO-Zuordnung, update_loehne.py --offline "
+          "und Scoring ausführen")
     if not dry_run:
-        basis.to_csv(pfad / "berufe_ch.csv", index=False)
         mapping.to_csv(mapping_path, index=False)
     return mapping
 

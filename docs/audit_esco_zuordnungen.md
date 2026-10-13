@@ -61,6 +61,7 @@ englisch. Die falschen Beschreibungen waren Input für das Exposure-Scoring.
 | 3112 | 3123 | CH-ISCO-19 führt Bauführer in 3112, ESCO die Bauleitung in 3123 |
 | 7200 | 72xx | CH-ISCO-19-Sammelcode (Polymechaniker) ohne ISCO-08-Gruppe |
 | 2149, 2511 | 1219, 1330 | ESCO führt (IT-)Projektmanager als Führungskräfte |
+| 4419 | 4311 | CH-ISCO-19 führt Bürokräfte Verkauf (Verkaufsinnendienst) als Berufsart 44192, ESCO den Verkaufssachbearbeiter (sales support assistant) unter 4311 |
 | 3312, 2422, 4415, 7421 | 4312, 3321, 4211, 3113 | ISCO-Code offen aus #51 (Code vermutlich falsch, ESCO-Beruf passt zum Titel); nach Klärung entfernen |
 
 ## Ergebnis (179 Einträge)
@@ -107,6 +108,31 @@ aus ESCO v1.2.1 (CSV `occupationSkillRelations` + deutsche Labels aus `skills`),
 (4'479 wesentlich, 5'553 optional; 7'100 skill, 2'928 knowledge). Spalten: `beruf`, `isco_code`,
 `esco_uri`, `kompetenz`, `relation` (essential/optional), `typ` (skill/knowledge; leer bei 4
 Kompetenzbereichen ohne Typ, z. B. «digitale Kommunikation und Zusammenarbeit»), `kompetenz_uri`.
+
+## Nachtrag: neu aufgenommene Berufsgattungen (8 Einträge)
+
+Für die 8 neu aufgenommenen SE-Gattungen (`docs/audit_isco_codes.md`, Abschnitt «Neu aufgenommene
+Berufsgattungen») wurde die ESCO-Zuordnung nach denselben Regeln bestimmt: Kandidaten über den
+ISCO-Concept-Endpunkt (`esco_search_isco`) und die Textsuche, harte ISCO-Prüfung
+(`isco_konsistenz`), keine bereits vergebene URI (Dedup gegen alle 179 bestehenden Einträge),
+inhaltliche Prüfung manuell (kein Sprachmodell-Aufruf); API mit `selectedVersion=v1.2.1`, Titel,
+Beschreibung und ISCO-Gruppe mit dem v1.2.1-CSV abgeglichen. Kein Eintrag braucht eine
+Fallback-Beschreibung.
+
+| Code | Beruf | ESCO-Beruf | ESCO-ISCO | Qualität | Begründung |
+|---|---|---|---|---|---|
+| 3115 | Maschinenbautechniker, Techniker im Bereich Systemtechnik, Automation und Unternehmensprozesse | Maschinenbautechniker/in | 3115 | korrekt | einziger ESCO-Beruf der Gruppe; deckt die grösste Berufsart 31151 (63 %) ab |
+| 3123 | Poliere und Vorarbeiter | Maurerpolier/in | 3123 | plausibel | Oberbauleiter/in (generisch, Alternativlabel «Baupolier») ist an Bauführer/in (3112) vergeben; Maurerpolier = Kern des Bauhauptgewerbes, Ausbaugewerbe (31232) nur als Teilgebiet |
+| 3311 | Wertpapierhändler, -makler und Finanzmakler | Trader/in am Finanzmarkt | 3311 | korrekt | Oberbegriff von Wertpapier-, Börsen- und Devisenhändler |
+| 3355 | Polizeikommissare und Kriminalbeamte | Kriminalbeamter/-beamtin | 3355 | korrekt | Ermittlungsarbeit; Polizeikommissar/in (Leitung) als Alternative verworfen |
+| 3434 | Küchenchefs, stv. Küchenchefs und Souschefs | Chefkoch/Chefköchin | 3434 | korrekt | Alternativlabels Küchenchef/in, Küchenmeister/in |
+| 4419 | Bürokräfte und verwandte Berufe, anderweitig nicht genannt | Verkaufssachbearbeiter/in | 4311 | plausibel | ESCO 4419 hat nur Fremdsprachenkorrespondent/in und Werbesachbearbeiter/in (passt nur zu 44191, 10 %); Verkaufssachbearbeiter (Verkaufsinnendienst, 44192 = 84 %) über die neue Ausnahme 4419 → 4311 |
+| 7223 | Werkzeugmaschineneinrichter und -bediener | CNC-Anwendungsfachkraft | 7223 | korrekt | Einrichten, Programmieren und Bedienen von CNC-Maschinen; die spezialisierten Maschinenbediener-Berufe der Gruppe sind zu eng |
+| 9329 | Hilfsarbeiter bei der Herstellung von Waren, anderweitig nicht genannt | Fabrikhilfsarbeiter/in | 9329 | korrekt | Alternativlabels Produktionshelfer/in, Produktionshilfskraft |
+
+Kompetenzen: 415 Zeilen für die 8 Einträge ergänzt (aus dem v1.2.1-CSV, wie oben); die Datei hat
+jetzt 10'447 Zeilen für 184 Einträge mit ESCO-URI. Match-Qualität aller 187 Einträge:
+korrekt 164 (3'374.0 Tsd.), plausibel 20 (323.7 Tsd.), fallback 3 (26.1 Tsd.).
 
 ## Alle Einträge
 

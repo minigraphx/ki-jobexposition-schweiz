@@ -78,6 +78,8 @@ ISCO_AUSNAHMEN: dict[str, tuple[tuple[str, ...], str]] = {
                       "ESCO-Berufe der Untergruppe 72"),
     "2149": (("1219",), "ESCO führt Projektmanager als Führungskräfte (1219)"),
     "2511": (("1330",), "ESCO führt IT-Projektmanager als Führungskräfte (1330)"),
+    "4419": (("4311",), "CH-ISCO-19 führt Bürokräfte Verkauf (Verkaufsinnendienst) als Berufsart "
+                        "44192, ESCO den Verkaufssachbearbeiter (sales support assistant) unter 4311"),
     # Offene ISCO-Codes aus #51 (docs/audit_isco_codes.md): Code vermutlich falsch,
     # der ESCO-Beruf passt zum Berufstitel. Nach Klärung des Codes entfernen.
     "3312": (("4312",), "Versicherungskaufmann/-frau: Code 3312 offen (#51), ESCO insurance clerk 4312"),

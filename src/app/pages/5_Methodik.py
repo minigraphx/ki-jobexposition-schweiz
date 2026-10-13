@@ -40,8 +40,25 @@ if df is not None and "synonyme" in df.columns:
     n_titel = int(syn[syn != ""].str.split(";").str.len().sum())
 else:
     n_zusammen = n_titel = 0
+def _tsd(wert: float) -> str:
+    return f"{wert:,.0f}".replace(",", "'")
+
+
 summe_tsd = float(df["beschaeftigte_1000"].sum()) if df is not None else 0.0
-summe_text = f"{summe_tsd:,.0f}".replace(",", "'")
+summe_text = _tsd(summe_tsd)
+# SE 2024, Blatt «2024», Zeile Total (alle Erwerbstätigen, inkl. Beruf unbekannt)
+SE_TOTAL_TSD = 4583.7
+abdeckung_text = f"{summe_tsd / SE_TOTAL_TSD * 100:.1f} %".replace(".", ",")
+# Neu aufgenommene Berufe ohne Exposure-Bewertung (score_ch leer)
+offen = df[df["score_ch"].isna()] if df is not None else None
+n_offen = 0 if offen is None else len(offen)
+offen_tsd = 0.0 if offen is None else float(offen["beschaeftigte_1000"].sum())
+offen_text = (
+    f" Davon sind **{n_offen} neu aufgenommene Berufe** ({_tsd(offen_tsd)} Tsd.) noch nicht "
+    "bewertet; sie erscheinen nur in der Berufssuche. Bewertet sind "
+    f"{n_berufe - n_offen} Berufe mit {_tsd(summe_tsd - offen_tsd)} Tsd. Erwerbstätigen."
+    if n_offen else ""
+)
 
 # ─── KMU-Adoptions-Faktor: STATENT-Anteile, Vergleich mit Betriebszählung 2008 ──
 KMU_PATH = DATA_PATH.parent / "kmu_anteil_branche.csv"
@@ -124,8 +141,10 @@ Die Beschäftigungszahlen und Frauenanteile stammen aus der offiziellen Schweize
   wo nötig Berufsart (5-stellig)
 
 Die App umfasst **{n_berufe} Berufe** mit zusammen **{summe_text} Tsd.** Erwerbstätigen
-(SE 2024 total: 4'584 Tsd.). Automatisch ergänzt wurden Berufsgattungen mit mindestens
-**5'000 Beschäftigten**.
+(**{abdeckung_text}** der SE 2024 total: 4'584 Tsd.).{offen_text} Automatisch ergänzt wurden
+Berufsgattungen mit mindestens **5'000 Erwerbstätigen** — ohne Restgruppen («onA» = ohne nähere
+Angaben, «anderweitig nicht genannt»), ausser sie sind gross und inhaltlich klar (4419 Bürokräfte
+a.n.g. = v. a. Verkaufsinnendienst, 9329 Hilfsarbeiter in der Produktion a.n.g.).
 
 **Keine Doppelzählung:** Jede 4-stellige Berufsgattung zählt genau einmal mit ihrem SE-Wert.
 

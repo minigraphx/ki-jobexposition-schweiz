@@ -17,6 +17,11 @@ dokumentiert und unverändert.
 - Berufe: **204 → 179**.
 - Summe Beschäftigte (`scores.csv`, App): **3,880.8 → 3,566.9 Tsd.**; `berufe_ch.csv` vorher 4,488.5 Tsd. (Doppelzählung). SE 2024 total: 4'583.7 Tsd.
 - Invariante (Test `tests/test_beschaeftigte_se.py`): Σ `beschaeftigte_1000` je 4-stelligem Code = SE-Wert.
+- **Nachtrag:** 8 fehlende SE-Berufsgattungen ≥ 5'000 Erwerbstätige aufgenommen (u. a. die durch
+  Code-Korrekturen frei gewordenen 3123, 3115, 3434, 7223, 3311, 3355): Berufe **179 → 187**,
+  Σ **3'566.9 → 3'723.8 Tsd.**, Abdeckung der SE-Erwerbstätigen **77.8 % → 81.2 %** — siehe
+  [Neu aufgenommene Berufsgattungen](#neu-aufgenommene-berufsgattungen-nachtrag). Die neuen
+  Einträge sind noch nicht bewertet.
 
 ## Korrigierte ISCO-Codes (hohe Sicherheit)
 
@@ -217,6 +222,82 @@ ESCO-Zuordnung und -Beschreibung wurden nicht verändert (separates Audit). Neu 
 - Kassierer/in (5223 → 5230) — jetzt Teil von «Kassierer und Kartenverkäufer»
 - Sachbearbeiter/in öff. Verwaltung (4416 → 4110) — jetzt Teil von «Allgemeine Bürokräfte»
 - Produktionsmitarbeiter/in (Pharma) (8211 → 8131) — jetzt Teil von «Bediener von Anlagen und Maschinen für chemische Erzeugnisse»
+
+## Neu aufgenommene Berufsgattungen (Nachtrag)
+
+Nach den Korrekturen oben fehlten SE-Gattungen ganz, deren bisheriger (falscher) Beruf in eine
+andere Gattung verschoben wurde (z. B. 3123 Poliere: Bauführer/in → 3112). Aufgenommen wurden
+alle 4-stelligen SE-Berufsgattungen mit **≥ 5'000 Erwerbstätigen im Blatt 2024**, die noch keinen
+Eintrag hatten (`python src/data/update_from_bfs.py --neue-berufe`). Titel = SE-Bezeichnung,
+ebene «gattung» (voller SE-Wert), Branche über `branche_fuer_isco()`, Lohn = LSE 2024 der
+2-stelligen Gruppe × 12 (keine der neuen Gattungen liegt in den Salarium-Gruppen 11–14/22/24/26),
+Qualifikation über die ISCO-Hauptgruppe. ESCO-Zuordnung siehe `docs/audit_esco_zuordnungen.md`.
+
+| Code | Beruf (SE-Bezeichnung) | Tsd. | Frauen % | Branche | Lohn CHF/Jahr | ESCO-Beruf (ESCO-ISCO) | Match |
+|---|---|---|---|---|---|---|---|
+| 3115 | Maschinenbautechniker, Techniker im Bereich Systemtechnik, Automation und Unternehmensprozesse | 12.0 | 8.8 | Industrie | 90'084 | Maschinenbautechniker/in (3115) | korrekt |
+| 3123 | Poliere und Vorarbeiter | 28.8 | 3.2 | Bau | 90'084 | Maurerpolier/in (3123) | plausibel |
+| 3311 | Wertpapierhändler, -makler und Finanzmakler | 8.5 | 24.7 | Finanzen | 94'800 | Trader/in am Finanzmarkt (3311) | korrekt |
+| 3355 | Polizeikommissare und Kriminalbeamte | 8.5 | 19.9 | Öff. Verwaltung | 94'800 | Kriminalbeamter/-beamtin (3355) | korrekt |
+| 3434 | Küchenchefs, stv. Küchenchefs und Souschefs | 9.6 | 15.4 | Gastgewerbe | 84'936 | Chefkoch/Chefköchin (3434) | korrekt |
+| 4419 | Bürokräfte und verwandte Berufe, anderweitig nicht genannt | 42.0 | 57.2 | Verwaltung | 76'272 | Verkaufssachbearbeiter/in (4311) | plausibel |
+| 7223 | Werkzeugmaschineneinrichter und -bediener | 8.6 | 10.9 | Industrie | 76'728 | CNC-Anwendungsfachkraft (7223) | korrekt |
+| 9329 | Hilfsarbeiter bei der Herstellung von Waren, anderweitig nicht genannt | 38.9 | 48.6 | Industrie | 66'492 | Fabrikhilfsarbeiter/in (9329) | korrekt |
+| | **Total** | **156.9** | | | | | |
+
+**Abdeckung** (Σ `beschaeftigte_1000` in `scores.csv` / SE 2024 total 4'583.7 Tsd.):
+
+| | Berufe | Tsd. | Abdeckung |
+|---|---|---|---|
+| vorher | 179 | 3'566.9 | 77.8 % |
+| nachher | 187 | 3'723.8 | 81.2 % |
+| davon bewertet | 179 | 3'566.9 | 77.8 % |
+
+**Restgruppen-Regel:** Gattungen mit «onA» (ohne nähere Angaben), «anderweitig nicht genannt» oder
+«ohne nähere Angabe» in der Bezeichnung werden nicht aufgenommen — sie bündeln heterogene oder
+nicht zuordenbare Angaben. Ausnahme (`RESTGRUPPEN_AUSNAHMEN` in `update_from_bfs.py`), wenn die
+Gruppe gross **und** inhaltlich klar ist und kein bestehender Eintrag die Tätigkeit abdeckt:
+
+- **4419 Bürokräfte a.n.g. (42.0 Tsd.):** 84 % Berufsart 44192 «Bürokräfte und verwandte Berufe,
+  Verkauf» (Verkaufsinnendienst, 35.4 Tsd.), dazu 44191 Marketing und Werbung (4.1) und onA (2.5).
+  3322 Verkaufsfachkräfte (Aussendienst) ist ein eigener Eintrag.
+- **9329 Hilfsarbeiter Herstellung von Waren a.n.g. (38.9 Tsd.):** einzige Berufsart 93290; die
+  ISCO-Untergruppe 932 hat sonst nur 9321 Verpackung — 9329 ist faktisch die Gattung der
+  Produktionshelfer/innen.
+
+Nicht aufgenommen (Restgruppen ≥ 5'000, zusammen 376.1 Tsd.):
+
+| Code | Bezeichnung | Tsd. | Grund |
+|---|---|---|---|
+| 3000 | Techniker und gleichrangige nichttechnische Berufe, onA | 64.5 | 68 % Projektleiter onA, 30 % Gruppenleiter onA — Funktion ohne Fachgebiet; hängt am offenen Fall Projektleiter/in (allg./Technik) |
+| 4320 | Bürokräfte Materialwirtschaft und Transport, onA | 41.0 | Rest der Untergruppe 432; 4321/4322/4323 sind eigene Einträge |
+| 2000 | Intellektuelle und wissenschaftliche Berufe, onA | 39.8 | ohne Fachgebiet |
+| 1000 | Führungskräfte, onA | 24.6 | ohne Bereich |
+| 8100 | Bediener stationärer Anlagen und Maschinen, onA | 22.6 | hängt am offenen Fall Maschinenführer/in (8211 → 8100?) |
+| 1210 | Führungskräfte betriebliche Administration, onA | 21.8 | Rest der Untergruppe 121 (1211–1213 eigene Einträge) |
+| 3119 | Material- und ingenieurtechnische Fachkräfte a.n.g. | 18.9 | heterogen (verschiedene Fachgebiete) |
+| 2269 | Spezialisten in Gesundheitsberufen a.n.g. | 16.2 | 71 % onA; Ergotherapeuten (22691) nur 4.7 Tsd. |
+| 9000 | Hilfsarbeitskräfte, onA | 14.5 | ohne Bereich |
+| 2500 | Spezialisten ICT, onA | 14.0 | ohne Fachgebiet |
+| 1219 | Führungskräfte betriebliche Administration a.n.g. | 13.2 | heterogen |
+| 2210 | Ärzte, onA | 11.2 | Ärzte ohne Fachrichtung; überschneidet sich mit 2211/2212 (eigener Eintrag wäre ein Duplikat) |
+| 2140 | Ingenieurwissenschaftler, onA | 10.9 | ohne Fachgebiet |
+| 3100 | Ingenieurtechnische Fachkräfte, onA | 10.6 | ohne Fachgebiet |
+| 1349 | Führungskräfte spezialisierte Dienstleistungen a.n.g. | 8.6 | heterogen |
+| 2300 | Lehrkräfte, onA | 8.1 | ohne Stufe; überschneidet sich mit den Lehrkräfte-Einträgen |
+| 8300 | Fahrzeugführer und Bediener mobiler Anlagen, onA | 6.7 | ohne Fahrzeugart |
+| 2510 | Entwickler und Analytiker Software, onA | 6.6 | 99 % Informatikingenieure (Ausbildungs-, keine Tätigkeitsangabe); überschneidet sich mit 2511/2512 |
+| 8210 | Montageberufe, onA | 5.8 | ohne Produkt |
+| 7549 | Handwerks- und verwandte Berufe a.n.g. | 5.7 | heterogen |
+| 2610 | Juristen, onA | 5.7 | überschneidet sich mit 2611/2619 |
+| 7119 | Baukonstruktions- und verwandte Berufe a.n.g. | 5.3 | heterogen |
+
+**Bewertung:** Die neuen Einträge haben noch keine Exposure-Bewertung (`score_*`, `haupt_risiko`,
+`zeitrahmen`, `begruendung`, `adaptabilitaet`, `score_ch` leer; `beschreibung_hash` leer →
+`exposure_scorer.py` bewertet sie beim nächsten Lauf). Regelbasierte Spalten (`delta_branche`,
+`lohnklasse`, `delta_lohn`) sind gesetzt. Die App führt sie in der Berufssuche als «noch nicht
+bewertet» und blendet sie in Treemap, Matrix, Branchenanalyse und den Kennzahlen der Startseite
+aus (mit Hinweis auf Anzahl und Beschäftigte).
 
 ## Vollständige Audit-Tabelle (alle 204 bisherigen Einträge)
 

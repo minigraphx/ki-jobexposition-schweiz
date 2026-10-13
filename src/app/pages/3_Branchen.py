@@ -42,6 +42,9 @@ Inspiriert von Amy Webbs *Future Today Institute Convergence Outlook 2026*.
 st.subheader("KI-Expositions-Score nach Branche")
 
 if df is not None:
+    # Neu aufgenommene Berufe ohne Exposure-Bewertung zählen nicht mit (Hinweis unten)
+    offen = df[df["score_ch"].isna()]
+    df = df[df["score_ch"].notna()]
     branche_stats = (
         df.groupby("branche")
         .agg(
@@ -92,6 +95,10 @@ if df is not None:
         bot = branche_stats.nsmallest(5, "score_mean")[["branche", "score_mean", "berufe"]]
         bot.columns = ["Branche", "Ø Score", "Berufe"]
         st.dataframe(bot, hide_index=True, use_container_width=True)
+    if not offen.empty:
+        st.caption(f"{len(offen)} neu aufgenommene Berufe ({offen['beschaeftigte_1000'].sum():,.0f} "
+                   "Tsd. Beschäftigte) sind noch nicht bewertet und in Scores, Berufs- und "
+                   "Beschäftigtenzahlen nicht enthalten — siehe Berufssuche.")
 else:
     st.warning("Noch keine Score-Daten vorhanden.")
 
