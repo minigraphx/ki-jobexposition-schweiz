@@ -11,7 +11,8 @@ Provider
              des System-Prompts, server-seitiger Refusal-Fallback (fallbacks="default").
     gemini   Google Gen AI SDK (google-genai), models.generate_content mit
              response_mime_type="application/json" + response_json_schema, thinking_level
-             (Standard "high"), keine Sampling-Parameter (werden vom Modell ignoriert).
+             (Standard "high"), keine Sampling-Parameter (werden vom Modell ignoriert),
+             automatic function calling aus (keine Tools).
 
 Ablauf je Lauf: Reihenfolge mit festem Seed gemischt, nur fehlende/veraltete Bewertungen
 (Input-Hash, Modell) werden angefragt (``--force`` = alle). Jede Antwort wird gegen das Schema
@@ -19,12 +20,23 @@ und die Plausibilitätsregeln validiert; bei Fehler ein Korrekturversuch mit Feh
 sonst wird sie als fehlgeschlagen protokolliert. Nach Lauf 1 und 2 folgt automatisch Lauf 3
 für Einträge mit |Δ ζ-Score| > DRITTER_LAUF_SCHWELLE.
 
+Batch-Modus (beide Provider, 50 % günstiger, Ergebnis bis 24 h; Logik in task_batch.py)
+    --batch submit    Anfragen einreichen (Delta wie synchron), Zustand unter <provider>/batches/
+    --batch status    offene Batches mit Status/Zählern
+    --batch collect   fertige Ergebnisse holen, validieren und wie synchron speichern (idempotent)
+    --batch followup  Wiederholungen/Korrekturen + dritte Läufe (|Δζ| > Schwelle) als neuen Batch;
+                      Refusals mit --refusal-sync synchron (claude: mit Fallback)
+
 Beispiele
+    python src/scoring/task_scorer.py --provider claude --only 2512 --runs 1       # synchrone Probe
     python src/scoring/task_scorer.py --provider claude --pilot --runs 2 --dry-run
     python src/scoring/task_scorer.py --provider claude --pilot --runs 2
-    python src/scoring/task_scorer.py --provider gemini --pilot --runs 2
-    python src/scoring/task_scorer.py --provider claude --runs 2            # alle 179 Einträge
-    python src/scoring/task_scorer.py --provider claude --nur 2411 2512 --force
+    python src/scoring/task_scorer.py --provider claude --runs 2 --batch submit --dry-run
+    python src/scoring/task_scorer.py --provider claude --runs 2 --batch submit   # alle Einträge
+    python src/scoring/task_scorer.py --provider claude --batch status
+    python src/scoring/task_scorer.py --provider claude --batch collect
+    python src/scoring/task_scorer.py --provider claude --batch followup --refusal-sync
+    python src/scoring/task_scorer.py --provider claude --only 2411 2512 --force
 
 Keys aus .env: ANTHROPIC_API_KEY (claude); GEMINI_API_KEY oder GOOGLE_API_KEY (gemini;
 GOOGLE_API_KEY hat Vorrang, wenn beide gesetzt sind).
@@ -33,6 +45,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import importlib
 import json
 import logging
 import os
@@ -77,14 +90,17 @@ BACKOFF_MAX_S = 120.0
 
 # Preise USD je 1 Mio. Tokens (Stand 13.10.2026; Quellen siehe docs/neubewertung_lokal.md)
 PREISE = {
-    "claude": {"input": 4.00, "output": 20.00, "cache_write": 5.00, "cache_read": 0.20},
+    "claude": {"input": 4.00, "output": 20.00, "cache_write": 5.00, "cache_write_1h": 8.00, "cache_read": 0.20},
     "gemini": {"input": 2.00, "output": 10.00, "cache_read": 0.10},          # Einführungspreis bis 30.11.2026
     "gemini_ab_2026_12": {"input": 4.00, "output": 20.00, "cache_read": 0.20},
 }
-# Grobe Schätzung für den Dry-Run (ohne count_tokens): Zeichen je Token und Ausgabe-Tokens
-ZEICHEN_JE_TOKEN = 3.0
-AUSGABE_JSON_TOKENS = 3000      # ≈ 7–9 KB JSON (Pilot-Ausgaben v2.1 ≈ 6 KB + Zusammenfassung)
-THINKING_TOKENS = {"low": 2000, "medium": 5000, "high": 10000, "xhigh": 16000, "max": 24000}
+BATCH_RABATT = 0.5              # beide Batch-APIs: 50 % auf alle Tokens (Claude: auch Cache-Lesen/-Schreiben)
+BATCH_CACHE_TREFFER = (0.98, 0.30)   # Claude-Doku: Cache-Treffer im Batch «best effort», typisch 30–98 %
+# Schätzung für den Dry-Run ohne Messwerte. Kalibriert an der ersten Claude-Probe (2512, effort high,
+# 13.10.2026): System-Prompt 67 034 Zeichen → 36 937 Tokens (1.8 Zeichen/Token), Ausgabe 4 847 Tokens
+# inkl. Thinking. Liegen gültige Ergebnisdateien vor, nimmt der Dry-Run deren Mittelwerte.
+ZEICHEN_JE_TOKEN = 1.8
+AUSGABE_TOKENS = {"low": 3500, "medium": 4500, "high": 5500, "xhigh": 7500, "max": 10000}
 
 
 class FatalerFehler(RuntimeError):
@@ -117,11 +133,11 @@ def _als_dict(obj: Any) -> Any:
         return {k: _als_dict(v) for k, v in obj.items()}
     if isinstance(obj, (list, tuple)):
         return [_als_dict(v) for v in obj]
-    for meth in ("to_dict", "model_dump"):
+    for meth in ("model_dump", "to_dict"):
         f = getattr(obj, meth, None)
         if callable(f):
             try:
-                return _als_dict(f(exclude_none=True) if meth == "model_dump" else f())
+                return _als_dict(f(exclude_none=True, mode="json") if meth == "model_dump" else f())
             except TypeError:
                 return _als_dict(f())
     if hasattr(obj, "__dict__"):
@@ -337,6 +353,8 @@ class GeminiBewerter:
             response_json_schema=self.schema,
             thinking_config=types.ThinkingConfig(thinking_level=self.thinking_level),
             max_output_tokens=self.max_output_tokens,
+            # keine Tools → automatic function calling (clientseitig im SDK) explizit aus
+            automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
         )
 
     def start(self, input_rec: dict) -> list:
@@ -416,6 +434,17 @@ def _summe_usage(liste: list[dict]) -> dict:
             if isinstance(v, (int, float)) and not isinstance(v, bool):
                 s[k] = s.get(k, 0) + v
     return s
+
+
+def token_zeile(provider: str, usages: list[dict]) -> str:
+    """Summenzeile: Input (davon Cache), Output inkl. Thinking und die rohen Zähler des Providers."""
+    s = _summe_usage(usages)
+    ein = sys_ = aus = 0.0
+    for u in usages:
+        i, c, o = _usage_kennzahlen(provider, u or {})
+        ein, sys_, aus = ein + i, sys_ + c, aus + o
+    return (f"Tokens: Input {ein:,.0f} (davon Cache {sys_:,.0f}) · Output {aus:,.0f} (inkl. Thinking) · "
+            f"roh {json.dumps(s, ensure_ascii=False)}")
 
 
 def mit_wiederholung(fn: Callable[[], Antwort], drossel: Drossel, versuche: int = API_VERSUCHE,
@@ -555,22 +584,88 @@ def kosten_usd(provider: str, input_tokens: float, output_tokens: float, cache_w
             + cache_write * p.get("cache_write", p["input"]) + cache_read * p.get("cache_read", p["input"])) / 1e6
 
 
+def stufe_von(bewerter: Any) -> str:
+    return getattr(bewerter, "effort", None) or getattr(bewerter, "thinking_level", None) or "high"
+
+
+def _usage_kennzahlen(provider: str, u: dict) -> tuple[float, float, float]:
+    """(Input gesamt, davon gecachter/zu cachender System-Teil, Output inkl. Thinking) eines Aufrufs."""
+    def g(k: str) -> float:
+        v = u.get(k)
+        return float(v) if isinstance(v, (int, float)) and not isinstance(v, bool) else 0.0
+    if provider == "claude":
+        system = g("cache_creation_input_tokens") + g("cache_read_input_tokens")
+        return g("input_tokens") + system, system, g("output_tokens")
+    return g("prompt_token_count"), g("cached_content_token_count"), g("candidates_token_count") + g("thoughts_token_count")
+
+
+def gemessene_usage(basis: Path | None, provider: str, stufe: str | None = None) -> dict | None:
+    """Mittelwerte aus vorhandenen Ergebnisdateien (je Datei der erste Aufruf; nur gleiche Stufe).
+
+    Grundlage des Dry-Runs, sobald echte Läufe vorliegen; None, wenn nichts Brauchbares da ist.
+    """
+    if basis is None or not (basis / provider).is_dir():
+        return None
+    ein, sys_, aus = [], [], []
+    for p in sorted((basis / provider).glob("run*/*.json")):
+        m = (lade_ergebnis(p) or {}).get("meta") or {}
+        st = (m.get("einstellungen") or {})
+        if stufe and (st.get("effort") or st.get("thinking_level")) != stufe:
+            continue
+        liste = m.get("usage_je_versuch") or ([m["usage"]] if m.get("usage") else [])
+        if not liste or not isinstance(liste[0], dict):
+            continue
+        i, s, o = _usage_kennzahlen(provider, liste[0])
+        if o <= 0:
+            continue
+        aus.append(o)
+        if i > 0:
+            ein.append(i)
+        if s > 0:
+            sys_.append(s)
+    if not aus:
+        return None
+    return {"n": len(aus), "output": sum(aus) / len(aus), "input": sum(ein) / len(ein) if ein else None,
+            "system": max(sys_) if sys_ else None}
+
+
+def _kosten_claude_batch(tin: float, tout: float, sys_gesamt: float, treffer: float, ttl: str) -> float:
+    """Claude-Batch: 50 % auf alles; System-Prompt je Anfrage entweder Cache-Lesen oder Cache-Schreiben."""
+    p = PREISE["claude"]
+    schreib_preis = p["cache_write_1h"] if ttl == "1h" else p["cache_write"]
+    usd = ((tin - sys_gesamt) * p["input"] + tout * p["output"]
+           + sys_gesamt * (1 - treffer) * schreib_preis + sys_gesamt * treffer * p["cache_read"]) / 1e6
+    return usd * BATCH_RABATT
+
+
 def schaetze(bewerter: Any, eintraege: list[ti.Eintrag], n_aufrufe: int, n_dritter_max: int,
-             zaehlen: bool = False) -> dict:
-    """Token- und Kostenschätzung ohne Bewertungsaufruf (count_tokens nur mit ``zaehlen``)."""
-    sys_tok = len(tr.system_prompt()) / ZEICHEN_JE_TOKEN
+             zaehlen: bool = False, basis: Path | None = None, cache_ttl: str = "5m") -> dict:
+    """Token- und Kostenschätzung ohne Bewertungsaufruf (count_tokens nur mit ``zaehlen``).
+
+    Input: count_tokens (``zaehlen``) > Mittelwert gemessener Aufrufe (``basis``) > grob über Zeichen.
+    Output: Mittelwert gemessener Aufrufe > AUSGABE_TOKENS[stufe].
+    """
+    stufe = stufe_von(bewerter)
+    gem = gemessene_usage(basis, bewerter.provider, stufe)
+    sys_tok = (gem or {}).get("system") or len(tr.system_prompt()) / ZEICHEN_JE_TOKEN
     if zaehlen and eintraege:
         tok = [bewerter.zaehle_tokens(e.input) for e in eintraege]
-        methode = "count_tokens"
+        mittel_in, methode = sum(tok) / len(tok), "count_tokens"
+    elif gem and gem.get("input"):
+        mittel_in, methode = gem["input"], f"gemessen aus {gem['n']} Aufrufen"
     else:
         tok = [sys_tok + len(tr.user_prompt(e.input)) / ZEICHEN_JE_TOKEN for e in eintraege]
+        mittel_in = sum(tok) / len(tok) if tok else 0.0
         methode = f"grob (Zeichen/{ZEICHEN_JE_TOKEN:g})"
-    mittel_in = sum(tok) / len(tok) if tok else 0.0
-    stufe = getattr(bewerter, "effort", None) or getattr(bewerter, "thinking_level", "high")
-    aus = AUSGABE_JSON_TOKENS + THINKING_TOKENS.get(stufe, THINKING_TOKENS["high"])
-    res = {"methode": methode, "aufrufe": n_aufrufe, "dritter_lauf_max": n_dritter_max,
-           "input_tokens_je_aufruf": round(mittel_in), "system_tokens_geschaetzt": round(sys_tok),
-           "output_tokens_je_aufruf": aus, "stufe": stufe}
+    if gem:
+        aus, aus_methode = gem["output"], f"gemessen aus {gem['n']} Aufrufen"
+    else:
+        aus, aus_methode = AUSGABE_TOKENS.get(stufe, AUSGABE_TOKENS["high"]), "Schätzung"
+    sys_tok = min(sys_tok, mittel_in)
+    res = {"methode": methode, "output_methode": aus_methode, "aufrufe": n_aufrufe,
+           "dritter_lauf_max": n_dritter_max, "input_tokens_je_aufruf": round(mittel_in),
+           "system_tokens_geschaetzt": round(sys_tok), "output_tokens_je_aufruf": round(aus), "stufe": stufe,
+           "cache_ttl_batch": cache_ttl}
     for name, n in (("", n_aufrufe), ("_mit_dritter_max", n_aufrufe + n_dritter_max)):
         tin, tout = mittel_in * n, aus * n
         if bewerter.provider == "claude":
@@ -580,29 +675,53 @@ def schaetze(bewerter: Any, eintraege: list[ti.Eintrag], n_aufrufe: int, n_dritt
             ungecacht = tin - schreib - lesen
             res[f"usd_ohne_cache{name}"] = kosten_usd("claude", tin, tout)
             res[f"usd_mit_cache{name}"] = kosten_usd("claude", ungecacht, tout, schreib, lesen)
+            res[f"usd_batch_ohne_cache{name}"] = kosten_usd("claude", tin, tout) * BATCH_RABATT
+            hoch, tief = BATCH_CACHE_TREFFER
+            res[f"usd_batch_cache_hoch{name}"] = _kosten_claude_batch(tin, tout, n * sys_tok, hoch, cache_ttl)
+            res[f"usd_batch_cache_tief{name}"] = _kosten_claude_batch(tin, tout, n * sys_tok, tief, cache_ttl)
         else:
             lesen = max(n - 1, 0) * sys_tok
             res[f"usd_ohne_cache{name}"] = kosten_usd("gemini", tin, tout)
             res[f"usd_mit_cache{name}"] = kosten_usd("gemini", tin - lesen, tout, 0, lesen)
             res[f"usd_ab_2026_12{name}"] = kosten_usd("gemini", tin, tout, preisliste="gemini_ab_2026_12")
+            res[f"usd_batch{name}"] = kosten_usd("gemini", tin, tout) * BATCH_RABATT
+            res[f"usd_batch_ab_2026_12{name}"] = res[f"usd_ab_2026_12{name}"] * BATCH_RABATT
         res[f"input_tokens{name}"] = round(tin)
         res[f"output_tokens{name}"] = round(tout)
     return res
 
 
-def formatiere_schaetzung(provider: str, model: str, s: dict) -> str:
-    z = [f"Dry-Run {provider} ({model}, Stufe {s['stufe']}) — keine Bewertungsaufrufe",
+def _batch_zeile(provider: str, s: dict, name: str = "") -> str:
+    if provider == "claude":
+        hoch, tief = BATCH_CACHE_TREFFER
+        return (f"~${s['usd_batch_cache_hoch' + name]:.2f} (Cache-Treffer {hoch:.0%}) bis "
+                f"~${s['usd_batch_cache_tief' + name]:.2f} (Treffer {tief:.0%}; Cache-TTL {s['cache_ttl_batch']})"
+                f" · ~${s['usd_batch_ohne_cache' + name]:.2f} ohne Cache")
+    return (f"~${s['usd_batch' + name]:.2f} ohne Cache (Einführungspreis; ab 1.12.2026 "
+            f"~${s['usd_batch_ab_2026_12' + name]:.2f})")
+
+
+def formatiere_schaetzung(provider: str, model: str, s: dict, batch: bool = False) -> str:
+    kopf = "Dry-Run Batch" if batch else "Dry-Run"
+    z = [f"{kopf} {provider} ({model}, Stufe {s['stufe']}) — keine Bewertungsaufrufe",
          f"  Aufrufe (Lauf 1..N, ohne dritten Lauf): {s['aufrufe']}"
          f"  · dritter Lauf: bis zu {s['dritter_lauf_max']} weitere (nur bei |Δζ| > {DRITTER_LAUF_SCHWELLE:g})",
          f"  Input-Tokens je Aufruf: ~{s['input_tokens_je_aufruf']:,} (davon System/Rubrik ~{s['system_tokens_geschaetzt']:,};"
          f" Methode: {s['methode']})",
-         f"  Output-Tokens je Aufruf (Schätzung inkl. Thinking): ~{s['output_tokens_je_aufruf']:,}",
-         f"  Summe: ~{s['input_tokens']:,} Input- und ~{s['output_tokens']:,} Output-Tokens",
-         f"  Kosten: ~${s['usd_mit_cache']:.2f} mit Cache · ~${s['usd_ohne_cache']:.2f} ohne Cache"]
-    if provider == "gemini":
-        z.append(f"          (Einführungspreis bis 30.11.2026; ab 1.12.2026 ohne Cache ~${s['usd_ab_2026_12']:.2f})")
+         f"  Output-Tokens je Aufruf (inkl. Thinking; {s['output_methode']}): ~{s['output_tokens_je_aufruf']:,}",
+         f"  Summe: ~{s['input_tokens']:,} Input- und ~{s['output_tokens']:,} Output-Tokens"]
+    synchron = f"~${s['usd_mit_cache']:.2f} mit Cache · ~${s['usd_ohne_cache']:.2f} ohne Cache"
+    if batch:
+        z.append(f"  Kosten Batch (−{BATCH_RABATT:.0%}): {_batch_zeile(provider, s)}")
+        z.append(f"  zum Vergleich synchron: {synchron}")
+    else:
+        z.append(f"  Kosten: {synchron}")
+        if provider == "gemini":
+            z.append(f"          (Einführungspreis bis 30.11.2026; ab 1.12.2026 ohne Cache ~${s['usd_ab_2026_12']:.2f})")
+        z.append(f"  im Batch-Modus (−{BATCH_RABATT:.0%}): {_batch_zeile(provider, s)}")
     z.append(f"  inkl. maximalem drittem Lauf: ~${s['usd_mit_cache_mit_dritter_max']:.2f} mit Cache · "
-             f"~${s['usd_ohne_cache_mit_dritter_max']:.2f} ohne Cache")
+             f"~${s['usd_ohne_cache_mit_dritter_max']:.2f} ohne Cache"
+             + (f" · Batch {_batch_zeile(provider, s, '_mit_dritter_max')}" if batch else ""))
     z.append("  Wiederholungen bei ungültigen Antworten sind nicht eingerechnet (Erfahrung: wenige Prozent).")
     return "\n".join(z)
 
@@ -687,9 +806,28 @@ def kandidaten_dritter_lauf(provider: str, eintraege: list[ti.Eintrag], basis: P
 def erstelle_bewerter(a: argparse.Namespace) -> Any:
     if a.provider == "claude":
         return ClaudeBewerter(model=a.model or MODELL["claude"], effort=a.effort,
-                              max_tokens=a.max_tokens or CLAUDE_MAX_TOKENS, fallback=not a.ohne_fallback)
+                              max_tokens=a.max_tokens or CLAUDE_MAX_TOKENS, fallback=not a.no_fallback)
     return GeminiBewerter(model=a.model or MODELL["gemini"], thinking_level=a.thinking_level,
                           max_output_tokens=a.max_tokens or GEMINI_MAX_OUTPUT_TOKENS)
+
+
+PAKETE = {"claude": ("anthropic", "anthropic"), "gemini": ("google.genai", "google-genai")}
+
+
+def pruefe_pakete(provider: str, importieren: Callable[[str], Any] = importlib.import_module) -> None:
+    """SDK des Providers früh importieren — fehlt es, mit klarer Anleitung abbrechen (vor dem ersten Lauf)."""
+    modul, paket = PAKETE[provider]
+    try:
+        importieren(modul)
+    except ImportError as e:
+        msg = (f"Python-Paket «{paket}» fehlt oder ist nicht importierbar ({e.__class__.__name__}: {e}). "
+               f"Installieren im aktiven venv ({sys.executable}): "
+               "`python -m pip install -r requirements-scoring.txt`")
+        if provider == "gemini":
+            msg += (" — Hinweis: Ein fremdes Paket namens «google» kann den Namespace «google.*» überdecken; "
+                    "prüfen mit `python -m pip show google` (falls installiert und nicht benötigt: "
+                    "`python -m pip uninstall google`, danach google-genai neu installieren).")
+        raise FatalerFehler(msg) from e
 
 
 def pruefe_keys(provider: str) -> None:
@@ -700,15 +838,20 @@ def pruefe_keys(provider: str) -> None:
                     "(ANTHROPIC_AUTH_TOKEN bzw. `ant auth login`-Profil)")
 
 
+BATCH_AKTIONEN = ("submit", "status", "collect", "followup")
+
+
 def parse_args(argv: list[str] | None) -> argparse.Namespace:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--provider", choices=PROVIDER, required=True)
     ap.add_argument("--runs", type=int, default=2, choices=(1, 2, 3),
-                    help="unabhängige Läufe (Standard 2; bei 2 folgt Lauf 3 automatisch, wenn |Δζ| > Schwelle)")
+                    help="unabhängige Läufe (Standard 2; bei 2 folgt Lauf 3 automatisch, wenn |Δζ| > Schwelle; "
+                         "im Batch-Modus über --batch followup)")
     g = ap.add_mutually_exclusive_group()
-    g.add_argument("--nur", nargs="+", metavar="ISCO", help="nur diese ISCO-Codes oder -Präfixe")
+    g.add_argument("--only", nargs="+", metavar="ISCO", help="nur diese ISCO-Codes oder -Präfixe")
     g.add_argument("--pilot", action="store_true", help="nur die 15 Pilotberufe")
-    ap.add_argument("--force", action="store_true", help="auch aktuelle Bewertungen neu anfragen")
+    ap.add_argument("--force", action="store_true", help="auch aktuelle (bzw. in offenen Batches enthaltene) "
+                                                         "Bewertungen neu anfragen")
     ap.add_argument("--dry-run", action="store_true", help="nur Aufrufe und Token-/Kostenschätzung zeigen")
     ap.add_argument("--count-tokens", action="store_true",
                     help="mit --dry-run: exakte Input-Tokens über count_tokens (braucht Key, kostenlos)")
@@ -717,10 +860,20 @@ def parse_args(argv: list[str] | None) -> argparse.Namespace:
     ap.add_argument("--effort", default=CLAUDE_EFFORT, choices=CLAUDE_EFFORTS, help="nur claude")
     ap.add_argument("--thinking-level", default=GEMINI_THINKING, choices=GEMINI_THINKING_LEVELS, help="nur gemini")
     ap.add_argument("--max-tokens", type=int, default=None, help="Obergrenze Thinking + Antwort")
-    ap.add_argument("--ohne-fallback", action="store_true", help="nur claude: kein Refusal-Fallback")
-    ap.add_argument("--kein-dritter-lauf", action="store_true")
-    ap.add_argument("--schwelle", type=float, default=DRITTER_LAUF_SCHWELLE)
+    ap.add_argument("--no-fallback", action="store_true", help="nur claude: kein Refusal-Fallback (synchron)")
+    ap.add_argument("--no-third-run", action="store_true", help="keinen dritten Lauf bei |Δζ| > Schwelle")
+    ap.add_argument("--threshold", type=float, default=DRITTER_LAUF_SCHWELLE, help="Schwelle |Δζ| für Lauf 3")
     ap.add_argument("--out", default=str(tr.BEWERTUNGEN_DIR), help="Basisverzeichnis der Bewertungen")
+    b = ap.add_argument_group("Batch-Modus (50 %% günstiger, Ergebnis bis 24 h; siehe docs/neubewertung_lokal.md)")
+    b.add_argument("--batch", choices=BATCH_AKTIONEN, default=None,
+                   help="submit: einreichen · status: offene Batches anzeigen · collect: fertige Ergebnisse holen "
+                        "· followup: Wiederholungen + dritte Läufe als neuen Batch einreichen")
+    b.add_argument("--batch-id", default=None, help="status/collect nur für diesen Batch")
+    b.add_argument("--refusal-sync", action="store_true",
+                   help="followup: Refusals synchron (claude: mit server-seitigem Fallback) nachholen")
+    b.add_argument("--cache-ttl", choices=("5m", "1h"), default="5m",
+                   help="nur claude im Batch: TTL des System-Prompt-Caches (Standard 5m: Fehltreffer kosten "
+                        "1.25× statt 2×; 1h lohnt nur bei deutlich höherer Trefferquote, siehe Dry-Run)")
     return ap.parse_args(argv)
 
 
@@ -733,13 +886,17 @@ def main(argv: list[str] | None = None, bewerter: Any = None,
         load_dotenv(tr.REPO_DIR / ".env")
     except ImportError:          # pragma: no cover
         pass
-    eintraege = ti.baue_eintraege(a.nur, a.pilot)
+    eintraege = ti.baue_eintraege(a.only, a.pilot)
     if not eintraege:
         log.error("keine Einträge ausgewählt")
         return 2
     bewerter = bewerter or erstelle_bewerter(a)
     basis = Path(a.out)
     laeufe = list(range(1, a.runs + 1))
+
+    if a.batch:
+        import task_batch as tb
+        return tb.ausfuehren(a, bewerter, eintraege, basis, schlafen=schlafen)
 
     if a.dry_run:
         n = 0
@@ -748,13 +905,20 @@ def main(argv: list[str] | None = None, bewerter: Any = None,
                 if a.force or not ist_aktuell(lade_ergebnis(ziel_pfad(basis, bewerter.provider, lauf, e)),
                                               e, bewerter.model):
                     n += 1
-        n3 = len(eintraege) if (a.runs == 2 and not a.kein_dritter_lauf) else 0
+        n3 = len(eintraege) if (a.runs == 2 and not a.no_third_run) else 0
         print(f"{len(eintraege)} Einträge × {a.runs} Läufe")
-        print(formatiere_schaetzung(bewerter.provider, bewerter.model,
-                                    schaetze(bewerter, eintraege, n, n3, zaehlen=a.count_tokens)))
+        try:
+            if a.count_tokens:
+                pruefe_pakete(bewerter.provider)
+            s = schaetze(bewerter, eintraege, n, n3, zaehlen=a.count_tokens, basis=basis, cache_ttl=a.cache_ttl)
+        except FatalerFehler as e:
+            log.error("Abbruch: %s", e)
+            return 3
+        print(formatiere_schaetzung(bewerter.provider, bewerter.model, s))
         return 0
 
     try:
+        pruefe_pakete(bewerter.provider)
         pruefe_keys(bewerter.provider)
         drossel = Drossel(schlafen)
         protokoll = Protokoll(basis / bewerter.provider / "protokoll.jsonl")
@@ -762,18 +926,17 @@ def main(argv: list[str] | None = None, bewerter: Any = None,
         for lauf in laeufe:
             fuehre_lauf_aus(bewerter, eintraege, lauf, basis, a.force, a.max_parallel, drossel, protokoll,
                             bilanz, schlafen)
-        if a.runs == 2 and not a.kein_dritter_lauf:
-            dritte = kandidaten_dritter_lauf(bewerter.provider, eintraege, basis, a.schwelle)
-            log.info("Dritter Lauf für %d Einträge (|Δζ| > %g)", len(dritte), a.schwelle)
+        if a.runs == 2 and not a.no_third_run:
+            dritte = kandidaten_dritter_lauf(bewerter.provider, eintraege, basis, a.threshold)
+            log.info("Dritter Lauf für %d Einträge (|Δζ| > %g)", len(dritte), a.threshold)
             if dritte:
                 fuehre_lauf_aus(bewerter, dritte, 3, basis, a.force, a.max_parallel, drossel, protokoll,
                                 bilanz, schlafen)
     except FatalerFehler as e:
         log.error("Abbruch: %s", e)
         return 3
-    s = _summe_usage(bilanz.usage)
     print(f"Fertig: {bilanz.ok} ok, {bilanz.fehlgeschlagen} fehlgeschlagen, {bilanz.uebersprungen} übersprungen")
-    print(f"Tokens: {json.dumps(s, ensure_ascii=False)}")
+    print(token_zeile(bewerter.provider, bilanz.usage))
     for f in bilanz.fehler:
         print(f"  FEHLGESCHLAGEN {f}")
     return 1 if bilanz.fehlgeschlagen else 0

@@ -164,10 +164,10 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--pilot-runs", nargs="*", default=[str(p) for p in PILOT_RUNS],
                     help="Verzeichnisse der Pilot-Abo-Läufe (leer = ohne Pilot)")
-    ap.add_argument("--basis", default=str(tr.BEWERTUNGEN_DIR))
+    ap.add_argument("--base-dir", default=str(tr.BEWERTUNGEN_DIR))
     ap.add_argument("--benchmark", default=str(tr.BENCHMARK_PATH), help="'' = ohne Benchmark-Vergleich")
     ap.add_argument("--out", default=str(tr.BEWERTUNGEN_DIR / "vergleich.md"))
-    ap.add_argument("--auch-veraltet", action="store_true")
+    ap.add_argument("--include-stale", action="store_true")
     a = ap.parse_args(argv)
 
     warnungen: list[str] = []
@@ -175,7 +175,7 @@ def main(argv: list[str] | None = None) -> int:
     pilot_e = ti.baue_eintraege(pilot=True)
     runs = [Path(p) for p in a.pilot_runs if p]
     pilot = lade_pilot(runs, eintraege, warnungen)
-    api = {p: ta.lade_laeufe(Path(a.basis), p, eintraege, warnungen, a.auch_veraltet) for p in ta.PROVIDER}
+    api = {p: ta.lade_laeufe(Path(a.base_dir), p, eintraege, warnungen, a.include_stale) for p in ta.PROVIDER}
     alle_df = tabelle(eintraege, pilot, api)
     pilot_keys = {e.schluessel for e in pilot_e}
     pilot_df = alle_df[[ti.Eintrag(r.isco_code, r.beruf, {}, "").schluessel in pilot_keys
