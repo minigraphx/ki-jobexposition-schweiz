@@ -3,21 +3,30 @@ ESCO-Berufsbeschreibungen zur CH-Berufsliste hinzufügen.
 
 Suchstrategie (6 Stufen, erste valide wird verwendet):
 1. ESCO-Textsuche DE mit Berufstitel
-2. ESCO-Textsuche DE/EN mit Haiku-generierten Alternativen (Synonyme, Oberbegriffe)
-3. ESCO-Suche gefiltert nach ISCO-Code-Gruppe
+2. ESCO-Textsuche DE/EN mit KI-generierten Alternativen (Synonyme, Oberbegriffe)
+3. ESCO-Berufe der ISCO-Gruppe (ISCO-Concept-Endpunkt → narrowerOccupation)
 4. berufsberatung.ch Suche (offizielle CH-Berufsberatung)
 5. Wikipedia DE Extrakt
-6. Haiku generiert Beschreibung direkt (mit ISCO-Kontext, Schweiz-spezifisch)
+6. KI-generierte Beschreibung (mit ISCO-Kontext, Schweiz-spezifisch)
 
-Jeder ESCO-Kandidat wird via Claude Haiku validiert bevor er akzeptiert wird.
+Jeder ESCO-Kandidat (Stufen 1–3) muss zwei Prüfungen bestehen:
+- **ISCO-Konsistenz (hart):** ESCO-ISCO-4-Steller == unser isco_code → «korrekt»;
+  gleiche 3-stellige Gruppe oder dokumentierte Ausnahme (`ISCO_AUSNAHMEN`) → «plausibel»;
+  sonst verworfen (ohne Sprachmodell-Aufruf).
+- **Inhaltliche Prüfung:** ein Sprachmodell bestätigt, dass die ESCO-Beschreibung zum Beruf passt.
+
+Alle ESCO-Abfragen laufen mit `selectedVersion=v1.2.1` (ohne Versionsangabe liefern einzelne
+URIs HTTP 500). Ergebnis je Beruf: esco_uri, esco_titel, esco_beschreibung, beschreibung_quelle,
+esco_isco_code, esco_match_qualitaet (korrekt / plausibel / fallback).
 
 Verwendung:
-  python enrich_with_esco.py                  # alle 204 Berufe
-  python enrich_with_esco.py --fix-wrong      # nur bekannte 16 Fehler
-  python enrich_with_esco.py --job "Grafiker/in"
+  python enrich_with_esco.py                  # nur Berufe ohne Zuordnung (neue Einträge)
+  python enrich_with_esco.py --alle           # alle Berufe neu (überschreibt kuratierte Zuordnungen!)
+  python enrich_with_esco.py --fix-wrong      # Einträge aus KNOWN_WRONG_MATCHES
+  python enrich_with_esco.py --job "Grafik- und Multimediadesigner"
 
-Benötigt: ANTHROPIC_API_KEY in .env
-ESCO-API ist im Cloud-Environment blockiert → lokal ausführen.
+Benötigt: ANTHROPIC_API_KEY in .env (Validierung, Stufen 2 und 6).
+Die ESCO-API ist aus der Cloud erreichbar (Stand Okt. 2026); sequentiell mit Pausen abfragen.
 """
 
 import argparse
@@ -39,41 +48,46 @@ logger = logging.getLogger(__name__)
 
 PROCESSED_PATH = Path(__file__).parent.parent.parent / "data" / "processed"
 ESCO_API = "https://ec.europa.eu/esco/api"
+ESCO_VERSION = "v1.2.1"
+ESCO_ISCO_URI = "http://data.europa.eu/esco/isco/C{code}"
 HEADERS = {"Accept": "application/json", "User-Agent": "ki-jobexposition-ch/2.0"}
+PAUSE = 0.5  # Sekunden zwischen ESCO-Abfragen
+MODELL = "claude-haiku-4-5-20251001"  # Validierung, Suchbegriffe, Fallback-Beschreibung
 
-# Bekannte falsche ESCO-Matches – werden bei --fix-wrong verarbeitet
-KNOWN_WRONG_MATCHES = [
-    # Gruppe 1: falsch in berufe_ch_esco_verified.csv
-    "Bankkaufmann/-frau",                  # → Abfallmakler
-    "Polymechaniker/in EFZ",               # → Brennschneider
-    "Logistiker/in EFZ",                   # → Abfallmakler
-    "Immobilienbewirtschafter/in",          # → Abfallmakler
-    "Automatiker/in EFZ",                  # → 3D-Druck-Techniker
-    "Bauführer/in",                        # → 3D-Druck-Techniker
-    "Grafiker/in",                         # → Kartograf
-    "Hochbauzeichner/in EFZ",              # → 3D-Druck-Techniker
-    "Elektroplaner/in EFZ",                # → 3D-Druck-Techniker
-    # Gruppe 1b: Brennschneider-URI (5d46e448) fälschlicherweise zugewiesen
-    "Primarlehrer/in",
-    "Sekundarlehrer/in",
-    "Pflegeassistent/in",
-    "Lastwagenfahrer/in",
-    "Arztpraxisassistent/in",
-    "Lieferwagenfahrer/in",
-    "Hauswirtschaftler/in EFZ",
-    "Telematiker/in EFZ",
-    "Drogist/in",
-    # Gruppe 2: falsch nur in berufe_ch_esco.csv (unverifiziert)
-    "PR-Spezialist/in",                    # → Preiskalkulation
-    "Reinigungspersonal und Hilfskräfte in Privathaushalten",  # → Netzverankerung Aquakultur
-    "Leitende Verwaltungsbedienstete",     # → Hauswirtschafter
-    "Technische Verkaufsfachkräfte (ohne Informations- und Kommunikationstechnologie)",
-    "Bürokräfte in der Transportwirtschaft und verwandte Berufe",  # → Lebensmitteltechniker
-    "Physiotherapeutische Techniker und Assistenten",  # → Anästhesietechnischer Assistent
-    "Fachkräfte in Personalschulung und -entwicklung",  # → Hydraulik-Fachkraft
-]
+QUELLE_ESCO = "ESCO"
+QUELLE_KI = "KI-generiert"
+QUALITAETEN = ("korrekt", "plausibel", "fallback")
 
-# ISCO Hauptgruppen für Kontext in Haiku-Prompts
+# Bekannte falsche ESCO-Matches – werden bei --fix-wrong neu gesucht.
+# Stand ESCO-Audit #52 (Okt. 2026): alle bekannten Fehlzuordnungen sind manuell korrigiert
+# (docs/audit_esco_zuordnungen.md). Die früheren 25 Einträge (Abfallmakler-, Brennschneider-,
+# 3D-Druck-Kontamination) bezogen sich teils auf Titel, die seit #51 zusammengelegt sind.
+# Neue Fehlzuordnungen hier mit aktuellem `beruf`-Titel eintragen.
+KNOWN_WRONG_MATCHES: list[str] = []
+
+# Ausnahmen der ISCO-Konsistenzprüfung: unser isco_code → (zulässige ESCO-ISCO-Präfixe, Grund).
+# Ein Kandidat aus einer dieser Gruppen gilt als «plausibel».
+ISCO_AUSNAHMEN: dict[str, tuple[tuple[str, ...], str]] = {
+    # ESCO-Konventionen / CH-ISCO-19-Besonderheiten
+    "3221": (("5321",), "ESCO v1.2.1 hat keinen Beruf in ISCO 3221; Pflege auf mittlerer Stufe "
+                        "(FaGe) steht als «nurse assistant» unter 5321"),
+    "3211": (("2269",), "ESCO führt Radiologiefachpersonal (radiographer) unter 2269"),
+    "3112": (("3123",), "CH-ISCO-19 führt Bauführer in 3112, ESCO die Bauleitung "
+                        "(construction general supervisor) in 3123"),
+    "7200": (("72",), "CH-ISCO-19-Sammelcode (Polymechaniker) ohne ISCO-08-Gruppe → "
+                      "ESCO-Berufe der Untergruppe 72"),
+    "2149": (("1219",), "ESCO führt Projektmanager als Führungskräfte (1219)"),
+    "2511": (("1330",), "ESCO führt IT-Projektmanager als Führungskräfte (1330)"),
+    # Offene ISCO-Codes aus #51 (docs/audit_isco_codes.md): Code vermutlich falsch,
+    # der ESCO-Beruf passt zum Berufstitel. Nach Klärung des Codes entfernen.
+    "3312": (("4312",), "Versicherungskaufmann/-frau: Code 3312 offen (#51), ESCO insurance clerk 4312"),
+    "2422": (("3321",), "Versicherungsexperte/-expertin: Code 2422 offen (#51), ESCO Underwriter 3321"),
+    "4415": (("4211",), "Posthalter/in: Code 4415 offen (#51), ESCO Postschalter 4211"),
+    "7421": (("3113",), "Mechatroniker/in EFZ: Code 7421 offen (#51), ESCO führt «Mechatroniker» "
+                        "als Bezeichnung von Elektronikmechaniker (3113)"),
+}
+
+# ISCO Hauptgruppen für Kontext in Prompts
 ISCO_MAJOR_GROUPS = {
     "1": "Führungskräfte",
     "2": "Akademische Berufe",
@@ -101,50 +115,160 @@ def make_client() -> anthropic.Anthropic:
 
 
 # ---------------------------------------------------------------------------
+# ISCO-Konsistenz
+# ---------------------------------------------------------------------------
+
+def normalize_isco(value) -> str:
+    """ISCO-Code als 4-stelligen String (z. B. 2221.0 → "2221"); leer bei ungültigem Wert."""
+    try:
+        return str(int(float(value))).zfill(4)
+    except (ValueError, TypeError):
+        return ""
+
+
+def isco_konsistenz(isco_code, esco_isco) -> str | None:
+    """
+    Harte Validierung eines ESCO-Kandidaten gegen unseren isco_code.
+
+    Returns:
+        "korrekt"   — ESCO-ISCO-4-Steller == isco_code
+        "plausibel" — gleiche 3-stellige Gruppe oder Ausnahme aus ISCO_AUSNAHMEN
+        None        — inkonsistent, Kandidat verwerfen
+    """
+    ours = normalize_isco(isco_code)
+    theirs = re.sub(r"\D", "", str(esco_isco or ""))[:4]
+    if not ours or len(theirs) < 4:
+        return None
+    if theirs == ours:
+        return "korrekt"
+    if theirs[:3] == ours[:3]:
+        return "plausibel"
+    erlaubt = ISCO_AUSNAHMEN.get(ours)
+    if erlaubt and any(theirs.startswith(p) for p in erlaubt[0]):
+        return "plausibel"
+    return None
+
+
+# ---------------------------------------------------------------------------
 # ESCO API
 # ---------------------------------------------------------------------------
 
+def _esco_get(path: str, params: dict) -> dict | None:
+    """GET auf die ESCO-API mit fester Version; None bei Fehler oder HTTP ≠ 200."""
+    try:
+        resp = requests.get(f"{ESCO_API}/{path}",
+                            params={**params, "selectedVersion": ESCO_VERSION},
+                            headers=HEADERS, timeout=30)
+        if resp.status_code == 200:
+            return resp.json()
+        logger.debug(f"ESCO {path} HTTP {resp.status_code}: {params}")
+    except Exception as e:
+        logger.debug(f"ESCO {path} fehlgeschlagen: {e}")
+    return None
+
+
 def esco_search_text(query: str, language: str = "de", limit: int = 5) -> list[dict]:
-    try:
-        resp = requests.get(f"{ESCO_API}/search",
-            params={"text": query, "language": language,
-                    "type": "occupation", "limit": limit},
-            headers=HEADERS, timeout=15)
-        if resp.status_code == 200:
-            return resp.json().get("_embedded", {}).get("results", [])
-    except Exception as e:
-        logger.debug(f"ESCO-Textsuche fehlgeschlagen: {e}")
-    return []
+    data = _esco_get("search", {"text": query, "language": language,
+                                "type": "occupation", "limit": limit})
+    return (data or {}).get("_embedded", {}).get("results", [])
 
 
-def esco_search_isco(isco_code: str, language: str = "de", limit: int = 10) -> list[dict]:
-    """Suche alle ESCO-Berufe einer ISCO-4-stelligen Gruppe."""
-    try:
-        resp = requests.get(f"{ESCO_API}/search",
-            params={"iscoGroup": isco_code[:4], "language": language,
-                    "type": "occupation", "limit": limit},
-            headers=HEADERS, timeout=15)
-        if resp.status_code == 200:
-            return resp.json().get("_embedded", {}).get("results", [])
-    except Exception as e:
-        logger.debug(f"ESCO-ISCO-Suche fehlgeschlagen: {e}")
-    return []
+def esco_get_occupation(uri: str, language: str = "de") -> dict:
+    """Rohe ESCO-Occupation-Ressource (leeres dict bei Fehler)."""
+    return _esco_get("resource/occupation", {"uri": uri, "language": language}) or {}
+
+
+def occupation_isco_code(detail: dict) -> str:
+    """ISCO-4-Steller einer ESCO-Occupation: broaderIscoGroup, sonst Präfix des ESCO-Codes
+    (Unterberufe wie 2330.1.4 haben nur broaderOccupation)."""
+    for g in detail.get("_links", {}).get("broaderIscoGroup", []):
+        code = re.sub(r"\D", "", str(g.get("code", "")))
+        if len(code) == 4:
+            return code
+    code = str(detail.get("code", "") or "").split(".")[0]
+    return code if re.fullmatch(r"\d{4}", code) else ""
+
+
+def get_description(detail: dict, lang: str = "de") -> str:
+    """Beschreibung einer Occupation-Ressource (Fallback Englisch)."""
+    desc = detail.get("description", {}) or {}
+    for code in [lang, "en"]:
+        if code in desc and desc[code].get("literal"):
+            return desc[code]["literal"].strip()
+    return ""
+
+
+def occupation_info(detail: dict) -> dict:
+    """Die für die Berufsliste relevanten Felder einer Occupation-Ressource."""
+    return {
+        "esco_uri": detail.get("uri", ""),
+        "esco_titel": detail.get("title", "") or "",
+        "esco_beschreibung": get_description(detail, "de"),
+        "esco_isco_code": occupation_isco_code(detail),
+    }
 
 
 def esco_get_description(uri: str) -> str:
-    try:
-        resp = requests.get(f"{ESCO_API}/resource/occupation",
-            params={"uri": uri, "language": "de"},
-            headers=HEADERS, timeout=15)
-        if resp.status_code == 200:
-            detail = resp.json()
-            desc = detail.get("description", {})
-            for lang in ["de", "en"]:
-                if lang in desc and desc[lang].get("literal"):
-                    return desc[lang]["literal"]
-    except Exception:
-        pass
-    return ""
+    return get_description(esco_get_occupation(uri, "de"), "de")
+
+
+def _isco_concept_codes(isco_code: str) -> list[str]:
+    """ISCO-Concept-Codes zum Abfragen: 4-Steller, bei CH-Sammelcodes (z. B. 7200) die
+    Obergruppe ohne Nullen (72)."""
+    code = normalize_isco(isco_code)
+    if not code:
+        return []
+    codes = [code]
+    gekuerzt = code.rstrip("0")
+    if gekuerzt and gekuerzt != code:
+        codes.append(gekuerzt)
+    return codes
+
+
+def esco_search_isco(isco_code: str, language: str = "de", limit: int = 10,
+                     max_tiefe: int = 3) -> list[dict]:
+    """
+    Alle ESCO-Berufe einer ISCO-Gruppe über den Concept-Endpunkt
+    (/resource/concept?uri=http://data.europa.eu/esco/isco/C{code} → _links.narrowerOccupation).
+
+    Hat die Gruppe keine direkten Berufe (2-/3-stellige Ebene), wird rekursiv über
+    narrowerConcept bis zu den 4-stelligen Gruppen abgestiegen. Der frühere Parameter
+    `iscoGroup` der Suche wird von der API ignoriert (lieferte alphabetische Fehltreffer).
+
+    Returns:
+        Liste von {"uri", "title", "isco_code"} (höchstens `limit`).
+    """
+    ergebnis: list[dict] = []
+    gesehen: set[str] = set()
+
+    def besuchen(code: str, tiefe: int) -> None:
+        if len(ergebnis) >= limit or tiefe > max_tiefe:
+            return
+        data = _esco_get("resource/concept",
+                         {"uri": ESCO_ISCO_URI.format(code=code), "language": language})
+        time.sleep(PAUSE)
+        if not data:
+            return
+        links = data.get("_links", {})
+        for occ in links.get("narrowerOccupation", []):
+            uri = occ.get("uri", "")
+            if uri and uri not in gesehen:
+                gesehen.add(uri)
+                ergebnis.append({"uri": uri, "title": occ.get("title", ""),
+                                 "isco_code": str(data.get("code", code))})
+                if len(ergebnis) >= limit:
+                    return
+        if not links.get("narrowerOccupation"):
+            for sub in links.get("narrowerConcept", []):
+                sub_code = str(sub.get("code") or sub.get("uri", "").rsplit("/C", 1)[-1])
+                if sub_code:
+                    besuchen(sub_code, tiefe + 1)
+
+    for code in _isco_concept_codes(isco_code):
+        besuchen(code, 0)
+        if ergebnis:
+            break
+    return ergebnis[:limit]
 
 
 # ---------------------------------------------------------------------------
@@ -155,6 +279,9 @@ def berufsberatung_search(beruf: str) -> str:
     """
     Sucht auf berufsberatung.ch nach dem Beruf und extrahiert die Beschreibung.
     Gibt Beschreibungstext zurück oder leeren String.
+
+    Hinweis (Okt. 2026): Die Website wurde neu aufgebaut; die alte Suche liefert keine
+    Treffer mehr (Suchergebnisse werden clientseitig geladen).
     """
     try:
         query = beruf.replace("/-", " ").replace("/", " ").replace("EFZ", "").strip()
@@ -222,7 +349,7 @@ def wikipedia_description(beruf: str) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Haiku Hilfsfunktionen
+# Sprachmodell-Hilfsfunktionen
 # ---------------------------------------------------------------------------
 
 def _parse_json(text: str) -> dict:
@@ -235,8 +362,8 @@ def _parse_json(text: str) -> dict:
     return json.loads(text)
 
 
-def haiku_validate(client: anthropic.Anthropic, beruf: str,
-                   esco_titel: str, esco_beschreibung: str) -> bool:
+def ki_validate(client: anthropic.Anthropic, beruf: str,
+                esco_titel: str, esco_beschreibung: str) -> bool:
     prompt = (
         f"Beruf (Schweiz): {beruf}\n"
         f"ESCO-Treffer: {esco_titel}\n"
@@ -246,15 +373,15 @@ def haiku_validate(client: anthropic.Anthropic, beruf: str,
     )
     try:
         resp = client.messages.create(
-            model="claude-haiku-4-5-20251001", max_tokens=64,
+            model=MODELL, max_tokens=64,
             messages=[{"role": "user", "content": prompt}])
         return _parse_json(resp.content[0].text).get("valid", False)
     except Exception:
         return False
 
 
-def haiku_alt_terms(client: anthropic.Anthropic, beruf: str,
-                    isco_code: str) -> list[str]:
+def ki_alt_terms(client: anthropic.Anthropic, beruf: str,
+                 isco_code: str) -> list[str]:
     """Generiert alternative Suchbegriffe für ESCO."""
     major = ISCO_MAJOR_GROUPS.get(str(isco_code)[0], "")
     prompt = (
@@ -268,15 +395,15 @@ def haiku_alt_terms(client: anthropic.Anthropic, beruf: str,
     )
     try:
         resp = client.messages.create(
-            model="claude-haiku-4-5-20251001", max_tokens=120,
+            model=MODELL, max_tokens=120,
             messages=[{"role": "user", "content": prompt}])
         return _parse_json(resp.content[0].text).get("terms", [])
     except Exception:
         return []
 
 
-def haiku_generate_description(client: anthropic.Anthropic, beruf: str,
-                                isco_code: str) -> str:
+def ki_generate_description(client: anthropic.Anthropic, beruf: str,
+                            isco_code: str) -> str:
     """Generiert eine qualitative Berufsbeschreibung mit Schweiz-Kontext."""
     major = ISCO_MAJOR_GROUPS.get(str(isco_code)[0], "")
     prompt = (
@@ -292,10 +419,10 @@ def haiku_generate_description(client: anthropic.Anthropic, beruf: str,
     )
     try:
         resp = client.messages.create(
-            model="claude-haiku-4-5-20251001", max_tokens=300,
+            model=MODELL, max_tokens=300,
             messages=[{"role": "user", "content": prompt}])
         text = resp.content[0].text.strip()
-        # Markdown-Überschriften entfernen die Haiku manchmal hinzufügt
+        # Markdown-Überschriften entfernen, die das Modell manchmal hinzufügt
         text = re.sub(r"^#+\s+.+\n+", "", text).strip()
         return text
     except Exception:
@@ -306,79 +433,93 @@ def haiku_generate_description(client: anthropic.Anthropic, beruf: str,
 # Hauptlogik: find_best_match mit 6 Stufen
 # ---------------------------------------------------------------------------
 
-def _try_esco_candidates(client: anthropic.Anthropic, beruf: str,
-                          candidates: list[dict],
-                          blocked_uris: set[str] | None = None) -> tuple[str, str, str] | None:
-    """Validiert Kandidaten und gibt ersten validen zurück.
+def _fallback(beruf: str, beschreibung: str, quelle: str) -> dict:
+    return {"esco_uri": "", "esco_titel": beruf, "esco_beschreibung": beschreibung,
+            "beschreibung_quelle": quelle, "esco_isco_code": "",
+            "esco_match_qualitaet": "fallback"}
 
-    blocked_uris: URIs die bereits einem anderen Beruf gehören — werden übersprungen
-    um Kreuz-Kontamination (z.B. Brennschneider-URI für Polymechaniker) zu verhindern.
+
+def _try_esco_candidates(client: anthropic.Anthropic, beruf: str, isco_code: str,
+                         candidates: list[dict],
+                         blocked_uris: set[str] | None = None) -> dict | None:
+    """Prüft Kandidaten (ISCO-Konsistenz, dann inhaltlich) und gibt den ersten gültigen zurück.
+
+    blocked_uris: URIs, die bereits einem anderen Beruf gehören — werden übersprungen,
+    um Kreuz-Kontamination (eine URI für mehrere Berufe) zu verhindern.
     """
     for c in candidates:
         uri = c.get("uri", "")
-        titel = c.get("title", "")
         if not uri:
             continue
         if blocked_uris and uri in blocked_uris:
-            logger.debug(f"    URI geblockt (bereits vergeben): {titel}")
+            logger.debug(f"    URI geblockt (bereits vergeben): {c.get('title', '')}")
             continue
-        beschreibung = esco_get_description(uri)
-        time.sleep(0.3)
-        if haiku_validate(client, beruf, titel, beschreibung):
-            time.sleep(0.1)
-            return uri, titel, beschreibung
+        detail = esco_get_occupation(uri, "de")
+        time.sleep(PAUSE)
+        if not detail:
+            continue
+        info = occupation_info(detail)
+        qualitaet = isco_konsistenz(isco_code, info["esco_isco_code"])
+        if qualitaet is None:
+            logger.debug(f"    ISCO inkonsistent ({info['esco_isco_code']} ≠ {isco_code}): "
+                         f"{info['esco_titel']}")
+            continue
+        if ki_validate(client, beruf, info["esco_titel"], info["esco_beschreibung"]):
+            return {**info, "beschreibung_quelle": QUELLE_ESCO,
+                    "esco_match_qualitaet": qualitaet}
         time.sleep(0.1)
     return None
 
 
 def find_best_match(client: anthropic.Anthropic, beruf: str,
                     isco_code: str,
-                    blocked_uris: set[str] | None = None) -> tuple[str, str, str, str]:
+                    blocked_uris: set[str] | None = None) -> dict:
     """
-    Gibt (esco_uri, esco_titel, esco_beschreibung, beschreibung_quelle) zurück.
-    Durchläuft 6 Suchstufen; Haiku validiert jeden ESCO-Kandidaten.
+    Durchläuft 6 Suchstufen und gibt ein dict mit esco_uri, esco_titel, esco_beschreibung,
+    beschreibung_quelle, esco_isco_code, esco_match_qualitaet zurück.
 
     beschreibung_quelle-Werte:
         "ESCO"              — offizielle EU-Klassifikation (Stufen 1–3)
         "berufsberatung.ch" — offizielle CH-Berufsberatung (Stufe 4)
         "Wikipedia"         — Wikipedia DE (Stufe 5)
-        "Haiku-generiert"   — KI-generierte Beschreibung, kein externer Match (Stufe 6)
+        "KI-generiert"      — generierte Beschreibung, kein externer Match (Stufe 6)
     """
+    isco_code = normalize_isco(isco_code) or str(isco_code)
     beruf_clean = beruf.replace("/-", " ").replace("/", " ").replace("EFZ", "").strip()
 
     # Stufe 1: ESCO DE direkt
     logger.debug(f"  Stufe 1: ESCO DE '{beruf_clean}'")
-    result = _try_esco_candidates(client, beruf, esco_search_text(beruf_clean, "de", 5), blocked_uris)
+    result = _try_esco_candidates(client, beruf, isco_code,
+                                  esco_search_text(beruf_clean, "de", 5), blocked_uris)
     if result:
-        logger.info(f"    ✓ Stufe 1 (ESCO DE): {result[1]}")
-        return (*result, "ESCO")
+        logger.info(f"    ✓ Stufe 1 (ESCO DE): {result['esco_titel']}")
+        return result
 
-    # Stufe 2: ESCO mit Haiku-generierten Alternativen
-    logger.debug("  Stufe 2: Haiku-Alternativen")
-    alt_terms = haiku_alt_terms(client, beruf, isco_code)
-    time.sleep(0.1)
-    for term in alt_terms:
+    # Stufe 2: ESCO mit KI-generierten Alternativen
+    logger.debug("  Stufe 2: alternative Suchbegriffe")
+    for term in ki_alt_terms(client, beruf, isco_code):
         for lang in ["de", "en"]:
             candidates = esco_search_text(term, lang, 5)
-            result = _try_esco_candidates(client, beruf, candidates, blocked_uris)
+            time.sleep(PAUSE)
+            result = _try_esco_candidates(client, beruf, isco_code, candidates, blocked_uris)
             if result:
-                logger.info(f"    ✓ Stufe 2 (ESCO '{term}' {lang.upper()}): {result[1]}")
-                return (*result, "ESCO")
-            time.sleep(0.2)
+                logger.info(f"    ✓ Stufe 2 (ESCO '{term}' {lang.upper()}): {result['esco_titel']}")
+                return result
 
-    # Stufe 3: ESCO nach ISCO-Code-Gruppe
-    logger.debug(f"  Stufe 3: ESCO ISCO-Gruppe {isco_code[:4]}")
-    result = _try_esco_candidates(client, beruf, esco_search_isco(isco_code, "de", 10), blocked_uris)
+    # Stufe 3: ESCO-Berufe der ISCO-Gruppe
+    logger.debug(f"  Stufe 3: ESCO ISCO-Gruppe {isco_code}")
+    result = _try_esco_candidates(client, beruf, isco_code,
+                                  esco_search_isco(isco_code, "de", 10), blocked_uris)
     if result:
-        logger.info(f"    ✓ Stufe 3 (ESCO ISCO-{isco_code[:4]}): {result[1]}")
-        return (*result, "ESCO")
+        logger.info(f"    ✓ Stufe 3 (ESCO ISCO-{isco_code}): {result['esco_titel']}")
+        return result
 
     # Stufe 4: berufsberatung.ch
     logger.debug("  Stufe 4: berufsberatung.ch")
     bb_desc = berufsberatung_search(beruf)
     if len(bb_desc) > 80:
         logger.info(f"    ✓ Stufe 4 (berufsberatung.ch): {len(bb_desc)} Zeichen")
-        return "", beruf, bb_desc, "berufsberatung.ch"
+        return _fallback(beruf, bb_desc, "berufsberatung.ch")
     time.sleep(0.2)
 
     # Stufe 5: Wikipedia DE
@@ -386,69 +527,85 @@ def find_best_match(client: anthropic.Anthropic, beruf: str,
     wiki_desc = wikipedia_description(beruf)
     if len(wiki_desc) > 80:
         logger.info(f"    ✓ Stufe 5 (Wikipedia DE): {len(wiki_desc)} Zeichen")
-        return "", beruf, wiki_desc, "Wikipedia"
+        return _fallback(beruf, wiki_desc, "Wikipedia")
     time.sleep(0.2)
 
-    # Stufe 6: Haiku generiert Beschreibung direkt
-    logger.info("    → Stufe 6: Haiku generiert Beschreibung (kein externer Match)")
-    desc = haiku_generate_description(client, beruf, isco_code)
-    return "", beruf, desc, "Haiku-generiert"
+    # Stufe 6: generierte Beschreibung
+    logger.info("    → Stufe 6: generierte Beschreibung (kein externer Match)")
+    return _fallback(beruf, ki_generate_description(client, beruf, isco_code), QUELLE_KI)
 
 
 # ---------------------------------------------------------------------------
 # Batch-Verarbeitung
 # ---------------------------------------------------------------------------
 
+ESCO_SPALTEN = ["esco_uri", "esco_titel", "esco_beschreibung", "beschreibung_quelle",
+                "esco_isco_code", "esco_match_qualitaet"]
+
+
 def enrich_jobs(jobs_df: pd.DataFrame, client: anthropic.Anthropic,
                 df_existing: pd.DataFrame | None = None) -> pd.DataFrame:
-    uris, titel_list, beschreibungen, quellen = [], [], [], []
     total = len(jobs_df)
+    ergebnisse: list[dict] = []
 
-    # URIs der nicht neu zu verarbeitenden Berufe als Blacklist aufbauen
-    # (verhindert Kreuz-Kontamination: kein URI wird zwei verschiedenen Berufen zugewiesen)
+    # URIs der nicht neu zu verarbeitenden Berufe sperren
+    # (verhindert Kreuz-Kontamination: keine URI wird zwei Berufen zugewiesen)
     used_uris: set[str] = set()
     if df_existing is not None:
         jobs_being_updated = set(jobs_df["beruf"])
         for _, r in df_existing.iterrows():
             if r["beruf"] not in jobs_being_updated:
-                uri = str(r.get("esco_uri", "") or "")
-                if uri:
-                    used_uris.add(uri)
+                uri = r.get("esco_uri", "")
+                if isinstance(uri, str) and uri.strip():
+                    used_uris.add(uri.strip())
 
     for i, (_, row) in enumerate(jobs_df.iterrows(), 1):
         beruf = row["beruf"]
-        isco = str(row["isco_code"])
+        isco = normalize_isco(row["isco_code"]) or str(row["isco_code"])
         logger.info(f"[{i:3d}/{total}] {beruf}")
 
-        # Vorher-Zustand aus bestehender Datei zeigen
         if df_existing is not None:
             prev = df_existing[df_existing["beruf"] == beruf]
             if not prev.empty:
                 p = prev.iloc[0]
-                prev_titel = str(p.get("esco_titel", "") or "–")
-                prev_desc = str(p.get("esco_beschreibung", "") or "–")
-                logger.info(f"    VORHER  titel: {prev_titel}")
-                logger.info(f"    VORHER  desc:  {prev_desc[:120]}")
+                logger.info(f"    VORHER  titel: {p.get('esco_titel', '') or '–'}")
+                logger.info(f"    VORHER  desc:  {str(p.get('esco_beschreibung', '') or '–')[:120]}")
 
-        uri, titel, beschreibung, quelle = find_best_match(client, beruf, isco, blocked_uris=used_uris)
-        if uri:
-            used_uris.add(uri)  # neu vergebe URI sofort sperren für folgende Berufe
-        uris.append(uri)
-        titel_list.append(titel)
-        beschreibungen.append(beschreibung)
-        quellen.append(quelle)
+        match = find_best_match(client, beruf, isco, blocked_uris=used_uris)
+        if match["esco_uri"]:
+            used_uris.add(match["esco_uri"])  # neu vergebene URI für folgende Berufe sperren
+        ergebnisse.append(match)
 
-        logger.info(f"    NACHHER quelle: {quelle}")
-        logger.info(f"    NACHHER titel:  {titel}")
-        logger.info(f"    NACHHER desc:   {beschreibung[:120]}")
-        time.sleep(0.4)
+        logger.info(f"    NACHHER quelle: {match['beschreibung_quelle']} "
+                    f"({match['esco_match_qualitaet']})")
+        logger.info(f"    NACHHER titel:  {match['esco_titel']}")
+        logger.info(f"    NACHHER desc:   {match['esco_beschreibung'][:120]}")
+        time.sleep(PAUSE)
 
-    result = jobs_df.copy()
-    result["esco_uri"] = uris
-    result["esco_titel"] = titel_list
-    result["esco_beschreibung"] = beschreibungen
-    result["beschreibung_quelle"] = quellen
+    result = jobs_df.copy().reset_index(drop=True)
+    for col in ESCO_SPALTEN:
+        result[col] = [m[col] for m in ergebnisse]
     return result
+
+
+def merge_into(df_existing: pd.DataFrame, enriched: pd.DataFrame) -> pd.DataFrame:
+    """Neue Zuordnungen in die bestehende Tabelle übernehmen; neue Berufe anhängen."""
+    df_out = df_existing.copy()
+    for col in ESCO_SPALTEN:
+        if col not in df_out.columns:
+            df_out[col] = ""
+        df_out[col] = df_out[col].astype(object)
+    neu = []
+    for _, row in enriched.iterrows():
+        mask = df_out["beruf"] == row["beruf"]
+        if mask.any():
+            for col in ESCO_SPALTEN:
+                df_out.loc[mask, col] = row[col]
+        else:
+            neu.append(row)
+    if neu:
+        df_out = pd.concat([df_out, pd.DataFrame(neu)], ignore_index=True)
+    return df_out
 
 
 # ---------------------------------------------------------------------------
@@ -456,14 +613,15 @@ def enrich_jobs(jobs_df: pd.DataFrame, client: anthropic.Anthropic,
 # ---------------------------------------------------------------------------
 
 def main():
-    parser = argparse.ArgumentParser(description="ESCO-Enrichment mit Haiku-Validierung")
+    parser = argparse.ArgumentParser(description="ESCO-Enrichment mit ISCO-Konsistenzprüfung")
     parser.add_argument("--fix-wrong", action="store_true",
-                        help="Nur die 16 bekannten Fehlmatches reparieren")
+                        help="Nur die Einträge aus KNOWN_WRONG_MATCHES neu suchen")
     parser.add_argument("--job", type=str, default=None,
                         help="Einzelnen Beruf verarbeiten")
+    parser.add_argument("--alle", action="store_true",
+                        help="Alle Berufe neu (überschreibt kuratierte Zuordnungen)")
     args = parser.parse_args()
 
-    client = make_client()
     df_base = pd.read_csv(PROCESSED_PATH / "berufe_ch.csv")
     df_existing = pd.read_csv(PROCESSED_PATH / "berufe_ch_esco.csv")
 
@@ -471,38 +629,38 @@ def main():
         target_jobs = [args.job]
     elif args.fix_wrong:
         target_jobs = KNOWN_WRONG_MATCHES
-    else:
+        if not target_jobs:
+            logger.info("KNOWN_WRONG_MATCHES ist leer — nichts zu tun.")
+            return
+    elif args.alle:
         target_jobs = df_base["beruf"].tolist()
+    else:
+        zugeordnet = set()
+        if "esco_match_qualitaet" in df_existing.columns:
+            zugeordnet = set(df_existing.loc[
+                df_existing["esco_match_qualitaet"].isin(QUALITAETEN), "beruf"])
+        target_jobs = [b for b in df_base["beruf"] if b not in zugeordnet]
+        if not target_jobs:
+            logger.info("Alle Berufe haben eine Zuordnung — nichts zu tun "
+                        "(--job, --fix-wrong oder --alle).")
+            return
 
     target_df = df_base[df_base["beruf"].isin(target_jobs)].reset_index(drop=True)
     not_found = [j for j in target_jobs if j not in df_base["beruf"].values]
     if not_found:
         logger.warning(f"Nicht in berufe_ch.csv gefunden: {not_found}")
 
+    client = make_client()
     logger.info(f"Verarbeite {len(target_df)} Berufe mit 6-stufiger Suchstrategie...")
-
     enriched = enrich_jobs(target_df, client, df_existing)
-
-    # Korrekturen in bestehende Datei einpflegen
-    df_out = df_existing.copy()
-    # Spalte anlegen falls noch nicht vorhanden (rückwärtskompatibler Migrationspfad)
-    if "beschreibung_quelle" not in df_out.columns:
-        df_out["beschreibung_quelle"] = df_out["esco_uri"].apply(
-            lambda u: "ESCO" if (pd.notna(u) and str(u).strip()) else "unbekannt"
-        )
-    for _, row in enriched.iterrows():
-        mask = df_out["beruf"] == row["beruf"]
-        df_out.loc[mask, "esco_uri"] = row["esco_uri"]
-        df_out.loc[mask, "esco_titel"] = row["esco_titel"]
-        df_out.loc[mask, "esco_beschreibung"] = row["esco_beschreibung"]
-        df_out.loc[mask, "beschreibung_quelle"] = row["beschreibung_quelle"]
+    df_out = merge_into(df_existing, enriched)
 
     output_esco = PROCESSED_PATH / "berufe_ch_esco.csv"
     output_verified = PROCESSED_PATH / "berufe_ch_esco_verified.csv"
     df_out.to_csv(output_esco, index=False)
     df_out.to_csv(output_verified, index=False)
 
-    with_uri = (df_out["esco_uri"].notna() & (df_out["esco_uri"] != "")).sum()
+    with_uri = (df_out["esco_uri"].fillna("").astype(str).str.strip() != "").sum()
     logger.info(f"Gespeichert: {output_esco}")
     logger.info(f"Mit ESCO-URI: {with_uri}/{len(df_out)}")
     logger.info(f"Mit Fallback-Beschreibung: {len(df_out) - with_uri}/{len(df_out)}")
