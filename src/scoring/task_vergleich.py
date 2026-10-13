@@ -95,7 +95,7 @@ def _f(x: float, nd: int = 1) -> str:
     # kaufmännisch runden; vorher auf 9 Stellen glätten, damit Gleitkomma-Rauschen
     # (z. B. 7.2499999 vs. 7.25) nicht je nach Umgebung anders rundet
     wert = Decimal(repr(round(float(x), 9))).quantize(Decimal(1).scaleb(-nd), rounding=ROUND_HALF_UP)
-    return f"{wert:.{nd}f}"
+    return f"{abs(wert) if wert == 0 else wert:.{nd}f}"          # kein «-0.0»
 
 
 def _rho(df: pd.DataFrame, a: str, b: str) -> tuple[float, int]:

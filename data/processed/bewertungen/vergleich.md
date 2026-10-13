@@ -41,7 +41,7 @@ Gleicher System-Prompt, gleiches Schema und gleiche Validierung; Abo-Läufe unte
 |---|---|---|---|---|---|---|---|---|
 | 2411 | Wirtschaftsprüfer, Steuerberater und verwandte Berufe | 8.5 | 8.8 | 0.3 | 6.0 | 2.8 | 5.5 / 5.7 | 2/2 |
 | 2643 | Übersetzer, Dolmetscher und andere Linguisten | 8.0 | 8.0 | 0.0 | 7.3 | 0.8 | 4.8 / 5.0 | 2/2 |
-| 2512 | Softwareentwickler | 7.6 | 7.5 | -0.0 | 7.3 | 0.3 | 5.3 / 5.3 | 2/3 |
+| 2512 | Softwareentwickler | 7.6 | 7.5 | 0.0 | 7.3 | 0.3 | 5.3 / 5.3 | 2/3 |
 | 4110 | Allgemeine Bürokräfte | 6.7 | 6.7 | -0.1 | 7.0 | -0.4 | 5.0 / 5.0 | 2/2 |
 | 2431 | Fachkräfte in Marketing und Werbung | 6.5 | 7.3 | 0.8 | 7.3 | -0.1 | 4.3 / 4.9 | 2/2 |
 | 3353 | Fachkräfte in Sozialverwaltung und -versicherung | 6.3 | 7.0 | 0.8 | 6.7 | 0.4 | 4.4 / 5.0 | 2/2 |
