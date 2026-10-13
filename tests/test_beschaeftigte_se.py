@@ -334,3 +334,53 @@ class TestIdempotenz:
         m.iloc[1:].to_csv(kopie / ub.MAPPING_CSV.name, index=False)
         with pytest.raises(SystemExit, match="ohne Eintrag"):
             ub.main(["--pfad", str(kopie), "--dry-run"])
+
+
+# ---------------------------------------------------------------------------
+# Neue Berufsgattungen (--neue-berufe)
+# ---------------------------------------------------------------------------
+
+class TestNeueBerufe:
+    def test_kandidaten_synthetisch(self, monkeypatch):
+        se = _se([
+            (4, "3123", "Poliere und Vorarbeiter", 28.8, 0.9),
+            (4, "3000", "Techniker, onA", 64.5, 24.2),                            # Restgruppe
+            (4, "9329", "Hilfsarbeiter, anderweitig nicht genannt", 38.9, 18.9),  # Ausnahme
+            (4, "3119", "Fachkräfte, anderweitig nicht genannt", 18.9, 5.1),      # Restgruppe
+            (4, "7112", "Maurer", 18.9, 0.4),                                     # schon erfasst
+            (4, "6111", "Gemüseanbauer", 4.9, 1.0),                               # < 5000
+            (4, "3434", "Küchenchefs", 5.0, 1.5),                                 # genau 5000
+        ])
+        m = _mapping([("Maurer/in", "7112", "gattung", "")])
+        monkeypatch.setattr(ub, "RESTGRUPPEN_AUSNAHMEN", {"9329": "Begründung"})
+        assert ub.neue_kandidaten(se, m)["code"].tolist() == ["3123", "3434", "9329"]
+
+    def test_restgruppe(self):
+        assert ub.ist_restgruppe("Führungskräfte, onA")
+        assert ub.ist_restgruppe("Juristen, anderweitig nicht genannt")
+        assert not ub.ist_restgruppe("Poliere und Vorarbeiter")
+
+    def test_aufnahme_auf_kopie(self, tmp_path, monkeypatch):
+        """Eintrag entfernen → --neue-berufe nimmt ihn mit SE-Wert, Branche und Lohn wieder auf."""
+        ziel = tmp_path / "processed"
+        shutil.copytree(P, ziel)
+        monkeypatch.setattr(ub, "BFS_FILE", tmp_path / "fehlt.xlsx")
+        beruf = "Poliere und Vorarbeiter"
+        for name in ub.CSV_DATEIEN + [ub.MAPPING_CSV.name]:
+            df = pd.read_csv(ziel / name, dtype=str, keep_default_na=False)
+            df[df["beruf"] != beruf].to_csv(ziel / name, index=False)
+        ub.main(["--pfad", str(ziel), "--neue-berufe"])
+        for name in ub.CSV_DATEIEN:
+            df = pd.read_csv(ziel / name, dtype=str, keep_default_na=False).set_index("beruf")
+            r = df.loc[beruf]
+            assert r["isco_code"] == "3123" and r["beschaeftigte_1000"] == "28.8", name
+            assert r["branche"] == "Bau" and r["lohn_quelle"] == "LSE2024_2d", name
+            if "score_gesamt" in df.columns:
+                assert r["score_gesamt"] == "" and r["beschreibung_hash"] == ""
+                assert r["scores_gemittelt"] == "False"
+        m = ub.lade_mapping(ziel / ub.MAPPING_CSV.name).set_index("beruf")
+        assert m.at[beruf, "isco_code"] == "3123" and m.at[beruf, "ebene"] == ub.EBENE_GATTUNG
+        # zweiter Lauf: nichts mehr zu ergänzen
+        vorher = {p.name: p.read_text(encoding="utf-8") for p in ziel.glob("*.csv")}
+        ub.main(["--pfad", str(ziel), "--neue-berufe"])
+        assert {p.name: p.read_text(encoding="utf-8") for p in ziel.glob("*.csv")} == vorher
