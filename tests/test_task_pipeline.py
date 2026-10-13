@@ -1172,6 +1172,30 @@ class FakeGeminiBatch:
         self.jobs[name].dest = SimpleNamespace(inlined_responses=antworten)
 
 
+def test_gemini_batch_kontingent_429_nach_erstem_teil(tmp_path, monkeypatch, caplog, gemini_key):
+    from google.genai import errors
+    monkeypatch.setattr(tb.GeminiBatchAPI, "max_bytes", 200_000)      # ≈ 2 Anfragen je Batch
+    fake = FakeGeminiBatch()
+    erst = fake._create
+
+    def create(model, src, config):
+        if fake.erstellt:
+            raise errors.ClientError(429, {"error": {"code": 429, "message": "You exceeded your current quota",
+                                                     "status": "RESOURCE_EXHAUSTED"}})
+        return erst(model, src, config)
+    fake.batches.create = create
+    g = ts.GeminiBewerter(client=fake)
+    argv = ["--provider", "gemini", "--only", *BATCH_ISCO, "--runs", "1", "--batch", "submit"]
+    assert _batch(argv, g, tmp_path) == 3
+    assert "enqueued" in caplog.text
+    zust = tb.lade_zustaende(tmp_path, "gemini")
+    assert len(zust) == 1 and len(fake.erstellt) == 1                  # erster Teil gespeichert
+    n1 = zust[0][1]["anzahl"]
+    fake.batches.create = erst                                         # Kontingent wieder frei
+    assert _batch(argv, g, tmp_path) == 0
+    assert sum(len(x["src"]) for x in fake.erstellt[1:]) == 5 - n1                 # nur der Rest (5 Einträge)
+
+
 def test_gemini_batch_submit_teilen_collect(tmp_path, monkeypatch, capsys, gemini_key):
     from google.genai import types
     monkeypatch.setattr(tb.GeminiBatchAPI, "max_bytes", 200_000)      # ≈ 2 Anfragen je Batch

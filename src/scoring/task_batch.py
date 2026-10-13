@@ -171,6 +171,12 @@ class GeminiBatchAPI:
             if e.code in (401, 403):
                 raise ts.FatalerFehler(f"Gemini: Zugriff verweigert ({e.code}) — GEMINI_API_KEY/GOOGLE_API_KEY "
                                        "und Paid-Tier prüfen") from e
+            if e.code == 429:
+                raise ts.FatalerFehler(
+                    f"Gemini-Batch-API: Kontingent erschöpft (429: {e.message}). Meist das Limit «Batch enqueued "
+                    "tokens» je Modell (Tier 1: 5 Mio. Tokens über alle offenen Batches) — bereits eingereichte "
+                    "Batches sind gespeichert; nach `--batch status`/`--batch collect` denselben submit-Befehl "
+                    "erneut ausführen (reicht nur den Rest ein)") from e
             raise ts.FatalerFehler(f"Gemini-Batch-API: Fehler {e.code}: {e.message} "
                                    "(Zustand ist gespeichert — Befehl später wiederholen)") from e
         except errors.APIError as e:

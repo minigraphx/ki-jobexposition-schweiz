@@ -239,6 +239,7 @@ Modell) bzw. die nicht schon in einem offenen Batch stecken. Abbrechen mit Ctrl-
 | `noch nicht fertig: <batch_id> (in_progress)` | Batch läuft noch → später `--batch collect` |
 | `[expired]` / `[fehlt]` nach `collect` | Anfrage nicht innerhalb der Frist bearbeitet → `--batch followup` |
 | `[validierung]` nach `collect` | Antwort ungültig → `--batch followup` reicht einen Korrekturversuch ein |
+| `Gemini-Batch-API: Kontingent erschöpft (429 …)` | Gemini «Batch enqueued tokens» je Modell (Tier 1: 5 Mio. über alle offenen Batches; ai.google.dev/gemini-api/docs/rate-limits) → fertige Batches mit `--batch status` / `--batch collect` abholen, dann denselben `--batch submit` erneut (Delta: nur der Rest; ggf. mehrere Runden) |
 | `Decoding continuation is not supported for batch requests, so max_output_tokens cannot exceed 32768` | Gemini-Batch: behoben (Batch-Anfragen mit `max_output_tokens=32768`; gemessen max. ~13 000 je gültiger Antwort). Ein im Batch abgeschnittener Eintrag lässt sich synchron mit 65 536 nachholen: `--provider gemini --runs 2` ohne `--batch` |
 | `Abbruch: Abo-Nutzungslimit erreicht …` | nur `claude-cli`: 5-h- oder Wochenlimit des Abos → nach dem Reset denselben Befehl erneut starten |
 | `Abbruch: Claude Code nicht angemeldet …` / `… nicht gefunden` | nur `claude-cli`: `claude` starten und `/login` mit dem Abo-Konto, bzw. Claude Code installieren |
