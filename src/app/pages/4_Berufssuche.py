@@ -139,6 +139,14 @@ if esco_uri and esco_uri != "nan":
         if esco_desc and esco_desc != "nan":
             st.caption(esco_desc)
         st.caption(f"ESCO URI: {esco_uri}")
+        qual = str(row.get("esco_match_qualitaet", "") or "").strip()
+        esco_isco = row.get("esco_isco_code", "")
+        esco_isco = str(int(esco_isco)) if isinstance(esco_isco, float) and esco_isco == esco_isco \
+            else str(esco_isco or "").strip()
+        if qual and qual != "nan":
+            st.caption(f"Match-Qualität: {qual}"
+                       + (f" (ESCO-ISCO {esco_isco})" if esco_isco and esco_isco != "nan" else ""))
+        st.caption("Quelle: ESCO v1.2.1 © Europäische Union, CC BY 4.0; Beschreibung ggf. gekürzt/angepasst")
 else:
     with st.expander("Scoring-Grundlage"):
         st.caption(

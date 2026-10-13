@@ -25,9 +25,7 @@ python src/data/update_from_bfs.py          # BFS SE → beschaeftigte_1000/frau
 python src/data/update_from_bfs.py --blatt 2023        # other year sheet (default "2024"; needs data/raw file)
 python src/data/update_from_bfs.py --neue-berufe       # also add new SE Berufsgattungen >= 5000 to berufe_ch.csv + mapping
 python src/data/berufe_zusammenlegen.py     # one-time #51 migration (ISCO fixes + merges), idempotent, kept for reference
-python src/data/enrich_with_esco.py         # ESCO API → berufe_ch_esco.csv  [LOCAL ONLY]
-python src/data/verify_esco_matches.py      # validate matches → berufe_ch_esco_verified.csv
-python src/data/patch_unmatched.py          # manual fixes for bad matches
+python src/data/enrich_with_esco.py         # ESCO v1.2.1 → berufe_ch_esco.csv + _verified.csv (only jobs without assignment)
 python src/data/update_loehne.py --offline  # LSE 2024 wages (+ stored Salarium profiles) → all CSVs, recomputes score_ch/adaptabilitaet
 python src/data/update_loehne.py            # same, but re-queries Salarium + STATENT online (~15 min, polite)
 python src/data/fetch_bgs.py                # BFS GGS (stats.swiss SDMX) + STATENT online → grenzgaenger_anteil_branche.csv
@@ -36,10 +34,12 @@ python src/data/fetch_statent.py            # BFS STATENT ts-x-06.02.01.01 (DAM 
 python src/data/fetch_statent.py --offline --apply-scores --dry-run  # preview new zeitrahmen in scores.csv (writes nothing)
 python src/data/fetch_statent.py --offline --apply-scores            # write kmu_anteil_branche.csv + recompute grossfirmen_anteil/zeitrahmen_kmu_delta/zeitrahmen
 
-# Fix known wrong ESCO matches (re-run locally after adding to KNOWN_WRONG_MATCHES):
+# Re-match entries listed in KNOWN_WRONG_MATCHES (currently empty, all known errors fixed in #52):
 python src/data/enrich_with_esco.py --fix-wrong
-# Test a single job:
-python src/data/enrich_with_esco.py --job "Bankkaufmann/-frau"
+# Single job / all jobs (--alle overwrites the curated #52 assignments!):
+python src/data/enrich_with_esco.py --job "Grafik- und Multimediadesigner"
+python src/data/enrich_with_esco.py --alle
+# verify_esco_matches.py and patch_unmatched.py are historical (exit immediately), see #52
 
 # --- Scoring Pipeline (requires ANTHROPIC_API_KEY in .env) ---
 python src/scoring/exposure_scorer.py       # synchronous scoring, hash-based delta (only changed jobs)
@@ -69,13 +69,15 @@ data/raw/su-d-40.02.03.02.01.03.10.xlsx   (BFS Strukturerhebung, manually downlo
   → beschaeftigte_1000, frauen_pct, synonyme in berufe_ch*.csv and scores.csv (179 jobs)
 
 berufe_ch.csv
-  → src/data/enrich_with_esco.py          [requires local ESCO API access]
-  → data/processed/berufe_ch_esco.csv     (+ ESCO URI + description)
+  → src/data/enrich_with_esco.py          (ESCO REST API, selectedVersion=v1.2.1; reachable from the cloud)
+  → data/processed/berufe_ch_esco.csv + berufe_ch_esco_verified.csv (identical ESCO columns:
+    esco_uri, esco_titel, esco_beschreibung, beschreibung_quelle, esco_isco_code, esco_match_qualitaet)
+  note: 3 of 179 jobs have no ESCO URI (fallback description); every URI is used once
+  curated in #52: docs/audit_esco_zuordnungen.md (decision + reason per entry)
 
-berufe_ch_esco.csv
-  → src/data/verify_esco_matches.py
-  → data/processed/berufe_ch_esco_verified.csv  (+ match_score 0/1/2)
-  note: 5 of 179 jobs have no ESCO URI (fallback description)
+data/processed/esco_kompetenzen.csv       (versioned; ESCO v1.2.1 CSV download, de)
+  beruf, isco_code, esco_uri, kompetenz, relation (essential/optional), typ (skill/knowledge), kompetenz_uri
+  → input for the planned task-based re-scoring; regenerate when an esco_uri changes
 
 data/raw/je-d-03.04.01.02.47.xlsx         (BFS LSE 2024 T17, optional — parsed copy is versioned)
 data/processed/lohn_profile_salarium.csv  (curated Salarium profile per job, groups 11–14/22/24/26)
@@ -188,9 +190,8 @@ CH wage deltas: <60k CHF −0.2, 60–100k 0.0, 100–150k +0.2, >150k +0.4.
 |--------|-------|--------|-------|
 | `src/data/update_from_bfs.py` | `data/raw/su-d-40.02.03.02.01.03.10.xlsx` (or `se_berufe.csv`), `beruf_berufsart_mapping.csv` | `berufe_ch*.csv`, `scores.csv`, `se_berufe.csv` | BFS SE 2024: Berufsgattung/Berufsart per mapping, sets `beschaeftigte_1000`, `frauen_pct`, `synonyme`; `--blatt`, `--neue-berufe`, `--dry-run` |
 | `src/data/berufe_zusammenlegen.py` | `beruf_berufsart_mapping.csv` | `berufe_ch*.csv`, `scores.csv` | One-time #51 migration: ISCO code fixes + merges (weighted-mean scores); idempotent |
-| `src/data/enrich_with_esco.py` | `berufe_ch.csv` | `berufe_ch_esco.csv` | **Must run locally** (ESCO API blocked in cloud); 6-stage search with Haiku validation |
-| `src/data/verify_esco_matches.py` | `berufe_ch_esco.csv` | `berufe_ch_esco_verified.csv` | Haiku-based match quality scoring 0/1/2 |
-| `src/data/patch_unmatched.py` | `berufe_ch_esco_verified.csv` | `berufe_ch_esco_verified.csv` | Manual overrides for known bad matches |
+| `src/data/enrich_with_esco.py` | `berufe_ch.csv`, `berufe_ch_esco.csv` | `berufe_ch_esco.csv`, `berufe_ch_esco_verified.csv` | 6-stage search, hard ISCO consistency check + LLM validation; default: only jobs without `esco_match_qualitaet`; `--job`, `--fix-wrong`, `--alle` |
+| `src/data/verify_esco_matches.py`, `src/data/patch_unmatched.py` | — | — | Historical (2-digit ISCO matching, `iscoGroup` bug); exit immediately, kept for reference |
 | `src/data/update_loehne.py` | LSE 2024 T17 (raw or `lse2024_monatslohn_isco.csv`), `lohn_profile_salarium.csv`, `lohn_salarium_abfragen.csv`, `statent_vzae_grossregion.csv` | `berufe_ch*.csv`, `scores.csv` | Sets `lohn_median_chf`/`lohn_quelle`; recomputes wage-dependent rule-based columns in scores.csv; `--offline` (no network), `--dry-run` |
 | `src/data/fetch_bgs.py` | stats.swiss SDMX `DF_GGS_4` + STATENT PxWeb (online) or `bgs_grenzgaenger_noga.csv` + `statent_beschaeftigte_noga.csv` (`--offline`) | `grenzgaenger_anteil_branche.csv` (+ the two versioned inputs when online) | Cross-border commuter share per sector (annual mean of latest full year, latest quarter extra); reads/writes no scores; `--periode JJJJ\|JJJJ-Qn`, `--dry-run` |
 | `src/data/fetch_statent.py` | BFS DAM API `ts-x-06.02.01.01` (online) or `statent_groessenklassen_noga.csv` (`--offline`) | `kmu_anteil_branche.csv` (+ `statent_groessenklassen_noga.csv` when online); with `--apply-scores`: `scores.csv` | Grossfirmen share per sector (enterprises ≥250 employed); `--jahr`, `--dry-run`; `--apply-scores` rewrites only `grossfirmen_anteil`, `zeitrahmen_kmu_delta`, `zeitrahmen` (from `zeitrahmen_roh`) |
@@ -203,18 +204,24 @@ CH wage deltas: <60k CHF −0.2, 60–100k 0.0, 100–150k +0.2, >150k +0.4.
 
 ### ESCO Search Strategy (`enrich_with_esco.py`)
 
-Six stages, first valid match wins (each candidate validated by Haiku before accepting):
+Six stages, first valid match wins. All ESCO requests use `selectedVersion=v1.2.1` (the API's
+default version differs; two URIs return HTTP 500 without it).
 
 1. ESCO REST API — direct German title search
-2. ESCO REST API — Haiku-generated alternative terms (4 synonyms/broader terms)
-3. ESCO REST API — filtered by ISCO-08 group code
-4. berufsberatung.ch — HTML scrape of official CH job descriptions
+2. ESCO REST API — LLM-generated alternative terms (4 synonyms/broader terms, DE/EN)
+3. ESCO REST API — occupations of the ISCO group via `/resource/concept?uri=http://data.europa.eu/esco/isco/C{code}`
+   → `_links.narrowerOccupation`, recursing through `narrowerConcept` (e.g. CH code 7200 → group 72).
+   The search parameter `iscoGroup` is **ignored** by the API (returned all occupations
+   alphabetically → e.g. the old Abfallmakler/3D-Druck contamination).
+4. berufsberatung.ch — HTML scrape (site rebuilt, currently returns nothing)
 5. Wikipedia DE — API search
-6. Haiku direct — generates description from job title + ISCO context (fallback)
+6. LLM-generated description from job title + ISCO context (`beschreibung_quelle = KI-generiert`)
 
-Each ESCO URI can only be assigned to one job (deduplication via `blocked_uris`).
-`KNOWN_WRONG_MATCHES` lists 25 confirmed bad matches → see `DATA_QUALITY.md`.
-Run `--fix-wrong` locally to reprocess them. Run `--job "Berufname"` to test a single job.
+ESCO candidates must pass `isco_konsistenz()` **before** the LLM check: ESCO ISCO-4 == `isco_code`
+→ `korrekt`; same 3-digit group or an entry of `ISCO_AUSNAHMEN` (documented ESCO conventions, e.g.
+3221 FaGe → 5321, plus open #51 codes) → `plausibel`; otherwise rejected. Each URI is assigned to
+one job only (`blocked_uris`; tested in `tests/test_esco_zuordnung.py`). `KNOWN_WRONG_MATCHES` is
+empty since #52 — add current `beruf` titles there for `--fix-wrong`.
 
 ### Streamlit App (`src/app/`)
 
@@ -245,9 +252,12 @@ All charts use **Plotly**. App reads from `data/processed/scores.csv`.
 | `lohn_median_chf` | BFS LSE 2024 (T17) | Median annual gross salary CHF = 2-digit group monthly median × 12; for groups 11–14/22/24/26 calibrated with Salarium profiles (`update_loehne.py`) |
 | `lohn_quelle` | `update_loehne.py` | `LSE2024_2d`, `LSE2024_2d+Salarium`, fallback `LSE2024_1d` / `LSE2024_total` |
 | `qualifikation` | Curated list / ISCO major group | Education level: Tertiär / Sekundär II / Keine Ausbildung |
-| `esco_uri` | ESCO REST API | ESCO occupation URI — empty for 5 of 179 jobs (fallback description) |
-| `esco_titel` | ESCO REST API | ESCO occupation title (German) |
-| `esco_beschreibung` | ESCO API or Haiku | ESCO description (174 jobs) or fallback from berufsberatung.ch / Wikipedia / Haiku (5 jobs) |
+| `esco_uri` | ESCO v1.2.1 | ESCO occupation URI — empty for 3 of 179 jobs (fallback description); unique |
+| `esco_titel` | ESCO v1.2.1 | ESCO occupation title (German, from the API); job title for fallbacks |
+| `esco_beschreibung` | ESCO v1.2.1 or fallback | ESCO description (176 jobs) or fallback text (3 jobs) |
+| `beschreibung_quelle` | `enrich_with_esco.py` | `ESCO` (iff `esco_uri` set), `berufsberatung.ch`, `Wikipedia`, `KI-generiert` |
+| `esco_isco_code` | ESCO v1.2.1 | ISCO-4 group of the ESCO occupation (empty for fallbacks) |
+| `esco_match_qualitaet` | #52 audit / `enrich_with_esco.py` | `korrekt` (same ISCO-4, fits), `plausibel` (same ISCO-3, documented exception or partial match), `fallback` (no URI) |
 | `score_gesamt` | Claude Sonnet | Raw AI exposure score 0–10 (Batch API) |
 | `score_digital` | Claude Sonnet | Sub-score: digital output (25% weight) |
 | `score_wiederholbarkeit` | Claude Sonnet | Sub-score: repeatability (25% weight) |
@@ -268,8 +278,8 @@ All charts use **Plotly**. App reads from `data/processed/scores.csv`.
 
 ## Datenqualität
 
-Siehe `DATA_QUALITY.md` für ESCO-Abdeckung, bekannte Fehlzuordnungen (25 Einträge),
-Korrektur-Historie, Quality Audit Prozess und ESCO API Cloud-Blockierung.
+Siehe `DATA_QUALITY.md` für ESCO-Abdeckung und Match-Qualität, Korrektur-Historie und
+Quality Audit Prozess; ESCO-Audit #52 mit Entscheid je Eintrag in `docs/audit_esco_zuordnungen.md`.
 
 ## Deployment (HuggingFace Spaces)
 

@@ -62,3 +62,42 @@ def test_berufssuche_label_enthaelt_synonyme():
     labels = sb.options
     assert any("Verkäufer in Handelsgeschäften" in o and "Detailhandelsfachmann/-frau EFZ" in o
                for o in labels)
+
+
+@pytest.mark.parametrize("beruf, erwartet", [
+    ("Dipl. Pflegefachperson", "Match-Qualität: korrekt (ESCO-ISCO 2221)"),
+    ("Fachperson Gesundheit EFZ (FaGe)", "Match-Qualität: plausibel (ESCO-ISCO 5321)"),
+])
+def test_berufssuche_zeigt_match_qualitaet(beruf, erwartet):
+    at = AppTest.from_file(APP, default_timeout=120)
+    at.query_params["beruf"] = beruf
+    at.run()
+    at.switch_page("pages/4_Berufssuche.py")
+    at.run()
+    assert not at.exception
+    captions = [c.value for c in at.caption]
+    assert erwartet in captions
+    assert any("CC BY 4.0" in c for c in captions)
+    assert not any("Diplomat" in c for c in captions)
+
+
+def test_berufssuche_fallback_ohne_esco():
+    at = AppTest.from_file(APP, default_timeout=120)
+    at.query_params["beruf"] = "Drogist/in"
+    at.run()
+    at.switch_page("pages/4_Berufssuche.py")
+    at.run()
+    assert not at.exception
+    assert any("Kein ESCO-Match" in c.value for c in at.caption)
+
+
+def test_methodik_zeigt_match_qualitaet():
+    at = _app()
+    at.switch_page("pages/5_Methodik.py")
+    at.run()
+    df = pd.read_csv(SCORES)
+    n = int((df["esco_match_qualitaet"] == "korrekt").sum())
+    texte = " ".join(m.value for m in at.markdown)
+    assert f"**korrekt** ({n})" in texte
+    assert "Version 1.2.1" in texte and "CC BY 4.0" in texte
+    assert "Haiku" not in texte

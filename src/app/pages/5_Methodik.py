@@ -22,10 +22,18 @@ def load_data() -> pd.DataFrame | None:
 df = load_data()
 n_berufe = len(df) if df is not None else 0
 if df is not None and "beschreibung_quelle" in df.columns:
-    n_esco = int((df["beschreibung_quelle"] == "ESCO").sum())
-    n_fallback = n_berufe - n_esco
+    quellen = df["beschreibung_quelle"].fillna("").value_counts()
+    n_esco = int(quellen.get("ESCO", 0))
+    n_bb = int(quellen.get("berufsberatung.ch", 0))
+    n_wiki = int(quellen.get("Wikipedia", 0))
+    n_fallback = n_berufe - n_esco - n_bb - n_wiki
 else:
-    n_esco = n_fallback = 0
+    n_esco = n_bb = n_wiki = n_fallback = 0
+if df is not None and "esco_match_qualitaet" in df.columns:
+    qual = df["esco_match_qualitaet"].fillna("").value_counts()
+    n_korrekt, n_plausibel = int(qual.get("korrekt", 0)), int(qual.get("plausibel", 0))
+else:
+    n_korrekt = n_plausibel = 0
 if df is not None and "synonyme" in df.columns:
     syn = df["synonyme"].fillna("").astype(str).str.strip()
     n_zusammen = int((syn != "").sum())
@@ -152,16 +160,32 @@ Die Beschreibungen werden in einem mehrstufigen Prozess ermittelt:
 
 | Stufe | Quelle | Berufe |
 |---|---|---|
-| 1–3 | ESCO API (ISCO-Code + Textsuche, Deutsch/Englisch) | {n_esco} von {n_berufe} |
-| 4 | berufsberatung.ch (Fallback bei keinem ESCO-Treffer) | — |
-| 5 | Wikipedia (zweiter Fallback) | — |
-| 6 | Claude Haiku (generierte Beschreibung als letzter Ausweg) | {n_fallback} von {n_berufe} |
+| 1–3 | ESCO (Textsuche Deutsch/Englisch, Berufe der ISCO-Gruppe) | {n_esco} von {n_berufe} |
+| 4 | berufsberatung.ch (Fallback bei keinem ESCO-Treffer) | {n_bb} |
+| 5 | Wikipedia (zweiter Fallback) | {n_wiki} |
+| 6 | KI-generierte Beschreibung (letzter Ausweg) | {n_fallback} |
 
 Die verwendete Quelle ist in der Spalte `beschreibung_quelle` gespeichert und
 wird bei der Berufssuche angezeigt.
 
-- **ESCO:** [esco.ec.europa.eu](https://esco.ec.europa.eu/de/use-esco/esco-api), Version 1.2
-- **Sprache:** Deutsch, Fallback Englisch
+**Match-Qualität** (Spalte `esco_match_qualitaet`): Ein ESCO-Beruf wird nur übernommen, wenn
+seine ISCO-Gruppe zum ISCO-Code des Berufs passt.
+
+- **korrekt** ({n_korrekt}): gleiche 4-stellige ISCO-Gruppe, der ESCO-Beruf deckt die Tätigkeit ab
+- **plausibel** ({n_plausibel}): gleiche 3-stellige Gruppe, dokumentierte Ausnahme (z. B. ESCO hat
+  keinen Beruf für «Fachkräfte Gesundheit und Pflege», 3221) oder nur ein Teilgebiet des Berufs
+- **fallback** ({n_fallback + n_bb + n_wiki}): kein passender ESCO-Beruf, eigene Beschreibung
+
+Alle Zuordnungen wurden im Oktober 2026 geprüft und, wo falsch, korrigiert (vorher u. a.
+«Dipl. Pflegefachperson» → Diplomat/in); Details in `docs/audit_esco_zuordnungen.md`.
+Für jeden Beruf mit ESCO-Zuordnung sind zudem die ESCO-Kompetenzen (wesentlich/optional)
+in `data/processed/esco_kompetenzen.csv` abgelegt.
+
+- **ESCO:** [esco.ec.europa.eu](https://esco.ec.europa.eu/de/use-esco/esco-api), Version 1.2.1
+  (API mit fester Version und CSV-Download)
+- **Lizenz:** ESCO © Europäische Union, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/);
+  Beschreibungen ggf. gekürzt/angepasst
+- **Sprache:** Deutsch
 """)
 
 st.subheader("Lohndaten")
@@ -518,7 +542,10 @@ st.markdown("""
   (Stichprobe; Werte kleiner Berufe sind entsprechend unsicher). Die KI-Landschaft
   verändert sich schnell; Scores können in 1–2 Jahren bereits überholt sein.
 - **ESCO-Matching nicht immer perfekt.** Für einige Schweizer Berufsbezeichnungen existiert
-  kein exakter ESCO-Eintrag. In diesen Fällen wurde der nächstähnliche Beruf verwendet.
+  kein exakter ESCO-Eintrag. Dann wurde ein ISCO-konsistenter, nahe verwandter Beruf verwendet
+  (Match-Qualität «plausibel») oder eine eigene Beschreibung («fallback»). Die Zuordnungen wurden
+  im Oktober 2026 korrigiert; die Scores der Berufe mit neuer Beschreibung beruhen bis zur
+  nächsten Neubewertung noch auf der früheren Beschreibung.
 - **Löhne sind Gruppenwerte bzw. Modellschätzungen.** Die LSE 2024 weist nur 2-stellige
   Berufsgruppen aus (Median). Alle Berufe einer Gruppe haben deshalb denselben Lohn — ausser in
   den Gruppen 11–14, 22, 24 und 26, wo er mit Salarium-Profilen (Ausbildung, Branche)
