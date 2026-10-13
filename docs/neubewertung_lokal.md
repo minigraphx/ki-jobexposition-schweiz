@@ -168,6 +168,44 @@ python src/scoring/task_vergleich.py
 Synchron und Batch lassen sich mischen: Beide schreiben dasselbe Format, die Delta-Logik sieht
 gültige Ergebnisse beider Wege.
 
+### 5a. Claude über das eigene Abo (`--provider claude-cli`)
+
+Statt über die API (API-Key, Abrechnung je Token) kann Claude über Claude Code im Print-Modus
+(`claude -p`) mit dem eigenen Pro-/Max-Abo bewerten. Voraussetzung: Claude Code installiert, im
+PATH und mit dem Abo-Konto angemeldet (`claude` starten, `/login`).
+
+```bash
+python src/scoring/task_scorer.py --provider claude-cli --pilot --runs 2 --dry-run
+python src/scoring/task_scorer.py --provider claude-cli --pilot --runs 2   # Vergleich mit den API-Läufen
+python src/scoring/task_vergleich.py                                       # Abschnitt «Claude über das Abo»
+python src/scoring/task_scorer.py --provider claude-cli --runs 2           # alle Einträge
+python src/scoring/task_aggregate.py --claude-source claude-cli            # Abo- statt API-Läufe für Claude
+```
+
+- Gleicher System-Prompt (`--system-prompt-file`), gleiches Schema (`--json-schema`), gleiche
+  Validierung, gleiche Delta-Logik und gleiches Dateiformat wie `claude`; Effort `high`
+  (`--effort`). Ergebnisse unter `bewertungen/claude-cli/` — getrennt von den API-Läufen.
+- Isolation: keine Tools (`--tools ""`), keine MCP-Server, keine Einstellungsdateien, kein
+  CLAUDE.md und keine Auto-Memory, leeres temporäres Arbeitsverzeichnis. Claude Code hängt der
+  ersten Nachricht trotzdem Umgebungsangaben an (Datum, Betriebssystem, Verzeichnis).
+- **API-Keys werden für den Unterprozess entfernt** (`ANTHROPIC_API_KEY`, `ANTHROPIC_AUTH_TOKEN`,
+  Bedrock/Vertex/Foundry-Schalter): Mit gesetztem Key würde Claude Code über die API abrechnen.
+- Unterschiede zur API: kein server-seitiger Refusal-Fallback, kein Batch, kein `--count-tokens`;
+  der Korrekturversuch wird als ein Prompt gestellt (Original + vorherige Antwort + Fehlerliste),
+  weil `claude -p` einstufig ist. `meta.usage.api_aequivalent_usd` ist der Listenpreis laut Claude
+  Code, nicht abgerechnet.
+- Abo-Limits: Die Aufrufe zählen gegen die 5-Stunden- und Wochenlimits des Abos (geteilt mit
+  claude.ai und interaktivem Claude Code). Ist das Limit erreicht, bricht der Lauf mit
+  `Abo-Nutzungslimit erreicht` ab; später denselben Befehl erneut starten — fertige Einträge
+  werden übersprungen. Ein gemessener Aufruf (2512, effort high) brauchte ~41 000 Input-Tokens
+  (fast alles System-Prompt) und ~4 200 Output-Tokens.
+- Nutzungsbedingungen (Stand 13.10.2026, code.claude.com/docs/en/legal-and-compliance): Die
+  Anmeldung mit dem eigenen Abo im unveränderten Claude Code ist zulässig; untersagt ist, Abo-
+  Zugangsdaten in fremden Anwendungen zu verwenden oder Anfragen für Dritte darüber zu leiten.
+  Die beworbenen Abo-Limits gehen von «ordinary, individual usage» aus. `claude-cli` ruft nur das
+  installierte Claude Code auf und liest keine Zugangsdaten; für Produkte, die Claude zur
+  Laufzeit nutzen, verlangt die Doku API-Keys (die App tut das nicht).
+
 ## 6. Ergebnisse committen und pushen
 
 ```bash
@@ -201,6 +239,9 @@ Modell) bzw. die nicht schon in einem offenen Batch stecken. Abbrechen mit Ctrl-
 | `noch nicht fertig: <batch_id> (in_progress)` | Batch läuft noch → später `--batch collect` |
 | `[expired]` / `[fehlt]` nach `collect` | Anfrage nicht innerhalb der Frist bearbeitet → `--batch followup` |
 | `[validierung]` nach `collect` | Antwort ungültig → `--batch followup` reicht einen Korrekturversuch ein |
+| `Abbruch: Abo-Nutzungslimit erreicht …` | nur `claude-cli`: 5-h- oder Wochenlimit des Abos → nach dem Reset denselben Befehl erneut starten |
+| `Abbruch: Claude Code nicht angemeldet …` / `… nicht gefunden` | nur `claude-cli`: `claude` starten und `/login` mit dem Abo-Konto, bzw. Claude Code installieren |
+| `HTTP-Client geschlossen, neuer Client` | Gemini: Client wird neu angelegt und die Anfrage wiederholt (behoben: früher Absturz «client has been closed») |
 
 `--force` fragt auch aktuelle Bewertungen neu an (z. B. `--only 2411 --force`). Alle Aufrufe stehen
 in `data/processed/bewertungen/<provider>/protokoll.jsonl`.

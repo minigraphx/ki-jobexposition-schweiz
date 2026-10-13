@@ -1,6 +1,7 @@
 """Vergleichsbericht: Pilot (Abo-Läufe, Rubrik v2.1) vs. API-Claude vs. API-Gemini (Rubrik v2.2).
 
 - 15 Pilotberufe: ζ-Score (10·ζ), Zeitersparnis und Δ je Quelle, Spearman ρ zwischen den Quellen
+- falls Abo-Läufe vorliegen (bewertungen/claude-cli/, ``claude -p``): Abschnitt Abo-CLI vs. API-Claude vs. Pilot
 - Spearman ρ gegen externe Benchmarks (data/processed/benchmarks_isco4.csv: ILO 2025,
   Eloundou et al. β, AEI observed exposure) — für die Pilotberufe und für alle bewerteten Einträge
 
@@ -31,7 +32,8 @@ PILOT_DIR = tr.BEWERTUNGEN_DIR / "pilot_abo"
 PILOT_RUNS = [PILOT_DIR / "run1_v21", PILOT_DIR / "run2_v21"]
 BENCHMARKS = {"ilo25_mean": "ILO 2025 (Gmyrek et al.)", "eloundou_gpt4_beta": "Eloundou et al. 2024 (β)",
               "aei_observed_exposure": "AEI observed exposure"}
-QUELLEN = {"pilot": "Pilot (Abo)", "claude": "API Claude", "gemini": "API Gemini", "kombiniert": "API kombiniert"}
+QUELLEN = {"pilot": "Pilot (Abo)", "claude": "API Claude", "gemini": "API Gemini", "kombiniert": "API kombiniert",
+           "cli": "Abo-CLI Claude"}
 
 
 def lade_pilot(runs: list[Path], eintraege: list[ti.Eintrag], warnungen: list[str]) -> dict[str, list[ta.Lauf]]:
@@ -76,8 +78,10 @@ def tabelle(eintraege: list[ti.Eintrag], pilot: dict, api: dict[str, dict]) -> p
         p = pilot.get(e.schluessel, [])
         c = api.get("claude", {}).get(e.schluessel, [])
         g = api.get("gemini", {}).get(e.schluessel, [])
-        z = {"isco_code": e.isco_code, "beruf": e.beruf, "n_pilot": len(p), "n_claude": len(c), "n_gemini": len(g)}
-        for name, l in (("pilot", p), ("claude", c), ("gemini", g), ("kombiniert", c + g)):
+        k = api.get("claude-cli", {}).get(e.schluessel, [])
+        z = {"isco_code": e.isco_code, "beruf": e.beruf, "n_pilot": len(p), "n_claude": len(c), "n_gemini": len(g),
+             "n_cli": len(k)}
+        for name, l in (("pilot", p), ("claude", c), ("gemini", g), ("kombiniert", c + g), ("cli", k)):
             z[f"zeta_{name}"] = _m(l, "score_aufgaben")
             z[f"ersparnis_{name}"] = _m(l, "score_zeitersparnis")
             z[f"ersetzend_{name}"] = _m(l, "anteil_ersetzend")
@@ -138,6 +142,24 @@ def bericht(pilot_df: pd.DataFrame, alle_df: pd.DataFrame, bench: pd.DataFrame |
         z.append(f"| {QUELLEN[a]} – {QUELLEN[b]} | {n} | {_f(rz, 2)} | {_f(md, 2)} | {_f(mae, 2)} | {_f(re_, 2)} |")
     z.append("")
 
+    if "n_cli" in pilot_df and (pilot_df["n_cli"] > 0).any():
+        z += ["## Claude über das Abo (claude -p) vs. API (Pilotberufe)", "",
+              "Gleicher System-Prompt, gleiches Schema und gleiche Validierung; Abo-Läufe unter bewertungen/claude-cli/.",
+              "", "| ISCO | Beruf | API Claude | Abo-CLI | Δ CLI−API | Pilot | Δ CLI−Pilot | Zeitersparnis API / CLI | "
+              "Läufe API/CLI |", "|---|---|---|---|---|---|---|---|---|"]
+        for _, r in pilot_df.sort_values("zeta_claude", ascending=False, na_position="last").iterrows():
+            z.append(f"| {r.isco_code} | {r.beruf} | {_f(r.zeta_claude)} | {_f(r.zeta_cli)} | "
+                     f"{_f(r.zeta_cli - r.zeta_claude)} | {_f(r.zeta_pilot)} | {_f(r.zeta_cli - r.zeta_pilot)} | "
+                     f"{_f(r.ersparnis_claude)} / {_f(r.ersparnis_cli)} | {r.n_claude}/{r.n_cli} |")
+        z += ["", "| Paar | n | Spearman ρ (ζ) | mittlere Differenz | MAE | ρ (Zeitersparnis) |",
+              "|---|---|---|---|---|---|"]
+        for a, b in (("cli", "claude"), ("cli", "pilot"), ("cli", "gemini")):
+            rz, n = _rho(pilot_df, f"zeta_{a}", f"zeta_{b}")
+            md, mae = _diff(pilot_df, f"zeta_{a}", f"zeta_{b}")
+            re_, _ = _rho(pilot_df, f"ersparnis_{a}", f"ersparnis_{b}")
+            z.append(f"| {QUELLEN[a]} – {QUELLEN[b]} | {n} | {_f(rz, 2)} | {_f(md, 2)} | {_f(mae, 2)} | {_f(re_, 2)} |")
+        z.append("")
+
     if bench is not None:
         for titel, df, quellen in (("Pilotberufe", pilot_df, ("pilot", "claude", "gemini", "kombiniert")),
                                    ("alle bewerteten Einträge", alle_df, ("claude", "gemini", "kombiniert"))):
@@ -175,7 +197,8 @@ def main(argv: list[str] | None = None) -> int:
     pilot_e = ti.baue_eintraege(pilot=True)
     runs = [Path(p) for p in a.pilot_runs if p]
     pilot = lade_pilot(runs, eintraege, warnungen)
-    api = {p: ta.lade_laeufe(Path(a.base_dir), p, eintraege, warnungen, a.include_stale) for p in ta.PROVIDER}
+    api = {p: ta.lade_laeufe(Path(a.base_dir), p, eintraege, warnungen, a.include_stale)
+           for p in (*ta.PROVIDER, "claude-cli")}
     alle_df = tabelle(eintraege, pilot, api)
     pilot_keys = {e.schluessel for e in pilot_e}
     pilot_df = alle_df[[ti.Eintrag(r.isco_code, r.beruf, {}, "").schluessel in pilot_keys
