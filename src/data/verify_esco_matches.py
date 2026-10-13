@@ -1,4 +1,13 @@
 """
+HISTORISCH — nicht mehr verwenden (ersetzt durch das ESCO-Audit, Issue #52, Okt. 2026).
+
+Das Skript bewertete Matches nur auf 2-stelliger ISCO-Ebene (`match_score` 0/1/2), suchte
+mit dem von der ESCO-API ignorierten Parameter `iscoGroup` und würde die kuratierten
+Zuordnungen in berufe_ch_esco_verified.csv überschreiben. Die Matchqualität steht seit #52 in
+`esco_match_qualitaet` (korrekt / plausibel / fallback); `enrich_with_esco.py` schreibt
+berufe_ch_esco.csv und berufe_ch_esco_verified.csv und prüft die ISCO-Konsistenz hart.
+
+Ursprüngliche Beschreibung:
 ESCO-Matchqualität prüfen und schlechte Matches verbessern.
 
 Phase 1: Bestehende Matches in berufe_ch_esco.csv bewerten (Score 0/1/2).
@@ -15,7 +24,8 @@ import pandas as pd
 
 # Pfad für Imports relativ zu diesem File setzen
 sys.path.insert(0, str(Path(__file__).parent))
-from enrich_with_esco import esco_get_occupation, esco_search, get_description
+from enrich_with_esco import esco_get_occupation, get_description  # noqa: E402
+from enrich_with_esco import esco_search_text as esco_search  # noqa: E402
 
 PROCESSED_PATH = Path(__file__).parent.parent.parent / "data" / "processed"
 RATE_LIMIT = 0.4
@@ -242,4 +252,5 @@ def verify_and_fix(
 
 
 if __name__ == "__main__":
-    verify_and_fix()
+    sys.exit("verify_esco_matches.py ist historisch (siehe Docstring) — "
+             "Matchqualität steht in esco_match_qualitaet.")

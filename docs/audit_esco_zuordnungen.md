@@ -83,7 +83,7 @@ Gymnasiallehrer/in (ESCO kennt nur «Lehrkraft Sekundarstufe»; die URI bleibt b
 Sekundarlehrer/in), Maschinenführer/in (kein generischer ESCO-Beruf, Code 8211 offen). Die
 Beschreibungen der beiden letzten wurden im Audit verfasst (`KI-generiert`), weil
 berufsberatung.ch (neu aufgebaut, alte Suche liefert nichts) und die Wikipedia-API (aus der Cloud
-rate-limitiert) nicht verfügbar waren. Der Quellenwert «Haiku-generiert» heisst jetzt
+rate-limitiert) nicht verfügbar waren. Der frühere Quellenwert für generierte Texte heisst jetzt
 «KI-generiert».
 
 **«Dipl.»-Titel (#48):** Dipl. Pflegefachperson ist der einzige Eintrag mit «Dipl.» im Titel

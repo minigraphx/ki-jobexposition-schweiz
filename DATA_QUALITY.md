@@ -1,53 +1,54 @@
 # Datenqualität & Korrektur-Historie
 
-## ESCO-Abdeckung (Stand 2026-10, nach #51)
+## ESCO-Abdeckung und Match-Qualität (Stand 2026-10, nach #52)
 
-- **174 / 179** Berufe mit ESCO-URI (offizielle EU-Klassifikation; vor #51: 197 / 204)
-- **5 Berufe** ohne ESCO-URI (Fallback-Beschreibung aus Stufe 4–6):
-  Telematiker/in EFZ, Drogist/in, Handelsmakler, Isolierer, Reiseverkehrsfachkräfte
-  (Logistiker/in EFZ und Hauswirtschaftler/in EFZ sind seit #51 Synonyme zusammengelegter Einträge)
-- Bei zusammengelegten Einträgen stammen ESCO-URI und -Beschreibung vom grössten Teilberuf.
-  Die Namen in `KNOWN_WRONG_MATCHES` / `patch_unmatched.py` beziehen sich teils auf die
-  bisherigen Titel (z. B. Bankkaufmann/-frau, Logistiker/in EFZ) — Bereinigung im ESCO-Audit (#52).
-- Berufe mit geändertem ISCO-Code (ESCO-Match neu prüfen): siehe `docs/audit_isco_codes.md`.
-- Genaue Fallback-Stufe (berufsberatung.ch / Wikipedia / Haiku) nicht persistiert — Issue #24
+Referenz: **ESCO v1.2.1** (API mit `selectedVersion=v1.2.1`, CSV-Download de/en), © Europäische
+Union, CC BY 4.0; Beschreibungen ggf. gekürzt/angepasst. Entscheid und Begründung je Eintrag:
+`docs/audit_esco_zuordnungen.md`.
 
-## Bekannte ESCO-Fehlzuordnungen (`KNOWN_WRONG_MATCHES`)
+| `esco_match_qualitaet` | Einträge | Beschäftigte (Tsd.) | Bedeutung |
+|---|---|---|---|
+| korrekt | 158 | 3'287.9 | ESCO-ISCO-4-Steller = `isco_code`, Tätigkeit abgedeckt |
+| plausibel | 18 | 252.9 | gleiche 3-stellige Gruppe, dokumentierte Ausnahme (`ISCO_AUSNAHMEN`) oder Teilgebiet |
+| fallback | 3 | 26.1 | kein passender ESCO-Beruf: Drogist/in, Gymnasiallehrer/in, Maschinenführer/in (`KI-generiert`) |
 
-25 Berufe mit bestätigten Fehlmatches; werden via `--fix-wrong` repariert:
+- **176 / 179** Einträge mit ESCO-URI, jede URI genau einmal; `esco_isco_code` = ISCO-Gruppe des
+  ESCO-Berufs; Titel deutsch aus der API. `beschreibung_quelle = ESCO` genau dann, wenn eine URI
+  gesetzt ist (Tests in `tests/test_esco_zuordnung.py`).
+- Vorher (Audit der bisherigen Zuordnungen auf die 179 Einträge übertragen): 96 korrekt,
+  45 plausibel-generisch, **33 falsch (950 Tsd. Beschäftigte)**, 5 ohne URI — davon 4 mit
+  `beschreibung_quelle = ESCO`. Auf den 204 Berufen vor #51: 107 / 51 / 39 falsch (987 Tsd., ~26 %) / 7.
+- **ESCO-Kompetenzen** je Eintrag (wesentlich/optional, skill/knowledge, deutsch):
+  `data/processed/esco_kompetenzen.csv` (10'032 Zeilen, aus dem CSV v1.2.1; mit der API abgeglichen).
+- `beschreibung_hash` wurde nicht neu berechnet → `exposure_scorer.py` bewertet die 89 Einträge mit
+  neuer Beschreibung beim nächsten Lauf neu (zusammen mit den 22 zusammengelegten: 101 Einträge).
+  Bis dahin beruhen deren Scores auf der alten (teils falschen) Beschreibung.
+- Offen: Fälle mit offenem ISCO-Code aus #51 (3312, 2422, 4415, 7421, 2146, 8211, 3522) nach
+  Klärung des Codes neu zuordnen; berufsberatung.ch-Scraper an die neu aufgebaute Website
+  anpassen (liefert derzeit nichts).
 
-```
-# Gruppe 1: verifizierte Fehlmatches
-Bankkaufmann/-frau              → Abfallmakler (korrekt: Bankbediensteter)
-Polymechaniker/in EFZ           → Brennschneider (korrekt: Industriemechaniker)
-Logistiker/in EFZ               → Abfallmakler
-Immobilienbewirtschafter/in     → Abfallmakler
-Automatiker/in EFZ              → 3D-Druck-Techniker
-Bauführer/in                    → 3D-Druck-Techniker
-Grafiker/in                     → Kartograf
-Hochbauzeichner/in EFZ          → 3D-Druck-Techniker
-Elektroplaner/in EFZ            → 3D-Druck-Techniker
+## ESCO-Fehlzuordnungen: Ursache und Behebung (#52, #48)
 
-# Gruppe 1b: Brennschneider-URI (5d46e448) fälschlicherweise zugewiesen
-Primarlehrer/in
-Sekundarlehrer/in
-Pflegeassistent/in
-Lastwagenfahrer/in
-Arztpraxisassistent/in
-Lieferwagenfahrer/in
-Hauswirtschaftler/in EFZ
-Telematiker/in EFZ
-Drogist/in
+1. **Stufe 3 von `enrich_with_esco.py`** suchte mit `iscoGroup=…`; die ESCO-API ignoriert diesen
+   Parameter und liefert alle Berufe alphabetisch («3D-Animationstechniker, 3D-Artist,
+   Abfallbeauftragter …») — daher u. a. die früheren Abfallmakler- und 3D-Druck-Treffer.
+   Jetzt: Concept-Endpunkt `/resource/concept?uri=http://data.europa.eu/esco/isco/C{code}` →
+   `narrowerOccupation` (rekursiv über `narrowerConcept`).
+2. **Keine ISCO-Prüfung:** Ein Sprachmodell bewertete nur Titel und Beschreibung (z. B. Textsuche
+   «Dipl.» → Diplomat/in für die Dipl. Pflegefachperson, #48; Kameramann/-frau für Detailhandel,
+   Restaurant- und Hotelfach). Jetzt harte Prüfung `isco_konsistenz()` vor der inhaltlichen Prüfung;
+   32 der 39 Fehler wären so abgefangen worden.
+3. **Version nicht fixiert:** Die Standardversion der API weicht von v1.2.1 ab (andere Texte, z. B.
+   PTA unter 3213 statt 2262; zwei URIs mit HTTP 500). Jetzt `selectedVersion=v1.2.1` überall.
+4. **Mehrfach vergebene URIs** (13 URIs für 30 Berufe) durch Teil-Läufe und Handkorrekturen.
+   Jetzt Test auf Eindeutigkeit.
+5. `verify_esco_matches.py` / `patch_unmatched.py` akzeptierten Treffer schon bei gleicher
+   2-stelliger ISCO-Gruppe und waren nicht mehr lauffähig → als historisch markiert.
 
-# Gruppe 2: Fehlmatches in berufe_ch_esco.csv (unverifiziert)
-PR-Spezialist/in                → Preiskalkulation
-Reinigungspersonal...           → Netzverankerung Aquakultur
-Leitende Verwaltungsbedienstete → Leitender Hauswirtschafter
-Technische Verkaufsfachkräfte   → Experte Geoinformationssysteme
-Bürokräfte Transportwirtschaft  → Lebensmitteltechniker
-Physiotherapeut. Techniker...   → Anästhesietechn. Assistent
-Fachkräfte Personal & Schulung  → Hydraulik-Fachkraft
-```
+`KNOWN_WRONG_MATCHES` ist seit #52 leer (die früheren 25 Einträge — Abfallmakler-, Brennschneider-
+und 3D-Druck-Kontamination — sind behoben; 13 davon waren schon korrekt, viele Titel sind seit #51
+zusammengelegt). Neue bestätigte Fehlzuordnungen dort mit dem aktuellen `beruf`-Titel eintragen und
+`enrich_with_esco.py --fix-wrong` ausführen. «Dipl.»-Titel: nur Dipl. Pflegefachperson (geprüft).
 
 ## Korrektur-Historie
 
@@ -61,6 +62,7 @@ Fachkräfte Personal & Schulung  → Hydraulik-Fachkraft
 | 2026-04 | URI-Duplikat-Schutz | `enrich_with_esco.py`: `blocked_uris` verhindert Kreuz-Kontamination |
 | 2026-10 | Löhne auf LSE 2024 umgestellt (#45), `update_loehne.py` | Alle 204 Berufe: `lohn_median_chf`, `lohn_quelle`; regelbasiert neu: `lohnklasse`, `delta_lohn`, `score_ch`, `adaptabilitaet` (inkl. Altlasten), `delta_branche` (Pharma-Ausnahme 2131/2145) |
 | 2026-10 | Beschäftigte ohne Doppelzählung, ISCO-Audit (#51) | 21 ISCO-Codes korrigiert, 22 Zusammenlegungen (204 → 179 Berufe), 2330/5131/5223 über SE-Berufsarten aufgeteilt; `beschaeftigte_1000`/`frauen_pct` in allen CSVs aus SE 2024; Löhne mit neuen Gewichten neu berechnet; Details `docs/audit_isco_codes.md` |
+| 2026-10 | ESCO-Audit und Neuzuordnung (#52, #48) | 83 URIs geändert, 89 Beschreibungen (v1.2.1), deutsche Titel, `beschreibung_quelle` korrigiert; neu `esco_isco_code`, `esco_match_qualitaet`, `esco_kompetenzen.csv`; Stufe 3 + ISCO-Prüfung in `enrich_with_esco.py`; Details `docs/audit_esco_zuordnungen.md` |
 
 ## Löhne (LSE 2024)
 
@@ -123,6 +125,6 @@ Report: `data/processed/audit_report.json`
 
 ## ESCO API — Hinweis
 
-Die ESCO REST API ist im **Anthropic Cloud-Environment geblockt**. Folgende Skripte
-müssen **lokal** ausgeführt werden:
-`enrich_with_esco.py`, `verify_esco_matches.py`, `patch_unmatched.py`
+Die ESCO REST API ist aus der Cloud **erreichbar** (Stand Okt. 2026; früher als blockiert
+dokumentiert). Abfragen sequentiell mit ~0.5 s Pause und immer mit `selectedVersion=v1.2.1`.
+Für Massenabfragen (Kompetenzen) ist der CSV-Download v1.2.1 konsistenter und schneller.

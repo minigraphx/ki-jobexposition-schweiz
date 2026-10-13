@@ -47,7 +47,7 @@ Für jeden Beruf bewertet **Claude (claude-sonnet-4-6)** fünf Kriterien (je 0�
 | Kreativität | 15 % (negativ) |
 | Soziale Interaktion | 15 % (negativ) |
 
-Auf den Rohscore werden **Schweiz-spezifische Anpassungen** angewendet (Branche, Lohnklasse). Datenquellen: BFS Strukturerhebung (SE) 2024 · ESCO v1.2 · BFS LSE 2024.
+Auf den Rohscore werden **Schweiz-spezifische Anpassungen** angewendet (Branche, Lohnklasse). Datenquellen: BFS Strukturerhebung (SE) 2024 · ESCO v1.2.1 · BFS LSE 2024.
 
 ## Lokale Entwicklung
 
@@ -85,7 +85,7 @@ pytest tests/ -v --cov=src/scoring
 ## Datenquellen
 
 - **BFS Strukturerhebung (SE) 2024** — Erwerbstätige und Frauenanteil pro Beruf (CH-ISCO-19, 4-stellige Berufsgattung bzw. 5-stellige Berufsart; jede Gattung zählt genau einmal, siehe `docs/audit_isco_codes.md`)
-- **ESCO v1.2** — Berufsbeschreibungen (Europäische Kommission)
+- **ESCO v1.2.1** — Berufsbeschreibungen und Kompetenzen (© Europäische Union, CC BY 4.0; Beschreibungen ggf. gekürzt/angepasst)
 - **BFS LSE 2024** (T17) — Medianlöhne nach 2-stelliger ISCO-Gruppe, für heterogene Gruppen mit BFS Salarium differenziert
 
 ## Lizenz
