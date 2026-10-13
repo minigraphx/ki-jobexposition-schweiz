@@ -64,6 +64,12 @@ def eintraege():
     return ti.baue_eintraege()
 
 
+def _anzahl_eintraege() -> int:
+    """Anzahl Einträge in scores.csv (wächst, wenn Berufsgattungen dazukommen)."""
+    import pandas as pd
+    return len(pd.read_csv(Path(__file__).parent.parent / "data" / "processed" / "scores.csv"))
+
+
 @pytest.fixture(scope="module")
 def pilot(eintraege):
     return ti.baue_eintraege(pilot=True)
@@ -210,8 +216,9 @@ def test_pilot_abo_dateien_sind_gueltig_v21():
 # --------------------------------------------------------------------------- Inputs
 
 def test_inputs_alle_eintraege(eintraege):
-    assert len(eintraege) == 179
-    assert len({e.datei for e in eintraege}) == 179
+    n = _anzahl_eintraege()
+    assert len(eintraege) == n
+    assert len({e.datei for e in eintraege}) == n
     for e in eintraege:
         assert e.input["isco_code"] == e.isco_code and len(e.input_hash) == 64
         typen = [k["typ"] for k in e.input["wesentliche_kompetenzen"]]
@@ -657,7 +664,7 @@ def test_aggregation_von_hand_nachgerechnet(tmp_path, eintraege):
     w: list[str] = []
     laeufe = {p: ta.lade_laeufe(tmp_path, p, eintraege, w) for p in ta.PROVIDER}
     df = ta.aggregiere(eintraege, laeufe)
-    assert len(df) == 179 and list(df.columns) == ta.SPALTEN
+    assert len(df) == _anzahl_eintraege() and list(df.columns) == ta.SPALTEN
     r = df[df.isco_code == "2512"].iloc[0]
     close(r.score_aufgaben, 4.0)                    # (4 + 6 + 2) / 3
     close(r.score_aufgaben_claude, 5.0)
@@ -715,7 +722,7 @@ def test_aggregate_main_schreibt_csv(tmp_path, eintraege):
     assert ta.main(["--basis", str(tmp_path), "--out", str(out)]) == 0
     import pandas as pd
     df = pd.read_csv(out, dtype={"isco_code": str})
-    assert len(df) == 179 and df.loc[df.isco_code == "2512", "score_aufgaben"].iloc[0] == 4.0
+    assert len(df) == _anzahl_eintraege() and df.loc[df.isco_code == "2512", "score_aufgaben"].iloc[0] == 4.0
 
 
 # --------------------------------------------------------------------------- Vergleichsbericht
