@@ -68,14 +68,31 @@ class TestParseLseExcel:
 
 class TestKalibrierung:
     def test_formel(self):
-        # LSE 22 × 12 × S_beruf / S_referenz, auf 100 CHF gerundet
+        # LSE_g × 12 × S_j / S̄_g, auf 100 CHF gerundet
         assert ul.kalibrierter_lohn(8000, 9641, 7876) == round(8000 * 12 * 9641 / 7876, -2)
 
-    def test_referenzprofil_ergibt_lse_wert(self):
+    def test_mittelwert_profil_ergibt_lse_wert(self):
         assert ul.kalibrierter_lohn(9509, 8500.0, 8500.0) == 9509 * 12 // 100 * 100
 
     def test_rundung_auf_100(self):
         assert ul.kalibrierter_lohn(8000, 1.0, 1.0) % 100 == 0
+
+    def test_gruppen_mittel_gewichtet(self):
+        assert ul.gruppen_mittel([12000, 10000], [30, 10]) == pytest.approx(11500)
+        assert ul.gruppen_mittel([12000, 10000], [0, 0]) == pytest.approx(11000)
+
+    @pytest.mark.parametrize("s, w", [
+        ([9400, 10039, 8500, 9000], [32, 20, 8, 28]),
+        ([7000, 12000], [130, 36]),
+        ([5000], [1]),
+    ])
+    def test_normierung_gewichtetes_mittel_gleich_lse(self, s, w):
+        """Σ w·lohn / Σ w = LSE_g × 12 (ungerundet exakt, gerundet auf ±50 CHF)."""
+        mittel = ul.gruppen_mittel(s, w)
+        exakt = [9509 * 12 * x / mittel for x in s]
+        assert sum(a * b for a, b in zip(exakt, w)) / sum(w) == pytest.approx(9509 * 12)
+        gerundet = [ul.kalibrierter_lohn(9509, x, mittel) for x in s]
+        assert abs(sum(a * b for a, b in zip(gerundet, w)) / sum(w) - 9509 * 12) <= 50
 
     def test_salarium_gruppe(self):
         assert [ul.salarium_gruppe(c) for c in ("1120", "1345", "1420", "2212", "2611")] == [10, 10, 10, 22, 26]
@@ -119,7 +136,6 @@ def _profile() -> pd.DataFrame:
 
 ABFRAGEN = _abfragen({
     (22, 86, "UNI", 1): 12000, (22, 86, "UNI", 2): 12000,
-    (22, 86, ul.STANDARD, 1): 8000, (22, 86, ul.STANDARD, 2): 8000,
     (22, 47, "UNI", 1): 10000, (22, 47, "UNI", 2): None,
 })
 
@@ -129,24 +145,49 @@ class TestBerechneLoehne:
         return pd.DataFrame({
             "beruf": ["Fachärzte", "Apotheker/in", "Physiotherapeut/in", "Kassierer/in", "Selbstversorger"],
             "isco_code": ["2212", "2262", "2264", "5223", "6310"],
+            "beschaeftigte_1000": [30.0, 10.0, 5.0, 20.0, 1.0],
         })
 
     def test_quellen_und_werte(self, capsys):
         res = ul.berechne_loehne(self._df(), LSE, _profile(), ABFRAGEN, GEWICHTE)
         assert res["lohn_quelle"].tolist() == [ul.QUELLE_SALARIUM, ul.QUELLE_SALARIUM,
                                                ul.QUELLE_2D, ul.QUELLE_2D, ul.QUELLE_1D]
-        assert res["lohn_median_chf"].tolist() == [144000, 120000, 96000, 4970 * 12, 5670 * 12]
+        # S̄_22 = (30·12000 + 10·10000) / 40 = 11500
+        assert res["lohn_median_chf"].tolist() == [round(96000 * 12000 / 11500, -2),
+                                                   round(96000 * 10000 / 11500, -2),
+                                                   96000, 4970 * 12, 5670 * 12]
         # heterogene Gruppe ohne Profil → Warnung, LSE-Gruppenwert
         assert "Kein Salarium-Profil für 2264" in capsys.readouterr().out
+
+    def test_gruppenmittel_gleich_lse(self):
+        df = self._df()
+        res = ul.berechne_loehne(df, LSE, _profile(), ABFRAGEN, GEWICHTE)
+        sal = res["lohn_quelle"] == ul.QUELLE_SALARIUM
+        w = df.loc[sal, "beschaeftigte_1000"]
+        assert (res.loc[sal, "lohn_median_chf"] * w).sum() / w.sum() == pytest.approx(96000, abs=50)
+
+    def test_externe_gewichte_haben_vorrang(self):
+        gew = {("2212", "Fachärzte"): 10.0, ("2262", "Apotheker/in"): 10.0}
+        res = ul.berechne_loehne(self._df(), LSE, _profile(), ABFRAGEN, GEWICHTE, gew)
+        assert res["lohn_median_chf"].tolist()[:2] == [round(96000 * 12000 / 11000, -2),
+                                                       round(96000 * 10000 / 11000, -2)]
+
+    def test_einziger_profilberuf_erhaelt_lse(self):
+        df = self._df().iloc[[0]]
+        res = ul.berechne_loehne(df, LSE, _profile(), ABFRAGEN, GEWICHTE)
+        assert res["lohn_median_chf"].tolist() == [96000]
 
     def test_ohne_salarium_daten_lse(self):
         res = ul.berechne_loehne(self._df(), LSE, _profile(), None, None)
         assert set(res["lohn_quelle"]) == {ul.QUELLE_2D, ul.QUELLE_1D}
 
-    def test_profil_ohne_wert_faellt_zurueck(self, capsys):
+    def test_profil_ohne_wert_faellt_zurueck_und_zaehlt_nicht(self, capsys):
+        """Ohne Salarium-Wert: LSE_g × 12; die übrigen Berufe werden ohne ihn normiert."""
         abf = ABFRAGEN[ABFRAGEN["noga"] != 47]
         res = ul.berechne_loehne(self._df(), LSE, _profile(), abf, GEWICHTE)
         assert res.loc[1, "lohn_quelle"] == ul.QUELLE_2D
+        assert res.loc[1, "lohn_median_chf"] == 96000
+        assert res.loc[0, "lohn_median_chf"] == 96000  # einziger Wert in S̄_22
         assert "Kein Salarium-Wert für 2262" in capsys.readouterr().out
 
 
@@ -168,10 +209,8 @@ class FakeClient:
 
 
 class TestAbfragen:
-    def test_benoetigte_abfragen_enthalten_referenz(self):
-        specs = ul.benoetigte_abfragen(_profile())
-        assert (22, 86, ul.STANDARD) in specs
-        assert (22, 47, "UNI") in specs and len(specs) == len(set(specs))
+    def test_benoetigte_abfragen(self):
+        assert ul.benoetigte_abfragen(_profile()) == [(22, 47, "UNI"), (22, 86, "UNI")]
 
     def test_abfragen_mit_normprofil(self):
         client = FakeClient()
@@ -197,11 +236,27 @@ class TestProfilTabelle:
         keys = set(zip(prof["isco_code"], prof["beruf"]))
         assert set(zip(het["isco_code"], het["beruf"])) == keys
 
-    def test_referenz_noga_folgt_regel(self):
-        """REFERENZ_NOGA = NOGA mit den meisten Beschäftigten unter den Profilen der Gruppe."""
-        prof = ul.lade_profile()
+    def test_gruppenmittel_in_daten_gleich_lse(self):
+        """In scores.csv: beschäftigungsgewichtetes Mittel (Gewichte berufe_ch.csv) der
+        Salarium-Berufe je LSE-Gruppe = LSE-Gruppenmedian × 12."""
+        lse = ul.lade_lse(raw=Path("/nicht/vorhanden.xlsx"), schreiben=False)
         scores = pd.read_csv(ul.PROCESSED_PATH / "scores.csv", dtype={"isco_code": str})
-        assert ul.referenz_noga_aus_profilen(prof, scores) == ul.REFERENZ_NOGA
+        basis = pd.read_csv(ul.PROCESSED_PATH / "berufe_ch.csv", dtype={"isco_code": str})
+        m = scores.drop(columns="beschaeftigte_1000").merge(
+            basis[["isco_code", "beruf", "beschaeftigte_1000"]], on=["isco_code", "beruf"])
+        m = m[m["lohn_quelle"] == ul.QUELLE_SALARIUM]
+        m["g"] = m["isco_code"].str[:2]
+        assert set(m["g"]) == set(ul.HETEROGENE_GRUPPEN)
+        for g, d in m.groupby("g"):
+            mittel = (d["lohn_median_chf"] * d["beschaeftigte_1000"]).sum() / d["beschaeftigte_1000"].sum()
+            assert mittel == pytest.approx(lse[g] * 12, abs=50), g
+
+    def test_alle_csvs_haben_gleiche_loehne(self):
+        ref = pd.read_csv(ul.PROCESSED_PATH / "berufe_ch.csv", dtype={"isco_code": str})
+        ref = ref.set_index(["isco_code", "beruf"])["lohn_median_chf"].sort_index()
+        for name in ul.BASIS_DATEIEN[1:] + [ul.SCORES_DATEI]:
+            d = pd.read_csv(ul.PROCESSED_PATH / name, dtype={"isco_code": str})
+            assert d.set_index(["isco_code", "beruf"])["lohn_median_chf"].sort_index().equals(ref), name
 
     def test_ungueltige_ausbildung(self, tmp_path):
         p = _profile().assign(ausbildung=["UNI", "Doktorat"])
@@ -250,17 +305,21 @@ class TestMainOffline:
         _profile().to_csv(tmp_path / ul.PROFILE_CSV.name, index=False)
         ABFRAGEN.to_csv(tmp_path / ul.SALARIUM_CSV.name, index=False)
         GEWICHTE.to_csv(tmp_path / ul.STATENT_CSV.name, index=False)
-        pd.DataFrame({"beruf": ["Fachärzte", "Kassierer/in"], "isco_code": ["2212", "5223"],
-                      "lohn_median_chf": ["90000", "48000"], "qualifikation": ["Tertiär", "Sekundär II"]}
+        # Gewichte für S̄_g kommen aus berufe_ch.csv (scores.csv hat absichtlich andere Werte)
+        pd.DataFrame({"beruf": ["Fachärzte", "Apotheker/in", "Kassierer/in"],
+                      "isco_code": ["2212", "2262", "5223"], "beschaeftigte_1000": ["30.0", "10.0", "20.0"],
+                      "lohn_median_chf": ["90000", "110000", "48000"],
+                      "qualifikation": ["Tertiär", "Tertiär", "Sekundär II"]}
                      ).to_csv(tmp_path / "berufe_ch.csv", index=False)
         pd.DataFrame({
-            "beruf": ["Fachärzte", "Kassierer/in"], "isco_code": ["2212", "5223"],
-            "branche": ["Gesundheit", "Detailhandel"], "lohn_median_chf": [90000, 48000],
-            "qualifikation": ["Tertiär", "Sekundär II"], "score_gesamt": [4.2, 6.4],
-            "score_digital": [5.0, 3.0], "begruendung": ["Text A", "Text B"],
-            "adaptabilitaet": [7.0, None], "delta_branche": [-0.3, 0.2],
-            "lohnklasse": ["60k–100k CHF", "< 60k CHF"], "delta_lohn": [0.0, -0.2],
-            "score_ch": [3.9, 6.4], "zeitrahmen_roh": ["5-10 Jahre", "3-5 Jahre"],
+            "beruf": ["Fachärzte", "Apotheker/in", "Kassierer/in"], "isco_code": ["2212", "2262", "5223"],
+            "beschaeftigte_1000": [1.0, 100.0, 20.0],
+            "branche": ["Gesundheit", "Gesundheit", "Detailhandel"], "lohn_median_chf": [90000, 110000, 48000],
+            "qualifikation": ["Tertiär", "Tertiär", "Sekundär II"], "score_gesamt": [4.2, 5.4, 6.4],
+            "score_digital": [5.0, 6.0, 3.0], "begruendung": ["Text A", "Text B", "Text C"],
+            "adaptabilitaet": [7.0, 7.4, None], "delta_branche": [-0.3, -0.3, 0.2],
+            "lohnklasse": ["60k–100k CHF", "100k–150k CHF", "< 60k CHF"], "delta_lohn": [0.0, 0.2, -0.2],
+            "score_ch": [3.9, 5.3, 6.4], "zeitrahmen_roh": ["5-10 Jahre", "3-5 Jahre", "3-5 Jahre"],
         }).to_csv(tmp_path / "scores.csv", index=False)
         return tmp_path
 
@@ -269,18 +328,23 @@ class TestMainOffline:
         alt = pd.read_csv(pfad / "scores.csv", dtype=str, keep_default_na=False)
         ul.main(["--offline", "--pfad", str(pfad)])
 
+        # S̄_22 = (30·12000 + 10·10000) / 40 = 11500
+        erwartet = [str(int(round(96000 * 12000 / 11500, -2))), str(int(round(96000 * 10000 / 11500, -2))),
+                    str(4970 * 12)]
         basis = pd.read_csv(pfad / "berufe_ch.csv", dtype=str, keep_default_na=False)
-        assert basis.columns.tolist()[:4] == ["beruf", "isco_code", "lohn_median_chf", "lohn_quelle"]
-        assert basis["lohn_median_chf"].tolist() == ["144000", str(4970 * 12)]
+        assert basis.columns.tolist()[:5] == ["beruf", "isco_code", "beschaeftigte_1000",
+                                              "lohn_median_chf", "lohn_quelle"]
+        assert basis["lohn_median_chf"].tolist() == erwartet
 
         neu = pd.read_csv(pfad / "scores.csv", dtype=str, keep_default_na=False)
+        assert neu["lohn_median_chf"].tolist() == erwartet  # gleiche Gewichte wie berufe_ch.csv
         for spalte in ["score_gesamt", "score_digital", "begruendung", "zeitrahmen_roh", "branche"]:
             assert neu[spalte].equals(alt[spalte])
-        # 144'000 → 100k–150k; Verkauf 4970 × 12 = 59'640 → < 60k
-        assert neu["lohnklasse"].tolist() == ["100k–150k CHF", "< 60k CHF"]
-        assert neu["delta_lohn"].astype(float).tolist() == [0.2, -0.2]
-        assert neu["score_ch"].astype(float).tolist() == pytest.approx([4.1, 6.4])
-        assert neu.loc[1, "score_ch"] == alt.loc[1, "score_ch"]  # gleicher Wert → Text unverändert
+        # 100'200 → 100k–150k; 83'500 → 60k–100k; Verkauf 4970 × 12 = 59'640 → < 60k
+        assert neu["lohnklasse"].tolist() == ["100k–150k CHF", "60k–100k CHF", "< 60k CHF"]
+        assert neu["delta_lohn"].astype(float).tolist() == [0.2, 0.0, -0.2]
+        assert neu["score_ch"].astype(float).tolist() == pytest.approx([4.1, 5.1, 6.4])
+        assert neu.loc[2, "score_ch"] == alt.loc[2, "score_ch"]  # gleicher Wert → Text unverändert
         assert neu["adaptabilitaet"].ne("").all()  # fehlende Werte werden berechnet
 
     def test_dry_run_schreibt_nichts(self, tmp_path, monkeypatch):

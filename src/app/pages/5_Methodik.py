@@ -70,28 +70,32 @@ Der mediane Jahresbruttolohn (`lohn_median_chf`) stammt aus der **BFS Lohnstrukt
   Hier wird der Gruppenmedian mit dem **BFS-Lohnrechner Salarium** (Modell auf Basis der
   LSE 2024) nach Ausbildung und Branche differenziert:
 
-  *Lohn = LSE-Gruppenmedian × 12 × Salarium(Berufsprofil) / Salarium(Gruppenreferenz)*
+  *Lohn(Beruf j) = LSE-Gruppenmedian × 12 × S(j) / S̄(Gruppe)*
 
-  - **Berufsprofil:** formale Pflichtausbildung des Berufs (z. B. Medizinstudium,
-    Pflege HF, Anwaltspatent) und NOGA-Abteilung der Hauptbranche; festgehalten mit
-    Begründung in `data/processed/lohn_profile_salarium.csv`.
+  *S̄(Gruppe) = Σ w(k)·S(k) / Σ w(k)* über alle Berufe k der Gruppe mit Salarium-Wert,
+  *w(k)* = Beschäftigte (BFS SE 2024)
+
+  - **S(j):** Salarium-Median für das Profil des Berufs — formale Pflichtausbildung
+    (z. B. Medizinstudium, Pflege HF, Anwaltspatent) und NOGA-Abteilung der Hauptbranche,
+    festgehalten mit Begründung in `data/processed/lohn_profile_salarium.csv`.
   - **Normprofil (für alle gleich):** 42 Jahre, 8 Dienstjahre, 40 Stunden, ohne Kaderfunktion,
     ohne Sonderzahlungen, Unternehmen ab 50 Beschäftigten.
-  - **Gruppenreferenz:** Hauptbranche der Gruppe (NOGA mit den meisten Beschäftigten unter den
-    Berufen der Gruppe) mit der Salarium-Standardausbildung (häufigster Wert in der LSE).
+  - **Normierung:** Das beschäftigungsgewichtete Mittel der Löhne einer Gruppe entspricht
+    genau dem LSE-Gruppenmedian × 12. Salarium verteilt also nur innerhalb der Gruppe um
+    (nach Ausbildung und Branche); das Lohnniveau stammt immer aus der LSE.
+    Führungskräfte (in Salarium eine Gruppe 11–14) werden je LSE-Gruppe 11, 12, 13, 14 normiert.
   - **Regionen:** Salarium rechnet je Grossregion. Verwendet wird das Mittel über die
     7 Grossregionen, gewichtet mit den Vollzeitäquivalenten der jeweiligen Branche
     (BFS STATENT 2024).
 
-  Das Lohnniveau stammt also immer aus der LSE; Salarium liefert nur das Verhältnis
-  innerhalb der Gruppe. Die Werte sind **Modellschätzungen**, keine erhobenen Berufslöhne.
+  Die Werte sind **Modellschätzungen**, keine erhobenen Berufslöhne.
   Ausnahme: Für leitende Verwaltungsbedienstete (öffentliche Verwaltung) liefert Salarium
-  keine Werte; sie behalten den LSE-Gruppenmedian.
+  keine Werte; sie erhalten den LSE-Gruppenmedian und zählen nicht in die Normierung.
 - **Einschränkungen:** nur 2-stellige LSE-Gruppen (eine 3-/4-stellige Auswertung wäre nur
   als kostenpflichtige BFS-Sonderauswertung erhältlich); Salarium bildet nur den
-  **Privatsektor** ab und kennt weder Facharzttitel noch Kaderzuschläge im Normprofil —
-  Spitzenlöhne (z. B. Fach- und Kaderärzte) werden daher unterschätzt; **Selbständige**
-  (z. B. Ärzte mit eigener Praxis, Anwälte, Landwirte) sind in der LSE nicht enthalten.
+  **Privatsektor** ab; Spitzenlöhne werden unterschätzt (siehe «Einschränkungen & Hinweise»);
+  **Selbständige** (z. B. Ärzte mit eigener Praxis, Anwälte, Landwirte) sind in der LSE
+  nicht enthalten.
 """)
 
 st.subheader("Branchenzuordnung")
@@ -342,6 +346,10 @@ st.markdown("""
   den Gruppen 11–14, 22, 24 und 26, wo er mit Salarium-Profilen (Ausbildung, Branche)
   differenziert wird. Berufsindividuelle Löhne wurden nicht erhoben; Selbständige fehlen in der
   LSE, Salarium deckt nur den Privatsektor ab.
+- **Spitzenlöhne (Ärzteschaft, Kader, Private Banking, Kanzleien) werden unterschätzt:**
+  Salarium kennt keine Facharzt- oder Kaderzuschläge, und das Normprofil enthält keine
+  Kaderfunktion. Präzisere Werte erfordern eine BFS-Sonderauswertung der LSE auf
+  3-/4-stelliger Ebene.
 """)
 
 st.subheader("Weitere CH-spezifische Faktoren (nicht in Score eingeflossen)")

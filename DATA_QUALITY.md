@@ -66,13 +66,17 @@ Herkunft je Beruf in `lohn_quelle`:
 
 - `LSE2024_2d` — Gruppenmedian (153 Berufe, inkl. Leitende Verwaltungsbedienstete 1112:
   Salarium hat für Führungskräfte der öffentlichen Verwaltung, NOGA 84, keine konsistenten Werte)
-- `LSE2024_2d+Salarium` — Gruppen 11–14, 22, 24, 26: Gruppenmedian × Salarium-Verhältnis
-  Berufsprofil/Gruppenreferenz (51 Berufe; Profile in `lohn_profile_salarium.csv`,
-  Antworten in `lohn_salarium_abfragen.csv`) — **Modellschätzung**
+- `LSE2024_2d+Salarium` — Gruppen 11–14, 22, 24, 26: Gruppenmedian × S_j / S̄_g, wobei S̄_g
+  das beschäftigungsgewichtete Mittel der Salarium-Werte der Gruppe ist (gewichtetes Mittel der
+  Löhne = LSE-Gruppenmedian; 51 Berufe; Profile in `lohn_profile_salarium.csv`, Antworten in
+  `lohn_salarium_abfragen.csv`) — **Modellschätzung**
 - `LSE2024_1d` / `LSE2024_total` — Fallback für Gruppen ohne LSE-Wert (01–03, 63, 95; derzeit 0 Berufe)
 
 Bekannte Schwächen: Berufe derselben 2-stelligen Gruppe ausserhalb der Salarium-Gruppen haben
 identische Löhne (z. B. Informatiker/in EFZ = Softwareentwickler/in, Kassierer/in = Detailhandel);
+die Normierung hängt von den Beschäftigtenzahlen der App-Berufe ab (nicht von der vollen Gruppe);
+`beschaeftigte_1000` in `scores.csv` weicht bei 104 Berufen von `berufe_ch.csv` (SE 2024) ab —
+für die Gewichte wird `berufe_ch.csv` verwendet;
 Salarium (Privatsektor, ohne Kader im Normprofil) unterschätzt Spitzenlöhne, v. a. Fachärzte.
 Saubere Alternative: BFS-Sonderauswertung 3-/4-stellig (lohn@bfs.admin.ch).
 

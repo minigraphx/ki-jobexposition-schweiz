@@ -83,10 +83,14 @@ und Geschlecht», private and public sector (asset 36355224, `je-d-03.04.01.02.4
 Only 2-digit CH-ISCO-19 groups exist. Standardised monthly wage incl. 1/12 of the 13th salary and of
 special payments → annual wage = monthly × 12. Fallback for groups without LSE value (01–03, 63, 95):
 1-digit major group (`LSE2024_1d`), else total median (`LSE2024_total`). Heterogeneous groups
-(11–14, 22, 24, 26): `lohn = LSE_group × 12 × S_job / S_reference`, S = Salarium (LSE-2024 model,
-private sector) median for a fixed norm profile (42 y, 8 years tenure, 40 h, no management function),
-FTE-weighted over the 7 Grossregionen (STATENT); reference = group's main NOGA division
-(`REFERENZ_NOGA`) with Salarium default education (`lohn_quelle = LSE2024_2d+Salarium`).
+(11–14, 22, 24, 26): `lohn_j = LSE_g × 12 × S_j / S̄_g` with `S̄_g = Σ_k∈g w_k·S_k / Σ_k∈g w_k`,
+`w_k = beschaeftigte_1000` (from `berufe_ch.csv`), normalised per 2-digit LSE group g (managers per
+11/12/13/14) — so the employment-weighted mean wage of each group equals the LSE median × 12.
+S = Salarium (LSE-2024 model, private sector) median for the job's profile (mandatory education,
+main NOGA division) plus a fixed norm profile (42 y, 8 years tenure, 40 h, no management function),
+FTE-weighted over the 7 Grossregionen (STATENT); `lohn_quelle = LSE2024_2d+Salarium`. Jobs without a
+Salarium value (1112, NOGA 84) get LSE_g × 12 and are excluded from S̄_g. Top wages (doctors,
+management, private banking, law firms) are underestimated.
 
 **Employment data** = **BFS Strukturerhebung (SE)**, *not* SAKE — table «Ausgeübter Beruf (CH-ISCO-19)
 nach Geschlecht und Staatsangehörigkeit» (asset 36492006, file `su-d-40.02.03.02.01.03.10.xlsx`),

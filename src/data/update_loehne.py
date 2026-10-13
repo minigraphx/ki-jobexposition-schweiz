@@ -17,18 +17,19 @@ Methode
    Basis LSE 2024, nur Privatsektor). Jeder Beruf hat ein festes Profil in
    data/processed/lohn_profile_salarium.csv (Salarium-Berufsgruppe, NOGA-Abteilung der
    Hauptbranche, formale Pflichtausbildung). Alle übrigen Merkmale sind für alle Berufe
-   gleich (NORMPROFIL). Kalibrierung auf die LSE:
+   gleich (NORMPROFIL). Kalibrierung auf die LSE je 2-stelliger LSE-Gruppe g:
 
-       lohn = LSE_gruppe × 12 × S_beruf / S_referenz
+       lohn_j = LSE_g × 12 × S_j / S̄_g,   S̄_g = Σ_k∈g w_k·S_k / Σ_k∈g w_k
 
-   S_* = beschäftigungsgewichtetes Mittel der Salarium-Mediane über die 7 Grossregionen
-   (Gewichte: Vollzeitäquivalente der jeweiligen NOGA-Abteilung je Grossregion, BFS
-   STATENT). S_referenz = Salarium-Wert der Gruppe für ihre Hauptbranche (REFERENZ_NOGA:
-   NOGA mit den meisten Beschäftigten unter den Profilen der Gruppe) mit
-   Salarium-Standardausbildung (Default der Salarium-API = häufigster Wert in der LSE).
-   lohn_quelle = "LSE2024_2d+Salarium". Das Verhältnis S_beruf/S_referenz bildet nur
-   Branchen- und Ausbildungsunterschiede innerhalb der Gruppe ab; das Niveau stammt
-   aus der LSE.
+   S_j = Salarium-Median des Profils von Beruf j, als Mittel über die 7 Grossregionen
+   gewichtet mit den Vollzeitäquivalenten der jeweiligen NOGA-Abteilung (BFS STATENT).
+   w_k = beschaeftigte_1000 (aus berufe_ch.csv, BFS SE). Damit ist das
+   beschäftigungsgewichtete Mittel der kalibrierten Löhne der Gruppe gleich dem
+   LSE-Gruppenmedian × 12: Salarium verteilt nur um (Branche, Ausbildung), das Niveau
+   stammt aus der LSE. Berufe der Gruppe ohne Salarium-Wert (z. B. 1112, NOGA 84 nicht
+   im Salarium-Modell) erhalten S = S̄_g, also LSE_g × 12, und zählen nicht in S̄_g.
+   lohn_quelle = "LSE2024_2d+Salarium". Für die Führungskräfte (Salarium-Gruppe 10 =
+   ISCO 11–14) wird je LSE-Gruppe 11, 12, 13, 14 separat normiert.
 3. scores.csv: regelbasierte Folgespalten neu berechnen — lohnklasse, delta_lohn,
    delta_branche, score_ch (ch_adjustments.apply_ch_adjustments) und adaptabilitaet
    (adaptability_scorer.berechne_adaptabilitaet). LLM-Scores und Texte bleiben unverändert.
@@ -76,6 +77,7 @@ STATENT_CSV = PROCESSED_PATH / "statent_vzae_grossregion.csv"
 
 BASIS_DATEIEN = ["berufe_ch.csv", "berufe_ch_esco.csv", "berufe_ch_esco_verified.csv"]
 SCORES_DATEI = "scores.csv"
+BESCHAEFTIGTE_DATEI = "berufe_ch.csv"  # Quelle der Gewichte w_k (beschaeftigte_1000)
 
 MONATE = 12  # LSE-Monatslohn enthält 13. Monatslohn und Sonderzahlungen bereits anteilig
 
@@ -86,19 +88,6 @@ QUELLE_SALARIUM = "LSE2024_2d+Salarium"
 
 # 2-stellige Gruppen, in denen die Salarium-Profilmethode angewendet wird
 HETEROGENE_GRUPPEN: frozenset[str] = frozenset({"11", "12", "13", "14", "22", "24", "26"})
-
-# Referenz-Hauptbranche je LSE-Gruppe: NOGA-Abteilung mit der grössten Beschäftigtenzahl
-# (beschaeftigte_1000, BFS SE 2024) unter den Profilen der Gruppe — siehe
-# referenz_noga_aus_profilen() und den zugehörigen Test.
-REFERENZ_NOGA: dict[str, int] = {
-    "11": 70,  # Verwaltung und Führung von Unternehmen
-    "12": 70,
-    "13": 28,  # Maschinenbau (Produktion von Waren)
-    "14": 56,  # Gastronomie
-    "22": 86,  # Gesundheitswesen
-    "24": 70,
-    "26": 88,  # Sozialwesen (ohne Heime)
-}
 
 # Salarium-Ausbildungscodes (GET /api/Data/code/education-levels)
 AUSBILDUNG_CODES: dict[str, int] = {
@@ -114,8 +103,8 @@ AUSBILDUNG_CODES: dict[str, int] = {
 STANDARD = "STANDARD"  # Salarium-Default der Kombination NOGA × Grossregion × Gruppe
 
 # Für alle Profile identische Merkmale. Alter/Dienstjahre/Arbeitszeit gemäss Issue #45;
-# keine Kader- und keine Sonderzahlungsannahme. Nur das Verhältnis Beruf/Referenz geht
-# in den Lohn ein — das Niveau kommt aus der LSE.
+# keine Kader- und keine Sonderzahlungsannahme. Nur das Verhältnis S_j / S̄_g geht in
+# den Lohn ein — das Niveau kommt aus der LSE.
 NORMPROFIL: dict[str, int] = {
     "ageCode": 42,
     "workYearCode": 8,
@@ -221,22 +210,9 @@ def lade_profile(path: Path = PROFILE_CSV) -> pd.DataFrame:
     return prof
 
 
-def referenz_noga_aus_profilen(profile: pd.DataFrame, beschaeftigte: pd.DataFrame) -> dict[str, int]:
-    """Hauptbranche je 2-stelliger Gruppe = NOGA mit den meisten Beschäftigten unter den Profilen."""
-    m = profile.merge(beschaeftigte[["isco_code", "beruf", "beschaeftigte_1000"]],
-                      on=["isco_code", "beruf"], how="left")
-    m["gruppe"] = m["isco_code"].str[:2]
-    summe = m.groupby(["gruppe", "noga"])["beschaeftigte_1000"].sum().reset_index()
-    summe = summe.sort_values(["gruppe", "beschaeftigte_1000", "noga"], ascending=[True, False, True])
-    return {g: int(d.iloc[0]["noga"]) for g, d in summe.groupby("gruppe")}
-
-
 def benoetigte_abfragen(profile: pd.DataFrame) -> list[tuple[int, int, str]]:
-    """Alle (salarium_gruppe, noga, ausbildung) inkl. Referenzen, sortiert und eindeutig."""
-    specs = {(int(r.salarium_gruppe), int(r.noga), str(r.ausbildung)) for r in profile.itertuples()}
-    for gruppe2 in {str(c)[:2] for c in profile["isco_code"]}:
-        specs.add((salarium_gruppe(gruppe2), REFERENZ_NOGA[gruppe2], STANDARD))
-    return sorted(specs)
+    """Alle (salarium_gruppe, noga, ausbildung) der Profile, sortiert und eindeutig."""
+    return sorted({(int(r.salarium_gruppe), int(r.noga), str(r.ausbildung)) for r in profile.itertuples()})
 
 
 class SalariumClient:
@@ -360,9 +336,17 @@ def gewichteter_salarium_wert(abfragen: pd.DataFrame, gewichte: pd.DataFrame,
     return float((sel["median_monat"].astype(float) * gew).sum() / gew.sum())
 
 
-def kalibrierter_lohn(lse_monat: float, s_beruf: float, s_referenz: float) -> int:
-    """lohn = LSE_gruppe × 12 × S_beruf / S_referenz, auf 100 CHF gerundet."""
-    return int(round(lse_monat * MONATE * s_beruf / s_referenz / 100.0) * 100)
+def gruppen_mittel(s_werte: list[float], gewichte_w: list[float]) -> float:
+    """S̄_g = Σ w_k·S_k / Σ w_k (beschäftigungsgewichtetes Mittel der Salarium-Werte)."""
+    summe_w = float(sum(gewichte_w))
+    if summe_w <= 0:  # keine Beschäftigtenzahlen → ungewichtet
+        return float(sum(s_werte)) / len(s_werte)
+    return float(sum(s * w for s, w in zip(s_werte, gewichte_w))) / summe_w
+
+
+def kalibrierter_lohn(lse_monat: float, s_beruf: float, s_mittel: float) -> int:
+    """lohn_j = LSE_g × 12 × S_j / S̄_g, auf 100 CHF gerundet."""
+    return int(round(lse_monat * MONATE * s_beruf / s_mittel / 100.0) * 100)
 
 
 # ---------------------------------------------------------------------------
@@ -370,26 +354,51 @@ def kalibrierter_lohn(lse_monat: float, s_beruf: float, s_referenz: float) -> in
 # ---------------------------------------------------------------------------
 
 def berechne_loehne(df: pd.DataFrame, lse: dict[str, int], profile: pd.DataFrame,
-                    abfragen: pd.DataFrame | None, gewichte: pd.DataFrame | None) -> pd.DataFrame:
-    """Je Zeile (beruf, isco_code) → lohn_median_chf, lohn_quelle."""
+                    abfragen: pd.DataFrame | None, gewichte: pd.DataFrame | None,
+                    beschaeftigte: dict[tuple[str, str], float] | None = None) -> pd.DataFrame:
+    """Je Zeile (beruf, isco_code) → lohn_median_chf, lohn_quelle.
+
+    beschaeftigte: Gewichte w_k je (isco_code, beruf); Default = Spalte beschaeftigte_1000 von df.
+    """
+    codes = df["isco_code"].astype(str).str.strip().tolist()
+    berufe = df["beruf"].tolist()
+    if beschaeftigte is None:
+        w_spalte = pd.to_numeric(df.get("beschaeftigte_1000", pd.Series(0.0, index=df.index)),
+                                 errors="coerce").fillna(0.0)
+        beschaeftigte = dict(zip(zip(codes, berufe), w_spalte))
     prof = {(str(r.isco_code), r.beruf): r for r in profile.itertuples()}
-    out = []
-    for code, beruf in zip(df["isco_code"].astype(str), df["beruf"]):
+
+    # 1) Basis LSE und Salarium-Wert S_j je Zeile
+    basis, s_j = [], []
+    for code, beruf in zip(codes, berufe):
         lohn, quelle = lse_basislohn(code, lse)
+        basis.append((lohn, quelle))
         p = prof.get((code, beruf))
+        s = None
         if p is not None and quelle == QUELLE_2D and abfragen is not None and gewichte is not None:
-            g2 = code[:2]
-            s_ref = gewichteter_salarium_wert(abfragen, gewichte, salarium_gruppe(g2),
-                                              REFERENZ_NOGA[g2], STANDARD)
-            s_ber = gewichteter_salarium_wert(abfragen, gewichte, int(p.salarium_gruppe),
-                                              int(p.noga), str(p.ausbildung))
-            if s_ref and s_ber:
-                lohn, quelle = kalibrierter_lohn(lse[g2], s_ber, s_ref), QUELLE_SALARIUM
-            else:
+            s = gewichteter_salarium_wert(abfragen, gewichte, int(p.salarium_gruppe),
+                                          int(p.noga), str(p.ausbildung))
+            if not s:
                 print(f"  ! Kein Salarium-Wert für {code} {beruf} (Kombination in Salarium "
                       f"nicht konsistent) → {QUELLE_2D}")
         elif p is None and code[:2] in HETEROGENE_GRUPPEN:
             print(f"  ! Kein Salarium-Profil für {code} {beruf} → {QUELLE_2D}")
+        s_j.append(s or None)
+
+    # 2) S̄_g je 2-stelliger LSE-Gruppe (nur Berufe mit Salarium-Wert)
+    gruppen: dict[str, tuple[list[float], list[float]]] = {}
+    for code, beruf, s in zip(codes, berufe, s_j):
+        if s:
+            werte, w = gruppen.setdefault(code[:2], ([], []))
+            werte.append(s)
+            w.append(float(beschaeftigte.get((code, beruf), 0.0) or 0.0))
+    mittel = {g: gruppen_mittel(werte, w) for g, (werte, w) in gruppen.items()}
+
+    # 3) lohn_j = LSE_g × 12 × S_j / S̄_g; ohne S_j bleibt LSE_g × 12
+    out = []
+    for code, (lohn, quelle), s in zip(codes, basis, s_j):
+        if s:
+            lohn, quelle = kalibrierter_lohn(lse[code[:2]], s, mittel[code[:2]]), QUELLE_SALARIUM
         out.append({"lohn_median_chf": lohn, "lohn_quelle": quelle})
     return pd.DataFrame(out, index=df.index)
 
@@ -463,13 +472,22 @@ def main(argv: list[str] | None = None) -> None:
             abfragen.to_csv(salarium_path, index=False)
     print(f"✓ Salarium: {len(abfragen)} Abfragen ({int(abfragen['median_monat'].notna().sum())} mit Wert)")
 
+    # Gewichte w_k für S̄_g einheitlich aus berufe_ch.csv (BFS SE), damit alle CSVs
+    # dieselben Löhne erhalten; fehlt die Datei, nutzt jede CSV ihre eigene Spalte.
+    beschaeftigte = None
+    basis_path = args.pfad / BESCHAEFTIGTE_DATEI
+    b = pd.read_csv(basis_path, dtype={"isco_code": str}) if basis_path.exists() else None
+    if b is not None and "beschaeftigte_1000" in b.columns:
+        beschaeftigte = dict(zip(zip(b["isco_code"].str.strip(), b["beruf"]),
+                                 pd.to_numeric(b["beschaeftigte_1000"], errors="coerce").fillna(0.0)))
+
     for name in BASIS_DATEIEN + [SCORES_DATEI]:
         path = args.pfad / name
         if not path.exists():
             print(f"– {name}: nicht vorhanden, übersprungen")
             continue
         df = _lesen(path)
-        loehne = berechne_loehne(df, lse, profile, abfragen, gewichte)
+        loehne = berechne_loehne(df, lse, profile, abfragen, gewichte, beschaeftigte)
         alt = pd.to_numeric(df["lohn_median_chf"], errors="coerce")
         geaendert = alt != loehne["lohn_median_chf"]
         print(f"✓ {name}: {int(geaendert.sum())} Zeilen mit neuem Lohn")
