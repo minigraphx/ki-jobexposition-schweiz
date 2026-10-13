@@ -16,7 +16,7 @@ Lauf die Kennzahlen (task_rubrik.kennzahlen; Logik wie Pilot-Auswertung v2.1). D
 Spalten «score_physisch_auto» = 10·Σ w·1[P1, p_art physisch], «score_software_auto» = dasselbe für
 p_art software (Pilot: score_p_physisch / score_p_software).
 
-Aufruf:  python src/scoring/task_aggregate.py [--provider claude gemini] [--out PFAD] [--auch-veraltet]
+Aufruf:  python src/scoring/task_aggregate.py [--provider claude gemini] [--out PFAD] [--include-stale] [--base-dir PFAD]
 scores.csv und die App werden nicht verändert.
 """
 from __future__ import annotations
@@ -183,14 +183,14 @@ def aggregiere(eintraege: list[ti.Eintrag], laeufe: dict[str, dict[str, list[Lau
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--provider", nargs="+", choices=PROVIDER, default=list(PROVIDER))
-    ap.add_argument("--basis", default=str(tr.BEWERTUNGEN_DIR))
+    ap.add_argument("--base-dir", default=str(tr.BEWERTUNGEN_DIR))
     ap.add_argument("--out", default=str(tr.SCORES_AUFGABEN_PATH))
-    ap.add_argument("--auch-veraltet", action="store_true",
+    ap.add_argument("--include-stale", action="store_true",
                     help="auch Bewertungen mit altem Input-Hash verwenden (z. B. nach Datenkorrekturen)")
     a = ap.parse_args(argv)
     eintraege = ti.baue_eintraege()
     warnungen: list[str] = []
-    laeufe = {p: lade_laeufe(Path(a.basis), p, eintraege, warnungen, a.auch_veraltet) for p in a.provider}
+    laeufe = {p: lade_laeufe(Path(a.base_dir), p, eintraege, warnungen, a.include_stale) for p in a.provider}
     df = aggregiere(eintraege, laeufe)
     df.round(4).to_csv(a.out, index=False)
     n_bew = int((df["n_laeufe_claude"] + df["n_laeufe_gemini"] > 0).sum())
