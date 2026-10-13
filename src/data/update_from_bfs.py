@@ -1,14 +1,23 @@
 """
 BFS CH-ISCO-19 Daten einlesen und berufe_ch.csv aktualisieren.
 
+Quelle: BFS Strukturerhebung (SE) — «Ausgeübter Beruf (CH-ISCO-19) nach Geschlecht
+und Staatsangehörigkeit», Erwerbstätige ab 15 Jahren, in 1000.
+Asset 36492006, Datei su-d-40.02.03.02.01.03.10.xlsx (manueller Download nach data/raw/):
+https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.36492006.html
+
+Hinweis: Es handelt sich um die Strukturerhebung (SE), nicht um die SAKE. Die Datei enthält
+ein Blatt pro Jahr («2024», «2023», …) sowie gepoolte Mehrjahresblätter («2022-2024», …).
+
 Schritte:
-1. BFS Excel parsen (Sheet "2024", 4-stellige Berufsgattungen)
+1. BFS Excel parsen (Blatt per --blatt wählbar, Default "2024"; 4-stellige Berufsgattungen)
 2. Beschäftigte + Frauen% der bestehenden 107 Einträge aktualisieren
 3. Neue Berufe (>= 5000 Beschäftigte, noch nicht in scores.csv) hinzufügen
 4. Branche / Lohn / Qualifikation per ISCO-Gruppe automatisch zuweisen
 5. berufe_ch.csv speichern
 """
 
+import argparse
 from pathlib import Path
 
 import numpy as np
@@ -16,7 +25,8 @@ import pandas as pd
 
 RAW_PATH = Path(__file__).parent.parent.parent / "data" / "raw"
 PROCESSED_PATH = Path(__file__).parent.parent.parent / "data" / "processed"
-BFS_FILE = RAW_PATH / "su-d-40.02.03.02.01.03.10.xlsx"
+BFS_FILE = RAW_PATH / "su-d-40.02.03.02.01.03.10.xlsx"  # BFS Strukturerhebung (SE)
+DEFAULT_BLATT = "2024"
 
 # ISCO-Hauptgruppe → Qualifikation
 QUALIFIKATION_MAP = {
@@ -67,9 +77,15 @@ LOHN_MAP = {
 }
 
 
-def parse_bfs_excel(filepath: Path) -> pd.DataFrame:
-    """BFS Excel einlesen, 4-stellige Berufsgattungen extrahieren."""
-    df = pd.read_excel(filepath, sheet_name="2024", header=None)
+def parse_bfs_excel(filepath: Path, blatt: str = DEFAULT_BLATT) -> pd.DataFrame:
+    """BFS-SE-Excel einlesen, 4-stellige Berufsgattungen extrahieren.
+
+    Args:
+        filepath: Pfad zur BFS-Excel-Datei (su-d-40.02.03.02.01.03.10.xlsx).
+        blatt: Name des Tabellenblatts, z. B. "2024" (Einzeljahr) oder
+               "2022-2024" (gepoolte Mehrjahresauswertung).
+    """
+    df = pd.read_excel(filepath, sheet_name=str(blatt), header=None)
     mask = df[3].notna() & df[4].isna()
     bfs = df[mask][[3, 5, 6, 7, 8]].copy()
     bfs.columns = ["isco_code", "beruf_bfs", "beschaeftigte_total", "maenner", "frauen"]
@@ -91,8 +107,22 @@ def assign_metadata(isco_code: str) -> tuple[str, str, int]:
     return branche, qualifikation, lohn
 
 
-def main() -> None:
-    bfs = parse_bfs_excel(BFS_FILE)
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="BFS Strukturerhebung (SE) einlesen und berufe_ch.csv aktualisieren."
+    )
+    parser.add_argument(
+        "--blatt",
+        default=DEFAULT_BLATT,
+        help=f'Tabellenblatt der BFS-Datei, z. B. "2024" oder "2022-2024" (Default: "{DEFAULT_BLATT}")',
+    )
+    return parser.parse_args(argv)
+
+
+def main(argv: list[str] | None = None) -> None:
+    args = parse_args(argv)
+    bfs = parse_bfs_excel(BFS_FILE, blatt=args.blatt)
+    print(f"✓ BFS Strukturerhebung (SE), Blatt «{args.blatt}»: {len(bfs)} Berufsgattungen gelesen")
     existing = pd.read_csv(PROCESSED_PATH / "berufe_ch.csv")
     existing["beschaeftigte_1000"] = existing["beschaeftigte_1000"].astype(float)
     existing["frauen_pct"] = existing["frauen_pct"].astype(float)
@@ -109,7 +139,7 @@ def main() -> None:
             if not np.isnan(real_frauen):
                 existing.at[idx, "frauen_pct"] = real_frauen
             updated += 1
-    print(f"✓ {updated} bestehende Einträge mit BFS-Daten aktualisiert")
+    print(f"✓ {updated} bestehende Einträge mit BFS-SE-Daten aktualisiert")
 
     # Neue Berufe (>= 5000, nicht vorhanden)
     existing_isco = set(existing["isco_code"].astype(str))

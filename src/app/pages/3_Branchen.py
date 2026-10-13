@@ -130,8 +130,8 @@ if BGS_PATH.exists() and df is not None and bgs_df is not None:
         fig_bgs.update_xaxes(tickformat=".0%")
         st.plotly_chart(fig_bgs, use_container_width=True)
         st.caption(
-            "Grenzgänger-Anteil = Grenzgänger in Branche / Beschäftigte in Branche (SAKE). "
-            "Blasengrösse = Beschäftigte in Tsd. "
+            "Grenzgänger-Anteil = Grenzgänger in Branche / Beschäftigte in Branche (BFS STATENT/BZ). "
+            "Blasengrösse = Erwerbstätige der erfassten Berufe in Tsd. (BFS Strukturerhebung 2024). "
             "Datenquelle: BFS BGS (Schätzwerte, Gesamtbestand ~380'000 Grenzgänger, 2023). "
             "Fliesst nicht in score_ch ein — rein additiver Kontext-Layer."
         )

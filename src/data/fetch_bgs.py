@@ -12,7 +12,8 @@ Output: data/processed/grenzgaenger_anteil_branche.csv
 Spalten: branche, grenzgaenger, beschaeftigte_total, grenzgaenger_anteil
 
 Berechnung:
-    grenzgaenger_anteil = grenzgaenger_in_branche / beschaeftigte_branche_sake
+    grenzgaenger_anteil = grenzgaenger_in_branche / beschaeftigte_branche
+    (Nenner: STATENT/BZ, Fallback: Summe beschaeftigte_1000 aus scores.csv = BFS Strukturerhebung)
 
 Fallback: Falls die Rohdatei fehlt (z.B. in CI), werden realistische
           Schätzwerte basierend auf bekannten CH-Statistiken verwendet.
@@ -225,7 +226,7 @@ def _load_bgs_from_csv(path: Path = BGS_RAW_PATH) -> pd.DataFrame | None:
     return result
 
 
-def _load_sake_beschaeftigte() -> dict[str, float]:
+def _load_branchen_beschaeftigte() -> dict[str, float]:
     """
     Lädt die Beschäftigten-Totale pro Branche.
 
@@ -250,7 +251,7 @@ def _load_sake_beschaeftigte() -> dict[str, float]:
         return {}
 
     logger.warning(
-        f"{KMU_PATH.name} nicht vorhanden — verwende SAKE-Beschäftigtenzahl aus scores.csv "
+        f"{KMU_PATH.name} nicht vorhanden — verwende SE-Beschäftigtenzahl aus scores.csv "
         "(unterschätzt Sektorgesamtheit, Anteil wird zu hoch)."
     )
     df = pd.read_csv(SCORES_PATH)
@@ -274,8 +275,8 @@ def compute_grenzgaenger_anteil(use_fallback: bool = False) -> pd.DataFrame:
         DataFrame mit Spalten:
             branche, grenzgaenger, beschaeftigte_total, grenzgaenger_anteil
     """
-    # Beschäftigtenzahlen aus SAKE
-    sake_beschaeftigte = _load_sake_beschaeftigte()
+    # Beschäftigtenzahlen (STATENT/BZ, Fallback: Strukturerhebung via scores.csv)
+    branchen_beschaeftigte = _load_branchen_beschaeftigte()
 
     # Alle 21 internen Branchen aus NOGA_ZU_BRANCHE
     alle_branchen = sorted(set(NOGA_ZU_BRANCHE.values()))
@@ -298,8 +299,8 @@ def compute_grenzgaenger_anteil(use_fallback: bool = False) -> pd.DataFrame:
 
     records = []
     for branche in alle_branchen:
-        # Beschäftigte aus SAKE (absolute Zahl)
-        beschaeftigte_total = sake_beschaeftigte.get(branche, 0.0)
+        # Beschäftigte pro Branche (absolute Zahl)
+        beschaeftigte_total = branchen_beschaeftigte.get(branche, 0.0)
 
         if bgs_map is not None:
             # Reale Grenzgängerzahl aus PxWeb
@@ -310,7 +311,7 @@ def compute_grenzgaenger_anteil(use_fallback: bool = False) -> pd.DataFrame:
             if beschaeftigte_total > 0:
                 grenzgaenger = round(anteil_fallback * beschaeftigte_total)
             else:
-                # Keine SAKE-Daten: Schätzwert basierend auf CH-Durchschnitt
+                # Keine Beschäftigtendaten: Schätzwert basierend auf CH-Durchschnitt
                 grenzgaenger = 0.0
 
         if beschaeftigte_total > 0:

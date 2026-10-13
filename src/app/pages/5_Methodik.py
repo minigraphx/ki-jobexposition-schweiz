@@ -18,10 +18,13 @@ st.markdown("""
 Die Beschäftigungszahlen und Frauenanteile stammen aus der offiziellen Schweizer Statistik:
 
 - **Quelle:** Bundesamt für Statistik (BFS)
-- **Erhebung:** Schweizerische Arbeitskräfteerhebung (SAKE) 2024
+- **Erhebung:** Strukturerhebung (SE) 2024 (Stichprobenerhebung im Rahmen der jährlichen Volkszählung)
 - **Tabelle:** *Ausgeübter Beruf (CH-ISCO-19) nach Geschlecht und Staatsangehörigkeit*
+  (su-d-40.02.03.02.01.03.10, Blatt «2024»)
 - **Download:** [bfs.admin.ch](https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.36492006.html)
 - **Einheit:** Erwerbstätige ab 15 Jahren, in 1'000 Personen
+- **Grundgesamtheit:** Ständige Wohnbevölkerung in Privathaushalten — Grenzgänger/-innen
+  sind nicht enthalten
 - **Klassifikation:** CH-ISCO-19 (basiert auf ISCO-08), Ebene Berufsgattung (4-stellig)
 
 Es werden Berufe mit mindestens **5'000 Beschäftigten** berücksichtigt.
@@ -52,7 +55,7 @@ Die medianen Jahresbruttolöhne sind Schätzwerte basierend auf:
 
 - **Quelle:** BFS Lohnstrukturerhebung (LSE) 2022
 - **Aggregation:** Medianwert pro ISCO-Untergruppe (2-stellig), inkl. 13. Monatslohn
-- **Hinweis:** Für Berufe aus dem BFS-SAKE-Datensatz (neue Einträge) werden Lohnschätzungen
+- **Hinweis:** Für Berufe aus dem BFS-SE-Datensatz (neue Einträge) werden Lohnschätzungen
   auf Basis der ISCO-Berufsgruppe verwendet, nicht berufsindividuelle Werte.
 """)
 
@@ -169,7 +172,8 @@ st.markdown("""
   Prognose verstanden werden.
 - **Exposition ≠ Jobverlust.** Ein hoher Score bedeutet, dass Teile des Berufs automatisierbar
   *sein könnten* – nicht dass Jobs verschwinden. Viele Berufe wandeln sich.
-- **Datenbasis 2024.** Die Beschäftigungszahlen basieren auf SAKE 2024. Die KI-Landschaft
+- **Datenbasis 2024.** Die Beschäftigungszahlen basieren auf der BFS Strukturerhebung (SE) 2024
+  (Stichprobe; Werte kleiner Berufe sind entsprechend unsicher). Die KI-Landschaft
   verändert sich schnell; Scores können in 1–2 Jahren bereits überholt sein.
 - **ESCO-Matching nicht immer perfekt.** Für einige Schweizer Berufsbezeichnungen existiert
   kein exakter ESCO-Eintrag. In diesen Fällen wurde der nächstähnliche Beruf verwendet.
@@ -182,7 +186,7 @@ st.markdown("""
 Folgende Faktoren beeinflussen die KI-Exposition im Schweizer Kontext, sind aber in der
 aktuellen Berechnung **nicht berücksichtigt**:
 
-- **Sprachregionen:** Die SAKE-Daten sind nicht nach Sprachregion × Beruf aufgeschlüsselt.
+- **Sprachregionen:** Die verwendete SE-Tabelle ist nicht nach Sprachregion × Beruf aufgeschlüsselt.
   Deutschschweiz, Romandie und Tessin können strukturell unterschiedliche Expositionsmuster
   aufweisen.
 - **Kantonale/regionale Lohnunterschiede:** Die LSE-Lohndaten sind national aggregiert.
@@ -204,7 +208,7 @@ st.markdown("""
 - Karpathy, A. (März 2026). [US Job Market Visualizer](https://karpathy.ai/jobs/) — Methodik-Impuls (342 US-Berufe, BLS-Daten, LLM-Scoring)
 - Brookings Institution (2019). *Automation and Artificial Intelligence: How machines are affecting people and places*
 - Webb, A. (2026). *Tech Trends Report* — Convergence-Ansatz für Branchenanalyse
-- BFS (2024). [Schweizerische Arbeitskräfteerhebung (SAKE)](https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/erhebungen/sake.html)
+- BFS (2026). [Strukturerhebung (SE) 2024 — Ausgeübter Beruf (CH-ISCO-19) nach Geschlecht und Staatsangehörigkeit](https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.36492006.html) · [Über die Strukturerhebung](https://www.bfs.admin.ch/bfs/de/home/statistiken/bevoelkerung/erhebungen/se.html)
 - Europäische Kommission (2023). [ESCO v1.2](https://esco.ec.europa.eu)
 - BFS (2022). [Lohnstrukturerhebung (LSE)](https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/loehne-erwerbseinkommen-arbeitskosten/lohnstruktur.html)
 """)

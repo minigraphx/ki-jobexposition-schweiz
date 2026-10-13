@@ -21,7 +21,9 @@ source .venv/bin/activate   # or: .venv/bin/python for one-off calls
 streamlit run src/app/app.py
 
 # --- Data Pipeline (run once, in order) ---
-python src/data/update_from_bfs.py          # BFS SAKE Excel → berufe_ch.csv
+python src/data/update_from_bfs.py          # BFS Strukturerhebung (SE) Excel → berufe_ch.csv
+python src/data/update_from_bfs.py --blatt 2023        # other year sheet (default "2024")
+python src/data/update_from_bfs.py --blatt 2022-2024   # pooled 3-year sheet
 python src/data/enrich_with_esco.py         # ESCO API → berufe_ch_esco.csv  [LOCAL ONLY]
 python src/data/verify_esco_matches.py      # validate matches → berufe_ch_esco_verified.csv
 python src/data/patch_unmatched.py          # manual fixes for bad matches
@@ -52,7 +54,7 @@ pytest tests/ --cov=src --cov-report=term-missing
 ### Data Pipeline (outputs to `data/processed/`)
 
 ```
-data/raw/sake_berufe_ch_isco19.xlsx   (manually downloaded from bfs.admin.ch)
+data/raw/su-d-40.02.03.02.01.03.10.xlsx   (BFS Strukturerhebung, manually downloaded from bfs.admin.ch)
   → src/data/update_from_bfs.py
   → data/processed/berufe_ch.csv          (204 jobs, ISCO codes, headcount, wages)
 
@@ -66,8 +68,15 @@ berufe_ch_esco.csv
   note: only covers the 107 jobs that had a valid match; 97 jobs have no ESCO URI
 ```
 
-**SAKE data** downloaded from:
+**Employment data** = **BFS Strukturerhebung (SE)**, *not* SAKE — table «Ausgeübter Beruf (CH-ISCO-19)
+nach Geschlecht und Staatsangehörigkeit» (asset 36492006, file `su-d-40.02.03.02.01.03.10.xlsx`),
+employed persons aged 15+ of the permanent resident population in private households (no cross-border
+commuters), in 1000. Downloaded from:
 `https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.36492006.html`
+
+The file has one sheet per year (`2024`, `2023`, …, `2010`, `2000`, `1990`) plus pooled sheets
+(`2022-2024`, `2021-2023`, …). Columns: 0–4 codes by level (4-digit Berufsgattung = column 3),
+5 label, 6 total, 7 men, 8 women. Select the sheet with `--blatt` (default `2024`).
 
 ### Scoring Pipeline (outputs `data/processed/scores.csv`)
 
@@ -94,7 +103,7 @@ CH wage deltas: <60k CHF −0.2, 60–100k 0.0, 100–150k +0.2, >150k +0.4.
 
 | Script | Input | Output | Notes |
 |--------|-------|--------|-------|
-| `src/data/update_from_bfs.py` | `data/raw/sake_berufe_ch_isco19.xlsx` | `berufe_ch.csv` | BFS SAKE 2024, sheet "2024", 4-digit ISCO groups |
+| `src/data/update_from_bfs.py` | `data/raw/su-d-40.02.03.02.01.03.10.xlsx` | `berufe_ch.csv` | BFS Strukturerhebung (SE) 2024, sheet via `--blatt` (default "2024"), 4-digit ISCO groups |
 | `src/data/enrich_with_esco.py` | `berufe_ch.csv` | `berufe_ch_esco.csv` | **Must run locally** (ESCO API blocked in cloud); 6-stage search with Haiku validation |
 | `src/data/verify_esco_matches.py` | `berufe_ch_esco.csv` | `berufe_ch_esco_verified.csv` | Haiku-based match quality scoring 0/1/2 |
 | `src/data/patch_unmatched.py` | `berufe_ch_esco_verified.csv` | `berufe_ch_esco_verified.csv` | Manual overrides for known bad matches |
@@ -139,11 +148,11 @@ All charts use **Plotly**. App reads from `data/processed/scores.csv`.
 
 | Column | Source | Description |
 |--------|--------|-------------|
-| `beruf` | BFS SAKE | German Swiss job title (CH-ISCO-19, 4-digit groups) |
-| `isco_code` | BFS SAKE | ISCO-08 / CH-ISCO-19 code |
-| `beschaeftigte_1000` | BFS SAKE 2024 | Employed persons in thousands |
-| `frauen_pct` | BFS SAKE 2024 | Share of women in percent (0–100) |
-| `branche` | BFS SAKE | Sector (21 categories, manually mapped from ISCO groups) |
+| `beruf` | BFS SE | German Swiss job title (CH-ISCO-19, 4-digit groups) |
+| `isco_code` | BFS SE | ISCO-08 / CH-ISCO-19 code |
+| `beschaeftigte_1000` | BFS Strukturerhebung (SE) 2024 | Employed persons in thousands |
+| `frauen_pct` | BFS Strukturerhebung (SE) 2024 | Share of women in percent (0–100) |
+| `branche` | ISCO mapping | Sector (21 categories, manually mapped from ISCO groups) |
 | `lohn_median_chf` | BFS LSE 2022 | Median annual gross salary CHF |
 | `qualifikation` | BFS LSE 2022 | Education level: Tertiär / Sekundär II / Keine Ausbildung |
 | `esco_uri` | ESCO REST API | ESCO occupation URI — empty for 7 of 204 jobs (fallback description) |

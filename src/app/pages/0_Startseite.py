@@ -28,7 +28,7 @@ die zeigt, wie stark 342 US-Berufe durch KI automatisierbar sind. Die Methodik: 
 in ein Sprachmodell einspeisen, fünf Kriterien bewerten, Score 0–10 berechnen.
 
 **Diese App überträgt diesen Ansatz auf die Schweiz.** Sie zeigt für 204 Schweizer Berufe —
-basierend auf amtlichen BFS-Daten (SAKE 2024) — wie stark jede Berufsgruppe von
+basierend auf amtlichen BFS-Daten (Strukturerhebung 2024) — wie stark jede Berufsgruppe von
 KI-Automatisierung betroffen sein könnte. Ergänzt wird die reine Exposition durch eine zweite
 Dimension: die **Anpassungsfähigkeit** der Berufsangehörigen. Denn ob ein exponierter Beruf
 verschwindet oder sich wandelt, hängt massgeblich davon ab, wie gut sich Betroffene neu
@@ -120,5 +120,5 @@ with col_b:
     st.page_link("pages/4_Berufssuche.py", label="→ Berufssuche öffnen")
 
 st.divider()
-st.caption("Datenquellen: BFS SAKE 2024, ESCO v1.2, BFS LSE 2022 · Scoring: Claude Sonnet (Anthropic) · Methodik: Karpathy (2026), Brookings Institution")
+st.caption("Datenquellen: BFS Strukturerhebung (SE) 2024, ESCO v1.2, BFS LSE 2022 · Scoring: Claude Sonnet (Anthropic) · Methodik: Karpathy (2026), Brookings Institution")
 st.page_link("pages/5_Methodik.py", label="📖 Methodik & Quellen im Detail")
