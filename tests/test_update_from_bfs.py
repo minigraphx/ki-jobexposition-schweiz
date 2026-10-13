@@ -5,7 +5,16 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from update_from_bfs import DEFAULT_BLATT, parse_args, parse_bfs_excel
+from ch_adjustments import BRANCHENEFFEKTE
+from update_from_bfs import (
+    BRANCHE_DEFAULT,
+    BRANCHE_MAP,
+    DEFAULT_BLATT,
+    assign_metadata,
+    branche_fuer_isco,
+    parse_args,
+    parse_bfs_excel,
+)
 
 
 def _blatt(isco: str, total: float, frauen: float | str) -> pd.DataFrame:
@@ -70,3 +79,82 @@ class TestParseArgs:
 
     def test_blatt_option(self):
         assert parse_args(["--blatt", "2022-2024"]).blatt == "2022-2024"
+
+
+class TestBrancheFuerIsco:
+    @pytest.mark.parametrize("isco, erwartet", [
+        ("1321", "Industrie"),
+        ("1322", "Industrie"),
+        ("1323", "Bau"),
+        ("1324", "Transport"),
+        ("1330", "ICT"),
+        ("1341", "Soziales"),
+        ("1342", "Gesundheit"),
+        ("1343", "Soziales"),
+        ("1344", "Soziales"),
+        ("1345", "Bildung"),
+        ("1346", "Finanzen"),
+        ("1311", "Landwirtschaft"),
+    ])
+    def test_gruppe_13_nach_wirtschaftszweig(self, isco, erwartet):
+        assert branche_fuer_isco(isco) == erwartet
+
+    @pytest.mark.parametrize("isco, erwartet", [
+        ("1411", "Gastgewerbe"),
+        ("1412", "Gastgewerbe"),
+        ("1420", "Detailhandel"),
+        ("1431", "Dienstleistungen"),
+        ("1439", "Dienstleistungen"),
+    ])
+    def test_gruppe_14_nach_wirtschaftszweig(self, isco, erwartet):
+        assert branche_fuer_isco(isco) == erwartet
+
+    def test_keine_fuehrungskraft_13_14_im_gastgewerbe(self):
+        """Regression #50: 13xx/142x/143x dürfen nicht pauschal im Gastgewerbe landen."""
+        for isco in ["1321", "1322", "1323", "1324", "1330", "1341", "1342",
+                     "1343", "1344", "1345", "1346", "1349", "1420", "1431", "1439"]:
+            assert branche_fuer_isco(isco) != "Gastgewerbe", isco
+
+    def test_4_stellig_vor_3_stellig_vor_2_stellig(self):
+        # 2-stellig "33" → Finanzen, 3-stellig "332" → Dienstleistungen, 4-stellig "3321" → Versicherungen
+        assert BRANCHE_MAP["33"] == "Finanzen"
+        assert branche_fuer_isco("3311") == "Finanzen"
+        assert branche_fuer_isco("3322") == "Dienstleistungen"
+        assert branche_fuer_isco("3321") == "Versicherungen"
+        # 3-stellig "343" → Medien, 4-stellig "3434" → Gastgewerbe
+        assert branche_fuer_isco("3431") == "Medien"
+        assert branche_fuer_isco("3434") == "Gastgewerbe"
+
+    def test_unbekannter_code_default(self):
+        assert branche_fuer_isco("") == BRANCHE_DEFAULT
+        assert branche_fuer_isco("9") == BRANCHE_DEFAULT
+        assert branche_fuer_isco("0") == BRANCHE_DEFAULT
+
+    def test_code_als_int_und_mit_leerzeichen(self):
+        assert branche_fuer_isco(1330) == "ICT"
+        assert branche_fuer_isco(" 1323 ") == "Bau"
+
+    def test_weitere_korrekturen(self):
+        assert branche_fuer_isco("1112") == "Öff. Verwaltung"
+        assert branche_fuer_isco("1114") == "Verwaltung"
+        assert branche_fuer_isco("7512") == "Industrie"      # Bäcker: verarbeitendes Gewerbe
+        assert branche_fuer_isco("9214") == "Landwirtschaft"
+        assert branche_fuer_isco("9313") == "Bau"
+        assert branche_fuer_isco("9333") == "Transport"
+        assert branche_fuer_isco("8342") == "Bau"
+        assert branche_fuer_isco("3344") == "Gesundheit"
+        assert branche_fuer_isco("2636") != "Medien"
+
+    def test_alle_branchen_haben_delta(self):
+        """Jede Ziel-Branche muss in ch_adjustments.BRANCHENEFFEKTE existieren."""
+        assert set(BRANCHE_MAP.values()) | {BRANCHE_DEFAULT} <= set(BRANCHENEFFEKTE)
+
+    def test_schluessel_sind_2_bis_4_stellige_ziffern(self):
+        for key in BRANCHE_MAP:
+            assert key.isdigit() and 2 <= len(key) <= 4, key
+
+    def test_assign_metadata_nutzt_praefix_aufloesung(self):
+        branche, qualifikation, lohn = assign_metadata("1330")
+        assert branche == "ICT"
+        assert qualifikation == "Tertiär"
+        assert lohn == 85000  # Lohn weiterhin 2-stellig

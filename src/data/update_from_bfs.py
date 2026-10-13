@@ -42,9 +42,22 @@ QUALIFIKATION_MAP = {
     "0": "Sekundär II",
 }
 
-# ISCO-Untergruppe (2-stellig) → Branche
+# ISCO-Präfix (2-, 3- oder 4-stellig) → Branche
+#
+# Auflösung über den längsten passenden Präfix (siehe branche_fuer_isco): ein 4-stelliger
+# Eintrag schlägt einen 3-stelligen, dieser einen 2-stelligen. So lassen sich heterogene
+# Untergruppen (z. B. 13 «Führungskräfte in Produktion und spezialisierten Dienstleistungen»)
+# sauber nach Wirtschaftszweig aufteilen. Branchennamen = die 21 Branchen aus
+# ch_adjustments.BRANCHENEFFEKTE; die Abgrenzung folgt, wo möglich, der NOGA-Zuordnung in
+# fetch_bgs.py / fetch_statent.py (z. B. NOGA 46 Grosshandel → Dienstleistungen,
+# NOGA 87 Heime → Soziales, NOGA 81 Gebäudebetreuung → Dienstleistungen).
+# Gilt nur für automatisch ergänzte Berufe; die kuratierte Liste in build_berufeliste.py
+# hat eigene, manuell gesetzte Branchen.
 BRANCHE_MAP = {
-    "11": "Verwaltung", "12": "Verwaltung", "13": "Gastgewerbe", "14": "Gastgewerbe",
+    # --- 2-stellige Untergruppen (Grundzuordnung) ---
+    "11": "Verwaltung", "12": "Verwaltung",
+    "13": "Dienstleistungen",  # nur Fallback; alle Gattungen unten nach Branche aufgeteilt
+    "14": "Dienstleistungen",  # nur Fallback; 141/142/143 unten
     "21": "Industrie", "22": "Gesundheit", "23": "Bildung", "24": "Finanzen",
     "25": "ICT", "26": "Medien", "27": "Industrie", "28": "Industrie", "29": "Industrie",
     "31": "Industrie", "32": "Gesundheit", "33": "Finanzen", "34": "Soziales",
@@ -52,12 +65,99 @@ BRANCHE_MAP = {
     "41": "Verwaltung", "42": "Verwaltung", "43": "Verwaltung", "44": "Verwaltung",
     "51": "Gastgewerbe", "52": "Detailhandel", "53": "Soziales", "54": "Öff. Verwaltung",
     "61": "Landwirtschaft", "62": "Landwirtschaft", "63": "Landwirtschaft",
-    "71": "Bau", "72": "Industrie", "73": "Industrie", "74": "Industrie", "75": "Landwirtschaft",
+    "71": "Bau", "72": "Industrie", "73": "Industrie", "74": "Industrie",
+    "75": "Industrie",  # Nahrungsmittel-, Holz-, Textilverarbeitung = verarb. Gewerbe (NOGA 10–16)
     "81": "Industrie", "82": "Industrie", "83": "Transport",
-    "91": "Dienstleistungen", "92": "Dienstleistungen", "93": "Industrie", "94": "Gastgewerbe",
+    "91": "Dienstleistungen",
+    "92": "Landwirtschaft",  # Hilfsarbeitskräfte in Land-/Forstwirtschaft, Fischerei
+    "93": "Industrie", "94": "Gastgewerbe",
     "95": "Dienstleistungen", "96": "Dienstleistungen",
-    "01": "Öff. Verwaltung",
+    "01": "Öff. Verwaltung", "02": "Öff. Verwaltung", "03": "Öff. Verwaltung",  # Armee
+
+    # --- 1: Führungskräfte ---
+    "111": "Öff. Verwaltung",   # Legislative, leitende Verwaltungsbedienstete (NOGA 84)
+    "1114": "Verwaltung",       # Leitende Funktionäre von Interessenverbänden (NOGA 94)
+    "131": "Landwirtschaft",    # Produktionsleiter Land-/Forstwirtschaft, Fischerei
+    "1321": "Industrie",        # Produktion von Waren
+    "1322": "Industrie",        # Bergbau (NOGA 05–09 → Industrie)
+    "1323": "Bau",              # Produktion im Bau
+    "1324": "Transport",        # Beschaffung, Logistik, Distribution
+    "133": "ICT",               # Dienstleistungen der Informations- und Kommunikationstechnologie
+    "1341": "Soziales",         # Kinderbetreuung
+    "1342": "Gesundheit",       # Gesundheitswesen
+    "1343": "Soziales",         # Altenbetreuung (Heime, NOGA 87 → Soziales)
+    "1344": "Soziales",         # Sozialwesen
+    "1345": "Bildung",          # Bildungswesen
+    "1346": "Finanzen",         # Finanz- und Versicherungsdienstleistungen (Filialleitung)
+    "1349": "Dienstleistungen", # sonstige spezialisierte Dienstleistungen
+    "141": "Gastgewerbe",       # Hotels und Restaurants
+    "142": "Detailhandel",      # Gross- und Einzelhandel
+    "143": "Dienstleistungen",  # Sport-, Freizeit-, Kultureinrichtungen, sonstige Dienstleistungen
+
+    # --- 2: Akademische Berufe ---
+    "2132": "Landwirtschaft",   # Agrar-, Forst-, Fischereiwissenschaftler
+    "2133": "Umwelt",           # Umweltschutzfachleute
+    "2142": "Bau",              # Bauingenieure
+    "2143": "Umwelt",           # Umweltingenieure
+    "2161": "Bau", "2162": "Bau", "2164": "Bau", "2165": "Bau",  # Architektur, Raumplanung, Vermessung
+    "2166": "Medien",           # Grafik- und Multimediadesigner
+    "2421": "Beratung",         # Management- und Organisationsanalytiker (NOGA 70)
+    "2422": "Öff. Verwaltung",  # Fachkräfte in der Politikverwaltung
+    "2423": "Verwaltung",       # Personalwesen und Berufsberatung (HR-Funktion)
+    "2424": "Verwaltung",       # Personalschulung und -entwicklung (HR-Funktion)
+    "243": "Medien",            # Marketing, Werbung, PR (NOGA 73 → Medien)
+    "2433": "Dienstleistungen", # Technische Verkaufsfachkräfte (Grosshandel, NOGA 46)
+    "2434": "ICT",              # ICT-Verkaufsfachkräfte
+    "261": "Recht",             # Juristen
+    "2634": "Gesundheit",       # Psychologen
+    "2635": "Soziales",         # Sozialarbeit
+    "2636": "Dienstleistungen", # Geistliche, Seelsorger
+
+    # --- 3: Techniker und gleichrangige Berufe ---
+    "3112": "Bau",              # Bautechniker
+    "3123": "Bau",              # Bauführer, Aufsichtskräfte im Bau
+    "315": "Transport",         # Schiffs-/Luftfahrzeugführer, Fluglotsen
+    "332": "Dienstleistungen",  # Ein-/Verkaufsagenten, Handelsmakler (Grosshandel, NOGA 46)
+    "3321": "Versicherungen",   # Versicherungsvertreter
+    "333": "Dienstleistungen",  # Unternehmensbezogene Dienstleistungen (Veranstaltungen, Vermittlung)
+    "3331": "Transport",        # Speditions- und Zollagenten
+    "3334": "Immobilien",       # Immobilienmakler und -verwalter
+    "334": "Verwaltung",        # Sekretariatsfachkräfte, Büroleitung
+    "3342": "Recht",            # Sekretariatsfachkräfte im Rechtswesen
+    "3344": "Gesundheit",       # Sekretariatsfachkräfte im Gesundheitswesen
+    "335": "Öff. Verwaltung",   # Verwaltungsfachkräfte der öffentlichen Hand (Zoll, Steuer, Sozialversicherung, Polizei)
+    "3411": "Recht",            # Fachkräfte für Rechtsangelegenheiten
+    "3413": "Dienstleistungen", # Nicht akademische Fachkräfte im religiösen Bereich
+    "342": "Dienstleistungen",  # Sport und Fitness (NOGA 93)
+    "343": "Medien",            # Künstlerische und kulturelle Fachkräfte (NOGA 90)
+    "3432": "Dienstleistungen", # Raumgestalter, Dekorateure (Design, NOGA 74)
+    "3434": "Gastgewerbe",      # Küchenchefs
+
+    # --- 4: Bürokräfte ---
+    "4211": "Finanzen",         # Bankschalter, Finanzdienstleistungen (NOGA 64)
+    "4412": "Transport",        # Postverteiler und -sortierer (NOGA 53, wie Posthalter/in)
+
+    # --- 5: Dienstleistungs- und Verkaufsberufe ---
+    "511": "Transport",         # Flugbegleiter, Zugbegleiter, Schaffner
+    "5113": "Gastgewerbe",      # Reiseleiter (Tourismus, NOGA 79)
+    "514": "Dienstleistungen",  # Coiffeure, Kosmetiker (NOGA 96)
+    "515": "Dienstleistungen",  # Hauswarte, Reinigungs-/Hauswirtschaftsleitung (NOGA 81)
+    "516": "Dienstleistungen",  # sonstige personenbezogene Dienstleistungen
+    "532": "Gesundheit",        # Betreuungsberufe im Gesundheitswesen (Pflegehilfe, Spitex)
+    "5414": "Sicherheit",       # Wachpersonal (NOGA 80)
+
+    # --- 7/8: Handwerk, Anlagen- und Maschinenbedienung ---
+    "7411": "Bau",              # Elektroinstallateure (Gebäude)
+    "8341": "Landwirtschaft",   # Führer land- und forstwirtschaftlicher Maschinen
+    "8342": "Bau",              # Erdbewegungs- und Strassenbaumaschinen
+
+    # --- 9: Hilfsarbeitskräfte ---
+    "931": "Bau",               # Hilfsarbeiter im Hoch- und Tiefbau
+    "9311": "Industrie",        # Hilfsarbeiter im Bergbau
+    "933": "Transport",         # Hilfsarbeiter in Transport und Lagerei
+    "961": "Umwelt",            # Abfallentsorgung (NOGA 38)
 }
+BRANCHE_DEFAULT = "Dienstleistungen"
 
 # ISCO-Untergruppe (2-stellig) → medianer Jahreslohn CHF (LSE 2022, geschätzt)
 LOHN_MAP = {
@@ -97,11 +197,20 @@ def parse_bfs_excel(filepath: Path, blatt: str = DEFAULT_BLATT) -> pd.DataFrame:
     return bfs.dropna(subset=["beschaeftigte_total"])
 
 
+def branche_fuer_isco(isco_code: str) -> str:
+    """Branche über den längsten passenden ISCO-Präfix (4 → 3 → 2 Stellen) bestimmen."""
+    code = str(isco_code).strip()
+    for laenge in (4, 3, 2):
+        if len(code) >= laenge and code[:laenge] in BRANCHE_MAP:
+            return BRANCHE_MAP[code[:laenge]]
+    return BRANCHE_DEFAULT
+
+
 def assign_metadata(isco_code: str) -> tuple[str, str, int]:
     """Branche, Qualifikation, Lohn aus ISCO-Code ableiten."""
     major = isco_code[0] if isco_code else "9"
     sub = isco_code[:2] if len(isco_code) >= 2 else major
-    branche = BRANCHE_MAP.get(sub, "Dienstleistungen")
+    branche = branche_fuer_isco(isco_code)
     qualifikation = QUALIFIKATION_MAP.get(major, "Sekundär II")
     lohn = LOHN_MAP.get(sub, 70000)
     return branche, qualifikation, lohn

@@ -108,6 +108,10 @@ def adjust_zeitrahmen_fuer_kmu(
       - zeitrahmen: adjustierter Wert
       - zeitrahmen_kmu_delta: angewendete Verschiebung (−1 / 0 / +1)
       - grossfirmen_anteil: Anteil Beschäftigte in Betrieben ≥250 VZÄ (BZ 2008)
+
+    Idempotent: Ist `zeitrahmen_roh` bereits vorhanden (z. B. beim erneuten Anwenden auf
+    scores.csv), wird von diesem Rohwert aus verschoben statt vom bereits adjustierten
+    `zeitrahmen`. Zeilen ohne Rohwert (neu gescort) verwenden `zeitrahmen`.
     """
     if "zeitrahmen" not in df.columns:
         return df
@@ -120,7 +124,10 @@ def adjust_zeitrahmen_fuer_kmu(
     kmu_map: dict[str, float] = dict(zip(kmu_df["branche"], kmu_df["grossfirmen_anteil"]))
 
     df = df.copy()
-    df["zeitrahmen_roh"] = df["zeitrahmen"]
+    if "zeitrahmen_roh" in df.columns:
+        df["zeitrahmen_roh"] = df["zeitrahmen_roh"].where(df["zeitrahmen_roh"].notna(), df["zeitrahmen"])
+    else:
+        df["zeitrahmen_roh"] = df["zeitrahmen"]
     df["grossfirmen_anteil"] = df["branche"].map(kmu_map)
 
     def _delta(anteil: float | None) -> int:

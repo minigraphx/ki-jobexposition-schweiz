@@ -59,6 +59,23 @@ Die medianen Jahresbruttolöhne sind Schätzwerte basierend auf:
   auf Basis der ISCO-Berufsgruppe verwendet, nicht berufsindividuelle Werte.
 """)
 
+st.subheader("Branchenzuordnung")
+st.markdown("""
+Jeder Beruf ist einer von 21 internen Branchen zugeordnet (Grundlage für Brancheneffekt,
+KMU-Faktor und Branchenanalyse):
+
+- **Kuratierte Berufe** (Kernliste): Branche manuell gesetzt.
+- **Ergänzte BFS-SE-Berufe:** Zuordnung über den ISCO-Code, wobei der **spezifischste Präfix**
+  gilt (4-stellig vor 3-stellig vor 2-stellig). So werden heterogene Gruppen wie die
+  Führungskräfte (ISCO 13/14) nach Wirtschaftszweig aufgeteilt — z. B. Produktionsleitung →
+  Industrie, Bau → Bau, ICT-Dienstleistungen → ICT, Bildungswesen → Bildung, Finanzdienstleistungen
+  → Finanzen, Hotels/Restaurants → Gastgewerbe, Handel → Detailhandel.
+- Die Abgrenzung orientiert sich an der NOGA-Zuordnung der Grenzgänger- und KMU-Daten
+  (z. B. Grosshandel → Dienstleistungen, Heime → Soziales).
+- **Limitation:** Ein Beruf wird genau einer Branche zugeordnet, auch wenn er in mehreren
+  Wirtschaftszweigen ausgeübt wird (z. B. Einkäufer, Kranführer).
+""")
+
 st.subheader("Grenzgänger-Anteil (Kontext)")
 st.markdown("""
 Der Grenzgänger-Anteil pro Branche dient als zusätzlicher Kontext-Layer in der Branchenanalyse.

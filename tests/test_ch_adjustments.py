@@ -429,3 +429,33 @@ class TestPharmaOverride:
         """PHARMA_MEDTECH_ISCO_WHITELIST enthält die spezifizierten ISCO-Codes."""
         expected = {"2131", "2145", "2212", "3141", "3212"}
         assert expected == PHARMA_MEDTECH_ISCO_WHITELIST
+
+
+class TestZeitrahmenIdempotenz:
+    def test_zweimal_anwenden_verschiebt_nur_einmal(self, tmp_path):
+        """Bereits adjustierte Zeilen (mit zeitrahmen_roh) dürfen nicht doppelt verschoben werden."""
+        kmu_path = _make_kmu_csv(tmp_path, [
+            {"branche": "Gastgewerbe", "grossfirmen_anteil": 0.02},
+        ])
+        df = pd.DataFrame({
+            "beruf": ["Koch"], "branche": ["Gastgewerbe"], "zeitrahmen": ["3-5 Jahre"],
+        })
+        einmal = adjust_zeitrahmen_fuer_kmu(df, kmu_path=kmu_path)
+        zweimal = adjust_zeitrahmen_fuer_kmu(einmal, kmu_path=kmu_path)
+        assert einmal["zeitrahmen"].iloc[0] == "5-10 Jahre"
+        assert zweimal["zeitrahmen"].iloc[0] == "5-10 Jahre"
+        assert zweimal["zeitrahmen_roh"].iloc[0] == "3-5 Jahre"
+
+    def test_fehlender_rohwert_nutzt_zeitrahmen(self, tmp_path):
+        """Neu gescorte Zeilen (zeitrahmen_roh = NaN nach concat) nutzen zeitrahmen als Rohwert."""
+        kmu_path = _make_kmu_csv(tmp_path, [
+            {"branche": "Gastgewerbe", "grossfirmen_anteil": 0.02},
+        ])
+        df = pd.DataFrame({
+            "beruf": ["Koch", "Kellner"], "branche": ["Gastgewerbe", "Gastgewerbe"],
+            "zeitrahmen": ["5-10 Jahre", "1-2 Jahre"],
+            "zeitrahmen_roh": ["3-5 Jahre", None],
+        })
+        result = adjust_zeitrahmen_fuer_kmu(df, kmu_path=kmu_path)
+        assert result["zeitrahmen"].tolist() == ["5-10 Jahre", "3-5 Jahre"]
+        assert result["zeitrahmen_roh"].tolist() == ["3-5 Jahre", "1-2 Jahre"]
