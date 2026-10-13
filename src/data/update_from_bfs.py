@@ -14,14 +14,19 @@ Schritte:
 2. Beschäftigte + Frauen% der bestehenden 107 Einträge aktualisieren
 3. Neue Berufe (>= 5000 Beschäftigte, noch nicht in scores.csv) hinzufügen
 4. Branche / Lohn / Qualifikation per ISCO-Gruppe automatisch zuweisen
+   (Lohn = LSE 2024, 2-stellige Gruppe × 12; danach update_loehne.py für alle Berufe
+   inkl. Salarium-Profile ausführen)
 5. berufe_ch.csv speichern
 """
 
 import argparse
+from functools import lru_cache
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+from update_loehne import lade_lse, lse_basislohn
 
 RAW_PATH = Path(__file__).parent.parent.parent / "data" / "raw"
 PROCESSED_PATH = Path(__file__).parent.parent.parent / "data" / "processed"
@@ -59,7 +64,7 @@ BRANCHE_MAP = {
     "13": "Dienstleistungen",  # nur Fallback; alle Gattungen unten nach Branche aufgeteilt
     "14": "Dienstleistungen",  # nur Fallback; 141/142/143 unten
     "21": "Industrie", "22": "Gesundheit", "23": "Bildung", "24": "Finanzen",
-    "25": "ICT", "26": "Medien", "27": "Industrie", "28": "Industrie", "29": "Industrie",
+    "25": "ICT", "26": "Medien",
     "31": "Industrie", "32": "Gesundheit", "33": "Finanzen", "34": "Soziales",
     "35": "ICT",
     "41": "Verwaltung", "42": "Verwaltung", "43": "Verwaltung", "44": "Verwaltung",
@@ -159,22 +164,9 @@ BRANCHE_MAP = {
 }
 BRANCHE_DEFAULT = "Dienstleistungen"
 
-# ISCO-Untergruppe (2-stellig) → medianer Jahreslohn CHF (LSE 2022, geschätzt)
-LOHN_MAP = {
-    "11": 150000, "12": 120000, "13": 85000, "14": 75000,
-    "21": 115000, "22": 90000, "23": 108000, "24": 115000,
-    "25": 120000, "26": 88000, "27": 105000, "28": 105000, "29": 100000,
-    "31": 88000, "32": 68000, "33": 82000, "34": 72000,
-    "35": 85000,
-    "41": 70000, "42": 68000, "43": 65000, "44": 62000,
-    "51": 52000, "52": 56000, "53": 58000, "54": 88000,
-    "61": 52000, "62": 50000, "63": 48000,
-    "71": 74000, "72": 78000, "73": 76000, "74": 72000, "75": 54000,
-    "81": 64000, "82": 60000, "83": 62000,
-    "91": 46000, "92": 44000, "93": 54000, "94": 44000,
-    "95": 48000, "96": 46000,
-    "01": 85000,
-}
+# Löhne: BFS LSE 2024 (2-stellige Gruppe × 12, Fallback 1-stellig/Total) aus
+# update_loehne.py. Die frühere, geschätzte LOHN_MAP («LSE 2022, geschätzt») ist entfernt.
+# Salarium-Profile für heterogene Gruppen setzt erst update_loehne.py.
 
 
 def parse_bfs_excel(filepath: Path, blatt: str = DEFAULT_BLATT) -> pd.DataFrame:
@@ -207,13 +199,17 @@ def branche_fuer_isco(isco_code: str) -> str:
 
 
 def assign_metadata(isco_code: str) -> tuple[str, str, int]:
-    """Branche, Qualifikation, Lohn aus ISCO-Code ableiten."""
+    """Branche, Qualifikation, Lohn (LSE 2024, siehe update_loehne.py) aus ISCO-Code ableiten."""
     major = isco_code[0] if isco_code else "9"
-    sub = isco_code[:2] if len(isco_code) >= 2 else major
     branche = branche_fuer_isco(isco_code)
     qualifikation = QUALIFIKATION_MAP.get(major, "Sekundär II")
-    lohn = LOHN_MAP.get(sub, 70000)
+    lohn, _ = lse_basislohn(isco_code, _lse())
     return branche, qualifikation, lohn
+
+
+@lru_cache(maxsize=1)
+def _lse() -> dict[str, int]:
+    return lade_lse(schreiben=False)
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -269,6 +265,7 @@ def main(argv: list[str] | None = None) -> None:
             "frauen_pct": row["frauen_pct"],
             "branche": branche,
             "lohn_median_chf": lohn,
+            "lohn_quelle": lse_basislohn(str(row["isco_code"]), _lse())[1],
             "qualifikation": qualifikation,
         })
 
@@ -279,6 +276,7 @@ def main(argv: list[str] | None = None) -> None:
     combined.to_csv(PROCESSED_PATH / "berufe_ch.csv", index=False)
     print(f"✓ {len(new_df)} neue Berufe hinzugefügt")
     print(f"✓ berufe_ch.csv gespeichert: {len(combined)} Berufe total")
+    print("→ Löhne inkl. Salarium-Profile: python src/data/update_loehne.py --offline")
 
 
 if __name__ == "__main__":

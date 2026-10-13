@@ -8,6 +8,11 @@ Basiert auf:
 
 Beschäftigte in 1000 Personen (gerundet, Vollzeit-Äquivalente 2022).
 Lohn = medianer Jahresbruttolohn CHF (LSE 2022, inkl. 13. Monatsgehalt).
+
+Hinweis Löhne: Die Lohnwerte in BERUFE_CH sind historische Schätzungen je 4-stelligem
+Beruf — die LSE publiziert keine 4-stelligen Werte, sie sind also nicht belegbar. Sie
+werden durch src/data/update_loehne.py ersetzt (LSE 2024, 2-stellige Gruppe × 12,
+Salarium-Profile für heterogene Gruppen; Spalte lohn_quelle).
 """
 
 import pandas as pd

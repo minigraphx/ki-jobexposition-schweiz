@@ -27,6 +27,8 @@ python src/data/update_from_bfs.py --blatt 2022-2024   # pooled 3-year sheet
 python src/data/enrich_with_esco.py         # ESCO API → berufe_ch_esco.csv  [LOCAL ONLY]
 python src/data/verify_esco_matches.py      # validate matches → berufe_ch_esco_verified.csv
 python src/data/patch_unmatched.py          # manual fixes for bad matches
+python src/data/update_loehne.py --offline  # LSE 2024 wages (+ stored Salarium profiles) → all CSVs, recomputes score_ch/adaptabilitaet
+python src/data/update_loehne.py            # same, but re-queries Salarium + STATENT online (~15 min, polite)
 
 # Fix known wrong ESCO matches (re-run locally after adding to KNOWN_WRONG_MATCHES):
 python src/data/enrich_with_esco.py --fix-wrong
@@ -66,7 +68,25 @@ berufe_ch_esco.csv
   → src/data/verify_esco_matches.py
   → data/processed/berufe_ch_esco_verified.csv  (+ match_score 0/1/2)
   note: only covers the 107 jobs that had a valid match; 97 jobs have no ESCO URI
+
+data/raw/je-d-03.04.01.02.47.xlsx         (BFS LSE 2024 T17, optional — parsed copy is versioned)
+data/processed/lohn_profile_salarium.csv  (curated Salarium profile per job, groups 11–14/22/24/26)
+  → src/data/update_loehne.py             (--offline: uses stored Salarium/STATENT values)
+  → lohn_median_chf + lohn_quelle in berufe_ch*.csv and scores.csv;
+    scores.csv: lohnklasse, delta_lohn, delta_branche, score_ch, adaptabilitaet recomputed
+  versioned helper files: lse2024_monatslohn_isco.csv, lohn_salarium_abfragen.csv,
+    statent_vzae_grossregion.csv
 ```
+
+**Wage data** = **BFS LSE 2024**, table T17 «Monatlicher Bruttolohn nach Berufsgruppen, Lebensalter
+und Geschlecht», private and public sector (asset 36355224, `je-d-03.04.01.02.47.xlsx`, sheet `2024`).
+Only 2-digit CH-ISCO-19 groups exist. Standardised monthly wage incl. 1/12 of the 13th salary and of
+special payments → annual wage = monthly × 12. Fallback for groups without LSE value (01–03, 63, 95):
+1-digit major group (`LSE2024_1d`), else total median (`LSE2024_total`). Heterogeneous groups
+(11–14, 22, 24, 26): `lohn = LSE_group × 12 × S_job / S_reference`, S = Salarium (LSE-2024 model,
+private sector) median for a fixed norm profile (42 y, 8 years tenure, 40 h, no management function),
+FTE-weighted over the 7 Grossregionen (STATENT); reference = group's main NOGA division
+(`REFERENZ_NOGA`) with Salarium default education (`lohn_quelle = LSE2024_2d+Salarium`).
 
 **Employment data** = **BFS Strukturerhebung (SE)**, *not* SAKE — table «Ausgeübter Beruf (CH-ISCO-19)
 nach Geschlecht und Staatsangehörigkeit» (asset 36492006, file `su-d-40.02.03.02.01.03.10.xlsx`),
@@ -107,6 +127,8 @@ CH wage deltas: <60k CHF −0.2, 60–100k 0.0, 100–150k +0.2, >150k +0.4.
 | `src/data/enrich_with_esco.py` | `berufe_ch.csv` | `berufe_ch_esco.csv` | **Must run locally** (ESCO API blocked in cloud); 6-stage search with Haiku validation |
 | `src/data/verify_esco_matches.py` | `berufe_ch_esco.csv` | `berufe_ch_esco_verified.csv` | Haiku-based match quality scoring 0/1/2 |
 | `src/data/patch_unmatched.py` | `berufe_ch_esco_verified.csv` | `berufe_ch_esco_verified.csv` | Manual overrides for known bad matches |
+| `src/data/update_loehne.py` | LSE 2024 T17 (raw or `lse2024_monatslohn_isco.csv`), `lohn_profile_salarium.csv`, `lohn_salarium_abfragen.csv`, `statent_vzae_grossregion.csv` | `berufe_ch*.csv`, `scores.csv` | Sets `lohn_median_chf`/`lohn_quelle`; recomputes wage-dependent rule-based columns in scores.csv; `--offline` (no network), `--dry-run` |
+| `src/data/branche_neu_zuordnen.py` | `BRANCHE_MAP` | `berufe_ch*.csv`, `scores.csv` | Re-applies ISCO-prefix sector mapping to non-curated jobs |
 | `src/scoring/exposure_scorer.py` | `berufe_ch_esco_verified.csv` | `scores.csv` | Synchronous, hash-based delta; `--force [name\|isco]` for selective re-score |
 | `src/scoring/adaptability_scorer.py` | `scores.csv` | `scores.csv` | Rule-based: education, wage, digital affinity, mobility |
 | `src/scoring/ch_adjustments.py` | `scores.csv` | `scores.csv` | CH sector/wage deltas, clips to 0–10 |
@@ -153,8 +175,9 @@ All charts use **Plotly**. App reads from `data/processed/scores.csv`.
 | `beschaeftigte_1000` | BFS Strukturerhebung (SE) 2024 | Employed persons in thousands |
 | `frauen_pct` | BFS Strukturerhebung (SE) 2024 | Share of women in percent (0–100) |
 | `branche` | ISCO mapping | Sector (21 categories, manually mapped from ISCO groups) |
-| `lohn_median_chf` | BFS LSE 2022 | Median annual gross salary CHF |
-| `qualifikation` | BFS LSE 2022 | Education level: Tertiär / Sekundär II / Keine Ausbildung |
+| `lohn_median_chf` | BFS LSE 2024 (T17) | Median annual gross salary CHF = 2-digit group monthly median × 12; for groups 11–14/22/24/26 calibrated with Salarium profiles (`update_loehne.py`) |
+| `lohn_quelle` | `update_loehne.py` | `LSE2024_2d`, `LSE2024_2d+Salarium`, fallback `LSE2024_1d` / `LSE2024_total` |
+| `qualifikation` | Curated list / ISCO major group | Education level: Tertiär / Sekundär II / Keine Ausbildung |
 | `esco_uri` | ESCO REST API | ESCO occupation URI — empty for 7 of 204 jobs (fallback description) |
 | `esco_titel` | ESCO REST API | ESCO occupation title (German) |
 | `esco_beschreibung` | ESCO API or Haiku | ESCO description (197 jobs) or fallback from berufsberatung.ch / Wikipedia / Haiku (7 jobs) |

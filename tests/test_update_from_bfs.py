@@ -157,4 +157,13 @@ class TestBrancheFuerIsco:
         branche, qualifikation, lohn = assign_metadata("1330")
         assert branche == "ICT"
         assert qualifikation == "Tertiär"
-        assert lohn == 85000  # Lohn weiterhin 2-stellig
+        assert lohn == 9594 * 12  # LSE 2024, Gruppe 13 (2-stellig) × 12
+
+    def test_keine_toten_isco_gruppen_27_bis_29(self):
+        """ISCO-08 kennt keine Untergruppen 27–29."""
+        assert not {"27", "28", "29"} & set(BRANCHE_MAP)
+
+    def test_assign_metadata_lohn_fallback(self):
+        """Gruppen ohne LSE-Wert: 63 → Hauptgruppe 6, 01 (Armee) → Gesamtmedian."""
+        assert assign_metadata("6310")[2] == 5670 * 12
+        assert assign_metadata("0110")[2] == 7024 * 12

@@ -55,6 +55,26 @@ Fachkräfte Personal & Schulung  → Hydraulik-Fachkraft
 | 2026-04 | Refactor Batch API → synchron + Hash-Delta | Alle 204 Berufe neu gescort; `beschreibung_hash` eingeführt |
 | 2026-04 | Brennschneider-Kontamination (ESCO-Metadaten) | 9 Berufe in `berufe_ch_esco_verified.csv` + `scores.csv` bereinigt |
 | 2026-04 | URI-Duplikat-Schutz | `enrich_with_esco.py`: `blocked_uris` verhindert Kreuz-Kontamination |
+| 2026-10 | Löhne auf LSE 2024 umgestellt (#45), `update_loehne.py` | Alle 204 Berufe: `lohn_median_chf`, `lohn_quelle`; regelbasiert neu: `lohnklasse`, `delta_lohn`, `score_ch`, `adaptabilitaet` (inkl. Altlasten), `delta_branche` (Pharma-Ausnahme 2131/2145) |
+
+## Löhne (LSE 2024)
+
+`lohn_median_chf` stammt seit Issue #45 aus der **BFS LSE 2024** (T17, Asset 36355224, nur
+2-stellige CH-ISCO-19-Gruppen, Monatsmedian × 12) statt aus der geschätzten `LOHN_MAP`
+(«LSE 2022, geschätzt») bzw. den nicht belegbaren 4-stelligen Werten aus `build_berufeliste.py`.
+Herkunft je Beruf in `lohn_quelle`:
+
+- `LSE2024_2d` — Gruppenmedian (153 Berufe, inkl. Leitende Verwaltungsbedienstete 1112:
+  Salarium hat für Führungskräfte der öffentlichen Verwaltung, NOGA 84, keine konsistenten Werte)
+- `LSE2024_2d+Salarium` — Gruppen 11–14, 22, 24, 26: Gruppenmedian × Salarium-Verhältnis
+  Berufsprofil/Gruppenreferenz (51 Berufe; Profile in `lohn_profile_salarium.csv`,
+  Antworten in `lohn_salarium_abfragen.csv`) — **Modellschätzung**
+- `LSE2024_1d` / `LSE2024_total` — Fallback für Gruppen ohne LSE-Wert (01–03, 63, 95; derzeit 0 Berufe)
+
+Bekannte Schwächen: Berufe derselben 2-stelligen Gruppe ausserhalb der Salarium-Gruppen haben
+identische Löhne (z. B. Informatiker/in EFZ = Softwareentwickler/in, Kassierer/in = Detailhandel);
+Salarium (Privatsektor, ohne Kader im Normprofil) unterschätzt Spitzenlöhne, v. a. Fachärzte.
+Saubere Alternative: BFS-Sonderauswertung 3-/4-stellig (lohn@bfs.admin.ch).
 
 ## Quality Audit Prozess
 

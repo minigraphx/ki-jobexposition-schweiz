@@ -51,12 +51,47 @@ wird bei der Berufssuche angezeigt.
 
 st.subheader("Lohndaten")
 st.markdown("""
-Die medianen Jahresbruttolöhne sind Schätzwerte basierend auf:
+Der mediane Jahresbruttolohn (`lohn_median_chf`) stammt aus der **BFS Lohnstrukturerhebung
+(LSE) 2024**. Die Herkunft jedes Werts steht in der Spalte `lohn_quelle`.
 
-- **Quelle:** BFS Lohnstrukturerhebung (LSE) 2022
-- **Aggregation:** Medianwert pro ISCO-Untergruppe (2-stellig), inkl. 13. Monatslohn
-- **Hinweis:** Für Berufe aus dem BFS-SE-Datensatz (neue Einträge) werden Lohnschätzungen
-  auf Basis der ISCO-Berufsgruppe verwendet, nicht berufsindividuelle Werte.
+- **Quelle:** BFS, LSE 2024, Tabelle T17 «Monatlicher Bruttolohn (Zentralwert) nach
+  Berufsgruppen, Lebensalter und Geschlecht — Privater und öffentlicher Sektor zusammen»
+  (publiziert 2026). Die LSE weist Berufe nur **2-stellig** aus (CH-ISCO-19-Untergruppen).
+- **Basis (`LSE2024_2d`):** Median der 2-stelligen Gruppe × 12. Der LSE-Wert ist ein
+  standardisierter Vollzeit-Monatslohn und enthält bereits 1/12 des 13. Monatslohns und der
+  Sonderzahlungen; deshalb × 12 und nicht × 13. Alle Berufe einer Gruppe erhalten zunächst
+  denselben Lohn.
+- **Fallback:** Für Gruppen ohne LSE-Wert (Armee 01–03, Selbstversorgung 63, Strassenhandel 95)
+  gilt die 1-stellige Hauptgruppe (`LSE2024_1d`) bzw. der Gesamtmedian (`LSE2024_total`).
+  Derzeit betrifft das keinen der 204 Berufe.
+- **Heterogene Gruppen (`LSE2024_2d+Salarium`):** In den Gruppen 11–14 (Führungskräfte),
+  22 (Gesundheitsberufe), 24 (Betriebswirtschaft, Finanzen) und 26 (Recht, Soziales, Kultur)
+  liegen Berufe mit sehr unterschiedlichen Löhnen zusammen (z. B. Ärzte und Pflege).
+  Hier wird der Gruppenmedian mit dem **BFS-Lohnrechner Salarium** (Modell auf Basis der
+  LSE 2024) nach Ausbildung und Branche differenziert:
+
+  *Lohn = LSE-Gruppenmedian × 12 × Salarium(Berufsprofil) / Salarium(Gruppenreferenz)*
+
+  - **Berufsprofil:** formale Pflichtausbildung des Berufs (z. B. Medizinstudium,
+    Pflege HF, Anwaltspatent) und NOGA-Abteilung der Hauptbranche; festgehalten mit
+    Begründung in `data/processed/lohn_profile_salarium.csv`.
+  - **Normprofil (für alle gleich):** 42 Jahre, 8 Dienstjahre, 40 Stunden, ohne Kaderfunktion,
+    ohne Sonderzahlungen, Unternehmen ab 50 Beschäftigten.
+  - **Gruppenreferenz:** Hauptbranche der Gruppe (NOGA mit den meisten Beschäftigten unter den
+    Berufen der Gruppe) mit der Salarium-Standardausbildung (häufigster Wert in der LSE).
+  - **Regionen:** Salarium rechnet je Grossregion. Verwendet wird das Mittel über die
+    7 Grossregionen, gewichtet mit den Vollzeitäquivalenten der jeweiligen Branche
+    (BFS STATENT 2024).
+
+  Das Lohnniveau stammt also immer aus der LSE; Salarium liefert nur das Verhältnis
+  innerhalb der Gruppe. Die Werte sind **Modellschätzungen**, keine erhobenen Berufslöhne.
+  Ausnahme: Für leitende Verwaltungsbedienstete (öffentliche Verwaltung) liefert Salarium
+  keine Werte; sie behalten den LSE-Gruppenmedian.
+- **Einschränkungen:** nur 2-stellige LSE-Gruppen (eine 3-/4-stellige Auswertung wäre nur
+  als kostenpflichtige BFS-Sonderauswertung erhältlich); Salarium bildet nur den
+  **Privatsektor** ab und kennt weder Facharzttitel noch Kaderzuschläge im Normprofil —
+  Spitzenlöhne (z. B. Fach- und Kaderärzte) werden daher unterschätzt; **Selbständige**
+  (z. B. Ärzte mit eigener Praxis, Anwälte, Landwirte) sind in der LSE nicht enthalten.
 """)
 
 st.subheader("Branchenzuordnung")
@@ -155,6 +190,10 @@ berücksichtigen. Alle 21 Branchen aus dem Datensatz sind explizit bewertet:
 | 60'000–100'000 CHF | **0.0** | Neutral |
 | < 60'000 CHF | **−0.2** | Geringerer ROI; manuelle Arbeit oft günstiger |
 
+Die Klassengrenzen sind seit der Umstellung auf die LSE 2024 unverändert (nicht um die
+Lohnentwicklung von +3,5 % seit 2022 angehoben; das würde nur 2 Berufe knapp über 100'000 CHF
+verschieben). Weil die LSE nur Gruppenmediane liefert, liegt derzeit kein Beruf über 150'000 CHF.
+
 Der finale **score_ch** wird auf den Bereich 0–10 begrenzt.
 """)
 
@@ -171,7 +210,7 @@ Er basiert auf der Methodik der **Brookings Institution** und setzt sich zusamme
 | Kriterium | Max. Punkte | Quelle |
 |---|---|---|
 | Qualifikationsniveau | 4 | BFS SAKE (Bildungsabschluss nach ISCO) |
-| Lohnniveau | 3 | LSE 2022 (höherer Lohn = mehr Ressourcen für Umschulung) |
+| Lohnniveau | 3 | LSE 2024 (höherer Lohn = mehr Ressourcen für Umschulung) |
 | Digitale Affinität | 2 | KI-Score Teilkriterium «Digitaler Output» |
 | Branchenmobilität | 1 | Schätzung basierend auf Branchencharakteristika |
 
@@ -298,8 +337,11 @@ st.markdown("""
   verändert sich schnell; Scores können in 1–2 Jahren bereits überholt sein.
 - **ESCO-Matching nicht immer perfekt.** Für einige Schweizer Berufsbezeichnungen existiert
   kein exakter ESCO-Eintrag. In diesen Fällen wurde der nächstähnliche Beruf verwendet.
-- **Lohnschätzungen für neue Einträge** basieren auf ISCO-Gruppendurchschnitten, nicht auf
-  berufsindividuellen Erhebungen.
+- **Löhne sind Gruppenwerte bzw. Modellschätzungen.** Die LSE 2024 weist nur 2-stellige
+  Berufsgruppen aus (Median). Alle Berufe einer Gruppe haben deshalb denselben Lohn — ausser in
+  den Gruppen 11–14, 22, 24 und 26, wo er mit Salarium-Profilen (Ausbildung, Branche)
+  differenziert wird. Berufsindividuelle Löhne wurden nicht erhoben; Selbständige fehlen in der
+  LSE, Salarium deckt nur den Privatsektor ab.
 """)
 
 st.subheader("Weitere CH-spezifische Faktoren (nicht in Score eingeflossen)")
@@ -310,7 +352,8 @@ aktuellen Berechnung **nicht berücksichtigt**:
 - **Sprachregionen:** Die verwendete SE-Tabelle ist nicht nach Sprachregion × Beruf aufgeschlüsselt.
   Deutschschweiz, Romandie und Tessin können strukturell unterschiedliche Expositionsmuster
   aufweisen.
-- **Kantonale/regionale Lohnunterschiede:** Die LSE-Lohndaten sind national aggregiert.
+- **Kantonale/regionale Lohnunterschiede:** Die LSE-Lohndaten sind national aggregiert
+  (Salarium-Verhältnisse als gewichtetes Mittel der Grossregionen).
   Regionale Lohndisparitäten (z.B. Zürich vs. Wallis) fliessen nicht ins Scoring ein.
 - **KMU-Adoptionsgeschwindigkeit:** Kleine und mittlere Unternehmen (KMU, > 99 % der CH-Firmen)
   adoptieren KI-Technologien typischerweise langsamer als Grossunternehmen. Dies beeinflusst
@@ -331,7 +374,9 @@ st.markdown("""
 - Webb, A. (2026). *Tech Trends Report* — Convergence-Ansatz für Branchenanalyse
 - BFS (2026). [Strukturerhebung (SE) 2024 — Ausgeübter Beruf (CH-ISCO-19) nach Geschlecht und Staatsangehörigkeit](https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.36492006.html) · [Über die Strukturerhebung](https://www.bfs.admin.ch/bfs/de/home/statistiken/bevoelkerung/erhebungen/se.html)
 - Europäische Kommission (2023). [ESCO v1.2](https://esco.ec.europa.eu)
-- BFS (2022). [Lohnstrukturerhebung (LSE)](https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/loehne-erwerbseinkommen-arbeitskosten/lohnstruktur.html)
+- BFS (2026). [LSE 2024, T17 — Monatlicher Bruttolohn nach Berufsgruppen, Lebensalter und Geschlecht, privater und öffentlicher Sektor zusammen](https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.36355224.html) · [Über die Lohnstrukturerhebung](https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/loehne-erwerbseinkommen-arbeitskosten/lohnstruktur.html)
+- BFS (2026). [Salarium — Statistischer Lohnrechner (LSE 2024)](https://www.salarium.bfs.admin.ch) — Profilverhältnisse für heterogene Berufsgruppen
+- BFS (2026). [Statistik der Unternehmensstruktur (STATENT) 2024 — Vollzeitäquivalente nach Kanton und Wirtschaftsabteilung](https://www.pxweb.bfs.admin.ch/pxweb/de/px-x-0602010000_101/-/px-x-0602010000_101.px/) — Regionsgewichte
 """)
 
 st.subheader("Beobachtete Wirkung — Schweiz")

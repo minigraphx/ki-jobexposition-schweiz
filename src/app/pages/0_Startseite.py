@@ -122,5 +122,5 @@ with col_b:
     st.page_link("pages/4_Berufssuche.py", label="→ Berufssuche öffnen")
 
 st.divider()
-st.caption("Datenquellen: BFS Strukturerhebung (SE) 2024, ESCO v1.2, BFS LSE 2022 · Scoring: Claude Sonnet (Anthropic) · Methodik: Karpathy (2026), Brookings Institution")
+st.caption("Datenquellen: BFS Strukturerhebung (SE) 2024, ESCO v1.2, BFS LSE 2024 · Scoring: Claude Sonnet (Anthropic) · Methodik: Karpathy (2026), Brookings Institution")
 st.page_link("pages/5_Methodik.py", label="📖 Methodik & Quellen im Detail")
