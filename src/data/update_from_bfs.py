@@ -1,5 +1,5 @@
 """
-BFS CH-ISCO-19 Daten einlesen und berufe_ch.csv aktualisieren.
+BFS Strukturerhebung (SE) einlesen und Beschäftigte / Frauenanteil aller Berufe setzen.
 
 Quelle: BFS Strukturerhebung (SE) — «Ausgeübter Beruf (CH-ISCO-19) nach Geschlecht
 und Staatsangehörigkeit», Erwerbstätige ab 15 Jahren, in 1000.
@@ -8,15 +8,37 @@ https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetai
 
 Hinweis: Es handelt sich um die Strukturerhebung (SE), nicht um die SAKE. Die Datei enthält
 ein Blatt pro Jahr («2024», «2023», …) sowie gepoolte Mehrjahresblätter («2022-2024», …).
+Spalten: 0–4 Codes je Ebene (3 = 4-stellige Berufsgattung, 4 = 5-stellige Berufsart),
+5 Bezeichnung, 6 Total, 7 Männer, 8 Frauen. «X» = nicht publiziert (< 5 Beobachtungen),
+Werte in Klammern (Zahlenformat «(##0)») = < 50 Beobachtungen.
+
+Zuordnung Beruf → SE (Issue #51), versioniert in data/processed/beruf_berufsart_mapping.csv:
+- ebene "gattung":   der Beruf ist der einzige Eintrag seiner 4-stelligen Berufsgattung und
+                     erhält deren vollen SE-Wert.
+- ebene "berufsart": mehrere Berufe teilen sich eine Berufsgattung; jeder Beruf entspricht
+                     einer oder mehreren 5-stelligen Berufsarten (Spalte berufsarten). Der Rest
+                     der Gattung (Berufsart «onA» und nicht publizierte Werte) wird proportional
+                     zu den zugeordneten Berufsarten verteilt. Jede publizierte Berufsart
+                     (ohne «onA») der Gattung muss genau einem Beruf zugeordnet sein.
+- Wo keine saubere Zuordnung möglich ist, sind die Berufe zusammengelegt (SE-Bezeichnung als
+  beruf, bisherige CH-Titel in synonyme; siehe berufe_zusammenlegen.py).
+Invariante: Σ beschaeftigte_1000 je 4-stelligem Code = SE-Wert der Berufsgattung
+(auf 0.1 gerundet; Rundung je Gattung nach grösstem Rest).
+
+SE-Wert: Blatt «2024» (--blatt). Ist eine Gattung im Jahresblatt nicht publiziert («X»),
+gilt das gepoolte Blatt «2022-2024»; ebenso für den Frauenanteil, wenn die Frauenzahl im
+Jahresblatt fehlt. Die Blätter «2024» und «2022-2024» liegen als data/processed/se_berufe.csv
+versioniert vor, damit die Pipeline ohne Rohdatei läuft.
 
 Schritte:
-1. BFS Excel parsen (Blatt per --blatt wählbar, Default "2024"; 4-stellige Berufsgattungen)
-2. Beschäftigte + Frauen% der bestehenden 107 Einträge aktualisieren
-3. Neue Berufe (>= 5000 Beschäftigte, noch nicht in scores.csv) hinzufügen
-4. Branche / Lohn / Qualifikation per ISCO-Gruppe automatisch zuweisen
-   (Lohn = LSE 2024, 2-stellige Gruppe × 12; danach update_loehne.py für alle Berufe
-   inkl. Salarium-Profile ausführen)
-5. berufe_ch.csv speichern
+1. SE-Excel parsen (Berufsgattungen und Berufsarten), versionierte CSV aktualisieren
+2. Beschäftigte, Frauenanteil und Synonyme in berufe_ch.csv, berufe_ch_esco.csv,
+   berufe_ch_esco_verified.csv und scores.csv setzen (nur diese Spalten; übrige Zellen
+   bleiben byte-identisch)
+3. Optional (--neue-berufe): neue Berufsgattungen (>= 5000 Beschäftigte, noch nicht
+   erfasst) in berufe_ch.csv und die Mapping-Tabelle aufnehmen; Branche / Lohn /
+   Qualifikation per ISCO-Gruppe. Danach ESCO-Anreicherung und Scoring nötig.
+Danach: python src/data/update_loehne.py --offline (Lohngewichte = neue Beschäftigte).
 """
 
 import argparse
@@ -32,6 +54,15 @@ RAW_PATH = Path(__file__).parent.parent.parent / "data" / "raw"
 PROCESSED_PATH = Path(__file__).parent.parent.parent / "data" / "processed"
 BFS_FILE = RAW_PATH / "su-d-40.02.03.02.01.03.10.xlsx"  # BFS Strukturerhebung (SE)
 DEFAULT_BLATT = "2024"
+POOL_BLATT = "2022-2024"
+SE_CSV = PROCESSED_PATH / "se_berufe.csv"          # versionierter Auszug (Blätter 2024, 2022-2024)
+SE_CSV_BLAETTER = (DEFAULT_BLATT, POOL_BLATT)
+MAPPING_CSV = PROCESSED_PATH / "beruf_berufsart_mapping.csv"
+CSV_DATEIEN = ["berufe_ch.csv", "berufe_ch_esco.csv", "berufe_ch_esco_verified.csv", "scores.csv"]
+
+EBENE_GATTUNG = "gattung"
+EBENE_BERUFSART = "berufsart"
+TRENNER = "; "  # Trennzeichen in den Spalten berufsarten, synonyme, zusammengelegt_aus
 
 # ISCO-Hauptgruppe → Qualifikation
 QUALIFIKATION_MAP = {
@@ -169,24 +200,221 @@ BRANCHE_DEFAULT = "Dienstleistungen"
 # Salarium-Profile für heterogene Gruppen setzt erst update_loehne.py.
 
 
+def _zahl(wert) -> float:
+    """SE-Zelle → float; «X» (nicht publiziert), leer → NaN."""
+    if wert is None:
+        return np.nan
+    if isinstance(wert, str):
+        wert = wert.strip()
+        if wert in ("", "X"):
+            return np.nan
+    try:
+        return float(wert)
+    except (TypeError, ValueError):
+        return np.nan
+
+
+def _code(wert) -> str:
+    return "" if wert is None else str(wert).strip()
+
+
+def parse_se_excel(filepath: Path, blatt: str = DEFAULT_BLATT) -> pd.DataFrame:
+    """SE-Excel lesen: 4-stellige Berufsgattungen und 5-stellige Berufsarten.
+
+    Returns:
+        DataFrame mit ebene (4 oder 5), code, bezeichnung, total, maenner, frauen
+        (in 1000, «X» → NaN) und total_lt50 (Zahlenformat in Klammern = < 50 Beobachtungen).
+    """
+    import openpyxl
+
+    wb = openpyxl.load_workbook(filepath, read_only=True, data_only=True)
+    try:
+        if str(blatt) not in wb.sheetnames:
+            raise ValueError(f"Blatt «{blatt}» nicht in {Path(filepath).name} "
+                             f"(vorhanden: {', '.join(wb.sheetnames)})")
+        rows = []
+        for zeile in wb[str(blatt)].iter_rows():
+            zellen = list(zeile) + [None] * (9 - len(zeile))
+            werte = [getattr(z, "value", None) for z in zellen[:9]]
+            gattung, art = _code(werte[3]), _code(werte[4])
+            if gattung and not art and gattung != "X":
+                ebene, code = 4, gattung
+            elif art and not gattung and art != "X":
+                ebene, code = 5, art
+            else:
+                continue
+            fmt = str(getattr(zellen[6], "number_format", "") or "")
+            rows.append({
+                "ebene": ebene, "code": code, "bezeichnung": _code(werte[5]),
+                "total": _zahl(werte[6]), "maenner": _zahl(werte[7]), "frauen": _zahl(werte[8]),
+                "total_lt50": "(" in fmt,
+            })
+    finally:
+        wb.close()
+    return pd.DataFrame(rows, columns=["ebene", "code", "bezeichnung", "total", "maenner",
+                                       "frauen", "total_lt50"])
+
+
 def parse_bfs_excel(filepath: Path, blatt: str = DEFAULT_BLATT) -> pd.DataFrame:
-    """BFS-SE-Excel einlesen, 4-stellige Berufsgattungen extrahieren.
+    """BFS-SE-Excel einlesen, nur 4-stellige Berufsgattungen mit publiziertem Total.
 
     Args:
         filepath: Pfad zur BFS-Excel-Datei (su-d-40.02.03.02.01.03.10.xlsx).
         blatt: Name des Tabellenblatts, z. B. "2024" (Einzeljahr) oder
                "2022-2024" (gepoolte Mehrjahresauswertung).
     """
-    df = pd.read_excel(filepath, sheet_name=str(blatt), header=None)
-    mask = df[3].notna() & df[4].isna()
-    bfs = df[mask][[3, 5, 6, 7, 8]].copy()
-    bfs.columns = ["isco_code", "beruf_bfs", "beschaeftigte_total", "maenner", "frauen"]
-    bfs = bfs.replace("X", np.nan)
-    bfs["beschaeftigte_total"] = pd.to_numeric(bfs["beschaeftigte_total"], errors="coerce")
-    bfs["frauen"] = pd.to_numeric(bfs["frauen"], errors="coerce")
+    se = parse_se_excel(filepath, blatt)
+    bfs = se[se["ebene"] == 4].rename(columns={"code": "isco_code", "bezeichnung": "beruf_bfs",
+                                               "total": "beschaeftigte_total"})
+    bfs = bfs[["isco_code", "beruf_bfs", "beschaeftigte_total", "maenner", "frauen"]].copy()
     bfs["frauen_pct"] = (bfs["frauen"] / bfs["beschaeftigte_total"] * 100).round(1)
-    bfs["isco_code"] = bfs["isco_code"].astype(str)
-    return bfs.dropna(subset=["beschaeftigte_total"])
+    return bfs.dropna(subset=["beschaeftigte_total"]).reset_index(drop=True)
+
+
+def lade_se(blaetter: tuple[str, ...] = SE_CSV_BLAETTER, raw: Path = BFS_FILE,
+            csv: Path = SE_CSV, schreiben: bool = True) -> pd.DataFrame:
+    """SE-Werte (Spalte blatt) — Rohdatei bevorzugt, sonst versionierte CSV.
+
+    Mit Rohdatei wird die CSV (Blätter SE_CSV_BLAETTER) neu geschrieben.
+    """
+    if raw.exists():
+        lesen = list(dict.fromkeys(list(blaetter) + (list(SE_CSV_BLAETTER) if schreiben else [])))
+        tab = pd.concat([parse_se_excel(raw, b).assign(blatt=b) for b in lesen], ignore_index=True)
+        tab = tab[["blatt"] + [c for c in tab.columns if c != "blatt"]]
+        # 6 Nachkommastellen (= 1 Person) — gleiche Werte mit und ohne Rohdatei
+        tab[["total", "maenner", "frauen"]] = tab[["total", "maenner", "frauen"]].round(6)
+        if schreiben:
+            tab[tab["blatt"].isin(SE_CSV_BLAETTER)].to_csv(csv, index=False)
+        return tab[tab["blatt"].isin(blaetter)].reset_index(drop=True)
+    tab = pd.read_csv(csv, dtype={"blatt": str, "code": str})
+    fehlt = set(blaetter) - set(tab["blatt"])
+    if fehlt:
+        raise SystemExit(f"Blatt {sorted(fehlt)} nicht in {csv.name} — Rohdatei {raw.name} "
+                         f"nach {raw.parent} herunterladen")
+    tab["total_lt50"] = tab["total_lt50"].astype(bool)
+    return tab[tab["blatt"].isin(blaetter)].reset_index(drop=True)
+
+
+def _liste(text) -> list[str]:
+    if text is None or (isinstance(text, float) and np.isnan(text)):
+        return []
+    return [t.strip() for t in str(text).split(TRENNER.strip()) if t.strip()]
+
+
+def lade_mapping(path: Path = MAPPING_CSV) -> pd.DataFrame:
+    """Mapping beruf → Berufsgattung/Berufsart(en) (Spalten siehe Moduldoku)."""
+    m = pd.read_csv(path, dtype=str, keep_default_na=False)
+    doppelt = m[m["beruf"].duplicated(keep=False)]
+    if not doppelt.empty:
+        raise ValueError(f"Mapping: Beruf mehrfach: {sorted(set(doppelt['beruf']))}")
+    falsch = set(m["ebene"]) - {EBENE_GATTUNG, EBENE_BERUFSART}
+    if falsch:
+        raise ValueError(f"Mapping: unbekannte ebene {sorted(falsch)}")
+    return m
+
+
+def _se_index(se: pd.DataFrame, blatt: str, ebene: int) -> pd.DataFrame:
+    sel = se[(se["blatt"] == blatt) & (se["ebene"].astype(int) == ebene)]
+    return sel.drop_duplicates("code").set_index("code")
+
+
+def _ist_ona(bezeichnung: str) -> bool:
+    return "onA" in str(bezeichnung)
+
+
+def _frauen_anteil(codes: list[str], idx: pd.DataFrame) -> float:
+    """100 × Σ Frauen / Σ Total über die Codes; NaN, wenn eine Frauenzahl fehlt."""
+    sel = idx.reindex(codes)
+    sel = sel[sel["total"].notna()]
+    if sel.empty or sel["frauen"].isna().any() or sel["total"].sum() <= 0:
+        return np.nan
+    return float(sel["frauen"].sum() / sel["total"].sum() * 100)
+
+
+def runde_mit_summe(werte: list[float], summe: float, stellen: int = 1) -> list[float]:
+    """Auf `stellen` runden, sodass die Summe exakt round(summe, stellen) ist (grösster Rest)."""
+    faktor = 10 ** stellen
+    ziel = int(round(summe * faktor))
+    roh = [w * faktor for w in werte]
+    basis = [int(np.floor(r)) for r in roh]
+    rest = ziel - sum(basis)
+    reihenfolge = sorted(range(len(roh)), key=lambda i: (-(roh[i] - basis[i]), i))
+    for i in reihenfolge[:max(rest, 0)]:
+        basis[i] += 1
+    return [b / faktor for b in basis]
+
+
+def beschaeftigte_berechnen(mapping: pd.DataFrame, se: pd.DataFrame,
+                            blatt: str = DEFAULT_BLATT, pool_blatt: str = POOL_BLATT) -> pd.DataFrame:
+    """Beschäftigte (1000) und Frauenanteil (%) je Beruf aus SE und Mapping.
+
+    Returns: DataFrame mit beruf, isco_code, beschaeftigte_1000, frauen_pct, se_blatt.
+    """
+    g_haupt, a_haupt = _se_index(se, blatt, 4), _se_index(se, blatt, 5)
+    g_pool, a_pool = _se_index(se, pool_blatt, 4), _se_index(se, pool_blatt, 5)
+    out = []
+    for code, grp in mapping.groupby("isco_code", sort=True):
+        if code not in g_haupt.index:
+            raise ValueError(f"Berufsgattung {code} nicht in der SE ({grp['beruf'].tolist()})")
+        total, quelle, arten_idx = g_haupt.at[code, "total"], blatt, a_haupt
+        if pd.isna(total) and code in g_pool.index and pd.notna(g_pool.at[code, "total"]):
+            total, quelle, arten_idx = g_pool.at[code, "total"], pool_blatt, a_pool
+        if pd.isna(total):
+            raise ValueError(f"Berufsgattung {code}: kein publizierter SE-Wert")
+        ebenen = set(grp["ebene"])
+        if len(grp) == 1 and ebenen == {EBENE_GATTUNG}:
+            beruf = grp["beruf"].iloc[0]
+            frauen = _frauen_anteil([code], g_haupt)
+            if pd.isna(frauen):
+                frauen = _frauen_anteil([code], g_pool)
+            out.append({"beruf": beruf, "isco_code": code, "roh": float(total),
+                        "frauen_pct": frauen, "se_blatt": quelle})
+            continue
+        if ebenen != {EBENE_BERUFSART}:
+            raise ValueError(f"Berufsgattung {code} hat {len(grp)} Berufe — alle brauchen "
+                             f"ebene={EBENE_BERUFSART}: {grp['beruf'].tolist()}")
+        arten = arten_idx[arten_idx.index.str.startswith(code) & (arten_idx.index.str.len() == 5)]
+        zugeordnet: dict[str, str] = {}
+        for beruf, liste in zip(grp["beruf"], grp["berufsarten"].map(_liste)):
+            if not liste:
+                raise ValueError(f"{beruf}: ebene={EBENE_BERUFSART} ohne berufsarten")
+            for art in liste:
+                if art not in arten.index:
+                    raise ValueError(f"{beruf}: Berufsart {art} gehört nicht zu {code}")
+                if art in zugeordnet:
+                    raise ValueError(f"Berufsart {art} doppelt: {zugeordnet[art]} / {beruf}")
+                zugeordnet[art] = beruf
+        offen = [a for a in arten.index if a not in zugeordnet and pd.notna(arten.at[a, "total"])
+                 and not _ist_ona(arten.at[a, "bezeichnung"])]
+        if offen:
+            raise ValueError(f"Berufsgattung {code}: Berufsarten ohne Beruf: {offen}")
+        eigen = {beruf: float(arten.reindex(_liste(text))["total"].fillna(0.0).sum())
+                 for beruf, text in zip(grp["beruf"], grp["berufsarten"])}
+        summe = sum(eigen.values())
+        for beruf, liste in zip(grp["beruf"], grp["berufsarten"].map(_liste)):
+            frauen = _frauen_anteil(liste, a_haupt)
+            if pd.isna(frauen):
+                frauen = _frauen_anteil(liste, a_pool)
+            # eigener Anteil + Rest der Gattung (onA, nicht publiziert) proportional
+            out.append({"beruf": beruf, "isco_code": code, "roh": float(total) * eigen[beruf] / summe,
+                        "frauen_pct": frauen, "se_blatt": quelle})
+    res = pd.DataFrame(out)
+    res["beschaeftigte_1000"] = np.nan
+    for code, idx in res.groupby("isco_code").groups.items():
+        werte = res.loc[idx, "roh"].tolist()
+        res.loc[idx, "beschaeftigte_1000"] = runde_mit_summe(werte, sum(werte))
+    res["frauen_pct"] = res["frauen_pct"].round(1)
+    return res[["beruf", "isco_code", "beschaeftigte_1000", "frauen_pct", "se_blatt"]]
+
+
+def se_gattungswert(se: pd.DataFrame, code: str, blatt: str = DEFAULT_BLATT,
+                    pool_blatt: str = POOL_BLATT) -> float:
+    """SE-Wert einer Berufsgattung (Jahresblatt, Fallback gepoolt), auf 0.1 gerundet."""
+    for b in (blatt, pool_blatt):
+        g = _se_index(se, b, 4)
+        if code in g.index and pd.notna(g.at[code, "total"]):
+            return round(float(g.at[code, "total"]), 1)
+    return np.nan
 
 
 def branche_fuer_isco(isco_code: str) -> str:
@@ -214,69 +442,118 @@ def _lse() -> dict[str, int]:
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="BFS Strukturerhebung (SE) einlesen und berufe_ch.csv aktualisieren."
+        description="BFS Strukturerhebung (SE) einlesen und Beschäftigte aller Berufe setzen."
     )
     parser.add_argument(
         "--blatt",
         default=DEFAULT_BLATT,
         help=f'Tabellenblatt der BFS-Datei, z. B. "2024" oder "2022-2024" (Default: "{DEFAULT_BLATT}")',
     )
+    parser.add_argument("--neue-berufe", action="store_true",
+                        help="neue SE-Berufsgattungen (>= 5000) in berufe_ch.csv aufnehmen")
+    parser.add_argument("--dry-run", action="store_true", help="Änderungen nur anzeigen")
+    parser.add_argument("--pfad", type=Path, default=PROCESSED_PATH, help="Verzeichnis der CSVs")
     return parser.parse_args(argv)
+
+
+def _lesen(path: Path) -> pd.DataFrame:
+    """CSV als Text lesen, damit unveränderte Zellen exakt erhalten bleiben."""
+    return pd.read_csv(path, dtype=str, keep_default_na=False)
+
+
+def _fmt1(wert: float) -> str:
+    return "" if pd.isna(wert) else f"{float(wert):.1f}"
+
+
+def _spalte_setzen(df: pd.DataFrame, spalte: str, neu: pd.Series, numerisch: bool) -> int:
+    """Spalte setzen; numerisch gleiche Zellen behalten ihren Text. Gibt Anzahl Änderungen zurück."""
+    if spalte not in df.columns:
+        df.insert(df.columns.get_loc("beruf") + 1, spalte, "")
+    alt = df[spalte]
+    if numerisch:
+        alt_num = pd.to_numeric(alt, errors="coerce")
+        neu_num = pd.to_numeric(neu, errors="coerce")
+        gleich = (alt_num.round(6) == neu_num.round(6)) | (alt_num.isna() & neu_num.isna())
+    else:
+        gleich = alt == neu
+    df[spalte] = alt.where(gleich, neu)
+    return int((~gleich).sum())
+
+
+def beschaeftigte_setzen(pfad: Path, werte: pd.DataFrame, mapping: pd.DataFrame,
+                         dry_run: bool = False) -> None:
+    """beschaeftigte_1000, frauen_pct und synonyme in allen CSVs setzen."""
+    w = werte.set_index("beruf")
+    syn = mapping.set_index("beruf")["synonyme"]
+    codes = mapping.set_index("beruf")["isco_code"]
+    for name in CSV_DATEIEN:
+        path = pfad / name
+        if not path.exists():
+            print(f"– {name}: nicht vorhanden, übersprungen")
+            continue
+        df = _lesen(path)
+        fehlt = sorted(set(df["beruf"]) - set(w.index))
+        if fehlt:
+            raise SystemExit(f"{name}: Berufe ohne Eintrag in {MAPPING_CSV.name}: {fehlt}")
+        falsch = df[df["isco_code"].str.strip() != df["beruf"].map(codes)]
+        if not falsch.empty:
+            raise SystemExit(f"{name}: isco_code weicht vom Mapping ab: {falsch['beruf'].tolist()}")
+        vorher = pd.to_numeric(df["beschaeftigte_1000"], errors="coerce").sum()
+        n_b = _spalte_setzen(df, "beschaeftigte_1000", df["beruf"].map(w["beschaeftigte_1000"]).map(_fmt1), True)
+        n_f = _spalte_setzen(df, "frauen_pct", df["beruf"].map(w["frauen_pct"]).map(_fmt1), True)
+        n_s = _spalte_setzen(df, "synonyme", df["beruf"].map(syn).fillna(""), False)
+        nachher = pd.to_numeric(df["beschaeftigte_1000"], errors="coerce").sum()
+        print(f"✓ {name}: {len(df)} Berufe; geändert: {n_b} Beschäftigte, {n_f} Frauenanteil, "
+              f"{n_s} Synonyme; Σ Beschäftigte {vorher:,.1f} → {nachher:,.1f} Tsd.")
+        if not dry_run:
+            df.to_csv(path, index=False)
+
+
+def neue_berufe_aufnehmen(pfad: Path, se: pd.DataFrame, mapping: pd.DataFrame, blatt: str,
+                          mapping_path: Path, dry_run: bool = False) -> pd.DataFrame:
+    """Neue Berufsgattungen (>= 5000, ohne onA/a.n.g.) in berufe_ch.csv und Mapping aufnehmen."""
+    bfs = _se_index(se, blatt, 4).reset_index()
+    exclude_terms = ["onA", "anderweitig nicht genannt", "ohne nähere Angabe"]
+    kandidaten = bfs[(bfs["total"] >= 5.0) & (~bfs["code"].isin(set(mapping["isco_code"])))
+                     & (~bfs["bezeichnung"].str.contains("|".join(exclude_terms), na=False))]
+    if kandidaten.empty:
+        print("✓ keine neuen Berufsgattungen")
+        return mapping
+    basis = _lesen(pfad / "berufe_ch.csv")
+    neue, neue_map = [], []
+    for _, row in kandidaten.iterrows():
+        code = str(row["code"])
+        branche, qualifikation, lohn = assign_metadata(code)
+        neue.append({"beruf": row["bezeichnung"], "isco_code": code, "branche": branche,
+                     "lohn_median_chf": str(lohn), "lohn_quelle": lse_basislohn(code, _lse())[1],
+                     "qualifikation": qualifikation})
+        neue_map.append({"beruf": row["bezeichnung"], "isco_code": code, "ebene": EBENE_GATTUNG,
+                         "begruendung": "automatisch ergänzte SE-Berufsgattung (>= 5000 Beschäftigte)"})
+        print(f"  + {code} {row['bezeichnung']}")
+    mapping = pd.concat([mapping, pd.DataFrame(neue_map)], ignore_index=True).fillna("")
+    basis = pd.concat([basis, pd.DataFrame(neue)], ignore_index=True).fillna("")
+    print(f"✓ {len(neue)} neue Berufe — danach ESCO-Anreicherung und Scoring ausführen")
+    if not dry_run:
+        basis.to_csv(pfad / "berufe_ch.csv", index=False)
+        mapping.to_csv(mapping_path, index=False)
+    return mapping
 
 
 def main(argv: list[str] | None = None) -> None:
     args = parse_args(argv)
-    bfs = parse_bfs_excel(BFS_FILE, blatt=args.blatt)
-    print(f"✓ BFS Strukturerhebung (SE), Blatt «{args.blatt}»: {len(bfs)} Berufsgattungen gelesen")
-    existing = pd.read_csv(PROCESSED_PATH / "berufe_ch.csv")
-    existing["beschaeftigte_1000"] = existing["beschaeftigte_1000"].astype(float)
-    existing["frauen_pct"] = existing["frauen_pct"].astype(float)
-
-    # Bestehende Beschäftigte/Frauen% mit BFS-Daten aktualisieren
-    bfs_lookup = bfs.set_index("isco_code")[["beschaeftigte_total", "frauen_pct"]]
-    updated = 0
-    for idx, row in existing.iterrows():
-        code = str(row["isco_code"])
-        if code in bfs_lookup.index:
-            real_beschaeftigte = bfs_lookup.loc[code, "beschaeftigte_total"]
-            real_frauen = bfs_lookup.loc[code, "frauen_pct"]
-            existing.at[idx, "beschaeftigte_1000"] = round(real_beschaeftigte, 1)
-            if not np.isnan(real_frauen):
-                existing.at[idx, "frauen_pct"] = real_frauen
-            updated += 1
-    print(f"✓ {updated} bestehende Einträge mit BFS-SE-Daten aktualisiert")
-
-    # Neue Berufe (>= 5000, nicht vorhanden)
-    existing_isco = set(existing["isco_code"].astype(str))
-    exclude_terms = ["onA", "anderweitig nicht genannt", "ohne nähere Angabe"]
-    new_candidates = bfs[
-        (bfs["beschaeftigte_total"] >= 5.0)
-        & (~bfs["isco_code"].isin(existing_isco))
-        & (~bfs["beruf_bfs"].str.contains("|".join(exclude_terms), na=False))
-    ].copy()
-
-    new_rows = []
-    for _, row in new_candidates.iterrows():
-        branche, qualifikation, lohn = assign_metadata(str(row["isco_code"]))
-        new_rows.append({
-            "beruf": row["beruf_bfs"],
-            "isco_code": row["isco_code"],
-            "beschaeftigte_1000": round(row["beschaeftigte_total"], 1),
-            "frauen_pct": row["frauen_pct"],
-            "branche": branche,
-            "lohn_median_chf": lohn,
-            "lohn_quelle": lse_basislohn(str(row["isco_code"]), _lse())[1],
-            "qualifikation": qualifikation,
-        })
-
-    new_df = pd.DataFrame(new_rows)
-    combined = pd.concat([existing, new_df], ignore_index=True)
-    combined = combined.sort_values("beschaeftigte_1000", ascending=False).reset_index(drop=True)
-
-    combined.to_csv(PROCESSED_PATH / "berufe_ch.csv", index=False)
-    print(f"✓ {len(new_df)} neue Berufe hinzugefügt")
-    print(f"✓ berufe_ch.csv gespeichert: {len(combined)} Berufe total")
-    print("→ Löhne inkl. Salarium-Profile: python src/data/update_loehne.py --offline")
+    blaetter = tuple(dict.fromkeys([args.blatt, POOL_BLATT]))
+    se = lade_se(blaetter, raw=BFS_FILE, csv=args.pfad / SE_CSV.name, schreiben=not args.dry_run)
+    n_gattungen = int(((se["blatt"] == args.blatt) & (se["ebene"].astype(int) == 4)).sum())
+    print(f"✓ BFS Strukturerhebung (SE), Blatt «{args.blatt}»: {n_gattungen} Berufsgattungen gelesen")
+    mapping_path = args.pfad / MAPPING_CSV.name
+    mapping = lade_mapping(mapping_path)
+    if args.neue_berufe:
+        mapping = neue_berufe_aufnehmen(args.pfad, se, mapping, args.blatt, mapping_path, args.dry_run)
+    werte = beschaeftigte_berechnen(mapping, se, blatt=args.blatt)
+    print(f"✓ {len(werte)} Berufe, {werte['isco_code'].nunique()} Berufsgattungen, "
+          f"Σ {werte['beschaeftigte_1000'].sum():,.1f} Tsd. Erwerbstätige")
+    beschaeftigte_setzen(args.pfad, werte, mapping, dry_run=args.dry_run)
+    print("→ Löhne (Gewichte = Beschäftigte): python src/data/update_loehne.py --offline")
 
 
 if __name__ == "__main__":
