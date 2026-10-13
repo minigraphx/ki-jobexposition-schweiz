@@ -1,0 +1,142 @@
+{
+  "isco_code": "2221",
+  "beruf": "Dipl. Pflegefachperson",
+  "taetigkeiten": [
+    {
+      "name": "Patientinnen bei Körperpflege, Mobilisation und Lagerung unterstützen",
+      "zeitanteil_pct": 15,
+      "stufe": "E0",
+      "modus": null,
+      "restzeit_mensch": null,
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "hoch",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [],
+      "begruendung": "Physische Pflege am Bett; keine Robotik in relevantem Umfang."
+    },
+    {
+      "name": "Medikamente richten und verabreichen, Infusionen und Injektionen vorbereiten und verabreichen",
+      "zeitanteil_pct": 15,
+      "stufe": "E0",
+      "modus": null,
+      "restzeit_mensch": null,
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "hoch",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [],
+      "begruendung": "Physische Tätigkeit mit hoher Sorgfaltspflicht am Patienten; Unit-Dose-Automaten betreffen nur einen kleinen Teil des Richtens."
+    },
+    {
+      "name": "Behandlungspflege durchführen: Wunden versorgen, Katheter legen, Blut entnehmen, Vitalzeichen messen",
+      "zeitanteil_pct": 15,
+      "stufe": "E0",
+      "modus": null,
+      "restzeit_mensch": null,
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "hoch",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [],
+      "begruendung": "Physische, technische Pflegeverrichtungen am Patienten."
+    },
+    {
+      "name": "Gesundheitszustand der Patienten beobachten, einschätzen und bei Verschlechterung oder Notfällen handeln",
+      "zeitanteil_pct": 10,
+      "stufe": "E0",
+      "modus": null,
+      "restzeit_mensch": null,
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "hoch",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [],
+      "begruendung": "Klinisches Assessment am Bett und rasches Handeln in Präsenz."
+    },
+    {
+      "name": "Pflegedokumentation und Verlaufsberichte im KIS erfassen",
+      "zeitanteil_pct": 10,
+      "stufe": "E2",
+      "modus": "delegierend",
+      "restzeit_mensch": "30-50",
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "mittel",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [
+        "regulatorisch"
+      ],
+      "begruendung": "Spracheingabe bzw. ambiente Dokumentation erstellt den Eintrag im KIS; die Pflegefachperson prüft und verantwortet jeden Eintrag. Hemmnis: Datenschutz und Cloud-Restriktionen im Spital."
+    },
+    {
+      "name": "Pflegeplanung mit Pflegediagnosen, Zielen und Massnahmen erstellen und anpassen",
+      "zeitanteil_pct": 5,
+      "stufe": "E1",
+      "modus": "delegierend",
+      "restzeit_mensch": "30-50",
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "mittel",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [],
+      "begruendung": "Aus kopiertem Assessment und Verlauf entwirft das LLM Pflegediagnosen und Massnahmen; die Pflegefachperson prüft und passt jede Planung an den Patienten an."
+    },
+    {
+      "name": "Patienten und Angehörige informieren, beraten und zur Selbstpflege anleiten",
+      "zeitanteil_pct": 10,
+      "stufe": "E0",
+      "modus": null,
+      "restzeit_mensch": null,
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "hoch",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [],
+      "begruendung": "Persönliche Beratung und Anleitung am Bett; Wert liegt in der Beziehung."
+    },
+    {
+      "name": "Visiten begleiten, Übergaberapporte und interprofessionelle Absprachen führen",
+      "zeitanteil_pct": 10,
+      "stufe": "E0",
+      "modus": null,
+      "restzeit_mensch": null,
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "hoch",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [],
+      "begruendung": "Mündliche Abstimmung im Team und mit Ärzten in Präsenz."
+    },
+    {
+      "name": "Pflegerische Austritts- und Überweisungsberichte für Spitex oder Heime verfassen",
+      "zeitanteil_pct": 5,
+      "stufe": "E1",
+      "modus": "delegierend",
+      "restzeit_mensch": "30-50",
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "mittel",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [
+        "regulatorisch"
+      ],
+      "begruendung": "Verlaufseinträge sind als Text kopierbar (Klärung D); das LLM entwirft den Überweisungsbericht, die Pflegefachperson prüft ihn gegen die Akte. Hemmnis: Patientendaten."
+    },
+    {
+      "name": "Lernende und Studierende anleiten sowie Arbeiten an FaGe und Assistenzpersonal delegieren",
+      "zeitanteil_pct": 5,
+      "stufe": "E0",
+      "modus": null,
+      "restzeit_mensch": null,
+      "physisch_automatisierbar": "P0",
+      "p_art": null,
+      "sicherheit": "hoch",
+      "sicherheit_begruendung": null,
+      "ch_hemmnis": [],
+      "begruendung": "Anleitung und Führung in Präsenz."
+    }
+  ],
+  "unsicherheit": "niedrig",
+  "kommentar": "Setting: Pflegefachperson HF im Akutspital, Bettenstation. Der grösste Teil der Arbeit ist physisch oder präsenzgebunden; exponiert sind nur Dokumentations- und Schreibanteile. Zeitanteile grob geschätzt."
+}
