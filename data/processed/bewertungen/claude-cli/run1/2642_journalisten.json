@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "e4bcd175c88322c7aee72cda38a2a933a6269e1df2e050ec1f3e2100b1735dd6",
+    "isco_code": "2642",
+    "beruf": "Journalisten",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T22:37:24+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4110,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 6287,
+      "api_aequivalent_usd": 0.1659582
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4110,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 6287,
+        "output_tokens_details": {
+          "thinking_tokens": 2781
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4110,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1659582
+      }
+    ],
+    "request_ids": [
+      "9fea1c1b-aeb7-41a2-89bb-b63ec02c1aba"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2642",
+    "beruf": "Journalisten",
+    "taetigkeiten": [
+      {
+        "name": "Nachrichtenlage, Agenturmeldungen und soziale Medien verfolgen und Themen sondieren",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob LLM-Digests und Monitoring-Agenten die Sichtungszeit wirklich halbieren, weil die eigene Lektüre Teil der Themenfindung bleibt; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Monitoring-Werkzeuge mit LLM fassen Agenturticker, Social Media und Medienmitteilungen zusammen und markieren Relevantes; die Journalistin wählt und beurteilt die Themen selbst."
+      },
+      {
+        "name": "Hintergrundrecherche in Dokumenten, Archiven, Datenbanken und im Web durchführen",
+        "zeitanteil_pct": 12,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche und Dokumentenanalyse fassen Quellen, Geschäftsberichte und Ratsprotokolle zusammen; die Journalistin recherchiert weiterhin selbst und prüft jede Quelle."
+      },
+      {
+        "name": "Interviews und Gespräche führen, Vor-Ort-Termine und Veranstaltungen besuchen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Präsenz, Gesprächsführung und Beobachtung vor Ort sind der Kern der Tätigkeit."
+      },
+      {
+        "name": "Interviewaufnahmen transkribieren und Gesprächsnotizen auswerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Transkriptionssoftware erstellt Transkript und Zusammenfassung; die Journalistin prüft verwendete Zitate gegen die Aufnahme, wobei Schweizerdeutsch den Korrekturaufwand erhöht."
+      },
+      {
+        "name": "Fakten verifizieren und Aussagen bei Quellen gegenchecken",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verifikation erfolgt über Rückfragen bei Quellen, Autorisierung von Zitaten und Primärdokumente; KI-Hilfen sparen wegen Halluzinationsrisiko keine 50 %."
+      },
+      {
+        "name": "Kurzmeldungen und Nachrichtenartikel aus Agenturmaterial, Medienmitteilungen und Notizen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Material einfügen, LLM erstellt die Meldung im Hausstil; die Journalistin prüft jeden Text inhaltlich und gibt ihn frei (Presserat-Kodex, Deklarationsregeln)."
+      },
+      {
+        "name": "Hintergrundartikel, Reportagen, Porträts und Kommentare schreiben",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Ein LLM-Entwurf aus Notizen könnte bei manchen Formaten 50 % sparen; E1 unterstützend (30-50) ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Eigene Stimme, Dramaturgie, Gewichtung und Meinung prägen die Texte; KI liefert Formulierungshilfen, spart bei gleicher Qualität aber typischerweise keine 50 %."
+      },
+      {
+        "name": "Titel, Leads, Teaser, Bildlegenden und Social-Media-Posts formulieren",
+        "zeitanteil_pct": 7,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Artikel einfügen, LLM erstellt Titel- und Teaservarianten sowie Posts; die Journalistin wählt aus und prüft jede Variante."
+      },
+      {
+        "name": "Texte redigieren, kürzen, an Hausstil und Kanal anpassen und Korrektur lesen",
+        "zeitanteil_pct": 6,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM kürzt auf Zeilenlänge, adaptiert für Online/Print und korrigiert Rechtschreibung; die Journalistin prüft jede Fassung auf Sinn und Fakten."
+      },
+      {
+        "name": "An Redaktionssitzungen teilnehmen und Themen mit Ressort und Fotografie abstimmen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Abstimmungstätigkeit im Team."
+      },
+      {
+        "name": "Kontakte zu Quellen, Behörden und Informanten pflegen und Netzwerk aufbauen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Vertrauensbeziehung zu Quellen beruht auf persönlichem Kontakt."
+      },
+      {
+        "name": "Beiträge im CMS aufbereiten: Bilder auswählen und bearbeiten, Kurzvideos schneiden, publizieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob generative Video- und Bildfunktionen im Redaktions-CMS die Aufbereitung typischerweise halbieren; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in CMS und Schnittsoftware schlagen Bildausschnitte, Untertitel und Video-Rohschnitte vor; die Journalistin prüft und publiziert jeden Beitrag."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Redaktorin bzw. Redaktor bei einer Schweizer Tages- oder Regionalzeitung mit Print und Online. Die ESCO-Angaben passen gut. Die grössten Unsicherheiten betreffen das Schreiben längerer Texte (E0 oder E1 unterstützend), das Monitoring und die Multimedia-Aufbereitung im CMS.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Kurzmeldungen, Titel/Teaser, Redigieren und Transkription, die Chat-LLM und Transkriptionssoftware übernehmen; Recherche und Monitoring werden durch Agenten unterstützt.",
+      "begruendung": "Etwa die Hälfte der Arbeitszeit ist exponiert, meist delegierend: Die KI entwirft Meldungen, Titel und gekürzte Fassungen, die Journalistin prüft jede Ausgabe; bei Recherche und Monitoring arbeitet die KI nur unterstützend. Interviews, Vor-Ort-Arbeit, Verifikation und das Schreiben von Reportagen und Kommentaren bleiben weitgehend menschlich. Bremsend wirken Presserat-Richtlinien und Deklarationspflichten sowie das Vertrauen des Publikums; Schweizerdeutsch erhöht den Korrekturaufwand bei Transkripten.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

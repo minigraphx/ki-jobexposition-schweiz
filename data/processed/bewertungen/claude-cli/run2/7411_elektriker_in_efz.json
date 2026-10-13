@@ -1,0 +1,247 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "059a1530b48d11796366dc6f2054e8354536e9d51119e4ed8c930887fded79a4",
+    "isco_code": "7411",
+    "beruf": "Elektriker/in EFZ",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-13T22:42:12+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 6285,
+      "cache_read_input_tokens": 76462,
+      "output_tokens": 7711,
+      "api_aequivalent_usd": 0.2198084
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 39811,
+        "output_tokens": 4409,
+        "output_tokens_details": {
+          "thinking_tokens": 1370
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.09615019999999999
+      },
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 6285,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3302,
+        "output_tokens_details": {
+          "thinking_tokens": 191
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6285,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1236582
+      }
+    ],
+    "request_ids": [
+      "d4d08b4b-e2a5-4bb4-a14c-74f0931696ba",
+      "be0a8e4d-285c-4fd5-b73e-788a310a33ee"
+    ],
+    "versuche": 2,
+    "status": "ok",
+    "fehler": [
+      "Versuch 1: Zeitanteile summieren auf 105, nicht exakt 100"
+    ],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "7411",
+    "beruf": "Elektriker/in EFZ",
+    "taetigkeiten": [
+      {
+        "name": "Rohinstallation erstellen: Wandschlitze fräsen, Leerrohre, Dosen und Kabeltrassen verlegen und befestigen",
+        "zeitanteil_pct": 18,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Arbeit auf der Baustelle; Bohr- und Montageroboter gibt es nur in Pilotprojekten, nicht im regulären Baustellenbetrieb."
+      },
+      {
+        "name": "Kabel einziehen, verdrahten und Verteiler bzw. Unterverteilungen bestücken und anschliessen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Montage- und Anschlussarbeit vor Ort; keine verfügbare Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Fertiginstallation: Schalter, Steckdosen, Leuchten, Sicherungs- und FI-Schalter sowie Geräte montieren und anschliessen",
+        "zeitanteil_pct": 14,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Feinmontage in Gebäuden; nicht durch generative KI oder Robotik übernehmbar."
+      },
+      {
+        "name": "Installationen mit Messgeräten prüfen (Isolation, Schleifenimpedanz, FI-Auslösung) und in Betrieb nehmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Messungen erfordern Anschliessen der Messgeräte an der Anlage vor Ort; Installationstester mit Messabläufen ersetzen die Person nicht."
+      },
+      {
+        "name": "Störungen an elektrischen Anlagen suchen und Defekte im Service beheben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fehlersuche mit Messgeräten und Reparatur an der Anlage dominieren; ein LLM kann Hinweise geben, spart aber keine 50 % der Zeit."
+      },
+      {
+        "name": "Mess- und Prüfprotokolle sowie Unterlagen zum Sicherheitsnachweis erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Messwerte, Fotos und Spracheingabe in einer Formular-App erzeugen das Protokoll; der Elektriker prüft jedes Protokoll fachlich, da es nach NIV unterschriftsrelevant ist."
+      },
+      {
+        "name": "Arbeits- und Regierapporte mit Arbeitsbeschrieb, Material und Stunden ausfüllen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe in der Rapport-App erstellt den Rapport inkl. Materialpositionen; der Elektriker prüft jeden Rapport. Dialekt und Baustellenlärm erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Baustelle einrichten, Material bereitstellen, Lieferungen entgegennehmen und aufräumen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Logistik vor Ort; keine relevante Automatisierung auf der Baustelle."
+      },
+      {
+        "name": "Elektropläne und Schemas lesen, Arbeitsschritte vor Ort planen und mit Bauleitung und anderen Gewerken absprechen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Planlesen ist an die Situation vor Ort gebunden, Absprachen erfolgen persönlich auf der Baustelle; KI spart hier keine 50 %."
+      },
+      {
+        "name": "Gebäudeautomation (KNX, Smart Home) parametrieren und in Betrieb setzen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Parametrierung in Herstellertools (z. B. ETS) mit Funktionstests vor Ort; LLM-Hilfe spart nach bester Einschätzung keine 50 %."
+      },
+      {
+        "name": "Kundschaft in die Bedienung der Anlagen instruieren und Anlagen übergeben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Instruktion vor Ort an der Anlage; Präsenztätigkeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Elektriker/in EFZ (früher Elektroinstallateur/in) in einem KMU-Installationsbetrieb, Neubau, Umbau und Service in Wohn- und Gewerbebauten. ESCO passt gut; Kompetenzen wie Firmware programmieren oder Löten sind für das CH-Berufsbild randständig und wurden nicht übernommen. Grenzfälle sind Protokolle und Rapporte (Qualität der Spracheingabe bei Dialekt/Lärm) sowie die KNX-Parametrierung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur Mess- und Prüfprotokolle sowie Arbeits- und Regierapporte, die mit Spracheingabe und Formular-Apps mit generativer KI entstehen; die Installationsarbeit selbst ist nicht betroffen.",
+      "begruendung": "Rund 10 % der Arbeitszeit sind exponiert, und zwar durchweg delegierend: Die KI erstellt Protokoll bzw. Rapport, der Elektriker prüft jedes Dokument fachlich. Der Kern des Berufs bleibt die physische Installation, Prüfung und Fehlersuche vor Ort. Die Unterschriftspflicht beim Sicherheitsnachweis nach NIV sowie Dialekt und Lärm auf der Baustelle bremsen die Umsetzung.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

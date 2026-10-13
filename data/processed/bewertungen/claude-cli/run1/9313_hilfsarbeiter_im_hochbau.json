@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "aeb7aa10a25d77366499bb05a443c566bc42c7ae777e479207dbb699b0b1897c",
+    "isco_code": "9313",
+    "beruf": "Hilfsarbeiter im Hochbau",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T22:39:43+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3198,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 3474,
+      "api_aequivalent_usd": 0.10240219999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3198,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3474,
+        "output_tokens_details": {
+          "thinking_tokens": 679
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3198,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.10240219999999998
+      }
+    ],
+    "request_ids": [
+      "662ebfe9-1c1b-47af-9daf-c8e1b7ab1a9b"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "9313",
+    "beruf": "Hilfsarbeiter im Hochbau",
+    "taetigkeiten": [
+      {
+        "name": "Material, Werkzeuge und Geräte auf der Baustelle transportieren und bereitstellen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliches Tragen, Verschieben und Bereitstellen auf wechselnden Baustellen; der Kran wird vom Kranführer bedient, und autonome Transportroboter sind auf Hochbaustellen nicht im regulären Einsatz."
+      },
+      {
+        "name": "Beton und Mörtel mischen, Zement entleeren und den Fachleuten zureichen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handlangerarbeit. Transportbeton und Mörtelsilos sind bereits verbreitet; die verbleibende Arbeit (Beschicken, Zureichen) übernimmt aber keine verfügbare Technik zu 50 %."
+      },
+      {
+        "name": "Beton einbringen, verdichten, abziehen und nachbehandeln",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit mit Vibrator und Abziehlatte vor Ort. Die Betonpumpe erleichtert die Arbeit, ersetzt die Person aber nicht."
+      },
+      {
+        "name": "Boden von Hand und mit Kleingeräten ausheben und Aushub verschieben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Erdarbeit und Bedienen von Kleinbaggern und Dumpern. Autonome Bagger gibt es nur in Pilotprojekten."
+      },
+      {
+        "name": "Schalungen, Bauprofile und Holzbauteile mit aufstellen und befestigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Montage nach Anweisung des Poliers oder Maurers. Dafür gibt es keine Robotik."
+      },
+      {
+        "name": "Wände und Untergründe für Verputz, Anstrich oder Tapete vorbereiten (abdecken, schleifen, grundieren)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Oberflächenarbeit an wechselnden Bauteilen. Schleifroboter sind nicht im regulären CH-Einsatz."
+      },
+      {
+        "name": "Bei Trockenbau- und Ausbauarbeiten Platten zuschneiden und montieren helfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Montage vor Ort. Keine verfügbare Automatisierung."
+      },
+      {
+        "name": "Baustelle und Arbeitsbereiche reinigen, Bauschutt trennen und entsorgen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Reinigung auf unebenen, verstellten Flächen. Autonome Reinigungsmaschinen sind auf Rohbaustellen nicht einsetzbar."
+      },
+      {
+        "name": "Gelieferte Baustoffe und ausgeführte Mauerwerksarbeiten auf Schäden und Mängel sichtkontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sichtprüfung vor Ort mit kurzer Meldung an den Polier. Eine Foto-KI würde gegenüber dem Blick vor Ort kaum Zeit sparen."
+      },
+      {
+        "name": "Absperrungen und Schutzmassnahmen umsetzen, Anweisungen des Poliers entgegennehmen und Stunden eintragen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Schutzmassnahmen werden physisch umgesetzt, die Absprachen laufen mündlich vor Ort. Das Eintragen der Stunden dauert nur Minuten, KI spart dabei nichts Relevantes."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: ungelernter Bauarbeiter (Handlanger) in einer Schweizer Hochbauunternehmung, Rohbau und Umbau, unter Anleitung von Polier und Maurern. Die ESCO-Beschreibung ist knapp, die Kompetenzliste deckt die physischen Hilfsarbeiten aber gut ab. Schriftliche Arbeit kommt praktisch nicht vor, deshalb gibt es keine exponierte Tätigkeit.",
+    "zusammenfassung": {
+      "haupt_risiko": "Keine Tätigkeit ist wesentlich exponiert: Transport, Beton-, Aushub-, Vorbereitungs- und Reinigungsarbeiten sind rein physisch und werden weder von generativer KI noch von verfügbarer Robotik übernommen.",
+      "begruendung": "Praktisch die gesamte Arbeitszeit besteht aus körperlicher Hilfsarbeit auf wechselnden Schweizer Baustellen, deshalb gibt es keinen ersetzenden, delegierenden oder unterstützenden KI-Einsatz. Administratives (Stunden eintragen) macht nur wenige Minuten aus und liegt meist beim Polier. Auch Baurobotik ist im regulären CH-Baubetrieb bisher nur in Pilotprojekten zu finden.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "f2070e6e07fb372502f5eaf4c7362b95e988ee246df297edfc00553b0a26164a",
+    "isco_code": "5223",
+    "beruf": "Verkäufer in Handelsgeschäften",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-13T22:45:51+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 40496,
+      "output_tokens": 5003,
+      "api_aequivalent_usd": 0.10816719999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 40496,
+        "output_tokens": 5003,
+        "output_tokens_details": {
+          "thinking_tokens": 1828
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.10816719999999999
+      }
+    ],
+    "request_ids": [
+      "287c4baf-bb36-41dd-a044-c68862babee4"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5223",
+    "beruf": "Verkäufer in Handelsgeschäften",
+    "taetigkeiten": [
+      {
+        "name": "Kundinnen und Kunden im Laden beraten, Bedürfnisse klären und Produkte vorführen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Verkaufsgespräch von Angesicht zu Angesicht mit Vorführen der Ware; der Wert liegt in der Präsenz. Keine nicht-generative Technik übernimmt das."
+      },
+      {
+        "name": "Ware an der Kasse scannen, kassieren, verpacken und Kassenabschluss machen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit ohne LLM-Bezug. Self-Checkout- und Self-Scanning-Kassen sowie Bargeld-Recycler sind im CH-Detailhandel verbreitet (P1); im kleinen Fachgeschäft weniger."
+      },
+      {
+        "name": "Ware annehmen, auf Menge und Schäden kontrollieren, auspacken und Regale auffüllen",
+        "zeitanteil_pct": 18,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit auf der Verkaufsfläche und im Lager; Regalauffüllroboter gibt es im regulären Filialbetrieb nicht."
+      },
+      {
+        "name": "Waren präsentieren, Verkaufsflächen und Schaufenster einrichten und Preisbeschriftung anbringen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physisches Einrichten vor Ort; elektronische Preisschilder decken nur einen kleinen Teil der Zeit ab."
+      },
+      {
+        "name": "Laden sauber und ordentlich halten und Ladendiebstahl vorbeugen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Ordnung und Präsenz auf der Fläche; Warensicherungsanlagen und Videoüberwachung ersetzen die Aufmerksamkeit nicht zu 50 %."
+      },
+      {
+        "name": "Lagerbestand im Warenwirtschaftssystem überwachen und Nachbestellungen auslösen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bestandsführung und Nachbestellung sind regelbasiert; automatische Disposition im Warenwirtschaftssystem (klassische Software) ist verfügbar, kein LLM nötig."
+      },
+      {
+        "name": "Kundenbestellungen und Reservationen erfassen, bei Lieferanten abklären und nachverfolgen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfassung erfolgt im Gespräch an der Theke in der Kassen-/Warenwirtschaftssoftware, Abklärungen meist telefonisch; generative KI spart hier keine 50 %."
+      },
+      {
+        "name": "Umtausch, Rückerstattungen und Reklamationen am Verkaufspunkt bearbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Klärung mit der Kundin, Prüfen der Ware und Kulanzentscheid vor Ort; Präsenztätigkeit."
+      },
+      {
+        "name": "Schriftliche Kundenanfragen (E-Mail, Online-Shop) beantworten und über Bestell- oder Reparaturstatus informieren",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Anfrage und Bestelldaten einfügen, das Chat-LLM entwirft die Antwort; die Verkäuferin prüft jede Antwort auf Richtigkeit (Termine, Preise) und sendet sie."
+      },
+      {
+        "name": "Produktinformationen, technische Daten und Vergleiche für Kundenfragen nachschlagen",
+        "zeitanteil_pct": 3,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Suche gegenüber Herstellerkatalog/Produktdatenbank wirklich 50 % Zeit spart und Halluzinationen tief genug sind; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Assistent mit Websuche bzw. KI-Suche in Produktdaten fasst Spezifikationen und Unterschiede zusammen; die Verkäuferin beurteilt selbst und berät."
+      },
+      {
+        "name": "Inventur sowie Haltbarkeits- und Qualitätskontrollen der Ware durchführen",
+        "zeitanteil_pct": 2,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zählen und Sichtkontrolle am Regal sind physisch; Handscanner unterstützen, übernehmen aber nicht ≥ 50 % der Zeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Detailhandelsfachfrau/-mann EFZ in einer Filiale (Lebensmittel- oder Fachhandel) mit Beratung, Kasse und Warenbewirtschaftung. Die ESCO-Beschreibung ist knapp, die Kompetenzliste passt aber gut. Die Zeitanteile schwanken stark zwischen Grossverteiler (mehr Kasse/Regale) und Fachgeschäft (mehr Beratung). Grenzfälle sind Produktrecherche und schriftliche Kundenanfragen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur kleine Randtätigkeiten: schriftliche Kundenanfragen (Antwortentwürfe per Chat-LLM) und die Suche nach Produktinformationen (KI-Recherche); Beratung, Kasse und Warenbewirtschaftung sind nicht durch generative KI exponiert.",
+      "begruendung": "Nur rund 6 % der Arbeitszeit sind exponiert, und zwar delegierend (KI entwirft E-Mails, die Verkäuferin prüft jede) bzw. unterstützend (Recherche). Der Kern des Berufs ist Präsenz- und physische Arbeit im Laden. Automatisierungsdruck entsteht eher durch klassische Technik wie Self-Checkout und automatische Disposition als durch generative KI.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

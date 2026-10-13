@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "1767afd364d4a3fbfe2c297c801c1b210cd816533565ec17cc06c60703c8c603",
+    "isco_code": "2341",
+    "beruf": "Primarlehrer/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T22:38:29+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 9911,
+      "cache_read_input_tokens": 78036,
+      "output_tokens": 8087,
+      "api_aequivalent_usd": 0.25665119999999997
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 9911,
+        "cache_read_input_tokens": 78036,
+        "output_tokens": 8087,
+        "output_tokens_details": {
+          "thinking_tokens": 1824
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 9911,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.25665119999999997
+      }
+    ],
+    "request_ids": [
+      "8f94cef9-b68f-49e9-9d6b-01f17789e320"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2341",
+    "beruf": "Primarlehrer/in",
+    "taetigkeiten": [
+      {
+        "name": "Lektionen vor der Klasse durchführen, Lernprozesse begleiten und die Klasse führen (inkl. Disziplin, Feedback, Gruppenarbeiten)",
+        "zeitanteil_pct": 50,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Beziehungstätigkeit im Klassenzimmer mit Kindern; Lernsoftware ersetzt die Lehrperson nicht in relevantem Umfang."
+      },
+      {
+        "name": "Unterricht nach Lehrplan 21 planen (Jahres-, Quartals- und Lektionsplanung, Differenzierung)",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Lehrperson plant weiterhin selbst und passt an ihre Klasse an; ein Chat-LLM liefert Planungsentwürfe, Sequenzideen und Differenzierungsvorschläge aus eingefügten Lehrplanzielen. Nahe an der 50 %-Schwelle, da viel Kontext im Kopf der Lehrperson liegt."
+      },
+      {
+        "name": "Arbeitsblätter, Lernmaterialien und Prüfungen erstellen",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt Aufgaben, Texte und Prüfungen in verschiedenen Niveaus; die Lehrperson prüft jedes Blatt fachlich und passt es an die Klasse und das Lehrmittel an."
+      },
+      {
+        "name": "Handschriftliche Schülerarbeiten, Hefte und Prüfungen korrigieren und bewerten",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Bei Rechnungen und Diktaten könnte Handschrifterkennung mit Fehlermarkierung (E2, unterstützend, 30-50) die Schwelle erreichen; bei freien Texten jüngerer Kinder kaum, daher E0 knapp wahrscheinlicher.",
+        "ch_hemmnis": [],
+        "begruendung": "Kinderhandschrift, kurze Arbeiten und das Scannen machen den Zeitgewinn gering; die Lehrperson liest und beurteilt jede Arbeit selbst."
+      },
+      {
+        "name": "Lernberichte, Zeugnisbemerkungen und Beobachtungsnotizen zu Schülerinnen und Schülern formulieren",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Stichworten und Beobachtungen entwirft das LLM die Berichtstexte; die Lehrperson prüft und verantwortet jeden Bericht. Hemmnis: kantonaler Datenschutz für Schülerdaten."
+      },
+      {
+        "name": "Elterngespräche und Standortgespräche führen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Gespräch von Angesicht zu Angesicht; Beziehung und Vertrauen stehen im Zentrum."
+      },
+      {
+        "name": "Elternbriefe, Mitteilungen und E-Mails an Eltern verfassen und übersetzen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Das LLM erstellt Standardmitteilungen aus Stichworten und übersetzt sie für fremdsprachige Eltern; die Lehrperson sichtet kurz und versendet. Sensible E-Mails werden genauer geprüft."
+      },
+      {
+        "name": "An Teamsitzungen teilnehmen und sich mit Schulleitung, SHP und Fachpersonen absprechen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz, Abstimmung und gemeinsame Fallbesprechungen."
+      },
+      {
+        "name": "Pausenaufsicht halten, Exkursionen, Schulreisen und Schulanlässe begleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz und Aufsichtspflicht für die Sicherheit der Kinder."
+      },
+      {
+        "name": "Schulzimmer einrichten, Material bereitstellen und Absenzen erfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Vorbereitung im Schulzimmer; Absenzenerfassung ist bereits klassische Schulsoftware und kostet kaum Zeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Klassenlehrperson an einer öffentlichen Primarschule (Zyklus 2) in der Deutschschweiz mit Vollpensum. Der ESCO-Input passt gut. Grenzfälle sind die Unterrichtsplanung (knapp an der 50 %-Schwelle) und die Korrektur handschriftlicher Arbeiten (E0 vs. E2).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Erstellen von Arbeitsblättern und Prüfungen, die Unterrichtsplanung, Lernberichte und Elternmitteilungen, die ein Chat-LLM entwirft oder vorbereitet; der Unterricht vor der Klasse ist nicht betroffen.",
+      "begruendung": "Rund ein Viertel der Arbeitszeit ist exponiert, hauptsächlich delegierend (Material, Berichte) und unterstützend (Planung), nur bei einfachen Elternmitteilungen ersetzend. Der Kern des Berufs – Unterricht, Klassenführung, Elterngespräche und Aufsicht – bleibt Präsenzarbeit. Kantonale Datenschutzvorgaben für Schülerdaten und das Vertrauen der Eltern bremsen den Einsatz bei Berichten und Mitteilungen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}
