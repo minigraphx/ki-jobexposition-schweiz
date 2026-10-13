@@ -193,10 +193,11 @@ st.markdown("""
 - **jobs.ch KI Report 2026** (JobCloud, Juni 2026): Der Anteil der Inserate für Berufseinsteiger
   sank im **Gesamtmarkt** 2025 um **32 %** gegenüber dem Durchschnitt 2019–2022.
   In den KI-exponierten Kategorien (IT, Administration/HR, Banking, Marketing, Einkauf, Vertrieb)
-  sank der Anteil der Junior-Inserate um **16 %**, jener der Senior-Inserate stieg um **26 %**.
-  *Einschränkung:* Inseratanteile einer Plattform, keine Einstellungen; keine Werte je Kategorie.
+  weist der Report für Junior-Inserate **−16 %** und für Senior-Inserate **+26 %** aus.
+  *Einschränkung:* Inserate einer Plattform, keine Einstellungen; keine Werte je Kategorie.
   Die −32 % beziehen sich auf den Gesamtmarkt, nicht auf KI-exponierte Berufe — so werden sie in
-  einzelnen Sekundärquellen falsch wiedergegeben.
+  einzelnen Sekundärquellen falsch wiedergegeben. Der Report-Text spricht von einem «weitaus
+  stärkeren» Rückgang in exponierten Berufen; die ausgewiesenen Werte belegen das nicht eindeutig.
 - **AXA KMU-Arbeitsmarktstudie 2026** (Sotomo, Befragung März 2026): **12 %** der KMU, die KI
   nutzen, erwarten, dank KI auf Personal verzichten zu können.
   *Einschränkung:* Erwartung, keine gemessene Entwicklung; N = 336 KMU.
@@ -207,8 +208,10 @@ st.markdown("""
 - **HSLU AI Jobs Report 2026** (Okt. 2026): Ergänzende Perspektive auf die Gegenbewegung —
   die Nachfrage nach KI-Fachkräften in Stelleninseraten wächst, vor allem für erfahrene Profile.
 
-**Zwischenfazit Schweiz:** Bisher zeigt sich KI vor allem über **weniger Einstiegsstellen** und
-**Nicht-Nachbesetzung**, kaum über messbare Entlassungswellen. Ein kausaler Nachweis fehlt.
+**Zwischenfazit Schweiz:** In stark exponierten Berufen ist ein überdurchschnittlicher Anstieg
+der Arbeitslosigkeit messbar (KOF). Befragungen deuten darauf hin, dass dies weniger über breite
+Entlassungen als über **Nicht-Nachbesetzung** und **weniger Einstiegsstellen** geschieht.
+Ein kausaler Nachweis fehlt.
 """)
 
 st.subheader("International (nur qualitativ — Zahlen nicht auf die Schweiz übertragbar)")
@@ -270,8 +273,8 @@ st.markdown("""
   *sein könnten* – nicht dass Jobs verschwinden. Viele Berufe wandeln sich.
   **Exposition** beschreibt die technische Möglichkeit; die **beobachtete Wirkung** ist die
   tatsächlich gemessene Entwicklung auf dem Arbeitsmarkt. Beides sind getrennte Grössen.
-  Bisher wirkt KI in der Schweiz vor allem über **weniger Einstiegsstellen** und
-  **Nicht-Nachbesetzung**, nicht über breite Entlassungen
+  Bisher wirkt KI in der Schweiz nach heutigem Wissensstand vor allem über **weniger
+  Einstiegsstellen** und **Nicht-Nachbesetzung**, weniger über breite Entlassungen
   (siehe «Was wir über die tatsächliche Wirkung wissen»).
 - **Datenbasis 2024.** Die Beschäftigungszahlen basieren auf der BFS Strukturerhebung (SE) 2024
   (Stichprobe; Werte kleiner Berufe sind entsprechend unsicher). Die KI-Landschaft

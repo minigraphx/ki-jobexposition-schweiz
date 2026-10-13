@@ -39,8 +39,8 @@ st.info(
     "**Wichtig:** Hohe KI-Exposition bedeutet nicht automatisch Jobverlust. "
     "Viele Berufe werden sich transformieren, nicht verschwinden. "
     "Die Scores sind Einschätzungen eines Sprachmodells — keine Prognosen. "
-    "Was bisher tatsächlich beobachtet wird (in der Schweiz v. a. weniger Einstiegsstellen "
-    "und Nicht-Nachbesetzung), fasst die Seite «Methodik & Quellen» zusammen.",
+    "Was bisher tatsächlich beobachtet wird (in der Schweiz u. a. mehr Arbeitslose in stark "
+    "exponierten Berufen, weniger Einstiegsstellen), fasst die Seite «Methodik & Quellen» zusammen.",
     icon="ℹ️",
 )
 
