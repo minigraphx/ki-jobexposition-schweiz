@@ -335,10 +335,18 @@ class TestIdempotenz:
         with pytest.raises(SystemExit, match="ohne Eintrag"):
             ub.main(["--pfad", str(kopie), "--dry-run"])
 
+    def test_neue_berufe_ohne_kandidaten(self, kopie):
+        vorher = self._inhalte(kopie)
+        ub.main(["--pfad", str(kopie), "--neue-berufe"])
+        assert self._inhalte(kopie) == vorher
+
 
 # ---------------------------------------------------------------------------
 # Neue Berufsgattungen (--neue-berufe)
 # ---------------------------------------------------------------------------
+
+NEUE_CODES = {"3115", "3123", "3311", "3355", "3434", "4419", "7223", "9329"}
+
 
 class TestNeueBerufe:
     def test_kandidaten_synthetisch(self, monkeypatch):
@@ -359,6 +367,31 @@ class TestNeueBerufe:
         assert ub.ist_restgruppe("Führungskräfte, onA")
         assert ub.ist_restgruppe("Juristen, anderweitig nicht genannt")
         assert not ub.ist_restgruppe("Poliere und Vorarbeiter")
+
+    def test_alle_grossen_gattungen_erfasst(self, mapping, se_csv):
+        """Vollständigkeit: keine SE-Gattung >= 5000 (Blatt 2024) fehlt, ausser Restgruppen."""
+        assert ub.neue_kandidaten(se_csv, mapping).empty
+        g = se_csv[(se_csv["blatt"] == "2024") & (se_csv["ebene"] == 4)]
+        fehlend = g[(g["total"] >= ub.NEUE_BERUFE_SCHWELLE) & ~g["code"].isin(set(mapping["isco_code"]))]
+        assert fehlend["bezeichnung"].map(ub.ist_restgruppe).all(), fehlend["code"].tolist()
+        assert not set(ub.RESTGRUPPEN_AUSNAHMEN) & set(fehlend["code"])
+
+    def test_neue_eintraege_in_daten(self, mapping, se_csv):
+        m = mapping.set_index("isco_code")
+        scores = _csv("scores.csv").set_index("isco_code")
+        g = se_csv[(se_csv["blatt"] == "2024") & (se_csv["ebene"] == 4)].set_index("code")
+        lse = ul.lade_lse(schreiben=False)
+        for code in NEUE_CODES:
+            assert m.at[code, "beruf"] == g.at[code, "bezeichnung"]  # SE-Bezeichnung als Titel
+            assert m.at[code, "ebene"] == ub.EBENE_GATTUNG
+            r = scores.loc[code]
+            assert float(r["beschaeftigte_1000"]) == pytest.approx(round(g.at[code, "total"], 1))
+            assert r["branche"] == ub.branche_fuer_isco(code)
+            assert int(r["lohn_median_chf"]) == ul.lse_basislohn(code, lse)[0]
+            # nicht bewertet, bis die Neubewertung läuft
+            assert r["beschreibung_hash"] == "" and r["score_gesamt"] == "" and r["score_ch"] == ""
+        for code in ub.RESTGRUPPEN_AUSNAHMEN:
+            assert "Restgruppe" in m.at[code, "begruendung"]
 
     def test_aufnahme_auf_kopie(self, tmp_path, monkeypatch):
         """Eintrag entfernen → --neue-berufe nimmt ihn mit SE-Wert, Branche und Lohn wieder auf."""
