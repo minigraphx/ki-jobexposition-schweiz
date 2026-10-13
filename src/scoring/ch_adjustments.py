@@ -6,7 +6,9 @@ die den Strukturwandel beschleunigen oder verlangsamen.
 
 Zusätzlich wird der LLM-generierte `zeitrahmen` um ±1 Stufe verschoben,
 abhängig vom Grossfirmen-Anteil in der jeweiligen Branche (KMU-Adoptions-Faktor).
-Datenquelle: BFS Betriebszählung 2008, `data/processed/kmu_anteil_branche.csv`.
+Datenquelle: BFS STATENT (ts-x-06.02.01.01, marktwirtschaftliche Unternehmen nach
+Wirtschaftsabteilung und Grössenklasse), aufbereitet durch `src/data/fetch_statent.py`
+in `data/processed/kmu_anteil_branche.csv`.
 """
 
 from __future__ import annotations
@@ -75,10 +77,16 @@ _PROCESSED_DATA_PATH = Path(__file__).parent.parent.parent / "data" / "processed
 # Zeitrahmen-Leiter (aufsteigend = weiter in der Zukunft)
 ZEITRAHMEN_STUFEN: list[str] = ["1-2 Jahre", "3-5 Jahre", "5-10 Jahre", ">10 Jahre"]
 
-# Schwellenwerte für Grossfirmen-Anteil (BZ 2008, ≥250 VZÄ)
-# Kalibriert auf tatsächliche Datenlage (max. ~49 % in CH-Branchen)
-GROSSFIRMEN_SCHWELLE_HOCH = 0.40   # ≥40 % → −1 Stufe (frühere Adoption)
-GROSSFIRMEN_SCHWELLE_TIEF = 0.10   # <10 % → +1 Stufe (spätere Adoption)
+# Schwellenwerte für den Grossfirmen-Anteil (STATENT, Anteil der Beschäftigten in
+# Unternehmen mit ≥250 Beschäftigten; schweizweit 2024: 34 %).
+# Oberes Segment: Mehrheit der Beschäftigten arbeitet in Grossunternehmen (≥50 %).
+# Unteres Segment: mindestens 85 % der Beschäftigten in KMU (<15 %), d. h. weniger als
+# rund die Hälfte des Landesmittels. Bis Oktober 2026 galten 0.40 / 0.10, kalibriert auf die
+# Betriebszählung 2008 (Arbeitsstätten ≥250 VZÄ, max. ~49 %); der Unternehmensbegriff
+# liefert deutlich höhere Anteile (Filialnetze zählen als ein Unternehmen), daher die
+# Anpassung — siehe Methodik-Seite.
+GROSSFIRMEN_SCHWELLE_HOCH = 0.50   # ≥50 % → −1 Stufe (frühere Adoption)
+GROSSFIRMEN_SCHWELLE_TIEF = 0.15   # <15 % → +1 Stufe (spätere Adoption)
 
 
 def _shift_zeitrahmen(wert: str, delta: int) -> str:
@@ -93,21 +101,29 @@ def _shift_zeitrahmen(wert: str, delta: int) -> str:
 def adjust_zeitrahmen_fuer_kmu(
     df: pd.DataFrame,
     kmu_path: Path | None = None,
+    kmu_df: pd.DataFrame | None = None,
 ) -> pd.DataFrame:
     """
     Verschiebt `zeitrahmen` um ±1 Stufe basierend auf dem Grossfirmen-Anteil pro Branche.
 
-    Logik (basierend auf BFS BZ 2008, Betriebe ≥250 VZÄ):
-      ≥40 % Grossfirmen → −1 Stufe (grosse Firmen adoptieren KI früher)
-      10–40 %           →  0 Stufen (neutral)
-      <10 %             → +1 Stufe  (KMU-dominierte Branchen adoptieren später)
+    Logik (BFS STATENT, Beschäftigte in Unternehmen ≥250 Beschäftigte):
+      ≥50 % Grossfirmen → −1 Stufe (grosse Firmen adoptieren KI früher)
+      15–50 %           →  0 Stufen (neutral)
+      <15 %             → +1 Stufe  (KMU-dominierte Branchen adoptieren später)
+      kein Wert (NaN)   →  0 Stufen (z. B. Öff. Verwaltung: keine marktwirtschaftlichen
+                                     Unternehmen in der STATENT-Tabelle)
 
     Erwartet Spalten: zeitrahmen, branche
     Gibt DataFrame zurück mit:
       - zeitrahmen_roh: originaler LLM-Wert
       - zeitrahmen: adjustierter Wert
       - zeitrahmen_kmu_delta: angewendete Verschiebung (−1 / 0 / +1)
-      - grossfirmen_anteil: Anteil Beschäftigte in Betrieben ≥250 VZÄ (BZ 2008)
+      - grossfirmen_anteil: Anteil Beschäftigte in Unternehmen ≥250 Beschäftigte (STATENT)
+
+    Args:
+        kmu_path: Pfad zu kmu_anteil_branche.csv (Standard: data/processed/).
+        kmu_df: alternativ die Tabelle direkt (Spalten branche, grossfirmen_anteil);
+                hat Vorrang vor kmu_path.
 
     Idempotent: Ist `zeitrahmen_roh` bereits vorhanden (z. B. beim erneuten Anwenden auf
     scores.csv), wird von diesem Rohwert aus verschoben statt vom bereits adjustierten
@@ -116,11 +132,12 @@ def adjust_zeitrahmen_fuer_kmu(
     if "zeitrahmen" not in df.columns:
         return df
 
-    resolved_path = kmu_path or (_PROCESSED_DATA_PATH / "kmu_anteil_branche.csv")
-    if not resolved_path.exists():
-        return df  # Datei fehlt → keine Anpassung, keine Ausnahme
-
-    kmu_df = pd.read_csv(resolved_path)[["branche", "grossfirmen_anteil"]]
+    if kmu_df is None:
+        resolved_path = kmu_path or (_PROCESSED_DATA_PATH / "kmu_anteil_branche.csv")
+        if not resolved_path.exists():
+            return df  # Datei fehlt → keine Anpassung, keine Ausnahme
+        kmu_df = pd.read_csv(resolved_path)
+    kmu_df = kmu_df[["branche", "grossfirmen_anteil"]]
     kmu_map: dict[str, float] = dict(zip(kmu_df["branche"], kmu_df["grossfirmen_anteil"]))
 
     df = df.copy()

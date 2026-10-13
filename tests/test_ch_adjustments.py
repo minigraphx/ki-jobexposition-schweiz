@@ -15,6 +15,8 @@ from ch_adjustments import (
     LOHNEFFEKTE,
     ZEITRAHMEN_STUFEN,
     PHARMA_MEDTECH_ISCO_WHITELIST,
+    GROSSFIRMEN_SCHWELLE_HOCH,
+    GROSSFIRMEN_SCHWELLE_TIEF,
 )
 
 
@@ -299,7 +301,7 @@ class TestAdjustZeitrahmenFuerKmu:
         assert df["zeitrahmen"].iloc[0] == original_wert
 
     def test_anteil_tief_spaeter(self, tmp_path):
-        """Anteil <10 % → +1 Stufe (später)."""
+        """Anteil <15 % → +1 Stufe (später)."""
         kmu_path = _make_kmu_csv(tmp_path, [
             {"branche": "Gastgewerbe", "grossfirmen_anteil": 0.02},
         ])
@@ -311,9 +313,9 @@ class TestAdjustZeitrahmenFuerKmu:
         assert result["zeitrahmen_kmu_delta"].iloc[0] == +1
 
     def test_anteil_hoch_frueher(self, tmp_path):
-        """Anteil ≥40 % → −1 Stufe (früher)."""
+        """Anteil ≥50 % → −1 Stufe (früher)."""
         kmu_path = _make_kmu_csv(tmp_path, [
-            {"branche": "Versicherungen", "grossfirmen_anteil": 0.47},
+            {"branche": "Versicherungen", "grossfirmen_anteil": 0.82},
         ])
         df = pd.DataFrame({
             "beruf": ["Versicherungsexperte"], "branche": ["Versicherungen"],
@@ -324,9 +326,9 @@ class TestAdjustZeitrahmenFuerKmu:
         assert result["zeitrahmen_kmu_delta"].iloc[0] == -1
 
     def test_neutral_bereich(self, tmp_path):
-        """Anteil 10–40 % → kein Shift."""
+        """Anteil 15–50 % → kein Shift."""
         kmu_path = _make_kmu_csv(tmp_path, [
-            {"branche": "ICT", "grossfirmen_anteil": 0.31},
+            {"branche": "ICT", "grossfirmen_anteil": 0.45},
         ])
         df = pd.DataFrame({
             "beruf": ["Softwareentwickler"], "branche": ["ICT"],
@@ -379,6 +381,43 @@ class TestAdjustZeitrahmenFuerKmu:
         result = adjust_zeitrahmen_fuer_kmu(df, kmu_path=kmu_path)
         assert "grossfirmen_anteil" in result.columns
         assert result["grossfirmen_anteil"].iloc[0] == pytest.approx(0.28)
+
+
+    def test_schwellen(self):
+        """Schwellen STATENT (Unternehmen ≥250 Beschäftigte): oberes/unteres Segment."""
+        assert GROSSFIRMEN_SCHWELLE_HOCH == pytest.approx(0.50)
+        assert GROSSFIRMEN_SCHWELLE_TIEF == pytest.approx(0.15)
+
+    @pytest.mark.parametrize("anteil, delta", [
+        (GROSSFIRMEN_SCHWELLE_HOCH, -1),           # Grenze gehört zum oberen Segment
+        (GROSSFIRMEN_SCHWELLE_HOCH - 0.0001, 0),
+        (GROSSFIRMEN_SCHWELLE_TIEF, 0),            # Grenze gehört zum neutralen Bereich
+        (GROSSFIRMEN_SCHWELLE_TIEF - 0.0001, +1),
+        (0.0, +1),
+        (1.0, -1),
+    ])
+    def test_raender(self, anteil, delta):
+        kmu = pd.DataFrame({"branche": ["X"], "grossfirmen_anteil": [anteil]})
+        df = pd.DataFrame({"beruf": ["B"], "branche": ["X"], "zeitrahmen": ["3-5 Jahre"]})
+        result = adjust_zeitrahmen_fuer_kmu(df, kmu_df=kmu)
+        assert result["zeitrahmen_kmu_delta"].iloc[0] == delta
+
+    def test_anteil_nan_neutral(self):
+        """Branche ohne Anteil (Öff. Verwaltung: keine marktwirtschaftl. Unternehmen) → 0."""
+        kmu = pd.DataFrame({"branche": ["Öff. Verwaltung"], "grossfirmen_anteil": [float("nan")]})
+        df = pd.DataFrame({"beruf": ["B"], "branche": ["Öff. Verwaltung"],
+                           "zeitrahmen": ["5-10 Jahre"]})
+        result = adjust_zeitrahmen_fuer_kmu(df, kmu_df=kmu)
+        assert result["zeitrahmen"].iloc[0] == "5-10 Jahre"
+        assert result["zeitrahmen_kmu_delta"].iloc[0] == 0
+
+    def test_kmu_df_hat_vorrang(self, tmp_path):
+        """kmu_df wird statt der Datei verwendet."""
+        kmu_path = _make_kmu_csv(tmp_path, [{"branche": "Finanzen", "grossfirmen_anteil": 0.02}])
+        kmu = pd.DataFrame({"branche": ["Finanzen"], "grossfirmen_anteil": [0.6]})
+        df = pd.DataFrame({"beruf": ["B"], "branche": ["Finanzen"], "zeitrahmen": ["3-5 Jahre"]})
+        result = adjust_zeitrahmen_fuer_kmu(df, kmu_path=kmu_path, kmu_df=kmu)
+        assert result["zeitrahmen"].iloc[0] == "1-2 Jahre"
 
 
 class TestPharmaOverride:

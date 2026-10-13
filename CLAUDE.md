@@ -32,6 +32,9 @@ python src/data/update_loehne.py --offline  # LSE 2024 wages (+ stored Salarium 
 python src/data/update_loehne.py            # same, but re-queries Salarium + STATENT online (~15 min, polite)
 python src/data/fetch_bgs.py                # BFS GGS (stats.swiss SDMX) + STATENT online → grenzgaenger_anteil_branche.csv
 python src/data/fetch_bgs.py --offline      # same from the versioned CSVs (no network); --periode 2026-Q2, --dry-run
+python src/data/fetch_statent.py            # BFS STATENT ts-x-06.02.01.01 (DAM API) → statent_groessenklassen_noga.csv + kmu_anteil_branche.csv
+python src/data/fetch_statent.py --offline --apply-scores --dry-run  # preview new zeitrahmen in scores.csv (writes nothing)
+python src/data/fetch_statent.py --offline --apply-scores            # write kmu_anteil_branche.csv + recompute grossfirmen_anteil/zeitrahmen_kmu_delta/zeitrahmen
 
 # Fix known wrong ESCO matches (re-run locally after adding to KNOWN_WRONG_MATCHES):
 python src/data/enrich_with_esco.py --fix-wrong
@@ -87,7 +90,25 @@ stats.swiss SDMX DF_GGS_4 (BFS GGS, quarterly, NOGA division)  +  STATENT px-x-0
                                            --offline: versioned CSVs below)
   → data/processed/bgs_grenzgaenger_noga.csv, statent_beschaeftigte_noga.csv (versioned)
   → data/processed/grenzgaenger_anteil_branche.csv  (context layer in 3_Branchen.py, no score effect)
+
+BFS DAM API orderNr=ts-x-06.02.01.01 (STATENT, market enterprises × NOGA division × size class)
+  → src/data/fetch_statent.py             (raw CSV → data/raw/statent_ts-x-06.02.01.01.csv, gitignored;
+                                           --offline: versioned table below)
+  → data/processed/statent_groessenklassen_noga.csv (versioned, all years 2011–2024)
+  → data/processed/kmu_anteil_branche.csv (grossfirmen_anteil per sector)
+  → --apply-scores: scores.csv grossfirmen_anteil, zeitrahmen_kmu_delta, zeitrahmen (from zeitrahmen_roh)
 ```
+
+**KMU adoption factor** = **BFS STATENT 2024**, table `ts-x-06.02.01.01` «Marktwirtschaftliche
+Unternehmen nach Wirtschaftsabteilungen und Grössenklasse» (asset 36734598, OGD CSV, status
+20.08.2026; columns PERIOD, NOGA, SIZE 1–4/999, INDICATOR 1 = enterprises / 2 = employed persons,
+VALUE, STATUS A/Q). Unit = **enterprise** (not establishment), size class and count = employed
+persons (headcount; no FTE variant exists per division × size class). `grossfirmen_anteil` = employed
+in enterprises ≥250 / all employed of the sector's NOGA divisions (`NOGA_ZU_BRANCHE`). Suppressed
+cells (Q): residual total − known classes split equally (impact < 1 pp). Market enterprises only →
+NOGA 84 empty → «Öff. Verwaltung» has no share (shift 0); `abdeckung` = coverage vs. all STATENT
+employed (Bildung 29 %, Soziales 59 %, Verwaltung 23 %). Thresholds in `ch_adjustments.py`:
+≥0.50 → −1 step, <0.15 → +1 step (until Oct 2026: BZ 2008 establishments ≥250 FTE, 0.40/0.10).
 
 **Cross-border commuters** = **BFS Grenzgängerstatistik (GGS)**, dataflow `CH1.GGS,DF_GGS_4,1.0.0`
 «Ausländische Grenzgänger/-innen nach Wirtschaftszweig und Erwerbsstatus» (ZEMIS/AHV, persons,
@@ -172,6 +193,7 @@ CH wage deltas: <60k CHF −0.2, 60–100k 0.0, 100–150k +0.2, >150k +0.4.
 | `src/data/patch_unmatched.py` | `berufe_ch_esco_verified.csv` | `berufe_ch_esco_verified.csv` | Manual overrides for known bad matches |
 | `src/data/update_loehne.py` | LSE 2024 T17 (raw or `lse2024_monatslohn_isco.csv`), `lohn_profile_salarium.csv`, `lohn_salarium_abfragen.csv`, `statent_vzae_grossregion.csv` | `berufe_ch*.csv`, `scores.csv` | Sets `lohn_median_chf`/`lohn_quelle`; recomputes wage-dependent rule-based columns in scores.csv; `--offline` (no network), `--dry-run` |
 | `src/data/fetch_bgs.py` | stats.swiss SDMX `DF_GGS_4` + STATENT PxWeb (online) or `bgs_grenzgaenger_noga.csv` + `statent_beschaeftigte_noga.csv` (`--offline`) | `grenzgaenger_anteil_branche.csv` (+ the two versioned inputs when online) | Cross-border commuter share per sector (annual mean of latest full year, latest quarter extra); reads/writes no scores; `--periode JJJJ\|JJJJ-Qn`, `--dry-run` |
+| `src/data/fetch_statent.py` | BFS DAM API `ts-x-06.02.01.01` (online) or `statent_groessenklassen_noga.csv` (`--offline`) | `kmu_anteil_branche.csv` (+ `statent_groessenklassen_noga.csv` when online); with `--apply-scores`: `scores.csv` | Grossfirmen share per sector (enterprises ≥250 employed); `--jahr`, `--dry-run`; `--apply-scores` rewrites only `grossfirmen_anteil`, `zeitrahmen_kmu_delta`, `zeitrahmen` (from `zeitrahmen_roh`) |
 | `src/data/branche_neu_zuordnen.py` | `BRANCHE_MAP` | `berufe_ch*.csv`, `scores.csv` | Re-applies ISCO-prefix sector mapping to non-curated jobs |
 | `src/scoring/exposure_scorer.py` | `berufe_ch_esco_verified.csv` | `scores.csv` | Synchronous, hash-based delta; `--force [name\|isco]` for selective re-score |
 | `src/scoring/adaptability_scorer.py` | `scores.csv` | `scores.csv` | Rule-based: education, wage, digital affinity, mobility |
@@ -233,7 +255,10 @@ All charts use **Plotly**. App reads from `data/processed/scores.csv`.
 | `score_kreativitaet` | Claude Sonnet | Sub-score: creativity (15% weight, inverted) |
 | `score_sozial` | Claude Sonnet | Sub-score: social interaction (15% weight, inverted) |
 | `haupt_risiko` | Claude Sonnet | Main automation risk description |
-| `zeitrahmen` | Claude Sonnet | Estimated time horizon (1-2 / 3-5 / 5-10 / >10 Jahre) |
+| `zeitrahmen_roh` | `exposure_scorer.py` (LLM scoring) | Estimated time horizon from scoring (1-2 / 3-5 / 5-10 / >10 Jahre) |
+| `zeitrahmen` | `ch_adjustments.py` | `zeitrahmen_roh` shifted by `zeitrahmen_kmu_delta` (KMU adoption factor) |
+| `grossfirmen_anteil` | BFS STATENT 2024 (`fetch_statent.py`) | Share of sector's employed persons in enterprises ≥250 employed; empty for Öff. Verwaltung |
+| `zeitrahmen_kmu_delta` | `ch_adjustments.py` | −1 (share ≥50 %), 0, +1 (share <15 %) |
 | `begruendung` | Claude Sonnet | 2–3 sentence justification, CH-specific |
 | `delta_branche` | `ch_adjustments.py` | CH sector adjustment (rule-based) |
 | `delta_lohn` | `ch_adjustments.py` | CH wage-level adjustment (rule-based) |

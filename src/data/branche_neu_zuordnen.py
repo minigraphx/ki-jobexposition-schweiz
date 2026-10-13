@@ -76,7 +76,9 @@ def scores_neu_berechnen(text_df: pd.DataFrame, num_df: pd.DataFrame, geaendert:
 
     for spalte in ["delta_branche", "score_ch", "grossfirmen_anteil"]:
         if spalte in out.columns:
-            out.loc[geaendert, spalte] = res.loc[geaendert, spalte].map(lambda v: repr(float(v)))
+            # NaN (z. B. grossfirmen_anteil der Öff. Verwaltung) als leere Zelle schreiben
+            out.loc[geaendert, spalte] = res.loc[geaendert, spalte].map(
+                lambda v: "" if pd.isna(v) else repr(float(v)))
     for spalte in ["zeitrahmen", "zeitrahmen_roh"]:
         if spalte in out.columns:
             out.loc[geaendert, spalte] = res.loc[geaendert, spalte]

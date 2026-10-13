@@ -35,6 +35,64 @@ else:
 summe_tsd = float(df["beschaeftigte_1000"].sum()) if df is not None else 0.0
 summe_text = f"{summe_tsd:,.0f}".replace(",", "'")
 
+# ─── KMU-Adoptions-Faktor: STATENT-Anteile, Vergleich mit Betriebszählung 2008 ──
+KMU_PATH = DATA_PATH.parent / "kmu_anteil_branche.csv"
+# Schwellen wie in src/scoring/ch_adjustments.py (GROSSFIRMEN_SCHWELLE_HOCH / _TIEF)
+KMU_SCHWELLE_HOCH, KMU_SCHWELLE_TIEF = 0.50, 0.15
+# Bis Oktober 2026 verwendet: BZ 2008, Arbeitsstätten ≥250 VZÄ, Schwellen 0.40 / 0.10
+BZ2008_ANTEIL = {
+    "Bau": 0.0391, "Beratung": 0.139, "Bildung": 0.119, "Detailhandel": 0.0228,
+    "Dienstleistungen": 0.0943, "Finanzen": 0.2799, "Gastgewerbe": 0.0238,
+    "Gesundheit": 0.4893, "ICT": 0.3063, "Immobilien": 0.0395, "Industrie": 0.3138,
+    "Landwirtschaft": 0.0, "Medien": 0.1702, "Recht": 0.0696, "Sicherheit": 0.3297,
+    "Soziales": 0.045, "Transport": 0.2537, "Umwelt": 0.1583, "Versicherungen": 0.4653,
+    "Verwaltung": 0.0481, "Öff. Verwaltung": 0.1507,
+}
+
+
+def _verschiebung(anteil: float, hoch: float, tief: float) -> str:
+    if pd.isna(anteil):
+        return "0"
+    if anteil >= hoch:
+        return "−1"
+    return "+1" if anteil < tief else "0"
+
+
+def _prozent(wert: float) -> str:
+    return "–" if pd.isna(wert) else f"{wert * 100:.1f} %".replace(".", ",")
+
+
+@st.cache_data
+def load_kmu() -> pd.DataFrame | None:
+    if not KMU_PATH.exists():
+        return None
+    return pd.read_csv(KMU_PATH)
+
+
+kmu_df = load_kmu()
+KMU_JAHR = int(kmu_df["jahr"].iloc[0]) if kmu_df is not None and "jahr" in kmu_df else "2024"
+KMU_MITTEL = (kmu_df["beschaeftigte_gross"].sum() / kmu_df["beschaeftigte_total"].sum()
+              if kmu_df is not None else float("nan"))
+KMU_MITTEL_TEXT = "–" if pd.isna(KMU_MITTEL) else f"{KMU_MITTEL * 100:.0f} %"
+kmu_vergleich = None
+if kmu_df is not None:
+    zeilen = [
+        f"| Branche | STATENT {KMU_JAHR} (Unternehmen) | Verschiebung | BZ 2008 (Arbeitsstätten) "
+        "| Verschiebung bisher | Abdeckung |",
+        "|---|---:|:---:|---:|:---:|---:|",
+    ]
+    for _, r in kmu_df.sort_values("grossfirmen_anteil", ascending=False,
+                                    na_position="last").iterrows():
+        alt = BZ2008_ANTEIL.get(r["branche"], float("nan"))
+        abdeckung = r.get("abdeckung", float("nan"))
+        zeilen.append(
+            f"| {r['branche']} | {_prozent(r['grossfirmen_anteil'])} "
+            f"| {_verschiebung(r['grossfirmen_anteil'], KMU_SCHWELLE_HOCH, KMU_SCHWELLE_TIEF)} "
+            f"| {_prozent(alt)} | {_verschiebung(alt, 0.40, 0.10)} "
+            f"| {'–' if pd.isna(abdeckung) else f'{abdeckung * 100:.0f} %'} |"
+        )
+    kmu_vergleich = "\n".join(zeilen)
+
 st.markdown("""
 Diese Seite erklärt, wie die KI-Expositions-Scores berechnet wurden und woher die Daten stammen.
 """)
@@ -275,6 +333,52 @@ verschieben). Weil die LSE nur Gruppenmediane liefert, liegt derzeit kein Beruf 
 Der finale **score_ch** wird auf den Bereich 0–10 begrenzt.
 """)
 
+st.subheader("KMU-Adoptions-Faktor (Zeitrahmen)")
+st.markdown(f"""
+Grossunternehmen führen KI in der Regel schneller ein als KMU. Der Faktor verschiebt deshalb den
+vom Scoring geschätzten Zeitrahmen (`zeitrahmen_roh`) je Branche um eine Stufe — er wirkt auf
+das **Wann**, nicht auf die Höhe der Exposition (`score_ch` bleibt unverändert). Das Ergebnis steht
+in `zeitrahmen`, die Verschiebung in `zeitrahmen_kmu_delta`.
+
+- **Quelle:** BFS Statistik der Unternehmensstruktur (STATENT) **{KMU_JAHR}**, Tabelle
+  [ts-x-06.02.01.01](https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.36734598.html) «Marktwirtschaftliche Unternehmen
+  nach Wirtschaftsabteilungen und Grössenklasse» (Stand 20.08.2026), automatisch geladen über die
+  BFS-DAM-Schnittstelle (`src/data/fetch_statent.py`).
+- **Einheit Unternehmen, nicht Arbeitsstätte:** Alle Beschäftigten eines Unternehmens zählen zu
+  dessen Haupttätigkeit (NOGA-Abteilung) und Grössenklasse. Das ist der fachlich passende Begriff,
+  weil Investitions- und IT-Entscheide auf Unternehmensebene fallen — eine Filiale einer
+  Detailhandelskette ist kein KMU.
+- **Grösse und Zählgrösse:** Beschäftigte (Personen inkl. Teilzeit). Eine Auswertung nach
+  Vollzeitäquivalenten je Wirtschaftsabteilung × Grössenklasse publiziert das BFS nicht.
+- **Definition:** Grossfirmen-Anteil = Beschäftigte in Unternehmen mit **≥ 250 Beschäftigten** /
+  alle Beschäftigten der NOGA-Abteilungen einer Branche (gleiches NOGA-Mapping wie der
+  Grenzgänger-Anteil). Schweizweit (alle marktwirtschaftlichen Unternehmen) {KMU_MITTEL_TEXT}.
+- **Schwellen:** ≥ 50 % → **−1 Stufe** (früher) · 15–50 % → neutral · < 15 % → **+1 Stufe** (später).
+  Das obere Segment umfasst Branchen, in denen die **Mehrheit** der Beschäftigten in Grossunternehmen
+  arbeitet; das untere Segment Branchen mit mindestens **85 % KMU-Beschäftigten** (weniger als rund
+  die Hälfte des Landesmittels). Die Grenzen entsprechen etwa dem oberen und unteren Quartil der
+  Branchenverteilung (47 % bzw. 15 %) und dem ursprünglichen Entwurf in Issue #33.
+  Das obere Ergebnis ist robust (identisch für Schwellen von 45 bis 53 %); knapp über der unteren
+  Schwelle liegen Verwaltung/Verbände (15,3 %) und Gastgewerbe (15,5 %), die deshalb neutral bleiben.
+- **Grenzen:** Nur **marktwirtschaftliche** Unternehmen. Die öffentliche Verwaltung (NOGA 84) fehlt
+  vollständig → kein Anteil, keine Verschiebung. Bei Bildung, Soziales und Verwaltung/Verbänden deckt
+  die Tabelle nur einen Teil der Beschäftigten ab (Spalte «Abdeckung»; öffentliche Schulen und
+  Sozialdienste fehlen). Nicht-marktwirtschaftliche Einheiten sind schweizweit zu rund 69 % gross
+  (≥ 250 Beschäftigte, STATENT {KMU_JAHR}); die Grösse wirkt dort aber nicht über Wettbewerb und
+  Investitionsentscheide und wird bewusst nicht verrechnet. Abdeckung über 100 % (z. B.
+  Versicherungen) entsteht, weil die Tabelle ganze Unternehmen ihrer Hauptbranche zuordnet,
+  STATENT-Arbeitsstätten dagegen nach ihrer eigenen Tätigkeit. Aus Datenschutzgründen gesperrte
+  Zellen werden aus der Differenz zum Total geschätzt (Einfluss < 1 Prozentpunkt). Nur 2-stellige
+  NOGA; ein Beruf gehört genau einer Branche.
+- **Frühere Werte:** Bis Oktober 2026 stammte der Anteil aus der **Betriebszählung 2008**
+  (Arbeitsstätten ≥ 250 Vollzeitäquivalente) mit Schwellen 40 % / 10 %. Weil dort jede Filiale
+  einzeln zählte, galten Detailhandel (2 %), Gastgewerbe (2 %) oder Soziales (5 %) als fast reine
+  KMU-Branchen; der Unternehmensbegriff liefert durchwegs höhere Anteile (Landesmittel 17 % → {KMU_MITTEL_TEXT}),
+  daher die neuen Schwellen.
+""")
+if kmu_vergleich is not None:
+    st.markdown(kmu_vergleich)
+
 st.divider()
 
 # ─── Anpassungsfähigkeit ──────────────────────────────────────────────────────
@@ -438,8 +542,9 @@ aktuellen Berechnung **nicht berücksichtigt**:
   (Salarium-Verhältnisse als gewichtetes Mittel der Grossregionen).
   Regionale Lohndisparitäten (z.B. Zürich vs. Wallis) fliessen nicht ins Scoring ein.
 - **KMU-Adoptionsgeschwindigkeit:** Kleine und mittlere Unternehmen (KMU, > 99 % der CH-Firmen)
-  adoptieren KI-Technologien typischerweise langsamer als Grossunternehmen. Dies beeinflusst
-  den realen Zeitrahmen der Automatisierung (BFS STATENT als mögliche Datenquelle, Issue #33).
+  adoptieren KI-Technologien typischerweise langsamer als Grossunternehmen. Der KMU-Adoptions-Faktor
+  (BFS STATENT, siehe oben) bildet das nur grob ab: ±1 Zeitrahmen-Stufe je Branche, ohne
+  Unterschiede innerhalb einer Branche und ohne den nicht-marktwirtschaftlichen Sektor.
 - **Grenzgänger-Effekte:** Der Schweizer Arbeitsmarkt weist einen hohen Grenzgängeranteil auf.
   Grenzgänger konzentrieren sich auf bestimmte Branchen und Regionen; KI-Exposition dieser
   Gruppe kann vom inländischen Muster abweichen. Der Grenzgänger-Anteil je Branche (BFS GGS 2025 /
@@ -460,6 +565,7 @@ st.markdown("""
 - BFS (2026). [LSE 2024, T17 — Monatlicher Bruttolohn nach Berufsgruppen, Lebensalter und Geschlecht, privater und öffentlicher Sektor zusammen](https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.36355224.html) · [Über die Lohnstrukturerhebung](https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/loehne-erwerbseinkommen-arbeitskosten/lohnstruktur.html)
 - BFS (2026). [Salarium — Statistischer Lohnrechner (LSE 2024)](https://www.salarium.bfs.admin.ch) — Profilverhältnisse für heterogene Berufsgruppen
 - BFS (2026). [Statistik der Unternehmensstruktur (STATENT) 2024 — Vollzeitäquivalente nach Kanton und Wirtschaftsabteilung](https://www.pxweb.bfs.admin.ch/pxweb/de/px-x-0602010000_101/-/px-x-0602010000_101.px/) — Regionsgewichte; Beschäftigte je Wirtschaftsabteilung als Nenner des Grenzgänger-Anteils
+- BFS (2026). [Statistik der Unternehmensstruktur (STATENT) 2011–2024 — Marktwirtschaftliche Unternehmen nach Wirtschaftsabteilungen und Grössenklasse (ts-x-06.02.01.01)](https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.36734598.html) — Grossfirmen-Anteil je Branche (KMU-Adoptions-Faktor)
 - BFS (2026). [Grenzgängerstatistik (GGS) — Ausländische Grenzgänger/-innen nach Wirtschaftszweig und Erwerbsstatus (DF_GGS_4)](https://stats.swiss/vis?lc=de&df[ds]=ds%3Adisseminate&df[id]=DF_GGS_4&df[ag]=CH1.GGS&df[vs]=1.0.0&dq=..Q&lom=LASTNPERIODS&lo=5) · [Über die Grenzgängerstatistik](https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/erhebungen/ggs.html)
 """)
 
