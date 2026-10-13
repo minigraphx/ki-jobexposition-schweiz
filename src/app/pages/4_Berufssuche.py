@@ -26,28 +26,43 @@ if df is None:
     st.warning("Noch keine Score-Daten vorhanden.")
     st.stop()
 
-# ── Lookup: ESCO-Titel pro Beruf ────────────────────────────────────────────────
+# ── Lookup: ESCO-Titel und Synonyme pro Beruf ───────────────────────────────────
+def _text(wert) -> str:
+    t = str(wert or "").strip()
+    return "" if t == "nan" else t
+
+
 _esco_map: dict[str, str] = {}
+_syn_map: dict[str, list[str]] = {}
 for _, _row in df.iterrows():
-    _t = str(_row.get("esco_titel", "") or "").strip()
-    if _t and _t != "nan":
+    _t = _text(_row.get("esco_titel", ""))
+    if _t:
         _esco_map[_row["beruf"]] = _t
+    _s = [s.strip() for s in _text(_row.get("synonyme", "")).split(";") if s.strip()]
+    if _s:
+        _syn_map[_row["beruf"]] = _s
+
+# Synonym (bisheriger CH-Titel eines zusammengelegten Berufs) → Eintrag
+_synonym_zu_beruf = {s.lower(): b for b, syn in _syn_map.items() for s in syn}
 
 
 def _label(beruf: str) -> str:
+    teile = [beruf] + _syn_map.get(beruf, [])
     esco = _esco_map.get(beruf, "")
-    if esco and esco.lower() != beruf.lower():
-        return f"{beruf}  ·  {esco}"
-    return beruf
+    if esco and esco.lower() not in {t.lower() for t in teile}:
+        teile.append(esco)
+    return "  ·  ".join(teile)
 
 
 # ── URL-State / Permalink ───────────────────────────────────────────────────────
 berufe_sorted = sorted(df["beruf"].unique())
 url_beruf = st.query_params.get("beruf", "")
+if url_beruf not in berufe_sorted:  # alte Permalinks: bisherige CH-Titel als Synonym
+    url_beruf = _synonym_zu_beruf.get(url_beruf.lower(), url_beruf)
 default_index = berufe_sorted.index(url_beruf) if url_beruf in berufe_sorted else 0
 
 beruf = st.selectbox(
-    "Beruf auswählen  (Schweizer oder ESCO-Bezeichnung)",
+    "Beruf auswählen  (Schweizer Titel, Synonym oder ESCO-Bezeichnung)",
     berufe_sorted,
     index=default_index,
     format_func=_label,
@@ -57,13 +72,26 @@ st.query_params["beruf"] = beruf
 # ── Daten für ausgewählten Beruf ────────────────────────────────────────────────
 row = df[df["beruf"] == beruf].iloc[0]
 
+if beruf in _syn_map:
+    st.caption("Umfasst auch: " + " · ".join(_syn_map[beruf]))
+if str(row.get("scores_gemittelt", "")).strip().lower() == "true":
+    st.warning(
+        "**Zusammengelegter Eintrag:** Die Strukturerhebung weist diese Berufe nicht getrennt aus. "
+        "Die Scores sind vorläufig das beschäftigungsgewichtete Mittel der bisherigen Einzelberufe "
+        f"({', '.join(_syn_map.get(beruf, []))}); Texte stammen vom grössten Teilberuf. "
+        "Eine Neubewertung des Gesamteintrags folgt.",
+        icon="⚠️",
+    )
+
 # ── Metriken ────────────────────────────────────────────────────────────────────
 col1, col2, col3 = st.columns(3)
 with col1:
     score = row.get("score_ch", row.get("score_gesamt", 0))
     st.metric("KI-Expositions-Score", f"{score:.1f} / 10")
 with col2:
-    st.metric("Beschäftigte CH", f"{row.get('beschaeftigte_1000', '?')} Tsd.")
+    st.metric("Beschäftigte CH", f"{row.get('beschaeftigte_1000', '?')} Tsd.",
+              help="BFS Strukturerhebung 2024, Erwerbstätige der CH-ISCO-19-Berufsgattung "
+                   f"{row.get('isco_code', '')} (bzw. der zugeordneten Berufsarten)")
 with col3:
     st.metric("Zeitrahmen", row.get("zeitrahmen", "–"))
 

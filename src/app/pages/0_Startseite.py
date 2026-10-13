@@ -18,16 +18,17 @@ def load_data() -> pd.DataFrame | None:
 
 
 df = load_data()
+n_text = f"{len(df)}" if df is not None else "rund 180"
 
 st.title("KI & Jobmarkt Schweiz")
 st.subheader("Welche Berufe verändert die künstliche Intelligenz am stärksten?")
 
-st.markdown("""
+st.markdown(f"""
 Andrej Karpathy — Mitgründer von OpenAI — hat im März 2026 eine Analyse veröffentlicht,
 die zeigt, wie stark 342 US-Berufe durch KI automatisierbar sind. Die Methodik: Berufsbeschreibungen
 in ein Sprachmodell einspeisen, fünf Kriterien bewerten, Score 0–10 berechnen.
 
-**Diese App überträgt diesen Ansatz auf die Schweiz.** Sie zeigt für 204 Schweizer Berufe —
+**Diese App überträgt diesen Ansatz auf die Schweiz.** Sie zeigt für {n_text} Schweizer Berufe —
 basierend auf amtlichen BFS-Daten (Strukturerhebung 2024) — wie stark jede Berufsgruppe von
 KI-Automatisierung betroffen sein könnte. Ergänzt wird die reine Exposition durch eine zweite
 Dimension: die **Anpassungsfähigkeit** der Berufsangehörigen. Denn ob ein exponierter Beruf
@@ -92,9 +93,9 @@ st.markdown("### Erkunden")
 col_a, col_b = st.columns(2)
 
 with col_a:
-    st.markdown("""
+    st.markdown(f"""
     **🗺️ Treemap**
-    Alle 204 Berufe auf einen Blick. Grösse = Beschäftigtenzahl,
+    Alle {n_text} Berufe auf einen Blick. Grösse = Beschäftigtenzahl,
     Farbe = KI-Expositions-Score. Sofort sichtbar: Wo konzentriert sich das Risiko?
     """)
     st.page_link("pages/1_Treemap.py", label="→ Treemap öffnen")

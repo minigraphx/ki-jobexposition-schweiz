@@ -2,9 +2,38 @@
 Seite 5: Methodik & Quellen
 """
 
+from pathlib import Path
+
+import pandas as pd
 import streamlit as st
 
 st.title("Methodik & Quellen")
+
+DATA_PATH = Path(__file__).parent.parent.parent.parent / "data" / "processed" / "scores.csv"
+
+
+@st.cache_data
+def load_data() -> pd.DataFrame | None:
+    if not DATA_PATH.exists():
+        return None
+    return pd.read_csv(DATA_PATH)
+
+
+df = load_data()
+n_berufe = len(df) if df is not None else 0
+if df is not None and "beschreibung_quelle" in df.columns:
+    n_esco = int((df["beschreibung_quelle"] == "ESCO").sum())
+    n_fallback = n_berufe - n_esco
+else:
+    n_esco = n_fallback = 0
+if df is not None and "synonyme" in df.columns:
+    syn = df["synonyme"].fillna("").astype(str).str.strip()
+    n_zusammen = int((syn != "").sum())
+    n_titel = int(syn[syn != ""].str.split(";").str.len().sum())
+else:
+    n_zusammen = n_titel = 0
+summe_tsd = float(df["beschaeftigte_1000"].sum()) if df is not None else 0.0
+summe_text = f"{summe_tsd:,.0f}".replace(",", "'")
 
 st.markdown("""
 Diese Seite erklärt, wie die KI-Expositions-Scores berechnet wurden und woher die Daten stammen.
@@ -14,7 +43,7 @@ Diese Seite erklärt, wie die KI-Expositions-Scores berechnet wurden und woher d
 st.header("Datenquellen")
 
 st.subheader("Beschäftigungsdaten")
-st.markdown("""
+st.markdown(f"""
 Die Beschäftigungszahlen und Frauenanteile stammen aus der offiziellen Schweizer Statistik:
 
 - **Quelle:** Bundesamt für Statistik (BFS)
@@ -25,22 +54,50 @@ Die Beschäftigungszahlen und Frauenanteile stammen aus der offiziellen Schweize
 - **Einheit:** Erwerbstätige ab 15 Jahren, in 1'000 Personen
 - **Grundgesamtheit:** Ständige Wohnbevölkerung in Privathaushalten — Grenzgänger/-innen
   sind nicht enthalten
-- **Klassifikation:** CH-ISCO-19 (basiert auf ISCO-08), Ebene Berufsgattung (4-stellig)
+- **Klassifikation:** CH-ISCO-19 (basiert auf ISCO-08), Ebene Berufsgattung (4-stellig);
+  wo nötig Berufsart (5-stellig)
 
-Es werden Berufe mit mindestens **5'000 Beschäftigten** berücksichtigt.
+Die App umfasst **{n_berufe} Berufe** mit zusammen **{summe_text} Tsd.** Erwerbstätigen
+(SE 2024 total: 4'584 Tsd.). Automatisch ergänzt wurden Berufsgattungen mit mindestens
+**5'000 Beschäftigten**.
+
+**Keine Doppelzählung:** Jede 4-stellige Berufsgattung zählt genau einmal mit ihrem SE-Wert.
+
+- In der Regel entspricht ein Beruf einer Berufsgattung und erhält deren vollen Wert.
+- Teilen sich mehrere Berufe eine Gattung, wird sie über die **5-stelligen Berufsarten** der SE
+  aufgeteilt: 2330 Lehrkräfte im Sekundarbereich → Sekundarstufe I / Sekundarstufe II,
+  5131 Service in Restaurants → Servicefachkräfte (inkl. Chefs de Service) / Servicehilfskräfte,
+  5223 Verkäufer → Verkäufer in Handelsgeschäften / Drogisten. Der nicht zugeordnete Rest der
+  Gattung (Berufsart «onA» = ohne nähere Angaben, nicht publizierte Kleinstwerte) wird
+  proportional verteilt.
+- Wo die SE die Berufe nicht trennt (z. B. Detailhandelsfachleute EFZ und Verkäufer/innen ohne
+  Ausbildung, Softwareentwickler/innen und Informatiker/innen EFZ), sind sie zu **einem Eintrag
+  mit der SE-Bezeichnung zusammengelegt** ({n_zusammen} Einträge aus {n_titel} bisherigen Titeln).
+  Die bisherigen Titel bleiben in der Berufssuche als Synonyme auffindbar. Die Scores dieser
+  Einträge sind vorläufig das beschäftigungsgewichtete Mittel der bisherigen Einzelberufe;
+  eine Neubewertung folgt.
+- Die Zuordnung Beruf → Berufsgattung/Berufsart(en) ist mit Begründung versioniert
+  (`data/processed/beruf_berufsart_mapping.csv`). Die ISCO-Codes aller Berufe wurden gegen die
+  CH-ISCO-19-Bezeichnungen geprüft und, wo eindeutig falsch, korrigiert (z. B. Koch/Köchin EFZ:
+  3434 Küchenchefs → 5120 Köche; Audit in `docs/audit_isco_codes.md`).
+- Ist eine Gattung im Jahresblatt 2024 nicht publiziert (< 5 Beobachtungen), gilt der Wert der
+  gepoolten Jahre 2022–2024; ebenso für den Frauenanteil.
+- **Einschränkung:** Bei einigen Berufen ist der Titel enger als die Berufsgattung, deren vollen
+  Wert sie tragen (z. B. Notar/in = Gattung «Juristen, anderweitig nicht genannt»,
+  Zimmermann/-frau = Gattung inkl. Schreiner).
 """)
 
 st.subheader("Berufsbeschreibungen")
-st.markdown("""
+st.markdown(f"""
 Für das KI-Scoring benötigt jeder Beruf eine inhaltliche Beschreibung seiner Kerntätigkeiten.
 Die Beschreibungen werden in einem mehrstufigen Prozess ermittelt:
 
 | Stufe | Quelle | Berufe |
 |---|---|---|
-| 1–3 | ESCO API (ISCO-Code + Textsuche, Deutsch/Englisch) | 201 von 204 |
+| 1–3 | ESCO API (ISCO-Code + Textsuche, Deutsch/Englisch) | {n_esco} von {n_berufe} |
 | 4 | berufsberatung.ch (Fallback bei keinem ESCO-Treffer) | — |
 | 5 | Wikipedia (zweiter Fallback) | — |
-| 6 | Claude Haiku (generierte Beschreibung als letzter Ausweg) | 3 von 204 |
+| 6 | Claude Haiku (generierte Beschreibung als letzter Ausweg) | {n_fallback} von {n_berufe} |
 
 Die verwendete Quelle ist in der Spalte `beschreibung_quelle` gespeichert und
 wird bei der Berufssuche angezeigt.
@@ -63,7 +120,7 @@ Der mediane Jahresbruttolohn (`lohn_median_chf`) stammt aus der **BFS Lohnstrukt
   denselben Lohn.
 - **Fallback:** Für Gruppen ohne LSE-Wert (Armee 01–03, Selbstversorgung 63, Strassenhandel 95)
   gilt die 1-stellige Hauptgruppe (`LSE2024_1d`) bzw. der Gesamtmedian (`LSE2024_total`).
-  Derzeit betrifft das keinen der 204 Berufe.
+  Derzeit betrifft das keinen Beruf der App.
 - **Heterogene Gruppen (`LSE2024_2d+Salarium`):** In den Gruppen 11–14 (Führungskräfte),
   22 (Gesundheitsberufe), 24 (Betriebswirtschaft, Finanzen) und 26 (Recht, Soziales, Kultur)
   liegen Berufe mit sehr unterschiedlichen Löhnen zusammen (z. B. Ärzte und Pflege).

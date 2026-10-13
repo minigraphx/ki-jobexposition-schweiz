@@ -118,4 +118,5 @@ try:
 except Exception:
     st.caption("PNG-Export nicht verfügbar (kaleido nicht installiert).")
 
-st.caption("Score 0–10: 0 = kaum betroffen, 10 = stark exponiert. Quelle: BFS Strukturerhebung (SE) 2024 + Claude Sonnet Scoring.")
+st.caption("Score 0–10: 0 = kaum betroffen, 10 = stark exponiert. Quelle: BFS Strukturerhebung (SE) 2024 + Claude Sonnet Scoring. "
+           "Grösse = Erwerbstätige der Berufsgattung bzw. der zugeordneten Berufsarten — jede Gattung zählt nur einmal.")
