@@ -163,6 +163,102 @@ Skala: 0 = sehr schwer anzupassen, 10 = sehr flexibel
 
 st.divider()
 
+# ─── Beobachtete Wirkung ──────────────────────────────────────────────────────
+st.header("Was wir über die tatsächliche Wirkung wissen (Stand Oktober 2026)")
+
+st.markdown("""
+Die Scores dieser App messen die **Exposition**, also was KI technisch übernehmen *könnte*.
+Ob und wie stark sich das bereits auf dem Arbeitsmarkt zeigt, ist eine andere Frage.
+Hier ist zusammengefasst, was die Forschung bisher beobachtet. Schweizer Zahlen und
+internationale Befunde sind bewusst getrennt: Arbeitsmärkte, Daten und Definitionen
+unterscheiden sich zu stark, als dass sich ausländische Zahlen auf die Schweiz übertragen liessen.
+""")
+
+st.subheader("Schweiz (Zahlen)")
+st.markdown("""
+- **KOF/ETH — Arbeitslosigkeit und Stelleninserate** (Kläui & Siegenthaler, Okt. 2025):
+  Die Zahl der Arbeitslosen stieg in stark KI-exponierten Berufen um **bis zu 27 %** stärker
+  als in wenig exponierten.
+  *Definition:* 20- bis 49-Jährige, Sept. 2024 bis Aug. 2025 gegenüber Herbst 2022; oberstes vs.
+  unterstes Drittel der Berufe nach dem Expositionsmass von Eloundou et al.
+  Die Stelleninserate (Daten x28) in exponierten Berufen lagen zuletzt rund **38 %** tiefer
+  (relativ zu wenig exponierten Berufen).
+  *Einschränkung:* kein Kausalnachweis. Die Inserate in exponierten Berufen entwickelten sich
+  laut den Autoren bereits **2020** signifikant schwächer, also vor ChatGPT.
+- **EY AI Survey 2026** (Mai 2026): Von **604 Befragten** (Personen, nicht Firmen) geben
+  **7 %** an, ihr Unternehmen habe wegen KI Stellen abgebaut, **11 %**, Stellen würden wegen KI
+  nicht mehr nachbesetzt, und **18 %**, es seien neue KI-Stellen entstanden; **42 %** können es
+  nicht einschätzen. **18 %** erwarten künftig einen Abbau.
+  *Einschränkung:* nicht repräsentativ (23 % aus Banken, 55 % aus Firmen mit ≥ 1'000 Mitarbeitenden).
+- **jobs.ch KI Report 2026** (JobCloud, Juni 2026): Der Anteil der Inserate für Berufseinsteiger
+  sank im **Gesamtmarkt** 2025 um **32 %** gegenüber dem Durchschnitt 2019–2022.
+  In den KI-exponierten Kategorien (IT, Administration/HR, Banking, Marketing, Einkauf, Vertrieb)
+  sank der Anteil der Junior-Inserate um **16 %**, jener der Senior-Inserate stieg um **26 %**.
+  *Einschränkung:* Inseratanteile einer Plattform, keine Einstellungen; keine Werte je Kategorie.
+  Die −32 % beziehen sich auf den Gesamtmarkt, nicht auf KI-exponierte Berufe — so werden sie in
+  einzelnen Sekundärquellen falsch wiedergegeben.
+- **AXA KMU-Arbeitsmarktstudie 2026** (Sotomo, Befragung März 2026): **12 %** der KMU, die KI
+  nutzen, erwarten, dank KI auf Personal verzichten zu können.
+  *Einschränkung:* Erwartung, keine gemessene Entwicklung; N = 336 KMU.
+- **einstAIn / Angestellte Schweiz** (Juni 2026): **28 %** der Schweizer Jobs gelten als
+  hoch exponiert.
+  *Einschränkung:* Wie diese App eine Expositionsschätzung, keine Wirkungsmessung; der
+  Schwellenwert für «hoch exponiert» ist nicht dokumentiert.
+- **HSLU AI Jobs Report 2026** (Okt. 2026): Ergänzende Perspektive auf die Gegenbewegung —
+  die Nachfrage nach KI-Fachkräften in Stelleninseraten wächst, vor allem für erfahrene Profile.
+
+**Zwischenfazit Schweiz:** Bisher zeigt sich KI vor allem über **weniger Einstiegsstellen** und
+**Nicht-Nachbesetzung**, kaum über messbare Entlassungswellen. Ein kausaler Nachweis fehlt.
+""")
+
+st.subheader("International (nur qualitativ — Zahlen nicht auf die Schweiz übertragbar)")
+st.markdown("""
+- **Stanford «Canaries in the Coal Mine?»** (Brynjolfsson, Chandar & Chen, Rev. Aug. 2026):
+  In den USA entwickelt sich die Beschäftigung junger Berufseinsteiger in stark exponierten Berufen
+  schwächer. Die Wirkung läuft über **weniger Einstellungen junger Beschäftigter**, nicht über
+  Entlassungen — vor allem dort, wo KI Tätigkeiten automatisiert statt ergänzt. Beschreibend,
+  nicht kausal.
+- **Federal Reserve Bank of New York** (Unternehmensumfragen 2025/26): Firmen nutzen KI
+  zunehmend, reagieren aber eher mit **Umschulung und weniger Neueinstellungen** als mit
+  Entlassungen.
+- **The Budget Lab at Yale** (Tracker, Update Sept. 2026): Gesamtwirtschaftlich gibt es in den USA
+  bisher **keine klare Evidenz** für eine Verdrängung durch KI.
+- **Oxford Economics** (Jan. 2026): Die Belege für einen KI-getriebenen Umbruch sind lückenhaft.
+  Manche Firmen stellen Stellenabbau als positive KI-Story dar
+  («dress up layoffs as a good news story»).
+- **Economic Innovation Group** (Iscenko & Curto Millet, Jan. 2026): Die Inserate in exponierten
+  Berufen erreichten ihren Höchststand bereits im Frühjahr 2022, also **vor ChatGPT** — ein
+  Hinweis, dass der spätere Rückgang nicht allein auf KI zurückgeht.
+""")
+
+st.divider()
+
+# ─── Kündigungsgründe ─────────────────────────────────────────────────────────
+st.header("Warum wir keine Kündigungsgründe zählen")
+
+st.markdown("""
+Naheliegend wäre, Entlassungen zu zählen, die mit KI begründet werden. Das ergibt aus mehreren
+Gründen kein verlässliches Bild:
+
+- **Verdeckte KI-Effekte:** Ein grosser Teil der Wirkung taucht in keiner Kündigung auf —
+  Stellen werden nicht nachbesetzt, Einstellungen gestoppt oder Abbau wird unter
+  «Restrukturierung» oder «Kostendruck» kommuniziert.
+- **KI als vorgeschobener Grund:** Umgekehrt wird KI mitunter genannt, obwohl andere Ursachen
+  dahinterstehen (Nachfragerückgang, Überanstellung) — gegenüber Investoren klingt KI besser.
+  In den Medien wird dies als «AI washing» bezeichnet.
+- **Keine Schweizer Statistik:** Für die Schweiz gibt es keine Statistik der Kündigungsgründe.
+  Die oft zitierten US-Zahlen (Challenger, Gray & Christmas) beruhen auf Selbstangaben der
+  Unternehmen in Abbauankündigungen.
+
+**Unser Ansatz:** Statt Gründe zu zählen, soll die Wirkung über **Ergebnisse je Beruf** gemessen
+werden — z. B. die Entwicklung der Arbeitslosen und Stellensuchenden sowie der Einstiegsinserate,
+jeweils exponierte im Vergleich zu wenig exponierten Berufen. Das erfasst KI-Effekte unabhängig
+davon, welcher Grund genannt wird. Dafür sind nicht-öffentliche SECO-Daten nach CH-ISCO-19
+(4-stellig) nötig; der Datenbezug ist **in Abklärung** (Issue #43).
+""")
+
+st.divider()
+
 # ─── Einschränkungen ──────────────────────────────────────────────────────────
 st.header("Einschränkungen & Hinweise")
 
@@ -172,6 +268,11 @@ st.markdown("""
   Prognose verstanden werden.
 - **Exposition ≠ Jobverlust.** Ein hoher Score bedeutet, dass Teile des Berufs automatisierbar
   *sein könnten* – nicht dass Jobs verschwinden. Viele Berufe wandeln sich.
+  **Exposition** beschreibt die technische Möglichkeit; die **beobachtete Wirkung** ist die
+  tatsächlich gemessene Entwicklung auf dem Arbeitsmarkt. Beides sind getrennte Grössen.
+  Bisher wirkt KI in der Schweiz vor allem über **weniger Einstiegsstellen** und
+  **Nicht-Nachbesetzung**, nicht über breite Entlassungen
+  (siehe «Was wir über die tatsächliche Wirkung wissen»).
 - **Datenbasis 2024.** Die Beschäftigungszahlen basieren auf der BFS Strukturerhebung (SE) 2024
   (Stichprobe; Werte kleiner Berufe sind entsprechend unsicher). Die KI-Landschaft
   verändert sich schnell; Scores können in 1–2 Jahren bereits überholt sein.
@@ -211,4 +312,25 @@ st.markdown("""
 - BFS (2026). [Strukturerhebung (SE) 2024 — Ausgeübter Beruf (CH-ISCO-19) nach Geschlecht und Staatsangehörigkeit](https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.36492006.html) · [Über die Strukturerhebung](https://www.bfs.admin.ch/bfs/de/home/statistiken/bevoelkerung/erhebungen/se.html)
 - Europäische Kommission (2023). [ESCO v1.2](https://esco.ec.europa.eu)
 - BFS (2022). [Lohnstrukturerhebung (LSE)](https://www.bfs.admin.ch/bfs/de/home/statistiken/arbeit-erwerb/loehne-erwerbseinkommen-arbeitskosten/lohnstruktur.html)
+""")
+
+st.subheader("Beobachtete Wirkung — Schweiz")
+st.markdown("""
+- Kläui, J. & Siegenthaler, M. (Okt. 2025). [KI und der Schweizer Arbeitsmarkt: Erste Evidenz zu Auswirkungen auf Arbeitslosigkeit und Stellenausschreibungen](https://doi.org/10.3929/ethz-c-000785283) — KOF Studien Nr. 186
+- EY Schweiz (27.05.2026). [EY AI Survey 2026](https://www.ey.com/de_ch/newsroom/2026/05/artificial-intelligence-widely-established-in-swiss-companies-but-many-are-still-in-the-early-stages-of-scaling)
+- JobCloud (Juni 2026). [jobs.ch KI Report 2026](https://www.jobcloud.ch/wp-content/uploads/2026/06/jobs.ch-KI-Report.pdf)
+- AXA / Sotomo (2026). [AXA KMU-Arbeitsmarktstudie 2026](https://www.axa.ch/de/ueber-axa/medien/medienmitteilungen/aktuelle-medienmitteilungen/2026/20260915-kmu-arbeitsmarktstudie-kuenstliche-intelligenz.html)
+- Derungs, C. et al. (08.10.2026). [HSLU AI Jobs Report 2026](https://www.hslu.ch/-/media/campus/common/files/dokumente/h/1-medienmitteilungen-und-news/2026/i/260922-hslu-ai-job-report-screen-def.pdf)
+- einstAIn / Angestellte Schweiz (16.06.2026). [Nahezu jeder dritte Schweizer Job wegen KI unter Druck](https://angestellte.ch/medien/medienmitteilungen/nahezu-jeder-dritte-schweizer-job-wegen-ki-unter-druck)
+- Lundsgaard-Hansen, C. / sparkr (Sept. 2026). [Künstliche Intelligenz und der Schweizer Arbeitsmarkt](https://sparkr.ch/wp-content/uploads/2026/09/Kuenstliche-Intelligenz-und-Schweizer-Arbeitsmarkt_sparkr_20260930.pdf)
+""")
+
+st.subheader("Beobachtete Wirkung — International")
+st.markdown("""
+- Iscenko, Z. & Curto Millet, F. (Jan. 2026). [Looking for the Ladder](https://eig.org/wp-content/uploads/2026/01/TAWP-Iscenko-Millet.pdf) — Economic Innovation Group
+- Brynjolfsson, E., Chandar, B. & Chen, R. (12.08.2026). [Canaries in the Coal Mine?](https://digitaleconomy.stanford.edu/app/uploads/2026/08/Canaries_August2026.pdf)
+- Abel, J. R. et al. (01.09.2026). [Businesses Are Using AI to Transform Work, Not Cut Jobs](https://libertystreeteconomics.newyorkfed.org/2026/09/businesses-are-using-ai-to-transform-work-not-cut-jobs/) — NY Fed
+- The Budget Lab at Yale (Update 15.09.2026). [Tracking the Impact of AI on the Labor Market](https://budgetlab.yale.edu/research/tracking-impact-ai-labor-market)
+- May, B. & Badawy, Y. (07.01.2026). [Evidence of an AI-driven shakeup of job markets is patchy](https://www.oxfordeconomics.com/wp-content/uploads/2026/01/Evidence-of-an-AI-driven-shakeup-of-job-markets-is-patchy.pdf) — Oxford Economics
+- Challenger, Gray & Christmas (01.10.2026). [Challenger Report September 2026](https://www.challengergray.com/wp-content/uploads/2026/10/Challenger-Report-September-2026.pdf)
 """)
