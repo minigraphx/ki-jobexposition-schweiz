@@ -19,7 +19,7 @@ license: mit
 [![HuggingFace Space](https://img.shields.io/badge/🤗%20HuggingFace-Live%20App-blue)](https://huggingface.co/spaces/AndyWHV/ki-jobexposition-schweiz)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-Interaktive Webapp zur KI-Automatisierungsexposition von **204 Schweizer Berufen** — basierend auf der Methodik von Andrej Karpathy, adaptiert für den Schweizer Arbeitsmarkt.
+Interaktive Webapp zur KI-Automatisierungsexposition von **179 Schweizer Berufen** — basierend auf der Methodik von Andrej Karpathy, adaptiert für den Schweizer Arbeitsmarkt.
 
 **👉 [Live-App auf HuggingFace Spaces](https://huggingface.co/spaces/AndyWHV/ki-jobexposition-schweiz)**
 
@@ -29,7 +29,7 @@ Interaktive Webapp zur KI-Automatisierungsexposition von **204 Schweizer Berufen
 
 | Seite | Inhalt |
 |-------|--------|
-| 🗺️ Treemap | Alle 204 Berufe als Kacheln — Grösse = Beschäftigte, Farbe = KI-Score |
+| 🗺️ Treemap | Alle 179 Berufe als Kacheln — Grösse = Beschäftigte, Farbe = KI-Score |
 | 📊 Matrix | Exposition × Anpassungsfähigkeit — vier Quadranten |
 | 🏭 Branchen | Branchenvergleich und Webb-Konvergenz-Heatmap |
 | 🔍 Berufssuche | Einzelberuf mit Radar-Chart und Permalink (`?beruf=…`) |
@@ -84,7 +84,7 @@ pytest tests/ -v --cov=src/scoring
 
 ## Datenquellen
 
-- **BFS Strukturerhebung (SE) 2024** — Erwerbstätige und Frauenanteil pro Beruf (CH-ISCO-19, 4-stellig)
+- **BFS Strukturerhebung (SE) 2024** — Erwerbstätige und Frauenanteil pro Beruf (CH-ISCO-19, 4-stellige Berufsgattung bzw. 5-stellige Berufsart; jede Gattung zählt genau einmal, siehe `docs/audit_isco_codes.md`)
 - **ESCO v1.2** — Berufsbeschreibungen (Europäische Kommission)
 - **BFS LSE 2024** (T17) — Medianlöhne nach 2-stelliger ISCO-Gruppe, für heterogene Gruppen mit BFS Salarium differenziert
 

@@ -5,7 +5,7 @@ This file provides guidance to Claude Code when working with this repository.
 ## Project Overview
 
 **KI-Jobexpositions-Analyse Schweiz** — A Streamlit webapp that visualizes AI automation
-exposure scores for **204 Swiss occupations**, using the Karpathy/Webb methodology adapted
+exposure scores for **179 Swiss occupations**, using the Karpathy/Webb methodology adapted
 for the Swiss labor market. Deployed on **HuggingFace Spaces**.
 
 - HuggingFace: `https://huggingface.co/spaces/AndyWHV/ki-jobexposition-schweiz`
@@ -21,9 +21,10 @@ source .venv/bin/activate   # or: .venv/bin/python for one-off calls
 streamlit run src/app/app.py
 
 # --- Data Pipeline (run once, in order) ---
-python src/data/update_from_bfs.py          # BFS Strukturerhebung (SE) Excel → berufe_ch.csv
-python src/data/update_from_bfs.py --blatt 2023        # other year sheet (default "2024")
-python src/data/update_from_bfs.py --blatt 2022-2024   # pooled 3-year sheet
+python src/data/update_from_bfs.py          # BFS SE → beschaeftigte_1000/frauen_pct/synonyme in all 4 CSVs (via mapping)
+python src/data/update_from_bfs.py --blatt 2023        # other year sheet (default "2024"; needs data/raw file)
+python src/data/update_from_bfs.py --neue-berufe       # also add new SE Berufsgattungen >= 5000 to berufe_ch.csv + mapping
+python src/data/berufe_zusammenlegen.py     # one-time #51 migration (ISCO fixes + merges), idempotent, kept for reference
 python src/data/enrich_with_esco.py         # ESCO API → berufe_ch_esco.csv  [LOCAL ONLY]
 python src/data/verify_esco_matches.py      # validate matches → berufe_ch_esco_verified.csv
 python src/data/patch_unmatched.py          # manual fixes for bad matches
@@ -37,7 +38,7 @@ python src/data/enrich_with_esco.py --job "Bankkaufmann/-frau"
 
 # --- Scoring Pipeline (requires ANTHROPIC_API_KEY in .env) ---
 python src/scoring/exposure_scorer.py       # synchronous scoring, hash-based delta (only changed jobs)
-python src/scoring/exposure_scorer.py --force                  # re-score all 204 jobs
+python src/scoring/exposure_scorer.py --force                  # re-score all jobs
 python src/scoring/exposure_scorer.py --force "Buchhalter/in"  # re-score by name
 python src/scoring/exposure_scorer.py --force 2411             # re-score by ISCO prefix
 python src/scoring/adaptability_scorer.py   # rule-based adaptability scores
@@ -58,7 +59,9 @@ pytest tests/ --cov=src --cov-report=term-missing
 ```
 data/raw/su-d-40.02.03.02.01.03.10.xlsx   (BFS Strukturerhebung, manually downloaded from bfs.admin.ch)
   → src/data/update_from_bfs.py
-  → data/processed/berufe_ch.csv          (204 jobs, ISCO codes, headcount, wages)
+  + data/processed/beruf_berufsart_mapping.csv  (beruf → 4-digit Berufsgattung or 5-digit Berufsart(en), versioned)
+  → data/processed/se_berufe.csv          (versioned SE extract: sheets 2024 + 2022-2024, both levels)
+  → beschaeftigte_1000, frauen_pct, synonyme in berufe_ch*.csv and scores.csv (179 jobs)
 
 berufe_ch.csv
   → src/data/enrich_with_esco.py          [requires local ESCO API access]
@@ -67,7 +70,7 @@ berufe_ch.csv
 berufe_ch_esco.csv
   → src/data/verify_esco_matches.py
   → data/processed/berufe_ch_esco_verified.csv  (+ match_score 0/1/2)
-  note: only covers the 107 jobs that had a valid match; 97 jobs have no ESCO URI
+  note: 5 of 179 jobs have no ESCO URI (fallback description)
 
 data/raw/je-d-03.04.01.02.47.xlsx         (BFS LSE 2024 T17, optional — parsed copy is versioned)
 data/processed/lohn_profile_salarium.csv  (curated Salarium profile per job, groups 11–14/22/24/26)
@@ -99,8 +102,25 @@ commuters), in 1000. Downloaded from:
 `https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.36492006.html`
 
 The file has one sheet per year (`2024`, `2023`, …, `2010`, `2000`, `1990`) plus pooled sheets
-(`2022-2024`, `2021-2023`, …). Columns: 0–4 codes by level (4-digit Berufsgattung = column 3),
-5 label, 6 total, 7 men, 8 women. Select the sheet with `--blatt` (default `2024`).
+(`2022-2024`, `2021-2023`, …). Columns: 0–4 codes by level (4-digit Berufsgattung = column 3,
+5-digit Berufsart = column 4), 5 label, 6 total, 7 men, 8 women; «X» = not published (< 5 obs.),
+number format «(##0)» = < 50 obs. Select the sheet with `--blatt` (default `2024`).
+
+**No double counting (Issue #51):** invariant Σ `beschaeftigte_1000` per 4-digit code = SE value
+(tested). Mapping `beruf_berufsart_mapping.csv` (columns `beruf, isco_code, ebene, berufsarten,
+synonyme, zusammengelegt_aus, text_von, begruendung`):
+- `ebene = gattung`: only job of its Berufsgattung → full SE value.
+- `ebene = berufsart`: several jobs share a Gattung (2330, 5131, 5223) → sum of the assigned
+  5-digit Berufsarten + rest of the Gattung (onA, unpublished) proportionally; every published
+  non-onA Berufsart must be assigned exactly once.
+- Otherwise jobs are merged (Fallback A): SE label as `beruf`, former CH titles in `synonyme`
+  (searchable in Berufssuche, old permalinks resolve); scores = employment-weighted mean of the
+  former entries, texts/ESCO from the largest (`text_von`), `scores_gemittelt = True` and empty
+  `beschreibung_hash` so `exposure_scorer.py` re-scores them. 22 merges, see `docs/audit_isco_codes.md`.
+- SE value from sheet 2024; if a Gattung (or its women count) is «X», the pooled sheet 2022-2024.
+- ISCO codes audited against SE labels (`docs/audit_isco_codes.md`): 21 corrected, 15 open.
+  A new job/code needs a mapping row; when changing codes, adjust `lohn_profile_salarium.csv`
+  (groups 11–14/22/24/26) and run `update_loehne.py --offline`.
 
 ### Scoring Pipeline (outputs `data/processed/scores.csv`)
 
@@ -127,7 +147,8 @@ CH wage deltas: <60k CHF −0.2, 60–100k 0.0, 100–150k +0.2, >150k +0.4.
 
 | Script | Input | Output | Notes |
 |--------|-------|--------|-------|
-| `src/data/update_from_bfs.py` | `data/raw/su-d-40.02.03.02.01.03.10.xlsx` | `berufe_ch.csv` | BFS Strukturerhebung (SE) 2024, sheet via `--blatt` (default "2024"), 4-digit ISCO groups |
+| `src/data/update_from_bfs.py` | `data/raw/su-d-40.02.03.02.01.03.10.xlsx` (or `se_berufe.csv`), `beruf_berufsart_mapping.csv` | `berufe_ch*.csv`, `scores.csv`, `se_berufe.csv` | BFS SE 2024: Berufsgattung/Berufsart per mapping, sets `beschaeftigte_1000`, `frauen_pct`, `synonyme`; `--blatt`, `--neue-berufe`, `--dry-run` |
+| `src/data/berufe_zusammenlegen.py` | `beruf_berufsart_mapping.csv` | `berufe_ch*.csv`, `scores.csv` | One-time #51 migration: ISCO code fixes + merges (weighted-mean scores); idempotent |
 | `src/data/enrich_with_esco.py` | `berufe_ch.csv` | `berufe_ch_esco.csv` | **Must run locally** (ESCO API blocked in cloud); 6-stage search with Haiku validation |
 | `src/data/verify_esco_matches.py` | `berufe_ch_esco.csv` | `berufe_ch_esco_verified.csv` | Haiku-based match quality scoring 0/1/2 |
 | `src/data/patch_unmatched.py` | `berufe_ch_esco_verified.csv` | `berufe_ch_esco_verified.csv` | Manual overrides for known bad matches |
@@ -176,15 +197,16 @@ All charts use **Plotly**. App reads from `data/processed/scores.csv`.
 |--------|--------|-------------|
 | `beruf` | BFS SE | German Swiss job title (CH-ISCO-19, 4-digit groups) |
 | `isco_code` | BFS SE | ISCO-08 / CH-ISCO-19 code |
-| `beschaeftigte_1000` | BFS Strukturerhebung (SE) 2024 | Employed persons in thousands |
-| `frauen_pct` | BFS Strukturerhebung (SE) 2024 | Share of women in percent (0–100) |
+| `synonyme` | `beruf_berufsart_mapping.csv` | Former CH titles of merged entries (`; `-separated), searched in Berufssuche |
+| `beschaeftigte_1000` | BFS Strukturerhebung (SE) 2024 | Employed persons in thousands — 4-digit Gattung or assigned 5-digit Berufsarten; Σ per code = SE value |
+| `frauen_pct` | BFS Strukturerhebung (SE) 2024 | Share of women in percent (0–100); pooled 2022–2024 if 2024 is «X» |
 | `branche` | ISCO mapping | Sector (21 categories, manually mapped from ISCO groups) |
 | `lohn_median_chf` | BFS LSE 2024 (T17) | Median annual gross salary CHF = 2-digit group monthly median × 12; for groups 11–14/22/24/26 calibrated with Salarium profiles (`update_loehne.py`) |
 | `lohn_quelle` | `update_loehne.py` | `LSE2024_2d`, `LSE2024_2d+Salarium`, fallback `LSE2024_1d` / `LSE2024_total` |
 | `qualifikation` | Curated list / ISCO major group | Education level: Tertiär / Sekundär II / Keine Ausbildung |
-| `esco_uri` | ESCO REST API | ESCO occupation URI — empty for 7 of 204 jobs (fallback description) |
+| `esco_uri` | ESCO REST API | ESCO occupation URI — empty for 5 of 179 jobs (fallback description) |
 | `esco_titel` | ESCO REST API | ESCO occupation title (German) |
-| `esco_beschreibung` | ESCO API or Haiku | ESCO description (197 jobs) or fallback from berufsberatung.ch / Wikipedia / Haiku (7 jobs) |
+| `esco_beschreibung` | ESCO API or Haiku | ESCO description (174 jobs) or fallback from berufsberatung.ch / Wikipedia / Haiku (5 jobs) |
 | `score_gesamt` | Claude Sonnet | Raw AI exposure score 0–10 (Batch API) |
 | `score_digital` | Claude Sonnet | Sub-score: digital output (25% weight) |
 | `score_wiederholbarkeit` | Claude Sonnet | Sub-score: repeatability (25% weight) |
@@ -198,6 +220,7 @@ All charts use **Plotly**. App reads from `data/processed/scores.csv`.
 | `delta_lohn` | `ch_adjustments.py` | CH wage-level adjustment (rule-based) |
 | `score_ch` | `ch_adjustments.py` | Final score: score_gesamt + delta_branche + delta_lohn, clipped 0–10 |
 | `adaptabilitaet` | `adaptability_scorer.py` | Adaptability score 0–10 (rule-based) |
+| `scores_gemittelt` | `berufe_zusammenlegen.py` | `True` = merged entry, scores are a provisional employment-weighted mean (re-scoring pending) |
 
 ## Datenqualität
 
