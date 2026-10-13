@@ -727,6 +727,7 @@ def test_vergleich_bericht(tmp_path, eintraege):
     out = tmp_path / "vergleich.md"
     assert tv.main(["--basis", str(tmp_path), "--out", str(out)]) == 0
     text = out.read_text(encoding="utf-8")
-    assert "| 2512 | Softwareentwickler | 7.2 | 7.0 | 6.0 | 6.5 | -0.2 | -1.2 | 1.0 |" in text
+    # Pilot-ζ 7.25 → kaufmännisch 7.3 (deterministisch, unabhängig von Gleitkomma-Rauschen)
+    assert "| 2512 | Softwareentwickler | 7.3 | 7.0 | 6.0 | 6.5 | -0.3 | -1.3 | 1.0 |" in text
     assert "ILO 2025" in text and "Pilot (Abo) ζ (n)" in text
     assert "0.88 (15)" in text          # Pilot vs. ILO, wie in der Pilot-Auswertung

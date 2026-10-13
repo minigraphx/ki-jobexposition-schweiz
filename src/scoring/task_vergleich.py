@@ -17,6 +17,7 @@ import argparse
 import json
 import math
 import sys
+from decimal import ROUND_HALF_UP, Decimal
 from pathlib import Path
 
 import pandas as pd
@@ -85,7 +86,12 @@ def tabelle(eintraege: list[ti.Eintrag], pilot: dict, api: dict[str, dict]) -> p
 
 
 def _f(x: float, nd: int = 1) -> str:
-    return "–" if x is None or (isinstance(x, float) and math.isnan(x)) else f"{x:.{nd}f}"
+    if x is None or (isinstance(x, float) and math.isnan(x)):
+        return "–"
+    # kaufmännisch runden; vorher auf 9 Stellen glätten, damit Gleitkomma-Rauschen
+    # (z. B. 7.2499999 vs. 7.25) nicht je nach Umgebung anders rundet
+    wert = Decimal(repr(round(float(x), 9))).quantize(Decimal(1).scaleb(-nd), rounding=ROUND_HALF_UP)
+    return f"{wert:.{nd}f}"
 
 
 def _rho(df: pd.DataFrame, a: str, b: str) -> tuple[float, int]:
