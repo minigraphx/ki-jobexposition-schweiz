@@ -17,8 +17,8 @@ Pilot-Läufe: run1_v21, run2_v21 · Einträge mit API-Bewertung: Claude 15, Gemi
 | 2411 | Wirtschaftsprüfer, Steuerberater und verwandte Berufe | 6.0 | 8.5 | 8.8 | 8.6 | 2.5 | 2.8 | -0.3 | 3.9 / 5.5 / 5.5 | 2/2/2 |
 | 2166 | Grafik- und Multimediadesigner | 4.8 | 5.1 | 6.0 | 5.5 | 0.3 | 1.3 | -1.0 | 3.4 / 3.4 / 4.0 | 2/2/2 |
 | 2341 | Primarlehrer/in | 3.0 | 2.5 | 2.5 | 2.5 | -0.5 | -0.6 | 0.1 | 1.9 / 1.6 / 1.5 | 2/2/2 |
-| 2221 | Dipl. Pflegefachperson | 2.3 | 2.1 | 2.3 | 2.2 | -0.2 | 0.0 | -0.2 | 1.4 / 1.3 / 1.4 | 2/2/2 |
 | 2211 | Arzt/Ärztin (Allgemeinmedizin) | 2.3 | 2.7 | 3.2 | 2.9 | 0.5 | 0.9 | -0.5 | 1.4 / 1.6 / 1.9 | 2/2/2 |
+| 2221 | Dipl. Pflegefachperson | 2.3 | 2.1 | 2.3 | 2.2 | -0.2 | 0.0 | -0.2 | 1.4 / 1.3 / 1.4 | 2/2/2 |
 | 7411 | Elektriker/in EFZ | 1.0 | 0.9 | 1.0 | 0.9 | -0.2 | 0.0 | -0.2 | 0.6 / 0.5 / 0.6 | 2/2/2 |
 | 5223 | Verkäufer in Handelsgeschäften | 0.2 | 0.5 | 0.5 | 0.5 | 0.4 | 0.4 | 0.0 | 0.1 / 0.4 / 0.4 | 2/2/2 |
 | 8332 | Lastwagenfahrer/in | 0.2 | 0.3 | 0.4 | 0.3 | 0.1 | 0.2 | -0.1 | 0.1 / 0.2 / 0.2 | 2/2/2 |
@@ -28,10 +28,10 @@ Pilot-Läufe: run1_v21, run2_v21 · Einträge mit API-Bewertung: Claude 15, Gemi
 
 | Paar | n | Spearman ρ (ζ) | mittlere Differenz | MAE | ρ (Zeitersparnis) |
 |---|---|---|---|---|---|
-| API Claude – Pilot (Abo) | 15 | 0.89 | 0.16 | 0.48 | 0.90 |
-| API Gemini – Pilot (Abo) | 15 | 0.90 | 0.73 | 0.81 | 0.95 |
-| API Claude – API Gemini | 15 | 1.00 | -0.58 | 0.58 | 0.97 |
-| API kombiniert – Pilot (Abo) | 15 | 0.89 | 0.45 | 0.56 | 0.94 |
+| API Claude – Pilot (Abo) | 15 | 0.90 | 0.16 | 0.48 | 0.90 |
+| API Gemini – Pilot (Abo) | 15 | 0.91 | 0.73 | 0.81 | 0.95 |
+| API Claude – API Gemini | 15 | 1.00 | -0.58 | 0.58 | 0.98 |
+| API kombiniert – Pilot (Abo) | 15 | 0.90 | 0.45 | 0.56 | 0.94 |
 
 ## Spearman ρ gegen externe Benchmarks — Pilotberufe
 
