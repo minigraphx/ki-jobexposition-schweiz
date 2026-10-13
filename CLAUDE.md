@@ -51,12 +51,18 @@ python src/scoring/ch_adjustments.py        # CH sector/salary deltas → scores
 
 # --- Task-based re-scoring, Rubrik v2.2 (LOCAL ONLY, own keys in .env; see docs/neubewertung_lokal.md) ---
 pip install -r requirements-dev.txt         # includes requirements-scoring.txt (anthropic, google-genai, jsonschema)
-python src/scoring/task_scorer.py --provider claude --pilot --runs 2 --dry-run   # calls + token/cost estimate, no API call
+python src/scoring/task_scorer.py --provider claude --pilot --runs 2 --dry-run   # calls + token/cost estimate (sync + batch), no API call
 python src/scoring/task_scorer.py --provider claude --pilot --runs 2 --dry-run --count-tokens  # exact input tokens (free, needs key)
+python src/scoring/task_scorer.py --provider claude --only 2512 --runs 1   # synchronous probe (schema check), 1 call
 python src/scoring/task_scorer.py --provider claude --pilot --runs 2   # 15 pilot jobs, 2 runs (+ auto run 3 if |Δζ| > 1)
 python src/scoring/task_scorer.py --provider gemini --pilot --runs 2
-python src/scoring/task_scorer.py --provider claude --runs 2           # all 179 entries (hash delta: only new/changed)
-python src/scoring/task_scorer.py --provider claude --nur 2411 2512 --force   # selected ISCO codes/prefixes, re-ask
+python src/scoring/task_scorer.py --provider claude --only 2411 2512 --force   # selected ISCO codes/prefixes, re-ask
+# Batch mode (recommended for the full run; 50 % cheaper, up to 24 h; state in bewertungen/<provider>/batches/)
+python src/scoring/task_scorer.py --provider claude --runs 2 --batch submit --dry-run   # requests + batch cost
+python src/scoring/task_scorer.py --provider claude --runs 2 --batch submit   # all entries (delta: skips current + open)
+python src/scoring/task_scorer.py --provider claude --batch status            # open batches, status/counts
+python src/scoring/task_scorer.py --provider claude --batch collect           # fetch finished, validate, write run<N>/ (idempotent)
+python src/scoring/task_scorer.py --provider claude --runs 2 --batch followup --refusal-sync  # retries/corrections + run 3 as new batch; refusals sync with fallback
 python src/scoring/task_aggregate.py        # → data/processed/scores_aufgaben.csv (per provider + combined)
 python src/scoring/task_vergleich.py        # → data/processed/bewertungen/vergleich.md (pilot vs. API, benchmarks)
 python src/scoring/task_inputs.py --pilot   # optional: write input JSONs for inspection (gitignored)
@@ -220,6 +226,8 @@ scores.csv (master data only: beruf, isco_code, synonyme, qualifikation, branche
   → task_inputs.py      input JSON per entry (pilot format) + input_hash = SHA-256(rubrik version, schema, input)
   → task_scorer.py      --provider claude|gemini, --runs 2 (seeded shuffle per run), validation + 1 correction retry,
                         auto run 3 if |Δ ζ-score| run1↔run2 > 1.0 (DRITTER_LAUF_SCHWELLE)
+                        --batch submit|status|collect|followup → task_batch.py (Message Batches API / Gemini
+                        Batch Mode; same prompts/schemas/validation; state bewertungen/<provider>/batches/<id>.json)
   → data/processed/bewertungen/<provider>/run<N>/<isco>_<slug>.json   {meta, bewertung[, rohantwort]}
     data/processed/bewertungen/<provider>/protokoll.jsonl            one line per call (status, usage)
   → task_aggregate.py   ζ, β, Zeitersparnis, Modus-Anteile, P-Scores; per provider + combined; flags
@@ -241,10 +249,21 @@ scores.csv (master data only: beruf, isco_code, synonyme, qualifikation, branche
   logged in `meta.model_served` / `meta.fallback`.
   `gemini-4-argon` via `models.generate_content`, `response_mime_type="application/json"` +
   `response_json_schema` (`schema_fuer_gemini()`: $refs inlined), `thinking_level="high"`,
-  `max_output_tokens=65536`, no temperature (ignored by the model).
+  `max_output_tokens=65536`, no temperature (ignored by the model), automatic function calling disabled.
+  Before any call the provider SDK import is checked (`pruefe_pakete`, clear message + pip hint).
+  Dry-run uses measured means from existing result files (`meta.usage`), else estimates
+  (1.8 chars/token, `AUSGABE_TOKENS`, calibrated on the first Claude probe).
 - **Validation:** every answer is checked against the original JSON schema (Draft 2020-12, incl.
   if/then rules) plus sum of time shares = 100 and isco_code/beruf = input (`task_rubrik.pruefe_bewertung`);
   mode × residual-time contradictions are only `meta.hinweise`.
+- **Batch mode** (`task_batch.py`): custom_id `r<run>-<isco>_<slug>` (`^[a-zA-Z0-9_-]{1,64}$`), results
+  matched strictly by custom_id (Gemini: `metadata.custom_id`, positional only if no response carries it).
+  Claude batch requests omit `fallbacks` (rejected by the Batches API) → refusals logged
+  (`meta.fehler_art = "refusal"`) and re-run synchronously with fallback via `followup --refusal-sync`;
+  system prompt cached (`--cache-ttl 5m|1h`, default 5m). Gemini inline batches are split to stay < 20 MB.
+  Results get `meta.modus = "batch"`, `batch_id`, `custom_id`; `collect` never overwrites a current valid
+  file and skips already collected batches. `followup`: correction turn for invalid answers, retry for
+  errored/expired/missing, run 3 for |Δζ| > threshold; entries in open batches are never re-submitted.
 - **Delta:** a result is current if `status == ok`, same `input_hash`, same `rubrik_version`, same
   `model_requested` → skipped unless `--force`.
 - **Aggregation:** `score_aufgaben` = 10·ζ (mean over all valid runs of both providers),
@@ -273,10 +292,11 @@ scores.csv (master data only: beruf, isco_code, synonyme, qualifikation, branche
 | `src/data/full_quality_audit.py` | `scores.csv` | `scores.csv` + `audit_report.json` | Phase 1: Haiku audit; Phase 2: Haiku desc generation; Phase 3: Sonnet re-score |
 | `src/scoring/fix_brennschneider_contamination.py` | `scores.csv` | `scores.csv` | One-time fix; kept for reference |
 | `src/scoring/task_rubrik.py` | `rubrik/*_v2_1.*`, `rubrik/*_v2_2.*` | — | Shared: rubric version, system prompt, validation, provider schemas, metrics (ζ, β, Zeitersparnis, …) |
-| `src/scoring/task_inputs.py` | `scores.csv` (master data), `esco_kompetenzen.csv` | (optional) `bewertungen/input/*.json` | Input per entry + input hash; `PILOT_BERUFE` (15); `--pilot`, `--nur` |
-| `src/scoring/task_scorer.py` | inputs (in memory), `.env` keys | `bewertungen/<provider>/run<N>/*.json`, `protokoll.jsonl` | **Local only**; `--provider`, `--runs`, `--pilot`/`--nur`, `--force`, `--dry-run [--count-tokens]`, `--max-parallel`, `--effort`/`--thinking-level`, `--model` |
-| `src/scoring/task_aggregate.py` | `bewertungen/<provider>/run*/` | `scores_aufgaben.csv` | Per provider + combined; `--auch-veraltet` |
-| `src/scoring/task_vergleich.py` | `bewertungen/pilot_abo/`, API runs, `benchmarks_isco4.csv` | `bewertungen/vergleich.md` | 15 pilot jobs + Spearman vs. benchmarks; `--pilot-runs` |
+| `src/scoring/task_inputs.py` | `scores.csv` (master data), `esco_kompetenzen.csv` | (optional) `bewertungen/input/*.json` | Input per entry + input hash; `PILOT_BERUFE` (15); `--pilot`, `--only` |
+| `src/scoring/task_scorer.py` | inputs (in memory), `.env` keys | `bewertungen/<provider>/run<N>/*.json`, `protokoll.jsonl` | **Local only**; `--provider`, `--runs`, `--pilot`/`--only`, `--force`, `--dry-run [--count-tokens]`, `--max-parallel`, `--effort`/`--thinking-level`, `--model`, `--no-fallback`, `--no-third-run`, `--threshold`; batch: `--batch submit\|status\|collect\|followup`, `--batch-id`, `--refusal-sync`, `--cache-ttl` |
+| `src/scoring/task_batch.py` | via `task_scorer.py --batch …` | `bewertungen/<provider>/batches/*.json`, `run<N>/*.json`, `protokoll.jsonl` | Batch mode for both providers (submit/status/collect/followup) |
+| `src/scoring/task_aggregate.py` | `bewertungen/<provider>/run*/` | `scores_aufgaben.csv` | Per provider + combined; `--base-dir`, `--include-stale` |
+| `src/scoring/task_vergleich.py` | `bewertungen/pilot_abo/`, API runs, `benchmarks_isco4.csv` | `bewertungen/vergleich.md` | 15 pilot jobs + Spearman vs. benchmarks; `--pilot-runs`, `--base-dir`, `--include-stale` |
 
 ### ESCO Search Strategy (`enrich_with_esco.py`)
 
