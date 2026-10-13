@@ -26,6 +26,10 @@ if df is None:
     st.warning("Noch keine Score-Daten vorhanden.")
     st.stop()
 
+# Neu aufgenommene Berufe ohne Exposure-Bewertung nicht darstellen (Hinweis unten)
+offen = df[df["score_ch"].isna()]
+df = df[df["score_ch"].notna()]
+
 st.markdown("""
 Die Matrix zeigt zwei Dimensionen:
 - **Y-Achse: KI-Exposition** (0 = sicher, 10 = stark exponiert)
@@ -116,3 +120,6 @@ fig.update_layout(
     showlegend=False,
 )
 st.plotly_chart(fig, use_container_width=True)
+if not offen.empty:
+    st.caption(f"{len(offen)} neu aufgenommene Berufe ({offen['beschaeftigte_1000'].sum():,.0f} Tsd. "
+               "Beschäftigte) sind noch nicht bewertet und hier nicht enthalten — siehe Berufssuche.")

@@ -29,6 +29,10 @@ if df is None:
     st.code("python src/scoring/exposure_scorer.py", language="bash")
     st.stop()
 
+# Neu aufgenommene Berufe ohne Exposure-Bewertung nicht darstellen (Hinweis unten)
+offen = df[df["score_ch"].isna()]
+df = df[df["score_ch"].notna()]
+
 # ── Sidebar Filter ─────────────────────────────────────────────────────────────
 with st.sidebar:
     st.header("Filter")
@@ -55,7 +59,7 @@ with st.sidebar:
     min_score = st.slider("Minimaler KI-Score", 0.0, 10.0, 0.0, 0.5)
 
     st.divider()
-    st.caption(f"{len(df)} Berufe total")
+    st.caption(f"{len(df)} Berufe bewertet")
 
 # ── Filtern ────────────────────────────────────────────────────────────────────
 filtered = df.copy()
@@ -79,6 +83,9 @@ if filtered.empty:
     st.stop()
 
 st.caption(f"**{len(filtered)}** Berufe angezeigt · {filtered['beschaeftigte_1000'].sum():,.0f} Tsd. Beschäftigte")
+if not offen.empty:
+    st.caption(f"{len(offen)} neu aufgenommene Berufe ({offen['beschaeftigte_1000'].sum():,.0f} Tsd. "
+               "Beschäftigte) sind noch nicht bewertet und hier nicht enthalten — siehe Berufssuche.")
 
 # ── Treemap ────────────────────────────────────────────────────────────────────
 fig = px.treemap(

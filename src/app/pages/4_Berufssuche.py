@@ -45,12 +45,18 @@ for _, _row in df.iterrows():
 # Synonym (bisheriger CH-Titel eines zusammengelegten Berufs) → Eintrag
 _synonym_zu_beruf = {s.lower(): b for b, syn in _syn_map.items() for s in syn}
 
+# Neu aufgenommene Einträge ohne Exposure-Bewertung (score_ch leer)
+_unbewertet = set(df.loc[df["score_ch"].isna(), "beruf"])
+UNBEWERTET = "noch nicht bewertet"
+
 
 def _label(beruf: str) -> str:
     teile = [beruf] + _syn_map.get(beruf, [])
     esco = _esco_map.get(beruf, "")
     if esco and esco.lower() not in {t.lower() for t in teile}:
         teile.append(esco)
+    if beruf in _unbewertet:
+        teile.append(f"({UNBEWERTET})")
     return "  ·  ".join(teile)
 
 
@@ -83,24 +89,34 @@ if str(row.get("scores_gemittelt", "")).strip().lower() == "true":
         icon="⚠️",
     )
 
+bewertet = beruf not in _unbewertet
+if not bewertet:
+    st.info(
+        f"**{UNBEWERTET.capitalize()}:** Dieser Beruf wurde neu aus der BFS Strukturerhebung "
+        "aufgenommen. Beschäftigte, Lohn und Berufsbeschreibung sind erfasst; die "
+        "KI-Expositions-Bewertung folgt. Bis dahin erscheint er nicht in Treemap, Matrix und "
+        "Branchenanalyse.",
+        icon="🕓",
+    )
+
 # ── Metriken ────────────────────────────────────────────────────────────────────
 col1, col2, col3 = st.columns(3)
 with col1:
     score = row.get("score_ch", row.get("score_gesamt", 0))
-    st.metric("KI-Expositions-Score", f"{score:.1f} / 10")
+    st.metric("KI-Expositions-Score", f"{score:.1f} / 10" if bewertet else "–")
 with col2:
     st.metric("Beschäftigte CH", f"{row.get('beschaeftigte_1000', '?')} Tsd.",
               help="BFS Strukturerhebung 2024, Erwerbstätige der CH-ISCO-19-Berufsgattung "
                    f"{row.get('isco_code', '')} (bzw. der zugeordneten Berufsarten)")
 with col3:
-    st.metric("Zeitrahmen", row.get("zeitrahmen", "–"))
+    st.metric("Zeitrahmen", _text(row.get("zeitrahmen", "")) or "–")
 
 st.divider()
 
 # ── Radar-Chart der Teilscores ──────────────────────────────────────────────────
 radar_cols = ["score_digital", "score_wiederholbarkeit", "score_physisch",
               "score_kreativitaet", "score_sozial"]
-if all(c in row.index for c in radar_cols):
+if bewertet and all(c in row.index for c in radar_cols):
     kategorien = ["Digital", "Wiederholbarkeit", "Physisch (inv.)", "Kreativität (inv.)", "Sozial (inv.)"]
     werte = [
         row["score_digital"],
@@ -123,8 +139,9 @@ if all(c in row.index for c in radar_cols):
     )
     st.plotly_chart(fig, use_container_width=True)
 
-st.markdown(f"**Hauptrisiko:** {row.get('haupt_risiko', '–')}")
-st.markdown(f"**Begründung:** {row.get('begruendung', '–')}")
+if bewertet:
+    st.markdown(f"**Hauptrisiko:** {row.get('haupt_risiko', '–')}")
+    st.markdown(f"**Begründung:** {row.get('begruendung', '–')}")
 
 # ── Scoring-Grundlage ───────────────────────────────────────────────────────────
 st.divider()
