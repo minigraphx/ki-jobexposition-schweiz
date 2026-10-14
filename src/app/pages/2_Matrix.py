@@ -77,7 +77,8 @@ for unsicher, (symbol, name) in symbole.items():
             "<b>%{customdata[0]}</b><br>"
             f"{y_label}: %{{y:.1f}}<br>"
             "Anpassungsfähigkeit: %{x:.1f}<br>"
-            "KI-Exposition: %{customdata[6]:.1f} (Claude %{customdata[1]:.1f} · Gemini %{customdata[2]:.1f})<br>"
+            "KI-Exposition: %{customdata[6]:.1f}<br>"
+            f"{g.CLAUDE_NAME} gibt %{{customdata[1]:.1f}} Punkte, {g.GEMINI_NAME} %{{customdata[2]:.1f}} Punkte<br>"
             "Erwerbstätige: %{customdata[3]:.1f} Tsd. · Frauen: %{customdata[4]:.0f} %"
             "%{customdata[5]}<extra></extra>"
         ),

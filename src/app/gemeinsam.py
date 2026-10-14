@@ -52,8 +52,8 @@ HILFE: dict[str, str] = {
 }
 
 MODELLE: dict[str, str] = {
-    "claude-cli": "Claude Opus 5.5 (Abo)",
-    "claude": "Claude Opus 5.5 (API)",
+    "claude-cli": "Claude Opus 5.5",
+    "claude": "Claude Opus 5.5",
     "gemini": "Gemini 4 Argon",
 }
 
@@ -179,11 +179,21 @@ def _ueber(wert, schwelle: float = 1.0) -> bool:
         return False
 
 
+CLAUDE_NAME, GEMINI_NAME = "Claude Opus 5.5", "Gemini 4 Argon"
+
+
+def modellwerte(z) -> str:
+    """«Claude Opus 5.5 gibt 6.7 Punkte, Gemini 4 Argon 8.2 Punkte» — Modellversion und Wert nie direkt
+    hintereinander (sonst liest man «Opus 5.5 6.7»)."""
+    return (f"{CLAUDE_NAME} gibt {z['exposure_claude']:.1f} Punkte, "
+            f"{GEMINI_NAME} {z['exposure_gemini']:.1f} Punkte")
+
+
 def unsicher_gruende(z) -> list[str]:
     """Kurze Gründe der Unsicherheits-Markierung (aus den Zahlen, nicht aus dem technischen uncertain_reason)."""
     gruende = []
     if _ueber(z.get("delta_provider")):
-        gruende.append(f"Claude {z['exposure_claude']:.1f}, Gemini {z['exposure_gemini']:.1f}")
+        gruende.append(modellwerte(z))
     if _ueber(z.get("spread_runs")):
         gruende.append(f"Wiederholungen streuen um {z['spread_runs']:.1f} Punkte")
     try:
@@ -196,7 +206,7 @@ def unsicher_gruende(z) -> list[str]:
 
 
 def quelle_lesbar(text_source: str) -> str:
-    """«claude-cli/run2» → «Claude Opus 5.5 (Abo), Lauf 2»."""
+    """«claude-cli/run2» → «Claude Opus 5.5, Lauf 2»."""
     q = text(text_source)
     if "/run" not in q:
         return q or "–"

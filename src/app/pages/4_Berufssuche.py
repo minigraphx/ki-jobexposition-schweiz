@@ -84,7 +84,7 @@ if row["uncertain"]:
         icon="⚠️",
     )
 else:
-    st.caption(f"Claude {row['exposure_claude']:.1f}, Gemini {row['exposure_gemini']:.1f} — übereinstimmend.")
+    st.caption(f"{g.modellwerte(row)} — übereinstimmend.")
 
 # ── Arbeitszeit nach Modus ──────────────────────────────────────────────────────
 st.subheader("Wie die Arbeitszeit betroffen ist")

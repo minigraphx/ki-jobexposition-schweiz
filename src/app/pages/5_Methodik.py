@@ -112,8 +112,8 @@ Die Modelle berechnen keinen Gesamtscore; die Kennzahlen bildet der Code aus den
 | Ersetzbare Zeit | Σ w · 1[ersetzend] · (1 − Restzeit) | Berufssuche, Branchen-Heatmap |
 | P physisch / Software | 10 · Σ w · 1[P1, Art physisch bzw. Software] | **Physische** bzw. **Software-Automatisierung** |
 
-**Zwei Modelle, mehrere Läufe:** Jeder Beruf wird unabhängig von **Claude Opus 5.5** (Anthropic,
-über das eigene Abo) und **Gemini 4 Argon** (Google) bewertet, je in **zwei unabhängigen Läufen**
+**Zwei Modelle, mehrere Läufe:** Jeder Beruf wird unabhängig von **Claude Opus 5.5** (Anthropic)
+und **Gemini 4 Argon** (Google) bewertet, je in **zwei unabhängigen Läufen**
 (jeder Beruf ein eigener Aufruf, gleiche Rubrik, gleiches Schema, gleiche Validierung; die Berufe
 je Lauf in neu gemischter Reihenfolge). Weichen die zwei Läufe eines Modells um mehr als 1 Punkt ab, folgt automatisch ein
 **dritter Lauf** (bei {n_dritter} Berufen). Jede Antwort wird gegen das JSON-Schema der Rubrik

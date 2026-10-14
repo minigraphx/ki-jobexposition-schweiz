@@ -141,7 +141,8 @@ def test_berufssuche_details_und_taetigkeiten():
     assert set(tab["Stufe"]) <= {"E0", "E1", "E2"}
     texte = _texte(at)
     assert df.at[beruf, "main_risk"] in texte
-    assert f"Claude {df.at[beruf, 'exposure_claude']:.1f}, Gemini {df.at[beruf, 'exposure_gemini']:.1f}" in texte
+    assert (f"Claude Opus 5.5 gibt {df.at[beruf, 'exposure_claude']:.1f} Punkte, "
+            f"Gemini 4 Argon {df.at[beruf, 'exposure_gemini']:.1f} Punkte") in texte
     assert "Opus 5.5 " + f"{df.at[beruf, 'exposure_claude']:.1f}" not in texte   # keine Zahl direkt nach der Modellnummer
     assert "Radar" not in texte
 
@@ -151,7 +152,7 @@ def test_berufssuche_unsicher_zeigt_beide_modelle():
     r = df[df["uncertain"] & (df["delta_provider"] > 1.0)].iloc[0]     # Grund: Modelle uneinig
     at = _seite("pages/4_Berufssuche.py", beruf=r["occupation"])
     warnung = " ".join(w.value for w in at.warning)
-    assert "Weniger sichere Bewertung" in warnung and "Opus" not in warnung
+    assert "Weniger sichere Bewertung" in warnung and f"Claude Opus 5.5 gibt {r['exposure_claude']:.1f} Punkte" in warnung
     assert f"{r['exposure_claude']:.1f}" in warnung and f"{r['exposure_gemini']:.1f}" in warnung
     assert "> 1" not in warnung                                  # kein technischer Grund-Text
 
@@ -245,5 +246,5 @@ def test_hilfsfunktionen():
     assert g.spearman(pd.Series([1, 2, 3, 4]), pd.Series([10, 20, 30, 40]))[0] == pytest.approx(1.0)
     assert g.spearman(pd.Series([1, 2]), pd.Series([2, 1]))[1] == 2
     assert g.tsd(1234567) == "1'234'567" and g.prozent(12.34, 1) == "12,3 %"
-    assert g.quelle_lesbar("claude-cli/run2") == "Claude Opus 5.5 (Abo), Lauf 2"
+    assert g.quelle_lesbar("claude-cli/run2") == "Claude Opus 5.5, Lauf 2"
     assert g.bewertungsdatei("", "1111", "X") is None

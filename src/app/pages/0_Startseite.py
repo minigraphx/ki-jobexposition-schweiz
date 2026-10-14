@@ -26,7 +26,7 @@ Tätigkeit einzeln beurteilt: Kann ein Sprachmodell — allein oder mit darauf a
 die Zeit für diese Tätigkeit bei gleicher Qualität **mindestens halbieren**? Das Vorgehen folgt
 der aufgabenbasierten Methode von Eloundou et al. (*GPTs are GPTs*) und der ILO (Gmyrek et al.
 2025). Zwei Sprachmodelle bewerten unabhängig voneinander nach derselben Rubrik:
-**Claude Opus 5.5** (Anthropic, über das eigene Abo) und **Gemini 4 Argon** (Google), je in zwei
+**Claude Opus 5.5** (Anthropic) und **Gemini 4 Argon** (Google), je in zwei
 bis drei Läufen.
 
 **Der KI-Expositions-Score (0–10)** ist der Anteil der Arbeitszeit in Tätigkeiten, die generative
@@ -134,6 +134,6 @@ with col_b:
 st.divider()
 st.caption("Datenquellen: BFS Strukturerhebung (SE) 2024, BFS LSE 2024 und Salarium, BFS STATENT 2024, "
            "BFS Grenzgängerstatistik, ESCO v1.2.1 (© EU, CC BY 4.0) · Bewertung: Claude Opus 5.5 "
-           "(Anthropic, Abo) und Gemini 4 Argon (Google), Rubrik v2.2 · Methodik: Eloundou et al. (2024), "
+           "(Anthropic) und Gemini 4 Argon (Google), Rubrik v2.2 · Methodik: Eloundou et al. (2024), "
            "ILO/Gmyrek et al. (2025), Brookings Institution")
 st.page_link("pages/5_Methodik.py", label="📖 Methodik & Quellen im Detail")
