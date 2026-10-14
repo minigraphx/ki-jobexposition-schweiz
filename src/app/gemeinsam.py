@@ -171,6 +171,30 @@ def lade_bewertung(pfad: str) -> dict | None:
         return None
 
 
+def _ueber(wert, schwelle: float = 1.0) -> bool:
+    """wert > schwelle, ohne Gleitkomma-Rauschen (wie task_rubrik.ueber_schwelle)."""
+    try:
+        return round(float(wert), 9) > schwelle
+    except (TypeError, ValueError):
+        return False
+
+
+def unsicher_gruende(z) -> list[str]:
+    """Kurze Gründe der Unsicherheits-Markierung (aus den Zahlen, nicht aus dem technischen uncertain_reason)."""
+    gruende = []
+    if _ueber(z.get("delta_provider")):
+        gruende.append(f"Claude {z['exposure_claude']:.1f}, Gemini {z['exposure_gemini']:.1f}")
+    if _ueber(z.get("spread_runs")):
+        gruende.append(f"Wiederholungen streuen um {z['spread_runs']:.1f} Punkte")
+    try:
+        n = int(z.get("n_runs_claude") or 0) + int(z.get("n_runs_gemini") or 0)
+    except (TypeError, ValueError):
+        n = 0
+    if n < 2:
+        gruende.append("nur eine gültige Bewertung")
+    return gruende
+
+
 def quelle_lesbar(text_source: str) -> str:
     """«claude-cli/run2» → «Claude Opus 5.5 (Abo), Lauf 2»."""
     q = text(text_source)

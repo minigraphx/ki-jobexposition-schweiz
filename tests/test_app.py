@@ -99,11 +99,11 @@ def test_matrix_unsichere_markiert():
     spec = json.loads(at.get("plotly_chart")[0].proto.spec)
     spuren = {t["name"]: t for t in spec["data"]}
     df = _scores()
-    unsicher = spuren["Bewertung unsicher (Modelle oder Läufe weichen ab)"]
+    unsicher = spuren["Weniger sichere Bewertung (Modelle oder Wiederholungen weichen ab)"]
     assert unsicher["marker"]["symbol"] == "diamond" and len(unsicher["customdata"]) == int(df["uncertain"].sum())
     assert spuren["Bewertung übereinstimmend"]["marker"]["symbol"] == "circle"
     assert "Claude" in unsicher["hovertemplate"] and "Gemini" in unsicher["hovertemplate"]
-    assert any("Unsicher:" in str(c) for c in unsicher["customdata"])
+    assert any("Weniger sicher:" in str(c) for c in unsicher["customdata"])
     at.radio[0].set_value("physical_automation").run()
     at.radio[1].set_value("Frauenanteil (%)").run()
     assert not at.exception
@@ -141,18 +141,19 @@ def test_berufssuche_details_und_taetigkeiten():
     assert set(tab["Stufe"]) <= {"E0", "E1", "E2"}
     texte = _texte(at)
     assert df.at[beruf, "main_risk"] in texte
-    assert "Claude Opus 5.5" in texte and "Gemini 4 Argon" in texte
+    assert f"Claude {df.at[beruf, 'exposure_claude']:.1f}, Gemini {df.at[beruf, 'exposure_gemini']:.1f}" in texte
+    assert "Opus 5.5 " + f"{df.at[beruf, 'exposure_claude']:.1f}" not in texte   # keine Zahl direkt nach der Modellnummer
     assert "Radar" not in texte
 
 
 def test_berufssuche_unsicher_zeigt_beide_modelle():
     df = _scores()
-    r = df[df["uncertain"]].iloc[0]
+    r = df[df["uncertain"] & (df["delta_provider"] > 1.0)].iloc[0]     # Grund: Modelle uneinig
     at = _seite("pages/4_Berufssuche.py", beruf=r["occupation"])
     warnung = " ".join(w.value for w in at.warning)
-    assert "Bewertung unsicher" in warnung
+    assert "Weniger sichere Bewertung" in warnung and "Opus" not in warnung
     assert f"{r['exposure_claude']:.1f}" in warnung and f"{r['exposure_gemini']:.1f}" in warnung
-    assert r["uncertain_reason"] in warnung
+    assert "> 1" not in warnung                                  # kein technischer Grund-Text
 
 
 def test_berufssuche_findet_synonym_im_permalink():

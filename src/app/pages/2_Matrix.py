@@ -7,6 +7,7 @@ import sys
 from pathlib import Path
 
 import numpy as np
+import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
@@ -55,7 +56,7 @@ for x, y, text, farbe, ausrichtung in [
 
 groesse = 6 + 3 * np.sqrt(df["employed_k"].fillna(1.0))   # Fläche ~ Erwerbstätige
 symbole = {False: ("circle", "Bewertung übereinstimmend"),
-           True: ("diamond", "Bewertung unsicher (Modelle oder Läufe weichen ab)")}
+           True: ("diamond", "Weniger sichere Bewertung (Modelle oder Wiederholungen weichen ab)")}
 for unsicher, (symbol, name) in symbole.items():
     d = df[df["uncertain"] == unsicher]
     if d.empty:
@@ -66,7 +67,8 @@ for unsicher, (symbol, name) in symbole.items():
                       showscale=not unsicher, colorbar=dict(title="Frauen-<br>anteil (%)"))
     else:
         marker.update(color=g.SERIE[0] if not unsicher else g.SERIE[1])
-    grund = d["uncertain_reason"].fillna("").map(lambda t: f"<br>Unsicher: {t}" if t else "")
+    grund = pd.Series([("<br>Weniger sicher: " + "; ".join(g.unsicher_gruende(z))) if z["uncertain"] else ""
+                       for _, z in d.iterrows()], index=d.index)
     fig.add_trace(go.Scatter(
         x=d["adaptability"], y=d[y_spalte], mode="markers", name=name, marker=marker,
         customdata=np.stack([d["occupation"], d["exposure_claude"], d["exposure_gemini"], d["employed_k"],
@@ -96,9 +98,9 @@ st.plotly_chart(fig, width="stretch")
 n_unsicher = int(df["uncertain"].sum())
 kritisch = g.kritische_zone(df, X, y_spalte)
 st.caption(
-    f"◆ Raute = Bewertung **unsicher** ({n_unsicher} von {len(df)} Berufen): Die beiden Modelle weichen um "
-    "mehr als 1 Punkt voneinander ab, die Läufe eines Modells streuen um mehr als 1 Punkt, oder es liegen "
-    "weniger als zwei gültige Läufe vor. ● Kreis = übereinstimmende Bewertung. Die Werte beider Modelle und "
+    f"◆ Raute = **weniger sichere** Bewertung ({n_unsicher} von {len(df)} Berufen): Die beiden Sprachmodelle weichen um "
+    "mehr als 1 Punkt voneinander ab, wiederholte Bewertungen desselben Modells streuen um mehr als 1 Punkt, "
+    "oder es liegt nur eine gültige Bewertung vor. ● Kreis = übereinstimmende Bewertung. Die Werte beider Modelle und "
     "der Grund stehen im Tooltip. "
     + (f"In der kritischen Zone liegen {len(kritisch)} Berufe mit {g.tsd(kritisch['employed_k'].sum())} Tsd. "
        f"Erwerbstätigen: {', '.join(kritisch.sort_values('employed_k', ascending=False)['occupation'])}. "

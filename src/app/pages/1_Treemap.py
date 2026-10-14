@@ -91,7 +91,7 @@ def _zeilen_beruf(z) -> str:
         teile.append(f"Frauenanteil: {z['women_pct']:.0f} %")
     teile.append(f"Ausbildung: {z['qualification']}")
     if z["uncertain"]:
-        teile.append(f"Bewertung unsicher — Claude {z['exposure_claude']:.1f}, Gemini {z['exposure_gemini']:.1f}")
+        teile.append("Weniger sichere Bewertung: " + "; ".join(g.unsicher_gruende(z)))
     return "<br>".join(teile)
 
 

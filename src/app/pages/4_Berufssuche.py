@@ -79,16 +79,12 @@ c4.metric("Erwerbstätige CH", f"{row['employed_k']:.1f} Tsd.",
 
 if row["uncertain"]:
     st.warning(
-        f"**Bewertung unsicher:** Claude Opus 5.5 {row['exposure_claude']:.1f}, Gemini 4 Argon "
-        f"{row['exposure_gemini']:.1f} (Abweichung {row['delta_provider']:.1f}; grösste Streuung der Läufe "
-        f"eines Modells {row['spread_runs']:.1f}). Grund: {g.text(row['uncertain_reason'])}. "
-        "Der Score ist das Mittel aller Läufe beider Modelle.",
+        f"**Weniger sichere Bewertung:** {'; '.join(g.unsicher_gruende(row))}. "
+        f"Angezeigt wird der Mittelwert {row['exposure']:.1f}.",
         icon="⚠️",
     )
 else:
-    st.caption(f"Werte der Modelle: Claude Opus 5.5 {row['exposure_claude']:.1f} · Gemini 4 Argon "
-               f"{row['exposure_gemini']:.1f} ({int(row['n_runs_claude'])} bzw. {int(row['n_runs_gemini'])} "
-               "Läufe) — übereinstimmend.")
+    st.caption(f"Claude {row['exposure_claude']:.1f}, Gemini {row['exposure_gemini']:.1f} — übereinstimmend.")
 
 # ── Arbeitszeit nach Modus ──────────────────────────────────────────────────────
 st.subheader("Wie die Arbeitszeit betroffen ist")
