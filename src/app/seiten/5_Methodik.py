@@ -412,8 +412,8 @@ Die Beschäftigungszahlen und Frauenanteile stammen aus der offiziellen Schweize
 - **Klassifikation:** CH-ISCO-19 (basiert auf ISCO-08), Ebene Berufsgattung (4-stellig);
   wo nötig Berufsart (5-stellig)
 
-Die App umfasst **{n_berufe} Berufe** mit zusammen **{summe_text} Tsd.** Erwerbstätigen
-(**{abdeckung_text}** der SE 2024 total: 4'584 Tsd.); alle sind aufgabenbasiert bewertet. Automatisch ergänzt wurden
+Die App umfasst **{n_berufe} Berufe** mit zusammen **{g.personen(summe_tsd)} Erwerbstätigen**
+(**{abdeckung_text}** aller {g.personen(SE_TOTAL_TSD)} Erwerbstätigen der SE 2024); alle sind aufgabenbasiert bewertet. Automatisch ergänzt wurden
 Berufsgattungen mit mindestens **5'000 Erwerbstätigen** — ohne Restgruppen («onA» = ohne nähere
 Angaben, «anderweitig nicht genannt»), ausser sie sind gross und inhaltlich klar (4419 Bürokräfte
 a.n.g. = v. a. Verkaufsinnendienst, 9329 Hilfsarbeiter in der Produktion a.n.g.).

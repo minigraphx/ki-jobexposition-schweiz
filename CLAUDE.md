@@ -340,7 +340,7 @@ assignment changes the task input hash → the entry must be re-rated.
 
 Entry point: `src/app/app.py` — uses `st.navigation()` for multi-page routing. Shared helpers
 (paths, loading, labels, colours, Spearman, rating-file lookup) in `src/app/gemeinsam.py`; the app
-does not import `src/scoring` (no jsonschema in `requirements.txt`). Pages in `src/app/pages/`:
+does not import `src/scoring` (no jsonschema in `requirements.txt`). Pages in `src/app/seiten/` (not `pages/`: that folder name triggers Streamlit's automatic page discovery, which broke deep links):
 
 | File | Menu Title | Content |
 |------|-----------|---------|

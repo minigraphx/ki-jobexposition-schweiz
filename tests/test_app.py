@@ -12,12 +12,12 @@ AppTest = pytest.importorskip("streamlit.testing.v1").AppTest
 APP_DIR = Path(__file__).parent.parent / "src" / "app"
 APP = str(APP_DIR / "app.py")
 SEITEN = [
-    "pages/0_Startseite.py",
-    "pages/1_Treemap.py",
-    "pages/2_Matrix.py",
-    "pages/3_Branchen.py",
-    "pages/4_Berufssuche.py",
-    "pages/5_Methodik.py",
+    "seiten/0_Startseite.py",
+    "seiten/1_Treemap.py",
+    "seiten/2_Matrix.py",
+    "seiten/3_Branchen.py",
+    "seiten/4_Berufssuche.py",
+    "seiten/5_Methodik.py",
 ]
 SCORES = Path(__file__).parent.parent / "data" / "processed" / "scores.csv"
 ALTE_SPALTEN = ["score_ch", "score_gesamt", "beruf", "branche", "beschaeftigte_1000", "adaptabilitaet"]
@@ -60,7 +60,7 @@ def test_seite_ohne_fehler(seite):
 
 
 def test_startseite_kennzahlen():
-    at = _seite("pages/0_Startseite.py")
+    at = _seite("seiten/0_Startseite.py")
     df = _scores()
     texte = _texte(at)
     assert f"**{len(df)} Schweizer Berufe**" in texte
@@ -87,7 +87,7 @@ def test_startseite_kennzahlen():
 
 @pytest.mark.parametrize("kennzahl", ["exposure", "time_savings", "physical_automation"])
 def test_treemap_farbe_waehlbar(kennzahl):
-    at = _seite("pages/1_Treemap.py")
+    at = _seite("seiten/1_Treemap.py")
     at.sidebar.radio[0].set_value(kennzahl).run()
     assert not at.exception
     spec = _spec(at)
@@ -95,7 +95,7 @@ def test_treemap_farbe_waehlbar(kennzahl):
 
 
 def test_matrix_unsichere_markiert():
-    at = _seite("pages/2_Matrix.py")
+    at = _seite("seiten/2_Matrix.py")
     spec = json.loads(at.get("plotly_chart")[0].proto.spec)
     spuren = {t["name"]: t for t in spec["data"]}
     df = _scores()
@@ -111,7 +111,7 @@ def test_matrix_unsichere_markiert():
 
 
 def test_branchen_gewichtet_und_heatmap():
-    at = _seite("pages/3_Branchen.py")
+    at = _seite("seiten/3_Branchen.py")
     charts = [json.loads(c.proto.spec) for c in at.get("plotly_chart")]
     assert len(charts) == 3
     df = _scores()
@@ -128,7 +128,7 @@ def test_branchen_gewichtet_und_heatmap():
 def test_berufssuche_details_und_taetigkeiten():
     df = _scores().set_index("occupation")
     beruf = "Dipl. Pflegefachperson"
-    at = _seite("pages/4_Berufssuche.py", beruf=beruf)
+    at = _seite("seiten/4_Berufssuche.py", beruf=beruf)
     assert at.selectbox[0].value == beruf
     metriken = {m.label: m.value for m in at.metric}
     assert metriken["KI-Exposition"] == f"{df.at[beruf, 'exposure']:.1f} / 10"
@@ -150,7 +150,7 @@ def test_berufssuche_details_und_taetigkeiten():
 def test_berufssuche_unsicher_zeigt_beide_modelle():
     df = _scores()
     r = df[df["uncertain"] & (df["delta_provider"] > 1.0)].iloc[0]     # Grund: Modelle uneinig
-    at = _seite("pages/4_Berufssuche.py", beruf=r["occupation"])
+    at = _seite("seiten/4_Berufssuche.py", beruf=r["occupation"])
     warnung = " ".join(w.value for w in at.warning)
     assert "Weniger sichere Bewertung" in warnung and f"Claude Opus 5.5 gibt {r['exposure_claude']:.1f} Punkte" in warnung
     assert f"{r['exposure_claude']:.1f}" in warnung and f"{r['exposure_gemini']:.1f}" in warnung
@@ -159,13 +159,13 @@ def test_berufssuche_unsicher_zeigt_beide_modelle():
 
 def test_berufssuche_findet_synonym_im_permalink():
     """Alter Permalink mit bisherigem CH-Titel → zusammengelegter Eintrag."""
-    at = _seite("pages/4_Berufssuche.py", beruf="Koch/Köchin EFZ")
+    at = _seite("seiten/4_Berufssuche.py", beruf="Koch/Köchin EFZ")
     assert at.selectbox[0].value == "Köche"
     assert any("Koch/Köchin EFZ" in c.value and "als Ganzes bewertet" in c.value for c in at.caption)
 
 
 def test_berufssuche_label_enthaelt_synonyme():
-    at = _seite("pages/4_Berufssuche.py")
+    at = _seite("seiten/4_Berufssuche.py")
     assert any("Verkäufer in Handelsgeschäften" in o and "Detailhandelsfachmann/-frau EFZ" in o
                for o in at.selectbox[0].options)
 
@@ -175,7 +175,7 @@ def test_berufssuche_label_enthaelt_synonyme():
     ("Fachperson Gesundheit EFZ (FaGe)", "Match-Qualität: plausibel (ESCO-ISCO 5321)"),
 ])
 def test_berufssuche_zeigt_match_qualitaet(beruf, erwartet):
-    at = _seite("pages/4_Berufssuche.py", beruf=beruf)
+    at = _seite("seiten/4_Berufssuche.py", beruf=beruf)
     captions = [c.value for c in at.caption]
     assert erwartet in captions
     assert any("CC BY 4.0" in c for c in captions)
@@ -183,12 +183,12 @@ def test_berufssuche_zeigt_match_qualitaet(beruf, erwartet):
 
 
 def test_berufssuche_fallback_ohne_esco():
-    at = _seite("pages/4_Berufssuche.py", beruf="Drogist/in")
+    at = _seite("seiten/4_Berufssuche.py", beruf="Drogist/in")
     assert any("Kein ESCO-Match" in c.value for c in at.caption)
 
 
 def test_methodik_abdeckung_und_match_qualitaet():
-    at = _seite("pages/5_Methodik.py")
+    at = _seite("seiten/5_Methodik.py")
     df = _scores()
     texte = _texte(at)
     abdeckung = f"{df['employed_k'].sum() / 4583.7 * 100:.1f} %".replace(".", ",")
@@ -201,7 +201,7 @@ def test_methodik_abdeckung_und_match_qualitaet():
 
 
 def test_methodik_validierung_zur_laufzeit():
-    at = _seite("pages/5_Methodik.py")
+    at = _seite("seiten/5_Methodik.py")
     df = _scores()
     bench = pd.read_csv(g.BENCHMARK_PATH, dtype={"isco_code": str})
     je_code = df.groupby("isco_code").apply(
@@ -219,7 +219,7 @@ def test_methodik_validierung_zur_laufzeit():
 
 def test_methodik_zeigt_lohnverhaeltnisse():
     """Tabelle der Verhältniszahlen Gruppe 22: Werte aus scores.csv, Band, Unsicher-Markierung."""
-    at = _seite("pages/5_Methodik.py")
+    at = _seite("seiten/5_Methodik.py")
     tab = next(d.value for d in at.dataframe if "Faktor" in d.value.columns).set_index("ISCO")
     df = _scores().set_index("isco_code")
     for code in ("2211", "2212", "2221"):

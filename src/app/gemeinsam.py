@@ -101,6 +101,15 @@ def tsd(wert: float) -> str:
     return f"{wert:,.0f}".replace(",", "'")
 
 
+def personen(wert_tsd: float) -> str:
+    """Erwerbstätige aus Tausendern lesbar: «3.7 Mio.» ab einer Million, sonst ausgeschrieben («728'000»)."""
+    if wert_tsd is None or pd.isna(wert_tsd):
+        return "–"
+    if wert_tsd >= 1000:
+        return f"{wert_tsd / 1000:.1f} Mio."
+    return tsd(round(wert_tsd * 1000, -2))
+
+
 def prozent(wert: float, stellen: int = 0) -> str:
     return "–" if wert is None or pd.isna(wert) else f"{wert:.{stellen}f} %".replace(".", ",")
 

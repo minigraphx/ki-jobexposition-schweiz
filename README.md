@@ -76,7 +76,7 @@ pytest tests/ -v --cov=src/scoring
 ```
 ├── src/
 │   ├── app/              # Streamlit-App (6 Seiten)
-│   │   └── pages/
+│   │   └── seiten/
 │   ├── data/             # Datenpipeline (BFS, ESCO), Spalten-Mapping
 │   └── scoring/          # Aufgabenbasierte Bewertung, KMU-Faktor, Anpassungsfähigkeit
 ├── data/processed/       # Aufbereitete Daten (scores.csv, Bewertungen unter bewertungen/)

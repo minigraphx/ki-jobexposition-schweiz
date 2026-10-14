@@ -71,15 +71,15 @@ for unsicher, (symbol, name) in symbole.items():
                        for _, z in d.iterrows()], index=d.index)
     fig.add_trace(go.Scatter(
         x=d["adaptability"], y=d[y_spalte], mode="markers", name=name, marker=marker,
-        customdata=np.stack([d["occupation"], d["exposure_claude"], d["exposure_gemini"], d["employed_k"],
-                             d["women_pct"].fillna(-1), grund, d["exposure"]], axis=-1),
+        customdata=np.stack([d["occupation"], d["exposure_claude"], d["exposure_gemini"], d["employed_k"].map(g.personen),
+                             d["women_pct"].map(lambda v: "–" if v != v else f"{v:.0f} %"), grund, d["exposure"]], axis=-1),
         hovertemplate=(
             "<b>%{customdata[0]}</b><br>"
             f"{y_label}: %{{y:.1f}}<br>"
             "Anpassungsfähigkeit: %{x:.1f}<br>"
             "KI-Exposition: %{customdata[6]:.1f}<br>"
             f"{g.CLAUDE_NAME} gibt %{{customdata[1]:.1f}} Punkte, {g.GEMINI_NAME} %{{customdata[2]:.1f}} Punkte<br>"
-            "Erwerbstätige: %{customdata[3]:.1f} Tsd. · Frauen: %{customdata[4]:.0f} %"
+            "Erwerbstätige: %{customdata[3]} · Frauenanteil: %{customdata[4]}"
             "%{customdata[5]}<extra></extra>"
         ),
     ))
@@ -103,7 +103,7 @@ st.caption(
     "mehr als 1 Punkt voneinander ab, wiederholte Bewertungen desselben Modells streuen um mehr als 1 Punkt, "
     "oder es liegt nur eine gültige Bewertung vor. ● Kreis = übereinstimmende Bewertung. Die Werte beider Modelle und "
     "der Grund stehen im Tooltip. "
-    + (f"In der kritischen Zone liegen {len(kritisch)} Berufe mit {g.tsd(kritisch['employed_k'].sum())} Tsd. "
+    + (f"In der kritischen Zone liegen {len(kritisch)} Berufe mit {g.personen(kritisch['employed_k'].sum())} "
        f"Erwerbstätigen: {', '.join(kritisch.sort_values('employed_k', ascending=False)['occupation'])}. "
        "Wie viele Berufe in der Zone liegen, hängt stark von den Schwellen ab (siehe «Methodik & Quellen»)."
        if not kritisch.empty else "In der kritischen Zone liegt derzeit kein Beruf.")

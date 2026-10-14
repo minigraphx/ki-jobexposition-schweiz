@@ -55,7 +55,7 @@ if filtered.empty:
     st.warning("Keine Berufe entsprechen den gewählten Filtern.")
     st.stop()
 
-st.caption(f"**{len(filtered)}** Berufe angezeigt · {g.tsd(filtered['employed_k'].sum())} Tsd. Erwerbstätige · "
+st.caption(f"**{len(filtered)}** Berufe angezeigt · {g.personen(filtered['employed_k'].sum())} Erwerbstätige · "
            f"Ø {g.LABELS[kennzahl]} (beschäftigungsgewichtet): {g.gewichtet(filtered, kennzahl):.1f}")
 
 # ── Treemap ────────────────────────────────────────────────────────────────────

@@ -73,7 +73,7 @@ zeit_hilfe = (f"Adoption in mindestens rund einem Drittel der Schweizer Betriebe
                   1: "; eine Stufe später, weil die Branche von KMU geprägt ist (KMU-Faktor).",
                   0: "; KMU-Faktor der Branche neutral."}[verschiebung]))
 c3.metric("Zeitrahmen", g.text(row["timeframe"]) or "–", help=zeit_hilfe)
-c4.metric("Erwerbstätige CH", f"{row['employed_k']:.1f} Tsd.",
+c4.metric("Erwerbstätige CH", g.personen(row['employed_k']),
           help="BFS Strukturerhebung 2024, Erwerbstätige der CH-ISCO-19-Berufsgattung "
                f"{row['isco_code']} (bzw. der zugeordneten Berufsarten)")
 
