@@ -19,16 +19,16 @@ P = ub.PROCESSED_PATH
 # ---------------------------------------------------------------------------
 
 def _se(rows: list[tuple], blatt: str = "2024") -> pd.DataFrame:
-    df = pd.DataFrame(rows, columns=["ebene", "code", "bezeichnung", "total", "frauen"])
-    df["maenner"] = df["total"] - df["frauen"]
+    df = pd.DataFrame(rows, columns=["level", "code", "label", "total", "women"])
+    df["men"] = df["total"] - df["women"]
     df["total_lt50"] = False
-    df.insert(0, "blatt", blatt)
+    df.insert(0, "sheet", blatt)
     return df
 
 
 def _mapping(rows: list[tuple]) -> pd.DataFrame:
-    return pd.DataFrame(rows, columns=["beruf", "isco_code", "ebene", "berufsarten"]).assign(
-        synonyme="", zusammengelegt_aus="", text_von="", begruendung="")
+    return pd.DataFrame(rows, columns=["occupation", "isco_code", "level", "se_types"]).assign(
+        synonyms="", merged_from="", text_from="", rationale="")
 
 
 SE = pd.concat([
@@ -63,35 +63,35 @@ class TestBeschaeftigteBerechnen:
     def test_berufsarten_mit_proportionalem_rest(self):
         m = _mapping([("Gymnasiallehrer/in", "2330", "berufsart", "23301"),
                       ("Sekundarlehrer/in", "2330", "berufsart", "23302")])
-        res = ub.beschaeftigte_berechnen(m, SE).set_index("beruf")
+        res = ub.beschaeftigte_berechnen(m, SE).set_index("occupation")
         # onA (7.0) proportional zu 17.4 : 25.8
-        assert res.at["Gymnasiallehrer/in", "beschaeftigte_1000"] == pytest.approx(
+        assert res.at["Gymnasiallehrer/in", "employed_k"] == pytest.approx(
             round(50.2 * 17.4 / 43.2, 1), abs=0.1)
-        assert res["beschaeftigte_1000"].sum() == pytest.approx(50.2)
-        assert res.at["Gymnasiallehrer/in", "frauen_pct"] == pytest.approx(50.0)
+        assert res["employed_k"].sum() == pytest.approx(50.2)
+        assert res.at["Gymnasiallehrer/in", "women_pct"] == pytest.approx(50.0)
 
     def test_mehrere_berufsarten_je_beruf(self):
         m = _mapping([("Verkauf gesamt", "5223", "berufsart", "52230; 52231")])
         res = ub.beschaeftigte_berechnen(m, SE)
-        assert res.iloc[0]["beschaeftigte_1000"] == pytest.approx(3.0)
+        assert res.iloc[0]["employed_k"] == pytest.approx(3.0)
 
     def test_gattung_voller_wert_und_frauen_aus_pool(self):
         m = _mapping([("Maurer/in", "7112", "gattung", "")])
         res = ub.beschaeftigte_berechnen(m, SE).iloc[0]
-        assert res["beschaeftigte_1000"] == pytest.approx(18.9)       # Jahresblatt
-        assert res["frauen_pct"] == pytest.approx(round(0.4 / 20.4 * 100, 1))  # Frauen «X» → gepoolt
-        assert res["se_blatt"] == "2024"
+        assert res["employed_k"] == pytest.approx(18.9)       # Jahresblatt
+        assert res["women_pct"] == pytest.approx(round(0.4 / 20.4 * 100, 1))  # Frauen «X» → gepoolt
+        assert res["se_sheet"] == "2024"
 
     def test_nicht_publizierte_gattung_aus_pool(self):
         m = _mapping([("Qualitätsmanager/in", "2146", "gattung", "")])
         res = ub.beschaeftigte_berechnen(m, SE).iloc[0]
-        assert res["beschaeftigte_1000"] == pytest.approx(0.1)
-        assert pd.isna(res["frauen_pct"])
-        assert res["se_blatt"] == "2022-2024"
+        assert res["employed_k"] == pytest.approx(0.1)
+        assert pd.isna(res["women_pct"])
+        assert res["se_sheet"] == "2022-2024"
 
     def test_geteilte_gattung_ohne_berufsart_fehler(self):
         m = _mapping([("A", "2330", "gattung", ""), ("B", "2330", "gattung", "")])
-        with pytest.raises(ValueError, match="ebene=berufsart"):
+        with pytest.raises(ValueError, match="level=berufsart"):
             ub.beschaeftigte_berechnen(m, SE)
 
     def test_offene_berufsart_fehler(self):
@@ -130,16 +130,16 @@ class TestParseSeExcel:
         wb.save(path)
         se = ub.parse_se_excel(path, "2024")
         assert se["code"].tolist() == ["5223", "52230", "52231"]
-        assert se["ebene"].tolist() == [4, 5, 5]
+        assert se["level"].tolist() == [4, 5, 5]
         assert se["total_lt50"].tolist() == [False, False, True]
-        assert pd.isna(se.iloc[2]["maenner"])
+        assert pd.isna(se.iloc[2]["men"])
         with pytest.raises(ValueError, match="2025"):
             ub.parse_se_excel(path, "2025")
 
     def test_lade_se_ohne_rohdatei_aus_csv(self):
         se = ub.lade_se(raw=Path("/nicht/vorhanden.xlsx"), schreiben=False)
-        assert set(se["blatt"]) == set(ub.SE_CSV_BLAETTER)
-        g = se[(se["blatt"] == "2024") & (se["ebene"] == 4)].set_index("code")
+        assert set(se["sheet"]) == set(ub.SE_CSV_BLAETTER)
+        g = se[(se["sheet"] == "2024") & (se["level"] == 4)].set_index("code")
         assert g.at["5223", "total"] == pytest.approx(140.3, abs=0.05)
         with pytest.raises(SystemExit):
             ub.lade_se(("2019",), raw=Path("/nicht/vorhanden.xlsx"), schreiben=False)
@@ -172,34 +172,34 @@ def mapping() -> pd.DataFrame:
 
 class TestInvariante:
     def test_summe_je_gattung_gleich_se(self, se_csv):
-        """Keine Doppelzählung: Σ beschaeftigte_1000 je 4-stelligem Code = SE-Wert."""
+        """Keine Doppelzählung: Σ employed_k je 4-stelligem Code = SE-Wert."""
         scores = _csv("scores.csv")
-        scores["b"] = scores["beschaeftigte_1000"].astype(float)
+        scores["b"] = scores["employed_k"].astype(float)
         for code, summe in scores.groupby("isco_code")["b"].sum().items():
             assert summe == pytest.approx(ub.se_gattungswert(se_csv, code), abs=1e-9), code
 
     def test_frauenanteil_aus_se(self, mapping, se_csv):
-        werte = ub.beschaeftigte_berechnen(mapping, se_csv).set_index("beruf")
-        scores = _csv("scores.csv").set_index("beruf")
-        neu = pd.to_numeric(scores["frauen_pct"], errors="coerce")
-        assert np.allclose(neu, werte.loc[neu.index, "frauen_pct"], equal_nan=True)
+        werte = ub.beschaeftigte_berechnen(mapping, se_csv).set_index("occupation")
+        scores = _csv("scores.csv").set_index("occupation")
+        neu = pd.to_numeric(scores["women_pct"], errors="coerce")
+        assert np.allclose(neu, werte.loc[neu.index, "women_pct"], equal_nan=True)
 
     def test_keine_doppelten_berufe(self):
         for name in ub.CSV_DATEIEN:
             df = _csv(name)
-            assert not df.duplicated(["beruf", "isco_code"]).any(), name
-            assert not df["beruf"].duplicated().any(), name
+            assert not df.duplicated(["occupation", "isco_code"]).any(), name
+            assert not df["occupation"].duplicated().any(), name
 
     def test_alle_csvs_konsistent(self):
-        spalten = ["isco_code", "beschaeftigte_1000", "frauen_pct", "synonyme", "branche",
-                   "lohn_median_chf", "qualifikation"]
-        ref = _csv("scores.csv").set_index("beruf")[spalten].sort_index()
+        spalten = ["isco_code", "employed_k", "women_pct", "synonyms", "sector",
+                   "wage_median_chf", "qualification"]
+        ref = _csv("scores.csv").set_index("occupation")[spalten].sort_index()
         for name in ub.CSV_DATEIEN[:-1]:
-            df = _csv(name).set_index("beruf")[spalten].sort_index()
+            df = _csv(name).set_index("occupation")[spalten].sort_index()
             pd.testing.assert_frame_equal(df, ref, obj=name)
 
     def test_summe_gesamt_plausibel(self):
-        total = _csv("scores.csv")["beschaeftigte_1000"].astype(float).sum()
+        total = _csv("scores.csv")["employed_k"].astype(float).sum()
         assert 3000 < total < 4584  # SE 2024 total 4'583.7 Tsd.
 
 
@@ -207,95 +207,63 @@ class TestMapping:
     def test_vollstaendig(self, mapping):
         for name in ub.CSV_DATEIEN:
             df = _csv(name)
-            assert set(df["beruf"]) == set(mapping["beruf"]), name
-            codes = mapping.set_index("beruf")["isco_code"]
-            assert (df["isco_code"] == df["beruf"].map(codes)).all(), name
+            assert set(df["occupation"]) == set(mapping["occupation"]), name
+            codes = mapping.set_index("occupation")["isco_code"]
+            assert (df["isco_code"] == df["occupation"].map(codes)).all(), name
 
     def test_spalten_und_begruendung(self, mapping):
-        assert list(mapping.columns) == ["beruf", "isco_code", "ebene", "berufsarten", "synonyme",
-                                         "zusammengelegt_aus", "text_von", "begruendung"]
-        assert (mapping["begruendung"].str.len() > 10).all()
-        art = mapping["ebene"] == ub.EBENE_BERUFSART
-        assert (mapping.loc[art, "berufsarten"] != "").all()
-        assert (mapping.loc[~art, "berufsarten"] == "").all()
+        assert list(mapping.columns) == ["occupation", "isco_code", "level", "se_types", "synonyms",
+                                         "merged_from", "text_from", "rationale"]
+        assert (mapping["rationale"].str.len() > 10).all()
+        art = mapping["level"] == ub.EBENE_BERUFSART
+        assert (mapping.loc[art, "se_types"] != "").all()
+        assert (mapping.loc[~art, "se_types"] == "").all()
 
     def test_geteilte_codes_nur_ueber_berufsarten(self, mapping):
         geteilt = mapping[mapping["isco_code"].duplicated(keep=False)]
-        assert (geteilt["ebene"] == ub.EBENE_BERUFSART).all()
+        assert (geteilt["level"] == ub.EBENE_BERUFSART).all()
         assert set(geteilt["isco_code"]) == {"2330", "5131", "5223"}
 
     def test_codes_existieren_in_se(self, mapping, se_csv):
-        g = se_csv[(se_csv["ebene"] == 4)]["code"]
+        g = se_csv[(se_csv["level"] == 4)]["code"]
         assert set(mapping["isco_code"]) <= set(g)
 
     def test_zusammenlegungen(self, mapping):
-        zus = mapping[mapping["zusammengelegt_aus"] != ""]
+        zus = mapping[mapping["merged_from"] != ""]
         assert len(zus) == 22
         for _, r in zus.iterrows():
-            teile = ub._liste(r["zusammengelegt_aus"])
+            teile = ub._liste(r["merged_from"])
             assert len(teile) >= 2
-            assert r["text_von"] in teile
-            assert set(ub._liste(r["synonyme"])) == set(teile) - {r["beruf"]}
-        alle_syn = [s for x in mapping["synonyme"] for s in ub._liste(x)]
+            assert r["text_from"] in teile
+            assert set(ub._liste(r["synonyms"])) == set(teile) - {r["occupation"]}
+        alle_syn = [s for x in mapping["synonyms"] for s in ub._liste(x)]
         assert len(alle_syn) == len(set(alle_syn))
-        assert not set(alle_syn) & set(mapping["beruf"])
+        assert not set(alle_syn) & set(mapping["occupation"])
 
-    def test_scores_markiert(self, mapping):
-        scores = _csv("scores.csv").set_index("beruf")
-        zus = set(mapping.loc[mapping["zusammengelegt_aus"] != "", "beruf"])
-        markiert = set(scores.index[scores["scores_gemittelt"].astype(str) == "True"])
-        assert markiert <= zus
-        for beruf in zus:
-            # entweder vorläufig gemittelt (ohne Hash) oder inzwischen neu bewertet (mit Hash)
-            if beruf in markiert:
-                assert scores.at[beruf, "beschreibung_hash"] == ""
-            else:
-                assert scores.at[beruf, "beschreibung_hash"] != ""
+    def test_zusammengelegte_als_ganzes_bewertet(self, mapping):
+        """Zusammengelegte Einträge haben eine eigene aufgabenbasierte Bewertung (kein Mittelwert mehr)."""
+        scores = _csv("scores.csv").set_index("occupation")
+        zus = set(mapping.loc[mapping["merged_from"] != "", "occupation"])
+        assert (scores.loc[sorted(zus), "exposure"] != "").all()
+        assert (scores.loc[sorted(zus), "text_source"] != "").all()
 
     def test_isco_korrekturen_angewendet(self, mapping):
         scores = _csv("scores.csv")
         for beruf, (alt, neu) in bz.ISCO_KORREKTUREN.items():
-            assert not ((scores["beruf"] == beruf) & (scores["isco_code"] == alt)).any(), beruf
-            if beruf in set(scores["beruf"]):
-                assert scores.loc[scores["beruf"] == beruf, "isco_code"].iloc[0] == neu
+            assert not ((scores["occupation"] == beruf) & (scores["isco_code"] == alt)).any(), beruf
+            if beruf in set(scores["occupation"]):
+                assert scores.loc[scores["occupation"] == beruf, "isco_code"].iloc[0] == neu
             else:  # zusammengelegt: Zieleintrag hat den neuen Code
-                ziel = mapping[mapping["zusammengelegt_aus"].map(lambda t: beruf in ub._liste(t))]
+                ziel = mapping[mapping["merged_from"].map(lambda t: beruf in ub._liste(t))]
                 assert ziel["isco_code"].tolist() == [neu], beruf
 
     def test_kuratierte_liste_passt(self):
         from build_berufeliste import BERUFE_CH
 
-        scores = _csv("scores.csv").set_index("beruf")
+        scores = _csv("scores.csv").set_index("occupation")
         for beruf, code, _, _, branche, _, _ in BERUFE_CH:
             assert scores.at[beruf, "isco_code"] == code, beruf
-            assert scores.at[beruf, "branche"] == branche, beruf
-
-
-class TestGewichtetesMittel:
-    def test_mittel(self):
-        assert bz.gewichtetes_mittel([6.0, 3.0], [30.0, 10.0]) == pytest.approx(5.2)
-        assert bz.gewichtetes_mittel([6.0, 3.0], [0.0, 0.0]) == pytest.approx(4.5)
-
-    def test_zusammenlegen_synthetisch(self):
-        df = pd.DataFrame({
-            "beruf": ["A", "B", "C"], "isco_code": ["1111", "1111", "2222"],
-            "beschaeftigte_1000": ["30.0", "10.0", "5.0"], "branche": ["X", "Y", "Z"],
-            **{s: ["6.0", "2.0", "1.0"] for s in bz.SCORE_SPALTEN},
-            "beschreibung_hash": ["h1", "h2", "h3"], "begruendung": ["Text A", "Text B", "Text C"],
-        })
-        m = pd.DataFrame([{"beruf": "AB", "isco_code": "1111", "ebene": "gattung", "berufsarten": "",
-                           "synonyme": "A; B", "zusammengelegt_aus": "A; B", "text_von": "A",
-                           "begruendung": "test"}])
-        bz.zusammenlegen(df, m, scores=True)
-        assert df["beruf"].tolist() == ["AB", "C"]
-        ab = df.iloc[0]
-        assert ab["score_gesamt"] == "5.0" and ab["begruendung"] == "Text A" and ab["branche"] == "X"
-        assert ab["beschreibung_hash"] == "" and ab[bz.MARKER] == "True"
-        assert df.iloc[1][bz.MARKER] == "False"
-        # idempotent
-        vorher = df.copy()
-        bz.zusammenlegen(df, m, scores=True)
-        pd.testing.assert_frame_equal(df, vorher)
+            assert scores.at[beruf, "sector"] == branche, beruf
 
 
 # ---------------------------------------------------------------------------
@@ -322,11 +290,6 @@ class TestIdempotenz:
     def test_update_loehne_offline(self, kopie):
         vorher = self._inhalte(kopie)
         ul.main(["--offline", "--data-dir", str(kopie)])
-        assert self._inhalte(kopie) == vorher
-
-    def test_berufe_zusammenlegen(self, kopie):
-        vorher = self._inhalte(kopie)
-        bz.main(["--data-dir", str(kopie)])
         assert self._inhalte(kopie) == vorher
 
     def test_mapping_fehlt_beruf(self, kopie):
@@ -371,27 +334,27 @@ class TestNeueBerufe:
     def test_alle_grossen_gattungen_erfasst(self, mapping, se_csv):
         """Vollständigkeit: keine SE-Gattung >= 5000 (Blatt 2024) fehlt, ausser Restgruppen."""
         assert ub.neue_kandidaten(se_csv, mapping).empty
-        g = se_csv[(se_csv["blatt"] == "2024") & (se_csv["ebene"] == 4)]
+        g = se_csv[(se_csv["sheet"] == "2024") & (se_csv["level"] == 4)]
         fehlend = g[(g["total"] >= ub.NEUE_BERUFE_SCHWELLE) & ~g["code"].isin(set(mapping["isco_code"]))]
-        assert fehlend["bezeichnung"].map(ub.ist_restgruppe).all(), fehlend["code"].tolist()
+        assert fehlend["label"].map(ub.ist_restgruppe).all(), fehlend["code"].tolist()
         assert not set(ub.RESTGRUPPEN_AUSNAHMEN) & set(fehlend["code"])
 
     def test_neue_eintraege_in_daten(self, mapping, se_csv):
         m = mapping.set_index("isco_code")
         scores = _csv("scores.csv").set_index("isco_code")
-        g = se_csv[(se_csv["blatt"] == "2024") & (se_csv["ebene"] == 4)].set_index("code")
+        g = se_csv[(se_csv["sheet"] == "2024") & (se_csv["level"] == 4)].set_index("code")
         lse = ul.lade_lse(schreiben=False)
         for code in NEUE_CODES:
-            assert m.at[code, "beruf"] == g.at[code, "bezeichnung"]  # SE-Bezeichnung als Titel
-            assert m.at[code, "ebene"] == ub.EBENE_GATTUNG
+            assert m.at[code, "occupation"] == g.at[code, "label"]  # SE-Bezeichnung als Titel
+            assert m.at[code, "level"] == ub.EBENE_GATTUNG
             r = scores.loc[code]
-            assert float(r["beschaeftigte_1000"]) == pytest.approx(round(g.at[code, "total"], 1))
-            assert r["branche"] == ub.branche_fuer_isco(code)
-            assert int(r["lohn_median_chf"]) == ul.lse_basislohn(code, lse)[0]
-            # nicht bewertet, bis die Neubewertung läuft
-            assert r["beschreibung_hash"] == "" and r["score_gesamt"] == "" and r["score_ch"] == ""
+            assert float(r["employed_k"]) == pytest.approx(round(g.at[code, "total"], 1))
+            assert r["sector"] == ub.branche_fuer_isco(code)
+            assert int(r["wage_median_chf"]) == ul.lse_basislohn(code, lse)[0]
+            # inzwischen aufgabenbasiert bewertet; ohne Score der früheren Methode
+            assert r["exposure"] != "" and r["legacy_score"] == ""
         for code in ub.RESTGRUPPEN_AUSNAHMEN:
-            assert "Restgruppe" in m.at[code, "begruendung"]
+            assert "Restgruppe" in m.at[code, "rationale"]
 
     def test_aufnahme_auf_kopie(self, tmp_path, monkeypatch):
         """Eintrag entfernen → --add-new nimmt ihn mit SE-Wert, Branche und Lohn wieder auf."""
@@ -401,18 +364,17 @@ class TestNeueBerufe:
         beruf = "Poliere und Vorarbeiter"
         for name in ub.CSV_DATEIEN + [ub.MAPPING_CSV.name]:
             df = pd.read_csv(ziel / name, dtype=str, keep_default_na=False)
-            df[df["beruf"] != beruf].to_csv(ziel / name, index=False)
+            df[df["occupation"] != beruf].to_csv(ziel / name, index=False)
         ub.main(["--data-dir", str(ziel), "--add-new"])
         for name in ub.CSV_DATEIEN:
-            df = pd.read_csv(ziel / name, dtype=str, keep_default_na=False).set_index("beruf")
+            df = pd.read_csv(ziel / name, dtype=str, keep_default_na=False).set_index("occupation")
             r = df.loc[beruf]
-            assert r["isco_code"] == "3123" and r["beschaeftigte_1000"] == "28.8", name
-            assert r["branche"] == "Bau" and r["lohn_quelle"] == "LSE2024_2d", name
-            if "score_gesamt" in df.columns:
-                assert r["score_gesamt"] == "" and r["beschreibung_hash"] == ""
-                assert r["scores_gemittelt"] == "False"
-        m = ub.lade_mapping(ziel / ub.MAPPING_CSV.name).set_index("beruf")
-        assert m.at[beruf, "isco_code"] == "3123" and m.at[beruf, "ebene"] == ub.EBENE_GATTUNG
+            assert r["isco_code"] == "3123" and r["employed_k"] == "28.8", name
+            assert r["sector"] == "Bau" and r["wage_source"] == "LSE2024_2d", name
+            if "exposure" in df.columns:   # noch nicht bewertet → apply_task_scores.py bricht ab
+                assert r["exposure"] == "" and r["text_source"] == "" and r["legacy_score"] == ""
+        m = ub.lade_mapping(ziel / ub.MAPPING_CSV.name).set_index("occupation")
+        assert m.at[beruf, "isco_code"] == "3123" and m.at[beruf, "level"] == ub.EBENE_GATTUNG
         # zweiter Lauf: nichts mehr zu ergänzen
         vorher = {p.name: p.read_text(encoding="utf-8") for p in ziel.glob("*.csv")}
         ub.main(["--data-dir", str(ziel), "--add-new"])

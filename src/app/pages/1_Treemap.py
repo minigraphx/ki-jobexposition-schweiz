@@ -1,129 +1,110 @@
 """
-Seite 1: Treemap aller Schweizer Berufe nach KI-Expositions-Score.
-Grösse = Beschäftigtenzahl, Farbe = Score (grün→rot)
+Seite 1: Treemap aller Schweizer Berufe.
+Grösse = Erwerbstätige, Farbe = wählbare Kennzahl (KI-Exposition, Zeitersparnis, physische Automatisierung)
 """
 
+import sys
 from datetime import date
 from pathlib import Path
 
-import pandas as pd
 import plotly.express as px
 import streamlit as st
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import gemeinsam as g  # noqa: E402
+
 st.title("🗺️ KI-Exposition: Alle Schweizer Berufe")
 
-DATA_PATH = Path(__file__).parent.parent.parent.parent / "data" / "processed" / "scores.csv"
-
-
-@st.cache_data
-def load_data() -> pd.DataFrame | None:
-    if not DATA_PATH.exists():
-        return None
-    return pd.read_csv(DATA_PATH)
-
-
-df = load_data()
-
+df = g.lade_scores()
 if df is None:
-    st.warning("Noch keine Score-Daten vorhanden. Bitte zuerst das Scoring ausführen.")
-    st.code("python src/scoring/exposure_scorer.py", language="bash")
+    st.warning("Noch keine Score-Daten vorhanden. Bitte zuerst die aufgabenbasierte Bewertung übernehmen.")
+    st.code("python src/scoring/apply_task_scores.py", language="bash")
     st.stop()
 
-# Neu aufgenommene Berufe ohne Exposure-Bewertung nicht darstellen (Hinweis unten)
-offen = df[df["score_ch"].isna()]
-df = df[df["score_ch"].notna()]
+KENNZAHLEN = ["exposure", "time_savings", "physical_automation"]
 
 # ── Sidebar Filter ─────────────────────────────────────────────────────────────
 with st.sidebar:
     st.header("Filter")
+    kennzahl = st.radio("Farbe nach", KENNZAHLEN, format_func=g.LABELS.get,
+                        help="Alle drei Kennzahlen auf der Skala 0–10 (Anteil der Arbeitszeit × 10).")
 
-    branchen = ["Alle"] + sorted(df["branche"].dropna().unique().tolist())
+    branchen = ["Alle"] + sorted(df["sector"].dropna().unique().tolist())
     selected_branche = st.selectbox("Branche", branchen)
 
-    qualifikationen = sorted(df["qualifikation"].dropna().unique().tolist())
-    selected_qual = st.multiselect(
-        "Qualifikation",
-        qualifikationen,
-        default=qualifikationen,
-        help="Leer lassen = alle anzeigen",
-    )
+    qualifikationen = sorted(df["qualification"].dropna().unique().tolist())
+    selected_qual = st.multiselect("Qualifikation", qualifikationen, default=qualifikationen,
+                                   help="Leer lassen = alle anzeigen")
 
-    frauen_min, frauen_max = st.slider(
-        "Frauenanteil (%)",
-        min_value=0,
-        max_value=100,
-        value=(0, 100),
-        step=5,
-    )
-
-    min_score = st.slider("Minimaler KI-Score", 0.0, 10.0, 0.0, 0.5)
+    frauen_min, frauen_max = st.slider("Frauenanteil (%)", min_value=0, max_value=100, value=(0, 100), step=5)
+    min_score = st.slider(f"Minimum {g.LABELS[kennzahl]}", 0.0, 10.0, 0.0, 0.5)
 
     st.divider()
     st.caption(f"{len(df)} Berufe bewertet")
 
 # ── Filtern ────────────────────────────────────────────────────────────────────
 filtered = df.copy()
-
 if selected_branche != "Alle":
-    filtered = filtered[filtered["branche"] == selected_branche]
-
+    filtered = filtered[filtered["sector"] == selected_branche]
 if selected_qual:
-    filtered = filtered[filtered["qualifikation"].isin(selected_qual)]
-
-if "frauen_pct" in filtered.columns:
-    filtered = filtered[
-        (filtered["frauen_pct"] >= frauen_min) &
-        (filtered["frauen_pct"] <= frauen_max)
-    ]
-
-filtered = filtered[filtered["score_ch"] >= min_score]
+    filtered = filtered[filtered["qualification"].isin(selected_qual)]
+filtered = filtered[filtered["women_pct"].between(frauen_min, frauen_max) | filtered["women_pct"].isna()]
+filtered = filtered[filtered[kennzahl] >= min_score]
 
 if filtered.empty:
     st.warning("Keine Berufe entsprechen den gewählten Filtern.")
     st.stop()
 
-st.caption(f"**{len(filtered)}** Berufe angezeigt · {filtered['beschaeftigte_1000'].sum():,.0f} Tsd. Beschäftigte")
-if not offen.empty:
-    st.caption(f"{len(offen)} neu aufgenommene Berufe ({offen['beschaeftigte_1000'].sum():,.0f} Tsd. "
-               "Beschäftigte) sind noch nicht bewertet und hier nicht enthalten — siehe Berufssuche.")
+st.caption(f"**{len(filtered)}** Berufe angezeigt · {g.tsd(filtered['employed_k'].sum())} Tsd. Erwerbstätige · "
+           f"Ø {g.LABELS[kennzahl]} (beschäftigungsgewichtet): {g.gewichtet(filtered, kennzahl):.1f}")
 
 # ── Treemap ────────────────────────────────────────────────────────────────────
+plot = filtered.assign(unsicher=filtered["uncertain"].map({True: "ja", False: "nein"}))
 fig = px.treemap(
-    filtered,
-    path=["branche", "beruf"],
-    values="beschaeftigte_1000",
-    color="score_ch",
-    color_continuous_scale=["#2ecc71", "#f39c12", "#e74c3c"],
+    plot,
+    path=[px.Constant("Alle Berufe"), "sector", "occupation"],
+    values="employed_k",
+    color=kennzahl,
+    color_continuous_scale=g.SKALA_0_10,
     range_color=[0, 10],
-    hover_data={
-        "score_ch": ":.1f",
-        "beschaeftigte_1000": ":.0f",
-        "frauen_pct": ":.0f",
-        "qualifikation": True,
-    },
-    title="KI-Expositions-Score Schweizer Berufe (Grösse = Beschäftigte, Farbe = Score)",
-    labels={
-        "score_ch": "KI-Score",
-        "beschaeftigte_1000": "Beschäftigte (Tsd.)",
-        "frauen_pct": "Frauenanteil %",
-    },
+    hover_data={kennzahl: ":.1f", "employed_k": ":.1f", "women_pct": ":.0f", "qualification": True,
+                "unsicher": True},
+    labels={kennzahl: g.LABELS[kennzahl], "employed_k": "Erwerbstätige (Tsd.)", "women_pct": "Frauenanteil (%)",
+            "qualification": "Qualifikation", "unsicher": "Bewertung unsicher", "sector": "Branche",
+            "occupation": "Beruf"},
+    title=f"{g.LABELS[kennzahl]} der Schweizer Berufe (Grösse = Erwerbstätige, Farbe = {g.LABELS[kennzahl]})",
 )
-fig.update_layout(height=700, coloraxis_colorbar_title="KI-Score")
-st.plotly_chart(fig, use_container_width=True)
+fig.update_traces(marker=dict(line=dict(width=1, color="#fcfcfb")), root_color="#f9f9f7")
+fig.update_layout(height=720, margin=dict(t=60, l=8, r=8, b=8),
+                  coloraxis_colorbar=dict(title=g.LABELS[kennzahl].replace(" ", "<br>")))
+st.plotly_chart(fig, width="stretch")
 
 # ── PNG-Export ─────────────────────────────────────────────────────────────────
 try:
     img_bytes = fig.to_image(format="png", width=1400, height=900, scale=2)
-    filename = f"treemap_ki_schweiz_{date.today().strftime('%Y-%m')}.png"
     st.download_button(
         label="📥 Als PNG herunterladen",
         data=img_bytes,
-        file_name=filename,
+        file_name=f"treemap_ki_schweiz_{kennzahl}_{date.today().strftime('%Y-%m')}.png",
         mime="image/png",
         help="Hochauflösendes PNG (1400×900px, Retina) für Artikel und Social Media",
     )
 except Exception:
     st.caption("PNG-Export nicht verfügbar (kaleido nicht installiert).")
 
-st.caption("Score 0–10: 0 = kaum betroffen, 10 = stark exponiert. Quelle: BFS Strukturerhebung (SE) 2024 + Claude Sonnet Scoring. "
-           "Grösse = Erwerbstätige der Berufsgattung bzw. der zugeordneten Berufsarten — jede Gattung zählt nur einmal.")
+with st.expander("Tabelle der angezeigten Berufe"):
+    tab = filtered.sort_values(kennzahl, ascending=False)[
+        ["occupation", "sector", kennzahl, "employed_k", "women_pct"]].rename(columns={
+            "occupation": "Beruf", "sector": "Branche", kennzahl: g.LABELS[kennzahl],
+            "employed_k": "Erwerbstätige (Tsd.)", "women_pct": "Frauenanteil (%)"})
+    st.dataframe(tab, hide_index=True, width="stretch")
+
+st.caption(
+    "Skala 0–10 = Anteil der Arbeitszeit × 10. **KI-Exposition:** Tätigkeiten, die generative KI um "
+    "mindestens die Hälfte beschleunigen kann. **Zeitersparnis:** davon tatsächlich eingesparte Zeit. "
+    "**Physische Automatisierung:** Tätigkeiten, die Robotik, Automaten oder Selbstbedienung ohne "
+    "generative KI übernehmen können (separate Kennzahl, nicht im KI-Score). Grösse = Erwerbstätige der "
+    "Berufsgattung bzw. der zugeordneten Berufsarten (BFS Strukturerhebung 2024) — jede Gattung zählt "
+    "nur einmal. Bewertung: Claude Opus 5.5 und Gemini 4 Argon, Rubrik v2.2. Die Farbe einer Branche ist "
+    "das beschäftigungsgewichtete Mittel ihrer Berufe."
+)

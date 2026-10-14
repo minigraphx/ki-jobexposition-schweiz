@@ -34,6 +34,15 @@ def hashes() -> dict[str, str]:
     return {e.datei: e.input_hash for e in ti.baue_eintraege()}
 
 
+def test_spaltenzuordnung_passt_zum_mapping():
+    """task_inputs liest die englischen Spalten und mappt sie auf die (gehashten) deutschen Schlüssel."""
+    import column_mapping as cm
+    for spalte, intern in ti.STAMMDATEN_SPALTEN.items():
+        assert cm.STAMMDATEN[intern] == spalte
+    for spalte, intern in ti.KOMPETENZ_SPALTEN.items():
+        assert cm.SPALTEN["esco_kompetenzen.csv"][intern] == spalte
+
+
 def test_bewertungen_vorhanden():
     dateien = _ok_dateien()
     assert len(dateien) >= 750

@@ -23,7 +23,7 @@ Begriffe:
     - Nur **marktwirtschaftliche** Unternehmen: nicht-marktwirtschaftliche institutionelle
       Einheiten (öffentliche Verwaltung, öffentliche Schulen, Teile des Sozialwesens) fehlen.
       NOGA 84 ist daher leer → «Öff. Verwaltung» erhält keinen Anteil (Verschiebung 0).
-      Die Spalte `abdeckung` zeigt je Branche den Anteil der STATENT-Beschäftigten
+      Die Spalte `coverage` zeigt je Branche den Anteil der STATENT-Beschäftigten
       (alle Arbeitsstätten, statent_beschaeftigte_noga.csv), den die Tabelle abdeckt.
 
 Gesperrte Werte (STATUS Q):
@@ -33,29 +33,29 @@ Gesperrte Werte (STATUS Q):
     Die Spannweite des Branchenanteils (Rest ganz/gar nicht in ≥250) wird geloggt.
 
 Definition:
-    grossfirmen_anteil[branche] = Σ Beschäftigte in Unternehmen ≥250 Beschäftigte
-                                  / Σ Beschäftigte (alle Grössenklassen)
+    large_firm_share[sector] = Σ Beschäftigte in Unternehmen ≥250 Beschäftigte
+                               / Σ Beschäftigte (alle Grössenklassen)
     über alle NOGA-Abteilungen der Branche (Mapping NOGA_ZU_BRANCHE).
 
 Dateien:
     data/raw/statent_ts-x-06.02.01.01.csv             Rohdownload (gitignored)
     data/processed/statent_groessenklassen_noga.csv  aufbereitet, alle Jahre:
-        jahr, noga, groessenklasse, unternehmen, unternehmen_status,
-        beschaeftigte, beschaeftigte_status
+        year, noga, size_class, enterprises, enterprises_status,
+        employed, employed_status
     data/processed/kmu_anteil_branche.csv            Ergebnis je interner Branche:
-        branche, beschaeftigte_total, beschaeftigte_gross, grossfirmen_anteil,
-        quelle, jahr, einheit, abdeckung
+        sector, employed_total, employed_large, large_firm_share,
+        source, year, unit, coverage
 
 Aufruf:
     python src/data/fetch_statent.py                  # online laden, beide CSVs schreiben
     python src/data/fetch_statent.py --offline        # versionierte Tabelle verwenden
     python src/data/fetch_statent.py --year 2023      # anderes STATENT-Jahr
     python src/data/fetch_statent.py --offline --apply-scores --dry-run
-        # zeigt, wie sich grossfirmen_anteil / zeitrahmen_kmu_delta / zeitrahmen in
+        # zeigt, wie sich large_firm_share / timeframe_sme_shift / timeframe in
         # scores.csv ändern würden, ohne etwas zu schreiben
     python src/data/fetch_statent.py --offline --apply-scores
         # kmu_anteil_branche.csv schreiben und die drei KMU-Spalten in scores.csv neu
-        # berechnen (ausgehend von zeitrahmen_roh; alle anderen Zellen bleiben byte-gleich)
+        # berechnen (ausgehend von timeframe_raw; alle anderen Zellen bleiben byte-gleich)
 
 Historie: Bis Oktober 2026 stammte der Anteil aus der Betriebszählung 2008
 (px-x-0602050000_102, Arbeitsstätten ≥250 VZÄ). Die Werte sind in der Git-Historie;
@@ -99,7 +99,7 @@ GROESSENKLASSEN: dict[str, str] = {
 }
 KLASSEN_DETAIL = ["1-9", "10-49", "50-249", "250+"]
 GROSSFIRMEN_KLASSE = "250+"
-INDIKATOREN = {"1": "unternehmen", "2": "beschaeftigte"}
+INDIKATOREN = {"1": "enterprises", "2": "employed"}
 
 QUELLE = f"BFS STATENT {STATENT_GK_BESTELLNR} (marktwirtschaftliche Unternehmen)"
 EINHEIT = "Beschäftigte in Unternehmen mit ≥250 Beschäftigten"
@@ -224,9 +224,9 @@ def parse_statent_groessenklassen_csv(source) -> pd.DataFrame:
     Liest den OGD-CSV-Export ts-x-06.02.01.01 (Pfad, Datei-Objekt oder Text-Buffer).
 
     Returns:
-        DataFrame [jahr, noga, groessenklasse, unternehmen, unternehmen_status,
-                   beschaeftigte, beschaeftigte_status] — eine Zeile je Jahr × NOGA ×
-        Grössenklasse; noga «999» und groessenklasse «total» sind die Totale.
+        DataFrame [year, noga, size_class, enterprises, enterprises_status,
+                   employed, employed_status] — eine Zeile je Jahr × NOGA ×
+        Grössenklasse; noga «999» und size_class «total» sind die Totale.
         Gesperrte Werte (STATUS Q) sind leer (NaN).
 
     Raises:
@@ -247,14 +247,14 @@ def parse_statent_groessenklassen_csv(source) -> pd.DataFrame:
     werte = pd.to_numeric(df["VALUE"], errors="coerce")
     werte[df["STATUS"] == "Q"] = float("nan")
     lang = pd.DataFrame({
-        "jahr": df["PERIOD"].astype(int),
+        "year": df["PERIOD"].astype(int),
         "noga": df["NOGA"].str.zfill(2),
-        "groessenklasse": df["SIZE"].map(GROESSENKLASSEN),
+        "size_class": df["SIZE"].map(GROESSENKLASSEN),
         "indikator": df["INDICATOR"].map(INDIKATOREN),
         "wert": werte,
         "status": df["STATUS"],
     })
-    breit = lang.pivot_table(index=["jahr", "noga", "groessenklasse"], columns="indikator",
+    breit = lang.pivot_table(index=["year", "noga", "size_class"], columns="indikator",
                              values=["wert", "status"], aggfunc="first", dropna=False)
     out = pd.DataFrame(index=breit.index)
     for ind in INDIKATOREN.values():
@@ -265,17 +265,17 @@ def parse_statent_groessenklassen_csv(source) -> pd.DataFrame:
     for ind in INDIKATOREN.values():
         out[ind] = out[ind].astype("Int64")
     reihenfolge = {k: i for i, k in enumerate(GROESSENKLASSEN.values())}
-    out = out.sort_values(["jahr", "noga", "groessenklasse"],
-                          key=lambda s: s.map(reihenfolge) if s.name == "groessenklasse" else s)
-    return out[["jahr", "noga", "groessenklasse", "unternehmen", "unternehmen_status",
-                "beschaeftigte", "beschaeftigte_status"]].reset_index(drop=True)
+    out = out.sort_values(["year", "noga", "size_class"],
+                          key=lambda s: s.map(reihenfolge) if s.name == "size_class" else s)
+    return out[["year", "noga", "size_class", "enterprises", "enterprises_status",
+                "employed", "employed_status"]].reset_index(drop=True)
 
 
 def lese_groessenklassen(path: Path = GROESSENKLASSEN_CSV) -> pd.DataFrame:
     """Versionierte Tabelle lesen (gleiche Typen wie parse_statent_groessenklassen_csv)."""
-    df = pd.read_csv(path, dtype={"noga": str, "groessenklasse": str,
-                                  "unternehmen_status": str, "beschaeftigte_status": str},
-                     keep_default_na=False, na_values={"unternehmen": [""], "beschaeftigte": [""]})
+    df = pd.read_csv(path, dtype={"noga": str, "size_class": str,
+                                  "enterprises_status": str, "employed_status": str},
+                     keep_default_na=False, na_values={"enterprises": [""], "employed": [""]})
     for ind in INDIKATOREN.values():
         df[ind] = pd.to_numeric(df[ind], errors="coerce").astype("Int64")
     return df
@@ -340,10 +340,10 @@ def schaetze_gesperrte_werte(gk: pd.DataFrame, jahr: int) -> pd.DataFrame:
         Klassen verteilte Beschäftigte) und «gross_gesperrt» (True, wenn die Klasse ≥250
         gesperrt war).
     """
-    sel = gk[(gk["jahr"] == jahr) & (gk["noga"] != "999")]
+    sel = gk[(gk["year"] == jahr) & (gk["noga"] != "999")]
     if sel.empty:
         raise ValueError(f"Keine STATENT-Grössenklassen für {jahr}.")
-    breit = sel.pivot(index="noga", columns="groessenklasse", values="beschaeftigte")
+    breit = sel.pivot(index="noga", columns="size_class", values="employed")
     breit = breit.reindex(columns=KLASSEN_DETAIL + ["total"]).astype("Float64")
 
     zeilen = {}
@@ -388,15 +388,15 @@ def compute_kmu_anteil(
         gk: Ausgabe von parse_statent_groessenklassen_csv / lese_groessenklassen.
         jahr: STATENT-Jahr; None → neuestes Jahr in gk.
         statent_noga: optional statent_beschaeftigte_noga.csv (alle Arbeitsstätten) für die
-            Spalte `abdeckung`; fehlt sie, bleibt `abdeckung` leer.
+            Spalte `coverage`; fehlt sie, bleibt `coverage` leer.
 
     Returns:
-        DataFrame [branche, beschaeftigte_total, beschaeftigte_gross, grossfirmen_anteil,
-                   quelle, jahr, einheit, abdeckung], alle 21 Branchen, alphabetisch.
+        DataFrame [sector, employed_total, employed_large, large_firm_share,
+                   source, year, unit, coverage], alle 21 Branchen, alphabetisch.
         Branchen ohne marktwirtschaftliche Unternehmen (Öff. Verwaltung) erhalten
-        grossfirmen_anteil = NaN.
+        large_firm_share = NaN.
     """
-    jahr = int(gk["jahr"].max()) if jahr is None else int(jahr)
+    jahr = int(gk["year"].max()) if jahr is None else int(jahr)
     w = schaetze_gesperrte_werte(gk, jahr)
     w["total"] = w[KLASSEN_DETAIL].sum(axis=1)
     alle = sorted(set(NOGA_ZU_BRANCHE.values()))
@@ -407,22 +407,22 @@ def compute_kmu_anteil(
 
     abdeckung = pd.Series(float("nan"), index=alle)
     if statent_noga is not None and not statent_noga.empty:
-        sj = statent_noga[statent_noga["jahr"] == jahr]
+        sj = statent_noga[statent_noga["year"] == jahr]
         if not sj.empty:
-            nenner = _summe_je_branche(sj.set_index("noga")["beschaeftigte"]).reindex(alle)
+            nenner = _summe_je_branche(sj.set_index("noga")["employed"]).reindex(alle)
             abdeckung = (total / nenner.where(nenner > 0)).round(3)
 
     df = pd.DataFrame({
-        "branche": alle,
-        "beschaeftigte_total": total.round(0).astype(int).to_numpy(),
-        "beschaeftigte_gross": gross.round(0).astype(int).to_numpy(),
-        "grossfirmen_anteil": anteil.to_numpy(),
-        "quelle": QUELLE,
-        "jahr": jahr,
-        "einheit": EINHEIT,
-        "abdeckung": abdeckung.reindex(alle).to_numpy(),
+        "sector": alle,
+        "employed_total": total.round(0).astype(int).to_numpy(),
+        "employed_large": gross.round(0).astype(int).to_numpy(),
+        "large_firm_share": anteil.to_numpy(),
+        "source": QUELLE,
+        "year": jahr,
+        "unit": EINHEIT,
+        "coverage": abdeckung.reindex(alle).to_numpy(),
     })
-    gueltig = df["grossfirmen_anteil"].dropna()
+    gueltig = df["large_firm_share"].dropna()
     if not gueltig.between(0, 1).all():
         raise ValueError("Grossfirmen-Anteil ausserhalb 0–1 — Daten prüfen.")
     return df
@@ -437,7 +437,7 @@ def spannweite_gesperrt(gk: pd.DataFrame, jahr: int) -> pd.DataFrame:
     w["total"] = w[KLASSEN_DETAIL].sum(axis=1)
     betroffen = w[w["gross_gesperrt"]]
     if betroffen.empty:
-        return pd.DataFrame(columns=["branche", "anteil_min", "anteil_max"])
+        return pd.DataFrame(columns=["sector", "anteil_min", "anteil_max"])
     total = _summe_je_branche(w["total"])
     gross = _summe_je_branche(w[GROSSFIRMEN_KLASSE])
     anteil_gesperrt = betroffen[GROSSFIRMEN_KLASSE]
@@ -446,7 +446,7 @@ def spannweite_gesperrt(gk: pd.DataFrame, jahr: int) -> pd.DataFrame:
     plus = _summe_je_branche(rest - anteil_gesperrt)
     branchen = minus.index
     return pd.DataFrame({
-        "branche": branchen,
+        "sector": branchen,
         "anteil_min": ((gross[branchen] - minus) / total[branchen]).round(4).to_numpy(),
         "anteil_max": ((gross[branchen] + plus) / total[branchen]).round(4).to_numpy(),
     })
@@ -456,16 +456,16 @@ def vergleich_mit_bisher(neu: pd.DataFrame, alt: pd.DataFrame | None) -> pd.Data
     """Anteil je Branche: bisherige Datei vs. neu berechnet (Δ in Prozentpunkten)."""
     if alt is None or alt.empty:
         return None
-    v = alt[["branche", "grossfirmen_anteil"]].merge(
-        neu[["branche", "grossfirmen_anteil"]], on="branche", how="outer",
+    v = alt[["sector", "large_firm_share"]].merge(
+        neu[["sector", "large_firm_share"]], on="sector", how="outer",
         suffixes=("_alt", "_neu"))
-    v["diff_pp"] = ((v["grossfirmen_anteil_neu"] - v["grossfirmen_anteil_alt"]) * 100).round(1)
-    return v.sort_values("grossfirmen_anteil_neu", ascending=False,
+    v["diff_pp"] = ((v["large_firm_share_neu"] - v["large_firm_share_alt"]) * 100).round(1)
+    return v.sort_values("large_firm_share_neu", ascending=False,
                          na_position="last").reset_index(drop=True)
 
 
 # ---------------------------------------------------------------------------
-# Anwenden auf scores.csv (grossfirmen_anteil, zeitrahmen_kmu_delta, zeitrahmen)
+# Anwenden auf scores.csv (large_firm_share, timeframe_sme_shift, timeframe)
 # ---------------------------------------------------------------------------
 
 def _fmt_anteil(v) -> str:
@@ -479,50 +479,49 @@ def zeitrahmen_in_scores_neu(
     """
     Berechnet die KMU-Spalten von scores.csv mit einer neuen kmu_anteil_branche-Tabelle.
 
-    Ausgangspunkt ist `zeitrahmen_roh` (Rohwert des Scorings); fehlt er, gilt `zeitrahmen`
-    als Rohwert und wird als `zeitrahmen_roh` gespeichert. Geschrieben werden nur
-    grossfirmen_anteil, zeitrahmen_kmu_delta, zeitrahmen (und ggf. zeitrahmen_roh).
+    Ausgangspunkt ist `timeframe_raw` (aggregierter Zeitrahmen der Bewertungen); fehlt er,
+    gilt `timeframe` als Rohwert und wird als `timeframe_raw` gespeichert. Geschrieben werden
+    nur large_firm_share, timeframe_sme_shift, timeframe (und ggf. timeframe_raw). Die Logik
+    liegt in src/scoring/kmu_faktor.py (gemeinsam mit apply_task_scores.py).
 
     Args:
         scores_text: scores.csv als Text (dtype=str, keep_default_na=False).
-        kmu_df: Tabelle mit Spalten branche, grossfirmen_anteil.
+        kmu_df: Tabelle mit Spalten sector, large_firm_share.
 
     Returns:
         (neue scores-Tabelle als Text, Änderungsübersicht je Zeile mit Änderung)
     """
     sys.path.insert(0, str(ROOT / "src" / "scoring"))
-    from ch_adjustments import adjust_zeitrahmen_fuer_kmu
+    from kmu_faktor import adjust_zeitrahmen_fuer_kmu
 
-    num = scores_text[["beruf", "branche", "zeitrahmen"]].copy()
-    if "zeitrahmen_roh" in scores_text.columns:
-        num["zeitrahmen_roh"] = scores_text["zeitrahmen_roh"].replace("", pd.NA)
-    res = adjust_zeitrahmen_fuer_kmu(num, kmu_df=kmu_df)
+    spalten = [s for s in ("sector", "timeframe_raw", "timeframe") if s in scores_text.columns]
+    res = adjust_zeitrahmen_fuer_kmu(scores_text[spalten], kmu_df=kmu_df)
 
     out = scores_text.copy()
-    neu_anteil = res["grossfirmen_anteil"].map(_fmt_anteil)
-    neu_delta = res["zeitrahmen_kmu_delta"].astype(int).astype(str)
+    neu_anteil = res["large_firm_share"].map(_fmt_anteil)
+    neu_delta = res["timeframe_sme_shift"].astype(int).astype(str)
     alt = {s: (out[s] if s in out.columns else pd.Series("", index=out.index))
-           for s in ("grossfirmen_anteil", "zeitrahmen_kmu_delta", "zeitrahmen")}
+           for s in ("large_firm_share", "timeframe_sme_shift", "timeframe")}
 
-    out["zeitrahmen_roh"] = res["zeitrahmen_roh"]
-    out["grossfirmen_anteil"] = neu_anteil
-    out["zeitrahmen_kmu_delta"] = neu_delta
-    out["zeitrahmen"] = res["zeitrahmen"]
+    out["timeframe_raw"] = res["timeframe_raw"].fillna("")
+    out["large_firm_share"] = neu_anteil
+    out["timeframe_sme_shift"] = neu_delta
+    out["timeframe"] = res["timeframe"].fillna("")
 
-    alt_anteil = pd.to_numeric(alt["grossfirmen_anteil"], errors="coerce")
+    alt_anteil = pd.to_numeric(alt["large_firm_share"], errors="coerce")
     neu_anteil_num = pd.to_numeric(neu_anteil, errors="coerce")
     anteil_geaendert = ~((alt_anteil - neu_anteil_num).abs().lt(1e-9)
                          | (alt_anteil.isna() & neu_anteil_num.isna()))
-    geaendert = (anteil_geaendert | (alt["zeitrahmen_kmu_delta"] != neu_delta)
-                 | (alt["zeitrahmen"] != out["zeitrahmen"]))
+    geaendert = (anteil_geaendert | (alt["timeframe_sme_shift"] != neu_delta)
+                 | (alt["timeframe"] != out["timeframe"]))
     diff = pd.DataFrame({
-        "beruf": out["beruf"],
-        "branche": out["branche"],
-        "zeitrahmen_roh": out["zeitrahmen_roh"],
-        "delta_alt": alt["zeitrahmen_kmu_delta"],
+        "occupation": out["occupation"],
+        "sector": out["sector"],
+        "timeframe_raw": out["timeframe_raw"],
+        "delta_alt": alt["timeframe_sme_shift"],
         "delta_neu": neu_delta,
-        "zeitrahmen_alt": alt["zeitrahmen"],
-        "zeitrahmen_neu": out["zeitrahmen"],
+        "timeframe_alt": alt["timeframe"],
+        "timeframe_neu": out["timeframe"],
     })[geaendert]
     return out, diff
 
@@ -533,27 +532,27 @@ def apply_scores(kmu_df: pd.DataFrame, scores_path: Path = SCORES_CSV,
     text = pd.read_csv(scores_path, dtype=str, keep_default_na=False)
     out, diff = zeitrahmen_in_scores_neu(text, kmu_df)
 
-    z = diff[diff["zeitrahmen_alt"] != diff["zeitrahmen_neu"]]
+    z = diff[diff["timeframe_alt"] != diff["timeframe_neu"]]
     d = diff[diff["delta_alt"] != diff["delta_neu"]]
     logger.info(f"\nscores.csv ({len(text)} Berufe): {len(diff)} Zeilen mit geänderten "
-                f"KMU-Spalten, {len(d)} mit neuer Verschiebung, {len(z)} mit neuem zeitrahmen.")
+                f"KMU-Spalten, {len(d)} mit neuer Verschiebung, {len(z)} mit neuem timeframe.")
     if not d.empty:
-        uebersicht = (d.groupby(["branche", "delta_alt", "delta_neu"]).size()
+        uebersicht = (d.groupby(["sector", "delta_alt", "delta_neu"]).size()
                       .rename("berufe").reset_index())
         for _, r in uebersicht.iterrows():
-            logger.info(f"  {r['branche']:18s} Verschiebung {r['delta_alt']:>2s} → "
+            logger.info(f"  {r['sector']:18s} Verschiebung {r['delta_alt']:>2s} → "
                         f"{r['delta_neu']:>2s}  ({r['berufe']} Berufe)")
     for _, r in z.head(15).iterrows():
-        logger.info(f"    {r['beruf'][:45]:45s} {r['zeitrahmen_roh']:>10s}: "
-                    f"{r['zeitrahmen_alt']} → {r['zeitrahmen_neu']}")
+        logger.info(f"    {r['occupation'][:45]:45s} {r['timeframe_raw']:>10s}: "
+                    f"{r['timeframe_alt']} → {r['timeframe_neu']}")
     if len(z) > 15:
         logger.info(f"    … und {len(z) - 15} weitere")
-    if "zeitrahmen" in text.columns:
-        vorher = text["zeitrahmen"].value_counts()
-        nachher = out["zeitrahmen"].value_counts()
+    if "timeframe" in text.columns:
+        vorher = text["timeframe"].value_counts()
+        nachher = out["timeframe"].value_counts()
         stufen = [s for s in ("1-2 Jahre", "3-5 Jahre", "5-10 Jahre", ">10 Jahre")
                   if s in vorher.index or s in nachher.index]
-        logger.info("  Verteilung zeitrahmen alt → neu: " + ", ".join(
+        logger.info("  Verteilung timeframe alt → neu: " + ", ".join(
             f"{s} {int(vorher.get(s, 0))} → {int(nachher.get(s, 0))}" for s in stufen))
 
     if dry_run:
@@ -576,7 +575,7 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--year", dest="jahr", metavar="YEAR", type=int, default=None,
                         help="STATENT-Jahr (Standard: neuestes verfügbares)")
     parser.add_argument("--apply-scores", action="store_true",
-                        help="grossfirmen_anteil, zeitrahmen_kmu_delta, zeitrahmen in "
+                        help="large_firm_share, timeframe_sme_shift, timeframe in "
                              "scores.csv neu berechnen")
     parser.add_argument("--scores", type=Path, default=SCORES_CSV, help="Pfad zu scores.csv")
     parser.add_argument("--dry-run", action="store_true", help="nichts schreiben")
@@ -585,7 +584,7 @@ def main(argv: list[str] | None = None) -> None:
     if args.offline:
         gk = lese_groessenklassen()
         logger.info(f"Offline: {GROESSENKLASSEN_CSV.name} ({len(gk)} Zeilen, "
-                    f"{gk['jahr'].min()}–{gk['jahr'].max()})")
+                    f"{gk['year'].min()}–{gk['year'].max()})")
     else:
         gk = fetch_statent_groessenklassen_online()
         if not args.dry_run:
@@ -595,16 +594,16 @@ def main(argv: list[str] | None = None) -> None:
     statent_noga = (pd.read_csv(STATENT_NOGA_CSV, dtype={"noga": str})
                     if STATENT_NOGA_CSV.exists() else None)
     kmu = compute_kmu_anteil(gk, args.jahr, statent_noga)
-    jahr = int(kmu["jahr"].iloc[0])
+    jahr = int(kmu["year"].iloc[0])
 
-    gesamt = gk[(gk["jahr"] == jahr) & (gk["noga"] == "999")].set_index("groessenklasse")
+    gesamt = gk[(gk["year"] == jahr) & (gk["noga"] == "999")].set_index("size_class")
     if {"250+", "total"} <= set(gesamt.index):
         logger.info(f"STATENT {jahr}, marktwirtschaftliche Unternehmen: "
-                    f"{int(gesamt.at['total', 'beschaeftigte']):,} Beschäftigte, davon "
-                    f"{gesamt.at['250+', 'beschaeftigte'] / gesamt.at['total', 'beschaeftigte']:.1%}"
+                    f"{int(gesamt.at['total', 'employed']):,} Beschäftigte, davon "
+                    f"{gesamt.at['250+', 'employed'] / gesamt.at['total', 'employed']:.1%}"
                     f" in Unternehmen ≥250 Beschäftigte")
     for _, r in spannweite_gesperrt(gk, jahr).iterrows():
-        logger.info(f"  gesperrte Werte {r['branche']}: Anteil {r['anteil_min']:.1%} … "
+        logger.info(f"  gesperrte Werte {r['sector']}: Anteil {r['anteil_min']:.1%} … "
                     f"{r['anteil_max']:.1%}")
 
     alt = pd.read_csv(KMU_CSV) if KMU_CSV.exists() else None
@@ -612,9 +611,9 @@ def main(argv: list[str] | None = None) -> None:
     if vergleich is not None:
         logger.info("\nGrossfirmen-Anteil je Branche, bisherige Datei → neu (Δ in %-Punkten):")
         for _, r in vergleich.iterrows():
-            neu_txt = ("   –  " if pd.isna(r["grossfirmen_anteil_neu"])
-                       else f"{r['grossfirmen_anteil_neu']:6.1%}")
-            logger.info(f"  {r['branche']:18s} {r['grossfirmen_anteil_alt']:6.1%} → {neu_txt}"
+            neu_txt = ("   –  " if pd.isna(r["large_firm_share_neu"])
+                       else f"{r['large_firm_share_neu']:6.1%}")
+            logger.info(f"  {r['sector']:18s} {r['large_firm_share_alt']:6.1%} → {neu_txt}"
                         + ("" if pd.isna(r["diff_pp"]) else f"  ({r['diff_pp']:+.1f})"))
 
     if not args.dry_run:

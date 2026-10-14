@@ -730,25 +730,33 @@ def test_aggregation_von_hand_nachgerechnet(tmp_path, eintraege):
     df = ta.aggregiere(eintraege, laeufe)
     assert len(df) == _anzahl_eintraege() and list(df.columns) == ta.SPALTEN
     r = df[df.isco_code == "2512"].iloc[0]
-    close(r.score_aufgaben, 4.0)                    # (4 + 6 + 2) / 3
-    close(r.score_aufgaben_claude, 5.0)
-    close(r.score_aufgaben_gemini, 2.0)
+    close(r.exposure, 4.0)                          # (4 + 6 + 2) / 3
+    close(r.exposure_claude, 5.0)
+    close(r.exposure_gemini, 2.0)
     close(r.delta_provider, 3.0)
-    close(r.delta_laeufe_claude, 2.0)
-    assert math.isnan(r.delta_laeufe_gemini)
-    close(r.delta_laeufe, 2.0)
-    close(r.score_zeitersparnis, 4.0 * 0.6)         # delegierend 30-50 → (1 − 0.40)
-    close(r.anteil_delegierend, 1.0)
-    close(r.score_aufgaben_beta, 4.0)
-    assert r.n_laeufe_claude == 2 and r.n_laeufe_gemini == 1
-    assert r.flag_unsicher and "Provider-Abweichung" in r.flag_grund and "Läufe-Spannweite" in r.flag_grund
-    assert r.zeitrahmen == "3-5 Jahre"              # Median von 1-2 / 3-5 / 5-10
-    assert r.zeitrahmen_claude == "3-5 Jahre"       # Gleichstand 1-2 / 3-5 → spätere
-    assert r.haupt_risiko == "Risiko C1 betrifft Code."   # |4−4| = 0 → claude/run1
-    assert r.text_quelle == "claude/run1"
+    close(r.spread_runs_claude, 2.0)
+    assert math.isnan(r.spread_runs_gemini)
+    close(r.spread_runs, 2.0)
+    close(r.time_savings, 4.0 * 0.6)                # delegierend 30-50 → (1 − 0.40)
+    close(r.share_delegating, 1.0)
+    close(r.exposure_beta, 4.0)
+    assert r.n_runs_claude == 2 and r.n_runs_gemini == 1
+    assert r.uncertain and "Provider-Abweichung" in r.uncertain_reason and "Läufe-Spannweite" in r.uncertain_reason
+    assert r.timeframe == "3-5 Jahre"               # Median von 1-2 / 3-5 / 5-10
+    assert r.timeframe_claude == "3-5 Jahre"        # Gleichstand 1-2 / 3-5 → spätere
+    assert r.main_risk == "Risiko C1 betrifft Code."      # |4−4| = 0 → claude/run1
+    assert r.text_source == "claude/run1"
+    assert r.claude_source == "claude-cli" and r.rubric_version == tr.RUBRIK_VERSION
     assert any("fehlgeschlagen" in x for x in w)
     leer = df[df.isco_code == "2411"].iloc[0]
-    assert leer.n_laeufe_claude == 0 and math.isnan(leer.score_aufgaben) and leer.flag_unsicher
+    assert leer.n_runs_claude == 0 and math.isnan(leer.exposure) and leer.uncertain
+
+
+def test_aggregation_spalten_aus_mapping():
+    """CSV-Spalten von scores_aufgaben.csv = englische Namen aus column_mapping (Reihenfolge wie intern)."""
+    import column_mapping as cm
+    assert ta.SPALTEN == [cm.SCORES_AUFGABEN[s] for s in ta.SPALTEN_INTERN]
+    assert set(cm.SCORES_AUFGABEN) == set(ta.SPALTEN_INTERN)
 
 
 def test_aggregation_ignoriert_veraltete_und_ungueltige(tmp_path, eintraege):
@@ -781,12 +789,13 @@ def test_zeitrahmen_median_und_textwahl():
 
 def test_aggregate_main_schreibt_csv(tmp_path, eintraege):
     e = next(x for x in eintraege if x.isco_code == "2512")
-    _schreibe(tmp_path, "claude", 1, e, bewertung_mit_zeta(e.isco_code, e.beruf, 40))
+    _schreibe(tmp_path, "claude-cli", 1, e, bewertung_mit_zeta(e.isco_code, e.beruf, 40))   # Standardquelle
     out = tmp_path / "scores_aufgaben.csv"
     assert ta.main(["--base-dir", str(tmp_path), "--out", str(out)]) == 0
     import pandas as pd
     df = pd.read_csv(out, dtype={"isco_code": str})
-    assert len(df) == _anzahl_eintraege() and df.loc[df.isco_code == "2512", "score_aufgaben"].iloc[0] == 4.0
+    assert len(df) == _anzahl_eintraege() and df.loc[df.isco_code == "2512", "exposure"].iloc[0] == 4.0
+    assert list(df.columns) == ta.SPALTEN
 
 
 # --------------------------------------------------------------------------- Vergleichsbericht
@@ -1368,14 +1377,15 @@ def test_cli_laeufe_getrennt_und_aggregation_mit_claude_source(tmp_path, monkeyp
     _main(["--provider", "claude-cli", "--only", "2512", "--runs", "1"], CliFake(), tmp_path)
     assert list((tmp_path / "claude-cli" / "run1").glob("2512_*.json")) and not (tmp_path / "claude").exists()
     out = tmp_path / "s.csv"
-    assert ta.main(["--base-dir", str(tmp_path), "--out", str(out)]) == 0
+    assert ta.main(["--base-dir", str(tmp_path), "--out", str(out), "--claude-source", "claude"]) == 0
     df = pd.read_csv(out, dtype={"isco_code": str})
-    assert df["n_laeufe_claude"].sum() == 0
-    assert ta.main(["--base-dir", str(tmp_path), "--out", str(out), "--claude-source", "claude-cli"]) == 0
-    df = pd.read_csv(out, dtype={"isco_code": str})
-    z = df[df["isco_code"] == "2512"].iloc[0]
-    assert z["n_laeufe_claude"] == 1 and z["claude_quelle"] == "claude-cli" and z["text_quelle"] == "claude-cli/run1"
-    assert df.loc[df["isco_code"] != "2512", "claude_quelle"].isna().all()
+    assert df["n_runs_claude"].sum() == 0                  # API-Läufe gewählt: keine vorhanden
+    for argv in ([], ["--claude-source", "claude-cli"]):   # Standard = Abo-Läufe (claude-cli)
+        assert ta.main(["--base-dir", str(tmp_path), "--out", str(out), *argv]) == 0
+        df = pd.read_csv(out, dtype={"isco_code": str})
+        z = df[df["isco_code"] == "2512"].iloc[0]
+        assert z["n_runs_claude"] == 1 and z["claude_source"] == "claude-cli" and z["text_source"] == "claude-cli/run1"
+        assert df.loc[df["isco_code"] != "2512", "claude_source"].isna().all()
 
 
 def test_skriptaufruf_batch_collect_mit_abgeschnittener_antwort(tmp_path, monkeypatch, gemini_key):

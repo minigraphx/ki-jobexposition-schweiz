@@ -4,23 +4,26 @@ Liest je Provider alle Läufe ``data/processed/bewertungen/<provider>/run*/*.jso
 gültige Bewertungen (Status ok, Schema + Plausibilität, aktueller Input-Hash) und berechnet je
 Lauf die Kennzahlen (task_rubrik.kennzahlen; Logik wie Pilot-Auswertung v2.1). Danach:
 
-- je Provider: Mittel über dessen Läufe, Spannweite des ζ-Scores (delta_laeufe_<provider>)
-- kombiniert: Mittel über alle gültigen Läufe beider Provider
+- je Provider: Mittel über dessen Läufe, Spannweite des ζ-Scores (spread_runs_<provider>)
+- kombiniert: Mittel über alle gültigen Läufe beider Provider (exposure = 10·ζ usw.)
 - delta_provider = |ζ-Score Claude − ζ-Score Gemini|
-- flag_unsicher, wenn delta_provider > PROVIDER_SCHWELLE, eine Läufe-Spannweite > LAEUFE_SCHWELLE
-  oder insgesamt weniger als 2 gültige Läufe vorliegen (Grund in flag_grund)
-- zeitrahmen = Median über alle Läufe (bei Gleichstand der spätere Wert); haupt_risiko und
+- uncertain, wenn delta_provider > PROVIDER_SCHWELLE, eine Läufe-Spannweite > LAEUFE_SCHWELLE
+  oder insgesamt weniger als 2 gültige Läufe vorliegen (Grund in uncertain_reason)
+- timeframe = Median über alle Läufe (bei Gleichstand der spätere Wert); haupt_risiko und
   begruendung aus dem Lauf, dessen ζ dem kombinierten Mittel am nächsten liegt (bei Gleichstand
   der erste: Claude vor Gemini, tiefere Laufnummer zuerst). Die Texte fliessen nicht in ζ/β ein.
 
-Spalten «score_physisch_auto» = 10·Σ w·1[P1, p_art physisch], «score_software_auto» = dasselbe für
-p_art software (Pilot: score_p_physisch / score_p_software).
+Spalten «physical_automation» = 10·Σ w·1[P1, p_art physisch], «software_automation» = dasselbe für
+p_art software (Pilot: score_p_physisch / score_p_software). Die Spaltennamen der CSV sind englisch
+(src/data/column_mapping.SCORES_AUFGABEN); intern rechnet das Skript mit den deutschen Kennzahl-Namen
+aus task_rubrik.kennzahlen.
 
 Aufruf:  python src/scoring/task_aggregate.py [--provider claude gemini] [--out PFAD] [--include-stale] [--base-dir PFAD]
-                                             [--claude-source claude|claude-cli]
-``--claude-source claude-cli`` nimmt für Claude die Abo-Läufe (bewertungen/claude-cli/) statt der API-Läufe;
-die Spalten heissen weiterhin *_claude, die Herkunft steht in claude_quelle und text_quelle.
-scores.csv und die App werden nicht verändert.
+                                             [--claude-source claude-cli|claude]
+Standard ``--claude-source claude-cli``: Claude-Läufe aus dem Abo (bewertungen/claude-cli/); ``claude`` nimmt
+die API-Läufe (bewertungen/claude/). Die Spalten heissen in beiden Fällen *_claude, die Herkunft steht in
+claude_source und text_source. scores.csv und die App übernehmen die Werte erst mit
+src/scoring/apply_task_scores.py.
 """
 from __future__ import annotations
 
@@ -34,6 +37,8 @@ from pathlib import Path
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "data"))
+import column_mapping as cm  # noqa: E402
 import task_inputs as ti  # noqa: E402
 import task_rubrik as tr  # noqa: E402
 
@@ -44,14 +49,15 @@ LAEUFE_SCHWELLE = 1.0       # Spannweite des ζ-Scores innerhalb eines Providers
 MITTEL = ["score_aufgaben", "score_aufgaben_beta", "score_zeitersparnis", "anteil_ersetzend",
           "anteil_delegierend", "anteil_unterstuetzend", "ersetzbare_zeit", "score_physisch_auto",
           "score_software_auto", "sicherheit_tief_anteil"]
-SPALTEN = (["isco_code", "beruf"] + MITTEL
+SPALTEN_INTERN = (["isco_code", "beruf"] + MITTEL
            + ["zeitrahmen", "haupt_risiko", "begruendung",
               "n_laeufe_claude", "n_laeufe_gemini", "score_aufgaben_claude", "score_aufgaben_gemini",
               "score_zeitersparnis_claude", "score_zeitersparnis_gemini",
               "delta_laeufe_claude", "delta_laeufe_gemini", "delta_laeufe", "delta_provider",
               "flag_unsicher", "flag_grund", "zeitrahmen_claude", "zeitrahmen_gemini", "text_quelle",
               "claude_quelle", "rubrik_version"])
-CLAUDE_QUELLEN = ("claude", "claude-cli")     # Verzeichnis der Claude-Läufe: API bzw. Abo (claude -p)
+SPALTEN = [cm.SCORES_AUFGABEN[s] for s in SPALTEN_INTERN]     # Spalten von scores_aufgaben.csv
+CLAUDE_QUELLEN = ("claude-cli", "claude")     # Verzeichnis der Claude-Läufe: Abo (claude -p, Standard) bzw. API
 
 
 @dataclass
@@ -179,12 +185,12 @@ def zeile(e: ti.Eintrag, je_provider: dict[str, list[Lauf]]) -> dict:
 
 
 def aggregiere(eintraege: list[ti.Eintrag], laeufe: dict[str, dict[str, list[Lauf]]],
-               claude_quelle: str = "claude") -> pd.DataFrame:
-    """laeufe: provider → (Schlüssel → Läufe). Eine Zeile je Eintrag (auch ohne Bewertung)."""
+               claude_quelle: str = "claude-cli") -> pd.DataFrame:
+    """laeufe: provider → (Schlüssel → Läufe). Eine Zeile je Eintrag (auch ohne Bewertung); Spalten SPALTEN."""
     zeilen = [zeile(e, {p: laeufe.get(p, {}).get(e.schluessel, []) for p in PROVIDER}) for e in eintraege]
-    df = pd.DataFrame(zeilen, columns=SPALTEN)
+    df = pd.DataFrame(zeilen, columns=SPALTEN_INTERN)
     df["claude_quelle"] = [claude_quelle if n else None for n in df["n_laeufe_claude"]]
-    return df
+    return df.rename(columns=cm.SCORES_AUFGABEN)
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -194,8 +200,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--out", default=str(tr.SCORES_AUFGABEN_PATH))
     ap.add_argument("--include-stale", action="store_true",
                     help="auch Bewertungen mit altem Input-Hash verwenden (z. B. nach Datenkorrekturen)")
-    ap.add_argument("--claude-source", choices=CLAUDE_QUELLEN, default="claude",
-                    help="Claude-Läufe aus der API (claude, Standard) oder aus dem Abo (claude-cli)")
+    ap.add_argument("--claude-source", choices=CLAUDE_QUELLEN, default="claude-cli",
+                    help="Claude-Läufe aus dem Abo (claude-cli, Standard) oder aus der API (claude)")
     a = ap.parse_args(argv)
     eintraege = ti.baue_eintraege()
     warnungen: list[str] = []
@@ -204,9 +210,9 @@ def main(argv: list[str] | None = None) -> int:
               for p in a.provider}
     df = aggregiere(eintraege, laeufe, a.claude_source)
     df.round(4).to_csv(a.out, index=False)
-    n_bew = int((df["n_laeufe_claude"] + df["n_laeufe_gemini"] > 0).sum())
-    print(f"{len(df)} Einträge ({n_bew} mit mindestens einer gültigen Bewertung) → {a.out}")
-    print(f"flag_unsicher: {int(df.loc[df['n_laeufe_claude'] + df['n_laeufe_gemini'] > 0, 'flag_unsicher'].sum())}")
+    bewertet = df["n_runs_claude"] + df["n_runs_gemini"] > 0
+    print(f"{len(df)} Einträge ({int(bewertet.sum())} mit mindestens einer gültigen Bewertung) → {a.out}")
+    print(f"uncertain: {int(df.loc[bewertet, 'uncertain'].sum())}")
     for w in warnungen:
         print(f"WARNUNG: {w}", file=sys.stderr)
     return 0

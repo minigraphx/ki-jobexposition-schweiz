@@ -108,3 +108,14 @@ class TestMigration:
             mc.migriere(tmp_path)
         assert p.read_bytes() == original   # zurückgesetzt
 
+
+def test_versionierte_daten_migriert(tmp_path):
+    """Alle versionierten CSVs sind migriert: ein weiterer Lauf ändert nichts."""
+    ziel = tmp_path / "processed"
+    shutil.copytree(PROC, ziel, ignore=shutil.ignore_patterns("bewertungen"))
+    vorher = {p.name: p.read_bytes() for p in ziel.glob("*.csv")}
+    plaene = mc.migriere(ziel)
+    assert {p.status for p in plaene} == {mc.BEREITS}
+    assert {p.name: p.read_bytes() for p in ziel.glob("*.csv")} == vorher
+    for p in plaene:
+        assert not set(p.kopf) & cm.nur_alt(p.datei), p.datei

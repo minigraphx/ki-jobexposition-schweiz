@@ -60,18 +60,18 @@ def bgs() -> pd.DataFrame:
 @pytest.fixture
 def statent() -> pd.DataFrame:
     """Nenner: jede gemappte NOGA-Abteilung mit 1000 Beschäftigten (älteres Jahr 2023 zum Ignorieren)."""
-    zeilen = [{"jahr": 2024, "noga": n, "beschaeftigte": 1000, "vzae": 800} for n in NOGA_ZU_BRANCHE]
-    zeilen.append({"jahr": 2023, "noga": "21", "beschaeftigte": 1, "vzae": 1})
+    zeilen = [{"year": 2024, "noga": n, "employed": 1000, "fte": 800} for n in NOGA_ZU_BRANCHE]
+    zeilen.append({"year": 2023, "noga": "21", "employed": 1, "fte": 1})
     return pd.DataFrame(zeilen)
 
 
 class TestParsing:
     def test_nur_abteilungen_und_total_status(self, bgs):
         assert set(bgs["noga"]) == {"21", "69", "97"}
-        assert list(bgs.columns) == ["noga", "periode", "grenzgaenger", "obs_status"]
+        assert list(bgs.columns) == ["noga", "period", "cross_border", "obs_status"]
         # AUFZW=1 (99.0) darf nicht enthalten sein
-        q4 = bgs[(bgs["noga"] == "21") & (bgs["periode"] == "2025-Q4")]
-        assert q4["grenzgaenger"].tolist() == [120.0]
+        q4 = bgs[(bgs["noga"] == "21") & (bgs["period"] == "2025-Q4")]
+        assert q4["cross_border"].tolist() == [120.0]
 
     def test_labels_both_format(self):
         text = SDMX_FIXTURE.replace(",21,_T,", ",21: Pharma,_T: Total,")
@@ -95,10 +95,10 @@ class TestParsing:
             {"key": ["2024", "999", "86", "5"], "values": ["..."]},
         ]}
         df = parse_statent_pxweb(antwort)
-        assert list(df.columns) == ["jahr", "noga", "beschaeftigte", "vzae"]
-        assert df.set_index("noga").loc["01", "beschaeftigte"] == 60
-        assert df.set_index("noga").loc["01", "vzae"] == 40
-        assert df.set_index("noga").loc["86", "beschaeftigte"] == 0
+        assert list(df.columns) == ["year", "noga", "employed", "fte"]
+        assert df.set_index("noga").loc["01", "employed"] == 60
+        assert df.set_index("noga").loc["01", "fte"] == 40
+        assert df.set_index("noga").loc["86", "employed"] == 0
         assert "999" not in set(df["noga"])
 
 
@@ -150,19 +150,19 @@ class TestMapping:
 
 class TestAnteil:
     def test_berechnung(self, bgs, statent):
-        df = compute_grenzgaenger_anteil(bgs, statent).set_index("branche")
+        df = compute_grenzgaenger_anteil(bgs, statent).set_index("sector")
         n_industrie = sum(1 for b in NOGA_ZU_BRANCHE.values() if b == "Industrie")
-        assert df.loc["Industrie", "beschaeftigte_total"] == 1000 * n_industrie
-        assert df.loc["Industrie", "grenzgaenger"] == 100
-        assert df.loc["Industrie", "grenzgaenger_anteil"] == pytest.approx(100 / (1000 * n_industrie), abs=1e-4)
-        assert df.loc["Recht", "grenzgaenger_anteil"] == pytest.approx(0.01)
-        assert df.loc["Recht", "grenzgaenger_quartal"] == 14
-        assert df.loc["Recht", "bgs_quartal"] == "2026-Q1"
-        assert df.loc["Recht", "statent_jahr"] == 2024
+        assert df.loc["Industrie", "employed_total"] == 1000 * n_industrie
+        assert df.loc["Industrie", "cross_border"] == 100
+        assert df.loc["Industrie", "cross_border_share"] == pytest.approx(100 / (1000 * n_industrie), abs=1e-4)
+        assert df.loc["Recht", "cross_border_share"] == pytest.approx(0.01)
+        assert df.loc["Recht", "cross_border_quarter"] == 14
+        assert df.loc["Recht", "ggs_quarter"] == "2026-Q1"
+        assert df.loc["Recht", "statent_year"] == 2024
         assert set(df.index) == ALLE_BRANCHEN
 
     def test_anteil_ueber_1_wird_abgelehnt(self, bgs, statent):
-        klein = statent.assign(beschaeftigte=1)
+        klein = statent.assign(employed=1)
         with pytest.raises(ValueError, match="0–1"):
             compute_grenzgaenger_anteil(bgs, klein)
 
@@ -180,26 +180,26 @@ class TestVersionierteDaten:
         return pd.read_csv(PROCESSED / "grenzgaenger_anteil_branche.csv")
 
     def test_alle_branchen_anteil_0_bis_1(self, ergebnis):
-        assert set(ergebnis["branche"]) == ALLE_BRANCHEN
-        assert ergebnis["grenzgaenger_anteil"].between(0, 1).all()
-        assert ergebnis["grenzgaenger_anteil_quartal"].between(0, 1).all()
-        assert (ergebnis["grenzgaenger"] >= 0).all()
-        assert (ergebnis["beschaeftigte_total"] > 0).all()
+        assert set(ergebnis["sector"]) == ALLE_BRANCHEN
+        assert ergebnis["cross_border_share"].between(0, 1).all()
+        assert ergebnis["cross_border_share_quarter"].between(0, 1).all()
+        assert (ergebnis["cross_border"] >= 0).all()
+        assert (ergebnis["employed_total"] > 0).all()
 
     def test_anteil_konsistent(self, ergebnis):
-        calc = ergebnis["grenzgaenger"] / ergebnis["beschaeftigte_total"]
-        assert ((ergebnis["grenzgaenger_anteil"] - calc).abs() < 1e-3).all()
+        calc = ergebnis["cross_border"] / ergebnis["employed_total"]
+        assert ((ergebnis["cross_border_share"] - calc).abs() < 1e-3).all()
 
     def test_offline_reproduzierbar(self, ergebnis):
-        bgs = pd.read_csv(fetch_bgs.BGS_CSV, dtype={"noga": str, "periode": str, "obs_status": str},
+        bgs = pd.read_csv(fetch_bgs.BGS_CSV, dtype={"noga": str, "period": str, "obs_status": str},
                           keep_default_na=False)
         statent = pd.read_csv(fetch_bgs.STATENT_CSV, dtype={"noga": str})
-        neu = compute_grenzgaenger_anteil(bgs, statent, str(ergebnis["bgs_periode"].iloc[0]))
+        neu = compute_grenzgaenger_anteil(bgs, statent, str(ergebnis["ggs_period"].iloc[0]))
         pd.testing.assert_frame_equal(
-            neu.sort_values("branche").reset_index(drop=True)[["branche", "grenzgaenger", "grenzgaenger_anteil"]],
-            ergebnis.sort_values("branche").reset_index(drop=True)[["branche", "grenzgaenger", "grenzgaenger_anteil"]],
+            neu.sort_values("sector").reset_index(drop=True)[["sector", "cross_border", "cross_border_share"]],
+            ergebnis.sort_values("sector").reset_index(drop=True)[["sector", "cross_border", "cross_border_share"]],
         )
 
     def test_gesamtanteil_plausibel(self, ergebnis):
-        gesamt = ergebnis["grenzgaenger"].sum() / ergebnis["beschaeftigte_total"].sum()
+        gesamt = ergebnis["cross_border"].sum() / ergebnis["employed_total"].sum()
         assert 0.04 < gesamt < 0.12

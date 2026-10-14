@@ -169,8 +169,8 @@ def test_kandidat_mit_falschem_isco_wird_ohne_ki_verworfen(fake_api, monkeypatch
     assert geprueft == ["Krankenpfleger Allgemeine Krankenpflege"]
     assert res["esco_uri"] == OCC + "nurse"
     assert res["esco_isco_code"] == "2221"
-    assert res["esco_match_qualitaet"] == "korrekt"
-    assert res["beschreibung_quelle"] == "ESCO"
+    assert res["esco_match_quality"] == "korrekt"
+    assert res["description_source"] == "ESCO"
 
 
 def test_kandidat_plausibel_und_blockiert(fake_api, monkeypatch):
@@ -182,7 +182,7 @@ def test_kandidat_plausibel_und_blockiert(fake_api, monkeypatch):
                                  [{"uri": OCC + "x"}, {"uri": OCC + "ds"}],
                                  blocked_uris={OCC + "x"})
     assert res["esco_uri"] == OCC + "ds"
-    assert res["esco_match_qualitaet"] == "plausibel"
+    assert res["esco_match_quality"] == "plausibel"
 
 
 def test_kandidat_inhaltlich_abgelehnt(fake_api, monkeypatch):
@@ -200,29 +200,29 @@ def test_find_best_match_stufe3_und_fallback(fake_api, monkeypatch):
     monkeypatch.setattr(E, "ki_alt_terms", lambda *a: [])
     res = E.find_best_match(None, "Spitex-Mitarbeiter/in", "5322")
     assert res["esco_uri"] == OCC + "h"
-    assert res["esco_match_qualitaet"] == "korrekt"
+    assert res["esco_match_quality"] == "korrekt"
 
     # ohne ESCO-Treffer: Fallback mit generierter Beschreibung
     monkeypatch.setattr(E, "berufsberatung_search", lambda b: "")
     monkeypatch.setattr(E, "wikipedia_description", lambda b: "")
     monkeypatch.setattr(E, "ki_generate_description", lambda *a: "Generierter Text.")
     res = E.find_best_match(None, "Maschinenführer/in", "8211")
-    assert res == {"esco_uri": "", "esco_titel": "Maschinenführer/in",
-                   "esco_beschreibung": "Generierter Text.", "beschreibung_quelle": "KI-generiert",
-                   "esco_isco_code": "", "esco_match_qualitaet": "fallback"}
+    assert res == {"esco_uri": "", "esco_title": "Maschinenführer/in",
+                   "esco_description": "Generierter Text.", "description_source": "KI-generiert",
+                   "esco_isco_code": "", "esco_match_quality": "fallback"}
 
 
 def test_merge_into_aktualisiert_und_haengt_an():
-    alt = pd.DataFrame({"beruf": ["A", "B"], "isco_code": [1111, 2222],
-                        "esco_uri": ["u1", "u2"], "esco_titel": ["t1", "t2"],
-                        "esco_beschreibung": ["d1", "d2"], "beschreibung_quelle": ["ESCO", "ESCO"]})
-    neu = pd.DataFrame([{"beruf": "B", "isco_code": 2222, "esco_uri": "u3", "esco_titel": "t3",
-                         "esco_beschreibung": "d3", "beschreibung_quelle": "ESCO",
-                         "esco_isco_code": "2222", "esco_match_qualitaet": "korrekt"},
-                        {"beruf": "C", "isco_code": 3333, "esco_uri": "", "esco_titel": "C",
-                         "esco_beschreibung": "d", "beschreibung_quelle": "KI-generiert",
-                         "esco_isco_code": "", "esco_match_qualitaet": "fallback"}])
+    alt = pd.DataFrame({"occupation": ["A", "B"], "isco_code": [1111, 2222],
+                        "esco_uri": ["u1", "u2"], "esco_title": ["t1", "t2"],
+                        "esco_description": ["d1", "d2"], "description_source": ["ESCO", "ESCO"]})
+    neu = pd.DataFrame([{"occupation": "B", "isco_code": 2222, "esco_uri": "u3", "esco_title": "t3",
+                         "esco_description": "d3", "description_source": "ESCO",
+                         "esco_isco_code": "2222", "esco_match_quality": "korrekt"},
+                        {"occupation": "C", "isco_code": 3333, "esco_uri": "", "esco_title": "C",
+                         "esco_description": "d", "description_source": "KI-generiert",
+                         "esco_isco_code": "", "esco_match_quality": "fallback"}])
     out = E.merge_into(alt, neu)
-    assert list(out["beruf"]) == ["A", "B", "C"]
-    assert out.loc[1, "esco_uri"] == "u3" and out.loc[1, "esco_match_qualitaet"] == "korrekt"
+    assert list(out["occupation"]) == ["A", "B", "C"]
+    assert out.loc[1, "esco_uri"] == "u3" and out.loc[1, "esco_match_quality"] == "korrekt"
     assert out.loc[0, "esco_uri"] == "u1"

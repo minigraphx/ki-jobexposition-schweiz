@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from ch_adjustments import BRANCHENEFFEKTE
+from kmu_faktor import BRANCHEN
 from update_from_bfs import (
     BRANCHE_DEFAULT,
     BRANCHE_MAP,
@@ -51,22 +51,22 @@ class TestParseBfsExcel:
         assert DEFAULT_BLATT == "2024"
         bfs = parse_bfs_excel(bfs_excel)
         assert list(bfs["isco_code"]) == ["2411"]
-        assert bfs.iloc[0]["beschaeftigte_total"] == pytest.approx(32.0)
-        assert bfs.iloc[0]["frauen_pct"] == pytest.approx(50.0)
+        assert bfs.iloc[0]["employed_total"] == pytest.approx(32.0)
+        assert bfs.iloc[0]["women_pct"] == pytest.approx(50.0)
 
     def test_anderes_jahr(self, bfs_excel):
         bfs = parse_bfs_excel(bfs_excel, blatt="2023")
-        assert bfs.iloc[0]["beschaeftigte_total"] == pytest.approx(30.0)
+        assert bfs.iloc[0]["employed_total"] == pytest.approx(30.0)
         # "X" (Datenschutz) → kein Frauenanteil
-        assert pd.isna(bfs.iloc[0]["frauen_pct"])
+        assert pd.isna(bfs.iloc[0]["women_pct"])
 
     def test_gepooltes_blatt(self, bfs_excel):
         bfs = parse_bfs_excel(bfs_excel, blatt="2022-2024")
-        assert bfs.iloc[0]["beschaeftigte_total"] == pytest.approx(40.0)
+        assert bfs.iloc[0]["employed_total"] == pytest.approx(40.0)
 
     def test_blatt_als_int(self, bfs_excel):
         bfs = parse_bfs_excel(bfs_excel, blatt=2023)
-        assert bfs.iloc[0]["beschaeftigte_total"] == pytest.approx(30.0)
+        assert bfs.iloc[0]["employed_total"] == pytest.approx(30.0)
 
     def test_unbekanntes_blatt(self, bfs_excel):
         with pytest.raises(ValueError):
@@ -146,8 +146,8 @@ class TestBrancheFuerIsco:
         assert branche_fuer_isco("2636") != "Medien"
 
     def test_alle_branchen_haben_delta(self):
-        """Jede Ziel-Branche muss in ch_adjustments.BRANCHENEFFEKTE existieren."""
-        assert set(BRANCHE_MAP.values()) | {BRANCHE_DEFAULT} <= set(BRANCHENEFFEKTE)
+        """Jede Ziel-Branche muss eine der 21 Branchen (kmu_faktor.BRANCHEN) sein."""
+        assert set(BRANCHE_MAP.values()) | {BRANCHE_DEFAULT} <= BRANCHEN
 
     def test_schluessel_sind_2_bis_4_stellige_ziffern(self):
         for key in BRANCHE_MAP:

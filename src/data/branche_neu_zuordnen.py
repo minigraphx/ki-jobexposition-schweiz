@@ -1,21 +1,20 @@
 """
 Branchen-Zuordnung (BRANCHE_MAP aus update_from_bfs.py) auf die bestehenden CSVs anwenden —
-ohne ESCO- oder LLM-Pipeline erneut laufen zu lassen.
+ohne ESCO- oder Bewertungs-Pipeline erneut laufen zu lassen.
 
 Betroffen sind nur automatisch ergänzte BFS-SE-Berufe; die kuratierten Berufe aus
 build_berufeliste.py behalten ihre manuell gesetzte Branche.
 
-Aktualisiert wird die Spalte `branche` in:
+Aktualisiert wird die Spalte `sector` in:
     berufe_ch.csv, berufe_ch_esco.csv, berufe_ch_esco_verified.csv, scores.csv
 
 In scores.csv werden zusätzlich — nur für die Zeilen mit geänderter Branche — die
 regelbasierten, branchenabhängigen Spalten neu berechnet:
-    delta_branche, score_ch                          (ch_adjustments.apply_ch_adjustments)
-    zeitrahmen, zeitrahmen_kmu_delta, grossfirmen_anteil
-                                                     (KMU-Faktor, ausgehend von zeitrahmen_roh)
-    adaptabilitaet                                   (nur der Branchenmobilitäts-Anteil wird ersetzt)
-score_gesamt, Sub-Scores und Begründungstexte bleiben unverändert. Alle übrigen Zellen
-werden byte-identisch zurückgeschrieben.
+    timeframe, timeframe_sme_shift, large_firm_share
+                                     (KMU-Faktor, ausgehend von timeframe_raw; kmu_faktor.py)
+    adaptability                     (nur der Branchenmobilitäts-Anteil wird ersetzt)
+Die aufgabenbasierten Scores (exposure usw.) und Texte bleiben unverändert — die Branche
+wirkt nur über den Zeitrahmen. Alle übrigen Zellen werden byte-identisch zurückgeschrieben.
 
 Aufruf:
     python src/data/branche_neu_zuordnen.py            # anwenden
@@ -34,7 +33,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "scoring"))
 
 from adaptability_scorer import BRANCHEN_MOBILITAET, BRANCHEN_MOBILITAET_DEFAULT  # noqa: E402
 from build_berufeliste import BERUFE_CH  # noqa: E402
-from ch_adjustments import adjust_zeitrahmen_fuer_kmu, apply_ch_adjustments  # noqa: E402
+from kmu_faktor import adjust_zeitrahmen_fuer_kmu  # noqa: E402
 from update_from_bfs import PROCESSED_PATH, branche_fuer_isco  # noqa: E402
 
 BASIS_DATEIEN = ["berufe_ch.csv", "berufe_ch_esco.csv", "berufe_ch_esco_verified.csv"]
@@ -49,8 +48,8 @@ def _lesen(path: Path) -> pd.DataFrame:
 
 def neue_branchen(df: pd.DataFrame) -> pd.Series:
     """Ziel-Branche je Zeile: kuratierte Berufe unverändert, übrige per ISCO-Präfix."""
-    auto = ~df["beruf"].isin(KURATIERTE_BERUFE)
-    neu = df["branche"].copy()
+    auto = ~df["occupation"].isin(KURATIERTE_BERUFE)
+    neu = df["sector"].copy()
     neu[auto] = df.loc[auto, "isco_code"].map(branche_fuer_isco)
     return neu
 
@@ -59,39 +58,35 @@ def _mobilitaet(branche: str) -> float:
     return BRANCHEN_MOBILITAET.get(branche, BRANCHEN_MOBILITAET_DEFAULT)
 
 
-def scores_neu_berechnen(text_df: pd.DataFrame, num_df: pd.DataFrame, geaendert: pd.Series) -> pd.DataFrame:
+def scores_neu_berechnen(text_df: pd.DataFrame, alt_branche: pd.Series, geaendert: pd.Series) -> pd.DataFrame:
     """Regelbasierte Folgespalten für geänderte Zeilen neu berechnen.
 
-    text_df: scores.csv als Text (mit bereits neuer Branche)
-    num_df:  scores.csv mit numerischen Typen (gleiche Zeilenreihenfolge)
+    text_df:     scores.csv als Text (mit bereits neuer Branche)
+    alt_branche: bisherige Branche je Zeile (gleicher Index)
     """
     out = text_df.copy()
     if not geaendert.any():
         return out
 
-    alt_branche = num_df.loc[geaendert, "branche"]
-    num = num_df.copy()
-    num["branche"] = text_df["branche"]
-    res = adjust_zeitrahmen_fuer_kmu(apply_ch_adjustments(num))
-
-    for spalte in ["delta_branche", "score_ch", "grossfirmen_anteil"]:
-        if spalte in out.columns:
-            # NaN (z. B. grossfirmen_anteil der Öff. Verwaltung) als leere Zelle schreiben
-            out.loc[geaendert, spalte] = res.loc[geaendert, spalte].map(
+    spalten = [s for s in ("sector", "timeframe_raw", "timeframe") if s in text_df.columns]
+    if len(spalten) > 1:
+        res = adjust_zeitrahmen_fuer_kmu(text_df[spalten])
+        if "large_firm_share" in res.columns:
+            # NaN (z. B. large_firm_share der Öff. Verwaltung) als leere Zelle schreiben
+            out.loc[geaendert, "large_firm_share"] = res.loc[geaendert, "large_firm_share"].map(
                 lambda v: "" if pd.isna(v) else repr(float(v)))
-    for spalte in ["zeitrahmen", "zeitrahmen_roh"]:
-        if spalte in out.columns:
-            out.loc[geaendert, spalte] = res.loc[geaendert, spalte]
-    if "zeitrahmen_kmu_delta" in out.columns:
-        out.loc[geaendert, "zeitrahmen_kmu_delta"] = res.loc[geaendert, "zeitrahmen_kmu_delta"].astype(int).astype(str)
+            out.loc[geaendert, "timeframe_sme_shift"] = (
+                res.loc[geaendert, "timeframe_sme_shift"].astype(int).astype(str))
+            for spalte in ("timeframe", "timeframe_raw"):
+                out.loc[geaendert, spalte] = res.loc[geaendert, spalte].fillna("")
 
-    if "adaptabilitaet" in out.columns:
-        for idx in num_df.index[geaendert]:
-            alt = num_df.at[idx, "adaptabilitaet"]
+    if "adaptability" in out.columns:
+        for idx in text_df.index[geaendert]:
+            alt = pd.to_numeric(text_df.at[idx, "adaptability"], errors="coerce")
             if pd.isna(alt):
                 continue
-            neu = float(alt) - _mobilitaet(alt_branche[idx]) + _mobilitaet(text_df.at[idx, "branche"])
-            out.at[idx, "adaptabilitaet"] = repr(round(min(max(neu, 0.0), 10.0), 1))
+            neu = float(alt) - _mobilitaet(alt_branche[idx]) + _mobilitaet(text_df.at[idx, "sector"])
+            out.at[idx, "adaptability"] = repr(round(min(max(neu, 0.0), 10.0), 1))
     return out
 
 
@@ -109,18 +104,18 @@ def main(argv: list[str] | None = None) -> None:
             continue
         df = _lesen(path)
         neu = neue_branchen(df)
-        geaendert = neu != df["branche"]
+        geaendert = neu != df["sector"]
         print(f"✓ {name}: {int(geaendert.sum())} Zeilen mit neuer Branche")
         for idx in df.index[geaendert]:
-            print(f"    {df.at[idx, 'isco_code']} {df.at[idx, 'beruf'][:60]}: "
-                  f"{df.at[idx, 'branche']} → {neu[idx]}")
+            print(f"    {df.at[idx, 'isco_code']} {df.at[idx, 'occupation'][:60]}: "
+                  f"{df.at[idx, 'sector']} → {neu[idx]}")
         if args.dry_run or not geaendert.any():
             continue
 
-        num_df = pd.read_csv(path) if name == SCORES_DATEI else None
-        df["branche"] = neu
-        if num_df is not None:
-            df = scores_neu_berechnen(df, num_df, geaendert)
+        alt_branche = df["sector"].copy()
+        df["sector"] = neu
+        if name == SCORES_DATEI:
+            df = scores_neu_berechnen(df, alt_branche, geaendert)
         df.to_csv(path, index=False)
 
 

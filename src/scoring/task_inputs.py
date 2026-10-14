@@ -23,8 +23,22 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import task_rubrik as tr  # noqa: E402
 
-STAMMDATEN = ["beruf", "isco_code", "synonyme", "qualifikation", "branche", "esco_uri", "esco_titel",
-              "esco_beschreibung", "beschreibung_quelle", "esco_match_qualitaet", "esco_isco_code"]
+# Spalte in scores.csv → interner Schlüssel. Die internen (deutschen) Schlüssel bilden den
+# Input-Datensatz und gehen in den Input-Hash ein; sie dürfen sich nicht ändern, sonst veralten
+# alle gespeicherten Bewertungen (tests/test_input_hash.py). Die CSV-Spalten heissen seit #53
+# englisch (src/data/column_mapping.py); die Zuordnung hier ist bewusst ausgeschrieben.
+STAMMDATEN_SPALTEN: dict[str, str] = {
+    "occupation": "beruf", "isco_code": "isco_code", "synonyms": "synonyme", "qualification": "qualifikation",
+    "sector": "branche", "esco_uri": "esco_uri", "esco_title": "esco_titel",
+    "esco_description": "esco_beschreibung", "description_source": "beschreibung_quelle",
+    "esco_match_quality": "esco_match_qualitaet", "esco_isco_code": "esco_isco_code",
+}
+STAMMDATEN = list(STAMMDATEN_SPALTEN.values())
+# esco_kompetenzen.csv: Spalte → interner Schlüssel
+KOMPETENZ_SPALTEN: dict[str, str] = {
+    "occupation": "beruf", "isco_code": "isco_code", "esco_uri": "esco_uri", "competence": "kompetenz",
+    "relation": "relation", "type": "typ", "competence_uri": "kompetenz_uri",
+}
 
 # Die 15 Berufe des Pilots (isco_code, Berufsname im Pilot). Mehrere Namen wurden nach dem
 # Pilot umbenannt; die Zuordnung zu scores.csv erfolgt über Name → Synonym → einziger ISCO-Eintrag.
@@ -72,11 +86,12 @@ def _text(x) -> str | None:
 
 
 def lade_eintraege(scores_path: Path = tr.SCORES_PATH) -> pd.DataFrame:
-    """Stammdaten aller Einträge (eine Zeile je Eintrag in scores.csv)."""
+    """Stammdaten aller Einträge (eine Zeile je Eintrag in scores.csv), mit internen Schlüsseln."""
     df = pd.read_csv(scores_path, dtype={"isco_code": str, "esco_isco_code": str})
-    fehlend = [c for c in ["beruf", "isco_code", "esco_beschreibung"] if c not in df.columns]
+    fehlend = [c for c in ["occupation", "isco_code", "esco_description"] if c not in df.columns]
     if fehlend:
         raise ValueError(f"scores.csv: Spalten fehlen: {fehlend}")
+    df = df[[c for c in STAMMDATEN_SPALTEN if c in df.columns]].rename(columns=STAMMDATEN_SPALTEN)
     for c in STAMMDATEN:
         if c not in df.columns:
             df[c] = None
@@ -89,6 +104,10 @@ def lade_eintraege(scores_path: Path = tr.SCORES_PATH) -> pd.DataFrame:
 
 def lade_kompetenzen(pfad: Path = tr.KOMPETENZEN_PATH) -> pd.DataFrame:
     k = pd.read_csv(pfad, dtype={"isco_code": str})
+    fehlend = [c for c in KOMPETENZ_SPALTEN if c not in k.columns]
+    if fehlend:
+        raise ValueError(f"{Path(pfad).name}: Spalten fehlen: {fehlend}")
+    k = k[list(KOMPETENZ_SPALTEN)].rename(columns=KOMPETENZ_SPALTEN)
     k["isco_code"] = k["isco_code"].str.strip().str.zfill(4)
     k["typ"] = k["typ"].fillna("unbekannt")
     return k

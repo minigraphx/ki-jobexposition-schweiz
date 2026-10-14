@@ -5,10 +5,16 @@ Kriterien:
 - Qualifikationsniveau  (4 Punkte): höhere Bildung → leichtere Umschulung
 - Lohnniveau            (3 Punkte): höherer Lohn → mehr Ressourcen
                                     (feste Skala: 0 bis 50'000 CHF, linear bis 3 bei 150'000 CHF)
-- Digitale Kompetenz    (2 Punkte): score_digital als Proxy
+- Digitale Kompetenz    (2 Punkte): exposure (aufgabenbasierter Score, Anteil der Arbeitszeit in
+                                    Tätigkeiten, die generative KI beschleunigt) als Proxy für den
+                                    Anteil digitaler Informationsarbeit
 - Branchenmobilität     (1 Punkt):  ICT/Finanzen mobilerer als Handwerk
 
-Ergebnis: adaptabilitaet (0–10), wird in scores.csv gespeichert.
+Bis Oktober 2026 war der Proxy das Teilkriterium score_digital der früheren Methode
+(Spearman ρ zu exposure 0.83); es existiert mit der aufgabenbasierten Bewertung nicht mehr.
+
+Ergebnis: adaptability (0–10), wird in scores.csv gespeichert (auch von apply_task_scores.py
+und update_loehne.py neu berechnet).
 """
 
 from pathlib import Path
@@ -54,29 +60,51 @@ def _lohn_punkte(lohn: float) -> float:
     return LOHN_PUNKTE_MAX * min(max(anteil, 0.0), 1.0)
 
 
-def _digital_punkte(score_digital: float) -> float:
-    """score_digital (0–10) → 0–2 Punkte (höhere Digitalaffinität = anpassungsfähiger)."""
-    return 2.0 * score_digital / 10.0
+def _digital_punkte(exposure: float) -> float:
+    """exposure (0–10) → 0–2 Punkte (höhere Digitalaffinität = anpassungsfähiger)."""
+    return 2.0 * exposure / 10.0
 
 
 def berechne_adaptabilitaet(df: pd.DataFrame) -> pd.Series:
-    qual = df["qualifikation"].map(QUALIFIKATION_PUNKTE).fillna(1.0)
-    lohn = df["lohn_median_chf"].apply(_lohn_punkte)
-    digital = df["score_digital"].apply(_digital_punkte)
-    mobil = df["branche"].map(BRANCHEN_MOBILITAET).fillna(BRANCHEN_MOBILITAET_DEFAULT)
+    """Spalten qualification, wage_median_chf, exposure, sector → adaptability (0–10, 0.1 gerundet)."""
+    qual = df["qualification"].map(QUALIFIKATION_PUNKTE).fillna(1.0)
+    lohn = df["wage_median_chf"].apply(_lohn_punkte)
+    digital = df["exposure"].apply(_digital_punkte)
+    mobil = df["sector"].map(BRANCHEN_MOBILITAET).fillna(BRANCHEN_MOBILITAET_DEFAULT)
 
     raw = qual + lohn + digital + mobil  # max = 4 + 3 + 2 + 1 = 10
     return raw.clip(0, 10).round(1)
 
 
+def setze_adaptabilitaet(text_df: pd.DataFrame) -> pd.DataFrame:
+    """adaptability in einer als Text gelesenen Tabelle neu setzen (Kopie).
+
+    Zellen mit numerisch gleichem Wert behalten ihren Text (Formatierung bleibt erhalten, damit
+    wiederholte Läufe byte-identisch sind); neue Werte als kürzeste Darstellung («6.4»).
+    """
+    num = pd.DataFrame({
+        "qualification": text_df["qualification"],
+        "wage_median_chf": pd.to_numeric(text_df["wage_median_chf"], errors="coerce"),
+        "exposure": pd.to_numeric(text_df["exposure"], errors="coerce"),
+        "sector": text_df["sector"],
+    }, index=text_df.index)
+    neu = berechne_adaptabilitaet(num)
+    out = text_df.copy()
+    text = neu.map(lambda v: "" if pd.isna(v) else repr(round(float(v), 1)))
+    if "adaptability" in out.columns:
+        alt = pd.to_numeric(out["adaptability"], errors="coerce")
+        text = text.where(~(alt.round(6) == neu.round(6)), out["adaptability"])
+    out["adaptability"] = text
+    return out
+
+
 def main() -> None:  # pragma: no cover
-    df = pd.read_csv(SCORES_PATH)
-
-    df = df.assign(adaptabilitaet=berechne_adaptabilitaet(df))
-
+    df = pd.read_csv(SCORES_PATH, dtype=str, keep_default_na=False)
+    df = setze_adaptabilitaet(df)
     df.to_csv(SCORES_PATH, index=False)
-    print(f"✓ adaptabilitaet berechnet für {len(df)} Berufe")
-    print(df[["beruf", "adaptabilitaet", "score_ch"]].sort_values("adaptabilitaet", ascending=False).head(10).to_string())
+    print(f"✓ adaptability berechnet für {len(df)} Berufe")
+    top = df.assign(a=pd.to_numeric(df["adaptability"])).sort_values("a", ascending=False)
+    print(top[["occupation", "adaptability", "exposure"]].head(10).to_string())
 
 
 if __name__ == "__main__":  # pragma: no cover

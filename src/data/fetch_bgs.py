@@ -20,8 +20,8 @@ Nenner — BFS STATENT, PX-Tabelle px-x-0602010000_101 «Arbeitsstätten und Bes
     bei mehreren Unternehmen werden mehrfach gezählt.
 
 Definition:
-    grenzgaenger_anteil[branche] = Σ GGS-Grenzgänger (NOGA-Abteilungen der Branche)
-                                   / Σ STATENT-Beschäftigte (gleiche NOGA-Abteilungen)
+    cross_border_share[sector] = Σ GGS-Grenzgänger (NOGA-Abteilungen der Branche)
+                                 / Σ STATENT-Beschäftigte (gleiche NOGA-Abteilungen)
     Bezugsperiode Zähler: Jahresmittel des neuesten vollständigen Kalenderjahres
     (Mittel der vier Quartale), zusätzlich das neueste Quartal als eigene Spalte.
     NOGA 97/98 (private Haushalte) und 99 (exterritoriale Organisationen) fehlen in
@@ -29,8 +29,8 @@ Definition:
 
 Dateien:
     data/raw/bgs_df_ggs_4.csv                 SDMX-CSV-Rohdownload (gitignored)
-    data/processed/bgs_grenzgaenger_noga.csv  aufbereitet: noga, periode, grenzgaenger, obs_status
-    data/processed/statent_beschaeftigte_noga.csv  jahr, noga, beschaeftigte, vzae
+    data/processed/bgs_grenzgaenger_noga.csv  aufbereitet: noga, period, cross_border, obs_status
+    data/processed/statent_beschaeftigte_noga.csv  year, noga, employed, fte
     data/processed/grenzgaenger_anteil_branche.csv Ergebnis je interner Branche
 
 Aufruf:
@@ -107,7 +107,7 @@ def parse_bgs_sdmx_csv(source) -> pd.DataFrame:
     NOGA-Abteilungen; Abschnitte (A–U), Sektoren (1–3), _T und -9 entfallen.
 
     Returns:
-        DataFrame [noga, periode, grenzgaenger, obs_status], sortiert.
+        DataFrame [noga, period, cross_border, obs_status], sortiert.
 
     Raises:
         ValueError: bei fehlenden Pflichtspalten oder ohne verwertbare Zeilen.
@@ -129,23 +129,23 @@ def parse_bgs_sdmx_csv(source) -> pd.DataFrame:
 
     out = pd.DataFrame({
         "noga": df["NOGA"],
-        "periode": df["TIME_PERIOD"].str.strip(),
-        "grenzgaenger": pd.to_numeric(df["OBS_VALUE"], errors="coerce"),
+        "period": df["TIME_PERIOD"].str.strip(),
+        "cross_border": pd.to_numeric(df["OBS_VALUE"], errors="coerce"),
         "obs_status": df["OBS_STATUS"] if "OBS_STATUS" in df.columns else "",
     })
-    if out["grenzgaenger"].isna().any():
-        n = int(out["grenzgaenger"].isna().sum())
+    if out["cross_border"].isna().any():
+        n = int(out["cross_border"].isna().sum())
         logger.warning(f"GGS: {n} Werte nicht numerisch → 0 gesetzt.")
-        out["grenzgaenger"] = out["grenzgaenger"].fillna(0.0)
-    if not out["periode"].str.fullmatch(_QUARTAL_RE.pattern).all():
+        out["cross_border"] = out["cross_border"].fillna(0.0)
+    if not out["period"].str.fullmatch(_QUARTAL_RE.pattern).all():
         raise ValueError("GGS-CSV: TIME_PERIOD nicht im Format JJJJ-Qn.")
-    return out.sort_values(["periode", "noga"]).reset_index(drop=True)
+    return out.sort_values(["period", "noga"]).reset_index(drop=True)
 
 
 def parse_statent_pxweb(antwort: dict) -> pd.DataFrame:
     """
     Wandelt die PxWeb-JSON-Antwort (Schweiz total, alle Wirtschaftsabteilungen,
-    Beobachtungseinheiten Beschäftigte und VZÄ) in [jahr, noga, beschaeftigte, vzae].
+    Beobachtungseinheiten Beschäftigte und VZÄ) in [year, noga, employed, fte].
     «X» (Datenschutz) und «...» werden zu 0.
     """
     zeilen = []
@@ -155,7 +155,7 @@ def parse_statent_pxweb(antwort: dict) -> pd.DataFrame:
             continue
         wert = pd.to_numeric(d["values"][0], errors="coerce")
         zeilen.append({
-            "jahr": int(jahr),
+            "year": int(jahr),
             "noga": str(noga).zfill(2),
             "einheit": einheit,
             "wert": 0.0 if pd.isna(wert) else float(wert),
@@ -163,16 +163,16 @@ def parse_statent_pxweb(antwort: dict) -> pd.DataFrame:
     if not zeilen:
         raise ValueError("STATENT-Antwort ohne Daten.")
     df = pd.DataFrame(zeilen).pivot_table(
-        index=["jahr", "noga"], columns="einheit", values="wert", aggfunc="sum"
+        index=["year", "noga"], columns="einheit", values="wert", aggfunc="sum"
     )
-    df = df.rename(columns={STATENT_EINHEIT_BESCHAEFTIGTE: "beschaeftigte",
-                            STATENT_EINHEIT_VZAE: "vzae"})
-    for spalte in ("beschaeftigte", "vzae"):
+    df = df.rename(columns={STATENT_EINHEIT_BESCHAEFTIGTE: "employed",
+                            STATENT_EINHEIT_VZAE: "fte"})
+    for spalte in ("employed", "fte"):
         if spalte not in df.columns:
             df[spalte] = 0.0
-    df = df[["beschaeftigte", "vzae"]].round(0).astype(int).reset_index()
+    df = df[["employed", "fte"]].round(0).astype(int).reset_index()
     df.columns.name = None
-    return df.sort_values(["jahr", "noga"]).reset_index(drop=True)
+    return df.sort_values(["year", "noga"]).reset_index(drop=True)
 
 
 # ---------------------------------------------------------------------------
@@ -235,7 +235,7 @@ def waehle_periode(bgs: pd.DataFrame, periode: str | None = None) -> tuple[pd.Se
     Returns:
         (Grenzgänger je NOGA-Abteilung, Periodenbezeichnung)
     """
-    quartale = bgs["periode"].drop_duplicates()
+    quartale = bgs["period"].drop_duplicates()
     jahre = quartale.str[:4].value_counts()
     vollstaendig = sorted(jahre[jahre == 4].index)
 
@@ -245,16 +245,16 @@ def waehle_periode(bgs: pd.DataFrame, periode: str | None = None) -> tuple[pd.Se
         periode = vollstaendig[-1]
 
     if _QUARTAL_RE.match(periode):
-        sel = bgs[bgs["periode"] == periode]
+        sel = bgs[bgs["period"] == periode]
         if sel.empty:
             raise ValueError(f"Quartal {periode} nicht in den GGS-Daten.")
-        return sel.set_index("noga")["grenzgaenger"], periode
+        return sel.set_index("noga")["cross_border"], periode
 
     if re.fullmatch(r"\d{4}", periode):
         if periode not in vollstaendig:
             raise ValueError(f"Jahr {periode} hat nicht vier GGS-Quartale.")
-        sel = bgs[bgs["periode"].str.startswith(periode)]
-        return sel.groupby("noga")["grenzgaenger"].mean(), periode
+        sel = bgs[bgs["period"].str.startswith(periode)]
+        return sel.groupby("noga")["cross_border"].mean(), periode
 
     raise ValueError(f"Ungültige Periode {periode!r} (erwartet JJJJ oder JJJJ-Qn).")
 
@@ -291,16 +291,16 @@ def compute_grenzgaenger_anteil(
     Grenzgänger-Anteil je interner Branche.
 
     Returns:
-        DataFrame [branche, grenzgaenger, beschaeftigte_total, grenzgaenger_anteil,
-                   grenzgaenger_quartal, grenzgaenger_anteil_quartal,
-                   bgs_periode, bgs_quartal, statent_jahr], absteigend nach Anteil.
+        DataFrame [sector, cross_border, employed_total, cross_border_share,
+                   cross_border_quarter, cross_border_share_quarter,
+                   ggs_period, ggs_quarter, statent_year], absteigend nach Anteil.
     """
     zaehler, label = waehle_periode(bgs, periode)
-    letztes_quartal = bgs["periode"].max()
+    letztes_quartal = bgs["period"].max()
     zaehler_q, _ = waehle_periode(bgs, letztes_quartal)
 
-    statent_jahr = int(statent["jahr"].max())
-    nenner_noga = statent[statent["jahr"] == statent_jahr].set_index("noga")["beschaeftigte"]
+    statent_jahr = int(statent["year"].max())
+    nenner_noga = statent[statent["year"] == statent_jahr].set_index("noga")["employed"]
 
     gg, _ = aggregiere_nach_branche(zaehler)
     gg_q, _ = aggregiere_nach_branche(zaehler_q)
@@ -309,30 +309,30 @@ def compute_grenzgaenger_anteil(
         raise ValueError(f"STATENT-Nenner fehlt für: {list(nenner[nenner <= 0].index)}")
 
     df = pd.DataFrame({
-        "branche": gg.index,
-        "grenzgaenger": gg.round(0).astype(int).to_numpy(),
-        "beschaeftigte_total": nenner.round(0).astype(int).to_numpy(),
-        "grenzgaenger_anteil": (gg / nenner).round(4).to_numpy(),
-        "grenzgaenger_quartal": gg_q.round(0).astype(int).to_numpy(),
-        "grenzgaenger_anteil_quartal": (gg_q / nenner).round(4).to_numpy(),
-        "bgs_periode": label,
-        "bgs_quartal": letztes_quartal,
-        "statent_jahr": statent_jahr,
+        "sector": gg.index,
+        "cross_border": gg.round(0).astype(int).to_numpy(),
+        "employed_total": nenner.round(0).astype(int).to_numpy(),
+        "cross_border_share": (gg / nenner).round(4).to_numpy(),
+        "cross_border_quarter": gg_q.round(0).astype(int).to_numpy(),
+        "cross_border_share_quarter": (gg_q / nenner).round(4).to_numpy(),
+        "ggs_period": label,
+        "ggs_quarter": letztes_quartal,
+        "statent_year": statent_jahr,
     })
-    if not df["grenzgaenger_anteil"].between(0, 1).all():
+    if not df["cross_border_share"].between(0, 1).all():
         raise ValueError("Grenzgänger-Anteil ausserhalb 0–1 — Zähler/Nenner prüfen.")
-    return df.sort_values("grenzgaenger_anteil", ascending=False).reset_index(drop=True)
+    return df.sort_values("cross_border_share", ascending=False).reset_index(drop=True)
 
 
 def vergleich_mit_bisher(neu: pd.DataFrame, alt_path: Path = OUTPUT_CSV) -> pd.DataFrame | None:
     """Vergleicht den Anteil je Branche mit der bisher gespeicherten Ergebnisdatei."""
     if not alt_path.exists():
         return None
-    alt = pd.read_csv(alt_path)[["branche", "grenzgaenger", "grenzgaenger_anteil"]]
-    v = alt.merge(neu[["branche", "grenzgaenger", "grenzgaenger_anteil"]],
-                  on="branche", how="outer", suffixes=("_alt", "_neu"))
-    v["diff_pp"] = ((v["grenzgaenger_anteil_neu"] - v["grenzgaenger_anteil_alt"]) * 100).round(1)
-    return v.sort_values("grenzgaenger_anteil_neu", ascending=False).reset_index(drop=True)
+    alt = pd.read_csv(alt_path)[["sector", "cross_border", "cross_border_share"]]
+    v = alt.merge(neu[["sector", "cross_border", "cross_border_share"]],
+                  on="sector", how="outer", suffixes=("_alt", "_neu"))
+    v["diff_pp"] = ((v["cross_border_share_neu"] - v["cross_border_share_alt"]) * 100).round(1)
+    return v.sort_values("cross_border_share_neu", ascending=False).reset_index(drop=True)
 
 
 # ---------------------------------------------------------------------------
@@ -350,17 +350,17 @@ def main(argv: list[str] | None = None) -> None:
     args = parser.parse_args(argv)
 
     if args.offline:
-        bgs = pd.read_csv(BGS_CSV, dtype={"noga": str, "periode": str, "obs_status": str},
+        bgs = pd.read_csv(BGS_CSV, dtype={"noga": str, "period": str, "obs_status": str},
                           keep_default_na=False)
         statent = pd.read_csv(STATENT_CSV, dtype={"noga": str})
         logger.info(f"Offline: {BGS_CSV.name} ({len(bgs)} Zeilen), {STATENT_CSV.name}")
     else:
         bgs = fetch_bgs_online(args.start)
         statent = fetch_statent_online()
-        logger.info(f"GGS: {bgs['periode'].min()} … {bgs['periode'].max()}, "
+        logger.info(f"GGS: {bgs['period'].min()} … {bgs['period'].max()}, "
                     f"{bgs['noga'].nunique()} NOGA-Abteilungen")
-        logger.info(f"STATENT {statent['jahr'].max()}: "
-                    f"{int(statent['beschaeftigte'].sum()):,} Beschäftigte")
+        logger.info(f"STATENT {statent['year'].max()}: "
+                    f"{int(statent['employed'].sum()):,} Beschäftigte")
         if not args.dry_run:
             bgs.to_csv(BGS_CSV, index=False)
             statent.to_csv(STATENT_CSV, index=False)
@@ -370,17 +370,17 @@ def main(argv: list[str] | None = None) -> None:
     zaehler, label = waehle_periode(bgs, args.periode)
     _, ausgeschlossen = aggregiere_nach_branche(zaehler)
     logger.info(
-        f"Zähler GGS {label}: {df['grenzgaenger'].sum():,} Grenzgänger/-innen in 21 Branchen "
+        f"Zähler GGS {label}: {df['cross_border'].sum():,} Grenzgänger/-innen in 21 Branchen "
         f"(+{ausgeschlossen:,.0f} in NOGA 97–99, nicht zugeordnet); "
-        f"Nenner STATENT {df['statent_jahr'].iloc[0]}: {df['beschaeftigte_total'].sum():,}"
+        f"Nenner STATENT {df['statent_year'].iloc[0]}: {df['employed_total'].sum():,}"
     )
 
     vergleich = vergleich_mit_bisher(df)
     if vergleich is not None:
         logger.info("\nVergleich mit bisheriger Datei (Anteil alt → neu, Δ in %-Punkten):")
         for _, r in vergleich.iterrows():
-            logger.info(f"  {r['branche']:18s} {r['grenzgaenger_anteil_alt']:6.1%} → "
-                        f"{r['grenzgaenger_anteil_neu']:6.1%}  ({r['diff_pp']:+.1f})")
+            logger.info(f"  {r['sector']:18s} {r['cross_border_share_alt']:6.1%} → "
+                        f"{r['cross_border_share_neu']:6.1%}  ({r['diff_pp']:+.1f})")
 
     if args.dry_run:
         logger.info("--dry-run: nichts geschrieben.")

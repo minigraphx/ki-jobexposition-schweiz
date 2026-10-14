@@ -30,7 +30,7 @@ PROCESSED_PATH = Path(__file__).parent.parent.parent / "data" / "processed"
 
 # fmt: off
 BERUFE_CH = [
-    # beruf, isco_code, beschaeftigte_1000, frauen_pct, branche, lohn_median_chf, qualifikation
+    # occupation, isco_code, employed_k, women_pct, sector, wage_median_chf, qualification
     # --- Gesundheit & Soziales ---
     ("Dipl. Pflegefachperson", "2221", 130, 84, "Gesundheit", 82000, "Tertiär"),
     ("Fachperson Gesundheit EFZ (FaGe)", "3221", 80, 88, "Gesundheit", 62000, "Sekundär II"),
@@ -167,13 +167,14 @@ BERUFE_CH = [
 ]
 # fmt: on
 
-COLUMNS = ["beruf", "isco_code", "beschaeftigte_1000", "frauen_pct",
-           "branche", "lohn_median_chf", "qualifikation"]
+# Spaltennamen wie in berufe_ch.csv (englisch seit #53, siehe column_mapping.py)
+COLUMNS = ["occupation", "isco_code", "employed_k", "women_pct",
+           "sector", "wage_median_chf", "qualification"]
 
 
 def build_berufeliste() -> pd.DataFrame:
     df = pd.DataFrame(BERUFE_CH, columns=COLUMNS)
-    df = df.sort_values("beschaeftigte_1000", ascending=False).reset_index(drop=True)
+    df = df.sort_values("employed_k", ascending=False).reset_index(drop=True)
     return df
 
 

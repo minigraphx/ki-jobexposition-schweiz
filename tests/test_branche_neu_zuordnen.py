@@ -9,24 +9,20 @@ import branche_neu_zuordnen as bnz
 
 def _scores_csv(path: Path) -> Path:
     df = pd.DataFrame({
-        "beruf": ["Führungskräfte in der Erbringung von Dienstleistungen im Bereich ICT",
-                  "Softwareentwickler/in",  # kuratiert → bleibt
-                  "Köche"],
+        "occupation": ["Führungskräfte in der Erbringung von Dienstleistungen im Bereich ICT",
+                       "Softwareentwickler/in",  # kuratiert → bleibt
+                       "Köche"],
         "isco_code": ["1330", "2512", "5120"],
-        "branche": ["Gastgewerbe", "ICT", "Gastgewerbe"],
-        "lohn_median_chf": [85000, 130000, 52000],
-        "score_gesamt": [4.2, 7.0, 2.6],
-        "score_digital": [6.0, 9.0, 1.0],
-        "adaptabilitaet": [6.7, 9.0, 3.3],
-        "delta_branche": [-0.1, -0.2, -0.1],
-        "lohnklasse": ["60k–100k CHF", "100k–150k CHF", "< 60k CHF"],
-        "delta_lohn": [0.0, 0.2, -0.2],
-        "score_ch": [4.1, 7.0, 2.3],
-        "zeitrahmen_roh": ["5-10 Jahre", "3-5 Jahre", "5-10 Jahre"],
-        "zeitrahmen": [">10 Jahre", "3-5 Jahre", ">10 Jahre"],
-        "grossfirmen_anteil": [0.0238, 0.3063, 0.0238],
-        "zeitrahmen_kmu_delta": [1, 0, 1],
-        "begruendung": ["Text A", "Text B", "Text C"],
+        "sector": ["Gastgewerbe", "ICT", "Gastgewerbe"],
+        "wage_median_chf": [85000, 130000, 52000],
+        "exposure": [4.2, 7.0, 0.8],
+        "rationale": ["Text A", "Text B", "Text C"],
+        "timeframe_raw": ["5-10 Jahre", "3-5 Jahre", "5-10 Jahre"],
+        "large_firm_share": [0.0238, 0.3063, 0.0238],
+        "timeframe_sme_shift": [1, 0, 1],
+        "timeframe": [">10 Jahre", "3-5 Jahre", ">10 Jahre"],
+        "adaptability": [6.7, 9.0, 3.3],
+        "legacy_score": [4.1, 7.0, 2.3],
     })
     path.mkdir(parents=True, exist_ok=True)
     df.to_csv(path / "scores.csv", index=False)
@@ -36,8 +32,8 @@ def _scores_csv(path: Path) -> Path:
 def _kmu_csv(path: Path) -> Path:
     kmu = path / "kmu_anteil_branche.csv"
     pd.DataFrame({
-        "branche": ["Gastgewerbe", "ICT"],
-        "grossfirmen_anteil": [0.0238, 0.3063],
+        "sector": ["Gastgewerbe", "ICT"],
+        "large_firm_share": [0.0238, 0.3063],
     }).to_csv(kmu, index=False)
     return kmu
 
@@ -45,14 +41,14 @@ def _kmu_csv(path: Path) -> Path:
 class TestNeueBranchen:
     def test_kuratierte_berufe_bleiben(self):
         df = pd.DataFrame({
-            "beruf": ["Unternehmensberater/in", "Fachkräfte in Marketing und Werbung"],
+            "occupation": ["Unternehmensberater/in", "Fachkräfte in Marketing und Werbung"],
             "isco_code": ["2421", "2431"],
-            "branche": ["Beratung", "Finanzen"],
+            "sector": ["Beratung", "Finanzen"],
         })
         assert bnz.neue_branchen(df).tolist() == ["Beratung", "Medien"]
 
     def test_unveraendert_wenn_mapping_passt(self):
-        df = pd.DataFrame({"beruf": ["Köche"], "isco_code": ["5120"], "branche": ["Gastgewerbe"]})
+        df = pd.DataFrame({"occupation": ["Köche"], "isco_code": ["5120"], "sector": ["Gastgewerbe"]})
         assert bnz.neue_branchen(df).tolist() == ["Gastgewerbe"]
 
 
@@ -75,16 +71,14 @@ class TestMain:
         # Nur die erste Zeile (1330) ist betroffen
         assert result.loc[1:].equals(original.loc[1:])
         row = result.iloc[0]
-        assert row["branche"] == "ICT"
-        assert float(row["delta_branche"]) == -0.2
-        assert float(row["score_ch"]) == 4.0          # 4.2 − 0.2 + 0.0
-        assert row["zeitrahmen"] == "5-10 Jahre"      # ICT neutral → Rohwert
-        assert row["zeitrahmen_roh"] == "5-10 Jahre"
-        assert row["zeitrahmen_kmu_delta"] == "0"
-        assert float(row["grossfirmen_anteil"]) == 0.3063
-        assert float(row["adaptabilitaet"]) == 7.4    # 6.7 − 0.3 (Gastgewerbe) + 1.0 (ICT)
-        # Rohscore und Texte unverändert
-        for col in ["score_gesamt", "score_digital", "begruendung", "delta_lohn", "lohnklasse"]:
+        assert row["sector"] == "ICT"
+        assert row["timeframe"] == "5-10 Jahre"      # ICT neutral → Rohwert
+        assert row["timeframe_raw"] == "5-10 Jahre"
+        assert row["timeframe_sme_shift"] == "0"
+        assert float(row["large_firm_share"]) == 0.3063
+        assert float(row["adaptability"]) == 7.4    # 6.7 − 0.3 (Gastgewerbe) + 1.0 (ICT)
+        # Exposition, Texte und alter Score unverändert: die Branche wirkt nur auf den Zeitrahmen
+        for col in ["exposure", "rationale", "legacy_score", "wage_median_chf"]:
             assert row[col] == original.iloc[0][col]
 
     def test_idempotent(self, tmp_path, monkeypatch):

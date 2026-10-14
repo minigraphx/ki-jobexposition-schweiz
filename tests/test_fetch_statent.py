@@ -71,21 +71,21 @@ def gk() -> pd.DataFrame:
 
 class TestParsing:
     def test_spalten_und_klassen(self, gk):
-        assert list(gk.columns) == ["jahr", "noga", "groessenklasse", "unternehmen",
-                                    "unternehmen_status", "beschaeftigte", "beschaeftigte_status"]
-        assert set(gk["groessenklasse"]) == {"1-9", "10-49", "50-249", "250+", "total"}
-        assert set(gk["jahr"]) == {2023, 2024}
+        assert list(gk.columns) == ["year", "noga", "size_class", "enterprises",
+                                    "enterprises_status", "employed", "employed_status"]
+        assert set(gk["size_class"]) == {"1-9", "10-49", "50-249", "250+", "total"}
+        assert set(gk["year"]) == {2023, 2024}
 
     def test_werte_und_status(self, gk):
-        bank = gk[(gk["jahr"] == 2024) & (gk["noga"] == "64")].set_index("groessenklasse")
-        assert bank.at["250+", "beschaeftigte"] == 600
-        assert bank.at["250+", "unternehmen"] == 1
-        assert bank.at["total", "beschaeftigte_status"] == "A"
+        bank = gk[(gk["year"] == 2024) & (gk["noga"] == "64")].set_index("size_class")
+        assert bank.at["250+", "employed"] == 600
+        assert bank.at["250+", "enterprises"] == 1
+        assert bank.at["total", "employed_status"] == "A"
 
     def test_gesperrt_ist_leer(self, gk):
-        gastro = gk[(gk["jahr"] == 2024) & (gk["noga"] == "56")].set_index("groessenklasse")
-        assert pd.isna(gastro.at["250+", "beschaeftigte"])
-        assert gastro.at["250+", "beschaeftigte_status"] == "Q"
+        gastro = gk[(gk["year"] == 2024) & (gk["noga"] == "56")].set_index("size_class")
+        assert pd.isna(gastro.at["250+", "employed"])
+        assert gastro.at["250+", "employed_status"] == "Q"
 
     def test_fehlende_spalte(self):
         with pytest.raises(ValueError, match="fehlende Spalten"):
@@ -116,7 +116,7 @@ class TestGesperrteWerte:
         assert w.loc["06", ["1-9", "10-49", "50-249", "250+"]].sum() == 0
 
     def test_spannweite(self, gk):
-        sw = spannweite_gesperrt(gk, 2024).set_index("branche")
+        sw = spannweite_gesperrt(gk, 2024).set_index("sector")
         # Gastgewerbe: total 1000, ≥250 zwischen 0 und 100
         assert sw.at["Gastgewerbe", "anteil_min"] == pytest.approx(0.0)
         assert sw.at["Gastgewerbe", "anteil_max"] == pytest.approx(0.1)
@@ -128,36 +128,36 @@ class TestGesperrteWerte:
 
 class TestKmuAnteil:
     def test_anteile(self, gk):
-        df = compute_kmu_anteil(gk).set_index("branche")
-        assert df.at["Finanzen", "grossfirmen_anteil"] == pytest.approx(0.6)
-        assert df.at["Gastgewerbe", "grossfirmen_anteil"] == pytest.approx(0.05)
-        assert df.at["Gastgewerbe", "beschaeftigte_total"] == 1000
-        assert df.at["Finanzen", "jahr"] == 2024
+        df = compute_kmu_anteil(gk).set_index("sector")
+        assert df.at["Finanzen", "large_firm_share"] == pytest.approx(0.6)
+        assert df.at["Gastgewerbe", "large_firm_share"] == pytest.approx(0.05)
+        assert df.at["Gastgewerbe", "employed_total"] == 1000
+        assert df.at["Finanzen", "year"] == 2024
 
     def test_neuestes_jahr_default_und_wahl(self, gk):
-        assert compute_kmu_anteil(gk)["jahr"].iloc[0] == 2024
-        alt = compute_kmu_anteil(gk, 2023).set_index("branche")
-        assert alt.at["Finanzen", "grossfirmen_anteil"] == pytest.approx(0.25)
+        assert compute_kmu_anteil(gk)["year"].iloc[0] == 2024
+        alt = compute_kmu_anteil(gk, 2023).set_index("sector")
+        assert alt.at["Finanzen", "large_firm_share"] == pytest.approx(0.25)
 
     def test_ohne_unternehmen_nan(self, gk):
-        df = compute_kmu_anteil(gk).set_index("branche")
-        assert pd.isna(df.at["Öff. Verwaltung", "grossfirmen_anteil"])
+        df = compute_kmu_anteil(gk).set_index("sector")
+        assert pd.isna(df.at["Öff. Verwaltung", "large_firm_share"])
         # Branchen ohne Zeilen in der Fixture ebenfalls ohne Anteil
-        assert pd.isna(df.at["ICT", "grossfirmen_anteil"])
+        assert pd.isna(df.at["ICT", "large_firm_share"])
 
     def test_format(self, gk):
         df = compute_kmu_anteil(gk)
-        assert list(df.columns) == ["branche", "beschaeftigte_total", "beschaeftigte_gross",
-                                    "grossfirmen_anteil", "quelle", "jahr", "einheit", "abdeckung"]
-        assert set(df["branche"]) == ALLE_BRANCHEN
-        assert df["grossfirmen_anteil"].dropna().between(0, 1).all()
+        assert list(df.columns) == ["sector", "employed_total", "employed_large",
+                                    "large_firm_share", "source", "year", "unit", "coverage"]
+        assert set(df["sector"]) == ALLE_BRANCHEN
+        assert df["large_firm_share"].dropna().between(0, 1).all()
 
     def test_abdeckung(self, gk):
-        statent = pd.DataFrame({"jahr": [2024, 2024, 2024], "noga": ["64", "55", "56"],
-                                "beschaeftigte": [2000, 100, 900], "vzae": [1, 1, 1]})
-        df = compute_kmu_anteil(gk, statent_noga=statent).set_index("branche")
-        assert df.at["Finanzen", "abdeckung"] == pytest.approx(0.5)
-        assert df.at["Gastgewerbe", "abdeckung"] == pytest.approx(1.0)
+        statent = pd.DataFrame({"year": [2024, 2024, 2024], "noga": ["64", "55", "56"],
+                                "employed": [2000, 100, 900], "fte": [1, 1, 1]})
+        df = compute_kmu_anteil(gk, statent_noga=statent).set_index("sector")
+        assert df.at["Finanzen", "coverage"] == pytest.approx(0.5)
+        assert df.at["Gastgewerbe", "coverage"] == pytest.approx(1.0)
 
     def test_unbekannte_noga(self):
         text = FIXTURE_CSV.replace('"2024","55",', '"2024","97",')
@@ -166,8 +166,8 @@ class TestKmuAnteil:
 
     def test_vergleich(self, gk):
         neu = compute_kmu_anteil(gk)
-        alt = pd.DataFrame({"branche": ["Finanzen"], "grossfirmen_anteil": [0.28]})
-        v = vergleich_mit_bisher(neu, alt).set_index("branche")
+        alt = pd.DataFrame({"sector": ["Finanzen"], "large_firm_share": [0.28]})
+        v = vergleich_mit_bisher(neu, alt).set_index("sector")
         assert v.at["Finanzen", "diff_pp"] == pytest.approx(32.0)
         assert vergleich_mit_bisher(neu, None) is None
 
@@ -186,26 +186,27 @@ class TestMapping:
 class TestScoresAnwenden:
     def _scores(self) -> pd.DataFrame:
         return pd.DataFrame({
-            "beruf": ["Banker", "Koch", "Beamter", "Neu"],
-            "branche": ["Finanzen", "Gastgewerbe", "Öff. Verwaltung", "Gastgewerbe"],
-            "zeitrahmen_roh": ["3-5 Jahre", "3-5 Jahre", "5-10 Jahre", ""],
-            "zeitrahmen": ["3-5 Jahre", "5-10 Jahre", "5-10 Jahre", "1-2 Jahre"],
-            "grossfirmen_anteil": ["0.28", "0.0238", "0.1507", ""],
-            "zeitrahmen_kmu_delta": ["0", "1", "0", ""],
-            "begruendung": ["A", "B", "C", "D"],
+            "occupation": ["Banker", "Koch", "Beamter", "Neu"],
+            "sector": ["Finanzen", "Gastgewerbe", "Öff. Verwaltung", "Gastgewerbe"],
+            "rationale": ["A", "B", "C", "D"],
+            "timeframe_raw": ["3-5 Jahre", "3-5 Jahre", "5-10 Jahre", ""],
+            "large_firm_share": ["0.28", "0.0238", "0.1507", ""],
+            "timeframe_sme_shift": ["0", "1", "0", ""],
+            "timeframe": ["3-5 Jahre", "5-10 Jahre", "5-10 Jahre", "1-2 Jahre"],
         }).astype(str)
 
     def test_nur_kmu_spalten(self):
-        kmu = pd.DataFrame({"branche": ["Finanzen", "Gastgewerbe", "Öff. Verwaltung"],
-                            "grossfirmen_anteil": [0.6, 0.05, float("nan")]})
+        kmu = pd.DataFrame({"sector": ["Finanzen", "Gastgewerbe", "Öff. Verwaltung"],
+                            "large_firm_share": [0.6, 0.05, float("nan")]})
         text = self._scores()
         out, diff = zeitrahmen_in_scores_neu(text, kmu)
-        assert out["zeitrahmen"].tolist() == ["1-2 Jahre", "5-10 Jahre", "5-10 Jahre", "3-5 Jahre"]
-        assert out["zeitrahmen_kmu_delta"].tolist() == ["-1", "1", "0", "1"]
-        assert out["grossfirmen_anteil"].tolist() == ["0.6", "0.05", "", "0.05"]
-        assert out["zeitrahmen_roh"].tolist() == ["3-5 Jahre", "3-5 Jahre", "5-10 Jahre", "1-2 Jahre"]
-        assert out["begruendung"].equals(text["begruendung"])
-        assert set(diff["beruf"]) == {"Banker", "Koch", "Beamter", "Neu"}
+        assert out["timeframe"].tolist() == ["1-2 Jahre", "5-10 Jahre", "5-10 Jahre", "3-5 Jahre"]
+        assert out["timeframe_sme_shift"].tolist() == ["-1", "1", "0", "1"]
+        assert out["large_firm_share"].tolist() == ["0.6", "0.05", "", "0.05"]
+        assert out["timeframe_raw"].tolist() == ["3-5 Jahre", "3-5 Jahre", "5-10 Jahre", "1-2 Jahre"]
+        assert out["rationale"].equals(text["rationale"])
+        assert list(out.columns) == list(text.columns)
+        assert set(diff["occupation"]) == {"Banker", "Koch", "Beamter", "Neu"}
 
     def test_dry_run_schreibt_nicht(self, gk, tmp_path, monkeypatch):
         scores = tmp_path / "scores.csv"
@@ -233,16 +234,16 @@ class TestScoresAnwenden:
 class TestVersionierteDaten:
     def test_groessenklassen_tabelle(self):
         gk = lese_groessenklassen(PROCESSED / "statent_groessenklassen_noga.csv")
-        assert gk["jahr"].max() >= 2024
-        neu = gk[gk["jahr"] == gk["jahr"].max()]
+        assert gk["year"].max() >= 2024
+        neu = gk[gk["year"] == gk["year"].max()]
         assert set(neu["noga"]) - {"999"} == set(NOGA_ZU_BRANCHE)
 
     def test_kmu_anteil_branche(self):
         df = pd.read_csv(PROCESSED / "kmu_anteil_branche.csv")
-        assert set(df["branche"]) == ALLE_BRANCHEN
-        assert df["grossfirmen_anteil"].dropna().between(0, 1).all()
-        assert df["grossfirmen_anteil"].notna().sum() == 20  # nur Öff. Verwaltung ohne Wert
-        assert {"quelle", "jahr", "einheit", "abdeckung"} <= set(df.columns)
+        assert set(df["sector"]) == ALLE_BRANCHEN
+        assert df["large_firm_share"].dropna().between(0, 1).all()
+        assert df["large_firm_share"].notna().sum() == 20  # nur Öff. Verwaltung ohne Wert
+        assert {"source", "year", "unit", "coverage"} <= set(df.columns)
 
     def test_kmu_anteil_reproduzierbar(self):
         """kmu_anteil_branche.csv entspricht der Berechnung aus der versionierten Tabelle."""
@@ -250,5 +251,5 @@ class TestVersionierteDaten:
         statent = pd.read_csv(PROCESSED / "statent_beschaeftigte_noga.csv", dtype={"noga": str})
         neu = compute_kmu_anteil(gk, None, statent)
         gespeichert = pd.read_csv(PROCESSED / "kmu_anteil_branche.csv")
-        pd.testing.assert_series_equal(neu["grossfirmen_anteil"], gespeichert["grossfirmen_anteil"])
-        assert neu["branche"].tolist() == gespeichert["branche"].tolist()
+        pd.testing.assert_series_equal(neu["large_firm_share"], gespeichert["large_firm_share"])
+        assert neu["sector"].tolist() == gespeichert["sector"].tolist()

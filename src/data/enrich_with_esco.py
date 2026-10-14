@@ -16,8 +16,8 @@ Jeder ESCO-Kandidat (Stufen 1–3) muss zwei Prüfungen bestehen:
 - **Inhaltliche Prüfung:** ein Sprachmodell bestätigt, dass die ESCO-Beschreibung zum Beruf passt.
 
 Alle ESCO-Abfragen laufen mit `selectedVersion=v1.2.1` (ohne Versionsangabe liefern einzelne
-URIs HTTP 500). Ergebnis je Beruf: esco_uri, esco_titel, esco_beschreibung, beschreibung_quelle,
-esco_isco_code, esco_match_qualitaet (korrekt / plausibel / fallback).
+URIs HTTP 500). Ergebnis je Beruf: esco_uri, esco_title, esco_description, description_source,
+esco_isco_code, esco_match_quality (korrekt / plausibel / fallback).
 
 Verwendung:
   python enrich_with_esco.py                  # nur Berufe ohne Zuordnung (neue Einträge)
@@ -62,7 +62,7 @@ QUALITAETEN = ("korrekt", "plausibel", "fallback")
 # Stand ESCO-Audit #52 (Okt. 2026): alle bekannten Fehlzuordnungen sind manuell korrigiert
 # (docs/audit_esco_zuordnungen.md). Die früheren 25 Einträge (Abfallmakler-, Brennschneider-,
 # 3D-Druck-Kontamination) bezogen sich teils auf Titel, die seit #51 zusammengelegt sind.
-# Neue Fehlzuordnungen hier mit aktuellem `beruf`-Titel eintragen.
+# Neue Fehlzuordnungen hier mit aktuellem `occupation`-Titel eintragen.
 KNOWN_WRONG_MATCHES: list[str] = []
 
 # Ausnahmen der ISCO-Konsistenzprüfung: unser isco_code → (zulässige ESCO-ISCO-Präfixe, Grund).
@@ -204,8 +204,8 @@ def occupation_info(detail: dict) -> dict:
     """Die für die Berufsliste relevanten Felder einer Occupation-Ressource."""
     return {
         "esco_uri": detail.get("uri", ""),
-        "esco_titel": detail.get("title", "") or "",
-        "esco_beschreibung": get_description(detail, "de"),
+        "esco_title": detail.get("title", "") or "",
+        "esco_description": get_description(detail, "de"),
         "esco_isco_code": occupation_isco_code(detail),
     }
 
@@ -436,9 +436,9 @@ def ki_generate_description(client: anthropic.Anthropic, beruf: str,
 # ---------------------------------------------------------------------------
 
 def _fallback(beruf: str, beschreibung: str, quelle: str) -> dict:
-    return {"esco_uri": "", "esco_titel": beruf, "esco_beschreibung": beschreibung,
-            "beschreibung_quelle": quelle, "esco_isco_code": "",
-            "esco_match_qualitaet": "fallback"}
+    return {"esco_uri": "", "esco_title": beruf, "esco_description": beschreibung,
+            "description_source": quelle, "esco_isco_code": "",
+            "esco_match_quality": "fallback"}
 
 
 def _try_esco_candidates(client: anthropic.Anthropic, beruf: str, isco_code: str,
@@ -464,11 +464,11 @@ def _try_esco_candidates(client: anthropic.Anthropic, beruf: str, isco_code: str
         qualitaet = isco_konsistenz(isco_code, info["esco_isco_code"])
         if qualitaet is None:
             logger.debug(f"    ISCO inkonsistent ({info['esco_isco_code']} ≠ {isco_code}): "
-                         f"{info['esco_titel']}")
+                         f"{info['esco_title']}")
             continue
-        if ki_validate(client, beruf, info["esco_titel"], info["esco_beschreibung"]):
-            return {**info, "beschreibung_quelle": QUELLE_ESCO,
-                    "esco_match_qualitaet": qualitaet}
+        if ki_validate(client, beruf, info["esco_title"], info["esco_description"]):
+            return {**info, "description_source": QUELLE_ESCO,
+                    "esco_match_quality": qualitaet}
         time.sleep(0.1)
     return None
 
@@ -477,10 +477,10 @@ def find_best_match(client: anthropic.Anthropic, beruf: str,
                     isco_code: str,
                     blocked_uris: set[str] | None = None) -> dict:
     """
-    Durchläuft 6 Suchstufen und gibt ein dict mit esco_uri, esco_titel, esco_beschreibung,
-    beschreibung_quelle, esco_isco_code, esco_match_qualitaet zurück.
+    Durchläuft 6 Suchstufen und gibt ein dict mit esco_uri, esco_title, esco_description,
+    description_source, esco_isco_code, esco_match_quality zurück.
 
-    beschreibung_quelle-Werte:
+    description_source-Werte:
         "ESCO"              — offizielle EU-Klassifikation (Stufen 1–3)
         "berufsberatung.ch" — offizielle CH-Berufsberatung (Stufe 4)
         "Wikipedia"         — Wikipedia DE (Stufe 5)
@@ -494,7 +494,7 @@ def find_best_match(client: anthropic.Anthropic, beruf: str,
     result = _try_esco_candidates(client, beruf, isco_code,
                                   esco_search_text(beruf_clean, "de", 5), blocked_uris)
     if result:
-        logger.info(f"    ✓ Stufe 1 (ESCO DE): {result['esco_titel']}")
+        logger.info(f"    ✓ Stufe 1 (ESCO DE): {result['esco_title']}")
         return result
 
     # Stufe 2: ESCO mit KI-generierten Alternativen
@@ -505,7 +505,7 @@ def find_best_match(client: anthropic.Anthropic, beruf: str,
             time.sleep(PAUSE)
             result = _try_esco_candidates(client, beruf, isco_code, candidates, blocked_uris)
             if result:
-                logger.info(f"    ✓ Stufe 2 (ESCO '{term}' {lang.upper()}): {result['esco_titel']}")
+                logger.info(f"    ✓ Stufe 2 (ESCO '{term}' {lang.upper()}): {result['esco_title']}")
                 return result
 
     # Stufe 3: ESCO-Berufe der ISCO-Gruppe
@@ -513,7 +513,7 @@ def find_best_match(client: anthropic.Anthropic, beruf: str,
     result = _try_esco_candidates(client, beruf, isco_code,
                                   esco_search_isco(isco_code, "de", 10), blocked_uris)
     if result:
-        logger.info(f"    ✓ Stufe 3 (ESCO ISCO-{isco_code}): {result['esco_titel']}")
+        logger.info(f"    ✓ Stufe 3 (ESCO ISCO-{isco_code}): {result['esco_title']}")
         return result
 
     # Stufe 4: berufsberatung.ch
@@ -541,8 +541,8 @@ def find_best_match(client: anthropic.Anthropic, beruf: str,
 # Batch-Verarbeitung
 # ---------------------------------------------------------------------------
 
-ESCO_SPALTEN = ["esco_uri", "esco_titel", "esco_beschreibung", "beschreibung_quelle",
-                "esco_isco_code", "esco_match_qualitaet"]
+ESCO_SPALTEN = ["esco_uri", "esco_title", "esco_description", "description_source",
+                "esco_isco_code", "esco_match_quality"]
 
 
 def enrich_jobs(jobs_df: pd.DataFrame, client: anthropic.Anthropic,
@@ -554,34 +554,34 @@ def enrich_jobs(jobs_df: pd.DataFrame, client: anthropic.Anthropic,
     # (verhindert Kreuz-Kontamination: keine URI wird zwei Berufen zugewiesen)
     used_uris: set[str] = set()
     if df_existing is not None:
-        jobs_being_updated = set(jobs_df["beruf"])
+        jobs_being_updated = set(jobs_df["occupation"])
         for _, r in df_existing.iterrows():
-            if r["beruf"] not in jobs_being_updated:
+            if r["occupation"] not in jobs_being_updated:
                 uri = r.get("esco_uri", "")
                 if isinstance(uri, str) and uri.strip():
                     used_uris.add(uri.strip())
 
     for i, (_, row) in enumerate(jobs_df.iterrows(), 1):
-        beruf = row["beruf"]
+        beruf = row["occupation"]
         isco = normalize_isco(row["isco_code"]) or str(row["isco_code"])
         logger.info(f"[{i:3d}/{total}] {beruf}")
 
         if df_existing is not None:
-            prev = df_existing[df_existing["beruf"] == beruf]
+            prev = df_existing[df_existing["occupation"] == beruf]
             if not prev.empty:
                 p = prev.iloc[0]
-                logger.info(f"    VORHER  titel: {p.get('esco_titel', '') or '–'}")
-                logger.info(f"    VORHER  desc:  {str(p.get('esco_beschreibung', '') or '–')[:120]}")
+                logger.info(f"    VORHER  titel: {p.get('esco_title', '') or '–'}")
+                logger.info(f"    VORHER  desc:  {str(p.get('esco_description', '') or '–')[:120]}")
 
         match = find_best_match(client, beruf, isco, blocked_uris=used_uris)
         if match["esco_uri"]:
             used_uris.add(match["esco_uri"])  # neu vergebene URI für folgende Berufe sperren
         ergebnisse.append(match)
 
-        logger.info(f"    NACHHER quelle: {match['beschreibung_quelle']} "
-                    f"({match['esco_match_qualitaet']})")
-        logger.info(f"    NACHHER titel:  {match['esco_titel']}")
-        logger.info(f"    NACHHER desc:   {match['esco_beschreibung'][:120]}")
+        logger.info(f"    NACHHER quelle: {match['description_source']} "
+                    f"({match['esco_match_quality']})")
+        logger.info(f"    NACHHER titel:  {match['esco_title']}")
+        logger.info(f"    NACHHER desc:   {match['esco_description'][:120]}")
         time.sleep(PAUSE)
 
     result = jobs_df.copy().reset_index(drop=True)
@@ -599,7 +599,7 @@ def merge_into(df_existing: pd.DataFrame, enriched: pd.DataFrame) -> pd.DataFram
         df_out[col] = df_out[col].astype(object)
     neu = []
     for _, row in enriched.iterrows():
-        mask = df_out["beruf"] == row["beruf"]
+        mask = df_out["occupation"] == row["occupation"]
         if mask.any():
             for col in ESCO_SPALTEN:
                 df_out.loc[mask, col] = row[col]
@@ -635,20 +635,20 @@ def main():
             logger.info("KNOWN_WRONG_MATCHES ist leer — nichts zu tun.")
             return
     elif args.alle:
-        target_jobs = df_base["beruf"].tolist()
+        target_jobs = df_base["occupation"].tolist()
     else:
         zugeordnet = set()
-        if "esco_match_qualitaet" in df_existing.columns:
+        if "esco_match_quality" in df_existing.columns:
             zugeordnet = set(df_existing.loc[
-                df_existing["esco_match_qualitaet"].isin(QUALITAETEN), "beruf"])
-        target_jobs = [b for b in df_base["beruf"] if b not in zugeordnet]
+                df_existing["esco_match_quality"].isin(QUALITAETEN), "occupation"])
+        target_jobs = [b for b in df_base["occupation"] if b not in zugeordnet]
         if not target_jobs:
             logger.info("Alle Berufe haben eine Zuordnung — nichts zu tun "
                         "(--job, --fix-wrong oder --all).")
             return
 
-    target_df = df_base[df_base["beruf"].isin(target_jobs)].reset_index(drop=True)
-    not_found = [j for j in target_jobs if j not in df_base["beruf"].values]
+    target_df = df_base[df_base["occupation"].isin(target_jobs)].reset_index(drop=True)
+    not_found = [j for j in target_jobs if j not in df_base["occupation"].values]
     if not_found:
         logger.warning(f"Nicht in berufe_ch.csv gefunden: {not_found}")
 

@@ -2,67 +2,150 @@
 Seite 5: Methodik & Quellen
 """
 
+import sys
 from pathlib import Path
 
 import pandas as pd
 import streamlit as st
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import gemeinsam as g  # noqa: E402
+
 st.title("Methodik & Quellen")
 
-DATA_PATH = Path(__file__).parent.parent.parent.parent / "data" / "processed" / "scores.csv"
-
-
-@st.cache_data
-def load_data() -> pd.DataFrame | None:
-    if not DATA_PATH.exists():
-        return None
-    return pd.read_csv(DATA_PATH)
-
-
-df = load_data()
+DATA_PATH = g.SCORES_PATH
+df = g.lade_scores()
 n_berufe = len(df) if df is not None else 0
-if df is not None and "beschreibung_quelle" in df.columns:
-    quellen = df["beschreibung_quelle"].fillna("").value_counts()
+if df is not None:
+    quellen = df["description_source"].fillna("").value_counts()
     n_esco = int(quellen.get("ESCO", 0))
     n_bb = int(quellen.get("berufsberatung.ch", 0))
     n_wiki = int(quellen.get("Wikipedia", 0))
     n_fallback = n_berufe - n_esco - n_bb - n_wiki
-else:
-    n_esco = n_bb = n_wiki = n_fallback = 0
-if df is not None and "esco_match_qualitaet" in df.columns:
-    qual = df["esco_match_qualitaet"].fillna("").value_counts()
+    qual = df["esco_match_quality"].fillna("").value_counts()
     n_korrekt, n_plausibel = int(qual.get("korrekt", 0)), int(qual.get("plausibel", 0))
-else:
-    n_korrekt = n_plausibel = 0
-if df is not None and "synonyme" in df.columns:
-    syn = df["synonyme"].fillna("").astype(str).str.strip()
+    syn = df["synonyms"].fillna("").astype(str).str.strip()
     n_zusammen = int((syn != "").sum())
     n_titel = int(syn[syn != ""].str.split(";").str.len().sum())
 else:
-    n_zusammen = n_titel = 0
+    n_esco = n_bb = n_wiki = n_fallback = n_korrekt = n_plausibel = n_zusammen = n_titel = 0
+
+
 def _tsd(wert: float) -> str:
-    return f"{wert:,.0f}".replace(",", "'")
+    return g.tsd(wert)
 
 
-summe_tsd = float(df["beschaeftigte_1000"].sum()) if df is not None else 0.0
+summe_tsd = float(df["employed_k"].sum()) if df is not None else 0.0
 summe_text = _tsd(summe_tsd)
 # SE 2024, Blatt «2024», Zeile Total (alle Erwerbstätigen, inkl. Beruf unbekannt)
 SE_TOTAL_TSD = 4583.7
 abdeckung_text = f"{summe_tsd / SE_TOTAL_TSD * 100:.1f} %".replace(".", ",")
-# Neu aufgenommene Berufe ohne Exposure-Bewertung (score_ch leer)
-offen = df[df["score_ch"].isna()] if df is not None else None
-n_offen = 0 if offen is None else len(offen)
-offen_tsd = 0.0 if offen is None else float(offen["beschaeftigte_1000"].sum())
-offen_text = (
-    f" Davon sind **{n_offen} neu aufgenommene Berufe** ({_tsd(offen_tsd)} Tsd.) noch nicht "
-    "bewertet; sie erscheinen nur in der Berufssuche. Bewertet sind "
-    f"{n_berufe - n_offen} Berufe mit {_tsd(summe_tsd - offen_tsd)} Tsd. Erwerbstätigen."
-    if n_offen else ""
-)
+
+
+def _f(wert: float, stellen: int = 1) -> str:
+    return "–" if wert is None or pd.isna(wert) else f"{wert:.{stellen}f}"
+
+
+# ─── Kennzahlen der aufgabenbasierten Bewertung (zur Laufzeit) ────────────────
+if df is not None:
+    n_unsicher = int(df["uncertain"].sum())
+    n_provider = int(df["uncertain_reason"].fillna("").str.contains("Provider").sum())
+    n_laeufe = int(df["uncertain_reason"].fillna("").str.contains("Läufe").sum())
+    n_dritter = int(((df["n_runs_claude"] >= 3) | (df["n_runs_gemini"] >= 3)).sum())
+    n_aufrufe = int((df["n_runs_claude"] + df["n_runs_gemini"]).sum())
+    expo_w = g.gewichtet(df, "exposure")
+    beispiel = df.loc[df["physical_automation"].idxmax()]
+else:
+    n_unsicher = n_provider = n_laeufe = n_dritter = n_aufrufe = 0
+    expo_w = float("nan")
+    beispiel = None
+
+st.markdown("""
+Diese Seite erklärt, wie die KI-Expositions-Scores entstehen, wie gut sie mit internationalen
+Messungen übereinstimmen und woher die Daten stammen.
+""")
+
+# ─── KI-Exposition ────────────────────────────────────────────────────────────
+st.header("KI-Expositions-Score (0–10)")
+st.markdown(f"""
+Der Score misst, welcher Teil der Arbeitszeit eines Berufs auf Tätigkeiten entfällt, die
+**generative KI** (Sprachmodelle und darauf aufbauende Software) technisch stark beschleunigen kann.
+Die Methode folgt der aufgabenbasierten Rubrik von **Eloundou et al. (*GPTs are GPTs*, Science 2024)**
+und dem Index der **ILO (Gmyrek et al. 2025)**: Bewertet wird nicht der Beruf als Ganzes, sondern
+jede seiner Tätigkeiten.
+
+**Ablauf je Beruf** (Rubrik v2.2, `src/scoring/rubrik/`):
+
+1. **Tätigkeiten ableiten:** 8–12 konkrete, beobachtbare Kerntätigkeiten mit ihrem Anteil an der
+   Arbeitszeit (Summe 100 %) — aus der ESCO-Beschreibung, den wesentlichen ESCO-Kompetenzen und dem
+   Schweizer Berufskontext (Bezugsperson: typische, voll ausgebildete Erwerbsperson in einem
+   typischen Schweizer Betrieb, 2026).
+2. **Stufe je Tätigkeit:** Reduziert die Technik die Zeit für die Tätigkeit um **mindestens 50 %
+   bei gleicher Qualität** — Prüf- und Korrekturaufwand eingerechnet?
+
+| Stufe | Bedeutung |
+|---|---|
+| **E0** | nicht exponiert: Schwelle nicht erreicht (z. B. körperliche Arbeit, Präsenz, Ermessen vor Ort) |
+| **E1** | direkt exponiert: ein Chat-Sprachmodell mit Text-Kontext reicht |
+| **E2** | exponiert mit Zusatzsoftware: erst mit Werkzeugen, Integration oder Multimodalität (z. B. KI in der Fachsoftware) |
+
+3. **Modus und Restzeit** (nur E1/E2): **ersetzend** (KI führt aus, der Mensch gibt höchstens frei),
+   **delegierend** (KI erstellt das Ergebnis, der Mensch prüft jede Ausgabe fachlich) oder
+   **unterstützend** (der Mensch arbeitet selbst, KI liefert Teilergebnisse); dazu die verbleibende
+   menschliche Zeit (< 10 %, 10–30 % oder 30–50 % der heutigen Zeit).
+4. **Automatisierung ohne generative KI (P-Feld):** P1, wenn heute in der Schweiz kommerziell
+   verfügbare nicht-generative Technik die Tätigkeit zu mindestens 50 % übernehmen kann —
+   **physisch** (Robotik, Automaten, Selbstbedienung, autonome Technik) oder **Software**
+   (klassische Regel-Software); sonst P0.
+5. **Sicherheit** je Tätigkeit (hoch / mittel / tief) und eine **Zusammenfassung** (Hauptrisiko,
+   Begründung, Zeitrahmen der Adoption).
+
+Die Modelle berechnen keinen Gesamtscore; die Kennzahlen bildet der Code aus den Tätigkeiten
+(w = Zeitanteil, Σ w = 1):
+
+| Kennzahl | Formel | In der App |
+|---|---|---|
+| **ζ (Hauptmass)** | Σ w · 1[E1 oder E2] | **KI-Exposition** = 10 · ζ |
+| β (vorsichtige Variante) | Σ w · (1[E1] + 0.5 · 1[E2]) | nur in den Daten (`exposure_beta`) |
+| Zeitersparnis | Σ w · 1[E1/E2] · (1 − Restzeit) mit Bandmitten 0.05 / 0.20 / 0.40 | **Zeitersparnis** = 10 · Wert |
+| Modus-Anteile | Anteil der exponierten Zeit je Modus | Berufssuche (ersetzend / delegierend / unterstützend) |
+| Ersetzbare Zeit | Σ w · 1[ersetzend] · (1 − Restzeit) | Berufssuche, Branchen-Heatmap |
+| P physisch / Software | 10 · Σ w · 1[P1, Art physisch bzw. Software] | **Physische** bzw. **Software-Automatisierung** |
+
+**Zwei Modelle, mehrere Läufe:** Jeder Beruf wird unabhängig von **Claude Opus 5.5** (Anthropic,
+über das eigene Abo) und **Gemini 4 Argon** (Google) bewertet, je in **zwei unabhängigen Läufen**
+(jeder Beruf ein eigener Aufruf, gleiche Rubrik, gleiches Schema, gleiche Validierung; die Berufe
+je Lauf in neu gemischter Reihenfolge). Weichen die zwei Läufe eines Modells um mehr als 1 Punkt ab, folgt automatisch ein
+**dritter Lauf** (bei {n_dritter} Berufen). Jede Antwort wird gegen das JSON-Schema der Rubrik
+geprüft (Zeitanteile = 100, Pflichtfelder, Regeln); ungültige Antworten werden einmal zur Korrektur
+zurückgegeben und sonst verworfen. Insgesamt fliessen {n_aufrufe} gültige Bewertungen ein. Der
+Score ist das **Mittel über alle gültigen Läufe beider Modelle**.
+
+**Unsicherheits-Markierung:** Ein Beruf gilt als **unsicher**, wenn die Modelle um mehr als
+1,0 Punkt voneinander abweichen, die Läufe eines Modells um mehr als 1,0 Punkt streuen oder
+weniger als zwei gültige Läufe vorliegen. Das trifft auf **{n_unsicher} von {n_berufe} Berufen** zu
+({n_provider}× Modell-Abweichung, {n_laeufe}× Streuung der Läufe; Mehrfachnennung möglich). Die Matrix
+zeigt sie als Raute, die Berufssuche nennt beide Modellwerte und den Grund.
+
+**Physische Automatisierung separat:** Der Hauptscore misst nur generative KI. Klassische Technik —
+Selbstbedienungskassen, Sortieranlagen, Roboter, Regel-Software — zählt bewusst nicht dazu, damit
+der Score eine klar umrissene Grösse bleibt. Sie steht als eigene Kennzahl daneben (Treemap, Matrix,
+Branchen, Berufssuche).""" + (f""" Beispiel: **{beispiel['occupation']}** haben eine KI-Exposition von nur
+**{_f(beispiel['exposure'])}**, aber eine physische Automatisierung von **{_f(beispiel['physical_automation'])}**"""
+    + (" — wegen Selbstbedienungskassen und automatischer Zahlung." if beispiel["isco_code"] == "5230" else ".")
+    if beispiel is not None else "") + f"""
+
+Beschäftigungsgewichtet liegt die KI-Exposition aller erfassten Erwerbstätigen bei
+**{_f(expo_w)} von 10**.
+
+**Kein Lohn- und Branchenzuschlag mehr:** Die frühere Methode verschob den Score je nach Branche
+(−0,3 bis +0,4) und Lohnklasse (−0,2 bis +0,4). Beides ist entfallen: Die Tätigkeitsbewertung erfasst
+die Unterschiede direkt, und die Branche wirkt nur noch über den Zeitrahmen der Einführung
+(KMU-Faktor, unten). Die Expositionswerte sind damit reine Tätigkeitsmasse ohne Zuschläge.
+""")
 
 # ─── KMU-Adoptions-Faktor: STATENT-Anteile, Vergleich mit Betriebszählung 2008 ──
-KMU_PATH = DATA_PATH.parent / "kmu_anteil_branche.csv"
-# Schwellen wie in src/scoring/ch_adjustments.py (GROSSFIRMEN_SCHWELLE_HOCH / _TIEF)
+# Schwellen wie in src/scoring/kmu_faktor.py (GROSSFIRMEN_SCHWELLE_HOCH / _TIEF)
 KMU_SCHWELLE_HOCH, KMU_SCHWELLE_TIEF = 0.50, 0.15
 # Bis Oktober 2026 verwendet: BZ 2008, Arbeitsstätten ≥250 VZÄ, Schwellen 0.40 / 0.10
 BZ2008_ANTEIL = {
@@ -87,16 +170,9 @@ def _prozent(wert: float) -> str:
     return "–" if pd.isna(wert) else f"{wert * 100:.1f} %".replace(".", ",")
 
 
-@st.cache_data
-def load_kmu() -> pd.DataFrame | None:
-    if not KMU_PATH.exists():
-        return None
-    return pd.read_csv(KMU_PATH)
-
-
-kmu_df = load_kmu()
-KMU_JAHR = int(kmu_df["jahr"].iloc[0]) if kmu_df is not None and "jahr" in kmu_df else "2024"
-KMU_MITTEL = (kmu_df["beschaeftigte_gross"].sum() / kmu_df["beschaeftigte_total"].sum()
+kmu_df = g.lade_csv(str(g.KMU_PATH))
+KMU_JAHR = int(kmu_df["year"].iloc[0]) if kmu_df is not None else "2024"
+KMU_MITTEL = (kmu_df["employed_large"].sum() / kmu_df["employed_total"].sum()
               if kmu_df is not None else float("nan"))
 KMU_MITTEL_TEXT = "–" if pd.isna(KMU_MITTEL) else f"{KMU_MITTEL * 100:.0f} %"
 kmu_vergleich = None
@@ -106,21 +182,186 @@ if kmu_df is not None:
         "| Verschiebung bisher | Abdeckung |",
         "|---|---:|:---:|---:|:---:|---:|",
     ]
-    for _, r in kmu_df.sort_values("grossfirmen_anteil", ascending=False,
-                                    na_position="last").iterrows():
-        alt = BZ2008_ANTEIL.get(r["branche"], float("nan"))
-        abdeckung = r.get("abdeckung", float("nan"))
+    for _, r in kmu_df.sort_values("large_firm_share", ascending=False, na_position="last").iterrows():
+        alt = BZ2008_ANTEIL.get(r["sector"], float("nan"))
+        abdeckung = r.get("coverage", float("nan"))
         zeilen.append(
-            f"| {r['branche']} | {_prozent(r['grossfirmen_anteil'])} "
-            f"| {_verschiebung(r['grossfirmen_anteil'], KMU_SCHWELLE_HOCH, KMU_SCHWELLE_TIEF)} "
+            f"| {r['sector']} | {_prozent(r['large_firm_share'])} "
+            f"| {_verschiebung(r['large_firm_share'], KMU_SCHWELLE_HOCH, KMU_SCHWELLE_TIEF)} "
             f"| {_prozent(alt)} | {_verschiebung(alt, 0.40, 0.10)} "
             f"| {'–' if pd.isna(abdeckung) else f'{abdeckung * 100:.0f} %'} |"
         )
     kmu_vergleich = "\n".join(zeilen)
 
-st.markdown("""
-Diese Seite erklärt, wie die KI-Expositions-Scores berechnet wurden und woher die Daten stammen.
+zeit_vert = ""
+if df is not None:
+    stufen = ["1-2 Jahre", "3-5 Jahre", "5-10 Jahre", ">10 Jahre"]
+    roh, neu = df["timeframe_raw"].value_counts(), df["timeframe"].value_counts()
+    zeit_vert = ", ".join(f"{s}: {int(roh.get(s, 0))} → {int(neu.get(s, 0))}" for s in stufen)
+    n_verschoben = int((df["timeframe_sme_shift"] != 0).sum())
+
+st.subheader("Zeitrahmen und KMU-Adoptions-Faktor")
+st.markdown(f"""
+Jede Bewertung schätzt zusätzlich einen **Zeitrahmen**: bis wann die exponierten Tätigkeiten in
+mindestens rund einem Drittel der Schweizer Betriebe tatsächlich mit KI erledigt werden
+(1–2 / 3–5 / 5–10 / > 10 Jahre). In `timeframe_raw` steht der Median über alle Läufe beider Modelle
+(bei Gleichstand der spätere Wert).
+
+Grossunternehmen führen KI in der Regel schneller ein als KMU. Der **KMU-Adoptions-Faktor** verschiebt
+den Zeitrahmen deshalb je Branche um eine Stufe — er wirkt auf das **Wann**, nicht auf die Höhe der
+Exposition. Das Ergebnis steht in `timeframe`, die Verschiebung in `timeframe_sme_shift`
+({n_verschoben if df is not None else 0} Berufe verschoben; Verteilung vorher → nachher: {zeit_vert}).
+
+- **Quelle:** BFS Statistik der Unternehmensstruktur (STATENT) **{KMU_JAHR}**, Tabelle
+  [ts-x-06.02.01.01](https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.36734598.html) «Marktwirtschaftliche Unternehmen
+  nach Wirtschaftsabteilungen und Grössenklasse» (Stand 20.08.2026), automatisch geladen über die
+  BFS-DAM-Schnittstelle (`src/data/fetch_statent.py`).
+- **Einheit Unternehmen, nicht Arbeitsstätte:** Alle Beschäftigten eines Unternehmens zählen zu
+  dessen Haupttätigkeit (NOGA-Abteilung) und Grössenklasse. Das ist der fachlich passende Begriff,
+  weil Investitions- und IT-Entscheide auf Unternehmensebene fallen — eine Filiale einer
+  Detailhandelskette ist kein KMU.
+- **Grösse und Zählgrösse:** Beschäftigte (Personen inkl. Teilzeit). Eine Auswertung nach
+  Vollzeitäquivalenten je Wirtschaftsabteilung × Grössenklasse publiziert das BFS nicht.
+- **Definition:** Grossfirmen-Anteil = Beschäftigte in Unternehmen mit **≥ 250 Beschäftigten** /
+  alle Beschäftigten der NOGA-Abteilungen einer Branche (gleiches NOGA-Mapping wie der
+  Grenzgänger-Anteil). Schweizweit (alle marktwirtschaftlichen Unternehmen) {KMU_MITTEL_TEXT}.
+- **Schwellen:** ≥ 50 % → **−1 Stufe** (früher) · 15–50 % → neutral · < 15 % → **+1 Stufe** (später).
+  Das obere Segment umfasst Branchen, in denen die **Mehrheit** der Beschäftigten in Grossunternehmen
+  arbeitet; das untere Segment Branchen mit mindestens **85 % KMU-Beschäftigten** (weniger als rund
+  die Hälfte des Landesmittels). Die Grenzen entsprechen etwa dem oberen und unteren Quartil der
+  Branchenverteilung (47 % bzw. 15 %) und dem ursprünglichen Entwurf in Issue #33.
+  Das obere Ergebnis ist robust (identisch für Schwellen von 45 bis 53 %); knapp über der unteren
+  Schwelle liegen Verwaltung/Verbände (15,3 %) und Gastgewerbe (15,5 %), die deshalb neutral bleiben.
+- **Grenzen:** Nur **marktwirtschaftliche** Unternehmen. Die öffentliche Verwaltung (NOGA 84) fehlt
+  vollständig → kein Anteil, keine Verschiebung. Bei Bildung, Soziales und Verwaltung/Verbänden deckt
+  die Tabelle nur einen Teil der Beschäftigten ab (Spalte «Abdeckung»; öffentliche Schulen und
+  Sozialdienste fehlen). Nicht-marktwirtschaftliche Einheiten sind schweizweit zu rund 69 % gross
+  (≥ 250 Beschäftigte, STATENT {KMU_JAHR}); die Grösse wirkt dort aber nicht über Wettbewerb und
+  Investitionsentscheide und wird bewusst nicht verrechnet. Abdeckung über 100 % (z. B.
+  Versicherungen) entsteht, weil die Tabelle ganze Unternehmen ihrer Hauptbranche zuordnet,
+  STATENT-Arbeitsstätten dagegen nach ihrer eigenen Tätigkeit. Aus Datenschutzgründen gesperrte
+  Zellen werden aus der Differenz zum Total geschätzt (Einfluss < 1 Prozentpunkt). Nur 2-stellige
+  NOGA; ein Beruf gehört genau einer Branche.
+- **Frühere Werte:** Bis Oktober 2026 stammte der Anteil aus der **Betriebszählung 2008**
+  (Arbeitsstätten ≥ 250 Vollzeitäquivalente) mit Schwellen 40 % / 10 %. Weil dort jede Filiale
+  einzeln zählte, galten Detailhandel (2 %), Gastgewerbe (2 %) oder Soziales (5 %) als fast reine
+  KMU-Branchen; der Unternehmensbegriff liefert durchwegs höhere Anteile (Landesmittel 17 % → {KMU_MITTEL_TEXT}),
+  daher die neuen Schwellen.
 """)
+if kmu_vergleich is not None:
+    st.markdown(kmu_vergleich)
+
+st.divider()
+
+# ─── Validierung ──────────────────────────────────────────────────────────────
+st.header("Validierung: Vergleich mit internationalen Messungen")
+
+BENCH = {
+    "ilo25_mean": ("ILO 2025 (Gmyrek et al.)", "Hauptvalidierung: unabhängiger, aufgabenbasierter Index "
+                   "der ILO mit eigener Tätigkeitsliste und Bewertung, nativ für die ISCO-08-Berufsgattungen "
+                   "(mittlerer Task-Score)."),
+    "eloundou_gpt4_beta": ("Eloundou et al. 2024 (β, GPT-4)", "Gleiche Rubrik-Familie (E0/E1/E2) — daher **keine "
+                           "unabhängige Prüfung**; die Bewertungen stammen von 2023 (GPT-4, US-Tätigkeiten aus O*NET)."),
+    "aei_observed_exposure": ("Anthropic Economic Index, März 2026 (beobachtete Exposition)",
+                              "Misst die **tatsächliche Nutzung** von Claude je Tätigkeit, nicht die technische "
+                              "Machbarkeit — eine tiefere Übereinstimmung ist zu erwarten."),
+}
+bench = g.lade_csv(str(g.BENCHMARK_PATH))
+if df is not None and bench is not None:
+    # je ISCO-4-Code ein Wert (mehrere Einträge eines Codes beschäftigungsgewichtet gemittelt)
+    je_code = pd.DataFrame([
+        {"isco_code": code, "exposure": g.gewichtet(d, "exposure")} for code, d in df.groupby("isco_code")])
+    vergleich = je_code.merge(bench, on="isco_code", how="left")
+    zeilen = ["| Benchmark | Spearman ρ | ISCO-Codes | Einordnung |", "|---|:---:|:---:|---|"]
+    for spalte, (name, einordnung) in BENCH.items():
+        rho, n = g.spearman(vergleich["exposure"], vergleich[spalte])
+        zeilen.append(f"| {name} | **{_f(rho, 2)}** | {n} | {einordnung} |")
+    st.markdown("\n".join(zeilen))
+    st.markdown(f"""
+Spearman ρ ist die Rangkorrelation: 1 = gleiche Reihenfolge der Berufe, 0 = kein Zusammenhang.
+Grundlage sind die {len(je_code)} ISCO-4-Codes der App (Einträge mit gleichem Code beschäftigungsgewichtet
+gemittelt), soweit der Benchmark einen Wert hat (Spalte «ISCO-Codes»); der CH-Sammelcode 7200 hat z. B.
+keinen ISCO-08-Gegenwert.
+
+- ρ prüft nur die **Reihenfolge** der Berufe, **nicht das Niveau**: Ein Score von 6 hier entspricht
+  nicht einem bestimmten ILO-Wert, und Unterschiede in der Kalibrierung der Rubriken bleiben unsichtbar.
+- **Einen Schweizer Benchmark gibt es nicht**; alle Vergleichswerte beruhen auf internationalen bzw.
+  US-Tätigkeitsbeschreibungen, die auf CH-ISCO-19 übertragen wurden.
+- Lizenzen: ILO-Daten [CC BY 4.0](https://github.com/pgmyrek/2025_GenAI_scores_ISCO08) (Adaption, nicht von
+  der ILO geprüft); Eloundou et al. [MIT](https://github.com/openai/GPTs-are-GPTs) mit BLS-Crosswalk (public
+  domain); Anthropic Economic Index [CC-BY](https://huggingface.co/datasets/Anthropic/EconomicIndex).
+  Details in `data/processed/benchmarks_isco4.README.md`.
+""")
+else:
+    st.info("Benchmark-Datei nicht verfügbar.")
+
+st.subheader("Vergleich mit der früheren Methode")
+if df is not None and df["legacy_score"].notna().any():
+    alt_neu = df.dropna(subset=["legacy_score"]).assign(diff=lambda d: d["exposure"] - d["legacy_score"])
+    rho_alt, n_alt = g.spearman(alt_neu["legacy_score"], alt_neu["exposure"])
+    st.markdown(f"""
+Bis Oktober 2026 bewertete ein Sprachmodell (Claude Sonnet 4.6) jeden Beruf **als Ganzes** nach fünf
+Kriterien (digitaler Output, Wiederholbarkeit, physische Präsenz, Kreativität, soziale Interaktion;
+Ansatz von Andrej Karpathy), dazu kamen Branchen- und Lohnzuschläge. Die Rangfolge der beiden
+Methoden stimmt nur mässig überein: **Spearman ρ = {_f(rho_alt, 2)}** ({n_alt} Berufe, die damals
+bewertet waren). Im Mittel liegt der neue Score tiefer ({_f(alt_neu['exposure'].mean())} statt
+{_f(alt_neu['legacy_score'].mean())}), weil er nur die Zeit zählt, die generative KI tatsächlich
+mindestens halbiert.
+""")
+    spalten = {"occupation": "Beruf", "legacy_score": "früher", "exposure": "neu", "diff": "Δ"}
+    for titel, auswahl in (("Grösste Rückgänge", alt_neu.nsmallest(6, "diff")),
+                           ("Grösste Zunahmen", alt_neu.nlargest(6, "diff"))):
+        st.markdown(f"**{titel}**")
+        st.dataframe(auswahl[list(spalten)].rename(columns=spalten).round(1), hide_index=True, width="stretch",
+                     column_config={"Beruf": st.column_config.TextColumn("Beruf", width="large")})
+    st.markdown("""
+Δ = neu − früher (Skala 0–10).
+
+**Warum sich die Werte verschieben:** Die alte Methode bewertete «Wiederholbarkeit» hoch — Routine
+zählte als Exposition, auch wenn sie körperlich ist. Kassen-, Sortier-, Fahr- und Maschinenberufe
+erhielten deshalb hohe Scores, obwohl ein Sprachmodell diese Arbeit nicht erledigt; ihre
+Automatisierung durch Selbstbedienung, Sortieranlagen oder Robotik steht jetzt separat in der
+**physischen Automatisierung**. Umgekehrt steigen Büro-, Analyse-, Beratungs- und Führungsberufe,
+in denen viel Arbeitszeit auf Texte, Berichte, Auswertungen und Korrespondenz entfällt: Die
+Tätigkeitsliste macht diese Anteile sichtbar, die eine Gesamtbeurteilung des Berufs oft unterschätzte
+(z. B. durch einen Abzug für «soziale Interaktion»). Der alte Score steht als `legacy_score` in den
+Daten, wird aber nirgends mehr angezeigt ausser hier.
+""")
+
+st.divider()
+
+# ─── Anpassungsfähigkeit ──────────────────────────────────────────────────────
+st.header("Anpassungsfähigkeits-Score (0–10)")
+
+st.markdown("""
+Der Anpassungsfähigkeits-Score (verwendet in der Matrix-Ansicht) misst, wie leicht
+Berufsangehörige sich bei Automatisierungsdruck neu orientieren können.
+Er basiert auf der Methodik der **Brookings Institution** und setzt sich zusammen aus:
+
+| Kriterium | Max. Punkte | Quelle |
+|---|---|---|
+| Qualifikationsniveau | 4 | Bildungsniveau des Berufs (Tertiär 4, Sekundär II 3, keine Ausbildung 1) |
+| Lohnniveau | 3 | LSE 2024 (höherer Lohn = mehr Ressourcen für Umschulung); feste Skala: 0 Punkte bis 50'000 CHF, linear bis 3 Punkte bei 150'000 CHF, darüber 3 |
+| Digitale Affinität | 2 | 2 × KI-Exposition / 10 (Anteil digitaler Informationsarbeit) |
+| Branchenmobilität | 1 | Schätzung basierend auf Branchencharakteristika |
+
+Skala: 0 = sehr schwer anzupassen, 10 = sehr flexibel
+
+Die Lohnskala ist fest (Lohnpunkte = 3 × (Lohn − 50'000) / 100'000, begrenzt auf 0–3) und
+umschliesst die Spanne der LSE-2024-Mediane der Berufsgruppen (rund 53'000–130'000 CHF).
+Die Lohnpunkte eines Berufs hängen damit nur von seinem eigenen Lohn ab — ein einzelner
+Ausreisser (z. B. ein neuer Höchstlohn) verschiebt die Werte der übrigen Berufe nicht.
+Beispiele: 75'000 CHF → 0.75, 100'000 CHF → 1.5, 125'000 CHF → 2.25 Punkte.
+
+**Digitale Affinität:** Bis Oktober 2026 diente das Teilkriterium «digitaler Output» der früheren
+Bewertung als Proxy. Es existiert nicht mehr; an seine Stelle tritt die KI-Exposition, die den Anteil
+der Arbeitszeit mit Text-, Daten- und Informationsarbeit gut abbildet (Spearman ρ zum alten
+Teilkriterium rund 0,8). Dadurch hängt die Anpassungsfähigkeit zu höchstens 2 von 10 Punkten von der
+Exposition ab — wie schon bei der früheren Methode. In der Matrix rückt ein stärker exponierter Beruf
+damit leicht nach rechts; die kritische Zone wird dadurch eher unterschätzt als überschätzt.
+""")
+
+st.divider()
 
 # ─── Datenquellen ─────────────────────────────────────────────────────────────
 st.header("Datenquellen")
@@ -141,7 +382,7 @@ Die Beschäftigungszahlen und Frauenanteile stammen aus der offiziellen Schweize
   wo nötig Berufsart (5-stellig)
 
 Die App umfasst **{n_berufe} Berufe** mit zusammen **{summe_text} Tsd.** Erwerbstätigen
-(**{abdeckung_text}** der SE 2024 total: 4'584 Tsd.).{offen_text} Automatisch ergänzt wurden
+(**{abdeckung_text}** der SE 2024 total: 4'584 Tsd.); alle sind aufgabenbasiert bewertet. Automatisch ergänzt wurden
 Berufsgattungen mit mindestens **5'000 Erwerbstätigen** — ohne Restgruppen («onA» = ohne nähere
 Angaben, «anderweitig nicht genannt»), ausser sie sind gross und inhaltlich klar (4419 Bürokräfte
 a.n.g. = v. a. Verkaufsinnendienst, 9329 Hilfsarbeiter in der Produktion a.n.g.).
@@ -158,9 +399,8 @@ a.n.g. = v. a. Verkaufsinnendienst, 9329 Hilfsarbeiter in der Produktion a.n.g.)
 - Wo die SE die Berufe nicht trennt (z. B. Detailhandelsfachleute EFZ und Verkäufer/innen ohne
   Ausbildung, Softwareentwickler/innen und Informatiker/innen EFZ), sind sie zu **einem Eintrag
   mit der SE-Bezeichnung zusammengelegt** ({n_zusammen} Einträge aus {n_titel} bisherigen Titeln).
-  Die bisherigen Titel bleiben in der Berufssuche als Synonyme auffindbar. Die Scores dieser
-  Einträge sind vorläufig das beschäftigungsgewichtete Mittel der bisherigen Einzelberufe;
-  eine Neubewertung folgt.
+  Die bisherigen Titel bleiben in der Berufssuche als Synonyme auffindbar. Diese Einträge sind
+  als Ganzes aufgabenbasiert bewertet.
 - Die Zuordnung Beruf → Berufsgattung/Berufsart(en) ist mit Begründung versioniert
   (`data/processed/beruf_berufsart_mapping.csv`). Die ISCO-Codes aller Berufe wurden gegen die
   CH-ISCO-19-Bezeichnungen geprüft und, wo eindeutig falsch, korrigiert (z. B. Koch/Köchin EFZ:
@@ -174,7 +414,7 @@ a.n.g. = v. a. Verkaufsinnendienst, 9329 Hilfsarbeiter in der Produktion a.n.g.)
 
 st.subheader("Berufsbeschreibungen")
 st.markdown(f"""
-Für das KI-Scoring benötigt jeder Beruf eine inhaltliche Beschreibung seiner Kerntätigkeiten.
+Für die Bewertung benötigt jeder Beruf eine inhaltliche Beschreibung seiner Kerntätigkeiten.
 Die Beschreibungen werden in einem mehrstufigen Prozess ermittelt:
 
 | Stufe | Quelle | Berufe |
@@ -184,10 +424,10 @@ Die Beschreibungen werden in einem mehrstufigen Prozess ermittelt:
 | 5 | Wikipedia (zweiter Fallback) | {n_wiki} |
 | 6 | KI-generierte Beschreibung (letzter Ausweg) | {n_fallback} |
 
-Die verwendete Quelle ist in der Spalte `beschreibung_quelle` gespeichert und
+Die verwendete Quelle ist in der Spalte `description_source` gespeichert und
 wird bei der Berufssuche angezeigt.
 
-**Match-Qualität** (Spalte `esco_match_qualitaet`): Ein ESCO-Beruf wird nur übernommen, wenn
+**Match-Qualität** (Spalte `esco_match_quality`): Ein ESCO-Beruf wird nur übernommen, wenn
 seine ISCO-Gruppe zum ISCO-Code des Berufs passt.
 
 - **korrekt** ({n_korrekt}): gleiche 4-stellige ISCO-Gruppe, der ESCO-Beruf deckt die Tätigkeit ab
@@ -198,7 +438,8 @@ seine ISCO-Gruppe zum ISCO-Code des Berufs passt.
 Alle Zuordnungen wurden im Oktober 2026 geprüft und, wo falsch, korrigiert (vorher u. a.
 «Dipl. Pflegefachperson» → Diplomat/in); Details in `docs/audit_esco_zuordnungen.md`.
 Für jeden Beruf mit ESCO-Zuordnung sind zudem die ESCO-Kompetenzen (wesentlich/optional)
-in `data/processed/esco_kompetenzen.csv` abgelegt.
+in `data/processed/esco_kompetenzen.csv` abgelegt; die wesentlichen Kompetenzen vom Typ «skill» sind
+die wichtigste Grundlage der Tätigkeitsliste jedes Berufs.
 
 - **ESCO:** [esco.ec.europa.eu](https://esco.ec.europa.eu/de/use-esco/esco-api), Version 1.2.1
   (API mit fester Version und CSV-Download)
@@ -209,8 +450,9 @@ in `data/processed/esco_kompetenzen.csv` abgelegt.
 
 st.subheader("Lohndaten")
 st.markdown("""
-Der mediane Jahresbruttolohn (`lohn_median_chf`) stammt aus der **BFS Lohnstrukturerhebung
-(LSE) 2024**. Die Herkunft jedes Werts steht in der Spalte `lohn_quelle`.
+Der mediane Jahresbruttolohn (`wage_median_chf`) stammt aus der **BFS Lohnstrukturerhebung
+(LSE) 2024**. Die Herkunft jedes Werts steht in der Spalte `wage_source`. Der Lohn geht nur in die
+Anpassungsfähigkeit ein, nicht in die Exposition.
 
 - **Quelle:** BFS, LSE 2024, Tabelle T17 «Monatlicher Bruttolohn (Zentralwert) nach
   Berufsgruppen, Lebensalter und Geschlecht — Privater und öffentlicher Sektor zusammen»
@@ -258,7 +500,7 @@ Der mediane Jahresbruttolohn (`lohn_median_chf`) stammt aus der **BFS Lohnstrukt
   (ihr gewichtetes Mittel = Gruppenmedian), damit ein Override ihre Löhne nicht verschiebt.
   Die Werte sind **Schätzungen**; das Band zeigt die plausible Spannweite.
   Zahnärzte und Apotheker haben keine belegte Relation, behalten den Salarium-Wert und sind
-  als **unsicher** markiert (Spalte `lohn_unsicher`).
+  als **unsicher** markiert (Spalte `wage_uncertain`).
 - **Einschränkungen:** nur 2-stellige LSE-Gruppen (eine 3-/4-stellige Auswertung wäre nur
   als kostenpflichtige BFS-Sonderauswertung erhältlich); Salarium bildet nur den
   **Privatsektor** ab; Spitzenlöhne werden unterschätzt (siehe «Einschränkungen & Hinweise»);
@@ -277,30 +519,30 @@ def load_verhaeltnisse() -> pd.DataFrame | None:
         return None
     verh = pd.read_csv(VERH_PATH, dtype={"isco_code": str})
     lse = pd.read_csv(LSE_PATH, dtype={"isco_prefix": str}, keep_default_na=False)
-    lse = dict(zip(lse["isco_prefix"], pd.to_numeric(lse["median_monat"], errors="coerce")))
+    lse = dict(zip(lse["isco_prefix"], pd.to_numeric(lse["median_monthly"], errors="coerce")))
     basis = verh["isco_code"].str[:2].map(lse) * 12
 
     def _chf(x: pd.Series) -> pd.Series:
         return x.map(lambda v: "" if pd.isna(v) else f"{round(v, -2):,.0f}".replace(",", "'"))
 
-    lohn = verh["faktor_zu_lse_gruppe"] * basis
-    band = _chf(verh["band_unten"] * basis) + " – " + _chf(verh["band_oben"] * basis)
+    lohn = verh["factor_to_lse_group"] * basis
+    band = _chf(verh["band_low"] * basis) + " – " + _chf(verh["band_high"] * basis)
     scores = pd.read_csv(DATA_PATH, dtype={"isco_code": str}) if DATA_PATH.exists() else None
     if scores is not None:  # ohne Faktor: Salarium-Wert aus scores.csv
-        salarium = verh.merge(scores[["isco_code", "beruf", "lohn_median_chf"]],
-                              on=["isco_code", "beruf"], how="left")["lohn_median_chf"]
+        salarium = verh.merge(scores[["isco_code", "occupation", "wage_median_chf"]],
+                              on=["isco_code", "occupation"], how="left")["wage_median_chf"]
         sal_text = _chf(salarium.astype(float)).map(lambda t: f"{t} (Salarium)" if t else "Salarium")
     else:
         sal_text = pd.Series("Salarium", index=verh.index)
     lohn_text = _chf(lohn).where(lohn.notna(), sal_text)
     return pd.DataFrame({
         "ISCO": verh["isco_code"],
-        "Beruf": verh["beruf"],
-        "Faktor": verh["faktor_zu_lse_gruppe"].map(lambda v: "–" if pd.isna(v) else f"{v:.3f}"),
+        "Beruf": verh["occupation"],
+        "Faktor": verh["factor_to_lse_group"].map(lambda v: "–" if pd.isna(v) else f"{v:.3f}"),
         "Lohn (CHF/Jahr)": lohn_text,
-        "Band (CHF/Jahr)": band.where(verh["band_unten"].notna(), "–"),
-        "Unsicher": verh["lohn_unsicher"].map({True: "ja", False: "nein"}),
-        "Bemerkung": verh["bemerkung"].fillna(""),
+        "Band (CHF/Jahr)": band.where(verh["band_low"].notna(), "–"),
+        "Unsicher": verh["wage_uncertain"].map({True: "ja", False: "nein"}),
+        "Bemerkung": verh["note"].fillna(""),
     })
 
 
@@ -323,14 +565,14 @@ if verh_tab is not None and not verh_tab.empty:
   Gruppen ist 0.85 **angenommen**. Das beschäftigungsgewichtete Mittel (SE 2024) der beiden
   Faktoren entspricht 1.6 × Pflege.
 - **Grenzen:** Spital-lastig; angestellte Praxisärzte und Selbständige fehlen; das Band der
-  Fachärzte überspannt die Lohnklassengrenze 150k CHF. Präzise wäre nur eine LSE-Sonderauswertung
+  Fachärzte überspannt 150'000 CHF, die Obergrenze der Lohnpunkte in der Anpassungsfähigkeit. Präzise wäre nur eine LSE-Sonderauswertung
   der 3-Steller 221/222/226.
 """)
 
 st.subheader("Branchenzuordnung")
 st.markdown("""
-Jeder Beruf ist einer von 21 internen Branchen zugeordnet (Grundlage für Brancheneffekt,
-KMU-Faktor und Branchenanalyse):
+Jeder Beruf ist einer von 21 internen Branchen zugeordnet (Grundlage für KMU-Faktor,
+Branchenmobilität und Branchenanalyse):
 
 - **Kuratierte Berufe** (Kernliste): Branche manuell gesetzt.
 - **Ergänzte BFS-SE-Berufe:** Zuordnung über den ISCO-Code, wobei der **spezifischste Präfix**
@@ -365,7 +607,7 @@ Der Grenzgänger-Anteil pro Branche dient als zusätzlicher Kontext-Layer in der
 - **Granularität:** NOGA-Wirtschaftsabteilungen (2-stellig), aggregiert auf die 21 internen Branchen
   (gleiches Mapping wie der KMU-Faktor). NOGA 97–99 (private Haushalte, exterritoriale
   Organisationen; rund 4'900 Grenzgänger/-innen) fehlen in STATENT und bleiben aussen vor.
-- **Wichtig: fliesst nicht in score_ch oder zeitrahmen ein** — rein additiver Kontext-Layer
+- **Wichtig: fliesst weder in die Exposition noch in den Zeitrahmen ein** — rein additiver Kontext-Layer
 - **Limitationen:** Kein Pro-Beruf-Mapping möglich; Zähler (2025) und Nenner (2024) liegen ein
   Jahr auseinander, bei leicht wachsendem Grenzgängerbestand ist der Anteil daher eher etwas zu
   hoch. STATENT zählt Personen mit Verträgen bei mehreren Unternehmen mehrfach, die GGS zählt
@@ -375,149 +617,6 @@ Der Grenzgänger-Anteil pro Branche dient als zusätzlicher Kontext-Layer in der
   gut 7 Prozentpunkte zu hoch.
 """)
 
-st.divider()
-
-# ─── Scoring-Methodik ─────────────────────────────────────────────────────────
-st.header("KI-Expositions-Score (0–10)")
-
-st.markdown("""
-Die Scoring-Methodik folgt dem Ansatz von **Andrej Karpathy (März 2026)** und der
-**Brookings Institution**, adaptiert für den Schweizer Kontext.
-
-Für jeden Beruf wird Claude (claude-sonnet-4-6) beauftragt, anhand der ESCO-Berufsbeschreibung
-fünf Kriterien auf einer Skala von 0–10 zu bewerten:
-""")
-
-st.markdown("""
-| Kriterium | Gewichtung | Beschreibung |
-|---|---|---|
-| Digitaler Output | 25 % | Arbeitet der Beruf primär mit digitalen Informationen, Texten oder Daten? |
-| Wiederholbarkeit | 25 % | Sind die Kerntätigkeiten strukturiert, vorhersehbar und regelbasiert? |
-| Physische Präsenz | 20 % | Je mehr körperliche Präsenz nötig, desto **tiefer** der Score |
-| Kreativität | 15 % | Je mehr originelles Denken gefragt, desto **tiefer** der Score |
-| Soziale Interaktion | 15 % | Je mehr Empathie und Vertrauen nötig, desto **tiefer** der Score |
-
-Der **Rohscore** ergibt sich aus der gewichteten Summe dieser Kriterien.
-""")
-
-st.subheader("Schweiz-spezifische Anpassungen")
-st.markdown("""
-Auf den Rohscore werden CH-spezifische Faktoren angewendet, die den lokalen Arbeitsmarktkontext
-berücksichtigen. Alle 21 Branchen aus dem Datensatz sind explizit bewertet:
-
-**Brancheneffekte** (Deltawert auf den Rohscore):
-
-| Branche | Delta | Begründung |
-|---|---|---|
-| Versicherungen | **+0.4** | Sehr standardisierte Prozesse, hoher Digitalisierungsgrad |
-| Finanzen | **+0.3** | Bankplatz CH: hoher Automatisierungsdruck |
-| Beratung | **+0.2** | Wissensarbeit: KI augmentiert Analyse & Strategie |
-| Detailhandel | **+0.2** | E-Commerce-Druck, Self-Checkout, Logistikautomation |
-| Recht | **+0.2** | LegalTech wächst; Dokumentenanalyse automatisierbar |
-| Immobilien | **+0.1** | PropTech, Bewertungs-KI, digitale Plattformen |
-| Medien | **+0.1** | KI-generierte Inhalte, aber Kreativität dämpft |
-| Verwaltung | **+0.1** | Private Administration: strukturierte Büroprozesse |
-| Dienstleistungen | **0.0** | Zu heterogen für einheitlichen Effekt |
-| Transport | **0.0** | Physisch, aber autonomes Fahren mittelfristig |
-| Umwelt | **0.0** | Spezialisiert; Monitoring-KI vs. Feldarbeit neutral |
-| Gastgewerbe | **−0.1** | Serviceorientiert, Kundenkontakt; Buchungs-KI marginal |
-| Industrie | **−0.1** | MEM/Pharma: Fachkräftemangel als Puffer |
-| Landwirtschaft | **−0.1** | Precision Farming wächst, aber physische Arbeit dominiert |
-| Öff. Verwaltung | **−0.1** | Öffentl. Sektor: langsame Adoption, politische Rahmenbedingungen |
-| Sicherheit | **−0.1** | Physische Präsenz erforderlich; Überwachungs-KI ergänzt nur |
-| Bau | **−0.2** | Stark physisch, handwerklich; Digitalisierung langsam |
-| Bildung | **−0.2** | Gesellschaftlicher Konsens über menschliche Lehrvermittlung |
-| ICT | **−0.2** | KI-Fachkräfte adaptiv; treiben Wandel selbst |
-| Gesundheit | **−0.3** | Regulierung, Fachkräftemangel, Pflegekomponente als Bremse |
-| Soziales | **−0.3** | Hoher Empathiebedarf, Schutzinteressen; ähnlich Gesundheit |
-
-**Lohneffekte** (Deltawert auf den Rohscore):
-
-| Lohnklasse (Jahresbruttolohn) | Delta | Begründung |
-|---|---|---|
-| > 150'000 CHF | **+0.4** | Sehr hoher ROI für Automatisierungsinvestitionen |
-| 100'000–150'000 CHF | **+0.2** | Stärkerer wirtschaftlicher Anreiz zur Automatisierung |
-| 60'000–100'000 CHF | **0.0** | Neutral |
-| < 60'000 CHF | **−0.2** | Geringerer ROI; manuelle Arbeit oft günstiger |
-
-Die Klassengrenzen sind seit der Umstellung auf die LSE 2024 unverändert (nicht um die
-Lohnentwicklung von +3,5 % seit 2022 angehoben; das würde nur 2 Berufe knapp über 100'000 CHF
-verschieben). Weil die LSE nur Gruppenmediane liefert, liegt derzeit kein Beruf über 150'000 CHF.
-
-Der finale **score_ch** wird auf den Bereich 0–10 begrenzt.
-""")
-
-st.subheader("KMU-Adoptions-Faktor (Zeitrahmen)")
-st.markdown(f"""
-Grossunternehmen führen KI in der Regel schneller ein als KMU. Der Faktor verschiebt deshalb den
-vom Scoring geschätzten Zeitrahmen (`zeitrahmen_roh`) je Branche um eine Stufe — er wirkt auf
-das **Wann**, nicht auf die Höhe der Exposition (`score_ch` bleibt unverändert). Das Ergebnis steht
-in `zeitrahmen`, die Verschiebung in `zeitrahmen_kmu_delta`.
-
-- **Quelle:** BFS Statistik der Unternehmensstruktur (STATENT) **{KMU_JAHR}**, Tabelle
-  [ts-x-06.02.01.01](https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.36734598.html) «Marktwirtschaftliche Unternehmen
-  nach Wirtschaftsabteilungen und Grössenklasse» (Stand 20.08.2026), automatisch geladen über die
-  BFS-DAM-Schnittstelle (`src/data/fetch_statent.py`).
-- **Einheit Unternehmen, nicht Arbeitsstätte:** Alle Beschäftigten eines Unternehmens zählen zu
-  dessen Haupttätigkeit (NOGA-Abteilung) und Grössenklasse. Das ist der fachlich passende Begriff,
-  weil Investitions- und IT-Entscheide auf Unternehmensebene fallen — eine Filiale einer
-  Detailhandelskette ist kein KMU.
-- **Grösse und Zählgrösse:** Beschäftigte (Personen inkl. Teilzeit). Eine Auswertung nach
-  Vollzeitäquivalenten je Wirtschaftsabteilung × Grössenklasse publiziert das BFS nicht.
-- **Definition:** Grossfirmen-Anteil = Beschäftigte in Unternehmen mit **≥ 250 Beschäftigten** /
-  alle Beschäftigten der NOGA-Abteilungen einer Branche (gleiches NOGA-Mapping wie der
-  Grenzgänger-Anteil). Schweizweit (alle marktwirtschaftlichen Unternehmen) {KMU_MITTEL_TEXT}.
-- **Schwellen:** ≥ 50 % → **−1 Stufe** (früher) · 15–50 % → neutral · < 15 % → **+1 Stufe** (später).
-  Das obere Segment umfasst Branchen, in denen die **Mehrheit** der Beschäftigten in Grossunternehmen
-  arbeitet; das untere Segment Branchen mit mindestens **85 % KMU-Beschäftigten** (weniger als rund
-  die Hälfte des Landesmittels). Die Grenzen entsprechen etwa dem oberen und unteren Quartil der
-  Branchenverteilung (47 % bzw. 15 %) und dem ursprünglichen Entwurf in Issue #33.
-  Das obere Ergebnis ist robust (identisch für Schwellen von 45 bis 53 %); knapp über der unteren
-  Schwelle liegen Verwaltung/Verbände (15,3 %) und Gastgewerbe (15,5 %), die deshalb neutral bleiben.
-- **Grenzen:** Nur **marktwirtschaftliche** Unternehmen. Die öffentliche Verwaltung (NOGA 84) fehlt
-  vollständig → kein Anteil, keine Verschiebung. Bei Bildung, Soziales und Verwaltung/Verbänden deckt
-  die Tabelle nur einen Teil der Beschäftigten ab (Spalte «Abdeckung»; öffentliche Schulen und
-  Sozialdienste fehlen). Nicht-marktwirtschaftliche Einheiten sind schweizweit zu rund 69 % gross
-  (≥ 250 Beschäftigte, STATENT {KMU_JAHR}); die Grösse wirkt dort aber nicht über Wettbewerb und
-  Investitionsentscheide und wird bewusst nicht verrechnet. Abdeckung über 100 % (z. B.
-  Versicherungen) entsteht, weil die Tabelle ganze Unternehmen ihrer Hauptbranche zuordnet,
-  STATENT-Arbeitsstätten dagegen nach ihrer eigenen Tätigkeit. Aus Datenschutzgründen gesperrte
-  Zellen werden aus der Differenz zum Total geschätzt (Einfluss < 1 Prozentpunkt). Nur 2-stellige
-  NOGA; ein Beruf gehört genau einer Branche.
-- **Frühere Werte:** Bis Oktober 2026 stammte der Anteil aus der **Betriebszählung 2008**
-  (Arbeitsstätten ≥ 250 Vollzeitäquivalente) mit Schwellen 40 % / 10 %. Weil dort jede Filiale
-  einzeln zählte, galten Detailhandel (2 %), Gastgewerbe (2 %) oder Soziales (5 %) als fast reine
-  KMU-Branchen; der Unternehmensbegriff liefert durchwegs höhere Anteile (Landesmittel 17 % → {KMU_MITTEL_TEXT}),
-  daher die neuen Schwellen.
-""")
-if kmu_vergleich is not None:
-    st.markdown(kmu_vergleich)
-
-st.divider()
-
-# ─── Anpassungsfähigkeit ──────────────────────────────────────────────────────
-st.header("Anpassungsfähigkeits-Score (0–10)")
-
-st.markdown("""
-Der Anpassungsfähigkeits-Score (verwendet in der Matrix-Ansicht) misst, wie leicht
-Berufsangehörige sich bei Automatisierungsdruck neu orientieren können.
-Er basiert auf der Methodik der **Brookings Institution** und setzt sich zusammen aus:
-
-| Kriterium | Max. Punkte | Quelle |
-|---|---|---|
-| Qualifikationsniveau | 4 | BFS SAKE (Bildungsabschluss nach ISCO) |
-| Lohnniveau | 3 | LSE 2024 (höherer Lohn = mehr Ressourcen für Umschulung); feste Skala: 0 Punkte bis 50'000 CHF, linear bis 3 Punkte bei 150'000 CHF, darüber 3 |
-| Digitale Affinität | 2 | KI-Score Teilkriterium «Digitaler Output» |
-| Branchenmobilität | 1 | Schätzung basierend auf Branchencharakteristika |
-
-Skala: 0 = sehr schwer anzupassen, 10 = sehr flexibel
-
-Die Lohnskala ist fest (Lohnpunkte = 3 × (Lohn − 50'000) / 100'000, begrenzt auf 0–3) und
-umschliesst die Spanne der LSE-2024-Mediane der Berufsgruppen (rund 53'000–130'000 CHF).
-Die Lohnpunkte eines Berufs hängen damit nur von seinem eigenen Lohn ab — ein einzelner
-Ausreisser (z. B. ein neuer Höchstlohn) verschiebt die Werte der übrigen Berufe nicht.
-Beispiele: 75'000 CHF → 0.75, 100'000 CHF → 1.5, 125'000 CHF → 2.25 Punkte.
-""")
 
 st.divider()
 
@@ -525,7 +624,7 @@ st.divider()
 st.header("Was wir über die tatsächliche Wirkung wissen (Stand Oktober 2026)")
 
 st.markdown("""
-Die Scores dieser App messen die **Exposition**, also was KI technisch übernehmen *könnte*.
+Die Scores dieser App messen die **Exposition**, also was generative KI technisch beschleunigen *könnte*.
 Ob und wie stark sich das bereits auf dem Arbeitsmarkt zeigt, ist eine andere Frage.
 Hier ist zusammengefasst, was die Forschung bisher beobachtet. Schweizer Zahlen und
 internationale Befunde sind bewusst getrennt: Arbeitsmärkte, Daten und Definitionen
@@ -624,11 +723,15 @@ st.divider()
 st.header("Einschränkungen & Hinweise")
 
 st.markdown("""
-- **KI-Scoring ist keine exakte Wissenschaft.** Die Scores sind Einschätzungen eines
-  Sprachmodells, keine empirisch gemessenen Werte. Sie sollten als Orientierung, nicht als
-  Prognose verstanden werden.
-- **Exposition ≠ Jobverlust.** Ein hoher Score bedeutet, dass Teile des Berufs automatisierbar
-  *sein könnten* – nicht dass Jobs verschwinden. Viele Berufe wandeln sich.
+- **KI-Bewertung ist keine exakte Wissenschaft.** Die Scores sind Einschätzungen zweier
+  Sprachmodelle nach einer festen Rubrik, keine empirisch gemessenen Werte. Auch die Tätigkeitslisten
+  und Zeitanteile sind modellgeneriert (aus ESCO und Berufswissen), nicht erhoben. Die Scores sollten
+  als Orientierung, nicht als Prognose verstanden werden; unsichere Bewertungen sind markiert.
+- **Stand der Technik Oktober 2026.** Die Rubrik bewertet, was heute kommerziell verfügbare
+  generative KI kann; mit neuen Modellen und Werkzeugen können Tätigkeiten von E0 zu E1/E2 wechseln.
+- **Exposition ≠ Jobverlust.** Ein hoher Score bedeutet, dass generative KI einen grossen Teil der
+  Arbeitszeit beschleunigen *könnte* – nicht dass Jobs verschwinden; in den meisten Berufen überwiegt
+  der Modus «delegierend» (der Mensch prüft jede Ausgabe). Viele Berufe wandeln sich.
   **Exposition** beschreibt die technische Möglichkeit; die **beobachtete Wirkung** ist die
   tatsächlich gemessene Entwicklung auf dem Arbeitsmarkt. Beides sind getrennte Grössen.
   Bisher wirkt KI in der Schweiz nach heutigem Wissensstand vor allem über **weniger
@@ -636,12 +739,12 @@ st.markdown("""
   (siehe «Was wir über die tatsächliche Wirkung wissen»).
 - **Datenbasis 2024.** Die Beschäftigungszahlen basieren auf der BFS Strukturerhebung (SE) 2024
   (Stichprobe; Werte kleiner Berufe sind entsprechend unsicher). Die KI-Landschaft
-  verändert sich schnell; Scores können in 1–2 Jahren bereits überholt sein.
+  verändert sich schnell; Bewertungen können in 1–2 Jahren bereits überholt sein.
 - **ESCO-Matching nicht immer perfekt.** Für einige Schweizer Berufsbezeichnungen existiert
   kein exakter ESCO-Eintrag. Dann wurde ein ISCO-konsistenter, nahe verwandter Beruf verwendet
   (Match-Qualität «plausibel») oder eine eigene Beschreibung («fallback»). Die Zuordnungen wurden
-  im Oktober 2026 korrigiert; die Scores der Berufe mit neuer Beschreibung beruhen bis zur
-  nächsten Neubewertung noch auf der früheren Beschreibung.
+  im Oktober 2026 korrigiert; die Bewertungen beruhen auf den korrigierten Beschreibungen und
+  Kompetenzen (jede Bewertung ist über einen Hash an ihre Eingabedaten gebunden).
 - **Löhne sind Gruppenwerte bzw. Modellschätzungen.** Die LSE 2024 weist nur 2-stellige
   Berufsgruppen aus (Median). Alle Berufe einer Gruppe haben deshalb denselben Lohn — ausser in
   den Gruppen 11–14, 22, 24 und 26, wo er mit Salarium-Profilen (Ausbildung, Branche)
@@ -654,7 +757,7 @@ st.markdown("""
   Präzisere Werte erfordern eine BFS-Sonderauswertung der LSE auf 3-/4-stelliger Ebene.
 """)
 
-st.subheader("Weitere CH-spezifische Faktoren (nicht in Score eingeflossen)")
+st.subheader("Weitere CH-spezifische Faktoren (nicht in den Score eingeflossen)")
 st.markdown("""
 Folgende Faktoren beeinflussen die KI-Exposition im Schweizer Kontext, sind aber in der
 aktuellen Berechnung **nicht berücksichtigt**:
@@ -664,7 +767,7 @@ aktuellen Berechnung **nicht berücksichtigt**:
   aufweisen.
 - **Kantonale/regionale Lohnunterschiede:** Die LSE-Lohndaten sind national aggregiert
   (Salarium-Verhältnisse als gewichtetes Mittel der Grossregionen).
-  Regionale Lohndisparitäten (z.B. Zürich vs. Wallis) fliessen nicht ins Scoring ein.
+  Regionale Lohndisparitäten (z.B. Zürich vs. Wallis) fliessen nicht in die Anpassungsfähigkeit ein.
 - **KMU-Adoptionsgeschwindigkeit:** Kleine und mittlere Unternehmen (KMU, > 99 % der CH-Firmen)
   adoptieren KI-Technologien typischerweise langsamer als Grossunternehmen. Der KMU-Adoptions-Faktor
   (BFS STATENT, siehe oben) bildet das nur grob ab: ±1 Zeitrahmen-Stufe je Branche, ohne
@@ -681,7 +784,10 @@ st.divider()
 st.header("Referenzen")
 
 st.markdown("""
-- Karpathy, A. (März 2026). [US Job Market Visualizer](https://karpathy.ai/jobs/) — Methodik-Impuls (342 US-Berufe, BLS-Daten, LLM-Scoring)
+- Eloundou, T., Manning, S., Mishkin, P. & Rock, D. (2024). [GPTs are GPTs: Labor market impact potential of LLMs](https://doi.org/10.1126/science.adj0998), *Science* 384 — Rubrik E0/E1/E2 · [Daten](https://github.com/openai/GPTs-are-GPTs)
+- Gmyrek, P. et al. (2025). *Generative AI and Jobs: A Refined Global Index of Occupational Exposure*, ILO Working Paper 140 · [Daten](https://github.com/pgmyrek/2025_GenAI_scores_ISCO08)
+- Massenkoff, M. & McCrory, P. (März 2026). Anthropic Economic Index — beobachtete Exposition · [Daten](https://huggingface.co/datasets/Anthropic/EconomicIndex)
+- Karpathy, A. (März 2026). [US Job Market Visualizer](https://karpathy.ai/jobs/) — Methodik-Impuls der ersten Version dieser App (342 US-Berufe, BLS-Daten, LLM-Scoring)
 - Brookings Institution (2019). *Automation and Artificial Intelligence: How machines are affecting people and places*
 - Webb, A. (2026). *Tech Trends Report* — Convergence-Ansatz für Branchenanalyse
 - BFS (2026). [Strukturerhebung (SE) 2024 — Ausgeübter Beruf (CH-ISCO-19) nach Geschlecht und Staatsangehörigkeit](https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.36492006.html) · [Über die Strukturerhebung](https://www.bfs.admin.ch/bfs/de/home/statistiken/bevoelkerung/erhebungen/se.html)
