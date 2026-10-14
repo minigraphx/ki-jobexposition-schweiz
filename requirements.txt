@@ -1,16 +1,18 @@
+# Laufzeit der App (HF-Docker-Image installiert bei jedem Neubau die neueste passende Version;
+# Untergrenzen = getestete Versionen, Obergrenzen = nächste Hauptversion)
+
 # Core
-pandas>=2.0.0
-numpy>=1.24.0
+pandas>=3.0,<4
+numpy>=2.0,<3
 
 # AI / API
 anthropic>=0.40.0
 
 # Visualisierung
-plotly>=5.18.0
-kaleido==0.2.1        # PNG-Export der Treemap (1.x inkompatibel mit plotly)
+plotly>=7.0,<8
 
 # Webapp
-streamlit>=1.32.0
+streamlit>=1.65,<2    # width="stretch", st.navigation, st.Page
 
 # Daten laden
 requests>=2.31.0

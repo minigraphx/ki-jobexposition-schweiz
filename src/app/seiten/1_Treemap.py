@@ -110,20 +110,11 @@ fig.update_traces(customdata=texte, hovertemplate="%{customdata}<extra></extra>"
                   marker=dict(line=dict(width=1, color="#fcfcfb")), root_color="#f9f9f7")
 fig.update_layout(height=720, margin=dict(t=60, l=8, r=8, b=8),
                   coloraxis_colorbar=dict(title=g.LABELS[kennzahl].replace(" ", "<br>")))
-st.plotly_chart(fig, width="stretch")
-
-# ── PNG-Export ─────────────────────────────────────────────────────────────────
-try:
-    img_bytes = fig.to_image(format="png", width=1400, height=900, scale=2)
-    st.download_button(
-        label="📥 Als PNG herunterladen",
-        data=img_bytes,
-        file_name=f"treemap_ki_schweiz_{kennzahl}_{date.today().strftime('%Y-%m')}.png",
-        mime="image/png",
-        help="Hochauflösendes PNG (1400×900px, Retina) für Artikel und Social Media",
-    )
-except Exception:
-    st.caption("PNG-Export nicht verfügbar (kaleido nicht installiert).")
+# PNG-Export im Browser (Kamera-Symbol der Plotly-Leiste) statt serverseitig mit kaleido
+st.plotly_chart(fig, width="stretch", config={"toImageButtonOptions": {
+    "format": "png", "width": 1400, "height": 900, "scale": 2,
+    "filename": f"treemap_ki_schweiz_{kennzahl}_{date.today().strftime('%Y-%m')}"}})
+st.caption("Als Bild speichern: Kamera-Symbol oben rechts in der Grafik (PNG, 1400 × 900 px, doppelte Auflösung).")
 
 with st.expander("Tabelle der angezeigten Berufe"):
     tab = filtered.sort_values(kennzahl, ascending=False)[
