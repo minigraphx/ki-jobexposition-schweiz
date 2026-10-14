@@ -252,7 +252,9 @@ scores.csv (master data only: beruf, isco_code, synonyme, qualifikation, branche
   logged in `meta.model_served` / `meta.fallback`.
   `gemini-4-argon` via `models.generate_content`, `response_mime_type="application/json"` +
   `response_json_schema` (`schema_fuer_gemini()`: $refs inlined), `thinking_level="high"`,
-  `max_output_tokens=65536`, no temperature (ignored by the model), automatic function calling disabled.
+  `max_output_tokens=65536` (batch: 32768, API limit), no temperature (ignored by the model), automatic function calling disabled;
+  `--no-response-schema` = JSON mode only (schema is in the system prompt) — the batch API with `response_json_schema`
+  returned 182/182 structurally broken answers on 14.10.2026 (sync 31/31 valid).
   `claude-cli`: Claude Code print mode (`claude -p --model claude-opus-5-5 --effort high --output-format json
   --tools "" --strict-mcp-config --no-session-persistence --setting-sources "" --system-prompt-file … --json-schema …`)
   with the user's own subscription; same prompt/schema/validation, empty temp cwd, `CLAUDE_CODE_DISABLE_CLAUDE_MDS=1`,

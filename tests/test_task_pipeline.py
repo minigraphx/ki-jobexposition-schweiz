@@ -1410,3 +1410,17 @@ def test_skriptaufruf_batch_collect_mit_abgeschnittener_antwort(tmp_path, monkey
     d = json.loads(next((tmp_path / "gemini" / "run1").glob("2512_*.json")).read_text(encoding="utf-8"))
     assert d["meta"]["status"] == "fehlgeschlagen" and "abgeschnitten (max_output_tokens = 32768)" in d["meta"]["fehler"][0]
     assert tb.lade_zustaende(tmp_path, "gemini")[0][1]["eingesammelt"]
+
+
+def test_gemini_ohne_response_schema_batch(tmp_path, gemini_key):
+    fake = FakeGeminiBatch()
+    g = ts.GeminiBewerter(client=fake, response_schema=False)
+    assert _batch(["--provider", "gemini", "--only", "2512", "--runs", "1", "--batch", "submit"], g, tmp_path) == 0
+    cfg = fake.erstellt[0]["src"][0].config
+    assert cfg.response_json_schema is None and cfg.response_mime_type == "application/json"
+    assert cfg.system_instruction == tr.system_prompt() and '"taetigkeiten"' in cfg.system_instruction
+    z = tb.lade_zustaende(tmp_path, "gemini")[0][1]
+    assert z["einstellungen"]["structured_output"].startswith("response_mime_type (Schema nur")
+    a = ts.parse_args(["--provider", "gemini", "--no-response-schema"])
+    assert ts.erstelle_bewerter(a).response_schema is False
+    assert ts.erstelle_bewerter(ts.parse_args(["--provider", "gemini"])).response_schema is True

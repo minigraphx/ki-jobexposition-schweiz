@@ -497,13 +497,18 @@ class GeminiBewerter:
     provider = "gemini"
 
     def __init__(self, model: str = MODELL["gemini"], thinking_level: str = GEMINI_THINKING,
-                 max_output_tokens: int = GEMINI_MAX_OUTPUT_TOKENS, client: Any = None):
+                 max_output_tokens: int = GEMINI_MAX_OUTPUT_TOKENS, client: Any = None,
+                 response_schema: bool = True):
         if thinking_level not in GEMINI_THINKING_LEVELS:
             raise ValueError(f"thinking_level muss einer von {GEMINI_THINKING_LEVELS} sein")
         self.model, self.thinking_level, self.max_output_tokens = model, thinking_level, max_output_tokens
         self._client = client
         self._client_lock = threading.Lock()
         self.schema = tr.schema_fuer_gemini()
+        # False: nur JSON-Modus, Schema steht ohnehin im System-Prompt (Validierung + Korrekturversuch
+        # sichern die Struktur). Grund: Im Batch-Modus lieferte Gemini mit response_json_schema am
+        # 14.10.2026 182/182 strukturell kaputte Antworten (synchron 31/31 gültig).
+        self.response_schema = response_schema
 
     @property
     def client(self):
@@ -526,14 +531,16 @@ class GeminiBewerter:
 
     def einstellungen(self) -> dict:
         return {"thinking_level": self.thinking_level, "max_output_tokens": self.max_output_tokens,
-                "temperature": None, "structured_output": "response_mime_type + response_json_schema"}
+                "temperature": None,
+                "structured_output": ("response_mime_type + response_json_schema" if self.response_schema
+                                      else "response_mime_type (Schema nur im System-Prompt)")}
 
     def _config(self, max_output_tokens: int | None = None):
         from google.genai import types
         return types.GenerateContentConfig(
             system_instruction=tr.system_prompt(),
             response_mime_type="application/json",
-            response_json_schema=self.schema,
+            response_json_schema=self.schema if self.response_schema else None,
             thinking_config=types.ThinkingConfig(thinking_level=self.thinking_level),
             max_output_tokens=max_output_tokens or self.max_output_tokens,
             # keine Tools → automatic function calling (clientseitig im SDK) explizit aus
@@ -1020,7 +1027,8 @@ def erstelle_bewerter(a: argparse.Namespace) -> Any:
         return ClaudeBewerter(model=a.model or MODELL["claude"], effort=a.effort,
                               max_tokens=a.max_tokens or CLAUDE_MAX_TOKENS, fallback=not a.no_fallback)
     return GeminiBewerter(model=a.model or MODELL["gemini"], thinking_level=a.thinking_level,
-                          max_output_tokens=a.max_tokens or GEMINI_MAX_OUTPUT_TOKENS)
+                          max_output_tokens=a.max_tokens or GEMINI_MAX_OUTPUT_TOKENS,
+                          response_schema=not a.no_response_schema)
 
 
 PAKETE = {"claude": ("anthropic", "anthropic"), "claude-cli": ("anthropic", "anthropic"),   # cli: transform_schema
@@ -1081,6 +1089,9 @@ def parse_args(argv: list[str] | None) -> argparse.Namespace:
     ap.add_argument("--thinking-level", default=GEMINI_THINKING, choices=GEMINI_THINKING_LEVELS, help="nur gemini")
     ap.add_argument("--max-tokens", type=int, default=None, help="Obergrenze Thinking + Antwort")
     ap.add_argument("--no-fallback", action="store_true", help="nur claude: kein Refusal-Fallback (synchron)")
+    ap.add_argument("--no-response-schema", action="store_true",
+                    help="nur gemini: kein response_json_schema, nur JSON-Modus (Schema steht im System-Prompt); "
+                         "für den Batch-Modus, wo das Schema die Antworten zerstörte")
     ap.add_argument("--no-third-run", action="store_true", help="keinen dritten Lauf bei |Δζ| > Schwelle")
     ap.add_argument("--threshold", type=float, default=DRITTER_LAUF_SCHWELLE, help="Schwelle |Δζ| für Lauf 3")
     ap.add_argument("--out", default=str(tr.BEWERTUNGEN_DIR), help="Basisverzeichnis der Bewertungen")
