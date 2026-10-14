@@ -2,9 +2,10 @@
 
 Diese Anleitung beschreibt, wie du die neue aufgabenbasierte KI-Expositionsbewertung **auf deinem
 Rechner mit eigenen API-Keys** laufen lässt: zuerst eine kurze synchrone Probe je Provider, danach
-der volle Lauf für alle Einträge (derzeit 187) — empfohlen im **Batch-Modus** (50 % günstiger).
-Die App und `scores.csv` bleiben unverändert; die Ergebnisse landen in
-`data/processed/bewertungen/` und `data/processed/scores_aufgaben.csv`.
+der volle Lauf für alle Einträge (derzeit 187) — für Gemini im **Batch-Modus** (50 % günstiger),
+für Claude über das eigene Abo (`--provider claude-cli`, Abschnitt 5a). Die Ergebnisse landen in
+`data/processed/bewertungen/` und `data/processed/scores_aufgaben.csv`; erst
+`apply_task_scores.py` übernimmt sie in `scores.csv` und damit in die App (Abschnitt 6).
 
 Rubrik v2.2 = Pilot-Rubrik v2.1 **plus** ein Block `zusammenfassung` je Beruf (`haupt_risiko`,
 `begruendung`, `zeitrahmen`). Der Block fliesst nicht in ζ, β oder die Zeitersparnis ein.
@@ -110,7 +111,7 @@ python src/scoring/task_scorer.py --provider claude --runs 2 --batch followup --
 python src/scoring/task_scorer.py --provider claude --batch collect      # nach Abschluss
 
 # 5. Auswerten
-python src/scoring/task_aggregate.py      # → data/processed/scores_aufgaben.csv
+python src/scoring/task_aggregate.py      # → data/processed/scores_aufgaben.csv (Claude: Abo-Läufe, Standard)
 python src/scoring/task_vergleich.py      # → data/processed/bewertungen/vergleich.md
 ```
 
@@ -179,7 +180,8 @@ python src/scoring/task_scorer.py --provider claude-cli --pilot --runs 2 --dry-r
 python src/scoring/task_scorer.py --provider claude-cli --pilot --runs 2   # Vergleich mit den API-Läufen
 python src/scoring/task_vergleich.py                                       # Abschnitt «Claude über das Abo»
 python src/scoring/task_scorer.py --provider claude-cli --runs 2           # alle Einträge
-python src/scoring/task_aggregate.py --claude-source claude-cli            # Abo- statt API-Läufe für Claude
+python src/scoring/task_aggregate.py                                       # Standard: Abo-Läufe für Claude
+python src/scoring/task_aggregate.py --claude-source claude                # alternativ: API-Läufe
 ```
 
 - Gleicher System-Prompt (`--system-prompt-file`), gleiches Schema (`--json-schema`), gleiche
@@ -206,18 +208,33 @@ python src/scoring/task_aggregate.py --claude-source claude-cli            # Abo
   installierte Claude Code auf und liest keine Zugangsdaten; für Produkte, die Claude zur
   Laufzeit nutzen, verlangt die Doku API-Keys (die App tut das nicht).
 
-## 6. Ergebnisse committen und pushen
+## 6. In die App übernehmen, committen und pushen
 
 ```bash
-python src/scoring/task_aggregate.py
-git add data/processed/bewertungen/ data/processed/scores_aufgaben.csv
+python src/scoring/task_aggregate.py               # → scores_aufgaben.csv (englische Spalten: exposure, …)
+python src/scoring/apply_task_scores.py --dry-run  # prüfen: jeder Eintrag bewertet? was ändert sich?
+python src/scoring/apply_task_scores.py            # → scores.csv (Exposition, KMU-Zeitrahmen, adaptability)
+pytest tests/ -q                                   # u. a. Input-Hash-Test und App-Seiten
+streamlit run src/app/app.py                       # Ergebnis ansehen
+git add data/processed/bewertungen/ data/processed/scores_aufgaben.csv data/processed/scores.csv
 git commit -m "data: aufgabenbasierte Bewertung (Rubrik v2.2)"
 git push origin <branch>
 ```
 
+`apply_task_scores.py` bricht ab, wenn ein Eintrag von `scores.csv` keine gültige Bewertung hat
+(oder `scores_aufgaben.csv` Einträge enthält, die es in `scores.csv` nicht gibt) — dann die
+fehlenden Einträge bewerten bzw. `task_aggregate.py` neu laufen lassen. Es übernimmt die Spalten
+des Expositions-Blocks unverändert, setzt `timeframe_raw` (Median-Zeitrahmen der Läufe) und
+verschiebt ihn mit dem KMU-Faktor der Branche zu `timeframe`; `adaptability` wird neu berechnet
+(digitale Affinität = exposure). Ein zweiter Lauf ändert nichts.
+
 Die Zustandsdateien unter `bewertungen/<provider>/batches/` dürfen mit committet werden (keine
-Keys). Ein Push auf HuggingFace (`git push hf main`) ist nicht nötig — die App nutzt die neuen
-Werte erst nach dem separaten App-Umbau.
+Keys). Live geht die App erst mit `git push hf main` (HuggingFace Spaces).
+
+**Achtung Input-Hash:** Jede Änderung an Stammdaten, die in den Input eingehen (Titel, Synonyme,
+Qualifikation, Branche, ESCO-Zuordnung, ESCO-Kompetenzen), macht die betroffenen Bewertungen
+veraltet; `task_aggregate.py` verwendet sie dann nicht mehr und `apply_task_scores.py` bricht ab.
+Löhne und Beschäftigte gehen nicht in den Input ein.
 
 ## 7. Wenn etwas schiefgeht
 

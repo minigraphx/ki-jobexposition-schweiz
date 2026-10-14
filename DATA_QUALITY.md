@@ -1,28 +1,34 @@
 # Datenqualität & Korrektur-Historie
 
+Spaltennamen: seit #53 englisch (z. B. `occupation`, `employed_k`, `esco_match_quality`); Zuordnung
+alt → neu in `src/data/column_mapping.py`. Einträge der Korrektur-Historie vor #53 nennen die damaligen
+deutschen Namen.
+
 ## ESCO-Abdeckung und Match-Qualität (Stand 2026-10, nach #52)
 
 Referenz: **ESCO v1.2.1** (API mit `selectedVersion=v1.2.1`, CSV-Download de/en), © Europäische
 Union, CC BY 4.0; Beschreibungen ggf. gekürzt/angepasst. Entscheid und Begründung je Eintrag:
 `docs/audit_esco_zuordnungen.md`.
 
-| `esco_match_qualitaet` | Einträge | Beschäftigte (Tsd.) | Bedeutung |
+| `esco_match_quality` | Einträge | Beschäftigte (Tsd.) | Bedeutung |
 |---|---|---|---|
-| korrekt | 158 | 3'287.9 | ESCO-ISCO-4-Steller = `isco_code`, Tätigkeit abgedeckt |
-| plausibel | 18 | 252.9 | gleiche 3-stellige Gruppe, dokumentierte Ausnahme (`ISCO_AUSNAHMEN`) oder Teilgebiet |
+| korrekt | 164 | 3'374.0 | ESCO-ISCO-4-Steller = `isco_code`, Tätigkeit abgedeckt |
+| plausibel | 20 | 323.7 | gleiche 3-stellige Gruppe, dokumentierte Ausnahme (`ISCO_AUSNAHMEN`) oder Teilgebiet |
 | fallback | 3 | 26.1 | kein passender ESCO-Beruf: Drogist/in, Gymnasiallehrer/in, Maschinenführer/in (`KI-generiert`) |
 
-- **176 / 179** Einträge mit ESCO-URI, jede URI genau einmal; `esco_isco_code` = ISCO-Gruppe des
-  ESCO-Berufs; Titel deutsch aus der API. `beschreibung_quelle = ESCO` genau dann, wenn eine URI
-  gesetzt ist (Tests in `tests/test_esco_zuordnung.py`).
+- **184 / 187** Einträge mit ESCO-URI (die 179 Einträge des Audits plus 8 später ergänzte
+  SE-Berufsgattungen), jede URI genau einmal; `esco_isco_code` = ISCO-Gruppe des ESCO-Berufs;
+  Titel deutsch aus der API. `description_source = ESCO` genau dann, wenn eine URI gesetzt ist
+  (Tests in `tests/test_esco_zuordnung.py`).
 - Vorher (Audit der bisherigen Zuordnungen auf die 179 Einträge übertragen): 96 korrekt,
   45 plausibel-generisch, **33 falsch (950 Tsd. Beschäftigte)**, 5 ohne URI — davon 4 mit
   `beschreibung_quelle = ESCO`. Auf den 204 Berufen vor #51: 107 / 51 / 39 falsch (987 Tsd., ~26 %) / 7.
 - **ESCO-Kompetenzen** je Eintrag (wesentlich/optional, skill/knowledge, deutsch):
   `data/processed/esco_kompetenzen.csv` (10'032 Zeilen, aus dem CSV v1.2.1; mit der API abgeglichen).
-- `beschreibung_hash` wurde nicht neu berechnet → `exposure_scorer.py` bewertet die 89 Einträge mit
-  neuer Beschreibung beim nächsten Lauf neu (zusammen mit den 22 zusammengelegten: 101 Einträge).
-  Bis dahin beruhen deren Scores auf der alten (teils falschen) Beschreibung.
+- Alle 187 Einträge sind seit Oktober 2026 aufgabenbasiert auf den korrigierten Beschreibungen und
+  Kompetenzen bewertet (Rubrik v2.2). Jede Bewertung trägt den Hash ihrer Eingabedaten
+  (`meta.input_hash`); `tests/test_input_hash.py` prüft, dass alle gespeicherten Bewertungen zum
+  heutigen Stand passen. Eine geänderte ESCO-Zuordnung macht die Bewertung des Eintrags veraltet.
 - Offen: Fälle mit offenem ISCO-Code aus #51 (3312, 2422, 4415, 7421, 2146, 8211, 3522) nach
   Klärung des Codes neu zuordnen; berufsberatung.ch-Scraper an die neu aufgebaute Website
   anpassen (liefert derzeit nichts).
@@ -47,7 +53,7 @@ Union, CC BY 4.0; Beschreibungen ggf. gekürzt/angepasst. Entscheid und Begründ
 
 `KNOWN_WRONG_MATCHES` ist seit #52 leer (die früheren 25 Einträge — Abfallmakler-, Brennschneider-
 und 3D-Druck-Kontamination — sind behoben; 13 davon waren schon korrekt, viele Titel sind seit #51
-zusammengelegt). Neue bestätigte Fehlzuordnungen dort mit dem aktuellen `beruf`-Titel eintragen und
+zusammengelegt). Neue bestätigte Fehlzuordnungen dort mit dem aktuellen `occupation`-Titel eintragen und
 `enrich_with_esco.py --fix-wrong` ausführen. «Dipl.»-Titel: nur Dipl. Pflegefachperson (geprüft).
 
 ## Korrektur-Historie
@@ -65,13 +71,15 @@ zusammengelegt). Neue bestätigte Fehlzuordnungen dort mit dem aktuellen `beruf`
 | 2026-10 | ESCO-Audit und Neuzuordnung (#52, #48) | 83 URIs geändert, 89 Beschreibungen (v1.2.1), deutsche Titel, `beschreibung_quelle` korrigiert; neu `esco_isco_code`, `esco_match_qualitaet`, `esco_kompetenzen.csv`; Stufe 3 + ISCO-Prüfung in `enrich_with_esco.py`; Details `docs/audit_esco_zuordnungen.md` |
 | 2026-10 | Gruppe 22: Verhältniszahlen statt Salarium-Normierung, `lohn_verhaeltnisse.csv` | 2221/2211/2212 `LSE2024_2d+Verhaeltnis` (94'800 / 132'000 / 155'200 CHF); neue Spalte `lohn_unsicher` (2261, 2262); `score_ch` 2212; `adaptabilitaet` 163 Berufe (Min-Max-Skalierung) |
 | 2026-10 | Feste Lohnskala im Anpassungsfähigkeits-Score, `adaptability_scorer.py` | Lohnpunkte 0 bis 50'000 CHF, linear bis 3 bei 150'000 CHF, darüber 3 (statt Min-Max über alle Berufe); `adaptabilitaet` 176 von 179 Werten +0.0 bis +0.2 (Mittel 6.06 → 6.17); 5 Berufe 4.9 → 5.0 (Matrix: Stagnierend → Sicher) |
+| 2026-10 | Englische Spaltennamen (#53), `migrate_columns.py` | Alle CSVs in `data/processed/` umbenannt (nur Kopfzeilen, Zellwerte geprüft unverändert); Mapping `column_mapping.py`; Input-Hashes aller 802 gespeicherten Bewertungen unverändert |
+| 2026-10 | App auf aufgabenbasierte Scores umgestellt, `apply_task_scores.py` | Alle 187 Einträge: `exposure` (10·ζ) usw. aus `scores_aufgaben.csv` (Claude Opus 5.5 über Abo + Gemini 4 Argon, je 2–3 Läufe); 41 als `uncertain` markiert; Scores der früheren Methode entfernt (alter Endscore als `legacy_score`); Lohn- und Branchenzuschlag entfallen, Branche wirkt nur über den KMU-Zeitrahmen; `adaptability` mit exposure als Digital-Proxy (Mittel 6.17 → 5.70, jetzt für alle 187) |
 
 ## Löhne (LSE 2024)
 
-`lohn_median_chf` stammt seit Issue #45 aus der **BFS LSE 2024** (T17, Asset 36355224, nur
+`wage_median_chf` stammt seit Issue #45 aus der **BFS LSE 2024** (T17, Asset 36355224, nur
 2-stellige CH-ISCO-19-Gruppen, Monatsmedian × 12) statt aus der geschätzten `LOHN_MAP`
 («LSE 2022, geschätzt») bzw. den nicht belegbaren 4-stelligen Werten aus `build_berufeliste.py`.
-Herkunft je Beruf in `lohn_quelle`:
+Herkunft je Beruf in `wage_source`:
 
 - `LSE2024_2d` — Gruppenmedian (136 Berufe, inkl. Leitende Verwaltungsbedienstete 1112:
   Salarium hat für Führungskräfte der öffentlichen Verwaltung, NOGA 84, keine konsistenten Werte)
@@ -83,7 +91,7 @@ Herkunft je Beruf in `lohn_quelle`:
   aus `lohn_verhaeltnisse.csv` (nach der Salarium-Kalibrierung angewendet; 3 Berufe der Gruppe 22)
   — **Schätzung mit Band**, siehe unten
 - `LSE2024_1d` / `LSE2024_total` — Fallback für Gruppen ohne LSE-Wert (01–03, 63, 95; derzeit 0 Berufe)
-- Spalte `lohn_unsicher` = `True`: keine belegte Relation, Lohn nur Salarium-Modell (Zahnärzte 2261,
+- Spalte `wage_uncertain` = `True`: keine belegte Relation, Lohn nur Salarium-Modell (Zahnärzte 2261,
   Apotheker 2262)
 
 ### Gruppe 22: Verhältniszahlen statt Salarium-Normierung (2026-10)
@@ -152,11 +160,11 @@ den vollen SE-Wert (Doppelzählung, Σ 4'488.5 Tsd.), `scores.csv` enthielt eine
 - **Zuordnung:** `data/processed/beruf_berufsart_mapping.csv` (eine Zeile je Beruf, mit Begründung).
   Option B (Berufsarten) für 2330 Sekundar-/Gymnasiallehrer, 5131 Restaurantfachleute /
   Servicemitarbeitende, 5223 Verkäufer / Drogisten; sonst Fallback A (Zusammenlegung, 22 Einträge).
-- **Invariante:** Σ `beschaeftigte_1000` je 4-stelligem Code = SE-Wert (Test). Σ App 3'566.9 Tsd.
-  (SE total 4'583.7 Tsd.).
-- **Zusammengelegte Einträge:** SE-Bezeichnung als `beruf`, bisherige Titel in `synonyme`;
-  Scores vorläufig beschäftigungsgewichtetes Mittel (`scores_gemittelt = True`, leerer
-  `beschreibung_hash` → Neubewertung beim nächsten `exposure_scorer.py`-Lauf).
+- **Invariante:** Σ `employed_k` je 4-stelligem Code = SE-Wert (Test). Σ App 3'566.9 Tsd. nach
+  #51, mit den 8 später ergänzten Gattungen 3'723.8 Tsd. (SE total 4'583.7 Tsd.).
+- **Zusammengelegte Einträge:** SE-Bezeichnung als `occupation`, bisherige Titel in `synonyms`;
+  bis zur Umstellung waren die Scores ein beschäftigungsgewichtetes Mittel der Teilberufe, seit
+  Oktober 2026 ist jeder zusammengelegte Eintrag als Ganzes aufgabenbasiert bewertet.
 - **ISCO-Audit:** `docs/audit_isco_codes.md` — 21 Korrekturen (hoch), 15 offene Fälle (mittel), u. a.
   Qualitätsmanager/in (2146, SE 2024 nicht publiziert → 0.1 Tsd. aus 2022–2024),
   Versicherungskaufmann/-frau (3312), Maschinenführer/in (8211), Posthalter/in (4415).
@@ -164,19 +172,27 @@ den vollen SE-Wert (Doppelzählung, Σ 4'488.5 Tsd.), `scores.csv` enthielt eine
   Zimmermann/-frau inkl. Schreiner); durch Code-Korrekturen frei gewordene Gattungen ≥ 5 Tsd.
   (3123 Poliere 28.8, 3115 Maschinenbau-/Systemtechniker 12.0, 3434 Küchenchefs 9.6,
   7223 Werkzeugmaschineneinrichter 8.6, 3311 Wertpapierhändler 8.5, 3355 Polizeikommissare 8.5 Tsd.)
-  sind nicht mehr abgedeckt — Aufnahme über
-  `update_from_bfs.py --add-new` plus ESCO-Anreicherung und Scoring möglich.
+  waren nach #51 nicht mehr abgedeckt und sind seither über `update_from_bfs.py --add-new`
+  ergänzt, ESCO-zugeordnet und aufgabenbasiert bewertet.
 
-## Quality Audit Prozess
+## Qualitätssicherung der Bewertungen
 
-`full_quality_audit.py` prüft ob `haupt_risiko`/`begruendung` zum Berufstitel passt:
+Seit der aufgabenbasierten Bewertung (Rubrik v2.2):
 
-1. **Phase 1 (Haiku)**: Prüft alle 204 Beschreibungen auf inhaltliche Korrektheit
-2. **Phase 2 (Haiku)**: Generiert korrekte Berufsbeschreibung für fehlerhafte Jobs
-3. **Phase 3 (Sonnet)**: Re-Scoring mit korrigierten Beschreibungen
+1. **Schema-Validierung** jeder Antwort (JSON-Schema Draft 2020-12 inkl. Bedingungen, Zeitanteile
+   = 100, `isco_code`/`beruf` wie im Input); ungültige Antworten erhalten einen Korrekturversuch,
+   sonst werden sie verworfen (`task_rubrik.pruefe_bewertung`).
+2. **Zwei Modelle, mehrere Läufe:** Claude Opus 5.5 (Abo) und Gemini 4 Argon, je 2 Läufe, dritter
+   Lauf bei |Δζ| > 1.0 zwischen den Läufen eines Modells.
+3. **Unsicherheits-Markierung** (`uncertain`): Modell-Abweichung > 1.0, Läufe-Spannweite > 1.0 oder
+   < 2 gültige Läufe — in der App sichtbar (Matrix, Berufssuche).
+4. **Input-Hash:** Bewertungen gelten nur, solange die Eingabedaten unverändert sind
+   (`tests/test_input_hash.py`).
+5. **Validierung gegen Benchmarks:** Spearman ρ zu ILO 2025, Eloundou et al. und Anthropic Economic
+   Index (Methodik-Seite, `bewertungen/vergleich.md`).
 
-Wann ausführen: nach `--fix-wrong`-Läufen oder bei Verdacht auf neue Artefakte.
-Report: `data/processed/audit_report.json`
+Historisch: `full_quality_audit.py` (Haiku-Prüfung der Texte der früheren Methode, Report
+`data/processed/audit_report.json`) — bricht heute sofort ab.
 
 ## ESCO API — Hinweis
 
