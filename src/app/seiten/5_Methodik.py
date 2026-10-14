@@ -138,24 +138,13 @@ Branchen, Berufssuche).""" + (f""" Beispiel: **{beispiel['occupation']}** haben 
 Beschäftigungsgewichtet liegt die KI-Exposition aller erfassten Erwerbstätigen bei
 **{_f(expo_w)} von 10**.
 
-**Kein Lohn- und Branchenzuschlag mehr:** Die frühere Methode verschob den Score je nach Branche
-(−0,3 bis +0,4) und Lohnklasse (−0,2 bis +0,4). Beides ist entfallen: Die Tätigkeitsbewertung erfasst
-die Unterschiede direkt, und die Branche wirkt nur noch über den Zeitrahmen der Einführung
-(KMU-Faktor, unten). Die Expositionswerte sind damit reine Tätigkeitsmasse ohne Zuschläge.
+**Keine Zuschläge:** Branche und Lohn verändern die Exposition nicht. Die Tätigkeitsbewertung erfasst
+die Unterschiede direkt; die Branche wirkt nur auf den Zeitrahmen der Einführung (KMU-Faktor, unten).
 """)
 
-# ─── KMU-Adoptions-Faktor: STATENT-Anteile, Vergleich mit Betriebszählung 2008 ──
+# ─── KMU-Adoptions-Faktor: STATENT-Anteile ──
 # Schwellen wie in src/scoring/kmu_faktor.py (GROSSFIRMEN_SCHWELLE_HOCH / _TIEF)
 KMU_SCHWELLE_HOCH, KMU_SCHWELLE_TIEF = 0.50, 0.15
-# Bis Oktober 2026 verwendet: BZ 2008, Arbeitsstätten ≥250 VZÄ, Schwellen 0.40 / 0.10
-BZ2008_ANTEIL = {
-    "Bau": 0.0391, "Beratung": 0.139, "Bildung": 0.119, "Detailhandel": 0.0228,
-    "Dienstleistungen": 0.0943, "Finanzen": 0.2799, "Gastgewerbe": 0.0238,
-    "Gesundheit": 0.4893, "ICT": 0.3063, "Immobilien": 0.0395, "Industrie": 0.3138,
-    "Landwirtschaft": 0.0, "Medien": 0.1702, "Recht": 0.0696, "Sicherheit": 0.3297,
-    "Soziales": 0.045, "Transport": 0.2537, "Umwelt": 0.1583, "Versicherungen": 0.4653,
-    "Verwaltung": 0.0481, "Öff. Verwaltung": 0.1507,
-}
 
 
 def _verschiebung(anteil: float, hoch: float, tief: float) -> str:
@@ -178,17 +167,14 @@ KMU_MITTEL_TEXT = "–" if pd.isna(KMU_MITTEL) else f"{KMU_MITTEL * 100:.0f} %"
 kmu_vergleich = None
 if kmu_df is not None:
     zeilen = [
-        f"| Branche | STATENT {KMU_JAHR} (Unternehmen) | Verschiebung | BZ 2008 (Arbeitsstätten) "
-        "| Verschiebung bisher | Abdeckung |",
-        "|---|---:|:---:|---:|:---:|---:|",
+        f"| Branche | Grossfirmen-Anteil STATENT {KMU_JAHR} | Verschiebung | Abdeckung |",
+        "|---|---:|:---:|---:|",
     ]
     for _, r in kmu_df.sort_values("large_firm_share", ascending=False, na_position="last").iterrows():
-        alt = BZ2008_ANTEIL.get(r["sector"], float("nan"))
         abdeckung = r.get("coverage", float("nan"))
         zeilen.append(
             f"| {r['sector']} | {_prozent(r['large_firm_share'])} "
             f"| {_verschiebung(r['large_firm_share'], KMU_SCHWELLE_HOCH, KMU_SCHWELLE_TIEF)} "
-            f"| {_prozent(alt)} | {_verschiebung(alt, 0.40, 0.10)} "
             f"| {'–' if pd.isna(abdeckung) else f'{abdeckung * 100:.0f} %'} |"
         )
     kmu_vergleich = "\n".join(zeilen)
@@ -242,11 +228,6 @@ Exposition. Das Ergebnis steht in `timeframe`, die Verschiebung in `timeframe_sm
   STATENT-Arbeitsstätten dagegen nach ihrer eigenen Tätigkeit. Aus Datenschutzgründen gesperrte
   Zellen werden aus der Differenz zum Total geschätzt (Einfluss < 1 Prozentpunkt). Nur 2-stellige
   NOGA; ein Beruf gehört genau einer Branche.
-- **Frühere Werte:** Bis Oktober 2026 stammte der Anteil aus der **Betriebszählung 2008**
-  (Arbeitsstätten ≥ 250 Vollzeitäquivalente) mit Schwellen 40 % / 10 %. Weil dort jede Filiale
-  einzeln zählte, galten Detailhandel (2 %), Gastgewerbe (2 %) oder Soziales (5 %) als fast reine
-  KMU-Branchen; der Unternehmensbegriff liefert durchwegs höhere Anteile (Landesmittel 17 % → {KMU_MITTEL_TEXT}),
-  daher die neuen Schwellen.
 """)
 if kmu_vergleich is not None:
     st.markdown(kmu_vergleich)
@@ -295,26 +276,27 @@ keinen ISCO-08-Gegenwert.
 else:
     st.info("Benchmark-Datei nicht verfügbar.")
 
-st.subheader("Vergleich mit der früheren Methode")
-if df is not None and df["legacy_score"].notna().any():
-    alt_neu = df.dropna(subset=["legacy_score"]).assign(diff=lambda d: d["exposure"] - d["legacy_score"])
-    rho_alt, n_alt = g.spearman(alt_neu["legacy_score"], alt_neu["exposure"])
-    st.markdown(f"""
+with st.expander("Frühere Version (bis Oktober 2026) und Vergleich"):
+    if df is not None and df["legacy_score"].notna().any():
+        alt_neu = df.dropna(subset=["legacy_score"]).assign(diff=lambda d: d["exposure"] - d["legacy_score"])
+        rho_alt, n_alt = g.spearman(alt_neu["legacy_score"], alt_neu["exposure"])
+        st.markdown(f"""
 Bis Oktober 2026 bewertete ein Sprachmodell (Claude Sonnet 4.6) jeden Beruf **als Ganzes** nach fünf
 Kriterien (digitaler Output, Wiederholbarkeit, physische Präsenz, Kreativität, soziale Interaktion;
-Ansatz von Andrej Karpathy), dazu kamen Branchen- und Lohnzuschläge. Die Rangfolge der beiden
-Methoden stimmt nur mässig überein: **Spearman ρ = {_f(rho_alt, 2)}** ({n_alt} Berufe, die damals
-bewertet waren). Im Mittel liegt der neue Score tiefer ({_f(alt_neu['exposure'].mean())} statt
-{_f(alt_neu['legacy_score'].mean())}), weil er nur die Zeit zählt, die generative KI tatsächlich
-mindestens halbiert.
+Ansatz von Andrej Karpathy), dazu kamen Zuschläge je Branche (−0,3 bis +0,4) und Lohnklasse
+(−0,2 bis +0,4). Die Rangfolge der beiden Methoden stimmt nur mässig überein:
+**Spearman ρ = {_f(rho_alt, 2)}** ({n_alt} Berufe, die damals bewertet waren). Im Mittel liegt der neue
+Score tiefer ({_f(alt_neu['exposure'].mean())} statt {_f(alt_neu['legacy_score'].mean())}), weil er nur
+die Zeit zählt, die generative KI tatsächlich mindestens halbiert.
 """)
-    spalten = {"occupation": "Beruf", "legacy_score": "früher", "exposure": "neu", "diff": "Δ"}
-    for titel, auswahl in (("Grösste Rückgänge", alt_neu.nsmallest(6, "diff")),
-                           ("Grösste Zunahmen", alt_neu.nlargest(6, "diff"))):
-        st.markdown(f"**{titel}**")
-        st.dataframe(auswahl[list(spalten)].rename(columns=spalten).round(1), hide_index=True, width="stretch",
-                     column_config={"Beruf": st.column_config.TextColumn("Beruf", width="large")})
-    st.markdown("""
+        spalten = {"occupation": "Beruf", "legacy_score": "früher", "exposure": "neu", "diff": "Δ"}
+        for titel, auswahl in (("Grösste Rückgänge", alt_neu.nsmallest(6, "diff")),
+                               ("Grösste Zunahmen", alt_neu.nlargest(6, "diff"))):
+            st.markdown(f"**{titel}**")
+            st.dataframe(auswahl[list(spalten)].rename(columns=spalten).round(1), hide_index=True,
+                         width="stretch",
+                         column_config={"Beruf": st.column_config.TextColumn("Beruf", width="large")})
+        st.markdown("""
 Δ = neu − früher (Skala 0–10).
 
 **Warum sich die Werte verschieben:** Die alte Methode bewertete «Wiederholbarkeit» hoch — Routine
@@ -325,7 +307,20 @@ Automatisierung durch Selbstbedienung, Sortieranlagen oder Robotik steht jetzt s
 in denen viel Arbeitszeit auf Texte, Berichte, Auswertungen und Korrespondenz entfällt: Die
 Tätigkeitsliste macht diese Anteile sichtbar, die eine Gesamtbeurteilung des Berufs oft unterschätzte
 (z. B. durch einen Abzug für «soziale Interaktion»). Der alte Score steht als `legacy_score` in den
-Daten, wird aber nirgends mehr angezeigt ausser hier.
+Daten.
+""")
+    st.markdown("""
+**Weitere Änderungen gegenüber der früheren Version:**
+- **Anpassungsfähigkeit:** Das Kriterium «digitale Affinität» (2 Punkte, mit dem «digitalen Output»
+  der alten Bewertung als Proxy) ist entfallen.
+- **KMU-Faktor:** Der Grossfirmen-Anteil stammte aus der Betriebszählung 2008 (Arbeitsstätten
+  ≥ 250 Vollzeitäquivalente, Schwellen 40 % / 10 %). Weil dort jede Filiale einzeln zählte, galten
+  Detailhandel, Gastgewerbe oder Soziales (2–5 %) als fast reine KMU-Branchen; der Unternehmensbegriff
+  von STATENT liefert durchwegs höhere Anteile, daher die neuen Schwellen.
+- **Grenzgänger-Anteil:** Der Nenner kam ebenfalls aus der Betriebszählung 2008 (rund 4,2 statt
+  5,7 Mio. Beschäftigte); die Anteile lagen dadurch je nach Branche bis gut 7 Prozentpunkte zu hoch.
+- **Konvergenz-Heatmap (Branchen):** war eine qualitative Einschätzung; jetzt beruht sie auf den
+  Tätigkeitsbewertungen.
 """)
 
 st.divider()
@@ -353,10 +348,9 @@ Die Lohnpunkte eines Berufs hängen damit nur von seinem eigenen Lohn ab — ein
 Ausreisser (z. B. ein neuer Höchstlohn) verschiebt die Werte der übrigen Berufe nicht.
 Beispiele: 75'000 CHF → 0.75, 100'000 CHF → 1.5, 125'000 CHF → 2.25 Punkte.
 
-**Kein Kriterium «digitale Affinität» mehr:** Bis Oktober 2026 zählte es 2 Punkte, mit dem
-Teilkriterium «digitaler Output» der früheren Bewertung als Proxy. Dieses gibt es nicht mehr; die
-KI-Exposition als Ersatz wäre zirkulär — dieselbe Grösse stünde auf beiden Achsen der Matrix, und stark
-exponierte Berufe würden automatisch als anpassungsfähiger gelten. Die übrigen Kriterien korrelieren
+**Kein Kriterium «digitale Affinität»:** Ein geeignetes Mass je Beruf fehlt; die KI-Exposition als
+Ersatz wäre zirkulär — dieselbe Grösse stünde auf beiden Achsen der Matrix, und stark exponierte
+Berufe würden automatisch als anpassungsfähiger gelten. Die übrigen Kriterien korrelieren
 trotzdem mit der Exposition, weil Büro- und Wissensberufe meist höhere Bildung und Löhne haben.
 """)
 
@@ -643,9 +637,6 @@ Der Grenzgänger-Anteil pro Branche dient als zusätzlicher Kontext-Layer in der
   Jahr auseinander, bei leicht wachsendem Grenzgängerbestand ist der Anteil daher eher etwas zu
   hoch. STATENT zählt Personen mit Verträgen bei mehreren Unternehmen mehrfach, die GGS zählt
   Personen. Grenzgänger/-innen mit Schweizer Pass sind im Zähler nicht enthalten.
-- **Frühere Werte:** Bis Oktober 2026 wurde der Anteil mit dem Nenner der Betriebszählung 2008
-  berechnet (rund 4,2 statt 5,7 Mio. Beschäftigte); die Anteile lagen dadurch je nach Branche bis
-  gut 7 Prozentpunkte zu hoch.
 """)
 
 

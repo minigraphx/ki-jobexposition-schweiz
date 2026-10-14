@@ -196,7 +196,8 @@ def test_methodik_abdeckung_und_match_qualitaet():
     assert f"**korrekt** ({int((df['esco_match_quality'] == 'korrekt').sum())})" in texte
     assert "Version 1.2.1" in texte and "CC BY 4.0" in texte and "Haiku" not in texte
     assert f"**{int(df['uncertain'].sum())} von {len(df)} Berufen**" in texte
-    for wort in ("E0", "E1", "E2", "ζ", "dritter", "KMU-Adoptions-Faktor", "Lohn- und Branchenzuschlag"):
+    for wort in ("E0", "E1", "E2", "ζ", "dritter", "KMU-Adoptions-Faktor", "Keine Zuschläge",
+                 "Betriebszählung 2008", "qualitative Einschätzung"):
         assert wort in texte, wort
 
 

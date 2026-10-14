@@ -184,6 +184,5 @@ st.caption(
     "Software** und **Physische Automatisierung** = Tätigkeiten, die Technik ohne generative KI übernehmen "
     "kann (Regel-Software bzw. Robotik, Automaten, Selbstbedienung). Die Farbe zeigt den Wert relativ zum "
     "Höchstwert der jeweiligen Welle, damit auch die kleinen Werte der klassischen Automatisierung "
-    "vergleichbar sind; sortiert nach dem Mittel dieser relativen Werte (Konvergenz-Index). Bis Oktober "
-    "2026 war die Heatmap eine qualitative Einschätzung; jetzt beruht sie auf den Tätigkeitsbewertungen."
+    "vergleichbar sind; sortiert nach dem Mittel dieser relativen Werte (Konvergenz-Index)."
 )
