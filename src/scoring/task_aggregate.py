@@ -169,9 +169,9 @@ def zeile(e: ti.Eintrag, je_provider: dict[str, list[Lauf]]) -> dict:
     gruende = []
     if len(alle) < 2:
         gruende.append(f"nur {len(alle)} gültige(r) Lauf/Läufe")
-    if not math.isnan(z["delta_provider"]) and z["delta_provider"] > PROVIDER_SCHWELLE:
+    if not math.isnan(z["delta_provider"]) and tr.ueber_schwelle(z["delta_provider"], PROVIDER_SCHWELLE):
         gruende.append(f"Provider-Abweichung {z['delta_provider']:.1f} > {PROVIDER_SCHWELLE:g}")
-    if not math.isnan(z["delta_laeufe"]) and z["delta_laeufe"] > LAEUFE_SCHWELLE:
+    if not math.isnan(z["delta_laeufe"]) and tr.ueber_schwelle(z["delta_laeufe"], LAEUFE_SCHWELLE):
         gruende.append(f"Läufe-Spannweite {z['delta_laeufe']:.1f} > {LAEUFE_SCHWELLE:g}")
     z["flag_unsicher"] = bool(gruende)
     z["flag_grund"] = "; ".join(gruende) or None

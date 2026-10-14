@@ -297,6 +297,12 @@ def kennzahlen(bewertung: dict) -> dict:
     return res
 
 
+def ueber_schwelle(wert: float, schwelle: float) -> bool:
+    """wert > schwelle ohne Gleitkomma-Rauschen: Scores sind Summen von Prozentanteilen, eine Differenz
+    von genau 1.0 ergibt je nach Plattform 0.9999999999999 oder 1.0000000000002."""
+    return round(float(wert), 9) > schwelle
+
+
 def zeta_score(bewertung: dict) -> float:
     """10·ζ einer (ggf. nicht exakt auf 100 summierenden) Bewertung."""
     return kennzahlen(normiere(bewertung))["score_aufgaben"]

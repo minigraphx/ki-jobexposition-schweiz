@@ -775,7 +775,7 @@ def zeta_aus_datei(daten: dict | None) -> float | None:
 
 def braucht_dritten_lauf(d1: dict | None, d2: dict | None, schwelle: float = DRITTER_LAUF_SCHWELLE) -> bool:
     z1, z2 = zeta_aus_datei(d1), zeta_aus_datei(d2)
-    return z1 is not None and z2 is not None and abs(z1 - z2) > schwelle
+    return z1 is not None and z2 is not None and tr.ueber_schwelle(abs(z1 - z2), schwelle)
 
 
 # --------------------------------------------------------------------------- Dry-Run / Kosten

@@ -1434,3 +1434,12 @@ def test_gemini_ohne_response_schema_batch(tmp_path, gemini_key):
     a = ts.parse_args(["--provider", "gemini", "--no-response-schema"])
     assert ts.erstelle_bewerter(a).response_schema is False
     assert ts.erstelle_bewerter(ts.parse_args(["--provider", "gemini"])).response_schema is True
+
+
+def test_schwelle_ohne_gleitkomma_rauschen():
+    assert not tr.ueber_schwelle(1.0000000000002, 1.0) and not tr.ueber_schwelle(0.9999999999999, 1.0)
+    assert tr.ueber_schwelle(1.05, 1.0) and not tr.ueber_schwelle(1.0, 1.0)
+    # Differenz zweier ζ-Scores von genau 1.0 löst keinen dritten Lauf aus
+    knapp_darunter, knapp_darueber = 0.7 + 0.2 + 0.1, 0.1 * 3 / 0.3       # 0.9999999999999999 / 1.0000000000000002
+    assert knapp_darunter != 1.0 and knapp_darueber != 1.0
+    assert not tr.ueber_schwelle(knapp_darunter, 1.0) and not tr.ueber_schwelle(knapp_darueber, 1.0)
