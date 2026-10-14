@@ -344,7 +344,7 @@ does not import `src/scoring` (no jsonschema in `requirements.txt`). Pages in `s
 
 | File | Menu Title | Content |
 |------|-----------|---------|
-| `0_Startseite.py` | Startseite | Method intro, key metrics (weighted exposure, critical zone = exposure > 6 and adaptability below the employment-weighted median), women share highlight |
+| `0_Startseite.py` | Startseite | Method intro, key metrics (weighted exposure, critical zone = exposure > 6 and adaptability ≤ the employment-weighted median), women share highlight |
 | `1_Treemap.py` | Treemap | Size = `employed_k`, colour selectable: exposure / time_savings / physical_automation |
 | `2_Matrix.py` | Matrix | X = adaptability, Y = exposure or physical_automation; uncertain entries as diamonds; hover with Claude/Gemini values |
 | `3_Branchen.py` | Branchen | Employment-weighted exposure per sector, cross-border context, convergence heatmap from task metrics |
@@ -392,7 +392,7 @@ App reads `data/processed/scores.csv`, `kmu_anteil_branche.csv`, `grenzgaenger_a
 | `large_firm_share` | BFS STATENT 2024 (`kmu_faktor.py`) | Share of sector's employed persons in enterprises ≥250 employed; empty for Öff. Verwaltung |
 | `timeframe_sme_shift` | `kmu_faktor.py` | −1 (share ≥50 %), 0, +1 (share <15 %) |
 | `timeframe` | `kmu_faktor.py` | `timeframe_raw` shifted by `timeframe_sme_shift` |
-| `adaptability` | `adaptability_scorer.py` | Adaptability 0–10 (rule-based: education, wage points on a fixed 50k–150k CHF scale, sector mobility; scaled × 10/8; independent of exposure). App critical zone = exposure > 6 and adaptability below the employment-weighted median (`gemeinsam.schwelle_anpassung`) |
+| `adaptability` | `adaptability_scorer.py` | Adaptability 0–10 (rule-based: education, wage points on a fixed 50k–150k CHF scale, sector mobility; scaled × 10/8; independent of exposure). App critical zone = exposure > 6 and adaptability ≤ the employment-weighted median (`gemeinsam.schwelle_anpassung`; ≤ because values are rounded to 0.1 and large jobs sit exactly on the median) |
 | `legacy_score` | former method | Old final score (`score_ch`, Karpathy-style holistic rating + sector/wage deltas); only for the old-vs-new comparison on the Methodik page; empty for the 8 entries added later |
 
 ## Datenqualität

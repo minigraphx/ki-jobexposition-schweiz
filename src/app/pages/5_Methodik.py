@@ -363,10 +363,10 @@ trotzdem mit der Exposition, weil Büro- und Wissensberufe meist höhere Bildung
 st.subheader("Kritische Zone: Schwellen und ihre Wirkung")
 _schwelle = g.schwelle_anpassung(df)
 _varianten = [
-    (f"Anpassungsfähigkeit unter dem Median der Erwerbstätigen ({_schwelle:.1f}) — verwendet", _schwelle),
-    (f"Anpassungsfähigkeit höchstens {_schwelle:.1f} (Median eingeschlossen)", _schwelle + 1e-9),
-    (f"Anpassungsfähigkeit unter {g.SCHWELLE_ANPASSUNG_FEST:g} (feste Schwelle)", g.SCHWELLE_ANPASSUNG_FEST),
-    ("Anpassungsfähigkeit unter 6 (feste Schwelle)", 6.0),
+    (f"Anpassungsfähigkeit höchstens im Median der Erwerbstätigen ({_schwelle:.1f}) — verwendet", _schwelle),
+    (f"Anpassungsfähigkeit unter dem Median ({_schwelle:.1f}, Median ausgeschlossen)", _schwelle - 0.05),
+    (f"Anpassungsfähigkeit unter {g.SCHWELLE_ANPASSUNG_FEST:g} (feste Schwelle)", g.SCHWELLE_ANPASSUNG_FEST - 0.05),
+    ("Anpassungsfähigkeit unter 6 (feste Schwelle)", 5.95),
 ]
 _zeilen = []
 for _name, _s in _varianten:
@@ -376,10 +376,16 @@ for _name, _s in _varianten:
                     "Frauenanteil": g.prozent(g.gewichtet(_k, "women_pct")) if not _k.empty else "–"})
 st.markdown(f"""
 Die kritische Zone umfasst Berufe mit hoher KI-Exposition (Score > {g.SCHWELLE_EXPOSITION:g}) und
-unterdurchschnittlicher Anpassungsfähigkeit. «Unterdurchschnittlich» ist relativ definiert: unter dem
-beschäftigungsgewichteten Median aller Berufe ({_schwelle:.1f}), d. h. die Hälfte der Erwerbstätigen
-arbeitet in Berufen mit tieferem Wert. Eine feste Zahl wäre willkürlicher, weil die Lage der Skala von
-der Zusammensetzung der Kriterien abhängt.
+höchstens durchschnittlicher Anpassungsfähigkeit, relativ definiert: höchstens der
+beschäftigungsgewichtete Median aller Berufe ({_schwelle:.1f}) — die Hälfte der Erwerbstätigen arbeitet
+in Berufen mit tieferem Wert. Eine feste Zahl wäre willkürlicher, weil die Lage der Skala von der
+Zusammensetzung der Kriterien abhängt. Der Median selbst wird eingeschlossen: Die Werte sind auf 0.1
+gerundet, auf dem Median liegen mehrere grosse Büroberufe, und ob sie dazugehören, hinge sonst allein an
+der Rundung. Zum Vergleich: Die Brookings-Studie (Manning & Aguirre) nimmt das oberste Viertel der
+Exposition und eine tiefe Anpassungsfähigkeit; ihr Index enthält aber Ersparnisse, Alter, regionale
+Arbeitsmarktdichte und Übertragbarkeit der Fähigkeiten — Grössen, die für die Schweiz nicht je Beruf
+vorliegen. Unser Index (Bildung, Lohn, Branchenmobilität) stuft Berufe mit Lehrabschluss und
+Schweizer Löhnen höher ein, deshalb landen die Büroberufe nur knapp in der Zone.
 
 Das Ergebnis reagiert stark auf diese Wahl — die Zone ist eine Lesehilfe, keine scharfe Grenze:
 """)

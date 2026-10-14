@@ -62,8 +62,8 @@ if df is not None:
                       help=f"Anteil an allen erfassten Erwerbstätigen: "
                            f"{g.prozent(hoch['employed_k'].sum() / df['employed_k'].sum() * 100)}")
     spalten[4].metric("Kritische Zone", len(kritisch),
-                      help=f"Score > 6 (stark exponiert) und Anpassungsfähigkeit unter {schwelle:.1f} — dem Median "
-                           "aller Erwerbstätigen (unterdurchschnittlich anpassungsfähig)")
+                      help=f"Score > 6 (stark exponiert) und Anpassungsfähigkeit höchstens {schwelle:.1f} — dem Median "
+                           "aller Erwerbstätigen (nicht überdurchschnittlich anpassungsfähig)")
 
     # Frauen-Highlight (Brookings-Befund), neu berechnet
     frauen_hoch = g.gewichtet(hoch, "women_pct")
@@ -91,7 +91,7 @@ if df is not None:
             "exponiert — die Brookings/GovAI-Studie (2024) fand für den US-Markt sogar 86 % Frauen in "
             "der kritischen Zone (hoch exponiert *und* schwer anpassbar). In der Schweiz liegt nach "
             "dieser Bewertung **kein Beruf in der kritischen Zone** (Score > 6 und Anpassungsfähigkeit "
-            f"unter dem Median {schwelle:.1f}).{tief_text}",
+            f"höchstens im Median {schwelle:.1f}).{tief_text}",
         )
 
 st.divider()

@@ -130,10 +130,14 @@ def schwelle_anpassung(df: pd.DataFrame) -> float:
 
 
 def kritische_zone(df: pd.DataFrame, schwelle: float | None = None, spalte: str = "exposure") -> pd.DataFrame:
-    """Stark exponiert (> SCHWELLE_EXPOSITION) und unterdurchschnittlich anpassungsfähig
-    (unter dem beschäftigungsgewichteten Median aller Berufe, sofern keine Schwelle angegeben)."""
+    """Stark exponiert (> SCHWELLE_EXPOSITION) und nicht überdurchschnittlich anpassungsfähig
+    (höchstens der beschäftigungsgewichtete Median aller Berufe, sofern keine Schwelle angegeben).
+
+    «Höchstens» statt «unter»: Die Werte sind auf 0.1 gerundet; auf dem Median liegen oft mehrere
+    Berufe, und ein grosser Beruf bestimmt den Median selbst. Mit «unter» hinge die Zugehörigkeit
+    dieser Gruppe allein an der Rundung."""
     s = schwelle_anpassung(df) if schwelle is None else schwelle
-    return df[(df[spalte] > SCHWELLE_EXPOSITION) & (df["adaptability"] < s)]
+    return df[(df[spalte] > SCHWELLE_EXPOSITION) & (df["adaptability"] <= s + 1e-9)]
 
 
 # --------------------------------------------------------------------------- Bewertungsdateien

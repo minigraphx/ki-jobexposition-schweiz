@@ -21,6 +21,7 @@ if df is None:
     st.stop()
 
 X, YS = g.schwelle_anpassung(df), g.SCHWELLE_EXPOSITION
+XG = X + 0.05     # Zonengrenze: halber Rundungsschritt rechts vom Median (Berufe genau auf dem Median gehören dazu)
 
 st.markdown(f"""
 Die Matrix zeigt zwei Dimensionen:
@@ -28,7 +29,7 @@ Die Matrix zeigt zwei Dimensionen:
   die **physische Automatisierung** (Robotik, Automaten, Selbstbedienung ohne generative KI)
 - **X-Achse: Anpassungsfähigkeit** (0 = schwer anzupassen, 10 = sehr flexibel)
 
-**Kritische Zone (rot, oben links):** Score > {YS:g} und Anpassungsfähigkeit unter {X:.1f}, dem Median
+**Kritische Zone (rot, oben links):** Score > {YS:g} und Anpassungsfähigkeit höchstens {X:.1f}, dem Median
 aller Erwerbstätigen (die Hälfte arbeitet in Berufen mit tieferem Wert) → höchstes Risiko.
 Punktgrösse = Erwerbstätige.
 """)
@@ -41,8 +42,8 @@ y_label = g.LABELS[y_spalte]
 fig = go.Figure()
 
 # Quadranten-Hintergrund (dezent; nur die kritische Zone farbig)
-for x0, x1, y0, y1, farbe in [(0, X, YS, 10, "rgba(208,59,59,0.10)"), (X, 10, YS, 10, "rgba(250,178,25,0.08)"),
-                              (0, X, 0, YS, "rgba(137,135,129,0.06)"), (X, 10, 0, YS, "rgba(12,163,12,0.05)")]:
+for x0, x1, y0, y1, farbe in [(0, XG, YS, 10, "rgba(208,59,59,0.10)"), (XG, 10, YS, 10, "rgba(250,178,25,0.08)"),
+                              (0, XG, 0, YS, "rgba(137,135,129,0.06)"), (XG, 10, 0, YS, "rgba(12,163,12,0.05)")]:
     fig.add_shape(type="rect", x0=x0, y0=y0, x1=x1, y1=y1, fillcolor=farbe, line=dict(width=0), layer="below")
 for x, y, text, farbe, ausrichtung in [
         (0.15, 9.7, "KRITISCH", "rgba(208,59,59,0.9)", "left"),

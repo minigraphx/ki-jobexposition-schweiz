@@ -69,10 +69,10 @@ def test_startseite_kennzahlen():
     metriken = {m.label: m.value for m in at.metric}
     assert metriken["Analysierte Berufe"] == str(len(df))
     assert metriken["Stark exponiert (Score > 6)"] == str(int((df["exposure"] > 6).sum()))
-    # kritische Zone: exposure > 6 und adaptability unter dem beschäftigungsgewichteten Median
+    # kritische Zone: exposure > 6 und adaptability höchstens im beschäftigungsgewichteten Median
     d = df[["adaptability", "employed_k"]].dropna().sort_values("adaptability", kind="mergesort")
     median = d.loc[d["employed_k"].cumsum() / d["employed_k"].sum() >= 0.5, "adaptability"].iloc[0]
-    kritisch = df[(df["exposure"] > 6) & (df["adaptability"] < median)]
+    kritisch = df[(df["exposure"] > 6) & (df["adaptability"] <= median)]
     assert metriken["Kritische Zone"] == str(len(kritisch))
     w = df[df["exposure"] > 6]
     frauen = (w["women_pct"] * w["employed_k"]).sum() / w["employed_k"].sum()
