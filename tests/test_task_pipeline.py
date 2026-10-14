@@ -13,6 +13,7 @@ import math
 import re
 import socket
 import subprocess
+import sys
 import threading
 from collections import Counter
 from pathlib import Path
@@ -1375,3 +1376,37 @@ def test_cli_laeufe_getrennt_und_aggregation_mit_claude_source(tmp_path, monkeyp
     z = df[df["isco_code"] == "2512"].iloc[0]
     assert z["n_laeufe_claude"] == 1 and z["claude_quelle"] == "claude-cli" and z["text_quelle"] == "claude-cli/run1"
     assert df.loc[df["isco_code"] != "2512", "claude_quelle"].isna().all()
+
+
+def test_skriptaufruf_batch_collect_mit_abgeschnittener_antwort(tmp_path, monkeypatch, gemini_key):
+    """Als Skript (__main__) gestartet: Fehler des Bewerters müssen in task_batch abgefangen werden.
+
+    Regression: main() lief in __main__, task_batch importierte task_scorer erneut → zwei Klassen
+    AntwortFehler; eine im Batch abgeschnittene Antwort brach `--batch collect` mit Traceback ab.
+    """
+    import runpy
+
+    from google import genai
+    from google.genai import types
+    fake = FakeGeminiBatch()
+    monkeypatch.setattr(genai, "Client", lambda **kw: fake)
+    skript = str(Path(ts.__file__))
+
+    def starte(*args):
+        monkeypatch.setattr(sys, "argv", [skript, "--provider", "gemini", "--only", "2512", "--runs", "1",
+                                          "--out", str(tmp_path), *args])
+        with pytest.raises(SystemExit) as ex:
+            runpy.run_path(skript, run_name="__main__")
+        return ex.value.code
+
+    assert starte("--batch", "submit") == 0
+    z = tb.lade_zustaende(tmp_path, "gemini")[0][1]
+    cid = z["reihenfolge"][0]
+    abgeschnitten = types.GenerateContentResponse.model_validate({
+        "candidates": [{"content": {"role": "model", "parts": [{"text": "{"}]}, "finish_reason": "MAX_TOKENS"}],
+        "model_version": "gemini-4-argon", "usage_metadata": {"prompt_token_count": 1, "thoughts_token_count": 32767}})
+    fake.fertig(z["batch_id"], [types.InlinedResponse(response=abgeschnitten, metadata={"custom_id": cid})])
+    starte("--batch", "collect")                                  # kein Traceback
+    d = json.loads(next((tmp_path / "gemini" / "run1").glob("2512_*.json")).read_text(encoding="utf-8"))
+    assert d["meta"]["status"] == "fehlgeschlagen" and "abgeschnitten (max_output_tokens = 32768)" in d["meta"]["fehler"][0]
+    assert tb.lade_zustaende(tmp_path, "gemini")[0][1]["eingesammelt"]

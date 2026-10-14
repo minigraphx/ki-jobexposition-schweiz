@@ -1166,4 +1166,8 @@ def main(argv: list[str] | None = None, bewerter: Any = None,
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    # Über den Modulnamen ausführen: task_batch importiert «task_scorer»; liefe main() hier in __main__,
+    # gäbe es zwei Kopien der Klassen (__main__.AntwortFehler ≠ task_scorer.AntwortFehler) und
+    # «except ts.AntwortFehler» in task_batch griffe bei Fehlern des Bewerters nicht.
+    import task_scorer
+    sys.exit(task_scorer.main())
