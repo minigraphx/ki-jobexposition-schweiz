@@ -10,77 +10,204 @@
     "beruf": "IT-Projektleiter/in",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 45,
+      "candidates_token_count": 2121,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 45
+          "token_count": 2121
         }
       ],
-      "prompt_token_count": 22492,
+      "prompt_token_count": 22453,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22492
+          "token_count": 22453
         }
       ],
-      "thoughts_token_count": 7554,
-      "total_token_count": 30091
+      "thoughts_token_count": 6900,
+      "total_token_count": 31474
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 45,
+        "candidates_token_count": 2121,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 45
+            "token_count": 2121
           }
         ],
-        "prompt_token_count": 22492,
+        "prompt_token_count": 22453,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22492
+            "token_count": 22453
           }
         ],
-        "thoughts_token_count": 7554,
-        "total_token_count": 30091
+        "thoughts_token_count": 6900,
+        "total_token_count": 31474
       }
     ],
     "request_ids": [
-      "nrnOauW_K-npz7IP896zyAM"
+      "XjzPaoDsCvSAz7IP5t2zgAs"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: [] is too short"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-2511_it_projektleiter_in",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: [] is too short"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"2511\",\"beruf\":\"IT-Projektleiter/in\",\"taetigkeiten\":[\n  ]}"
+  "bewertung": {
+    "isco_code": "2511",
+    "beruf": "IT-Projektleiter/in",
+    "taetigkeiten": [
+      {
+        "name": "Projektmeetings, Workshops und agile Zeremonien (z. B. Sprint Planning, SteerCo) leiten und moderieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare zwischenmenschliche Präsenz- und Moderationstätigkeit, deren Wert in der aktiven Gesprächsführung und Konsensfindung liegt."
+      },
+      {
+        "name": "Projektteam fachlich koordinieren, Aufgaben priorisieren, Blockaden lösen und Teammitglieder coachen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führungs- und Beziehungstätigkeit im Projektalltag, bei der menschliche Interaktion, Motivation und situative Problemlösung dominieren."
+      },
+      {
+        "name": "Mit Auftraggebern, Stakeholdern und Lieferanten verhandeln sowie Konflikte bei Zielabweichungen lösen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlungsführung, Erwartungsmanagement und Konfliktlösung erfordern persönlichen Kontakt, Empathie und Durchsetzungsvermögen."
+      },
+      {
+        "name": "Projektspezifikationen, Pflichtenhefte, Epics und User Stories aus Workshop-Ergebnissen ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus rohen Workshop-Notizen strukturierte Spezifikationen, User Stories und Akzeptanzkriterien; die Projektleitung steuert den Kontext und prüft jede Anforderung fachlich."
+      },
+      {
+        "name": "Termin-, Meilenstein- und Ressourcenpläne im Projektmanagement-Tool erstellen und laufend nachführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Hauptaufwand liegt in der laufenden Abstimmung realer Ressourcenverfügbarkeiten und technischer Abhängigkeiten zwischen Teams, wobei generative KI weniger als 50 % Zeit spart."
+      },
+      {
+        "name": "Projektbudget, Stunden und Lieferantenrechnungen kontrollieren sowie Abweichungsanalysen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Datenanalyse in Tabellen- oder ERP-Systemen gleicht Leistungsrapporte, Rechnungen und Budgets ab und markiert Ausreisser, während die Projektleitung jede Position selbst beurteilt. Regelbasierte Soll-Ist-Abgleiche lassen sich zudem durch klassische ERP-/PPM-Software automatisieren."
+      },
+      {
+        "name": "Statusberichte, Business Cases, Änderungsanträge und Projektabschlussberichte verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Aus eingegebenen Projektdaten und Stichworten entwirft ein Chat-LLM Berichte, Kosten-Nutzen-Analysen und Change Requests; die Projektleitung prüft und verantwortet jedes Dokument vor Vorlage im Steuerungsausschuss."
+      },
+      {
+        "name": "Sitzungsprotokolle, Entscheidungs- und Pendenzenlisten erstellen sowie im Projekt-Wiki pflegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Transkriptions- und Wiki-Integrationen (z. B. in Teams und Confluence) erstellen Protokolle und Pendenzen automatisch; wegen Schweizerdeutsch, IT-Fachjargon und Vertragsrelevanz prüft die Projektleitung jedes Protokoll inhaltlich."
+      },
+      {
+        "name": "Projektrisiken sowie rechtliche Vorgaben analysieren, bewerten und Massnahmenkataloge erarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Projektleitung bewertet Eintrittswahrscheinlichkeit und Tragweite der Risiken selbst, während das Chat-LLM auf Basis von Projektdaten und Richtlinien (z. B. Datenschutz, IT-Sicherheit) potenzielle Risiken und Gegenmassnahmen vorschlägt."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: IT-Projektleiter/in in einem grösseren Schweizer KMU, IT-Dienstleister oder Verwaltungsverband mit hybrider Projektmethodik (z. B. HERMES/Scrum). Offensichtliches ESCO-Rauschen (Blockchain-Entwicklung) sowie reine Linienführungsaufgaben (Personal einstellen, da ISCO 2511 statt 1330) wurden bereinigt. Die Trennlinie verläuft klar zwischen hoher zwischenmenschlicher Führungs- und Verhandlungsarbeit (E0) und stark exponierter Dokumentations-, Spezifikations- und Berichtstätigkeit (E1/E2).",
+    "zusammenfassung": {
+      "haupt_risiko": "Das Ausarbeiten von Spezifikationen und User Stories, das Verfassen von Statusberichten und Business Cases, die Protokollierung sowie das Projektcontrolling werden durch Chat-LLMs, Transkriptions-Tools und KI-Datenanalyse stark beschleunigt.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind gegenüber generativer KI exponiert, während die restlichen 60 % auf Moderation, Teamkoordination, Verhandlungen und laufende Ressourcenabstimmung entfallen. Die KI wirkt überwiegend delegierend (Entwurf von Spezifikationen, Berichten und Protokollen mit Einzelprüfung) sowie unterstützend (Risiko- und Budgetanalyse); gebremst wird der Einsatz in der Schweiz vor allem durch Datenschutz- und Geheimhaltungsvorgaben bei Aufzeichnungen sowie mehrsprachige Governance-Anforderungen.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
 }

@@ -10,83 +10,223 @@
     "beruf": "Versicherungsexperte/-expertin",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 442,
+      "candidates_token_count": 2291,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 442
+          "token_count": 2291
         }
       ],
-      "prompt_token_count": 22304,
+      "prompt_token_count": 22265,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22304
+          "token_count": 22265
         }
       ],
-      "thoughts_token_count": 6021,
-      "total_token_count": 28767
+      "thoughts_token_count": 5541,
+      "total_token_count": 30097
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 442,
+        "candidates_token_count": 2291,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 442
+            "token_count": 2291
           }
         ],
-        "prompt_token_count": 22304,
+        "prompt_token_count": 22265,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22304
+            "token_count": 22265
           }
         ],
-        "thoughts_token_count": 6021,
-        "total_token_count": 28767
+        "thoughts_token_count": 5541,
+        "total_token_count": 30097
       }
     ],
     "request_ids": [
-      "nrnOaumvLri-_PUPrrqE6QQ"
+      "XjzPao6_DfSAz7IP5t2zgAs"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: taetigkeiten/0: 'Broker-Ausschreibungen (Submissions), Antragsdokumente und Schadenverläufe sichten und im Underwriting-System strukturieren' is not of type 'object'; taetigkeiten/1: 'Jahresabschlüsse, Bonitätsdaten und finanzielle Tragfähigkeit von Unternehmenskunden analysieren' is not of type 'object'; taetigkeiten/2: 'Technische Inspektionsberichte, Immobilienunterlagen und Präventionsmassnahmen prüfen sowie Risikoauflagen formulieren' is not of type 'object'; taetigkeiten/3: 'Risikomodelle, Prämien und Selbstbehalte in der Tarifierungssoftware kalkulieren' is not of type 'object'; taetigkeiten/4: 'Zeichnungsentscheide über komplexe oder ausserordentliche Versicherungsrisiken fällen' is not of type 'object'; taetigkeiten/5: 'Individuelle Versicherungspolicen, Spezialklauseln und Vertragsbedingungen (Wordings) entwerfen und prüfen' is not of type 'object'; taetigkeiten/6: 'Vertragsmodalitäten, Prämien und Deckungskonzepte mit Brokern, Grosskunden und Rückversicherern verhandeln' is not of type 'object'; taetigkeiten/7: 'Versicherungsportfolios überwachen, Schadenquoten auswerten und Risikoberichte für das Management erstellen' is not of type 'object'; taetigkeiten/8: 'Zeichnungsrichtlinien (Underwriting Guidelines) und Produktvorgaben ausarbeiten und aktualisieren' is not of type 'object'; zusammenfassung: 'Grosses Automatisierungspotenzial mit starker menschlicher Kontrollfunktion.' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-2422_versicherungsexperte_expertin",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "taetigkeiten/0: 'Broker-Ausschreibungen (Submissions), Antragsdokumente und Schadenverläufe sichten und im Underwriting-System strukturieren' is not of type 'object'",
-      "taetigkeiten/1: 'Jahresabschlüsse, Bonitätsdaten und finanzielle Tragfähigkeit von Unternehmenskunden analysieren' is not of type 'object'",
-      "taetigkeiten/2: 'Technische Inspektionsberichte, Immobilienunterlagen und Präventionsmassnahmen prüfen sowie Risikoauflagen formulieren' is not of type 'object'",
-      "taetigkeiten/3: 'Risikomodelle, Prämien und Selbstbehalte in der Tarifierungssoftware kalkulieren' is not of type 'object'",
-      "taetigkeiten/4: 'Zeichnungsentscheide über komplexe oder ausserordentliche Versicherungsrisiken fällen' is not of type 'object'",
-      "taetigkeiten/5: 'Individuelle Versicherungspolicen, Spezialklauseln und Vertragsbedingungen (Wordings) entwerfen und prüfen' is not of type 'object'",
-      "taetigkeiten/6: 'Vertragsmodalitäten, Prämien und Deckungskonzepte mit Brokern, Grosskunden und Rückversicherern verhandeln' is not of type 'object'",
-      "taetigkeiten/7: 'Versicherungsportfolios überwachen, Schadenquoten auswerten und Risikoberichte für das Management erstellen' is not of type 'object'",
-      "taetigkeiten/8: 'Zeichnungsrichtlinien (Underwriting Guidelines) und Produktvorgaben ausarbeiten und aktualisieren' is not of type 'object'",
-      "zusammenfassung: 'Grosses Automatisierungspotenzial mit starker menschlicher Kontrollfunktion.' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"2422\",\"beruf\":\"Versicherungsexperte/-expertin\",\"taetigkeiten\":[\n  \"Broker-Ausschreibungen (Submissions), Antragsdokumente und Schadenverläufe sichten und im Underwriting-System strukturieren\",\n  \"Jahresabschlüsse, Bonitätsdaten und finanzielle Tragfähigkeit von Unternehmenskunden analysieren\",\n  \"Technische Inspektionsberichte, Immobilienunterlagen und Präventionsmassnahmen prüfen sowie Risikoauflagen formulieren\",\n  \"Risikomodelle, Prämien und Selbstbehalte in der Tarifierungssoftware kalkulieren\",\n  \"Zeichnungsentscheide über komplexe oder ausserordentliche Versicherungsrisiken fällen\",\n  \"Individuelle Versicherungspolicen, Spezialklauseln und Vertragsbedingungen (Wordings) entwerfen und prüfen\",\n  \"Vertragsmodalitäten, Prämien und Deckungskonzepte mit Brokern, Grosskunden und Rückversicherern verhandeln\",\n  \"Versicherungsportfolios überwachen, Schadenquoten auswerten und Risikoberichte für das Management erstellen\",\n  \"Zeichnungsrichtlinien (Underwriting Guidelines) und Produktvorgaben ausarbeiten und aktualisieren\"\n],\"unsicherheit\":\"niedrig\",\"kommentar\":\"Angenommenes Setting: Versicherungsexperte/-expertin (Senior/Corporate Underwriter bzw. Fachspezialist/in Risikoprüfung und Produkte) bei einer Schweizer Erst- oder Rückversicherungsgesellschaft im Unternehmens- und Spezialgeschäft. Die ESCO-Zuordnung zum Underwriter (ISCO 3321) wurde auf das tertiäre Schweizer Anforderungsprofil (ISCO 2422) ausgerichtet; bankenspezifische ESCO-Kompetenzen (Darlehensverträge) wurden zugunsten der versicherungstechnischen Risikoprüfung und Richtlinienarbeit bereinigt.\",\"zusammenfassung\":\"Grosses Automatisierungspotenzial mit starker menschlicher Kontrollfunktion.\"}"
+  "bewertung": {
+    "isco_code": "2422",
+    "beruf": "Versicherungsexperte/-expertin",
+    "taetigkeiten": [
+      {
+        "name": "Antragsunterlagen, Geschäftsberichte und Inspektionsberichte sichten und Risikodaten aufbereiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumenten-KI extrahiert Kennzahlen, Schadenhistorien und Risikofaktoren aus heterogenen PDFs, Bilanzen und Besichtigungsberichten und erstellt eine strukturierte Risikoübersicht; die Fachperson prüft jede Aufbereitung anhand der Originalakten."
+      },
+      {
+        "name": "Komplexe Versicherungs- und Finanzrisiken sowie Schadenverläufe analysieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Der Experte beurteilt die technische und finanzielle Tragfähigkeit sowie Kumulrisiken selbst; KI-gestützte Analysewerkzeuge liefern Auswertungen von Schadenverläufen, Bilanzkennzahlen und Branchenbenchmarks."
+      },
+      {
+        "name": "Prämien, Selbstbehalte und Deckungslimiten mit Tarifierungsmodellen kalkulieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Prämienberechnung folgt mathematisch-aktuariellen Modellen und wird durch klassische Tarifierungssoftware (Rating-Engines) ohne generative KI automatisiert."
+      },
+      {
+        "name": "Individuelle Vertragsklauseln, Spezialdeckungen und Wordings ausarbeiten und prüfen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft auf Basis eingefügter AVB und Risikoparameter spezifische Klauseln oder gleicht Broker-Wordings mit internen Standards ab; die Fachperson prüft jede Klausel fachlich und rechtlich."
+      },
+      {
+        "name": "Zeichnungsentscheide über komplexe Risiken treffen und im Gremium verantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der eigentliche Risikoentscheid im Einzelfall sowie das Vertreten im Underwriting-Komitee erfordern menschliches Ermessen und Zeichnungskompetenz."
+      },
+      {
+        "name": "Mit Brokern, Unternehmenskunden und Rückversicherern über Konditionen verhandeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlungen über Prämien, Deckungsumfang und Beteiligungen beruhen auf persönlicher Interaktion, Überzeugungsarbeit und Vertrauensbeziehungen."
+      },
+      {
+        "name": "Zeichnungsrichtlinien, Produktkonzepte und interne Fachweisungen ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Die Fachperson entwickelt die Risikopolitik und Produktlogik selbst, während ein Chat-LLM Textentwürfe, Strukturierungen und sprachliche Adaptionen liefert."
+      },
+      {
+        "name": "Vor-Ort-Risikoprüfungen begleiten und Auflagen zur Risikominimierung vereinbaren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz bei Betriebsbesichtigungen von Grosskunden und persönliche Abstimmung von Sicherheitsmassnahmen mit Risikoingenieuren."
+      },
+      {
+        "name": "Standardofferten, Deckungsbestätigungen und Policendokumente im Fachsystem erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Integrierte KI-Funktionen im Bestandessystem erstellen Offertdokumente und Begleitschreiben weitgehend automatisch zur Freigabe; für strukturierte Standardpolicen leistet dies auch klassische Bestandesverwaltungssoftware."
+      },
+      {
+        "name": "Komplexe Deckungsanfragen von Vertrieb, Brokern und Schadenabteilung schriftlich beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft auf Basis eingefügter Vertragsbedingungen und Sachverhalte die fachliche Stellungnahme; der Experte prüft jede Auskunft vor dem Versand auf Haftungs- und Deckungsfolgen."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Versicherungsexperte/-expertin (Senior Underwriter / Fachspezialist/in Underwriting und Produktmanagement im Unternehmensgeschäft) bei einer Schweizer Versicherungsgesellschaft. Die ESCO-Vorlage vermischt das Versicherungs-Underwriting teilweise mit US-spezifischer Hypothekar- und Darlehensprüfung (ISCO 3321); diese sachfremden Anteile wurden zugunsten der Schweizer Berufspraxis auf Tertiärstufe (ISCO 2422) bereinigt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Vor allem das Aufbereiten von Antrags- und Risikodokumenten, das Entwerfen und Prüfen von Vertragsklauseln sowie das Ausarbeiten von Richtlinien und Deckungsauskünften werden durch Dokumenten-KI, Datenanalyse-Werkzeuge und Chat-LLMs stark verändert.",
+      "begruendung": "Rund 65 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei der delegierende und unterstützende Modus überwiegen, da komplexe Risikobeurteilungen und Vertragsklauseln im Unternehmensgeschäft zwingend fachlich geprüft werden müssen. Lediglich die Erstellung von Standardofferten lässt sich ersetzend automatisieren, während Verhandlungen mit Brokern, Vor-Ort-Termine und die eigentlichen Zeichnungsentscheide beim Menschen bleiben. In der Schweiz bremsen strenge Datenschutz- und Aufsichtsvorgaben (revDSG, FINMA, VVG) sowie die Mehrsprachigkeit der Vertragswerke (DE/FR/IT/EN) eine ungeprüfte Übernahme von KI-Ergebnissen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

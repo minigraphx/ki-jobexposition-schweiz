@@ -10,83 +10,198 @@
     "beruf": "Lieferwagenfahrer/in",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 1691,
+      "candidates_token_count": 2055,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 1691
+          "token_count": 2055
         }
       ],
-      "prompt_token_count": 21541,
+      "prompt_token_count": 21502,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21541
+          "token_count": 21502
         }
       ],
-      "thoughts_token_count": 4766,
-      "total_token_count": 27998
+      "thoughts_token_count": 7014,
+      "total_token_count": 30571
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 1691,
+        "candidates_token_count": 2055,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 1691
+            "token_count": 2055
           }
         ],
-        "prompt_token_count": 21541,
+        "prompt_token_count": 21502,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21541
+            "token_count": 21502
           }
         ],
-        "thoughts_token_count": 4766,
-        "total_token_count": 27998
+        "thoughts_token_count": 7014,
+        "total_token_count": 30571
       }
     ],
     "request_ids": [
-      "nrnOavqKLLzi_uMP6aHG6Ag"
+      "XTzPasWCAv7oz7IP17yB4Qw"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: taetigkeiten/0: '{name: \"Lieferwagen im Stadt-, Überland- und Autobahnverkehr zu den Zielorten lenken\", zeitanteil_pct: 40, stufe: \"E0\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \"P0\", p_art: null, sicherheit: \"hoch\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \"Rein physische Fahrtätigkeit im Strassenverkehr; fahrerlose Lieferwagen sind im regulären Schweizer Strassennetz weder zugelassen noch kommerziell verfügbar.\"}' is not of type 'object'; taetigkeiten/1: '{name: \"Pakete und Güter am Zustellort entladen und zur Haustür, Etage oder Rampe transportieren\", zeitanteil_pct: 20, stufe: \"E0\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \"P0\", p_art: null, sicherheit: \"hoch\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \"Physische Arbeit vor Ort beim Tragen und Manövrieren von Sendungen über Treppen, Gehwege und Laderampen; keine Robotik für die Feinverteilung im regulären Einsatz verfügbar.\"}' is not of type 'object'; taetigkeiten/2: '{name: \"Sendungen im Depot nach Tour sortieren, in den Lieferwagen einladen und Ladung sichern\", zeitanteil_pct: 15, stufe: \"E0\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \"P0\", p_art: null, sicherheit: \"hoch\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \"Manuelle physische Tätigkeit beim Stauen verschiedenartiger Pakete und Gebinde im Laderaum sowie beim Anbringen der Ladungssicherung.\"}' is not of type 'object'; taetigkeiten/3: '{name: \"Sendungen bei Übernahme und Zustellung scannen sowie elektronische Empfangsbestätigungen einholen\", zeitanteil_pct: 5, stufe: \"E0\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \"P0\", p_art: null, sicherheit: \"hoch\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \"Physische Handhabung des Handscanners direkt am Paket und an der Haustür mittels klassischer Barcode-Technik ohne Einsatz generativer KI.\"}' is not of type 'object'; taetigkeiten/4: '{name: \"Waren persönlich an Kundschaft übergeben, Lieferscheine abgleichen und Nachnahmen abrechnen\", zeitanteil_pct: 5, stufe: \"E0\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \"P0\", p_art: null, sicherheit: \"hoch\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \"Unmittelbare Präsenz- und Interaktionstätigkeit bei der persönlichen Übergabe quittungspflichtiger Sendungen oder gewerblicher Warenlieferungen vor Ort.\"}' is not of type 'object'; taetigkeiten/5: '{name: \"Tagestour, Stoppreihenfolge und Umfahrungen bei Verkehrsstörungen planen und anpassen\", zeitanteil_pct: 5, stufe: \"E0\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \"P1\", p_art: \"software\", sicherheit: \"hoch\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \"Die Berechnung optimaler Routen, Zeitfenster und Stauumfahrungen erfolgt durch klassische algorithmische Tourenplanungs- und Navigationssoftware und benötigt kein Sprachmodell.\"}' is not of type 'object'; taetigkeiten/6: '{name: \"Transportschäden, Annahmeverweigerungen und besondere Zustellvorfälle dokumentieren\", zeitanteil_pct: 3, stufe: \"E2\", modus: \"delegierend\", restzeit_mensch: \"30-50\", physisch_automatisierbar: \"P0\", p_art: null, sicherheit: \"tief\", sicherheit_begruendung: \"Unklar, ob in der Praxis genügend Freitext- und Schadensmeldungen anfallen, damit Spracheingabe und Bilderkennung gegenüber Standard-Statuscodes im Scanner mindestens 50 % Zeit sparen; E0 ist ebenso plausibel.\", ch_hemmnis: [], begruendung: \"Per Foto und Spracheingabe in der Fahrer-App erstellt die KI einen strukturierten Schadens- oder Vorfallbericht in Standardsprache; die Fahrperson prüft und bestätigt jeden Eintrag vor dem Absenden.\"}' is not of type 'object'; taetigkeiten/7: '{name: \"Mit Disposition und Kundschaft bei Adressproblemen oder geschlossenen Zugängen telefonisch Rücksprache halten\", zeitanteil_pct: 3, stufe: \"E0\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \"P0\", p_art: null, sicherheit: \"hoch\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \"Situative Echtzeit-Abstimmung direkt vor Ort bei physischen Zustellhindernissen, bei der generative KI dem Fahrpersonal keine 50 % der Zeit abnimmt.\"}' is not of type 'object'; taetigkeiten/8: '{name: \"Lieferwagen vor Fahrtantritt auf Betriebssicherheit prüfen, auftanken bzw. laden und reinigen\", zeitanteil_pct: 4, stufe: \"E0\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \"P0\", p_art: null, sicherheit: \"hoch\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \"Manuelle Sicht- und Funktionskontrolle am Fahrzeug, Tank- oder Ladevorgang sowie Reinigung von Fahrerkabine und Laderaum.\"}' is not of type 'object'; zusammenfassung: '{haupt_risiko: \"Einzig die Dokumentation von Transportschäden und besonderen Zustellvorfällen per Spracheingabe und Foto im Handscanner ist durch multimodale KI exponiert, während die Fahr-, Lade- und Zustellarbeit unberührt bleibt.\", begruendung: \"Lediglich rund 3 % der Arbeitszeit entfallen auf exponierte Dokumentationsaufgaben, bei denen die KI im delegierenden Modus aus Sprachnotizen und Fotos strukturierte Schadens- oder Vorfallmeldungen erstellt, die das Fahrpersonal kurz prüft. Über 95 % der Tätigkeit bestehen aus dem physischen Lenken des Lieferwagens, dem Be- und Entladen sowie der persönlichen Zustellung vor Ort, wofür keine generative KI einsetzbar ist. Die Routen- und Tourenoptimierung wird durch klassische Dispositionssoftware gelöst, und die Feinverteilung an Wohn- und Geschäftsadressen erfordert weiterhin durchgängig menschliche Präsenz.\", zeitrahmen: \"5-10 Jahre\"}' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-8322_lieferwagenfahrer_in",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "taetigkeiten/0: '{name: \"Lieferwagen im Stadt-, Überland- und Autobahnverkehr zu den Zielorten lenken\", zeitanteil_pct: 40, stufe: \"E0\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \"P0\", p_art: null, sicherheit: \"hoch\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \"Rein physische Fahrtätigkeit im Strassenverkehr; fahrerlose Lieferwagen sind im regulären Schweizer Strassennetz weder zugelassen noch kommerziell verfügbar.\"}' is not of type 'object'",
-      "taetigkeiten/1: '{name: \"Pakete und Güter am Zustellort entladen und zur Haustür, Etage oder Rampe transportieren\", zeitanteil_pct: 20, stufe: \"E0\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \"P0\", p_art: null, sicherheit: \"hoch\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \"Physische Arbeit vor Ort beim Tragen und Manövrieren von Sendungen über Treppen, Gehwege und Laderampen; keine Robotik für die Feinverteilung im regulären Einsatz verfügbar.\"}' is not of type 'object'",
-      "taetigkeiten/2: '{name: \"Sendungen im Depot nach Tour sortieren, in den Lieferwagen einladen und Ladung sichern\", zeitanteil_pct: 15, stufe: \"E0\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \"P0\", p_art: null, sicherheit: \"hoch\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \"Manuelle physische Tätigkeit beim Stauen verschiedenartiger Pakete und Gebinde im Laderaum sowie beim Anbringen der Ladungssicherung.\"}' is not of type 'object'",
-      "taetigkeiten/3: '{name: \"Sendungen bei Übernahme und Zustellung scannen sowie elektronische Empfangsbestätigungen einholen\", zeitanteil_pct: 5, stufe: \"E0\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \"P0\", p_art: null, sicherheit: \"hoch\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \"Physische Handhabung des Handscanners direkt am Paket und an der Haustür mittels klassischer Barcode-Technik ohne Einsatz generativer KI.\"}' is not of type 'object'",
-      "taetigkeiten/4: '{name: \"Waren persönlich an Kundschaft übergeben, Lieferscheine abgleichen und Nachnahmen abrechnen\", zeitanteil_pct: 5, stufe: \"E0\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \"P0\", p_art: null, sicherheit: \"hoch\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \"Unmittelbare Präsenz- und Interaktionstätigkeit bei der persönlichen Übergabe quittungspflichtiger Sendungen oder gewerblicher Warenlieferungen vor Ort.\"}' is not of type 'object'",
-      "taetigkeiten/5: '{name: \"Tagestour, Stoppreihenfolge und Umfahrungen bei Verkehrsstörungen planen und anpassen\", zeitanteil_pct: 5, stufe: \"E0\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \"P1\", p_art: \"software\", sicherheit: \"hoch\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \"Die Berechnung optimaler Routen, Zeitfenster und Stauumfahrungen erfolgt durch klassische algorithmische Tourenplanungs- und Navigationssoftware und benötigt kein Sprachmodell.\"}' is not of type 'object'",
-      "taetigkeiten/6: '{name: \"Transportschäden, Annahmeverweigerungen und besondere Zustellvorfälle dokumentieren\", zeitanteil_pct: 3, stufe: \"E2\", modus: \"delegierend\", restzeit_mensch: \"30-50\", physisch_automatisierbar: \"P0\", p_art: null, sicherheit: \"tief\", sicherheit_begruendung: \"Unklar, ob in der Praxis genügend Freitext- und Schadensmeldungen anfallen, damit Spracheingabe und Bilderkennung gegenüber Standard-Statuscodes im Scanner mindestens 50 % Zeit sparen; E0 ist ebenso plausibel.\", ch_hemmnis: [], begruendung: \"Per Foto und Spracheingabe in der Fahrer-App erstellt die KI einen strukturierten Schadens- oder Vorfallbericht in Standardsprache; die Fahrperson prüft und bestätigt jeden Eintrag vor dem Absenden.\"}' is not of type 'object'",
-      "taetigkeiten/7: '{name: \"Mit Disposition und Kundschaft bei Adressproblemen oder geschlossenen Zugängen telefonisch Rücksprache halten\", zeitanteil_pct: 3, stufe: \"E0\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \"P0\", p_art: null, sicherheit: \"hoch\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \"Situative Echtzeit-Abstimmung direkt vor Ort bei physischen Zustellhindernissen, bei der generative KI dem Fahrpersonal keine 50 % der Zeit abnimmt.\"}' is not of type 'object'",
-      "taetigkeiten/8: '{name: \"Lieferwagen vor Fahrtantritt auf Betriebssicherheit prüfen, auftanken bzw. laden und reinigen\", zeitanteil_pct: 4, stufe: \"E0\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \"P0\", p_art: null, sicherheit: \"hoch\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \"Manuelle Sicht- und Funktionskontrolle am Fahrzeug, Tank- oder Ladevorgang sowie Reinigung von Fahrerkabine und Laderaum.\"}' is not of type 'object'",
-      "zusammenfassung: '{haupt_risiko: \"Einzig die Dokumentation von Transportschäden und besonderen Zustellvorfällen per Spracheingabe und Foto im Handscanner ist durch multimodale KI exponiert, während die Fahr-, Lade- und Zustellarbeit unberührt bleibt.\", begruendung: \"Lediglich rund 3 % der Arbeitszeit entfallen auf exponierte Dokumentationsaufgaben, bei denen die KI im delegierenden Modus aus Sprachnotizen und Fotos strukturierte Schadens- oder Vorfallmeldungen erstellt, die das Fahrpersonal kurz prüft. Über 95 % der Tätigkeit bestehen aus dem physischen Lenken des Lieferwagens, dem Be- und Entladen sowie der persönlichen Zustellung vor Ort, wofür keine generative KI einsetzbar ist. Die Routen- und Tourenoptimierung wird durch klassische Dispositionssoftware gelöst, und die Feinverteilung an Wohn- und Geschäftsadressen erfordert weiterhin durchgängig menschliche Präsenz.\", zeitrahmen: \"5-10 Jahre\"}' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"8322\",\"beruf\":\"Lieferwagenfahrer/in\",\"taetigkeiten\":[\n    \"{name: \\\"Lieferwagen im Stadt-, Überland- und Autobahnverkehr zu den Zielorten lenken\\\", zeitanteil_pct: 40, stufe: \\\"E0\\\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \\\"P0\\\", p_art: null, sicherheit: \\\"hoch\\\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \\\"Rein physische Fahrtätigkeit im Strassenverkehr; fahrerlose Lieferwagen sind im regulären Schweizer Strassennetz weder zugelassen noch kommerziell verfügbar.\\\"}\",\n  \"{name: \\\"Pakete und Güter am Zustellort entladen und zur Haustür, Etage oder Rampe transportieren\\\", zeitanteil_pct: 20, stufe: \\\"E0\\\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \\\"P0\\\", p_art: null, sicherheit: \\\"hoch\\\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \\\"Physische Arbeit vor Ort beim Tragen und Manövrieren von Sendungen über Treppen, Gehwege und Laderampen; keine Robotik für die Feinverteilung im regulären Einsatz verfügbar.\\\"}\",\n  \"{name: \\\"Sendungen im Depot nach Tour sortieren, in den Lieferwagen einladen und Ladung sichern\\\", zeitanteil_pct: 15, stufe: \\\"E0\\\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \\\"P0\\\", p_art: null, sicherheit: \\\"hoch\\\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \\\"Manuelle physische Tätigkeit beim Stauen verschiedenartiger Pakete und Gebinde im Laderaum sowie beim Anbringen der Ladungssicherung.\\\"}\",\n  \"{name: \\\"Sendungen bei Übernahme und Zustellung scannen sowie elektronische Empfangsbestätigungen einholen\\\", zeitanteil_pct: 5, stufe: \\\"E0\\\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \\\"P0\\\", p_art: null, sicherheit: \\\"hoch\\\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \\\"Physische Handhabung des Handscanners direkt am Paket und an der Haustür mittels klassischer Barcode-Technik ohne Einsatz generativer KI.\\\"}\",\n  \"{name: \\\"Waren persönlich an Kundschaft übergeben, Lieferscheine abgleichen und Nachnahmen abrechnen\\\", zeitanteil_pct: 5, stufe: \\\"E0\\\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \\\"P0\\\", p_art: null, sicherheit: \\\"hoch\\\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \\\"Unmittelbare Präsenz- und Interaktionstätigkeit bei der persönlichen Übergabe quittungspflichtiger Sendungen oder gewerblicher Warenlieferungen vor Ort.\\\"}\",\n  \"{name: \\\"Tagestour, Stoppreihenfolge und Umfahrungen bei Verkehrsstörungen planen und anpassen\\\", zeitanteil_pct: 5, stufe: \\\"E0\\\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \\\"P1\\\", p_art: \\\"software\\\", sicherheit: \\\"hoch\\\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \\\"Die Berechnung optimaler Routen, Zeitfenster und Stauumfahrungen erfolgt durch klassische algorithmische Tourenplanungs- und Navigationssoftware und benötigt kein Sprachmodell.\\\"}\",\n  \"{name: \\\"Transportschäden, Annahmeverweigerungen und besondere Zustellvorfälle dokumentieren\\\", zeitanteil_pct: 3, stufe: \\\"E2\\\", modus: \\\"delegierend\\\", restzeit_mensch: \\\"30-50\\\", physisch_automatisierbar: \\\"P0\\\", p_art: null, sicherheit: \\\"tief\\\", sicherheit_begruendung: \\\"Unklar, ob in der Praxis genügend Freitext- und Schadensmeldungen anfallen, damit Spracheingabe und Bilderkennung gegenüber Standard-Statuscodes im Scanner mindestens 50 % Zeit sparen; E0 ist ebenso plausibel.\\\", ch_hemmnis: [], begruendung: \\\"Per Foto und Spracheingabe in der Fahrer-App erstellt die KI einen strukturierten Schadens- oder Vorfallbericht in Standardsprache; die Fahrperson prüft und bestätigt jeden Eintrag vor dem Absenden.\\\"}\",\n  \"{name: \\\"Mit Disposition und Kundschaft bei Adressproblemen oder geschlossenen Zugängen telefonisch Rücksprache halten\\\", zeitanteil_pct: 3, stufe: \\\"E0\\\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \\\"P0\\\", p_art: null, sicherheit: \\\"hoch\\\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \\\"Situative Echtzeit-Abstimmung direkt vor Ort bei physischen Zustellhindernissen, bei der generative KI dem Fahrpersonal keine 50 % der Zeit abnimmt.\\\"}\",\n  \"{name: \\\"Lieferwagen vor Fahrtantritt auf Betriebssicherheit prüfen, auftanken bzw. laden und reinigen\\\", zeitanteil_pct: 4, stufe: \\\"E0\\\", modus: null, restzeit_mensch: null, physisch_automatisierbar: \\\"P0\\\", p_art: null, sicherheit: \\\"hoch\\\", sicherheit_begruendung: null, ch_hemmnis: [], begruendung: \\\"Manuelle Sicht- und Funktionskontrolle am Fahrzeug, Tank- oder Ladevorgang sowie Reinigung von Fahrerkabine und Laderaum.\\\"}\"\n],\"unsicherheit\":\"niedrig\",\"kommentar\":\"Angenommenes Setting: Lieferwagenfahrer/in (Fahrzeuge bis 3,5 t) bei Kurier-, Express- und Paketdiensten (KEP) sowie im regionalen Auslieferverkehr von Handels- und Gewerbebetrieben in der Schweiz. Die ESCO-Daten passen gut zum Berufsbild. Der Arbeitsalltag ist stark durch das physische Fahren, Be- und Entladen sowie die Feinverteilung geprägt; die Tourenoptimierung wird durch klassische Dispositions- und Navigationssoftware (P1) abgedeckt, während generative KI nur bei der Dokumentation von Schäden und Vorfällen (E2) relevant ist.\",\"zusammenfassung\":\n  \"{haupt_risiko: \\\"Einzig die Dokumentation von Transportschäden und besonderen Zustellvorfällen per Spracheingabe und Foto im Handscanner ist durch multimodale KI exponiert, während die Fahr-, Lade- und Zustellarbeit unberührt bleibt.\\\", begruendung: \\\"Lediglich rund 3 % der Arbeitszeit entfallen auf exponierte Dokumentationsaufgaben, bei denen die KI im delegierenden Modus aus Sprachnotizen und Fotos strukturierte Schadens- oder Vorfallmeldungen erstellt, die das Fahrpersonal kurz prüft. Über 95 % der Tätigkeit bestehen aus dem physischen Lenken des Lieferwagens, dem Be- und Entladen sowie der persönlichen Zustellung vor Ort, wofür keine generative KI einsetzbar ist. Die Routen- und Tourenoptimierung wird durch klassische Dispositionssoftware gelöst, und die Feinverteilung an Wohn- und Geschäftsadressen erfordert weiterhin durchgängig menschliche Präsenz.\\\", zeitrahmen: \\\"5-10 Jahre\\\"}\"\n}"
+  "bewertung": {
+    "isco_code": "8322",
+    "beruf": "Lieferwagenfahrer/in",
+    "taetigkeiten": [
+      {
+        "name": "Lieferwagen im Strassen- und Stadtverkehr zu den Zustellorten lenken und parkieren",
+        "zeitanteil_pct": 40,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Fahrtätigkeit im Strassenverkehr; autonom fahrende Lieferwagen sind in der Schweiz 2026 im regulären Verkehr weder zugelassen noch kommerziell verfügbar."
+      },
+      {
+        "name": "Sendungen im Depot auf Unversehrtheit prüfen, nach Tour sortieren und im Laderaum sichern",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Sortieren, Einladen und Sichern verschiedenartiger Pakete und Güter im Kleintransporter; keine marktreife Robotik für die Fahrzeugbeladung im regulären Einsatz."
+      },
+      {
+        "name": "Pakete und Güter am Zielort entladen und bis zur Haustür, Rampe oder Etage transportieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein körperliche Arbeit auf der letzten Meile (Heben, Tragen, Treppensteigen, Sackkarre nutzen), die nicht durch verfügbare Robotik übernommen werden kann."
+      },
+      {
+        "name": "Sendungen persönlich an Kundschaft übergeben, Empfang quittieren lassen sowie Retouren und Zahlungen abwickeln",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Präsenz- und Übergabetätigkeit beim Empfänger vor Ort; Paketautomaten decken nur einen kleinen Teil des gesamten Liefervolumens ab."
+      },
+      {
+        "name": "Pakete mit Handscanner oder Zustell-App scannen und Sendungsstatus im System verbuchen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Barcode-Erfassung am Zustellort mit dem Handscanner; weder generative KI noch weitere nicht-generative Technik spart hier mindestens 50 % der verbleibenden Handgriffe."
+      },
+      {
+        "name": "Tagestour, Zeitfenster und Ausweichrouten bei Verkehrsbehinderungen planen und anpassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Routenberechnung, Reihenfolgeoptimierung und dynamische Stauumfahrung werden durch klassische algorithmische Dispositions- und GPS-Navigationssoftware übernommen, nicht durch Sprachmodelle."
+      },
+      {
+        "name": "Fahrzeug vor Fahrtantritt kontrollieren, betanken oder laden sowie reinigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeiten am Fahrzeug (Sichtkontrolle, Tanken bzw. Einstecken an der Ladesäule, Innenraum- und Aussenreinigung)."
+      },
+      {
+        "name": "Telefonische Rücksprachen mit Disposition und Empfängern bei Lieferhindernissen oder Terminabweichungen führen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze, situative Echtzeit-Absprachen von unterwegs (z. B. verschlossener Zugang, abweichender Abstellort), bei denen die Fahrperson selbst unmittelbar Rückmeldung benötigt."
+      },
+      {
+        "name": "Lieferscheine, Fahrzeugübergabeprotokolle und Schadensmeldungen mit Fotos und Bemerkungen erfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Da viele Meldungen in modernen Zustell-Apps bereits über kurze Standard-Auswahlfelder laufen, ist unsicher, ob generative KI über alle Protokolle hinweg ≥ 50 % Zeit spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Multimodale KI in der Fahrer-App erstellt aus Schadensfotos, gescannten Lieferscheinen und kurzen Spracheingaben strukturierte Meldungen; die Fahrperson prüft jeden Eintrag vor dem Absenden."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Lieferwagenfahrer/in (Kleintransporter bis 3,5 t) im Kurier-, Express- und Paketdienst (KEP) sowie in der allgemeinen Warenauslieferung in der Schweiz. Das ESCO-Profil bildet das Berufsbild gut ab. Der Beruf ist fast vollständig durch physische Fahr-, Lade- und Zustelltätigkeiten geprägt; einziger Grenzfall für generative KI ist die mobile Dokumentation von Schäden und Abweichungen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Von generativer KI betroffen ist lediglich das Erfassen von Schadensmeldungen, Lieferscheinen und Fahrzeugübergabeprotokollen mittels multimodaler Sprach- und Bilderkennung in der Fahrer-App; die eigentliche Fahr- und Zustellarbeit bleibt unberührt.",
+      "begruendung": "Nur rund 3 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI im delegierenden Modus aus Sprachnotizen und Fotos strukturierte Meldungen erstellt, die von der Fahrperson geprüft werden. Über 95 % der Arbeitszeit entfallen auf das physische Führen des Lieferwagens im Schweizer Strassen- und Stadtverkehr, das Be- und Entladen sowie die persönliche Übergabe vor Ort, während die Touren- und Routenoptimierung durch klassische Navigations- und Dispositionssoftware abgedeckt wird. Spezifische regulatorische oder kulturelle CH-Hemmnisse für die geringe exponierte Dokumentation bestehen kaum, jedoch erschweren Umgebungsgeräusche und Dialekt in der Praxis die Spracheingabe.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }

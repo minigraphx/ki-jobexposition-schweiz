@@ -10,87 +10,198 @@
     "beruf": "Uhrmacher, Uhrenarbeiter, Mikromechaniker",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 114,
+      "candidates_token_count": 2067,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 114
+          "token_count": 2067
         }
       ],
-      "prompt_token_count": 21716,
+      "prompt_token_count": 21677,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21716
+          "token_count": 21677
         }
       ],
-      "thoughts_token_count": 4704,
-      "total_token_count": 26534
+      "thoughts_token_count": 8713,
+      "total_token_count": 32457
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 114,
+        "candidates_token_count": 2067,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 114
+            "token_count": 2067
           }
         ],
-        "prompt_token_count": 21716,
+        "prompt_token_count": 21677,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21716
+            "token_count": 21677
           }
         ],
-        "thoughts_token_count": 4704,
-        "total_token_count": 26534
+        "thoughts_token_count": 8713,
+        "total_token_count": 32457
       }
     ],
     "request_ids": [
-      "nrnOavvzJ4mc_uMPqZXzoA0"
+      "XTzPauvKB8yfz7IP7bi_mAY"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten/0: 'name' is not of type 'object'; taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'; taetigkeiten/2: 'stufe' is not of type 'object'; taetigkeiten/3: 'modus' is not of type 'object'; taetigkeiten/4: 'restzeit_mensch' is not of type 'object'; taetigkeiten/5: 'physisch_automatisierbar' is not of type 'object'; taetigkeiten/6: 'p_art' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-7311_uhrmacher_uhrenarbeiter_mikromechaniker",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten/0: 'name' is not of type 'object'",
-      "taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'",
-      "taetigkeiten/2: 'stufe' is not of type 'object'",
-      "taetigkeiten/3: 'modus' is not of type 'object'",
-      "taetigkeiten/4: 'restzeit_mensch' is not of type 'object'",
-      "taetigkeiten/5: 'physisch_automatisierbar' is not of type 'object'",
-      "taetigkeiten/6: 'p_art' is not of type 'object'",
-      "taetigkeiten/7: 'sicherheit' is not of type 'object'",
-      "taetigkeiten/8: 'sicherheit_begruendung' is not of type 'object'",
-      "taetigkeiten/9: 'ch_hemmnis' is not of type 'object'",
-      "taetigkeiten/10: 'begruendung' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"7311\",\"beruf\":\"Uhrmacher, Uhrenarbeiter, Mikromechaniker\",\"taetigkeiten\":[\n    \"name\", \"zeitanteil_pct\", \"stufe\", \"modus\", \"restzeit_mensch\", \"physisch_automatisierbar\", \"p_art\", \"sicherheit\", \"sicherheit_begruendung\", \"ch_hemmnis\", \"begruendung\"\n  ]}"
+  "bewertung": {
+    "isco_code": "7311",
+    "beruf": "Uhrmacher, Uhrenarbeiter, Mikromechaniker",
+    "taetigkeiten": [
+      {
+        "name": "Uhrwerke sowie mechanische und elektronische Baugruppen montieren",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Feinmotorische Montage von Räderwerk, Hemmung, Unruh und Elektronikmodulen inklusive Ölen am Werktisch ist rein physische Präzisionsarbeit; für die heute manuell ausgeführten Werkmontagen erreicht Robotik keine 50 % Zeitersparnis bei gleicher Qualität."
+      },
+      {
+        "name": "Zifferblätter und Uhrzeiger setzen sowie Uhrwerke ins Gehäuse einschalen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Setzen von Zifferblättern und Zeigern sowie das Einschalen (Emboîtage) erfordern höchste feinmechanische Sorgfalt am physischen Objekt; Halbautomaten übernehmen bei wechselnden Serien und Luxusuhren keine 50 % der menschlichen Arbeitszeit."
+      },
+      {
+        "name": "Mikromechanische Präzisionsteile fertigen, nachbearbeiten und finissieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spanende Fertigung an Präzisionsmaschinen sowie manuelles Entgraten, Polieren und Dekorieren (z. B. Anglieren, Perlieren) von Werkteilen sind physische Tätigkeiten, die im Schweizer Qualitätssegment nicht zu 50 % weiter automatisierbar sind."
+      },
+      {
+        "name": "Ganggenauigkeit regulieren sowie Funktions- und Wasserdichtigkeitsprüfungen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das feinmechanische Justieren von Spirale und Unruh (Reglage) sowie das physische Prüfen auf Zeitwaage und Druckprüfgeräten erfordern manuelle Eingriffe am Uhrwerk."
+      },
+      {
+        "name": "Optische und massliche Qualitätskontrolle von Bauteilen und fertigen Uhren durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Prüfung von Höhen- und Seitenspiel, Ölmenisken sowie dreidimensionale Ästhetikkontrolle unter Binokular und Lupe sind physisch-visuelle Tätigkeiten; optische Prüfautomaten decken die komplexe Endkontrolle im Uhrenbereich nicht zu 50 % ab."
+      },
+      {
+        "name": "Defekte Uhren demontieren, reinigen, reparieren und revidieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zerlegen, Reinigen, Ersetzen verschlissener Komponenten und Wiederzusammenbauen im Service après-vente (Rhabillage) sind rein manuelle Instandsetzungsarbeiten am Einzelstück."
+      },
+      {
+        "name": "Arbeitsplatz, Spezialwerkzeuge und Präzisionsmaschinen nach technischen Zeichnungen einrichten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Vorbereiten, Nachschärfen und Justieren von Uhrmacherwerkzeugen, Posage-Aufnahmen und Maschinen anhand von Werk- und Bauplänen findet physisch am Arbeitsplatz statt."
+      },
+      {
+        "name": "Kostenvoranschläge, Diagnoseberichte und technische Kundenauskünfte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM formuliert und übersetzt aus Stichworten zur Schadensdiagnose vollständige Kostenvoranschläge und Revisionsberichte (oft DE/FR/EN); die Fachperson prüft und verantwortet jeden Bericht inhaltlich."
+      },
+      {
+        "name": "Prüf- und Messwerte protokollieren sowie Ersatzteilbestellungen im System abwickeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Erfassen strukturierter Gang- und Druckmesswerte sowie das Nachbestellen von Fournituren braucht keine generative KI, lässt sich aber durch direkte Messgeräte-Schnittstellen zum ERP/MES und regelbasierte Bestellworkflows (klassische Software) zu über 50 % automatisieren."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Der Beruf umfasst in der Schweiz Uhrmacher/innen EFZ (Produktion und Rhabilleur), Uhrenarbeiter/innen EBA sowie Mikromechaniker/innen EFZ in Manufakturen, Zulieferbetrieben und Reparaturateliers. Das Aufgabenprofil bildet den typischen Mix aus Werk- und Gehäusemontage, mikromechanischer Bearbeitung, Qualitäts-/Funktionsprüfung und Service après-vente ab. Da fast ausschliesslich feinmotorische Präzisionsarbeit am physischen Objekt geleistet wird, ist die Exposition gegenüber generativer KI sehr gering.",
+    "zusammenfassung": {
+      "haupt_risiko": "Einzig das Verfassen und Übersetzen von Diagnoseberichten, Kostenvoranschlägen und technischen Auskünften (rund 5 % der Arbeitszeit) ist durch Chat-LLMs exponiert, während die feinmechanische Montage, Bearbeitung und Prüfung von Uhren nicht betroffen ist.",
+      "begruendung": "Der Beruf besteht in der Schweizer Uhren- und Mikrotechnikindustrie zu rund 95 % aus feinmotorischer Handarbeit am Werktisch, an Prüfgeräten und an Präzisionsmaschinen. Generative KI wirkt lediglich bei der schriftlichen Dokumentation im Service après-vente im delegierenden Modus, wobei der Uhrmacher jeden Kostenvoranschlag und Befundbericht fachlich prüft.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }

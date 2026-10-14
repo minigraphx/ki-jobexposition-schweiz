@@ -10,86 +10,231 @@
     "beruf": "Ökonom/in / Volkswirt/in",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 312,
+      "cache_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 19386
+        }
+      ],
+      "cached_content_token_count": 19386,
+      "candidates_token_count": 2365,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 312
+          "token_count": 2365
         }
       ],
-      "prompt_token_count": 24148,
+      "prompt_token_count": 24109,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 24148
+          "token_count": 24109
         }
       ],
-      "thoughts_token_count": 6200,
-      "total_token_count": 30660
+      "thoughts_token_count": 5992,
+      "total_token_count": 32466
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 312,
+        "cache_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 19386
+          }
+        ],
+        "cached_content_token_count": 19386,
+        "candidates_token_count": 2365,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 312
+            "token_count": 2365
           }
         ],
-        "prompt_token_count": 24148,
+        "prompt_token_count": 24109,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 24148
+            "token_count": 24109
           }
         ],
-        "thoughts_token_count": 6200,
-        "total_token_count": 30660
+        "thoughts_token_count": 5992,
+        "total_token_count": 32466
       }
     ],
     "request_ids": [
-      "nrnOaqO2K628_uMP5v6cyQQ"
+      "XjzPaoWlKvSAz7IP5t2zgAs"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten/0: 'Statistische und ökonomische Daten beschaffen, bereinigen und für Analysen aufbereiten' is not of type 'object'; taetigkeiten/1: 'Ökonometrische Modelle, Simulationen und Prognosen in Statistiksoftware programmieren und schätzen' is not of type 'object'; taetigkeiten/2: 'Modellergebnisse und Konjunkturindikatoren fachlich interpretieren und wirtschaftspolitische oder strategische Empfehlungen ableiten' is not of type 'object'; taetigkeiten/3: 'Wissenschaftliche Literatur, Marktberichte und Regulierungsdokumente recherchieren und auswerten' is not of type 'object'; taetigkeiten/4: 'Wirtschaftsberichte, Marktkommentare, Studien und Kosten-Nutzen-Analysen verfassen' is not of type 'object'; taetigkeiten/5: 'Grafiken, Tabellen und Präsentationsfolien für Berichte und Vorträge erstellen' is not of type 'object'; taetigkeiten/6: 'Fachtexte und Publikationen in andere Landes- oder Arbeitssprachen (DE, FR, IT, EN) übersetzen und redigieren' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-2631_oekonom_in_volkswirt_in",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten/0: 'Statistische und ökonomische Daten beschaffen, bereinigen und für Analysen aufbereiten' is not of type 'object'",
-      "taetigkeiten/1: 'Ökonometrische Modelle, Simulationen und Prognosen in Statistiksoftware programmieren und schätzen' is not of type 'object'",
-      "taetigkeiten/2: 'Modellergebnisse und Konjunkturindikatoren fachlich interpretieren und wirtschaftspolitische oder strategische Empfehlungen ableiten' is not of type 'object'",
-      "taetigkeiten/3: 'Wissenschaftliche Literatur, Marktberichte und Regulierungsdokumente recherchieren und auswerten' is not of type 'object'",
-      "taetigkeiten/4: 'Wirtschaftsberichte, Marktkommentare, Studien und Kosten-Nutzen-Analysen verfassen' is not of type 'object'",
-      "taetigkeiten/5: 'Grafiken, Tabellen und Präsentationsfolien für Berichte und Vorträge erstellen' is not of type 'object'",
-      "taetigkeiten/6: 'Fachtexte und Publikationen in andere Landes- oder Arbeitssprachen (DE, FR, IT, EN) übersetzen und redigieren' is not of type 'object'",
-      "taetigkeiten/7: 'Forschungsanträge, Projektofferten und Methodenkonzepte ausarbeiten' is not of type 'object'",
-      "taetigkeiten/8: 'Analyseergebnisse vor Entscheidungsträgern, Kunden oder Fachgremien präsentieren und beraten' is not of type 'object'",
-      "taetigkeiten/9: 'Forschungsprojekte mit Auftraggebern und im Team abstimmen sowie Fachnetzwerke pflegen' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\n  \"isco_code\": \"2631\",\n  \"beruf\": \"Ökonom/in / Volkswirt/in\",\n  \"taetigkeiten\": [\n    \"Statistische und ökonomische Daten beschaffen, bereinigen und für Analysen aufbereiten\",\n    \"Ökonometrische Modelle, Simulationen und Prognosen in Statistiksoftware programmieren und schätzen\",\n    \"Modellergebnisse und Konjunkturindikatoren fachlich interpretieren und wirtschaftspolitische oder strategische Empfehlungen ableiten\",\n    \"Wissenschaftliche Literatur, Marktberichte und Regulierungsdokumente recherchieren und auswerten\",\n    \"Wirtschaftsberichte, Marktkommentare, Studien und Kosten-Nutzen-Analysen verfassen\",\n    \"Grafiken, Tabellen und Präsentationsfolien für Berichte und Vorträge erstellen\",\n    \"Fachtexte und Publikationen in andere Landes- oder Arbeitssprachen (DE, FR, IT, EN) übersetzen und redigieren\",\n    \"Forschungsanträge, Projektofferten und Methodenkonzepte ausarbeiten\",\n    \"Analyseergebnisse vor Entscheidungsträgern, Kunden oder Fachgremien präsentieren und beraten\",\n    \"Forschungsprojekte mit Auftraggebern und im Team abstimmen sowie Fachnetzwerke pflegen\"\n  ]\n}"
+  "bewertung": {
+    "isco_code": "2631",
+    "beruf": "Ökonom/in / Volkswirt/in",
+    "taetigkeiten": [
+      {
+        "name": "Wirtschafts- und Finanzmarktdaten aus Datenbanken beschaffen, bereinigen und für Analysen aufbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Coding- und Datenanalyse-Agenten schreiben und führen Skripte zur Datenbereinigung und -verknüpfung selbständig aus; die Ökonomin spezifiziert die Variablendefinitionen und prüft jeden aufbereiteten Datensatz auf Plausibilität und Strukturbrüche."
+      },
+      {
+        "name": "Ökonometrische und statistische Modelle sowie Simulationen in R, Python oder Stata programmieren und schätzen",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Coding-Agenten mit Code-Ausführung setzen Regressions-, Zeitreihen- und Simulationsmodelle sowie Robustheitstests über mehrere Skripte um; der Volkswirt gibt die Modellspezifikation vor und prüft jede Schätzung und Diagnostik fachlich im Detail."
+      },
+      {
+        "name": "Konjunktur-, Branchen- und Finanzmarktindikatoren laufend überwachen und ökonomisch einordnen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Ökonomin nimmt die fachliche Einordnung von Datenveröffentlichungen und Notenbankentscheiden selbst vor, während Recherche- und Daten-Agenten aktuelle Indikatoren, Marktreaktionen und Konsensschätzungen automatisiert zusammentragen."
+      },
+      {
+        "name": "Forschungsdesign, theoretischen Rahmen und methodisches Vorgehen für Studien konzipieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Entwicklung kausaler Identifikationsstrategien und theoretischer Modelle für spezifische wirtschaftspolitische oder unternehmerische Fragestellungen erfordert tiefe Domänenexpertise; ein LLM dient als Sparringspartner, spart aber keine 50 % der Zeit bei gleicher Qualität."
+      },
+      {
+        "name": "Fachliteratur, wissenschaftliche Arbeitspapiere und wirtschaftspolitische Dokumente recherchieren und auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten durchsuchen Literaturdatenbanken und fassen Studien sowie regulatorische Vorlagen zusammen; der Volkswirt bewertet die Methoden und Ergebnisse der Kernquellen weiterhin selbst und verifiziert zentrale Aussagen."
+      },
+      {
+        "name": "Konjunkturberichte, wirtschaftspolitische Studien, Kosten-Nutzen-Analysen und Fachpublikationen verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Auf Basis bereitgestellter Schätzergebnisse, Gliederungen und Stichworte entwirft ein Chat-LLM Berichte, Management-Summaries und Übersetzungen; die Ökonomin steuert die Argumentationslinie und prüft jeden Textabschnitt inhaltlich."
+      },
+      {
+        "name": "Grafiken, Datenvisualisierungen und Präsentationsunterlagen für Berichte und Vorträge erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Analyse- und Präsentationswerkzeuge generieren Plot-Skripte, Diagramme und Folienentwürfe aus den Analysedaten; der Volkswirt gibt die gewünschten Darstellungen vor und kontrolliert jede Grafik auf korrekte Aussage."
+      },
+      {
+        "name": "Analyseergebnisse vor Geschäftsleitung, Kundschaft, Behörden oder an Konferenzen präsentieren und Entscheidungsträger beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Präsenz-, Vortrags- und Beratungstätigkeit, bei der Überzeugungskraft, Vertrauensaufbau und das direkte Beantworten kritischer Rückfragen im Zentrum stehen."
+      },
+      {
+        "name": "Forschungsanträge, Offerten für Studienaufträge und Projektpläne ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Pflichtenheften, Referenzprojekten und Methodenstichworten erstellt ein Chat-LLM den Entwurf der Offerte oder des Forschungsantrags; die Ökonomin spezifiziert Vorgehen sowie Kalkulation und überarbeitet jeden Entwurf fachlich."
+      },
+      {
+        "name": "Ökonomische Analysen, Programmiercode und Berichtsentwürfe von Teammitgliedern fachlich begutachten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Volkswirt führt das fachliche Review und Mentoring selbst durch, nutzt aber ein Chat-LLM zur Vorprüfung von Skripten, mathematischen Herleitungen und Textkonsistenz."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Ökonom/in (Volkswirt/in) in der Volkswirtschafts-/Research-Abteilung einer Schweizer Bank, eines Wirtschaftsforschungsinstituts, einer Bundesstelle (z. B. SECO, SNB) oder eines ökonomischen Beratungsbüros. Das Berufsbild besteht überwiegend aus daten-, code- und textbasierter Wissensarbeit und ist daher technisch stark gegenüber LLMs und Coding-Agenten exponiert, wobei die fachliche Verantwortung stets eine intensive Prüfung verlangt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Datenaufbereitung, ökonometrische Programmierung, Literaturauswertung sowie das Verfassen von Studien und Konjunkturberichten werden durch Coding-Agenten, Recherche-Tools und Chat-LLMs stark beschleunigt.",
+      "begruendung": "Rund 80 % der Arbeitszeit sind exponiert, jedoch ausschliesslich im delegierenden oder unterstützenden Modus, da komplexe ökonomische Modelle, Kausalanalysen und Politik- oder Finanzmarktprognosen zwingend eine fundierte fachliche Steuerung und Einzelprüfung erfordern. In der Schweiz bremsen vor allem strenge Datenschutz- und Geheimhaltungsvorschriften (Bankkundengeheimnis, Statistikgeheimnis bei Mikrodaten, revDSG) sowie die mehrsprachige Publikationspraxis (DE/FR/IT/EN) einen unkontrollierten Einsatz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

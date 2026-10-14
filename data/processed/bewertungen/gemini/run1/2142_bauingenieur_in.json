@@ -10,77 +10,217 @@
     "beruf": "Bauingenieur/in",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 44,
+      "candidates_token_count": 2431,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 44
+          "token_count": 2431
         }
       ],
-      "prompt_token_count": 22930,
+      "prompt_token_count": 22891,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22930
+          "token_count": 22891
         }
       ],
-      "thoughts_token_count": 4695,
-      "total_token_count": 27669
+      "thoughts_token_count": 6928,
+      "total_token_count": 32250
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 44,
+        "candidates_token_count": 2431,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 44
+            "token_count": 2431
           }
         ],
-        "prompt_token_count": 22930,
+        "prompt_token_count": 22891,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22930
+            "token_count": 22891
           }
         ],
-        "thoughts_token_count": 4695,
-        "total_token_count": 27669
+        "thoughts_token_count": 6928,
+        "total_token_count": 32250
       }
     ],
     "request_ids": [
-      "nrnOapm7LLzi_uMP6aHG6Ag"
+      "XjzPau2dKbeBz7IPmfKIqA4"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: [] is too short"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-2142_bauingenieur_in",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: [] is too short"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"2142\",\"beruf\":\"Bauingenieur/in\",\"taetigkeiten\":[\n]\n}"
+  "bewertung": {
+    "isco_code": "2142",
+    "beruf": "Bauingenieur/in",
+    "taetigkeiten": [
+      {
+        "name": "Statische und konstruktive Berechnungen sowie Tragwerksbemessungen durchführen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Modellierung des statischen Systems in Fachsoftware (FEM/Statik) und die sicherheitskritische Bemessung nach SIA-Tragwerksnormen erfordern hohes Ingenieurermessen; generative KI spart hier deutlich weniger als 50 % der Zeit. Klassische Statiksoftware ist bereits Standard, der verbleibende menschliche Modellierungs- und Prüfaufwand ist nicht automatisierbar."
+      },
+      {
+        "name": "Tragwerkskonzepte, Bauverfahren und Projektvarianten im Entwurf entwickeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Entwerfen von Tragwerken, Baugruben und Tiefbauvarianten hängt stark von Baugrund, Architektur und lokaler Ausführbarkeit ab; Sprachmodelle erreichen bei dieser konzeptionellen Ingenieurleistung keine 50 % Zeitersparnis."
+      },
+      {
+        "name": "Technische Berichte, Machbarkeitsstudien und Nutzungsvereinbarungen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus eingefügten Projektdaten, Berechnungsergebnissen und Stichworten erstellt ein Chat-LLM Entwürfe für technische Berichte, Machbarkeitsstudien und Nutzungsvereinbarungen nach SIA 260; die Ingenieurin spezifiziert die Eckdaten und prüft jeden Bericht fachlich im Detail."
+      },
+      {
+        "name": "Konstruktions-, Schalungs- und Armierungspläne sowie BIM-Modelle prüfen und anpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Kontrolle und Anpassung der von Zeichner/innen EFZ erstellten Schalungs- und Bewehrungspläne sowie BIM-Modelle auf Übereinstimmung mit der Statik erreicht mit heutiger generativer KI keine 50 % Zeitersparnis. Regelbasierte Kollisionsprüfung im BIM deckt nur geometrische Konflikte ab, nicht die konstruktive Richtigkeit."
+      },
+      {
+        "name": "Ausschreibungsunterlagen, Leistungsverzeichnisse und Kostenvoranschläge erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-gestützte Devisierung nach Schweizer NPK-Standard bei komplexen Tief- und Tragwerksbauten heute bereits 50 % Zeit spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in Bauadministrations- und BIM-Software schlagen passende Positionen nach Normpositionen-Katalog (NPK), Ausmasse und Kostenschätzungen vor und erstellen den Entwurf des Leistungsverzeichnisses; der Bauingenieur prüft und verantwortet jede Position."
+      },
+      {
+        "name": "Unternehmerofferten, Nachträge und Bauabrechnungen prüfen sowie Werkverträge vorbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Der Ingenieur beurteilt Nachtragsforderungen, Regierapporte und Abrechnungen fachlich selbst; KI-Dokumentenanalyse gleicht Belege, Offerten und Werkverträge (SIA 118) ab, markiert Abweichungen und schlägt Vertragsklauseln vor."
+      },
+      {
+        "name": "Projektsitzungen und Fachkoordination mit Bauherrschaft, Architekten und Behörden führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die persönliche Beratung von Architekten und Bauherren sowie die Koordination und Verhandlung in Bausitzungen erfordern unmittelbare zwischenmenschliche Präsenz und Überzeugungsarbeit."
+      },
+      {
+        "name": "Projektkorrespondenz, Sitzungsprotokolle und Aktennotizen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten oder Notizen erstellt ein Chat-LLM formelle Projektbriefe, Aktennotizen und Sitzungsprotokolle; die Projektleiterin liest jedes Dokument wegen der vertraglichen Tragweite gegen und gibt es frei."
+      },
+      {
+        "name": "Baustellenkontrollen, Bewehrungsabnahmen und Sicherheitsprüfungen vor Ort durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die physische Kontrolle der verlegten Armierung vor dem Betonieren, der Baugrubensicherung und der Arbeitssicherheit auf der Baustelle erfordert zwingend die Präsenz und visuelle Prüfung vor Ort."
+      },
+      {
+        "name": "Abnahmeprotokolle, Prüfberichte und Mängellisten aus Baustellenbegehungen dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Per Spracheingabe und Fotoerfassung in einer Bau-App erstellt die KI strukturierte Abnahmeprotokolle und Mängellisten; der Bauingenieur prüft und unterzeichnet jedes Protokoll. Dialekt und Baustellenlärm erhöhen den Korrekturaufwand."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Bauingenieur/in (FH/ETH) in einem typischen Schweizer Ingenieurbüro für Hoch- und Tiefbau (Tragwerksplanung, Projektierung und Fachbauleitung). In der Schweizer Baupraxis wird die detaillierte CAD-Planerstellung überwiegend von Zeichner/innen EFZ Fachrichtung Ingenieurbau ausgeführt, während Bauingenieur/innen konzipieren, berechnen, Pläne prüfen und Projekte leiten. ESCO-Kompetenzen wie 'Open-Source-Software entwickeln' und 'Forschungsdaten verwalten' wurden als unpassendes Rauschen für die gängige Berufspraxis ignoriert.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Verfassen technischer Berichte, Studien und Protokolle per Chat-LLM sowie die Devisierung, Nachtragsprüfung und Baustellendokumentation durch multimodale und in Bausoftware integrierte KI-Werkzeuge.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden und teilweise im unterstützenden Modus, da jede Ausgabe im Bauwesen fachlich geprüft werden muss. Die Kernaufgaben in Statik, Entwurf, Planprüfung und Bauüberwachung vor Ort (60 % der Zeit) bleiben weitgehend unberührt, und strenge Haftungsregeln sowie das Schweizer SIA-Normenwerk bremsen eine ungeprüfte Übernahme.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

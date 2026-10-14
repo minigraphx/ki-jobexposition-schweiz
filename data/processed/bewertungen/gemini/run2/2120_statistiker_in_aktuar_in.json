@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "d6bc29c3f25a7a666ec96604886a7b9e1332e588f90264cca498e7307f884ef5",
+    "isco_code": "2120",
+    "beruf": "Statistiker/in / Aktuar/in",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2291,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2291
+        }
+      ],
+      "prompt_token_count": 21375,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21375
+        }
+      ],
+      "thoughts_token_count": 9699,
+      "total_token_count": 33365
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2291,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2291
+          }
+        ],
+        "prompt_token_count": 21375,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21375
+          }
+        ],
+        "thoughts_token_count": 9699,
+        "total_token_count": 33365
+      }
+    ],
+    "request_ids": [
+      "xD_PasP8CJzwqtsPnJ2H2AM"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2120_statistiker_in_aktuar_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2120",
+    "beruf": "Statistiker/in / Aktuar/in",
+    "taetigkeiten": [
+      {
+        "name": "Finanz-, Bestandes- und Schadendaten aus Datenbanken einholen, bereinigen und validieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Datenanalyse- und Coding-Agenten mit Datenbank- und Code-Ausführung erstellen Bereinigungsskripte und Konsistenzprüfungen; die Fachperson spezifiziert die Regeln und prüft jeden bereinigten Datensatz sowie Ausreisser fachlich."
+      },
+      {
+        "name": "Statistische und aktuarielle Modelle in R, Python oder Fachsoftware programmieren, weiterentwickeln und testen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Coding-Agenten schreiben und refaktorisieren Modellcode sowie Unit-Tests über mehrere Skripte im Repository; der Aktuar bzw. die Statistikerin gibt die mathematische Spezifikation vor und reviewt jede Codeänderung im Detail."
+      },
+      {
+        "name": "Modellannahmen, Parameter und Schätzverfahren fachlich festlegen (z. B. Sterblichkeit, Zinskurven, Schadenabwicklung)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Festlegung aktuarieller Annahmen (Expert Judgment) bei Strukturbrüchen oder dünner Datenlage erfordert hohes Domänenwissen und persönliche Verantwortung; generative KI erreicht bei diesem Ermessensentscheid keine 50 % Zeitersparnis."
+      },
+      {
+        "name": "Versicherungstechnische Rückstellungen, Prämientarife und Finanzkalkulationen berechnen sowie Abweichungen plausibilisieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-gestützte Abweichungsanalysen über den gesamten Kalkulations- und Plausibilisierungsprozess hinweg die 50-%-Schwelle erreichen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Fachperson beurteilt jede Bestandes- und Reserveveränderung selbst, während KI-Analysewerkzeuge Periodenvergleiche und Ausreisser markieren; die eigentlichen Rechenläufe lassen sich durch klassische aktuarielle Berechnungs- und Workflow-Software automatisieren."
+      },
+      {
+        "name": "Risikoanalysen, Stresstests und Szenariorechnungen für Portfolios und Bilanzen durchführen (z. B. SST, ALM, Kreditrisiken)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Konzeption von Stressszenarien und die Beurteilung komplexer Wechselwirkungen zwischen Aktiven und Passiven beruhen auf mathematischen Simulationsmodellen und menschlichem Risikourteil; generative KI spart hier weniger als 50 % der Zeit."
+      },
+      {
+        "name": "Finanzmarkttrends, makroökonomische Entwicklungen und Branchenstatistiken recherchieren und auswerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche und Dokumentenanalyse tragen Marktdaten, Zinsprognosen und Studien zusammen; die Fachperson analysiert und verifiziert die Trends für die eigenen Modelle selbst."
+      },
+      {
+        "name": "Standardisierte Finanz- und Versicherungsstatistiken erzeugen sowie Management-Zusammenfassungen aufbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte BI- und Datenanalyse-Werkzeuge erstellen statistische Auswertungen, Grafiken und Textzusammenfassungen nach Vorgabe, die der Aktuar auf numerische Korrektheit prüft; klassische BI- und Reporting-Software automatisiert bereits die Tabellenproduktion."
+      },
+      {
+        "name": "Aktuarielle Berichte, Modelldokumentationen und regulatorische Nachweise (z. B. für FINMA, Revisionsstelle, Stiftungsrat) verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus eingefügten Ergebnistabellen, Vorjahresberichten und Modellformeln die Berichtskapitel und Dokumentationen; die Fachperson prüft jeden Abschnitt inhaltlich und trägt die formelle Unterschriftsverantwortung."
+      },
+      {
+        "name": "Geschäftsleitung, Fachabteilungen (Underwriting, Bankfachleute) und Kunden (z. B. Stiftungsräte) zu Risiko, Tarifen und Finanzplanung beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung, Präsentation komplexer Risikoabwägungen und Verhandlung in Gremien oder mit Kunden erfordern unmittelbare Präsenz und Vertrauensaufbau."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Aktuar/in bzw. quantitative/r Statistiker/in in einer Schweizer Versicherung, Bank oder Pensionskassen-Beratung. ESCO bildet das Profil mit Fokus auf den Finanz- und Versicherungsbereich sehr treffend ab. Der wichtigste Grenzfall liegt bei der Plausibilisierung periodischer Reserve- und Tarifberechnungen an der 50-%-Schwelle.",
+    "zusammenfassung": {
+      "haupt_risiko": "Datenaufbereitung, Modellprogrammierung, die Erstellung von Finanzstatistiken und Abweichungsanalysen sowie das Verfassen aktuarieller Berichte werden durch Coding- und Datenanalyse-Agenten sowie Chat-LLMs stark beschleunigt.",
+      "begruendung": "Rund 60 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus (Datenaufbereitung, Programmierung, Standardstatistiken, Berichtsentwürfe) und teilweise unterstützend (Abweichungsanalysen und Marktrecherche), da jede Berechnung und jeder Bericht fachlich geprüft und verantwortet werden muss. Die Festlegung aktuarieller Modellannahmen, komplexe Risiko- und Szenarioanalysen sowie die persönliche Beratung von Geschäftsleitung und Stiftungsräten bleiben beim Menschen. In der Schweiz verlangen strenge regulatorische Vorgaben (FINMA-Modellgovernance, BVG-Gutachterpflichten, Datenschutz nach revDSG) sowie die Mehrsprachigkeit in national tätigen Unternehmen eine konsequente menschliche Kontrolle.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

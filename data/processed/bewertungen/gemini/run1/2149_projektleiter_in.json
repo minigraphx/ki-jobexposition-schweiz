@@ -10,77 +10,215 @@
     "beruf": "Projektleiter/in (Technik)",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:20:45+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 44,
+      "candidates_token_count": 2348,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 44
+          "token_count": 2348
         }
       ],
-      "prompt_token_count": 23318,
+      "prompt_token_count": 23279,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 23318
+          "token_count": 23279
         }
       ],
-      "thoughts_token_count": 7351,
-      "total_token_count": 30713
+      "thoughts_token_count": 9865,
+      "total_token_count": 35492
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 44,
+        "candidates_token_count": 2348,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 44
+            "token_count": 2348
           }
         ],
-        "prompt_token_count": 23318,
+        "prompt_token_count": 23279,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 23318
+            "token_count": 23279
           }
         ],
-        "thoughts_token_count": 7351,
-        "total_token_count": 30713
+        "thoughts_token_count": 9865,
+        "total_token_count": 35492
       }
     ],
     "request_ids": [
-      "nrnOatOmLKmCz7IPpvHS8Qs"
+      "1zHPas7HDo2b6dkP7Jip0Q0"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: [] is too short"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/n5emuc02ro4ufy1vyf6nfkxyavizsuglfcaq",
     "custom_id": "r1-2149_projektleiter_in",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: [] is too short"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"2149\",\"beruf\":\"Projektleiter/in (Technik) \",\"taetigkeiten\":[]}"
+  "bewertung": {
+    "isco_code": "2149",
+    "beruf": "Projektleiter/in (Technik)",
+    "taetigkeiten": [
+      {
+        "name": "Technische Pflichtenhefte, Projektspezifikationen und Lösungskonzepte ausarbeiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus hochgeladenen Kundenanforderungen und technischen Eckdaten entwirft ein Chat-LLM strukturierte Pflichtenhefte und Spezifikationstexte; die Projektleitung gibt die technischen Parameter vor und prüft jede Anforderung im Detail."
+      },
+      {
+        "name": "Termin-, Meilenstein- und Ressourcenpläne erstellen und laufend nachführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Funktionen in Projektmanagement-Tools bei komplexen technischen Abhängigkeiten die 50-%-Zeitersparnisschwelle erreichen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Projektleitung plant und entscheidet über Prioritäten sowie Ressourcenzuteilung weiterhin selbst; in PM-Software integrierte KI-Assistenten schlagen Arbeitspakete, Dauern und Terminverschiebungen aus Projektdaten vor."
+      },
+      {
+        "name": "Projektbudget, Kostenverlauf, Kennzahlen und Änderungsanträge (Change Requests) analysieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Projektleitung beurteilt Budgetabweichungen, Prognosen und kommerzielle Auswirkungen von Projektänderungen selbst; Datenanalyse-Agenten bzw. KI-Funktionen im ERP werten Stunden- und Kostendaten aus und markieren Abweichungen."
+      },
+      {
+        "name": "Technische Risikoanalysen durchführen und Einhaltung von Normen und Sicherheitsvorschriften prüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Projektleitung bewertet technische Risiken (z. B. FMEA) und Konformitätsanforderungen selbst; KI-Werkzeuge durchsuchen Normenkataloge sowie technische Dossiers und liefern Vorschläge für Risikomatrizen. Produktesicherheitsrecht und Haftung erfordern eine fundierte menschliche Beurteilung."
+      },
+      {
+        "name": "Projektstatusberichte, Kosten-Nutzen-Analysen und Entscheidungsvorlagen für Management und Kunden verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Aus exportierten Projektkennzahlen und Stichworten erstellt das Chat-LLM den Berichtsentwurf oder die Entscheidungsvorlage; die Projektleitung steuert den Inhalt und prüft jeden Bericht fachlich vor dem Versand."
+      },
+      {
+        "name": "Sitzungsprotokolle, Aktennotizen und Pendenzenlisten aus Besprechungen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Transkriptions- und Zusammenfassungsfunktionen erstellen aus Sitzungsaufnahmen automatisch Protokolle und Pendenzenlisten; die Projektleitung liest kurz gegen und gibt frei, wobei Mundart und technischer Fachjargon gelegentliche Korrekturen erfordern."
+      },
+      {
+        "name": "Interdisziplinäre Projektteams im Tagesgeschäft koordinieren und Projektsitzungen leiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Personalführung, Moderation technischer Lösungsfindungen zwischen Fachabteilungen (Mechanik, Elektronik, Software, Fertigung) und Konfliktlösung sind unmittelbare Präsenz- und Beziehungstätigkeiten."
+      },
+      {
+        "name": "Mit Auftraggebern, Lieferanten und Management über Anforderungen, Nachträge und Verträge verhandeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlungen über Projektumfang, Nachträge (Claim Management), Termine und Budgets sowie die Beziehungspflege zu Stakeholdern erfordern persönliche Präsenz und Überzeugungsarbeit."
+      },
+      {
+        "name": "Beschaffung von Spezialkomponenten, Liefertermine und Anlagenlogistik mit Einkauf und Lieferanten abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Klären von Lieferengpässen, technischen Abweichungen bei Zulieferteilen und die Terminkoordination für Anlagenkomponenten besteht überwiegend aus direkter Abstimmung und Ausnahmebehandlung."
+      },
+      {
+        "name": "Technische Umsetzung, Tests und Abnahmen (FAT/SAT) in der Fertigung oder auf der Anlage vor Ort begleiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Begleitung von Aufbau, Inbetriebnahme, Werksabnahmen (FAT) und Kundenabnahmen vor Ort (SAT) erfordert physische Anwesenheit an der Maschine oder Anlage."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Technische/r Projektleiter/in in einem Schweizer Industrieunternehmen (z. B. Maschinen-, Elektro- und Metallindustrie oder Anlagenbau). Das ESCO-Profil bildet einen allgemeinen Projektmanager (ISCO 1219) ab, während der Schweizer Beruf zur Gruppe der Ingenieurberufe (ISCO 2149) gehört; entsprechend wurden technische Spezifikationen, Normenkonformität und Werks-/Anlagenabnahmen ergänzt. Grenzfälle liegen vor allem bei der KI-gestützten Termin- und Ressourcenplanung, wo der Koordinationsaufwand hoch bleibt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Das Ausarbeiten von technischen Pflichtenheften und Statusberichten, die Protokollierung von Sitzungen sowie Kosten-, Termin- und Risikoanalysen werden durch Chat-LLMs, Transkriptions-KI und KI-gestützte Projektmanagement- und ERP-Systeme stark beschleunigt.",
+      "begruendung": "Rund 55 % der Arbeitszeit sind gegenüber generativer KI exponiert, während Teamführung, Verhandlungen und technische Abnahmen vor Ort beim Menschen bleiben. Die KI wirkt bei Spezifikationen und Berichten vorwiegend delegierend, bei Planung, Controlling und Risikoanalysen unterstützend und nur bei der Sitzungsprotokollierung ersetzend. In der Schweizer Industrie bremsen insbesondere Haftungs- und Normenanforderungen (Produktesicherheit, CE-Konformität) sowie die Abstimmung über mehrere Sprachregionen hinweg einen unkontrollierten Einsatz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

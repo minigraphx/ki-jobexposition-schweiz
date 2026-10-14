@@ -10,85 +10,211 @@
     "beruf": "Gipser, Trockenbauer",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 252,
+      "candidates_token_count": 2070,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 252
+          "token_count": 2070
         }
       ],
-      "prompt_token_count": 21738,
+      "prompt_token_count": 21699,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21738
+          "token_count": 21699
         }
       ],
-      "thoughts_token_count": 4367,
-      "total_token_count": 26357
+      "thoughts_token_count": 4225,
+      "total_token_count": 27994
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 252,
+        "candidates_token_count": 2070,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 252
+            "token_count": 2070
           }
         ],
-        "prompt_token_count": 21738,
+        "prompt_token_count": 21699,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21738
+            "token_count": 21699
           }
         ],
-        "thoughts_token_count": 4367,
-        "total_token_count": 26357
+        "thoughts_token_count": 4225,
+        "total_token_count": 27994
       }
     ],
     "request_ids": [
-      "nrnOauCJKejgqtsPyO6RsAs"
+      "XTzParz3NfSAz7IP5t2zgAs"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten/0: 'Innen- und Aussenputze anrühren, auftragen, abziehen und glätten' is not of type 'object'; taetigkeiten/1: 'Trockenbauwände, Vorsatzschalen und Deckensysteme montieren und beplanken' is not of type 'object'; taetigkeiten/2: 'Untergründe prüfen, vorbereiten, abdecken sowie Grundierungen und Putzprofile anbringen' is not of type 'object'; taetigkeiten/3: 'Plattenfugen verspachteln, Flächen überziehen und mit Schleifgeräten bearbeiten' is not of type 'object'; taetigkeiten/4: 'Wärmedämmplatten, Schalldämmung und Schutzmembranen zuschneiden und anbringen' is not of type 'object'; taetigkeiten/5: 'Baustelle einrichten, Rollgerüste aufstellen sowie Material und Werkzeuge transportieren' is not of type 'object'; taetigkeiten/6: 'Pläne lesen, Räume einmessen und Fluchten sowie Höhen auf Bauteile übertragen' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-7123_gipser_trockenbauer",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten/0: 'Innen- und Aussenputze anrühren, auftragen, abziehen und glätten' is not of type 'object'",
-      "taetigkeiten/1: 'Trockenbauwände, Vorsatzschalen und Deckensysteme montieren und beplanken' is not of type 'object'",
-      "taetigkeiten/2: 'Untergründe prüfen, vorbereiten, abdecken sowie Grundierungen und Putzprofile anbringen' is not of type 'object'",
-      "taetigkeiten/3: 'Plattenfugen verspachteln, Flächen überziehen und mit Schleifgeräten bearbeiten' is not of type 'object'",
-      "taetigkeiten/4: 'Wärmedämmplatten, Schalldämmung und Schutzmembranen zuschneiden und anbringen' is not of type 'object'",
-      "taetigkeiten/5: 'Baustelle einrichten, Rollgerüste aufstellen sowie Material und Werkzeuge transportieren' is not of type 'object'",
-      "taetigkeiten/6: 'Pläne lesen, Räume einmessen und Fluchten sowie Höhen auf Bauteile übertragen' is not of type 'object'",
-      "taetigkeiten/7: 'Material- und Mengenbedarf für Putz, Gipsplatten und Dämmstoffe ermitteln' is not of type 'object'",
-      "taetigkeiten/8: 'Tages- und Regierapporte mit Arbeitsbeschrieb, Materialverbrauch und Stunden ausfüllen' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"7123\",\"beruf\":\"Gipser, Trockenbauer\",\"taetigkeiten\":[\n  \"Innen- und Aussenputze anrühren, auftragen, abziehen und glätten\",\n  \"Trockenbauwände, Vorsatzschalen und Deckensysteme montieren und beplanken\",\n  \"Untergründe prüfen, vorbereiten, abdecken sowie Grundierungen und Putzprofile anbringen\",\n  \"Plattenfugen verspachteln, Flächen überziehen und mit Schleifgeräten bearbeiten\",\n  \"Wärmedämmplatten, Schalldämmung und Schutzmembranen zuschneiden und anbringen\",\n  \"Baustelle einrichten, Rollgerüste aufstellen sowie Material und Werkzeuge transportieren\",\n  \"Pläne lesen, Räume einmessen und Fluchten sowie Höhen auf Bauteile übertragen\",\n  \"Material- und Mengenbedarf für Putz, Gipsplatten und Dämmstoffe ermitteln\",\n  \"Tages- und Regierapporte mit Arbeitsbeschrieb, Materialverbrauch und Stunden ausfüllen\"\n]}"
+  "bewertung": {
+    "isco_code": "7123",
+    "beruf": "Gipser, Trockenbauer",
+    "taetigkeiten": [
+      {
+        "name": "Innen- und Aussenputze anmischen, auftragen, abziehen und strukturieren",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Handwerksarbeit auf der Baustelle; Verputzmaschinen unterstützen beim Fördern, aber autonome Verputzroboter sind in der Schweiz nicht im regulären Einsatz."
+      },
+      {
+        "name": "Trockenbau-Unterkonstruktionen für Wände und Decken montieren und mit Gipsplatten beplanken",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montagearbeit vor Ort mit Zuschneiden, Ausrichten und Verschrauben; keine kommerziell etablierte Robotik im Schweizer Baustellenalltag."
+      },
+      {
+        "name": "Untergründe prüfen, vorbereiten, abkleben und Putzprofile setzen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Vorbereitungs- und Prüftätigkeit direkt am Bauteil (Grundieren, Abdecken, Eckschutzprofile setzen), die physische Präsenz erfordert."
+      },
+      {
+        "name": "Plattenstösse und Oberflächen verspachteln, glätten und schleifen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Ausführungsarbeit an Wänden und Decken; Schleif- und Spachtelroboter existieren erst vereinzelt für Grossflächen und übernehmen im typischen CH-Betrieb keine 50 % der Zeit."
+      },
+      {
+        "name": "Wärme- und Schalldämmungen sowie Dampfbremsen und Schutzmembranen anbringen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Zuschneiden, Kleben,Verdübeln und Abdichten von Dämmplatten und Folien auf der Baustelle ohne relevante Automatisierbarkeit."
+      },
+      {
+        "name": "Baustelle einrichten, Rollgerüste aufbauen, Material und Werkzeuge transportieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Logistik-, Einrichtungs- und Aufräumarbeiten auf wechselnden Baustellen."
+      },
+      {
+        "name": "Baupläne lesen, Räume ausmessen und Bauteile vor Ort einmessen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Hauptaufwand liegt im physischen Einmessen und Anzeichnen mit Laser und Messwerkzeugen direkt im Raum; generative KI spart hier keine 50 % der Zeit."
+      },
+      {
+        "name": "Schäden im Altbau ausbessern, Wandschlitze schliessen und Stuckprofile restaurieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Feinmotorische, handwerkliche Reparatur- und Restaurierungsarbeit vor Ort im Umbau oder Bestand."
+      },
+      {
+        "name": "Material- und Mengenbedarf für Verputz- und Trockenbauarbeiten berechnen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die Berechnung im Chat gegenüber Faustregeln und Hersteller-Tabellen wirklich 50 % Zeit spart; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Nach Eingabe der Raummasse und Systemvorgaben berechnet das LLM den Bedarf an Platten, Profilen, Putzsäcken und Verschnitt; der Gipser prüft jedes Ergebnis vor der Bestellung."
+      },
+      {
+        "name": "Regie- und Tagesrapporte mit Arbeitsbeschrieb, Material und Stunden erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Per Spracheingabe und Fotos in einer Bau-App erstellt die KI den strukturierten Rapport; der Gipser oder Vorarbeiter prüft und visiert jeden Rapport. Baustellenlärm und Dialekt erhöhen den Korrekturaufwand."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Gipser-Trockenbauer/in EFZ in einem typischen Schweizer Gipser- und Trockenbaubetrieb (Neubau, Umbau und Renovation). ESCO betont unter dem Titel Stuckateur vor allem Verputzarbeiten, deckt aber über die wesentlichen und optionalen Kompetenzen auch den in der Schweiz zentralen Trockenbau und die Wärmedämmung gut ab.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind einzig administrative Randaufgaben wie das Erstellen von Regierapporten per Spracheingabe und die Mengenberechnung per Chat-LLM, während die handwerklichen Verputz-, Dämm- und Trockenbauarbeiten nicht betroffen sind.",
+      "begruendung": "Nur rund 10 % der Arbeitszeit sind gegenüber generativer KI exponiert, und zwar ausschliesslich im delegierenden Modus, bei dem die Fachperson jeden Rapport und jede Materialberechnung inhaltlich prüft. Rund 90 % der Arbeit erfordern physische Präsenz und handwerkliches Geschick auf der Baustelle; zudem erschweren Dialekt und Baustellenlärm die Spracheingabe.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }

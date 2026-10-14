@@ -10,77 +10,185 @@
     "beruf": "Küchenhilfe",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 41,
+      "candidates_token_count": 1722,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 41
+          "token_count": 1722
         }
       ],
-      "prompt_token_count": 21936,
+      "prompt_token_count": 21897,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21936
+          "token_count": 21897
         }
       ],
-      "thoughts_token_count": 5900,
-      "total_token_count": 27877
+      "thoughts_token_count": 4897,
+      "total_token_count": 28516
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 41,
+        "candidates_token_count": 1722,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 41
+            "token_count": 1722
           }
         ],
-        "prompt_token_count": 21936,
+        "prompt_token_count": 21897,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21936
+            "token_count": 21897
           }
         ],
-        "thoughts_token_count": 5900,
-        "total_token_count": 27877
+        "thoughts_token_count": 4897,
+        "total_token_count": 28516
       }
     ],
     "request_ids": [
-      "nrnOavGWLImc_uMPqZXzoA0"
+      "XTzPauvfKsucz7IP_rLrgA8"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: [] is too short"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-9412_kuechenhilfe",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: [] is too short"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"9412\",\"beruf\":\"Küchenhilfe\",\"taetigkeiten\":[\n  ]}"
+  "bewertung": {
+    "isco_code": "9412",
+    "beruf": "Küchenhilfe",
+    "taetigkeiten": [
+      {
+        "name": "Gemüse, Salate und andere Rohwaren waschen, rüsten und schneiden",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Vorbereitungsarbeit (Mise en place) mit Händen, Messern und Küchengeräten vor Ort; gewerbliche Gemüseschneider unterstützen punktuell, ersetzen aber nicht mindestens 50 % der manuellen Rüst- und Putzarbeit."
+      },
+      {
+        "name": "Einfache kalte und warme Speisen wie Salate, Sandwiches oder Beilagen nach Vorgabe zubereiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Zubereitung von Speisen in der Küche; kommerzielle Kochrobotik ist für typische Schweizer Gastronomiebetriebe nicht wirtschaftlich verfügbar."
+      },
+      {
+        "name": "Speisen nach Standardgrössen portionieren, auf Tellern anrichten oder am Buffet nachfüllen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit am Pass, an der Essensausgabe oder am Buffet, die unmittelbare Präsenz und Handarbeit erfordert."
+      },
+      {
+        "name": "Geschirr, Besteck, Töpfe und Küchengeräte in der Spülküche abwaschen und versorgen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Tätigkeit in der Abwaschküche: Gewerbliche Spülmaschinen sind bereits Standard, während das Vorspülen, Ein- und Ausräumen sowie Versorgen manuell erfolgt."
+      },
+      {
+        "name": "Vorbereitungsbereiche, Oberflächen, Kochgeräte und Böden reinigen und desinfizieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Reinigungsarbeit an verwinkelten Küchengeräten, Arbeitsflächen und Böden; Reinigungsroboter können diese Detailarbeiten in Gastronomieküchen nicht zu mindestens 50 % übernehmen."
+      },
+      {
+        "name": "Warenlieferungen entgegennehmen, prüfen und Lebensmittel in Lager- und Kühlräume einräumen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physisches Auspacken, Kontrollieren und Verräumen von Lebensmitteln nach dem FIFO-Prinzip in Kühl- und Lagerräumen."
+      },
+      {
+        "name": "Lagerbestände, Haltbarkeitsdaten und Kühltemperaturen kontrollieren und dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Sichtkontrolle von Vorräten und Datierungen im Kühlhaus erfolgt vor Ort; das Eintragen weniger Messwerte nach HACCP umfasst kaum Textarbeit, und Temperatursensoren decken nur einen Teil der Kontrolle ab."
+      },
+      {
+        "name": "Küchenabfälle, Rüstabfälle und Verpackungsmaterialien trennen und entsorgen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein manuelle Entsorgung von Speiseresten, Gebinden und Karton sowie Reinigung der Abfallbehälter."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Küchenhilfe ohne formale Berufsausbildung in einem typischen Schweizer Gastronomiebetrieb (Restaurant, Hotel oder Gemeinschaftsgastronomie). Die ESCO-Kompetenzliste bildet die praktischen Vorbereitungs-, Spül-, Reinigungs- und Lagerarbeiten gut ab; die offensichtlich unpassende Management-Kompetenz «Indikatoren für die Verringerung von Lebensmittelabfällen konzipieren» wurde als ESCO-Rauschen ausgeschlossen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Keine der Kerntätigkeiten einer Küchenhilfe ist gegenüber generativer KI exponiert, da das Berufsbild vollständig aus manuellen Vorbereitungs-, Spül-, Reinigungs- und Lagerarbeiten vor Ort besteht.",
+      "begruendung": "Sämtliche Aufgaben (100 % der Arbeitszeit) erfordern unmittelbare physische Präsenz und Handarbeit in der Küche, weshalb Sprachmodelle in keinem Tätigkeitsbereich mindestens 50 % der Arbeitszeit einsparen können. Weder ein ersetzender noch ein delegierender oder unterstützender KI-Modus ist für diese praktischen Hilfstätigkeiten relevant, weshalb auch spezifische CH-Hemmnisse nicht zum Tragen kommen.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
 }

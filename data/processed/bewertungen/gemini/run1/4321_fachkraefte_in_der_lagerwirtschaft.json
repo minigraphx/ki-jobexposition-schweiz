@@ -10,84 +10,211 @@
     "beruf": "Fachkräfte in der Lagerwirtschaft",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 654,
+      "candidates_token_count": 2307,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 654
+          "token_count": 2307
         }
       ],
-      "prompt_token_count": 21196,
+      "prompt_token_count": 21157,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21196
+          "token_count": 21157
         }
       ],
-      "thoughts_token_count": 6317,
-      "total_token_count": 28167
+      "thoughts_token_count": 6481,
+      "total_token_count": 29945
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 654,
+        "candidates_token_count": 2307,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 654
+            "token_count": 2307
           }
         ],
-        "prompt_token_count": 21196,
+        "prompt_token_count": 21157,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21196
+            "token_count": 21157
           }
         ],
-        "thoughts_token_count": 6317,
-        "total_token_count": 28167
+        "thoughts_token_count": 6481,
+        "total_token_count": 29945
       }
     ],
     "request_ids": [
-      "nrnOatyHKqvX_uMP-8qPkQE"
+      "XjzPaou2EvSAz7IP5t2zgAs"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: taetigkeiten/0: 'Warenannahme und Qualitätsprüfung: Eingehende Warenlieferungen entgegennehmen, mit Bestellungen und Lieferscheinen abgleichen sowie Zustand und Qualität der Waren kontrollieren.' is not of type 'object'; taetigkeiten/1: 'Einlagerung und Lagerorganisation: Waren systematisch und unter Berücksichtigung von Sicherheits- und Lagervorschriften (z. B. FIFO-Prinzip, Gefahrgut) an den vorgesehenen Lagerplätzen einlagern.' is not of type 'object'; taetigkeiten/2: 'Bestandsführung und Buchung: Warenbewegungen (Ein-, Aus- und Umlagerungen) im Warenwirtschafts- oder Lagerverwaltungssystem (ERP/LVS) erfassen und dokumentieren.' is not of type 'object'; taetigkeiten/3: 'Kommissionierung: Waren anhand von Kunden- oder Produktionsaufträgen sowie Kommissionierlisten (bzw. per Scanner/Pick-by-Voice) zusammenstellen.' is not of type 'object'; taetigkeiten/4: 'Verpackung und Versandvorbereitung: Kommissionierte Waren versandfertig verpacken, sichern, etikettieren und die erforderlichen Versand- und Begleitpapiere erstellen.' is not of type 'object'; taetigkeiten/5: 'Warenausgabe und Verladung: Bereitgestellte Sendungen an interne Abteilungen oder Transportdienstleister übergeben und bei der sicheren Verladung mitwirken.' is not of type 'object'; taetigkeiten/6: 'Inventur und Bestandskontrolle: Regelmässige Bestandsprüfungen und Stichtags- oder permanente Inventuren durchführen sowie Bestandsdifferenzen aufklären.' is not of type 'object'; taetigkeiten/7: 'Bestandsüberwachung und Nachbestellung: Mindestbestände überwachen, Bedarfsprognosen beachten und bei Bedarf Nachbestellungen oder Bestellanforderungen auslösen.' is not of type 'object'; taetigkeiten/8: 'Bedienung von Flurförderzeugen: Gabelstapler, Hubwagen und andere Lagertechnik sicher bedienen, pflegen und auf Funktionsfähigkeit prüfen.' is not of type 'object'; taetigkeiten/9: 'Retourenabwicklung: Rücksendungen entgegennehmen, prüfen, im System verbuchen und der Wiederverwertung, Reparatur oder Entsorgung zuführen.' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-4321_fachkraefte_in_der_lagerwirtschaft",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "taetigkeiten/0: 'Warenannahme und Qualitätsprüfung: Eingehende Warenlieferungen entgegennehmen, mit Bestellungen und Lieferscheinen abgleichen sowie Zustand und Qualität der Waren kontrollieren.' is not of type 'object'",
-      "taetigkeiten/1: 'Einlagerung und Lagerorganisation: Waren systematisch und unter Berücksichtigung von Sicherheits- und Lagervorschriften (z. B. FIFO-Prinzip, Gefahrgut) an den vorgesehenen Lagerplätzen einlagern.' is not of type 'object'",
-      "taetigkeiten/2: 'Bestandsführung und Buchung: Warenbewegungen (Ein-, Aus- und Umlagerungen) im Warenwirtschafts- oder Lagerverwaltungssystem (ERP/LVS) erfassen und dokumentieren.' is not of type 'object'",
-      "taetigkeiten/3: 'Kommissionierung: Waren anhand von Kunden- oder Produktionsaufträgen sowie Kommissionierlisten (bzw. per Scanner/Pick-by-Voice) zusammenstellen.' is not of type 'object'",
-      "taetigkeiten/4: 'Verpackung und Versandvorbereitung: Kommissionierte Waren versandfertig verpacken, sichern, etikettieren und die erforderlichen Versand- und Begleitpapiere erstellen.' is not of type 'object'",
-      "taetigkeiten/5: 'Warenausgabe und Verladung: Bereitgestellte Sendungen an interne Abteilungen oder Transportdienstleister übergeben und bei der sicheren Verladung mitwirken.' is not of type 'object'",
-      "taetigkeiten/6: 'Inventur und Bestandskontrolle: Regelmässige Bestandsprüfungen und Stichtags- oder permanente Inventuren durchführen sowie Bestandsdifferenzen aufklären.' is not of type 'object'",
-      "taetigkeiten/7: 'Bestandsüberwachung und Nachbestellung: Mindestbestände überwachen, Bedarfsprognosen beachten und bei Bedarf Nachbestellungen oder Bestellanforderungen auslösen.' is not of type 'object'",
-      "taetigkeiten/8: 'Bedienung von Flurförderzeugen: Gabelstapler, Hubwagen und andere Lagertechnik sicher bedienen, pflegen und auf Funktionsfähigkeit prüfen.' is not of type 'object'",
-      "taetigkeiten/9: 'Retourenabwicklung: Rücksendungen entgegennehmen, prüfen, im System verbuchen und der Wiederverwertung, Reparatur oder Entsorgung zuführen.' is not of type 'object'",
-      "zusammenfassung: 'Fachkräfte in der Lagerwirtschaft sind für den reibungslosen physischen und administrativen Materialfluss im Lager verantwortlich – von der Warenannahme und Einlagerung über die Bestandsführung im System bis hin zur Kommissionierung und dem Versand. Während die administrativen Aufgaben wie Bestandsbuchungen, Disposition und Dokumentenerstellung zunehmend durch digitale Systeme und KI unterstützt oder automatisiert werden, bleibt die physische Handhabung der Waren (insbesondere in nicht vollautomatisierten Lagern) ein zentraler, menschlicher Tätigkeitsbereich.' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"4321\",\"beruf\":\"Fachkräfte in der Lagerwirtschaft\",\"taetigkeiten\":[\n    \"Warenannahme und Qualitätsprüfung: Eingehende Warenlieferungen entgegennehmen, mit Bestellungen und Lieferscheinen abgleichen sowie Zustand und Qualität der Waren kontrollieren.\",\n    \"Einlagerung und Lagerorganisation: Waren systematisch und unter Berücksichtigung von Sicherheits- und Lagervorschriften (z. B. FIFO-Prinzip, Gefahrgut) an den vorgesehenen Lagerplätzen einlagern.\",\n    \"Bestandsführung und Buchung: Warenbewegungen (Ein-, Aus- und Umlagerungen) im Warenwirtschafts- oder Lagerverwaltungssystem (ERP/LVS) erfassen und dokumentieren.\",\n    \"Kommissionierung: Waren anhand von Kunden- oder Produktionsaufträgen sowie Kommissionierlisten (bzw. per Scanner/Pick-by-Voice) zusammenstellen.\",\n    \"Verpackung und Versandvorbereitung: Kommissionierte Waren versandfertig verpacken, sichern, etikettieren und die erforderlichen Versand- und Begleitpapiere erstellen.\",\n    \"Warenausgabe und Verladung: Bereitgestellte Sendungen an interne Abteilungen oder Transportdienstleister übergeben und bei der sicheren Verladung mitwirken.\",\n    \"Inventur und Bestandskontrolle: Regelmässige Bestandsprüfungen und Stichtags- oder permanente Inventuren durchführen sowie Bestandsdifferenzen aufklären.\",\n    \"Bestandsüberwachung und Nachbestellung: Mindestbestände überwachen, Bedarfsprognosen beachten und bei Bedarf Nachbestellungen oder Bestellanforderungen auslösen.\",\n    \"Bedienung von Flurförderzeugen: Gabelstapler, Hubwagen und andere Lagertechnik sicher bedienen, pflegen und auf Funktionsfähigkeit prüfen.\",\n    \"Retourenabwicklung: Rücksendungen entgegennehmen, prüfen, im System verbuchen und der Wiederverwertung, Reparatur oder Entsorgung zuführen.\"\n  ],\"unsicherheit\":\"mittel\",\"kommentar\":\"Die Einschätzung basiert auf dem typischen Tätigkeitsprofil von Logistikerinnen und Logistikern EFZ (Fachrichtung Lager) sowie Lageristinnen und Lageristen in Schweizer Industrie-, Handels- und Logistikbetrieben. Da der Beruf sowohl stark physisch geprägte Rollen im Kleingewerbe als auch stark systemgestützte Rollen in hochautomatisierten Logistikzentren umfasst, besteht eine mittlere Unsicherheit bezüglich der exakten Zeitanteile.\",\"zusammenfassung\":\"Fachkräfte in der Lagerwirtschaft sind für den reibungslosen physischen und administrativen Materialfluss im Lager verantwortlich – von der Warenannahme und Einlagerung über die Bestandsführung im System bis hin zur Kommissionierung und dem Versand. Während die administrativen Aufgaben wie Bestandsbuchungen, Disposition und Dokumentenerstellung zunehmend durch digitale Systeme und KI unterstützt oder automatisiert werden, bleibt die physische Handhabung der Waren (insbesondere in nicht vollautomatisierten Lagern) ein zentraler, menschlicher Tätigkeitsbereich.\"}"
+  "bewertung": {
+    "isco_code": "4321",
+    "beruf": "Fachkräfte in der Lagerwirtschaft",
+    "taetigkeiten": [
+      {
+        "name": "Waren physisch entgegennehmen, abladen und auf Transportschäden prüfen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Entladen mit Flurförderzeugen und unmittelbare Sichtkontrolle heterogener Gebinde an der Rampe; weder durch Sprachmodelle noch durch kommerzielle Robotik im typischen KMU-Lager zu mindestens 50 % ersetzbar."
+      },
+      {
+        "name": "Lieferscheine prüfen und Wareneingänge im Lagerverwaltungssystem erfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Dokumentenverarbeitung liest heterogene Lieferscheine und Packlisten aus, gleicht sie mit Bestellungen im ERP/WMS ab und bucht Standardfälle; die Fachkraft bearbeitet nur markierte Abweichungen. Parallel ermöglichen Barcodescanner und klassische EDI-Schnittstellen eine nicht-generative Automatisierung."
+      },
+      {
+        "name": "Waren mit Flurförderzeugen einlagern, stapeln und Lagersicherheit gewährleisten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer innerbetrieblicher Transport mit Stapler oder Hubwagen sowie Vor-Ort-Kontrolle von Regalsicherheit, Traglasten und Gefahrgutvorschriften; bei gemischten Ladungsträgern in typischen Schweizer Betrieben nicht mehrheitlich automatisiert."
+      },
+      {
+        "name": "Waren nach Aufträgen im Lager kommissionieren und verpacken",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Tätigkeit am Lagerplatz und Packtisch ohne Exposition gegenüber Sprachmodellen. Automatische Kleinteilelager und Behälter-Robotersysteme (z. B. AutoStore oder Shuttle-Systeme) sind in der Schweiz kommerziell verfügbar und übernehmen über 50 % der Kommissionierzeit."
+      },
+      {
+        "name": "Versand- und Transportdokumente erstellen sowie Warenausgänge im System buchen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Erstellen von Rüstscheinen, Lieferscheinen, Versandetiketten und Warenausgangsbuchungen erfolgt regelbasiert über klassische ERP-, WMS- und Versandsoftware; generative KI ist dafür im Regelfall nicht erforderlich."
+      },
+      {
+        "name": "Physische Inventur durchführen und Lagerbestände an den Lagerplätzen zählen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliches Zählen und Prüfen der Artikel direkt in den Regalen und Blocklagern; vollautomatische RFID-Inventuren oder Inventurdrohnen erreichen im typischen Schweizer KMU-Lager noch keine 50 % Zeitersparnis über das Gesamtsortiment."
+      },
+      {
+        "name": "Lagerbestände überwachen, Nachschub disponieren und Standardbestellungen im ERP auslösen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Überwachung von Mindest- und Meldebeständen sowie automatische Bestellvorschläge werden durch klassische regelbasierte Dispositions- und ERP-Software abgedeckt, nicht durch Sprachmodelle."
+      },
+      {
+        "name": "Bestandsdifferenzen analysieren, Bestandsdaten in Tabellenkalkulationen auswerten und Stammdaten pflegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus exportierten Buchungs- und Inventurlisten Formeln, Auswertungen sowie bereinigte Artikelstammdaten; die Fachkraft gibt den Kontext vor und prüft jede Auswertung sowie jede Bestandskorrektur fachlich."
+      },
+      {
+        "name": "Retouren physisch prüfen, sortieren und wieder einlagern oder entsorgen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Auspacken, optische und funktionale Qualitätsprüfung einzelner Rücksendungen sowie physisches Einlagern sind auf menschliche Handarbeit vor Ort angewiesen."
+      },
+      {
+        "name": "Schriftliche Lieferantenreklamationen, Terminabklärungen und Bestandsberichte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Sprachmodell formuliert aus Stichworten Mängelrügen bei Falsch- oder Schadlieferungen, Liefermahnschreiben und kurze Berichte (auch fremdsprachig); die Fachkraft prüft jedes Schreiben inhaltlich vor dem Versand."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting ist eine ausgebildete Fachkraft (Logistiker/in EFZ Fachrichtung Lager bzw. Lagerist/in) in einem Schweizer Handels-, Industrie- oder Logistikbetrieb, die sowohl physische Lagerarbeiten als auch die Bestandsführung im WMS/ERP erledigt. Die Unsicherheit ist mittel, da das Aufgabenprofil je nach Betriebsgrösse zwischen fast reiner Büro-Bestandsverwaltung und überwiegend physischer Lagerarbeit variiert. Ein erheblicher Teil des Automatisierungspotenzials entfällt auf klassische WMS-/ERP-Software und Lagerrobotik (P1) statt auf generative KI.",
+    "zusammenfassung": {
+      "haupt_risiko": "Durch generative KI verändert werden vor allem das Erfassen und Abgleichen von Lieferscheinen (Dokumentenerkennung im ERP/WMS), das Auswerten von Bestandsdaten und Pflegen von Stammdaten sowie das Verfassen von Lieferantenreklamationen per Chat-LLM.",
+      "begruendung": "Rund ein Viertel der Arbeitszeit ist gegenüber generativer KI exponiert, während der Grossteil auf physische Lagerarbeit und klassische ERP-Routinen entfällt. Bei der Belegerfassung wirkt die KI ersetzend mit Bearbeitung von Ausnahmen, bei Datenauswertungen und Reklamationen delegierend mit fachlicher Einzelprüfung. Nennenswerte regulatorische Hürden bestehen kaum, jedoch verzögert die heterogene IT-Landschaft kleinerer Schweizer Lagerbetriebe die direkte Integration in Lagerverwaltungssysteme.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

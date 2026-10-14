@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "138aa988879fbdb26a96902cdedfb89e53f0562e065f08a08594e0c602ea5ea6",
+    "isco_code": "2151",
+    "beruf": "Elektroingenieur/in",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2388,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2388
+        }
+      ],
+      "prompt_token_count": 23741,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 23741
+        }
+      ],
+      "thoughts_token_count": 7896,
+      "total_token_count": 34025
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2388,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2388
+          }
+        ],
+        "prompt_token_count": 23741,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 23741
+          }
+        ],
+        "thoughts_token_count": 7896,
+        "total_token_count": 34025
+      }
+    ],
+    "request_ids": [
+      "xD_PaoXXCY2ymtkPhcvTkAk"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2151_elektroingenieur_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2151",
+    "beruf": "Elektroingenieur/in",
+    "taetigkeiten": [
+      {
+        "name": "Technische Anforderungen definieren sowie Pflichtenhefte und Machbarkeitsstudien verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus technischen Eckdaten, Kundenanforderungen und Berechnungsnotizen strukturierte Entwürfe für Lasten-/Pflichtenhefte und Machbarkeitsstudien. Die Ingenieurin gibt die Spezifikationen vor und prüft jede Anforderung fachlich."
+      },
+      {
+        "name": "Elektrische Anlagen, Stromnetze und Schaltpläne mit CAE-/ECAD-Software konstruieren und anpassen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Entwerfen komplexer Schaltpläne und Netztopologien in CAE-Systemen (z. B. EPLAN, NEPLAN) erfordert präzise räumlich-funktionale Konstruktionsarbeit, bei der generative KI heute keine 50 % Zeitersparnis erreicht. Regelbasierte Makros gehören bereits zum Standardprozess."
+      },
+      {
+        "name": "Elektronische Schaltungen und Leiterplatten (PCB-Layouts) in EDA-Software entwerfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Schaltungsdesign, Bauteilplatzierung und EMV-gerechtes Routing von Leiterplatten erfordern detaillierte physikalische und geometrische Optimierung, die von generativer KI nicht in halber Zeit bei gleicher Qualität geleistet wird."
+      },
+      {
+        "name": "Energiesimulationen, Netzberechnungen und elektromagnetische Modellierungen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Aufbau physikalischer Simulationsmodelle (z. B. Lastfluss, FEM in ANSYS oder MATLAB/Simulink) und die Plausibilisierung des Systemverhaltens liegen überwiegend in spezialisierter Fachsoftware und Ingenieururteil; KI-Hilfe bei Skripten spart insgesamt unter 50 % der Zeit."
+      },
+      {
+        "name": "Hardwarenahe Firmware, SPS-Steuerungen und automatisierte Testskripte programmieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Coding-Agenten in der Entwicklungsumgebung erstellen unter Einbezug von Datenblättern und Code-Repositories C/C++-Firmware, SPS-Bausteine oder Python-Testskripte. Der Ingenieur spezifiziert die Hardware-Schnittstellen und prüft sowie testet jede Codeänderung am Zielsystem."
+      },
+      {
+        "name": "Prototypen und elektromechanische Systeme im Labor aufbauen, prüfen und Anlagen in Betrieb nehmen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Montage von Prototypen, Fehlersuche mit Messgeräten am Prüfstand sowie Inbetriebnahme und Wartung elektrischer Maschinen vor Ort sind physische und präsenzgebundene Tätigkeiten."
+      },
+      {
+        "name": "Mess- und Prüfdaten auswerten sowie technische Berichte und Systemdokumentationen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLMs mit Datenanalyse- und Dokumentenfunktionen werten Messprotokolle aus, erzeugen Grafiken und entwerfen Prüfberichte oder Handbücher. Die Fachperson steuert die Auswertung und kontrolliert jeden Bericht inhaltlich."
+      },
+      {
+        "name": "Bauteilauswahl, Stücklisten (BOM) und Materialkonformität (z. B. RoHS, REACH, IEC) prüfen und dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Agenten mit Zugriff auf PDF-Datenblätter und Normdatenbanken gleichen Stücklisten auf unzulässige Materialien und Spezifikationen ab und erstellen Konformitätsnachweise. Die Ingenieurin prüft jede kritische Bauteilentscheidung wegen der Produkt- und Sicherheitsverantwortung."
+      },
+      {
+        "name": "Schaltpläne und Konstruktionsunterlagen auf elektrische Sicherheit prüfen und genehmigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die sicherheitstechnische Prüfung von Schaltplänen, Schutzkonzepten und Selektivität vor der formellen Konstruktionsfreigabe erfordert detaillierte visuelle Planprüfung und haftungsrelevantes Fachurteil, wobei KI heute keine 50 % Zeitersparnis erreicht."
+      },
+      {
+        "name": "Technische Schnittstellen mit Kunden, Lieferanten und Projektteams abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Technische Klärungsgespräche, Projektsitzungen und Verhandlungen mit Lieferanten oder Auftraggebern beruhen auf direkter zwischenmenschlicher Interaktion und Abstimmung."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Elektroingenieur/in (FH/ETH) in einem Schweizer Industrie- oder Ingenieurbetrieb (Entwicklung und Projektierung von elektrischen Anlagen, Antriebs-/Energiesystemen und Industrieelektronik). Da das Berufsbild von der Energietechnik bis zur eingebetteten Hardwareentwicklung reicht, wurden die Zeitanteile über ein typisches industrielles Entwicklungs- und Projektierungsumfeld gemittelt. Grenzfälle bestehen bei Simulationsarbeiten und Skripting, wo der KI-Nutzen stark vom Anteil der Text-/Code-Arbeit gegenüber der grafischen Modellierung abhängt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem das Verfassen von Pflichtenheften und Machbarkeitsstudien, die hardwarenahe Programmierung, die Messdatenauswertung mit Berichterstellung sowie die Prüfung und Dokumentation der Material- und Normenkonformität durch Chat-LLMs, Coding- und Dokumenten-Agenten.",
+      "begruendung": "Rund 35 % der Arbeitszeit sind gegenüber generativer KI exponiert, durchwegs im delegierenden Modus: Die KI entwirft Spezifikationen, Steuerungs- bzw. Firmware-Code sowie Prüf- und Konformitätsberichte, während die Ingenieurin oder der Ingenieur jedes Ergebnis fachlich prüft und verantwortet. Der Grossteil der Arbeit (Schaltplan- und Leiterplattenentwurf in CAE/EDA, physikalische Simulationen, Labor- und Inbetriebnahmearbeiten) bleibt aufgrund komplexer Konstruktionsanforderungen, physischer Präsenz sowie strenger Sicherheits- und Haftungsvorschriften (z. B. NEV, ESTI, CE) beim Menschen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

@@ -10,86 +10,185 @@
     "beruf": "Maurer/in EFZ",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 337,
+      "candidates_token_count": 1585,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 337
+          "token_count": 1585
         }
       ],
-      "prompt_token_count": 21983,
+      "prompt_token_count": 21944,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21983
+          "token_count": 21944
         }
       ],
-      "thoughts_token_count": 1329,
-      "total_token_count": 23649
+      "thoughts_token_count": 3088,
+      "total_token_count": 26617
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 337,
+        "candidates_token_count": 1585,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 337
+            "token_count": 1585
           }
         ],
-        "prompt_token_count": 21983,
+        "prompt_token_count": 21944,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21983
+            "token_count": 21944
           }
         ],
-        "thoughts_token_count": 1329,
-        "total_token_count": 23649
+        "thoughts_token_count": 3088,
+        "total_token_count": 26617
       }
     ],
     "request_ids": [
-      "nrnOap-QK8nyz7IPu5--gQE"
+      "XTzPasHkDoLrz7IP-_az2Q0"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): Additional properties are not allowed ('begruendung', 'zeitrahmen' were unexpected); taetigkeiten/0: 'name' is not of type 'object'; taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'; taetigkeiten/2: 'stufe' is not of type 'object'; taetigkeiten/3: 'modus' is not of type 'object'; taetigkeiten/4: 'restzeit_mensch' is not of type 'object'; taetigkeiten/5: 'physisch_automatisierbar' is not of type 'object'; taetigkeiten/6: 'p_art' is not of type 'object'; taetigkeiten/7: 'sicherheit' is not of type 'object'; taetigkeiten/8: 'sicherheit_begruendung' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-7112_maurer_in_efz",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): Additional properties are not allowed ('begruendung', 'zeitrahmen' were unexpected)",
-      "taetigkeiten/0: 'name' is not of type 'object'",
-      "taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'",
-      "taetigkeiten/2: 'stufe' is not of type 'object'",
-      "taetigkeiten/3: 'modus' is not of type 'object'",
-      "taetigkeiten/4: 'restzeit_mensch' is not of type 'object'",
-      "taetigkeiten/5: 'physisch_automatisierbar' is not of type 'object'",
-      "taetigkeiten/6: 'p_art' is not of type 'object'",
-      "taetigkeiten/7: 'sicherheit' is not of type 'object'",
-      "taetigkeiten/8: 'sicherheit_begruendung' is not of type 'object'",
-      "taetigkeiten/9: 'ch_hemmnis' is not of type 'object'",
-      "taetigkeiten/10: 'begruendung' is not of type 'object'",
-      "zusammenfassung: 'haupt_risiko' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"7112\",\"beruf\":\"Maurer/in EFZ\",\"taetigkeiten\":[\n    \"name\",\n  \"zeitanteil_pct\",\n  \"stufe\",\n  \"modus\",\n  \"restzeit_mensch\",\n  \"physisch_automatisierbar\",\n  \"p_art\",\n  \"sicherheit\",\n  \"sicherheit_begruendung\",\n  \"ch_hemmnis\",\n  \"begruendung\"\n  ], \"unsicherheit\":\"niedrig\",\"kommentar\":\"Setting: Maurer/in EFZ in einer Schweizer Bauunternehmung (Hochbau, Neubau und Umbau). ESCO betont stark das reine Ziegelmauern, während in der Schweizer Praxis Schalungs-, Armierungs- und Betonarbeiten einen ebenso grossen Teil der Arbeit ausmachen (aus den optionalen Kompetenzen einbezogen).\",\"zusammenfassung\":\n  \"haupt_risiko\",\n  \"begruendung\": \"Rund 10 % der Arbeitszeit sind exponiert, durchwegs im delegierenden Modus: Die KI erstellt Rapport-Entwürfe bzw. Mengenrechnungen, die Fachperson oder der Polier prüft jedes Ergebnis. Der Kern des Berufs besteht zu 90 % aus physischer Arbeit und Präsenz auf der Baustelle; Dialekt, Baustellenlärm und kleinteilige Abläufe verlangsamen zudem die Einführung von Sprach-Tools.\",\n  \"zeitrahmen\": \"5-10 Jahre\"\n}"
+  "bewertung": {
+    "isco_code": "7112",
+    "beruf": "Maurer/in EFZ",
+    "taetigkeiten": [
+      {
+        "name": "Mauerwerk aus Backstein und Kalksandstein erstellen",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Tätigkeit auf der Baustelle (Steine verlegen, Mörtel auftragen, Fugen fertigstellen); Mauerroboter gibt es in der Schweiz nur in Pilotprojekten."
+      },
+      {
+        "name": "Schalungen bauen, Armierung verlegen und betonieren",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische und handwerkliche Arbeit vor Ort auf der Baustelle; keine kommerziell verfügbare Robotik übernimmt diese Arbeit im regulären Baustellenbetrieb."
+      },
+      {
+        "name": "Baustelle einrichten, Arbeitsbereich sichern und Material transportieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeiten auf wechselnden Baustellen inklusive Gerüst- und Absicherungsarbeiten sowie Abfallsortierung."
+      },
+      {
+        "name": "Baupläne lesen, Masse übertragen und vor Ort einmessen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Hauptzeitaufwand liegt im physischen Einmessen, Anbringen von Bauprofilen und Ziehen von Schlagschnüren direkt am Bauwerk."
+      },
+      {
+        "name": "Verputzen, Abdichten und Reparaturen im Umbau ausführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Ausführungsarbeiten am bestehenden oder neuen Baukörper (Dämmstoffe, Schutzmembranen, Mörtel); weder durch KI noch durch Robotik automatisierbar."
+      },
+      {
+        "name": "Material- und Mengenbedarf für Mauerwerk ermitteln",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die Rechnung im Chat gegenüber Faustregeln wirklich 50 % spart; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Massen aus dem Plan eintippen, LLM rechnet Steine, Mörtel und Zuschlag; der Maurer kontrolliert jedes Ergebnis."
+      },
+      {
+        "name": "Regierapporte mit Arbeitsbeschrieb, Material und Stunden ausfüllen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe in der Rapport-App erstellt den Rapport; der Maurer bzw. Polier prüft jeden Rapport. Dialekt und Lärm erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Absprachen mit Polier führen und Lernende anleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Präsenz- und Kommunikationstätigkeit im Bauteam direkt auf der Baustelle."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Maurer/in EFZ in einer Schweizer Bauunternehmung (Hochbau, Neubau und Umbau). Die wesentlichen ESCO-Kompetenzen fokussieren stark auf reines Mauerwerk und wurden anhand der optionalen Kompetenzen sowie des Schweizer Berufsbilds um Schalungs-, Armierungs- und Betonarbeiten ergänzt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur Rapporte und Mengenberechnungen, die per Spracheingabe bzw. Chat-LLM entstehen; die Bauarbeit selbst nicht.",
+      "begruendung": "Rund 10 % der Arbeitszeit sind exponiert, durchwegs delegierend: Die KI erstellt Rapport bzw. Mengenrechnung, der Maurer oder Polier prüft jedes Ergebnis fachlich. Der Kern des Berufs ist physische Arbeit auf der Baustelle; Dialekt und Baustellenlärm erschweren zudem die Spracheingabe.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }

@@ -10,78 +10,213 @@
     "beruf": "Führungskräfte in Forschung und Entwicklung",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 46,
+      "candidates_token_count": 2319,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 46
+          "token_count": 2319
         }
       ],
-      "prompt_token_count": 23019,
+      "prompt_token_count": 22980,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 23019
+          "token_count": 22980
         }
       ],
-      "thoughts_token_count": 5511,
-      "total_token_count": 28576
+      "thoughts_token_count": 7695,
+      "total_token_count": 32994
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 46,
+        "candidates_token_count": 2319,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 46
+            "token_count": 2319
           }
         ],
-        "prompt_token_count": 23019,
+        "prompt_token_count": 22980,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 23019
+            "token_count": 22980
           }
         ],
-        "thoughts_token_count": 5511,
-        "total_token_count": 28576
+        "thoughts_token_count": 7695,
+        "total_token_count": 32994
       }
     ],
     "request_ids": [
-      "nrnOarfOKsbrz7IPq46CuAM"
+      "XTzPaobsEcucz7IP_rLrgA8"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): Additional properties are not allowed ('taetigkeitenMaz' was unexpected); (root): 'taetigkeiten' is a required property; (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-1223_fuehrungskraefte_in_forschung_und_entwic",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): Additional properties are not allowed ('taetigkeitenMaz' was unexpected)",
-      "(root): 'taetigkeiten' is a required property",
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"1223\",\"beruf\":\"Führungskräfte in Forschung und Entwicklung\",\"taetigkeitenMaz\":null}"
+  "bewertung": {
+    "isco_code": "1223",
+    "beruf": "Führungskräfte in Forschung und Entwicklung",
+    "taetigkeiten": [
+      {
+        "name": "F&E-Mitarbeitende und Projektteams fachlich und personell führen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mitarbeitendengespräche, Coaching, Konfliktlösung, Leistungsbeurteilung und Personalrekrutierung beruhen auf unmittelbarer zwischenmenschlicher Präsenz und Führungsbeziehung."
+      },
+      {
+        "name": "F&E-Strategie, Technologie-Roadmaps und Projektportfolio mit der Geschäftsleitung abstimmen und festlegen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Strategische Priorisierung, Go/No-Go-Entscheide und Aushandlungsprozesse in Leitungsgremien erfordern menschliches Ermessen, Verhandlung und Gesamtverantwortung."
+      },
+      {
+        "name": "Laufende F&E-Projekte steuern, Meilensteine überwachen und technische Eskalationen klären",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Leiten von Projekt-Reviews, das Lösen technischer Blockaden im Dialog mit Forschenden und das Anordnen von Korrekturmassnahmen sind interaktive Führungsaufgaben."
+      },
+      {
+        "name": "Technologische Trends, wissenschaftliche Fachliteratur und Konkurrenzaktivitäten recherchieren und zusammenfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Recherche-Agenten mit Zugriff auf Web, Literaturdatenbanken und PDF-Dokumente erstellen strukturierte Trend- und Literatursynthesen; die Führungskraft gibt die Suchfragen vor und prüft jede Auswertung anhand zentraler Primärquellen."
+      },
+      {
+        "name": "Technische und wirtschaftliche Machbarkeit von Entwicklungskonzepten und Business Cases analysieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die KI-gestützte Daten- und Dokumentenanalyse bei komplexen technischen Machbarkeitsprüfungen die 50-%-Zeitersparnis erreicht; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Führungskraft beurteilt die technische und kommerzielle Machbarkeit weiterhin selbst, während LLM-gestützte Analysewerkzeuge Versuchsdaten, Spezifikationen und Finanzmodelle auswerten und Risiken markieren."
+      },
+      {
+        "name": "Management-Berichte, Entscheidungsvorlagen und Präsentationen über F&E-Ergebnisse verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus eingefügten Projektberichten, Kennzahlen und Stichworten den Bericht- oder Präsentationsentwurf; die Führungskraft steuert die Kernaussagen und prüft jede Vorlage inhaltlich."
+      },
+      {
+        "name": "F&E-Budgets planen, Kostenstellen kontrollieren und Mittelverwendung überwachen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Soll-Ist-Abgleiche, Kostenstellenberichte und Budgetkonsolidierungen werden durch klassische ERP-, BI- und Controlling-Software automatisiert; für die verbleibenden Budgetentscheide spart generative KI keine 50 % der Zeit."
+      },
+      {
+        "name": "Forschungsanträge, Fördergesuche und Projektbeschriebe für Drittmittel oder Kooperationen ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Auf Basis technischer Konzeptnotizen und Förderrichtlinien (z. B. Innosuisse, Horizon Europe) entwirft ein Chat-LLM die Antragsabschnitte; die Führungskraft spezifiziert das Vorhaben und überarbeitet jeden Antrag fachlich."
+      },
+      {
+        "name": "Erfindungsmeldungen aufbereiten sowie Patentrecherchen und Schutzrechtsansprüche fachlich prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Führungskraft prüft Erfindungsmeldungen und Patentansprüche in Abstimmung mit Patentanwälten selbst; spezialisierte KI-Patentrecherche- und Dokumentenwerkzeuge durchsuchen den Stand der Technik und markieren Überschneidungen."
+      },
+      {
+        "name": "F&E-Bereich gegenüber Kooperationspartnern, Hochschulen, Kunden und Behörden vertreten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beziehungsaufbau, Kooperationsverhandlungen und Repräsentation an Konferenzen oder gegenüber Behörden erfordern persönliche Präsenz und Vertrauen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Leiter/in Forschung und Entwicklung in einem Schweizer Industrie-, Technologie- oder Pharma-/Medtech-Unternehmen bzw. einer grösseren Forschungseinrichtung. Die ESCO-Kompetenzen decken das Berufsbild gut ab; der wichtigste Grenzfall liegt bei der technischen und wirtschaftlichen Machbarkeitsanalyse, bei der die Zeitersparnis durch KI nahe an der 50-%-Schwelle liegt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Verfassen von Management-Berichten und Förderanträgen mittels Chat-LLM sowie die Literatur- und Trendrecherche, Machbarkeitsanalysen und Patentprüfungen durch KI-gestützte Recherche- und Analysewerkzeuge.",
+      "begruendung": "Rund 40 % der Arbeitszeit entfallen auf analytische und dokumentarische Aufgaben, bei denen generative KI vorwiegend delegierend (Entwurf von Berichten, Fördergesuchen und Trendsynthesen) oder unterstützend (Machbarkeits- und Patentanalysen) eingesetzt wird. Der Kern des Berufs — Personalführung, strategische Portfolioentscheide, operative Projektsteuerung und die Vertretung nach aussen — erfordert persönliche Präsenz und Führungsverantwortung und ist nicht exponiert. In Schweizer F&E-Abteilungen bremsen zudem strenge Geheimhaltungs- und Schutzrechtsanforderungen (Neuheitsschutz bei Patenten, Schutz von Geschäftsgeheimnissen) die Nutzung externer KI-Dienste bei sensiblen Entwicklungsdaten.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

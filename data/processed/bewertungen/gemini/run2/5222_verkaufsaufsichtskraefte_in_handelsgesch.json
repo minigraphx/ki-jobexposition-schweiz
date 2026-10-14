@@ -10,77 +10,211 @@
     "beruf": "Verkaufsaufsichtskräfte in Handelsgeschäften",
     "lauf": 2,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 51,
+      "candidates_token_count": 2212,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 51
+          "token_count": 2212
         }
       ],
-      "prompt_token_count": 21275,
+      "prompt_token_count": 21236,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21275
+          "token_count": 21236
         }
       ],
-      "thoughts_token_count": 7293,
-      "total_token_count": 28619
+      "thoughts_token_count": 8749,
+      "total_token_count": 32197
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 51,
+        "candidates_token_count": 2212,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 51
+            "token_count": 2212
           }
         ],
-        "prompt_token_count": 21275,
+        "prompt_token_count": 21236,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21275
+            "token_count": 21236
           }
         ],
-        "thoughts_token_count": 7293,
-        "total_token_count": 28619
+        "thoughts_token_count": 8749,
+        "total_token_count": 32197
       }
     ],
     "request_ids": [
-      "nrnOatPxK7WaqtsP9_GF2AM"
+      "XTzPaofqB7Dtz7IPofG1mAw"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: [] is too short"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r2-5222_verkaufsaufsichtskraefte_in_handelsgesch",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: [] is too short"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"5222\",\"beruf\":\"Verkaufsaufsichtskräfte in Handelsgeschäften\",\"taetigkeiten\":[\n  ]\n}"
+  "bewertung": {
+    "isco_code": "5222",
+    "beruf": "Verkaufsaufsichtskräfte in Handelsgeschäften",
+    "taetigkeiten": [
+      {
+        "name": "Abläufe auf der Verkaufsfläche und an den Kassen überwachen sowie Tageseinsätze koordinieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die laufende Aufsicht auf der Verkaufsfläche, das Reagieren auf Kundenfrequenzen und die direkte Aufgabenverteilung im Schichtbetrieb erfordern physische Präsenz und unmittelbare Führung vor Ort."
+      },
+      {
+        "name": "Warenpräsentation, Aktionsaufbauten, Preisauszeichnung und Hygienevorschriften im Laden kontrollieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kontrollrundgänge zu Regalbild, Frische, Mindesthaltbarkeitsdaten, Kühlkette und Arbeitssicherheit finden physisch im Geschäft statt; elektronische Regaletiketten ersetzen die Vor-Ort-Kontrolle nicht zu 50 %."
+      },
+      {
+        "name": "Mitarbeitende und Lernende im Verkauf einarbeiten, schulen und Feedbackgespräche führen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das praktische Anleiten von Verkaufspersonal und Lernenden auf der Fläche sowie persönliche Führungs- und Qualifikationsgespräche sind unmittelbare Präsenz- und Beziehungstätigkeiten."
+      },
+      {
+        "name": "Kundenreklamationen, Umtausche und komplexe Kundenanliegen vor Ort bearbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Eskalierte Kundenbeschwerden und Kulanzentscheide an der Kasse oder am Kundendienst erfordern das persönliche Gespräch von Angesicht zu Angesicht sowie die physische Prüfung der Ware."
+      },
+      {
+        "name": "Warenbestände im System kontrollieren und Nachbestellungen nach Einkaufsrichtlinien disponieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Bestandsüberwachung und Bestellmengenberechnung erfolgt regelbasiert; klassische Warenwirtschaftssysteme mit automatischer Disposition übernehmen mindestens die Hälfte des manuellen Dispositionsaufwands."
+      },
+      {
+        "name": "Personaleinsatz- und Schichtpläne erstellen sowie Absenzen bewirtschaften",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Schichtplanung nach Arbeitsgesetz, Öffnungszeiten und Verfügbarkeiten ist eine regelbasierte Optimierungsaufgabe für klassische Personaleinsatzplanungs-Software (PEP) mit Mitarbeiter-Self-Service, nicht für Sprachmodelle."
+      },
+      {
+        "name": "Kassenabrechnungen, Tagesabschlüsse und Zahlungsbestände prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Abgleich von Kasseneinnahmen, elektronischen Zahlungen und Tagesabschlüssen wird durch klassische Kassen- und Buchhaltungssoftware weitgehend automatisiert; für generative KI besteht keine relevante Exposition."
+      },
+      {
+        "name": "Bewerbungen sichten, Vorstellungsgespräche führen und Probearbeitstage im Laden begleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Obwohl ein Sprachmodell beim Sichten von Dossiers helfen kann, entfällt der Grossteil der Zeit auf persönliche Gespräche und das Begleiten von Schnupper- und Probearbeitstagen auf der Fläche, sodass keine 50 % Zeitersparnis erreicht werden."
+      },
+      {
+        "name": "Umsatz-, Kosten- und Bestandszahlen auswerten sowie Berichte für die Geschäftsleitung verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Exportierte Verkaufs-, Abschreiber- und Budgetzahlen lassen sich samt Stichworten in ein Chat-LLM eingeben, das Abweichungsanalysen und den Berichtsentwurf erstellt. Die Aufsichtskraft gibt den Kontext vor und prüft jeden Bericht vor Weitergabe fachlich."
+      },
+      {
+        "name": "Interne Arbeitsanweisungen, Teammitteilungen und schriftliche Kundenantworten verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus wenigen Stichworten erstellt ein Chat-LLM Entwürfe für Team-Informationen, Checklisten oder schriftliche Kundenantworten. Die Verkaufsaufsichtskraft spezifiziert den Inhalt und kontrolliert jedes Schreiben vor dem Aushang oder Versand."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Teamleiter/in, Rayonsleiter/in oder Kassenaufsicht im Schweizer Detailhandel (Supermarkt oder grösseres Fachgeschäft). Im Unterschied zu Filialleitenden (ISCO 1420) arbeitet diese Funktion mehrheitlich direkt auf der Verkaufsfläche; entsprechend hoch ist der Anteil physischer Präsenz- und Führungsaufgaben.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind lediglich das Auswerten und Verfassen von Wochen- und Umsatzberichten sowie das Schreiben interner Arbeitsanweisungen und Kundenantworten mittels Chat-LLM, während die Aufsichts- und Führungsarbeit auf der Verkaufsfläche nicht betroffen ist.",
+      "begruendung": "Nur rund 10 % der Arbeitszeit entfallen auf schriftliche Berichte, Teammitteilungen und Korrespondenz, bei denen Sprachmodelle im delegierenden Modus Entwürfe und Abweichungsanalysen erstellen, die von der Aufsichtskraft fachlich geprüft werden. Weitere 25 % der Zeit (Nachbestellungen, Schichtplanung, Kassenabschluss) sind durch klassische Warenwirtschafts- und Einsatzplanungssoftware ohne generative KI automatisierbar. Da der Beruf im Schweizer Detailhandel stark durch physische Präsenz im Laden, direkte Personalführung und persönlichen Kundenkontakt geprägt ist, bleibt die Gesamtexposition gering.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

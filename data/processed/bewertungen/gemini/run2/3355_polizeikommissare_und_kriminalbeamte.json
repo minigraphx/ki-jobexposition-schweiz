@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "c035f9c44cc5b25262658ba9bf6cff837cbc999b06aa5e30a9b6d15793463c8e",
+    "isco_code": "3355",
+    "beruf": "Polizeikommissare und Kriminalbeamte",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2215,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2215
+        }
+      ],
+      "prompt_token_count": 21446,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21446
+        }
+      ],
+      "thoughts_token_count": 5364,
+      "total_token_count": 29025
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2215,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2215
+          }
+        ],
+        "prompt_token_count": 21446,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21446
+          }
+        ],
+        "thoughts_token_count": 5364,
+        "total_token_count": 29025
+      }
+    ],
+    "request_ids": [
+      "xD_Pavj3EaSt_PUPotaH2QY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-3355_polizeikommissare_und_kriminalbeamte",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3355",
+    "beruf": "Polizeikommissare und Kriminalbeamte",
+    "taetigkeiten": [
+      {
+        "name": "Einvernahmen von Beschuldigten, Opfern und Zeugen mündlich durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare zwischenmenschliche Präsenz, Vernehmungstaktik und Beobachtung des Aussageverhaltens vor Ort sind durch KI nicht ersetzbar."
+      },
+      {
+        "name": "Einvernahmeprotokolle aus Befragungen und Audioaufnahmen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracherkennung und LLM erstellen aus der Aufnahme oder dem Diktat den Protokollentwurf; Kriminalbeamte und Einvernommene prüfen und korrigieren jedes Protokoll im Detail vor der Unterschrift (StPO). Dialekt und Mehrpersonen-Gespräche erhöhen den Nachbearbeitungsaufwand."
+      },
+      {
+        "name": "Ermittlungsberichte, Schlussrapporte und Anträge an die Staatsanwaltschaft verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus eingefügten Aktennotizen, Protokollen und Falldaten den strukturierten Rapport; die ermittelnde Person prüft jede Tatsachendarstellung streng gegen die Akten."
+      },
+      {
+        "name": "Digitale Spuren, Kommunikationsdaten und Belegdokumente auswerten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM-gestützte Analysewerkzeuge durchsuchen, übersetzen und gruppieren grosse Mengen an Chats, E-Mails, Bildern und Bankbelegen; die Ermittlerin bewertet die Beweismittel selbst und verifiziert jede Spur."
+      },
+      {
+        "name": "Aussendiensteinsätze wie Observationen, Hausdurchsuchungen und Festnahmen durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz im Feld, polizeilicher Zwang und unmittelbares situatives Handeln sind weder durch generative KI noch durch Robotik automatisierbar."
+      },
+      {
+        "name": "Tatorte untersuchen und physische Beweismittel vor Ort sichern",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Spurensuche, Tatortbegehung und physische Beweissicherung vor Ort erfordern menschliche Präsenz und Sensorik."
+      },
+      {
+        "name": "Recherchen in Polizeidatenbanken und offenen Quellen zu Personen und Delikten durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Recherche-Agenten und Systemintegrationen fassen Einträge aus polizeilichen Journalen, Fahndungssystemen und OSINT zusammen; der Kriminalbeamte führt die Abfragen gezielt durch und prüft alle Treffer."
+      },
+      {
+        "name": "Ermittlungsstrategie planen und Beweislage rechtlich-taktisch würdigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Taktische Fallentscheide, Hypothesenbildung und die Beurteilung des Tatverdachts erfordern kriminalistische Erfahrung und menschliches Ermessen, wobei KI keine 50 % Zeitersparnis erreicht."
+      },
+      {
+        "name": "Sichergestellte Gegenstände und Beweismittel im System erfassen und verwalten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Handhabung, Verpackung und Etikettierung heterogener Asservate kombiniert mit kurzer strukturierter Systemerfassung."
+      },
+      {
+        "name": "Fallabsprachen mit Staatsanwaltschaft, Forensik und anderen Polizeikorps führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Koordination, Einsatzbesprechungen und Abstimmung der Verfahrensleitung mit der Staatsanwaltschaft beruhen auf direkter Kommunikation."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Kriminalbeamte/Detektive bei einer Schweizer Kantons- oder Stadtpolizei bzw. fedpol. Der Arbeitsalltag teilt sich je etwa zur Hälfte in operative Präsenzarbeit (Einvernahmen, Tatort, Aussendienst) und Büro-/Analysearbeit (Protokollierung, Rapportierung, Auswertung digitaler Beweise). Die Trennung zwischen mündlicher Einvernahme (E0) und Protokollerstellung (E2) bildet die hohe administrative Belastung im Schweizer Strafverfahren nach StPO präzise ab.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem das Verfassen von Ermittlungsrapporten, das Erstellen von Einvernahmeprotokollen sowie die Auswertung grosser Mengen digitaler Kommunikations- und Belegdaten durch Sprachmodelle, Spracherkennung und KI-Analysewerkzeuge.",
+      "begruendung": "Rund 45 % der Arbeitszeit sind gegenüber generativer KI exponiert, während die restlichen 55 % auf nicht exponierte Präsenz- und Ermittlungsarbeit im Feld und im Vernehmungszimmer entfallen. Die KI wirkt dabei ausschliesslich delegierend oder unterstützend, da im Strafverfahren jede Protokollstelle, jeder Bericht und jede Spur lückenlos durch die Ermittler geprüft und verantwortet werden muss. Strenge regulatorische Vorgaben (Schweizerische Strafprozessordnung, Amtsgeheimnis, Datenschutz und lokale Serverhaltung in kantonalen Polizeikorps) bremsen eine rasche Einführung deutlich.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

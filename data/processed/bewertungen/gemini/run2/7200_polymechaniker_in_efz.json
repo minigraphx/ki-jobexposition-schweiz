@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "75586ac2f9c7de598c06b678833d9b260ceaefa97ab3efcfb91010f2509bf53e",
+    "isco_code": "7200",
+    "beruf": "Polymechaniker/in EFZ",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2067,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2067
+        }
+      ],
+      "prompt_token_count": 21329,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21329
+        }
+      ],
+      "thoughts_token_count": 5255,
+      "total_token_count": 28651
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2067,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2067
+          }
+        ],
+        "prompt_token_count": 21329,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21329
+          }
+        ],
+        "thoughts_token_count": 5255,
+        "total_token_count": 28651
+      }
+    ],
+    "request_ids": [
+      "xD_ParnkCZvv_uMP7IC_2Qw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-7200_polymechaniker_in_efz",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "7200",
+    "beruf": "Polymechaniker/in EFZ",
+    "taetigkeiten": [
+      {
+        "name": "CNC-Werkzeugmaschinen einrichten, Werkzeuge rüsten und Werkstücke aufspannen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische und feinmotorische Arbeit direkt an der Werkzeugmaschine (Spannmittel montieren, Nullpunkte antasten, Werkzeuge bestücken); in der typischen Klein- und Mittelserienfertigung nicht durch Robotik zu ≥ 50 % automatisierbar."
+      },
+      {
+        "name": "Werkstücke an CNC-Maschinen bestücken, Teile einfahren und laufende Fertigung überwachen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Maschinenbedienung und Prozessüberwachung vor Ort (E0). Mit kommerziell verfügbaren Beladerobotern, Palettenwechslern und Stangenladern inkl. automatischer Prozessüberwachung lässt sich mindestens die Hälfte der Bestückungs- und Überwachungszeit übernehmen (P1)."
+      },
+      {
+        "name": "Single- und Kleinserienteile zu mechanischen Baugruppen montieren, justieren und testen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Montage-, Einstell- und Inbetriebnahmearbeit an Maschinen und Baugruppen; wegen hoher Variantenvielfalt im Schweizer Maschinenbau auch durch Industrieroboter nicht zu ≥ 50 % automatisierbar."
+      },
+      {
+        "name": "CNC-Programme mit CAM-Software oder an der Maschinensteuerung erstellen, optimieren und simulieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative KI erreicht bei der 3D-Bahnplanung und Kollisionsprüfung in Bezug auf Maschinengeometrie und Toleranzen keine 50 % Zeitersparnis (E0). Klassische CAM-Software mit automatischer Feature-Erkennung und Regelstrategien übernimmt jedoch über 50 % der Programmierarbeit (P1)."
+      },
+      {
+        "name": "Konventionelle Bearbeitungen (Drehen, Fräsen, Bohren) sowie manuelles Entgraten und Nacharbeiten ausführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein manuelle und physische Bearbeitung von Einzelteilen, Hilfsvorrichtungen und Kanten an konventionellen Maschinen oder am Werkbank."
+      },
+      {
+        "name": "Gefertigte Werkstücke mit Handmessmitteln und Koordinatenmessmaschinen prüfen und vermessen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Messen von Mass-, Form- und Lagetoleranzen am Bauteil (E0). Durch automatisierte CNC-Koordinatenmessmaschinen und optische Messzellen kann in der Qualitätskontrolle mindestens die Hälfte der manuellen Messzeit übernommen werden (P1)."
+      },
+      {
+        "name": "Technische Zeichnungen und CAD-Modelle analysieren sowie Arbeitsabläufe und Spannkonzepte planen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Festlegen von Aufspannungen, Bearbeitungsreihenfolgen und Werkzeugen erfordert räumlich-physikalisches Erfahrungswissen zu Bauteilverzug und Schwingungen, bei dem Sprachmodelle heute keine 50 % Zeitersparnis erreichen."
+      },
+      {
+        "name": "Werkzeugmaschinen und Betriebsmittel warten, reinigen sowie technische Störungen beheben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Instandhaltungs-, Reinigungs- und Reparaturarbeit direkt an den Produktionsanlagen."
+      },
+      {
+        "name": "Einrichteblätter, Montageanleitungen sowie Prüf- und Störungsrapporte dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Multimodale KI-Werkzeuge erstellen aus Fotos der Aufspannung, Spracheingaben oder Stichworten strukturierte Einrichteblätter, Anleitungen und Rapporte; die Fachperson spezifiziert die Angaben und prüft jedes Dokument fachlich auf Richtigkeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Polymechaniker/in EFZ in einem typischen Schweizer KMU der MEM-Industrie (Kombinationsprofil aus CNC-Fertigung und Baugruppenmontage). Die ESCO-Zuordnung «Zerspanungsmechaniker/in» greift für die Schweiz zu kurz, da das Berufsbild gemäss Bildungsverordnung neben der Zerspanung auch Montage, Inbetriebnahme und Instandhaltung umfasst. Das Automatisierungspotenzial liegt vor allem bei klassischer CAM-Software, Beladerobotern und CNC-Messmaschinen (P1), während generative KI nur die technische Dokumentation betrifft.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen ist lediglich das Erstellen von Einrichteblättern, Montageanleitungen sowie Prüf- und Störungsrapporten durch multimodale KI-Werkzeuge, während die physische Fertigungs- und Montagearbeit nicht gegenüber generativer KI exponiert ist.",
+      "begruendung": "Nur rund 5 % der Arbeitszeit sind gegenüber generativer KI exponiert, und zwar im delegierenden Modus: Die KI entwirft aus Fotos und Spracheingaben technische Dokumentationen, die der Polymechaniker wegen hoher Qualitäts- und Sicherheitsanforderungen jedes Mal fachlich prüft. Der Kern des Berufs besteht aus physischer Arbeit an Werkzeugmaschinen und Baugruppen, wobei in Schweizer Werkstätten Lärm und Mundart die Spracheingabe zusätzlich erschweren.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

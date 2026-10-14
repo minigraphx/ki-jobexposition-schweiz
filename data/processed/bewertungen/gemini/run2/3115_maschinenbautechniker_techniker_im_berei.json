@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "9c011f2bb65725e3a0868f2ae65a0c6d70fed4b5120caae1f5b4b79cc264cb3e",
+    "isco_code": "3115",
+    "beruf": "Maschinenbautechniker, Techniker im Bereich Systemtechnik, Automation und Unternehmensprozesse",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2202,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2202
+        }
+      ],
+      "prompt_token_count": 21435,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21435
+        }
+      ],
+      "thoughts_token_count": 5789,
+      "total_token_count": 29426
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2202,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2202
+          }
+        ],
+        "prompt_token_count": 21435,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21435
+          }
+        ],
+        "thoughts_token_count": 5789,
+        "total_token_count": 29426
+      }
+    ],
+    "request_ids": [
+      "xD_PavLWCI2b6dkP7Jip0Q0"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-3115_maschinenbautechniker_techniker_im_berei",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3115",
+    "beruf": "Maschinenbautechniker, Techniker im Bereich Systemtechnik, Automation und Unternehmensprozesse",
+    "taetigkeiten": [
+      {
+        "name": "Technische Komponenten und Baugruppen im 3D-CAD konstruieren und modellieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die parametrische 3D-Konstruktion mechanischer Baugruppen unter Berücksichtigung von Bauraum, Kinematik und Fertigbarkeit erreicht mit heutiger generativer KI keine Zeitersparnis von 50 %."
+      },
+      {
+        "name": "Fertigungszeichnungen, Stücklisten und Konstruktionspläne im CAD/PLM erstellen und anpassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Standardableitungen übernimmt bereits das klassische CAD-System; die verbleibende Arbeit an normgerechten Form- und Lagetoleranzen sowie Änderungsprüfungen wird durch generative KI um weniger als 50 % verkürzt."
+      },
+      {
+        "name": "Technische Anforderungen an Bauteile definieren und Pflichtenhefte ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus technischen Eckdaten, Kundenanforderungen und Normvorgaben strukturierte Spezifikationsentwürfe; der Techniker gibt die Parameter vor und prüft jede Anforderung fachlich."
+      },
+      {
+        "name": "SPS-Steuerungsprogramme und Automationsabläufe erstellen und anpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Copiloten in Automations-Entwicklungsumgebungen generieren Funktionsbausteine (z. B. in Structured Text) und Schrittketten; der Techniker spezifiziert die Logik und prüft sowie testet jeden Programmteil im Hinblick auf die Maschinensicherheit."
+      },
+      {
+        "name": "Testläufe und Funktionsprüfungen an Prototypen und Maschinen im Prüffeld durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Einrichten von Prüfständen, Verkabeln von Sensorik und Durchführen von Versuchsläufen an physischen Maschinen erfordert manuelle Arbeit vor Ort."
+      },
+      {
+        "name": "Mechanische und mechatronische Fehlersuche an Anlagen vor Ort betreiben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Störungsdiagnose und -behebung an Maschinen in der Werkhalle oder beim Kunden besteht überwiegend aus physischem Messen, Prüfen und Nachjustieren vor Ort."
+      },
+      {
+        "name": "Prüf-, Mess- und Produktionsdaten aufbereiten und statistisch auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Datenanalyse-Werkzeuge bereinigen Messreihen aus Prüfständen, führen Berechnungen aus und erstellen Diagramme; der Techniker steuert die Auswertung und prüft die physikalische Plausibilität jedes Ergebnisses."
+      },
+      {
+        "name": "Technische Prüfberichte, Dokumentationen und Betriebsanleitungen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Aus Messergebnissen und Stichworten formuliert ein Chat-LLM vollständige Prüfberichte und Anleitungstexte (inkl. Übersetzungen); der Techniker prüft jedes Dokument inhaltlich auf Normkonformität."
+      },
+      {
+        "name": "Produktionsprozesse und Betriebskosten analysieren sowie Arbeitspläne im ERP pflegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Techniker analysiert und optimiert die Fertigungsabläufe weiterhin selbst; KI-Funktionen im ERP- und BI-System liefern Auswertungen zu Durchlaufzeiten, Kostenszenarien und Vorschläge für Arbeitspläne."
+      },
+      {
+        "name": "Technische Besprechungen mit Ingenieuren, Fertigung und Lieferanten führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmungen zur Fertigbarkeit am Bauteil oder in der Montage leben vom persönlichen Austausch und der gemeinsamen Problemlösung vor Ort."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting ist ein typisches KMU der Schweizer MEM-Industrie (Maschinen-, Elektro- und Metallindustrie). Da die Berufsbezeichnung die Schwerpunkte Maschinenbau, Systemtechnik/Automation und Unternehmensprozesse (typischerweise Techniker/in HF) bündelt, bildet das Tätigkeitsprofil einen ausgewogenen Querschnitt aus Konstruktion, Steuerungsbau, Versuch/Prüffeld und Prozessoptimierung ab. Grenzfälle liegen bei der SPS-Programmierung und der Zeichnungserstellung, je nach Standardisierungsgrad des Betriebs.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind das Erstellen von Pflichtenheften und technischen Dokumentationen per Chat-LLM sowie die Messdatenauswertung, Prozessanalyse und SPS-Codegenerierung durch spezialisierte KI-Werkzeuge.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus (und teilweise unterstützend bei der Prozessanalyse), während 3D-CAD-Konstruktion und praktische Arbeit am Prüfstand oder an Anlagen kaum betroffen sind. In der Schweizer Maschinenindustrie erfordern strenge Sicherheitsnormen (Maschinenrichtlinie/CE) eine lückenlose fachliche Prüfung jeder Ausgabe, während mehrsprachige Dokumentationspflichten den Nutzen von LLMs beim Verfassen von Anleitungen erhöhen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

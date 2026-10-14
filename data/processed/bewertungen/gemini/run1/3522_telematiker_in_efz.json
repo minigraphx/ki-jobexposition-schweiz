@@ -10,77 +10,215 @@
     "beruf": "Telematiker/in EFZ",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 44,
+      "candidates_token_count": 2306,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 44
+          "token_count": 2306
         }
       ],
-      "prompt_token_count": 22425,
+      "prompt_token_count": 22386,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22425
+          "token_count": 22386
         }
       ],
-      "thoughts_token_count": 8189,
-      "total_token_count": 30658
+      "thoughts_token_count": 4529,
+      "total_token_count": 29221
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 44,
+        "candidates_token_count": 2306,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 44
+            "token_count": 2306
           }
         ],
-        "prompt_token_count": 22425,
+        "prompt_token_count": 22386,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22425
+            "token_count": 22386
           }
         ],
-        "thoughts_token_count": 8189,
-        "total_token_count": 30658
+        "thoughts_token_count": 4529,
+        "total_token_count": 29221
       }
     ],
     "request_ids": [
-      "nrnOavr4KrG1_PUPj86l4AU"
+      "XTzParOvDdXoz7IPnKSMuAw"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: [] is too short"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-3522_telematiker_in_efz",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: [] is too short"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"3522\",\"beruf\":\"Telematiker/in EFZ\",\"taetigkeiten\":[\n]}"
+  "bewertung": {
+    "isco_code": "3522",
+    "beruf": "Telematiker/in EFZ",
+    "taetigkeiten": [
+      {
+        "name": "Kupfer- und Glasfaserverkabelungen (LWL) in Gebäuden einziehen, anschliessen und spleissen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische und handwerkliche Installationsarbeit auf Baustellen und in bestehenden Gebäuden; keine Automatisierung durch Robotik im regulären Betrieb verfügbar."
+      },
+      {
+        "name": "Netzwerkschränke, aktive Komponenten, Endgeräte sowie Video- und Gegensprechanlagen vor Ort montieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montage- und Anschlussarbeit von Racks, Switches, Access Points, IP-Telefonen und Sicherheitskomponenten vor Ort."
+      },
+      {
+        "name": "Netzwerkkomponenten (Switches, Router, Firewalls, WLAN, VPN) und VoIP-Systeme (inkl. SBC) konfigurieren und per Skript einrichten",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Je nach Anteil standardisierter Hersteller-GUIs gegenüber CLI-, Skript- und Provisionierungsdateien wird die 50-%-Schwelle knapp erreicht oder verfehlt; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Das Chat-LLM erstellt auf Basis von Vorgaben CLI-Konfigurationsblöcke, Firewall-Regeln, PowerShell-Skripte und Provisionierungslisten; die Fachperson spezifiziert die Parameter, spielt die Konfiguration ein und prüft jede Einstellung fachlich."
+      },
+      {
+        "name": "Leitungs- und Systemmessungen durchführen sowie Funktions- und Systemtests vor Ort vornehmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Bedienen von Messgeräten (z. B. OTDR, Zertifizierungsmessgeräte, WLAN-Ausmessung) und Prüfen der Hardwarefunktionen direkt an der Anlage."
+      },
+      {
+        "name": "Störungen an Telematik-, Netzwerk- und Telefonieanlagen vor Ort lokalisieren und Hardware reparieren oder ersetzen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ortsgebundene Fehlersuche an Verkabelung und Geräten sowie physischer Austausch defekter Baugruppen, Netzteile oder Endgeräte."
+      },
+      {
+        "name": "Systemstörungen und Konfigurationsprobleme per Fernwartung anhand von Logs und Fachdokumentation analysieren und beheben",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Fachperson führt die Fehlersuche und Entstörung im Kundensystem selbst durch, nutzt aber ein Chat-LLM zur raschen Auswertung kopierter Logdateien (z. B. SIP-Traces, Syslogs) und englischsprachiger Herstellerdokumentation."
+      },
+      {
+        "name": "Firmware-Updates einspielen und Systeme im laufenden Betrieb überwachen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zentrale Netzwerk-Management-, RMM- und Controller-Software übernimmt zeitgesteuerte Firmware-Rollouts und regelbasiertes Monitoring weitgehend ohne generative KI."
+      },
+      {
+        "name": "Anlagendokumentationen, Netzwerkschemata sowie Mess- und Abnahmeprotokolle erstellen und nachführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Dokumentationswerkzeuge erstellen aus Konfigurationsexporten, Messdaten, Fotos und Spracheingaben strukturierte Anlagendokumentationen und Protokolle; die Fachperson prüft und verantwortet jedes Dokument."
+      },
+      {
+        "name": "Kundschaft und Systemanwender/innen vor Ort instruieren und bei Systemwechseln begleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Übergabe, Schulung und Betreuung der Anwenderinnen und Anwender vor Ort bei der Inbetriebnahme neuer Kommunikations- und Sicherheitssysteme."
+      },
+      {
+        "name": "Kleinprojekte und Systemmigrationen planen, Offertgrundlagen zusammenstellen und Nutzungsrichtlinien verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM entwirft aus Stichworten und Anforderungen Migrationschecklisten, Offerttexte sowie System- und Sicherheitsrichtlinien; die Fachperson prüft und adaptiert jeden Entwurf für das Kundenprojekt."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Telematiker/in EFZ in einem Schweizer Elektro-/Telematik-KMU oder ICT-Systemintegrator. Der ESCO-Beruf «Maschinenbautechniker im Bereich Telekommunikation» ist unpräzise übersetzt und zu stark auf Forschung/Gerätebau ausgerichtet; die Tätigkeiten wurden deshalb an die Schweizer Berufspraxis (Netzwerk-, VoIP-, Gebäude- und Sicherheitskommunikation) angepasst. Die grösste Unsicherheit besteht beim Zeitanteil und Automatisierungsgrad der Systemkonfiguration (GUI-Klickarbeit vs. Skript-/CLI-Generierung).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind das Erstellen von Konfigurationsskripten und Netzwerkregeln, die Remote-Störungsanalyse anhand von Logs und Fachtexten sowie die Anlagendokumentation und Projektplanung durch Chat-LLMs und multimodale Dokumentationstools.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit entfällt auf kognitive Konfigurations-, Diagnose-, Planungs- und Dokumentationsaufgaben, während der Grossteil der Arbeit (Verkabelung, Montage, Messungen und Entstörung vor Ort) physisch und ortsgebunden bleibt. Bei den exponierten Tätigkeiten wirkt die KI überwiegend delegierend (Entwurf von Konfigurationsblöcken, Dokumentationen und Migrationsplänen mit anschliessender Fachprüfung) sowie unterstützend bei der Log- und Fehleranalyse. Datenschutzvorgaben (revDSG) und das Fernmeldegeheimnis bei Kundennetz- und Verbindungsdaten bremsen in der Schweiz die direkte Nutzung externer Cloud-KI-Dienste.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

@@ -10,84 +10,224 @@
     "beruf": "HR-Manager/in",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 563,
+      "candidates_token_count": 2410,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 563
+          "token_count": 2410
         }
       ],
-      "prompt_token_count": 23447,
+      "prompt_token_count": 23408,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 23447
+          "token_count": 23408
         }
       ],
-      "thoughts_token_count": 5644,
-      "total_token_count": 29654
+      "thoughts_token_count": 5593,
+      "total_token_count": 31411
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 563,
+        "candidates_token_count": 2410,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 563
+            "token_count": 2410
           }
         ],
-        "prompt_token_count": 23447,
+        "prompt_token_count": 23408,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 23447
+            "token_count": 23408
           }
         ],
-        "thoughts_token_count": 5644,
-        "total_token_count": 29654
+        "thoughts_token_count": 5593,
+        "total_token_count": 31411
       }
     ],
     "request_ids": [
-      "nrnOatO9LImc_uMPqZXzoA0"
+      "XTzPavLFE8ucz7IP_rLrgA8"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: taetigkeiten/0: 'Linienvorgesetzte in Führungs-, Konflikt- und Personalfragen beraten' is not of type 'object'; taetigkeiten/1: 'Vorstellungs-, Vertrags- und Trennungsgespräche mit Kandidatinnen und Mitarbeitenden führen' is not of type 'object'; taetigkeiten/2: 'Personalreglemente, Stellenprofile, komplexe Arbeitsverträge und Arbeitszeugnisse entwerfen' is not of type 'object'; taetigkeiten/3: 'Bewerbungsdossiers sichten, mit Anforderungsprofilen abgleichen und Vorauswahl treffen' is not of type 'object'; taetigkeiten/4: 'Konzepte für Weiterbildung, Talentmanagement, Leistungsbeurteilung und Mitarbeiterbindung ausarbeiten' is not of type 'object'; taetigkeiten/5: 'HR-Kennzahlen und Lohngleichheitsanalysen auswerten sowie Management-Berichte erstellen' is not of type 'object'; taetigkeiten/6: 'Arbeitsrechtliche Einzelfälle abklären und Vorgehensempfehlungen erarbeiten' is not of type 'object'; taetigkeiten/7: 'Lohnrunden, Vergütungssysteme und Personalbudget planen und mit Linienvorgesetzten kalibrieren' is not of type 'object'; taetigkeiten/8: 'HR-Strategie, Stellenplanung und Organisationsentwicklung mit der Geschäftsleitung abstimmen' is not of type 'object'; taetigkeiten/9: 'Eigenes HR-Team führen sowie mit Sozialpartnern, Behörden und Personalvermittlern verhandeln' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-1212_hr_manager_in",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "taetigkeiten/0: 'Linienvorgesetzte in Führungs-, Konflikt- und Personalfragen beraten' is not of type 'object'",
-      "taetigkeiten/1: 'Vorstellungs-, Vertrags- und Trennungsgespräche mit Kandidatinnen und Mitarbeitenden führen' is not of type 'object'",
-      "taetigkeiten/2: 'Personalreglemente, Stellenprofile, komplexe Arbeitsverträge und Arbeitszeugnisse entwerfen' is not of type 'object'",
-      "taetigkeiten/3: 'Bewerbungsdossiers sichten, mit Anforderungsprofilen abgleichen und Vorauswahl treffen' is not of type 'object'",
-      "taetigkeiten/4: 'Konzepte für Weiterbildung, Talentmanagement, Leistungsbeurteilung und Mitarbeiterbindung ausarbeiten' is not of type 'object'",
-      "taetigkeiten/5: 'HR-Kennzahlen und Lohngleichheitsanalysen auswerten sowie Management-Berichte erstellen' is not of type 'object'",
-      "taetigkeiten/6: 'Arbeitsrechtliche Einzelfälle abklären und Vorgehensempfehlungen erarbeiten' is not of type 'object'",
-      "taetigkeiten/7: 'Lohnrunden, Vergütungssysteme und Personalbudget planen und mit Linienvorgesetzten kalibrieren' is not of type 'object'",
-      "taetigkeiten/8: 'HR-Strategie, Stellenplanung und Organisationsentwicklung mit der Geschäftsleitung abstimmen' is not of type 'object'",
-      "taetigkeiten/9: 'Eigenes HR-Team führen sowie mit Sozialpartnern, Behörden und Personalvermittlern verhandeln' is not of type 'object'",
-      "zusammenfassung: 'Die Hälfte der Arbeitszeit entfällt auf konzeptionelle, analytische und textbasierte Aufgaben, bei denen generative KI überwiegend delegierend (Entwurf von Reglementen, Konzepten, Berichten und Bewerbervorauswahl mit fachlicher Einzelprüfung durch die HR-Leitung) und teils unterstützend (arbeitsrechtliche Abklärungen) wirkt. Die andere Hälfte besteht aus persönlicher Führungsberatung, Auswahl- und Trennungsgesprächen sowie strategischer Abstimmung in der Geschäftsleitung und bleibt kaum exponiert. In der Schweiz bremsen vor allem das strenge Datenschutzgesetz (revDSG) bei Personendaten, arbeitsrechtliche Haftungsrisiken, die Mehrsprachigkeit vieler Betriebe sowie Akzeptanzfragen im Recruiting eine vollautomatische Umsetzung.' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"1212\",\"beruf\":\"HR-Manager/in\",\"taetigkeiten\":[\n    \"Linienvorgesetzte in Führungs-, Konflikt- und Personalfragen beraten\",\n    \"Vorstellungs-, Vertrags- und Trennungsgespräche mit Kandidatinnen und Mitarbeitenden führen\",\n    \"Personalreglemente, Stellenprofile, komplexe Arbeitsverträge und Arbeitszeugnisse entwerfen\",\n    \"Bewerbungsdossiers sichten, mit Anforderungsprofilen abgleichen und Vorauswahl treffen\",\n    \"Konzepte für Weiterbildung, Talentmanagement, Leistungsbeurteilung und Mitarbeiterbindung ausarbeiten\",\n    \"HR-Kennzahlen und Lohngleichheitsanalysen auswerten sowie Management-Berichte erstellen\",\n    \"Arbeitsrechtliche Einzelfälle abklären und Vorgehensempfehlungen erarbeiten\",\n    \"Lohnrunden, Vergütungssysteme und Personalbudget planen und mit Linienvorgesetzten kalibrieren\",\n    \"HR-Strategie, Stellenplanung und Organisationsentwicklung mit der Geschäftsleitung abstimmen\",\n    \"Eigenes HR-Team führen sowie mit Sozialpartnern, Behörden und Personalvermittlern verhandeln\"\n  ],\"unsicherheit\":\"niedrig\",\"kommentar\":\"Angenommenes Setting: HR-Manager/in (Personalleiter/in) in einem mittleren bis grösseren Schweizer Unternehmen (KMU ab ca. 100 Mitarbeitenden oder Unternehmensbereich) mit sowohl strategisch-konzeptionellen als auch operativ-beratenden Aufgaben. Die ESCO-Kompetenzen decken das Berufsbild gut ab; Routinetätigkeiten der Personaladministration (wie der monatliche Lohnlauf) liegen bei HR-Sachbearbeitenden und sind hier nicht als eigene Tätigkeit erfasst.\",\"zusammenfassung\":\n  \"Die Hälfte der Arbeitszeit entfällt auf konzeptionelle, analytische und textbasierte Aufgaben, bei denen generative KI überwiegend delegierend (Entwurf von Reglementen, Konzepten, Berichten und Bewerbervorauswahl mit fachlicher Einzelprüfung durch die HR-Leitung) und teils unterstützend (arbeitsrechtliche Abklärungen) wirkt. Die andere Hälfte besteht aus persönlicher Führungsberatung, Auswahl- und Trennungsgesprächen sowie strategischer Abstimmung in der Geschäftsleitung und bleibt kaum exponiert. In der Schweiz bremsen vor allem das strenge Datenschutzgesetz (revDSG) bei Personendaten, arbeitsrechtliche Haftungsrisiken, die Mehrsprachigkeit vieler Betriebe sowie Akzeptanzfragen im Recruiting eine vollautomatische Umsetzung.\"}"
+  "bewertung": {
+    "isco_code": "1212",
+    "beruf": "HR-Manager/in",
+    "taetigkeiten": [
+      {
+        "name": "Linienvorgesetzte und Geschäftsleitung in Führungs-, Personal- und Konfliktsituationen beraten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Coaching, Konfliktmoderation und situative Führungsberatung erfordern unmittelbare zwischenmenschliche Präsenz, Empathie und Vertrauensarbeit."
+      },
+      {
+        "name": "Vorstellungsgespräche sowie Vertrags-, Lohn- und Trennungsgespräche führen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Interviews mit Kandidatinnen und Kandidaten, Gehaltsverhandlungen sowie heikle Kündigungs- oder Austrittsgespräche sind reine Präsenz- und Verhandlungstätigkeiten."
+      },
+      {
+        "name": "Stelleninserate, Arbeitsverträge, Vereinbarungen und Arbeitszeugnisse entwerfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten und Vorlagen vollständige Entwürfe für Inserate, individuelle Vertragsklauseln und codierte Schweizer Arbeitszeugnisse; die HR-Führungskraft spezifiziert die Vorgaben und prüft jedes Dokument fachlich und rechtlich."
+      },
+      {
+        "name": "Bewerbungsdossiers sichten, mit Anforderungsprofilen abgleichen und Vorauswahl erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Dokumentenverarbeitung und LLM-Funktionen im Bewerbermanagementsystem (ATS) extrahieren Qualifikationen aus PDF-Lebensläufen und Zeugnissen und schlagen ein Matching vor; die HR-Führungskraft beurteilt die geeigneten Dossiers weiterhin selbst und trifft die Vorauswahl."
+      },
+      {
+        "name": "Personalreglemente sowie Konzepte für Weiterbildung, Mitarbeiterbindung und Gleichstellung ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft auf Basis betrieblicher Eckwerte Richtlinien (z. B. Spesen-, Arbeitszeit- oder Homeoffice-Reglemente) sowie Schulungs- und Bindungsprogramme; die HR-Führungskraft steuert die Ausarbeitung und prüft jeden Entwurf auf Gesetzes- und Kulturkonformität."
+      },
+      {
+        "name": "Personalbedarfs-, Budget- und Lohnrundenplanung durchführen sowie HR-Kennzahlen aufbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Datenanalyse-Agenten in Tabellen- oder HR-Systemen werten Fluktuations-, Absenzen- und Lohndaten aus und entwerfen Management-Berichte, während die HR-Führungskraft die Budget- und Lohnentscheide selbst erarbeitet. Klassische HRIS-/ERP-Software und Tools wie Logib automatisieren bereits die regelbasierte Datenkonsolidierung und Lohngleichheitsberechnung (P1)."
+      },
+      {
+        "name": "Arbeits- und sozialversicherungsrechtliche Einzelfälle abklären und Massnahmen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Mit Zugriff auf Schweizer Rechtsdatenbanken (OR, ArG, GAV, Sozialversicherungsrecht) recherchiert ein KI-System die Rechtslage bei komplexen Fällen wie Sperrfristen oder Lohnfortzahlung und entwirft rechtliche Einschätzungen oder Verwarnungen; die HR-Führungskraft prüft jede Quelle und verantwortet den Entscheid."
+      },
+      {
+        "name": "Beurteilungs- und Talentmanagementprozesse mit Führungskräften kalibrieren und begleiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Hauptaufwand liegt in gemeinsamen Kalibrierungsrunden mit dem Kader zur Leistungsbeurteilung, Beförderungs- und Nachfolgeplanung, bei denen Diskussion und persönliches Ermessen dominieren."
+      },
+      {
+        "name": "HR-Team führen sowie operative Personal- und Lohnprozesse überwachen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung, Koordination und fachliche Kontrolle der Mitarbeitenden im Personalwesen sowie die Schlussfreigabe von Lohnläufen sind Führungs- und Verantwortungstätigkeiten ohne relevante Zeitersparnis durch generative KI."
+      },
+      {
+        "name": "Kultur-, Change- und Gesundheitsprojekte moderieren sowie mit Dienstleistern und Behörden verhandeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Workshops zur Unternehmenskultur und zum betrieblichen Gesundheitsmanagement sowie Verhandlungen mit Personalvermittlern, Versicherern und Behörden erfordern persönliche Präsenz und Beziehungsarbeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: HR-Manager/in (Personalleiter/in bzw. Senior HR Business Partner) in einem mittleren bis grösseren Schweizer Unternehmen oder einer Verwaltungseinheit. Die Tätigkeit teilt sich je zur Hälfte in interpersonelle Führungs-, Beratungs- und Verhandlungsaufgaben (E0) sowie in konzeptionelle, redaktionelle, analytische und rechtliche Aufgaben (E1/E2). Grenzfälle bestehen bei der Dossiervorselektion und den Datenanalysen, wo die 50-%-Schwelle erst durch integrierte Zusatzsoftware (ATS/BI mit KI) erreicht wird.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind das Entwerfen von Verträgen, Arbeitszeugnissen und Personalreglementen per Chat-LLM sowie die Bewerbungsvorauswahl, HR-Datenanalyse und arbeitsrechtliche Recherche durch spezialisierte KI-Software.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit ist gegenüber generativer KI exponiert, wobei die KI überwiegend delegierend (bei Texten, Reglementen und Rechtsabklärungen) oder unterstützend (bei Dossiersichtung und Kennzahlenanalyse) eingesetzt wird, während persönliche Beratung, Verhandlungen und Führung beim Menschen bleiben. Wesentliche Hemmnisse in der Schweiz sind der strenge Datenschutz (revDSG) bei Personendaten, arbeitsrechtliche Haftungsrisiken (OR/ArG), das Vertrauen in menschliche Personalentscheide sowie mehrsprachige Dokumente in nationalen und internationalen Betrieben.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

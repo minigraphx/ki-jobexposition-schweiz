@@ -1,0 +1,231 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "2f15034451b9deec97e3d5c0ace26ed88e42480789c1939773312055102e23e4",
+    "isco_code": "3311",
+    "beruf": "Wertpapierhändler, -makler und Finanzmakler",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2547,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2547
+        }
+      ],
+      "prompt_token_count": 21601,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21601
+        }
+      ],
+      "thoughts_token_count": 7882,
+      "total_token_count": 32030
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2547,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2547
+          }
+        ],
+        "prompt_token_count": 21601,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21601
+          }
+        ],
+        "thoughts_token_count": 7882,
+        "total_token_count": 32030
+      }
+    ],
+    "request_ids": [
+      "xD_PapDQBo2ymtkPhcvTkAk"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-3311_wertpapierhaendler_makler_und_finanzmakl",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3311",
+    "beruf": "Wertpapierhändler, -makler und Finanzmakler",
+    "taetigkeiten": [
+      {
+        "name": "Standardisierte Kauf- und Verkaufsaufträge im Handelssystem prüfen, routen und abwickeln",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Platzierung und das Routing standardisierter Börsen- und Devisenaufträge ist ein regelbasierter Prozess ohne Einsatz generativer KI. Klassische Order-Management-Systeme (OMS), Straight-Through-Processing und Ausführungsalgorithmen (z. B. VWAP/TWAP) übernehmen heute über 50 % dieser Arbeit."
+      },
+      {
+        "name": "Komplexe oder grossvolumige Handelsaufträge (Block Trades, OTC-Geschäfte) mit Gegenparteien verhandeln und ausführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bilaterale Preisverhandlungen, das Abschätzen der Marktliquidität und das Eingehen von Ausführungsrisiken in Echtzeit erfordern menschliches Urteilsvermögen und direkten Kontakt mit Market Makern. Weder Sprachmodelle noch klassische Software sparen hier mindestens 50 % der Zeit."
+      },
+      {
+        "name": "Kurse, Orderbücher, Marktliquidität und Handelsrisiken während der Börsenzeiten in Echtzeit überwachen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die laufende Überwachung offener Positionen, Spreads und Risikolimiten am Trading-Desk erfordert unmittelbare menschliche Präsenz und Eingriffsbereitschaft. Klassische Preis- und Risikoalarme helfen zwar, ersetzen die Überwachung aber nicht zu mindestens 50 %."
+      },
+      {
+        "name": "Laufende Markt-, Unternehmens- und Konjunkturnachrichten sowie Research-Berichte sichten und auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "In Finanzterminals integrierte LLM-Funktionen und Recherche-Agenten fassen Ad-hoc-Mitteilungen, Notenbankentscheide, Gewinnkonferenzen und Analystenberichte in Sekunden zusammen. Die Handelsfachperson erarbeitet die Markteinschätzung weiterhin selbst auf Basis der KI-Auszüge."
+      },
+      {
+        "name": "Finanzinstrumente, Bewertungen und Portfoliorisiken analysieren sowie Handels- und Absicherungsstrategien ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLMs mit Datenanalyse- und Code-Ausführungswerkzeugen werten Marktdaten und Portfoliorisiken aus und berechnen Szenarien; der Händler entwickelt und verantwortet die Strategie weiterhin selbst. Bei Kundendaten greifen Bankkundengeheimnis und Datenschutz."
+      },
+      {
+        "name": "Kundschaft und Kundenberater telefonisch oder persönlich zu Marktlage, Produkten und Auftragsausführung beraten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das direkte Beratungs- und Verkaufsgespräch mit institutionellen Kunden, Vermögensverwaltern oder internen Kundenberatern lebt von persönlichem Vertrauen und synchroner Interaktion. Generative KI erreicht hier keine Zeitersparnis von 50 % bei gleicher Qualität."
+      },
+      {
+        "name": "Marktkommentare, Morning Briefings und Produktinformationen für Kundschaft und Berater verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus eingegebenen Marktdaten und Stichworten vollständige Marktkommentare und Übersetzungen; die Fachperson prüft jeden Text vor dem Versand inhaltlich und aufsichtsrechtlich. FIDLEG-Vorgaben und die parallele Publikation in mehreren Landessprachen plus Englisch prägen den Schweizer Alltag."
+      },
+      {
+        "name": "Offerten und Term Sheets verschiedener Emittenten einholen, vergleichen und für Kundschaft aufbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenextraktion mit LLMs liest Konditionen und Payoffs aus PDF-Term-Sheets aus und erstellt Angebotsvergleiche, die der Broker einzeln gegen die Originaldokumente prüft. Für standardisierte Produkte übernehmen zudem klassische Multi-Issuer-Plattformen (z. B. Deritrade) den Preisvergleich."
+      },
+      {
+        "name": "Transaktionsdaten erfassen, Handelsbestätigungen abgleichen und Nachhandels-Unstimmigkeiten (Settlement) klären",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM-gestützte Dokumenten- und Nachrichtenverarbeitung extrahiert Zuteilungen aus Kunden-Chats oder E-Mails und entwirft Rückfragen bei Abwicklungsdifferenzen; jede Buchung wird vor Freigabe kontrolliert. Standardisierte Abgleiche erfolgen bereits über klassische Matching- und STP-Software."
+      },
+      {
+        "name": "Compliance-, Eignungs- und Best-Execution-Nachweise (FIDLEG/FINMA) für Transaktionen dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus kopierten Transaktions- und Marktdaten formuliert ein Chat-LLM den Entwurf für Best-Execution- und Angemessenheitsnotizen; die Handelsfachperson prüft und verantwortet jeden Eintrag einzeln. Regulatorische Dokumentationspflichten nach FIDLEG und das Bankkundengeheimnis sind zentrale Hürden."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Wertpapierhändler/in (Execution/Sales Trader) und Finanzmakler/in bei einer Schweizer Bank, einem Wertpapierhaus oder unabhängigen Vermögensverwalter/Broker. Die Tätigkeiten im Handel sind stark durch klassische Handelssoftware (OMS, Ausführungsalgorithmen, Multi-Issuer-Plattformen) geprägt, die gemäss Rubrik unter P und nicht unter E erfasst wird. Generative KI greift vor allem bei Research-Auswertung, Datenanalyse, Textproduktion und Dokumentation.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Auswertung von Marktnachrichten und Research, die Analyse von Handelsstrategien, das Verfassen von Marktkommentaren, der Vergleich von Term Sheets sowie die Nachhandels- und Compliance-Dokumentation durch Chat-LLMs und integrierte Analyse- und Dokumentenwerkzeuge.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind gegenüber generativer KI exponiert, je zur Hälfte unterstützend (Nachrichten- und Strategieanalyse) und delegierend (Marktkommentare, Offertenvergleiche, Settlement-Klärung und FIDLEG-Dokumentation), während der Echtzeithandel und die Kundenberatung beim Menschen bleiben. In der Schweiz bremsen insbesondere das Bankkundengeheimnis, Datenschutzvorgaben (revDSG) und strenge FINMA-/FIDLEG-Regeln den Einsatz externer KI-Dienste, während die Mehrsprachigkeit im Research den Nutzen erhöht.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

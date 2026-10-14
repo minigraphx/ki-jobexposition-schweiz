@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "ba47f04d54614c625e5088214a0eb40bf11f4cb33460158d58074cb673b79f0a",
+    "isco_code": "2521",
+    "beruf": "Datenbankentwickler und -administratoren",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2434,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2434
+        }
+      ],
+      "prompt_token_count": 21929,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21929
+        }
+      ],
+      "thoughts_token_count": 8372,
+      "total_token_count": 32735
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2434,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2434
+          }
+        ],
+        "prompt_token_count": 21929,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21929
+          }
+        ],
+        "thoughts_token_count": 8372,
+        "total_token_count": 32735
+      }
+    ],
+    "request_ids": [
+      "xD_PasbzCYqd6dkP-MrZ-A8"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2521_datenbankentwickler_und_administratoren",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2521",
+    "beruf": "Datenbankentwickler und -administratoren",
+    "taetigkeiten": [
+      {
+        "name": "Datenmodelle, Datenbankschemata und Tabellenstrukturen entwerfen und mittels DDL implementieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus fachlichen Anforderungen und bestehenden Schemaauszügen im Textformat erstellt ein Chat-LLM Entwürfe für normalisierte Datenmodelle und DDL-Skripte; die Fachperson spezifiziert die Domänenlogik und prüft jede Tabelle und Beziehung im Detail."
+      },
+      {
+        "name": "Datenbankabfragen (SQL), Stored Procedures, Views und Trigger programmieren und testen",
+        "zeitanteil_pct": 20,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bereits ein Chat-LLM mit eingefügtem Tabellenschema erreicht über 50 % Zeitersparnis; in der Praxis generiert die KI den SQL-Code samt Testfällen, während der Entwickler die Anforderungen vorgibt und jede Abfrage vor der Übernahme fachlich prüft und testet."
+      },
+      {
+        "name": "ETL-Pipelines, Datenmigrationen und Anwendungsschnittstellen entwickeln und integrieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Coding-Agenten mit Zugriff auf das Code-Repository sowie Quell- und Zielschemata erstellen Transformationsskripte, Schnittstellencode und Integrationstests über mehrere Dateien; der Entwickler steuert das Mapping und reviewt jede Änderung."
+      },
+      {
+        "name": "Datenbank-Performance überwachen, Ausführungspläne analysieren und Indizes sowie Ressourcen optimieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Administrator beurteilt und verantwortet die Optimierungsmassnahmen am Produktivsystem selbst; in Monitoring- und Datenbanksysteme integrierte KI-Werkzeuge werten Ausführungspläne und Telemetriedaten aus und schlagen passende Indizes oder Abfrageumstellungen vor."
+      },
+      {
+        "name": "Datensicherungen (Backups) konfigurieren, überwachen und Wiederherstellungstests (Recovery) durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die operative Kontrolle von Sicherungsläufen und das Durchführen realer Recovery-Tests auf Speichersystemen werden durch generative KI nicht um 50 % verkürzt; jedoch können klassische Backup-Orchestrierungssoftware und Managed-Database-Dienste (DBaaS) über die Hälfte des manuellen Aufwands automatisieren."
+      },
+      {
+        "name": "Datenbanksysteme installieren, konfigurieren, patchen und bei Betriebsstörungen entstören",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Wartungsfenster, Failover-Tests und die operative Störungsbehebung im laufenden Betrieb erfordern Systemeingriffe und Koordination, bei denen LLMs keine 50 % Zeitersparnis erreichen; klassische Infrastructure-as-Code-Werkzeuge (z. B. Ansible/Terraform) und Managed-Cloud-Datenbanken übernehmen jedoch über 50 % der manuellen Installations- und Patch-Arbeit."
+      },
+      {
+        "name": "Zugriffsrechte, Sicherheitsrichtlinien und Datenbank-Audits umsetzen und überprüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Fachperson führt Sicherheits-Audits und Berechtigungsprüfungen selbst durch; ein Chat-LLM wertet exportierte Rollen- und Berechtigungstabellen gegen Sicherheitsvorgaben aus, markiert Abweichungen und liefert Entwürfe für GRANT-/REVOKE-Skripte."
+      },
+      {
+        "name": "Datenqualität prüfen, Datenbereinigungen durchführen und Auswertungen für Fachabteilungen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Datenanalyse-Agenten mit Code- und SQL-Ausführung identifizieren Datenanomalien, erstellen Bereinigungsskripte und generieren Auswertungsberichte; der Entwickler gibt die Prüfregeln vor und kontrolliert jedes Skript und Ergebnis vor der Ausführung."
+      },
+      {
+        "name": "Datenbankdokumentation, Datenkataloge und Betriebshandbücher verfassen und pflegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus eingefügten DDL-Skripten, Prozedurcode und Stichworten erstellt ein Chat-LLM vollständige technische Dokumentationen und Datenkatalog-Einträge; die Fachperson prüft jeden Text auf fachliche Richtigkeit und gibt ihn frei."
+      },
+      {
+        "name": "Fachliche Anforderungen mit Kunden und Entwicklerteams erheben, Aufwände schätzen und Lösungen abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Anforderungsworkshops, Architekturabstimmungen mit Softwareteams und das Einholen von Kundenfeedback bestehen überwiegend aus direkter zwischenmenschlicher Kommunikation und Abstimmung, bei der KI-Werkzeuge weniger als 50 % der Zeit einsparen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting ist eine kombinierte Rolle aus Datenbankentwicklung und Datenbankadministration (DBA/Data Engineering) in einem mittleren bis grösseren Schweizer Unternehmen oder IT-Dienstleister. Die ESCO-Beschreibung betont die Entwicklung, während der Berufstitel (ISCO 2521) auch die Administration umfasst; daher wurden Entwicklungs- und Betriebstätigkeiten gleichermassen abgebildet.",
+    "zusammenfassung": {
+      "haupt_risiko": "Das Programmieren von SQL-Abfragen und Prozeduren, der Entwurf von Datenmodellen, die Entwicklung von ETL-Pipelines, Datenqualitätsanalysen sowie die Dokumentation werden stark durch Chat-LLMs und Coding-Agenten verändert, während Performance-Tuning und Sicherheits-Audits durch KI-Analysewerkzeuge beschleunigt werden.",
+      "begruendung": "Rund 70 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei der Modus überwiegend delegierend (Erstellung von SQL-Code, Schemata, ETL-Skripten und Dokumentation mit fachlicher Einzelprüfung) und beim Performance-Tuning sowie bei Sicherheitsprüfungen unterstützend ist. Ein ersetzender Einsatz ohne Einzelprüfung ist wegen des hohen Risikos von Datenverlusten und Systemausfällen in Produktivdatenbanken unüblich. In der Schweiz bremsen vor allem strenge Datenschutz- und Geheimhaltungsvorgaben (revDSG, Finanz- und Behördenregulierung) den direkten Zugriff externer KI-Agenten auf produktive Datenbestände.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

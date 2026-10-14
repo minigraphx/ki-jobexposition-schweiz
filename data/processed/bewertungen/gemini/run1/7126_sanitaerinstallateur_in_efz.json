@@ -10,69 +10,225 @@
     "beruf": "Sanitärinstallateur/in EFZ",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
-    "stop_reason": "MAX_TOKENS",
+    "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 27839,
+      "cache_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 19837
+        }
+      ],
+      "cached_content_token_count": 19837,
+      "candidates_token_count": 2145,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 27839
+          "token_count": 2145
         }
       ],
-      "prompt_token_count": 22106,
+      "prompt_token_count": 22067,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22106
+          "token_count": 22067
         }
       ],
-      "thoughts_token_count": 4929,
-      "total_token_count": 54874
+      "thoughts_token_count": 5620,
+      "total_token_count": 29832
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 27839,
+        "cache_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 19837
+          }
+        ],
+        "cached_content_token_count": 19837,
+        "candidates_token_count": 2145,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 27839
+            "token_count": 2145
           }
         ],
-        "prompt_token_count": 22106,
+        "prompt_token_count": 22067,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22106
+            "token_count": 22067
           }
         ],
-        "thoughts_token_count": 4929,
-        "total_token_count": 54874
+        "thoughts_token_count": 5620,
+        "total_token_count": 29832
       }
     ],
-    "request_ids": [],
-    "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Antwort abgeschnitten (max_output_tokens = 32768)"
+    "request_ids": [
+      "XTzPasHgELDtz7IPofG1mAw"
     ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-7126_sanitaerinstallateur_in_efz",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "antwort",
+    "fehler_art": null,
     "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null
+  "bewertung": {
+    "isco_code": "7126",
+    "beruf": "Sanitärinstallateur/in EFZ",
+    "taetigkeiten": [
+      {
+        "name": "Rohrleitungen für Trinkwasser, Abwasser und Gas zuschneiden, biegen, verbinden und verlegen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Montagearbeit auf der Baustelle und in der Werkstatt (Pressen, Schweissen, Löten, Befestigen); keine kommerziell verfügbare Robotik für die Baustellenmontage."
+      },
+      {
+        "name": "Vorwandinstallationen, Tragsysteme und Einbauteile montieren sowie Schlitze und Durchbrüche erstellen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit vor Ort beim Stellen von Vorwandelementen, Schalldämmen und Spitzen; industrielle Vorfertigung ersetzt die Montage auf Schweizer Baustellen nicht zu 50 %."
+      },
+      {
+        "name": "Sanitärapparate, Armaturen, Garnituren und Wassererwärmer montieren und anschliessen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Fertigmontage von Apparaten, Armaturen und Boilern inklusive Abdichtungsarbeiten vor Ort."
+      },
+      {
+        "name": "Wartungs-, Reparatur- und Entstopfungsarbeiten im Service und Unterhalt ausführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Kundendienstarbeit vor Ort wie Armaturenwechsel, Boilerentkalkung, Lecksuche und Abflussreinigung."
+      },
+      {
+        "name": "Material, Werkzeuge und Maschinen rüsten, zur Baustelle transportieren und Arbeitsbereich sichern",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Verladen, Fahren des Servicefahrzeugs und Einrichten der Baustelle; autonomes Fahren ist im Schweizer Strassenverkehr nicht verfügbar."
+      },
+      {
+        "name": "Installationspläne (2D/3D) lesen, Masse auf der Baustelle übertragen und Leitungsführungen anzeichnen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Zeitaufwand liegt überwiegend im physischen Einmessen, Kontrollieren der baulichen Gegebenheiten und Anzeichnen mit Laser oder Schlagschnur vor Ort."
+      },
+      {
+        "name": "Dichtheits- und Druckprüfungen an Wasser- und Gasleitungen durchführen sowie Anlagen einregulieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Anschliessen der Prüfgeräte, Abdrücken, Spülen der Leitungen und Einregulieren von Armaturen auf der Baustelle."
+      },
+      {
+        "name": "Arbeiten vor Ort mit Bauleitung und anderen Gewerken abstimmen sowie Kundschaft instruieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare persönliche Koordination auf der Baustelle und Übergabeinstruktion von Angesicht zu Angesicht."
+      },
+      {
+        "name": "Material- und Ersatzteilbedarf für Montage und Service ermitteln sowie Bestellungen erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob multimodale Ersatzteilerkennung und KI-Bestellassistenten im Baustellenalltag über alle Fälle hinweg mindestens 50 % Zeit sparen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in Grosshandels-Apps erstellen aus Fotos von Bestandsbauteilen oder Spracheingaben den Warenkorb; die Fachperson prüft Systemkompatibilität und Mengen vor der Bestellung."
+      },
+      {
+        "name": "Regierapporte, Arbeitsberichte sowie Druckprüfungs- und Inbetriebnahmeprotokolle erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe und Bilderkennung in der Branchen-App erstellen den Rapport oder das Prüfprotokoll; der Installateur kontrolliert die Angaben auf Richtigkeit und visiert das Dokument."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Sanitärinstallateur/in EFZ in einem typischen Schweizer Haustechnik-KMU (Mischung aus Neu-/Umbau und Kundendienst). Der Beruf ist stark handwerklich-physisch geprägt; Grenzfälle betreffen einzig die kleinen administrativen Anteile bei Rapportwesen und Materialbestellung auf dem Smartphone oder Tablet.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind einzig das Erstellen von Regierapporten und Prüfprotokollen sowie die Ermittlung und Bestellung von Material und Ersatzteilen mittels Spracheingabe und multimodaler KI-Erkennung, während die handwerkliche Installationsarbeit nicht betroffen ist.",
+      "begruendung": "Nur rund 10 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI durchwegs im delegierenden Modus Rapporte, Protokolle und Materialbestellungen entwirft, die von den Installateurinnen und Installateuren fachlich geprüft werden müssen. Der überwiegende Teil der Arbeit besteht aus physischer Montage-, Wartungs- und Prüfarbeit auf Schweizer Baustellen und bei der Kundschaft vor Ort. Spezifische regulatorische oder kulturelle CH-Hemmnisse stehen dem KI-Einsatz bei den administrativen Randtätigkeiten kaum entgegen, jedoch verlangsamen Baustellenlärm, Mundart und die kleinstrukturierte KMU-Landschaft die Einführung im Alltag.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }

@@ -10,91 +10,221 @@
     "beruf": "Bürokräfte in der Statistik, im Finanz- und Versicherungswesen",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "cache_tokens_details": [
-        {
-          "modality": "TEXT",
-          "token_count": 19219
-        }
-      ],
-      "cached_content_token_count": 19219,
-      "candidates_token_count": 57,
+      "candidates_token_count": 2382,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 57
+          "token_count": 2382
         }
       ],
-      "prompt_token_count": 21678,
+      "prompt_token_count": 21639,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21678
+          "token_count": 21639
         }
       ],
-      "thoughts_token_count": 8340,
-      "total_token_count": 30075
+      "thoughts_token_count": 8102,
+      "total_token_count": 32123
     },
     "usage_je_versuch": [
       {
-        "cache_tokens_details": [
-          {
-            "modality": "TEXT",
-            "token_count": 19219
-          }
-        ],
-        "cached_content_token_count": 19219,
-        "candidates_token_count": 57,
+        "candidates_token_count": 2382,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 57
+            "token_count": 2382
           }
         ],
-        "prompt_token_count": 21678,
+        "prompt_token_count": 21639,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21678
+            "token_count": 21639
           }
         ],
-        "thoughts_token_count": 8340,
-        "total_token_count": 30075
+        "thoughts_token_count": 8102,
+        "total_token_count": 32123
       }
     ],
     "request_ids": [
-      "nrnOarq2LfWN_uMP8LiPoAE"
+      "XTzPapHREZrVz7IP29KluQo"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: [] is too short"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-4312_buerokraefte_in_der_statistik_im_finanz",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: [] is too short"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\": \"4312\", \"beruf\": \"Bürokräfte in der Statistik, im Finanz- und Versicherungswesen\", \"taetigkeiten\":  [] }"
+  "bewertung": {
+    "isco_code": "4312",
+    "beruf": "Bürokräfte in der Statistik, im Finanz- und Versicherungswesen",
+    "taetigkeiten": [
+      {
+        "name": "Kundenanträge, Verträge und Formulare (Kontoeröffnungen, Policen) sichten und im Kernsystem erfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM-gestützte Dokumentenextraktion mit Integration ins Kernbanken- oder Versicherungssystem übernimmt das Auslesen und Erfassen heterogener Anträge; die Sachbearbeitung gibt stichprobenartig frei und bearbeitet markierte Ausnahmen."
+      },
+      {
+        "name": "Stammdatenmutationen (Adressen, Vollmachten, Begünstigte) aus Kundenmitteilungen im System verarbeiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Integrierte KI liest Freitext-Mitteilungen oder Formulare aus und bereitet die Mutation im Bestandessystem vor; die Fachperson prüft jede Änderung inhaltlich (inkl. Unterschriften-/Berechtigungskontrolle) und gibt sie frei."
+      },
+      {
+        "name": "Zahlungsaufträge, Überweisungen und Buchungen im Zahlungsverkehrssystem abwickeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Ausführung von Zahlungsläufen und der automatische Abgleich per QR-Referenz oder camt-Dateien erfolgen über klassische Zahlungsverkehrs- und Kernbankensoftware (Straight-Through-Processing), nicht über generative KI."
+      },
+      {
+        "name": "Unstimmigkeiten, Rückläufer und Spezialfälle bei Finanztransaktionen abklären und bereinigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Sachbearbeitung klärt und bereinigt den Fall selbst; ein im System integrierter KI-Assistent durchsucht Transaktionshistorien sowie SWIFT-/Buchungstexte und liefert Zuordnungs- und Korrekturvorschläge."
+      },
+      {
+        "name": "Formelle Vollständigkeits- und Compliance-Vorprüfungen (KYC-Unterlagen, Richtlinien) durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Person führt die formelle Kontrolle jedes Dossiers selbst durch; eine KI-gestützte Dokumentenprüfung gleicht Belege (z. B. Handelsregisterauszüge, Herkunftsnachweise) mit Checklisten ab und markiert Lücken oder Widersprüche."
+      },
+      {
+        "name": "Standardkorrespondenz (Eingangsbestätigungen, Dokumentennachforderungen, Bestandesmitteilungen) verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "<10",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Sprachmodell formuliert aus kurzen Fallangaben fehlerfreie Kundenbriefe und E-Mails in den Landessprachen; in der Praxis genügt eine kurze Sichtung und Klick-Freigabe."
+      },
+      {
+        "name": "Transaktions-, Bestandes- und Statistikdaten in Tabellenkalkulationen aufbereiten und Standardberichte erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Datenanalyse-Agenten und KI-Funktionen in Tabellenkalkulationen erstellen Auswertungen, Grafiken und Berichtsentwürfe nach Vorgabe, wobei die Fachperson jede Tabelle auf rechnerische Richtigkeit prüft. Standardberichte lassen sich zudem über klassische BI- und Reporting-Software automatisieren."
+      },
+      {
+        "name": "Rückfragen des Front-Office zu Bearbeitungsstand, Richtlinien und Abläufen beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein mit internen Weisungen und dem Ticketsystem verbundener KI-Assistent entwirft Antworten auf Anfragen der Kundenberatenden; das Back-Office prüft die Auskunft im Einzelfall und übernimmt direkte Rücksprachen."
+      },
+      {
+        "name": "Physische Originaldokumente und Posteingänge sortieren, digitalisieren und im Archiv ablegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Handhabung von physischer Eingangspost, Entklammern, Scannen und das geordnete Ablegen von Originalurkunden und Policen sind physische Tätigkeiten."
+      },
+      {
+        "name": "Fallbesprechungen im Team und Prozessabstimmungen mit Schnittstellenabteilungen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Abstimmung und Koordination zwischen Back-Office, Front-Office und Compliance erfordern unmittelbare zwischenmenschliche Kommunikation."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Kaufmännische Sachbearbeiter/innen (EFZ) im Back-Office bzw. Operations einer Schweizer Bank oder Versicherung (Bestandespflege, Zahlungsverkehr, Daten-/Statistikaufbereitung). Die ESCO-Beschreibung deckt sich gut mit dem Schweizer Berufsbild. Reine Zahlungsläufe und Referenzabgleiche werden bereits durch klassische Software erledigt (E0/P1), während die Verarbeitung unstrukturierter Kundenaufträge, Belege und Auswertungen stark gegenüber E2 exponiert ist.",
+    "zusammenfassung": {
+      "haupt_risiko": "Vor allem die Erfassung von Anträgen und Stammdatenmutationen, die Standardkorrespondenz, statistische Auswertungen sowie formelle Compliance-Vorprüfungen werden durch Dokumentenextraktion, Chat-LLMs und in Kernsysteme integrierte KI-Assistenten stark beschleunigt.",
+      "begruendung": "Rund 80 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die Technik bei Standardkorrespondenz und Antragserfassung ersetzend, bei Mutationen, internen Auskünften und Datenberichten delegierend sowie bei Compliance-Kontrollen und Transaktionsabklärungen unterstützend wirkt. In der Schweiz bremsen vor allem strenge regulatorische Vorgaben (Bankkundengeheimnis, revDSG, GwG-Sorgfaltspflichten und FINMA-Regulierung) sowie die notwendige Integration in bestehende Kernbanken- und Versicherungssysteme eine unkontrollierte Vollautomatisierung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

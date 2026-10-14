@@ -10,87 +10,218 @@
     "beruf": "Technische Verkaufsfachkräfte (ohne Informations- und Kommunikationstechnologie)",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 149,
+      "candidates_token_count": 2216,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 149
+          "token_count": 2216
         }
       ],
-      "prompt_token_count": 22454,
+      "prompt_token_count": 22415,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22454
+          "token_count": 22415
         }
       ],
-      "thoughts_token_count": 5389,
-      "total_token_count": 27992
+      "thoughts_token_count": 6740,
+      "total_token_count": 31371
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 149,
+        "candidates_token_count": 2216,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 149
+            "token_count": 2216
           }
         ],
-        "prompt_token_count": 22454,
+        "prompt_token_count": 22415,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22454
+            "token_count": 22415
           }
         ],
-        "thoughts_token_count": 5389,
-        "total_token_count": 27992
+        "thoughts_token_count": 6740,
+        "total_token_count": 31371
       }
     ],
     "request_ids": [
-      "nrnOaueUKbi-_PUPrrqE6QQ"
+      "XTzPatajDrDtz7IPofG1mAw"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten/0: 'name' is not of type 'object'; taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'; taetigkeiten/2: 'stufe' is not of type 'object'; taetigkeiten/3: 'modus' is not of type 'object'; taetigkeiten/4: 'restzeit_mensch' is not of type 'object'; taetigkeiten/5: 'physisch_automatisierbar' is not of type 'object'; taetigkeiten/6: 'p_art' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-2433_technische_verkaufsfachkraefte",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten/0: 'name' is not of type 'object'",
-      "taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'",
-      "taetigkeiten/2: 'stufe' is not of type 'object'",
-      "taetigkeiten/3: 'modus' is not of type 'object'",
-      "taetigkeiten/4: 'restzeit_mensch' is not of type 'object'",
-      "taetigkeiten/5: 'physisch_automatisierbar' is not of type 'object'",
-      "taetigkeiten/6: 'p_art' is not of type 'object'",
-      "taetigkeiten/7: 'sicherheit' is not of type 'object'",
-      "taetigkeiten/8: 'sicherheit_begruendung' is not of type 'object'",
-      "taetigkeiten/9: 'ch_hemmnis' is not of type 'object'",
-      "taetigkeiten/10: 'begruendung' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\n  \"isco_code\": \"2433\",\n  \"beruf\": \"Technische Verkaufsfachkräfte (ohne Informations- und Kommunikationstechnologie)\",\n  \"taetigkeiten\": [\n      \"name\",\n      \"zeitanteil_pct\",\n      \"stufe\",\n      \"modus\",\n      \"restzeit_mensch\",\n      \"physisch_automatisierbar\",\n      \"p_art\",\n      \"sicherheit\",\n      \"sicherheit_begruendung\",\n      \"ch_hemmnis\",\n      \"begruendung\"\n    ]\n  }"
+  "bewertung": {
+    "isco_code": "2433",
+    "beruf": "Technische Verkaufsfachkräfte (ohne Informations- und Kommunikationstechnologie)",
+    "taetigkeiten": [
+      {
+        "name": "Technische Bedarfsanalyse und Beratungsgespräche bei der Kundschaft durchführen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Erfassen komplexer technischer Anforderungen im direkten Gespräch vor Ort sowie der Vertrauensaufbau zur Kundschaft erfordern unmittelbare persönliche Präsenz."
+      },
+      {
+        "name": "Produkte, Muster und technische Funktionsweisen bei Kunden oder an Messen vorführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Demonstration von Maschinen, Geräten oder Bauteilen vor Ort bzw. im Showroom; weder durch Sprachmodelle noch durch Robotik ersetzbar."
+      },
+      {
+        "name": "Technische Angebote, Pflichtenheft-Antworten und Ausschreibungsunterlagen ausarbeiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit",
+          "regulatorisch"
+        ],
+        "begruendung": "LLM-gestützte Dokumentenverarbeitung und Anbindung an Produktkataloge (RAG/CPQ) erstellen den Angebotsentwurf und beantworten Lastenheft-Positionen; die Verkaufsfachkraft spezifiziert die Lösung und prüft jedes Angebot technisch und rechtlich."
+      },
+      {
+        "name": "Schriftliche technische Kundenanfragen beantworten und Nachfasskorrespondenz führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM formuliert aus Stichworten und kopierten Produktdaten präzise Antworten und Follow-up-E-Mails (auch mehrsprachig); die Fachperson prüft jede Nachricht vor dem Versand auf technische Richtigkeit."
+      },
+      {
+        "name": "Potenzielle Neukunden und Marktchancen recherchieren sowie Erstkontakte vorbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Recherche-Agenten mit Web- und Firmendatenbankzugriff identifizieren Zielunternehmen, fassen deren technisches Profil zusammen und entwerfen Erstansprachen; die Verkaufsfachkraft steuert die Suche und prüft jeden Lead."
+      },
+      {
+        "name": "Preis- und Vertragsverhandlungen führen sowie Verkaufsabschlüsse tätigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlungsführung, Einwandbehandlung und kommerzielle Entscheidungsfindung im direkten Kontakt mit Einkauf und Geschäftsleitung sind reine Beziehungs- und Präsenzarbeit."
+      },
+      {
+        "name": "Kundeninteraktionen, Besuchsberichte und Verkaufschancen im CRM-System dokumentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracheingabe nach Kundenbesuchen oder automatische Gesprächstranskription mit CRM-Integration erstellt strukturierte Besuchsberichte und Opportunity-Einträge; die Fachperson kontrolliert jeden Eintrag (allfällige Korrekturen bei Dialekt/Fachjargon sind in der Restzeit berücksichtigt)."
+      },
+      {
+        "name": "Verkaufsberichte, Umsatzprognosen und Marktanalysen für die Verkaufsleitung erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus exportierten CRM-Tabellen erstellt ein Chat-LLM den Management-Kommentar und die Abweichungsanalyse, welche die Fachperson prüft; die rein zahlenmässige Auswertung übernimmt klassische BI-/CRM-Reporting-Software."
+      },
+      {
+        "name": "Technische Projektabwicklung nach dem Verkauf begleiten und Anwendungsprobleme klären",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Koordination zwischen Kundschaft, Technik und Service bei Inbetriebnahmen oder Reklamationen erfordert individuelle Problemlösung vor Ort und persönliche Konfliktbereinigung."
+      },
+      {
+        "name": "Besuchstermine, Reiserouten sowie Spesen- und Verkaufsabrechnungen verwalten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Klassische Terminbuchungs-, Routenplanungs-, Spesen- und ERP-Fakturierungssoftware automatisiert diese administrativen Routinen weitgehend ohne Bedarf an generativer KI."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Technische/r Verkaufsberater/in bzw. Vertriebsingenieur/in im B2B-Bereich (z. B. Maschinen-, Elektro- und Metallindustrie, Gebäudetechnik oder Medizintechnik) in einem Schweizer KMU. Die ESCO-Kompetenzliste bildet die Mischung aus technischer Kundenberatung, Angebotswesen und CRM-Administration gut ab.",
+    "zusammenfassung": {
+      "haupt_risiko": "Die Ausarbeitung technischer Angebote, die schriftliche Kundenkorrespondenz, die Neukundenrecherche sowie die CRM-Dokumentation und Berichterstattung werden durch Chat-LLMs, Recherche-Agenten und sprachgestützte CRM-Integrationen stark beschleunigt.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit entfällt auf schriftliche, konzeptionelle und administrative Vertriebsaufgaben, bei denen die KI im delegierenden Modus Angebotsentwürfe, Korrespondenz und Besuchsberichte erstellt, die von den Verkaufsfachkräften fachlich geprüft werden. Die andere Hälfte – technische Beratung vor Ort, Produktvorführungen und Preisverhandlungen – bleibt auf persönliche Präsenz und Kundenbeziehung angewiesen. In der Schweiz prägen insbesondere die Mehrsprachigkeit über die Sprachregionen hinweg sowie Datenschutz- und Haftungsfragen (revDSG, verbindliche technische Zusicherungen) den Einsatz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

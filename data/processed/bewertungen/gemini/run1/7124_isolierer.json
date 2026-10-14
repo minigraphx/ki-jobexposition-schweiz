@@ -10,78 +10,198 @@
     "beruf": "Isolierer",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 44,
+      "candidates_token_count": 1981,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 44
+          "token_count": 1981
         }
       ],
-      "prompt_token_count": 22053,
+      "prompt_token_count": 22014,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22053
+          "token_count": 22014
         }
       ],
-      "thoughts_token_count": 3395,
-      "total_token_count": 25492
+      "thoughts_token_count": 4082,
+      "total_token_count": 28077
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 44,
+        "candidates_token_count": 1981,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 44
+            "token_count": 1981
           }
         ],
-        "prompt_token_count": 22053,
+        "prompt_token_count": 22014,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22053
+            "token_count": 22014
           }
         ],
-        "thoughts_token_count": 3395,
-        "total_token_count": 25492
+        "thoughts_token_count": 4082,
+        "total_token_count": 28077
       }
     ],
     "request_ids": [
-      "nrnOaumHKLzi_uMP6aHG6Ag"
+      "XTzParTGDsucz7IP_rLrgA8"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: ['error'] is too short; taetigkeiten/0: 'error' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-7124_isolierer",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: ['error'] is too short",
-      "taetigkeiten/0: 'error' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"7124\",\"beruf\":\"Isolierer\",\"taetigkeiten\":[\n  \"error\"\n]}"
+  "bewertung": {
+    "isco_code": "7124",
+    "beruf": "Isolierer",
+    "taetigkeiten": [
+      {
+        "name": "Dämmstoffplatten, -matten und -schalen an Bauteilen und Anlagen anbringen, verkleben und befestigen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Montagearbeit vor Ort auf der Baustelle; kommerziell einsetzbare Baustellenrobotik ist dafür in der Schweiz nicht verfügbar."
+      },
+      {
+        "name": "Dämmstoffe und Schutzverkleidungen nach Mass zuschneiden und vorfertigen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Tätigkeit mit Schneidwerkzeugen und Maschinen vor Ort oder in der Werkstatt; stationäre Zuschnittautomaten decken den individuellen Baustellenzuschnitt nicht zu mindestens 50 % ab."
+      },
+      {
+        "name": "Dampfbremsen, Schutzmembranen, Fassadenbahnen und Bauprofile verlegen und luftdicht anschliessen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Ausführung direkt am Baukörper, insbesondere an komplexen Übergängen und Durchdringungen; keine Automatisierung verfügbar."
+      },
+      {
+        "name": "Hohlräume und Fugen mit Schaum-, Schütt- oder Einblasdämmstoffen dämmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit auf der Baustelle mit handgeführten Werkzeugen und Einblasmaschinen; erfordert manuelle Führung und Kontrolle vor Ort."
+      },
+      {
+        "name": "Baustelle einrichten, Material transportieren, Absturzsicherungen anbringen und Oberflächen schützen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Transport-, Abdeck- und Sicherungsarbeiten in wechselnden Baustellenumgebungen und in der Höhe."
+      },
+      {
+        "name": "2D- und 3D-Ausführungspläne lesen, Bauteile vor Ort ausmessen und Masse anzeichnen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Hauptzeitaufwand liegt im physischen Nachmessen am Bauwerk und im Übertragen der Masse auf Bauteile und Dämmstoffe vor Ort."
+      },
+      {
+        "name": "Untergrund, Dämmstoffe und ausgeführte Dämmung prüfen (inkl. Feuchte- und Wärmebildkontrolle)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Prüfung erfordert die physische Begehung, manuelle Messungen und Sichtkontrollen von Anschlüssen und Verklebungen direkt am Objekt."
+      },
+      {
+        "name": "Material- und Mengenbedarf ermitteln sowie Baustoffe abrufen oder nachbestellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die Berechnung und Bestelllistenerstellung im Chat gegenüber einfachen Tabellen oder Faustregeln im Baustellenalltag mindestens 50 % Zeit spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Aus eingegebenen Massen berechnet ein Chat-LLM Flächen, Verschnittzuschläge, Klebermengen und erstellt die Bestellliste; der Isolierer prüft jede Position vor der Bestellung."
+      },
+      {
+        "name": "Arbeitsfortschritt, Ausmasse, Regierapporte und Stunden erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Per Spracheingabe und Foto-Upload in einer Baustellen-App erstellt die KI den Arbeits- oder Regierapport; die Fachperson kontrolliert und korrigiert jeden Eintrag, wobei Dialekt und Baulärm den Nachbearbeitungsaufwand erhöhen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Isolierer/in (in der Schweiz Dämmungsmonteur/in EFZ bzw. Isolierspengler/in im Bereich Gebäudehülle, Innenausbau und technische Isolationen) in einem typischen KMU des Ausbaugewerbes. Die ESCO-Kompetenzen bilden den handwerklichen Baustellenalltag gut ab; rund 90 % der Arbeit sind physische Montage- und Vorbereitungsarbeiten vor Ort.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind lediglich die Mengenermittlung und Materialbestellung per Chat-LLM sowie das Erstellen von Arbeits- und Regierapporten per Spracheingabe in Baustellen-Apps, während die eigentliche Dämmungsmontage nicht exponiert ist.",
+      "begruendung": "Nur rund 10 % der Arbeitszeit entfallen auf exponierte Planungs- und Dokumentationsaufgaben, bei denen die KI im delegierenden Modus Mengenberechnungen und Rapporte entwirft, die der Isolierer jedoch jedes Mal fachlich prüfen muss. Die übrigen 90 % bestehen aus manueller Zuschnitt-, Montage- und Abdichtungsarbeit auf der Baustelle, die weder durch generative KI noch durch heutige Robotik übernommen werden kann. Im Schweizer Baustellenalltag bremsen zudem starker Dialekt, Umgebungsgeräusche bei der Spracheingabe sowie die kleinbetriebliche Struktur des Ausbaugewerbes eine rasche Verbreitung.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }

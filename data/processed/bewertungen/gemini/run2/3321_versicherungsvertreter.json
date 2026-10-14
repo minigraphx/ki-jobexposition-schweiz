@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "5e1fb1dffd4fae0e4f94632f2d8d5daf2196b76d650392245585e7643b4fa0da",
+    "isco_code": "3321",
+    "beruf": "Versicherungsvertreter",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2193,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2193
+        }
+      ],
+      "prompt_token_count": 21883,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21883
+        }
+      ],
+      "thoughts_token_count": 6525,
+      "total_token_count": 30601
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2193,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2193
+          }
+        ],
+        "prompt_token_count": 21883,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21883
+          }
+        ],
+        "thoughts_token_count": 6525,
+        "total_token_count": 30601
+      }
+    ],
+    "request_ids": [
+      "xD_PauqjBtaL_uMP9ombOA"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-3321_versicherungsvertreter",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3321",
+    "beruf": "Versicherungsvertreter",
+    "taetigkeiten": [
+      {
+        "name": "Potenzielle Neukunden telefonisch und über persönliche Netzwerke akquirieren sowie Termine vereinbaren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Telefonische Kalt- und Warmakquise sowie der Aufbau persönlicher Empfehlungsnetzwerke beruhen auf zwischenmenschlicher Überzeugungsarbeit; Voicebots erreichen im Schweizer Versicherungsvertrieb nicht die nötige Akzeptanz und Abschlussqualität."
+      },
+      {
+        "name": "Beratungs- und Verkaufsgespräche mit Privat- und KMU-Kunden vor Ort oder per Video führen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Präsenz- und Beziehungstätigkeit beim Kunden zu Hause, im KMU-Betrieb oder auf der Agentur, bei der Vertrauensaufbau, Bedarfsermittlung im Dialog und Einwandbehandlung im Zentrum stehen."
+      },
+      {
+        "name": "Bestehende Kundenpolicen, Vorsorgeausweise und Risikodaten sichten sowie Deckungslücken analysieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung und LLM-Analyse extrahieren Versicherungssummen, Selbstbehalte und Leistungen aus gescannten Fremdpolicen und Pensionskassenausweisen und erstellen eine Übersicht der Deckungslücken; die Beraterin prüft jede Analyse fachlich gegen die Originaldokumente."
+      },
+      {
+        "name": "Versicherungsprämien und Produktvarianten in Tarifierungs- und Offertsystemen berechnen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Prämienberechnung erfolgt deterministisch nach aktuariellen Regeln ohne generative KI; klassische Offertrechner, Brokerplattformen (z. B. Sobrado, Bromatic) und Online-Konfiguratoren automatisieren den Berechnungsprozess."
+      },
+      {
+        "name": "Allgemeine Versicherungsbedingungen (AVB) und Spezialdeckungen verschiedener Anbieter abgleichen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Versicherungsberater beurteilt komplexe Deckungsfragen weiterhin selbst, nutzt aber ein Chat-LLM mit hochgeladenen AVB-Texten, um Klauseln, Ausschlüsse und Deckungsunterschiede schnell zu lokalisieren und gegenüberzustellen."
+      },
+      {
+        "name": "Beratungsprotokolle nach VAG, individuelle Offertbegleitschreiben und Vorsorgeberichte verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Stichworten zum Kundengespräch und den Eckdaten der Offerte erstellt das Chat-LLM den Entwurf des gesetzlich vorgeschriebenen Beratungsprotokolls sowie das Begleitschreiben; der Berater prüft und verantwortet jedes Dokument vor dem Versand."
+      },
+      {
+        "name": "Kundenangaben, Versicherungsanträge und Policenmutationen im CRM- und Bestandessystem erfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenextraktion mit CRM-Integration überträgt Daten aus E-Mails, Ausweisen und Antragsformularen ins System, sodass der Mensch nur noch freigibt oder markierte Ausnahmen bearbeitet; daneben übernehmen klassische Kundenportale und Dunkelverarbeitung viele Standardmutationen."
+      },
+      {
+        "name": "Schadenmeldungen und Kundenanfragen schriftlich aufnehmen, vorprüfen und an den Innendienst weiterleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Multimodale KI-Werkzeuge fassen Kunden-E-Mails, Schadenfotos und Handwerkerrechnungen zu einer strukturierten Schadenmeldung zusammen und gleichen sie mit der Police ab; der Vertreter kontrolliert jede Meldung vor der Weiterleitung."
+      },
+      {
+        "name": "Bestandeskunden bei Jahresgesprächen und im Schadenfall persönlich betreuen sowie mit Versicherern verhandeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beziehungspflege, Begleitung in heiklen Schadenfällen sowie das Aushandeln von Spezialkonditionen, Risikozuschlägen oder Kulanzlösungen mit Underwritern erfordern menschliches Verhandlungsgeschick."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Versicherungsberater/in im Aussendienst einer Schweizer Generalagentur oder Versicherungsbroker/in (VBV/Cicero) für Privat- und KMU-Kunden. Die ESCO-Beschreibung deckt sowohl gebundene Vertreter als auch ungebundene Makler ab; die Tätigkeitsstruktur ist in der Schweizer Praxis sehr ähnlich. Die Haupttrennung verläuft klar zwischen persönlicher Akquise/Beratung (E0) und der administrativen Vor- und Nachbereitung (E1/E2).",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem die Vor- und Nachbereitung der Beratung – namentlich Policen- und Vorsorgeanalysen, das Verfassen von Beratungsprotokollen und Offertschreiben, die Erfassung von Anträgen im CRM sowie die schriftliche Aufnahme von Schadenmeldungen mittels Chat-LLMs und Dokumentenerkennung.",
+      "begruendung": "Rund 40 % der Arbeitszeit entfallen auf analytische und administrative Aufgaben, bei denen generative KI überwiegend delegierend (Protokolle, Policenanalyse, Schadenaufnahme) und teilweise ersetzend (CRM-Datenerfassung) oder unterstützend (AVB-Abgleich) wirkt. Der Kern des Berufs – Akquise, persönliche Verkaufsgespräche und Kundenbetreuung – bleibt jedoch nicht exponiert, und regulatorische Vorgaben (VAG-Dokumentationspflicht, Datenschutz nach revDSG bei Gesundheits- und Vorsorgedaten) verlangen eine fachliche Kontrolle.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

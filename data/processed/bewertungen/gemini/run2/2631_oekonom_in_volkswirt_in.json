@@ -1,0 +1,229 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "2cc9473faca5118f69d18f8f0056e3eafbb4f77e31fa5e7120ad67748a66931e",
+    "isco_code": "2631",
+    "beruf": "Ökonom/in / Volkswirt/in",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2354,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2354
+        }
+      ],
+      "prompt_token_count": 24109,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 24109
+        }
+      ],
+      "thoughts_token_count": 7078,
+      "total_token_count": 33541
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2354,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2354
+          }
+        ],
+        "prompt_token_count": 24109,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 24109
+          }
+        ],
+        "thoughts_token_count": 7078,
+        "total_token_count": 33541
+      }
+    ],
+    "request_ids": [
+      "xD_Pat-EB9vd_uMPlIzg6Q4"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2631_oekonom_in_volkswirt_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2631",
+    "beruf": "Ökonom/in / Volkswirt/in",
+    "taetigkeiten": [
+      {
+        "name": "Wirtschafts- und Finanzmarktdaten beschaffen, bereinigen und für Analysen aufbereiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Coding- und Datenanalyse-Agenten in R oder Python erstellen und testen die Aufbereitungsskripte direkt auf den Datensätzen; die Ökonomin definiert die Variablenlogik und prüft jede Datenbereinigung auf Strukturbrüche und Ausreisser."
+      },
+      {
+        "name": "Ökonometrische und statistische Modelle in Statistiksoftware programmieren und schätzen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Coding-Agenten mit Code-Ausführung setzen Regressions-, Zeitreihen- und Simulationsmodelle in R, Python oder Stata um und erstellen Ergebnistabellen; der Volkswirt spezifiziert die Schätzgleichungen und prüft jedes Modellergebnis sowie die Diagnostik fachlich."
+      },
+      {
+        "name": "Methodisches Vorgehen, Forschungsdesign und theoretische Modellannahmen konzipieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Festlegung kausaler Identifikationsstrategien, theoretischer Wirkungsmechanismen und realistischer Szenarioannahmen erfordert tiefes ökonomisches Urteilsvermögen; Sprachmodelle dienen als Sparringspartner, sparen aber bei gleicher Qualität keine 50 % der Denk- und Konzeptionszeit."
+      },
+      {
+        "name": "Fachliteratur, Studien und wirtschaftspolitische Dokumente recherchieren und auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche und PDF-Analyse finden relevante Studien, Gesetzesentwürfe und Fachpublikationen und extrahieren Kernaussagen; die Fachperson bewertet die methodische Güte der Quellen und synthetisiert den Forschungsstand selbst."
+      },
+      {
+        "name": "Laufende Konjunktur-, Branchen- und Finanzmarktindikatoren beobachten und kommentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Aus eingefügten Datenveröffentlichungen (z. B. BFS, SNB, KOF) und Stichworten zur Hausmeinung entwirft ein Chat-LLM Marktkommentare und Übersetzungen; der Ökonom gibt die Einordnung vor und prüft jeden Beitrag vor der Publikation."
+      },
+      {
+        "name": "Wirtschaftsstudien, Kosten-Nutzen-Analysen und wissenschaftliche Fachberichte verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit",
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Gliederung, Schätzergebnissen und Tabellen Rohentwürfe für Kapitel und Management Summaries; die Volkswirtin steuert die Argumentationslinie, kontrolliert jede Aussage gegen die empirische Evidenz und überarbeitet den Text."
+      },
+      {
+        "name": "Präsentationen und Entscheidungsgrundlagen für Gremien, Politik und Kundschaft erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "In Office- und Grafiksoftware integrierte KI-Funktionen generieren Folienentwürfe und Visualisierungen aus Berichten und Daten; die Fachperson gibt die Kernbotschaften vor und prüft sowie bereinigt jede Folie."
+      },
+      {
+        "name": "Entscheidungsträger, Kundschaft und Öffentlichkeit in Sitzungen und Vorträgen beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsentationen in Geschäftsleitungen, Kommissionen oder Kundenterminen sowie Medienauskünfte beruhen auf persönlicher Präsenz, Überzeugungskraft und dem direkten Eingehen auf kritische Rückfragen."
+      },
+      {
+        "name": "Forschungsanträge, Projektofferten und Ausschreibungsunterlagen ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Auf Basis von Pflichtenheften und Projektskizzen formuliert ein Chat-LLM Antrags- und Offerttexte sowie Arbeitspakete; die Projektleiterin definiert Untersuchungsansatz und Budget und prüft das gesamte Dokument fachlich."
+      },
+      {
+        "name": "Forschungs- und Beratungsprojekte koordinieren, Netzwerke pflegen und Mitarbeitende begleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmungen mit Auftraggebern, fachliche Führung von Projektteams, Mentoring und Netzwerkpflege sind zwischenmenschliche Präsenz- und Beziehungstätigkeiten."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Angewandte/r Ökonom/in bzw. Volkswirt/in in der Schweiz (Economic Research bei Banken/Versicherungen, wirtschaftswissenschaftliche Beratungsinstitute, Verbände oder Bundesverwaltung wie SECO/SNB). Die ESCO-Kompetenzen sind stark auf den rein akademischen Hochschulbetrieb ausgerichtet; sie wurden mit der ESCO-Beschreibung und dem Schweizer Branchenkontext (Finanzen/Wirtschaftsberatung) zu einem repräsentativen Aufgabenprofil verbunden.",
+    "zusammenfassung": {
+      "haupt_risiko": "Datenaufbereitung, ökonometrische Programmierung, Literaturrecherche sowie das Verfassen von Marktkommentaren, Studien und Offerten werden weitgehend durch Coding-Agenten, Recherche-Tools und Chat-LLMs übernommen.",
+      "begruendung": "Rund 75 % der Arbeitszeit sind exponiert, überwiegend im delegierenden Modus (und teilweise unterstützend bei der Literaturauswertung), da Ökonominnen und Ökonomen weiterhin die Modelle spezifizieren und jede empirische Aussage sowie jeden Bericht fachlich prüfen müssen. In der Schweiz bremsen vor allem strenge Datenschutz- und Geheimhaltungsvorschriften bei Mikro- und Bankdaten (revDSG, Statistik- und Bankkundengeheimnis) sowie die Abstimmung mehrsprachiger Publikationen (DE/FR/IT/EN) einen unkontrollierten KI-Einsatz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

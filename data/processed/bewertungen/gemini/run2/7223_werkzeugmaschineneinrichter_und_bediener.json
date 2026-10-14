@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "828d07b17a9ade681151c1c1fcd0d54f3f43a2c7f673b202c2394b4eadd332ae",
+    "isco_code": "7223",
+    "beruf": "Werkzeugmaschineneinrichter und -bediener",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2311,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2311
+        }
+      ],
+      "prompt_token_count": 22197,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22197
+        }
+      ],
+      "thoughts_token_count": 5825,
+      "total_token_count": 30333
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2311,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2311
+          }
+        ],
+        "prompt_token_count": 22197,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22197
+          }
+        ],
+        "thoughts_token_count": 5825,
+        "total_token_count": 30333
+      }
+    ],
+    "request_ids": [
+      "xD_PavD9CJvv_uMP7IC_2Qw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-7223_werkzeugmaschineneinrichter_und_bediener",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "7223",
+    "beruf": "Werkzeugmaschineneinrichter und -bediener",
+    "taetigkeiten": [
+      {
+        "name": "Technische Zeichnungen, CAD-Modelle und Fertigungsaufträge analysieren sowie Bearbeitungsfolge planen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Fachperson muss Geometrie, Form- und Lagetoleranzen sowie die Aufspannstrategie selbst durchdringen, um die Maschine sicher einzurichten; KI-Zusammenfassungen sparen hier keine 50 % der Zeit."
+      },
+      {
+        "name": "CNC-Programme mit CAM-Software oder an der Maschinensteuerung erstellen und anpassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Copiloten in CAM-Systemen und bei der G-Code-Erstellung über alle Teilespektren inklusive Kollisionssimulation bereits mindestens 50 % Zeit sparen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte CAM-Assistenten und Code-Generatoren schlagen Bearbeitungsstrategien, Werkzeugwege und G-Code-Makros vor; die Fachperson spezifiziert die Aufspannung und prüft jedes Programm zwingend in der Simulation gegen Kollisionsrisiken. Gleichzeitig automatisiert klassische regelbasierte Feature-Erkennung in moderner CAM-Software bereits grosse Teile der Programmierung."
+      },
+      {
+        "name": "Werkzeugmaschine physisch einrichten: Spannmittel montieren, Werkzeuge rüsten, vermessen und Nullpunkte setzen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Rüsttätigkeit an der Werkzeugmaschine und am Werkzeugvoreinstellgerät; bei wechselnden Serien in KMU auch durch Robotik nicht zu mindestens 50 % automatisierbar."
+      },
+      {
+        "name": "Einfahrprozess und Testlauf an der Maschine durchführen sowie Schnittparameter optimieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Einfahren des ersten Werkstücks im Einzelsatz erfordert unmittelbare Präsenz an der Steuerung sowie visuelle und akustische Kontrolle von Spanbildung, Kühlmittelstrahl und Freigängen."
+      },
+      {
+        "name": "Werkstücke einlegen, spannen, entnehmen und manuell entgraten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Handhabung von Rohteilen und Fertigteilen (E0); durch kommerziell breit verfügbare Stangenlader, Palettenwechsler und Roboterzellen zur Maschinenbeladung jedoch zu über 50 % physisch automatisierbar."
+      },
+      {
+        "name": "Laufenden Fertigungsprozess überwachen, Späne entfernen und verschlissene Wendeschneidplatten wechseln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Arbeit im Maschinenumfeld wie das Wechseln von Schneidplatten, das Entfernen von Wirrspänen und das Eingreifen bei Prozessabweichungen."
+      },
+      {
+        "name": "Gefertigte Werkstücke mit Präzisionsmessmitteln prüfen und Messdaten im Qualitätssystem (SPC) erfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Messen mit Handmessmitteln oder Messmaschinen (E0). Durch In-Prozess-Messtaster in der CNC-Maschine, automatisierte Koordinatenmessmaschinen (KMG) und Funk-Messmittel mit direkter SPC-Anbindung kann über 50 % der manuellen Prüfzeit übernommen werden."
+      },
+      {
+        "name": "Störungen an Werkzeugmaschine und Zerspanungsprozess lokalisieren und beheben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Fehlersuche bei Werkzeugbruch, Vibrationen (Rattern) oder mechanischen Blockaden erfordert primär manuelle Prüfung und physisches Eingreifen direkt an der Anlage."
+      },
+      {
+        "name": "Wartungs-, Reinigungs- und Kühlschmierstoff-Pflegearbeiten an den Maschinen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Tätigkeiten wie Arbeitsraum reinigen, Späneförderer leeren sowie Konzentration und pH-Wert des Kühlschmierstoffs prüfen und nachfüllen."
+      },
+      {
+        "name": "Einrichtblätter, Werkzeuglisten, Prüfprotokolle und Schichtübergaben dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Multimodale KI-Funktionen (Fotos der Aufspannung, Spracheingabe) und CAM-Integrationen erstellen strukturierte Einrichtblätter und Übergabenotizen; die Fachperson kontrolliert alle technischen Angaben vor der Freigabe."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting ist ein typischer Schweizer KMU-Fertigungsbetrieb der MEM-Industrie (z. B. Lohnfertigung oder Medtech-Zulieferer mit kleinen bis mittleren Losgrössen), in dem Polymechaniker/innen EFZ oder Produktionsmechaniker/innen EFZ Maschinen selbst programmieren, einrichten und bedienen. Die grösste Unsicherheit liegt bei der CNC-/CAM-Programmierung, da KI-Assistenten für CAM-Systeme zwar stark aufkommen, der Prüf- und Simulationsaufwand wegen hoher Kollisions- und Ausschusskosten jedoch hoch bleibt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert gegenüber generativer KI sind lediglich das Erstellen von CNC-/CAM-Programmen sowie die Dokumentation von Einrichtblättern und Schichtübergaben durch KI-Copiloten in CAM-Systemen und multimodale Dokumentationstools.",
+      "begruendung": "Rund 20 % der Arbeitszeit entfallen auf potenziell KI-exponierte Tätigkeiten, in denen die KI durchwegs delegierend wirkt, weil jedes CNC-Programm und Einrichtblatt wegen hoher Kollisions- und Qualitätsrisiken zwingend fachlich geprüft werden muss. Der Grossteil der Arbeit (80 %) ist physisch an die Werkzeugmaschine gebunden und nicht durch Sprachmodelle ersetzbar, unterliegt in der Schweiz jedoch einer starken klassischen Automatisierung durch Beladeroboter, Palettenwechsler und automatisierte Messtechnik.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

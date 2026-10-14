@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "f4c1b606359e77a5a498e0f4fd8a2d67ceccd924619b35360cfd6579f4750c1b",
+    "isco_code": "4311",
+    "beruf": "Sachbearbeiter/in Buchhaltung",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2660,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2660
+        }
+      ],
+      "prompt_token_count": 21214,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21214
+        }
+      ],
+      "thoughts_token_count": 7044,
+      "total_token_count": 30918
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2660,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2660
+          }
+        ],
+        "prompt_token_count": 21214,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21214
+          }
+        ],
+        "thoughts_token_count": 7044,
+        "total_token_count": 30918
+      }
+    ],
+    "request_ids": [
+      "xj_PavWFH-nc_uMP4Oj0yAY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-4311_sachbearbeiter_in_buchhaltung",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "4311",
+    "beruf": "Sachbearbeiter/in Buchhaltung",
+    "taetigkeiten": [
+      {
+        "name": "Kreditorenrechnungen und Spesenbelege prüfen, kontieren und im ERP erfassen",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM-gestützte Dokumentenerkennung im Buchhaltungssystem extrahiert Kopf- und Positionsdaten und schlägt die Kontierung vor; die Fachperson bearbeitet nur markierte Ausnahmen und Stichproben. Über QR-Rechnung, eBill und klassische OCR-Regeln im ERP ist zudem bereits ein grosser Teil ohne generative KI automatisierbar."
+      },
+      {
+        "name": "Ausgangsrechnungen, Gutschriften und Debitorenauszüge erstellen und versenden",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Fakturierung aus Auftrags- oder Leistungsdaten sowie der Versand von Rechnungen und Kontoauszügen erfolgen regelbasiert über klassische ERP- und Fakturierungssoftware (inkl. QR-Rechnung und eBill) und erfordern kein Sprachmodell."
+      },
+      {
+        "name": "Zahlungseingänge abgleichen, Zahlungsläufe durchführen und Mahnläufe steuern",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der automatische Zahlungsabgleich per QR-Referenz (camt.054), Kreditoren-Zahlungsläufe (pain.001) und regelbasierte Mahnläufe werden durch klassische Buchhaltungssoftware erledigt."
+      },
+      {
+        "name": "Hauptbuch- und Bankkonten abstimmen sowie Buchungsdifferenzen klären",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Sachbearbeiterin klärt unklare Differenzen zwischen Nebenbüchern, Bankauszügen und Hauptbuch selbst; KI-Analysefunktionen im ERP oder mit Datenanalyse-Werkzeugen gleichen unstrukturierte Buchungstexte ab und markieren Abweichungen."
+      },
+      {
+        "name": "Schriftliche Kunden- und Lieferantenanfragen zu Rechnungen, Salden und Mahnungen beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM entwirft auf Basis einkopierter Kontodaten und Kunden-E-Mails präzise Antworten zu offenen Posten, Rechnungskopien oder Mahnstufen; die Fachperson prüft Beträge und Fristen in jeder Nachricht vor dem Versand."
+      },
+      {
+        "name": "Periodenabschlüsse vorbereiten sowie Abgrenzungen und Rückstellungen berechnen und buchen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Buchhalterin beurteilt jede Abgrenzungs- und Rückstellungsposition fachlich selbst; KI-gestützte Auswertungen über Konten und Verträge im ERP liefern Berechnungs- und Buchungsvorschläge für transitorische Aktiven und Passiven."
+      },
+      {
+        "name": "Kunden- und Lieferantenstammdaten sowie Kreditinformationen pflegen und aktualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Extraktionsfunktionen übernehmen Adress-, Handelsregister-, Bonitäts- und IBAN-Änderungen aus E-Mails, Formularen und Auskünften direkt in die Stammdatenmaske; die Fachperson kontrolliert jede Mutation auf Korrektheit und Betrugsrisiken."
+      },
+      {
+        "name": "Mehrwertsteuerabrechnungen und behördliche Meldeformulare erstellen und abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Fachperson führt die Umsatz- und Vorsteuerabstimmung durch und reicht die Abrechnung ein, während KI-Prüfroutinen Buchungsjournale auf fehlerhafte Steuercodes (z. B. Bezugsteuer, Vorsteuerabzug) durchsuchen; die reine Formularberechnung erfolgt über klassische ERP-Module."
+      },
+      {
+        "name": "Finanzberichte, Kennzahlen und Auswertungen in Tabellenkalkulationen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Assistenten in Tabellenkalkulationen erstellen aus exportierten Salden- und OP-Listen Auswertungen, Grafiken und kurze Kommentare; die Sachbearbeiterin spezifiziert die Anforderungen und prüft alle Zahlen. Standardisierte Berichte lassen sich auch über klassische ERP-Reportingfunktionen automatisieren."
+      },
+      {
+        "name": "Geschäftsunterlagen und Buchungsbelege digital ordnen und revisionssicher archivieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenmanagementsysteme mit KI-Klassifizierung benennen, verschlagworten und archivieren Belege und Verträge automatisch; der Mensch bearbeitet nur Ausnahmen. Regelbasierte Archivierung über Barcodes und DMS-Workflows ist auch mit klassischer Software verbreitet."
+      },
+      {
+        "name": "Telefonische und persönliche Klärungen bei strittigen Forderungen, Zahlungsvereinbarungen und internen Buchungsfragen führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlungen über Ratenzahlungen, das Bereinigen umstrittener Rechnungspositionen am Telefon sowie mündliche Rücksprachen mit Projektleitenden erfordern zwischenmenschliches Verhandlungsgeschick und erreichen mit Sprach-KI nicht die nötige Qualität."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Sachbearbeiter/in Buchhaltung in einem Schweizer KMU (Finanz-, Debitoren- und Kreditorenbuchhaltung). Der ESCO-Titel 'Fakturist/Fakturistin' ist enger gefasst als das Schweizer Berufsbild, die wesentlichen und optionalen ESCO-Kompetenzen decken jedoch das gesamte Aufgabenspektrum der Buchhaltung ab. Stark strukturierte Prozesse wie Fakturierung, Zahlungsläufe und Mahnläufe sind durch klassische ERP-Software (P1) geprägt und daher E0.",
+    "zusammenfassung": {
+      "haupt_risiko": "Vor allem die Belegerfassung und Kontierung, die digitale Belegarchivierung, die schriftliche Korrespondenz zu offenen Posten sowie das Abstimmen von Konten und Abschlüssen werden durch KI-gestützte ERP-Funktionen und Sprachmodelle stark verändert.",
+      "begruendung": "Rund 70 % der Arbeitszeit sind gegenüber generativer KI exponiert, während weitere 25 % (Fakturierung, Zahlungs- und Mahnläufe) bereits stark durch klassische Buchhaltungssoftware automatisierbar sind. Bei der Belegerfassung und Archivierung wirkt die KI ersetzend, bei Korrespondenz, Stammdatenpflege und Auswertungen delegierend und bei Kontenabstimmungen, Abschlussbuchungen sowie MWST-Plausibilisierungen unterstützend. Buchführungs-, Revisions- und Aufbewahrungspflichten nach Schweizer Obligationenrecht (OR/GeBüV) und Mehrwertsteuerrecht erfordern bei Abschluss- und Steuerarbeiten weiterhin eine sorgfältige fachliche Kontrolle.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

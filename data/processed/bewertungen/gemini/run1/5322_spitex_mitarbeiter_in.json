@@ -10,78 +10,226 @@
     "beruf": "Spitex-Mitarbeiter/in",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 46,
+      "candidates_token_count": 2340,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 46
+          "token_count": 2340
         }
       ],
-      "prompt_token_count": 22286,
+      "prompt_token_count": 22247,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22286
+          "token_count": 22247
         }
       ],
-      "thoughts_token_count": 4339,
-      "total_token_count": 26671
+      "thoughts_token_count": 5143,
+      "total_token_count": 29730
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 46,
+        "candidates_token_count": 2340,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 46
+            "token_count": 2340
           }
         ],
-        "prompt_token_count": 22286,
+        "prompt_token_count": 22247,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22286
+            "token_count": 22247
           }
         ],
-        "thoughts_token_count": 4339,
-        "total_token_count": 26671
+        "thoughts_token_count": 5143,
+        "total_token_count": 29730
       }
     ],
     "request_ids": [
-      "nrnOaoCMJ-npz7IP896zyAM"
+      "XTzPao_hFvGfz7IP68qu-AE"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): Additional properties are not allowed ('taetigkeitenMaz' was unexpected); (root): 'taetigkeiten' is a required property; (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-5322_spitex_mitarbeiter_in",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): Additional properties are not allowed ('taetigkeitenMaz' was unexpected)",
-      "(root): 'taetigkeiten' is a required property",
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"5322\",\"beruf\":\"Spitex-Mitarbeiter/in\",\"taetigkeitenMaz\":null}"
+  "bewertung": {
+    "isco_code": "5322",
+    "beruf": "Spitex-Mitarbeiter/in",
+    "taetigkeiten": [
+      {
+        "name": "Klientinnen und Klienten bei der Körperpflege, beim An- und Auskleiden sowie bei der Mobilisation unterstützen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare körperliche Pflege- und Unterstützungsarbeit am Menschen im Privathaushalt; weder durch generative KI noch durch kommerziell verfügbare Robotik automatisierbar."
+      },
+      {
+        "name": "Wohnräume, Küche und Sanitäranlagen reinigen, Geschirr spülen sowie Betten machen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Hauswirtschaftstätigkeit in möblierten Privatwohnungen; Haushaltsroboter können weniger als 50 % dieser vielfältigen Reinigungsarbeiten übernehmen."
+      },
+      {
+        "name": "Mahlzeiten und Zwischenverpflegung zubereiten sowie bei der Nahrungsaufnahme unterstützen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Zubereitung von Speisen in der Küche der Klientel und persönliche Präsenz beim Anreichen von Nahrung."
+      },
+      {
+        "name": "Vitalzeichen messen, gerichtete Medikamente verabreichen und Gesundheitszustand überwachen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert physische Durchführung am Körper (z. B. Blutdruck messen, Kompressionsstrümpfe anziehen, Medikamenteneinnahme überwachen) und direkte Krankenbeobachtung vor Ort."
+      },
+      {
+        "name": "Klientinnen und Klienten im Alltag und zu Terminen begleiten sowie Gesellschaft leisten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beziehungs- und Präsenzarbeit zur sozialen Aktivierung sowie physische Begleitung ausser Haus (z. B. Sturzprävention auf Spaziergängen oder zum Arzt)."
+      },
+      {
+        "name": "Haushaltswäsche waschen, trocknen, bügeln und im Schrank versorgen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handhabung von Textilien im Klientenhaushalt; über die bereits übliche Waschmaschine hinaus gibt es keine relevante Automatisierung."
+      },
+      {
+        "name": "Lebensmittel und Güter des täglichen Bedarfs für Klientinnen und Klienten einkaufen und einräumen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Besorgen von Kleinmengen im Quartierladen (oft gemeinsam mit der Klientel) und Einräumen in der Wohnung; autonome Lieferroboter sind in der Schweiz nicht regulär verfügbar."
+      },
+      {
+        "name": "Alltagskompetenz und Sturzrisiken im Haushalt beurteilen sowie zu Unfallverhütung und Umgang mit Einschränkungen beraten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beruht auf unmittelbarer Beobachtung der Bewegungsabläufe in der Wohnung und dem persönlichen Beratungsgespräch vor Ort."
+      },
+      {
+        "name": "Wegstrecken zwischen den Klientenhaushalten mit Auto, E-Bike oder öffentlichen Verkehrsmitteln zurücklegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Fortbewegung von Haushalt zu Haushalt; autonomes Fahren ist im Schweizer Strassenverkehr 2026 nicht regulär verfügbar."
+      },
+      {
+        "name": "Pflegeverlauf, Beobachtungen und erbrachte Leistungen im mobilen Klientendossier dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Per Spracheingabe (auch Schweizerdeutsch) in der mobilen Spitex-App erstellt ein integriertes LLM aus Stichworten den strukturierten Verlaufsbericht; die Mitarbeitenden prüfen und verantworten jeden Eintrag fachlich."
+      },
+      {
+        "name": "Fallbesprechungen und Übergaben im Spitex-Team durchführen sowie sich mit Angehörigen abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönlicher und telefonischer Austausch im Pflegeteam und mit Angehörigen zur Vertrauensbildung und Koordination vor Ort."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Betrachtet wird eine Spitex-Mitarbeiterin bzw. ein Spitex-Mitarbeiter auf Sekundarstufe II (z. B. Pflegehelfer/in SRK, Assistent/in Gesundheit und Soziales EBA, Hauspfleger/in oder FaGe/FaBe mit Schwerpunkt Grundpflege und Hauswirtschaft) im ambulanten Einsatz bei Klientinnen und Klienten zu Hause. Das ESCO-Profil 'Haus- und Familienpfleger/in' deckt diese Kombination aus körpernaher Grundpflege, sozialer Begleitung und Hauswirtschaft sehr gut ab. Da nahezu alle Tätigkeiten physische Präsenz im Privathaushalt erfordern, beschränkt sich die KI-Exposition auf die mobile Pflegedokumentation.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert ist einzig die Verlaufs- und Leistungsdokumentation im mobilen Klientendossier durch KI-gestützte Spracheingabe und Textgenerierung, während die körperliche Grundpflege, Hauswirtschaft und Betreuung nicht betroffen sind.",
+      "begruendung": "Lediglich rund 5 % der Arbeitszeit entfallen auf Tätigkeiten mit relevanter KI-Exposition, wobei die KI im delegierenden Modus aus eingesprochenen Beobachtungen strukturierte Pflegeeinträge erstellt, die von der Spitex-Mitarbeiterin einzeln geprüft werden. Der überwiegende Teil des Berufs besteht aus körpernaher Pflege, Hausarbeit und zwischenmenschlicher Präsenz in Privathaushalten. Als wesentliches Schweizer Hemmnis bei der mobilen Dokumentation wirken die strengen Anforderungen an den Schutz von Gesundheitsdaten (revDSG, Berufsgeheimnis).",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

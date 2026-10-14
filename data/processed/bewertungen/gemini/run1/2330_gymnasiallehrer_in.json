@@ -10,78 +10,219 @@
     "beruf": "Gymnasiallehrer/in",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 50,
+      "candidates_token_count": 2367,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 50
+          "token_count": 2367
         }
       ],
-      "prompt_token_count": 20290,
+      "prompt_token_count": 20251,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 20290
+          "token_count": 20251
         }
       ],
-      "thoughts_token_count": 6838,
-      "total_token_count": 27178
+      "thoughts_token_count": 7204,
+      "total_token_count": 29822
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 50,
+        "candidates_token_count": 2367,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 50
+            "token_count": 2367
           }
         ],
-        "prompt_token_count": 20290,
+        "prompt_token_count": 20251,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 20290
+            "token_count": 20251
           }
         ],
-        "thoughts_token_count": 6838,
-        "total_token_count": 27178
+        "thoughts_token_count": 7204,
+        "total_token_count": 29822
       }
     ],
     "request_ids": [
-      "nrnOaruMKbzi_uMP6aHG6Ag"
+      "XTzPatbiG7Csz7IP3NihgQ0"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: [True] is too short; taetigkeiten/0: True is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-2330_gymnasiallehrer_in",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: [True] is too short",
-      "taetigkeiten/0: True is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"2330\",\"beruf\":\"Gymnasiallehrer/in\",\"taetigkeiten\":[\n  true\n]\n}"
+  "bewertung": {
+    "isco_code": "2330",
+    "beruf": "Gymnasiallehrer/in",
+    "taetigkeiten": [
+      {
+        "name": "Präsenzunterricht im Klassenzimmer und Fachraum halten (Lehrgespräch, Vortrag, Übungen und Praktika anleiten)",
+        "zeitanteil_pct": 35,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unterrichten vor der Klasse ist eine unmittelbare Präsenz- und Beziehungstätigkeit, deren Wert in der persönlichen pädagogischen Interaktion vor Ort liegt."
+      },
+      {
+        "name": "Unterrichtsreihen planen sowie Skripte, Arbeitsblätter, Präsentationen und Übungsaufgaben erstellen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus Lehrplanvorgaben und Fachtexten Entwürfe für Skripte, Übungsblätter und Lektionsstrukturen; die Lehrperson steuert die Erstellung und prüft jedes Lehrmittel fachlich und didaktisch."
+      },
+      {
+        "name": "Schriftliche Prüfungen und Maturitätsprüfungen samt Musterlösungen und Erwartungshorizonten konzipieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das Sprachmodell entwirft Prüfungsfragen, Aufgabenvarianten und detaillierte Bewertungsschlüssel; die Lehrperson prüft jede Aufgabe intensiv auf Korrektheit, Niveau und Lehrplankonformität."
+      },
+      {
+        "name": "Schriftliche Prüfungen, Aufsätze und Klausuren korrigieren, kommentieren und benoten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-gestützte Vorkorrektur und Feedbackvorschläge bei komplexen, oft handschriftlich verfassten Gymnasialprüfungen über alle Fächer hinweg die 50-%-Schwelle erreichen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Multimodale KI-Werkzeuge (Handschrifterkennung und Abgleich mit Erwartungshorizont bzw. Korrekturhilfe in digitalen Prüfungsplattformen) markieren Fehler und schlagen Kommentare vor; die Lehrperson liest, beurteilt und benotet jede Arbeit weiterhin selbst."
+      },
+      {
+        "name": "Mündliche Prüfungen und mündliche Maturitätsprüfungen abnehmen und bewerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Prüfungen erfordern die unmittelbare Präsenz im Prüfungsgespräch, spontanes Nachfragen sowie die gemeinsame Beurteilung mit Expertinnen und Experten vor Ort."
+      },
+      {
+        "name": "Schriftliche Maturitätsarbeiten prüfen, auf Quellenredlichkeit kontrollieren und Bewertungsgutachten verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Lehrperson liest und beurteilt die Arbeit selbst, nutzt aber Recherche- und Prüfagenten zur Quellen- und Zitatkontrolle sowie ein LLM als Formulierungshilfe für das schriftliche Gutachten."
+      },
+      {
+        "name": "Lernende individuell beraten, bei Maturaarbeiten coachen sowie Elterngespräche führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratungs-, Betreuungs- und Elterngespräche leben von zwischenmenschlicher Präsenz, Empathie und individuellem Coaching."
+      },
+      {
+        "name": "Schriftliche Korrespondenz mit Lernenden, Eltern und Schulleitung sowie Empfehlungsschreiben verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Ein Chat-LLM formuliert aus Stichworten Elternbriefe, E-Mails und Empfehlungsschreiben für Hochschulen oder Stipendien; die Lehrperson prüft und verantwortet jedes Schreiben vor dem Versand."
+      },
+      {
+        "name": "An Konventen, Fachschaftssitzungen, Notenkonferenzen und Schulentwicklungsgruppen teilnehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kollegiale Abstimmung, Notenkonferenzen und Schulentwicklung erfordern persönliche Teilnahme, Diskussion und gemeinsame Entscheidungsfindung."
+      },
+      {
+        "name": "Exkursionen, Studienwochen, Projekttage und Schulanlässe durchführen und begleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Begleitung und Aufsicht von Klassen ausserhalb des Schulzimmers erfordert physische Präsenz und unmittelbare pädagogische Führung vor Ort."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Gymnasiallehrer/in an einer öffentlichen Schweizer Kantonsschule bzw. einem Gymnasium (Sekundarstufe II) mit zwei Unterrichtsfächern, gemittelt über das gesamte Arbeitsjahr. Da im Input keine ESCO-Kompetenzliste vorlag, wurden die Tätigkeiten aus der Berufsbeschreibung und dem typischen Schweizer Berufsauftrag abgeleitet. Grösster Grenzfall ist die Korrektur schriftlicher Prüfungen und Aufsätze, bei der die 50-%-Zeitersparnis stark vom Fach und vom Anteil digitaler vs. handschriftlicher Prüfungen abhängt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem die Unterrichtsvorbereitung und Lehrmittelerstellung, das Konzipieren und Vorkorrigieren schriftlicher Prüfungen, das Begutachten von Maturaarbeiten sowie das Verfassen von Korrespondenz und Empfehlungsschreiben mittels Chat-LLMs und multimodaler Prüfwerkzeuge.",
+      "begruendung": "Rund 45 % der Jahresarbeitszeit sind gegenüber generativer KI exponiert, während der Präsenzunterricht, mündliche Prüfungen und die persönliche Betreuung (zusammen 55 %) nicht betroffen sind. Die KI wirkt bei der Erstellung von Unterrichtsmaterialien, Prüfungsentwürfen und Schreiben delegierend und bei der Korrektur von Prüfungen sowie der Begutachtung von Maturaarbeiten unterstützend, da jede Leistung von der Lehrperson selbst fachlich beurteilt werden muss. In der Schweiz bremsen insbesondere kantonale Datenschutzvorgaben (revDSG/kDSG), das Rekursrecht bei promotions- und maturitätsrelevanten Noten sowie der Anspruch auf persönliche Kommunikation eine vollständige Ausschöpfung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

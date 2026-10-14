@@ -10,78 +10,215 @@
     "beruf": "Chemieingenieur/in / Verfahrenstechniker/in",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 49,
+      "candidates_token_count": 2431,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 49
+          "token_count": 2431
         }
       ],
-      "prompt_token_count": 22060,
+      "prompt_token_count": 22021,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22060
+          "token_count": 22021
         }
       ],
-      "thoughts_token_count": 9379,
-      "total_token_count": 31488
+      "thoughts_token_count": 7403,
+      "total_token_count": 31855
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 49,
+        "candidates_token_count": 2431,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 49
+            "token_count": 2431
           }
         ],
-        "prompt_token_count": 22060,
+        "prompt_token_count": 22021,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22060
+            "token_count": 22021
           }
         ],
-        "thoughts_token_count": 9379,
-        "total_token_count": 31488
+        "thoughts_token_count": 7403,
+        "total_token_count": 31855
       }
     ],
     "request_ids": [
-      "nrnOaqu2Kunpz7IP896zyAM"
+      "XTzPavT2KbeBz7IPmfKIqA4"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): Additional properties are not allowed ('taetigkeitenPLICATE' was unexpected); (root): 'taetigkeiten' is a required property; (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-2145_chemieingenieur_in_verfahrenstechniker_i",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): Additional properties are not allowed ('taetigkeitenPLICATE' was unexpected)",
-      "(root): 'taetigkeiten' is a required property",
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"2145\",\"beruf\":\"Chemieingenieur/in / Verfahrenstechniker/in\",\"taetigkeitenPLICATE\":null}"
+  "bewertung": {
+    "isco_code": "2145",
+    "beruf": "Chemieingenieur/in / Verfahrenstechniker/in",
+    "taetigkeiten": [
+      {
+        "name": "Verfahrenskonzepte, Reaktions- und Trennprozesse mittels Stoff- und Energiebilanzen sowie Prozesssimulation auslegen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die rigorose thermodynamische Modellierung und Apparateauslegung erfolgt in klassischer Prozesssimulationssoftware (z. B. Aspen Plus, ChemCAD); generative KI liefert höchstens Teilberechnungen oder Skripte, erreicht aber bei gleicher Ingenieurqualität keine 50 % Zeitersparnis."
+      },
+      {
+        "name": "Verfahrensfliessbilder (PFD, R&I-Schemata) und Anlagenpläne in CAD/CAE-Systemen erstellen, anpassen und genehmigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Zeichnen, Anpassen und fachliche Freigeben sicherheitskritischer Rohrleitungs- und Instrumentenfliessschemata erfordert präzise Ingenieurarbeit im CAD/CAE-System, bei der generative KI heute keine 50 % Zeit spart."
+      },
+      {
+        "name": "Lastenhefte (URS), Apparatespezifikationen und Konstruktionsvorgaben für Anlagenkomponenten ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Prozessparametern und Vorlagen vollständige Entwürfe für Lastenhefte und Spezifikationen; die Ingenieurin gibt die Randbedingungen vor und prüft jede technische Anforderung im Detail."
+      },
+      {
+        "name": "Versuche im Technikum (Pilotanlage) und Labor zur Verfahrensentwicklung und zum Scale-up durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Aufbau, die Begleitung und die Steuerung von Scale-up-Versuchen und Pilotchargen mit Chemikalien erfordern physische Präsenz an der Versuchsanlage; Laborroboter decken nicht-standardisierte Technikumsversuche nicht ab."
+      },
+      {
+        "name": "Chemische Proben untersuchen und analytische Messungen zur Prozesskontrolle auswerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Untersuchung von Entwicklungsproben (z. B. mittels Spektroskopie oder Chromatographie) und die Beurteilung komplexer Analysendaten sind physisch bzw. stützen sich auf klassische Gerätesoftware ohne relevante Zeitersparnis durch LLMs."
+      },
+      {
+        "name": "Versuchs-, Chargen- und Prozessdaten statistisch auswerten sowie Produktionsprozesse zwecks Optimierung analysieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Datenanalyse- und Coding-Werkzeuge werten exportierte Betriebs- und DoE-Versuchsdaten statistisch aus und visualisieren Korrelationen; der Verfahrenstechniker führt die Ursachenanalyse und Prozessoptimierung selbst durch und prüft die Auswertungen."
+      },
+      {
+        "name": "Laufende Produktionsanlagen vor Ort überwachen, Prozessstörungen beheben und Betriebspersonal anleiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Troubleshooting bei Chargenabweichungen im Werk, Anlagenbegehungen und die Abstimmung mit Chemie- und Pharmatechnologen erfordern unmittelbare Präsenz vor Ort."
+      },
+      {
+        "name": "Sicherheits-, Risiko- und Umweltbeurteilungen (z. B. HAZOP, ATEX, Störfallvorsorge, Ökobilanzen) durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Systematische Sicherheitsanalysen (wie interdisziplinäre HAZOP-Workshops, Explosionsschutz- und Umweltbeurteilungen) erfordern hohes Ingenieurermessen und Teamabstimmung; trotz KI-Hilfe bei Stoffdaten und Protokollen wird die 50-%-Schwelle bei gleicher Sicherheitsqualität nicht erreicht."
+      },
+      {
+        "name": "Technische Berichte, Verfahrensbeschreibungen, Betriebsanweisungen (SOPs) und Validierungsdokumente verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus eingefügten Chargenprotokoll-Auszügen und Stichworten vollständige Entwürfe für Entwicklungs-, Qualifizierungs- und SOP-Dokumente; die Fachperson prüft und verantwortet jedes Dokument gegen die Rohdaten und GMP-Vorgaben."
+      },
+      {
+        "name": "Fachliteratur, Patente und Technologieoptionen recherchieren sowie Machbarkeitsstudien erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten durchsuchen wissenschaftliche Publikationen, Patente und Stoffdatenbanken und fassen diese zusammen; der Ingenieur erarbeitet die technisch-wirtschaftliche Machbarkeitsbeurteilung selbst und verifiziert die Quellen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Chemieingenieur/in bzw. Verfahrenstechniker/in (FH/ETH/EPFL) in der Prozessentwicklung, im Scale-up und in der Betriebsunterstützung der Schweizer Chemie-, Pharma- oder Spezialitätenindustrie. Reine Routinelaborarbeiten und die Schichtführung an Produktionsanlagen liegen in der Schweiz überwiegend bei Laborant/innen EFZ bzw. Chemie- und Pharmatechnolog/innen EFZ, während Ingenieur/innen die Versuchsplanung, das Scale-up im Technikum, das Engineering und die Validierung verantworten.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Verfassen technischer Berichte, SOPs, Validierungsdokumente und Lastenhefte mittels Chat-LLMs sowie die statistische Prozessdatenanalyse und Literatur-/Patentrecherche durch KI-Analyse- und Recherche-Agenten.",
+      "begruendung": "Rund 35 % der Arbeitszeit sind exponiert, wobei die KI beim Erstellen von Spezifikationen, SOPs und Validierungsberichten delegierend Textentwürfe liefert und bei der Prozessdatenanalyse sowie Machbarkeitsstudien unterstützend wirkt. Die Kernaufgaben im Technikum, bei der Anlagenbetreuung vor Ort, in der rigorosen Prozesssimulation und bei Sicherheitsbeurteilungen (HAZOP, ATEX) bleiben wegen physischer Präsenz und hoher Sicherheitsanforderungen beim Menschen. In der stark pharmazeutisch und feinchemisch geprägten Schweizer Industrie bremsen zudem strenge regulatorische Vorgaben (GMP, Swissmedic) und der Schutz von proprietärem Verfahrens-Know-how den Einsatz externer KI-Dienste.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

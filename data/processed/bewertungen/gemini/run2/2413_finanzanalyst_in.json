@@ -1,0 +1,227 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "afb538562942c20d2798a4db4a8d1a803eecb154858cc594dace36b5f54d4b5a",
+    "isco_code": "2413",
+    "beruf": "Finanzanalyst/in",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2375,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2375
+        }
+      ],
+      "prompt_token_count": 22085,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22085
+        }
+      ],
+      "thoughts_token_count": 8141,
+      "total_token_count": 32601
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2375,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2375
+          }
+        ],
+        "prompt_token_count": 22085,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22085
+          }
+        ],
+        "thoughts_token_count": 8141,
+        "total_token_count": 32601
+      }
+    ],
+    "request_ids": [
+      "xD_PaoTCCIqd6dkP-MrZ-A8"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2413_finanzanalyst_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2413",
+    "beruf": "Finanzanalyst/in",
+    "taetigkeiten": [
+      {
+        "name": "Finanzdaten aus Geschäftsberichten, Abschlüssen und Anhangsangaben extrahieren und aufbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM-gestützte Dokumentenextraktion und Tabellen-Integration überführen Kennzahlen und Fussnoten aus PDF-Berichten in strukturierte Tabellen; die Fachperson spezifiziert die Datenpunkte und prüft jede Extraktion auf Rechnungslegungskonsistenz."
+      },
+      {
+        "name": "Standardisierte Finanz-, Risiko- und Portfolio-Dashboards periodisch mit Marktdaten aktualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelmässige Datenabzüge und das Aktualisieren standardisierter Kennzahlen-Dashboards sind regelbasierte Abläufe ohne Bedarf an generativer KI; sie lassen sich mit klassischer BI- und Reporting-Software (z. B. PowerBI, Datenbankschnittstellen) zu über 50 % automatisieren."
+      },
+      {
+        "name": "Jahresabschlüsse, Bilanzstrukturen und Cashflow-Entwicklungen fachlich analysieren und interpretieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Auf Basis eingefügter Abschlussdaten und Anhangstexte berechnet das Chat-LLM Kennzahlenbrücken, Margentreiber und Abweichungen; der Analyst führt die betriebswirtschaftliche Würdigung und Bilanzkritik weiterhin selbst durch."
+      },
+      {
+        "name": "Finanzmodelle, Unternehmensbewertungen und Szenariosimulationen in Tabellenkalkulationen erstellen und pflegen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "In die Tabellenkalkulation integrierte KI-Agenten und Code-Ausführung unterstützen beim Aufbau von DCF-Modellen, komplexen Formeln und Sensitivitätsanalysen; die Fachperson modelliert und verantwortet die ökonomischen Annahmen selbst."
+      },
+      {
+        "name": "Markt-, Branchen- und Wettbewerbsinformationen recherchieren und zusammenfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche und Transkriptionsfunktionen werten Branchenstudien, Konjunkturdaten und Gewinnkonferenzen (Earnings Calls) aus und erstellen Dossiers; die Analystin steuert die Fragestellung und verifiziert jede Zusammenfassung anhand der Primärquellen."
+      },
+      {
+        "name": "Finanzberichte, Unternehmensanalysen, Kreditvorlagen und Investment-Memos verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Aus den Kennzahlen, Bewertungsergebnissen und Stichworten der Fachperson entwirft ein Chat-LLM den vollständigen Analysebericht; jeder Bericht wird inhaltlich, sprachlich und bezüglich Compliance im Detail geprüft."
+      },
+      {
+        "name": "Präsentationen und Entscheidungsgrundlagen für Gremien, Management oder Kundschaft gestalten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative KI-Funktionen in Präsentations- und Office-Software erstellen aus Berichten und Tabellen vollständige Folienentwürfe und Grafiken; der Analyst gibt die Struktur vor und kontrolliert sowie überarbeitet jedes Folienset."
+      },
+      {
+        "name": "Anlage-, Kredit- oder Investitionsempfehlungen unter Berücksichtigung wirtschaftlicher Risiken abwägen und festlegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das abschliessende Abwägen widersprüchlicher ökonomischer Kriterien, Risiken und Bewertungsannahmen für ein Rating oder einen Kreditentscheid ist ein menschlicher Ermessensentscheid, bei dem KI keine 50 % Zeitersparnis erreicht."
+      },
+      {
+        "name": "Analysen und Empfehlungen in Anlagekomitees, Geschäftsleitungssitzungen oder Kundengesprächen präsentieren und vertreten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Beziehungstätigkeit: Der Wert liegt in der persönlichen Überzeugungsarbeit, der Verteidigung von Annahmen bei kritischen Rückfragen und der direkten Beratung."
+      },
+      {
+        "name": "Fachgespräche mit Unternehmensleitungen, Wirtschaftsprüfern und operativen Einheiten führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare zwischenmenschliche Interaktion im Rahmen von Due-Diligence-Prüfungen oder Management-Gesprächen, um qualitative Faktoren und die Glaubwürdigkeit der Führung einzuschätzen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Finanzanalyst/in bei einer Schweizer Bank, einem Vermögensverwalter oder in der Finanzabteilung eines grösseren Unternehmens (Aktien-, Kredit- und Unternehmensanalyse sowie Finanzplanung). Die ESCO-Kompetenzen decken das Berufsbild gut ab; wichtigste Grenzfälle liegen bei der komplexen Finanzmodellierung und der Abschlussinterpretation, die nahe an der 50-%-Schwelle liegen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Datenextraktion aus Geschäftsberichten, Markt- und Branchenrecherchen, das Verfassen von Finanzberichten sowie das Erstellen von Bewertungsmodellen und Präsentationen sind durch Dokumenten-KI, Recherche-Agenten, Chat-LLMs und Tabellenkalkulations-Assistenten stark exponiert.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind exponiert, wobei die KI überwiegend delegierend (Datenextraktion, Recherche, Berichte, Präsentationen) oder unterstützend (Abschlussanalyse, Finanzmodellierung) eingesetzt wird und aufgrund hoher Qualitäts- und Haftungsansprüche jede Ausgabe fachlich geprüft wird. Unberührt bleiben der eigentliche Anlage- oder Kreditentscheid sowie die persönliche Vertretung der Empfehlungen vor Gremien, Unternehmensleitungen und Kundschaft. In der Schweiz bremsen insbesondere strenge regulatorische Vorgaben (Bankkundengeheimnis, revDSG, FINMA-Compliance beim Cloud-Einsatz) die Verarbeitung vertraulicher Finanzdaten, während die mehrsprachige Berichterstattung zusätzlichen Abstimmungsaufwand bedingt.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

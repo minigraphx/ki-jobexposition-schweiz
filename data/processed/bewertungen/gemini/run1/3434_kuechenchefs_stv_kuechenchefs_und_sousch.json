@@ -10,85 +10,229 @@
     "beruf": "Küchenchefs, stv. Küchenchefs und Souschefs",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 566,
+      "candidates_token_count": 2358,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 566
+          "token_count": 2358
         }
       ],
-      "prompt_token_count": 22207,
+      "prompt_token_count": 22168,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22207
+          "token_count": 22168
         }
       ],
-      "thoughts_token_count": 6268,
-      "total_token_count": 29041
+      "thoughts_token_count": 8590,
+      "total_token_count": 33116
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 566,
+        "candidates_token_count": 2358,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 566
+            "token_count": 2358
           }
         ],
-        "prompt_token_count": 22207,
+        "prompt_token_count": 22168,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22207
+            "token_count": 22168
           }
         ],
-        "thoughts_token_count": 6268,
-        "total_token_count": 29041
+        "thoughts_token_count": 8590,
+        "total_token_count": 33116
       }
     ],
     "request_ids": [
-      "nrnOatrSKImc_uMPqZXzoA0"
+      "XTzPatX5DrDtz7IPofG1mAw"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): Additional properties are not allowed ('Rund 15 % der Arbeitszeit weisen eine KI-Exposition auf, wobei die KI beim Entwerfen von Menüs und Rezeptblättern delegierend und bei der Preiskalkulation sowie Abfallanalyse unterstützend wirkt. Der weit überwiegende Teil des Berufs (Kochen, Passkontrolle, Brigadenführung und Hygienekontrolle vor Ort) bleibt physisch und präsenzgebunden; bei den exponierten Planungsaufgaben erfordern schweizerische Vorschriften zur Allergen- und Herkunftsdeklaration eine genaue fachliche Prüfung.' was unexpected); taetigkeiten/0: 'Warme und kalte Speisen zubereiten, garen und veredeln (Mise en place und Service)' is not of type 'object'; taetigkeiten/1: 'Küchenbrigade während des Service anweisen, Posten koordinieren und Teller am Pass kontrollieren' is not of type 'object'; taetigkeiten/2: 'Mitarbeitende und Lernende im Küchenalltag anleiten, schulen und führen' is not of type 'object'; taetigkeiten/3: 'Speisekarten, saisonale Menüs, Bankettvorschläge und Rezepturen samt Allergendeklaration ausarbeiten' is not of type 'object'; taetigkeiten/4: 'Warenkosten und Verkaufspreise kalkulieren sowie Kennzahlen zu Food-Cost und Lebensmittelabfällen auswerten' is not of type 'object'; taetigkeiten/5: 'Lagerbestände prüfen, Warenbedarf ermitteln und Bestellungen bei Lieferanten aufgeben' is not of type 'object'; taetigkeiten/6: 'Warenlieferungen entgegennehmen, auf Qualität und Temperatur kontrollieren sowie fachgerecht einlagern' is not of type 'object'; taetigkeiten/7: 'Einhaltung der Hygienevorschriften (HACCP), Kühltemperaturen und Arbeitsplatzübergaben kontrollieren und dokumentieren' is not of type 'object'; taetigkeiten/8: 'Dienst-, Schicht- und Ferienpläne unter Berücksichtigung des L-GAV erstellen und Arbeitszeiten kontrollieren' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-3434_kuechenchefs_stv_kuechenchefs_und_sousch",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): Additional properties are not allowed ('Rund 15 % der Arbeitszeit weisen eine KI-Exposition auf, wobei die KI beim Entwerfen von Menüs und Rezeptblättern delegierend und bei der Preiskalkulation sowie Abfallanalyse unterstützend wirkt. Der weit überwiegende Teil des Berufs (Kochen, Passkontrolle, Brigadenführung und Hygienekontrolle vor Ort) bleibt physisch und präsenzgebunden; bei den exponierten Planungsaufgaben erfordern schweizerische Vorschriften zur Allergen- und Herkunftsdeklaration eine genaue fachliche Prüfung.' was unexpected)",
-      "taetigkeiten/0: 'Warme und kalte Speisen zubereiten, garen und veredeln (Mise en place und Service)' is not of type 'object'",
-      "taetigkeiten/1: 'Küchenbrigade während des Service anweisen, Posten koordinieren und Teller am Pass kontrollieren' is not of type 'object'",
-      "taetigkeiten/2: 'Mitarbeitende und Lernende im Küchenalltag anleiten, schulen und führen' is not of type 'object'",
-      "taetigkeiten/3: 'Speisekarten, saisonale Menüs, Bankettvorschläge und Rezepturen samt Allergendeklaration ausarbeiten' is not of type 'object'",
-      "taetigkeiten/4: 'Warenkosten und Verkaufspreise kalkulieren sowie Kennzahlen zu Food-Cost und Lebensmittelabfällen auswerten' is not of type 'object'",
-      "taetigkeiten/5: 'Lagerbestände prüfen, Warenbedarf ermitteln und Bestellungen bei Lieferanten aufgeben' is not of type 'object'",
-      "taetigkeiten/6: 'Warenlieferungen entgegennehmen, auf Qualität und Temperatur kontrollieren sowie fachgerecht einlagern' is not of type 'object'",
-      "taetigkeiten/7: 'Einhaltung der Hygienevorschriften (HACCP), Kühltemperaturen und Arbeitsplatzübergaben kontrollieren und dokumentieren' is not of type 'object'",
-      "taetigkeiten/8: 'Dienst-, Schicht- und Ferienpläne unter Berücksichtigung des L-GAV erstellen und Arbeitszeiten kontrollieren' is not of type 'object'",
-      "taetigkeiten/9: 'Gäste bei kulinarischen Fragen, Spezialwünschen und Bankettanlässen persönlich beraten' is not of type 'object'",
-      "zusammenfassung: 'Betroffen sind vor allem die Ausarbeitung von Speisekarten, Bankettmenüs, Rezepturen und Allergendeklarationen sowie die Kalkulation von Warenkosten und Food-Waste-Analysen mittels Sprachmodellen.' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"3434\",\"beruf\":\"Küchenchefs, stv. Küchenchefs und Souschefs\",\"taetigkeiten\":[\n  \"Warme und kalte Speisen zubereiten, garen und veredeln (Mise en place und Service)\",\n  \"Küchenbrigade während des Service anweisen, Posten koordinieren und Teller am Pass kontrollieren\",\n  \"Mitarbeitende und Lernende im Küchenalltag anleiten, schulen und führen\",\n  \"Speisekarten, saisonale Menüs, Bankettvorschläge und Rezepturen samt Allergendeklaration ausarbeiten\",\n  \"Warenkosten und Verkaufspreise kalkulieren sowie Kennzahlen zu Food-Cost und Lebensmittelabfällen auswerten\",\n  \"Lagerbestände prüfen, Warenbedarf ermitteln und Bestellungen bei Lieferanten aufgeben\",\n  \"Warenlieferungen entgegennehmen, auf Qualität und Temperatur kontrollieren sowie fachgerecht einlagern\",\n  \"Einhaltung der Hygienevorschriften (HACCP), Kühltemperaturen und Arbeitsplatzübergaben kontrollieren und dokumentieren\",\n  \"Dienst-, Schicht- und Ferienpläne unter Berücksichtigung des L-GAV erstellen und Arbeitszeiten kontrollieren\",\n  \"Gäste bei kulinarischen Fragen, Spezialwünschen und Bankettanlässen persönlich beraten\"\n],\"unsicherheit\":\"niedrig\",\"kommentar\":\"Angenommenes Setting: Küchenchef/in oder Souschef/in in einem typischen Schweizer Gastronomie- oder Hotelbetrieb (KMU), in dem Führungskräfte der Küche sowohl administrativ planen als auch aktiv am Herd und am Pass mitarbeiten. Die sehr knappe ESCO-Beschreibung wurde über die wesentlichen und optionalen Kompetenzen präzisiert.\",\"zusammenfassung\":\n  \"Betroffen sind vor allem die Ausarbeitung von Speisekarten, Bankettmenüs, Rezepturen und Allergendeklarationen sowie die Kalkulation von Warenkosten und Food-Waste-Analysen mittels Sprachmodellen.\",\n  \"Rund 15 % der Arbeitszeit weisen eine KI-Exposition auf, wobei die KI beim Entwerfen von Menüs und Rezeptblättern delegierend und bei der Preiskalkulation sowie Abfallanalyse unterstützend wirkt. Der weit überwiegende Teil des Berufs (Kochen, Passkontrolle, Brigadenführung und Hygienekontrolle vor Ort) bleibt physisch und präsenzgebunden; bei den exponierten Planungsaufgaben erfordern schweizerische Vorschriften zur Allergen- und Herkunftsdeklaration eine genaue fachliche Prüfung.\"\n  :\"3-5 Jahre\"\n}"
+  "bewertung": {
+    "isco_code": "3434",
+    "beruf": "Küchenchefs, stv. Küchenchefs und Souschefs",
+    "taetigkeiten": [
+      {
+        "name": "Speisen vor- und zubereiten sowie kulinarische Veredelungsverfahren anwenden",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physisch-handwerkliche und sensorische Arbeit am Herd und auf den Posten (Mise en Place, Schneiden, Garen, Abschmecken); kommerzielle Kochroboter erreichen in der vielfältigen Gastronomie keine 50 % Zeitersparnis."
+      },
+      {
+        "name": "Serviceablauf am Pass steuern, Gerichte anrichten und Endqualität kontrollieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert unmittelbare physische Präsenz, sensorische Qualitätskontrolle jedes Tellers und Echtzeit-Koordination der Küchenbrigade während der Servicezeiten."
+      },
+      {
+        "name": "Küchenbrigade und Lernende im Arbeitsalltag anweisen, schulen und führen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Führungs-, Ausbildungs- und Präsenzaufgabe direkt am Arbeitsplatz in der Küche."
+      },
+      {
+        "name": "Lagerbestände prüfen, Warenbedarf ermitteln und Bestellungen bei Lieferanten aufgeben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die tägliche Sichtkontrolle verderblicher Frischwaren und Anbrüche in Kühl- und Lagerräumen ist ortsgebunden; für die Gesamttätigkeit spart weder generative KI noch klassische Bestellsoftware mindestens 50 % der Zeit."
+      },
+      {
+        "name": "Warenannahme durchführen, Lieferungen prüfen und Lebensmittelrohstoffe fachgerecht lagern",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische und sensorische Prüfung von Frische, Gewicht und Temperatur bei der Anlieferung sowie Verräumen in die Kühlhäuser."
+      },
+      {
+        "name": "Hygienestandards (HACCP), Kühltemperaturen und Küchengeräte überwachen sowie Arbeitsbereiche übergeben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Sicht- und Hygienekontrolle der Arbeitsflächen, Kühlgeräte und Lebensmittel vor Ort; automatische Temperatursensoren decken nur einen kleinen Teil der gesamten Selbstkontrolle ab."
+      },
+      {
+        "name": "Speisekarten, saisonale Menüpläne und Bankettangebote konzipieren und verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt auf Basis von Saison-, Konzept- und Budgetvorgaben Menüvorschläge sowie ansprechende, mehrsprachige Speisekartentexte; die Küchenleitung gibt die kulinarische Linie vor und prüft jeden Entwurf fachlich."
+      },
+      {
+        "name": "Rezepturen, Allergendeklarationen und Richtlinien zur Abfallverminderung erstellen und dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM generiert aus Stichworten strukturierte Rezeptblätter, skaliert Mengen, weist deklarationspflichtige Allergene aus und formuliert Massnahmen gegen Food-Waste; der Küchenchef kontrolliert jede Rezeptur und Deklaration im Detail."
+      },
+      {
+        "name": "Warenkosten kalkulieren, Verkaufspreise festlegen und Ausgaben sowie Abfallkennzahlen kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Rezept- und Margenkalkulation sowie die Auswertung von Wareneinsatz und Lebensmittelabfällen erfolgen regelbasiert über klassische Warenwirtschafts- und Kalkulationssoftware sowie automatisierte Abfallwaagen."
+      },
+      {
+        "name": "Dienst- und Schichtpläne erstellen sowie Arbeitszeiten kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Schichtplanung unter Einhaltung der Arbeits- und Ruhezeitvorgaben (L-GAV) wird durch klassische Personaleinsatzplanungs- und Zeiterfassungssoftware weitgehend automatisiert."
+      },
+      {
+        "name": "Gäste und Bankettkundschaft beraten sowie Spezialwünsche und Rückmeldungen bearbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung bei Bankettbesprechungen, Abklärung individueller Diät- oder Allergiewünsche am Tisch und Pflege der Gästebeziehung vor Ort."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Küchenchef/in oder Souschef/in in einem typischen Schweizer Gastronomie- oder Hotelbetrieb (KMU), in dem die Küchenleitung neben Planungs- und Führungsaufgaben weiterhin aktiv am Herd und am Pass mitarbeitet. In sehr grossen Hotel- oder Gemeinschaftsgastronomiebetrieben ist der administrative Anteil etwas höher, ohne das Gesamtbild wesentlich zu verändern.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind lediglich das Konzipieren und Texten von Speisekarten und Bankettangeboten sowie das Erstellen von Rezepturen, Allergendeklarationen und Küchenrichtlinien mittels Chat-LLM; die handwerkliche Koch- und Führungsarbeit bleibt unberührt.",
+      "begruendung": "Rund 10 % der Arbeitszeit entfallen auf text- und konzeptbasierte Planungsaufgaben, bei denen die KI im delegierenden Modus Menüpläne, Rezeptblätter und Deklarationen entwirft und die Küchenleitung jedes Ergebnis fachlich prüft. Der weitaus grösste Teil des Berufs besteht aus physischem Kochen, dem Leiten des Service am Pass sowie der direkten Führung der Brigade vor Ort. In der Schweiz erfordern zudem strenge lebensmittelrechtliche Haftungsvorgaben bei Allergendeklarationen sowie mehrsprachige Küchenbrigaden und Gästegruppen eine sorgfältige menschliche Kontrolle.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

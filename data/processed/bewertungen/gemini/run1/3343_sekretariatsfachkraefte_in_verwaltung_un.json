@@ -10,85 +10,221 @@
     "beruf": "Sekretariatsfachkräfte in Verwaltung und Geschäftsleitung",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 584,
+      "candidates_token_count": 2278,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 584
+          "token_count": 2278
         }
       ],
-      "prompt_token_count": 22358,
+      "prompt_token_count": 22319,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22358
+          "token_count": 22319
         }
       ],
-      "thoughts_token_count": 7361,
-      "total_token_count": 30303
+      "thoughts_token_count": 7002,
+      "total_token_count": 31599
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 584,
+        "candidates_token_count": 2278,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 584
+            "token_count": 2278
           }
         ],
-        "prompt_token_count": 22358,
+        "prompt_token_count": 22319,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22358
+            "token_count": 22319
           }
         ],
-        "thoughts_token_count": 7361,
-        "total_token_count": 30303
+        "thoughts_token_count": 7002,
+        "total_token_count": 31599
       }
     ],
     "request_ids": [
-      "nrnOauGyK7zi_uMP6aHG6Ag"
+      "XTzPaqXlBrCsz7IP3NihgQ0"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): Additional properties are not allowed ('Rund 70 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI bei der Korrespondenz nach Stichworten ersetzend und bei Übersetzungen, Präsentationen, Sitzungsprotokollen, Registern sowie Recherchen delegierend mit fachlicher Einzelprüfung arbeitet. Persönliche Beziehungspflege, Gatekeeping für die Geschäftsleitung sowie die Terminkoordination verbleiben beim Menschen bzw. bei klassischer Kalender-Software. In der Schweiz bremsen vor allem der Datenschutz (revDSG), das Geschäfts- und Amtsgeheimnis bei vertraulichen Führungsakten sowie organisatorische Anforderungen der Mehrsprachigkeit einen unkontrollierten Einsatz.' was unexpected); taetigkeiten/0: 'Geschäftliche Korrespondenz, E-Mails und Mitteilungen nach Stichworten verfassen' is not of type 'object'; taetigkeiten/1: 'Fremdsprachige Korrespondenz und Dokumente übersetzen sowie Textentwürfe sprachlich überarbeiten' is not of type 'object'; taetigkeiten/2: 'Sitzungen vorbereiten, Traktandenlisten zusammenstellen und Präsentationsunterlagen erstellen' is not of type 'object'; taetigkeiten/3: 'Sitzungsprotokolle aus Aufnahmen oder Notizen erstellen und Pendenzenlisten nachführen' is not of type 'object'; taetigkeiten/4: 'Terminkalender der Führungskräfte verwalten, Sitzungstermine koordinieren und Zeitpläne abstimmen' is not of type 'object'; taetigkeiten/5: 'Geschäftsreisen buchen, Reiseprogramme zusammenstellen und Spesenabrechnungen vorbereiten' is not of type 'object'; taetigkeiten/6: 'Akten, Verzeichnisse wie das Aktionärsregister und die digitale Ablage im Bürosystem pflegen' is not of type 'object'; taetigkeiten/7: 'Geschäftsbezogene Recherchen durchführen und Entscheidungsgrundlagen aufbereiten' is not of type 'object'; taetigkeiten/8: 'Anfragen von Führungskräften, Gremien und externen Anspruchsgruppen telefonisch und persönlich betreuen' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-3343_sekretariatsfachkraefte_in_verwaltung_un",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): Additional properties are not allowed ('Rund 70 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI bei der Korrespondenz nach Stichworten ersetzend und bei Übersetzungen, Präsentationen, Sitzungsprotokollen, Registern sowie Recherchen delegierend mit fachlicher Einzelprüfung arbeitet. Persönliche Beziehungspflege, Gatekeeping für die Geschäftsleitung sowie die Terminkoordination verbleiben beim Menschen bzw. bei klassischer Kalender-Software. In der Schweiz bremsen vor allem der Datenschutz (revDSG), das Geschäfts- und Amtsgeheimnis bei vertraulichen Führungsakten sowie organisatorische Anforderungen der Mehrsprachigkeit einen unkontrollierten Einsatz.' was unexpected)",
-      "taetigkeiten/0: 'Geschäftliche Korrespondenz, E-Mails und Mitteilungen nach Stichworten verfassen' is not of type 'object'",
-      "taetigkeiten/1: 'Fremdsprachige Korrespondenz und Dokumente übersetzen sowie Textentwürfe sprachlich überarbeiten' is not of type 'object'",
-      "taetigkeiten/2: 'Sitzungen vorbereiten, Traktandenlisten zusammenstellen und Präsentationsunterlagen erstellen' is not of type 'object'",
-      "taetigkeiten/3: 'Sitzungsprotokolle aus Aufnahmen oder Notizen erstellen und Pendenzenlisten nachführen' is not of type 'object'",
-      "taetigkeiten/4: 'Terminkalender der Führungskräfte verwalten, Sitzungstermine koordinieren und Zeitpläne abstimmen' is not of type 'object'",
-      "taetigkeiten/5: 'Geschäftsreisen buchen, Reiseprogramme zusammenstellen und Spesenabrechnungen vorbereiten' is not of type 'object'",
-      "taetigkeiten/6: 'Akten, Verzeichnisse wie das Aktionärsregister und die digitale Ablage im Bürosystem pflegen' is not of type 'object'",
-      "taetigkeiten/7: 'Geschäftsbezogene Recherchen durchführen und Entscheidungsgrundlagen aufbereiten' is not of type 'object'",
-      "taetigkeiten/8: 'Anfragen von Führungskräften, Gremien und externen Anspruchsgruppen telefonisch und persönlich betreuen' is not of type 'object'",
-      "taetigkeiten/9: 'Täglichen Bürobetrieb koordinieren, Anlässe organisieren und Mitarbeitende in Büroprozesse einführen' is not of type 'object'",
-      "zusammenfassung: 'Korrespondenz, Übersetzungen, Sitzungsvorbereitung, Protokollführung, Aktenpflege und Recherchen werden weitgehend durch Chat-LLMs, Transkriptions- und Office-KI-Systeme übernommen.' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"3343\",\"beruf\":\"Sekretariatsfachkräfte in Verwaltung und Geschäftsleitung\",\"taetigkeiten\":[\n    \"Geschäftliche Korrespondenz, E-Mails und Mitteilungen nach Stichworten verfassen\",\n    \"Fremdsprachige Korrespondenz und Dokumente übersetzen sowie Textentwürfe sprachlich überarbeiten\",\n    \"Sitzungen vorbereiten, Traktandenlisten zusammenstellen und Präsentationsunterlagen erstellen\",\n    \"Sitzungsprotokolle aus Aufnahmen oder Notizen erstellen und Pendenzenlisten nachführen\",\n    \"Terminkalender der Führungskräfte verwalten, Sitzungstermine koordinieren und Zeitpläne abstimmen\",\n    \"Geschäftsreisen buchen, Reiseprogramme zusammenstellen und Spesenabrechnungen vorbereiten\",\n    \"Akten, Verzeichnisse wie das Aktionärsregister und die digitale Ablage im Bürosystem pflegen\",\n    \"Geschäftsbezogene Recherchen durchführen und Entscheidungsgrundlagen aufbereiten\",\n    \"Anfragen von Führungskräften, Gremien und externen Anspruchsgruppen telefonisch und persönlich betreuen\",\n    \"Täglichen Bürobetrieb koordinieren, Anlässe organisieren und Mitarbeitende in Büroprozesse einführen\"\n  ],\"unsicherheit\":\"niedrig\",\"kommentar\":\"Angenommenes Setting: Direktions- bzw. Geschäftsleitungsassistenz oder gehobenes Verwaltungssekretariat in einem Schweizer KMU oder einer öffentlichen Verwaltung. Das Aufgabenprofil kombiniert stark text- und dokumentenbasierte Tätigkeiten (hohe KI-Exposition) mit Vertrauens-, Koordinations- und Gatekeeping-Aufgaben für Führungskräfte.\",\"zusammenfassung\":\n    \"Korrespondenz, Übersetzungen, Sitzungsvorbereitung, Protokollführung, Aktenpflege und Recherchen werden weitgehend durch Chat-LLMs, Transkriptions- und Office-KI-Systeme übernommen.\",\n    \"Rund 70 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI bei der Korrespondenz nach Stichworten ersetzend und bei Übersetzungen, Präsentationen, Sitzungsprotokollen, Registern sowie Recherchen delegierend mit fachlicher Einzelprüfung arbeitet. Persönliche Beziehungspflege, Gatekeeping für die Geschäftsleitung sowie die Terminkoordination verbleiben beim Menschen bzw. bei klassischer Kalender-Software. In der Schweiz bremsen vor allem der Datenschutz (revDSG), das Geschäfts- und Amtsgeheimnis bei vertraulichen Führungsakten sowie organisatorische Anforderungen der Mehrsprachigkeit einen unkontrollierten Einsatz.\"\n  :\"3-5 Jahre\"}"
+  "bewertung": {
+    "isco_code": "3343",
+    "beruf": "Sekretariatsfachkräfte in Verwaltung und Geschäftsleitung",
+    "taetigkeiten": [
+      {
+        "name": "Geschäftskorrespondenz, E-Mails und Stellungnahmen nach Stichworten verfassen und redigieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten oder Rohentwürfen der Geschäftsleitung vollständige Briefe und E-Mails; die Assistenz prüft jeden Text inhaltlich und sprachlich auf Tonfall und Korrektheit."
+      },
+      {
+        "name": "Fremdsprachige Korrespondenz und Geschäftsdokumente übersetzen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Das Sprachmodell übersetzt Korrespondenz und Vorlagen zwischen den Landessprachen und Englisch auf hohem Niveau; die Fachkraft liest jede Übersetzung gegen und gleicht die Fachterminologie ab."
+      },
+      {
+        "name": "Sitzungsprotokolle und Pendenzenlisten aus Aufnahmen oder Notizen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Transkriptions- und Protokollsoftware erstellt aus Audioaufnahmen und Sitzungsnotizen den Protokollentwurf; die Assistenz prüft und überarbeitet jedes Protokoll fachlich, wobei Mundartgespräche mehrerer Personen den Korrekturaufwand erhöhen."
+      },
+      {
+        "name": "Terminkalender der Führungskräfte verwalten und Termine koordinieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Kalenderassistenten bei komplexer Priorisierung und diplomatischer Terminabstimmung für Führungskräfte die 50-%-Schwelle erreichen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "In die Office-Suite integrierte KI-Assistenten schlagen Zeitfenster vor, formulieren Terminanfragen und tragen Termine ein; die Assistenz steuert die Prioritäten und prüft jede Buchung."
+      },
+      {
+        "name": "Sitzungen, Generalversammlungen und Veranstaltungen organisieren sowie Unterlagen bereitstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die logistische Organisation von Räumen, Catering und Technik sowie die Betreuung vor Ort erfordern persönliche Präsenz und Koordination, bei der generative KI keine 50 % Zeitersparnis erreicht."
+      },
+      {
+        "name": "Präsentationen, Entscheidungsgrundlagen und Recherchen für die Geschäftsleitung erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten und KI-Funktionen in Präsentations- und Kalkulationsprogrammen erstellen Folienentwürfe und Auswertungen; die Assistenz gibt die Struktur vor und prüft alle Zahlen und Aussagen."
+      },
+      {
+        "name": "Geschäftsreisen buchen und Spesenabrechnungen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Belegerkennung und Reiseplanungstools erstellen Reisevorschläge und Spesenabrechnungen, die von der Assistenz einzeln geprüft werden; klassische Buchungsplattformen und Spesen-Workflows (P1) automatisieren bereits grosse Teile."
+      },
+      {
+        "name": "Telefonische und persönliche Anfragen triagieren, Anspruchsgruppen betreuen und Gäste empfangen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der persönliche Empfang von Gästen sowie die diplomatische Triage und Beziehungspflege für Geschäftsleitung und Verwaltungsrat sind Präsenz- und Vertrauensaufgaben."
+      },
+      {
+        "name": "Akten, Verträge und Register im Dokumentenmanagementsystem pflegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenverarbeitungs-KI extrahiert Metadaten und Mutationen (z. B. für das Aktionärsverzeichnis oder Vertragsarchiv) aus PDFs und schlägt Systembucheinträge vor; die Fachkraft kontrolliert jeden Eintrag anhand der Originalbelege."
+      },
+      {
+        "name": "Täglichen Bürobetrieb koordinieren und Mitarbeitende in Bürosysteme einführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Anleiten von Mitarbeitenden vor Ort und das Lösen praktischer Alltagsprobleme im Bürobetrieb erfordern unmittelbare persönliche Interaktion."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Direktions- bzw. Geschäftsleitungsassistenz oder gehobenes Verwaltungssekretariat in einem mittleren bis grösseren Schweizer Betrieb oder einer Behörde. Die ESCO-Daten decken das Berufsbild gut ab; die grösste Unsicherheit liegt bei der Terminkoordination für Führungskräfte, die nahe an der 50-%-Schwelle liegt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Verfassen und Übersetzen von Korrespondenz per Chat-LLM sowie die Protokollerstellung, Präsentationsaufbereitung, Terminplanung, Spesenverarbeitung und Aktenpflege durch integrierte Office- und Dokumenten-KI.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind exponiert, wobei die KI auf Stufe Geschäftsleitung und Verwaltung durchwegs im delegierenden Modus arbeitet: Sie erstellt Entwürfe, Übersetzungen, Protokolle und Buchungsvorschläge, während die Sekretariatsfachkraft jede Ausgabe inhaltlich prüft. Gebremst wird der Einsatz in der Schweiz durch strenge Datenschutz- und Geheimhaltungspflichten bei Geschäftsleitungs- und Behördendaten, die Abstimmung über mehrere Landessprachen hinweg sowie die Erwartung persönlicher Betreuung bei Führungskontakten.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

@@ -10,83 +10,213 @@
     "beruf": "Sicherheitsbeauftragter/-beauftragte",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
-    "stop_reason": "MAX_TOKENS",
+    "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "cache_tokens_details": [
-        {
-          "modality": "TEXT",
-          "token_count": 17820
-        }
-      ],
-      "cached_content_token_count": 17820,
-      "candidates_token_count": 27879,
+      "candidates_token_count": 2178,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 27879
+          "token_count": 2178
         }
       ],
-      "prompt_token_count": 22053,
+      "prompt_token_count": 22014,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22053
+          "token_count": 22014
         }
       ],
-      "thoughts_token_count": 4889,
-      "total_token_count": 54821
+      "thoughts_token_count": 5270,
+      "total_token_count": 29462
     },
     "usage_je_versuch": [
       {
-        "cache_tokens_details": [
-          {
-            "modality": "TEXT",
-            "token_count": 17820
-          }
-        ],
-        "cached_content_token_count": 17820,
-        "candidates_token_count": 27879,
+        "candidates_token_count": 2178,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 27879
+            "token_count": 2178
           }
         ],
-        "prompt_token_count": 22053,
+        "prompt_token_count": 22014,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22053
+            "token_count": 22014
           }
         ],
-        "thoughts_token_count": 4889,
-        "total_token_count": 54821
+        "thoughts_token_count": 5270,
+        "total_token_count": 29462
       }
     ],
-    "request_ids": [],
-    "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Antwort abgeschnitten (max_output_tokens = 32768)"
+    "request_ids": [
+      "XTzPap3CLLCsz7IP3NihgQ0"
     ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-5414_sicherheitsbeauftragter_beauftragte",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "antwort",
+    "fehler_art": null,
     "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null
+  "bewertung": {
+    "isco_code": "5414",
+    "beruf": "Sicherheitsbeauftragter/-beauftragte",
+    "taetigkeiten": [
+      {
+        "name": "Kontroll- und Patrouillengänge in Gebäuden und auf Arealen durchführen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz- und Kontrolltätigkeit vor Ort (Inspektionsrunden, Schliesskontrollen); Wachroboter oder Drohnen können Rundgänge in komplexen Gebäuden heute nicht zu mindestens 50 % übernehmen."
+      },
+      {
+        "name": "Zutrittsberechtigungen, Ausweise und Tickets am Eingang prüfen sowie Besucher registrieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Kontrolltätigkeit am Eingang ohne relevante Exposition gegenüber Sprachmodellen. Automatische Zutrittsschleusen, Drehkreuze mit Badge- oder QR-Scannern und Self-Check-in-Terminals können die reguläre Einlasskontrolle zu über 50 % übernehmen."
+      },
+      {
+        "name": "Physische Sicherheitskontrollen an Personen, Gepäck und Fahrzeugen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Tätigkeit vor Ort wie Abtasten, Taschenkontrollen und Fahrzeugdurchsuchungen, die trotz technischer Hilfsmittel manuell erfolgt."
+      },
+      {
+        "name": "Überwachungskameras sowie Einbruch- und Brandmeldeanlagen in der Zentrale überwachen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die laufende Bildschirm- und Alarmüberwachung wird nicht durch Sprachmodelle gelöst. Klassische Videoanalyse-Software mit automatischer Bewegungs- und Einbrucherkennung sowie regelbasierter Alarmauslösung reduziert den Überwachungsaufwand jedoch um mindestens 50 %."
+      },
+      {
+        "name": "Bei Störungen, Regelverstössen und aggressivem Verhalten vor Ort intervenieren und deeskalieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert unmittelbare persönliche Präsenz, verbale Deeskalation von Angesicht zu Angesicht und im Ernstfall körperliches Eingreifen."
+      },
+      {
+        "name": "Bei Alarmen und Notfällen vor Ort intervenieren, Erste Hilfe leisten und Räumungen anleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Handeln vor Ort und unmittelbare Führung von Personen in Notfallsituationen."
+      },
+      {
+        "name": "Mit Polizei, Rettungsdiensten und Auftraggebern bei Einsätzen vor Ort zusammenarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Einsatzkoordination per Funk und persönliche Übergabe von Sachverhalten oder angehaltenen Personen an die Behörden vor Ort."
+      },
+      {
+        "name": "Sicherheitseinrichtungen, Schliessanlagen und Funkgeräte auf Funktion prüfen und warten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Prüfung und einfache Instandhaltung von technischen Sicherheitsanlagen, Schlüsselkästen und Einsatzmitteln vor Ort."
+      },
+      {
+        "name": "Ereignisrapporte, Vorfallmeldungen und Schichtprotokolle mit Fotodokumentation erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracheingabe und Bildverarbeitung in einer mobilen Rapport-App erstellen den strukturierten Vorfallbericht aus Diktat und Fotos; die Sicherheitsfachkraft prüft und korrigiert jeden Rapport wegen möglicher rechtlicher Relevanz."
+      },
+      {
+        "name": "Objektspezifische Dienstanweisungen, Checklisten und schriftliche Kundenmeldungen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM formuliert aus Stichworten und Objektvorgaben Entwürfe für Dienstanweisungen, Checklisten oder Kundenmitteilungen; die verantwortliche Person prüft jedes Dokument inhaltlich auf Richtigkeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Gemäss ISCO-Code 5414 und ESCO-Profil bezieht sich der Beruf auf Sicherheits- und Bewachungsfachkräfte im privaten Sicherheitsdienst (in der Schweiz z. B. Sicherheitsdienstmitarbeiter/in bzw. Fachmann/-frau für Sicherheit und Bewachung, nicht auf Arbeitssicherheitsbeauftragte nach EKAS). Angenommenes Setting: kombinierter Einsatz im Objektschutz, Logen-/Zentralendienst und Veranstaltungsdienst. Die geringe Exposition gegenüber generativer KI ist sehr robust, da Präsenz- und Kontrollaufgaben dominieren.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind ausschliesslich das Erstellen von Ereignisrapporten und Schichtprotokollen per Spracheingabe sowie das Verfassen von Dienstanweisungen und Kundenmeldungen mittels Chat-LLM, während die Überwachungs-, Kontroll- und Interventionstätigkeit vor Ort nicht durch generative KI übernehmbar ist.",
+      "begruendung": "Lediglich rund 10 % der Arbeitszeit entfallen auf administrative Dokumentations- und Schreibaufgaben, bei denen generative KI im delegierenden Modus Entwürfe erstellt, die wegen ihrer rechtlichen und vertraglichen Tragweite einzeln geprüft werden müssen. Der überwiegende Teil des Berufs erfordert physische Präsenz bei Patrouillen, Personenkontrollen und Deeskalationen; zudem bremsen Datenschutzvorgaben (revDSG) bei Personendaten und Vertraulichkeitsanforderungen den Einsatz Cloud-basierter KI-Lösungen.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }

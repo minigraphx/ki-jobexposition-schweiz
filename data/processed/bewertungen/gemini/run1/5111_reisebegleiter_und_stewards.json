@@ -10,77 +10,200 @@
     "beruf": "Reisebegleiter und Stewards",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 47,
+      "candidates_token_count": 1979,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 47
+          "token_count": 1979
         }
       ],
-      "prompt_token_count": 21399,
+      "prompt_token_count": 21360,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21399
+          "token_count": 21360
         }
       ],
-      "thoughts_token_count": 5566,
-      "total_token_count": 27012
+      "thoughts_token_count": 4410,
+      "total_token_count": 27749
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 47,
+        "candidates_token_count": 1979,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 47
+            "token_count": 1979
           }
         ],
-        "prompt_token_count": 21399,
+        "prompt_token_count": 21360,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21399
+            "token_count": 21360
           }
         ],
-        "thoughts_token_count": 5566,
-        "total_token_count": 27012
+        "thoughts_token_count": 4410,
+        "total_token_count": 27749
       }
     ],
     "request_ids": [
-      "nrnOaqm0Kbi-_PUPrrqE6QQ"
+      "XTzPauaQK8ucz7IP_rLrgA8"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: [] is too short"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-5111_reisebegleiter_und_stewards",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: [] is too short"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"5111\",\"beruf\":\"Reisebegleiter und Stewards\",\"taetigkeiten\":[\n    ]\n}"
+  "bewertung": {
+    "isco_code": "5111",
+    "beruf": "Reisebegleiter und Stewards",
+    "taetigkeiten": [
+      {
+        "name": "Speisen und Getränke an Bord zubereiten, anrichten und den Fahrgästen servieren",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Zubereitung in der Bordküche und persönliches Servieren am Platz oder aus dem Servicewagen sind rein physische Präsenzarbeiten."
+      },
+      {
+        "name": "Fahrgäste beim Ein- und Aussteigen begrüssen, Bordkarten oder Tickets prüfen und beim Gepäck unterstützen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönlicher Empfang an der Kabinentür, Einweisen der Gäste und physische Hilfe beim Verstauen des Handgepäcks erfordern menschliche Präsenz vor Ort."
+      },
+      {
+        "name": "Kabine, Waggons sowie Sicherheits- und Notfallausrüstung vor und nach der Fahrt kontrollieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Inspektion von Notfallausrüstung, Türen, Sitzen und Sicherheitsvorkehrungen direkt im Fahrzeug oder Flugzeug."
+      },
+      {
+        "name": "Sicherheitsanweisungen vorführen und Einhaltung der Sicherheitsvorschriften in der Kabine überwachen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sicherheitsrundgänge (Anschnallgurte, Gepäckablagen, Sitzlehnen) und das Anleiten der Passagiere erfordern unmittelbare physische Präsenz in der Kabine."
+      },
+      {
+        "name": "Fahrgäste während der Reise persönlich betreuen, Auskünfte erteilen und bei besonderen Bedürfnissen unterstützen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare zwischenmenschliche Betreuung von Reisenden (z. B. Familien, mobilitätseingeschränkte Personen) und mündliche Auskünfte vor Ort."
+      },
+      {
+        "name": "Bordverkauf von Speisen, Getränken und Waren durchführen sowie Zahlungen am mobilen Terminal abwickeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Warenausgabe am Sitzplatz oder im Speisewagen und Kassieren am POS-Gerät; keine relevante Zeitersparnis durch generative KI."
+      },
+      {
+        "name": "Kundenbeschwerden vor Ort bearbeiten sowie bei Störungen und medizinischen Notfällen Hilfe leisten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Deeskalation von Angesicht zu Angesicht, Erste Hilfe und Evakuierungs- oder Notfallmassnahmen sind reine Präsenz- und Körpertätigkeiten."
+      },
+      {
+        "name": "Bordküche (Galley), Servicewagen und Gastraum aufräumen sowie Lebensmittelbestände kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Abräumen, Verstauen der Trolleys, Einhalten der Hygienevorschriften und physisches Zählen der Bestände."
+      },
+      {
+        "name": "Reise-, Flug- und Vorfallberichte sowie Mängel- und Fundsachenmeldungen erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracheingabe und Bild-zu-Text-Funktionen in der mobilen Crew-App erstellen strukturierte Vorfall-, Technik- und Reiseberichte (auch in Fremdsprachen wie Englisch); die verantwortliche Person an Bord prüft und gibt jede Meldung fachlich frei."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Kabinenpersonal im Luftverkehr (Flight Attendants) sowie Stewards in der Bordgastronomie von Bahn und Schifffahrt in der Schweiz. Trotz knapper ESCO-Beschreibung lässt sich das Aufgabenprofil anhand der Kompetenzliste sehr klar abgrenzen; der Beruf ist stark durch physische Präsenz-, Service- und Sicherheitsaufgaben an Bord geprägt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Lediglich das Erfassen von Reise-, Flug- und Vorfallberichten sowie Mängelmeldungen (rund 5 % der Arbeitszeit) ist durch Spracheingabe und KI-gestützte Berichterstellung auf mobilen Crew-Geräten betroffen, während die Kerntätigkeiten an Bord nicht exponiert sind.",
+      "begruendung": "Rund 95 % der Arbeitszeit von Reisebegleitern und Stewards im Schweizer Luft-, Bahn- und Schiffsverkehr bestehen aus physischem Service, Sicherheitskontrollen und direkter persönlicher Gästebetreuung vor Ort und sind daher nicht exponiert. Einzig bei der administrativen Dokumentation von Vorfällen, Mängeln und Reiseberichten wirkt KI im delegierenden Modus zeitsparend, indem sie aus Spracheingaben oder Stichworten strukturierte Meldungen entwirft, die vom Personal einzeln geprüft werden. Strenge regulatorische Dokumentationsvorgaben in der Luftfahrt und im öffentlichen Verkehr sowie der Datenschutz bei Passagierdaten erfordern dabei stets die menschliche Endkontrolle.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }

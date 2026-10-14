@@ -1,0 +1,229 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "5de4c7d5dba29161b0fedd66ddb40117719ff02cbc79ea249d907813e8d7ea1b",
+    "isco_code": "4120",
+    "beruf": "Sekretär/in / Assistent/in",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2329,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2329
+        }
+      ],
+      "prompt_token_count": 22111,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22111
+        }
+      ],
+      "thoughts_token_count": 5222,
+      "total_token_count": 29662
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2329,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2329
+          }
+        ],
+        "prompt_token_count": 22111,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22111
+          }
+        ],
+        "thoughts_token_count": 5222,
+        "total_token_count": 29662
+      }
+    ],
+    "request_ids": [
+      "xD_PatOtB8f_qtsPt4yCmQ4"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-4120_sekretaer_in_assistent_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "4120",
+    "beruf": "Sekretär/in / Assistent/in",
+    "taetigkeiten": [
+      {
+        "name": "Geschäftliche E-Mails, Briefe und interne Mitteilungen verfassen und beantworten",
+        "zeitanteil_pct": 20,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten oder Vorlagen vollständige Entwürfe für Korrespondenz und interne Mitteilungen (auch mehrsprachig); die Assistenz gibt den Kontext vor und prüft jede Nachricht vor dem Versand inhaltlich und stilistisch."
+      },
+      {
+        "name": "Eingehende Telefonanrufe entgegennehmen, Auskünfte erteilen und Anliegen weiterleiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Die Qualität von Voicebots bei Schweizerdeutschem Dialekt und sehr heterogenen Anrufanliegen im Sekretariat ist unsicher; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein KI-Voicebot mit Systemzugriff beantwortet Standardanfragen, nimmt Rückrufbitten auf und leitet Gespräche weiter; die Sekretariatskraft übernimmt nur weitergeleitete Spezialfälle."
+      },
+      {
+        "name": "Terminkalender führen, Besprechungen koordinieren und Einladungen versenden",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "In Kalender- und E-Mail-Systeme integrierte KI-Assistenten werten Terminwünsche aus, schlagen Zeitfenster vor und bereiten Einladungen vor; die Assistenz steuert Prioritäten und prüft jede Terminbuchung vor der Freigabe."
+      },
+      {
+        "name": "Sitzungsunterlagen, Präsentationen und Protokolle erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Funktionen in Office-Programmen und Transkriptionswerkzeuge erstellen Folienentwürfe sowie Sitzungsprotokolle aus Aufnahmen; die Assistenz prüft und überarbeitet jedes Dokument fachlich, wobei Schweizerdeutsch in Mehrpersonengesprächen den Korrekturaufwand erhöht."
+      },
+      {
+        "name": "Besucher empfangen, Sitzungszimmer bereitstellen und Büroinfrastruktur vor Ort betreuen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönlicher Empfang von Gästen, Bewirtung sowie das physische Herrichten von Sitzungsräumen und Büroeinrichtungen erfordern Präsenz und manuelle Arbeit vor Ort."
+      },
+      {
+        "name": "Digitale Dokumente, Geschäftsunterlagen und Datenbanken ordnen, aktualisieren und archivieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM-gestützte Dokumentenmanagementsysteme lesen Metadaten aus heterogenen PDFs und E-Mails aus, legen Dateien strukturiert ab und aktualisieren Stammdaten; der Mensch bearbeitet nur markierte Ausnahmen und prüft stichprobenartig."
+      },
+      {
+        "name": "Physische Ein- und Ausgangspost sowie Kuriersendungen bearbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Öffnen, Sortieren, Scannen, Verpacken und Frankieren von Briefen und Paketen ist eine überwiegend physische Tätigkeit."
+      },
+      {
+        "name": "Formulare ausfüllen sowie Spesen- und Kreditorenbelege vorerfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumentenerkennung mit Systemintegration extrahiert Angaben aus Quittungen, Belegen und Vorlagen direkt in Formulare oder Buchhaltungssysteme; die Assistenz gibt die Einträge frei und klärt nur unleserliche oder abweichende Fälle."
+      },
+      {
+        "name": "Personalabsenzen, Ferienlisten und Aufgabenübersichten nachführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Erfassen und Überwachen von Ferien, Absenzen und Standardpendenzen lässt sich durch klassische HR-, Zeiterfassungs- und Workflow-Software mit Self-Service-Funktionen ohne generative KI weitgehend automatisieren."
+      },
+      {
+        "name": "Geschäftsreisen, Unterkünfte und externe Anlässe recherchieren und buchen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Recherche- und Buchungsagenten stellen passende Verbindungen, Hotels und Veranstaltungsorte nach Vorgaben zusammen; die Assistenz spezifiziert die Rahmenbedingungen, prüft jede Option gegen Spesenreglemente und schliesst die Buchung ab."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting ist ein klassisches Sekretariat bzw. eine Team- oder Abteilungsassistenz in einem Schweizer KMU oder der Verwaltung. Das Aufgabenprofil ist durch die ESCO-Daten gut abgedeckt; die grösste Unsicherheit liegt bei der telefonischen Anrufentgegennahme, da die Akzeptanz und Dialekterkennung von Voicebots im Sekretariatsalltag ein Grenzfall ist.",
+    "zusammenfassung": {
+      "haupt_risiko": "Korrespondenz, Terminkoordination, Protokollierung, Dokumentenablage, Belegvorerfassung und telefonische Standardauskünfte werden weitgehend durch Chat-LLMs, integrierte Office-KI, Dokumentenerkennung und Voicebots übernommen.",
+      "begruendung": "Rund 80 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus (insbesondere bei E-Mails, Terminen, Protokollen und Reisebuchungen) sowie teilweise im ersetzenden Modus (bei der digitalen Ablage, Belegerfassung und am Telefon). Nicht exponiert bleiben physische und präsenzgebundene Aufgaben wie Empfang, Postbearbeitung und Raumorganisation. In der Schweiz bremsen vor allem der Anspruch an persönlichen Kontakt in Mundart bzw. mehreren Landessprachen sowie der Datenschutz (revDSG) bei vertraulichen Sitzungs- und Geschäftsunterlagen eine vollständige Automatisierung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

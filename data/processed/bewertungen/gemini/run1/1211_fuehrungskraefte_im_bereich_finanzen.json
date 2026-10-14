@@ -10,78 +10,217 @@
     "beruf": "Führungskräfte im Bereich Finanzen",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 46,
+      "candidates_token_count": 2324,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 46
+          "token_count": 2324
         }
       ],
-      "prompt_token_count": 23744,
+      "prompt_token_count": 23705,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 23744
+          "token_count": 23705
         }
       ],
-      "thoughts_token_count": 5218,
-      "total_token_count": 29008
+      "thoughts_token_count": 6464,
+      "total_token_count": 32493
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 46,
+        "candidates_token_count": 2324,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 46
+            "token_count": 2324
           }
         ],
-        "prompt_token_count": 23744,
+        "prompt_token_count": 23705,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 23744
+            "token_count": 23705
           }
         ],
-        "thoughts_token_count": 5218,
-        "total_token_count": 29008
+        "thoughts_token_count": 6464,
+        "total_token_count": 32493
       }
     ],
     "request_ids": [
-      "nrnOaprPKunpz7IP896zyAM"
+      "XTzPatbrDILrz7IP-_az2Q0"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): Additional properties are not allowed ('taetigkeitenMaz' was unexpected); (root): 'taetigkeiten' is a required property; (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-1211_fuehrungskraefte_im_bereich_finanzen",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): Additional properties are not allowed ('taetigkeitenMaz' was unexpected)",
-      "(root): 'taetigkeiten' is a required property",
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"1211\",\"beruf\":\"Führungskräfte im Bereich Finanzen\",\"taetigkeitenMaz\":null}"
+  "bewertung": {
+    "isco_code": "1211",
+    "beruf": "Führungskräfte im Bereich Finanzen",
+    "taetigkeiten": [
+      {
+        "name": "Monats-, Quartals- und Jahresabschlüsse prüfen sowie Bewertungen, Abgrenzungen und Rückstellungen festlegen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte ERP- und Analysefunktionen markieren Auffälligkeiten über viele Konten hinweg und liefern Berechnungs- sowie Buchungsvorschläge; die Finanzchefin bzw. der Finanzchef beurteilt jede Bewertungs- und Rückstellungsposition nach OR oder Swiss GAAP FER selbst."
+      },
+      {
+        "name": "Finanzberichte, Anhang zum Jahresabschluss und Management-Kommentare verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus exportierten Kennzahlen und Stichworten entwirft ein Chat-LLM den Management-Kommentar sowie Textpassagen für den Anhang; die Führungskraft gibt die Schwerpunkte vor und prüft jeden Bericht inhaltlich im Detail."
+      },
+      {
+        "name": "Finanz- und Ertragslage analysieren sowie Soll-Ist-Vergleiche und Ad-hoc-Auswertungen durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Datenanalyse-Agenten und KI-Funktionen in BI-Systemen werten Abweichungen, Margen und Kostentreiber automatisiert aus; die Führungskraft führt die betriebswirtschaftliche Ursachenanalyse und Interpretation weiterhin selbst durch."
+      },
+      {
+        "name": "Finanzmodelle, Szenariorechnungen sowie Budget- und Forecast-Vorlagen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Assistenten in Tabellenkalkulations- und Planungssystemen bauen nach Vorgabe komplexe Formeln, Planungslogiken und Szenariorechnungen auf; die Führungskraft definiert die Annahmen und kontrolliert jedes Modell auf rechnerische und fachliche Konsistenz."
+      },
+      {
+        "name": "Geschäftsleitung, Verwaltungsrat und Linienverantwortliche beraten sowie Budgets verhandeln",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die strategische Finanzberatung in Gremien sowie das Aushandeln und Durchsetzen von Budgets mit Abteilungsleitenden erfordern persönliche Präsenz, Überzeugungskraft und Verhandlungsgeschick."
+      },
+      {
+        "name": "Liquidität überwachen, Zahlungen freigeben und Finanzierungskonditionen mit Banken verhandeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlungen mit Banken über Kreditlinien sowie die verantwortliche Freigabe von Zahlungsläufen und Finanztransaktionen beruhen auf persönlichem Vertrauensaufbau und menschlicher Entscheidungsverantwortung."
+      },
+      {
+        "name": "Mitarbeitende der Finanzabteilung führen und Buchhaltungsabläufe beaufsichtigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Personalführung, Fördergespräche, Arbeitsorganisation und das klärende Eingreifen bei komplexen Buchhaltungsfällen sind zwischenmenschliche Führungs- und Präsenzaufgaben."
+      },
+      {
+        "name": "Steuererklärungen vorbereiten und steuerliche Sachverhalte abklären",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Steuersoftware und Recherche-Agenten bereiten Gewinn-, Kapital- und Mehrwertsteuerdeklarationen aus den Abschlussdaten vor und entwerfen steuerrechtliche Abklärungen; die Führungskraft prüft und verantwortet jede Deklaration."
+      },
+      {
+        "name": "Externe Revision begleiten sowie Auskünfte an Wirtschaftsprüfer und Behörden erteilen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Im Zentrum steht die persönliche Erörterung von Bewertungsfragen, Ermessensentscheiden und dem internen Kontrollsystem (IKS) mit den Wirtschaftsprüfern; KI-Hilfe bei der Dokumentensuche spart insgesamt keine 50 % der Zeit."
+      },
+      {
+        "name": "Investitionsanträge, Geschäftspläne und Finanzmarkttrends analysieren und bewerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche- und Dokumentenanalyse-Agenten fassen Businesspläne sowie Marktdaten zusammen und prüfen Wirtschaftlichkeitsrechnungen vor; die Beurteilung der finanziellen Tragfähigkeit und Risiken nimmt die Führungskraft selbst vor."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Leiter/in Finanzen und Rechnungswesen (CFO) in einem mittelgrossen Schweizer Unternehmen (KMU). Operative Buchhaltungsroutinen (z. B. Belegerfassung, Lohnlauf) liegen bei den Sachbearbeitenden bzw. der Standardsoftware, während bei der Führungskraft Analyse-, Berichts-, Kontroll- und Verhandlungsaufgaben dominieren.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Finanzberichterstattung, die Budget- und Finanzmodellierung, Abschluss- und Abweichungsanalysen sowie steuerliche Vorbereitungen durch Chat-LLMs sowie KI-gestützte ERP-, BI- und Analysewerkzeuge.",
+      "begruendung": "Rund 60 % der Arbeitszeit sind gegenüber generativer KI exponiert, allerdings ausschliesslich in unterstützendem (z. B. Abschlussprüfung, Ertrags- und Investitionsanalyse) oder delegierendem Modus (z. B. Finanzberichte, Planungsmodelle, Steuervorbereitung), da die fachliche und rechtliche Verantwortung bei der Führungskraft verbleibt. Führungsaufgaben, Bank- und Budgetverhandlungen sowie die persönliche Beratung von Geschäftsleitung und Verwaltungsrat (rund 40 % der Zeit) sind nicht exponiert. Regulatorische Anforderungen (OR-Rechnungslegung, kantonale Steuergesetze, Haftung) und der Schutz vertraulicher Finanzdaten verlangen durchgehend eine sorgfältige Einzelfallprüfung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

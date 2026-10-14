@@ -10,77 +10,202 @@
     "beruf": "Medizintechniker im Bereich Labor und Pathologie",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 51,
+      "candidates_token_count": 2322,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 51
+          "token_count": 2322
         }
       ],
-      "prompt_token_count": 22846,
+      "prompt_token_count": 22807,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22846
+          "token_count": 22807
         }
       ],
-      "thoughts_token_count": 10715,
-      "total_token_count": 33612
+      "thoughts_token_count": 8333,
+      "total_token_count": 33462
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 51,
+        "candidates_token_count": 2322,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 51
+            "token_count": 2322
           }
         ],
-        "prompt_token_count": 22846,
+        "prompt_token_count": 22807,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22846
+            "token_count": 22807
           }
         ],
-        "thoughts_token_count": 10715,
-        "total_token_count": 33612
+        "thoughts_token_count": 8333,
+        "total_token_count": 33462
       }
     ],
     "request_ids": [
-      "nrnOasyhLYmc_uMPqZXzoA0"
+      "XTzPaty5HJrVz7IP29KluQo"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: [] is too short"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-3212_medizintechniker_im_bereich_labor_und_pa",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: [] is too short"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"3212\",\"beruf\":\"Medizintechniker im Bereich Labor und Pathologie\",\"taetigkeiten\":[\n  ]\n}"
+  "bewertung": {
+    "isco_code": "3212",
+    "beruf": "Medizintechniker im Bereich Labor und Pathologie",
+    "taetigkeiten": [
+      {
+        "name": "Biologische Proben auspacken, auf Unversehrtheit prüfen, zentrifugieren, aliquotieren und für die Analyse vorbereiten",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein manuelle und physische Aufbereitung von Probenmaterial (Blut, Urin, Liquor, Gewebe) am Laborarbeitsplatz. Kommerziell verfügbare Präanalytik-Automaten und Pipettierroboter können in medizinischen Labors über 50 % der routinemässigen Probenvorbereitung übernehmen."
+      },
+      {
+        "name": "Probenbegleitscheine, Auftragsangaben und Patientenidentität prüfen sowie im Laborinformationssystem (LIS) erfassen und archivieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Dokumentenerkennung (OCR mit Sprachmodell) extrahiert Auftragsdaten und klinische Angaben aus Begleitscheinen ins LIS; wegen der hohen Sicherheitsrelevanz der Patientenidentifikation prüft die Fachperson jeden Auftrag. Gleichzeitig übernehmen klassische elektronische Auftragserfassung (Order Entry) und Barcode-Systeme bereits grosse Teile dieser Arbeit."
+      },
+      {
+        "name": "Analysegeräte mit Proben und Reagenzien bestücken, Chemikalien ansetzen und Routineanalysen durchführen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Einfüllen von Reagenzien, Mischen von Chemikalien und Beladen der Analysevorrichtungen im Labor. Vollautomatische Analysegeräte und Laborstrassen (Total Laboratory Automation) übernehmen in Schweizer Labors über 50 % der routinemässigen Messabläufe."
+      },
+      {
+        "name": "Zellproben, Blutausstriche und histologische Präparate herstellen sowie mikroskopisch untersuchen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Anfertigen, Färben und mikroskopische Beurteilen von Zell- und Gewebepräparaten erfordert manuelle Feinmotorik und visuelle Diagnostik am Mikroskop, wofür generative KI keine 50 % Zeitersparnis bietet. Digitale Mikroskopiesysteme unterstützen zwar bei der Zellzählung, ersetzen aber die Präparateherstellung und Beurteilung pathologischer Proben insgesamt noch nicht zu über 50 %."
+      },
+      {
+        "name": "Laborgeräte und wissenschaftliche Messinstrumente pflegen, warten, kalibrieren und interne Qualitätskontrollen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Wartungs-, Reinigungs- und Kalibrierarbeiten direkt an den Analysegeräten im Labor, die manuelle Eingriffe vor Ort erfordern."
+      },
+      {
+        "name": "Messresultate und Prüfdaten im Laborinformationssystem auf technische Plausibilität prüfen und dokumentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die technische Validierung von Messwerten (Prüfung auf Gerätemeldungen, Störfaktoren wie Hämolyse und Delta-Checks) wird durch regelbasierte Autovalidierung im Laborinformationssystem (klassische Software) automatisiert; die verbleibenden Ausnahmefälle erfordern fachliche Beurteilung und oft Nachmessungen am Gerät."
+      },
+      {
+        "name": "Qualitätsmanagement-Dokumentation, Arbeitsanweisungen (SOPs) und Abweichungsmeldungen erstellen und nachführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus Stichworten oder Gerätehandbüchern Standardarbeitsanweisungen (SOPs) und Abweichungsberichte; die Laborfachperson prüft und korrigiert jedes Dokument fachlich gemäss den Vorgaben der Laborakkreditierung (ISO 15189) und Swissmedic."
+      },
+      {
+        "name": "Rückfragen von Stationen und Arztpraxen zu Präanalytik, Probenstatus und kritischen Messwerten klären",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Telefonische Durchgaben kritischer Laborwerte (Notfallwerte), Abklärungen bei fehlerhaftem Probenmaterial und Nachforderungen im Spital- oder Praxisalltag erfordern direkte, oft mundartliche Kommunikation und unmittelbares Handeln im Labor."
+      },
+      {
+        "name": "Reagenzien- und Materialbestände kontrollieren, Proben für den Versand verpacken sowie Laborabfälle entsorgen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Logistik- und Entsorgungsarbeiten im Labor wie das Einräumen von Reagenzien, das Verpacken von Versandproben oder Blutkonserven und das Autoklavieren infektiöser Abfälle."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Medizinisch-technische Laborfachperson (Laborassistent/in bzw. BMA HF / Laborant/in EFZ) in einem Schweizer Spital- oder privaten Diagnostik- und Pathologielabor. Die Arbeit ist stark durch physische Probenaufbereitung, Gerätebedienung und klassische Laborautomation (Präanalytik-Strassen, Analyseautomaten, regelbasierte LIS-Autovalidierung) geprägt, während generative KI nur bei der Erfassung unstrukturierter Begleitscheine und in der QM-Dokumentation zum Tragen kommt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind lediglich die Erfassung von Probenbegleitscheinen im Laborinformationssystem (mittels KI-Dokumentenerkennung) sowie das Verfassen von Qualitätsmanagement-Dokumenten und Arbeitsanweisungen per Chat-LLM; die eigentliche Labor- und Analysearbeit bleibt unberührt.",
+      "begruendung": "Nur rund 15 % der Arbeitszeit sind gegenüber generativer KI exponiert, ausschliesslich im delegierenden Modus, da sowohl erfasste Patienten- und Auftragsdaten als auch Qualitätsdokumente zwingend fachlich geprüft werden müssen. Der Beruf ist in der Schweiz stark durch physische Präanalytik, Gerätebedienung und Mikroskopie geprägt, wobei die klassische Laborautomation (Analyseautomaten, Laborstrassen, regelbasierte Autovalidierung) einen weitaus grösseren Automatisierungshebel darstellt als Sprachmodelle. Strenge regulatorische Anforderungen im Gesundheitswesen (ISO-15189-Akkreditierung, Medizinprodukterecht, Datenschutz) verlangen zudem eine lückenlose menschliche Kontrolle und Rückverfolgbarkeit.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }

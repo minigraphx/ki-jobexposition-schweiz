@@ -10,92 +10,201 @@
     "beruf": "Kinderbetreuerin/-betreuer",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "cache_tokens_details": [
-        {
-          "modality": "TEXT",
-          "token_count": 19059
-        }
-      ],
-      "cached_content_token_count": 19059,
-      "candidates_token_count": 59,
+      "candidates_token_count": 1912,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 59
+          "token_count": 1912
         }
       ],
-      "prompt_token_count": 21166,
+      "prompt_token_count": 21127,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21166
+          "token_count": 21127
         }
       ],
-      "thoughts_token_count": 3063,
-      "total_token_count": 24288
+      "thoughts_token_count": 5813,
+      "total_token_count": 28852
     },
     "usage_je_versuch": [
       {
-        "cache_tokens_details": [
-          {
-            "modality": "TEXT",
-            "token_count": 19059
-          }
-        ],
-        "cached_content_token_count": 19059,
-        "candidates_token_count": 59,
+        "candidates_token_count": 1912,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 59
+            "token_count": 1912
           }
         ],
-        "prompt_token_count": 21166,
+        "prompt_token_count": 21127,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21166
+            "token_count": 21127
           }
         ],
-        "thoughts_token_count": 3063,
-        "total_token_count": 24288
+        "thoughts_token_count": 5813,
+        "total_token_count": 28852
       }
     ],
     "request_ids": [
-      "6rnOarzrOpyCqtsPnsuBoAk"
+      "XTzPas6CC_7oz7IP17yB4Qw"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: [-1234567890] is too short; taetigkeiten/0: -1234567890 is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-5311_kinderbetreuerin_betreuer",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: [-1234567890] is too short",
-      "taetigkeiten/0: -1234567890 is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"5311\",\"beruf\":\"Kinderbetreuerin/-betreuer\",\"taetigkeiten\":[\n     -1234567890\n]}"
+  "bewertung": {
+    "isco_code": "5311",
+    "beruf": "Kinderbetreuerin/-betreuer",
+    "taetigkeiten": [
+      {
+        "name": "Kinder im Freispiel, im Gruppenalltag und auf Ausflügen beaufsichtigen und begleiten",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare physische Präsenz, Aufsichtspflicht und zwischenmenschliche Interaktion mit den Kindern lassen sich weder durch Sprachmodelle noch durch Robotik übernehmen."
+      },
+      {
+        "name": "Altersgerechte Spiel-, Bastel- und Förderaktivitäten sowie Hausaufgabenbegleitung durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die praktische Durchführung von Förderangeboten, gemeinsamem Spielen und Lernbegleitung vor Ort lebt von der persönlichen Beziehung und physischen Anleitung."
+      },
+      {
+        "name": "Körperpflege, Wickeln, Ankleiden und Ruhezeiten der Kinder begleiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Pflege- und Betreuungstätigkeit am Kind verbunden mit emotionaler Zuwendung; keine Automatisierung verfügbar."
+      },
+      {
+        "name": "Mahlzeiten und Zwischenverpflegung zubereiten sowie Kinder beim Essen unterstützen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Zubereitung von Speisen und aktive Begleitung am Tisch (Schöpfen, Füttern, Tischkultur fördern) erfordern manuelle Arbeit und Präsenz."
+      },
+      {
+        "name": "Tür- und Angelgespräche sowie Standortgespräche mit Eltern führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beziehungs- und Vertrauensarbeit im direkten Gespräch beim Bringen und Abholen sowie an Elterngesprächen."
+      },
+      {
+        "name": "Gruppenräume, Spielmaterialien und Sanitärbereiche reinigen und aufräumen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Reinigungs- und Hygieneaufgaben in möblierten Gruppenräumen und Sanitäranlagen; kommerzielle Reinigungsroboter decken keine 50 % dieser Arbeit ab."
+      },
+      {
+        "name": "Gesundheit überwachen, Erste Hilfe leisten und Kindeswohlgefährdungen abklären",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Wundversorgung und Erste Hilfe sind physisch; das Erkennen und Besprechen von Kindeswohlgefährdungen im Team erfordert menschliche Beobachtung und Urteilskraft."
+      },
+      {
+        "name": "Entwicklungsberichte, Beobachtungsprotokolle und Elterninformationen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Ein Chat-LLM formuliert aus anonymisierten Stichworten strukturierte Entwicklungsberichte, Portfolioeinträge und Elternbriefe; die Betreuungsperson prüft und verantwortet jeden Text fachlich."
+      },
+      {
+        "name": "Wochenprogramme, pädagogische Themenblöcke und Förderangebote schriftlich planen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus Altersgruppe, Förderzielen und Thema komplette Wochenpläne sowie Spiel- und Bastelanleitungen; die Fachperson wählt aus und prüft jedes Angebot auf Gruppentauglichkeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Kinderbetreuer/in bzw. Fachperson Betreuung EFZ (Fachrichtung Kinderbetreuung) in einer Schweizer Kindertagesstätte (Kita) oder schulergänzenden Tagesstruktur. Der Beruf besteht zu rund 90 % aus unmittelbarer Präsenz-, Pflege- und Beziehungsarbeit vor Ort; lediglich die kurze Büro- und Vorbereitungszeit für Dokumentation und Programmplanung ist gegenüber Sprachmodellen exponiert.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind lediglich das Verfassen von Entwicklungsberichten und Elterninformationen sowie die schriftliche Planung pädagogischer Wochenprogramme mittels Chat-LLM, während die gesamte direkte Betreuungs-, Pflege- und Beziehungsarbeit am Kind unberührt bleibt.",
+      "begruendung": "Nur rund 10 % der Arbeitszeit entfallen auf konzeptionelle Planung und schriftliche Dokumentation, bei denen Sprachmodelle im delegierenden Modus Entwürfe erstellen, die von der Fachperson inhaltlich geprüft und angepasst werden. Der überwiegende Berufsalltag in Schweizer Kindertagesstätten und Tagesstrukturen erfordert unmittelbare physische Präsenz, Aufsicht und emotionale Zuwendung. Bei der Dokumentation bremsen zudem strenge Datenschutzanforderungen für Personendaten Minderjähriger (revDSG) sowie der Anspruch der Eltern auf persönliche Rückmeldungen den KI-Einsatz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

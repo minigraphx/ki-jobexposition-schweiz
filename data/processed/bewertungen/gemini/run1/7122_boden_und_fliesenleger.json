@@ -10,78 +10,198 @@
     "beruf": "Boden- und Fliesenleger",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 44,
+      "candidates_token_count": 1958,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 44
+          "token_count": 1958
         }
       ],
-      "prompt_token_count": 21803,
+      "prompt_token_count": 21764,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21803
+          "token_count": 21764
         }
       ],
-      "thoughts_token_count": 3065,
-      "total_token_count": 24912
+      "thoughts_token_count": 3952,
+      "total_token_count": 27674
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 44,
+        "candidates_token_count": 1958,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 44
+            "token_count": 1958
           }
         ],
-        "prompt_token_count": 21803,
+        "prompt_token_count": 21764,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21803
+            "token_count": 21764
           }
         ],
-        "thoughts_token_count": 3065,
-        "total_token_count": 24912
+        "thoughts_token_count": 3952,
+        "total_token_count": 27674
       }
     ],
     "request_ids": [
-      "nrnOarn2Lbzi_uMP6aHG6Ag"
+      "XjzParWnE_SAz7IP5t2zgAs"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): Additional properties are not allowed ('taetigkeitenFp' was unexpected); (root): 'taetigkeiten' is a required property; (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-7122_boden_und_fliesenleger",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): Additional properties are not allowed ('taetigkeitenFp' was unexpected)",
-      "(root): 'taetigkeiten' is a required property",
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"7122\",\"beruf\":\"Boden- und Fliesenleger\",\"taetigkeitenFp\":null}"
+  "bewertung": {
+    "isco_code": "7122",
+    "beruf": "Boden- und Fliesenleger",
+    "taetigkeiten": [
+      {
+        "name": "Kleber und Mörtel anrühren, auftragen sowie Wand- und Bodenplatten verlegen und ausrichten",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische, feinmotorische Handwerksarbeit auf der Baustelle; Verlegeroboter existieren nur als Prototypen für Grossflächen und sind im Schweizer Baualltag nicht einsetzbar."
+      },
+      {
+        "name": "Untergrund prüfen, vorbereiten, ausgleichen, grundieren und im Nassbereich abdichten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Prüfung (z. B. Feuchtigkeitsmessung, Ebenheit) und manuelle Vorarbeit mit Spachtelmasse, Grundierung und Verbundabdichtung vor Ort."
+      },
+      {
+        "name": "Platten und Beläge auf Mass zuschneiden, Aussparungen bohren und Kanten bearbeiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Bedienen von Schneidmaschinen, Nassschneidern, Winkelschleifern und Bohrkronen direkt am Einsatzort."
+      },
+      {
+        "name": "Plattenbeläge verfugen, abwaschen sowie Bewegungs- und Anschlussfugen mit Silikon abdichten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein manuelle Ausführung vor Ort beim Einbringen von Fugenmörtel, Schwammreinigen und Abziehen von Silikonfugen."
+      },
+      {
+        "name": "Pläne lesen, Flächen vor Ort einmessen, Verlegebild einteilen und Schlagschnur oder Laser anzeichnen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Hauptzeitaufwand liegt im physischen Ausmessen der realen Raumgeometrie und dem Anzeichnen der Fluchtlinien im Raum; KI spart hier keine 50 % der Zeit."
+      },
+      {
+        "name": "Material, Werkzeuge und Maschinen transportieren, Baustelle einrichten und angrenzende Bauteile schützen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Transport-, Einrichtungs- und Abdeckarbeiten auf wechselnden Baustellen."
+      },
+      {
+        "name": "Ausführung und Details vor Ort mit Bauleitung, anderen Gewerken und Kundschaft absprechen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare persönliche Abstimmung und Beratung direkt am Bauobjekt."
+      },
+      {
+        "name": "Material- und Mengenbedarf für Flächen, Verschnitt, Kleber und Fugenmasse berechnen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die Berechnung im Chat-LLM gegenüber gewohnten Faustregeln und einfachen Tabellen im KMU-Alltag mindestens 50 % Zeit spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Raummasse, Plattenformat und Verbrauchsangaben lassen sich im Chat-LLM eingeben, das die Mengen inkl. Verschnitt berechnet; die Fachperson prüft jedes Ergebnis vor der Bestellung."
+      },
+      {
+        "name": "Regierapporte, Ausmassnotizen und Arbeitsfortschritt erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe und Fotoerfassung in einer Baustellen-App erstellen den strukturierten Rapport; die Fachperson kontrolliert und korrigiert jeden Eintrag, wobei Dialekt und Baustellenlärm den Prüfaufwand erhöhen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "In der Schweiz umfasst ISCO 7122 sowohl Plattenleger/in EFZ als auch Bodenleger/in-Parkett EFZ; das ESCO-Profil bildet primär den Plattenleger ab. Bewertet wird ein typischer Plattenleger/in EFZ in einem Schweizer KMU (Neubau, Umbau und Sanierung), wobei die Aufgabenstruktur und KI-Exposition beim Verlegen textiler oder elastischer Bodenbeläge sowie Parkett praktisch identisch ausfallen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind einzig das Erfassen von Regierapporten und Ausmassnotizen per Spracheingabe in Baustellen-Apps sowie die Berechnung des Material- und Mengenbedarfs mittels Chat-LLM, während die handwerkliche Verlegearbeit vor Ort unberührt bleibt.",
+      "begruendung": "Lediglich rund 10 % der Arbeitszeit entfallen auf administrative und rechnerische Randaufgaben, bei denen die KI im delegierenden Modus Entwürfe und Mengenberechnungen erstellt, die von der Fachperson einzeln geprüft werden. Rund 90 % der Tätigkeit bestehen aus physischer Handwerksarbeit und Vor-Ort-Präsenz auf Schweizer Baustellen. In den überwiegend kleingewerblich strukturierten Betrieben bremsen zudem Dialekt, Baustellenlärm und ein geringer Digitalisierungsgrad die rasche Einführung im Arbeitsalltag.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }

@@ -10,77 +10,228 @@
     "beruf": "Fachperson Gesundheit EFZ (FaGe)",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 39,
+      "candidates_token_count": 2363,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 39
+          "token_count": 2363
         }
       ],
-      "prompt_token_count": 23361,
+      "prompt_token_count": 23322,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 23361
+          "token_count": 23322
         }
       ],
-      "thoughts_token_count": 6005,
-      "total_token_count": 29405
+      "thoughts_token_count": 9213,
+      "total_token_count": 34898
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 39,
+        "candidates_token_count": 2363,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 39
+            "token_count": 2363
           }
         ],
-        "prompt_token_count": 23361,
+        "prompt_token_count": 23322,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 23361
+            "token_count": 23322
           }
         ],
-        "thoughts_token_count": 6005,
-        "total_token_count": 29405
+        "thoughts_token_count": 9213,
+        "total_token_count": 34898
       }
     ],
     "request_ids": [
-      "nrnOauHJKYmc_uMPqZXzoA0"
+      "XTzPao3CDNXoz7IPnKSMuAw"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'taetigkeiten' is a required property; (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-3221_fachperson_gesundheit_efz",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'taetigkeiten' is a required property",
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"3221\",\"beruf\":\"Fachperson Gesundheit EFZ (FaGe)\"}"
+  "bewertung": {
+    "isco_code": "3221",
+    "beruf": "Fachperson Gesundheit EFZ (FaGe)",
+    "taetigkeiten": [
+      {
+        "name": "Körperpflege, Ankleiden und Unterstützung bei der Ausscheidung durchführen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische und zwischenmenschliche Tätigkeit direkt am Patientenbett oder im Bad; es existiert keine kommerziell verfügbare Robotik, die diese Grundpflege übernehmen kann."
+      },
+      {
+        "name": "Patientinnen und Patienten mobilisieren, lagern und bei der Nahrungsaufnahme unterstützen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit und unmittelbare Präsenz am Patienten; technische Hebehilfen entlasten zwar ergonomisch, reduzieren die Arbeitszeit aber nicht um mindestens die Hälfte."
+      },
+      {
+        "name": "Vitalzeichen messen sowie kapillare und venöse Blutentnahmen und Injektionen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle medizinaltechnische Verrichtungen direkt an den Patientinnen und Patienten, die physische Präsenz und handwerkliches Geschick erfordern."
+      },
+      {
+        "name": "Medikamente nach ärztlicher Verordnung richten, kontrollieren und verabreichen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Tätigkeit vor Ort; Verblisterungsautomaten können zwar das Richten teilweise übernehmen, die Verabreichung und Einnahmekontrolle am Patienten macht jedoch den Grossteil der Zeit aus."
+      },
+      {
+        "name": "Wunden versorgen, Verbände wechseln und Infusionen richten sowie überwachen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle, aseptische Verrichtungen am Patientenbett, die weder durch generative KI noch durch Robotik automatisierbar sind."
+      },
+      {
+        "name": "Patientinnen, Patienten und Angehörige im Alltag begleiten, informieren und emotional unterstützen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Präsenz- und Beziehungstätigkeit wie Beruhigen, Aktivieren und empathische Gespräche, deren Wert in der menschlichen Zuwendung liegt."
+      },
+      {
+        "name": "Tägliche Pflegedokumentation und Verlaufsnotizen im elektronischen Pflegedossier (KIS) erfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Spracheingabe bzw. ambiente Dokumentation im KIS erstellt strukturierte Verlaufseinträge aus gesprochenen Beobachtungen; die FaGe prüft und verantwortet jeden Eintrag fachlich. Korrekturaufwand bei Schweizerdeutsch und Fachbegriffen fliesst in die Restzeit ein."
+      },
+      {
+        "name": "Pflegepläne, Verlegungsberichte und Verlaufssynthesen aus bestehenden Pflegenotizen entwerfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus kopierten Verlaufseinträgen oder Stichworten entwirft ein Chat-LLM strukturierte Übergabe- und Verlegungsberichte sowie Vorschläge für Massnahmenpläne; die FaGe prüft und korrigiert jeden Entwurf anhand der Akte."
+      },
+      {
+        "name": "Mündliche Schichtübergaben im Team durchführen, sich interdisziplinär absprechen und Lernende anleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Koordination im Behandlungsteam auf der Station sowie praktische Anleitung von Lernenden vor Ort erfordern unmittelbare Präsenz."
+      },
+      {
+        "name": "Pflegeleistungen im System erfassen sowie Patiententermine und Transporte koordinieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die strukturierte Leistungserfassung (z. B. nach LEP oder BESA) aus hinterlegten Standardpflegeplänen sowie die interne Termin- und Transportbuchung erfolgen über regelbasierte Klinik- und Heimsoftware ohne generative KI."
+      },
+      {
+        "name": "Pflegeutensilien, Material und Wäsche bewirtschaften sowie Patientenumgebung reinigen und desinfizieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Hauswirtschafts-, Hygiene- und Logistikarbeiten in belegten Patientenzimmern und im Stationsstützpunkt, die manuell ausgeführt werden müssen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Stationäre Pflege im Akutspital oder Alters- und Pflegeheim (häufigste Arbeitsorte von FaGe EFZ in der Schweiz). Da die ESCO-Zuordnung Assistenz- und diplomierte Pflegekompetenzen vermischt, wurde strikt das Schweizer Berufsprofil gemäss Bildungsverordnung FaGe EFZ herangezogen. Grenzfälle betreffen vor allem die genaue Zeitersparnis durch Spracheingabe bei der Pflegedokumentation sowie den Automatisierungsgrad klassischer Software bei der Leistungserfassung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind ausschliesslich die tägliche Pflegedokumentation sowie das Entwerfen von Verlegungsberichten und Pflegeplänen durch KI-gestützte Spracheingabe im KIS und Chat-LLMs, während die eigentliche Pflege- und Betreuungsarbeit am Patienten nicht betroffen ist.",
+      "begruendung": "Lediglich rund 15 % der Arbeitszeit entfallen auf exponierte Dokumentations- und Berichtstätigkeiten, bei denen die KI im delegierenden Modus Entwürfe erstellt, die von der Fachperson Gesundheit aus Haftungs- und Qualitätsgründen einzeln geprüft werden müssen. Der überwiegende Teil des Berufs besteht aus physischer Grund- und Behandlungspflege sowie persönlicher Betreuung vor Ort. Strenge Datenschutzvorgaben für Gesundheitsdaten (revDSG), das Berufsgeheimnis und die notwendige Integration in bestehende Klinik- und Heiminformationssysteme bremsen die flächendeckende Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

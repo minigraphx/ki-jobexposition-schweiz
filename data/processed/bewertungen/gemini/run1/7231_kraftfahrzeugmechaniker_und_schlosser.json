@@ -10,83 +10,211 @@
     "beruf": "Kraftfahrzeugmechaniker und -schlosser",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 595,
+      "candidates_token_count": 2139,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 595
+          "token_count": 2139
         }
       ],
-      "prompt_token_count": 23290,
+      "prompt_token_count": 23251,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 23290
+          "token_count": 23251
         }
       ],
-      "thoughts_token_count": 4473,
-      "total_token_count": 28358
+      "thoughts_token_count": 4509,
+      "total_token_count": 29899
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 595,
+        "candidates_token_count": 2139,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 595
+            "token_count": 2139
           }
         ],
-        "prompt_token_count": 23290,
+        "prompt_token_count": 23251,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 23290
+            "token_count": 23251
           }
         ],
-        "thoughts_token_count": 4473,
-        "total_token_count": 28358
+        "thoughts_token_count": 4509,
+        "total_token_count": 29899
       }
     ],
     "request_ids": [
-      "nrnOaqG-LLi-_PUPrrqE6QQ"
+      "XTzPavucBILrz7IP-_az2Q0"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: taetigkeiten/0: 'Wartungs- und Servicearbeiten nach Herstellervorgabe durchführen (Öl- und Filterwechsel, Flüssigkeiten, Sichtkontrollen, MFK-Bereitstellung)' is not of type 'object'; taetigkeiten/1: 'Mechanische Bauteile an Motor, Getriebe, Bremsen, Fahrwerk und Lenkung reparieren und ersetzen' is not of type 'object'; taetigkeiten/2: 'Reifen montieren, Räder auswuchten, am Fahrzeug wechseln und einlagern' is not of type 'object'; taetigkeiten/3: 'Fehlersuche und Messungen am Fahrzeug mit Diagnosegeräten, Oszilloskop und Prüfmitteln durchführen' is not of type 'object'; taetigkeiten/4: 'Elektrische Anlagen, Hochvolt-Systeme und Fahrerassistenzsysteme (ADAS) instand setzen und kalibrieren' is not of type 'object'; taetigkeiten/5: 'Probefahrten sowie Brems-, Licht- und Abgastests auf dem Prüfstand durchführen' is not of type 'object'; taetigkeiten/6: 'Technische Herstellerdokumentationen, Schaltpläne und Fehlercode-Datenbanken zur Fehlereingrenzung konsultieren' is not of type 'object'; taetigkeiten/7: 'Ausgeführte Arbeiten, Messwerte, Ersatzteile und Garantieanträge im Werkstatt-System (DMS) erfassen' is not of type 'object'; taetigkeiten/8: 'Kunden und Kundendienstberatern technische Befunde und Reparaturoptionen am Fahrzeug erläutern' is not of type 'object'; zusammenfassung: ['Betroffen sind einzig die Recherche in technischen Herstellerdokumentationen sowie das Erfassen von Arbeits- und Garantierapporten mittels KI-gestützter Diagnosedatenbanken und Spracheingabe im Werkstattsystem; die handwerkliche Wartungs- und Reparaturarbeit am Fahrzeug bleibt unberührt.', 'Lediglich rund 10 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die Technik unterstützend bei der Fehlereingrenzung in Herstellerunterlagen und delegierend beim Verfassen von Werkstatt- und Garantierapporten wirkt und jede Ausgabe fachlich geprüft wird. Rund 90 % der Tätigkeit in Schweizer Garagen bestehen aus physischer Montage, Wartung, Messung am Fahrzeug, Probefahrten und direkter Abstimmung vor Ort. Werkstattlärm, Mundart bei der Spracheingabe sowie geschlossene herstellerspezifische Systemlandschaften bremsen die Einführung im KMU-Garagengewerbe zusätzlich.', '5-10 Jahre'] is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-7231_kraftfahrzeugmechaniker_und_schlosser",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "taetigkeiten/0: 'Wartungs- und Servicearbeiten nach Herstellervorgabe durchführen (Öl- und Filterwechsel, Flüssigkeiten, Sichtkontrollen, MFK-Bereitstellung)' is not of type 'object'",
-      "taetigkeiten/1: 'Mechanische Bauteile an Motor, Getriebe, Bremsen, Fahrwerk und Lenkung reparieren und ersetzen' is not of type 'object'",
-      "taetigkeiten/2: 'Reifen montieren, Räder auswuchten, am Fahrzeug wechseln und einlagern' is not of type 'object'",
-      "taetigkeiten/3: 'Fehlersuche und Messungen am Fahrzeug mit Diagnosegeräten, Oszilloskop und Prüfmitteln durchführen' is not of type 'object'",
-      "taetigkeiten/4: 'Elektrische Anlagen, Hochvolt-Systeme und Fahrerassistenzsysteme (ADAS) instand setzen und kalibrieren' is not of type 'object'",
-      "taetigkeiten/5: 'Probefahrten sowie Brems-, Licht- und Abgastests auf dem Prüfstand durchführen' is not of type 'object'",
-      "taetigkeiten/6: 'Technische Herstellerdokumentationen, Schaltpläne und Fehlercode-Datenbanken zur Fehlereingrenzung konsultieren' is not of type 'object'",
-      "taetigkeiten/7: 'Ausgeführte Arbeiten, Messwerte, Ersatzteile und Garantieanträge im Werkstatt-System (DMS) erfassen' is not of type 'object'",
-      "taetigkeiten/8: 'Kunden und Kundendienstberatern technische Befunde und Reparaturoptionen am Fahrzeug erläutern' is not of type 'object'",
-      "zusammenfassung: ['Betroffen sind einzig die Recherche in technischen Herstellerdokumentationen sowie das Erfassen von Arbeits- und Garantierapporten mittels KI-gestützter Diagnosedatenbanken und Spracheingabe im Werkstattsystem; die handwerkliche Wartungs- und Reparaturarbeit am Fahrzeug bleibt unberührt.', 'Lediglich rund 10 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die Technik unterstützend bei der Fehlereingrenzung in Herstellerunterlagen und delegierend beim Verfassen von Werkstatt- und Garantierapporten wirkt und jede Ausgabe fachlich geprüft wird. Rund 90 % der Tätigkeit in Schweizer Garagen bestehen aus physischer Montage, Wartung, Messung am Fahrzeug, Probefahrten und direkter Abstimmung vor Ort. Werkstattlärm, Mundart bei der Spracheingabe sowie geschlossene herstellerspezifische Systemlandschaften bremsen die Einführung im KMU-Garagengewerbe zusätzlich.', '5-10 Jahre'] is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"7231\",\"beruf\":\"Kraftfahrzeugmechaniker und -schlosser\",\"taetigkeiten\":[\n    \"Wartungs- und Servicearbeiten nach Herstellervorgabe durchführen (Öl- und Filterwechsel, Flüssigkeiten, Sichtkontrollen, MFK-Bereitstellung)\",\n    \"Mechanische Bauteile an Motor, Getriebe, Bremsen, Fahrwerk und Lenkung reparieren und ersetzen\",\n    \"Reifen montieren, Räder auswuchten, am Fahrzeug wechseln und einlagern\",\n    \"Fehlersuche und Messungen am Fahrzeug mit Diagnosegeräten, Oszilloskop und Prüfmitteln durchführen\",\n    \"Elektrische Anlagen, Hochvolt-Systeme und Fahrerassistenzsysteme (ADAS) instand setzen und kalibrieren\",\n    \"Probefahrten sowie Brems-, Licht- und Abgastests auf dem Prüfstand durchführen\",\n    \"Technische Herstellerdokumentationen, Schaltpläne und Fehlercode-Datenbanken zur Fehlereingrenzung konsultieren\",\n    \"Ausgeführte Arbeiten, Messwerte, Ersatzteile und Garantieanträge im Werkstatt-System (DMS) erfassen\",\n    \"Kunden und Kundendienstberatern technische Befunde und Reparaturoptionen am Fahrzeug erläutern\"\n],\"unsicherheit\":\"niedrig\",\"kommentar\":\"Bewertet wird das typische Setting als Automobil-Mechatroniker/in EFZ bzw. Automobil-Fachmann/-frau EFZ in einer Schweizer Marken- oder freien Garage (KMU). Die Arbeit ist zu rund 90 % physisch und fahrzeuggebunden; KI-Potenzial besteht lediglich bei der Recherche in umfangreichen Herstellerunterlagen sowie bei der Dokumentation von Arbeits- und Garantierapporten.\",\"zusammenfassung\":[\n    \"Betroffen sind einzig die Recherche in technischen Herstellerdokumentationen sowie das Erfassen von Arbeits- und Garantierapporten mittels KI-gestützter Diagnosedatenbanken und Spracheingabe im Werkstattsystem; die handwerkliche Wartungs- und Reparaturarbeit am Fahrzeug bleibt unberührt.\",\n    \"Lediglich rund 10 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die Technik unterstützend bei der Fehlereingrenzung in Herstellerunterlagen und delegierend beim Verfassen von Werkstatt- und Garantierapporten wirkt und jede Ausgabe fachlich geprüft wird. Rund 90 % der Tätigkeit in Schweizer Garagen bestehen aus physischer Montage, Wartung, Messung am Fahrzeug, Probefahrten und direkter Abstimmung vor Ort. Werkstattlärm, Mundart bei der Spracheingabe sowie geschlossene herstellerspezifische Systemlandschaften bremsen die Einführung im KMU-Garagengewerbe zusätzlich.\",\n    \"5-10 Jahre\"\n]}"
+  "bewertung": {
+    "isco_code": "7231",
+    "beruf": "Kraftfahrzeugmechaniker und -schlosser",
+    "taetigkeiten": [
+      {
+        "name": "Wartungs- und Servicearbeiten nach Herstellervorgaben durchführen (Öl-, Filter-, Flüssigkeitswechsel, Sichtkontrollen)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische und manuelle Tätigkeit am Fahrzeug auf der Hebebühne; es existiert keine kommerziell verfügbare Robotik für den Werkstattbetrieb."
+      },
+      {
+        "name": "Mechanische Verschleiss- und Baugruppenreparaturen an Bremsen, Fahrwerk, Lenkung und Abgasanlage ausführen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Montage- und Demontagearbeit mit Werkzeugen direkt am Fahrzeug; weder durch generative KI noch durch Robotik automatisierbar."
+      },
+      {
+        "name": "Motoren-, Getriebe- und Antriebskomponenten zerlegen, instand setzen oder austauschen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Komplexe manuelle Mechanikarbeit in der Werkstatt; erfordert physisches Geschick und den Einsatz von Spezialwerkzeugen vor Ort."
+      },
+      {
+        "name": "Elektrische Anlagen, Komfortsysteme, Klimaanlagen und Hochvoltkomponenten prüfen und instand setzen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Instandsetzungsarbeiten an Kabelbäumen, Sensoren, Aktuatoren und Hochvoltsystemen unter Einhaltung von Sicherheitsvorschriften am Fahrzeug."
+      },
+      {
+        "name": "Reifen und Räder wechseln, montieren, auswuchten und Reifendruckkontrollsysteme anlernen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend körperliche Arbeit an Fahrzeug und Reifenmontiermaschine; autonome Reifenwechselroboter sind im Schweizer Garagengewerbe nicht im regulären Einsatz."
+      },
+      {
+        "name": "Fahrzeugdiagnose mit Diagnosetester, Oszilloskop und Messgeräten direkt am Fahrzeug durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Zeitaufwand liegt im Anschliessen der Prüfgeräte, im Freilegen von Messpunkten, im Durchführen von Stellgliedtests und im physischen Messen am Fahrzeug."
+      },
+      {
+        "name": "Probefahrten, Prüfstandkontrollen (Bremsen, Abgas, Licht) und Kalibrierungen von Assistenzsystemen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert das Führen des Fahrzeugs im Strassenverkehr sowie das physische Einrichten von Kalibriertafeln und Bedienen von Prüfständen."
+      },
+      {
+        "name": "Schaltpläne, Reparaturanleitungen, technische Bulletins und komplexe Fehlerbilder in Datenbanken recherchieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Such- und Diagnoseassistenten in Werkstattinformationssystemen liefern passgenaue Prüfanleitungen, Anzugsdrehmomente und bekannte Fehlerbulletins; die Fachperson interpretiert die Schaltpläne und entscheidet über den Prüfablauf selbst."
+      },
+      {
+        "name": "Ausgeführte Arbeiten, Messwerte, Garantieansprüche und Ersatzteile im Werkstattsystem dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Per Spracheingabe in der Werkstatt-App oder aus Diagnoseprotokollen erstellt die KI Arbeitsrapporte und wohlformulierte Gewährleistungsanträge; der Mechatroniker prüft jeden Eintrag fachlich vor der Freigabe."
+      },
+      {
+        "name": "Kundenanliegen zur Fehlerbeschreibung aufnehmen, Reparaturbedarf erläutern und Teilebedarf im Betrieb abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare persönliche Kommunikation mit Kundschaft direkt am Fahrzeug (z. B. Geräusche vorführen, defekte Teile zeigen) sowie kurze mündliche Abstimmung mit Serviceberatung und Teiledienst."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Automobil-Mechatroniker/in EFZ bzw. Automobil-Fachmann/-frau EFZ in einem typischen Schweizer Garagenbetrieb (Markenvertretung oder freie Werkstatt). Das ESCO-Profil deckt sich sehr gut mit der Schweizer Berufspraxis; die Arbeit ist zu rund 90 % physisch am Fahrzeug gebunden, während reine Administrations- und Empfangsaufgaben in grösseren Betrieben beim Kundendienstberater liegen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind lediglich die Recherche in technischen Herstellerdatenbanken sowie die Erstellung von Arbeitsrapporten und Garantieanträgen durch integrierte Werkstatt-KI und Spracheingabe; die eigentliche Wartungs- und Reparaturarbeit am Fahrzeug bleibt unberührt.",
+      "begruendung": "Rund 10 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die Technik bei der technischen Recherche unterstützend und bei der Rapport- und Garantiedokumentation delegierend wirkt. Da das Kerngeschäft in Schweizer Garagenbetrieben aus physischer Montage-, Wartungs- und Messarbeit am Fahrzeug besteht und Werkstattlärm, Dialekt sowie heterogene Dealer-Management-Systeme die Einführung bremsen, verändert sich das Berufsbild nur in den administrativen und diagnostischen Randbereichen.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }

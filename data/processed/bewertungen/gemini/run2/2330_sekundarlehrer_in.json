@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "08d1d57c896b855eb06d9b23cb8630662156f5a6f31eb7e9ca5b262a3aa7bd2f",
+    "isco_code": "2330",
+    "beruf": "Sekundarlehrer/in",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2326,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2326
+        }
+      ],
+      "prompt_token_count": 23055,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 23055
+        }
+      ],
+      "thoughts_token_count": 6909,
+      "total_token_count": 32290
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2326,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2326
+          }
+        ],
+        "prompt_token_count": 23055,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 23055
+          }
+        ],
+        "thoughts_token_count": 6909,
+        "total_token_count": 32290
+      }
+    ],
+    "request_ids": [
+      "xD_PasTiCI2ymtkPhcvTkAk"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2330_sekundarlehrer_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2330",
+    "beruf": "Sekundarlehrer/in",
+    "taetigkeiten": [
+      {
+        "name": "Fachunterricht im Klassenzimmer leiten und Klassenführung sicherstellen",
+        "zeitanteil_pct": 40,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Beziehungstätigkeit vor der Klasse (Stoffvermittlung, Moderation, Disziplin und Klassenklima), deren pädagogischer Wert in der unmittelbaren persönlichen Interaktion liegt."
+      },
+      {
+        "name": "Schülerinnen und Schüler individuell beim Lernen und bei der Berufswahl begleiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Individuelle Lernbegleitung im Schulzimmer, direktes pädagogisches Feedback und persönliches Coaching bei der Lehrstellensuche erfordern menschliche Präsenz und Beziehungsarbeit."
+      },
+      {
+        "name": "Stoffpläne, Unterrichtsreihen und Lektionsplanungen nach Lehrplan erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt auf Basis eingefügter Lehrplankompetenzen strukturierte Entwürfe für Unterrichtsreihen und Lektionsabläufe; die Lehrperson steuert die didaktischen Vorgaben und prüft sowie adaptiert jede Planung für ihre Klasse."
+      },
+      {
+        "name": "Arbeitsblätter, Unterrichtsmaterialien und differenzierte Übungsaufgaben erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Sprachmodell generiert Sachtexte, Aufgabenstellungen und Niveaudifferenzierungen für verschiedene Leistungszüge; die Lehrperson spezifiziert das Niveau, prüft jedes Arbeitsblatt fachlich und passt es an die Klasse an."
+      },
+      {
+        "name": "Lernkontrollen, Prüfungen und Bewertungsraster konzipieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM entwirft Prüfungsfragen über verschiedene Anforderungsstufen inklusive Musterlösung und Punkteraster; die Lehrperson prüft jede Aufgabe auf fachliche Korrektheit und Übereinstimmung mit dem behandelten Stoff."
+      },
+      {
+        "name": "Schriftliche Schülerarbeiten, Aufsätze und Prüfungen korrigieren und bewerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob über alle Fächer und die Mischung aus handschriftlichen sowie digitalen Prüfungen hinweg im Schnitt die 50-%-Zeitersparnis erreicht wird; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Multimodale KI-Werkzeuge (Handschrifterkennung und LLM-Vorprüfung anhand von Bewertungsrastern) markieren Fehler und schlagen Feedback vor; die Lehrperson liest, bewertet und verantwortet jede Arbeit weiterhin selbst."
+      },
+      {
+        "name": "Zeugnisbeurteilungen, Förderberichte und Übertrittsberichte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus anonymisierten Beobachtungsstichworten formuliert das Chat-LLM Berichtsentwürfe zu Lern- und Sozialverhalten; die Lehrperson prüft jeden Bericht im Einzelfall genau, da Übertritts- und Förderentscheide rechtlich relevant sind."
+      },
+      {
+        "name": "Elterngespräche, Standortgespräche und Besprechungen mit Fachstellen führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Gespräche mit Eltern, Lernenden sowie Schulsozialarbeit und Heilpädagogik zu Leistungsstand, Verhalten und Laufbahnentscheiden erfordern Empathie, Verhandlungsgeschick und Präsenz."
+      },
+      {
+        "name": "Elternbriefe, schriftliche Mitteilungen und Klasseninformationen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus kurzen Stichworten Elternbriefe, Lagerinformationen und bei Bedarf Übersetzungen für fremdsprachige Eltern; die Lehrperson liest die Texte kurz gegen und gibt sie frei."
+      },
+      {
+        "name": "Im Kollegium konferieren sowie Exkursionen, Klassenlager und Aufsichten durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Teilnahme an Schul- und Stufenkonferenzen sowie die Begleitung und Beaufsichtigung von Jugendlichen bei Exkursionen, Schulanlässen und in den Pausen sind reine Präsenz- und Aufsichtstätigkeiten."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Sekundarlehrer/in auf der Sekundarstufe I an einer öffentlichen Schweizer Volksschule (7.–9. Klasse, Fach- und Klassenlehrperson nach Lehrplan 21 / PER; das Tätigkeitsprofil auf Sekundarstufe II ist ähnlich). Die Zeitanteile orientieren sich an den Schweizer Arbeitszeiterhebungen bei Lehrpersonen. Der wichtigste Grenzfall ist die Korrektur von Schülerarbeiten (E2 vs. E0 je nach Fach und Anteil handschriftlicher Prüfungen).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Unterrichtsvor- und -nachbereitung (Lektionsplanung, Arbeitsblätter, Prüfungskonzeption, Korrekturunterstützung) sowie das Verfassen von Förderberichten und Elternbriefen durch Chat-LLMs und multimodale Korrekturwerkzeuge, während der Unterricht im Klassenzimmer nicht exponiert ist.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus bei der Erstellung von Lehrmaterialien, Prüfungen, Berichten und Elternkorrespondenz sowie unterstützend bei der Korrektur von Schülerarbeiten. Der Kern des Berufs bleibt die persönliche Präsenz und Beziehungsarbeit im Klassenzimmer. Kantonale Datenschutzvorgaben beim Umgang mit Personendaten von Minderjährigen, die rechtliche Anfechtbarkeit von Noten und Übertrittsentscheiden sowie die Erwartung persönlicher Elternkommunikation bremsen einen weitergehenden KI-Einsatz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

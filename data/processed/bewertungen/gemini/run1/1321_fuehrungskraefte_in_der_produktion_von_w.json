@@ -10,78 +10,214 @@
     "beruf": "Führungskräfte in der Produktion von Waren",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 49,
+      "candidates_token_count": 2372,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 49
+          "token_count": 2372
         }
       ],
-      "prompt_token_count": 22362,
+      "prompt_token_count": 22323,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22362
+          "token_count": 22323
         }
       ],
-      "thoughts_token_count": 5139,
-      "total_token_count": 27550
+      "thoughts_token_count": 6215,
+      "total_token_count": 30910
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 49,
+        "candidates_token_count": 2372,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 49
+            "token_count": 2372
           }
         ],
-        "prompt_token_count": 22362,
+        "prompt_token_count": 22323,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22362
+            "token_count": 22323
           }
         ],
-        "thoughts_token_count": 5139,
-        "total_token_count": 27550
+        "thoughts_token_count": 6215,
+        "total_token_count": 30910
       }
     ],
     "request_ids": [
-      "nrnOaraVLLi-_PUPrrqE6QQ"
+      "XTzPaszXCf7oz7IP17yB4Qw"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): Additional properties are not allowed ('taetigkeitenCount' was unexpected); (root): 'taetigkeiten' is a required property; (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-1321_fuehrungskraefte_in_der_produktion_von_w",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): Additional properties are not allowed ('taetigkeitenCount' was unexpected)",
-      "(root): 'taetigkeiten' is a required property",
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"1321\",\"beruf\":\"Führungskräfte in der Produktion von Waren\",\"taetigkeitenCount\":null}"
+  "bewertung": {
+    "isco_code": "1321",
+    "beruf": "Führungskräfte in der Produktion von Waren",
+    "taetigkeiten": [
+      {
+        "name": "Mitarbeitende und Schichtleitende führen, Shopfloor-Meetings leiten und Personalgespräche durchführen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Führungs-, Präsenz- und Beziehungstätigkeit auf dem Shopfloor und im Einzelgespräch; generative KI kann die persönliche Führung und Motivation vor Ort nicht übernehmen."
+      },
+      {
+        "name": "Fertigungsaufträge, Kapazitäten und Schichtpläne im ERP-/MES-System disponieren und feinplanen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die automatische Kapazitäts-, Reihenfolge- und Schichtplanung erfolgt über regelbasierte bzw. mathematisch optimierende ERP-, MES- und APS-Software (klassische Software ohne LLM); beim Menschen verbleiben kurzfristige Ausnahmen und Prioritätsentscheide."
+      },
+      {
+        "name": "Laufenden Produktionsbetrieb in der Werkhalle überwachen und bei Störungen oder Engpässen vor Ort entscheiden",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert physische Präsenz in der Produktionshalle, unmittelbare Situationsbeurteilung an den Anlagen und rasche operative Koordination mit Instandhaltung und Logistik."
+      },
+      {
+        "name": "Produktionskennzahlen (OEE, Ausschuss, Durchlaufzeiten) auswerten und Abweichungsanalysen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Datenanalyse-Agenten bzw. KI-Funktionen in BI-/MES-Systemen werten Betriebsdaten aus, erkennen Muster bei Ausschuss oder Stillständen und erstellen Abweichungsanalysen; die Produktionsleitung spezifiziert die Fragestellungen und prüft jede Auswertung fachlich auf Plausibilität im Realbetrieb."
+      },
+      {
+        "name": "Arbeitsanweisungen, Fertigungsvorgaben (SOPs) und Produktionsrichtlinien erstellen und aktualisieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft und übersetzt strukturierte Arbeitsanweisungen, Prozessbeschreibungen und Qualitätsrichtlinien aus Stichworten oder bestehenden Dokumenten; die Produktionsleitung gibt die Prozessparameter vor und prüft jedes Dokument inhaltlich auf Sicherheit und Normkonformität."
+      },
+      {
+        "name": "Projekte zur Einführung neuer Fertigungsverfahren, Anlagen und Lean-Optimierungen planen und vor Ort umsetzen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Auslegung und Einführung von Fertigungsprozessen sowie KVP-Workshops auf dem Shopfloor erfordern physische Prozesskenntnis an den Maschinen, Versuchsreihen und Abstimmung im Team; generative KI spart bei der reinen Konzeptdokumentation weniger als 50 % der Gesamtzeit."
+      },
+      {
+        "name": "Produktionsberichte, Abweichungsrapporte und Investitionsanträge für die Geschäftsleitung verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus eingefügten Kennzahlen, Projektdaten und Stichworten erstellt ein Chat-LLM Entwürfe für Monatsberichte, 8D-Reports und Investitionsanträge (CAPEX); die Führungskraft steuert den Inhalt und prüft jeden Bericht vor der Freigabe."
+      },
+      {
+        "name": "Produktionsbudgets planen sowie Herstellkosten und Kostenstellenabweichungen analysieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Produktionsleitung beurteilt Kostenpositionen und Budgetziele weiterhin selbst, nutzt das Chat-LLM aber anhand exportierter ERP-Tabellen für Szenariorechnungen, Soll-Ist-Vergleiche und Formulierungshilfen zur Abweichungsbegründung."
+      },
+      {
+        "name": "Mit Lieferanten, internen Schnittstellen und Kundschaft über Termine, Spezifikationen und Engpässe verhandeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlungs- und Koordinationsgespräche zur Lösung von Zielkonflikten zwischen Liefertreue, Kosten und technischer Machbarkeit beruhen auf persönlicher Abstimmung und Entscheidungskompetenz."
+      },
+      {
+        "name": "Arbeitssicherheits-, Umwelt- und Qualitätskontrollen (z. B. SUVA- und ISO-Audits) im Werk durchführen und begleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Vor-Ort-Begehungen, physische Sicherheitskontrollen an Anlagen und persönliche Auditgespräche mit Prüfstellen oder Behörden erfordern unmittelbare Präsenz in der Fertigung."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Produktions- bzw. Betriebsleiter/in in einem mittelgrossen Schweizer Industriebetrieb (z. B. MEM-, Medtech- oder Lebensmittelindustrie). Die Datenlage in ESCO ist gut und deckt die Mischung aus Shopfloor-Führung, Planung und Prozessoptimierung passend ab. Eine gewisse Unsicherheit besteht bei den Zeitanteilen je nach Betriebsgrösse (in Kleinbetrieben höherer operativer Shopfloor-Anteil, in Grossbetrieben höherer Berichts- und Analyseanteil).",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem das Erstellen von Arbeitsanweisungen (SOPs), Produktions- und Investitionsberichten sowie die Auswertung von Produktionskennzahlen und Kostenabweichungen mittels Chat-LLMs und Datenanalyse-Agenten, während Personalführung und Shopfloor-Steuerung beim Menschen bleiben.",
+      "begruendung": "Rund 30 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus (Entwurf von Richtlinien, Berichten und Datenauswertungen unter fachlicher Prüfung der Produktionsleitung) sowie ergänzend unterstützend bei der Budget- und Kostenanalyse. Der Grossteil der Arbeit entfällt auf Präsenzführung auf dem Shopfloor, Störungsbewältigung vor Ort und Verhandlungen, während die operative Feinplanung primär durch klassische ERP-/APS-Software automatisiert wird. In der Schweizer Industrie erfordern strenge Sicherheits- und Qualitätsregularien (SUVA, ISO-Normen, Branchenvorgaben) sowie mehrsprachige Produktionsteams eine sorgfältige menschliche Freigabe.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

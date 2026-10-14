@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "a2d1904fbb6017161d97fee75a85b9741c44266d7bdb2d95d6c45e25b6a914a1",
+    "isco_code": "1345",
+    "beruf": "Führungskräfte in der Erbringung von Dienstleistungen des Bildungswesens",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2284,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2284
+        }
+      ],
+      "prompt_token_count": 22491,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22491
+        }
+      ],
+      "thoughts_token_count": 6146,
+      "total_token_count": 30921
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2284,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2284
+          }
+        ],
+        "prompt_token_count": 22491,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22491
+          }
+        ],
+        "thoughts_token_count": 6146,
+        "total_token_count": 30921
+      }
+    ],
+    "request_ids": [
+      "xD_PavHmDOCj_PUP44v1mQ0"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-1345_fuehrungskraefte_in_der_erbringung_von_d",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "1345",
+    "beruf": "Führungskräfte in der Erbringung von Dienstleistungen des Bildungswesens",
+    "taetigkeiten": [
+      {
+        "name": "Lehrpersonen und Mitarbeitende führen, Mitarbeitendengespräche durchführen und Personal rekrutieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Führungs-, Beziehungs- und Präsenzarbeit im persönlichen Gespräch mit Lehrpersonen und Bewerbenden; generative KI erreicht hier keine relevante Zeitersparnis."
+      },
+      {
+        "name": "Unterrichtsbesuche (Hospitationen) durchführen und Lehrpersonen pädagogisch beurteilen und beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beobachtung vor Ort im Klassenzimmer bzw. Hörsaal und anschliessendes persönliches Feedbackgespräch erfordern zwingend menschliche Präsenz."
+      },
+      {
+        "name": "Konferenzen, Gremiensitzungen und Verhandlungen mit Schulbehörden und externen Stellen leiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Moderation, Konsensfindung im Kollegium und Verhandlung mit Behörden oder Trägerschaften sind reine Präsenz- und Interaktionstätigkeiten."
+      },
+      {
+        "name": "Schwierige Schüler-, Studierenden- und Elterngespräche führen sowie Konflikte und Disziplinarfälle klären",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Deeskalation, Konfliktlösung und persönliche Beratung von Jugendlichen und Erziehungsberechtigten erfordern Empathie und physische Präsenz."
+      },
+      {
+        "name": "Stundenpläne, Pensenplanung, Klassenzuteilungen und Ressourceneinsatz planen und koordinieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kombinatorische Optimierung und Pensenabgleich sind keine Aufgaben für Sprachmodelle (E0), lassen sich aber durch klassische Stundenplan- und Schulverwaltungssoftware (z. B. Untis, Schulnetz) zu über 50 % automatisieren."
+      },
+      {
+        "name": "Schulbudget planen, Finanzmittel zuweisen und laufende Ausgaben sowie Abrechnungen kontrollieren und freigeben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die reine Buchführung erfolgt bereits im Sekretariat bzw. ERP; die verbleibende Arbeit der Schulleitung besteht aus Budgetentscheiden, Mittelzuweisung und Visumskontrolle mit unter 50 % KI-Zeitersparnis."
+      },
+      {
+        "name": "Schulprogramm, pädagogische Konzepte, Curricula-Vorgaben und interne Richtlinien ausarbeiten und verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten, Leitplanken und kantonalen Lehrplanvorgaben vollständige Konzept- und Richtlinienentwürfe; die Schulleitung steuert den Prozess und prüft sowie überarbeitet jeden Textabschnitt fachlich."
+      },
+      {
+        "name": "Jahresberichte, Evaluationsberichte und Anträge zuhanden von Schulbehörden oder Trägerschaft verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus eingefügten Kennzahlen, Evaluationsnotizen und Vorjahrestexten formuliert das Chat-LLM den Berichts- oder Antragsentwurf; die Führungskraft prüft alle Aussagen und Zahlen im Detail vor der Einreichung."
+      },
+      {
+        "name": "Elternbriefe, Informationsschreiben, Newsletter und Stellungnahmen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Das Chat-LLM erstellt aus wenigen Stichworten adressatengerechte Informationsschreiben; die Schulleitung liest jedes Schreiben gegen und gibt es vor dem Versand frei."
+      },
+      {
+        "name": "Zulassungsdossiers und Gesuche prüfen sowie formelle Entscheide (Verfügungen) erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Dokumentenverarbeitung extrahiert Angaben aus eingereichten Zeugnissen und Gesuchen, gleicht sie mit Zulassungsreglementen ab und entwirft die Verfügung; wegen vorgeschriebenem menschlichem Einzelfallentscheid prüft und verantwortet die Schulleitung jeden Fall."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Schulleiter/in bzw. Rektor/in an einer öffentlichen Schule (Volksschule, Berufsfachschule oder Mittelschule) oder Studiengangsleitung an einer Hochschule in der Schweiz. Die ESCO-Kompetenzen betonen operative Buchhaltungsaufgaben stark; in der Schweizer Praxis erledigt das Schulsekretariat bzw. die Gemeindeverwaltung die laufende Buchhaltung, während die Schulleitung für Budgetplanung, Visum und Ressourcensteuerung zuständig ist.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind das Verfassen von pädagogischen Konzepten, Rechenschaftsberichten und Elternbriefen mittels Chat-LLM sowie die Vorprüfung von Zulassungsdossiers und Gesuchen samt Verfügungsentwurf durch KI-gestützte Dokumentenverarbeitung.",
+      "begruendung": "Rund ein Viertel der Arbeitszeit entfällt auf exponierte Schreib-, Konzept- und Dossierprüfungsaufgaben, bei denen die KI im delegierenden Modus Entwürfe erstellt, die von der Schulleitung inhaltlich und rechtlich geprüft werden. Der überwiegende Teil der Arbeit besteht aus Personalführung, Unterrichtsbesuchen, Konfliktlösung und Gremienarbeit und bleibt von generativer KI unberührt. Wesentliche Hürden in der Schweiz sind strenge kantonale Datenschutz- und Verfügungsanforderungen im Bildungsbereich sowie der Anspruch von Eltern und Behörden auf eine persönlich verantwortete Kommunikation.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

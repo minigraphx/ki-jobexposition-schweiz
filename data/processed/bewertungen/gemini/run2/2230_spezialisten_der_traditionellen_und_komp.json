@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "eaf948cf8364ea74a9ff1987337b3220a475953d7c073044fd017675fc329f87",
+    "isco_code": "2230",
+    "beruf": "Spezialisten der traditionellen und komplementären Medizin",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2010,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2010
+        }
+      ],
+      "prompt_token_count": 21120,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21120
+        }
+      ],
+      "thoughts_token_count": 3378,
+      "total_token_count": 26508
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2010,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2010
+          }
+        ],
+        "prompt_token_count": 21120,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21120
+          }
+        ],
+        "thoughts_token_count": 3378,
+        "total_token_count": 26508
+      }
+    ],
+    "request_ids": [
+      "xD_PaoiWC43jqtsPtpOG4AE"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2230_spezialisten_der_traditionellen_und_komp",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2230",
+    "beruf": "Spezialisten der traditionellen und komplementären Medizin",
+    "taetigkeiten": [
+      {
+        "name": "Ganzheitliche Anamnese und körperliche Befunderhebung durchführen (z. B. Erstgespräch, Puls-, Zungen- oder Konstitutionsdiagnose, Palpation)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Untersuchung mit allen Sinnen und persönliches Anamnesegespräch vor Ort erfordern unmittelbare menschliche Präsenz."
+      },
+      {
+        "name": "Körperbezogene und manuelle Therapien durchführen (z. B. Akupunktur, Schröpfen, Shiatsu, Tuina, Heilmassagen)",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische, feinmotorische Tätigkeit am Körper der Patientinnen und Patienten; keine relevante Automatisierung oder Robotik verfügbar."
+      },
+      {
+        "name": "Therapeutische Gespräche führen sowie zu Lebensführung, Ernährung und Prävention beraten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Wert liegt in der persönlichen therapeutischen Beziehung, Empathie und individuellen Begleitung von Angesicht zu Angesicht."
+      },
+      {
+        "name": "Individuellen Therapieplan ausarbeiten sowie Heilmittel und Rezepturen bestimmen (z. B. Kräuterrezepturen, homöopathische Repertorisation)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Fachperson trifft den Therapieentscheid selbst; ein Chat-LLM liefert aus anonymisierten Symptomen rasch Vorschläge zur Musterdifferenzierung, Repertorisation und Wechselwirkungsprüfung."
+      },
+      {
+        "name": "Körper-, Atem- und Entspannungsübungen (z. B. Qi Gong, Achtsamkeit, Sophrologie) anleiten und korrigieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz- und Anleitungstätigkeit mit unmittelbarer Beobachtung und Korrektur der Bewegungsausführung."
+      },
+      {
+        "name": "Praxisraum sowie therapeutische Materialien, Öle, Wickel und Rezepturen vorbereiten und hygienisch aufbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Vorbereitungs- und Hygienetätigkeiten in den Praxisräumlichkeiten."
+      },
+      {
+        "name": "Verlaufsdokumentation im Patientendossier führen und Berichte für Zusatzversicherungen oder Ärzte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracheingabe bzw. Diktatfunktion erstellt aus Stichworten strukturierte Dossiereinträge und Kostengutspracheberichte; die Therapeutin prüft und verantwortet jeden Eintrag fachlich."
+      },
+      {
+        "name": "Schriftliche Einnahmeempfehlungen, individuelle Ernährungspläne und Übungsanleitungen für Patientinnen und Patienten erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus wenigen Vorgaben fertige, patientengerechte Diätpläne (z. B. nach TCM oder TEN) und Merkblätter; die Fachperson kontrolliert das Ergebnis vor der Abgabe."
+      },
+      {
+        "name": "Termine koordinieren, Leistungen nach Tarif 590 abrechnen und Praxisadministration erledigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Online-Terminbuchung, Rechnungsstellung nach Tarif 590 und Zahlungsabgleich werden durch klassische Praxissoftware ohne generative KI weitgehend automatisiert."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Naturheilpraktiker/in oder Komplementärtherapeut/in mit eidg. Diplom (z. B. TCM, TEN, Homöopathie, Shiatsu) in ambulanter Einzel- oder Gemeinschaftspraxis in der Schweiz. Je nach Fachrichtung variiert das Verhältnis zwischen manueller Behandlung (höher bei Akupunktur/Shiatsu) und Rezeptur-/Mittelbestimmung (höher bei Homöopathie/Phytotherapie), was am Gesamtbild geringer KI-Exposition jedoch wenig ändert.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem die Ausarbeitung von Therapieplänen und Rezepturen, das Erstellen individueller Ernährungs- und Übungsblätter per Chat-LLM sowie die sprachgestützte Verlaufsdokumentation, während die Kerntätigkeiten am Patienten nicht betroffen sind.",
+      "begruendung": "Rund 20 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI bei der Dokumentation und bei Patientenmerkblättern delegierend und bei der Therapieplanung unterstützend wirkt. Der Grossteil der Arbeit besteht aus körperlicher Befunderhebung, manuellen Therapien und persönlicher Beziehungsarbeit vor Ort. In der Schweiz bremsen zudem strenge Datenschutzanforderungen bei Gesundheitsdaten (revDSG, Berufsgeheimnis) und die stark fragmentierte Struktur aus Kleinst- und Einzelpraxen eine tiefe Systemintegration.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

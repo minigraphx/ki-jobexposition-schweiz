@@ -10,84 +10,210 @@
     "beruf": "Notar/in",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 393,
+      "candidates_token_count": 2220,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 393
+          "token_count": 2220
         }
       ],
-      "prompt_token_count": 21576,
+      "prompt_token_count": 21537,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21576
+          "token_count": 21537
         }
       ],
-      "thoughts_token_count": 7093,
-      "total_token_count": 29062
+      "thoughts_token_count": 7078,
+      "total_token_count": 30835
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 393,
+        "candidates_token_count": 2220,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 393
+            "token_count": 2220
           }
         ],
-        "prompt_token_count": 21576,
+        "prompt_token_count": 21537,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21576
+            "token_count": 21537
           }
         ],
-        "thoughts_token_count": 7093,
-        "total_token_count": 29062
+        "thoughts_token_count": 7078,
+        "total_token_count": 30835
       }
     ],
     "request_ids": [
-      "nrnOaoO8KrG1_PUPj86l4AU"
+      "XjzPasCXD_SAz7IP5t2zgAs"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: taetigkeiten/0: 'Klienten beraten, Sachverhalt aufnehmen und Vertragswillen ermitteln' is not of type 'object'; taetigkeiten/1: 'Öffentliche Urkunden und Verträge im Immobilien-, Gesellschafts-, Ehe- und Erbrecht entwerfen' is not of type 'object'; taetigkeiten/2: 'Registerauszüge, Vollmachten, Identitäts- und Finanzierungsdokumente auf Rechtmässigkeit prüfen' is not of type 'object'; taetigkeiten/3: 'Komplexe Rechtsfragen abklären und Gesetze für den Einzelfall auslegen' is not of type 'object'; taetigkeiten/4: 'Beurkundungsverhandlung durchführen, Parteien belehren und Unterzeichnung bezeugen' is not of type 'object'; taetigkeiten/5: 'Unterschriften, Dokumentenkopien und eidesstattliche Erklärungen beglaubigen' is not of type 'object'; taetigkeiten/6: 'Grundbuch-, Handelsregister- und Behördenanmeldungen sowie Ausfertigungen erstellen' is not of type 'object'; taetigkeiten/7: 'Treuhand- und Kaufpreisabrechnungen sowie Gebührenrechnungen erstellen und Zahlungen abwickeln' is not of type 'object'; taetigkeiten/8: 'Fachkorrespondenz mit Klienten, Banken und Behörden sowie Aktennotizen verfassen' is not of type 'object'; taetigkeiten/9: 'Mitarbeitende fachlich anleiten und Urkundenregister sowie Dossiers kontrollieren' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-2619_notar_in",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "taetigkeiten/0: 'Klienten beraten, Sachverhalt aufnehmen und Vertragswillen ermitteln' is not of type 'object'",
-      "taetigkeiten/1: 'Öffentliche Urkunden und Verträge im Immobilien-, Gesellschafts-, Ehe- und Erbrecht entwerfen' is not of type 'object'",
-      "taetigkeiten/2: 'Registerauszüge, Vollmachten, Identitäts- und Finanzierungsdokumente auf Rechtmässigkeit prüfen' is not of type 'object'",
-      "taetigkeiten/3: 'Komplexe Rechtsfragen abklären und Gesetze für den Einzelfall auslegen' is not of type 'object'",
-      "taetigkeiten/4: 'Beurkundungsverhandlung durchführen, Parteien belehren und Unterzeichnung bezeugen' is not of type 'object'",
-      "taetigkeiten/5: 'Unterschriften, Dokumentenkopien und eidesstattliche Erklärungen beglaubigen' is not of type 'object'",
-      "taetigkeiten/6: 'Grundbuch-, Handelsregister- und Behördenanmeldungen sowie Ausfertigungen erstellen' is not of type 'object'",
-      "taetigkeiten/7: 'Treuhand- und Kaufpreisabrechnungen sowie Gebührenrechnungen erstellen und Zahlungen abwickeln' is not of type 'object'",
-      "taetigkeiten/8: 'Fachkorrespondenz mit Klienten, Banken und Behörden sowie Aktennotizen verfassen' is not of type 'object'",
-      "taetigkeiten/9: 'Mitarbeitende fachlich anleiten und Urkundenregister sowie Dossiers kontrollieren' is not of type 'object'",
-      "zusammenfassung: None is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"2619\",\"beruf\":\"Notar/in\",\"taetigkeiten\":[\"Klienten beraten, Sachverhalt aufnehmen und Vertragswillen ermitteln\",\"Öffentliche Urkunden und Verträge im Immobilien-, Gesellschafts-, Ehe- und Erbrecht entwerfen\",\"Registerauszüge, Vollmachten, Identitäts- und Finanzierungsdokumente auf Rechtmässigkeit prüfen\",\"Komplexe Rechtsfragen abklären und Gesetze für den Einzelfall auslegen\",\"Beurkundungsverhandlung durchführen, Parteien belehren und Unterzeichnung bezeugen\",\"Unterschriften, Dokumentenkopien und eidesstattliche Erklärungen beglaubigen\",\"Grundbuch-, Handelsregister- und Behördenanmeldungen sowie Ausfertigungen erstellen\",\"Treuhand- und Kaufpreisabrechnungen sowie Gebührenrechnungen erstellen und Zahlungen abwickeln\",\"Fachkorrespondenz mit Klienten, Banken und Behörden sowie Aktennotizen verfassen\",\"Mitarbeitende fachlich anleiten und Urkundenregister sowie Dossiers kontrollieren\"],\"unsicherheit\":\"niedrig\",\"kommentar\":\"Angenommenes Setting: Freiberufliche/r Notar/in bzw. Anwaltsnotar/in in einer Schweizer Notariatskanzlei mit Schwerpunkt Grundstücks-, Gesellschafts-, Ehe- und Erbrecht; im kantonalen Amtsnotariat (z. B. ZH) sind die Kerntätigkeiten sehr ähnlich. Die ESCO-Kompetenzen «Trauungen vornehmen» und «Handelspapiere erstellen» wurden als für Schweizer Notariate unpassendes Rauschen weggelassen. Wichtigster Grenzfall ist die Vorprüfung von Registerauszügen und Finanzierungsdokumenten an der 50-%-Schwelle.\",\"zusammenfassung\":null}"
+  "bewertung": {
+    "isco_code": "2619",
+    "beruf": "Notar/in",
+    "taetigkeiten": [
+      {
+        "name": "Klientengespräche führen, Sachverhalt erheben und zu Ehe-, Erb-, Sachen- oder Gesellschaftsrecht beraten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung, Vertrauensaufbau und Erforschung des Parteiwillens vor Ort erfordern unmittelbare zwischenmenschliche Präsenz."
+      },
+      {
+        "name": "Öffentliche Urkunden und Verträge entwerfen (Grundstückkauf-, Ehe-, Erbverträge, Gesellschaftsgründungen)",
+        "zeitanteil_pct": 25,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Sachverhaltsangaben und Musterklauseln den Urkundenentwurf; die Notarin spezifiziert die Klauseln und prüft jeden Entwurf aufgrund der gesetzlichen Beurkundungs- und Haftungspflicht vollständig."
+      },
+      {
+        "name": "Beurkundungsverhandlung durchführen, Parteien rechtlich belehren und Unterzeichnung der Urkunde bezeugen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der hoheitliche Beurkundungsakt (Vorlesen bzw. Lesenlassen der Urkunde, Belehrung, Prüfung der Urteilsfähigkeit und Unterzeichnung in unmittelbarer Anwesenheit) ist zwingend an die persönliche Präsenz gebunden."
+      },
+      {
+        "name": "Eingereichte Vertragsentwürfe, Statuten und Vollmachten auf Rechtmässigkeit und Formvorschriften prüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Der Notar führt die rechtliche Prüfung der eingereichten Textdokumente weiterhin selbst durch, während das Chat-LLM fehlende gesetzliche Pflichtinhalte, Widersprüche und Formmängel markiert."
+      },
+      {
+        "name": "Registerauszüge, Vorurkunden und Personenstandsdokumente sichten sowie Daten und Dienstbarkeiten zusammenstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenanalyse-Software extrahiert aus gescannten Vorurkunden, Grundbuch- und Handelsregisterauszügen die relevanten Lasten, Dienstbarkeiten und Personalien; die Notarin prüft jede Angabe gegen die Originalbelege."
+      },
+      {
+        "name": "Unterschriften und Dokumentenkopien beglaubigen sowie Identitäten vor Ort prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische und visuelle Kontrolle von Ausweisdokumenten, Originalurkunden und vor Ort geleisteten Unterschriften sowie das Anbringen des Beglaubigungsvermerks."
+      },
+      {
+        "name": "Komplexe Rechtsfragen in Gesetzgebung, Rechtsprechung und Fachliteratur recherchieren und auslegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Der Notar nimmt die rechtliche Würdigung und Gesetzesauslegung selbst vor, nutzt aber juristische Recherche-Agenten, um einschlägige Entscheide und Literaturstellen rasch zu finden und zusammenzufassen."
+      },
+      {
+        "name": "Grundbuch- und Handelsregisteranmeldungen sowie Vollzugsschreiben an Behörden und Banken verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus dem fertigen Urkundentext generiert ein Chat-LLM die standardisierten Registeranmeldungen und Treuhand- bzw. Vollzugsschreiben; die Urkundsperson kontrolliert und unterzeichnet jedes Schreiben."
+      },
+      {
+        "name": "Steuer-, Bank- und Vermögensbelege für Nachlassinventare, Erbteilungen und Kaufpreisabrechnungen auswerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Dokumentenverarbeitung liest Bankauszüge, Steuerakten und Pfandbriefe aus und erstellt den Entwurf des Inventars oder der Abrechnung; der Notar prüft jede Position fachlich und rechnerisch."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Hauptberufliche/r Notar/in in der Schweiz (Schwerpunkt freies Notariat wie in BE, VD, GE, BS, AG, TI; im Amtsnotariat wie in ZH sind die Kerntätigkeiten bei Beurkundungen vergleichbar). Das Aufgabenprofil ist gesetzlich klar strukturiert: Während das Entwerfen und Prüfen von Urkunden stark exponiert ist, bleibt der formelle Beurkundungsakt an die persönliche Anwesenheit der Urkundsperson gebunden. ESCO-spezifische Besonderheiten ohne CH-Bezug (wie «Trauungen vornehmen», was in der Schweiz dem Zivilstandsamt obliegt) wurden unberücksichtigt gelassen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Entwerfen öffentlicher Urkunden und Verträge, die Vorprüfung eingereichter Vertragsentwürfe und Registerbelege sowie das Erstellen von Registeranmeldungen und Nachlassinventaren durch Sprachmodelle und Dokumentenanalyse-Tools.",
+      "begruendung": "Rund 60 % der Arbeitszeit sind exponiert, wobei die KI überwiegend delegierend (Entwurf von Urkunden, Registeranmeldungen und Inventaren) und teilweise unterstützend (Prüfung von Drittentwürfen, Rechtsrecherche) eingesetzt wird. Da die öffentliche Beurkundung in der Schweiz eine hoheitliche Vorbehaltstätigkeit mit persönlicher Prüfungs-, Belehrungs- und Haftungspflicht ist, muss jede KI-Ausgabe fachlich im Detail kontrolliert werden; der Beurkundungsakt selbst bleibt physisch an die Person gebunden. Strenge kantonale Formvorschriften sowie das strafrechtlich geschützte Berufsgeheimnis und der Datenschutz wirken als deutliche regulatorische Hemmnisse.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

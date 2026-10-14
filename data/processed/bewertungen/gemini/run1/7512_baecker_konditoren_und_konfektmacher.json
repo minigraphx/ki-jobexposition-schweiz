@@ -10,78 +10,211 @@
     "beruf": "Bäcker, Konditoren und Konfektmacher",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 49,
+      "candidates_token_count": 2226,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 49
+          "token_count": 2226
         }
       ],
-      "prompt_token_count": 23506,
+      "prompt_token_count": 23467,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 23506
+          "token_count": 23467
         }
       ],
-      "thoughts_token_count": 6872,
-      "total_token_count": 30427
+      "thoughts_token_count": 6857,
+      "total_token_count": 32550
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 49,
+        "candidates_token_count": 2226,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 49
+            "token_count": 2226
           }
         ],
-        "prompt_token_count": 23506,
+        "prompt_token_count": 23467,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 23506
+            "token_count": 23467
           }
         ],
-        "thoughts_token_count": 6872,
-        "total_token_count": 30427
+        "thoughts_token_count": 6857,
+        "total_token_count": 32550
       }
     ],
     "request_ids": [
-      "nrnOarv1Kfy8_uMPqrOhoAc"
+      "XTzPaq2qD_Gfz7IP68qu-AE"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: ['...'] is too short; taetigkeiten/0: '...' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-7512_baecker_konditoren_und_konfektmacher",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: ['...'] is too short",
-      "taetigkeiten/0: '...' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"7512\",\"beruf\":\"Bäcker, Konditoren und Konfektmacher\",\"taetigkeiten\":[\"...\"]}"
+  "bewertung": {
+    "isco_code": "7512",
+    "beruf": "Bäcker, Konditoren und Konfektmacher",
+    "taetigkeiten": [
+      {
+        "name": "Zutaten nach Rezept auswählen, abwiegen und dosieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Abwiegen und Bereitstellen von Rohstoffen in der Backstube ist eine rein physische Tätigkeit. Während Mehl und Wasser oft bereits über Siloanlagen dosiert werden, lässt sich das restliche Abwiegen vielfältiger Klein- und Feingebäckzutaten in typischen Schweizer Betrieben nicht zu mindestens 50 % wirtschaftlich automatisieren."
+      },
+      {
+        "name": "Teige, Vorteige und Massen mischen, kneten und Teigruhe überwachen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische und sensorische Arbeit an Knet- und Rührmaschinen sowie bei der Teigführung vor Ort; es besteht keine Exposition gegenüber generativer KI."
+      },
+      {
+        "name": "Teiglinge abteilen, formen und zu Backwaren aufarbeiten",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliches Wirken, Formen, Flechten und Aufarbeiten von Teiglingen (teilweise unterstützt durch Standard-Aufarbeitungsmaschinen) erfordert manuelle Geschicklichkeit vor Ort."
+      },
+      {
+        "name": "Backwaren einschiessen, Backöfen steuern und Backprozess überwachen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Beschicken und Entleeren der Öfen sowie die visuelle und sensorische Kontrolle des Backfortschritts und der Krustenbräunung sind physische Präsenzarbeiten."
+      },
+      {
+        "name": "Konditorei-, Patisserie- und Confiserieprodukte herstellen, füllen und garnieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Feinmotorische Handarbeit beim Dressieren, Überziehen, Temperieren von Couverture und Dekorieren von Torten, Patisserie und Pralinen; weder durch KI noch durch Robotik in typischen Betrieben ersetzbar."
+      },
+      {
+        "name": "Qualität der Back- und Konditoreiwaren prüfen und Produkte kommissionieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sicht- und Qualitätsprüfung der fertigen Erzeugnisse sowie das Bereitstellen und Verpacken für Filialen oder den Verkauf sind überwiegend manuelle Tätigkeiten an empfindlichen Backwaren."
+      },
+      {
+        "name": "Rohstoffe annehmen, kontrollieren und fachgerecht einlagern",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Warenannahme, Eingangskontrolle der Frische und Einlagerung in Kühl-, Tiefkühl- und Trockenlagern."
+      },
+      {
+        "name": "Maschinen, Anlagen und Backstube reinigen sowie einfache Wartungen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Reinigung von Knetern, Öfen, Arbeitsflächen und Schneidausrüstung nach Hygienevorschriften; keine Automatisierung über bestehende Spülmaschinen hinaus zu 50 % möglich."
+      },
+      {
+        "name": "Produktionsmengen disponieren, Rohstoffbestellungen auslösen und HACCP-Protokolle führen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Standardisierte Mengenberechnungen, Bestellvorschläge und Temperaturaufzeichnungen benötigen kein Sprachmodell, lassen sich aber durch klassische Bäckerei-Branchensoftware (ERP) und vernetzte Temperaturlogger zu mindestens 50 % automatisieren."
+      },
+      {
+        "name": "Rezepturen für neue Back- und Konditoreiwaren entwerfen, umrechnen und Produktdeklarationen verfassen",
+        "zeitanteil_pct": 2,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob ein Chat-LLM bei der Rezeptentwicklung und -umrechnung angesichts notwendiger praktischer Backversuche tatsächlich mindestens 50 % der Zeit spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus Vorgaben Rezeptentwürfe, rechnet Mengenverhältnisse um und formuliert Zutaten- sowie Allergendeklarationen; die Fachperson prüft und korrigiert jedes Ergebnis fachlich."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Bäcker/in-Konditor/in-Confiseur/in EFZ in einer typischen gewerblichen oder mittelständischen Schweizer Bäckerei-Konditorei-Confiserie. Die ESCO-Kompetenzen decken die Brot- und Backwarenherstellung gut ab und wurden für den Schweizer Kontext um die typischen Konditorei- und Confiseriearbeiten ergänzt. In Grossbäckereien ist der Automatisierungsgrad (Feld P) bereits höher, dort verbleiben den Mitarbeitenden vor allem Anlagenführung, Einrichten und Qualitätskontrolle.",
+    "zusammenfassung": {
+      "haupt_risiko": "Kaum eine Tätigkeit ist exponiert; einzig das Entwerfen und Umrechnen neuer Rezepturen sowie das Verfassen von Produktdeklarationen (rund 2 % der Arbeitszeit) kann durch ein Chat-LLM unterstützt werden, während die gesamte Produktion in der Backstube nicht betroffen ist.",
+      "begruendung": "Der Beruf besteht zu 98 % aus physischer, handwerklicher und sensorischer Arbeit an Teigen, Öfen, Maschinen und Konditoreiwaren vor Ort. Lediglich ein minimaler administrativ-konzeptioneller Randbereich bei Rezepturen und Deklarationstexten ist im delegierenden Modus exponiert, wobei die Fachperson jedes Ergebnis selbst prüfen und in Backversuchen erproben muss. Spezifische regulatorische oder kulturelle CH-Hemmnisse spielen gegenüber der rein physischen Natur der Arbeit eine untergeordnete Rolle.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
 }

@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "59404dfd9d3528133aa60afecc331e2c9018e8e03542fb3fe002b8b1363295ca",
+    "isco_code": "2131",
+    "beruf": "Biologen, Botaniker, Zoologen und verwandte Berufe",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2302,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2302
+        }
+      ],
+      "prompt_token_count": 23475,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 23475
+        }
+      ],
+      "thoughts_token_count": 5355,
+      "total_token_count": 31132
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2302,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2302
+          }
+        ],
+        "prompt_token_count": 23475,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 23475
+          }
+        ],
+        "thoughts_token_count": 5355,
+        "total_token_count": 31132
+      }
+    ],
+    "request_ids": [
+      "xD_ParDQBtqd6dkPo9vt2A0"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2131_biologen_botaniker_zoologen_und_verwandt",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2131",
+    "beruf": "Biologen, Botaniker, Zoologen und verwandte Berufe",
+    "taetigkeiten": [
+      {
+        "name": "Laborexperimente, mikrobiologische Untersuchungen und Zellkultur-Assays durchführen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Laborarbeit an der Werkbank, Mikroskopie und das Ansetzen neuer Experimente sind physische Tätigkeiten. Während Hochdurchsatz-Pipettierroboter Routinetests übernehmen, bleibt die nicht-standardisierte Forschungsarbeit manuell."
+      },
+      {
+        "name": "Biologische Proben und Beobachtungsdaten im Freiland, Gewächshaus oder Tierhaus erheben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Feldarbeit in Botanik, Zoologie und Ökologie sowie die Untersuchung lebender Organismen vor Ort erfordern unmittelbare physische Präsenz und manuelle Handhabung."
+      },
+      {
+        "name": "Experimentelle und biologische Messdaten statistisch und bioinformatisch auswerten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Coding- und Datenanalyse-Agenten erstellen Auswertungsskripte (z. B. in R oder Python), führen statistische Tests aus und generieren Grafiken; die Fachperson spezifiziert das Versuchsdesign und prüft jede Auswertung auf biologische Plausibilität."
+      },
+      {
+        "name": "Versuchsprotokolle, Standardarbeitsanweisungen (SOPs) und Studienpläne entwerfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Versuchs- und Methodenparametern vollständige Entwürfe für SOPs und Studienprotokolle; Biologinnen und Biologen prüfen jedes Protokoll im Detail auf wissenschaftliche Korrektheit, biologische Sicherheit und GxP-Konformität."
+      },
+      {
+        "name": "Experimentelle Abläufe im elektronischen Laborbuch (ELN) dokumentieren und Forschungsdaten verwalten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Funktionen in Laborinformations- und ELN-Systemen strukturieren Rohnotizen, Spracheingaben und Gerätedaten zu fertigen Einträgen; die Forschenden prüfen und visieren jeden Eintrag zur Wahrung der Datenintegrität."
+      },
+      {
+        "name": "Wissenschaftliche Fachliteratur, Datenbanken und Patente recherchieren und zusammenfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spezialisierte Recherche-Agenten durchsuchen Fachdatenbanken, extrahieren Kernaussagen und fassen Studien zusammen; die Biologin bewertet die methodische Qualität zentraler Primärquellen weiterhin selbst und synthetisiert den Forschungsstand."
+      },
+      {
+        "name": "Wissenschaftliche Publikationen, technische Forschungsberichte und Fachgutachten verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus bereitgestellten Resultaten, Tabellen und Stichworten formuliert das Sprachmodell Manuskript- und Berichtsentwürfe; die Fachperson steuert die wissenschaftliche Argumentation und überarbeitet sowie verantwortet jeden Textabschnitt."
+      },
+      {
+        "name": "Forschungsanträge, Projektvorschläge und Drittmittelgesuche ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Forschenden entwickeln die wissenschaftliche Hypothese und Projektarchitektur selbst, während das Chat-LLM Textbausteine, Arbeitsplanbeschreibungen und sprachliche Überarbeitungen liefert."
+      },
+      {
+        "name": "Forschungsprojekte koordinieren, Laborabläufe planen und technisches Personal anleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Führung von Laboranten und Studierenden vor Ort sowie die interdisziplinäre Projektkoordination beruhen auf persönlicher Präsenz und direkter Kommunikation."
+      },
+      {
+        "name": "Forschungsergebnisse an Konferenzen, in Fachgremien oder vor Auftraggebern präsentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der persönliche Vortrag, die wissenschaftliche Diskussion und der Aufbau von Forschungsnetzwerken erfordern unmittelbare menschliche Präsenz."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Das Berufsbild nach ISCO 2131 ist in der Schweiz heterogen und umfasst Forschung und Entwicklung in der Pharma-/Biotech-Industrie, akademische Forschung an Hochschulen und Bundesforschungsanstalten (z. B. WSL, Agroscope, Eawag) sowie ökologische Umweltbüros. Bewertet wurde ein typisches Mischprofil mit Labor- und Feldanteil sowie substanzieller Datenauswertungs- und Publikationstätigkeit. Die grösste Unsicherheit liegt in der Gewichtung zwischen physischer Labor-/Feldarbeit und trockener Datenanalyse je nach Spezialisierung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem die statistisch-bioinformatische Datenauswertung, das Entwerfen von Versuchsprotokollen, die Dokumentation im elektronischen Laborbuch sowie die Literaturrecherche und das Verfassen wissenschaftlicher Berichte durch Chat-LLMs, Coding- und Recherche-Agenten.",
+      "begruendung": "Rund 60 % der Arbeitszeit entfallen auf kognitive Analyse-, Dokumentations- und Schreibaufgaben, bei denen KI überwiegend delegierend oder unterstützend eingesetzt wird, da jede Auswertung und jeder Bericht wissenschaftlich exakt geprüft werden muss. Die physische Labor- und Freilandarbeit (40 % der Zeit) bleibt von generativer KI unberührt. In der Schweizer Pharma- und Biotech-Branche sowie in der Auftragsforschung bremsen strenge regulatorische Vorgaben (GxP-Validierung, Datenintegrität, Geheimhaltung von Forschungsdaten) eine unkontrollierte Nutzung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

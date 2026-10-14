@@ -10,92 +10,219 @@
     "beruf": "Netzwerkingenieur/in",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "cache_tokens_details": [
-        {
-          "modality": "TEXT",
-          "token_count": 19606
-        }
-      ],
-      "cached_content_token_count": 19606,
-      "candidates_token_count": 43,
+      "candidates_token_count": 2482,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 43
+          "token_count": 2482
         }
       ],
-      "prompt_token_count": 22263,
+      "prompt_token_count": 22224,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22263
+          "token_count": 22224
         }
       ],
-      "thoughts_token_count": 7428,
-      "total_token_count": 29734
+      "thoughts_token_count": 8132,
+      "total_token_count": 32838
     },
     "usage_je_versuch": [
       {
-        "cache_tokens_details": [
-          {
-            "modality": "TEXT",
-            "token_count": 19606
-          }
-        ],
-        "cached_content_token_count": 19606,
-        "candidates_token_count": 43,
+        "candidates_token_count": 2482,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 43
+            "token_count": 2482
           }
         ],
-        "prompt_token_count": 22263,
+        "prompt_token_count": 22224,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22263
+            "token_count": 22224
           }
         ],
-        "thoughts_token_count": 7428,
-        "total_token_count": 29734
+        "thoughts_token_count": 8132,
+        "total_token_count": 32838
       }
     ],
     "request_ids": [
-      "nrnOapeGKbi-_PUPrrqE6QQ"
+      "XTzPatmrEYjsz7IPmt60KQ"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): Additional properties are not allowed ('taetigkeitenCount' was unexpected); (root): 'taetigkeiten' is a required property; (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-2523_netzwerkingenieur_in",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): Additional properties are not allowed ('taetigkeitenCount' was unexpected)",
-      "(root): 'taetigkeiten' is a required property",
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"2523\",\"beruf\":\"Netzwerkingenieur/in\",\"taetigkeitenCount\":null}"
+  "bewertung": {
+    "isco_code": "2523",
+    "beruf": "Netzwerkingenieur/in",
+    "taetigkeiten": [
+      {
+        "name": "Netzwerkanforderungen mit Kunden oder Fachabteilungen abklären und Standorte begehen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Anforderungsworkshops, Abstimmungen mit Stakeholdern sowie physische Standortbegehungen (z. B. für WLAN-Ausleuchtung oder Serverraum-Planung) erfordern persönliche Präsenz und Verhandlung."
+      },
+      {
+        "name": "Netzwerkarchitekturen, Topologien und IP-/Routing-Konzepte entwerfen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Der Netzwerkingenieur erarbeitet die Zielarchitektur (VLANs, Routing, Redundanz, Cloud-Anbindung) selbst, während ein Chat-LLM Subnetzpläne berechnet, Architekturmuster vorschlägt und Konzeptabschnitte vorformuliert."
+      },
+      {
+        "name": "Konfigurationen für Switches, Router, Firewalls und VPNs erstellen und anpassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM generiert oder übersetzt herstellerspezifische CLI-Konfigurationen, ACLs und VPN-Setups aus Textvorgaben; die Fachperson spezifiziert die Parameter und prüft jede Zeile vor dem Rollout. Klassische SDN-Controller und zentrales Vorlagen-Management (z. B. FortiManager, Cisco Catalyst Center) automatisieren Standardkonfigurationen ebenfalls weitgehend (P1)."
+      },
+      {
+        "name": "Automatisierungsskripte und Infrastructure-as-Code (Ansible, Python, APIs) entwickeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI schreibt Playbooks, Python-Skripte und API-Integrationen für Netzwerkgeräte nach Spezifikation; der Ingenieur steuert die Entwicklung, prüft den Code und testet ihn in einer Laborumgebung."
+      },
+      {
+        "name": "Netzwerkkomponenten im Rack montieren, verkabeln und vor Ort in Betrieb nehmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montage von Switches, Firewalls und Access Points sowie das Patchen von Glasfaser- und Kupferkabeln im Rechenzentrum oder am Standort sind rein manuelle Tätigkeiten."
+      },
+      {
+        "name": "Netzwerkleistung überwachen, Logs analysieren und komplexe Störungen beheben",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "In Monitoring-, SIEM- und AIOps-Plattformen integrierte KI-Assistenten korrelieren Logdaten, Paketmitschnitte und Telemetrie und weisen auf Fehlerursachen hin; der Ingenieur führt die Diagnose und Störungsbehebung selbst durch."
+      },
+      {
+        "name": "Netzwerksicherheitsrichtlinien prüfen, Schwachstellen analysieren und Härtungsmassnahmen definieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Security-Assistenten gleichen umfangreiche Firewall-Regelwerke und Gerätekonfigurationen mit CVE-Schwachstellen ab und schlagen Bereinigungen vor, während die Fachperson das Risiko beurteilt und Massnahmen festlegt. Klassische Policy-Analyzer und Schwachstellenscanner (z. B. Tufin, AlgoSec, Nessus) übernehmen regelbasierte Prüfungen bereits ohne generative KI (P1)."
+      },
+      {
+        "name": "Wartungsfenster, Firmware-Upgrades und Live-Migrationen durchführen und überwachen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das begleitende Überwachen von Umschaltungen (Cutovers), Funktionstests in Echtzeit und die Bereitschaft zum sofortigen Rollback im Wartungsfenster werden durch generative KI nicht um 50 % verkürzt; das Ausrollen selbst wird durch klassische zentrale Netzwerk-Management-Software automatisiert (P1)."
+      },
+      {
+        "name": "Netzwerkdokumentation, Betriebshandbücher und Change-Anträge verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus Konfigurationsdateien und Stichworten fertige Betriebshandbücher (Runbooks), CAB-Change-Anträge und Störungsberichte; der Ingenieur prüft die technische Korrektheit und gibt das Dokument frei."
+      },
+      {
+        "name": "Herstellerspezifikationen recherchieren, vergleichen und Beschaffungsempfehlungen ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche und Dokumentenextraktion werten Datenblätter sowie Lizenzmodelle verschiedener Hersteller aus und entwerfen Vergleichstabellen samt Beschaffungsantrag; der Ingenieur gibt die Kriterien vor und prüft alle Angaben."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Netzwerkingenieur/in (Tertiärstufe HF/FH) bei einem Schweizer IT-Dienstleister oder in der internen IT eines grösseren Unternehmens. Die ESCO-Kompetenzen enthalten leichte Überschneidungen zur allgemeinen Softwareentwicklung, wurden aber gemäss Berufsbeschreibung auf Netzwerkkonzeption, Konfiguration, Network Automation (IaC), Security und Troubleshooting fokussiert. Physische Rack- und Vor-Ort-Arbeiten machen auf Tertiärstufe einen kleineren, aber weiterhin relevanten Teil der Arbeitszeit aus.",
+    "zusammenfassung": {
+      "haupt_risiko": "Vor allem das Erstellen von Gerätekonfigurationen, Automatisierungsskripten und Dokumentationen (per Chat-LLM) sowie die Log- und Störungsanalyse, Sicherheitsüberprüfungen und Herstellervergleiche (über KI-Assistenten in Monitoring- und Security-Systemen bzw. Recherche-Agenten) verändern sich stark.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die Technik je etwa zur Hälfte delegierend (Generieren von CLI-Konfigurationen, Skripten, Dokumentationen und Offertenvergleichen mit zwingender Fachprüfung) und unterstützend (Konzeptarbeit, Troubleshooting und Security-Analysen) eingesetzt wird. Ein direkter Ersatz ohne Prüfung ist aufgrund des hohen Ausfall- und Sicherheitsrisikos produktiver Netzwerke ausgeschlossen, und physische Rack-Arbeiten sowie Vor-Ort-Abklärungen bleiben gänzlich beim Menschen. In der Schweiz bremsen insbesondere regulatorische Vorgaben (revDSG, FINMA, Vorgaben für kritische Infrastrukturen) die Nutzung Cloud-basierter KI-Modelle mit sensiblen Netzwerktopologien und Logdaten.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

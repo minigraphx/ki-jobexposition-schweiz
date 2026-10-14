@@ -10,78 +10,211 @@
     "beruf": "Maschinenführer/in",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 42,
+      "candidates_token_count": 2267,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 42
+          "token_count": 2267
         }
       ],
-      "prompt_token_count": 20270,
+      "prompt_token_count": 20231,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 20270
+          "token_count": 20231
         }
       ],
-      "thoughts_token_count": 4750,
-      "total_token_count": 25062
+      "thoughts_token_count": 5675,
+      "total_token_count": 28173
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 42,
+        "candidates_token_count": 2267,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 42
+            "token_count": 2267
           }
         ],
-        "prompt_token_count": 20270,
+        "prompt_token_count": 20231,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 20270
+            "token_count": 20231
           }
         ],
-        "thoughts_token_count": 4750,
-        "total_token_count": 25062
+        "thoughts_token_count": 5675,
+        "total_token_count": 28173
       }
     ],
     "request_ids": [
-      "nrnOarnFKr7sz7IP5uuTiQE"
+      "XTzPatP6NPSAz7IP5t2zgAs"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: ['...'] is too short; taetigkeiten/0: '...' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-8211_maschinenfuehrer_in",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: ['...'] is too short",
-      "taetigkeiten/0: '...' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"8211\",\"beruf\":\"Maschinenführer/in\",\"taetigkeiten\":[\"...\"]}"
+  "bewertung": {
+    "isco_code": "8211",
+    "beruf": "Maschinenführer/in",
+    "taetigkeiten": [
+      {
+        "name": "Produktionsmaschinen und -anlagen nach Fertigungsauftrag einrichten und umrüsten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Wechseln von Werkzeugen, Formen und Anschlägen sowie das Einrichten direkt an der Maschine sind physische Tätigkeiten vor Ort, die weder durch Sprachmodelle noch zu über 50 % durch Standardrobotik übernommen werden."
+      },
+      {
+        "name": "Rohmaterial, Halbfabrikate und Hilfsstoffe bereitstellen und der Anlage zuführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Materialhandhabung an der Produktionslinie ohne Exposition gegenüber generativer KI. Kommerziell verfügbare Bestückungsroboter, Stangenlader und automatische Zuführsysteme können diese Arbeit heute zu über 50 % übernehmen."
+      },
+      {
+        "name": "Laufenden Produktionsprozess an der Anlage bedienen, überwachen und Prozessparameter nachregeln",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert physische Präsenz und unmittelbare sinnliche Überwachung des Materialflusses und Maschinenlaufs in der Werkhalle; die Grundsteuerung erfolgt bereits über klassische SPS-Technik."
+      },
+      {
+        "name": "Gefertigte Produkte oder Teile entnehmen, verpacken und für den Weitertransport bereitstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein manuelle Tätigkeit beim Entnehmen und Abpacken von Teilen. In der Industrie etablierte Entnahmeroboter, Kartonierer und Palettieranlagen können diesen Arbeitsschritt weitgehend automatisieren."
+      },
+      {
+        "name": "Qualitätskontrollen an gefertigten Teilen durchführen (Sichtprüfung, Stichprobenmessungen)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Prüfen mit Messmitteln und das bloße Auge vor Ort sind nicht durch Sprachmodelle exponiert. Kommerzielle optische Kameraprüfsysteme (Inline-Bildverarbeitung) und automatische Messzellen können jedoch über 50 % der Routineprüfungen übernehmen."
+      },
+      {
+        "name": "Einfache mechanische oder prozessbedingte Störungen an der Anlage lokalisieren und beheben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Beseitigen von Materialstaus, Nachstellen von Sensoren und Beheben mechanischer Kleinstörungen erfordert direktes handwerkliches Eingreifen an der Maschine."
+      },
+      {
+        "name": "Regelmässige Reinigungs-, Schmier- und einfache Wartungsarbeiten an den Maschinen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Reinigungs- und Instandhaltungsarbeiten direkt an und in den Produktionsanlagen lassen sich weder durch KI noch durch Standardrobotik in relevantem Umfang ersetzen."
+      },
+      {
+        "name": "Produktionsdaten, Stückzahlen und Stillstandscodes im Leitsystem (BDE/MES) erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Strukturierte Eingabe von Zahlen und Fehlercodes am Terminal erfordert kein Sprachmodell. Klassische Maschinendatenerfassung (MDE/BDE-Software mit direkter Steuerungsschnittstelle und Barcode-Scannern) übernimmt diese Erfassung automatisch."
+      },
+      {
+        "name": "Störungsmeldungen, Abweichungsnotizen und Einträge im Schichtbuch verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob freie Textprotokolle gegenüber standardisierten Störungscodes im Alltag genügend Raum einnehmen, um 50 % Zeitersparnis zu erzielen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Per Spracheingabe im MES oder Schichtbuch-Tool erstellt die KI aus kurzen Stichworten (auch bei Dialekt oder Fremdsprachenakzent) einen verständlichen Protokolleintrag; die Fachperson prüft jeden Eintrag vor dem Speichern. Umgebungslärm in der Werkhalle erhöht den Korrekturaufwand."
+      },
+      {
+        "name": "Mündliche Schichtübergabe an der Anlage durchführen und sich mit Team und Instandhaltung absprechen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare persönliche Abstimmung und Zeigen von Besonderheiten direkt an der laufenden Maschine."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Maschinenführer/in (angelernt oder EBA) in einem Schweizer Industriebetrieb (z. B. Kunststoff-, Verpackungs-, Lebensmittel- oder Metallverarbeitung) im Schichtbetrieb. Trotz fehlender ESCO-Kompetenzliste im Input lässt sich das Tätigkeitsprofil aus der Beschreibung und der Schweizer Betriebspraxis sehr klar ableiten; das Automatisierungspotenzial liegt überwiegend im Bereich P (Robotik, optische Prüfsysteme, MDE) und kaum bei generativer KI.",
+    "zusammenfassung": {
+      "haupt_risiko": "Gegenüber generativer KI ist lediglich das Verfassen kurzer Störungsmeldungen und Schichtbucheinträge per Spracheingabe exponiert; die eigentliche Maschinenbedienung, Rüst-, Prüf- und Wartungsarbeit bleibt unberührt.",
+      "begruendung": "Nur rund 5 % der Arbeitszeit entfallen auf schriftliche Schicht- und Störungsnotizen, bei denen KI im delegierenden Modus aus Spracheingaben oder Stichworten saubere Einträge formuliert, die vor dem Speichern geprüft werden. Die übrigen 95 % der Tätigkeit verlangen physische Präsenz und manuelle Eingriffe direkt an den Produktionsanlagen in Schweizer Industriebetrieben, wobei Umgebungslärm und Dialekt die Spracheingabe in der Werkhalle zusätzlich erschweren. Das relevante Automatisierungspotenzial liegt nicht bei Sprachmodellen, sondern bei klassischer Industrieautomatisierung (Bestückungs- und Verpackungsroboter, Kameraprüfung, MDE).",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }

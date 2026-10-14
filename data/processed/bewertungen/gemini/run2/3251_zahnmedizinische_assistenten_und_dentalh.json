@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "6c5a0ac84f787e8f674618d0610172fce1c7e9c922d310302c99cfc9415e4cf0",
+    "isco_code": "3251",
+    "beruf": "Zahnmedizinische Assistenten und Dentalhygieniker",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2153,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2153
+        }
+      ],
+      "prompt_token_count": 23214,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 23214
+        }
+      ],
+      "thoughts_token_count": 5965,
+      "total_token_count": 31332
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2153,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2153
+          }
+        ],
+        "prompt_token_count": 23214,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 23214
+          }
+        ],
+        "thoughts_token_count": 5965,
+        "total_token_count": 31332
+      }
+    ],
+    "request_ids": [
+      "XTzPaqayMbeBz7IPmfKIqA4"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r2-3251_zahnmedizinische_assistenten_und_dentalh",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3251",
+    "beruf": "Zahnmedizinische Assistenten und Dentalhygieniker",
+    "taetigkeiten": [
+      {
+        "name": "Stuhlassistenz bei zahnärztlichen Behandlungen leisten (Absaugen, Instrumente anreichen, Materialien anmischen)",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare manuelle Tätigkeit am Behandlungsstuhl (vierhändige Assistenz im Mundraum); weder durch generative KI noch durch verfügbare Robotik übernehmbar."
+      },
+      {
+        "name": "Professionelle Zahnreinigung, Zahnsteinentfernung und Mundhygieneinstruktion durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Feinmotorische klinische Behandlung im Mund der Patientinnen und Patienten sowie persönliche Instruktion vor Ort (Kernaufgabe in der Dentalhygiene und Prophylaxeassistenz)."
+      },
+      {
+        "name": "Behandlungszimmer vor- und nachbereiten sowie Oberflächen desinfizieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Hygiene- und Bereitstellungsarbeiten an der Behandlungseinheit zwischen den Sitzungen; keine kommerziell verfügbare Robotiklösung vorhanden."
+      },
+      {
+        "name": "Instrumente im Sterilisationsraum reinigen, verpacken und im Autoklaven sterilisieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Sortieren, Bestücken von Thermodesinfektor und Autoklav, Einschweissen sowie Chargenkontrolle und Einräumen sind physische Tätigkeiten."
+      },
+      {
+        "name": "Patientinnen und Patienten empfangen, für den Eingriff vorbereiten und bei Angst betreuen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Präsenz- und Beziehungstätigkeit zur Beruhigung ängstlicher Personen sowie physisches Lagern und Beobachten während der Behandlung."
+      },
+      {
+        "name": "Intraorale und extraorale Röntgenaufnahmen anfertigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Positionieren der Person, Einsetzen des Röntgensensors oder Halters im Mund und Auslösen der Aufnahme vor Ort."
+      },
+      {
+        "name": "Kieferabformungen oder intraorale 3D-Scans für Modelle und Zahnersatz vornehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Tätigkeit am Patienten im Behandlungsstuhl, sowohl bei konventionellen Abdrücken mit Abformmasse als auch beim Führen eines Intraoralscanners."
+      },
+      {
+        "name": "Zahnstatus, Parodontalbefunde und Behandlungsverlauf in der Praxissoftware erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Spracheingabe gegenüber dem direkten Anklicken im Zahnschema während des Untersuchs mindestens 50 % Zeit spart; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Spracherkennung mit Praxissoftware-Integration wandelt diktierte Befunde (Zahnschema, Taschentiefen, Verlaufsnotizen) in strukturierte Einträge um; die Fachperson prüft und verantwortet jeden Eintrag."
+      },
+      {
+        "name": "Termine verwalten, Recall-Aufgebote steuern und Leistungen nach Tarif abrechnen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Online-Terminbuchung, automatischer SMS-/E-Mail-Recall sowie die regelbasierte Tarifabrechnung (DENTOTAR) und elektronische Rechnungsübermittlung in der Praxissoftware sind klassische Softwarefunktionen ohne generative KI."
+      },
+      {
+        "name": "Patientenkorrespondenz, Begleitschreiben zu Kostenvoranschlägen und Antworten an Versicherer verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten E-Mails, Erläuterungen zu Heil- und Kostenplänen oder Schreiben an Versicherungen; die Fachperson prüft jedes Schreiben inhaltlich vor dem Versand."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Ambulante Schweizer Zahnarztpraxis. Die ISCO-Gruppe 3251 umfasst in der Schweiz sowohl Dentalassistent/innen EFZ (Sekundarstufe II, Schwerpunkt des ESCO-Profils) als auch Dentalhygieniker/innen HF; beide Profile wurden über Stuhlassistenz, Praxisadministration und professionelle Zahnreinigung abgebildet und bestehen weit überwiegend aus manueller Arbeit am Patienten.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind lediglich das Verfassen von Patienten- und Versicherungskorrespondenz mittels Chat-LLM sowie die Befund- und Verlaufsdokumentation per KI-Spracherkennung, während die klinische Arbeit am Behandlungsstuhl unberührt bleibt.",
+      "begruendung": "Nur rund 10 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI im delegierenden Modus Entwürfe für Schreiben und Dokumentationseinträge liefert, die einzeln fachlich geprüft werden. Der Kern des Berufs besteht aus feinmotorischer Arbeit im Mundraum, Hygieneprozessen und persönlicher Patientenbetreuung; zudem bremsen Datenschutzanforderungen (revDSG) und das Berufsgeheimnis den Einsatz externer KI-Dienste in Zahnarztpraxen.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

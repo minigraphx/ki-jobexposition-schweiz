@@ -10,87 +10,200 @@
     "beruf": "Metzger, Fischhändler und -verarbeiter und verwandte Berufe",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 340,
+      "candidates_token_count": 2052,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 340
+          "token_count": 2052
         }
       ],
-      "prompt_token_count": 23453,
+      "prompt_token_count": 23414,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 23453
+          "token_count": 23414
         }
       ],
-      "thoughts_token_count": 3821,
-      "total_token_count": 27614
+      "thoughts_token_count": 4040,
+      "total_token_count": 29506
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 340,
+        "candidates_token_count": 2052,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 340
+            "token_count": 2052
           }
         ],
-        "prompt_token_count": 23453,
+        "prompt_token_count": 23414,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 23453
+            "token_count": 23414
           }
         ],
-        "thoughts_token_count": 3821,
-        "total_token_count": 27614
+        "thoughts_token_count": 4040,
+        "total_token_count": 29506
       }
     ],
     "request_ids": [
-      "nrnOarC7KbG1_PUPj86l4AU"
+      "XjzParj5EfSAz7IP5t2zgAs"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten/0: 'name' is not of type 'object'; taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'; taetigkeiten/2: 'stufe' is not of type 'object'; taetigkeiten/3: 'modus' is not of type 'object'; taetigkeiten/4: 'restzeit_mensch' is not of type 'object'; taetigkeiten/5: 'physisch_automatisierbar' is not of type 'object'; taetigkeiten/6: 'p_art' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-7511_metzger_fischhaendler_und_verarbeiter_un",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten/0: 'name' is not of type 'object'",
-      "taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'",
-      "taetigkeiten/2: 'stufe' is not of type 'object'",
-      "taetigkeiten/3: 'modus' is not of type 'object'",
-      "taetigkeiten/4: 'restzeit_mensch' is not of type 'object'",
-      "taetigkeiten/5: 'physisch_automatisierbar' is not of type 'object'",
-      "taetigkeiten/6: 'p_art' is not of type 'object'",
-      "taetigkeiten/7: 'sicherheit' is not of type 'object'",
-      "taetigkeiten/8: 'sicherheit_begruendung' is not of type 'object'",
-      "taetigkeiten/9: 'ch_hemmnis' is not of type 'object'",
-      "taetigkeiten/10: 'begruendung' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\n  \"isco_code\": \"7511\",\n  \"beruf\": \"Metzger, Fischhändler und -verarbeiter und verwandte Berufe\",\n  \"taetigkeiten\": [\n        \"name\",\n    \"zeitanteil_pct\",\n    \"stufe\",\n    \"modus\",\n    \"restzeit_mensch\",\n    \"physisch_automatisierbar\",\n    \"p_art\",\n    \"sicherheit\",\n    \"sicherheit_begruendung\",\n    \"ch_hemmnis\",\n    \"begruendung\"\n  ],\n  \"taetigkeiten\": [\n    \"name\",\n    \"zeitanteil_pct\",\n    \"stufe\",\n    \"modus\",\n    \"restzeit_mensch\",\n    \"physisch_automatisierbar\",\n    \"p_art\",\n    \"sicherheit\",\n    \"sicherheit_begruendung\",\n    \"ch_hemmnis\",\n    \"begruendung\"\n  ],\n  \"taetigkeiten\": [\n    \"name\",\n    \"zeitanteil_pct\",\n    \"stufe\",\n    \"modus\",\n    \"restzeit_mensch\",\n    \"physisch_automatisierbar\",\n    \"p_art\",\n    \"sicherheit\",\n    \"sicherheit_begruendung\",\n    \"ch_hemmnis\",\n    \"begruendung\"\n  ]\n}"
+  "bewertung": {
+    "isco_code": "7511",
+    "beruf": "Metzger, Fischhändler und -verarbeiter und verwandte Berufe",
+    "taetigkeiten": [
+      {
+        "name": "Schlachtkörper, Fleischhälften und Fisch zerlegen, ausbeinen und parieren",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische, handwerkliche Tätigkeit mit Messern und Sägen an anatomisch variierendem Naturprodukt; Zerlegeroboter decken in typischen Schweizer Betrieben keine 50 % dieser Arbeit ab."
+      },
+      {
+        "name": "Wurstwaren, Brät und Fleischspezialitäten herstellen (Wolfen, Kuttern, Würzen, Abfüllen, Räuchern)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Verarbeitung und Maschinenbedienung an Wolf, Kutter, Füllmaschine und Koch-/Rauchanlage inklusive sensorischer Kontrolle des Bräts."
+      },
+      {
+        "name": "Verkaufsfertige Fleisch- und Fischstücke portionieren, marinieren und für Auslage oder Versand herrichten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Feinschneiden, Dressieren, Panieren, Marinieren und Anrichten erfordert unmittelbare Handarbeit und optische Qualitätskontrolle."
+      },
+      {
+        "name": "Fleisch-, Fisch- und Wurstwaren verpacken, vakuumieren, wiegen und etikettieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit ohne Exposition gegenüber generativer KI; automatische Tiefzieh-, Verpackungs- und Preisauszeichnungsstrassen sind kommerziell verfügbar und können über 50 % der manuellen Abpackzeit übernehmen."
+      },
+      {
+        "name": "Maschinen, Werkzeuge, Zerlegetische und Kühlräume reinigen und desinfizieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Reinigungs- und Desinfektionsarbeit vor Ort an komplex geformten Verarbeitungsmaschinen und Arbeitsflächen."
+      },
+      {
+        "name": "Kundschaft an der Bedientheke beraten, Waren frisch aufschneiden, abwiegen und verkaufen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Präsenz- und Beratungstätigkeit von Angesicht zu Angesicht, kombiniert mit manuellem Aufschneiden und Abwiegen an der Frischetheke."
+      },
+      {
+        "name": "Wareneingang, Fleischqualität, Kühlkettentemperaturen und Chargenrückverfolgbarkeit nach HACCP kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit liegt überwiegend in der physischen und sensorischen Prüfung (Kerntemperatur, pH-Wert, Farbe, Geruch) am Wareneingang und in den Kühlräumen."
+      },
+      {
+        "name": "Kundenbestellungen aus Gastronomie und Detailhandel erfassen und Rüstlisten erstellen",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Dokumenten- und Sprachverarbeitung liest Freitext-Bestellungen (E-Mail, Chat, Sprachnachricht) aus und legt Bestellvorschläge sowie Rüstlisten im ERP an, die die Fachperson einzeln auf Zuschnitt- und Mengenangaben prüft. Parallel können klassische B2B-Bestellportale und EDI-Schnittstellen die Erfassung weitgehend automatisieren."
+      },
+      {
+        "name": "Rezepturen, Produktspezifikationen, Allergendeklarationen und Wochenangebote erstellen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus Zutatenlisten und Stichworten Produktspezifikationen, Zutaten-/Allergendeklarationen und Angebotstexte; die Fachperson prüft jeden Entwurf inhaltlich auf Einhaltung des Schweizer Lebensmittelrechts."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting ist eine ausgebildete Fleischfachperson EFZ in einem typischen Schweizer Metzgerei- oder Fleischverarbeitungsbetrieb (Kombination aus Zerlegung, Verarbeitung/Wursterei und Verkauf/Auftragsabwicklung). Die Tätigkeiten sind stark physisch-handwerklich geprägt, weshalb die Einstufung als überwiegend E0 sehr robust ist. Leichte Varianz besteht je nach Betriebsgrösse zwischen gewerblicher Metzgerei mit höherem Theken-/Administrationsanteil und rein industrieller Fleischverarbeitung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind lediglich die Erfassung von Kundenbestellungen samt Rüstlistenerstellung durch integrierte KI-Extraktion sowie das Entwerfen von Produktspezifikationen, Deklarationen und Angebotstexten per Chat-LLM; die handwerkliche Fleisch- und Fischverarbeitung bleibt unberührt.",
+      "begruendung": "Nur rund 7 % der Arbeitszeit entfallen auf KI-exponierte administrative Randtätigkeiten, während über 90 % aus physischer Zerlege-, Verarbeitungs-, Reinigungs- und Verkaufsarbeit bestehen. In den exponierten Aufgaben arbeitet die KI im delegierenden Modus, da jede Bestellerfassung auf spezifische Zuschnittwünsche und jede Deklaration wegen strenger Vorgaben des Schweizer Lebensmittelrechts (Allergen- und Herkunftskennzeichnung) fachlich geprüft werden muss.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }

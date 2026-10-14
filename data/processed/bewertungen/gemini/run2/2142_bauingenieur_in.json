@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "6d13935f213521df279bc754bd625424c34098d9c809ec7c7a3fb7c4e48bb9a2",
+    "isco_code": "2142",
+    "beruf": "Bauingenieur/in",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2382,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2382
+        }
+      ],
+      "prompt_token_count": 22891,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22891
+        }
+      ],
+      "thoughts_token_count": 7298,
+      "total_token_count": 32571
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2382,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2382
+          }
+        ],
+        "prompt_token_count": 22891,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22891
+          }
+        ],
+        "thoughts_token_count": 7298,
+        "total_token_count": 32571
+      }
+    ],
+    "request_ids": [
+      "xD_Par66BI3jqtsPtpOG4AE"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2142_bauingenieur_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2142",
+    "beruf": "Bauingenieur/in",
+    "taetigkeiten": [
+      {
+        "name": "Tragwerksanalysen, statische Berechnungen und Bemessungen in Fachsoftware durchführen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Modellierung von Tragwerken, die Festlegung von Lastannahmen nach SIA-Normen und die Bemessung in FEM-/Statik-Software erfordern ingenieurtechnisches Urteilsvermögen; generative KI spart hier keine 50 % der Zeit bei gleicher Sicherheit."
+      },
+      {
+        "name": "Konstruktions-, Schalungs- und Bewehrungspläne sowie BIM-Modelle prüfen, anpassen und freigeben",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Kontrolle von Plänen und 3D-Modellen (die in der Schweiz meist von Zeichner/innen EFZ erstellt werden) auf statische Korrektheit und Ausführbarkeit erfordert räumlich-konstruktives Denken, bei dem heutige KI-Werkzeuge die 50-%-Schwelle nicht erreichen."
+      },
+      {
+        "name": "Bauausführung vor Ort überwachen, Baukontrollen und Bewehrungsabnahmen durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz und visuelle Kontrolle auf der Baustelle (z. B. Bewehrungskontrolle vor dem Betonieren, Baugrubensicherung, Sicherheitsvorschriften) sind nicht durch KI ersetzbar."
+      },
+      {
+        "name": "Planungssitzungen mit Bauherrschaft, Architekten, Behörden und Fachplanern führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Präsenz-, Beratungs- und Verhandlungstätigkeit zur Koordination komplexer Bauvorhaben zwischen verschiedenen Projektbeteiligten."
+      },
+      {
+        "name": "Technische Berichte, Machbarkeitsstudien und statische Nachweisdokumentationen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus eingegebenen Projektkennwerten, Berechnungsergebnissen und Normvorgaben strukturierte Berichte und Nutzungsvereinbarungen; die Ingenieurin steuert den Inhalt und prüft jeden Bericht fachlich im Detail."
+      },
+      {
+        "name": "Mengenermittlungen, Leistungsverzeichnisse (NPK) und Baukostenschätzungen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative KI erreicht bei der exakten Massenauswertung aus Plänen und der NPK-Codierung noch keine 50 % Zeitersparnis; jedoch kann klassische BIM-zu-AVA-Software (automatisierter Mengenauszug und SIA-451-Schnittstelle) über 50 % der heute oft noch manuellen Ausmass- und Devisierungsarbeit übernehmen."
+      },
+      {
+        "name": "Ausschreibungsunterlagen, Baubeschriebe und Werkvertragsentwürfe ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Projektspezifikationen und Vorlagen erstellt ein Chat-LLM Entwürfe für besondere Bestimmungen (nach SIA 118), Baubeschriebe und Verträge; der Bauingenieur prüft jede Klausel auf rechtliche und technische Konsistenz."
+      },
+      {
+        "name": "Sitzungsprotokolle, Baustellenrapporte, Aktennotizen und Projektkorrespondenz erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe- und Transkriptionswerkzeuge sowie Bau-Apps (inkl. Fotodokumentation) erstellen Protokoll- und Rapportentwürfe, die der Ingenieur wegen der vertraglichen Relevanz und allfälliger Dialektfehler einzeln prüft und freigibt."
+      },
+      {
+        "name": "Unternehmerofferten prüfen, Nachträge beurteilen und Bauabrechnungen kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die KI-Dokumentenanalyse über alle Fälle mindestens 50 % Zeit spart, da die materielle Prüfung von Ausmassen und Baustellensachverhalten viel Zeit bindet; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Ingenieurin beurteilt Nachtragsforderungen und Abrechnungen weiterhin selbst; KI-gestützte Dokumenten- und Tabellenanalyse gleicht Offerten, Werkverträge und Regierapporte ab und markiert Abweichungen."
+      },
+      {
+        "name": "Projekttermine, Ressourcen und Kosten überwachen sowie Projekte intern steuern",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die laufende Termin-, Honorar- und Ressourcensteuerung stützt sich auf klassische ERP-/Projektmanagement-Software und erfordert laufende Abstimmung und Führungsentscheide."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Bauingenieur/in (FH/ETH) als Projektleiter/in und Tragwerksplaner/in in einem Schweizer Ingenieurbüro (Hoch- und Tiefbau). Die reine CAD-Zeichnungsarbeit liegt in der Schweiz überwiegend bei Zeichner/innen EFZ Fachrichtung Ingenieurbau, weshalb beim Bauingenieur Berechnung, Planprüfung, Ausschreibung und Fachbauleitung im Vordergrund stehen. ESCO-Rauschen (Open-Source-Software entwickeln, Forschungsdaten verwalten) wurde ignoriert.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Verfassen technischer Berichte, Machbarkeitsstudien, Ausschreibungstexte und Protokolle sowie die Vorprüfung von Offerten und Nachträgen durch Sprachmodelle, Spracheingabe-Tools und KI-Dokumentenanalyse.",
+      "begruendung": "Rund ein Viertel der Arbeitszeit ist gegenüber generativer KI exponiert, während die Kernaufgaben wie statische Bemessung, Planprüfung, Bauleitung vor Ort und Projektsitzungen kaum betroffen sind. In den exponierten dokumentations- und textlastigen Bereichen arbeitet die KI überwiegend delegierend oder unterstützend, da jede Ausgabe fachlich im Detail geprüft werden muss. In der Schweiz bremsen insbesondere hohe Haftungsrisiken für die Tragsicherheit (OR, SIA-Normen) sowie strenge Vorgaben im öffentlichen Beschaffungsrecht (BöB/IVöB) einen ungeprüften KI-Einsatz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

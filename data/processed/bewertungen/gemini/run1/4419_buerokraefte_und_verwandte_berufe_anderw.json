@@ -10,84 +10,217 @@
     "beruf": "Bürokräfte und verwandte Berufe, anderweitig nicht genannt",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 435,
+      "candidates_token_count": 2377,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 435
+          "token_count": 2377
         }
       ],
-      "prompt_token_count": 21038,
+      "prompt_token_count": 20999,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21038
+          "token_count": 20999
         }
       ],
-      "thoughts_token_count": 6307,
-      "total_token_count": 27780
+      "thoughts_token_count": 6232,
+      "total_token_count": 29608
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 435,
+        "candidates_token_count": 2377,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 435
+            "token_count": 2377
           }
         ],
-        "prompt_token_count": 21038,
+        "prompt_token_count": 20999,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21038
+            "token_count": 20999
           }
         ],
-        "thoughts_token_count": 6307,
-        "total_token_count": 27780
+        "thoughts_token_count": 6232,
+        "total_token_count": 29608
       }
     ],
     "request_ids": [
-      "nrnOaoGjLYmc_uMPqZXzoA0"
+      "XTzParuOILCsz7IP3NihgQ0"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: taetigkeiten/0: 'Kundenbestellungen und Auftragsdokumente (E-Mail, PDF) prüfen und im ERP-System erfassen' is not of type 'object'; taetigkeiten/1: 'Standardkorrespondenz mit Kundschaft und Lieferanten verfassen (Auftragsbestätigungen, Lieferauskünfte, Nachforderungen)' is not of type 'object'; taetigkeiten/2: 'Rechnungs- und Buchhaltungsbelege mit Bestell- und Lieferscheinen abgleichen und Unstimmigkeiten markieren' is not of type 'object'; taetigkeiten/3: 'Verkaufs- und Bestandsdaten zusammenstellen und periodische Berichte für Abteilungen erstellen' is not of type 'object'; taetigkeiten/4: 'Kunden- und Artikelstammdaten sowie Verkaufsaufzeichnungen aus Änderungsmeldungen im System pflegen' is not of type 'object'; taetigkeiten/5: 'Telefonische Standardauskünfte zu Auftragsstatus, Lieferterminen und Rechnungen erteilen' is not of type 'object'; taetigkeiten/6: 'Geschäftsbezogene Recherchen zu Kunden, Lieferanten und Marktdaten durchführen und aufbereiten' is not of type 'object'; taetigkeiten/7: 'Physische Ein- und Ausgangspost öffnen, sortieren, scannen und verteilen sowie Büromaterial bewirtschaften' is not of type 'object'; taetigkeiten/8: 'Unterlagen und Präsentationen für Verkaufsplanung und Absatzförderung nach Vorgabe erstellen' is not of type 'object'; taetigkeiten/9: 'Reklamationen, Lieferverzögerungen und komplexe Sonderfälle mit Kundschaft und internen Stellen abklären' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-4419_buerokraefte_und_verwandte_berufe_anderw",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "taetigkeiten/0: 'Kundenbestellungen und Auftragsdokumente (E-Mail, PDF) prüfen und im ERP-System erfassen' is not of type 'object'",
-      "taetigkeiten/1: 'Standardkorrespondenz mit Kundschaft und Lieferanten verfassen (Auftragsbestätigungen, Lieferauskünfte, Nachforderungen)' is not of type 'object'",
-      "taetigkeiten/2: 'Rechnungs- und Buchhaltungsbelege mit Bestell- und Lieferscheinen abgleichen und Unstimmigkeiten markieren' is not of type 'object'",
-      "taetigkeiten/3: 'Verkaufs- und Bestandsdaten zusammenstellen und periodische Berichte für Abteilungen erstellen' is not of type 'object'",
-      "taetigkeiten/4: 'Kunden- und Artikelstammdaten sowie Verkaufsaufzeichnungen aus Änderungsmeldungen im System pflegen' is not of type 'object'",
-      "taetigkeiten/5: 'Telefonische Standardauskünfte zu Auftragsstatus, Lieferterminen und Rechnungen erteilen' is not of type 'object'",
-      "taetigkeiten/6: 'Geschäftsbezogene Recherchen zu Kunden, Lieferanten und Marktdaten durchführen und aufbereiten' is not of type 'object'",
-      "taetigkeiten/7: 'Physische Ein- und Ausgangspost öffnen, sortieren, scannen und verteilen sowie Büromaterial bewirtschaften' is not of type 'object'",
-      "taetigkeiten/8: 'Unterlagen und Präsentationen für Verkaufsplanung und Absatzförderung nach Vorgabe erstellen' is not of type 'object'",
-      "taetigkeiten/9: 'Reklamationen, Lieferverzögerungen und komplexe Sonderfälle mit Kundschaft und internen Stellen abklären' is not of type 'object'",
-      "zusammenfassung: 'haupt_risiko' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"4419\",\"beruf\":\"Bürokräfte und verwandte Berufe, anderweitig nicht genannt\",\"taetigkeiten\":[\n  \"Kundenbestellungen und Auftragsdokumente (E-Mail, PDF) prüfen und im ERP-System erfassen\",\n  \"Standardkorrespondenz mit Kundschaft und Lieferanten verfassen (Auftragsbestätigungen, Lieferauskünfte, Nachforderungen)\",\n  \"Rechnungs- und Buchhaltungsbelege mit Bestell- und Lieferscheinen abgleichen und Unstimmigkeiten markieren\",\n  \"Verkaufs- und Bestandsdaten zusammenstellen und periodische Berichte für Abteilungen erstellen\",\n  \"Kunden- und Artikelstammdaten sowie Verkaufsaufzeichnungen aus Änderungsmeldungen im System pflegen\",\n  \"Telefonische Standardauskünfte zu Auftragsstatus, Lieferterminen und Rechnungen erteilen\",\n  \"Geschäftsbezogene Recherchen zu Kunden, Lieferanten und Marktdaten durchführen und aufbereiten\",\n  \"Physische Ein- und Ausgangspost öffnen, sortieren, scannen und verteilen sowie Büromaterial bewirtschaften\",\n  \"Unterlagen und Präsentationen für Verkaufsplanung und Absatzförderung nach Vorgabe erstellen\",\n  \"Reklamationen, Lieferverzögerungen und komplexe Sonderfälle mit Kundschaft und internen Stellen abklären\"\n],\"unsicherheit\":\"mittel\",\"kommentar\":\"ISCO 4419 ist eine heterogene Sammelkategorie für allgemeine Büro- und Sachbearbeitungskräfte, während ESCO den Beruf enger als Verkaufssachbearbeitung modelliert. Bewertet wurde daher eine typische kaufmännische Sachbearbeitungsstelle im Innendienst/Backoffice eines Schweizer KMU, die allgemeine Büro- und Postarbeiten mit Auftrags-, Rechnungs- und Verkaufsadministration verbindet.\",\"zusammenfassung\":\n  \"haupt_risiko\"\n}"
+  "bewertung": {
+    "isco_code": "4419",
+    "beruf": "Bürokräfte und verwandte Berufe, anderweitig nicht genannt",
+    "taetigkeiten": [
+      {
+        "name": "Eingehende Dokumente, Formulare und Auftragsbelege sichten und Daten im ERP- oder CRM-System erfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM-gestützte Dokumentenerkennung mit Systemintegration extrahiert Daten aus heterogenen PDFs, Scans und E-Mails direkt ins Fachsystem; die Sachbearbeiterin bearbeitet nur markierte Ausnahmen. Klassische Formularerkennung allein reicht bei unstrukturierten Kundenbelegen nicht für 50 % Zeitersparnis."
+      },
+      {
+        "name": "Standardkorrespondenz, Auftragsbestätigungen und einfache Kundenanfragen schriftlich beantworten",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus kurzen Stichworten oder kopierten Falldaten fertige E-Mails und Briefe; die Bürokraft sichtet den Text nur kurz auf Plausibilität und gibt ihn frei."
+      },
+      {
+        "name": "Eingehende und ausgehende Post- und Kuriersendungen physisch sortieren, öffnen, frankieren und verteilen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Handhabung von Briefen, Paketen und interner Hauspost vor Ort; in typischen KMU- und Verwaltungsbüros nicht durch Robotik automatisierbar."
+      },
+      {
+        "name": "Verkaufsrechnungen und Lieferscheine im ERP-System fakturieren sowie regelbasierte Zahlungsabgleiche durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Fakturierung aus Auftragsdaten und Zahlungsabgleich per QR-Referenz werden durch klassische ERP- und Buchhaltungssoftware ohne generative KI automatisiert."
+      },
+      {
+        "name": "Rechnungsbeanstandungen, Rückerstattungsanträge und Belegabweichungen prüfen und klären",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Sachbearbeiterin prüft und entscheidet jeden Abweichungs- und Kulanzfall selbst; KI-gestützte Dokumenten- und ERP-Abgleiche markieren Differenzen zwischen Bestellung, Lieferschein und Rechnung."
+      },
+      {
+        "name": "Verkaufs-, Auftrags- und Betriebsdaten zusammenstellen und periodische Standardberichte erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Analysefunktionen in Tabellenkalkulation oder ERP erstellen Auswertungen und Berichtsentwürfe, die die Bürokraft spezifiziert und fachlich auf Zahlenrichtigkeit prüft. Standardberichte lassen sich zudem mit klassischen BI- und Reporting-Tools automatisieren."
+      },
+      {
+        "name": "Telefonische Standardauskünfte zu Auftragsstatus, Lieferterminen und allgemeinen Bürofragen erteilen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Die Verlässlichkeit von Voicebots bei Schweizerdeutsch und gemischten Kundenanliegen in KMU ist unsicher; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Ein Voicebot mit Zugriff auf das Auftrags- bzw. Informationssystem beantwortet Routineanfragen selbständig; die Bürokraft übernimmt nur weitergeleitete Spezialfälle."
+      },
+      {
+        "name": "Geschäftsbezogene Recherchen zu Kunden, Lieferanten oder Marktdaten im Internet und in Datenbanken durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein KI-Recherche-Agent trägt Informationen aus Webquellen und Registern zusammen und strukturiert sie; die Sachbearbeiterin gibt den Suchauftrag vor und verifiziert die Ergebnisse anhand der Quellen."
+      },
+      {
+        "name": "Text- und Präsentationsentwürfe für Offerten, Verkaufsförderung oder interne Dokumentation erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Vorgaben und Produktinformationen Entwürfe für Angebots- und Verkaufsunterlagen; die Bürokraft prüft und überarbeitet jede Fassung inhaltlich."
+      },
+      {
+        "name": "Besuchende am Empfang betreuen, Sitzungszimmer bereitstellen, Büromaterial bewirtschaften und Abläufe im Team abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz am Empfang, Vorbereiten von Räumen sowie persönliche Koordination vor Ort lassen sich nicht durch Sprachmodelle übernehmen."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Kaufmännische Sachbearbeitung / allgemeine Büro- und Innendienstkraft in einem Schweizer KMU oder einer Verwaltungseinheit. Da ISCO 4419 eine Sammel- und Restkategorie für allgemeine Bürokräfte ist und das ESCO-Profil stark auf Verkaufssachbearbeitung (ISCO 4311) fokussiert, wurden allgemeine administrative Aufgaben mit auftrags- und verkaufsbezogenen Backoffice-Tätigkeiten kombiniert. Die grösste Unsicherheit besteht bei der Automatisierbarkeit telefonischer Auskünfte im Dialekt sowie bei der genauen Zeitverteilung je nach Betrieb.",
+    "zusammenfassung": {
+      "haupt_risiko": "Vor allem die Datenerfassung aus Belegen, die schriftliche Standardkorrespondenz, telefonische Routineauskünfte sowie das Erstellen von Berichten und Recherchen werden durch Dokumenten-KI, Chat-LLMs, Voicebots und Analyse-Agenten stark verändert.",
+      "begruendung": "Rund 70 % der Arbeitszeit sind gegenüber generativer KI exponiert: Bei Datenerfassung, Standardkorrespondenz und einfachen Telefonauskünften wirkt die KI überwiegend ersetzend, während sie bei Datenberichten, Recherchen und Textentwürfen delegierend sowie bei der Klärung von Rechnungsabweichungen unterstützend eingesetzt wird. Physische Post- und Empfangsaufgaben sowie die bereits durch klassische ERP-Software automatisierbare Fakturierung sind nicht durch LLMs exponiert; in der Schweiz bremsen zudem Datenschutzvorgaben (revDSG), mehrsprachige Unterlagen und die Kundenerwartung an persönlichen Telefonkontakt die Umsetzung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

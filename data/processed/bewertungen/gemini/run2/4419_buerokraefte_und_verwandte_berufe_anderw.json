@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "7ce55ed6edea33110377fb4b34f42f9fa276f319731ae0da735a2d9a4193da7b",
+    "isco_code": "4419",
+    "beruf": "Bürokräfte und verwandte Berufe, anderweitig nicht genannt",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2390,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2390
+        }
+      ],
+      "prompt_token_count": 20999,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 20999
+        }
+      ],
+      "thoughts_token_count": 6149,
+      "total_token_count": 29538
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2390,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2390
+          }
+        ],
+        "prompt_token_count": 20999,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 20999
+          }
+        ],
+        "thoughts_token_count": 6149,
+        "total_token_count": 29538
+      }
+    ],
+    "request_ids": [
+      "xD_Parr8BqSt_PUPotaH2QY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-4419_buerokraefte_und_verwandte_berufe_anderw",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "4419",
+    "beruf": "Bürokräfte und verwandte Berufe, anderweitig nicht genannt",
+    "taetigkeiten": [
+      {
+        "name": "Standardkorrespondenz und routinemässige E-Mail-Anfragen aus Stichworten beantworten",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus kurzen Stichworten oder kopierten Falldaten fertige E-Mails und Briefe; die Bürokraft sichtet den Entwurf nur kurz zur Freigabe."
+      },
+      {
+        "name": "Auftragsdaten, Kundenmutationen und Formulare aus E-Mails oder PDF-Belegen im ERP erfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM-gestützte Dokumenten- und E-Mail-Extraktion mit Systemanbindung übernimmt die Datenerfassung aus heterogenen Vorlagen; der Mensch bearbeitet nur markierte Ausnahmen."
+      },
+      {
+        "name": "Standard-Verkaufsbelege, Rechnungen und Gutschriften im ERP-System auslösen und verbuchen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Erstellung und Verbuchung standardisierter Rechnungen und Belege aus vorhandenen Auftragsdaten erfolgt über regelbasierte Workflows in klassischer ERP-Software ohne generative KI."
+      },
+      {
+        "name": "Kundenrechnungen, Lieferscheine und Buchhaltungsbelege auf Unstimmigkeiten prüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Analysefunktionen gleichen Belege, Rechnungen und Auftragsdaten ab und markieren Abweichungen; die Sachbearbeiterin prüft und klärt die markierten Fälle selbst."
+      },
+      {
+        "name": "Verkaufs-, Bestands- und Betriebsdaten zusammenstellen und regelmässige Berichte erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Assistenten in Tabellenkalkulationen oder BI-Systemen werten die Daten aus und entwerfen den Bericht samt Kommentar; die Fachperson spezifiziert die Abfrage und kontrolliert jede Kennzahl fachlich."
+      },
+      {
+        "name": "Geschäftsbezogene Recherchen zu Märkten, Lieferanten oder Kunden durchführen und aufbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Webzugriff tragen Informationen zusammen und erstellen strukturierte Übersichten; die Bürokraft steuert die Suche und verifiziert die Angaben anhand der Quellen."
+      },
+      {
+        "name": "Physische Ein- und Ausgangspost sowie Paketsendungen öffnen, sortieren und versandfertig machen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Handhabung von Briefen und Paketen vor Ort; in typischen Schweizer Bürobetrieben nicht durch Robotik automatisierbar."
+      },
+      {
+        "name": "Telefonische Standardauskünfte zu Aufträgen, Terminen und Lieferungen erteilen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Die Erkennungsqualität von Voicebots bei Schweizerdeutschem Dialekt am Telefon ist im KMU-Alltag unsicher; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Ein Voicebot mit Systemzugriff beantwortet routinemässige Statusanfragen selbständig; die Bürokraft übernimmt nur weitergeleitete Spezialfälle."
+      },
+      {
+        "name": "Sitzungsprotokolle, Aktennotizen und interne Mitteilungen aus Aufnahmen oder Stichworten erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Transkriptions- und Zusammenfassungssoftware erstellt das Protokoll automatisch; die protokollführende Person liest gegen und gibt das Dokument frei."
+      },
+      {
+        "name": "Eingangsdokumente und digitale Dossiers klassifizieren, indexieren und im System ablegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumentenmanagementsysteme mit LLM-gestützter Texterkennung lesen Metadaten aus und legen Dateien automatisch im richtigen Dossier ab; der Mensch prüft nur unklare Fälle."
+      },
+      {
+        "name": "Interne Büroabläufe koordinieren, Büromaterial bewirtschaften und Absprachen im Team führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Abstimmung im Team und physische Bewirtschaftung der Büroinfrastruktur vor Ort erreichen mit Sprachmodellen keine 50 % Zeitersparnis."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Kaufmännische Bürokraft / Sachbearbeiter/in im Innendienst und Backoffice eines Schweizer KMU oder einer Verwaltungseinheit. Da ISCO 4419 eine Sammel- und Restkategorie ist und die ESCO-Zuordnung schwerpunktmässig die Verkaufssachbearbeitung abbildet, wurden allgemeine administrative Kerntätigkeiten mit kaufmännischer Auftrags- und Berichtsbearbeitung kombiniert. Die Unsicherheit liegt vor allem in der Heterogenität der Sammelgruppe.",
+    "zusammenfassung": {
+      "haupt_risiko": "Vor allem die Standardkorrespondenz, die Datenerfassung aus Belegen, die digitale Dokumentenablage sowie Berichte und Recherchen werden durch Chat-LLMs, KI-Dokumentenextraktion und Recherche-Agenten weitgehend übernommen oder stark beschleunigt.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im ersetzenden Modus bei Routinekorrespondenz, Datenerfassung und Ablage sowie delegierend bei Berichten und Recherchen. Nicht exponiert bleiben physische Postverarbeitung, klassische ERP-Fakturierung und persönliche Teamkoordination. In Schweizer KMU bremsen vor allem die Erwartung persönlicher telefonischer Erreichbarkeit (Vertrauen) sowie die Dialektverarbeitung am Telefon einen vollständigen Ersatz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

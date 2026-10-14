@@ -10,78 +10,203 @@
     "beruf": "Maschinenbautechniker, Techniker im Bereich Systemtechnik, Automation und Unternehmensprozesse",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 55,
+      "candidates_token_count": 2103,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 55
+          "token_count": 2103
         }
       ],
-      "prompt_token_count": 21474,
+      "prompt_token_count": 21435,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21474
+          "token_count": 21435
         }
       ],
-      "thoughts_token_count": 8597,
-      "total_token_count": 30126
+      "thoughts_token_count": 5572,
+      "total_token_count": 29110
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 55,
+        "candidates_token_count": 2103,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 55
+            "token_count": 2103
           }
         ],
-        "prompt_token_count": 21474,
+        "prompt_token_count": 21435,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21474
+            "token_count": 21435
           }
         ],
-        "thoughts_token_count": 8597,
-        "total_token_count": 30126
+        "thoughts_token_count": 5572,
+        "total_token_count": 29110
       }
     ],
     "request_ids": [
-      "nrnOaoSWLKvX_uMP-8qPkQE"
+      "XTzPapq0Bf7oz7IP17yB4Qw"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: ['...'] is too short; taetigkeiten/0: '...' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-3115_maschinenbautechniker_techniker_im_berei",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: ['...'] is too short",
-      "taetigkeiten/0: '...' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"3115\",\"beruf\":\"Maschinenbautechniker, Techniker im Bereich Systemtechnik, Automation und Unternehmensprozesse\",\"taetigkeiten\":[\"...\"]}"
+  "bewertung": {
+    "isco_code": "3115",
+    "beruf": "Maschinenbautechniker, Techniker im Bereich Systemtechnik, Automation und Unternehmensprozesse",
+    "taetigkeiten": [
+      {
+        "name": "Mechanische Bauteile und Baugruppen im 3D-CAD konstruieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die geometrische 3D-Modellierung im CAD unter Berücksichtigung von Einbauverhältnissen, Werkstoffen und Fertigungsverfahren erreicht mit heutiger generativer KI keine Zeitersparnis von 50 %."
+      },
+      {
+        "name": "Fertigungszeichnungen, Konstruktionspläne und Stücklisten erstellen und anpassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Standardansichten und Stücklistenexporte erledigt klassische CAD-/PDM-Software bereits heute; die verbleibende Arbeit (Form- und Lagetoleranzen, Passungen, Änderungsprüfung) erfordert konstruktives Fachurteil und erreicht mit KI nicht die 50-%-Schwelle."
+      },
+      {
+        "name": "Technische Anforderungen, Pflichtenhefte und Bauteilspezifikationen ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM entwirft aus Stichworten, Kundenanforderungen und Normvorgaben strukturierte Pflichtenhefte und Spezifikationen; der Techniker gibt die Randbedingungen vor und prüft jede Anforderung fachlich."
+      },
+      {
+        "name": "Steuerungs- und Automationsprogramme sowie Testskripte erstellen und anpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Sprachmodell generiert Funktionsbausteine (z. B. Structured Text nach IEC 61131-3) und Auswerteskripte nach Spezifikation; der Techniker integriert den Code und prüft sowie testet jede Änderung hinsichtlich Funktion und Maschinensicherheit."
+      },
+      {
+        "name": "Prüfstände aufbauen sowie Funktionstests und Messreihen an Prototypen durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit am Prüfstand und an Prototypen im Labor oder Prüffeld (Sensoren montieren, Prüflinge einrichten, Testläufe fahren und überwachen)."
+      },
+      {
+        "name": "Fehlersuche und Störungsbehebung an Maschinen und Automationsanlagen vor Ort betreiben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Diagnose- und Eingriffsarbeit direkt an der Maschine in der Werkhalle oder beim Kunden (Signale messen, Mechanik justieren, Komponenten tauschen)."
+      },
+      {
+        "name": "Mess-, Test- und Produktionsdaten auswerten sowie Prozessoptimierungen berechnen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM-gestützte Datenanalyse-Werkzeuge (Code-Ausführung, Tabellen-Integration) bereinigen Messreihen sowie Prozessdaten und erstellen statistische Auswertungen und Diagramme; der Techniker steuert die Analyse und prüft jedes Ergebnis auf physikalische und betriebliche Plausibilität."
+      },
+      {
+        "name": "Prüfberichte, technische Dokumentationen und Betriebsanleitungen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Messprotokollen und Stichworten vollständige Prüfberichte und Kapitel für Betriebsanleitungen (inkl. Übersetzung in Landessprachen und Englisch); der Techniker prüft jedes Dokument inhaltlich und auf Normkonformität."
+      },
+      {
+        "name": "Technische Abstimmungen mit Ingenieuren, Werkstatt und Lieferanten führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche und mündliche Koordination, Konstruktionsbesprechungen am Bauteil sowie Abstimmungen mit Fertigung und Lieferanten."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting ist ein/e Techniker/in HF (bzw. erfahrene Fachkraft in Technikerfunktion) in einem Schweizer Industrie- und Maschinenbau-KMU (MEM-Branche). Da der Berufstitel Konstruktion, Systemtechnik/Automation und Unternehmensprozesse bündelt, wurde ein ausgewogenes Profil zwischen Entwicklung, Versuch und Prozessanalyse modelliert; je nach Betriebsschwerpunkt variieren die Zeitanteile. Ein Grenzfall besteht bei der SPS-Programmierung, wo hardwarenahe Sicherheitslogik den Prüfaufwand erhöht.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind das Ausarbeiten von Pflichtenheften, das Erstellen von Steuerungs- und Auswerteskripten, die Analyse von Test- und Produktionsdaten sowie das Verfassen technischer Berichte und Betriebsanleitungen durch Chat-LLMs und Datenanalyse-Agenten.",
+      "begruendung": "Rund 35 % der Arbeitszeit sind gegenüber generativer KI exponiert, während die 3D-CAD-Konstruktion, die Zeichnungsableitung und die physische Arbeit an Prüfständen und Anlagen nicht betroffen sind. In den exponierten Tätigkeiten arbeitet die KI durchwegs delegierend, da der Techniker Entwürfe, Code und Datenauswertungen wegen hoher Anforderungen an Funktion und Maschinensicherheit einzeln fachlich prüfen muss. Regulatorische Vorgaben (Maschinenrichtlinie, CE-Konformität, Produkthaftung) sowie mehrsprachige Dokumentationspflichten in der exportorientierten Schweizer MEM-Industrie verlangen eine konsequente Fachkontrolle.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

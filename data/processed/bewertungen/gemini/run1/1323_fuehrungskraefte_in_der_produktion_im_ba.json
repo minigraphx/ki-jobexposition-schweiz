@@ -10,77 +10,217 @@
     "beruf": "Führungskräfte in der Produktion im Bau",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 49,
+      "candidates_token_count": 2384,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 49
+          "token_count": 2384
         }
       ],
-      "prompt_token_count": 22600,
+      "prompt_token_count": 22561,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22600
+          "token_count": 22561
         }
       ],
-      "thoughts_token_count": 8080,
-      "total_token_count": 30729
+      "thoughts_token_count": 7065,
+      "total_token_count": 32010
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 49,
+        "candidates_token_count": 2384,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 49
+            "token_count": 2384
           }
         ],
-        "prompt_token_count": 22600,
+        "prompt_token_count": 22561,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22600
+            "token_count": 22561
           }
         ],
-        "thoughts_token_count": 8080,
-        "total_token_count": 30729
+        "thoughts_token_count": 7065,
+        "total_token_count": 32010
       }
     ],
     "request_ids": [
-      "nrnOapL3J8nyz7IPu5--gQE"
+      "XTzPar-HDdXoz7IPnKSMuAw"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: [] is too short"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-1323_fuehrungskraefte_in_der_produktion_im_ba",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: [] is too short"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"1323\",\"beruf\":\"Führungskräfte in der Produktion im Bau\",\"taetigkeiten\":[\n]\n}"
+  "bewertung": {
+    "isco_code": "1323",
+    "beruf": "Führungskräfte in der Produktion im Bau",
+    "taetigkeiten": [
+      {
+        "name": "Baustellenbegehungen durchführen, Bauausführung vor Ort beaufsichtigen und Baustellenpersonal instruieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert physische Präsenz auf der Baustelle, visuelle Kontrolle des Baufortschritts und direkte persönliche Führung von Polieren und Werkteams."
+      },
+      {
+        "name": "Bausitzungen mit Bauherrschaft, Architekten und Fachplanern leiten sowie Vertrags- und Nachtragsverhandlungen führen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare zwischenmenschliche Kommunikation, Interessenabwägung und Verhandlungsführung vor Ort oder in Projektsitzungen sind durch KI nicht ersetzbar."
+      },
+      {
+        "name": "Qualitätskontrollen, Ausmassaufnahmen vor Ort und formelle Bauabnahmen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Prüfung der Bauausführung und gemeinsames Nachmessen auf der Baustelle mit Bauherrschaft oder Subunternehmern erfordern Präsenz vor Ort."
+      },
+      {
+        "name": "Bauprogramme, Termin- und Ressourcenpläne für Personal, Inventar und Etappierung erstellen und disponieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die laufende Disposition hängt stark von kurzfristigen Baustellenbedingungen, Witterung und telefonischen Absprachen ab; generative KI spart hier keine 50 % der Zeit."
+      },
+      {
+        "name": "Ausmasse und Baustoffbedarf anhand von Bauplänen und BIM-Modellen ermitteln sowie Angebotskalkulationen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die automatische Mengenermittlung aus CAD-/BIM-Modellen und die Preiskalkulation erfolgen über klassische Bauadministrations- und BIM-Software (z. B. Sorba, Messerli, Solibri); die verbleibende Bewertung von Bauabläufen, Leistungswerten und Risiken wird durch LLMs nicht um 50 % verkürzt."
+      },
+      {
+        "name": "Ausschreibungsunterlagen, Leistungsverzeichnisse (NPK) und Werkverträge ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Bauadministrationssoftware analysiert Planungsunterlagen und entwirft Leistungsverzeichnisse sowie Werkvertragsklauseln nach SIA-Normen; die Bauprojektleitung spezifiziert die Vorgaben und prüft jedes Dokument im Detail."
+      },
+      {
+        "name": "Offerten von Subunternehmern und Lieferanten analysieren, Offertenspiegel erstellen und Vergaben vorbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumenten- und Datenanalyse-Agenten lesen heterogene PDF-Offerten aus, erstellen den Preis- und Leistungsvergleich (Offertenspiegel) und markieren Vorbehalte; die Führungskraft prüft jede Auswertung fachlich."
+      },
+      {
+        "name": "Projektkosten, Regierapporte, Nachträge und Unternehmerrechnungen im Baukosten-Controlling prüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-gestützte Rechnungs- und Nachtragsprüfung bei komplexen Bauabrechnungen die 50-%-Schwelle im Durchschnitt erreicht; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Führungskraft führt die materielle Rechnungs- und Nachtragsprüfung selbst durch, während KI-Funktionen im Bau-ERP Belege mit Werkverträgen und Regierapporten abgleichen sowie Abweichungen markieren."
+      },
+      {
+        "name": "Bausitzungs- und Abnahmeprotokolle, Mängelrügen sowie Projektkorrespondenz verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Sprachaufnahmen, Baustellenfotos und Stichworte werden durch Bau-Apps und LLMs zu strukturierten Protokollen, Mängellisten und SIA-konformen Rügen verarbeitet; die Projektleitung prüft und verantwortet jedes Schreiben vor dem Versand."
+      },
+      {
+        "name": "Sicherheitskonzepte (SUVA), Umweltauflagen und Baubewilligungsauflagen für die Baustelle aufbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM extrahiert aus eingefügten Baubewilligungsentscheiden und Vorschriften die relevanten Auflagen und entwirft baustellenspezifische Sicherheits- und Umweltkonzepte; die Führungskraft kontrolliert jedes Konzept auf Vollständigkeit und Rechtskonformität."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Bauführer/in HF bzw. Bauprojektleiter/in in einer mittleren Schweizer Bau- oder Generalunternehmung (Hoch- und Tiefbau). Die Unsicherheit ist mittel, da je nach Betriebsgrösse und Funktion (Ausführung vs. Gesamtleitung) die Anteile zwischen Baustellenpräsenz und Büroarbeit variieren und das Baukosten-Controlling nahe an der 50-%-Schwelle liegt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem bürobasierte Aufgaben wie das Verfassen von Protokollen, Mängelrügen und Sicherheitskonzepten sowie das Ausarbeiten von Ausschreibungen, Offertenspiegeln und Nachtragsprüfungen durch Chat-LLMs und dokumentenverarbeitende KI in der Bauadministration.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden und teilweise im unterstützenden Modus, da die Bauführung jedes Dokument fachlich prüfen und verantworten muss. Die Kernaufgaben auf der Baustelle, die Führung des Baustellenpersonals sowie Bausitzungen und Verhandlungen (zusammen 60 %) erfordern physische Präsenz und menschliches Ermessen. In der Schweiz bremsen zudem hohe haftungs- und vertragsrechtliche Anforderungen (SIA-Normen, öffentliches Beschaffungsrecht, SUVA-Vorschriften) eine ungeprüfte Übernahme von KI-Ausgaben.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

@@ -10,77 +10,215 @@
     "beruf": "Prozess- und Produktionsingenieure",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 48,
+      "candidates_token_count": 2185,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 48
+          "token_count": 2185
         }
       ],
-      "prompt_token_count": 21648,
+      "prompt_token_count": 21609,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21648
+          "token_count": 21609
         }
       ],
-      "thoughts_token_count": 6182,
-      "total_token_count": 27878
+      "thoughts_token_count": 5167,
+      "total_token_count": 28961
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 48,
+        "candidates_token_count": 2185,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 48
+            "token_count": 2185
           }
         ],
-        "prompt_token_count": 21648,
+        "prompt_token_count": 21609,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21648
+            "token_count": 21609
           }
         ],
-        "thoughts_token_count": 6182,
-        "total_token_count": 27878
+        "thoughts_token_count": 5167,
+        "total_token_count": 28961
       }
     ],
     "request_ids": [
-      "nrnOatzrJ7WaqtsP9_GF2AM"
+      "XTzPatKENfSAz7IP5t2zgAs"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: [] is too short"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-2141_prozess_und_produktionsingenieure",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: [] is too short"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"2141\",\"beruf\":\"Prozess- und Produktionsingenieure\",\"taetigkeiten\":[\n  ]\n}"
+  "bewertung": {
+    "isco_code": "2141",
+    "beruf": "Prozess- und Produktionsingenieure",
+    "taetigkeiten": [
+      {
+        "name": "Produktions- und Prozessdaten (OEE, Durchlaufzeiten, Ausschuss) aus MES und ERP auswerten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Datenanalyse-Werkzeuge (Code-Ausführung, BI-Integration) erstellen Auswertungen, Diagramme und Anomalieberichte aus Betriebsdaten; der Ingenieur gibt die Fragestellungen vor und prüft jede Auswertung fachlich am realen Prozess."
+      },
+      {
+        "name": "Fertigungsabläufe in der Werkhalle beobachten, Störungen vor Ort analysieren und Bedienpersonal beraten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert physische Präsenz am Shopfloor (Gemba), unmittelbare Beobachtung der Produktionsanlagen und direkte Abstimmung mit den Anlagenführern."
+      },
+      {
+        "name": "Arbeitsanweisungen (SOPs), Prüfanweisungen und Prozessdokumentationen verfassen und aktualisieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Prozessparametern, Stichworten und Vorlagen vollständige Entwürfe für Arbeits- und Prüfanweisungen; die Fachperson prüft und verantwortet jedes Dokument im Rahmen des Qualitätsmanagements."
+      },
+      {
+        "name": "Wirtschaftlichkeitsrechnungen (ROI) und technische Machbarkeitsstudien für Anlagen und Verfahren erarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Ingenieur erarbeitet die technisch-wirtschaftliche Bewertung selbst, nutzt aber KI-Werkzeuge zur Datenextraktion aus Lieferantenofferten, für Kalkulationsmodelle und für Textbausteine der Studie."
+      },
+      {
+        "name": "Vorrichtungen, Werkzeuge und Hallenlayouts im CAD-System konstruieren und anpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das geometrische Anpassen von Betriebsmitteln und Fabriklayouts in 3D-CAD-Systemen an reale räumliche Gegebenheiten erreicht mit heutiger generativer KI keine Zeitersparnis von mindestens 50 %."
+      },
+      {
+        "name": "Produktentwürfe auf Fertigungsgerechtigkeit (Design for Manufacturing) prüfen und Konstruktionsfreigaben erteilen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Beurteilung von CAD-Baugruppen und Toleranzen hinsichtlich der spezifischen Maschinenfähigkeiten im eigenen Werk erfordert tiefes Erfahrungswissen; KI spart hier heute weniger als 50 % der Zeit."
+      },
+      {
+        "name": "Prozess-Risikoanalysen (PFMEA) und Lastenhefte für neue Produktionsanlagen ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Sprachmodell generiert aus Prozessbeschreibungen und Normvorgaben strukturierte Lastenhefte sowie FMEA-Tabellen mit Fehlerursachen und -folgen; der Ingenieur prüft und korrigiert jeden Punkt fachlich."
+      },
+      {
+        "name": "Neue Fertigungsprozesse und Anlagen vor Ort einfahren, Versuchsläufe durchführen und validieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenzarbeit direkt an den Maschinen bei Inbetriebnahmen, Parameter-Einstellungen, Abnahmetests (FAT/SAT) und Musterproduktionen."
+      },
+      {
+        "name": "Kapazitäts-, Taktzeit- und Reihenfolgeplanung der Produktion bei Engpässen anpassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte und mathematische Optimierung der Produktionsfeinplanung ist eine Aufgabe klassischer APS- und ERP-Software (keine generative KI)."
+      },
+      {
+        "name": "KVP-Workshops, Lieferantenabstimmungen und Prozessschulungen mit dem Produktionsteam durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zwischenmenschliche Führungs-, Moderations- und Verhandlungstätigkeit, deren Wert in der persönlichen Präsenz und Überzeugungsarbeit liegt."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Prozess- und Produktionsingenieur/in in einem mittelgrossen Schweizer Industriebetrieb (z. B. MEM-Industrie, Medtech oder Pharma/Chemie). Der Beruf verbindet analytisch-dokumentarische Ingenieurarbeit am Bildschirm mit einem hohen Anteil an Präsenzarbeit direkt an den Fertigungsanlagen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Auswertung von Produktionsdaten und Machbarkeitsstudien durch KI-Analysewerkzeuge sowie das Erstellen von Arbeitsanweisungen, Lastenheften und Prozess-Risikoanalysen (PFMEA) mittels Sprachmodellen.",
+      "begruendung": "Rund 45 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden und teilweise im unterstützenden Modus, da jede Auswertung und jedes technische Dokument fachlich geprüft und verantwortet werden muss. Strenge regulatorische Anforderungen in der Schweizer Industrie (Maschinensicherheit, ISO-Normen, GMP/Medtech-Validierung) verlangen eine lückenlose menschliche Kontrolle, während mehr als die Hälfte der Arbeit (Fehlersuche und Inbetriebnahme an den Anlagen, CAD-Konstruktion, DFM-Prüfung) kaum exponiert ist.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

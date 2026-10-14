@@ -10,91 +10,218 @@
     "beruf": "Konferenz- und Veranstaltungsplaner",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 150,
+      "candidates_token_count": 2256,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 150
+          "token_count": 2256
         }
       ],
-      "prompt_token_count": 22021,
+      "prompt_token_count": 21982,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22021
+          "token_count": 21982
         }
       ],
-      "thoughts_token_count": 6748,
-      "total_token_count": 28919
+      "thoughts_token_count": 7556,
+      "total_token_count": 31794
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 150,
+        "candidates_token_count": 2256,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 150
+            "token_count": 2256
           }
         ],
-        "prompt_token_count": 22021,
+        "prompt_token_count": 21982,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22021
+            "token_count": 21982
           }
         ],
-        "thoughts_token_count": 6748,
-        "total_token_count": 28919
+        "thoughts_token_count": 7556,
+        "total_token_count": 31794
       }
     ],
     "request_ids": [
-      "nrnOavmTK6vX_uMP-8qPkQE"
+      "XTzPavKlE7Csz7IP3NihgQ0"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: ['name', 'zeitanteil_pct', 'stufe', 'modus', 'restzeit_mensch', 'physisch_automatisierbar', 'p_art', 'sicherheit', 'sicherheit_begruendung', 'ch_hemmnis', 'begruendung', 'unsicherheit', 'kommentar', 'zusammenfassung'] is too long; taetigkeiten/0: 'name' is not of type 'object'; taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'; taetigkeiten/2: 'stufe' is not of type 'object'; taetigkeiten/3: 'modus' is not of type 'object'; taetigkeiten/4: 'restzeit_mensch' is not of type 'object'; taetigkeiten/5: 'physisch_automatisierbar' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-3332_konferenz_und_veranstaltungsplaner",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: ['name', 'zeitanteil_pct', 'stufe', 'modus', 'restzeit_mensch', 'physisch_automatisierbar', 'p_art', 'sicherheit', 'sicherheit_begruendung', 'ch_hemmnis', 'begruendung', 'unsicherheit', 'kommentar', 'zusammenfassung'] is too long",
-      "taetigkeiten/0: 'name' is not of type 'object'",
-      "taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'",
-      "taetigkeiten/2: 'stufe' is not of type 'object'",
-      "taetigkeiten/3: 'modus' is not of type 'object'",
-      "taetigkeiten/4: 'restzeit_mensch' is not of type 'object'",
-      "taetigkeiten/5: 'physisch_automatisierbar' is not of type 'object'",
-      "taetigkeiten/6: 'p_art' is not of type 'object'",
-      "taetigkeiten/7: 'sicherheit' is not of type 'object'",
-      "taetigkeiten/8: 'sicherheit_begruendung' is not of type 'object'",
-      "taetigkeiten/9: 'ch_hemmnis' is not of type 'object'",
-      "taetigkeiten/10: 'begruendung' is not of type 'object'",
-      "taetigkeiten/11: 'unsicherheit' is not of type 'object'",
-      "taetigkeiten/12: 'kommentar' is not of type 'object'",
-      "taetigkeiten/13: 'zusammenfassung' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"3332\",\"beruf\":\"Konferenz- und Veranstaltungsplaner\",\"taetigkeiten\":[\n      \"name\",\n      \"zeitanteil_pct\",\n      \"stufe\",\n      \"modus\",\n      \"restzeit_mensch\",\n      \"physisch_automatisierbar\",\n      \"p_art\",\n      \"sicherheit\",\n      \"sicherheit_begruendung\",\n      \"ch_hemmnis\",\n      \"begruendung\"\n    ,\n    \"unsicherheit\",\n    \"kommentar\",\n    \"zusammenfassung\"\n  ]}"
+  "bewertung": {
+    "isco_code": "3332",
+    "beruf": "Konferenz- und Veranstaltungsplaner",
+    "taetigkeiten": [
+      {
+        "name": "Kundenbedürfnisse klären, Auftraggeber beraten und Eventziele abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Briefing-Gespräche, Kundenberatung und das Abstimmen der Erwartungen mit Auftraggebern sind Beziehungs- und Präsenztätigkeiten, bei denen generative KI keine 50 % Zeitersparnis erreicht."
+      },
+      {
+        "name": "Veranstaltungskonzepte, Programmabläufe und Regiepläne (Drehbücher) entwerfen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus Briefing-Stichworten Entwürfe für Eventkonzepte, Zeitpläne und tabellarische Regiepläne; die planende Person spezifiziert die Rahmenbedingungen und prüft sowie überarbeitet jeden Entwurf auf Machbarkeit."
+      },
+      {
+        "name": "Veranstaltungsorte besichtigen und Einrichtungen vor Ort inspizieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Besichtigen von Locations sowie die Kontrolle von Räumlichkeiten, Logistikwegen und technischer Infrastruktur erfordern zwingend die physische Präsenz vor Ort."
+      },
+      {
+        "name": "Konditionen mit Locations, Dienstleistern und Referierenden verhandeln sowie Gewerke abstimmen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Preis- und Leistungsverhandlungen sowie die laufende technische und organisatorische Abstimmung mit Catering, Veranstaltungstechnik, Locations und Kuratoren erfolgen überwiegend im direkten Gespräch und erreichen die 50-%-Schwelle nicht."
+      },
+      {
+        "name": "Leistungsanfragen, Verträge sowie Bewilligungs- und Sicherheitskonzepte ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus Eckdaten Ausschreibungsunterlagen, Vereinbarungen mit Veranstaltern und Lieferanten sowie Sicherheits- und Bewilligungsgesuche; die Fachperson prüft jedes Dokument inhaltlich auf rechtliche und betriebliche Vorgaben."
+      },
+      {
+        "name": "Einladungen, Programmhefte und Werbetexte für Veranstaltungen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Das Chat-LLM verfasst und übersetzt Einladungstexte, Programmbeschreibungen und Webtexte aus Stichworten; der Mensch gibt Tonalität und Zielgruppe vor und kontrolliert jeden Text vor der Publikation."
+      },
+      {
+        "name": "Teilnehmeranmeldung, Gästelisten und Teilnehmenden-Anfragen betreuen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit",
+          "vertrauen"
+        ],
+        "begruendung": "KI-Funktionen in Event- und E-Mail-Systemen bereiten Antworten auf Teilnehmenden-Anfragen sowie Listenmutationen vor, die die Fachperson prüft und freigibt. Zudem automatisieren klassische Online-Registrierungs- und Ticketing-Plattformen den Standard-Anmeldeprozess."
+      },
+      {
+        "name": "Aufbau, Durchführung und Abbau vor Ort leiten sowie Veranstaltungspersonal überwachen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Regieführung vor Ort, das Anleiten und Überwachen des Einsatzpersonals sowie das unmittelbare Beheben von Störungen während der Veranstaltung erfordern persönliche Präsenz."
+      },
+      {
+        "name": "Budgets überwachen, Veranstaltungsrechnungen prüfen und Schlussabrechnungen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Dokumenten- und Tabellenanalyse liest mehrseitige Lieferantenrechnungen (PDF) aus, gleicht die Positionen mit Offerten sowie dem Budget ab und markiert Abweichungen; die Fachperson beurteilt und kontrolliert jede Abrechnung selbst."
+      },
+      {
+        "name": "Veranstaltungen evaluieren, Feedback auswerten und Abschlussberichte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus exportierten Umfragedaten, Freitext-Rückmeldungen und Kennzahlen erstellt ein Chat-LLM Fragebögen sowie den Entwurf des Evaluations- und Abschlussberichts; der Mensch prüft und überarbeitet den Bericht für den Auftraggeber."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Eventmanager/in bzw. Konferenz- und Veranstaltungsplaner/in in einer Schweizer Eventagentur, einem Kongresszentrum oder einer Unternehmenskommunikation. Der Beruf teilt sich klar in stark exponierte konzeptionelle und administrative Planungsarbeiten am Schreibtisch sowie nicht exponierte Verhandlungs-, Inspektions- und Regietätigkeiten vor Ort.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Ausarbeiten von Veranstaltungskonzepten, Regieplänen, Verträgen, Einladungstexten und Evaluationsberichten mittels Chat-LLM sowie die Teilnehmenden-Kommunikation und Rechnungsprüfung durch integrierte KI-Software.",
+      "begruendung": "Gut die Hälfte der Arbeitszeit (55 %) ist gegenüber generativer KI exponiert, überwiegend im delegierenden Modus (Konzepte, Texte, Verträge, Berichte) und teils unterstützend (Rechnungs- und Budgetkontrolle), während Kundenberatung, Verhandlungen und die Vor-Ort-Regie beim Menschen bleiben. In der Schweiz beeinflussen insbesondere die Mehrsprachigkeit bei nationalen Tagungen, kantonale und kommunale Bewilligungsauflagen sowie der Anspruch an persönliche Gästebetreuung den Einsatz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

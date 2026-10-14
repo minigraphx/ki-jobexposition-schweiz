@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "ddf43b3eb55d5f176fca002d09ec1cbc586fc9031a78584c2e5b9cf5bd063a4a",
+    "isco_code": "4312",
+    "beruf": "Bürokräfte in der Statistik, im Finanz- und Versicherungswesen",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2441,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2441
+        }
+      ],
+      "prompt_token_count": 21639,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21639
+        }
+      ],
+      "thoughts_token_count": 9176,
+      "total_token_count": 33256
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2441,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2441
+          }
+        ],
+        "prompt_token_count": 21639,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21639
+          }
+        ],
+        "thoughts_token_count": 9176,
+        "total_token_count": 33256
+      }
+    ],
+    "request_ids": [
+      "xD_PavGfB5vv_uMP7IC_2Qw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-4312_buerokraefte_in_der_statistik_im_finanz",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "4312",
+    "beruf": "Bürokräfte in der Statistik, im Finanz- und Versicherungswesen",
+    "taetigkeiten": [
+      {
+        "name": "Kunden-, Antrags- und Vertragsunterlagen sichten und Stammdaten im Fachsystem erfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumenten-KI mit Integration ins Kernbank- oder Versicherungssystem liest Formulare, Ausweise und Mutationsanträge aus und erfasst die Daten; die Bürokraft bearbeitet nur markierte Ausnahmen und gibt frei. Wegen heterogener Belege und Freitext-Meldungen reicht klassische Formularerkennung allein nicht aus."
+      },
+      {
+        "name": "Zahlungsverkehr, Prämien- oder Zinsabrechnungen und regelbasierte Transaktionen im Fachsystem abwickeln",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Transaktionsverarbeitung, Fakturierung und Zahlungsabgleich (z. B. via QR-Referenz und Straight-Through-Processing in Kernbank- oder Versicherungssoftware) erfolgen über klassische Software ohne generative KI."
+      },
+      {
+        "name": "Unstimmigkeiten bei Finanztransaktionen, Zahlungsrückläufer und Differenzbuchungen untersuchen und bereinigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Bürokraft klärt Differenzen und fehlerhafte Transaktionen weiterhin selbst ab und entscheidet über die Korrekturbuchung; ein im System integriertes KI-Analysewerkzeug gleicht Transaktionslisten sowie Fehlermeldungen ab und liefert Lösungsvorschläge."
+      },
+      {
+        "name": "Standardkorrespondenz (Bestätigungen, Unterlagen nachfordern, Fristbriefe) aus Falldaten erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "<10",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Sprachmodell erstellt aus wenigen Fallangaben fertige Standardbriefe und E-Mails in den benötigten Landessprachen; die Person sichtet den Entwurf nur kurz zur Freigabe per Klick."
+      },
+      {
+        "name": "Individuelle schriftliche Anfragen von Front-Office und Kundschaft zu Finanzprodukten und Verträgen beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Auf Basis eingefügter Produktblätter, Reglemente und Vertragsdaten entwirft das Chat-LLM die Antwort; die Bürokraft prüft jede Auskunft vor dem Versand fachlich auf Richtigkeit."
+      },
+      {
+        "name": "Formelle Compliance- und Dossierprüfungen (z. B. Vollständigkeit nach GwG/VSB und internen Richtlinien) durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Bürokraft führt die formelle Kontrolle jedes Kundendossiers selbst durch; eine Dokumenten-KI prüft eingereichte Formulare, Unterschriften und Ausweiskopien vorab gegen Checklisten und markiert Lücken oder Widersprüche."
+      },
+      {
+        "name": "Statistische Auswertungen, Finanztabellen und periodische Back-Office-Berichte in Tabellenkalkulationen aufbereiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Assistenten mit Datenanalyse- und Tabellenkalkulationsintegration bereinigen Datensätze, erstellen statistische Auswertungen und formulieren Berichtsentwürfe nach Vorgabe; die Fachkraft prüft jede Tabelle und Kennzahl auf Plausibilität."
+      },
+      {
+        "name": "Vertrags-, Kredit- und Sicherheitenakten verwalten sowie Konditionen und Fristen im System erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumenten-KI extrahiert Laufzeiten, Kündigungsfristen, Zinskonditionen und Sicherheiten aus mehrseitigen Verträgen und schlägt die Systemerfassung vor; die Bürokraft kontrolliert jeden Eintrag anhand des Originaldokuments."
+      },
+      {
+        "name": "Telefonische Rückfragen und Fallabklärungen mit Front-Office, Bankfachleuten und Kundschaft führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Abklärungen im Back-Office betreffen meist spezifische Pendenzen, Rückfragen von Kundenberatern oder Abstimmungen mit Drittbanken und Behörden (oft in Mundart), bei denen Sprach-KI keine 50 % Zeitersparnis erreicht."
+      },
+      {
+        "name": "Tagesgeschäft und Pendenzen im Back-Office koordinieren sowie an Team- und Prozessbesprechungen teilnehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Operative Arbeitsverteilung im Team, Priorisierung von Pendenzen und persönliche Besprechungen erfordern menschliche Abstimmung und Präsenz."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Kaufmännische Sachbearbeitung / Back-Office in einer Schweizer Bank, Versicherung oder Verwaltungseinheit mit statistischen Aufgaben (EFZ-Niveau). Die ISCO-Gruppe 4312 bündelt Statistik-, Finanz- und Versicherungsbürokräfte, deren Kernaufgaben sich jedoch stark überschneiden (Dokumenten- und Stammdatenpflege, Transaktionsabwicklung, Dossierkontrolle, Tabellenaufbereitung).",
+    "zusammenfassung": {
+      "haupt_risiko": "Dokumenten- und Stammdatenerfassung, Standardkorrespondenz, schriftliche Fachauskünfte, Vertragsverwaltung sowie die Aufbereitung statistischer Finanztabellen und Compliance-Vorprüfungen werden durch Dokumenten-KI, Chat-LLMs und Datenanalyse-Werkzeuge stark verändert.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit im Back-Office sind gegenüber generativer KI exponiert, wobei standardisierte Datenerfassung und Routinekorrespondenz ersetzend, das Erstellen von Finanzstatistiken, Vertragsdaten und Fachantworten delegierend und Compliance- sowie Differenzprüfungen unterstützend erfolgen. Daneben lässt sich die regelbasierte Transaktions- und Zahlungsabwicklung weitgehend durch klassische Kernbank- und Versicherungssoftware automatisieren. In der Schweiz bremsen vor allem strenge regulatorische Vorgaben (Bankkunden- und Versicherungsgeheimnis, revDSG, GwG/VSB, FINMA-Regulierung) sowie die Mehrsprachigkeit eine rasche Vollintegration in die Kernsysteme.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

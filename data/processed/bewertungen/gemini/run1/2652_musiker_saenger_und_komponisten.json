@@ -10,84 +10,226 @@
     "beruf": "Musiker, Sänger und Komponisten",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 674,
+      "candidates_token_count": 2385,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 674
+          "token_count": 2385
         }
       ],
-      "prompt_token_count": 21857,
+      "prompt_token_count": 21818,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21857
+          "token_count": 21818
         }
       ],
-      "thoughts_token_count": 5244,
-      "total_token_count": 27775
+      "thoughts_token_count": 9681,
+      "total_token_count": 33884
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 674,
+        "candidates_token_count": 2385,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 674
+            "token_count": 2385
           }
         ],
-        "prompt_token_count": 21857,
+        "prompt_token_count": 21818,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21857
+            "token_count": 21818
           }
         ],
-        "thoughts_token_count": 5244,
-        "total_token_count": 27775
+        "thoughts_token_count": 9681,
+        "total_token_count": 33884
       }
     ],
     "request_ids": [
-      "nrnOaorNLrzi_uMP6aHG6Ag"
+      "XTzPaub7MLeBz7IPmfKIqA4"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: taetigkeiten/0: 'Individuell am Instrument oder an der Gesangsstimme üben und Repertoire technisch erarbeiten' is not of type 'object'; taetigkeiten/1: 'An Ensemble-, Band- oder Orchesterproben teilnehmen und musikalisches Zusammenspiel erarbeiten' is not of type 'object'; taetigkeiten/2: 'Live-Konzerte und Bühnenauftritte vor Publikum durchführen (inkl. Soundcheck)' is not of type 'object'; taetigkeiten/3: 'Musikstücke und Gesangsparts im Tonstudio am Instrument oder Mikrofon einspielen bzw. einsingen' is not of type 'object'; taetigkeiten/4: 'Aufgezeichnete Audioaufnahmen in der DAW schneiden, bereinigen und vorabmischen' is not of type 'object'; taetigkeiten/5: 'Eigenständige musikalische Werke und komplexe Kompositionen künstlerisch ausarbeiten' is not of type 'object'; taetigkeiten/6: 'Musikalische Skizzen, Layout-Demos, Varianten und Gebrauchsmusik (z. B. für Medien) erstellen' is not of type 'object'; taetigkeiten/7: 'Musikstücke arrangieren und Audioaufnahmen in Notenschrift (Partituren und Einzelstimmen) transkribieren' is not of type 'object'; taetigkeiten/8: 'Künstlerische Projektanträge, Fördergesuche und Werkbeschriebe verfassen' is not of type 'object'; taetigkeiten/9: 'Werbematerialien und Social-Media-Beiträge erstellen sowie Auftritte mit Veranstaltern koordinieren' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-2652_musiker_saenger_und_komponisten",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "taetigkeiten/0: 'Individuell am Instrument oder an der Gesangsstimme üben und Repertoire technisch erarbeiten' is not of type 'object'",
-      "taetigkeiten/1: 'An Ensemble-, Band- oder Orchesterproben teilnehmen und musikalisches Zusammenspiel erarbeiten' is not of type 'object'",
-      "taetigkeiten/2: 'Live-Konzerte und Bühnenauftritte vor Publikum durchführen (inkl. Soundcheck)' is not of type 'object'",
-      "taetigkeiten/3: 'Musikstücke und Gesangsparts im Tonstudio am Instrument oder Mikrofon einspielen bzw. einsingen' is not of type 'object'",
-      "taetigkeiten/4: 'Aufgezeichnete Audioaufnahmen in der DAW schneiden, bereinigen und vorabmischen' is not of type 'object'",
-      "taetigkeiten/5: 'Eigenständige musikalische Werke und komplexe Kompositionen künstlerisch ausarbeiten' is not of type 'object'",
-      "taetigkeiten/6: 'Musikalische Skizzen, Layout-Demos, Varianten und Gebrauchsmusik (z. B. für Medien) erstellen' is not of type 'object'",
-      "taetigkeiten/7: 'Musikstücke arrangieren und Audioaufnahmen in Notenschrift (Partituren und Einzelstimmen) transkribieren' is not of type 'object'",
-      "taetigkeiten/8: 'Künstlerische Projektanträge, Fördergesuche und Werkbeschriebe verfassen' is not of type 'object'",
-      "taetigkeiten/9: 'Werbematerialien und Social-Media-Beiträge erstellen sowie Auftritte mit Veranstaltern koordinieren' is not of type 'object'",
-      "zusammenfassung: ['Betroffen sind vor allem das Erstellen von Demos und Gebrauchsmusik, die Audio-zu-Noten-Transkription, die Audiobearbeitung sowie das Verfassen von Fördergesuchen und Werbeinhalten durch generative Audio-KI, DAW-Assistenten und Sprachmodelle, während das Üben, Proben und Live-Auftreten nicht exponiert sind.', 'Rund ein Viertel der Arbeitszeit ist gegenüber generativer KI exponiert, durchwegs im delegierenden Modus, da Musikerinnen und Komponisten die KI-Ausgaben (Demos, Transkriptionen, Vorabmischungen, Dossiertexte) steuern und jedes Ergebnis künstlerisch prüfen. Der Kern des Berufs – das physische Musizieren und Singen bei Proben, Konzerten und Studioaufnahmen sowie die originäre Werkkomposition – bleibt beim Menschen. In der Schweiz bremsen zudem urheberrechtliche Fragen (URG, SUISA-Regelungen) und der hohe Anspruch an künstlerische Authentizität bei Veranstaltern und Publikum.', '3-5 Jahre'] is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\n  \"isco_code\": \"2652\",\n  \"beruf\": \"Musiker, Sänger und Komponisten\",\n  \"taetigkeiten\": [\n    \"Individuell am Instrument oder an der Gesangsstimme üben und Repertoire technisch erarbeiten\",\n    \"An Ensemble-, Band- oder Orchesterproben teilnehmen und musikalisches Zusammenspiel erarbeiten\",\n    \"Live-Konzerte und Bühnenauftritte vor Publikum durchführen (inkl. Soundcheck)\",\n    \"Musikstücke und Gesangsparts im Tonstudio am Instrument oder Mikrofon einspielen bzw. einsingen\",\n    \"Aufgezeichnete Audioaufnahmen in der DAW schneiden, bereinigen und vorabmischen\",\n    \"Eigenständige musikalische Werke und komplexe Kompositionen künstlerisch ausarbeiten\",\n    \"Musikalische Skizzen, Layout-Demos, Varianten und Gebrauchsmusik (z. B. für Medien) erstellen\",\n    \"Musikstücke arrangieren und Audioaufnahmen in Notenschrift (Partituren und Einzelstimmen) transkribieren\",\n    \"Künstlerische Projektanträge, Fördergesuche und Werkbeschriebe verfassen\",\n    \"Werbematerialien und Social-Media-Beiträge erstellen sowie Auftritte mit Veranstaltern koordinieren\"\n  ],\n  \"unsicherheit\": \"mittel\",\n  \"kommentar\": \"Angenommenes Setting: Professionelle/r Musiker/in, Sänger/in oder Komponist/in in der Schweiz im typischen Mischprofil (Portfolio-Karriere aus Live-Auftritten, Ensemble-/Orchesterdienst, Studioarbeit, Komposition/Arrangement und Selbstmanagement). Da die Berufsgruppe vom klassischen Orchestermusiker bis zur freischaffenden Medienkomponistin reicht, sind die Zeitanteile als Durchschnitt über die Berufsgruppe geschätzt. ESCO-Fremdkompetenzen aus dem Schauspielbereich wurden ignoriert.\",\n  \"zusammenfassung\":\n  [\n    \"Betroffen sind vor allem das Erstellen von Demos und Gebrauchsmusik, die Audio-zu-Noten-Transkription, die Audiobearbeitung sowie das Verfassen von Fördergesuchen und Werbeinhalten durch generative Audio-KI, DAW-Assistenten und Sprachmodelle, während das Üben, Proben und Live-Auftreten nicht exponiert sind.\",\n    \"Rund ein Viertel der Arbeitszeit ist gegenüber generativer KI exponiert, durchwegs im delegierenden Modus, da Musikerinnen und Komponisten die KI-Ausgaben (Demos, Transkriptionen, Vorabmischungen, Dossiertexte) steuern und jedes Ergebnis künstlerisch prüfen. Der Kern des Berufs – das physische Musizieren und Singen bei Proben, Konzerten und Studioaufnahmen sowie die originäre Werkkomposition – bleibt beim Menschen. In der Schweiz bremsen zudem urheberrechtliche Fragen (URG, SUISA-Regelungen) und der hohe Anspruch an künstlerische Authentizität bei Veranstaltern und Publikum.\",\n    \"3-5 Jahre\"\n  ]\n}"
+  "bewertung": {
+    "isco_code": "2652",
+    "beruf": "Musiker, Sänger und Komponisten",
+    "taetigkeiten": [
+      {
+        "name": "Instrument oder Gesang individuell üben und Partituren/Rollen einstudieren",
+        "zeitanteil_pct": 23,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physisch-motorische und stimmliche Übungstätigkeit sowie kognitives Verinnerlichen von Musikstücken am Instrument; keine relevante Zeitersparnis durch generative KI."
+      },
+      {
+        "name": "An Ensemble-, Orchester- oder Bandproben teilnehmen und musikalische Interpretation erarbeiten",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Musizieren und unmittelbare zwischenmenschliche Interaktion im Proberaum unter Umsetzung künstlerischer Anweisungen und Einsätze."
+      },
+      {
+        "name": "Bei Konzerten und Bühnenproduktionen live vor Publikum auftreten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Wert der Tätigkeit liegt vollständig in der persönlichen Präsenz auf der Bühne, der physischen Klangerzeugung und dem unmittelbaren Kontakt mit dem Publikum."
+      },
+      {
+        "name": "Im Tonstudio Instrumentalsoli, Ensembleparts oder Gesang aufnehmen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische und künstlerische Ausführung am Instrument oder Mikrofon im Studio in Zusammenarbeit mit Tonmeisterinnen und Produzenten."
+      },
+      {
+        "name": "Soundchecks, Bühnenaufbau und technische Abläufe vor Ort mit Technikteams und Regie abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ortsgebundene akustische und technische Abstimmung auf der Bühne oder im Studio; erfordert physische Anwesenheit und direktes Hören im Raum."
+      },
+      {
+        "name": "Musikwerke, Songs und Auftragsmusik komponieren sowie musikalische Konzepte entwickeln",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Bei gebrauchsorientierter Medien- und Werbemusik können generative Musik- und Textmodelle bereits heute mindestens 50 % der Zeit sparen (E2, delegierend oder unterstützend).",
+        "ch_hemmnis": [],
+        "begruendung": "Bei künstlerischen Eigenkompositionen und urheberrechtlich geschützten Werken (SUISA/URG) liegt der Kern in der individuellen menschlichen Schöpfung; KI-Ideengeber sparen über alle Sparten gemittelt weniger als 50 % der Zeit."
+      },
+      {
+        "name": "Musikstücke arrangieren, transkribieren und Notenmaterial in Notationssoftware ausarbeiten",
+        "zeitanteil_pct": 6,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Audio-zu-Noten-Transkription und Arrangierfunktionen in Notationssoftware erstellen den Rohentwurf von Partitur und Stimmen; die Musikschaffenden prüfen und korrigieren jede Stimme auf Spielbarkeit und Satztechnik."
+      },
+      {
+        "name": "Audioaufnahmen nachbearbeiten und musikalische Demos/Vorproduktionen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative Audio-Tools und KI-Assistenten in der DAW erzeugen Begleitspuren für Mockups sowie Vorabmischungen und Stems; die Person steuert den Klangcharakter und kontrolliert jede Spur."
+      },
+      {
+        "name": "Repertoire recherchieren, Konzertprogramme dramaturgisch gestalten und Bühnenmoderationen vorbereiten",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Musikerin stellt das Programm weiterhin selbst künstlerisch zusammen; ein Chat-LLM liefert Werkvorschläge nach Besetzung/Epoche, Hintergrundfakten und Formulierungshilfen für Moderationen."
+      },
+      {
+        "name": "Fördergesuche, Projektdossiers, Werkbeschriebe und Künstlerbiografien verfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten zum künstlerischen Konzept Entwürfe für Gesuche an Kulturförderstellen (z. B. Pro Helvetia, Kantone, Stiftungen) sowie Programmhefttexte; jeder Text wird inhaltlich geprüft und angepasst."
+      },
+      {
+        "name": "Werbematerial, Pressetexte und Social-Media-Beiträge erstellen sowie Booking-Korrespondenz führen",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Generative Text- und Bildwerkzeuge erstellen Konzertankündigungen, Visuals, Medienmitteilungen und Anschreiben an Veranstalter; die Kunstschaffenden wählen aus und prüfen jeden Beitrag vor Veröffentlichung."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Typische freischaffende oder teilangestellte Berufsmusiker/innen, Sänger/innen und Komponist/innen in der Schweiz mit einem Portfolio aus Proben, Live-Auftritten, Studioarbeit, Komposition/Arrangement und Selbstmanagement (Musikunterricht an Musikschulen fällt unter ISCO 2354). Die Hauptunsicherheit liegt in der Heterogenität zwischen rein ausübenden Orchestermusikern und kommerziellen Medienkomponisten.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind das Arrangieren und Transkribieren in Notationssoftware, die Demo- und Audiovorproduktion sowie das Verfassen von Fördergesuchen, Programm- und Werbetexten durch generative Audio-, Notations- und Sprachmodelle, während Üben, Proben und Live-Auftritte unberührt bleiben.",
+      "begruendung": "Rund 22 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus bei Notentranskription, Demo-Produktion, Förderdossiers und Promotion sowie unterstützend bei der Programmplanung. Der Kern des Berufs bleibt das physische Musizieren und die unmittelbare Bühnenpräsenz vor Publikum. Zudem schützt das Schweizer Urheberrecht (URG/SUISA) nur menschliche Schöpfungen, und im Kontakt mit Veranstaltern sowie Förderstellen ist Vertrauen in die persönliche künstlerische Authentizität zentral.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

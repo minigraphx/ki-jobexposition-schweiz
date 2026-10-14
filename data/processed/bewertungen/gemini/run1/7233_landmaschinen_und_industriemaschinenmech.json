@@ -10,77 +10,198 @@
     "beruf": "Landmaschinen- und Industriemaschinenmechaniker und -schlosser",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 52,
+      "candidates_token_count": 1863,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 52
+          "token_count": 1863
         }
       ],
-      "prompt_token_count": 21282,
+      "prompt_token_count": 21243,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21282
+          "token_count": 21243
         }
       ],
-      "thoughts_token_count": 5679,
-      "total_token_count": 27013
+      "thoughts_token_count": 3220,
+      "total_token_count": 26326
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 52,
+        "candidates_token_count": 1863,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 52
+            "token_count": 1863
           }
         ],
-        "prompt_token_count": 21282,
+        "prompt_token_count": 21243,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21282
+            "token_count": 21243
           }
         ],
-        "thoughts_token_count": 5679,
-        "total_token_count": 27013
+        "thoughts_token_count": 3220,
+        "total_token_count": 26326
       }
     ],
     "request_ids": [
-      "nrnOaqOOKaDpz7IPm8ufkAQ"
+      "XTzPaorIJMucz7IP_rLrgA8"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: [] is too short"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-7233_landmaschinen_und_industriemaschinenmech",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: [] is too short"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"7233\",\"beruf\":\"Landmaschinen- und Industriemaschinenmechaniker und -schlosser\",\"taetigkeiten\":[\n  ]}"
+  "bewertung": {
+    "isco_code": "7233",
+    "beruf": "Landmaschinen- und Industriemaschinenmechaniker und -schlosser",
+    "taetigkeiten": [
+      {
+        "name": "Wartungs- und Servicearbeiten an Land-, Bau- oder Industriemaschinen durchführen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Arbeit an der Maschine (Öl- und Filterwechsel, Schmieren, Verschleissteile prüfen und ersetzen); keine Robotik für heterogene Maschinen im Einsatz."
+      },
+      {
+        "name": "Mechanische, hydraulische und elektrische Baugruppen demontieren, überholen und montieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Instandsetzung von Motoren, Getrieben, Hydraulikzylindern und Kabelbäumen in der Werkstatt oder Werkhalle."
+      },
+      {
+        "name": "Störungen an Kraftstoff-, Hydraulik- und Elektroniksystemen an der Maschine messen und diagnostizieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Arbeitszeit entfällt auf das physische Anschliessen von Prüfgeräten, das Messen von Drücken und Spannungen sowie die Fehlersuche direkt am Gerät."
+      },
+      {
+        "name": "Maschinen und Anlagen bei Pannen vor Ort auf dem Feld oder im Betrieb instand setzen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer Reparatureinsatz mit dem Servicefahrzeug vor Ort unter wechselnden Bedingungen."
+      },
+      {
+        "name": "Metallteile, Bleche und Halterungen durch Schweissen, Richten und Zerspanen anfertigen oder reparieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Schlosser- und Schweissarbeiten für Einzelteile und Reparaturen lassen sich weder durch Sprachmodelle noch durch Standardrobotik abdecken."
+      },
+      {
+        "name": "Neumaschinen, Anbaugeräte und industrielle Baugruppen montieren und einstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montage, Justierung und Inbetriebnahme von Maschinen und Zusatzgeräten."
+      },
+      {
+        "name": "Land- und Schwerfahrzeuge manövrieren sowie Probefahrten und Sicherheitsprüfungen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Fahren, Manövrieren auf dem Werkhof und praktische Funktions- sowie Sicherheitskontrolle an der Maschine."
+      },
+      {
+        "name": "Werkstatthandbücher sowie Hydraulik- und Schaltpläne konsultieren und Ersatzteile im Katalog ermitteln",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Such- und Diagnoseassistenten in Herstellerportalen durchsuchen umfangreiche Handbücher, Schemata und Teilekataloge; der Mechaniker prüft die Angaben am Objekt und wählt die Ersatzteile selbst aus."
+      },
+      {
+        "name": "Serviceprotokolle, Prüfberichte und Arbeitsrapporte mit Beschrieb, Material und Stunden erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe in der Werkstatt-App erstellt den Arbeitsbeschrieb und das Protokoll; der Mechaniker prüft und korrigiert jeden Eintrag, wobei Werkstattlärm und Dialekt den Nachbearbeitungsaufwand erhöhen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Landmaschinen-, Baumaschinen- oder Industriemaschinenmechaniker/in EFZ in einer typischen Schweizer KMU-Werkstatt bzw. im industriellen Betriebsunterhalt. Während die ESCO-Quelle stark auf Landmaschinen fokussiert, umfasst ISCO 7233 auch Industriemaschinen; das Tätigkeitsprofil ist in beiden Fällen klar durch physische Diagnose-, Wartungs- und Reparaturarbeiten geprägt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind lediglich das Nachschlagen in technischen Handbüchern und Ersatzteilkatalogen sowie das Erstellen von Serviceprotokollen und Arbeitsrapporten mittels KI-Suchassistenten und Spracheingabe.",
+      "begruendung": "Nur rund 10 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die Technik beim Recherchieren von Einstelldaten und Ersatzteilen unterstützend und beim Verfassen von Rapporten delegierend wirkt. Der weit überwiegende Teil des Berufs besteht aus physischer Wartung, Demontage, Fehlersuche am Gerät und Schlosserarbeiten, während in der Werkstatt Lärm und Schweizerdeutsch die Spracheingabe zusätzlich erschweren.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }

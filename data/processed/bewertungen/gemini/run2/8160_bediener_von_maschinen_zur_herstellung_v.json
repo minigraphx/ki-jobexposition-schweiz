@@ -1,0 +1,210 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "7d598b9de9affa51044143a80539df12e0b8d6ca622576ecddfac5c0db9dd9e0",
+    "isco_code": "8160",
+    "beruf": "Bediener von Maschinen zur Herstellung von Nahrungs- und Genussmitteln",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2166,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2166
+        }
+      ],
+      "prompt_token_count": 22493,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22493
+        }
+      ],
+      "thoughts_token_count": 5290,
+      "total_token_count": 29949
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2166,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2166
+          }
+        ],
+        "prompt_token_count": 22493,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22493
+          }
+        ],
+        "thoughts_token_count": 5290,
+        "total_token_count": 29949
+      }
+    ],
+    "request_ids": [
+      "xD_PatLbDJ7mqtsPqe2ygQ4"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-8160_bediener_von_maschinen_zur_herstellung_v",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "8160",
+    "beruf": "Bediener von Maschinen zur Herstellung von Nahrungs- und Genussmitteln",
+    "taetigkeiten": [
+      {
+        "name": "Produktions- und Verarbeitungsmaschinen nach Produktionsplan einrichten, umrüsten und anfahren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit direkt an der Anlage (Formatteile wechseln, Schläuche und Armaturen anschliessen, Probelauf einstellen); weder durch Sprachmodelle noch durch heutige Robotik in relevantem Umfang übernehmbar."
+      },
+      {
+        "name": "Rohstoffe und Zutaten nach Rezeptur bereitstellen, abwiegen und den Anlagen beigeben",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Bereitstellen, Abwiegen und Einfüllen von Gebinden ist rein physisch (E0). Automatische Silo-, Förder- und Dosieranlagen mit integrierter Verwiegung sind in der Schweizer Lebensmittelindustrie kommerziell verfügbar und übernehmen über 50 % dieser Arbeit."
+      },
+      {
+        "name": "Produktionslinie im laufenden Betrieb überwachen und Prozessparameter steuern",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Überwachung vor Ort und am Leitstand erfordert Präsenz an der Linie und nutzt keine generative KI (E0). Klassische Prozessleitsysteme (SPS/SCADA) mit Inline-Sensorik regeln Temperatur, Druck, Mischzeiten und Durchfluss automatisch und übernehmen über 50 % der manuellen Nachregelung."
+      },
+      {
+        "name": "Abfüll-, Verpackungs- und Etikettiermaschinen bedienen sowie Warenauszeichnung prüfen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Bedienung und Sichtkontrolle an der Verpackungslinie (E0). Vollautomatische Abfüll-, Verpackungs- und Kartonierstrassen sowie optische Kameraprüfsysteme für Etiketten und Mindesthaltbarkeitsdaten sind kommerziell breit verfügbar."
+      },
+      {
+        "name": "Produktproben entnehmen sowie sensorische und physikalische Qualitätskontrollen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Probenahme an der Linie sowie sensorische Prüfungen von Geschmack, Geruch, Konsistenz und Aussehen erfordern menschliche Sinne und Präsenz vor Ort."
+      },
+      {
+        "name": "Maschinen, Leitungen und Arbeitsbereiche nach Hygieneplan (GMP/HACCP) reinigen und desinfizieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Während geschlossene Kreisläufe bereits per Cleaning-in-Place (CIP) gespült werden, bleibt das Demontieren von Anlagenteilen sowie das manuelle Einschäumen und Reinigen von Maschinenoberflächen und Produktionsräumen überwiegend Handarbeit."
+      },
+      {
+        "name": "Kleinstörungen an den Produktionsanlagen beheben und einfache Wartungsarbeiten durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Beseitigen von Produkt- oder Verpackungsstaus sowie das Auswechseln von Dichtungen und Verschleissteilen erfordert manuelles Eingreifen direkt an der Maschine."
+      },
+      {
+        "name": "Rohstofflagerung, Kühlkette und Linienbestände kontrollieren sowie Materialbewegungen buchen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Lagerkontrolle und Standardbuchungen benötigen keine generative KI (E0). Automatische Temperaturdatenlogger für die Kühlkette sowie Barcode-Scanner mit ERP-/MES-Anbindung (klassische Software) übernehmen über 50 % des Kontroll- und Buchungsaufwands."
+      },
+      {
+        "name": "Schichtübergaberapporte, Störungsmeldungen und HACCP-Abweichungsberichte dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "In vielen Betrieben besteht die Dokumentation überwiegend aus kurzen Zahlen- und Checkbox-Einträgen, bei denen Spracheingabe und LLM kaum 50 % Zeit sparen; E0 ist daher ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Per Spracheingabe in eine MES- oder QM-App erstellt die KI aus kurzen Angaben strukturierte Schichtübergaben, Störungsbeschriebe und Abweichungsmeldungen; die anlagenführende Person prüft und visiert jeden Eintrag fachlich. Umgebungslärm in der Produktionshalle und Dialekt erhöhen den Korrekturaufwand."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Anlagenführer/in bzw. Lebensmitteltechnologe/-technologin EFZ in einem mittelgrossen Schweizer Produktionsbetrieb der Nahrungs- und Genussmittelindustrie. Die Arbeit ist stark durch physische Maschinenbedienung, Hygieneprozesse und klassische Industrieautomatisierung (SPS/SCADA, automatische Dosier- und Verpackungslinien) geprägt, während generative KI nur bei der Textdokumentation von Schichtübergaben und Abweichungen greift. Unpassendes ESCO-Rauschen («ethische Ernährungsgewohnheiten fördern») wurde ignoriert.",
+    "zusammenfassung": {
+      "haupt_risiko": "Der Beruf ist durch generative KI kaum betroffen; einzig das Verfassen von Schichtübergaberapporten, Störungsmeldungen und HACCP-Abweichungsberichten kann durch Spracheingabe und KI-Funktionen in Produktionssystemen beschleunigt werden.",
+      "begruendung": "Nur rund 5 % der Arbeitszeit sind gegenüber generativer KI exponiert, und zwar im delegierenden Modus, da jeder generierte Qualitäts- oder Schichtrapport von der verantwortlichen Fachperson geprüft und visiert werden muss. Strenge lebensmittelrechtliche Dokumentations- und Rückverfolgbarkeitspflichten (HACCP/GMP) sowie sprachlich gemischte Schichtteams bremsen die Einführung, während der eigentliche Automatisierungsdruck von klassischer Prozess- und Verpackungstechnik ausgeht.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

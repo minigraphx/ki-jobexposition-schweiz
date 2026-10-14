@@ -10,85 +10,220 @@
     "beruf": "Spezialisten im Bereich Management- und Organisationsanalyse",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 243,
+      "candidates_token_count": 2217,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 243
+          "token_count": 2217
         }
       ],
-      "prompt_token_count": 22533,
+      "prompt_token_count": 22494,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22533
+          "token_count": 22494
         }
       ],
-      "thoughts_token_count": 9093,
-      "total_token_count": 31869
+      "thoughts_token_count": 7015,
+      "total_token_count": 31726
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 243,
+        "candidates_token_count": 2217,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 243
+            "token_count": 2217
           }
         ],
-        "prompt_token_count": 22533,
+        "prompt_token_count": 22494,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22533
+            "token_count": 22494
           }
         ],
-        "thoughts_token_count": 9093,
-        "total_token_count": 31869
+        "thoughts_token_count": 7015,
+        "total_token_count": 31726
       }
     ],
     "request_ids": [
-      "nrnOapv1Lbzi_uMP6aHG6Ag"
+      "XTzPavuuFPGfz7IP68qu-AE"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten/0: 'Stakeholder-Interviews und Workshops zur Ist-Aufnahme und Problemanalyse durchführen' is not of type 'object'; taetigkeiten/1: 'Prozessdokumentationen, Anforderungsspezifikationen und Workshop-Protokolle erstellen' is not of type 'object'; taetigkeiten/2: 'Betriebs-, Prozess- und Finanzdaten quantitativ auswerten und Business Cases berechnen' is not of type 'object'; taetigkeiten/3: 'Markt-, Umfeld- und Benchmark-Recherchen durchführen und aufbereiten' is not of type 'object'; taetigkeiten/4: 'Soll-Konzepte, Reorganisationspläne und Beratungsberichte verfassen' is not of type 'object'; taetigkeiten/5: 'Ausschreibungsunterlagen analysieren und Beratungsangebote oder Projektanträge ausarbeiten' is not of type 'object'; taetigkeiten/6: 'Analyseergebnisse präsentieren, strategische Optionen in Gremien verhandeln und Entscheide herbeiführen' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-2421_spezialisten_im_bereich_management_und_o",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten/0: 'Stakeholder-Interviews und Workshops zur Ist-Aufnahme und Problemanalyse durchführen' is not of type 'object'",
-      "taetigkeiten/1: 'Prozessdokumentationen, Anforderungsspezifikationen und Workshop-Protokolle erstellen' is not of type 'object'",
-      "taetigkeiten/2: 'Betriebs-, Prozess- und Finanzdaten quantitativ auswerten und Business Cases berechnen' is not of type 'object'",
-      "taetigkeiten/3: 'Markt-, Umfeld- und Benchmark-Recherchen durchführen und aufbereiten' is not of type 'object'",
-      "taetigkeiten/4: 'Soll-Konzepte, Reorganisationspläne und Beratungsberichte verfassen' is not of type 'object'",
-      "taetigkeiten/5: 'Ausschreibungsunterlagen analysieren und Beratungsangebote oder Projektanträge ausarbeiten' is not of type 'object'",
-      "taetigkeiten/6: 'Analyseergebnisse präsentieren, strategische Optionen in Gremien verhandeln und Entscheide herbeiführen' is not of type 'object'",
-      "taetigkeiten/7: 'Veränderungsprozesse (Change Management) begleiten, Schulungen durchführen und Umsetzung unterstützen' is not of type 'object'",
-      "taetigkeiten/8: 'Beratungsprojekte planen und steuern sowie Kunden- und Managementbeziehungen pflegen' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"2421\",\"beruf\":\"Spezialisten im Bereich Management- und Organisationsanalyse\",\"taetigkeiten\":[\n  \"Stakeholder-Interviews und Workshops zur Ist-Aufnahme und Problemanalyse durchführen\",\n  \"Prozessdokumentationen, Anforderungsspezifikationen und Workshop-Protokolle erstellen\",\n  \"Betriebs-, Prozess- und Finanzdaten quantitativ auswerten und Business Cases berechnen\",\n  \"Markt-, Umfeld- und Benchmark-Recherchen durchführen und aufbereiten\",\n  \"Soll-Konzepte, Reorganisationspläne und Beratungsberichte verfassen\",\n  \"Ausschreibungsunterlagen analysieren und Beratungsangebote oder Projektanträge ausarbeiten\",\n  \"Analyseergebnisse präsentieren, strategische Optionen in Gremien verhandeln und Entscheide herbeiführen\",\n  \"Veränderungsprozesse (Change Management) begleiten, Schulungen durchführen und Umsetzung unterstützen\",\n  \"Beratungsprojekte planen und steuern sowie Kunden- und Managementbeziehungen pflegen\"\n]}"
+  "bewertung": {
+    "isco_code": "2421",
+    "beruf": "Spezialisten im Bereich Management- und Organisationsanalyse",
+    "taetigkeiten": [
+      {
+        "name": "Stakeholder-Interviews und Workshops zur Ist-Aufnahme und Bedarfsermittlung durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Führen von Interviews und Moderieren von Workshops erfordert unmittelbare zwischenmenschliche Präsenz, Empathie und das Wahrnehmen von Zwischentönen in der Organisation."
+      },
+      {
+        "name": "Interne Dokumente, Prozessbeschreibungen und Interviewnotizen auswerten und strukturieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM fasst hochgeladene Textdokumente und Gesprächsnotizen zusammen und strukturiert Anforderungen; die Fachperson steuert die Abfragen und prüft jede Auswertung inhaltlich gegen die Quellen."
+      },
+      {
+        "name": "Geschäftsprozesse und Organisationsstrukturen modellieren und auf Schwachstellen analysieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Fachperson modelliert und beurteilt die Abläufe selbst, während KI-gestützte Prozessmodellierungs- und Analysewerkzeuge Diagrammentwürfe liefern und Medienbrüche oder Engpässe markieren."
+      },
+      {
+        "name": "Finanz-, Betriebs- und Leistungsdaten aufbereiten und quantitativ analysieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Datenanalyse-Agenten mit Code-Ausführung oder Tabellen-Integration bereinigen Betriebsdaten, berechnen Kennzahlen und erstellen Business-Cases; der Analyst gibt die Logik vor und kontrolliert jede Berechnung."
+      },
+      {
+        "name": "Markt-, Branchen- und Benchmark-Recherchen zu externen Faktoren durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche tragen Markt-, Wettbewerbs- und Benchmarkdaten zusammen und erstellen strukturierte Übersichten; die Fachperson verifiziert die Quellen und plausibilisiert die Ergebnisse."
+      },
+      {
+        "name": "Strategische Optionen, Reorganisationskonzepte und Massnahmenpläne entwerfen und abwägen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das kundenspezifische Abwägen strategischer Zielkonflikte unter Berücksichtigung von Unternehmenskultur, Governance und Machbarkeit ist eine komplexe Urteilsleistung, bei der KI-Ideen keine 50 % Zeitersparnis bringen."
+      },
+      {
+        "name": "Beratungsberichte, Projektanträge, Entscheidungsgrundlagen und Präsentationen erstellen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "LLMs mit Office- und Präsentations-Integration erstellen Berichtsabschnitte und Folienentwürfe aus Analysenotizen; die Fachperson gibt die Storyline vor und überarbeitet und prüft jedes Dokument."
+      },
+      {
+        "name": "Analyseergebnisse präsentieren und Führungskräfte in Entscheidungsgremien beraten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Überzeugungsarbeit und Beratung von Entscheidungsträgern im Steuerungsausschuss oder in der Geschäftsleitung beruht auf persönlicher Präsenz, Vertrauen und direkter Diskussion."
+      },
+      {
+        "name": "Änderungsmanagement und Projektumsetzung mit den Beteiligten im Betrieb begleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Begleiten von Veränderungsprozessen, das Lösen von Widerständen und das Coaching von Führungskräften erfordern persönliche Interaktion und soziale Kompetenz vor Ort."
+      },
+      {
+        "name": "Beziehungen zu Entscheidungsträgern pflegen sowie Akquise- und Auftragsklärungsgespräche führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aufbau und Pflege langfristiger Kunden- und Stakeholderbeziehungen sowie das Aushandeln von Aufträgen sind reine Präsenz- und Beziehungstätigkeiten."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Unternehmensberater/in bzw. Spezialist/in für Organisationsanalyse und Projektleitung in Beratungsunternehmen, Grossbetrieben oder der öffentlichen Verwaltung. Die analytischen, recherchierenden und dokumentenerstellenden Aufgaben sind klar von den interpersonellen und strategisch-abwägenden Tätigkeiten abgrenzbar. Grenzfälle bestehen bei der Prozessmodellierung und der strategischen Konzepterstellung je nach Standardisierungsgrad des Mandats.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Auswertung von Dokumenten und Interviewnotizen, Markt- und Benchmark-Recherchen, quantitative Datenanalysen sowie das Erstellen von Berichten und Präsentationen durch Chat-LLMs, Recherche- und Datenanalyse-Agenten sowie Office-Integrationen.",
+      "begruendung": "Rund 60 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden und teilweise im unterstützenden Modus, da jede Analyse und jedes Konzeptpapier fachlich geprüft und verantwortet werden muss. Die persönliche Durchführung von Workshops, die strategische Urteilsbildung, das Change Management und die Beratung in Führungsgremien (zusammen 40 %) bleiben beim Menschen. Wesentliche Schweizer Hemmnisse sind der Schutz vertraulicher Geschäfts- und Verwaltungsdaten (revDSG, Amts- und Geschäftsgeheimnis) sowie die mehrsprachige Aufbereitung von Entscheidungsgrundlagen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

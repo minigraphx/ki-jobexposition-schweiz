@@ -10,85 +10,214 @@
     "beruf": "Servicemitarbeiter/in",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 259,
+      "candidates_token_count": 2099,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 259
+          "token_count": 2099
         }
       ],
-      "prompt_token_count": 22676,
+      "prompt_token_count": 22637,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22676
+          "token_count": 22637
         }
       ],
-      "thoughts_token_count": 6601,
-      "total_token_count": 29536
+      "thoughts_token_count": 5238,
+      "total_token_count": 29974
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 259,
+        "candidates_token_count": 2099,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 259
+            "token_count": 2099
           }
         ],
-        "prompt_token_count": 22676,
+        "prompt_token_count": 22637,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22676
+            "token_count": 22637
           }
         ],
-        "thoughts_token_count": 6601,
-        "total_token_count": 29536
+        "thoughts_token_count": 5238,
+        "total_token_count": 29974
       }
     ],
     "request_ids": [
-      "nrnOarjTKLi-_PUPrrqE6QQ"
+      "XTzPapnjF5rVz7IP29KluQo"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: taetigkeiten/0: 'name' is not of type 'object'; taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'; taetigkeiten/2: 'stufe' is not of type 'object'; taetigkeiten/3: 'modus' is not of type 'object'; taetigkeiten/4: 'restzeit_mensch' is not of type 'object'; taetigkeiten/5: 'physisch_automatisierbar' is not of type 'object'; taetigkeiten/6: 'p_art' is not of type 'object'; taetigkeiten/7: 'sicherheit' is not of type 'object'; taetigkeiten/8: 'sicherheit_begruendung' is not of type 'object'; taetigkeiten/9: 'ch_hemmnis' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-5131_servicemitarbeiter_in",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "taetigkeiten/0: 'name' is not of type 'object'",
-      "taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'",
-      "taetigkeiten/2: 'stufe' is not of type 'object'",
-      "taetigkeiten/3: 'modus' is not of type 'object'",
-      "taetigkeiten/4: 'restzeit_mensch' is not of type 'object'",
-      "taetigkeiten/5: 'physisch_automatisierbar' is not of type 'object'",
-      "taetigkeiten/6: 'p_art' is not of type 'object'",
-      "taetigkeiten/7: 'sicherheit' is not of type 'object'",
-      "taetigkeiten/8: 'sicherheit_begruendung' is not of type 'object'",
-      "taetigkeiten/9: 'ch_hemmnis' is not of type 'object'",
-      "taetigkeiten/10: 'begruendung' is not of type 'object'",
-      "zusammenfassung: '' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\": \"5131\", \"beruf\": \"Servicemitarbeiter/in\", \"taetigkeiten\": [\n  \"name\",\n  \"zeitanteil_pct\",\n  \"stufe\",\n  \"modus\",\n  \"restzeit_mensch\",\n  \"physisch_automatisierbar\",\n  \"p_art\",\n  \"sicherheit\",\n  \"sicherheit_begruendung\",\n  \"ch_hemmnis\",\n  \"begruendung\"\n], \"unsicherheit\": \"niedrig\", \"kommentar\": \"Setting: Servicemitarbeiter/in (Restaurationsfachperson) in einem typischen Schweizer Speiserestaurant mit Tischservice (KMU). Die Arbeit ist zu 95 % durch physische Tätigkeiten im Speisesaal und unmittelbare persönliche Präsenz am Gast geprägt. Eine Teilautomatisierung über nicht-generative Selbstbedienungslösungen (QR-Code-Bestellung, Self-Checkout, klassische Online-Reservationstools) ist in Teilen möglich, verändert im klassischen Tischservice aber oft den Dienstleistungscharakter.\", \"zusammenfassung\": \"\"}"
+  "bewertung": {
+    "isco_code": "5131",
+    "beruf": "Servicemitarbeiter/in",
+    "taetigkeiten": [
+      {
+        "name": "Gastraum vorbereiten, Tische eindecken und Servicestationen bestücken",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Vorbereitungsarbeiten (Mise en place, Gläser polieren, Aufdecken) im Restaurant; keine Automatisierung verfügbar."
+      },
+      {
+        "name": "Gäste begrüssen, an den Tisch begleiten und Speisekarten überreichen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare persönliche Präsenz und Gastfreundschaft beim Empfang vor Ort; nicht durch generative KI ersetzbar."
+      },
+      {
+        "name": "Gäste am Tisch zu Speisen, Getränken, Weinen und Allergenen beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Beratungs- und Verkaufsgespräch von Angesicht zu Angesicht am Tisch, dessen Wert in der menschlichen Präsenz liegt."
+      },
+      {
+        "name": "Speisen- und Getränkebestellungen am Tisch aufnehmen und im Kassensystem erfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bestellaufnahme vor Ort am Tisch ist keine LLM-Aufgabe (E0), kann aber in vielen Betrieben über Selbstbedienung per QR-Code-Bestellsystem oder Bestellterminal übernommen werden (P1)."
+      },
+      {
+        "name": "Heissgetränke, Offenausschank und einfache Aperitifs am Buffet zubereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Zubereitung von Getränken an Kaffeemaschine, Zapfanlage und Buffet; über heutige Standardgeräte hinaus nicht zu 50 % automatisierbar."
+      },
+      {
+        "name": "Speisen und Getränke servieren, Wein präsentieren sowie Geschirr abräumen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Lauf- und Servierarbeit am Tisch; Servierroboter können nur als Transporthilfe dienen, aber nicht am Tisch einstellen oder abräumen."
+      },
+      {
+        "name": "Gäste während des Besuchs betreuen und auf Zusatzwünsche oder Reklamationen reagieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beziehungs- und Präsenztätigkeit direkt am Gast, die Empathie und situatives Reagieren vor Ort erfordert."
+      },
+      {
+        "name": "Rechnungen erstellen, Zahlungen am Tisch einkassieren und Kasse abrechnen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer Kassiervorgang am Tisch ohne LLM-Exposition (E0); Selbstbedienungs-Bezahllösungen per QR-Code am Tisch oder Bezahlautomaten können über 50 % der Inkassozeit übernehmen (P1)."
+      },
+      {
+        "name": "Tische, Buffet und Arbeitsflächen reinigen sowie Hygienestandards kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Reinigungsarbeit auf Tischen, am Buffet und im möblierten Gastraum, die nicht durch Roboter übernommen werden kann."
+      },
+      {
+        "name": "Tischreservationen und Gästeanfragen per Telefon und E-Mail bearbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Qualität von Voicebots bei Schweizerdeutsch und Hintergrundlärm im Restaurant sowie Anteil komplexer Gruppenanfragen unsicher; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "mehrsprachigkeit",
+          "vertrauen"
+        ],
+        "begruendung": "Voicebots und KI-E-Mail-Assistenten mit Anbindung ans Reservierungssystem nehmen Standardreservationen selbständig auf, während das Personal nur Spezialfälle übernimmt; klassische Online-Reservierungsportale erledigen dies bereits heute regelbasiert (P1)."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Ausgebildete Servicefachkraft (Restaurantfachfrau/-mann EFZ bzw. Servicemitarbeiter/in) in einem typischen Schweizer Speiserestaurant mit Tischservice (KMU). Die Arbeit ist zu 95 % durch physische Tätigkeiten und persönliche Präsenz am Gast geprägt; Automatisierungspotenzial besteht vor allem durch nicht-generative Selbstbedienungslösungen (QR-Bestellung/Bezahlung, Online-Reservation).",
+    "zusammenfassung": {
+      "haupt_risiko": "Einzig die telefonische und schriftliche Entgegennahme von Tischreservationen und Gästeanfragen ist durch Voicebots und KI-Assistenten exponiert, während die gesamte Arbeit am Gast und im Gastraum nicht betroffen ist.",
+      "begruendung": "Nur rund 5 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI im ersetzenden Modus Standardreservationen und Auskünfte übernimmt und das Personal lediglich Spezialanfragen bearbeitet. In der Schweiz bremsen die Erwartung persönlicher Gastfreundschaft (Vertrauen) sowie der Umgang mit Mundart und Fremdsprachen (Mehrsprachigkeit) den Einsatz von Telefon-KI im Gastgewerbe.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }

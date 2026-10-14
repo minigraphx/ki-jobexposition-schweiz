@@ -10,84 +10,236 @@
     "beruf": "Qualitätsmanager/in",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 550,
+      "cache_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 19567
+        }
+      ],
+      "cached_content_token_count": 19567,
+      "candidates_token_count": 2303,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 550
+          "token_count": 2303
         }
       ],
-      "prompt_token_count": 21696,
+      "prompt_token_count": 21657,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21696
+          "token_count": 21657
         }
       ],
-      "thoughts_token_count": 4515,
-      "total_token_count": 26761
+      "thoughts_token_count": 6108,
+      "total_token_count": 30068
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 550,
+        "cache_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 19567
+          }
+        ],
+        "cached_content_token_count": 19567,
+        "candidates_token_count": 2303,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 550
+            "token_count": 2303
           }
         ],
-        "prompt_token_count": 21696,
+        "prompt_token_count": 21657,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21696
+            "token_count": 21657
           }
         ],
-        "thoughts_token_count": 4515,
-        "total_token_count": 26761
+        "thoughts_token_count": 6108,
+        "total_token_count": 30068
       }
     ],
     "request_ids": [
-      "nrnOauD_J8brz7IPq46CuAM"
+      "XjzPaqnjKPSAz7IP5t2zgAs"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: taetigkeiten/0: 'QMS-Dokumentation (Prozessbeschreibungen, Arbeits- und Prüfanweisungen, QM-Handbuch) erstellen und pflegen' is not of type 'object'; taetigkeiten/1: 'Interne Audits, Lieferantenaudits und Prozessinspektionen vor Ort durchführen' is not of type 'object'; taetigkeiten/2: 'Audit-, Kontroll- und Abweichungsberichte (z. B. 8D-Reports, CAPA-Dokumentation) verfassen' is not of type 'object'; taetigkeiten/3: 'Prüf-, Reklamations- und Prozessdaten (SPC, Ausschuss, KPIs) auswerten und Qualitätsberichte aufbereiten' is not of type 'object'; taetigkeiten/4: 'Risikoanalysen (z. B. FMEA) und Prüfpläne inhaltlich ausarbeiten und dokumentieren' is not of type 'object'; taetigkeiten/5: 'Qualitätszirkel, KVP-Workshops und Ursachenanalysen mit Produktion und Entwicklung moderieren' is not of type 'object'; taetigkeiten/6: 'Abweichungen und fehlerhafte Chargen physisch begutachten und über Sonderfreigaben oder Sperrungen entscheiden' is not of type 'object'; taetigkeiten/7: 'Mitarbeitende in Qualitätsstandards, Prüfverfahren und Richtlinien schulen und unterweisen' is not of type 'object'; taetigkeiten/8: 'Externe Zertifizierungs-, Kunden- und Behördenaudits vor Ort begleiten' is not of type 'object'; taetigkeiten/9: 'Kundenanforderungen (Qualitätssicherungsvereinbarungen, Lastenhefte) und Normenänderungen prüfen und abgleichen' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-2146_qualitaetsmanager_in",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "taetigkeiten/0: 'QMS-Dokumentation (Prozessbeschreibungen, Arbeits- und Prüfanweisungen, QM-Handbuch) erstellen und pflegen' is not of type 'object'",
-      "taetigkeiten/1: 'Interne Audits, Lieferantenaudits und Prozessinspektionen vor Ort durchführen' is not of type 'object'",
-      "taetigkeiten/2: 'Audit-, Kontroll- und Abweichungsberichte (z. B. 8D-Reports, CAPA-Dokumentation) verfassen' is not of type 'object'",
-      "taetigkeiten/3: 'Prüf-, Reklamations- und Prozessdaten (SPC, Ausschuss, KPIs) auswerten und Qualitätsberichte aufbereiten' is not of type 'object'",
-      "taetigkeiten/4: 'Risikoanalysen (z. B. FMEA) und Prüfpläne inhaltlich ausarbeiten und dokumentieren' is not of type 'object'",
-      "taetigkeiten/5: 'Qualitätszirkel, KVP-Workshops und Ursachenanalysen mit Produktion und Entwicklung moderieren' is not of type 'object'",
-      "taetigkeiten/6: 'Abweichungen und fehlerhafte Chargen physisch begutachten und über Sonderfreigaben oder Sperrungen entscheiden' is not of type 'object'",
-      "taetigkeiten/7: 'Mitarbeitende in Qualitätsstandards, Prüfverfahren und Richtlinien schulen und unterweisen' is not of type 'object'",
-      "taetigkeiten/8: 'Externe Zertifizierungs-, Kunden- und Behördenaudits vor Ort begleiten' is not of type 'object'",
-      "taetigkeiten/9: 'Kundenanforderungen (Qualitätssicherungsvereinbarungen, Lastenhefte) und Normenänderungen prüfen und abgleichen' is not of type 'object'",
-      "zusammenfassung: 'Exponiert sind vor allem das Erstellen und Pflegen der QMS-Dokumentation, das Verfassen von Audit- und 8D-Berichten, der Abgleich von Normen und Kundenanforderungen (durch Chat-LLMs) sowie die Auswertung von Prüf- und Reklamationsdaten (durch KI-gestützte Datenanalyse- und CAQ-Werkzeuge).' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"2146\",\"beruf\":\"Qualitätsmanager/in\",\"taetigkeiten\":[\n  \"QMS-Dokumentation (Prozessbeschreibungen, Arbeits- und Prüfanweisungen, QM-Handbuch) erstellen und pflegen\",\n  \"Interne Audits, Lieferantenaudits und Prozessinspektionen vor Ort durchführen\",\n  \"Audit-, Kontroll- und Abweichungsberichte (z. B. 8D-Reports, CAPA-Dokumentation) verfassen\",\n  \"Prüf-, Reklamations- und Prozessdaten (SPC, Ausschuss, KPIs) auswerten und Qualitätsberichte aufbereiten\",\n  \"Risikoanalysen (z. B. FMEA) und Prüfpläne inhaltlich ausarbeiten und dokumentieren\",\n  \"Qualitätszirkel, KVP-Workshops und Ursachenanalysen mit Produktion und Entwicklung moderieren\",\n  \"Abweichungen und fehlerhafte Chargen physisch begutachten und über Sonderfreigaben oder Sperrungen entscheiden\",\n  \"Mitarbeitende in Qualitätsstandards, Prüfverfahren und Richtlinien schulen und unterweisen\",\n  \"Externe Zertifizierungs-, Kunden- und Behördenaudits vor Ort begleiten\",\n  \"Kundenanforderungen (Qualitätssicherungsvereinbarungen, Lastenhefte) und Normenänderungen prüfen und abgleichen\"\n],\"unsicherheit\":\"niedrig\",\"kommentar\":\"Angenommenes Setting: Qualitätsmanager/in (Tertiärstufe) in einem Schweizer Industriebetrieb (z. B. MEM-Industrie, Medtech, Pharma oder Lebensmittel). Die ESCO-Zuordnung «Qualitätsingenieur/in» vermischt teilweise operative Qualitätsprüfung an der Linie mit dem übergeordneten Qualitätsmanagement; die Tätigkeiten wurden daher auf das typische Schweizer Berufsbild im Qualitätsmanagement ausgerichtet. Grenzfälle bestehen bei der Ausarbeitung von Risikoanalysen (FMEA) und der Datenauswertung, wo der Prüf- und Interpretationsaufwand nahe an der 50-%-Schwelle liegt.\",\"zusammenfassung\":\n  \"Exponiert sind vor allem das Erstellen und Pflegen der QMS-Dokumentation, das Verfassen von Audit- und 8D-Berichten, der Abgleich von Normen und Kundenanforderungen (durch Chat-LLMs) sowie die Auswertung von Prüf- und Reklamationsdaten (durch KI-gestützte Datenanalyse- und CAQ-Werkzeuge).\"\n}"
+  "bewertung": {
+    "isco_code": "2146",
+    "beruf": "Qualitätsmanager/in",
+    "taetigkeiten": [
+      {
+        "name": "QMS-Dokumentation, Arbeitsanweisungen (SOPs) und Qualitätsstandards verfassen und aktualisieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Prozessnotizen und Normvorgaben vollständige Entwürfe für SOPs und Prozessbeschreibungen; die Qualitätsmanagerin spezifiziert die Abläufe und prüft jedes Dokument fachlich vor der Freigabe."
+      },
+      {
+        "name": "Interne Audits, Lieferantenaudits und Betriebsinspektionen vor Ort durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Vor-Ort-Begehungen in der Produktion und bei Lieferanten sowie die persönliche Befragung von Mitarbeitenden erfordern physische Präsenz und unmittelbare Beobachtung."
+      },
+      {
+        "name": "Audit-, Inspektions- und Qualitätsberichte sowie Management-Reviews verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus eingefügten Checklisten, Stichworten und Kennzahlen formuliert ein Chat-LLM strukturierte Audit- und Reviewberichte; der Mensch prüft jede Feststellung und Bewertung inhaltlich."
+      },
+      {
+        "name": "Prüf-, Mess- und Fehlerdaten (SPC, Ausschussraten, Reklamationsstatistiken) auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM-gestützte Datenanalyse-Werkzeuge (Code-Ausführung, Tabellen-Copiloten) erstellen statistische Auswertungen und clustern Fehlertexte, während die Fachperson die Prozessanalyse selbst führt. Standard-SPC- und BI-Auswertungen lassen sich zudem über klassische CAQ-Software automatisieren."
+      },
+      {
+        "name": "Qualitätsabweichungen im Betrieb untersuchen, Ursachenanalysen moderieren und CAPA-Massnahmen vereinbaren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Begutachtung fehlerhafter Teile in der Fertigung und die Moderation interdisziplinärer Ursachen-Workshops (z. B. Ishikawa, 5-Why) erfordern Präsenz, Teamabstimmung und technisches Erfahrungswissen."
+      },
+      {
+        "name": "8D-Reports, Abweichungsmeldungen und Stellungnahmen für Kunden und Behörden ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Das Chat-LLM entwirft aus den Ergebnissen der Ursachenanalyse vollständige 8D-Reports und fremdsprachige Kundenstellungnahmen; der Qualitätsmanager kontrolliert und verantwortet jeden Bericht vor dem Versand."
+      },
+      {
+        "name": "Risikoanalysen (z. B. Prozess- und Design-FMEA) vorbereiten und dokumentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM schlägt potenzielle Fehlerarten, Folgen und Massnahmen für FMEA-Tabellen vor; die Risikobewertung und Eintretensschätzung führt die Fachperson im Fachteam selbst durch."
+      },
+      {
+        "name": "Neue Normen, Richtlinien und Kundenanforderungen mit bestehenden QMS-Prozessen abgleichen (Gap-Analyse)",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Durch Textvergleich im Chat-LLM werden Abweichungen zwischen neuen ISO-/Branchennormen und internen Vorgaben markiert; die Qualitätsmanagerin prüft die markierten Stellen und beurteilt den Anpassungsbedarf selbst."
+      },
+      {
+        "name": "Mitarbeitende zu Qualitätsstandards, Prüfverfahren und QMS-Vorgaben schulen und unterweisen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Schulungen und praktische Unterweisungen des Produktions- und Prüfpersonals sind Präsenz- und Kommunikationstätigkeiten, deren Wert in der direkten Interaktion liegt."
+      },
+      {
+        "name": "Stichproben-, Erstmuster- und Freigabeprüfungen an Produkten in Fertigung oder Prüflabor durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Mess- und Sichtprüfungen an Bauteilen sind gegenüber Sprachmodellen nicht exponiert, können aber in der Industrie durch automatische optische Prüfsysteme (AOI) und CNC-Koordinatenmessgeräte weitgehend übernommen werden."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Qualitätsmanager/in bzw. Qualitätsingenieur/in in einem Schweizer Industriebetrieb (z. B. MEM-Industrie, Medtech, Pharma). Während operative Prüfaufgaben in der Fertigung nur einen kleinen Teil ausmachen, liegt der Schwerpunkt auf QMS-Pflege, Audits, Reklamations-/CAPA-Management und Datenanalyse.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Erstellung und Pflege von QMS-Dokumenten (SOPs), Audit- und 8D-Berichten, Normen-Gap-Analysen und Risikoanalysen durch Chat-LLMs sowie die Qualitätsdatenauswertung durch KI-Analysewerkzeuge.",
+      "begruendung": "Rund 60 % der Arbeitszeit sind exponiert, wobei die KI im Dokumentations- und Berichtswesen delegierend (Entwurf durch KI, Einzelfallprüfung durch den Menschen) und bei Risiko-, Norm- und Datenanalysen unterstützend wirkt. In der Schweizer Industrie – insbesondere in stark regulierten Branchen wie Medtech, Pharma und Maschinenbau – bremsen strenge Haftungs-, Nachweis- und Zertifizierungsvorschriften (ISO, MDR) sowie das Kundenvertrauen bei Reklamationen eine ungeprüfte Übernahme von KI-Ausgaben.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

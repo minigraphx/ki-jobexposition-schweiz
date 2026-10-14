@@ -10,85 +10,213 @@
     "beruf": "Bauführer/in",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 667,
+      "candidates_token_count": 2342,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 667
+          "token_count": 2342
         }
       ],
-      "prompt_token_count": 22222,
+      "prompt_token_count": 22183,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22222
+          "token_count": 22183
         }
       ],
-      "thoughts_token_count": 7170,
-      "total_token_count": 30059
+      "thoughts_token_count": 5867,
+      "total_token_count": 30392
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 667,
+        "candidates_token_count": 2342,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 667
+            "token_count": 2342
           }
         ],
-        "prompt_token_count": 22222,
+        "prompt_token_count": 22183,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22222
+            "token_count": 22183
           }
         ],
-        "thoughts_token_count": 7170,
-        "total_token_count": 30059
+        "thoughts_token_count": 5867,
+        "total_token_count": 30392
       }
     ],
     "request_ids": [
-      "nrnOatC5KavX_uMP-8qPkQE"
+      "XTzPareZNfSAz7IP5t2zgAs"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): Additional properties are not allowed ('Rund 25 % der Arbeitszeit sind exponiert, überwiegend im delegierenden Modus (20 %-Punkte) und teilweise unterstützend (5 %-Punkte): Die KI erstellt Vertragsentwürfe, Preisspiegel, Korrespondenz und Rechnungsabgleiche, die der Bauführer wegen der hohen Kosten- und Werkvertragshaftung im Einzelfall fachlich prüft. Der Grossteil der Arbeit erfordert physische Präsenz auf der Baustelle, Verhandlungsgeschick sowie räumlich-logistische Planung anhand lokaler Gegebenheiten. Harte regulatorische KI-Hemmnisse bestehen kaum, jedoch verlangsamen heterogene Baustellendaten und die KMU-Struktur des Schweizer Bauhauptgewerbes die breite Einführung integrierter Lösungen.' was unexpected); taetigkeiten/0: 'Baustellen vor Ort überwachen, Ausführungsqualität und Arbeitssicherheit kontrollieren' is not of type 'object'; taetigkeiten/1: 'Arbeitsvorbereitung (AVOR), Bauprogramme und Baustelleninstallation planen' is not of type 'object'; taetigkeiten/2: 'Personal-, Kolonnen- und Grossgeräteeinsatz disponieren sowie Poliere führen' is not of type 'object'; taetigkeiten/3: 'An Bausitzungen teilnehmen und mit Bauleitung, Fachplanern und Subunternehmern verhandeln' is not of type 'object'; taetigkeiten/4: 'Offerten und Nachträge anhand von Plänen und Leistungsverzeichnissen (NPK) kalkulieren' is not of type 'object'; taetigkeiten/5: 'Ausmasse am Bau und auf Plänen ermitteln sowie Teil- und Schlussabrechnungen erstellen' is not of type 'object'; taetigkeiten/6: 'Lieferanten- und Subunternehmerofferten auswerten, Preisspiegel erstellen und Werkverträge ausarbeiten' is not of type 'object'; taetigkeiten/7: 'Tages- und Regierapporte prüfen, aufbereiten und Nachkalkulation im Bau-ERP führen' is not of type 'object'; taetigkeiten/8: 'Eingangsrechnungen mit Lieferscheinen und Verträgen abgleichen, kontieren und freigeben' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-3112_baufuehrer_in",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): Additional properties are not allowed ('Rund 25 % der Arbeitszeit sind exponiert, überwiegend im delegierenden Modus (20 %-Punkte) und teilweise unterstützend (5 %-Punkte): Die KI erstellt Vertragsentwürfe, Preisspiegel, Korrespondenz und Rechnungsabgleiche, die der Bauführer wegen der hohen Kosten- und Werkvertragshaftung im Einzelfall fachlich prüft. Der Grossteil der Arbeit erfordert physische Präsenz auf der Baustelle, Verhandlungsgeschick sowie räumlich-logistische Planung anhand lokaler Gegebenheiten. Harte regulatorische KI-Hemmnisse bestehen kaum, jedoch verlangsamen heterogene Baustellendaten und die KMU-Struktur des Schweizer Bauhauptgewerbes die breite Einführung integrierter Lösungen.' was unexpected)",
-      "taetigkeiten/0: 'Baustellen vor Ort überwachen, Ausführungsqualität und Arbeitssicherheit kontrollieren' is not of type 'object'",
-      "taetigkeiten/1: 'Arbeitsvorbereitung (AVOR), Bauprogramme und Baustelleninstallation planen' is not of type 'object'",
-      "taetigkeiten/2: 'Personal-, Kolonnen- und Grossgeräteeinsatz disponieren sowie Poliere führen' is not of type 'object'",
-      "taetigkeiten/3: 'An Bausitzungen teilnehmen und mit Bauleitung, Fachplanern und Subunternehmern verhandeln' is not of type 'object'",
-      "taetigkeiten/4: 'Offerten und Nachträge anhand von Plänen und Leistungsverzeichnissen (NPK) kalkulieren' is not of type 'object'",
-      "taetigkeiten/5: 'Ausmasse am Bau und auf Plänen ermitteln sowie Teil- und Schlussabrechnungen erstellen' is not of type 'object'",
-      "taetigkeiten/6: 'Lieferanten- und Subunternehmerofferten auswerten, Preisspiegel erstellen und Werkverträge ausarbeiten' is not of type 'object'",
-      "taetigkeiten/7: 'Tages- und Regierapporte prüfen, aufbereiten und Nachkalkulation im Bau-ERP führen' is not of type 'object'",
-      "taetigkeiten/8: 'Eingangsrechnungen mit Lieferscheinen und Verträgen abgleichen, kontieren und freigeben' is not of type 'object'",
-      "taetigkeiten/9: 'Baukorrespondenz, Bedenkenanzeigen, Mängelrügen und Aktennotizen verfassen' is not of type 'object'",
-      "zusammenfassung: 'Betroffen sind vor allem die kaufmännisch-administrativen Büroaufgaben wie Offertvergleiche, Werkvertragsentwürfe, Rechnungsprüfung, Rapportaufbereitung und Baukorrespondenz durch Chat-LLMs und KI-Funktionen im Bau-ERP, während die Baustellenführung vor Ort nicht exponiert ist.' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"3112\",\"beruf\":\"Bauführer/in\",\"taetigkeiten\":[\n  \"Baustellen vor Ort überwachen, Ausführungsqualität und Arbeitssicherheit kontrollieren\",\n  \"Arbeitsvorbereitung (AVOR), Bauprogramme und Baustelleninstallation planen\",\n  \"Personal-, Kolonnen- und Grossgeräteeinsatz disponieren sowie Poliere führen\",\n  \"An Bausitzungen teilnehmen und mit Bauleitung, Fachplanern und Subunternehmern verhandeln\",\n  \"Offerten und Nachträge anhand von Plänen und Leistungsverzeichnissen (NPK) kalkulieren\",\n  \"Ausmasse am Bau und auf Plänen ermitteln sowie Teil- und Schlussabrechnungen erstellen\",\n  \"Lieferanten- und Subunternehmerofferten auswerten, Preisspiegel erstellen und Werkverträge ausarbeiten\",\n  \"Tages- und Regierapporte prüfen, aufbereiten und Nachkalkulation im Bau-ERP führen\",\n  \"Eingangsrechnungen mit Lieferscheinen und Verträgen abgleichen, kontieren und freigeben\",\n  \"Baukorrespondenz, Bedenkenanzeigen, Mängelrügen und Aktennotizen verfassen\"\n],\"unsicherheit\":\"niedrig\",\"kommentar\":\"Angenommenes Setting: Bauführer/in HF in einer Schweizer Bauunternehmung (Hoch- oder Tiefbau, typischerweise KMU). Die ESCO-Zuordnung «Oberbauleiter/in» ist sehr allgemein gehalten; die Tätigkeiten wurden daher um die schweiztypischen Kernaufgaben (AVOR, NPK-Kalkulation, Ausmass und Abrechnung nach SIA 118) ergänzt. Die grösste Unsicherheit besteht beim Grad der Zeitersparnis durch KI-gestützte Dokumenten- und Rapportfunktionen in Branchensoftware (Bau-ERP).\",\"zusammenfassung\":\n  \"Betroffen sind vor allem die kaufmännisch-administrativen Büroaufgaben wie Offertvergleiche, Werkvertragsentwürfe, Rechnungsprüfung, Rapportaufbereitung und Baukorrespondenz durch Chat-LLMs und KI-Funktionen im Bau-ERP, während die Baustellenführung vor Ort nicht exponiert ist.\",\n  \"Rund 25 % der Arbeitszeit sind exponiert, überwiegend im delegierenden Modus (20 %-Punkte) und teilweise unterstützend (5 %-Punkte): Die KI erstellt Vertragsentwürfe, Preisspiegel, Korrespondenz und Rechnungsabgleiche, die der Bauführer wegen der hohen Kosten- und Werkvertragshaftung im Einzelfall fachlich prüft. Der Grossteil der Arbeit erfordert physische Präsenz auf der Baustelle, Verhandlungsgeschick sowie räumlich-logistische Planung anhand lokaler Gegebenheiten. Harte regulatorische KI-Hemmnisse bestehen kaum, jedoch verlangsamen heterogene Baustellendaten und die KMU-Struktur des Schweizer Bauhauptgewerbes die breite Einführung integrierter Lösungen.\"\n  :\"5-10 Jahre\"}"
+  "bewertung": {
+    "isco_code": "3112",
+    "beruf": "Bauführer/in",
+    "taetigkeiten": [
+      {
+        "name": "Arbeitsvorbereitung (AVOR), Bauprogramm sowie Personal- und Inventarplanung erstellen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Planung von Baustelleninstallation, Kranstandorten, Etappierungen und Kolonneneinsätzen hängt stark von den örtlichen Gegebenheiten und der Betriebsverfügbarkeit ab; generative KI spart hier keine 50 % der Zeit."
+      },
+      {
+        "name": "Leistungsverzeichnisse (NPK/Devis) kalkulieren sowie Offerten und Nachträge ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-gestützte Vorbelegung und Dokumentenanalyse bei der Kalkulation angesichts der objektspezifischen Risiko- und Leistungsbeurteilung die 50-%-Schwelle erreicht; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in der Bausoftware prüfen Ausschreibungsunterlagen auf Spezialbedingungen, schlagen Ansätze aus Referenzprojekten vor und entwerfen Nachtragsbegründungen; der Bauführer kalkuliert und verantwortet die Aufwandswerte und Preise selbst."
+      },
+      {
+        "name": "Material und Subunternehmerleistungen ausschreiben, Offerten vergleichen und vergeben",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumentenextraktion und Analyse-Agenten erstellen aus heterogenen Lieferanten-PDFs automatisch Preisspiegel und markieren Abweichungen; der Bauführer führt die Vergabeverhandlungen und trifft den Entscheid selbst."
+      },
+      {
+        "name": "Bauausführung, Qualität und Arbeitssicherheit vor Ort auf der Baustelle überwachen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Begehungen auf der Baustelle zur Kontrolle von Baufortschritt, Ausführungsqualität und SUVA-Sicherheitsvorschriften erfordern physische Präsenz vor Ort."
+      },
+      {
+        "name": "Poliere und Baustellenpersonal führen, einweisen und bei Problemen vor Ort unterstützen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Führungstätigkeit, Einsatzbesprechungen mit dem Polier und kurzfristige technische Problemlösung direkt auf der Baustelle."
+      },
+      {
+        "name": "An Bausitzungen mit Bauleitung, Architekten und Fachplanern teilnehmen und Ausführung abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlung und Koordination von Terminen, Ausführungsdetails und Schnittstellen im persönlichen Gespräch vor Ort oder in Bausitzungen."
+      },
+      {
+        "name": "Ausmasse vor Ort und nach Plan aufnehmen, Regierapporte prüfen und Bauabrechnungen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das gemeinsame Ausmessen auf der Baustelle bzw. am Plan und die Bereinigung von Regierapporten mit der Bauleitung erfordern detaillierte Einzelfallprüfung; generative KI spart hier insgesamt keine 50 % der Zeit."
+      },
+      {
+        "name": "Lieferanten- und Subunternehmerrechnungen mit Lieferscheinen abgleichen, kontieren und visieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Belegerkennung im Bau-ERP gleicht Rechnungen automatisch mit Lieferscheinen, Bestellungen und Werkverträgen ab und schlägt die Baustellenkontierung vor; der Bauführer prüft und visiert jede Rechnung fachlich."
+      },
+      {
+        "name": "Baustellencontrolling, Leistungsmeldungen und Soll-Ist-Vergleiche durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Die Beurteilung des tatsächlichen Bautenstands und der Abgrenzungen erfordert viel Erfahrungswissen über die Baustelle; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Analysefunktionen im Bau-ERP bereiten Stunden-, Material- und Fremdleistungskosten auf, markieren Abweichungen zum Budget und schlagen Abgrenzungen vor; der Bauführer beurteilt den Leistungsstand je Baustelle selbst."
+      },
+      {
+        "name": "Baukorrespondenz, Bedenkenanzeigen, Abmahnungen und Aktennotizen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten formgerechte Schreiben wie Abmahnungen oder Bedenkenanzeigen nach SIA 118; der Bauführer prüft jeden Entwurf wegen der werkvertraglichen Haftung vor dem Versand."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Diplomierte/r Bauführer/in HF/SBA in einer Schweizer Bauunternehmung (Hoch- und Tiefbau). Die ESCO-Bezeichnung «Oberbauleiter/in» wurde an das Schweizer Berufsbild des Bauführers (unternehmerseitige Leitung von Baustellen bzgl. Technik, Kosten, Terminen und Personal) angepasst. Grösste Grenzfälle sind die Kalkulation sowie das Baustellencontrolling, die stark von der Integration generativer KI in branchenspezifische Bau-ERP-Systeme (z. B. SORBA, Abacus, Baubit) abhängen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Kaufmännische und administrative Bürotätigkeiten wie Offertvergleiche, Rechnungsprüfung, Baukorrespondenz sowie Teile der Kalkulation und des Baustellencontrollings werden durch Chat-LLMs und KI-Funktionen in der Bausoftware beschleunigt.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im unterstützenden und delegierenden Modus, da der Bauführer Preise, Vergaben, Rechnungen und rechtlich relevante SIA-Anzeigen weiterhin fachlich verantwortet und prüft. Der Kern des Berufs – die Führung der Poliere, die Überwachung der Bauausführung vor Ort und die Verhandlung an Bausitzungen – bleibt physisch und präsenzgebunden; werkvertragliche Haftungsfragen erfordern zudem eine genaue menschliche Kontrolle.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }

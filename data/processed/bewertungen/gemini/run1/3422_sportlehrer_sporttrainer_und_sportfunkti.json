@@ -10,78 +10,212 @@
     "beruf": "Sportlehrer, Sporttrainer und Sportfunktionäre",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 47,
+      "cache_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 19648
+        }
+      ],
+      "cached_content_token_count": 19648,
+      "candidates_token_count": 2078,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 47
+          "token_count": 2078
         }
       ],
-      "prompt_token_count": 22903,
+      "prompt_token_count": 22864,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22903
+          "token_count": 22864
         }
       ],
-      "thoughts_token_count": 8720,
-      "total_token_count": 31670
+      "thoughts_token_count": 3688,
+      "total_token_count": 28630
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 47,
+        "cache_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 19648
+          }
+        ],
+        "cached_content_token_count": 19648,
+        "candidates_token_count": 2078,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 47
+            "token_count": 2078
           }
         ],
-        "prompt_token_count": 22903,
+        "prompt_token_count": 22864,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22903
+            "token_count": 22864
           }
         ],
-        "thoughts_token_count": 8720,
-        "total_token_count": 31670
+        "thoughts_token_count": 3688,
+        "total_token_count": 28630
       }
     ],
     "request_ids": [
-      "nrnOaqqZKbzi_uMP6aHG6Ag"
+      "XjzPar3nEPSAz7IP5t2zgAs"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: ['...'] is too short; taetigkeiten/0: '...' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-3422_sportlehrer_sporttrainer_und_sportfunkti",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: ['...'] is too short",
-      "taetigkeiten/0: '...' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"3422\",\"beruf\":\"Sportlehrer, Sporttrainer und Sportfunktionäre\",\"taetigkeiten\":[\"...\"]}"
+  "bewertung": {
+    "isco_code": "3422",
+    "beruf": "Sportlehrer, Sporttrainer und Sportfunktionäre",
+    "taetigkeiten": [
+      {
+        "name": "Gruppentraining und Sportlektionen vor Ort leiten, Übungen demonstrieren und Teilnehmende motivieren",
+        "zeitanteil_pct": 35,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Anleiten, Vorzeigen und Motivieren auf dem Sportplatz, in der Halle oder im Gelände erfordert unmittelbare körperliche Präsenz und zwischenmenschliche Interaktion."
+      },
+      {
+        "name": "Bewegungsausführung korrigieren, an Sportgeräten sichern und Unfallprävention im Training gewährleisten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Hilfestellung, situatives Eingreifen zur Risikominimierung und direkte Haltungskorrekturen vor Ort sind nicht durch KI übernehmbar."
+      },
+      {
+        "name": "Sportler/innen an Wettkämpfen betreuen, taktisch einstellen oder Einsätze als Sportoffizielle leiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Coaching am Spielfeldrand sowie das Leiten und Überwachen von Wettkämpfen als Schiedsrichter oder Funktionär erfordern persönliche Anwesenheit und Echtzeit-Entscheidungen vor Ort."
+      },
+      {
+        "name": "Individuelle Feedbackgespräche führen sowie zu Trainingsbelastung, Regeneration und Zielen beraten",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beziehungs- und Beratungstätigkeit, deren Wirkung auf dem direkten Vertrauensverhältnis und dem pädagogischen Gespräch mit den Sportlerinnen und Sportlern beruht."
+      },
+      {
+        "name": "Sportgeräte, Trainingsmaterial und Sportanlagen bereitstellen, kontrollieren und instand halten",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein manuelle Tätigkeit beim Auf- und Abbau von Trainingsparcours sowie bei der Material- und Anlagenkontrolle."
+      },
+      {
+        "name": "Trainingspläne, Lektionsabläufe und mehrwöchige Aufbauprogramme erstellen",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt auf Basis von Altersgruppe, Leistungsniveau und Trainingsziel strukturierte Lektionspläne und Übungsvarianten; die Lehrperson spezifiziert die Vorgaben und prüft jeden Plan fachlich auf Durchführbarkeit."
+      },
+      {
+        "name": "Trainingsbetrieb, Platz- und Hallenbelegung, Kursanmeldungen sowie J+S- und Vereinsabrechnungen verwalten",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Anwesenheitskontrollen, Kursbuchungen und Abrechnungen (z. B. für Jugend+Sport) werden über klassische Vereins-, Buchungs- und Verwaltungssoftware wie ClubDesk oder Eversports abgewickelt und benötigen kein Sprachmodell."
+      },
+      {
+        "name": "Leistungs-, Fitness- und Wettkampfdaten von Sportler/innen auswerten und dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Im Breiten- und Freizeitsport werden oft nur einfache Notizen geführt, bei denen KI kaum 50 % Zeit spart; E0 ist dort ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Analyse- und Tracking-Software bereitet Trainingsdaten, Messwerte und Videoanalysen auf und markiert Muster; der Trainer interpretiert und beurteilt die Entwicklung jedes Athleten weiterhin selbst."
+      },
+      {
+        "name": "Ausschreibungen, Eltern- und Mitgliederinformationen sowie Berichte für Verein oder Verband verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus wenigen Stichworten entwirft ein Chat-LLM Kursausschreibungen, Elternbriefe oder Turnierberichte; die verantwortliche Person liest den Entwurf gegen und passt Details vor dem Versand an."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Betrachtet wird das typische Setting von haupt- und nebenberuflichen Sportlehrer/innen und Trainer/innen im Schweizer Freizeit-, Vereins- und Nachwuchssport (z. B. Schneesport-, Tennis- oder Schwimmschulen, Vereinstrainer mit J+S-Anerkennung, Verbandsfunktionäre). Die Berufsgruppe ISCO 3422 ist heterogen: Während bei reinen Sportlehrer/innen die praktische Unterrichtszeit auf der Anlage noch stärker überwiegt, haben Sportfunktionäre in Verbänden höhere administrative Anteile. Der Schulunterricht an obligatorischen Schulen und Gymnasien fällt nicht unter diesen Code.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Erstellen von Trainings- und Lektionsplänen, das Verfassen von Ausschreibungen und Mitgliederinformationen per Chat-LLM sowie die Auswertung von Leistungsdaten, während der eigentliche Sportunterricht und die Wettkampfbetreuung vor Ort stattfinden.",
+      "begruendung": "Knapp ein Fünftel der Arbeitszeit ist gegenüber generativer KI exponiert, überwiegend im delegierenden Modus bei der Trainingsplanung und Vereinskorrespondenz sowie unterstützend bei der Leistungsdatenanalyse. Der Kern des Berufs besteht aus physischer Präsenz, Bewegungsdemonstration, Sicherheitsüberwachung und persönlichem Coaching auf Sportanlagen, was technisch nicht durch Sprachmodelle ersetzbar ist. Nennenswerte regulatorische Hürden bestehen im Schweizer Breiten- und Vereinssport kaum, jedoch bremst die kleinräumige Struktur von Vereinen und Sportschulen eine systematische Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

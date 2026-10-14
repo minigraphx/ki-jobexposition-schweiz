@@ -10,78 +10,201 @@
     "beruf": "Empfangskräfte (allgemein)",
     "lauf": 2,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 62,
+      "candidates_token_count": 2050,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 62
+          "token_count": 2050
         }
       ],
-      "prompt_token_count": 21418,
+      "prompt_token_count": 21379,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21418
+          "token_count": 21379
         }
       ],
-      "thoughts_token_count": 6175,
-      "total_token_count": 27655
+      "thoughts_token_count": 6364,
+      "total_token_count": 29793
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 62,
+        "candidates_token_count": 2050,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 62
+            "token_count": 2050
           }
         ],
-        "prompt_token_count": 21418,
+        "prompt_token_count": 21379,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21418
+            "token_count": 21379
           }
         ],
-        "thoughts_token_count": 6175,
-        "total_token_count": 27655
+        "thoughts_token_count": 6364,
+        "total_token_count": 29793
       }
     ],
     "request_ids": [
-      "nrnOavCAJ5Ptz7IPkMfZ0QI"
+      "XTzParnTCIjsz7IPmt60KQ"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: ['name'] is too short; taetigkeiten/0: 'name' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r2-4226_empfangskraefte",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: ['name'] is too short",
-      "taetigkeiten/0: 'name' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\": \"4226\", \"beruf\": \"Empfangskräfte (allgemein)\", \"taetigkeiten\":  \n    [\n      \"name\"\n    ]\n  }"
+  "bewertung": {
+    "isco_code": "4226",
+    "beruf": "Empfangskräfte (allgemein)",
+    "taetigkeiten": [
+      {
+        "name": "Besucherinnen und Besucher vor Ort begrüssen, mündliche Auskünfte erteilen und im Wartebereich betreuen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Präsenz- und Gastgebertätigkeit am Empfangsschalter; der Wert liegt im unmittelbaren menschlichen Empfang und der Betreuung vor Ort."
+      },
+      {
+        "name": "Eingehende Telefonanrufe entgegennehmen, telefonische Auskünfte erteilen und Gespräche weiterleiten",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Die Verlässlichkeit von Voicebots bei Schweizerdeutsch und heterogenen Anrufanliegen an einer Telefonzentrale ist unsicher; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein KI-Voicebot mit Zugriff auf das Telefonverzeichnis und Firmeninformationen beantwortet Standardfragen und verbindet Anrufe weiter; die Empfangskraft übernimmt nur weitergeleitete Spezialfälle."
+      },
+      {
+        "name": "Allgemeine E-Mail-Anfragen im zentralen Postfach beantworten und Nachrichten intern weiterleiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein in das E-Mail-System integrierter KI-Assistent klassifiziert eingehende Nachrichten, leitet sie an die zuständigen Stellen weiter und erstellt Standardantworten, die meist nur per Klick freigegeben werden."
+      },
+      {
+        "name": "Termine, Sitzungszimmer und Besprechungen im Kalendersystem koordinieren und buchen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Koordination und Reservierung von Terminen und Sitzungszimmern lässt sich überwiegend durch klassische Online-Buchungs- und Kalendersoftware ohne generative KI automatisieren."
+      },
+      {
+        "name": "Besucherinnen und Besucher registrieren, Identität prüfen und Zutrittsbadges ausgeben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische und regelbasierte Kontrolle am Empfang; Selbstbedienungs-Terminals (Self-Check-in-Kioske mit Ausweisscan und Badgedruck) sind in der Schweiz kommerziell verfügbar."
+      },
+      {
+        "name": "Ein- und ausgehende Post- und Kuriersendungen entgegennehmen, sortieren und verteilen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handhabung von Briefen, Einschreiben und Paketen inklusive Quittieren, Frankieren und Verteilen in die Postfächer."
+      },
+      {
+        "name": "Empfangsbereich und Sitzungszimmer in Ordnung halten sowie Büromaterial und Getränke bereitstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Tätigkeit vor Ort (Aufräumen, Sitzungszimmer herrichten, Getränke und Verbrauchsmaterial nachfüllen)."
+      },
+      {
+        "name": "Interne Mitteilungen, Informationsschreiben und einfache Korrespondenz verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus wenigen Stichworten fertige Hausmitteilungen, Aushänge oder Standardbriefe (auch mehrsprachig); die Empfangskraft sichtet den Text kurz und gibt ihn frei."
+      },
+      {
+        "name": "Adressdaten, Telefonverzeichnisse und allgemeine Verwaltungsdokumente aktualisieren und ablegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in Office- und Dokumentensystemen extrahieren Kontaktdaten aus E-Mails oder Dokumenten und schlagen Aktualisierungen sowie Ablageorte vor; die Empfangskraft steuert und prüft jeden Eintrag."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Empfangskraft am Haupteingang bzw. an der Zentrale eines mittelgrossen Schweizer Unternehmens oder einer Verwaltung. Die grösste Unsicherheit besteht beim telefonischen Empfang (20 % Zeitanteil), da die Qualität und Akzeptanz von Voicebots bei Schweizerdeutsch und sehr unterschiedlichen Anrufanliegen ein Grenzfall zur 50-%-Schwelle ist.",
+    "zusammenfassung": {
+      "haupt_risiko": "Telefonische Standardauskünfte und Anrufweiterleitungen, die Bearbeitung allgemeiner E-Mail-Anfragen, das Verfassen interner Mitteilungen sowie die Pflege von Verzeichnissen können durch Voicebots, integrierte E-Mail-Assistenten und Sprachmodelle übernommen werden.",
+      "begruendung": "Knapp die Hälfte der Arbeitszeit entfällt auf kommunikative und administrative Aufgaben am Telefon und PC, bei denen generative KI überwiegend ersetzend (Voicebot, E-Mail-Triage, Standardtexte) und teilweise delegierend (Daten- und Dokumentenpflege) wirkt. Der übrige Teil der Arbeit – persönliche Begrüssung und Betreuung von Gästen, Postdienst sowie Ordnung im Empfangsbereich – erfordert zwingend physische Präsenz vor Ort, ergänzt durch klassische Self-Check-in-Terminals und Buchungssoftware. In der Schweiz bremsen die Erwartung eines persönlichen Erstkontakts sowie der Umgang mit Mundart und mehreren Landessprachen (Vertrauen und Mehrsprachigkeit) den Einsatz von Voicebots an der Zentrale.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

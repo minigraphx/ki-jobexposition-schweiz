@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "25610e964abd0ee0ca276738bdef4805cb22a10e261831140b0b977dbd68f060",
+    "isco_code": "5414",
+    "beruf": "Sicherheitsbeauftragter/-beauftragte",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 1990,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 1990
+        }
+      ],
+      "prompt_token_count": 22014,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22014
+        }
+      ],
+      "thoughts_token_count": 4720,
+      "total_token_count": 28724
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1990,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1990
+          }
+        ],
+        "prompt_token_count": 22014,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22014
+          }
+        ],
+        "thoughts_token_count": 4720,
+        "total_token_count": 28724
+      }
+    ],
+    "request_ids": [
+      "xD_Pat_OB43jqtsPtpOG4AE"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-5414_sicherheitsbeauftragter_beauftragte",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "5414",
+    "beruf": "Sicherheitsbeauftragter/-beauftragte",
+    "taetigkeiten": [
+      {
+        "name": "Kontroll- und Schliessrundgänge in Gebäuden und auf Arealen durchführen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Präsenz- und Kontrolltätigkeit vor Ort; Wachroboter oder Drohnen decken in typischen Schweizer Objekten keine 50 % der Rundgänge ab."
+      },
+      {
+        "name": "Zutrittskontrollen an Eingängen, Logen und Veranstaltungen durchführen (Ausweise und Tickets prüfen)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz am Eingang ohne Exposition gegenüber generativer KI; elektronische Zutrittsschleusen, Drehkreuze mit Badge-/QR-Scannern und automatische Ausweisleser übernehmen jedoch mindestens 50 % der reinen Kontrollzeit."
+      },
+      {
+        "name": "Videoüberwachungs- und Alarmanlagen in der Loge oder Zentrale beobachten und Alarme vorprüfen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Klassische Videoanalyse-Software (Bewegungs-, Objekt- und Perimetersensorik) sowie regelbasierte Alarmmanagementsysteme filtern Ereignisse automatisch vor; dies ist nicht-generative Software und daher E0."
+      },
+      {
+        "name": "Personen-, Taschen- und Fahrzeugkontrollen am Zutrittspunkt durchführen (inkl. Abtasten)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Durchsuchung von Taschen, Fahrzeugen sowie Leibesvisitationen erfordern unmittelbares physisches Handeln vor Ort."
+      },
+      {
+        "name": "Bei Konflikten, Regelverstössen und aggressivem Verhalten intervenieren, deeskalieren und Personen anhalten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare persönliche Präsenz, verbale Deeskalation von Angesicht zu Angesicht und gegebenenfalls körperliches Eingreifen sind nicht durch KI ersetzbar."
+      },
+      {
+        "name": "Ereignisprotokolle, Schichtrapporte und Vorfallmeldungen mit Fotos erfassen und verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Per Spracheingabe und Foto-Upload in der Wächterkontroll-App erstellt die KI einen sprachlich korrekten Vorfallbericht; die Sicherheitsfachkraft prüft jeden Bericht auf sachliche Richtigkeit für Auftraggeber oder Polizei."
+      },
+      {
+        "name": "Besucher an der Loge empfangen, Auskünfte vor Ort erteilen sowie Schlüssel und Besucherausweise ausgeben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönlicher Empfang vor Ort ist nicht durch Sprachmodelle exponiert, jedoch übernehmen Self-Check-in-Terminals für Besucher und elektronische Schlüsselschränke mindestens die Hälfte der Routineabwicklung."
+      },
+      {
+        "name": "Bei Notfällen Erste Hilfe leisten, Evakuierungen anleiten und mit Blaulichtorganisationen vor Ort zusammenarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Notfallhilfe am Ereignisort und persönliche Einweisung von Rettungskräften und Personen."
+      },
+      {
+        "name": "Dienstübergabe durchführen, Einsatzweisungen prüfen und sich per Funk mit der Einsatzzentrale abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Schichtübergabe im Team und laufende Echtzeit-Koordination per Funk während des Einsatzes."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Gemäss ISCO 5414 und ESCO-Kompetenzprofil wird hier der Beruf als Sicherheitsdienstmitarbeiter/in im privaten Bewachungs-, Objekt-, Logen- und Veranstaltungsdienst (Sekundarstufe II) bewertet und nicht die betriebliche Zusatzfunktion als Sicherheitsbeauftragte/r (SIBE) für Arbeitssicherheit. Der Beruf ist stark durch physische Präsenz, Rundgänge und unmittelbare Intervention geprägt. Bei der Zutritts- und Videoüberwachung kommt vor allem nicht-generative Technik (Zutrittsschleusen, klassische Videoanalyse) zum Tragen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Generative KI betrifft in diesem Beruf fast ausschliesslich das Erstellen von Ereignisprotokollen, Schichtrapporten und Vorfallmeldungen per Spracheingabe und Bilddokumentation, während der physische Sicherheits- und Überwachungsdienst unberührt bleibt.",
+      "begruendung": "Lediglich rund 5 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI im delegierenden Modus aus Stichworten oder Diktaten formale Rapporte entwirft, die wegen ihrer möglichen Beweisfunktion jedes Mal geprüft werden müssen. Datenschutzvorgaben (revDSG) bei Personendaten und polizeilichen Meldungen wirken als regulatorisches Hemmnis, während der Kern der Arbeit aus physischer Präsenz vor Ort besteht.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

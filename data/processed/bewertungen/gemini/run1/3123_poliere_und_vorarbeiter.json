@@ -10,78 +10,211 @@
     "beruf": "Poliere und Vorarbeiter",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 81,
+      "candidates_token_count": 2149,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 81
+          "token_count": 2149
         }
       ],
-      "prompt_token_count": 22422,
+      "prompt_token_count": 22383,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22422
+          "token_count": 22383
         }
       ],
-      "thoughts_token_count": 6280,
-      "total_token_count": 28783
+      "thoughts_token_count": 6813,
+      "total_token_count": 31345
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 81,
+        "candidates_token_count": 2149,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 81
+            "token_count": 2149
           }
         ],
-        "prompt_token_count": 22422,
+        "prompt_token_count": 22383,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22422
+            "token_count": 22383
           }
         ],
-        "thoughts_token_count": 6280,
-        "total_token_count": 28783
+        "thoughts_token_count": 6813,
+        "total_token_count": 31345
       }
     ],
     "request_ids": [
-      "nrnOauzDLK28_uMP5v6cyQQ"
+      "XTzPaviAFIjsz7IPmt60KQ"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: ['Baustellenteam vor Ort einteilen, anleiten und beaufsichtigen'] is too short; taetigkeiten/0: 'Baustellenteam vor Ort einteilen, anleiten und beaufsichtigen' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-3123_poliere_und_vorarbeiter",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: ['Baustellenteam vor Ort einteilen, anleiten und beaufsichtigen'] is too short",
-      "taetigkeiten/0: 'Baustellenteam vor Ort einteilen, anleiten und beaufsichtigen' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\n  \"isco_code\": \"3123\",\n  \"beruf\": \"Poliere und Vorarbeiter\",\n  \"taetigkeiten\": [\n    \"Baustellenteam vor Ort einteilen, anleiten und beaufsichtigen\"\n  ]\n}"
+  "bewertung": {
+    "isco_code": "3123",
+    "beruf": "Poliere und Vorarbeiter",
+    "taetigkeiten": [
+      {
+        "name": "Baustellenpersonal einteilen, anleiten und Arbeitsausführung vor Ort beaufsichtigen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Führungs- und Präsenztätigkeit auf der Baustelle; erfordert persönliche Anwesenheit und laufende Reaktion auf den Bauablauf."
+      },
+      {
+        "name": "Ausführungsqualität von Schalung, Armierung, Beton- und Maurerarbeiten vor Ort kontrollieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Sicht- und Masskontrolle direkt am Bauwerk (z. B. Bewehrungsabnahme vor dem Betonieren), die durch Sprachmodelle nicht übernommen werden kann."
+      },
+      {
+        "name": "Bei komplexen Bauarbeiten auf der Baustelle physisch mitarbeiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche und physische Mitarbeit auf der Baustelle (insbesondere bei Vorarbeitern und kleineren Equipen); keine marktreife Robotik im regulären Baustellenbetrieb verfügbar."
+      },
+      {
+        "name": "2D- und 3D-Ausführungspläne lesen sowie Bauteile auf der Baustelle einmessen und abstecken",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Hauptaufwand liegt im physischen Übertragen der Masse, Nivellieren und Abstecken vor Ort mit Laser oder Tachymeter."
+      },
+      {
+        "name": "Arbeitssicherheit und Gesundheitsschutz auf der Baustelle kontrollieren und durchsetzen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenzgebundene Kontrolle von Gerüsten, Absturzsicherungen, Grabenverbau und persönlicher Schutzausrüstung gemäss SUVA-Vorschriften direkt vor Ort."
+      },
+      {
+        "name": "Tages-, Leistungs- und Regierapporte sowie Fotodokumentation erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe und Bilderkennung in der Baustellen-App erstellen den Rapportentwurf; der Polier prüft und visiert jeden Rapport fachlich. Baustellenlärm, Fachjargon und Dialekt erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Materiallieferungen und Frischbeton auf der Baustelle entgegennehmen und prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Warenannahme, Einweisung der Lieferfahrzeuge, Konsistenz- und Sichtprüfung des Betons sowie Lieferscheinkontrolle vor Ort."
+      },
+      {
+        "name": "Mengenbedarf berechnen sowie Baumaterialien, Beton und Geräte disponieren und abrufen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Funktionen gegenüber klassischen Ausmasswerkzeugen und einfachen Bestell-Apps in der Praxis mindestens 50 % Zeit sparen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Plan- und Stücklistenauswertung in der Baustellensoftware berechnet Bestellmengen (z. B. Betonkubaturen) und erstellt Abrufentwürfe; der Polier prüft jede Bestellung vor der Freigabe."
+      },
+      {
+        "name": "Kurzfristiges Arbeitsprogramm für Tages- und Wocheneinsätze von Personal und Kränen planen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die laufende Takt- und Einsatzplanung vor Ort hängt stark von Wetter, Baufortschritt und kurzfristigen Gegebenheiten ab, deren Erfassung für eine KI kaum Zeit gegenüber der direkten Planung spart."
+      },
+      {
+        "name": "Baustellenbesprechungen und Begehungen mit Bauführer, Bauleitung und Subunternehmern durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Koordination, Begehung am Bauobjekt und unmittelbare technische Problemlösung von Angesicht zu Angesicht."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Polier/in bzw. Vorarbeiter/in im Schweizer Bauhauptgewerbe (Hoch- und Tiefbau). Die ESCO-Zuordnung «Maurerpolier» ist etwas zu eng auf Mauerwerksarbeiten zugeschnitten und enthält einzelne Aufgaben der Bauführung (wie Angebotsbeantwortung), weshalb das Tätigkeitsprofil an die Schweizer Baupraxis angepasst wurde. Einziger nennenswert exponierter Bereich ist das digitale Rapport- und Bestellwesen auf dem Baustellen-Tablet.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind ausschliesslich administrative Baustellentätigkeiten wie das Erstellen von Tages- und Regierapporten samt Fotodokumentation sowie die Mengenermittlung und der Materialabruf über KI-gestützte Baustellen-Apps.",
+      "begruendung": "Rund 15 % der Arbeitszeit sind exponiert, durchwegs im delegierenden Modus: Die KI erstellt Rapport- und Bestellentwürfe per Spracheingabe und Plananalyse, während der Polier jede Ausgabe fachlich prüft und verantwortet. Der überwiegende Teil des Berufs (85 %) besteht aus Personalführung, Qualitäts- und Sicherheitskontrolle, Einmessen sowie praktischer Mitarbeit vor Ort; zudem erschweren Dialekt und Baustellenlärm die Spracheingabe.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }

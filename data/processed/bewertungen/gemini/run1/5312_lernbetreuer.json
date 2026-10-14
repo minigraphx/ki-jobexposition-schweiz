@@ -10,112 +10,200 @@
     "beruf": "Lernbetreuer",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "cache_tokens_details": [
-        {
-          "modality": "TEXT",
-          "token_count": 19870
-        }
-      ],
-      "cached_content_token_count": 19870,
-      "candidates_token_count": 187,
+      "candidates_token_count": 1875,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 187
+          "token_count": 1875
         }
       ],
-      "prompt_token_count": 21935,
+      "prompt_token_count": 21896,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21935
+          "token_count": 21896
         }
       ],
-      "thoughts_token_count": 3214,
-      "total_token_count": 25336
+      "thoughts_token_count": 3759,
+      "total_token_count": 27530
     },
     "usage_je_versuch": [
       {
-        "cache_tokens_details": [
-          {
-            "modality": "TEXT",
-            "token_count": 19870
-          }
-        ],
-        "cached_content_token_count": 19870,
-        "candidates_token_count": 187,
+        "candidates_token_count": 1875,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 187
+            "token_count": 1875
           }
         ],
-        "prompt_token_count": 21935,
+        "prompt_token_count": 21896,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21935
+            "token_count": 21896
           }
         ],
-        "thoughts_token_count": 3214,
-        "total_token_count": 25336
+        "thoughts_token_count": 3759,
+        "total_token_count": 27530
       }
     ],
     "request_ids": [
-      "nrnOauuCKbGzmtkP9tmQcA"
+      "XTzPapvBFrCsz7IP3NihgQ0"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: ['name', 'Schülerinnen und Schüler einzeln oder in Kleingruppen bei Lern- und Hausaufgaben vor Ort anleiten und begleiten', 'zeitanteil_pct', 30, 'stufe', 'E0', 'modus', None, 'restzeit_mensch', None, 'physisch_automatisierbar', 'P0', 'p_art', None, 'sicherheit', 'hoch', 'sicherheit_begruendung', None, 'ch_hemmnis', 'begruendung', 'Unmittelbare zwischenmenschliche Präsenz- und Beziehungstätigkeit im Klassenzimmer oder Lernatelier; der Wert liegt in der persönlichen Begleitung, Motivation und direkten Hilfestellung am Platz.'] is too long; taetigkeiten/0: 'name' is not of type 'object'; taetigkeiten/1: 'Schülerinnen und Schüler einzeln oder in Kleingruppen bei Lern- und Hausaufgaben vor Ort anleiten und begleiten' is not of type 'object'; taetigkeiten/2: 'zeitanteil_pct' is not of type 'object'; taetigkeiten/3: 30 is not of type 'object'; taetigkeiten/4: 'stufe' is not of type 'object'; taetigkeiten/5: 'E0' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-5312_lernbetreuer",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: ['name', 'Schülerinnen und Schüler einzeln oder in Kleingruppen bei Lern- und Hausaufgaben vor Ort anleiten und begleiten', 'zeitanteil_pct', 30, 'stufe', 'E0', 'modus', None, 'restzeit_mensch', None, 'physisch_automatisierbar', 'P0', 'p_art', None, 'sicherheit', 'hoch', 'sicherheit_begruendung', None, 'ch_hemmnis', 'begruendung', 'Unmittelbare zwischenmenschliche Präsenz- und Beziehungstätigkeit im Klassenzimmer oder Lernatelier; der Wert liegt in der persönlichen Begleitung, Motivation und direkten Hilfestellung am Platz.'] is too long",
-      "taetigkeiten/0: 'name' is not of type 'object'",
-      "taetigkeiten/1: 'Schülerinnen und Schüler einzeln oder in Kleingruppen bei Lern- und Hausaufgaben vor Ort anleiten und begleiten' is not of type 'object'",
-      "taetigkeiten/2: 'zeitanteil_pct' is not of type 'object'",
-      "taetigkeiten/3: 30 is not of type 'object'",
-      "taetigkeiten/4: 'stufe' is not of type 'object'",
-      "taetigkeiten/5: 'E0' is not of type 'object'",
-      "taetigkeiten/6: 'modus' is not of type 'object'",
-      "taetigkeiten/7: None is not of type 'object'",
-      "taetigkeiten/8: 'restzeit_mensch' is not of type 'object'",
-      "taetigkeiten/9: None is not of type 'object'",
-      "taetigkeiten/10: 'physisch_automatisierbar' is not of type 'object'",
-      "taetigkeiten/11: 'P0' is not of type 'object'",
-      "taetigkeiten/12: 'p_art' is not of type 'object'",
-      "taetigkeiten/13: None is not of type 'object'",
-      "taetigkeiten/14: 'sicherheit' is not of type 'object'",
-      "taetigkeiten/15: 'hoch' is not of type 'object'",
-      "taetigkeiten/16: 'sicherheit_begruendung' is not of type 'object'",
-      "taetigkeiten/17: None is not of type 'object'",
-      "taetigkeiten/18: 'ch_hemmnis' is not of type 'object'",
-      "taetigkeiten/19: 'begruendung' is not of type 'object'",
-      "taetigkeiten/20: 'Unmittelbare zwischenmenschliche Präsenz- und Beziehungstätigkeit im Klassenzimmer oder Lernatelier; der Wert liegt in der persönlichen Begleitung, Motivation und direkten Hilfestellung am Platz.' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"5312\",\"beruf\":\"Lernbetreuer\",\"taetigkeiten\":[\n  \"name\",\"Schülerinnen und Schüler einzeln oder in Kleingruppen bei Lern- und Hausaufgaben vor Ort anleiten und begleiten\",\"zeitanteil_pct\",30,\"stufe\",\"E0\",\"modus\",null,\"restzeit_mensch\",null,\"physisch_automatisierbar\",\"P0\",\"p_art\",null,\"sicherheit\",\"hoch\",\"sicherheit_begruendung\",null,\"ch_hemmnis\",\n  \"begruendung\",\"Unmittelbare zwischenmenschliche Präsenz- und Beziehungstätigkeit im Klassenzimmer oder Lernatelier; der Wert liegt in der persönlichen Begleitung, Motivation und direkten Hilfestellung am Platz.\"\n  ]}"
+  "bewertung": {
+    "isco_code": "5312",
+    "beruf": "Lernbetreuer",
+    "taetigkeiten": [
+      {
+        "name": "Schüler/innen einzeln oder in Kleingruppen beim Lösen von Lern- und Hausaufgaben im Klassenzimmer begleiten",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare persönliche Präsenz- und Beziehungstätigkeit am Arbeitsplatz der Kinder (Erklären, Motivieren, Aufmerksamkeit lenken); durch KI nicht in gleicher Qualität ersetzbar."
+      },
+      {
+        "name": "Schüler/innen mit besonderem Förderbedarf oder Verhaltensauffälligkeiten im Unterricht individuell betreuen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert kontinuierliche physische und emotionale Präsenz vor Ort, um Kinder zu beruhigen, Sicherheit zu geben und Krisensituationen im Schulalltag aufzufangen."
+      },
+      {
+        "name": "Pausenplatz-, Mittags- und Randzeitenaufsicht führen sowie Klassen auf Ausflügen begleiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Wahrnehmung der physischen Aufsichtspflicht auf dem Schulareal und unterwegs; reine Präsenz- und Sicherheitstätigkeit."
+      },
+      {
+        "name": "Ruhe und Arbeitsdisziplin im Klassenzimmer aufrechterhalten und bei Konflikten zwischen Kindern vermitteln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zwischenmenschliche Interaktion und unmittelbares pädagogisches Eingreifen im Raum."
+      },
+      {
+        "name": "Kinder bei lebenspraktischen Alltagsverrichtungen, Garderobe, Hygiene und kleineren Blessuren unterstützen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Betreuung und praktische Hilfestellung direkt am Kind."
+      },
+      {
+        "name": "Klassenzimmer, Geräte und physische Unterrichtsmaterialien bereitstellen, kopieren und aufräumen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Praktisch-manuelle Tätigkeit im Schulzimmer und Kopierraum ohne relevante KI-Exposition."
+      },
+      {
+        "name": "Sich im Schulalltag mündlich mit Lehrpersonen und Fachpersonen über Lernstand und Verhalten abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze mündliche Absprachen zwischen den Lektionen und im Team leben vom direkten persönlichen Austausch vor Ort."
+      },
+      {
+        "name": "Einfache Übungsblätter und differenzierte Lernmaterialien nach Vorgabe der Lehrperson zusammenstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus Themen- und Niveauvorgaben passende Übungsaufgaben oder vereinfachte Lesetexte; die Betreuungsperson prüft jedes Blatt inhaltlich und passt es an die einzelnen Schüler/innen an."
+      },
+      {
+        "name": "Beobachtungsnotizen zum Lern- und Sozialverhalten sowie kurze schriftliche Rückmeldungen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus eingegebenen Stichworten formuliert ein Chat-LLM strukturierte, sachliche Beobachtungseinträge zuhanden der Lehrperson; jeder Eintrag wird von der Betreuungsperson auf Richtigkeit geprüft."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Klassenassistenz bzw. Lern- und Aufgabenbetreuung an einer Schweizer Volksschule oder Tagesschule. Die Bezeichnung «Lernbetreuer» ist in der Schweiz nicht einheitlich geregelt, umfasst aber in allen gängigen Settings (Klassenassistenz, Aufgabenstunde, Sonderschulbegleitung) zu rund 90 % unmittelbare Präsenz- und Beziehungsarbeit mit Kindern und Jugendlichen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Lediglich das Erstellen einfacher Übungsblätter und das Ausformulieren von Beobachtungsnotizen mittels Chat-LLM sind exponiert, während die eigentliche Betreuung und Begleitung der Schüler/innen vor Ort kaum betroffen ist.",
+      "begruendung": "Rund 10 % der Arbeitszeit entfallen auf vorbereitende und dokumentierende Textarbeiten, bei denen generative KI im delegierenden Modus Entwürfe liefert, die von der Betreuungsperson jedes Mal fachlich geprüft werden. Die übrigen 90 % der Arbeit erfordern unmittelbare persönliche Präsenz, Beziehungsarbeit und Aufsicht im Klassenzimmer oder in der Tagesstruktur. Im Schweizer Schulkontext bremsen zudem strenge kantonale Datenschutzvorgaben beim Umgang mit Personendaten von Minderjährigen den Einsatz externer KI-Dienste.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }

@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "711da9656544eb8dc22b8161fcb0429cd746f8992440db0c0e68c234d71645f3",
+    "isco_code": "2113",
+    "beruf": "Naturwissenschaftler/in (Biologie/Chemie)",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2172,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2172
+        }
+      ],
+      "prompt_token_count": 24787,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 24787
+        }
+      ],
+      "thoughts_token_count": 5754,
+      "total_token_count": 32713
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2172,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2172
+          }
+        ],
+        "prompt_token_count": 24787,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 24787
+          }
+        ],
+        "thoughts_token_count": 5754,
+        "total_token_count": 32713
+      }
+    ],
+    "request_ids": [
+      "xD_PasmRDri8_PUP5dCjsQI"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2113_naturwissenschaftler_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2113",
+    "beruf": "Naturwissenschaftler/in (Biologie/Chemie)",
+    "taetigkeiten": [
+      {
+        "name": "Wissenschaftliche Literatur, Patente und Stoffdatenbanken recherchieren und auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Fachperson bewertet die wissenschaftliche Validität und Relevanz der Quellen selbst; spezialisierte KI-Recherche-Agenten durchsuchen Fachdatenbanken sowie Patentschriften und liefern strukturierte Zusammenfassungen."
+      },
+      {
+        "name": "Versuchsreihen, Syntheserouten und analytische Methoden konzipieren und planen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "KI-gestützte Retrosynthese- und Versuchsplanungs-Tools (Design of Experiments) sparen bei Standardfragestellungen bereits viel Zeit; E2 (unterstützend, 30-50) ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Das Entwickeln neuer Versuchsdesigns, Synthesewege oder Bioassays erfordert tiefes chemisch-biologisches Fachurteil unter Berücksichtigung spezifischer Labor- und Prozessbedingungen, sodass generative KI die Zeit im Schnitt noch nicht um 50 % reduziert."
+      },
+      {
+        "name": "Proben vorbereiten sowie chemische und biologische Versuche und Instrumentenanalysen im Labor durchführen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Laborarbeit, Gerätekalibrierung und Durchführung von Experimenten (z. B. Chromatografie, Spektroskopie, Synthesen) sind physische Tätigkeiten; Laborroboter decken in der Forschung und Methodenentwicklung keine 50 % dieser nicht-routinemässigen Arbeit ab."
+      },
+      {
+        "name": "Mess- und Analysedaten mit Statistik- und Fachsoftware auswerten und fachlich interpretieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Naturwissenschaftlerin interpretiert die Messreihen, Chromatogramme und Spektren fachlich selbst; LLMs mit Code-Ausführung und Datenanalyse-Funktionen übernehmen die Datenaufbereitung, statistische Modellierung und Grafikgenerierung."
+      },
+      {
+        "name": "Laborjournale, Standardarbeitsanweisungen (SOPs) und technische Analyseberichte verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus exportierten Messdaten und Stichworten erstellt ein Chat-LLM vollständige Entwürfe für Analyseberichte und SOPs; die Fachperson prüft jedes Dokument im Detail auf wissenschaftliche Korrektheit und GxP-Konformität."
+      },
+      {
+        "name": "Wissenschaftliche Publikationen, Erfindungsmeldungen und Fachpräsentationen ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das Sprachmodell entwirft Manuskriptabschnitte oder Patentbeschreibungen auf Basis der bereitgestellten Forschungsergebnisse; der Wissenschaftler steuert den Aufbau und revidiert jeden Textabschnitt fachlich."
+      },
+      {
+        "name": "Formulierungen und Herstellungsverfahren in den Pilot- und Produktionsmassstab übertragen (Scale-up)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Begleitung von Pilotchargen, die Prozessoptimierung an den Anlagen und die Fehlersuche vor Ort in der Produktion erfordern physische Präsenz und unmittelbares prozesstechnisches Eingreifen."
+      },
+      {
+        "name": "Regulatorische Nachweise, Sicherheitsbewertungen (ChemV/REACH) und Abweichungsberichte (GMP) erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die KI erstellt aus eingefügten Stoff-, Prozess- und Vorfallsdaten den Entwurf für Sicherheitsdossiers oder CAPA-/Abweichungsberichte; die verantwortliche Fachperson prüft und verantwortet jeden Einzelfall."
+      },
+      {
+        "name": "Forschungsprojekte koordinieren, Laborpersonal fachlich anleiten und Ergebnisse im Team besprechen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Anleiten von Laborantinnen und Laboranten, die interdisziplinäre Abstimmung und die Projektleitung beruhen auf persönlicher Kommunikation und Präsenz."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Naturwissenschaftler/in (Chemie/Biologie, Hochschulabschluss) in Forschung & Entwicklung, Analytik oder Qualitätssicherung der Schweizer Chemie-, Pharma- oder Biotech-Industrie. Während Routinemessungen oft von Laborant/innen EFZ ausgeführt werden, liegt der Schwerpunkt hier stärker auf Methodenentwicklung, komplexer Analytik, Datenauswertung und Dokumentation. Der wichtigste Grenzfall ist die Versuchs- und Syntheseplanung, bei der spezialisierte KI-Werkzeuge nahe an die 50-%-Schwelle herankommen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Verfassen von Analyseberichten, SOPs, regulatorischen Dossiers und Publikationen mittels Chat-LLM sowie die Literatur- und Patentrecherche und die statistische Datenauswertung durch KI-Agenten.",
+      "begruendung": "Rund 50 % der Arbeitszeit sind exponiert, wobei die KI bei der Dokumentation und Berichterstattung delegierend (mit vollständiger fachlicher Prüfung jeder Ausgabe) und bei der Datenanalyse sowie Literaturrecherche unterstützend eingesetzt wird. Die praktische Laborarbeit und das Scale-up in der Produktion bleiben nicht exponiert. In der Schweizer Pharma- und Chemieindustrie bremsen strenge GxP-Validierungspflichten (Swissmedic), Chemikalienregulierung (ChemV/REACH) sowie der Schutz von Geschäftsgeheimnissen und unveröffentlichten Patentdaten eine unkontrollierte Übernahme.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

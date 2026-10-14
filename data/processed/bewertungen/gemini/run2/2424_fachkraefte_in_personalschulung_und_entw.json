@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "ea9346461062af90d6d644b1668a284db1ee67b1e9a7d43eb24ef593ec8faf0e",
+    "isco_code": "2424",
+    "beruf": "Fachkräfte in Personalschulung und -entwicklung",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2238,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2238
+        }
+      ],
+      "prompt_token_count": 21590,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21590
+        }
+      ],
+      "thoughts_token_count": 5119,
+      "total_token_count": 28947
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2238,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2238
+          }
+        ],
+        "prompt_token_count": 21590,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21590
+          }
+        ],
+        "thoughts_token_count": 5119,
+        "total_token_count": 28947
+      }
+    ],
+    "request_ids": [
+      "xD_PaqbAHpzE_PUP6K-UyQg"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2424_fachkraefte_in_personalschulung_und_entw",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2424",
+    "beruf": "Fachkräfte in Personalschulung und -entwicklung",
+    "taetigkeiten": [
+      {
+        "name": "Präsenz- und Live-Online-Schulungen sowie Workshops für Mitarbeitende durchführen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Präsenz-, Moderations- und Beziehungstätigkeit vor der Gruppe; der Wert liegt in der direkten Interaktion und Demonstration."
+      },
+      {
+        "name": "Mitarbeitende und Führungskräfte individuell coachen und konstruktives Feedback geben",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Vertrauensbasierte Einzelgespräche zur Kompetenz- und Persönlichkeitsentwicklung erfordern menschliche Empathie und Präsenz."
+      },
+      {
+        "name": "Weiterbildungsbedarf in Gesprächen mit Linienvorgesetzten und Geschäftsleitung erheben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Abstimmungs- und Beratungsgespräche zur Klärung betrieblicher Kompetenzlücken; stark vom impliziten Organisationskontext geprägt."
+      },
+      {
+        "name": "Schulungskonzepte, Curricula und didaktische Drehbücher für Zielgruppen entwerfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Lernzielen und Zielgruppenbeschreibungen strukturierte Konzepte und Methodendrehbücher; die Fachperson spezifiziert den Bedarf und prüft jedes Konzept fachlich."
+      },
+      {
+        "name": "Schulungsunterlagen, Handouts, Fallbeispiele und Übungsaufgaben in Textform ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Das Chat-LLM generiert und übersetzt Arbeitsblätter, Rollenspiele und Praxisfälle nach Vorgabe; die Ausbilderin prüft und adaptiert jedes Dokument für den Betrieb."
+      },
+      {
+        "name": "Präsentationen, E-Learning-Module und multimediale Lerninhalte in Autorentools erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Generative KI in Präsentations- und E-Learning-Autorentools erstellt Folien, Bilder, Vertonungen und Quizfragen; die Fachperson steuert die Produktion und kontrolliert jedes Modul."
+      },
+      {
+        "name": "Standardeinladungen, Terminankündigungen und Kursausschreibungen aus Rahmendaten erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM verfasst aus Stichworten zu Kursinhalt und Zielgruppe fertige Ausschreibungs- und Einladungstexte; die Fachperson nimmt vor der Publikation nur eine kurze Freigabesichtung vor."
+      },
+      {
+        "name": "Feedbackbögen, Kursevaluationen und Lernerfolgskontrollen auswerten sowie Berichte erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Exportierte Tabellen und Freitextkommentare aus Evaluationen werden im Chat-LLM zusammengefasst und zu einem Auswertungsbericht verarbeitet; die Fachperson prüft jeden Bericht auf Richtigkeit."
+      },
+      {
+        "name": "Kursadministration, Anmeldungen, Raumdisposition und Teilnahmebestätigungen abwickeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Abwicklung über klassische Learning-Management-Systeme (LMS) und HR-Software (Selbstbuchung, Wartelisten, automatische Zertifikate) ohne Bedarf an generativer KI."
+      },
+      {
+        "name": "Fachliche Trends, neue Lehrmethoden und Arbeitsmarktentwicklungen recherchieren und auswerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche fassen Studien, Bildungstrends und Kompetenzprofile zusammen; die Fachperson beurteilt die Relevanz selbst und leitet Schlüsse für das interne Angebot ab."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Betriebliche/r Aus- und Weiterbildner/in bzw. Personalentwickler/in in einem grösseren Schweizer Unternehmen oder in der öffentlichen Verwaltung. Die Rollenverteilung zwischen eigener Lehrtätigkeit und Konzeptions-/Entwicklungsarbeit variiert je nach Betriebsgrösse; hier ist ein ausgewogenes Profil abgebildet. Der ESCO-Begriff «Darstellern/Darstellerinnen Feedback geben» ist ein Übersetzungsartefakt (engl. performers) und wurde als Feedback an Mitarbeitende/Lernende eingeordnet.",
+    "zusammenfassung": {
+      "haupt_risiko": "Stark exponiert sind die Konzeption von Curricula, das Ausarbeiten und Übersetzen von Schulungsunterlagen, die Produktion von E-Learning-Modulen sowie die Auswertung von Kursevaluationen durch Chat-LLMs und generative Autorentools.",
+      "begruendung": "Rund 45 % der Arbeitszeit entfallen auf konzeptionelle, textliche und mediale Vor- und Nachbereitungsarbeiten, bei denen die KI überwiegend delegierend Entwürfe liefert und die Fachperson steuert sowie prüft, während die eigentliche Durchführung von Schulungen, das Coaching und die Auftragsklärung (zusammen 50 %) menschliche Präsenz erfordern. In der Schweiz bremsen vor allem die Abstimmung mehrsprachiger Schulungsinhalte über die Sprachregionen hinweg sowie der Datenschutz (revDSG) bei Mitarbeitenden- und Evaluationsdaten in Verwaltung und Betrieben.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

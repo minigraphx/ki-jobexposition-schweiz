@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "31ed6941d321c1a3bd2d6bb3496eb70ffa43901217a6937400dda7deab95b4c4",
+    "isco_code": "3312",
+    "beruf": "Versicherungskaufmann/-frau",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2533,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2533
+        }
+      ],
+      "prompt_token_count": 21494,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21494
+        }
+      ],
+      "thoughts_token_count": 6044,
+      "total_token_count": 30071
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2533,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2533
+          }
+        ],
+        "prompt_token_count": 21494,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21494
+          }
+        ],
+        "thoughts_token_count": 6044,
+        "total_token_count": 30071
+      }
+    ],
+    "request_ids": [
+      "xD_PasD3BoaI_uMPpdSFkAY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-3312_versicherungskaufmann_frau",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3312",
+    "beruf": "Versicherungskaufmann/-frau",
+    "taetigkeiten": [
+      {
+        "name": "Kundenbedürfnisse und Risikosituation im persönlichen oder telefonischen Beratungsgespräch aufnehmen und Deckungen erläutern",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Führen von Beratungsgesprächen im direkten Dialog erfordert zwischenmenschliche Präsenz, Empathie und situatives Nachfragen; generative KI spart hier keine 50 % der Gesprächszeit."
+      },
+      {
+        "name": "Versicherungsofferten und Vertragsänderungen (Mutationen) auf Basis von Kunden- und Brokeranfragen im Bestandesführungssystem erstellen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Eine ins Bestandesführungssystem integrierte KI liest Freitext-Anfragen und Beilagen aus und bereitet die Offerte oder Mutation vor; die Fachperson prüft jede Ausgabe vor dem Versand. Klassische Online-Rechner, Kundenportale und standardisierte Broker-Schnittstellen (IG B2B) wickeln Standardfälle ebenfalls regelbasiert ab."
+      },
+      {
+        "name": "Eingehende Anträge, Formulare und Vertragsunterlagen (PDF/Scans) sichten und Daten ins Fachsystem übertragen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Multimodale Dokumentenerkennung mit Systemintegration extrahiert Antragsdaten und überträgt sie ins System, während der Mensch nur markierte Ausnahmen und Unstimmigkeiten bearbeitet. Bei strukturierten Formularen und digitalen Antragsstrecken übernimmt klassische OCR- und Workflow-Software dies bereits."
+      },
+      {
+        "name": "Standardkorrespondenz wie Deckungsbestätigungen, Kündigungsbestätigungen und Unterlagen-Nachforderungen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "<10",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Sprachmodell erzeugt Standardbriefe und Routine-E-Mails aus kurzen Falldaten; die Sachbearbeiterin gibt diese nur noch per Klick frei. Klassische Output-Management-Systeme mit regelbasierten Textbausteinen automatisieren Standardbriefe ebenfalls."
+      },
+      {
+        "name": "Telefonische Standardauskünfte zu Policen, Prämienrechnungen und Bearbeitungsstand erteilen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Die Qualität und Akzeptanz von Voicebots bei Schweizerdeutsch und verschiedenen Dialekten am Telefon ist wenig belegt; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "mehrsprachigkeit",
+          "vertrauen"
+        ],
+        "begruendung": "Ein Voicebot mit Zugriff auf das Bestandes- und Abrechnungssystem beantwortet telefonische Routineanfragen selbständig, sodass Mitarbeitende nur noch weitergeleitete Spezialfälle übernehmen."
+      },
+      {
+        "name": "Risikoprüfung (Underwriting) bei Anträgen anhand von Annahmerichtlinien und Risikodaten vornehmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das Sprachmodell gleicht eingefügte Antragsdaten mit den Annahmerichtlinien ab und erstellt einen Prüfvorschlag inklusive allfälliger Vorbehalte; die Fachperson prüft und verantwortet jeden Annahmeentscheid einzeln. Für Standardrisiken erledigen regelbasierte Underwriting-Engines im Kernsystem die Triage bereits automatisch."
+      },
+      {
+        "name": "Schadenmeldungen entgegennehmen und Versicherungsdeckung anhand von Police und AVB vorprüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Nach Eingabe der Schadenmeldung sowie der relevanten Policen- und AVB-Passagen entwirft das LLM die Deckungsbeurteilung; die Sachbearbeiterin kontrolliert jede Vorprüfung fachlich auf den Einzelfall."
+      },
+      {
+        "name": "Prämienfakturierung, Zahlungseingänge, Mahnläufe und Auszahlungen im Finanzsystem überwachen und abwickeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Prämienrechnungen, Zahlungsabgleich per QR-Referenz, Mahnläufe und regelbasierte Auszahlungen werden durch klassische Inkasso- und Buchhaltungssoftware abgewickelt; für ein LLM besteht hier kein relevanter Mehrwert."
+      },
+      {
+        "name": "Komplexe Vertrags- oder Schadenfälle, Beschwerden und Kulanzanfragen mit Kunden, Brokern oder Spezialisten verhandeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlungen, Konfliktlösung und Ermessensentscheide bei Kulanz oder strittigen Fällen erfordern menschliches Urteilsvermögen und Überzeugungsarbeit; KI erreicht hier keine 50 % Zeitersparnis."
+      },
+      {
+        "name": "Gesprächsnotizen, Beratungsprotokolle und Aktennotizen für das Kundendossier verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus kurzen Stichworten formuliert das Sprachmodell strukturierte Aktennotizen und Beratungsprotokolle; die Fachperson prüft jeden Eintrag auf inhaltliche Korrektheit vor der Ablage im Dossier."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Kaufmännische/r Sachbearbeiter/in im Innendienst einer Schweizer Versicherungsgesellschaft oder Generalagentur (Vertragsverwaltung, Offertwesen, Kundenservice und Schadenaufnahme). Trotz der leichten Abweichung zwischen CH-ISCO 3312 und ESCO 4312 ist das Aufgabenprofil in der Schweizer Versicherungsbranche sehr klar abgrenzbar. Wichtigste Grenzfälle sind die Dialekttauglichkeit von Voicebots am Telefon sowie der Grad der Systemintegration bei Offerten und Mutationen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Antragserfassung, Offert- und Mutationsverarbeitung, Standardkorrespondenz, telefonische Routineauskünfte sowie die Vorprüfung von Risiken und Schäden werden durch Dokumentenerkennung, Chat-LLMs, Fachsystem-Integration und Voicebots stark beschleunigt oder übernommen.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind exponiert, wobei routinemässige Dokumentenerfassung, Standardkorrespondenz und einfache Telefonauskünfte im ersetzenden Modus, fachliche Aufgaben wie Offertwesen, Risikoprüfung, Deckungsvorprüfung und Aktennotizen hingegen im delegierenden Modus mit menschlicher Einzelprüfung erfolgen. Persönliche Beratungsgespräche, komplexe Verhandlungen und bereits durch klassische Software automatisierte Inkassoprozesse sind nicht gegenüber generativer KI exponiert. In der Schweiz bremsen strenge regulatorische Anforderungen (VVG, FINMA, revDSG bei Personendaten) sowie die Mehr- und Mundartsprachigkeit und das Kundenbedürfnis nach persönlichem Kontakt eine unkontrollierte Vollautomatisierung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

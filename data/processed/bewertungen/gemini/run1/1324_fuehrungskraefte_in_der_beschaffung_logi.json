@@ -10,77 +10,215 @@
     "beruf": "Führungskräfte in der Beschaffung, Logistik und in verwandten Bereichen",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 56,
+      "candidates_token_count": 2279,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 56
+          "token_count": 2279
         }
       ],
-      "prompt_token_count": 22729,
+      "prompt_token_count": 22690,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22729
+          "token_count": 22690
         }
       ],
-      "thoughts_token_count": 6443,
-      "total_token_count": 29228
+      "thoughts_token_count": 4132,
+      "total_token_count": 29101
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 56,
+        "candidates_token_count": 2279,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 56
+            "token_count": 2279
           }
         ],
-        "prompt_token_count": 22729,
+        "prompt_token_count": 22690,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22729
+            "token_count": 22690
           }
         ],
-        "thoughts_token_count": 6443,
-        "total_token_count": 29228
+        "thoughts_token_count": 4132,
+        "total_token_count": 29101
       }
     ],
     "request_ids": [
-      "nrnOauORK7zi_uMP6aHG6Ag"
+      "XTzPavbsCrDtz7IPofG1mAw"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: [] is too short"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-1324_fuehrungskraefte_in_der_beschaffung_logi",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: [] is too short"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"1324\",\"beruf\":\"Führungskräfte in der Beschaffung, Logistik und in verwandten Bereichen\",\"taetigkeiten\":[\n]\n}"
+  "bewertung": {
+    "isco_code": "1324",
+    "beruf": "Führungskräfte in der Beschaffung, Logistik und in verwandten Bereichen",
+    "taetigkeiten": [
+      {
+        "name": "Mitarbeitende in Einkauf, Disposition und Lagerlogistik führen, anleiten und beurteilen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führungsgespräche, Coaching, Konfliktlösung und Motivation im Team sind Präsenz- und Beziehungstätigkeiten, bei denen generative KI keine 50 % der Zeit ersetzt."
+      },
+      {
+        "name": "Rahmenverträge, Preise und Lieferkonditionen mit Lieferanten und Logistikdienstleistern verhandeln",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlungen und strategische Beziehungspflege mit wichtigen Lieferanten basieren auf direkter zwischenmenschlicher Interaktion und Verhandlungstaktik."
+      },
+      {
+        "name": "Ausschreibungsunterlagen und Vertragsentwürfe erstellen sowie Lieferantenangebote auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM-gestützte Dokumenten- und Tabellenanalyse gleicht heterogene Lieferantenangebote (PDF/Excel) ab und entwirft Ausschreibungs- sowie Vertragstexte; die Führungskraft spezifiziert die Vorgaben und prüft jedes Dokument fachlich."
+      },
+      {
+        "name": "Lieferketten-KPIs, Bestandsverläufe und Bedarfsprognosen analysieren und Managementberichte erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Assistenten im ERP-/BI-System werten Bestands- und Lieferdaten aus und erstellen Berichtsentwürfe samt Kommentar; die Führungskraft prüft jede Auswertung inhaltlich. Klassische ERP-, APS- und BI-Software übernimmt bereits Standardprognosen und Kennzahlenberechnungen."
+      },
+      {
+        "name": "Lieferantenrisiken, Beschaffungsmärkte und Nachhaltigkeitsnachweise recherchieren und beurteilen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Recherche-Agenten und Dokumentenanalyse-Tools werten Marktdaten, Finanzberichte, Zertifikate und Rückverfolgbarkeitsdokumente aus und erstellen Risikoprofile; die Führungskraft prüft und verantwortet jede Lieferantenbewertung."
+      },
+      {
+        "name": "Abteilungsübergreifende Abstimmung (Sales & Operations Planning) mit Produktion, Vertrieb und Geschäftsleitung leiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Moderieren von Zielkonflikten zwischen Lieferfähigkeit, Bestandsbindung und Produktionsauslastung in S&OP-Sitzungen ist eine persönliche Abstimmungs- und Führungsaufgabe."
+      },
+      {
+        "name": "Bei akuten Lieferengpässen, Transportstörungen und Qualitätsproblemen intervenieren und Eskalationen steuern",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurzfristiges Krisenmanagement erfordert direkte telefonische Verhandlungen über Priorisierungen oder Sondertransporte sowie schnelle Ermessensentscheide unter Unsicherheit."
+      },
+      {
+        "name": "Lager- und Logistikabläufe vor Ort kontrollieren sowie Lieferantenaudits durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Begehungen von Logistikzentren, Produktionsanlagen und Lieferantenbetrieben zur Überprüfung von Standards und Prozessen erfordern Präsenz vor Ort."
+      },
+      {
+        "name": "Logistik- und Beschaffungsrichtlinien, Prozessbeschreibungen und Arbeitsanweisungen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten vollständige Richtlinien, SOPs und Checklisten (bei Bedarf direkt in mehreren Landessprachen oder Englisch); die Führungskraft prüft und gibt jedes Dokument frei."
+      },
+      {
+        "name": "Logistik- und Beschaffungsbudgets sowie Gesamtkostenkalkulationen erstellen und überwachen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Führungskraft erarbeitet und verantwortet die Budget- und Kostenplanung selbst, während KI-Funktionen in Tabellenkalkulation und ERP Szenariorechnungen und Abweichungsanalysen zuliefern. Klassische ERP- und Controlling-Software automatisiert bereits grosse Teile der Standardkalkulation."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Leiter/in Einkauf, Logistik oder Supply Chain Management in einem mittelgrossen bis grossen Schweizer Industrie-, Handels- oder Logistikbetrieb. Die Datenlage aus ESCO ist gut und bildet das Zusammenspiel aus analytisch-konzeptioneller Planung (exponiert) und Führung, Verhandlung sowie operativer Eskalation (nicht exponiert) realistisch ab.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Erstellung von Ausschreibungen, Vertragsentwürfen und Prozessrichtlinien sowie die Auswertung von Lieferantenangeboten, Lieferketten-KPIs und Lieferantenrisiken durch Chat-LLMs, Dokumentenanalyse- und Recherche-Agenten.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind exponiert, wobei die KI überwiegend delegierend Entwürfe, Angebotsvergleiche und Analysen erstellt, die von der Führungskraft fachlich geprüft werden, und bei der Budgetierung unterstützend wirkt. Der grössere Teil der Tätigkeit besteht aus Personalführung, Preisverhandlungen, abteilungsübergreifender Abstimmung und Störungsbewältigung, die persönliche Präsenz und menschliches Ermessen erfordern. In der Schweiz bremsen zudem vertragliche Haftungsfragen, Sorgfaltspflichten in der Lieferkette sowie der Schutz vertraulicher Einkaufskonditionen eine ungeprüfte Übernahme von KI-Ergebnissen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

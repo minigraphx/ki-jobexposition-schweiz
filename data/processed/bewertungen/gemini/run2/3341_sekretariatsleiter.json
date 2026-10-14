@@ -1,0 +1,232 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "4c454eab51cc8552e3e08eca6acd0e384557205cb82ac557f73585aadb779db9",
+    "isco_code": "3341",
+    "beruf": "Sekretariatsleiter",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2359,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2359
+        }
+      ],
+      "prompt_token_count": 21689,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21689
+        }
+      ],
+      "thoughts_token_count": 7666,
+      "total_token_count": 31714
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2359,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2359
+          }
+        ],
+        "prompt_token_count": 21689,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21689
+          }
+        ],
+        "thoughts_token_count": 7666,
+        "total_token_count": 31714
+      }
+    ],
+    "request_ids": [
+      "xD_PaqaBDaSt_PUPotaH2QY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-3341_sekretariatsleiter",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3341",
+    "beruf": "Sekretariatsleiter",
+    "taetigkeiten": [
+      {
+        "name": "Sekretariatsmitarbeitende fachlich und personell führen, einarbeiten und Mitarbeitergespräche durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Personalführung, Einarbeitung, Feedbackgespräche und Konfliktlösung im Team erfordern unmittelbare zwischenmenschliche Präsenz und Beziehungsarbeit."
+      },
+      {
+        "name": "Tagesgeschäft, Aufgabenverteilung sowie Einsatz- und Ferienplanung im Sekretariatsteam koordinieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die laufende Priorisierung von Aufträgen, das Ausgleichen von Kapazitätsengpässen und die Absprache von Stellvertretungen beruhen im typischen Sekretariat auf situativer Abstimmung im Team; weder LLMs noch klassische Planungstools sparen hier mindestens 50 % der Zeit."
+      },
+      {
+        "name": "Anspruchsvolle Korrespondenz, Stellungnahmen und interne Mitteilungen verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten und Fallkontext fertige Brief- und Mitteilungsentwürfe (auch mehrsprachig); die Sekretariatsleitung gibt den Inhalt vor und prüft jeden Text vor dem Versand fachlich und stilistisch."
+      },
+      {
+        "name": "Ausgehenden Schriftverkehr und Entwürfe von Mitarbeitenden oder Vorgesetzten prüfen und überarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das Sprachmodell prüft einkopierte Entwürfe auf Sprache, Stil, Vollständigkeit sowie interne Vorgaben und markiert Schwachstellen; die Sekretariatsleitung führt die inhaltliche Qualitätskontrolle und Freigabe selbst durch."
+      },
+      {
+        "name": "Sitzungen vorbereiten, Traktandenlisten zusammenstellen und Sitzungsprotokolle erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Transkriptions- und Protokoll-KI erstellt aus Sitzungsaufnahmen und Unterlagen den Protokollentwurf samt Pendenzenliste; die Sekretariatsleitung prüft jedes Protokoll fachlich, wobei Schweizerdeutsch in Mehrpersonengesprächen den Korrekturaufwand erhöht."
+      },
+      {
+        "name": "Tätigkeits-, Auslastungs- und Kostenberichte zuhanden der Leitung erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus exportierten Auslastungs-, Personal- und Budgettabellen erstellt ein Chat-LLM Berichtsentwürfe und Auswertungen; die Sekretariatsleitung spezifiziert die Fragestellung und kontrolliert alle Kennzahlen sowie Aussagen."
+      },
+      {
+        "name": "Dokumentenablage strukturieren sowie eingehende Dokumente und Verträge im System klassifizieren und ablegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Dokumentenverarbeitung im Dokumentenmanagementsystem liest eingehende Briefe, PDFs und Verträge aus, verschlagwortet sie und legt sie im passenden Dossier ab; der Mensch bearbeitet nur markierte Ausnahmen und pflegt die Ablagestruktur."
+      },
+      {
+        "name": "Büromaterial- und Gerätebedarf verwalten, Bestellungen prüfen und Lieferantenrechnungen visieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Bewirtschaftung von Büromaterial, der Bestellabgleich und der Freigabeworkflow werden mehrheitlich durch klassische ERP- und E-Procurement-Software automatisiert; für die eigentliche Genehmigungsentscheidung bringt generative KI keine 50 % Zeitersparnis."
+      },
+      {
+        "name": "Komplexe Anfragen, Eskalationen und Reklamationen von Kundschaft oder Partnern telefonisch und persönlich klären",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bei eskalierten Anliegen, Beschwerden oder heiklen Abstimmungen steht das persönliche Gespräch zur Deeskalation und Vertrauensbildung im Vordergrund."
+      },
+      {
+        "name": "Administrative Prozesse analysieren sowie Arbeitsanweisungen, Checklisten und Vorlagen ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus Prozessbeschreibungen strukturierte Arbeitsanweisungen, Checklisten und Dokumentvorlagen; die Sekretariatsleitung gibt die betrieblichen Abläufe vor und prüft jedes Dokument auf Praxistauglichkeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Leiter/in eines Sekretariats (ca. 3–10 Mitarbeitende) in einer Schweizer Verwaltung, einem Verband oder einem grösseren KMU. Je nach Betriebsgrösse verschiebt sich das Verhältnis zwischen operativer Sachbearbeitung und reiner Teamsteuerung. Grenzfälle liegen bei der Sitzungsprotokollierung wegen Schweizerdeutsch in Mehrpersonengesprächen sowie beim Gegenlesen von Entwürfen nahe der 50-%-Schwelle.",
+    "zusammenfassung": {
+      "haupt_risiko": "Das Verfassen und Prüfen von Korrespondenz, Berichten und Arbeitsanweisungen sowie die Sitzungsprotokollierung und Dokumentenablage verändern sich stark durch Chat-LLMs, Transkriptions-KI und intelligente Dokumentenmanagementsysteme.",
+      "begruendung": "Rund 60 % der Arbeitszeit sind gegenüber generativer KI exponiert, während die personelle Führung, die tägliche Aufgabenkoordination im Team und heikle Kundenkontakte beim Menschen bleiben. Die KI wirkt überwiegend delegierend (Entwurf von Korrespondenz, Protokollen, Berichten und Vorlagen mit fachlicher Einzelprüfung), teils unterstützend bei der Textkontrolle und ersetzend bei der digitalen Dokumentenablage. In Schweizer Verwaltungen und Betrieben bremsen vor allem der Datenschutz (revDSG, Amtsgeheimnis) bei vertraulichen Dossiers sowie die Abstimmung mehrsprachiger Vorlagen eine rasche Vollintegration.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "51cf430f6935798782e5bb3c8a44401e40a06ebbb638bc9133985726e78f165d",
+    "isco_code": "8211",
+    "beruf": "Maschinenführer/in",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2250,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2250
+        }
+      ],
+      "prompt_token_count": 20231,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 20231
+        }
+      ],
+      "thoughts_token_count": 7091,
+      "total_token_count": 29572
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2250,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2250
+          }
+        ],
+        "prompt_token_count": 20231,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 20231
+          }
+        ],
+        "thoughts_token_count": 7091,
+        "total_token_count": 29572
+      }
+    ],
+    "request_ids": [
+      "xD_PapDlBqmHqtsPzqfB8Qs"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-8211_maschinenfuehrer_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "8211",
+    "beruf": "Maschinenführer/in",
+    "taetigkeiten": [
+      {
+        "name": "Produktionsmaschinen und -anlagen nach Auftrag umrüsten und Werkzeuge einrichten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Tätigkeit direkt an der Anlage (Formen, Werkzeuge und Führungen wechseln, mechanische Einstellungen vornehmen); auch durch klassische Automatisierung in der Breite nicht zu mindestens 50 % ersetzbar."
+      },
+      {
+        "name": "Laufende Produktionsanlagen bedienen, überwachen und Prozessparameter nachregeln",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert physische Präsenz sowie laufende visuelle und akustische Überwachung an der Maschine; die eigentliche Prozessregelung erfolgt bereits über klassische SPS-Steuerungen."
+      },
+      {
+        "name": "Rohmaterial, Halbfabrikate und Packmittel bereitstellen und in die Anlage nachfüllen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Heranschaffen von Gebinden, Wechseln von Folien- oder Papierrollen und Nachfüllen von Magazinen; für Schüttgüter existieren zwar automatische Förderanlagen, das Vorbereiten, Auspacken und Rollenwechseln bleibt im KMU-Alltag jedoch überwiegend manuell."
+      },
+      {
+        "name": "Fertige Erzeugnisse an der Anlage entnehmen, in Gebinde verpacken und palettieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Handhabung ohne Exposition gegenüber generativer KI. Kommerziell verfügbare Entnahme-, Kartonier- und Palettierroboter können diese Arbeit in der Industrie zu über 50 % übernehmen."
+      },
+      {
+        "name": "Stichprobenartige Qualitätskontrollen per Sichtprüfung und mit Handmessmitteln durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle und visuelle Prüfung physischer Werkstücke vor Ort. Industrielle Kameraprüfsysteme (optische Qualitätskontrolle) und automatische Kontrollwaagen oder Messzellen sind kommerziell verfügbar und können den Grossteil der Routineprüfungen übernehmen."
+      },
+      {
+        "name": "Einfache Maschinenstörungen beheben, Materialstaus beseitigen und Anlage wieder anfahren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Zeitaufwand liegt überwiegend im manuellen Eingreifen an der Maschine (Staus entfernen, Sensoren reinigen, Mechanik richten und Wiederanlauf überwachen); ein KI-gestützter Blick ins Handbuch spart bezogen auf die Gesamttätigkeit deutlich unter 50 % Zeit."
+      },
+      {
+        "name": "Regelmässige Reinigungs-, Schmier- und einfache Wartungsarbeiten an der Anlage durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Reinigungs- und Instandhaltungsarbeiten an oft schwer zugänglichen Maschinenteilen; weder durch generative KI noch durch Robotik in relevantem Umfang automatisierbar."
+      },
+      {
+        "name": "Produktionsdaten, Stückzahlen, Ausschuss und Chargen im BDE-/MES-System erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Strukturierte Erfassung von Zahlen, Codes und Chargen im Leitsystem erfordert kein Sprachmodell. Klassische Maschinendatenerfassung (MDE-Anbindung der Maschinensteuerung an das MES) und Barcodescanner übernehmen diese Erfassung heute weitgehend automatisch."
+      },
+      {
+        "name": "Störungsberichte, Abweichungsmeldungen und Schichtprotokolle dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Per Spracheingabe und Fotoaufnahme in einer mobilen Shopfloor-App erstellt die KI strukturierte Schichtbuch- und Störungseinträge; die Maschinenführerin oder der Maschinenführer prüft und bestätigt jeden Eintrag. Lärm in der Werkhalle, Dialekt und Fachbegriffe erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Mündliche Schichtübergabe an der Anlage durchführen und sich mit Instandhaltung und Schichtleitung absprechen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare persönliche Kommunikation und Demonstration des Anlagenzustands direkt vor Ort beim Schichtwechsel."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Maschinenführer/in im Schichtbetrieb eines Schweizer Industrie-KMU (z. B. Kunststoff-, Verpackungs-, Lebensmittel- oder Metallindustrie). Trotz fehlender ESCO-Kompetenzliste im Input ist das Tätigkeitsprofil (angelehnt an Anlageführer/in EFZ bzw. angelernte Maschinenführung) klar abgrenzbar und stark physisch geprägt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Von generativer KI betroffen ist lediglich das Verfassen von Störungsberichten, Abweichungsmeldungen und Schichtprotokollen mittels Spracheingabe und Bilddokumentation, während die eigentliche Maschinenführung physisch vor Ort bleibt.",
+      "begruendung": "Nur rund 5 % der Arbeitszeit sind gegenüber generativer KI exponiert, und zwar im delegierenden Modus beim Erstellen von Schicht- und Störungsprotokollen, die der Mensch weiterhin fachlich prüft. Die übrigen 95 % entfallen auf physische Arbeiten direkt an der Produktionsanlage wie Umrüsten, Bedienen, Materialzufuhr, Qualitätsprüfung und Störungsbehebung, wobei in Schweizer Industriebetrieben vielmehr die klassische Automatisierung durch Entnahme- und Palettierroboter, Kameraprüfsysteme sowie automatische Maschinendatenerfassung (rund 25 % der Zeit) relevant ist. In der Werkhalle bremsen zudem Umgebungslärm, Dialekt und eine hohe Systemvielfalt bei älteren Bestandesanlagen die rasche Einführung von KI-Sprachfunktionen.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

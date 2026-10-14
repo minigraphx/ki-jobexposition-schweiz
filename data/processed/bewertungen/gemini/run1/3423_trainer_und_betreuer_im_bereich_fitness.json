@@ -10,83 +10,211 @@
     "beruf": "Trainer und Betreuer im Bereich Fitness und Erholung",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 370,
+      "candidates_token_count": 2145,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 370
+          "token_count": 2145
         }
       ],
-      "prompt_token_count": 21772,
+      "prompt_token_count": 21733,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21772
+          "token_count": 21733
         }
       ],
-      "thoughts_token_count": 6813,
-      "total_token_count": 28955
+      "thoughts_token_count": 6787,
+      "total_token_count": 30665
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 370,
+        "candidates_token_count": 2145,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 370
+            "token_count": 2145
           }
         ],
-        "prompt_token_count": 21772,
+        "prompt_token_count": 21733,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21772
+            "token_count": 21733
           }
         ],
-        "thoughts_token_count": 6813,
-        "total_token_count": 28955
+        "thoughts_token_count": 6787,
+        "total_token_count": 30665
       }
     ],
     "request_ids": [
-      "nrnOari-KPiJz7IPxeCtqAE"
+      "XTzPauaINfSAz7IP5t2zgAs"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: taetigkeiten/0: 'Mitglieder auf der Trainingsfläche einweisen, Übungen vorzeigen und Bewegungsabläufe korrigieren' is not of type 'object'; taetigkeiten/1: 'Gruppenfitnesskurse leiten, Übungen vorturnen und Teilnehmende motivieren' is not of type 'object'; taetigkeiten/2: 'Anamnesegespräche führen, Kundenziele ermitteln und körperliche Fitnesstests durchführen' is not of type 'object'; taetigkeiten/3: 'Individuelle Trainingspläne nach Trainingsprinzipien erstellen und periodisch anpassen' is not of type 'object'; taetigkeiten/4: 'Probetrainings begleiten, Interessierte vor Ort beraten und Mitgliedschaften verkaufen' is not of type 'object'; taetigkeiten/5: 'Trainingsgeräte, Trainingsfläche und Hygiene im Studio kontrollieren und instand halten' is not of type 'object'; taetigkeiten/6: 'Mitglieder im persönlichen Gespräch zu gesunder Lebensweise, Regeneration und Ernährung beraten' is not of type 'object'; taetigkeiten/7: 'Termine koordinieren, Check-in betreuen und Abonnemente in der Studiosoftware verwalten' is not of type 'object'; taetigkeiten/8: 'Informationsblätter zu Fitnessthemen sowie Social-Media-Beiträge für Kursangebote erstellen' is not of type 'object'; zusammenfassung: 'haupt_risiko' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-3423_trainer_und_betreuer_im_bereich_fitness",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "taetigkeiten/0: 'Mitglieder auf der Trainingsfläche einweisen, Übungen vorzeigen und Bewegungsabläufe korrigieren' is not of type 'object'",
-      "taetigkeiten/1: 'Gruppenfitnesskurse leiten, Übungen vorturnen und Teilnehmende motivieren' is not of type 'object'",
-      "taetigkeiten/2: 'Anamnesegespräche führen, Kundenziele ermitteln und körperliche Fitnesstests durchführen' is not of type 'object'",
-      "taetigkeiten/3: 'Individuelle Trainingspläne nach Trainingsprinzipien erstellen und periodisch anpassen' is not of type 'object'",
-      "taetigkeiten/4: 'Probetrainings begleiten, Interessierte vor Ort beraten und Mitgliedschaften verkaufen' is not of type 'object'",
-      "taetigkeiten/5: 'Trainingsgeräte, Trainingsfläche und Hygiene im Studio kontrollieren und instand halten' is not of type 'object'",
-      "taetigkeiten/6: 'Mitglieder im persönlichen Gespräch zu gesunder Lebensweise, Regeneration und Ernährung beraten' is not of type 'object'",
-      "taetigkeiten/7: 'Termine koordinieren, Check-in betreuen und Abonnemente in der Studiosoftware verwalten' is not of type 'object'",
-      "taetigkeiten/8: 'Informationsblätter zu Fitnessthemen sowie Social-Media-Beiträge für Kursangebote erstellen' is not of type 'object'",
-      "zusammenfassung: 'haupt_risiko' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"3423\",\"beruf\":\"Trainer und Betreuer im Bereich Fitness und Erholung\",\"taetigkeiten\":[\n    \"Mitglieder auf der Trainingsfläche einweisen, Übungen vorzeigen und Bewegungsabläufe korrigieren\",\n    \"Gruppenfitnesskurse leiten, Übungen vorturnen und Teilnehmende motivieren\",\n    \"Anamnesegespräche führen, Kundenziele ermitteln und körperliche Fitnesstests durchführen\",\n    \"Individuelle Trainingspläne nach Trainingsprinzipien erstellen und periodisch anpassen\",\n    \"Probetrainings begleiten, Interessierte vor Ort beraten und Mitgliedschaften verkaufen\",\n    \"Trainingsgeräte, Trainingsfläche und Hygiene im Studio kontrollieren und instand halten\",\n    \"Mitglieder im persönlichen Gespräch zu gesunder Lebensweise, Regeneration und Ernährung beraten\",\n    \"Termine koordinieren, Check-in betreuen und Abonnemente in der Studiosoftware verwalten\",\n    \"Informationsblätter zu Fitnessthemen sowie Social-Media-Beiträge für Kursangebote erstellen\"\n  ],\"unsicherheit\":\"niedrig\",\"kommentar\":\"Angenommenes Setting: Fitnesstrainer/in bzw. Fachmann/Fachfrau Bewegungs- und Gesundheitsförderung EFZ in einem Schweizer Fitness- oder Gesundheitszentrum. Die Arbeit wird stark durch physische Präsenz auf der Trainingsfläche, Kursleitung und persönliche Betreuung geprägt. Grenzfall ist die Trainingsplanerstellung, bei der je nach genutzter Studiosoftware auch integrierte KI-Funktionen (E2) oder klassische Vorlagen zum Einsatz kommen können.\",\"zusammenfassung\":\n  \"haupt_risiko\"\n}"
+  "bewertung": {
+    "isco_code": "3423",
+    "beruf": "Trainer und Betreuer im Bereich Fitness und Erholung",
+    "taetigkeiten": [
+      {
+        "name": "Anamnesegespräche führen, Kundenziele ermitteln und körperliche Leistungstests durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das persönliche Eingangsgespräch zum Vertrauensaufbau sowie physische Messungen und Funktionstests (z. B. Kraft-, Ausdauer- und Beweglichkeitstests) erfordern unmittelbare Präsenz vor Ort."
+      },
+      {
+        "name": "Individuelle Trainingspläne und Übungsprogramme erstellen und anpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Auf Basis von Zielen, Trainingsstand und gesundheitlichen Einschränkungen erstellt ein Chat-LLM strukturierte Trainingspläne und Progressionsvorschläge; die Fachperson gibt die Parameter vor, prüft jeden Plan fachlich und überträgt ihn ins Trainingssystem."
+      },
+      {
+        "name": "Kundinnen und Kunden an Geräten und freien Gewichten einweisen und Bewegungsabläufe korrigieren",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische und präsenzgebundene Tätigkeit auf der Trainingsfläche: Geräte einstellen, Übungen vorzeigen sowie Haltung und Ausführung visuell und taktil korrigieren."
+      },
+      {
+        "name": "Gruppenfitness- und Erholungskurse vor Ort anleiten und Teilnehmende motivieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Unterrichten, Vorturnen, Korrigieren und Motivieren von Gruppen lebt von der persönlichen Präsenz und Gruppendynamik im Kursraum."
+      },
+      {
+        "name": "Trainingsfläche betreuen, Präsenz zeigen und sichere Übungsausführung überwachen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rundgänge auf der Trainingsfläche, Hilfestellung (Spotting), Eingreifen bei fehlerhafter Technik und kurze Kontaktpflege erfordern physische Anwesenheit."
+      },
+      {
+        "name": "Kundinnen und Kunden im persönlichen Gespräch zu gesundem Lebensstil, Regeneration und Ernährung beraten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung und Motivationsarbeit im direkten Kundengespräch sind Beziehungs- und Präsenztätigkeiten."
+      },
+      {
+        "name": "Interessierte durch das Center führen und Verkaufsgespräche für Mitgliedschaften vor Ort führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rundgänge vor Ort und das persönliche Überzeugen von Interessierten im Beratungsgespräch beruhen auf zwischenmenschlichem Kontakt."
+      },
+      {
+        "name": "Termine koordinieren, Check-in betreuen und Abonnementsmutationen in der Centersoftware abwickeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Terminbuchungen, Vertragsabschlüsse und Pausenmeldungen lassen sich über klassische Online-Buchungssysteme, Mitglieder-Apps und automatische Zutrittssysteme ohne generative KI zu über 50 % automatisieren."
+      },
+      {
+        "name": "Schriftliche Kundenanfragen beantworten sowie Informationsblätter und Werbetexte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM entwirft Antworten auf Kunden-E-Mails, Merkblätter zu Training und Ernährung sowie Newsletter- oder Social-Media-Texte aus Stichworten; der Trainer prüft und passt die Texte kurz an."
+      },
+      {
+        "name": "Trainingsgeräte, Kursmaterial und Übungsumgebung prüfen, reinigen und instand halten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Kontroll-, Aufräum- und Reinigungsarbeiten an komplexen Trainingsgeräten und Freihantelbereichen sind nicht durch kommerzielle Robotik abdeckbar."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Fachperson Bewegungs- und Gesundheitsförderung EFZ bzw. Fitnesstrainer/in in einem typischen Schweizer Fitness- und Gesundheitscenter (Kombination aus Flächenbetreuung, 1:1-Einweisung, Gruppenkursen und Center-Administration). Die ESCO-Kompetenzen bilden das Berufsbild gut ab. Einziger Grenzfall ist die Trainingsplanerstellung, bei der heute teilweise auch regelbasierte Vorlagen in der Centersoftware genutzt werden, LLMs jedoch bei individuellen Einschränkungen und Zielen deutlich flexibler unterstützen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind lediglich das Erstellen individueller Trainingspläne sowie das Verfassen von Informationsblättern, Werbetexten und schriftlichen Kundenantworten mittels Chat-LLM, während die Kerntätigkeit auf der Trainingsfläche und in Kursen physisch und präsenzgebunden bleibt.",
+      "begruendung": "Nur rund 15 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI im delegierenden Modus Trainingspläne, Merkblätter und Korrespondenz entwirft und die Fachperson die Ergebnisse fachlich prüft. Der Grossteil der Arbeit erfordert unmittelbare körperliche Präsenz beim Anleiten, Korrigieren und Motivieren der Kundschaft vor Ort, weshalb der persönliche Betreuungsanspruch der Kundschaft den KI-Einsatz auf vorbereitende und administrative Aufgaben begrenzt.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

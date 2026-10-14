@@ -10,78 +10,215 @@
     "beruf": "Technische Zeichner",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 43,
+      "candidates_token_count": 2379,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 43
+          "token_count": 2379
         }
       ],
-      "prompt_token_count": 22539,
+      "prompt_token_count": 22500,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22539
+          "token_count": 22500
         }
       ],
-      "thoughts_token_count": 8634,
-      "total_token_count": 31216
+      "thoughts_token_count": 7984,
+      "total_token_count": 32863
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 43,
+        "candidates_token_count": 2379,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 43
+            "token_count": 2379
           }
         ],
-        "prompt_token_count": 22539,
+        "prompt_token_count": 22500,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22539
+            "token_count": 22500
           }
         ],
-        "thoughts_token_count": 8634,
-        "total_token_count": 31216
+        "thoughts_token_count": 7984,
+        "total_token_count": 32863
       }
     ],
     "request_ids": [
-      "nrnOas2lJ-b8qtsPj8-C2A0"
+      "XjzPapSuJreBz7IPmfKIqA4"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: [''] is too short; taetigkeiten/0: '' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-3118_technische_zeichner",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: [''] is too short",
-      "taetigkeiten/0: '' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"3118\",\"beruf\":\"Technische Zeichner\",\"taetigkeiten\":[\n  \"\"\n]}"
+  "bewertung": {
+    "isco_code": "3118",
+    "beruf": "Technische Zeichner",
+    "taetigkeiten": [
+      {
+        "name": "3D-Gebäude- und Bauteilmodelle im CAD/BIM nach Entwurfsvorgaben aufbauen und konstruieren",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das präzise geometrische und konstruktive Modellieren von Bauwerken oder Maschinenbauteilen in CAD-/BIM-Systemen erfordert räumliches Vorstellungsvermögen und exakte Einhaltung technischer Regeln; generative KI erreicht hier heute keine Zeitersparnis von 50 %."
+      },
+      {
+        "name": "Ausführungs-, Detail-, Montage- und Schemapläne im CAD ausarbeiten, bemassen und beschriften",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Ausarbeitung konstruktiver Anschlussdetails, Montageabfolgen und normgerechter Plandarstellungen (SIA 400 / ISO) lässt sich mit heutiger generativer KI nicht in gleicher Ausführungsqualität um mindestens die Hälfte der Zeit verkürzen."
+      },
+      {
+        "name": "Bestehende Konstruktions- und Ausführungspläne nach Änderungsvorgaben revidieren und nachführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Einarbeiten von Planmutationen und Prüfvermerken im CAD-Modell samt Nachführung aller abhängigen Schnitte, Details und Revisionsindizes erfordert präzise manuelle Modellpflege und erreicht mit LLMs keine 50 % Zeitersparnis."
+      },
+      {
+        "name": "Massaufnahmen, Bestandesaufnahmen und Plankontrollen vor Ort auf der Baustelle oder im Betrieb durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz- und Messtätigkeit vor Ort mit Lasermessgeräten oder Vermessungsinstrumenten zur Aufnahme bestehender Bauteile und zur Kontrolle der Bauausführung."
+      },
+      {
+        "name": "Stücklisten, Mengenauszüge und Flächenberechnungen aus CAD-/BIM-Modellen ermitteln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Ableitung von Mengen, Flächen (z. B. nach SIA 416) und Stücklisten aus 3D-Modellen für Ausschreibung und Kalkulation ist eine regelbasierte Funktion klassischer BIM-, CAD- und Baukostensoftware (P1), keine Leistung generativer KI."
+      },
+      {
+        "name": "Konstruktive Details und Schnittstellen mit Architekten, Ingenieuren, Fachplanern und Ausführenden besprechen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche und fachliche Abstimmung im Planungsteam sowie mit Bauleitung und Werkstätten zur Lösung konstruktiver und räumlicher Schnittstellenprobleme."
+      },
+      {
+        "name": "Technische Beschriebe, Montageanleitungen und Baugesuchsunterlagen verfassen und zusammenstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten, Raum- oder Bauteillisten strukturierte Entwürfe für Baubeschriebe, technische Berichte und Montageanleitungen; die Fachperson spezifiziert die Vorgaben und prüft jedes Dokument inhaltlich auf Richtigkeit."
+      },
+      {
+        "name": "Projektkorrespondenz, Planbegleitscheine sowie Besprechungs- und Begehungsnotizen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI formuliert aus kurzen Notizen oder Mängellisten fertige E-Mails, Aktennotizen und Protokolle; die zeichnende Person gibt den Kontext ein und kontrolliert jede Nachricht vor dem Versand."
+      },
+      {
+        "name": "Entwurfsskizzen, 3D-Visualisierungen und Präsentationsgrafiken aus CAD-Modellen generieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative Bild- und Rendering-Software erzeugt aus einfachen CAD-Ansichten oder Skizzen innert Kürze fotorealistische Visualisierungen und Materialvarianten; der Mensch steuert die Prompts, wählt aus und prüft jedes Bild."
+      },
+      {
+        "name": "Bauvorschriften, SIA-/ISO-Normen und Konstruktionsrichtlinien recherchieren und auf das Projekt abgleichen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Recherche- und Dokumentenwerkzeuge durchsuchen Bau- und Zonenordnungen, Brandschutzvorschriften und Normenwerke nach relevanten Vorgaben; die Fachperson prüft die Anwendbarkeit am konkreten Bauteil selbst."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Zeichner/in EFZ (Fachrichtung Architektur/Ingenieurbau, ehem. Hoch-/Tiefbauzeichner) bzw. technische/r Zeichner/in in einem Schweizer Planungs-, Architektur- oder Konstruktionsbüro (KMU). Die ESCO-Kompetenzen mischen Bau-, Innenarchitektur- und Maschinenbau-Aufgaben; das Tätigkeitsprofil bildet den gemeinsamen Kern aus CAD-/BIM-Modellierung, Planausarbeitung, Ausmass und technischer Dokumentation ab.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem das Erstellen von 3D-Visualisierungen, das Verfassen technischer Beschriebe, Baugesuchs- und Korrespondenztexte sowie die Normenrecherche durch Bildgeneratoren, Chat-LLMs und Recherche-Werkzeuge, während die eigentliche CAD-Konstruktions- und Planungsarbeit kaum betroffen ist.",
+      "begruendung": "Rund 20 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus bei Visualisierungen und Textdokumenten sowie unterstützend beim Abgleich von Vorschriften. Der Kern des Berufs (80 % der Zeit) besteht aus präzisem 3D-Modellieren, dem Ausarbeiten konstruktiver Detail- und Ausführungspläne, Aufmassen vor Ort und regelbasierten Mengenauszügen, wofür heutige Sprach- und Bildmodelle nicht die nötige geometrische und konstruktive Verlässlichkeit bieten. In der Schweiz bremsen zudem stark fragmentierte kantonale und kommunale Bauvorschriften sowie Haftungsanforderungen bei Baugesuchs- und Ausführungsunterlagen einen unkontrollierten KI-Einsatz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

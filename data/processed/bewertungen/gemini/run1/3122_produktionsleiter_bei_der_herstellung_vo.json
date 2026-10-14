@@ -10,78 +10,214 @@
     "beruf": "Produktionsleiter bei der Herstellung von Waren",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 45,
+      "candidates_token_count": 2216,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 45
+          "token_count": 2216
         }
       ],
-      "prompt_token_count": 23649,
+      "prompt_token_count": 23610,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 23649
+          "token_count": 23610
         }
       ],
-      "thoughts_token_count": 5019,
-      "total_token_count": 28713
+      "thoughts_token_count": 10998,
+      "total_token_count": 36824
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 45,
+        "candidates_token_count": 2216,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 45
+            "token_count": 2216
           }
         ],
-        "prompt_token_count": 23649,
+        "prompt_token_count": 23610,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 23649
+            "token_count": 23610
           }
         ],
-        "thoughts_token_count": 5019,
-        "total_token_count": 28713
+        "thoughts_token_count": 10998,
+        "total_token_count": 36824
       }
     ],
     "request_ids": [
-      "nrnOarn5Kub8qtsPj8-C2A0"
+      "XTzPatPwBMyfz7IP7bi_mAY"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): Additional properties are not allowed ('taetigkeitenMaz' was unexpected); (root): 'taetigkeiten' is a required property; (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-3122_produktionsleiter_bei_der_herstellung_vo",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): Additional properties are not allowed ('taetigkeitenMaz' was unexpected)",
-      "(root): 'taetigkeiten' is a required property",
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"3122\",\"beruf\":\"Produktionsleiter bei der Herstellung von Waren\",\"taetigkeitenMaz\":null}"
+  "bewertung": {
+    "isco_code": "3122",
+    "beruf": "Produktionsleiter bei der Herstellung von Waren",
+    "taetigkeiten": [
+      {
+        "name": "Fertigungsabläufe und Anlagenbetrieb in der Produktionshalle überwachen und bei Störungen eingreifen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert physische Präsenz am Shopfloor, visuelle Kontrolle der laufenden Anlagen und unmittelbares Eingreifen bei technischen oder organisatorischen Störungen vor Ort."
+      },
+      {
+        "name": "Produktionspersonal im Tagesgeschäft anleiten und tägliche Schichtbesprechungen durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Führungs-, Betreuungs- und Kommunikationstätigkeit von Angesicht zu Angesicht in der Werkhalle (Shopfloor-Meetings, Schichtübergaben, Coaching)."
+      },
+      {
+        "name": "Produktions- und Auftragsfeinplanung erstellen, Materialverfügbarkeit prüfen und Pläne bei Engpässen anpassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Kapazitäts-, Materialbedarfs- und Feinplanung wird durch klassische ERP-, PPS- und APS-Systeme (ohne generative KI) zu über 50 % automatisiert; das Lösen akuter Engpässe erfordert menschliche Abstimmung."
+      },
+      {
+        "name": "Schicht- und Personaleinsatzpläne erstellen sowie Personalkapazitäten abgleichen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Schichtplanung nach Qualifikationen, Absenzen und Arbeitsgesetz-Vorgaben ist eine Optimierungsaufgabe für klassische Personaleinsatzplanungs-Software (PEP), nicht für Sprachmodelle."
+      },
+      {
+        "name": "Qualitätskontrollen, Warenauszeichnung und Arbeitssicherheit im Produktionsbereich überwachen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kontrollgänge in der Produktion zur Prüfung von Endprodukten, Etikettierung und Einhaltung der Sicherheits- und Hygienevorschriften erfordern persönliche Anwesenheit vor Ort."
+      },
+      {
+        "name": "Produktionsprozesse vor Ort analysieren und Optimierungsmassnahmen (KVP/Lean) im Betrieb umsetzen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Prozessbeobachtung an den Linien (Gemba), physisches Umgestalten von Arbeitsplätzen und das Einbinden der Mitarbeitenden in KVP-Workshops finden überwiegend vor Ort statt; KI spart hier insgesamt keine 50 % der Zeit."
+      },
+      {
+        "name": "Produktionsdaten und Schichtprotokolle auswerten sowie Produktions- und Abweichungsberichte verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Datenanalyse-Werkzeuge bzw. BI-/ERP-Integrationen werten Betriebsdaten und Freitext-Schichtnotizen aus und erstellen den Berichtsentwurf; der Produktionsleiter prüft jede Abweichungsanalyse fachlich."
+      },
+      {
+        "name": "Termine, Kapazitäten und Budgets mit Geschäftsleitung, Verkauf, Einkauf und Instandhaltung abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abteilungsübergreifende Koordination, Priorisierung bei Lieferengpässen und Budgetverhandlungen beruhen auf persönlicher Abstimmung und Ermessensentscheiden."
+      },
+      {
+        "name": "Arbeitsanweisungen (SOPs), Anlagenstandards und schriftliche Betriebsinformationen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten strukturierte Arbeits- und Sicherheitsanweisungen inklusive Übersetzungen für das Team; der Produktionsleiter prüft jedes Dokument im Detail auf technische Richtigkeit und Arbeitssicherheit."
+      },
+      {
+        "name": "Mitarbeitende beurteilen, Qualifikationsgespräche führen und Schulungsmassnahmen planen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Leistungsbeurteilung aus der praktischen Beobachtung und das persönliche Mitarbeitergespräch sind Beziehungstätigkeiten, bei denen der Schreibanteil untergeordnet ist."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Produktionsleiter/in (bzw. Industriemeister/in / Fertigungsleiter/in, ISCO 3122) in einem typischen Schweizer Industriebetrieb (KMU). Die Aufgaben verbinden direkte Führung und Überwachung in der Werkhalle mit Planung und Berichterstattung am Bildschirm. Die Auftrags-, Material- und Schichtplanung wird primär durch klassische ERP-/PPS- und PEP-Software automatisiert (P1) und zählt gemäss Rubrik nicht als generative KI-Exposition.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Auswertung von Produktionsdaten und Schichtprotokollen für Berichte mittels Datenanalyse-KI sowie das Verfassen von Arbeitsanweisungen und Standards per Chat-LLM.",
+      "begruendung": "Lediglich rund 15 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI im delegierenden Modus Berichtsentwürfe und Arbeitsanweisungen erstellt, die der Produktionsleiter fachlich prüft und verantwortet. Der Kern des Berufs bleibt durch physische Präsenz in der Produktionshalle, direkte Personalführung und Störungsbehebung vor Ort geprägt, während Routineplanungen durch klassische ERP- und Schichtplanungssoftware abgedeckt werden. In Schweizer Industriebetrieben erfordern zudem Sicherheits- und Auditvorgaben (SUVA, ISO/GMP) sowie mehrsprachige Fertigungsteams eine sorgfältige menschliche Freigabe aller Dokumente.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

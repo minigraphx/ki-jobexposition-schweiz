@@ -10,77 +10,213 @@
     "beruf": "Kindergärtnerin/-gärtner",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 49,
+      "candidates_token_count": 2189,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 49
+          "token_count": 2189
         }
       ],
-      "prompt_token_count": 22811,
+      "prompt_token_count": 22772,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22811
+          "token_count": 22772
         }
       ],
-      "thoughts_token_count": 3203,
-      "total_token_count": 26063
+      "thoughts_token_count": 4677,
+      "total_token_count": 29638
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 49,
+        "candidates_token_count": 2189,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 49
+            "token_count": 2189
           }
         ],
-        "prompt_token_count": 22811,
+        "prompt_token_count": 22772,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22811
+            "token_count": 22772
           }
         ],
-        "thoughts_token_count": 3203,
-        "total_token_count": 26063
+        "thoughts_token_count": 4677,
+        "total_token_count": 29638
       }
     ],
     "request_ids": [
-      "nrnOapqUKbzi_uMP6aHG6Ag"
+      "XTzPap_NDvGfz7IP68qu-AE"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: [] is too short"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-2342_kindergaertnerin_gaertner",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: [] is too short"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"2342\",\"beruf\":\"Kindergärtnerin/-gärtner\",\"taetigkeiten\":[\n  ]\n}"
+  "bewertung": {
+    "isco_code": "2342",
+    "beruf": "Kindergärtnerin/-gärtner",
+    "taetigkeiten": [
+      {
+        "name": "Geführte Unterrichtssequenzen im Kreis und in Teilgruppen durchführen (Geschichten, Lieder, Rhythmik, thematische Einführungen)",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Präsenz- und Beziehungstätigkeit mit vier- bis sechsjährigen Kindern im Kindergartenraum; erfordert persönliche Interaktion, Vorzeigen und situatives Reagieren."
+      },
+      {
+        "name": "Kinder im Freispiel sowie bei Bastel- und Werkarbeiten anleiten, begleiten und Konflikte in der Gruppe moderieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Pädagogische Begleitung, emotionale Unterstützung und Konfliktschlichtung vor Ort sind reine Präsenz- und Beziehungstätigkeiten."
+      },
+      {
+        "name": "Kinder im Alltag betreuen (Garderobe, Znüni, Hygiene, kleine Verletzungen) und auf dem Pausenplatz sowie bei Waldmorgen beaufsichtigen",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Betreuung und Aufsichtspflicht vor Ort können weder durch generative KI noch durch Robotik übernommen werden."
+      },
+      {
+        "name": "Lernumgebung, Spielposten sowie physische Bastel- und Anschauungsmaterialien im Kindergartenraum herrichten und aufräumen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein manuelle und physische Arbeit im Klassenzimmer wie Material zuschneiden, Themenposten aufbauen und Aufräumen."
+      },
+      {
+        "name": "Motorische, sprachliche, kognitive und soziale Entwicklung der Kinder im Alltag gezielt beobachten und Kurznotizen erfassen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Beobachtung findet unmittelbar während des Spiel- und Unterrichtsgeschehens am Kind statt und setzt persönliche Wahrnehmung und pädagogische Einschätzung voraus."
+      },
+      {
+        "name": "Wochen- und Quartalspläne nach Lehrplan 21, Rahmengeschichten sowie Spiel- und Lernideen schriftlich ausarbeiten",
+        "zeitanteil_pct": 7,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM entwirft auf Basis von Thema, Altersgruppe und Lehrplan-21-Zielen strukturierte Wochenpläne, Geschichten und Aktivitätsideen; die Lehrperson spezifiziert die Vorgaben, prüft jeden Entwurf fachlich und passt ihn an ihre Klasse an."
+      },
+      {
+        "name": "Standortbestimmungen, Entwicklungsberichte und Übertrittsberichte zuhanden der Primarschule aus Beobachtungsnotizen verfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus anonymisierten Stichworten und Beobachtungsnotizen formuliert ein Chat-LLM differenzierte Entwicklungsberichte; die Lehrperson prüft und überarbeitet jeden Bericht inhaltlich, da sie die pädagogische Beurteilung verantwortet."
+      },
+      {
+        "name": "Elternbriefe, Quartalsinformationen und schriftliche Mitteilungen an Eltern (inkl. Übersetzungen) verfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus wenigen Stichworten fertige Elternbriefe, Erinnerungen und Übersetzungen in verschiedene Herkunftssprachen; die Lehrperson liest jedes Schreiben vor dem Versand kurz durch und prüft alle Angaben."
+      },
+      {
+        "name": "Elterngespräche, schulische Standortgespräche und Elternabende persönlich durchführen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Vertrauensbildende Gespräche mit Erziehungsberechtigten über die Entwicklung des Kindes erfordern persönliche Präsenz, Empathie und Dialog von Angesicht zu Angesicht."
+      },
+      {
+        "name": "Sich mit schulischer Heilpädagogik, Logopädie, DaZ-Lehrpersonen und Schulleitung absprechen sowie an Konferenzen teilnehmen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Interdisziplinäre Fallbesprechungen zur individuellen Förderung und Teamsitzungen vor Ort sind auf persönlichen Austausch und gemeinsame Entscheidungsfindung angewiesen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Lehrperson Kindergarten (Zyklus 1 der öffentlichen Volksschule in der Schweiz). Das Tätigkeitsprofil ist klar durch die Präsenzarbeit mit vier- bis sechsjährigen Kindern geprägt; die ESCO-Begriffe ('Studierende bewerten', 'Jugendliche') wurden an den Schweizer Kindergartenalltag gemäss Lehrplan 21 angepasst.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind ausschliesslich die schriftliche Unterrichts- und Quartalsplanung, das Verfassen von Entwicklungsberichten sowie das Erstellen und Übersetzen von Elternbriefen mittels Chat-LLM.",
+      "begruendung": "Lediglich rund 15 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI durchwegs im delegierenden Modus Entwürfe für Planungen, Berichte und Elternkommunikation erstellt, die von der Lehrperson fachlich geprüft und angepasst werden. Der überwiegende Kern des Berufs (85 %) besteht aus unmittelbarer Präsenz-, Beziehungs- und Betreuungsarbeit mit kleinen Kindern im Kindergartenraum, die technisch nicht durch KI übernehmbar ist. Bei Entwicklungs- und Übertrittsberichten bremsen zudem kantonale Datenschutzvorgaben und das Berufsgeheimnis den Einsatz externer Sprachmodelle.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

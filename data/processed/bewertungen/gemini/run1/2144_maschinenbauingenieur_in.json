@@ -10,88 +10,229 @@
     "beruf": "Maschinenbauingenieur/in",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 246,
+      "candidates_token_count": 2400,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 246
+          "token_count": 2400
         }
       ],
-      "prompt_token_count": 23683,
+      "prompt_token_count": 23644,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 23683
+          "token_count": 23644
         }
       ],
-      "thoughts_token_count": 8577,
-      "total_token_count": 32506
+      "thoughts_token_count": 7553,
+      "total_token_count": 33597
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 246,
+        "candidates_token_count": 2400,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 246
+            "token_count": 2400
           }
         ],
-        "prompt_token_count": 23683,
+        "prompt_token_count": 23644,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 23683
+            "token_count": 23644
           }
         ],
-        "thoughts_token_count": 8577,
-        "total_token_count": 32506
+        "thoughts_token_count": 7553,
+        "total_token_count": 33597
       }
     ],
     "request_ids": [
-      "nrnOaumjK7i-_PUPrrqE6QQ"
+      "XTzPasb1KMucz7IP_rLrgA8"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): Additional properties are not allowed ('ch_hemmnis', 'modus', 'physisch_automatisierbar', 'properties', 'sicherheit', 'zeitanteil_pct' were unexpected); (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten/0: 'name' is not of type 'object'; taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'; taetigkeiten/2: 'stufe' is not of type 'object'; taetigkeiten/3: 'modus' is not of type 'object'; taetigkeiten/4: 'restzeit_mensch' is not of type 'object'; taetigkeiten/5: 'physisch_automatisierbar' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-2144_maschinenbauingenieur_in",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): Additional properties are not allowed ('ch_hemmnis', 'modus', 'physisch_automatisierbar', 'properties', 'sicherheit', 'zeitanteil_pct' were unexpected)",
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten/0: 'name' is not of type 'object'",
-      "taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'",
-      "taetigkeiten/2: 'stufe' is not of type 'object'",
-      "taetigkeiten/3: 'modus' is not of type 'object'",
-      "taetigkeiten/4: 'restzeit_mensch' is not of type 'object'",
-      "taetigkeiten/5: 'physisch_automatisierbar' is not of type 'object'",
-      "taetigkeiten/6: 'p_art' is not of type 'object'",
-      "taetigkeiten/7: 'sicherheit' is not of type 'object'",
-      "taetigkeiten/8: 'sicherheit_begruendung' is not of type 'object'",
-      "taetigkeiten/9: 'ch_hemmnis' is not of type 'object'",
-      "taetigkeiten/10: 'begruendung' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\n  \"isco_code\": \"2144\",\n  \"beruf\": \"Maschinenbauingenieur/in\",\n  \"taetigkeiten\": [\n        \"name\",\n        \"zeitanteil_pct\",\n        \"stufe\",\n        \"modus\",\n        \"restzeit_mensch\",\n        \"physisch_automatisierbar\",\n        \"p_art\",\n        \"sicherheit\",\n        \"sicherheit_begruendung\",\n        \"ch_hemmnis\",\n        \"begruendung\"\n      ],\n      \"properties\":\n    \"name\",\n    \"zeitanteil_pct\"\n  :\n    \"stufe\",\n    \"modus\"\n  :\n    \"restzeit_mensch\",\n    \"physisch_automatisierbar\"\n  :\n    \"p_art\",\n    \"sicherheit\"\n  :\n    \"sicherheit_begruendung\",\n    \"ch_hemmnis\"\n  :\n    \"begruendung\"\n  }"
+  "bewertung": {
+    "isco_code": "2144",
+    "beruf": "Maschinenbauingenieur/in",
+    "taetigkeiten": [
+      {
+        "name": "Technische Anforderungen, Pflichtenhefte und Machbarkeitsstudien erarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM entwirft aus Kundenanforderungen, Stichworten und Normauszügen strukturierte Pflichtenhefte und Machbarkeitsberichte; die Ingenieurin gibt die technischen Randbedingungen vor und prüft jede Anforderung fachlich."
+      },
+      {
+        "name": "Maschinenkomponenten und Baugruppen im 3D-CAD entwerfen und konstruieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die räumlich-funktionale Konstruktion komplexer, fertigungsgerechter 3D-Baugruppen im CAD erreicht mit generativer KI heute keine Zeitersparnis von 50 %."
+      },
+      {
+        "name": "Fertigungszeichnungen, Toleranzen und Stücklisten im CAD/PDM ableiten und anpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Festlegen funktionskritischer Form- und Lagetoleranzen sowie das Anpassen detaillierter Konstruktionspläne erfordert tiefes Geometrie- und Fertigungsverständnis, bei dem LLMs keine 50 % Zeit sparen."
+      },
+      {
+        "name": "Analytisch-mathematische Berechnungen und Bauteilauslegungen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLMs mit Code-Ausführung (z. B. Python/MATLAB-Agenten) erstellen und berechnen Auslegungsskripte für Festigkeit, Kinematik oder Thermodynamik; der Ingenieur definiert das physikalische Modell und kontrolliert jeden Rechenweg."
+      },
+      {
+        "name": "Numerische Simulationen (FEM, CFD) aufsetzen, durchführen und auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Geometrieaufbereitung, Vernetzung, Randbedingungsdefinition in der CAE-Software und die physikalische Plausibilisierung von Spannungs- oder Strömungsfeldern werden durch generative KI nicht um 50 % verkürzt."
+      },
+      {
+        "name": "Technische Dokumentation, Risikobeurteilungen und Konformitätsnachweise (CE) verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Aus Bauteilbeschreibungen, Gefahrenlisten und Normtexten erstellt das Chat-LLM Entwürfe für Risikoanalysen (nach Maschinenrichtlinie/ISO 12100) und technische Berichte; jede Position wird aus Haftungsgründen fachlich geprüft."
+      },
+      {
+        "name": "Prototypen und Versuchsaufbauten im Labor oder Prüffeld aufbauen und testen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit am Prüfstand, Sensorinstallation und Durchführung von Versuchen an realen Prototypen erfordern manuelle Eingriffe und Präsenz vor Ort."
+      },
+      {
+        "name": "Mess- und Versuchsdaten aus Prüfständen und Feldanlagen analysieren und auswerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Datenanalyse-Agenten mit Code-Ausführung bereinigen Sensordaten, führen Signal- und Statistikauswertungen durch und erzeugen Diagramme; die Ingenieurin gibt die Auswertungslogik vor und prüft die Ergebnisse auf physikalische Plausibilität."
+      },
+      {
+        "name": "Konstruktionsentwürfe und Zeichnungen prüfen und freigeben (Design Review)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die fachliche Prüfung und Freigabe von 3D-Modellen und 2D-Fertigungszeichnungen hinsichtlich Funktion, Montage- und Fertigungsgerechtigkeit wird von multimodaler KI qualitativ nicht erreicht."
+      },
+      {
+        "name": "Fertigung, Montage und Inbetriebnahme technisch betreuen sowie Störungen vor Ort analysieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Präsenz in der Werkhalle oder beim Kunden an der Anlage zur Fehlersuche und Inbetriebnahme."
+      },
+      {
+        "name": "Entwicklungsteams, Konstrukteure und Lieferanten fachlich koordinieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zwischenmenschliche Koordination, technische Abstimmungsgespräche an Schnittstellen und Verhandlungen mit Zulieferern."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Maschinenbauingenieur/in (FH/ETH) in der Forschung, Entwicklung und Konstruktion eines Schweizer MEM-Industriebetriebs. In der Schweiz wird ein Teil der reinen Detailzeichnung an Konstrukteur/innen EFZ delegiert, während Ingenieur/innen stärker in Konzept, Auslegung, Simulation und Projektleitung tätig sind. Sehr spezifische ESCO-Einträge (wie solare Absorptionskühlung oder Schiffsantriebe) wurden auf allgemeine maschinenbauliche Auslegungs- und Planungsaufgaben verallgemeinert.",
+    "zusammenfassung": {
+      "haupt_risiko": "Pflichtenhefte, technische Dokumentationen und Risikobeurteilungen sowie analytische Bauteilberechnungen und Messdatenauswertungen werden durch Chat-LLMs und Code-/Datenanalyse-Agenten stark beschleunigt.",
+      "begruendung": "Rund 35 % der Arbeitszeit sind exponiert, durchwegs im delegierenden Modus: Die KI erstellt Entwürfe für Spezifikationen, CE-Sicherheitsnachweise, Berechnungsskripte und Datenauswertungen, während die Ingenieurin jedes Ergebnis fachlich und rechnerisch prüft. Die Kernaufgaben im 3D-CAD, in der FEM/CFD-Simulation sowie im Prüffeld bleiben kaum betroffen; zudem erfordern Maschinenrichtlinie, Produktehaftpflicht und der Schutz von Konstruktions-Know-how in der Schweizer MEM-Industrie eine strenge menschliche Einzelprüfung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

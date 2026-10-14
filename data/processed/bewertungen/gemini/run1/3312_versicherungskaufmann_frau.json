@@ -10,84 +10,235 @@
     "beruf": "Versicherungskaufmann/-frau",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 445,
+      "candidates_token_count": 2479,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 445
+          "token_count": 2479
         }
       ],
-      "prompt_token_count": 21533,
+      "prompt_token_count": 21494,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21533
+          "token_count": 21494
         }
       ],
-      "thoughts_token_count": 5028,
-      "total_token_count": 27006
+      "thoughts_token_count": 8059,
+      "total_token_count": 32032
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 445,
+        "candidates_token_count": 2479,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 445
+            "token_count": 2479
           }
         ],
-        "prompt_token_count": 21533,
+        "prompt_token_count": 21494,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21533
+            "token_count": 21494
           }
         ],
-        "thoughts_token_count": 5028,
-        "total_token_count": 27006
+        "thoughts_token_count": 8059,
+        "total_token_count": 32032
       }
     ],
     "request_ids": [
-      "nrnOapr5LLi-_PUPrrqE6QQ"
+      "XTzPapOfDMyfz7IP7bi_mAY"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: taetigkeiten/0: 'Anträge, Vertragsänderungen und Kündigungen prüfen und im Bestandesführungssystem verarbeiten' is not of type 'object'; taetigkeiten/1: 'Versicherungsofferten und Deckungsvorschläge nach Kundenvorgaben ausarbeiten' is not of type 'object'; taetigkeiten/2: 'Schadenmeldungen und Leistungsbelege sichten und Daten ins Schadensystem übertragen' is not of type 'object'; taetigkeiten/3: 'Versicherungsdeckung und Leistungsanspruch anhand von Police und AVB vorprüfen' is not of type 'object'; taetigkeiten/4: 'Schriftliche Kundenanfragen beantworten und Standardkorrespondenz verfassen' is not of type 'object'; taetigkeiten/5: 'Telefonische Standardauskünfte zu Policen, Prämien und Schadenstatus erteilen' is not of type 'object'; taetigkeiten/6: 'Kunden bei komplexem Versicherungsbedarf persönlich oder telefonisch beraten' is not of type 'object'; taetigkeiten/7: 'Prämienabrechnungen, Zahlungsabgleiche, Mahnläufe und Standardauszahlungen im System abwickeln' is not of type 'object'; taetigkeiten/8: 'Komplexe Risiko-, Kulanz- und Schadenfälle mit Underwriting, Aussendienst oder Gutachtern abklären und entscheiden' is not of type 'object'; taetigkeiten/9: 'Aktennotizen, Gesprächsprotokolle und interne Fallzusammenfassungen verfassen' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-3312_versicherungskaufmann_frau",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "taetigkeiten/0: 'Anträge, Vertragsänderungen und Kündigungen prüfen und im Bestandesführungssystem verarbeiten' is not of type 'object'",
-      "taetigkeiten/1: 'Versicherungsofferten und Deckungsvorschläge nach Kundenvorgaben ausarbeiten' is not of type 'object'",
-      "taetigkeiten/2: 'Schadenmeldungen und Leistungsbelege sichten und Daten ins Schadensystem übertragen' is not of type 'object'",
-      "taetigkeiten/3: 'Versicherungsdeckung und Leistungsanspruch anhand von Police und AVB vorprüfen' is not of type 'object'",
-      "taetigkeiten/4: 'Schriftliche Kundenanfragen beantworten und Standardkorrespondenz verfassen' is not of type 'object'",
-      "taetigkeiten/5: 'Telefonische Standardauskünfte zu Policen, Prämien und Schadenstatus erteilen' is not of type 'object'",
-      "taetigkeiten/6: 'Kunden bei komplexem Versicherungsbedarf persönlich oder telefonisch beraten' is not of type 'object'",
-      "taetigkeiten/7: 'Prämienabrechnungen, Zahlungsabgleiche, Mahnläufe und Standardauszahlungen im System abwickeln' is not of type 'object'",
-      "taetigkeiten/8: 'Komplexe Risiko-, Kulanz- und Schadenfälle mit Underwriting, Aussendienst oder Gutachtern abklären und entscheiden' is not of type 'object'",
-      "taetigkeiten/9: 'Aktennotizen, Gesprächsprotokolle und interne Fallzusammenfassungen verfassen' is not of type 'object'",
-      "zusammenfassung: 'Policen- und Schadenverarbeitung, Deckungsvorprüfungen, Offertenerstellung sowie schriftliche und telefonische Standardkundenkontakte werden weitgehend durch Dokumentenerkennung, Chat-LLMs und Voicebots übernommen.' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"3312\",\"beruf\":\"Versicherungskaufmann/-frau\",\"taetigkeiten\":[\n  \"Anträge, Vertragsänderungen und Kündigungen prüfen und im Bestandesführungssystem verarbeiten\",\n  \"Versicherungsofferten und Deckungsvorschläge nach Kundenvorgaben ausarbeiten\",\n  \"Schadenmeldungen und Leistungsbelege sichten und Daten ins Schadensystem übertragen\",\n  \"Versicherungsdeckung und Leistungsanspruch anhand von Police und AVB vorprüfen\",\n  \"Schriftliche Kundenanfragen beantworten und Standardkorrespondenz verfassen\",\n  \"Telefonische Standardauskünfte zu Policen, Prämien und Schadenstatus erteilen\",\n  \"Kunden bei komplexem Versicherungsbedarf persönlich oder telefonisch beraten\",\n  \"Prämienabrechnungen, Zahlungsabgleiche, Mahnläufe und Standardauszahlungen im System abwickeln\",\n  \"Komplexe Risiko-, Kulanz- und Schadenfälle mit Underwriting, Aussendienst oder Gutachtern abklären und entscheiden\",\n  \"Aktennotizen, Gesprächsprotokolle und interne Fallzusammenfassungen verfassen\"\n],\"unsicherheit\":\"niedrig\",\"kommentar\":\"Angenommenes Setting: Kaufmännische Sachbearbeitung im Innendienst einer Schweizer Versicherungsgesellschaft oder grösseren Generalagentur (Vertragsverwaltung, Kundenservice und Schaden-/Leistungsabwicklung). Die ESCO-Zuordnung ist sehr allgemein gehalten, wurde aber anhand des typischen Berufsbilds Kauffrau/Kaufmann EFZ Privatversicherung bzw. Versicherungssachbearbeitung in der Schweiz präzisiert. Der wichtigste Grenzfall betrifft telefonische Auskünfte per Voicebot wegen der Schweizerdeutschen Mundart.\",\"zusammenfassung\":\n  \"Policen- und Schadenverarbeitung, Deckungsvorprüfungen, Offertenerstellung sowie schriftliche und telefonische Standardkundenkontakte werden weitgehend durch Dokumentenerkennung, Chat-LLMs und Voicebots übernommen.\"\n}"
+  "bewertung": {
+    "isco_code": "3312",
+    "beruf": "Versicherungskaufmann/-frau",
+    "taetigkeiten": [
+      {
+        "name": "Vertragsänderungen, Mutationen und Standardanträge aus E-Mails und Formularen im Bestandesführungssystem erfassen und policieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenextraktion und KI-Integration im Bestandesführungssystem lesen Kundenmeldungen aus und bereiten die Policierung vor; die Fachperson gibt frei oder bearbeitet markierte Ausnahmen."
+      },
+      {
+        "name": "Fremdpolicen analysieren, Deckungsvergleiche erstellen und individuelle Offertdossiers ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Software liest gescannte Fremdpolicen aus und erstellt den Leistungsvergleich sowie den Offerttext; die Fachperson steuert den Prozess und prüft jede Deckungsposition fachlich."
+      },
+      {
+        "name": "Risikoprüfung bei neuen oder angepassten Verträgen anhand von Annahmerichtlinien und AVB vorprüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Antragsdaten, Zeichnungsrichtlinien und AVB werden als Text ins Chat-LLM eingegeben, das die Risikobeurteilung entwirft; die Fachperson prüft und verantwortet jeden Annahmeentscheid."
+      },
+      {
+        "name": "Schadenmeldungen und Leistungsbelege sichten und Daten ins Schadensystem übertragen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumenten- und Bilderkennung mit Systemintegration extrahiert Angaben aus Rechnungen, Fotos und Rapporten direkt ins Schadensystem; der Mensch bearbeitet nur markierte Ausnahmen."
+      },
+      {
+        "name": "Schadendeckung anhand von Police, Allgemeinen Versicherungsbedingungen (AVB) und Sachverhalt vorprüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sachverhalt, Police und AVB lassen sich als Text in ein Chat-LLM einfügen, das die Deckungsbeurteilung erstellt; die Fachperson kontrolliert jede Prüfung inhaltlich."
+      },
+      {
+        "name": "Standardkorrespondenz mit Versicherten, Brokern und Behörden verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "<10",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt Deckungsbestätigungen, Unterlagennachforderungen und Standardantworten aus Falldaten; die Fachperson gibt diese nach kurzer Sichtung per Klick frei."
+      },
+      {
+        "name": "Telefonische Standardauskünfte an Kundschaft zu Policenstatus, fehlenden Unterlagen und Bearbeitungsstand erteilen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Die Qualität von Voicebots bei Schweizerdeutsch am Telefon ist im Versicherungsalltag wenig belegt; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Voicebot mit Zugriff auf das Bestandes- und Schadensystem beantwortet Standardfragen selbständig; Mitarbeitende übernehmen nur weitergeleitete Spezialfälle."
+      },
+      {
+        "name": "Kundschaft zu Versicherungsbedarf, Deckungsvarianten und Vertragsoptimierungen beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche oder telefonische Beratungstätigkeit, deren Kern im Vertrauensaufbau und im individuellen Eingehen auf die Kundensituation liegt."
+      },
+      {
+        "name": "Komplexe Schaden- und Vertragsfälle mit Aussendienst, Brokern oder Gutachtern verhandeln und Kulanzentscheide treffen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlung, Koordination und Ermessensentscheide bei komplexen oder streitigen Fällen erreichen mit generativer KI keine Zeitersparnis von mindestens 50 %."
+      },
+      {
+        "name": "Aktennotizen, Beratungsprotokolle und Falldokumentation im Kundendossier verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das Chat-LLM formuliert strukturierte Akten- und Beratungsnotizen aus Stichworten; die Fachperson prüft jeden Eintrag inhaltlich wegen der Dokumentations- und Haftungspflicht."
+      },
+      {
+        "name": "Zahlungsabgleich, Mahnlauf und Schadenzahlungen nach Freigaberegeln im System abwickeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Verarbeitung durch klassische Bestandesführungs- und Buchhaltungssoftware (QR-Zahlungsabgleich, automatischer Mahnlauf, Dunkelverarbeitung bei Auszahlungen) ohne generative KI."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Versicherungskaufmann/-frau EFZ im Innendienst einer Schweizer Versicherungsgesellschaft oder Generalagentur (Vertrags- und Policenverwaltung, Offertwesen, Kundenbetreuung und Schadenabwicklung). Die ESCO-Vorlage ist sehr allgemein gehalten und wurde deshalb mit den typischen Fachaufgaben der Schweizer Versicherungsbranche präzisiert. Grösster Grenzfall ist der Einsatz von Voicebots für telefonische Standardauskünfte auf Schweizerdeutsch.",
+    "zusammenfassung": {
+      "haupt_risiko": "Mutationen und Schadenmeldungen erfassen, Risiko- und Deckungsvorprüfungen, Offertvergleiche, Standardkorrespondenz, Aktennotizen sowie telefonische Standardauskünfte werden durch Dokumentenerkennung mit Systemintegration, Chat-LLMs und Voicebots stark verändert.",
+      "begruendung": "Rund vier Fünftel der Arbeitszeit sind exponiert: Standardprozesse wie Beleg- und Mutationserfassung, Standardkorrespondenz und telefonische Auskünfte wirken überwiegend ersetzend, während Risiko- und Deckungsprüfungen, Offertvergleiche sowie Aktennotizen delegierend mit fachlicher Einzelkontrolle erfolgen. Persönliche Kundenberatung und komplexe Kulanzverhandlungen bleiben beim Menschen. In der Schweiz bremsen strenge Anforderungen an Datenschutz (revDSG) und Versicherungsaufsicht (revVVG/FINMA) sowie die Kundenerwartung einer persönlichen Betreuung in Mundart und den Landessprachen eine rasche Vollautomatisierung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

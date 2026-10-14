@@ -10,78 +10,217 @@
     "beruf": "Berufsberater und -analytiker und vergleichbare Spezialisten der Personalwesen",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 54,
+      "candidates_token_count": 2285,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 54
+          "token_count": 2285
         }
       ],
-      "prompt_token_count": 22563,
+      "prompt_token_count": 22524,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22563
+          "token_count": 22524
         }
       ],
-      "thoughts_token_count": 6287,
-      "total_token_count": 28904
+      "thoughts_token_count": 7067,
+      "total_token_count": 31876
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 54,
+        "candidates_token_count": 2285,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 54
+            "token_count": 2285
           }
         ],
-        "prompt_token_count": 22563,
+        "prompt_token_count": 22524,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22563
+            "token_count": 22524
           }
         ],
-        "thoughts_token_count": 6287,
-        "total_token_count": 28904
+        "thoughts_token_count": 7067,
+        "total_token_count": 31876
       }
     ],
     "request_ids": [
-      "nrnOaqb1Lbzi_uMP6aHG6Ag"
+      "XTzPauz9DYjsz7IPmt60KQ"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): Additional properties are not allowed ('taetigkeitenMaz' was unexpected); (root): 'taetigkeiten' is a required property; (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-2423_berufsberater_und_analytiker_und_verglei",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): Additional properties are not allowed ('taetigkeitenMaz' was unexpected)",
-      "(root): 'taetigkeiten' is a required property",
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"2423\",\"beruf\":\"Berufsberater und -analytiker und vergleichbare Spezialisten der Personalwesen\",\"taetigkeitenMaz\":null}"
+  "bewertung": {
+    "isco_code": "2423",
+    "beruf": "Berufsberater und -analytiker und vergleichbare Spezialisten der Personalwesen",
+    "taetigkeiten": [
+      {
+        "name": "Persönliche Beratungs- und Coachinggespräche zur Berufs-, Studien- und Laufbahnwahl führen",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Führen von Beratungsgesprächen, aktives Zuhören und das Anregen zur Selbstreflexion erfordern unmittelbare zwischenmenschliche Präsenz und Vertrauensaufbau."
+      },
+      {
+        "name": "Zeugnisse, Kompetenzprofile, Vorleistungen und Testergebnisse von Klient/innen sichten und auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumenten- und Analysewerkzeuge extrahieren Qualifikationen aus gescannten Zeugnissen, Arbeitsbestätigungen und Testprofilen und gleichen sie mit Anforderungsprofilen ab; die Beraterin nimmt die fachliche Einschätzung der Eignung weiterhin selbst vor."
+      },
+      {
+        "name": "Individuelle Bildungswege, Zulassungsbedingungen und Finanzierungsmöglichkeiten recherchieren und zusammenstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein KI-Recherche-Agent mit Zugriff auf aktuelle Schweizer Bildungsdatenbanken und Schulwebseiten stellt passende Lehrgänge, Passerellen und Stipendienoptionen zusammen; die Fachperson spezifiziert das Profil und prüft jede Empfehlung."
+      },
+      {
+        "name": "Bewerbungsunterlagen (Lebenslauf, Motivationsschreiben) prüfen und Optimierungsvorschläge ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt auf Basis des eingefügten Lebenslaufs und Stelleninserats konkrete Textverbesserungen und Entwürfe; der Berater prüft jeden Vorschlag fachlich und bespricht ihn mit den Ratsuchenden."
+      },
+      {
+        "name": "Beratungsverläufe dokumentieren sowie Abklärungs- und Laufbahnberichte verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Stichworten zum Gesprächsverlauf und zu Testergebnissen entwirft das Chat-LLM strukturierte Aktennotizen und Berichte (z. B. zuhanden von IV, RAV oder Stipendienstellen); die Fachperson prüft und verantwortet jeden Bericht."
+      },
+      {
+        "name": "Informationsveranstaltungen, Schulklassenorientierungen und Bewerbungsworkshops durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Leiten von Workshops und Orientierungsveranstaltungen vor Schulklassen oder Gruppen von Stellensuchenden ist eine reine Präsenz- und Beziehungstätigkeit."
+      },
+      {
+        "name": "Präsentationen, Arbeitsblätter und Merkblätter für Veranstaltungen und Workshops erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Chat-LLM entwirft Gliederungen, Übungsaufgaben und Merkblatttexte nach Vorgabe; die beratende Person prüft die Inhalte fachlich und passt sie an die Zielgruppe an."
+      },
+      {
+        "name": "Schriftliche Anfragen von Ratsuchenden zu Ausbildungen, Studiengängen und Weiterbildungen beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein LLM mit Recherchefunktion bzw. Anbindung an berufskundliche Wissensdatenbanken formuliert präzise Antwortentwürfe inklusive weiterführender Links; jede Antwort wird vor dem Versand fachlich kontrolliert."
+      },
+      {
+        "name": "Entwicklungen im Bildungswesen und auf dem Arbeitsmarkt verfolgen und Fachinformationen aufbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Recherche- und Analysewerkzeuge fassen neue Bildungsverordnungen, Studienreglemente und Arbeitsmarktberichte zusammen; die Fachperson steuert die Abfragen und prüft die Zusammenfassungen gegen die Originalquellen."
+      },
+      {
+        "name": "Fallbesprechungen und Koordination mit Lehrpersonen, Eltern, Sozialversicherungen und Betrieben führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Abstimmungen, Runde Tische und Vernetzungsgespräche erfordern persönliche Interaktion und Verhandlungsgeschick."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Berufs-, Studien- und Laufbahnberater/in in einer kantonalen Beratungsstelle (BIZ) bzw. im Umfeld von RAV/IV. Während der ISCO-Code 2423 auch Personalberater/innen umfasst, bezieht sich das ESCO-Profil eindeutig auf die Berufs- und Laufbahnberatung; das Profil ist konsistent und erlaubt eine klare Trennung zwischen persönlicher Beratung (E0) und stark exponierter Informations-, Dossier- und Berichtzarbeit (E1/E2).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Recherche von Bildungswegen, die Auswertung von Klientendossiers, die Überarbeitung von Bewerbungsunterlagen, das Verfassen von Beratungsberichten sowie schriftliche Auskünfte durch Chat-LLMs und KI-Recherchewerkzeuge, während die persönliche Beratung beim Menschen bleibt.",
+      "begruendung": "Gut die Hälfte der Arbeitszeit entfällt auf Vor- und Nachbereitung, Informationsrecherche, Dossierprüfung und Berichtswesen und ist gegenüber generativer KI exponiert. Die KI arbeitet dabei überwiegend delegierend (Entwurf von Berichten, Antworten, Schulungsunterlagen und Bewerbungsoptimierungen mit fachlicher Einzelprüfung) sowie unterstützend bei der Dossier- und Testauswertung, während Beratungsgespräche und Workshops persönliche Präsenz erfordern. In den kantonalen Beratungsstellen bremsen vor allem strenge Datenschutzvorgaben und das Amtsgeheimnis beim Umgang mit Klientendaten eine rasche Integration.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

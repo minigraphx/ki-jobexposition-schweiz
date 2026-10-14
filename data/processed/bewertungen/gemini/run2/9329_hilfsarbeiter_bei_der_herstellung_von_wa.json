@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "9b07ae1c1b53b0e7f295b8aae8eb9fdfe983ba08989adbe5719fd4e05992e2df",
+    "isco_code": "9329",
+    "beruf": "Hilfsarbeiter bei der Herstellung von Waren, anderweitig nicht genannt",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2085,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2085
+        }
+      ],
+      "prompt_token_count": 21069,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21069
+        }
+      ],
+      "thoughts_token_count": 5268,
+      "total_token_count": 28422
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2085,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2085
+          }
+        ],
+        "prompt_token_count": 21069,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21069
+          }
+        ],
+        "thoughts_token_count": 5268,
+        "total_token_count": 28422
+      }
+    ],
+    "request_ids": [
+      "xD_PasvpBpz8qtsP25KVoA4"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-9329_hilfsarbeiter_bei_der_herstellung_von_wa",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "9329",
+    "beruf": "Hilfsarbeiter bei der Herstellung von Waren, anderweitig nicht genannt",
+    "taetigkeiten": [
+      {
+        "name": "Produktionsmaschinen mit Rohmaterialien, Rohlingen und Hilfsstoffen beschicken",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physisches Einlegen und Nachfüllen von Material an Produktionsanlagen. Automatische Zuführsysteme, Stangenlader und Bestückungsroboter (Cobots) sind kommerziell verfügbar, rechnen sich in Schweizer KMU aber oft erst ab mittleren Seriengrössen."
+      },
+      {
+        "name": "Gefertigte Werkstücke an Maschinen entnehmen, abstapeln und für den Weitertransport bereitstellen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handhabung von gefertigten Teilen direkt an der Maschine. Entnahmeroboter, Förderbänder und automatische Abstapelanlagen können diese Arbeit in der Serienfertigung zu über 50 % übernehmen."
+      },
+      {
+        "name": "Rohstoffe, Werkzeuge und Verbrauchsmaterialien im Betrieb transportieren und an Arbeitsplätzen bereitstellen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Holen, Auspacken und Bereitstellen von Werkzeugen und Materialien an wechselnden Maschinen. Fahrerlose Transportsysteme können zwar Paletten fahren, übernehmen in typischen KMU aber nicht das Auspacken und Handhaben am Arbeitsplatz im Umfang von mindestens 50 %."
+      },
+      {
+        "name": "Einfache manuelle Zuarbeiten, Nachbearbeitungen (z. B. Entgraten, Ausrichten) und Handmontagen ausführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Tätigkeiten mit Hand- und Elektrowerkzeugen zur Unterstützung von Maschinenbedienern und Montagearbeitern; wegen wechselnder Teile und Handgriffe weder durch generative KI noch durch Standardrobotik zu 50 % automatisierbar."
+      },
+      {
+        "name": "Produktionsmaschinen, Werkzeuge, Vorrichtungen und Werkbänke manuell reinigen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Entfernen von Spänen, Staub, Öl und Produktionsrückständen in und an Maschinen sowie auf Arbeitsflächen; erfordert physischen Zugang an verwinkelten Stellen und ist nicht durch Roboter automatisierbar."
+      },
+      {
+        "name": "Hallenböden und Verkehrswege im Produktionsbereich mit Reinigungsgeräten säubern",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Bodenreinigung auf freien Flächen in Werkhallen und Gängen; autonome Scheuersaugmaschinen und Kehrroboter für Industrieflächen sind in der Schweiz kommerziell verfügbar."
+      },
+      {
+        "name": "Gefertigte Teile auf sichtbare Mängel prüfen, zählen und in Gebinde verpacken",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Sortieren, Zählen und Verpacken von Waren nach der Bearbeitung. Kamerabasierte optische Prüfsysteme, Zählwaagen und Verpackungsanlagen sind kommerziell verfügbar, in KMU bei Kleinserien jedoch nur teilweise im Einsatz."
+      },
+      {
+        "name": "Produktionsabfälle, Späne und Ausschuss sammeln, sortieren und innerbetrieblich entsorgen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Leeren von Späne- und Abfallbehältern an verschiedenen Arbeitsstationen sowie Sortieren in Sammelmulden; für diesen Gesamtprozess ist keine kommerzielle Robotiklösung verfügbar."
+      },
+      {
+        "name": "Einfache Schmierarbeiten an Maschinen ausführen sowie Reinigungs- und Stückzahllisten abhaken",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Wartungshilfsarbeiten (z. B. Abschmieren mit der Fettpresse, Kühlmittel nachfüllen) kombiniert mit sehr kurzen Quittierungen auf Checklisten oder am BDE-Terminal; generative KI spart hier keine relevante Zeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Produktionshelfer/in bzw. Fabrikhilfsarbeiter/in in einem typischen Schweizer Industriebetrieb (z. B. Metall-, Kunststoff- oder Konsumgüterverarbeitung). Die ESCO-Daten passen gut zum Berufsbild; sämtliche Tätigkeiten sind klar physisch (E0). Leichte Unsicherheiten bestehen einzig beim Feld P (klassische Automatisierung/Robotik), da die Wirtschaftlichkeit von Bestückungs- und Verpackungsrobotern in Schweizer KMU stark von der Seriengrösse abhängt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Keine der Kerntätigkeiten ist gegenüber generativer KI exponiert, da der Beruf ausschliesslich aus physischen Handreichungs-, Bestückungs-, Transport- und Reinigungsarbeiten in der Werkhalle besteht.",
+      "begruendung": "Sämtliche Aufgaben erfordern körperliche Arbeit vor Ort an Maschinen und Arbeitsplätzen, weshalb die Exposition gegenüber Sprachmodellen bei 0 % liegt (durchwegs E0). Hingegen lässt sich knapp die Hälfte der Arbeitszeit — insbesondere das Beschicken und Entladen von Maschinen, das Prüfen/Verpacken sowie die Hallenbodenreinigung — mit klassischer Technik wie Bestückungsrobotern, Zuführsystemen und autonomen Scheuersaugmaschinen automatisieren (P1). In Schweizer Industrie-KMU bremsen vor allem kleine Losgrössen und häufige Produktwechsel eine vollständige physische Automatisierung.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

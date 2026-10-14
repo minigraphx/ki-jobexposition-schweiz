@@ -10,77 +10,211 @@
     "beruf": "Werkzeugmaschineneinrichter und -bediener",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 217,
+      "candidates_token_count": 2401,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 217
+          "token_count": 2401
         }
       ],
-      "prompt_token_count": 22236,
+      "prompt_token_count": 22197,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22236
+          "token_count": 22197
         }
       ],
-      "thoughts_token_count": 5946,
-      "total_token_count": 28399
+      "thoughts_token_count": 9027,
+      "total_token_count": 33625
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 217,
+        "candidates_token_count": 2401,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 217
+            "token_count": 2401
           }
         ],
-        "prompt_token_count": 22236,
+        "prompt_token_count": 22197,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22236
+            "token_count": 22197
           }
         ],
-        "thoughts_token_count": 5946,
-        "total_token_count": 28399
+        "thoughts_token_count": 9027,
+        "total_token_count": 33625
       }
     ],
     "request_ids": [
-      "nrnOaoOZLYmc_uMPqZXzoA0"
+      "XTzPas7kCf7oz7IP17yB4Qw"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: taetigkeiten: ['name', 'zeitanteil_pct'] is too short; taetigkeiten/0: 'name' is not of type 'object'; taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'; zusammenfassung: 'haupt_risiko' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-7223_werkzeugmaschineneinrichter_und_bediener",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "taetigkeiten: ['name', 'zeitanteil_pct'] is too short",
-      "taetigkeiten/0: 'name' is not of type 'object'",
-      "taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'",
-      "zusammenfassung: 'haupt_risiko' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"7223\",\"beruf\":\"Werkzeugmaschineneinrichter und -bediener\",\"taetigkeiten\":[\n  \"name\"\n,\n  \"zeitanteil_pct\"\n],\"unsicherheit\":\"niedrig\",\"kommentar\":\"Angenommenes Setting: Werkzeugmaschineneinrichter/in und -bediener/in (z. B. Produktionsmechaniker/in EFZ oder Polymechaniker/in EFZ) in einem Schweizer KMU der MEM-Industrie mit Einzelteil- bis Mittelserienfertigung. Die ESCO-Kompetenzen bilden das Berufsbild sehr gut ab. Während die Exposition gegenüber generativer KI aufgrund der physischen Arbeit an der Maschine sehr gering ist, besteht beim Werkstückhandling und bei der CAM-Programmierung ein deutliches Potenzial durch klassische Automatisierung (Robotik und regelbasierte Software).\",\"zusammenfassung\":\n  \"haupt_risiko\"\n}"
+  "bewertung": {
+    "isco_code": "7223",
+    "beruf": "Werkzeugmaschineneinrichter und -bediener",
+    "taetigkeiten": [
+      {
+        "name": "Technische Zeichnungen, 3D-Modelle und Fertigungsaufträge prüfen sowie Aufspannung und Bearbeitungsfolge planen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Obwohl multimodale Modelle Zeichnungen auslesen können, erfordert die Festlegung der physischen Aufspannung und Bearbeitungsreihenfolge an den im Betrieb vorhandenen Vorrichtungen und Maschinen ein verkörpertes Erfahrungswissen, bei dem KI keine 50 % Zeitersparnis erreicht."
+      },
+      {
+        "name": "CNC-Programme und Bearbeitungszyklen mit CAM-Software oder an der Steuerung erstellen sowie Schnittdaten festlegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob generative KI-Assistenten in CAM-Systemen über typische Werkstückgeometrien hinweg bereits die 50-%-Schwelle erreichen; E0 (bei rein klassischer CAM-Feature-Erkennung als P1) ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "KI-Assistenten in moderner CAM-Software sowie LLM-Codegeneratoren für G-Code und Makros schlagen Werkzeugwege, Werkzeuge und Schnittdaten vor; die Fachperson simuliert, prüft und verantwortet jedes Programm einzeln gegen Kollisionsrisiken. Unabhängig davon übernimmt bereits klassische CAM-Software mit regelbasierter Feature-Erkennung (P1, software) über 50 % der manuellen Programmierarbeit."
+      },
+      {
+        "name": "Werkzeugmaschinen einrichten, Spannmittel montieren sowie Werkzeuge rüsten und vermessen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Montieren und Ausrichten von Spannmitteln, das Zusammenbauen und Vermessen der Werkzeuge am Voreinstellgerät sowie das Antasten der Werkstücknullpunkte sind rein physische Tätigkeiten an der Maschine."
+      },
+      {
+        "name": "Testlauf durchführen, Einfahrprozess überwachen und Korrekturwerte an der Steuerung einstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Einfahren eines neuen Programms im Einzelsatz erfordert unmittelbare Präsenz an der Maschine, visuelle und akustische Kontrolle des Zerspanungsprozesses sowie manuelles Eingreifen am Vorschubregler."
+      },
+      {
+        "name": "Rohteile einlegen, automatischen Maschinenlauf überwachen und bearbeitete Werkstücke entnehmen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit an der Maschine ohne Exposition gegenüber Sprachmodellen. Mit kommerziell in der Schweiz etablierter Automation wie Stangenladern, Palettenwechslern und Beladerobotern (Cobots) inkl. automatischer Prozessüberwachung lässt sich diese Arbeit jedoch zu über 50 % automatisieren."
+      },
+      {
+        "name": "Werkstücke entgraten, reinigen und Oberflächen manuell nachbearbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Nacharbeit mit Handentgratern, Feilen, Bürsten und Druckluft; bei den in Schweizer KMU üblichen kleinen bis mittleren Losgrössen und wechselnden Geometrien übernehmen Entgratroboter keine 50 % der Arbeit."
+      },
+      {
+        "name": "Bearbeitete Werkstücke mit Präzisionsmessmitteln prüfen und Messdaten für die Qualitätskontrolle erfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Prüfen von Massen, Toleranzen und Oberflächen mit Bügelmessschrauben, Messschiebern, Lehren und Messgeräten direkt an der Maschine ist überwiegend physisch-manuell; automatische Koordinatenmessmaschinen decken im typischen KMU-Alltag nur einen Teil der laufenden Fertigungsprüfungen ab."
+      },
+      {
+        "name": "Maschinenstörungen beheben, Prozessabweichungen korrigieren und verschlissene Schneidplatten wechseln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Wechseln verschlissener Wendeschneidplatten, das Beseitigen von Spänestaus und das Korrigieren von Massabweichungen bei Werkzeugverschleiss erfordern manuelles Handeln direkt an der Werkzeugmaschine."
+      },
+      {
+        "name": "Wartungs-, Reinigungs- und Pflegearbeiten an den Werkzeugmaschinen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Instandhaltungsarbeiten wie Kühlschmierstoff prüfen und nachfüllen, Späneförderer reinigen, Filter tauschen und Maschine abschmieren."
+      },
+      {
+        "name": "Einrichtblätter, Fertigungsdokumentation und Schichtübergabeprotokolle erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mittels Fotoaufnahme der Aufspannung und Spracheingabe (E2) erstellt die KI strukturierte Einrichtblätter und Schichtnotizen; die Fachperson prüft jedes Dokument fachlich auf korrekte Nullpunkte und Spannhinweise. Werkstattlärm und Dialekt erhöhen den Korrekturaufwand."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: CNC-Einrichter/in und -Bediener/in (in der Schweiz typischerweise Polymechaniker/in EFZ oder Produktionsmechaniker/in EFZ) in einem KMU der Schweizer MEM-Industrie mit Einzelteil- und Kleinserienfertigung. Der Beruf ist stark durch physische Arbeit an der Werkzeugmaschine geprägt; die wichtigste Abgrenzungsfrage betrifft den Anteil generativer KI gegenüber klassischer CAM-Automatisierung bei der CNC-Programmierung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Von generativer KI betroffen sind lediglich das Erstellen von CNC-Programmen mittels KI-gestützter CAM-Assistenten sowie das Verfassen von Einrichtblättern und Schichtprotokollen per Bild- und Spracheingabe, während die physische Arbeit an der Werkzeugmaschine unberührt bleibt.",
+      "begruendung": "Rund 15 % der Arbeitszeit sind gegenüber generativer KI exponiert, durchwegs im delegierenden Modus, da jedes CNC-Programm wegen hoher Kollisions- und Ausschussrisiken sowie jedes Einrichtblatt fachlich geprüft werden muss. Der Grossteil der Arbeit entfällt auf das physische Rüsten, Einfahren, Bedienen und Messen an der Maschine; stärker als durch Sprachmodelle verändert sich der Beruf in Schweizer MEM-Betrieben durch klassische Automatisierung wie Beladeroboter, Palettenwechsler und regelbasierte CAM-Software.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }

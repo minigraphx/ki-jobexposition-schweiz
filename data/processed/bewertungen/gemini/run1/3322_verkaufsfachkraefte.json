@@ -10,78 +10,218 @@
     "beruf": "Verkaufsfachkräfte",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 60,
+      "candidates_token_count": 2234,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 60
+          "token_count": 2234
         }
       ],
-      "prompt_token_count": 22906,
+      "prompt_token_count": 22867,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 22906
+          "token_count": 22867
         }
       ],
-      "thoughts_token_count": 6182,
-      "total_token_count": 29148
+      "thoughts_token_count": 5513,
+      "total_token_count": 30614
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 60,
+        "candidates_token_count": 2234,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 60
+            "token_count": 2234
           }
         ],
-        "prompt_token_count": 22906,
+        "prompt_token_count": 22867,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 22906
+            "token_count": 22867
           }
         ],
-        "thoughts_token_count": 6182,
-        "total_token_count": 29148
+        "thoughts_token_count": 5513,
+        "total_token_count": 30614
       }
     ],
     "request_ids": [
-      "nrnOaruwKvWN_uMP8LiPoAE"
+      "XjzPavmMEPSAz7IP5t2zgAs"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: ['...'] is too short; taetigkeiten/0: '...' is not of type 'object'"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-3322_verkaufsfachkraefte",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: ['...'] is too short",
-      "taetigkeiten/0: '...' is not of type 'object'"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\n  \"isco_code\": \"3322\",\n  \"beruf\": \"Verkaufsfachkräfte\",\n  \"taetigkeiten\": [\n    \"...\"\n  ]\n}"
+  "bewertung": {
+    "isco_code": "3322",
+    "beruf": "Verkaufsfachkräfte",
+    "taetigkeiten": [
+      {
+        "name": "Verkaufs- und Beratungsgespräche mit Geschäftskunden führen und Kundenbedürfnisse ermitteln",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beziehungsarbeit und interaktive Bedarfsabklärung im direkten Gespräch vor Ort oder per Videocall; der Wert liegt in der menschlichen Präsenz und im Vertrauensaufbau."
+      },
+      {
+        "name": "Offerten, Ausschreibungsantworten und kundenspezifische Angebote ausarbeiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft auf Basis eingefügter Kundenanforderungen und Produktspezifikationen Angebotstexte und Antworten auf Pflichtenhefte; die Verkaufsfachkraft steuert die Eckdaten und prüft jedes Angebot fachlich und preislich."
+      },
+      {
+        "name": "Produkte und Muster bei Kunden vorführen und technische Merkmale präsentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Demonstration von Handelswaren oder Live-Präsentation beim Kunden mit unmittelbarer Beantwortung von Rückfragen."
+      },
+      {
+        "name": "Preise, Konditionen und Rahmenverträge mit Kunden verhandeln und Abschlüsse tätigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlungsführung von Angesicht zu Angesicht oder am Telefon erfordert kaufmännisches Ermessen, Taktik und persönliche Überzeugungskraft."
+      },
+      {
+        "name": "Schriftliche Kundenanfragen beantworten und Nachfassaktionen per E-Mail durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit",
+          "vertrauen"
+        ],
+        "begruendung": "Das Sprachmodell formuliert aus kurzen Stichworten und dem bisherigen Nachrichtenverlauf Antwort- und Follow-up-E-Mails in den Landessprachen; die Verkaufsfachkraft prüft jede Nachricht vor dem Versand."
+      },
+      {
+        "name": "Potenzielle Neukunden, Markttrends und Ausschreibungen im Verkaufsgebiet recherchieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Recherche-Agenten mit Web- und Datenbankzugriff identifizieren und qualifizieren potenzielle Zielunternehmen sowie relevante Ausschreibungen; die Verkaufsfachkraft gibt Suchkriterien vor und prüft die Dossiers."
+      },
+      {
+        "name": "Gesprächsnotizen, Kundenstammdaten und Verkaufsaktivitäten im CRM-System erfassen und pflegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracherkennung (Diktat nach Kundenbesuch oder Gesprächstranskription) mit CRM-Integration erstellt strukturierte Besuchseinträge und Aufgaben; die Verkaufsfachkraft kontrolliert jeden Eintrag trotz allfälliger Dialektkorrekturen rasch."
+      },
+      {
+        "name": "Erstkontakt zu potenziellen Neukunden per Telefon oder vor Ort aufnehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Telefonische oder persönliche Kaltakquise im B2B-Bereich lebt vom unmittelbaren zwischenmenschlichen Gespräch; Sprachbots erreichen hier nicht die erforderliche Akzeptanz und Abschlussqualität."
+      },
+      {
+        "name": "Verkaufszahlen auswerten sowie Verkaufsberichte und Umsatzprognosen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Analysefunktionen im CRM- oder Tabellenkalkulationssystem werten Absatzdaten aus und entwerfen den Verkaufsbericht, den die Fachkraft fachlich prüft; klassische BI- und CRM-Reporting-Software automatisiert Standardauswertungen bereits weitgehend."
+      },
+      {
+        "name": "Liefertermine, Spezialanfragen und Reklamationen mit Innendienst und Lieferanten abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Direkte mündliche und situative Koordination bei Engpässen oder Problemen zwischen Kundschaft, internen Stellen und Lieferanten; generative KI spart hier keine 50 % der Zeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Verkaufsfachkraft im B2B-Vertrieb (Innen- und Aussendienst / Account Management) in einem typischen Schweizer Handels-, Industrie- oder Dienstleistungs-KMU. Die ESCO-Beschreibung ist sehr knapp, wird aber durch die Kompetenzliste klar als gewerblicher Vertrieb (Handelsvertretung) charakterisiert. Die Unsicherheit ist mittel, da die Zeitanteile zwischen persönlicher Reisetätigkeit/Kundenbetreuung und administrativer Angebotsarbeit je nach Branche stark variieren.",
+    "zusammenfassung": {
+      "haupt_risiko": "Das Ausarbeiten von Offerten und Ausschreibungsantworten, die schriftliche Kundenkorrespondenz sowie die Lead-Recherche, CRM-Dokumentation und Verkaufsberichterstattung werden durch Chat-LLMs und KI-gestützte CRM-Systeme stark beschleunigt.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit entfällt auf vor- und nachbereitende Aufgaben am Schreibtisch, die im delegierenden Modus durch generative KI erstellt und von den Verkaufsfachkräften fachlich geprüft werden. Die andere Hälfte besteht aus persönlichen Beratungsgesprächen, Produktvorführungen und Preisverhandlungen im B2B-Geschäft, die menschliche Präsenz erfordern. In der Schweiz beeinflussen das hohe Bedürfnis nach persönlichem Vertrauen im Geschäftskundenvertrieb, die Mehrsprachigkeit über die Sprachregionen hinweg sowie Datenschutzvorgaben (revDSG) bei der automatischen Gesprächserfassung den Einsatz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
 }

@@ -10,77 +10,227 @@
     "beruf": "Bediener von Anlagen und Maschinen für chemische Erzeugnisse",
     "lauf": 1,
     "reihenfolge_seed": null,
-    "timestamp": "2026-10-14T06:39:44+00:00",
+    "timestamp": "2026-10-14T08:32:59+00:00",
     "einstellungen": {
       "thinking_level": "high",
       "max_output_tokens": 32768,
       "temperature": null,
-      "structured_output": "response_mime_type + response_json_schema",
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
       "modus": "batch"
     },
     "stop_reason": "STOP",
     "stop_details": null,
     "usage": {
-      "candidates_token_count": 52,
+      "cache_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 17787
+        }
+      ],
+      "cached_content_token_count": 17787,
+      "candidates_token_count": 2207,
       "candidates_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 52
+          "token_count": 2207
         }
       ],
-      "prompt_token_count": 21268,
+      "prompt_token_count": 21229,
       "prompt_tokens_details": [
         {
           "modality": "TEXT",
-          "token_count": 21268
+          "token_count": 21229
         }
       ],
-      "thoughts_token_count": 5655,
-      "total_token_count": 26975
+      "thoughts_token_count": 6474,
+      "total_token_count": 29910
     },
     "usage_je_versuch": [
       {
-        "candidates_token_count": 52,
+        "cache_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 17787
+          }
+        ],
+        "cached_content_token_count": 17787,
+        "candidates_token_count": 2207,
         "candidates_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 52
+            "token_count": 2207
           }
         ],
-        "prompt_token_count": 21268,
+        "prompt_token_count": 21229,
         "prompt_tokens_details": [
           {
             "modality": "TEXT",
-            "token_count": 21268
+            "token_count": 21229
           }
         ],
-        "thoughts_token_count": 5655,
-        "total_token_count": 26975
+        "thoughts_token_count": 6474,
+        "total_token_count": 29910
       }
     ],
     "request_ids": [
-      "nrnOasnSKLG1_PUPj86l4AU"
+      "XTzPauSyD_Gfz7IP68qu-AE"
     ],
     "versuche": 1,
-    "status": "fehlgeschlagen",
-    "fehler": [
-      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: [] is too short"
-    ],
+    "status": "ok",
+    "fehler": [],
     "hinweise": [],
     "modus": "batch",
-    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
     "custom_id": "r1-8131_bediener_von_anlagen_und_maschinen_fuer",
     "anfrage_typ": "neu",
     "batch_ergebnis": "succeeded",
-    "fehler_art": "validierung",
-    "probleme": [
-      "(root): 'unsicherheit' is a required property",
-      "(root): 'kommentar' is a required property",
-      "(root): 'zusammenfassung' is a required property",
-      "taetigkeiten: [] is too short"
-    ],
+    "fehler_art": null,
+    "probleme": [],
     "zuordnung": "custom_id"
   },
-  "bewertung": null,
-  "rohantwort": "{\"isco_code\":\"8131\",\"beruf\":\"Bediener von Anlagen und Maschinen für chemische Erzeugnisse\",\"taetigkeiten\":[\n  ]\n}"
+  "bewertung": {
+    "isco_code": "8131",
+    "beruf": "Bediener von Anlagen und Maschinen für chemische Erzeugnisse",
+    "taetigkeiten": [
+      {
+        "name": "Roh-, Hilfs- und Wirkstoffe abwägen, bereitstellen und in Reaktoren chargieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handhabung von Gebinden, Fässern und Big-Bags sowie manuelles Abwägen und Beschicken der Anlagen vor Ort."
+      },
+      {
+        "name": "Produktionsanlagen, Bioreaktoren und Apparate einrichten, anfahren und vor Ort bedienen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Einstellen von Armaturen, Verbinden von Schlauch- und Rohrleitungen sowie Vor-Ort-Kontrolle an den Apparaten im Produktionsbetrieb."
+      },
+      {
+        "name": "Chemische und biotechnologische Prozesse über das Prozessleitsystem (PLS) überwachen und nachsteuern",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Regelung erfolgt über klassische Prozessleitsysteme; die verbleibende menschliche Überwachung von Prozessparametern und Alarmen ist sicherheitskritische Präsenzarbeit und durch Sprachmodelle nicht um 50 % reduzierbar."
+      },
+      {
+        "name": "Proben an den Anlagen ziehen und In-Prozess-Kontrollen (z. B. Dichte, pH-Wert) durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit im Betrieb und Betriebslabor (E0); kommerziell verfügbare Inline-Prozessmesstechnik (PAT) und automatische Probenehmer können jedoch über 50 % der manuellen Routinemessungen übernehmen."
+      },
+      {
+        "name": "Anlagen, Tanks und Rohrleitungen reinigen, sterilisieren (CIP/SIP) und für Chargenwechsel umrüsten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Umbau-, Montage- und Reinigungsarbeiten sowie visuelle Sauberkeitskontrollen an den Produktionsanlagen."
+      },
+      {
+        "name": "Kleinere Wartungsarbeiten, Filterwechsel und Dichtheitsprüfungen an Anlagen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Instandhaltungs- und Prüfarbeiten direkt an Pumpen, Ventilen, Filtern und Reaktoren."
+      },
+      {
+        "name": "Chargenprotokolle nach GMP-Vorgaben führen und Prozessdaten dokumentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Protokollieren von Messwerten, Einwaagen und Arbeitsschritten erfordert exakte Daten statt generativer Textmodelle (E0); klassische elektronische Chargendokumentationssysteme (MES/EBR) mit Waagen- und PLS-Anbindung automatisieren dies zu über 50 %."
+      },
+      {
+        "name": "Abweichungsmeldungen, Störungsberichte und Schichtübergabeprotokolle verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus eingegebenen Stichworten normgerechte Textentwürfe für GMP-Abweichungen und Schichtbücher; der Anlagenbediener spezifiziert den Sachverhalt und prüft jeden Bericht fachlich im Detail."
+      },
+      {
+        "name": "Materialverbrauch und Gebindebestände der Produktion im ERP-System erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Strukturierte Buchungen im Warenwirtschaftssystem bieten keinen relevanten Hebel für Sprachmodelle (E0), lassen sich aber durch Barcode-/RFID-Scanner und automatische MES-ERP-Schnittstellen mehrheitlich automatisieren."
+      },
+      {
+        "name": "Sonderabfälle und Lösungsmittel vorschriftsgemäss entsorgen sowie Sicherheitskontrollen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Handling von Gefahrstoffgebinden und Abwässern sowie Vor-Ort-Kontrollgänge zur Arbeitssicherheit und zum Umweltschutz."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Chemie- und Pharmatechnologe/-technologin EFZ bzw. Produktionsmitarbeiter/in in einem Produktionsbetrieb der Schweizer Chemie-, Pharma- oder Kosmetikindustrie. Die stark auf Fermentation fokussierten ESCO-Kompetenzen wurden auf die typische schweizerische Chargen- und Wirkstoffproduktion verbreitert. Das Automatisierungspotenzial liegt vor allem bei klassischer Prozess- und Industriesoftware (MES/EBR, Inline-Sensorik), während generative KI nur bei Freitext-Berichten greift.",
+    "zusammenfassung": {
+      "haupt_risiko": "Lediglich das Verfassen von Abweichungsmeldungen, Störungsberichten und Schichtübergabeprotokollen ist durch Sprachmodelle exponiert, während die eigentliche Anlagenbedienung und Prozessführung nicht von generativer KI betroffen sind.",
+      "begruendung": "Nur rund 5 % der Arbeitszeit entfallen auf das Formulieren freier Dokumentationstexte, bei denen die KI im delegierenden Modus Textentwürfe aus Stichworten erstellt und die Fachperson jeden Bericht fachlich prüft. Der weit überwiegende Teil des Berufs besteht aus physischer Arbeit an den Anlagen sowie der Prozessüberwachung, bei der klassische Automatisierungstechnik (Prozessleitsysteme, elektronische Chargendokumentation) dominiert. In der Schweizer Pharma- und Chemieproduktion bremsen zudem strenge regulatorische Vorgaben (GMP, Swissmedic) und Geheimhaltungspflichten die Nutzung nicht-validierter KI-Systeme.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
 }
