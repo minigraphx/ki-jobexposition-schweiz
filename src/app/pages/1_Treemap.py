@@ -59,22 +59,55 @@ st.caption(f"**{len(filtered)}** Berufe angezeigt · {g.tsd(filtered['employed_k
            f"Ø {g.LABELS[kennzahl]} (beschäftigungsgewichtet): {g.gewichtet(filtered, kennzahl):.1f}")
 
 # ── Treemap ────────────────────────────────────────────────────────────────────
-plot = filtered.assign(unsicher=filtered["uncertain"].map({True: "ja", False: "nein"}))
+WURZEL = "Alle Berufe"
 fig = px.treemap(
-    plot,
-    path=[px.Constant("Alle Berufe"), "sector", "occupation"],
+    filtered,
+    path=[px.Constant(WURZEL), "sector", "occupation"],
     values="employed_k",
     color=kennzahl,
     color_continuous_scale=g.SKALA_0_10,
     range_color=[0, 10],
-    hover_data={kennzahl: ":.1f", "employed_k": ":.1f", "women_pct": ":.0f", "qualification": True,
-                "unsicher": True},
-    labels={kennzahl: g.LABELS[kennzahl], "employed_k": "Erwerbstätige (Tsd.)", "women_pct": "Frauenanteil (%)",
-            "qualification": "Qualifikation", "unsicher": "Bewertung unsicher", "sector": "Branche",
-            "occupation": "Beruf"},
     title=f"{g.LABELS[kennzahl]} der Schweizer Berufe (Grösse = Erwerbstätige, Farbe = {g.LABELS[kennzahl]})",
 )
-fig.update_traces(marker=dict(line=dict(width=1, color="#fcfcfb")), root_color="#f9f9f7")
+
+
+def _zeilen_gruppe(name: str, d) -> str:
+    """Tooltip einer Branche bzw. aller Berufe: Mittelwert, Umfang, Frauenanteil."""
+    frauen = g.gewichtet(d, "women_pct")
+    return (f"<b>{name}</b><br>"
+            f"Ø {g.LABELS[kennzahl]}: {g.gewichtet(d, kennzahl):.1f} von 10 (gewichtet nach Erwerbstätigen)<br>"
+            f"{len(d)} Berufe · {g.tsd(d['employed_k'].sum() * 1000)} Erwerbstätige<br>"
+            + (f"Frauenanteil: {frauen:.0f} %" if frauen == frauen else ""))
+
+
+def _zeilen_beruf(z) -> str:
+    """Tooltip eines Berufs in Alltagssprache."""
+    teile = [f"<b>{z['occupation']}</b>", f"Branche: {z['sector']}",
+             f"{g.LABELS[kennzahl]}: {z[kennzahl]:.1f} von 10"]
+    if kennzahl != "exposure":
+        teile.append(f"KI-Exposition: {z['exposure']:.1f} von 10")
+    teile.append(f"Erwerbstätige: {g.tsd(z['employed_k'] * 1000)}")
+    if z["women_pct"] == z["women_pct"]:
+        teile.append(f"Frauenanteil: {z['women_pct']:.0f} %")
+    teile.append(f"Ausbildung: {z['qualification']}")
+    if z["uncertain"]:
+        teile.append(f"Bewertung unsicher — Claude {z['exposure_claude']:.1f}, Gemini {z['exposure_gemini']:.1f}")
+    return "<br>".join(teile)
+
+
+# Tooltip je Knoten selbst bauen: die Standard-Tooltips zeigen technische Felder (labels=, parent=, id=)
+nach_beruf = {(z["sector"], z["occupation"]): z for _, z in filtered.iterrows()}
+texte = []
+for label, parent in zip(fig.data[0].labels, fig.data[0].parents):
+    if not parent:                                            # Wurzel
+        texte.append(_zeilen_gruppe(WURZEL, filtered))
+    elif parent == WURZEL:                                    # Branche
+        texte.append(_zeilen_gruppe(label, filtered[filtered["sector"] == label]))
+    else:                                                     # Beruf
+        z = nach_beruf.get((parent[len(WURZEL) + 1:], label))
+        texte.append(_zeilen_beruf(z) if z is not None else f"<b>{label}</b>")
+fig.update_traces(customdata=texte, hovertemplate="%{customdata}<extra></extra>",
+                  marker=dict(line=dict(width=1, color="#fcfcfb")), root_color="#f9f9f7")
 fig.update_layout(height=720, margin=dict(t=60, l=8, r=8, b=8),
                   coloraxis_colorbar=dict(title=g.LABELS[kennzahl].replace(" ", "<br>")))
 st.plotly_chart(fig, width="stretch")

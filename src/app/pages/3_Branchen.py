@@ -66,11 +66,23 @@ if "cross_border_share" in bar:
 fig_bar = px.bar(bar, x="exposure_w", y="sector", orientation="h", hover_data=hover, labels=labels,
                  text="exposure_w",
                  title="Ø KI-Exposition je Branche, gewichtet mit den Erwerbstätigen der Berufe")
+def _hover_branche(z) -> str:
+    teile = [f"<b>{z['sector']}</b>",
+             f"Ø KI-Exposition: {z['exposure_w']:.1f} von 10 (gewichtet nach Erwerbstätigen)",
+             f"ohne Gewichtung: {z['exposure_mean']:.1f}",
+             f"Spannweite: {z['exposure_min']:.1f} (tiefster Beruf) bis {z['exposure_max']:.1f} (höchster)",
+             f"{int(z['berufe'])} Berufe · {g.tsd(z['employed'] * 1000)} Erwerbstätige"]
+    if "cross_border_share" in z and z["cross_border_share"] == z["cross_border_share"]:
+        teile.append(f"Grenzgänger-Anteil: {z['cross_border_share'] * 100:.1f} %")
+    return "<br>".join(teile)
+
+
 fig_bar.update_traces(marker_color=g.SERIE[0], texttemplate="%{x:.1f}", textposition="outside",
-                      cliponaxis=False)
+                      cliponaxis=False, customdata=[_hover_branche(z) for _, z in bar.iterrows()],
+                      hovertemplate="%{customdata}<extra></extra>")
 fig_bar.update_layout(height=640, bargap=0.25, xaxis=dict(range=[0, 10], title="Ø KI-Exposition (0–10)",
                                                           gridcolor="#e1e0d9"),
-                      yaxis_title=None, margin=dict(l=8, r=24))
+                      yaxis_title=None, margin=dict(l=8, r=24), hoverlabel=dict(align="left"))
 st.plotly_chart(fig_bar, width="stretch")
 
 col1, col2 = st.columns(2)
@@ -105,8 +117,17 @@ if ggs is not None and "cross_border_share" in stats:
         size_max=45,
     )
     fig_ggs.update_traces(marker=dict(color=g.SERIE[0], opacity=0.7, line=dict(width=1.5, color="#fcfcfb")),
-                          textposition="top center", textfont=dict(size=11, color=g.TEXT_GEDAEMPFT))
-    fig_ggs.update_layout(height=540, xaxis=dict(tickformat=".0%", gridcolor="#e1e0d9"),
+                          textposition="top center", textfont=dict(size=11, color=g.TEXT_GEDAEMPFT),
+                          customdata=[
+                              f"<b>{z['sector']}</b><br>"
+                              + (f"Grenzgänger-Anteil: {z['cross_border_share'] * 100:.1f} % "
+                                 f"({g.tsd(z['cross_border'])} Grenzgänger/-innen)<br>"
+                                 if z["cross_border_share"] == z["cross_border_share"] else "")
+                              + f"Ø KI-Exposition: {z['exposure_w']:.1f} von 10<br>"
+                              f"Erwerbstätige der erfassten Berufe: {g.tsd(z['employed'] * 1000)}"
+                              for _, z in stats.iterrows()],
+                          hovertemplate="%{customdata}<extra></extra>")
+    fig_ggs.update_layout(height=540, hoverlabel=dict(align="left"), xaxis=dict(tickformat=".0%", gridcolor="#e1e0d9"),
                           yaxis=dict(range=[0, max(6.0, stats["exposure_w"].max() + 1)], gridcolor="#e1e0d9"))
     st.plotly_chart(fig_ggs, width="stretch")
     periode = str(ggs["ggs_period"].iloc[0])
