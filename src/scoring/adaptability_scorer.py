@@ -5,13 +5,13 @@ Kriterien:
 - Qualifikationsniveau  (4 Punkte): höhere Bildung → leichtere Umschulung
 - Lohnniveau            (3 Punkte): höherer Lohn → mehr Ressourcen
                                     (feste Skala: 0 bis 50'000 CHF, linear bis 3 bei 150'000 CHF)
-- Digitale Kompetenz    (2 Punkte): exposure (aufgabenbasierter Score, Anteil der Arbeitszeit in
-                                    Tätigkeiten, die generative KI beschleunigt) als Proxy für den
-                                    Anteil digitaler Informationsarbeit
 - Branchenmobilität     (1 Punkt):  ICT/Finanzen mobilerer als Handwerk
+Summe (max. 8) wird auf 0–10 skaliert (× 10/8).
 
-Bis Oktober 2026 war der Proxy das Teilkriterium score_digital der früheren Methode
-(Spearman ρ zu exposure 0.83); es existiert mit der aufgabenbasierten Bewertung nicht mehr.
+Bis Oktober 2026 gab es zusätzlich «digitale Kompetenz» (2 Punkte) mit dem Teilkriterium
+score_digital der früheren Bewertung als Proxy. Es existiert mit der aufgabenbasierten Bewertung
+nicht mehr; ein Ersatz durch die KI-Exposition wäre zirkulär (dieselbe Grösse auf beiden Achsen
+der Matrix), deshalb entfällt das Kriterium.
 
 Ergebnis: adaptability (0–10), wird in scores.csv gespeichert (auch von apply_task_scores.py
 und update_loehne.py neu berechnet).
@@ -52,6 +52,7 @@ BRANCHEN_MOBILITAET_DEFAULT = 0.5
 LOHN_PUNKTE_MIN_CHF = 50_000
 LOHN_PUNKTE_MAX_CHF = 150_000
 LOHN_PUNKTE_MAX = 3.0
+MAX_PUNKTE = 4.0 + LOHN_PUNKTE_MAX + 1.0     # Qualifikation + Lohn + Mobilität → auf 10 skaliert
 
 
 def _lohn_punkte(lohn: float) -> float:
@@ -60,20 +61,14 @@ def _lohn_punkte(lohn: float) -> float:
     return LOHN_PUNKTE_MAX * min(max(anteil, 0.0), 1.0)
 
 
-def _digital_punkte(exposure: float) -> float:
-    """exposure (0–10) → 0–2 Punkte (höhere Digitalaffinität = anpassungsfähiger)."""
-    return 2.0 * exposure / 10.0
-
-
 def berechne_adaptabilitaet(df: pd.DataFrame) -> pd.Series:
-    """Spalten qualification, wage_median_chf, exposure, sector → adaptability (0–10, 0.1 gerundet)."""
+    """Spalten qualification, wage_median_chf, sector → adaptability (0–10, 0.1 gerundet)."""
     qual = df["qualification"].map(QUALIFIKATION_PUNKTE).fillna(1.0)
     lohn = df["wage_median_chf"].apply(_lohn_punkte)
-    digital = df["exposure"].apply(_digital_punkte)
     mobil = df["sector"].map(BRANCHEN_MOBILITAET).fillna(BRANCHEN_MOBILITAET_DEFAULT)
 
-    raw = qual + lohn + digital + mobil  # max = 4 + 3 + 2 + 1 = 10
-    return raw.clip(0, 10).round(1)
+    raw = qual + lohn + mobil  # max = 4 + 3 + 1 = 8
+    return (raw * 10 / MAX_PUNKTE).clip(0, 10).round(1)
 
 
 def setze_adaptabilitaet(text_df: pd.DataFrame) -> pd.DataFrame:
@@ -85,7 +80,6 @@ def setze_adaptabilitaet(text_df: pd.DataFrame) -> pd.DataFrame:
     num = pd.DataFrame({
         "qualification": text_df["qualification"],
         "wage_median_chf": pd.to_numeric(text_df["wage_median_chf"], errors="coerce"),
-        "exposure": pd.to_numeric(text_df["exposure"], errors="coerce"),
         "sector": text_df["sector"],
     }, index=text_df.index)
     neu = berechne_adaptabilitaet(num)

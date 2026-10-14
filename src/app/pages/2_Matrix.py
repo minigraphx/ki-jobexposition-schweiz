@@ -20,7 +20,7 @@ if df is None:
     st.warning("Noch keine Score-Daten vorhanden.")
     st.stop()
 
-X, YS = g.SCHWELLE_ANPASSUNG, g.SCHWELLE_EXPOSITION
+X, YS = g.schwelle_anpassung(df), g.SCHWELLE_EXPOSITION
 
 st.markdown(f"""
 Die Matrix zeigt zwei Dimensionen:
@@ -28,7 +28,8 @@ Die Matrix zeigt zwei Dimensionen:
   die **physische Automatisierung** (Robotik, Automaten, Selbstbedienung ohne generative KI)
 - **X-Achse: Anpassungsfähigkeit** (0 = schwer anzupassen, 10 = sehr flexibel)
 
-**Kritische Zone (rot, oben links):** Score > {YS:g} und Anpassungsfähigkeit < {X:g} → höchstes Risiko.
+**Kritische Zone (rot, oben links):** Score > {YS:g} und Anpassungsfähigkeit unter {X:.1f}, dem Median
+aller Erwerbstätigen (die Hälfte arbeitet in Berufen mit tieferem Wert) → höchstes Risiko.
 Punktgrösse = Erwerbstätige.
 """)
 
@@ -92,14 +93,16 @@ fig.update_layout(
 st.plotly_chart(fig, width="stretch")
 
 n_unsicher = int(df["uncertain"].sum())
-kritisch = df[(df[y_spalte] > YS) & (df["adaptability"] < X)]
+kritisch = g.kritische_zone(df, X, y_spalte)
 st.caption(
     f"◆ Raute = Bewertung **unsicher** ({n_unsicher} von {len(df)} Berufen): Die beiden Modelle weichen um "
     "mehr als 1 Punkt voneinander ab, die Läufe eines Modells streuen um mehr als 1 Punkt, oder es liegen "
     "weniger als zwei gültige Läufe vor. ● Kreis = übereinstimmende Bewertung. Die Werte beider Modelle und "
     "der Grund stehen im Tooltip. "
-    + (f"In der kritischen Zone liegen {len(kritisch)} Berufe." if not kritisch.empty
-       else "In der kritischen Zone liegt derzeit kein Beruf.")
+    + (f"In der kritischen Zone liegen {len(kritisch)} Berufe mit {g.tsd(kritisch['employed_k'].sum())} Tsd. "
+       f"Erwerbstätigen: {', '.join(kritisch.sort_values('employed_k', ascending=False)['occupation'])}. "
+       "Wie viele Berufe in der Zone liegen, hängt stark von den Schwellen ab (siehe «Methodik & Quellen»)."
+       if not kritisch.empty else "In der kritischen Zone liegt derzeit kein Beruf.")
 )
 if farb_modus == "Frauenanteil (%)":
     st.caption("Farbe: blau = überwiegend Männer, grau = ausgeglichen, rot = überwiegend Frauen "

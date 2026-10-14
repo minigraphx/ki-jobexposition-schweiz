@@ -492,10 +492,9 @@ class TestMainOffline:
         for spalte in ["exposure", "rationale", "timeframe_raw", "sector", "legacy_score"]:
             assert neu[spalte].equals(alt[spalte])   # kein Lohnzuschlag auf den Score
         assert [c for c in neu.columns if c not in ("wage_source", "wage_uncertain")] == list(alt.columns)
-        # adaptability = Qualifikation + Lohnpunkte + 2·exposure/10 + Mobilität (Gesundheit 0.5, Detailhandel 0.4)
-        # 4 + 1.506 + 0.5 + 0.5 = 6.5; 4 + 1.005 + 1.0 + 0.5 = 6.5; 3 + 0.289 + 0.02 + 0.4 = 3.7
-        assert neu["adaptability"].tolist() == ["6.5", "6.5", "3.7"]
-        assert neu.loc[1, "adaptability"] == alt.loc[1, "adaptability"]  # gleicher Wert → Text unverändert
+        # adaptability = (Qualifikation + Lohnpunkte + Mobilität) × 10/8 (Gesundheit 0.5, Detailhandel 0.4)
+        # (4 + 1.506 + 0.5) → 7.5; (4 + 1.005 + 0.5) → 6.9; (3 + 0.289 + 0.4) → 4.6
+        assert neu["adaptability"].tolist() == ["7.5", "6.9", "4.6"]
         # ohne lohn_verhaeltnisse.csv: keine Overrides, Spalte wage_uncertain nach wage_source
         assert basis.columns.tolist()[5] == "wage_uncertain"
         assert basis["wage_uncertain"].tolist() == neu["wage_uncertain"].tolist() == ["False"] * 3
@@ -514,7 +513,7 @@ class TestMainOffline:
         assert neu["wage_median_chf"].tolist() == ["153600", "96000", str(4970 * 12)]
         assert neu["wage_source"].tolist() == [ul.QUELLE_VERHAELTNIS, ul.QUELLE_SALARIUM, ul.QUELLE_2D]
         assert neu["wage_uncertain"].tolist() == ["False", "True", "False"]
-        assert neu["adaptability"].tolist()[0] == "8.0"   # 4 + 3 (≥ 150k) + 0.5 + 0.5
+        assert neu["adaptability"].tolist()[0] == "9.4"   # (4 + 3 (≥ 150k) + 0.5) × 10/8
 
     def test_dry_run_schreibt_nichts(self, tmp_path, monkeypatch):
         pfad = self._setup(tmp_path, monkeypatch)

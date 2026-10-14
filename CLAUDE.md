@@ -310,7 +310,7 @@ scores.csv (master data only: occupation, isco_code, synonyms, qualification, se
 | `src/scoring/task_aggregate.py` | `bewertungen/<provider>/run*/` | `scores_aufgaben.csv` | Per provider + combined; `--base-dir`, `--include-stale`, `--claude-source claude-cli\|claude` (default `claude-cli`) |
 | `src/scoring/apply_task_scores.py` | `scores_aufgaben.csv`, `scores.csv`, `kmu_anteil_branche.csv` | `scores.csv` | Writes exactly `SCORES_SCHEMA`; fails loudly on missing/extra ratings or unknown sectors; idempotent; `--dry-run`, `--scores`, `--aufgaben`, `--kmu` |
 | `src/scoring/kmu_faktor.py` | `kmu_anteil_branche.csv` | — | Shared SME timeframe shift (thresholds, `verschiebe_zeitrahmen`, `adjust_zeitrahmen_fuer_kmu`), list of the 21 sectors (`BRANCHEN`) |
-| `src/scoring/adaptability_scorer.py` | `scores.csv` | `scores.csv` | Rule-based: education 4, wage 3, digital affinity 2 (= 2·exposure/10), sector mobility 1; `setze_adaptabilitaet()` keeps numerically equal cells |
+| `src/scoring/adaptability_scorer.py` | `scores.csv` | `scores.csv` | Rule-based: (education 4 + wage 3 + sector mobility 1) × 10/8; no digital-affinity criterion since Oct 2026 (exposure as proxy would be circular); `setze_adaptabilitaet()` keeps numerically equal cells |
 | `src/scoring/task_vergleich.py` | `bewertungen/pilot_abo/`, API runs, `benchmarks_isco4.csv` | `bewertungen/vergleich.md` | 15 pilot jobs + Spearman vs. benchmarks; `--pilot-runs`, `--base-dir`, `--include-stale` |
 | historical (see Commands) | — | — | Exit immediately with a pointer to the current pipeline |
 
@@ -344,7 +344,7 @@ does not import `src/scoring` (no jsonschema in `requirements.txt`). Pages in `s
 
 | File | Menu Title | Content |
 |------|-----------|---------|
-| `0_Startseite.py` | Startseite | Method intro, key metrics (weighted exposure, critical zone = exposure > 6 and adaptability < 5), women share highlight |
+| `0_Startseite.py` | Startseite | Method intro, key metrics (weighted exposure, critical zone = exposure > 6 and adaptability below the employment-weighted median), women share highlight |
 | `1_Treemap.py` | Treemap | Size = `employed_k`, colour selectable: exposure / time_savings / physical_automation |
 | `2_Matrix.py` | Matrix | X = adaptability, Y = exposure or physical_automation; uncertain entries as diamonds; hover with Claude/Gemini values |
 | `3_Branchen.py` | Branchen | Employment-weighted exposure per sector, cross-border context, convergence heatmap from task metrics |
@@ -392,7 +392,7 @@ App reads `data/processed/scores.csv`, `kmu_anteil_branche.csv`, `grenzgaenger_a
 | `large_firm_share` | BFS STATENT 2024 (`kmu_faktor.py`) | Share of sector's employed persons in enterprises ≥250 employed; empty for Öff. Verwaltung |
 | `timeframe_sme_shift` | `kmu_faktor.py` | −1 (share ≥50 %), 0, +1 (share <15 %) |
 | `timeframe` | `kmu_faktor.py` | `timeframe_raw` shifted by `timeframe_sme_shift` |
-| `adaptability` | `adaptability_scorer.py` | Adaptability 0–10 (rule-based; wage points on a fixed 50k–150k CHF scale, digital affinity = 2·exposure/10) |
+| `adaptability` | `adaptability_scorer.py` | Adaptability 0–10 (rule-based: education, wage points on a fixed 50k–150k CHF scale, sector mobility; scaled × 10/8; independent of exposure). App critical zone = exposure > 6 and adaptability below the employment-weighted median (`gemeinsam.schwelle_anpassung`) |
 | `legacy_score` | former method | Old final score (`score_ch`, Karpathy-style holistic rating + sector/wage deltas); only for the old-vs-new comparison on the Methodik page; empty for the 8 entries added later |
 
 ## Datenqualität

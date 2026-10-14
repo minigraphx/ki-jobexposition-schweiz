@@ -342,10 +342,10 @@ Er basiert auf der Methodik der **Brookings Institution** und setzt sich zusamme
 |---|---|---|
 | Qualifikationsniveau | 4 | Bildungsniveau des Berufs (Tertiär 4, Sekundär II 3, keine Ausbildung 1) |
 | Lohnniveau | 3 | LSE 2024 (höherer Lohn = mehr Ressourcen für Umschulung); feste Skala: 0 Punkte bis 50'000 CHF, linear bis 3 Punkte bei 150'000 CHF, darüber 3 |
-| Digitale Affinität | 2 | 2 × KI-Exposition / 10 (Anteil digitaler Informationsarbeit) |
 | Branchenmobilität | 1 | Schätzung basierend auf Branchencharakteristika |
 
-Skala: 0 = sehr schwer anzupassen, 10 = sehr flexibel
+Die Summe (höchstens 8 Punkte) wird auf 0–10 skaliert (× 10/8). Skala: 0 = sehr schwer anzupassen,
+10 = sehr flexibel.
 
 Die Lohnskala ist fest (Lohnpunkte = 3 × (Lohn − 50'000) / 100'000, begrenzt auf 0–3) und
 umschliesst die Spanne der LSE-2024-Mediane der Berufsgruppen (rund 53'000–130'000 CHF).
@@ -353,13 +353,38 @@ Die Lohnpunkte eines Berufs hängen damit nur von seinem eigenen Lohn ab — ein
 Ausreisser (z. B. ein neuer Höchstlohn) verschiebt die Werte der übrigen Berufe nicht.
 Beispiele: 75'000 CHF → 0.75, 100'000 CHF → 1.5, 125'000 CHF → 2.25 Punkte.
 
-**Digitale Affinität:** Bis Oktober 2026 diente das Teilkriterium «digitaler Output» der früheren
-Bewertung als Proxy. Es existiert nicht mehr; an seine Stelle tritt die KI-Exposition, die den Anteil
-der Arbeitszeit mit Text-, Daten- und Informationsarbeit gut abbildet (Spearman ρ zum alten
-Teilkriterium rund 0,8). Dadurch hängt die Anpassungsfähigkeit zu höchstens 2 von 10 Punkten von der
-Exposition ab — wie schon bei der früheren Methode. In der Matrix rückt ein stärker exponierter Beruf
-damit leicht nach rechts; die kritische Zone wird dadurch eher unterschätzt als überschätzt.
+**Kein Kriterium «digitale Affinität» mehr:** Bis Oktober 2026 zählte es 2 Punkte, mit dem
+Teilkriterium «digitaler Output» der früheren Bewertung als Proxy. Dieses gibt es nicht mehr; die
+KI-Exposition als Ersatz wäre zirkulär — dieselbe Grösse stünde auf beiden Achsen der Matrix, und stark
+exponierte Berufe würden automatisch als anpassungsfähiger gelten. Die übrigen Kriterien korrelieren
+trotzdem mit der Exposition, weil Büro- und Wissensberufe meist höhere Bildung und Löhne haben.
 """)
+
+st.subheader("Kritische Zone: Schwellen und ihre Wirkung")
+_schwelle = g.schwelle_anpassung(df)
+_varianten = [
+    (f"Anpassungsfähigkeit unter dem Median der Erwerbstätigen ({_schwelle:.1f}) — verwendet", _schwelle),
+    (f"Anpassungsfähigkeit höchstens {_schwelle:.1f} (Median eingeschlossen)", _schwelle + 1e-9),
+    (f"Anpassungsfähigkeit unter {g.SCHWELLE_ANPASSUNG_FEST:g} (feste Schwelle)", g.SCHWELLE_ANPASSUNG_FEST),
+    ("Anpassungsfähigkeit unter 6 (feste Schwelle)", 6.0),
+]
+_zeilen = []
+for _name, _s in _varianten:
+    _k = g.kritische_zone(df, _s)
+    _zeilen.append({"Abgrenzung (jeweils KI-Exposition > 6)": _name, "Berufe": len(_k),
+                    "Erwerbstätige (Tsd.)": round(_k["employed_k"].sum()),
+                    "Frauenanteil": g.prozent(g.gewichtet(_k, "women_pct")) if not _k.empty else "–"})
+st.markdown(f"""
+Die kritische Zone umfasst Berufe mit hoher KI-Exposition (Score > {g.SCHWELLE_EXPOSITION:g}) und
+unterdurchschnittlicher Anpassungsfähigkeit. «Unterdurchschnittlich» ist relativ definiert: unter dem
+beschäftigungsgewichteten Median aller Berufe ({_schwelle:.1f}), d. h. die Hälfte der Erwerbstätigen
+arbeitet in Berufen mit tieferem Wert. Eine feste Zahl wäre willkürlicher, weil die Lage der Skala von
+der Zusammensetzung der Kriterien abhängt.
+
+Das Ergebnis reagiert stark auf diese Wahl — die Zone ist eine Lesehilfe, keine scharfe Grenze:
+""")
+st.dataframe(pd.DataFrame(_zeilen), hide_index=True, width="stretch")
+
 
 st.divider()
 

@@ -50,7 +50,8 @@ st.divider()
 # ── Kennzahlen ─────────────────────────────────────────────────────────────────
 if df is not None:
     hoch = df[df["exposure"] > g.SCHWELLE_EXPOSITION]
-    kritisch = g.kritische_zone(df)
+    schwelle = g.schwelle_anpassung(df)
+    kritisch = g.kritische_zone(df, schwelle)
     spalten = st.columns(5)
     spalten[0].metric("Analysierte Berufe", len(df))
     spalten[1].metric("Ø KI-Exposition", f"{g.gewichtet(df, 'exposure'):.1f} / 10",
@@ -61,7 +62,8 @@ if df is not None:
                       help=f"Anteil an allen erfassten Erwerbstätigen: "
                            f"{g.prozent(hoch['employed_k'].sum() / df['employed_k'].sum() * 100)}")
     spalten[4].metric("Kritische Zone", len(kritisch),
-                      help="Score > 6 (stark exponiert) und Anpassungsfähigkeit < 5 (schwer anpassbar)")
+                      help=f"Score > 6 (stark exponiert) und Anpassungsfähigkeit unter {schwelle:.1f} — dem Median "
+                           "aller Erwerbstätigen (unterdurchschnittlich anpassungsfähig)")
 
     # Frauen-Highlight (Brookings-Befund), neu berechnet
     frauen_hoch = g.gewichtet(hoch, "women_pct")
@@ -71,8 +73,10 @@ if df is not None:
         st.info(
             f"👩 **{frauen_kritisch:.0f} % der Erwerbstätigen in der kritischen Zone sind Frauen** — "
             "also in Berufen mit hoher KI-Exposition *und* geringer Anpassungsfähigkeit "
-            f"({len(kritisch)} Berufe, {g.tsd(kritisch['employed_k'].sum())} Tsd. Erwerbstätige). "
-            "Die Brookings/GovAI-Studie (2024) weist für den US-Arbeitsmarkt 86 % aus.",
+            f"({len(kritisch)} Berufe, {g.tsd(kritisch['employed_k'].sum())} Tsd. Erwerbstätige; über alle "
+            f"erfassten Berufe: {frauen_alle:.0f} % Frauen). Die Brookings/GovAI-Studie (2024) weist für den "
+            "US-Arbeitsmarkt 86 % aus (mit anderer Abgrenzung). Welche Berufe in die Zone fallen, hängt stark "
+            "von den Schwellen ab — siehe «Methodik & Quellen».",
         )
     else:
         tiefste = hoch.nsmallest(1, "adaptability")
@@ -87,7 +91,7 @@ if df is not None:
             "exponiert — die Brookings/GovAI-Studie (2024) fand für den US-Markt sogar 86 % Frauen in "
             "der kritischen Zone (hoch exponiert *und* schwer anpassbar). In der Schweiz liegt nach "
             "dieser Bewertung **kein Beruf in der kritischen Zone** (Score > 6 und Anpassungsfähigkeit "
-            f"< 5).{tief_text}",
+            f"unter dem Median {schwelle:.1f}).{tief_text}",
         )
 
 st.divider()

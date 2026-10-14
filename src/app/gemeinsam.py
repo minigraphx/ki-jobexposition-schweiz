@@ -22,9 +22,11 @@ BENCHMARK_PATH = DATA_DIR / "benchmarks_isco4.csv"
 KMU_PATH = DATA_DIR / "kmu_anteil_branche.csv"
 GGS_PATH = DATA_DIR / "grenzgaenger_anteil_branche.csv"
 
-# Kritische Zone (Startseite, Matrix): hoch exponiert und schwer anpassbar
+# Kritische Zone (Startseite, Matrix): hoch exponiert und schwer anpassbar. Die Schwelle der
+# Anpassungsfähigkeit ist relativ (schwelle_anpassung): eine feste Zahl auf einer Skala, deren Lage
+# von der Zusammensetzung der Kriterien abhängt, wäre willkürlicher.
 SCHWELLE_EXPOSITION = 6.0
-SCHWELLE_ANPASSUNG = 5.0
+SCHWELLE_ANPASSUNG_FEST = 5.0     # nur für den Sensitivitätsvergleich auf der Methodik-Seite
 
 # Beschriftungen der Kennzahlen (Spalten von scores.csv) in der App
 LABELS: dict[str, str] = {
@@ -117,8 +119,21 @@ def spearman(a: pd.Series, b: pd.Series) -> tuple[float, int]:
     return float(d["a"].rank().corr(d["b"].rank())), len(d)
 
 
-def kritische_zone(df: pd.DataFrame) -> pd.DataFrame:
-    return df[(df["exposure"] > SCHWELLE_EXPOSITION) & (df["adaptability"] < SCHWELLE_ANPASSUNG)]
+def schwelle_anpassung(df: pd.DataFrame) -> float:
+    """Beschäftigungsgewichteter Median der Anpassungsfähigkeit: die Hälfte der Erwerbstätigen
+    arbeitet in Berufen mit tieferem Wert."""
+    d = df[["adaptability", "employed_k"]].dropna().sort_values("adaptability", kind="mergesort")
+    if d.empty or d["employed_k"].sum() <= 0:
+        return float("nan")
+    kumuliert = d["employed_k"].cumsum() / d["employed_k"].sum()
+    return float(d.loc[kumuliert >= 0.5, "adaptability"].iloc[0])
+
+
+def kritische_zone(df: pd.DataFrame, schwelle: float | None = None, spalte: str = "exposure") -> pd.DataFrame:
+    """Stark exponiert (> SCHWELLE_EXPOSITION) und unterdurchschnittlich anpassungsfähig
+    (unter dem beschäftigungsgewichteten Median aller Berufe, sofern keine Schwelle angegeben)."""
+    s = schwelle_anpassung(df) if schwelle is None else schwelle
+    return df[(df[spalte] > SCHWELLE_EXPOSITION) & (df["adaptability"] < s)]
 
 
 # --------------------------------------------------------------------------- Bewertungsdateien

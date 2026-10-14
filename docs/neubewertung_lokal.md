@@ -226,7 +226,7 @@ git push origin <branch>
 fehlenden Einträge bewerten bzw. `task_aggregate.py` neu laufen lassen. Es übernimmt die Spalten
 des Expositions-Blocks unverändert, setzt `timeframe_raw` (Median-Zeitrahmen der Läufe) und
 verschiebt ihn mit dem KMU-Faktor der Branche zu `timeframe`; `adaptability` wird neu berechnet
-(digitale Affinität = exposure). Ein zweiter Lauf ändert nichts.
+(Qualifikation, Lohn, Branchenmobilität; unabhängig von der Exposition). Ein zweiter Lauf ändert nichts.
 
 Die Zustandsdateien unter `bewertungen/<provider>/batches/` dürfen mit committet werden (keine
 Keys). Live geht die App erst mit `git push hf main` (HuggingFace Spaces).

@@ -14,8 +14,8 @@ dem Schema column_mapping.SCORES_SCHEMA:
 - timeframe_raw = aggregierter Zeitrahmen der Bewertungen (Median über alle Läufe);
   timeframe = timeframe_raw, um den KMU-Adoptions-Faktor der Branche verschoben
   (kmu_faktor.adjust_zeitrahmen_fuer_kmu, Daten kmu_anteil_branche.csv).
-- adaptability wird neu berechnet (adaptability_scorer: Qualifikation, Lohn, exposure als
-  Digital-Proxy, Branchenmobilität).
+- adaptability wird neu berechnet (adaptability_scorer: Qualifikation, Lohn, Branchenmobilität,
+  auf 0–10 skaliert; unabhängig von exposure).
 - legacy_score = Endscore der früheren Methode (nur für den Vergleich alt/neu auf der
   Methodik-Seite); bleibt, wie er ist.
 Die Branche wirkt nur über den Zeitrahmen; einen Lohn- oder Branchenzuschlag auf den Score gibt

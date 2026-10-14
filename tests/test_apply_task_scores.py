@@ -55,7 +55,7 @@ class TestUebernehmen:
         assert out["large_firm_share"].tolist() == ["0.6", "0.02"]
         assert out["legacy_score"].tolist() == ["5.3", ""]
         # 4 + 1.5 + 2·0.6 + 0.9 (Finanzen) = 7.6; 4 + 0 + 0.1 + 0.3 (Gastgewerbe) = 4.4
-        assert out["adaptability"].tolist() == ["7.6", "4.4"]
+        assert out["adaptability"].tolist() == ["8.0", "5.4"]   # (Qualifikation + Lohn + Mobilität) × 10/8
 
     def test_reihenfolge_folgt_scores_csv(self):
         out = ats.uebernehmen(_scores(), _aufgaben().iloc[::-1].reset_index(drop=True), KMU)

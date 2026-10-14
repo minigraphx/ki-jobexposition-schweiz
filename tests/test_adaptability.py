@@ -107,27 +107,29 @@ class TestLohnPunkte:
         df = pd.DataFrame({
             "qualification": ["Sekundär II"] * 2,
             "wage_median_chf": [50_000, 150_000],
-            "exposure": [0.0, 0.0],
             "sector": ["ICT", "ICT"],
         })
-        # 3 (Qualifikation) + 0 bzw. 3 (Lohn) + 0 (Digital-Proxy exposure) + 1 (ICT)
-        assert berechne_adaptabilitaet(df).tolist() == [4.0, 7.0]
+        # (3 Qualifikation + 0 bzw. 3 Lohn + 1 ICT) × 10/8
+        assert berechne_adaptabilitaet(df).tolist() == [5.0, 8.8]
 
 
-class TestDigitalProxy:
-    """Digitale Affinität (2 Punkte) = 2 × exposure / 10 (seit der aufgabenbasierten Bewertung)."""
+class TestOhneDigitalProxy:
+    """Seit Oktober 2026 kein Digital-Kriterium mehr (Exposition als Proxy wäre zirkulär)."""
 
-    def test_exposure_anteil(self):
+    def test_unabhaengig_von_exposure(self):
         df = pd.DataFrame({"qualification": ["Sekundär II"] * 2, "wage_median_chf": [50_000] * 2,
                            "exposure": [0.0, 10.0], "sector": ["ICT", "ICT"]})
-        assert berechne_adaptabilitaet(df).tolist() == [4.0, 6.0]
+        assert berechne_adaptabilitaet(df).tolist() == [5.0, 5.0]
+
+    def test_maximum_10(self):
+        df = pd.DataFrame({"qualification": ["Tertiär"], "wage_median_chf": [200_000], "sector": ["ICT"]})
+        assert berechne_adaptabilitaet(df).tolist() == [10.0]
 
     def test_setze_text_erhaelt_gleiche_werte(self):
         text = pd.DataFrame({"qualification": ["Tertiär", "Sekundär II", "Tertiär"],
-                             "wage_median_chf": ["100000", "50000", "100000"],
-                             "exposure": ["5.0", "", "5.0"], "sector": ["ICT", "Bau", "ICT"],
-                             "adaptability": ["7.50", "3.3", "1.0"]})
+                             "wage_median_chf": ["100000", "", "100000"], "sector": ["ICT", "Bau", "ICT"],
+                             "adaptability": ["8.10", "3.3", "1.0"]})
         out = setze_adaptabilitaet(text)
-        # 4 + 1.5 + 1.0 + 1.0 = 7.5 → Text «7.50» bleibt; ohne exposure → leer; sonst neu
-        assert out["adaptability"].tolist() == ["7.50", "", "7.5"]
-        assert text["adaptability"].tolist() == ["7.50", "3.3", "1.0"]   # Original unverändert
+        # (4 + 1.5 + 1) × 10/8 = 8.125 → 8.1: Text «8.10» bleibt; ohne Lohn → leer; sonst neu
+        assert out["adaptability"].tolist() == ["8.10", "", "8.1"]
+        assert text["adaptability"].tolist() == ["8.10", "3.3", "1.0"]   # Original unverändert

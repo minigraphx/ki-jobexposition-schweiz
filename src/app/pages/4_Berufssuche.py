@@ -123,7 +123,7 @@ d2.metric("Software-Automatisierung", f"{row['software_automation']:.1f} / 10", 
 d3.metric("Ersetzbare Arbeitszeit", g.prozent(row["replaceable_time"] * 100),
           help="Anteil der Arbeitszeit, der in Tätigkeiten mit Modus «ersetzend» tatsächlich eingespart wird.")
 d4.metric("Anpassungsfähigkeit", f"{row['adaptability']:.1f} / 10",
-          help="Regelbasiert: Qualifikation, Lohn, digitale Affinität, Branchenmobilität (siehe Methodik).")
+          help="Regelbasiert: Qualifikation, Lohn, Branchenmobilität (siehe Methodik).")
 if row["physical_automation"] >= 2 * max(row["exposure"], 0.5):
     st.info("Bei diesem Beruf ist die **Automatisierung ohne generative KI** (z. B. Robotik, Automaten, "
             "Selbstbedienung) deutlich grösser als die KI-Exposition — der KI-Score allein unterschätzt den "
