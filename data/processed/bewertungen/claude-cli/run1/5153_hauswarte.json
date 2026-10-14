@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "afea5c235e6cab3110a71547d753a525cffed5276da882bed00206c0dec84196",
+    "isco_code": "5153",
+    "beruf": "Hauswarte",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:49:48+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2282,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4614,
+      "api_aequivalent_usd": 0.11787419999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2282,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4614,
+        "output_tokens_details": {
+          "thinking_tokens": 1393
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2282,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11787419999999998
+      }
+    ],
+    "request_ids": [
+      "5d55b37a-90a3-41fc-a838-3fdc00e592e7"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5153",
+    "beruf": "Hauswarte",
+    "taetigkeiten": [
+      {
+        "name": "Treppenhäuser, Allgemeinräume, Waschküchen und Tiefgaragen reinigen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Reinigungsarbeit vor Ort. Autonome Reinigungsmaschinen eignen sich nur für grosse freie Flächen, nicht für Treppenhäuser mit Geländern, Türen und Nischen."
+      },
+      {
+        "name": "Umgebung pflegen: Rasen mähen, Hecken schneiden, Wege räumen, Winterdienst leisten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit im Freien. Mähroboter übernehmen nur das Rasenmähen; Heckenschnitt, Laub, Schnee und Rabatten bleiben Handarbeit, deshalb unter 50 %."
+      },
+      {
+        "name": "Kleinere Reparaturen ausführen (Leuchtmittel, Türschliesser, Armaturen, Storen)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Arbeit vor Ort; dafür gibt es keine Robotik."
+      },
+      {
+        "name": "Haustechnik (Heizung, Warmwasser, Lüftung, Lift) kontrollieren, einstellen und einfache Störungen beheben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kontrolle und Eingriffe an Anlagen vor Ort. Fernüberwachung über Gebäudeleittechnik meldet Störungen, ersetzt aber nicht den Grossteil der Arbeit an der Anlage."
+      },
+      {
+        "name": "Kontrollrundgänge machen und Zustand sowie Sicherheit des Gebäudes prüfen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Begehung und Sichtkontrolle vor Ort (Fluchtwege, Beleuchtung, Schäden); die Zeit liegt in der physischen Präsenz."
+      },
+      {
+        "name": "Anliegen und Beschwerden von Mietenden vor Ort oder am Telefon entgegennehmen und Konflikte schlichten",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Ansprechperson im Haus; der Wert liegt in der Präsenz und im direkten Gespräch, oft in Mundart."
+      },
+      {
+        "name": "Handwerker und Reinigungsfirmen aufbieten, Zutritt organisieren und Arbeiten vor Ort begleiten",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit geht überwiegend in kurze Telefonate, Zutritt gewähren und Arbeiten vor Ort abnehmen. Generative KI spart dabei kaum 50 %."
+      },
+      {
+        "name": "Wohnungsabnahmen und -übergaben bei Mieterwechsel vor Ort durchführen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Begehung mit Mietenden, Schäden beurteilen und Schlüssel übergeben, alles in persönlicher Präsenz."
+      },
+      {
+        "name": "Mängel- und Schadenmeldungen sowie Rundgangs- und Abnahmeprotokolle an die Verwaltung erstellen",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Eine Rapport- oder Bewirtschaftungs-App erstellt aus Fotos und Spracheingabe die Meldung bzw. das Protokoll; der Hauswart prüft und ergänzt jeden Eintrag. Mundart und Fachbegriffe erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Hausmitteilungen, Aushänge und E-Mails an Mietende und Verwaltung verfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM schreibt Standardtexte (Waschküchenordnung, Wasserabstellung, Hausordnung) aus Stichworten, auch mehrsprachig; der Hauswart sichtet kurz und hängt den Text aus."
+      },
+      {
+        "name": "Zählerstände ablesen, Material bestellen und An-/Abmeldungen der Mietenden eintragen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es geht um Zahlen- und Formulareinträge in kleinem Umfang; ein LLM bringt kaum Zeitgewinn. Funkzähler mit Fernablesung für Heiz- und Wasserkosten sind in der Schweiz verbreitet und übernehmen den grössten Teil des Ablesens."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Hauswart/in im Voll- oder Teilzeitpensum für mehrere Wohnliegenschaften einer Immobilienverwaltung oder Genossenschaft, ohne grosse Facility-Management-Organisation. Der ESCO-Input passt gut; die Zeitanteile zwischen Reinigung, Umgebung und Technik schwanken je nach Objekt stark. Grenzfälle sind die Rapporterstellung per App (abhängig von der Dialekterkennung) und der Anteil, den Mähroboter und Funkzähler übernehmen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind nur Mängelrapporte und Protokolle (über Rapport-Apps mit Foto- und Spracheingabe) sowie Hausmitteilungen (Chat-LLM); Reinigung, Umgebungspflege, Reparaturen und Mieterkontakt bleiben unberührt.",
+      "begruendung": "Nur rund 7 % der Arbeitszeit sind exponiert. Rapporte arbeitet die KI delegierend ab, der Hauswart prüft also jeden Eintrag; Standardmitteilungen erledigt sie ersetzend. Der Kern des Berufs ist physische Arbeit und persönliche Präsenz im Haus; Mundart und Fachjargon bei der Spracheingabe sowie die vielen kleinen Verwaltungen und Einzelhauswarte bremsen die Einführung.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

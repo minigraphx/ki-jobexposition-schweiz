@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "67f736ea57f692dd9275f8bb647bff77330d970da631b780b36b5ff6eb21edfd",
+    "isco_code": "2149",
+    "beruf": "Projektleiter/in (Technik)",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:09:04+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4813,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4688,
+      "api_aequivalent_usd": 0.1396022
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4813,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4688,
+        "output_tokens_details": {
+          "thinking_tokens": 1415
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4813,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1396022
+      }
+    ],
+    "request_ids": [
+      "fbf7d797-b793-48a2-a9b5-15e6d8ea89d7"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2149",
+    "beruf": "Projektleiter/in (Technik)",
+    "taetigkeiten": [
+      {
+        "name": "Projektteam koordinieren, Arbeiten verteilen und Mitarbeitende im Projekt führen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung, Priorisierung und Problemlösung im direkten Austausch mit dem Team; Wert liegt in Präsenz und Verantwortung."
+      },
+      {
+        "name": "Mit Kunden, Auftraggebern und Management Ziele, Änderungen und Konflikte besprechen und verhandeln",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Stakeholder-Management und Verhandlung von Angesicht zu Angesicht oder per Call; Beziehungs- und Ermessensarbeit."
+      },
+      {
+        "name": "Termin- und Ressourcenpläne in der Projektsoftware erstellen und nachführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zeit liegt im Einholen von Aufwandschätzungen und Abwägen von Abhängigkeiten; LLM-Vorschläge sparen kaum 50 %, die Terminberechnung erledigt die klassische Planungssoftware bereits."
+      },
+      {
+        "name": "Statusberichte und Projektberichte für Lenkungsausschuss und Kunden verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "PL liefert Stichworte, Kennzahlen und Vorbericht als Text, das LLM erstellt den Bericht; jeder Bericht wird inhaltlich geprüft und angepasst."
+      },
+      {
+        "name": "Sitzungsprotokolle und Pendenzenlisten aus Projektsitzungen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Projektsitzungen mit mehreren Personen oft in Schweizerdeutsch und mit Fachjargon, Transkriptionsqualität unsicher; E0 oder delegierend mit 30-50 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Meeting-Assistent (Transkription und Zusammenfassung in Teams/Office) erstellt Protokoll und Pendenzen; PL liest gegen und gibt frei."
+      },
+      {
+        "name": "Projektspezifikationen, Pflichtenhefte und technische Projektunterlagen ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Struktur und Text aus Anforderungsnotizen und Vorlagen; die technische Richtigkeit prüft und korrigiert die Projektleiterin bei jedem Dokument."
+      },
+      {
+        "name": "Projektkosten überwachen, Budgetabweichungen und Nachkalkulation im ERP auswerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Soll-Ist-Vergleiche und Kostenberichte liefert das Projektcontrolling-Modul im ERP (klassische Software); die Beurteilung der Abweichungen bleibt Ermessen."
+      },
+      {
+        "name": "Risikoanalysen und Änderungsanträge (Change Requests) bewerten und dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "PL beurteilt Risiken und Auswirkungen selbst; das LLM schlägt Risikolisten, Massnahmen und Formulierungen für das Risikoregister bzw. den Antrag vor."
+      },
+      {
+        "name": "E-Mail-Korrespondenz mit Kunden, Lieferanten und internen Stellen bearbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI im Mailprogramm fasst Verläufe zusammen und entwirft Antworten (auch FR/EN); PL prüft jede inhaltlich, da Zusagen zu Terminen und Kosten verbindlich sind."
+      },
+      {
+        "name": "Normen, gesetzliche Vorgaben und Kundenanforderungen (z. B. CE, Maschinenrichtlinie) ermitteln und zusammenstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agent mit Dokumentenzugriff erstellt Übersicht der relevanten Anforderungen; PL verifiziert jede Angabe an der Quelle, da Haftung betroffen ist."
+      },
+      {
+        "name": "Inbetriebnahmen, Abnahmen und Montagen beim Kunden oder in der Fertigung vor Ort begleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz vor Ort, Beurteilung technischer Situationen und Abstimmung mit Beteiligten."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Projektleiter/in mit FH-Ingenieurhintergrund in einem Industrieunternehmen (Maschinen- oder Anlagenbau), Kundenprojekte. ESCO-Profil «Projektmanager» passt nur teilweise; ESCO-Rauschen (Inspizient, Signalanlagen) nicht übernommen und durch CH-Berufswissen ergänzt. Grenzfälle sind Terminplanung (E0 vs. E2) und Sitzungsprotokolle wegen Schweizerdeutsch in Gesprächen mit mehreren Personen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Status- und Projektberichte, Spezifikationen, E-Mail-Korrespondenz, Sitzungsprotokolle sowie Normen- und Risikorecherchen, die durch Chat-LLMs, Office-integrierte KI-Assistenten und Recherche-Agenten weitgehend erstellt werden können.",
+      "begruendung": "Knapp die Hälfte der Arbeitszeit ist exponiert, überwiegend im delegierenden Modus: Die KI entwirft Berichte, Unterlagen und Antworten, die Projektleiterin prüft jede Ausgabe wegen Termin-, Kosten- und Haftungsfolgen. Der Kern des Berufs – Team führen, mit Kunden verhandeln, vor Ort Abnahmen begleiten – bleibt menschlich; Schweizerdeutsch in Sitzungen bremst die automatische Protokollierung, wesentliche regulatorische Hemmnisse gibt es kaum.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "607191f41a9aa46ea7a8414bd180d45d4a79a6ca2923a9c46e82fce3cdc8727e",
+    "isco_code": "5142",
+    "beruf": "Kosmetiker und verwandte Berufe",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:21:36+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 39810,
+      "output_tokens": 4186,
+      "api_aequivalent_usd": 0.09168999999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 39810,
+        "output_tokens": 4186,
+        "output_tokens_details": {
+          "thinking_tokens": 1109
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.09168999999999998
+      }
+    ],
+    "request_ids": [
+      "0cb56557-1a7b-473f-a5d5-47466f2b8d5c"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5142",
+    "beruf": "Kosmetiker und verwandte Berufe",
+    "taetigkeiten": [
+      {
+        "name": "Haut analysieren, Hauttyp bestimmen und Behandlungswünsche im Gespräch klären",
+        "zeitanteil_pct": 9,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sichtprüfung und Abtasten der Haut sowie das persönliche Gespräch mit der Kundin finden direkt vor Ort statt. Hautanalyse-Apps liefern höchstens Zusatzinfos und sparen keine 50 % der Zeit."
+      },
+      {
+        "name": "Gesichtsbehandlungen durchführen (Reinigung, Peeling, Ausreinigung, Masken, Seren)",
+        "zeitanteil_pct": 27,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körpernahe Handarbeit an der Kundin. Für diese Tätigkeit gibt es keine Robotik."
+      },
+      {
+        "name": "Gesichts-, Nacken- und Körpermassagen sowie Body-Wraps ausführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Behandlung am Körper, deren Wert in der persönlichen Ausführung liegt. Massageroboter sind in Schweizer Kosmetikstudios nicht verbreitet."
+      },
+      {
+        "name": "Unerwünschte Haare mit Wachs, Zuckerpaste oder Pinzette entfernen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präzise Handarbeit an der Kundin, die physisch bleibt."
+      },
+      {
+        "name": "Apparative Behandlungen durchführen (IPL/Laser-Haarentfernung, Mikrodermabrasion, Ultraschall)",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Fachperson führt das Gerät von Hand an der Kundin und überwacht die Hautreaktion. Laut Schweizer Recht (NISSG/V-NISSG) braucht es dafür einen Sachkundenachweis; eine autonome Bedienung gibt es nicht."
+      },
+      {
+        "name": "Make-up auftragen, Wimpern und Augenbrauen färben und formen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handarbeit im Gesicht der Kundin. Virtuelle Make-up-Vorschauen ersetzen das Auftragen nicht."
+      },
+      {
+        "name": "Kundinnen zu Heimpflege beraten, Kosmetikprodukte empfehlen und verkaufen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung im Studio gestützt auf den eigenen Hautbefund. Ihr Wert liegt in der Präsenz und in der Kundenbeziehung."
+      },
+      {
+        "name": "Behandlungsraum und Geräte reinigen, desinfizieren und warten",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Hygiene- und Wartungsarbeit an kleinen Flächen und Instrumenten. Autoklav und Sterilisator nehmen nur einen kleinen Teil davon ab."
+      },
+      {
+        "name": "Termine vereinbaren und Kundenkartei mit Behandlungsnotizen führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Online-Terminbuchung mit automatischen Erinnerungen und digitaler Kundenkartei ist klassische Studio-Software und übernimmt den Grossteil. Die kurzen Notizen sparen mit einem LLM kaum Zeit."
+      },
+      {
+        "name": "Kassieren, Rechnungen ausstellen und Produkte nachbestellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kassensystem mit Karten- und TWINT-Terminal sowie Lagerverwaltung mit Mindestbestand-Bestellung sind klassische Software. Ein LLM ist dafür nicht nötig."
+      },
+      {
+        "name": "Social-Media-Beiträge, Newsletter und Angebotstexte für das Studio erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Texte könnte schon ein Chat-LLM erstellen, Bildbearbeitung und Post-Gestaltung brauchen aber generative Zusatzsoftware. Die KI entwirft Text und Bild, die Kosmetikerin wählt aus und prüft jeden Post."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommen wird eine Kosmetikerin EFZ in einem kleinen Kosmetikstudio, oft als Inhaberin oder in einem Kleinstbetrieb mit wenigen Mitarbeitenden. Der ESCO-Input passt gut. Die Arbeit ist überwiegend körpernahe Behandlung und damit klar E0. Grenzfälle sind die Marketingtexte (Zeitanteil je nach Selbständigkeit sehr unterschiedlich) und der Umfang der Software-Unterstützung bei Termin- und Kassenverwaltung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur das Erstellen von Social-Media-Beiträgen, Newslettern und Angebotstexten durch Text- und Bildgeneratoren; die Behandlungen an der Kundin sind nicht exponiert.",
+      "begruendung": "Nur rund 5 % der Arbeitszeit sind exponiert, und zwar delegierend: Die KI entwirft Posts und Texte, die Kosmetikerin wählt aus und prüft jeden Beitrag. Der Kern des Berufs sind physische Behandlungen und persönliche Beratung im Studio, die in der Schweiz stark von Vertrauen und Stammkundschaft leben. Termin- und Kassenverwaltung übernimmt klassische Software, nicht generative KI.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

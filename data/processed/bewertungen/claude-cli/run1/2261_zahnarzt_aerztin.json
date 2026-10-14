@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "122c7d0b00fa9f75c91866584e9ecef53488802b102ee0ec1ee51964c5e58828",
+    "isco_code": "2261",
+    "beruf": "Zahnarzt/-ärztin",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:36:47+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7827,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4722,
+      "api_aequivalent_usd": 0.1643942
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 7827,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4722,
+        "output_tokens_details": {
+          "thinking_tokens": 1854
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 7827,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1643942
+      }
+    ],
+    "request_ids": [
+      "039fb664-3ec8-436e-a800-285c26fdb453"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2261",
+    "beruf": "Zahnarzt/-ärztin",
+    "taetigkeiten": [
+      {
+        "name": "Patienten klinisch untersuchen und Zahn-, Parodontal- und Schleimhautbefund erheben",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Untersuchung im Mund des Patienten mit Sonde und Spiegel; Präsenztätigkeit ohne Robotik."
+      },
+      {
+        "name": "Röntgenbilder und DVT-Aufnahmen beurteilen und Diagnose stellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative Bildmodelle erreichen bei Röntgenbefundung keine diagnostische Qualität; vorhandene Detektionssoftware (nicht-generativ) markiert Karies, übernimmt aber nicht ≥50 % der Beurteilung."
+      },
+      {
+        "name": "Füllungen legen, Wurzelbehandlungen durchführen und Lokalanästhesie verabreichen",
+        "zeitanteil_pct": 33,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Behandlung am Patienten; keine Behandlungsrobotik im regulären Einsatz."
+      },
+      {
+        "name": "Extraktionen, Implantationen, Parodontalbehandlungen und Notfallbehandlungen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chirurgische und manuelle Eingriffe am Patienten; physisch und mit hoher Verantwortung."
+      },
+      {
+        "name": "Zahnersatz präparieren, Intraoralscan/Abformung nehmen und Kronen, Brücken, Prothesen einpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit am Patienten; CAD/CAM-Fertigung entlastet das Labor, nicht die Behandlungszeit des Zahnarztes."
+      },
+      {
+        "name": "Behandlungsoptionen besprechen, Patienten aufklären, Ängste nehmen und zu Prophylaxe und Ernährung beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Gespräch und Aufklärung von Angesicht zu Angesicht; Wert liegt in Präsenz und Vertrauen."
+      },
+      {
+        "name": "Behandlungsverlauf und Befunde in der Praxissoftware dokumentieren",
+        "zeitanteil_pct": 6,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Diktat (auch Schweizerdeutsch, Einzelperson) bzw. Spracheingabe erstellt den KG-Eintrag; Zahnärztin prüft jeden Eintrag fachlich. Hemmnis: Berufsgeheimnis/Datenschutz bei Cloud-Diensten."
+      },
+      {
+        "name": "Behandlungsplan festlegen und Kostenvoranschlag nach Zahnarzttarif erstellen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Therapieentscheid ist fachliches Ermessen; die Tarifberechnung (Taxpunkte, Positionen) erledigt klassische Praxissoftware."
+      },
+      {
+        "name": "Berichte an Überweiser, Kostengutsprachen an Versicherer und Überweisungen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM entwirft Bericht bzw. Gesuch aus kopierten Befund- und Planungsnotizen; Zahnärztin prüft und unterschreibt jeden Brief. Hemmnis: Berufsgeheimnis/revDSG."
+      },
+      {
+        "name": "Praxisteam (DA, DH, Lernende) anleiten, Hygiene und Qualitätssicherung überwachen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung und Kontrolle vor Ort; Präsenz- und Beziehungstätigkeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: angestellte/r oder selbständige/r Zahnarzt/-ärztin in einer allgemeinzahnärztlichen Privatpraxis (KMU) in der Schweiz; Spezialisierungen (Kieferorthopädie, Kieferchirurgie) nicht separat abgebildet. ESCO-Beschreibung knapp, Tätigkeiten aus Kompetenzliste und Berufswissen abgeleitet. Grenzfälle sind die Dokumentation (Einsparung durch Spracheingabe nahe 50 %) und die Röntgenbefundung, wo nicht-generative Detektionssoftware nur unterstützt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur die Behandlungsdokumentation (Spracheingabe/ambiente Dokumentation) sowie Berichte und Kostengutsprachen (Chat-LLM); die klinische Arbeit am Patienten nicht.",
+      "begruendung": "Rund ein Zehntel der Arbeitszeit ist exponiert, durchwegs delegierend: Die KI erstellt KG-Einträge und Briefe, die Zahnärztin prüft und verantwortet jedes Dokument. Der Kern des Berufs bleibt manuelle Behandlung und persönliches Gespräch; Berufsgeheimnis und Datenschutz (revDSG, Cloud-Restriktionen) bremsen die Einführung in den vielen kleinen Praxen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

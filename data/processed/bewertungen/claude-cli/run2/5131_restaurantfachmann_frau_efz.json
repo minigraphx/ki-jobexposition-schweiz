@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "34d3a9d22284f09791cd9af9825202aa9ca2020aa2ef88837729770cb9325dde",
+    "isco_code": "5131",
+    "beruf": "Restaurantfachmann/-frau EFZ",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:46:02+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 10235,
+      "cache_read_input_tokens": 77988,
+      "output_tokens": 8602,
+      "api_aequivalent_usd": 0.2695336
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 10235,
+        "cache_read_input_tokens": 77988,
+        "output_tokens": 8602,
+        "output_tokens_details": {
+          "thinking_tokens": 1622
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 10235,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.2695336
+      }
+    ],
+    "request_ids": [
+      "bb9d4a66-a88a-4d9a-91e9-f48a63ff7c8d"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5131",
+    "beruf": "Restaurantfachmann/-frau EFZ",
+    "taetigkeiten": [
+      {
+        "name": "Gäste empfangen, platzieren und zu Speisen, Getränken und Weinen beraten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Gästebetreuung und Beratung von Angesicht zu Angesicht; der Wert liegt in der Präsenz."
+      },
+      {
+        "name": "Bestellungen am Tisch aufnehmen und im Kassensystem bonieren",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Ob QR-/Tablet-Selbstbestellung im typischen Bedienungsrestaurant ≥ 50 % der Bestellaufnahme bei gleicher Servicequalität übernimmt, ist unklar; P0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Bestellaufnahme im Gespräch am Tisch, keine LLM-Leistung; Selbstbestellsysteme (QR-Code, Tablet, Kiosk) sind kommerziell verfügbar und im Einsatz."
+      },
+      {
+        "name": "Speisen und Getränke servieren, nachservieren und Tische abräumen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Servicearbeit mit Gästekontakt; Servierroboter übernehmen nur Transportwege, keine 50 % der Arbeit."
+      },
+      {
+        "name": "Getränke zubereiten und ausschenken (Kaffee, Bar, Wein öffnen und dekantieren)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Tätigkeit am Buffet/Bar; Kaffeevollautomaten sind bereits Standard, der verbleibende Rest (Wein, Cocktails, Ausschank) ist manuell."
+      },
+      {
+        "name": "Mise en place erstellen: Tische eindecken, Geschirr und Gläser vorbereiten, Speisesaal reinigen und kontrollieren",
+        "zeitanteil_pct": 11,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Vorbereitungs- und Reinigungsarbeit vor Ort; keine verfügbare Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Rechnungen erstellen, Zahlungen kassieren und Tagesabrechnung der Kasse machen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rechnungsstellung, Kartenzahlung und Tagesabschluss laufen über Kassensystem und Zahlterminals (klassische Software, Pay-at-Table per QR); kein LLM nötig."
+      },
+      {
+        "name": "Reklamationen am Tisch entgegennehmen und Gäste mit speziellen Bedürfnissen (Allergien, Mobilität) betreuen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Direkte zwischenmenschliche Situation, Beschwichtigen und Lösungen vor Ort; Präsenztätigkeit."
+      },
+      {
+        "name": "Offerten und Menüvorschläge für Bankette und Anlässe schriftlich ausarbeiten",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM erstellt aus Gästewunsch, Karte und Preisliste den Offert- und Menütext; die Fachperson prüft Preise, Machbarkeit mit Küche und jeden Entwurf."
+      },
+      {
+        "name": "Reservationen per Telefon und E-Mail entgegennehmen und im Reservationssystem erfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Qualität von Voicebots bei Schweizerdeutsch am Telefon und Integration in kleine Reservationssysteme wenig belegt; E0 für den Telefonteil ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Voicebot bzw. E-Mail-Assistent mit Anbindung ans Reservationssystem erfasst Standardreservationen, Spezialwünsche gehen an Personal; Online-Buchungstools (klassische Software) decken bereits viel ab."
+      },
+      {
+        "name": "Getränke- und Warenbestand kontrollieren, Inventar zählen und Nachbestellungen auslösen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zeit liegt im physischen Zählen und Einräumen im Lager; Bestellung über Lieferantenshop kurz, keine relevante LLM-Ersparnis."
+      },
+      {
+        "name": "Servicebriefing durchführen, Mitarbeitende und Lernende über Tageskarte instruieren",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Instruktion und Anleitung im Team vor Ort; Präsenz- und Führungstätigkeit."
+      },
+      {
+        "name": "Tageskarte, Menübeschriebe und Aushänge verfassen und in Fremdsprachen übersetzen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM formuliert Beschriebe und übersetzt DE/FR/IT/EN aus Stichworten; die Fachperson prüft jede Karte auf Korrektheit (Allergene, Preise)."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Restaurantfachmann/-frau EFZ im Service eines Bedienungsrestaurants bzw. Hotelrestaurants (KMU). Die ESCO-Zuordnung «Oberkellner» überzeichnet Führungs- und Managementaufgaben (Einstellen, Speisekarten planen, Ausgabenkontrolle); diese wurden nur gering gewichtet oder weggelassen. Grenzfälle sind die Selbstbestellsysteme (P) und Voicebots für Reservationen in Mundart.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur kleine Nebentätigkeiten: Offerten und Menütexte für Anlässe sowie Karten-Übersetzungen per Chat-LLM und die Entgegennahme von Reservationen per Voicebot/E-Mail-Assistent; der eigentliche Service am Gast ist nicht exponiert.",
+      "begruendung": "Nur rund ein Zehntel der Arbeitszeit ist exponiert, überwiegend delegierend (KI entwirft Texte, die Fachperson prüft jeden Entwurf), bei Reservationen auch ersetzend. Der Kern des Berufs ist physischer Service und persönliche Gästebetreuung; Schweizer Gäste erwarten am Telefon und im Restaurant oft einen persönlichen Kontakt in Mundart, was den Einsatz von Voicebots bremst.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

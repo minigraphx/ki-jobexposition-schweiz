@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "60ba5cab7a0c6c5273ec5a9455686bb205c143fbf3430e2fee1e4da39b0549e7",
+    "isco_code": "4322",
+    "beruf": "Bürokräfte in der Material- und Fertigungsplanung und verwandte Berufe",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T06:39:44+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 203,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 203
+        }
+      ],
+      "prompt_token_count": 21289,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21289
+        }
+      ],
+      "thoughts_token_count": 6759,
+      "total_token_count": 28251
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 203,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 203
+          }
+        ],
+        "prompt_token_count": 21289,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21289
+          }
+        ],
+        "thoughts_token_count": 6759,
+        "total_token_count": 28251
+      }
+    ],
+    "request_ids": [
+      "nrnOaqG5KbGcz7IPp7a2sQ4"
+    ],
+    "versuche": 1,
+    "status": "fehlgeschlagen",
+    "fehler": [
+      "Versuch 1: taetigkeiten: ['name'] is too short; taetigkeiten/0: 'name' is not of type 'object'; zusammenfassung: 'haupt_risiko' is not of type 'object'"
+    ],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "custom_id": "r1-4322_buerokraefte_in_der_material_und_fertigu",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": "validierung",
+    "probleme": [
+      "taetigkeiten: ['name'] is too short",
+      "taetigkeiten/0: 'name' is not of type 'object'",
+      "zusammenfassung: 'haupt_risiko' is not of type 'object'"
+    ],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": null,
+  "rohantwort": "{\"isco_code\":\"4322\",\"beruf\":\"Bürokräfte in der Material- und Fertigungsplanung und verwandte Berufe\",\"taetigkeiten\":[\n  \"name\"\n],\"unsicherheit\":\"mittel\",\"kommentar\":\"Angenommenes Setting: Sachbearbeiter/in AVOR, Produktionsplanung und -steuerung (PPS) bzw. Materialdisposition in einem Schweizer Industrie- oder Maschinenbau-KMU. Ein grosser Teil der Kerntätigkeiten (Terminierung, MRP-Lauf, Betriebsdatenerfassung) entfällt auf klassische regelbasierte ERP-/PPS-Software (P1) und nicht auf generative KI (E0). Grenzfälle bestehen dort, wo neue KI-Copiloten direkt in moderne ERP-Systeme integriert werden, etwa bei der Pflege von Arbeitsplänen aus technischen Unterlagen.\",\"zusammenfassung\":\n  \"haupt_risiko\"\n}"
+}

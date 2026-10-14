@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "41049df6c5e7f031888ab80bf3dda6b3ee6e25ed5223552361963ff04f454ed6",
+    "isco_code": "2522",
+    "beruf": "Systemadministrator/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:27:11+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 40882,
+      "output_tokens": 6110,
+      "api_aequivalent_usd": 0.1303844
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 40882,
+        "output_tokens": 6110,
+        "output_tokens_details": {
+          "thinking_tokens": 2635
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1303844
+      }
+    ],
+    "request_ids": [
+      "92754bfb-e469-4e39-97bb-5c0b5da8bd29"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2522",
+    "beruf": "Systemadministrator/in",
+    "taetigkeiten": [
+      {
+        "name": "Updates und Patches auf Servern und Clients einspielen und Wartungsfenster durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Patchverteilung läuft über klassische Software (Intune, WSUS, RMM-Tools) mit Regeln und Zeitplänen; generative KI spart an der Kontrolle und Fehlerbehebung keine 50 %."
+      },
+      {
+        "name": "Skripte zur Automatisierung von Routineaufgaben schreiben und anpassen (PowerShell, Bash, Ansible)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Chat-LLM schreibt das Skript nach Beschreibung; die Administratorin prüft jede Version, testet sie in der eigenen Umgebung und integriert sie. Tests auf Produktivsystemen halten die Restzeit im oberen Band."
+      },
+      {
+        "name": "Server, Virtualisierung, Verzeichnisdienste und Cloud-Dienste (z. B. M365, Active Directory) konfigurieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Konfiguration erfolgt in typischen KMU-Umgebungen grösstenteils interaktiv in Admin-Konsolen mit umgebungsspezifischem Wissen; LLM-Hilfen für Befehle sparen keine 50 % der Zeit, Computer-Use-Agenten sind dafür nicht verlässlich."
+      },
+      {
+        "name": "Firewall, VPN, Antivirus und Sicherheitsrichtlinien einrichten und pflegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sicherheitskritische Konfiguration mit hohem Prüfbedarf und Abhängigkeit von der konkreten Netzarchitektur; KI-Vorschläge für Regelwerke reduzieren den Aufwand inkl. Prüfung nicht um die Hälfte."
+      },
+      {
+        "name": "Systemleistung und Sicherheitsereignisse im Monitoring überwachen und Alarme bearbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwachung, Schwellwertalarme und automatische Standardreaktionen leisten klassische Monitoring-Tools (PRTG, Zabbix, Endpoint-Security-Konsolen); die verbleibende Alarmbeurteilung wird durch LLMs nicht halbiert."
+      },
+      {
+        "name": "Komplexe Störungen an Servern und Netzwerk anhand von Logs und Fehlermeldungen diagnostizieren und beheben",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Log-Analyse durch LLM und Agenten mit Shell-Zugriff die gesamte Fehlersuche typischerweise um 50 % verkürzt; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Administratorin führt die Fehlersuche selbst; KI-Werkzeuge mit Zugriff auf Logs/Konsole fassen Fehlermeldungen zusammen, schlagen Ursachen und Befehle vor und beschleunigen die Eingrenzung deutlich."
+      },
+      {
+        "name": "Supportanfragen von Anwender/innen im Ticketsystem beantworten und schriftliche Anleitungen geben",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktion im Ticketsystem entwirft Antworten und Anleitungen aus Ticketverlauf und Wissensdatenbank; der Admin prüft jede Antwort vor dem Versand."
+      },
+      {
+        "name": "Arbeitsplätze, Drucker und Peripherie vor Ort einrichten, Hardware beschaffen und tauschen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit vor Ort und persönliche Hilfe bei Anwender/innen; Autopilot-Provisionierung erleichtert Teile, ersetzt aber nicht den Einsatz vor Ort in relevantem Umfang."
+      },
+      {
+        "name": "Backups überwachen, Restore-Tests und Wiederherstellungen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sicherung, Erfolgskontrolle und automatisierte Restore-Verifikation übernimmt klassische Backup-Software (z. B. Veeam mit automatischen Prüfjobs); kein LLM nötig."
+      },
+      {
+        "name": "Systemdokumentation, Betriebshandbücher und Konfigurationsbeschriebe verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Konfigurationsexporte und Stichworte werden eingefügt, das LLM erstellt die Dokumentation; der Admin prüft jede auf technische Korrektheit und ergänzt Umgebungswissen."
+      },
+      {
+        "name": "Migrationen und Systemwechsel (z. B. Server, Cloud, Mailsystem) planen und durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Planung, Abstimmung mit Fachbereichen und Durchführung mit Tests und Rollback dominieren; KI hilft bei Migrationsplänen und Skripten, spart insgesamt aber keine 50 %."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Systemadministrator/in in einem KMU oder bei einem IT-Dienstleister mit Windows-/M365-Umgebung, Virtualisierung und gemischtem Betrieb vor Ort. Die ESCO-Beschreibung passt gut. Der grösste Grenzfall ist die Störungsdiagnose (E2 unterstützend oder E0). Ein grosser Teil der Routine (Patching, Monitoring, Backup) ist klassische Automatisierung und zählt nur für P.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Schreiben von Automatisierungsskripten und Dokumentation per Chat-LLM, Ticketantworten durch KI im Ticketsystem und die Log-Analyse bei Störungen durch KI-Werkzeuge; die interaktive Konfiguration, die Sicherheitsarbeit und die Arbeit vor Ort sind nicht betroffen.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert, überwiegend im Modus delegierend (Skripte, Dokumentation, Ticketantworten) und bei der Fehlersuche unterstützend. Die Verantwortung für Produktivsysteme und Sicherheit bleibt durchgehend beim Menschen. Wesentliche CH-Hemmnisse fehlen weitgehend; IT-Fachleute übernehmen solche Werkzeuge rasch, Datenschutzvorgaben gelten höchstens bei Kundendaten in Logs.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

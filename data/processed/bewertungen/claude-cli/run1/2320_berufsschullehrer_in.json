@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "61b7e6da63df6791fdadbf3565a22b75599bd76f7746b589b1b60874566d55a4",
+    "isco_code": "2320",
+    "beruf": "Berufsschullehrer/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:42:13+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3260,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4781,
+      "api_aequivalent_usd": 0.1290382
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3260,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4781,
+        "output_tokens_details": {
+          "thinking_tokens": 1514
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3260,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1290382
+      }
+    ],
+    "request_ids": [
+      "9239680c-c47b-4bfd-9f03-064695029b06"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2320",
+    "beruf": "Berufsschullehrer/in",
+    "taetigkeiten": [
+      {
+        "name": "Berufskundlichen Unterricht vor der Klasse halten (Theorie vermitteln, Diskussionen und Gruppenarbeiten leiten)",
+        "zeitanteil_pct": 40,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Beziehungstätigkeit im Klassenzimmer inklusive Klassenführung; KI ersetzt die Unterrichtsführung nicht."
+      },
+      {
+        "name": "Praktische Übungen in Werkstatt, Labor oder Übungsraum anleiten und Sicherheit überwachen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Demonstration, Korrektur der Handgriffe und Aufsicht vor Ort; keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Lektionen planen und Unterrichtsmaterialien (Arbeitsblätter, Folien, Fallbeispiele) erstellen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM entwirft aus Bildungsplan-Auszügen und Vorgaben Lektionsablauf, Arbeitsblätter und Fallbeispiele; die Lehrperson prüft jede Unterlage fachlich und passt sie an Klasse und Berufsfeld an."
+      },
+      {
+        "name": "Prüfungen, Tests und Bewertungsraster erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM generiert Aufgaben, Varianten, Musterlösungen und Raster aus dem Stoff; die Lehrperson prüft Korrektheit, Niveau und Passung zu den Leistungszielen jeder Prüfung."
+      },
+      {
+        "name": "Prüfungen, schriftliche Arbeiten und Projektarbeiten korrigieren und benoten",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Anteil handschriftlicher vs. digitaler Arbeiten und Zeitgewinn bei offenen Aufgaben unsicher; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Lernplattform bzw. Handschrifterkennung mit LLM schlägt Punkte und Feedback vor und markiert Fehler; die Lehrperson liest und bewertet jede Arbeit selbst. Notengebung und Schülerdaten berühren Datenschutz und Rekursmöglichkeiten."
+      },
+      {
+        "name": "Lernende individuell begleiten und Feedback- bzw. Standortgespräche führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Gespräche und Förderung im direkten Kontakt; Wert liegt in der Beziehung."
+      },
+      {
+        "name": "Noten und Absenzen in der Schulverwaltungssoftware erfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Reine Dateneingabe in klassischer Schulverwaltungssoftware mit wenig Zeitaufwand; generative KI spart nichts Relevantes, die Eingabe selbst bleibt bei der Lehrperson."
+      },
+      {
+        "name": "Gespräche mit Lehrbetrieben, Berufsbildnern und Eltern zu Lernenden mit Schwierigkeiten führen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche oder telefonische Abstimmung im dualen System mit Ermessen und Beziehungsarbeit."
+      },
+      {
+        "name": "E-Mails, Mitteilungen und kurze Berichte an Lehrbetriebe, Schulleitung und Lernende verfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM formuliert Mitteilungen und Berichte aus Stichworten; die Lehrperson prüft jeden Text, da er Aussagen über einzelne Lernende enthält."
+      },
+      {
+        "name": "An Fachschafts- und Konventssitzungen, Schulentwicklung und Qualifikationsverfahren (Expertentätigkeit) mitwirken",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung im Kollegium und Prüfungsexpertise bei mündlichen/praktischen QV-Teilen erfordern Präsenz und Urteil."
+      },
+      {
+        "name": "Fachliche Entwicklungen im Berufsfeld verfolgen und sich weiterbilden",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Eigenes Lernen, Kurse und Betriebsbesuche; KI-Zusammenfassungen helfen, sparen aber keine 50 % der Zeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Lehrperson für berufskundlichen Unterricht an einer kantonalen Berufsfachschule (duale Grundbildung EFZ/EBA), Vollpensum. Die ESCO-Optionalkompetenzen sind stark heterogen (Fahr-, Flug-, Pflegeunterricht) und wurden nur als Hinweis auf praktische Anteile genutzt. Grösste Unsicherheit: die Korrektur von Prüfungen (handschriftlich vs. digital) sowie der tatsächliche Zeitgewinn bei der Unterrichtsvorbereitung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Unterrichtsvorbereitung, die Erstellung von Prüfungen und Korrespondenz (Chat-LLM) sowie in geringerem Mass die Korrektur von Arbeiten (KI-Funktionen in Lernplattformen, Handschrifterkennung); der Unterricht selbst ist nicht betroffen.",
+      "begruendung": "Knapp ein Drittel der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI entwirft Materialien, Prüfungen und Mitteilungen, die die Lehrperson fachlich prüft und an Klasse und Bildungsplan anpasst; bei der Korrektur bleibt sie unterstützend, weil die Lehrperson jede Arbeit selbst bewertet. Bremsend wirken in der Schweiz vor allem kantonale Datenschutzvorgaben für Schülerdaten und die Rekursfähigkeit von Noten.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

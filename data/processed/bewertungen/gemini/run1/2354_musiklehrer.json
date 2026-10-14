@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "6e042fa09e2db288d2b136a979fd00045e092063c965bb19a714bdeaae102ca2",
+    "isco_code": "2354",
+    "beruf": "Musiklehrer",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T06:39:44+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 396,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 396
+        }
+      ],
+      "prompt_token_count": 22531,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22531
+        }
+      ],
+      "thoughts_token_count": 7268,
+      "total_token_count": 30195
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 396,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 396
+          }
+        ],
+        "prompt_token_count": 22531,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22531
+          }
+        ],
+        "thoughts_token_count": 7268,
+        "total_token_count": 30195
+      }
+    ],
+    "request_ids": [
+      "nrnOav2DLd6p_PUP0tSn0AU"
+    ],
+    "versuche": 1,
+    "status": "fehlgeschlagen",
+    "fehler": [
+      "Versuch 1: taetigkeiten/0: 'Einzel- und Kleingruppenunterricht am Instrument oder im Gesang erteilen' is not of type 'object'; taetigkeiten/1: 'Ensembles, Schülerbands oder Chöre proben und leiten' is not of type 'object'; taetigkeiten/2: 'Eigenes Instrumental- oder Vokalspiel üben und Unterrichtsliteratur einstudieren' is not of type 'object'; taetigkeiten/3: 'Musikstücke für den Unterricht arrangieren, transponieren und Noten oder Play-Alongs aufbereiten' is not of type 'object'; taetigkeiten/4: 'Arbeitsblätter zu Musiktheorie und Musikgeschichte sowie Übungspläne erstellen' is not of type 'object'; taetigkeiten/5: 'Schülerkonzerte und Vorspielabende vor Ort einrichten, technisch betreuen und leiten' is not of type 'object'; taetigkeiten/6: 'Vorspiele und Stufentests abnehmen sowie persönliche Elterngespräche führen' is not of type 'object'; taetigkeiten/7: 'Schriftliche Lernberichte, Elternkorrespondenz und Programmhefte verfassen' is not of type 'object'; taetigkeiten/8: 'Semesterstundenpläne koordinieren sowie Absenzen und Schülerdaten verwalten' is not of type 'object'; taetigkeiten/9: 'Musikinstrumente und Audiotechnik stimmen, warten und bereitstellen' is not of type 'object'"
+    ],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "custom_id": "r1-2354_musiklehrer",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": "validierung",
+    "probleme": [
+      "taetigkeiten/0: 'Einzel- und Kleingruppenunterricht am Instrument oder im Gesang erteilen' is not of type 'object'",
+      "taetigkeiten/1: 'Ensembles, Schülerbands oder Chöre proben und leiten' is not of type 'object'",
+      "taetigkeiten/2: 'Eigenes Instrumental- oder Vokalspiel üben und Unterrichtsliteratur einstudieren' is not of type 'object'",
+      "taetigkeiten/3: 'Musikstücke für den Unterricht arrangieren, transponieren und Noten oder Play-Alongs aufbereiten' is not of type 'object'",
+      "taetigkeiten/4: 'Arbeitsblätter zu Musiktheorie und Musikgeschichte sowie Übungspläne erstellen' is not of type 'object'",
+      "taetigkeiten/5: 'Schülerkonzerte und Vorspielabende vor Ort einrichten, technisch betreuen und leiten' is not of type 'object'",
+      "taetigkeiten/6: 'Vorspiele und Stufentests abnehmen sowie persönliche Elterngespräche führen' is not of type 'object'",
+      "taetigkeiten/7: 'Schriftliche Lernberichte, Elternkorrespondenz und Programmhefte verfassen' is not of type 'object'",
+      "taetigkeiten/8: 'Semesterstundenpläne koordinieren sowie Absenzen und Schülerdaten verwalten' is not of type 'object'",
+      "taetigkeiten/9: 'Musikinstrumente und Audiotechnik stimmen, warten und bereitstellen' is not of type 'object'",
+      "zusammenfassung: 'Betroffen sind das Erstellen von Arbeitsblättern zur Musiktheorie und von Übungsplänen sowie das Verfassen von schriftlichen Lernberichten, Elternbriefen und Programmheften mittels Chat-LLM.' is not of type 'object'"
+    ],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": null,
+  "rohantwort": "{\"isco_code\":\"2354\",\"beruf\":\"Musiklehrer\",\"taetigkeiten\":[\n  \"Einzel- und Kleingruppenunterricht am Instrument oder im Gesang erteilen\",\n  \"Ensembles, Schülerbands oder Chöre proben und leiten\",\n  \"Eigenes Instrumental- oder Vokalspiel üben und Unterrichtsliteratur einstudieren\",\n  \"Musikstücke für den Unterricht arrangieren, transponieren und Noten oder Play-Alongs aufbereiten\",\n  \"Arbeitsblätter zu Musiktheorie und Musikgeschichte sowie Übungspläne erstellen\",\n  \"Schülerkonzerte und Vorspielabende vor Ort einrichten, technisch betreuen und leiten\",\n  \"Vorspiele und Stufentests abnehmen sowie persönliche Elterngespräche führen\",\n  \"Schriftliche Lernberichte, Elternkorrespondenz und Programmhefte verfassen\",\n  \"Semesterstundenpläne koordinieren sowie Absenzen und Schülerdaten verwalten\",\n  \"Musikinstrumente und Audiotechnik stimmen, warten und bereitstellen\"\n],\"unsicherheit\":\"niedrig\",\"kommentar\":\"Angenommenes Setting ist eine ausgebildete Instrumental- oder Vokallehrperson (Master in Music Pedagogy FH) an einer kommunalen oder regionalen Musikschule in der Schweiz mit Einzel-, Gruppen- und Ensembleunterricht. Die ESCO-Beschreibung deckt das Berufsbild gut ab; der Arbeitsalltag wird klar durch den physischen Präsenzunterricht am Instrument dominiert.\",\"zusammenfassung\":\n  \"Betroffen sind das Erstellen von Arbeitsblättern zur Musiktheorie und von Übungsplänen sowie das Verfassen von schriftlichen Lernberichten, Elternbriefen und Programmheften mittels Chat-LLM.\"\n}"
+}

@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "8a08f2260a5eff5006b6d95e460e01ef9424921632346e6c61e4b6dc5dea56ab",
+    "isco_code": "9112",
+    "beruf": "Reinigungskraft / Hauswart",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T06:39:44+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 419,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 419
+        }
+      ],
+      "prompt_token_count": 21002,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21002
+        }
+      ],
+      "thoughts_token_count": 6501,
+      "total_token_count": 27922
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 419,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 419
+          }
+        ],
+        "prompt_token_count": 21002,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21002
+          }
+        ],
+        "thoughts_token_count": 6501,
+        "total_token_count": 27922
+      }
+    ],
+    "request_ids": [
+      "nrnOavfRLO6jqtsP2tjVmA4"
+    ],
+    "versuche": 1,
+    "status": "fehlgeschlagen",
+    "fehler": [
+      "Versuch 1: (root): Additional properties are not allowed ('begruendung', 'zeitrahmen' were unexpected); taetigkeiten/0: 'name' is not of type 'object'; taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'; taetigkeiten/2: 'stufe' is not of type 'object'; taetigkeiten/3: 'modus' is not of type 'object'; taetigkeiten/4: 'restzeit_mensch' is not of type 'object'; taetigkeiten/5: 'physisch_automatisierbar' is not of type 'object'; taetigkeiten/6: 'p_art' is not of type 'object'; taetigkeiten/7: 'sicherheit' is not of type 'object'; taetigkeiten/8: 'sicherheit_begruendung' is not of type 'object'"
+    ],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "custom_id": "r1-9112_reinigungskraft_hauswart",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": "validierung",
+    "probleme": [
+      "(root): Additional properties are not allowed ('begruendung', 'zeitrahmen' were unexpected)",
+      "taetigkeiten/0: 'name' is not of type 'object'",
+      "taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'",
+      "taetigkeiten/2: 'stufe' is not of type 'object'",
+      "taetigkeiten/3: 'modus' is not of type 'object'",
+      "taetigkeiten/4: 'restzeit_mensch' is not of type 'object'",
+      "taetigkeiten/5: 'physisch_automatisierbar' is not of type 'object'",
+      "taetigkeiten/6: 'p_art' is not of type 'object'",
+      "taetigkeiten/7: 'sicherheit' is not of type 'object'",
+      "taetigkeiten/8: 'sicherheit_begruendung' is not of type 'object'",
+      "taetigkeiten/9: 'ch_hemmnis' is not of type 'object'",
+      "taetigkeiten/10: 'begruendung' is not of type 'object'",
+      "zusammenfassung: 'haupt_risiko' is not of type 'object'"
+    ],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": null,
+  "rohantwort": "{\"isco_code\":\"9112\",\"beruf\":\"Reinigungskraft / Hauswart\",\"taetigkeiten\":[\n    \"name\",\n    \"zeitanteil_pct\",\n    \"stufe\",\n    \"modus\",\n    \"restzeit_mensch\",\n    \"physisch_automatisierbar\",\n    \"p_art\",\n    \"sicherheit\",\n    \"sicherheit_begruendung\",\n    \"ch_hemmnis\",\n    \"begruendung\"\n  ],\"unsicherheit\":\"niedrig\",\"kommentar\":\"Angenommenes Setting ist die Unterhaltsreinigung und einfache Hauswartung in Büro-, Geschäfts-, Schul- oder Hotelgebäuden (ISCO 9112, ohne formale Berufsausbildung). Während der Schweizer Berufstitel auch den Begriff Hauswart einschliesst, beziehen sich der ISCO-Code 9112 und das ESCO-Profil primär auf Raumpflege- und Reinigungskräfte mit einfachen Betreuungs- und Kontrollaufgaben. Die Bodenreinigung wurde nach Flächentyp aufgeteilt, da autonome Reinigungsroboter nur auf grossen freien Flächen relevant einsetzbar sind.\",\"zusammenfassung\":\n    \"haupt_risiko\",\n    \"begruendung\"\n  :\"Rund 3 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI im delegierenden Modus aus Sprach- und Bildeingaben kurze Meldungen erstellt, die vom Personal geprüft werden. Die übrigen 97 % der Arbeit bestehen aus physischen Reinigungs-, Pflege- und Präsenzaufgaben vor Ort, bei denen höchstens auf grossen freien Bodenflächen nicht-generative Reinigungsroboter zum Einsatz kommen. Nennenswerte regulatorische Hemmnisse bestehen für den winzigen administrativen Anteil nicht, doch einfache Abhak-Checklisten reichen im Alltag oft aus.\",\"zeitrahmen\":\">10 Jahre\"}"
+}

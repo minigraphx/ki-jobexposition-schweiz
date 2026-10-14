@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "9b2737bf94a8add71c8832b834eec679d9004abc78e3b8e3e9fe062c5aa875e9",
+    "isco_code": "2511",
+    "beruf": "IT-Projektleiter/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T22:58:22+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 9881,
+      "cache_read_input_tokens": 77146,
+      "output_tokens": 9389,
+      "api_aequivalent_usd": 0.2822732
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 9881,
+        "cache_read_input_tokens": 77146,
+        "output_tokens": 9389,
+        "output_tokens_details": {
+          "thinking_tokens": 1875
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 9881,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.2822732
+      }
+    ],
+    "request_ids": [
+      "c651f2c2-1730-494f-a06e-800b1908f250"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2511",
+    "beruf": "IT-Projektleiter/in",
+    "taetigkeiten": [
+      {
+        "name": "Projektsitzungen, Workshops und Steering-Committee-Meetings leiten (vor Ort oder per Video)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Moderation, Entscheidungsfindung und Abstimmung in Echtzeit mit Personen; der Wert liegt in der Präsenz und Führung der Sitzung."
+      },
+      {
+        "name": "Projektteam führen, Aufgaben zuteilen, Mitarbeitende coachen und Konflikte lösen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führungs- und Beziehungstätigkeit (inkl. Rekrutierungsgespräche und Einarbeitung), die persönliche Interaktion erfordert."
+      },
+      {
+        "name": "Mit Auftraggebern, Fachbereichen und Lieferanten verhandeln und Erwartungen abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Stakeholder-Management und Verhandlung im direkten Gespräch; Vertrauen und Ermessen dominieren."
+      },
+      {
+        "name": "Projektplan, Meilensteine, Aufwandschätzungen und Ressourcenplanung im PM-Tool erstellen und nachführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "KI-Funktionen in Jira/MS Project können Strukturpläne und Zeitpläne entwerfen, doch die Zeit liegt v. a. im Einholen von Schätzungen und Klären von Ressourcen; E2 delegierend 30-50 ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "LLM kann einen Grob-Strukturplan entwerfen, aber Schätzungen, Abhängigkeiten und Ressourcenverfügbarkeit müssen mit Team und Linie geklärt werden; die Ersparnis bleibt unter 50 %. Klassische PM-Software rechnet Termine, übernimmt aber nicht die Planung."
+      },
+      {
+        "name": "Statusberichte, Management-Reportings und Projektabschlussberichte verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Projektdaten aus Jira/Excel exportieren und Stichworte geben; das LLM erstellt den Bericht, die Projektleiterin prüft Aussagen, Ampelstatus und Formulierungen jedes Berichts."
+      },
+      {
+        "name": "Projektaufträge, Business Cases, Anforderungsspezifikationen und Konzepte ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Workshop-Notizen und Vorgaben erstellt das LLM strukturierte Entwürfe nach HERMES- oder Firmenvorlage; der Mensch ergänzt Inhalte, prüft fachlich und stimmt ab."
+      },
+      {
+        "name": "Projektbudget überwachen, Kostenprognosen und Kosten-Nutzen-Analysen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Datenanalyse-Werkzeug mit Code-Ausführung wertet exportierte Kosten- und Stundendaten aus und erstellt Prognosen und Analysevorlagen; die Projektleiterin prüft Annahmen und Zahlen jeder Analyse."
+      },
+      {
+        "name": "Risikoanalysen durchführen und Risiko- sowie Qualitätsregister führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM leitet aus Projektbeschrieb typische Risiken, Bewertungen und Massnahmen ab und formuliert Registereinträge; Projektleiterin prüft und passt Bewertung an den Projektkontext an."
+      },
+      {
+        "name": "Änderungsanträge (Change Requests) bewerten und dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Auswirkungsanalyse hängt stark von Rückfragen beim Team ab; ob 50 % gespart werden, ist unklar, E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Projektleiterin beurteilt Auswirkungen auf Termine, Kosten und Scope selbst; LLM strukturiert den Antrag, formuliert die Dokumentation und schlägt Auswirkungsfragen vor."
+      },
+      {
+        "name": "Sitzungsprotokolle, Pendenzenlisten und Projektablage führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Meeting-Assistenten (z. B. in Teams) transkribieren und erstellen Protokoll und Pendenzen; die Projektleiterin liest kurz gegen und gibt frei. Schweizerdeutsche Mehrpersonengespräche erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Beschaffungen vorbereiten: Ausschreibungsunterlagen erstellen, Offerten einholen und vergleichen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Pflichtenheft- und Kriterienkataloge und erstellt Offertvergleiche aus eingefügten Offerttexten; die Projektleiterin prüft jede Bewertung und verantwortet den Vergabevorschlag."
+      },
+      {
+        "name": "Projektkorrespondenz per E-Mail und Chat beantworten und Informationen weiterleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktion im Mailprogramm fasst Threads zusammen und entwirft Antworten mit Bezug auf Projektdokumente; die Projektleiterin prüft und passt jede Nachricht an."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: IT-Projektleiter/in in einer internen Informatikabteilung bzw. bei einem IT-Dienstleister in der Deutschschweiz, klassisch oder hybrid nach HERMES/PMI geführte Projekte. Das ESCO-Profil passt nur teilweise (Blockchain-Kompetenzen = Rauschen, wurden nicht übernommen); die Zeitanteile sind geschätzt. Grenzfälle sind Projektplanung (E0 vs. E2) und die Bewertung von Change Requests.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Dokumentationsarbeiten: Statusberichte, Konzepte, Risikoregister, Protokolle, Offertvergleiche und Korrespondenz. Diese übernehmen Chat-LLMs, Meeting-Assistenten und KI-Funktionen in Office- und PM-Tools.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI entwirft Berichte, Konzepte und Analysen, die Projektleiterin prüft jedes Ergebnis fachlich; nur Protokolle laufen weitgehend ersetzend. Den Kern des Berufs bilden weiterhin Führung, Moderation und Stakeholder-Verhandlungen, die nicht exponiert sind. Bremsend wirken in der Schweiz vor allem Datenschutz- und Cloud-Vorgaben bei Bank-, Versicherungs- und Verwaltungsprojekten sowie Schweizerdeutsch in Sitzungen.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

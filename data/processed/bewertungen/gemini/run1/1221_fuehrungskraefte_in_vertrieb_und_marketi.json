@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "41ae19ed03dfb92cd7fce48d91a51df1578cf09e7c8000b0c2521b03a64acf09",
+    "isco_code": "1221",
+    "beruf": "Führungskräfte in Vertrieb und Marketing",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T06:39:44+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 47,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 47
+        }
+      ],
+      "prompt_token_count": 23716,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 23716
+        }
+      ],
+      "thoughts_token_count": 6278,
+      "total_token_count": 30041
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 47,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 47
+          }
+        ],
+        "prompt_token_count": 23716,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 23716
+          }
+        ],
+        "thoughts_token_count": 6278,
+        "total_token_count": 30041
+      }
+    ],
+    "request_ids": [
+      "nrnOao2BLbzi_uMP6aHG6Ag"
+    ],
+    "versuche": 1,
+    "status": "fehlgeschlagen",
+    "fehler": [
+      "Versuch 1: (root): Additional properties are not allowed ('taetigkeitenMaz' was unexpected); (root): 'taetigkeiten' is a required property; (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property"
+    ],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "custom_id": "r1-1221_fuehrungskraefte_in_vertrieb_und_marketi",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": "validierung",
+    "probleme": [
+      "(root): Additional properties are not allowed ('taetigkeitenMaz' was unexpected)",
+      "(root): 'taetigkeiten' is a required property",
+      "(root): 'unsicherheit' is a required property",
+      "(root): 'kommentar' is a required property",
+      "(root): 'zusammenfassung' is a required property"
+    ],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": null,
+  "rohantwort": "{\"isco_code\":\"1221\",\"beruf\":\"Führungskräfte in Vertrieb und Marketing\",\"taetigkeitenMaz\":null}"
+}

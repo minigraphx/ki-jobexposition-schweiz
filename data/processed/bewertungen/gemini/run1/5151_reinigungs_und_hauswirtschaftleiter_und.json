@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "45f18eab8e4280884989d449546fb197ff4a853933a51ab9ac231fddba33a691",
+    "isco_code": "5151",
+    "beruf": "Reinigungs- und Hauswirtschaftleiter und -kräfte in Büros, Hotels und anderen Einrichtungen",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T06:39:44+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 547,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 547
+        }
+      ],
+      "prompt_token_count": 22011,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22011
+        }
+      ],
+      "thoughts_token_count": 7018,
+      "total_token_count": 29576
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 547,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 547
+          }
+        ],
+        "prompt_token_count": 22011,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22011
+          }
+        ],
+        "thoughts_token_count": 7018,
+        "total_token_count": 29576
+      }
+    ],
+    "request_ids": [
+      "nrnOatn1Lbzi_uMP6aHG6Ag"
+    ],
+    "versuche": 1,
+    "status": "fehlgeschlagen",
+    "fehler": [
+      "Versuch 1: (root): Additional properties are not allowed ('begruendung', 'zeitrahmen' were unexpected); taetigkeiten/0: 'name' is not of type 'object'; taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'; taetigkeiten/2: 'stufe' is not of type 'object'; taetigkeiten/3: 'modus' is not of type 'object'; taetigkeiten/4: 'restzeit_mensch' is not of type 'object'; taetigkeiten/5: 'physisch_automatisierbar' is not of type 'object'; taetigkeiten/6: 'p_art' is not of type 'object'; taetigkeiten/7: 'sicherheit' is not of type 'object'; taetigkeiten/8: 'sicherheit_begruendung' is not of type 'object'"
+    ],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "custom_id": "r1-5151_reinigungs_und_hauswirtschaftleiter_und",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": "validierung",
+    "probleme": [
+      "(root): Additional properties are not allowed ('begruendung', 'zeitrahmen' were unexpected)",
+      "taetigkeiten/0: 'name' is not of type 'object'",
+      "taetigkeiten/1: 'zeitanteil_pct' is not of type 'object'",
+      "taetigkeiten/2: 'stufe' is not of type 'object'",
+      "taetigkeiten/3: 'modus' is not of type 'object'",
+      "taetigkeiten/4: 'restzeit_mensch' is not of type 'object'",
+      "taetigkeiten/5: 'physisch_automatisierbar' is not of type 'object'",
+      "taetigkeiten/6: 'p_art' is not of type 'object'",
+      "taetigkeiten/7: 'sicherheit' is not of type 'object'",
+      "taetigkeiten/8: 'sicherheit_begruendung' is not of type 'object'",
+      "taetigkeiten/9: 'ch_hemmnis' is not of type 'object'",
+      "taetigkeiten/10: 'begruendung' is not of type 'object'",
+      "zusammenfassung: 'haupt_risiko' is not of type 'object'"
+    ],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": null,
+  "rohantwort": "{\"isco_code\":\"5151\",\"beruf\":\"Reinigungs- und Hauswirtschaftleiter und -kräfte in Büros, Hotels und anderen Einrichtungen\",\"taetigkeiten\":[\n    \"name\",\n  \"zeitanteil_pct\",\n  \"stufe\",\n  \"modus\",\n  \"restzeit_mensch\",\n  \"physisch_automatisierbar\",\n  \"p_art\",\n  \"sicherheit\",\n  \"sicherheit_begruendung\",\n  \"ch_hemmnis\",\n  \"begruendung\"\n],\"unsicherheit\":\"mittel\",\"kommentar\":\"Angenommenes Setting: Bereichsleitung Hauswirtschaft / Gouvernante bzw. erfahrene Fachfrau/Fachmann Hauswirtschaft EFZ oder Hotelfachfrau/-mann EFZ mit Koordinationsaufgaben in einem Schweizer Hotel, Heim oder Dienstleistungsbetrieb. Da der CH-ISCO-Code 5151 sowohl leitende Hauswirtschaftskräfte (ESCO-Fokus) als auch ausgebildete Hauswirtschafts- und Hotelfachkräfte auf Sekundärstufe II umfasst, wurde neben den Führungs-, Kontroll- und Planungsaufgaben auch ein substanzieller Anteil an praktischer Reinigungs- und Hauswirtschaftsarbeit berücksichtigt. Die Unsicherheit der Gesamtbewertung ist dennoch moderat, da sowohl die ausführenden als auch die beaufsichtigenden Tätigkeiten vor Ort stattfinden und gegenüber generativer KI nicht exponiert sind.\",\"zusammenfassung\":\n  \"haupt_risiko\",\n  \"begruendung\"\n  : \"Exponiert sind lediglich das Verfassen von Reinigungsplänen, Checklisten, Arbeitsanweisungen und Korrespondenz sowie das Erstellen von Abteilungsberichten und Budgetübersichten mittels Chat-LLM, während die Reinigungs-, Kontroll- und Führungsarbeit vor Ort nicht betroffen ist.\",\"begruendung\":\"Nur rund 10 % der Arbeitszeit entfallen auf schriftliche Planungs-, Dokumentations- und Berichtstätigkeiten, bei denen ein Sprachmodell im delegierenden Modus Entwürfe liefert, die von der Hauswirtschaftsleitung fachlich geprüft werden. Der überwiegende Teil des Berufs besteht aus physischer Hauswirtschaftsarbeit, Vor-Ort-Kontrollen der Räumlichkeiten sowie der direkten Anleitung von Mitarbeitenden und Betreuung von Gästen. In den oft klein- und mittelständisch geprägten Schweizer Hotels, Heimen und Facility-Betrieben bleibt der Arbeitsalltag daher stark präsenzgebunden.\",\"zeitrahmen\":\"5-10 Jahre\"}"
+}

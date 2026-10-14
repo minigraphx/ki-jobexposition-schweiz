@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "3bd50f52c2def1a68341c680b4907efbee745f2fa41b05705318e4390175b51d",
+    "isco_code": "9111",
+    "beruf": "Reinigungspersonal und Hilfskräfte in Privathaushalten",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:43:09+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3148,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 3783,
+      "api_aequivalent_usd": 0.10818219999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3148,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3783,
+        "output_tokens_details": {
+          "thinking_tokens": 954
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3148,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.10818219999999999
+      }
+    ],
+    "request_ids": [
+      "d6d71c4a-5ba4-4a8f-b715-cae82dba7f7b"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "9111",
+    "beruf": "Reinigungspersonal und Hilfskräfte in Privathaushalten",
+    "taetigkeiten": [
+      {
+        "name": "Böden in Wohnräumen staubsaugen und feucht wischen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Saug-/Wischroboter in möblierten Wohnungen mit Teppichen, Treppen und Ecken wirklich ≥ 50 % der Bodenzeit bei gleicher Qualität übernehmen; P0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Tätigkeit vor Ort, keine LLM-Exposition. Saug- und Wischroboter mit Absaugstation sind in Schweizer Haushalten kommerziell verbreitet und können einen grossen Teil der Bodenpflege übernehmen."
+      },
+      {
+        "name": "Bad, WC und Küche reinigen, schrubben und desinfizieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handarbeit an Sanitäranlagen, Armaturen und Küchengeräten; keine Robotik in relevantem Umfang verfügbar."
+      },
+      {
+        "name": "Staub wischen sowie Möbel und Oberflächen reinigen und polieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit an vielfältigen Gegenständen und Oberflächen; keine verfügbare Robotik."
+      },
+      {
+        "name": "Fenster, Spiegel und Glasflächen reinigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit; Fensterputzroboter existieren, übernehmen aber wegen Aufsetzen, Rahmen, Simsen und kleinen Scheiben keine 50 % der Zeit."
+      },
+      {
+        "name": "Wäsche sortieren, waschen, aufhängen, zusammenlegen und versorgen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Waschen und Trocknen erledigen Maschinen bereits; die verbleibende Handarbeit (Sortieren, Falten, Versorgen) ist physisch, Faltmaschinen sind nicht im regulären Einsatz."
+      },
+      {
+        "name": "Kleider und Haushaltstextilien bügeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handarbeit; Bügelautomaten für Privathaushalte übernehmen keinen relevanten Anteil."
+      },
+      {
+        "name": "Geschirr spülen, Geschirrspüler ein- und ausräumen, Küche aufräumen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spülen übernimmt bereits der Geschirrspüler; das verbleibende Ein-/Ausräumen und Handspülen ist physisch."
+      },
+      {
+        "name": "Betten machen, Bettwäsche wechseln und Räume aufräumen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit; keine verfügbare Haushaltsrobotik dafür."
+      },
+      {
+        "name": "Reinigungsmittel und Haushaltsvorräte kontrollieren, auffüllen und Absprachen mit dem Haushalt treffen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend Nachschauen und Auffüllen vor Ort sowie kurze persönliche Absprachen; der kleine Schreibanteil (Einkaufsnotiz) ist so gering, dass KI keine relevante Zeit spart."
+      },
+      {
+        "name": "Reinigungsgeräte pflegen sowie Abfall trennen und entsorgen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit (Geräte reinigen, Filter wechseln, Säcke zur Sammelstelle bringen); keine Automatisierung in relevantem Umfang."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Reinigungskraft, die stundenweise in mehreren Schweizer Privathaushalten arbeitet (oft direkt angestellt oder über eine Vermittlungsplattform). Der ESCO-Input passt gut, und die Tätigkeiten sind durchwegs physisch. Der wichtigste Grenzfall ist die Bodenreinigung: Es ist offen, ob Saug- und Wischroboter in möblierten Wohnungen tatsächlich die Hälfte der Zeit übernehmen (P).",
+    "zusammenfassung": {
+      "haupt_risiko": "Generative KI betrifft keine wesentliche Tätigkeit, weil die Arbeit fast ausschliesslich aus physischer Reinigung, Wäsche und Aufräumen vor Ort besteht; einzig die Bodenpflege kann teilweise von Saug- und Wischrobotern (nicht-generative Technik) übernommen werden.",
+      "begruendung": "Praktisch keine Arbeitszeit ist gegenüber generativer KI exponiert, weshalb kein Modus (ersetzend, delegierend oder unterstützend) zum Tragen kommt. Die Schreib- und Organisationsanteile in Schweizer Privathaushalten sind minimal und beschränken sich auf kurze persönliche Absprachen. Veränderungen kommen eher durch Haushaltsrobotik für Böden als durch Sprachmodelle.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "fe23b78a0b4a7387af3fc0c9bf0a2d5ac55d215276a2f8e8b348c62ee1747292",
+    "isco_code": "5321",
+    "beruf": "Pflegeassistent/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-14T00:03:35+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4500,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 3538,
+      "api_aequivalent_usd": 0.11409819999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4500,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3538,
+        "output_tokens_details": {
+          "thinking_tokens": 870
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4500,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11409819999999998
+      }
+    ],
+    "request_ids": [
+      "72d8c17d-ac3f-412e-843a-1d9fbf01bf19"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5321",
+    "beruf": "Pflegeassistent/in",
+    "taetigkeiten": [
+      {
+        "name": "Bewohnende bei Körperpflege, An- und Auskleiden und Ausscheidung unterstützen",
+        "zeitanteil_pct": 35,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körpernahe Arbeit mit den Händen direkt am Menschen; es gibt keine Pflegerobotik, die einen relevanten Teil davon übernimmt."
+      },
+      {
+        "name": "Bewohnende mobilisieren, lagern und beim Transfer (Bett–Rollstuhl) begleiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit; Hilfsmittel wie Lifter unterstützen nur, die Person führt den Transfer weiterhin selbst aus."
+      },
+      {
+        "name": "Mahlzeiten verteilen, beim Essen und Trinken unterstützen und Einnahme beobachten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Unterstützung direkt am Bewohner; Essensausgabe und Hilfe beim Essen sind nicht automatisiert."
+      },
+      {
+        "name": "Vitalzeichen, Gewicht und Blutzucker messen, Zustand beobachten und Veränderungen der Pflegefachperson melden",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Messungen und Beobachtung finden direkt am Bewohner statt. Messgeräte sind Hilfsmittel, eine kontinuierliche automatische Überwachung ist im Heim nicht üblich."
+      },
+      {
+        "name": "Bewohnende im Alltag begleiten, Gespräche führen, Angehörige über Routinethemen informieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Wert dieser Beziehungsarbeit liegt in der persönlichen Anwesenheit."
+      },
+      {
+        "name": "Durchgeführte Pflegeleistungen und Beobachtungen in der Pflegedokumentation erfassen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Per Spracheingabe (auch Schweizerdeutsch als Einzeldiktat) erstellt die KI-Funktion der Pflegesoftware Verlaufseintrag und Leistungserfassung; die Pflegeassistentin prüft und korrigiert jeden Eintrag. Weil die Einträge kurz sind und Dialekt Korrekturen nötig macht, bleibt viel Restzeit; Hemmnis sind Datenschutz und Berufsgeheimnis."
+      },
+      {
+        "name": "Zimmer und Betten herrichten, Wäsche versorgen, Material auffüllen und Hilfsmittel reinigen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit in verwinkelten Zimmern; Reinigungsroboter übernehmen davon keine 50 %."
+      },
+      {
+        "name": "Bei der Medikamentenabgabe nach Verordnung assistieren und einfache pflegerische Verrichtungen ausführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Abgabe und Kontrolle der Einnahme direkt beim Bewohner ist physisch. Externe Blistersysteme verändern das Richten der Medikamente, nicht die Abgabe."
+      },
+      {
+        "name": "An Übergaberapporten teilnehmen und Arbeit mit dem Pflegeteam absprechen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Abstimmung im Team in Präsenz."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Pflegeassistent/in (Pflegehelfer/in SRK bzw. Assistent/in Gesundheit und Soziales EBA) in einem Alters- und Pflegeheim, Arbeit unter Aufsicht von Pflegefachpersonen. Der ESCO-Input passt gut, enthält aber viele überfachliche Kompetenzen, die keine Tätigkeiten sind (z. B. Information politischer Entscheidungsträger), und diese wurden nicht übernommen. Der einzige Grenzfall ist die Dokumentation: Die Einträge sind kurz und werden teils auf Schweizerdeutsch diktiert.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen ist nur die Pflegedokumentation, die per Spracheingabe mit KI-Funktionen der Pflegesoftware erstellt werden kann; die körpernahe Pflege und Betreuung ist nicht exponiert.",
+      "begruendung": "Nur knapp ein Zehntel der Arbeitszeit ist exponiert, und zwar im delegierenden Modus: Die KI formuliert den Verlaufseintrag, die Pflegeassistentin prüft und verantwortet jeden Eintrag. In Schweizer Heimen bremsen Datenschutz und Berufsgeheimnis, Schweizerdeutsch beim Diktieren und die begrenzten IT-Budgets kleiner Heime die Einführung.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

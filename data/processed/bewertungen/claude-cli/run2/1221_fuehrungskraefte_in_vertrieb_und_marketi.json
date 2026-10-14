@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "41ae19ed03dfb92cd7fce48d91a51df1578cf09e7c8000b0c2521b03a64acf09",
+    "isco_code": "1221",
+    "beruf": "Führungskräfte in Vertrieb und Marketing",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:44:55+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5288,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5451,
+      "api_aequivalent_usd": 0.1586622
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 5288,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5451,
+        "output_tokens_details": {
+          "thinking_tokens": 1929
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5288,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1586622
+      }
+    ],
+    "request_ids": [
+      "7f3bca38-9eda-4ba8-ad27-916ac5661ed5"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1221",
+    "beruf": "Führungskräfte in Vertrieb und Marketing",
+    "taetigkeiten": [
+      {
+        "name": "Verkaufs- und Marketingteam führen: Mitarbeitergespräche, Coaching, Motivation, Rekrutierung",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung von Mitarbeitenden ist eine Präsenz- und Beziehungstätigkeit; KI spart hier keine 50 %."
+      },
+      {
+        "name": "Schlüsselkunden und wichtige Leads persönlich betreuen und Abschlüsse verhandeln",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandeln und Beziehungspflege von Angesicht zu Angesicht oder am Telefon; der Wert liegt in der persönlichen Präsenz."
+      },
+      {
+        "name": "Marketing- und Vertriebsmassnahmen mit Agenturen, Produktmanagement und Geschäftsleitung in Sitzungen koordinieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung in Sitzungen und Absprachen mit Beteiligten; Protokoll-KI spart nur einen kleinen Teil der Zeit."
+      },
+      {
+        "name": "Strategische Entscheide treffen: Verkaufsziele, Marktprioritäten und Ressourcenzuteilung festlegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ermessensentscheid mit Verantwortung; die Vorbereitung ist separat erfasst, der Entscheid selbst spart kaum Zeit."
+      },
+      {
+        "name": "Professionelles Netzwerk pflegen, Messen und Branchenanlässe besuchen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Präsenz und Beziehungspflege."
+      },
+      {
+        "name": "Sales-Pipeline im CRM überwachen, Leads priorisieren und Umsatzprognosen aktualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Lead-Scoring, Pipeline-Ansichten und Forecasts liefert die klassische CRM-Software (regelbasiert/prädiktiv, ohne LLM); die übrige Zeit ist Beurteilung im Pipeline-Review mit dem Team."
+      },
+      {
+        "name": "Markt-, Wettbewerbs- und Trendanalysen recherchieren und als Entscheidungsgrundlage aufbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent mit Websuche erstellt Markt- und Wettbewerbsübersichten samt Quellen; die Führungskraft gibt Fragestellung vor und prüft Fakten und Schlussfolgerungen jeder Analyse."
+      },
+      {
+        "name": "Verkaufszahlen und KPIs auswerten und Management-Reports mit Kommentar und Grafiken erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Datenanalyse-Agent bzw. KI im BI/Office erstellt Auswertung, Grafiken und Berichtskommentar aus CRM-/ERP-Exporten; die Führungskraft prüft Zahlen und Interpretation jedes Reports. Zahlenaufbereitung und Dashboards übernimmt auch klassische BI-Software (P1)."
+      },
+      {
+        "name": "Marketingplan, Kampagnenkonzepte und Vertriebsstrategie als Dokument ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten, Zielen und eingefügten Unterlagen entwirft das LLM Plan bzw. Konzept; die Führungskraft steuert, überarbeitet und verantwortet jeden Entwurf inhaltlich."
+      },
+      {
+        "name": "Jährliches Marketingbudget erstellen und Rentabilität der Massnahmen überwachen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Budgetierung beruht auf Ermessen und Abstimmung mit der Geschäftsleitung in Excel/ERP; ein LLM spart kaum 50 %, Kostenrechnung ist klassische Software."
+      },
+      {
+        "name": "Marketinginhalte und Kampagnenmaterial prüfen und freigeben",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Vorprüfung auf Botschaft, Tonalität und Konsistenz die Freigabezeit wirklich halbiert; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Die Führungskraft beurteilt Inhalte selbst; das LLM prüft Texte gegen Briefing, Tonalität und Sprachfassungen und markiert Abweichungen."
+      },
+      {
+        "name": "Präsentationen, Verkaufsargumentarien und Kundenofferten-Vorlagen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in Office-Suiten erzeugen Foliensätze und Argumentarien aus Unterlagen; die Führungskraft passt sie an Kunde und CI an und prüft jede Fassung."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Als Setting nehme ich eine Leiterin bzw. einen Leiter Verkauf und Marketing in einem Schweizer KMU oder mittelgrossen Unternehmen mit eigenem Team an. Die ESCO-Beschreibung passt gut. Der Branchenhinweis «Verwaltung» wirkt unspezifisch. Grenzfälle sind die Freigabe von Inhalten und die Budgetierung, beide nahe der 50-%-Schwelle; die Zeitanteile zwischen Führung, Kundenkontakt und Analysearbeit sind grob geschätzt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Markt- und Wettbewerbsanalysen, KPI-Reports, Strategie- und Planungsdokumente, Präsentationen sowie die Vorprüfung von Marketinginhalten. Die Technik dafür sind Recherche- und Datenanalyse-Agenten, Chat-LLMs und KI-Funktionen in Office-Suiten.",
+      "begruendung": "Etwa ein Drittel der Arbeitszeit ist exponiert. Dort arbeitet die KI überwiegend delegierend: Sie entwirft Analysen, Reports und Konzepte, die Führungskraft steuert und prüft jedes Ergebnis. Den Kern des Berufs bilden Teamführung, persönliche Kundenbeziehungen und strategische Entscheide; diese bleiben beim Menschen. Mehrsprachige Inhalte für die Landesteile erschweren die Freigabe.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

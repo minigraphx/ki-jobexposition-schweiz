@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "9c1c0c02f98932578282f5f4c513183f187f89319e138e11d3878dd08d1f0a15",
+    "isco_code": "5222",
+    "beruf": "Verkaufsaufsichtskräfte in Handelsgeschäften",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:05:14+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 39120,
+      "output_tokens": 4467,
+      "api_aequivalent_usd": 0.09717199999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 39120,
+        "output_tokens": 4467,
+        "output_tokens_details": {
+          "thinking_tokens": 1301
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.09717199999999998
+      }
+    ],
+    "request_ids": [
+      "65936306-f08c-4046-bcc7-ccca65ae3b96"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5222",
+    "beruf": "Verkaufsaufsichtskräfte in Handelsgeschäften",
+    "taetigkeiten": [
+      {
+        "name": "Verkaufsfläche überwachen sowie Verkaufsmitarbeitende vor Ort einteilen, anleiten und unterstützen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung und Aufsicht in physischer Präsenz auf der Verkaufsfläche; keine Technik übernimmt das in relevantem Umfang."
+      },
+      {
+        "name": "Selbst im Verkauf mitarbeiten: Kundschaft beraten, Kasse bedienen, Reklamationen vor Ort lösen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Kundenberatung und Konfliktlösung von Angesicht zu Angesicht; Selbstbedienungskassen betreffen nur einen kleinen Teil dieser gemischten Tätigkeit."
+      },
+      {
+        "name": "Warenpräsentation, Produkthandhabung, Frische und Hygiene im Laden kontrollieren und korrigieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kontrollgänge und Korrekturen an Regalen und Frischeabteilungen sind physisch vor Ort."
+      },
+      {
+        "name": "Personaleinsatzpläne erstellen und bei Ausfällen anpassen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Schichtplanung mit Bedarfsprognose und Regeln (Arbeitsgesetz, GAV) leistet klassische Workforce-Management-Software; ein LLM spart darüber hinaus keine 50 %."
+      },
+      {
+        "name": "Bestand prüfen, Bestellungen auslösen und Inventuren durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Automatische Disposition im Warenwirtschaftssystem (klassische Software) übernimmt den Grossteil der Bestellungen; Zählen bei der Inventur ist physisch."
+      },
+      {
+        "name": "Kassenabrechnungen und Tagesabschlüsse kontrollieren, Ausgaben und Budget überwachen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kassensystem, Geldzählautomaten und Budgetreports im ERP erledigen Abgleich und Berechnung regelbasiert; kein LLM nötig."
+      },
+      {
+        "name": "Aktionspreise und Preisauszeichnung bei Werbeverkäufen kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kontrolle am Regal ist physisch; elektronische Regaletiketten mit zentraler Preissteuerung übernehmen in vielen CH-Filialen den Grossteil."
+      },
+      {
+        "name": "Mitarbeitende und Lernende schulen, einarbeiten sowie Bewerbungs- und Mitarbeitergespräche führen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Beziehungstätigkeit (Instruktion am Arbeitsplatz, Gespräche)."
+      },
+      {
+        "name": "Stelleninserate verfassen und eingegangene Bewerbungen vorsichten",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Inserat und fasst eingefügte Bewerbungstexte gegen das Anforderungsprofil zusammen; die Aufsichtskraft prüft jedes Ergebnis und entscheidet selbst."
+      },
+      {
+        "name": "Interne Berichte, E-Mails, Checklisten und Mitteilungen an Team und Zentrale verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM formuliert Texte aus Stichworten; die Person gibt Inhalte vor und liest jeden Text gegen, da er filialspezifische Fakten enthält."
+      },
+      {
+        "name": "Verkaufszahlen und Kennzahlen der Filiale auswerten und Massnahmen ableiten",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Viele Kennzahlen liefern bereits klassische Dashboards, und die Ableitung von Massnahmen ist Ermessen; E0 ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Datenanalyse-Agent erstellt aus exportierten Verkaufsdaten Auswertungen und Kommentare; die Person prüft jede Auswertung und entscheidet über Massnahmen."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: stellvertretende Filialleitung bzw. Rayon-/Teamleitung in einer Detailhandelsfiliale (Grossverteiler oder Fachhandel) mit hohem Anteil an Präsenz und eigener Mitarbeit im Verkauf. ESCO passt gut, Zeitanteile sind aber grob geschätzt und hängen stark von der Filialgrösse ab. Grenzfälle sind Kennzahlenauswertung und Einsatzplanung, wo eher klassische Software als LLMs greift.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur kleine Büroanteile: Inserate, interne Berichte und E-Mails (Chat-LLM) sowie Kennzahlenauswertungen (Datenanalyse-Agent); Führung auf der Fläche, Verkauf und Warenkontrolle bleiben unberührt.",
+      "begruendung": "Nur rund ein Achtel der Arbeitszeit ist exponiert, durchwegs delegierend: Die KI erstellt Texte und Auswertungen, die Aufsichtskraft prüft jedes Ergebnis. Der Grossteil der Arbeit ist Präsenz, Führung und physische Kontrolle im Laden; Disposition, Einsatzplanung und Kassenabschluss laufen über klassische Software. Wesentliche CH-Hemmnisse bestehen kaum, die Adoption hängt eher an zentralen IT-Vorgaben der Detailhandelsketten.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

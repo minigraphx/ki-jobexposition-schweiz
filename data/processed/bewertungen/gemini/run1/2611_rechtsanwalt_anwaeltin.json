@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "2b87c7ea05a84c87661ad9194c23ad07076c44df28b423c19235db5b5333f6fa",
+    "isco_code": "2611",
+    "beruf": "Rechtsanwalt/-anwältin",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T06:39:44+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 253,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 253
+        }
+      ],
+      "prompt_token_count": 21674,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21674
+        }
+      ],
+      "thoughts_token_count": 6926,
+      "total_token_count": 28853
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 253,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 253
+          }
+        ],
+        "prompt_token_count": 21674,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21674
+          }
+        ],
+        "thoughts_token_count": 6926,
+        "total_token_count": 28853
+      }
+    ],
+    "request_ids": [
+      "nrnOarKBJ8brz7IPq46CuAM"
+    ],
+    "versuche": 1,
+    "status": "fehlgeschlagen",
+    "fehler": [
+      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten/0: 'Mandantengespräche führen, Sachverhalt erheben und mündlich beraten' is not of type 'object'; taetigkeiten/1: 'Rechtsrecherche in Gesetzgebung, Rechtsprechung und Fachliteratur durchführen' is not of type 'object'; taetigkeiten/2: 'Verfahrensakten, Urkunden und Beweismittel sichten und analysieren' is not of type 'object'; taetigkeiten/3: 'Prozessschriften und rechtliche Eingaben an Gerichte und Behörden verfassen' is not of type 'object'; taetigkeiten/4: 'Verträge, Vereinbarungen und rechtliche Gutachten entwerfen und prüfen' is not of type 'object'; taetigkeiten/5: 'Prozessstrategie festlegen und komplexe rechtliche Risikoabwägungen treffen' is not of type 'object'; taetigkeiten/6: 'Mandatskorrespondenz, Stellungnahmen auf Anfragen und Aktennotizen verfassen' is not of type 'object'"
+    ],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "custom_id": "r1-2611_rechtsanwalt_anwaeltin",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": "validierung",
+    "probleme": [
+      "(root): 'unsicherheit' is a required property",
+      "(root): 'kommentar' is a required property",
+      "(root): 'zusammenfassung' is a required property",
+      "taetigkeiten/0: 'Mandantengespräche führen, Sachverhalt erheben und mündlich beraten' is not of type 'object'",
+      "taetigkeiten/1: 'Rechtsrecherche in Gesetzgebung, Rechtsprechung und Fachliteratur durchführen' is not of type 'object'",
+      "taetigkeiten/2: 'Verfahrensakten, Urkunden und Beweismittel sichten und analysieren' is not of type 'object'",
+      "taetigkeiten/3: 'Prozessschriften und rechtliche Eingaben an Gerichte und Behörden verfassen' is not of type 'object'",
+      "taetigkeiten/4: 'Verträge, Vereinbarungen und rechtliche Gutachten entwerfen und prüfen' is not of type 'object'",
+      "taetigkeiten/5: 'Prozessstrategie festlegen und komplexe rechtliche Risikoabwägungen treffen' is not of type 'object'",
+      "taetigkeiten/6: 'Mandatskorrespondenz, Stellungnahmen auf Anfragen und Aktennotizen verfassen' is not of type 'object'",
+      "taetigkeiten/7: 'Mandantschaft vor Gerichten, Schlichtungsbehörden und Amtsstellen vertreten' is not of type 'object'",
+      "taetigkeiten/8: 'Vergleichs- und Vertragsverhandlungen mit Gegenparteien führen' is not of type 'object'",
+      "taetigkeiten/9: 'Leistungserfassung, Honorarabrechnung und Fristenkontrolle in der Kanzleisoftware erledigen' is not of type 'object'"
+    ],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": null,
+  "rohantwort": "{\"isco_code\":\"2611\",\"beruf\":\"Rechtsanwalt/-anwältin\",\"taetigkeiten\":[\n  \"Mandantengespräche führen, Sachverhalt erheben und mündlich beraten\",\n  \"Rechtsrecherche in Gesetzgebung, Rechtsprechung und Fachliteratur durchführen\",\n  \"Verfahrensakten, Urkunden und Beweismittel sichten und analysieren\",\n  \"Prozessschriften und rechtliche Eingaben an Gerichte und Behörden verfassen\",\n  \"Verträge, Vereinbarungen und rechtliche Gutachten entwerfen und prüfen\",\n  \"Prozessstrategie festlegen und komplexe rechtliche Risikoabwägungen treffen\",\n  \"Mandatskorrespondenz, Stellungnahmen auf Anfragen und Aktennotizen verfassen\",\n  \"Mandantschaft vor Gerichten, Schlichtungsbehörden und Amtsstellen vertreten\",\n  \"Vergleichs- und Vertragsverhandlungen mit Gegenparteien führen\",\n  \"Leistungserfassung, Honorarabrechnung und Fristenkontrolle in der Kanzleisoftware erledigen\"\n]\n}"
+}

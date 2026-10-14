@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "2bd51b60406e9b2cdc57b1605b8470079d602c23516270670b8fc89e69b7aad4",
+    "isco_code": "1120",
+    "beruf": "Geschäftsführer/in (KMU)",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:01:22+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4536,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4450,
+      "api_aequivalent_usd": 0.13262619999999997
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4536,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4450,
+        "output_tokens_details": {
+          "thinking_tokens": 1190
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4536,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.13262619999999997
+      }
+    ],
+    "request_ids": [
+      "d1d1f9a3-c27e-4a5d-a158-5f3bd30ebac4"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1120",
+    "beruf": "Geschäftsführer/in (KMU)",
+    "taetigkeiten": [
+      {
+        "name": "Kader und Mitarbeitende führen: Führungssitzungen leiten, Mitarbeitenden- und Konfliktgespräche führen, Personal rekrutieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Wert dieser Führungsarbeit liegt in der persönlichen Präsenz und Beziehung. Generative KI spart hier keine 50 % der Zeit."
+      },
+      {
+        "name": "Schlüsselkunden, Partner, Lieferanten und Banken persönlich betreuen und Konditionen verhandeln",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlung von Angesicht zu Angesicht und persönlicher Vertrauensaufbau (Präsenz). Keine Technik übernimmt das."
+      },
+      {
+        "name": "Strategie und Jahresziele mit dem Kader erarbeiten und strategische Geschäftsentscheide fällen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bei Workshops, Abwägung und Entscheid in eigener Verantwortung zählt das Ermessen. Die Ausarbeitung der Dokumente ist als eigene Tätigkeit erfasst."
+      },
+      {
+        "name": "Strategiepapiere, Businesspläne, Budgets und Massnahmenpläne schriftlich ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten, Zahlen und Workshop-Ergebnissen erstellt das LLM Gliederung, Text und Budgetstruktur. Die Geschäftsführerin gibt Eckwerte vor und prüft und korrigiert jedes Dokument fachlich."
+      },
+      {
+        "name": "Finanz- und Ertragslage, Jahresabschluss und KPI-Reporting analysieren und interpretieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Werkzeug mit Code-Ausführung wertet Exporte aus Buchhaltung und ERP aus, markiert Abweichungen und entwirft Kommentare. Die Geschäftsführerin interpretiert die Zahlen weiterhin selbst. Klassische BI-Dashboards liefern nur die Zahlen und übernehmen die Interpretation nicht."
+      },
+      {
+        "name": "Berichte, Anträge und Präsentationen für Verwaltungsrat und Generalversammlung verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft aus eingefügten Zahlen und Stichworten den VR-Bericht und die Anträge. Die Geschäftsführerin prüft jeden Inhalt und verantwortet ihn gegenüber dem VR."
+      },
+      {
+        "name": "An Verwaltungsratssitzungen und Generalversammlung teilnehmen, präsentieren und Rechenschaft ablegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Präsenz, Diskussion und Rechenschaft gegenüber dem Gremium."
+      },
+      {
+        "name": "Verträge (Kunden-, Lieferanten-, Miet-, Arbeitsverträge) prüfen, anpassen und abschliessen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die LLM-Vorprüfung bei individuell verhandelten Verträgen inklusive Prüfung wirklich 50 % spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM fasst den eingefügten Vertragstext zusammen, markiert heikle Klauseln und schlägt Formulierungen vor. Die Geschäftsführerin prüft und entscheidet jeden Vertrag selbst, bei Bedarf mit Anwalt oder Treuhänder."
+      },
+      {
+        "name": "Geschäftliche E-Mails, Korrespondenz und interne Mitteilungen an die Belegschaft verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft Antworten und Mitteilungen aus Stichworten und eingefügten Mails, bei Bedarf auch in Französisch oder Italienisch. Weil die Texte oft heikle Inhalte haben, liest die Geschäftsführerin jeden Text, bevor sie ihn versendet."
+      },
+      {
+        "name": "Operativen Tagesbetrieb überwachen, Betriebsrundgänge machen und Ad-hoc-Probleme lösen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Betriebsalltag verlangt Präsenz vor Ort, spontane Abstimmung mit Mitarbeitenden und Ermessensentscheide."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Geschäftsführer/in einer Schweizer AG/GmbH mit rund 20–100 Mitarbeitenden, die einem Verwaltungsrat rapportiert und viel Kunden- und Personalkontakt hat. Der ESCO-Input passt gut; die optionalen Flughafen-Kompetenzen sind Rauschen und wurden ignoriert. Grösste Unsicherheiten sind die Zeitanteile (je nach Betrieb sehr unterschiedlich) sowie die Schwelle bei Vertragsprüfung und Finanzanalyse.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Schreibarbeiten (Strategiepapiere, Budgets, VR-Berichte, Korrespondenz) sowie die Vorarbeit bei Finanzanalyse und Vertragsprüfung, die Chat-LLMs und Datenanalyse-Werkzeuge übernehmen oder beschleunigen.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind exponiert, meist delegierend: Die KI entwirft Dokumente und Texte, die Geschäftsführerin prüft und verantwortet jedes Ergebnis. Bei Finanzanalyse und Vertragsprüfung bleibt die KI unterstützend. Der Kern der Funktion (Führung, Verhandlung, Entscheide, Präsenz gegenüber VR und Kundschaft) ist nicht exponiert; in Schweizer KMU bremsen vor allem Zeitmangel und Vertraulichkeit der Geschäftsdaten die Nutzung, kaum Regulierung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

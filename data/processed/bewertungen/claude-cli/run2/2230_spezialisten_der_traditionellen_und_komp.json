@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "eaf948cf8364ea74a9ff1987337b3220a475953d7c073044fd017675fc329f87",
+    "isco_code": "2230",
+    "beruf": "Spezialisten der traditionellen und komplementären Medizin",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:50:17+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2475,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4611,
+      "api_aequivalent_usd": 0.11935819999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2475,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4611,
+        "output_tokens_details": {
+          "thinking_tokens": 1203
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2475,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11935819999999998
+      }
+    ],
+    "request_ids": [
+      "f9675af5-0123-474c-b99d-0ebb3019b298"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2230",
+    "beruf": "Spezialisten der traditionellen und komplementären Medizin",
+    "taetigkeiten": [
+      {
+        "name": "Anamnesegespräch führen und Befund erheben (Puls-/Zungendiagnose, Palpation, Meridianbefund)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Gespräch und körperliche Untersuchung am Patienten; der Wert liegt in der Präsenz und im Tastbefund."
+      },
+      {
+        "name": "Akupunktur, Schröpfen und Moxibustion am Patienten durchführen",
+        "zeitanteil_pct": 28,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Behandlung am Körper; keine Robotik in relevantem Umfang verfügbar."
+      },
+      {
+        "name": "Manuelle Verfahren (Tuina, Shiatsu, Massage, Aromatherapie-Anwendungen) ausführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Behandlung mit den Händen; Massagegeräte ersetzen keine 50 % dieser therapeutischen Arbeit."
+      },
+      {
+        "name": "Therapieplan festlegen und Arzneimittel-/Kräuterrezeptur für den Einzelfall auswählen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ermessensentscheid auf Basis des eigenen Befunds; ein LLM kann Rezepturvorschläge liefern, spart aber inkl. Prüfung auf Wechselwirkungen kaum 50 % der Zeit."
+      },
+      {
+        "name": "Kräutermischungen, Öle und Präparate zubereiten und abgeben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Abwägen und Mischen in der Praxis; Dispensierautomaten sind in typischen Kleinpraxen nicht verbreitet bzw. wird an Apotheken ausgelagert."
+      },
+      {
+        "name": "Patientinnen zu Ernährung, Lebensstil und Prävention im Gespräch beraten und Verlauf besprechen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung und therapeutische Beziehung von Angesicht zu Angesicht."
+      },
+      {
+        "name": "Behandlungsdokumentation und Verlaufseinträge in der Praxissoftware erstellen",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Diktat (auch Schweizerdeutsch, Einzelperson) oder Stichworte → KI erstellt den Eintrag; Therapeutin prüft jeden Eintrag fachlich. Hemmnis: Berufsgeheimnis/Gesundheitsdaten (revDSG)."
+      },
+      {
+        "name": "Berichte an Ärzte und Zusatzversicherer, Kostengutsprachen sowie Patienten-Merkblätter verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Chat-LLM entwirft Bericht oder Merkblatt aus Stichworten und Falldaten; Therapeutin prüft und unterschreibt jeden Text."
+      },
+      {
+        "name": "Termine verwalten und Leistungen nach Tarif 590 mit Krankenkassen-Zusatzversicherungen abrechnen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Online-Terminbuchung und Tarifabrechnung der Praxissoftware sind klassische Software; kein LLM nötig."
+      },
+      {
+        "name": "Schriftliche Patientenanfragen beantworten und Nachkontrollen per E-Mail organisieren",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "LLM entwirft Antworten auf Standardanfragen (Ablauf, Kosten, Nachsorgehinweise); Therapeutin prüft jede Antwort wegen gesundheitlicher Inhalte. Patienten erwarten persönlichen Kontakt."
+      },
+      {
+        "name": "Texte für Praxis-Website, Flyer und Social Media erstellen",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Text wäre E1, mit Bilderzeugung für Posts/Flyer E2; KI erstellt Entwürfe, Therapeutin prüft jeden Inhalt auf Heilversprechen und Stimmigkeit."
+      },
+      {
+        "name": "Behandlungsraum vorbereiten, Hygiene sicherstellen, Nadeln und Material entsorgen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit in der Praxis; keine Robotik für diese kleinteiligen Arbeiten."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Als Setting angenommen: Naturheilpraktiker/in oder Komplementärtherapeut/in (Schwerpunkt TCM/Akupunktur) mit eidg. Diplom in eigener Kleinpraxis, Abrechnung über Zusatzversicherungen (EMR/ASCA). Weil die ESCO-Kompetenzen sehr allgemein sind, habe ich die Tätigkeiten vor allem aus den optionalen Kompetenzen und aus Berufswissen abgeleitet; die Zeitanteile sind grob geschätzt. Der Beruf ist heterogen (Homöopathie mit höherem Gesprächsanteil gegenüber stark manuellen Methoden). Grenzfall ist die Rezepturauswahl, die ich als E0 bewerte.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur Schreibarbeiten: Behandlungsdokumentation per Diktat oder KI in der Praxissoftware, Berichte an Ärzte und Versicherer, Patientenanfragen sowie Marketingtexte per Chat-LLM. Die Behandlung selbst ist nicht betroffen.",
+      "begruendung": "Rund ein Viertel der Arbeitszeit ist exponiert, durchwegs delegierend: Die KI entwirft Einträge und Texte, die Therapeutin prüft jeden fachlich und verantwortet ihn. Der Kern des Berufs sind Befund, Akupunktur und manuelle Behandlung in persönlicher Präsenz. Das Berufsgeheimnis und der Datenschutz bei Gesundheitsdaten sowie die Erwartung persönlichen Kontakts bremsen die Nutzung in den vielen Einzelpraxen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

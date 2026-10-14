@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "868ecf0f41d974a8940e7e83271bc15770317ca263764d48f40c78f744288ac3",
+    "isco_code": "2161",
+    "beruf": "Architekt/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:09:53+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5972,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5492,
+      "api_aequivalent_usd": 0.1649542
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 5972,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5492,
+        "output_tokens_details": {
+          "thinking_tokens": 2030
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5972,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1649542
+      }
+    ],
+    "request_ids": [
+      "0394ce64-0006-4399-af82-be53b60205ec"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2161",
+    "beruf": "Architekt/in",
+    "taetigkeiten": [
+      {
+        "name": "Bedürfnisse der Bauherrschaft in Gesprächen klären und Raumprogramm festlegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung und Abstimmung mit der Bauherrschaft von Angesicht zu Angesicht; der Wert liegt in Präsenz und Vertrauen."
+      },
+      {
+        "name": "Entwurfskonzept entwickeln: Ideen, Varianten und Handskizzen für Gebäude und Aussenräume erarbeiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Konzeptfindung unter Einbezug von Ort, Baurecht, Statik und Ästhetik dominiert; Bildgeneratoren liefern Inspiration, sparen aber keine 50 % der Entwurfsarbeit."
+      },
+      {
+        "name": "Projekt-, Bewilligungs- und Ausführungspläne inkl. Details im CAD/BIM ausarbeiten",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative KI-Funktionen in CAD/BIM (Archicad, Revit, Vectorworks) erzeugen heute keine normgerechten, koordinierten Pläne mit ≥ 50 % Zeitersparnis; parametrische BIM-Automatisierung ist bereits Teil der heutigen Arbeit und übernimmt nicht die Hälfte."
+      },
+      {
+        "name": "Visualisierungen, Renderings und Präsentationsunterlagen für Bauherrschaft und Wettbewerbe erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Renderer (Bild-zu-Bild aus Modell-Screenshots/Skizzen) erzeugen Stimmungsbilder und Varianten in einem Bruchteil der Zeit; Architektin steuert und prüft jedes Bild auf Projekttreue."
+      },
+      {
+        "name": "Baurechtliche Rahmenbedingungen abklären: Zonenordnung, Baureglement, SIA-Normen, Brandschutz- und Hindernisfreiheitsvorgaben prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Eingefügte Reglemente und Projektdaten lassen sich vom LLM auswerten (Ausnützung, Abstände, relevante Artikel); die Architektin beurteilt die Einhaltung selbst und verifiziert jede Aussage an der Quelle."
+      },
+      {
+        "name": "Baugesuchsunterlagen, Baubeschrieb und Begleittexte für die Bewilligung verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Baubeschrieb und Begleittexte aus Projektangaben; die Architektin prüft jeden Text fachlich und ergänzt Formulare und Nachweise (Energienachweis mit klassischer Software)."
+      },
+      {
+        "name": "Kosten schätzen, Kostenvoranschlag und Leistungsverzeichnisse nach NPK erstellen, Kosten kontrollieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Arbeit erfolgt in klassischer AVA-/Kostensoftware (NPK, eBKP) mit Mengen und Erfahrungswerten; generative KI spart hier keine 50 %, und die Software übernimmt die fachliche Auswahl nicht zur Hälfte."
+      },
+      {
+        "name": "Projektberichte, Wettbewerbstexte, Kosten-Nutzen-Berichte und Korrespondenz verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM erstellt Texte aus Stichworten und Projektdaten; die Architektin prüft jeden Text inhaltlich und gibt ihn frei."
+      },
+      {
+        "name": "Fachplaner, Behörden und Unternehmer koordinieren, Planungssitzungen leiten und verhandeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung, Verhandlung und Führung in Sitzungen und Gesprächen; Präsenz- und Ermessenstätigkeit."
+      },
+      {
+        "name": "Sitzungs- und Baustellenprotokolle erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Transkription von Schweizerdeutsch in Sitzungen mehrerer Personen mit Fachjargon ist fehleranfällig; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Aufnahme mit Transkription und Zusammenfassung erstellt das Protokoll mit Pendenzenliste; die Architektin korrigiert und prüft jedes Protokoll, Dialektfehler erhöhen die Restzeit."
+      },
+      {
+        "name": "Bestand vor Ort aufnehmen, Baustelle begehen, Ausführungsqualität kontrollieren und Abnahmen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz vor Ort; Laserscanner erleichtern das Aufmass, ersetzen aber nicht die Begehung und Beurteilung."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Architekt/in (Projektleitung/Entwurf) in einem Schweizer Architekturbüro (KMU) entlang der SIA-Phasen, Bauleitung grösstenteils separat. ESCO passt gut; Zeitanteile grob geschätzt. Grösste Unsicherheiten: Fähigkeit generativer KI in CAD/BIM (Planbearbeitung derzeit E0 eingeschätzt), Protokollerstellung bei Schweizerdeutsch und Nutzen bei baurechtlichen Abklärungen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Textarbeiten (Projektberichte, Baubeschriebe, Korrespondenz), baurechtliche Abklärungen, Visualisierungen und Protokolle, die von Chat-LLM, KI-Renderern und Transkriptionssoftware übernommen bzw. unterstützt werden, während Entwurf, Planbearbeitung und Koordination kaum exponiert sind.",
+      "begruendung": "Rund ein Viertel der Arbeitszeit ist exponiert, überwiegend im delegierenden Modus: Die KI erstellt Texte, Renderings und Protokolle, die Architektin prüft jedes Ergebnis; bei baurechtlichen Abklärungen bleibt sie selbst die Ausführende. Der Kern des Berufs – Entwurf, CAD/BIM-Planung, Kostenplanung und Koordination – bleibt menschlich; Dialekt in Sitzungen und die Haftung für baurechtliche Aussagen bremsen die Nutzung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

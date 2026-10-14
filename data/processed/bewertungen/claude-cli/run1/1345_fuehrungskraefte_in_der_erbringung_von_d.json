@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "a2d1904fbb6017161d97fee75a85b9741c44266d7bdb2d95d6c45e25b6a914a1",
+    "isco_code": "1345",
+    "beruf": "Führungskräfte in der Erbringung von Dienstleistungen des Bildungswesens",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:08:24+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3938,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5897,
+      "api_aequivalent_usd": 0.1567822
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3938,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5897,
+        "output_tokens_details": {
+          "thinking_tokens": 2149
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3938,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1567822
+      }
+    ],
+    "request_ids": [
+      "b91c4976-03fa-45a6-9208-896dcf76ca42"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1345",
+    "beruf": "Führungskräfte in der Erbringung von Dienstleistungen des Bildungswesens",
+    "taetigkeiten": [
+      {
+        "name": "Lehrpersonen führen: Mitarbeitendengespräche, Unterrichtsbesuche, Beurteilungen und Bewerbungsgespräche durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Personenführung, Beobachtung im Unterricht und persönliche Gespräche sind Präsenz- und Beziehungstätigkeiten; keine Automatisierungstechnik."
+      },
+      {
+        "name": "Gespräche mit Eltern, Schülerinnen und Schülern führen, Konflikte und Krisensituationen bearbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare zwischenmenschliche Präsenz, Vermittlung und Krisenintervention; Wert liegt in der persönlichen Anwesenheit."
+      },
+      {
+        "name": "Konferenzen, Schulleitungssitzungen und Sitzungen mit Schulbehörde/Schulkommission und Partnern leiten bzw. vertreten",
+        "zeitanteil_pct": 11,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Moderation, Verhandlung und Abstimmung von Angesicht zu Angesicht mit Team, Behörden und Gemeinde."
+      },
+      {
+        "name": "Stellen ausschreiben und Bewerbungsdossiers sichten und vorselektionieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Zusammenfassung der PDF-Dossiers bei kleinen Bewerberzahlen wirklich 50 % spart; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI entwirft Ausschreibungstexte und fasst Dossiers (PDF) gegen das Anforderungsprofil zusammen; die Schulleitung liest und beurteilt jedes Dossier selbst. Hemmnis: Personaldatenschutz in der öffentlichen Verwaltung."
+      },
+      {
+        "name": "Pensen planen, Klassen bilden, Stundenplan und Stellvertretungen organisieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kern ist Abwägen von Wünschen, Qualifikationen und kantonalen Vorgaben sowie Aushandeln mit Lehrpersonen; Stundenplansoftware (klassisch) wird bereits genutzt und übernimmt die verbleibende Arbeit nicht zu 50 %."
+      },
+      {
+        "name": "Schulbudget erarbeiten, Ausgaben überwachen und Rechnungen visieren",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Budgetierung beruht auf Pensen- und Schülerzahlen sowie Prioritätenentscheiden und Abstimmung mit Gemeinde/Kanton; Buchhaltung und Kontrolle laufen über klassische Finanzsoftware der Verwaltung, KI spart hier keine 50 %."
+      },
+      {
+        "name": "Berichte, Konzepte, Reglemente und Anträge an Schulbehörde bzw. Kanton verfassen (z. B. Jahresbericht, Qualitätsbericht)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM erstellt aus Stichworten, Vorlagen und eingefügten Vorgaben den Entwurf; die Schulleitung prüft jeden Text inhaltlich und passt ihn an die lokale Situation an."
+      },
+      {
+        "name": "Elternbriefe, Informationen an Lehrpersonen und E-Mail-Korrespondenz verfassen",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Briefe und Mitteilungen aus Stichworten, inkl. Übersetzungen für fremdsprachige Eltern; die Schulleitung liest jeden Text vor dem Versand, da er die Schule nach aussen vertritt."
+      },
+      {
+        "name": "Schulentwicklungsprojekte, Leitbild und Qualitätsentwicklung mit dem Kollegium planen und umsetzen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend partizipative Prozesse im Team (Workshops, Absprachen, Change-Begleitung); KI liefert allenfalls Ideen, spart aber keine 50 % der Zeit."
+      },
+      {
+        "name": "Gesuche (Dispensationen, Übertritte, Zuweisungen, Disziplinarmassnahmen) prüfen und Entscheide bzw. Verfügungen verfassen",
+        "zeitanteil_pct": 6,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI entwirft Entscheid und Begründung aus Falldaten und eingefügtem Reglement; menschlicher Einzelfallentscheid mit rechtlichem Gehör vorgeschrieben → höchstens delegierend, jede Verfügung wird geprüft."
+      },
+      {
+        "name": "Mitarbeitendengespräche, Unterrichtsbesuche und Vorfälle schriftlich dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM formuliert aus Stichwortnotizen Gesprächsprotokolle und Beurteilungsberichte; die Schulleitung prüft jede Einschätzung, da sie personalrechtlich relevant ist. Hemmnis: Personaldaten/Datenschutz."
+      },
+      {
+        "name": "Eigenen Unterricht erteilen und Klassen stellvertretend übernehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unterrichten vor der Klasse ist Präsenz- und Beziehungstätigkeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Schulleitung einer öffentlichen Volksschule bzw. Schule der Sekundarstufe II (Kantonsschule/Berufsfachschule) in der Deutschschweiz, mit kleinem Unterrichtspensum; Hochschulleitungen sind seltener und stärker strategisch ausgerichtet. ESCO passt gut, die Finanzkompetenzen sind für CH-Schulleitungen aber übergewichtet, da Buchhaltung meist bei der Gemeinde- bzw. Kantonsverwaltung liegt. Grenzfälle sind die Dossiersichtung (E2/E0) und die Budgetarbeit (E0/E1).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Schreiben von Berichten, Konzepten, Elternbriefen, Verfügungen und Gesprächsdokumentationen per Chat-LLM sowie die KI-gestützte Sichtung von Bewerbungsdossiers.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert, fast durchwegs delegierend: Die KI entwirft Texte und Entscheide, die Schulleitung prüft jede Ausgabe und verantwortet sie. Der Kern des Berufs (Führung, Elternarbeit, Sitzungen, Schulentwicklung) bleibt Präsenzarbeit. Bremsend wirken Datenschutzvorgaben für Personal- und Schülerdaten in der öffentlichen Verwaltung sowie kantonal unterschiedliche Freigaben für KI-Werkzeuge.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

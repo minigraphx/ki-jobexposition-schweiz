@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "b56b85771ad3734c27ed75b1ee15a983d48f691707a08bba8d0833733965ea27",
+    "isco_code": "2636",
+    "beruf": "Geistliche Seelsorger",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:32:09+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2310,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 3807,
+      "api_aequivalent_usd": 0.10195819999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2310,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3807,
+        "output_tokens_details": {
+          "thinking_tokens": 981
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2310,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.10195819999999998
+      }
+    ],
+    "request_ids": [
+      "44968f7b-9cfe-43b2-9012-09ca73389871"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2636",
+    "beruf": "Geistliche Seelsorger",
+    "taetigkeiten": [
+      {
+        "name": "Seelsorgerliche Gespräche mit Patientinnen, Bewohnern oder Inhaftierten am Bett bzw. im Zimmer führen",
+        "zeitanteil_pct": 33,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Wert liegt in der persönlichen Präsenz, im Zuhören und in der Beziehung; KI kann das nicht ersetzen."
+      },
+      {
+        "name": "Menschen in Krisen begleiten: Sterbebegleitung, Notfalleinsätze, Gespräche mit Angehörigen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare zwischenmenschliche Präsenz in Ausnahmesituationen, oft auf Pikett und rund um die Uhr."
+      },
+      {
+        "name": "Gottesdienste, Andachten und Rituale (Segnung, Krankensalbung, Abschiedsfeier) in der Einrichtung durchführen",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Liturgisches Handeln vor Ort mit den Anwesenden; Präsenztätigkeit."
+      },
+      {
+        "name": "Predigten, Andachts- und Ritualtexte sowie Bibelauslegungen schriftlich vorbereiten",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Chat-LLM entwirft aus Bibeltext, Anlass und Stichworten Predigt- bzw. Gebetstexte; die Seelsorgerin prüft theologisch, passt jeden Text an Situation und eigene Stimme an. Authentizität ist ein Akzeptanzthema."
+      },
+      {
+        "name": "Seelsorgerliche Kurzdokumentation und Rückmeldungen im Klinikinformationssystem erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM formuliert aus Stichworten die Notiz für das interprofessionelle Team; die Seelsorgerin prüft jede Notiz, besonders darauf, was unter das Seelsorgegeheimnis fällt. Kurze Einträge begrenzen die Ersparnis."
+      },
+      {
+        "name": "An interprofessionellen Rapporten, Ethikkonsilien und Fallbesprechungen mit Pflege und Ärzteschaft teilnehmen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung und ethische Beratung im persönlichen Austausch; Präsenztätigkeit."
+      },
+      {
+        "name": "Freiwillige Besuchsdienste anleiten und Schulungen für Personal durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Anleitung, Begleitung und Unterricht von Angesicht zu Angesicht."
+      },
+      {
+        "name": "Schulungsunterlagen, Informationsflyer und Tätigkeitsberichte der Seelsorge verfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM erstellt Textentwürfe aus Stichworten und Vorjahresunterlagen; die Seelsorgerin prüft und ergänzt jeden Text inhaltlich."
+      },
+      {
+        "name": "Anfragen von Stationen und Angehörigen entgegennehmen, Besuche und Pikettdienst koordinieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend kurze Telefonate und spontane Absprachen mit Situationseinschätzung; generative KI spart hier keine 50 %, Pikettplanung läuft über einfache Kalender."
+      },
+      {
+        "name": "An Supervision, Intervision und theologischer Weiterbildung teilnehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Reflexion der eigenen Praxis im persönlichen Austausch; Präsenztätigkeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: von einer Landeskirche angestellte Spital- oder Heimseelsorgerin (reformiert/katholisch) in einer Schweizer Institution, teils mit Pikettdienst. Der ESCO-Input passt gut. Grenzfall ist die Predigtvorbereitung: Ob LLM-Entwürfe wirklich 50 % Zeit sparen, hängt stark vom persönlichen Stil ab.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur schriftliche Nebentätigkeiten: Predigt- und Ritualtexte, Kurzdokumentation sowie Schulungs- und Berichtstexte, die ein Chat-LLM entwerfen kann. Die Seelsorge am Menschen selbst ist nicht betroffen.",
+      "begruendung": "Rund ein Sechstel der Arbeitszeit ist exponiert, und zwar durchwegs delegierend: Die KI liefert Textentwürfe, die die Seelsorgerin theologisch und situativ prüft und anpasst. Den Kern des Berufs bilden Gespräche, Krisenbegleitung und Rituale in persönlicher Präsenz. Seelsorgegeheimnis und Datenschutz im Spital sowie Erwartungen an die Authentizität bremsen den Einsatz.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

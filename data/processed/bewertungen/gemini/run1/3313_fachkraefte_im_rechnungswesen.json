@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "991537039867bcc6bb9646c245f982399faa8b2eb9485a64bc8a62cd27b66546",
+    "isco_code": "3313",
+    "beruf": "Fachkräfte im Rechnungswesen",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T06:39:44+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 200,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 200
+        }
+      ],
+      "prompt_token_count": 21835,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21835
+        }
+      ],
+      "thoughts_token_count": 6702,
+      "total_token_count": 28737
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 200,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 200
+          }
+        ],
+        "prompt_token_count": 21835,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21835
+          }
+        ],
+        "thoughts_token_count": 6702,
+        "total_token_count": 28737
+      }
+    ],
+    "request_ids": [
+      "nrnOatSuJ_iJz7IPxeCtqAE"
+    ],
+    "versuche": 1,
+    "status": "fehlgeschlagen",
+    "fehler": [
+      "Versuch 1: taetigkeiten: ['name'] is too short; taetigkeiten/0: 'name' is not of type 'object'; zusammenfassung: 'haupt_risiko' is not of type 'object'"
+    ],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "custom_id": "r1-3313_fachkraefte_im_rechnungswesen",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": "validierung",
+    "probleme": [
+      "taetigkeiten: ['name'] is too short",
+      "taetigkeiten/0: 'name' is not of type 'object'",
+      "zusammenfassung: 'haupt_risiko' is not of type 'object'"
+    ],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": null,
+  "rohantwort": "{\"isco_code\":\"3313\",\"beruf\":\"Fachkräfte im Rechnungswesen\",\"taetigkeiten\":[\n  \"name\"\n],\"unsicherheit\":\"niedrig\",\"kommentar\":\"Angenommenes Setting ist eine Buchhalterin bzw. Fachkraft im Finanz- und Rechnungswesen in einem typischen Schweizer KMU oder Treuhandbüro. Die ESCO-Beschreibung deckt das Berufsbild gut ab; im Schweizer Alltag gehören neben der Finanz- und Nebenbuchhaltung typischerweise auch MWST-Abrechnungen und die Lohnbuchhaltung dazu. Viele regelbasierte Prozesse (QR-Zahlungsabgleich, Mahn- und Lohnlauf) werden durch klassische Buchhaltungssoftware abgedeckt (P1) und sind deshalb bei der generativen KI als E0 eingestuft.\",\"zusammenfassung\":\n  \"haupt_risiko\"\n}"
+}

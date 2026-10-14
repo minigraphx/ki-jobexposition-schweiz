@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "b7b4f9180ef677e994268a59933d9b52023b8aafbd6d38047eda3f3bbf9dc2d1",
+    "isco_code": "2523",
+    "beruf": "Netzwerkingenieur/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:11:05+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 6682,
+      "cache_read_input_tokens": 80560,
+      "output_tokens": 10232,
+      "api_aequivalent_usd": 0.274224
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 6682,
+        "cache_read_input_tokens": 80560,
+        "output_tokens": 10232,
+        "output_tokens_details": {
+          "thinking_tokens": 2662
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6682,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.274224
+      }
+    ],
+    "request_ids": [
+      "8f173cdf-3b32-4017-9ed9-5173c10f9a36"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2523",
+    "beruf": "Netzwerkingenieur/in",
+    "taetigkeiten": [
+      {
+        "name": "Netzwerkarchitektur konzipieren (Topologie, Adressierung, Redundanz, Segmentierung) für LAN/WAN/WLAN",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Designentscheide hängen von der bestehenden Umgebung, Budget und Abwägungen ab, die oft nur im Kopf der Fachperson vorhanden sind. Ein LLM liefert Vorschläge, spart aber typischerweise keine 50 % der Zeit."
+      },
+      {
+        "name": "Konfigurationen für Router, Switches, Firewalls, VPN und WLAN nach Vorgaben erstellen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM erzeugt aus Spezifikation und eingefügter Bestandskonfiguration die Konfiguration (CLI oder Templates). Der Ingenieur prüft jede Zeile vor dem Ausrollen, weil Fehler zu Ausfällen führen. Hemmnis: Netzwerk- und Sicherheitsdetails dürfen bei Banken und Verwaltungen oft nicht in Cloud-Dienste."
+      },
+      {
+        "name": "Automatisierungs- und Migrationsskripte (Python, Ansible, Terraform) im Repository entwickeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Coding-Agent schreibt Playbooks und Skripte über mehrere Dateien und führt Tests bzw. Dry-Runs aus. Der Ingenieur spezifiziert und reviewt jede Änderung."
+      },
+      {
+        "name": "Netzwerkhardware im Rechenzentrum oder beim Kunden einbauen, verkabeln und in Betrieb nehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit vor Ort; dafür gibt es keine verfügbare Robotik."
+      },
+      {
+        "name": "Netzwerkstörungen mit Diagnosewerkzeugen (Ping, Traceroute, Paketmitschnitt, Logs) eingrenzen und beheben",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "KI-Assistenten in Netzwerkplattformen (AIOps mit LLM) und Log-Analyse könnten in Standardfällen 50 % sparen; E2 unterstützend ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Bei Live-Fehlersuche, Reproduktion, Absprachen mit Providern und Nutzenden sowie physischen Prüfungen beschleunigt ein LLM nur die Interpretation von Logs. Das reicht typischerweise nicht für 50 % Zeitersparnis."
+      },
+      {
+        "name": "Netzwerkleistung und Auslastung auswerten und künftigen Kapazitätsbedarf prognostizieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Agent wertet exportierte Monitoringdaten aus und erstellt Trendanalyse und Bericht; der Ingenieur prüft jede Aussage. Klassische Monitoringsoftware (z. B. PRTG, NMS mit Trendreports) übernimmt bereits einen Grossteil der Messung und Auswertung."
+      },
+      {
+        "name": "Changes und Migrationen im Wartungsfenster durchführen, testen und bei Bedarf zurückrollen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Echtzeit-Ausführung mit Überwachung, Tests und Entscheiden zum Rollback bleibt beim Menschen. Die Vorbereitung ist in den Tätigkeiten Konfiguration und Skripte erfasst."
+      },
+      {
+        "name": "Firewall-Regelwerke und Sicherheitskonfigurationen auf Schwachstellen und Compliance prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Der Ingenieur prüft selbst; das LLM markiert im exportierten Regelwerk redundante, zu offene oder widersprüchliche Regeln. Klassische Werkzeuge für Firewall-Policy-Analyse (z. B. Tufin, AlgoSec) erledigen die regelbasierte Analyse ebenfalls."
+      },
+      {
+        "name": "Hardware- und Softwareprodukte recherchieren, vergleichen und Empfehlungen ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent stellt Datenblätter, Preise und Vergleichstabellen zusammen und entwirft die Empfehlung. Der Ingenieur verifiziert die Fakten und passt die Empfehlung an die Umgebung an."
+      },
+      {
+        "name": "Technische Dokumentation verfassen (Konzepte, Betriebshandbücher, Change-Requests)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt Dokumente aus Stichworten, Konfigurationsauszügen und Vorlagen. Der Ingenieur prüft die technische Richtigkeit jedes Dokuments."
+      },
+      {
+        "name": "Anforderungen mit Kunden und Fachabteilungen klären und Projektbesprechungen führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zwischenmenschliche Abstimmung, Rückfragen und Verhandlung über Anforderungen und Termine."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Netzwerkingenieur/in bei einem Schweizer ICT-Dienstleister oder in der IT-Abteilung eines grösseren Unternehmens, mit Betrieb und Projekten. Der ESCO-Input passt gut, enthält aber Software-Rauschen (Entwurfsmuster, Softwarespezifikationen), das nicht übernommen wurde. Der grösste Grenzfall ist die Störungsbehebung (E0 oder E2 unterstützend); offen ist auch, ob das Erstellen von Konfigurationen tatsächlich 50 % Zeit spart.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Konfigurationen, Automatisierungsskripte, technische Dokumentation, Produktrecherche und Kapazitätsanalysen: Chat-LLM, Coding-Agenten und Recherche- bzw. Analyse-Agenten erstellen diese Ergebnisse.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI erstellt Konfigurationen, Code und Dokumente, der Ingenieur prüft jede Ausgabe, weil Fehler im Netz Ausfälle verursachen. Design, Störungsbehebung, Arbeiten im Wartungsfenster, Hardware und Kundenabstimmung bleiben weitgehend beim Menschen. Das wichtigste CH-Hemmnis ist regulatorisch: Bei Banken, Verwaltung und kritischen Infrastrukturen dürfen sensible Netzwerk- und Sicherheitsdaten oft nicht an Cloud-LLMs gehen.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

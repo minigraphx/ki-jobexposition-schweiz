@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "f173e082995110bf89028867e0f98dd70af415b5856e2688c0d4db6989fd0a6b",
+    "isco_code": "1112",
+    "beruf": "Leitende Verwaltungsbedienstete",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:05:07+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 39612,
+      "output_tokens": 4326,
+      "api_aequivalent_usd": 0.09445039999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 39612,
+        "output_tokens": 4326,
+        "output_tokens_details": {
+          "thinking_tokens": 1217
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.09445039999999999
+      }
+    ],
+    "request_ids": [
+      "ae7d52c1-cf3c-4e38-b7de-016b809a3ad2"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1112",
+    "beruf": "Leitende Verwaltungsbedienstete",
+    "taetigkeiten": [
+      {
+        "name": "Mitarbeitende führen: Mitarbeitergespräche, Zielvereinbarungen, Personalentscheide und Rekrutierung",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Personalführung ist eine Präsenz- und Beziehungstätigkeit mit Ermessen und Verantwortung; generative KI spart hier keine 50 %."
+      },
+      {
+        "name": "Interne Sitzungen leiten und abteilungsübergreifende Geschäfte koordinieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Moderation, Abstimmung und Konfliktlösung von Angesicht zu Angesicht; der Wert liegt in der Anwesenheit und Steuerung."
+      },
+      {
+        "name": "Departementsvorsteher/in, Regierung und parlamentarische Kommissionen beraten und informieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Politische Beratung, Vertrauensverhältnis und Verhandlung in persönlichen Gesprächen und Kommissionssitzungen."
+      },
+      {
+        "name": "Mit Gemeinden, Bundesstellen, Verbänden, Medien und Öffentlichkeit verhandeln und auftreten",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlungen, Netzwerkpflege, Medienauftritte und Informationsveranstaltungen erfordern persönliche Präsenz."
+      },
+      {
+        "name": "Anträge an die Regierung, Berichte, Vernehmlassungsantworten und Antworten auf parlamentarische Vorstösse entwerfen",
+        "zeitanteil_pct": 12,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus eingefügten Grundlagen, Stichworten und Vorlagen erstellt das LLM den Entwurf; die Leitung prüft jeden Text fachlich und politisch und verantwortet ihn. Hemmnis: Amtsgeheimnis und Cloud-Restriktionen in der Verwaltung."
+      },
+      {
+        "name": "Strategien, mittelfristige Ziele und Umsetzungsmassnahmen der Politik konzipieren und priorisieren",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abwägung politischer Interessen, Ressourcen und Machbarkeit ist Ermessens- und Abstimmungsarbeit; KI liefert nur Ideen und Gliederungen ohne 50 % Zeitersparnis."
+      },
+      {
+        "name": "Budget und Finanzplan des Amts erarbeiten, Ressourcen zuteilen und Abweichungen im Controlling beurteilen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zahlen liefert das Finanzsystem (klassische Software); die Zeit der Leitung liegt in Priorisierung, Verhandlung und Begründung gegenüber Finanzdepartement und Politik."
+      },
+      {
+        "name": "Vorlagen, Berichte und Entscheidentwürfe von Mitarbeitenden prüfen, korrigieren und freigeben",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "KI-Zusammenfassungen und Markierungen könnten das Gegenlesen beschleunigen; E1 unterstützend mit 30-50 % Restzeit ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Prüfung auf politische Tragweite und Kohärenz erfordert eigenes Lesen; KI-Markierungen sparen voraussichtlich unter 50 % der Zeit."
+      },
+      {
+        "name": "E-Mails, Anfragen von Bürgerinnen und Bürgern und interne Korrespondenz beantworten",
+        "zeitanteil_pct": 6,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM entwirft Antworten aus der eingefügten Anfrage und Stichworten; die Leitung prüft jede Antwort inhaltlich vor dem Versand. Datenschutz/Amtsgeheimnis als Hemmnis."
+      },
+      {
+        "name": "Dossiers, Sitzungsunterlagen und Gesetzesentwürfe lesen und für Entscheide aufbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Leitung erarbeitet sich die Geschäfte selbst; das LLM fasst eingefügte Unterlagen zusammen und stellt Kernpunkte und offene Fragen zusammen, was das Einarbeiten deutlich verkürzt."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Amts- oder Abteilungsleitung in einer kantonalen Verwaltung (auch grössere Städte bzw. Bundesverwaltung), Führungsspanne mit mehreren Teams. ESCO passt gut, die Zeitanteile sind aber grob geschätzt, weil Führungsalltag stark nach Amt variiert. Die wichtigsten Grenzfälle sind das Prüfen/Freigeben von Vorlagen und das Aufbereiten von Dossiers, beide nahe an der 50-%-Schwelle.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Entwerfen von Regierungsanträgen, Berichten und Vorstossantworten, die Korrespondenz sowie das Aufbereiten von Dossiers, jeweils durch Chat-LLM bzw. KI-Funktionen in der Office-Suite.",
+      "begruendung": "Etwa ein Viertel der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI entwirft Texte, die Leitung prüft und verantwortet jeden politisch heiklen Text; beim Einarbeiten in Dossiers unterstützt sie nur. Der Kern des Berufs, also Führung, politische Beratung und Verhandlung, bleibt Präsenzarbeit; Amtsgeheimnis, Datenschutz und Cloud-Restriktionen in der Verwaltung bremsen die Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

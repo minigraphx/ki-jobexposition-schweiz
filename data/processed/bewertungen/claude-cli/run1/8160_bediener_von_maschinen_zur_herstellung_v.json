@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "7d598b9de9affa51044143a80539df12e0b8d6ca622576ecddfac5c0db9dd9e0",
+    "isco_code": "8160",
+    "beruf": "Bediener von Maschinen zur Herstellung von Nahrungs- und Genussmitteln",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:23:25+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4148,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4792,
+      "api_aequivalent_usd": 0.1363622
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4148,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4792,
+        "output_tokens_details": {
+          "thinking_tokens": 1483
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4148,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1363622
+      }
+    ],
+    "request_ids": [
+      "86cd410c-1f0a-4228-a864-ad00165e0a95"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "8160",
+    "beruf": "Bediener von Maschinen zur Herstellung von Nahrungs- und Genussmitteln",
+    "taetigkeiten": [
+      {
+        "name": "Produktionsmaschinen einrichten, auf neue Formate oder Rezepturen umrüsten, anfahren und Kleinteile wechseln",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handarbeit an der Anlage: Formatteile montieren, einstellen, Probelauf. Ein vollautomatischer Formatwechsel ist nur bei einzelnen Neuanlagen verfügbar, nicht für 50 % der Arbeit."
+      },
+      {
+        "name": "Produktionslinie überwachen, Prozessparameter am Bedienpanel kontrollieren und Störungen (Stau, Fehlfüllung) beheben",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz an der Linie und physisches Eingreifen bei Störungen; die Prozesssteuerung (SPS/SCADA) ist bereits automatisiert, die verbleibende Arbeit ist Eingreifen vor Ort. Ein LLM-Assistent für Störungsdiagnose spart keine 50 %."
+      },
+      {
+        "name": "Rohstoffe und Zutaten nach Rezeptur abwiegen, vorbereiten und in Misch- oder Kochanlagen beigeben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit. Automatische Dosier- und Wägesysteme mit Rezeptursteuerung sind kommerziell verfügbar und in grösseren Betrieben üblich; in KMU wird noch oft manuell gearbeitet."
+      },
+      {
+        "name": "Verpackungsmaschinen mit Packmaterial beschicken, Produkte verpacken, etikettieren und palettieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisch. Pick-and-Place-Roboter, Kartonierer und Palettierroboter sind verfügbar und könnten den Grossteil des manuellen Verpackens und Palettierens übernehmen."
+      },
+      {
+        "name": "Qualitätskontrollen an der Linie durchführen: Proben ziehen, Gewicht, Temperatur, Aussehen und Geschmack prüfen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Probenahme und sensorische Prüfung vor Ort; Kontrollwaagen, Metalldetektoren und Kamerasysteme übernehmen Teile, aber die verbleibende manuelle Stichprobenkontrolle macht keine 50 % automatisierbar."
+      },
+      {
+        "name": "Maschinen und Produktionsbereich demontieren, reinigen und desinfizieren (inkl. Cleaning-in-Place überwachen)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Reinigung und Demontage nach Hygieneplan. CIP-Anlagen reinigen geschlossene Systeme bereits automatisch; offene Anlagenteile bleiben Handarbeit."
+      },
+      {
+        "name": "Rohstoffe und Fertigware transportieren, einlagern, Kühllager kontrollieren und Bestände/Entnahmen per Scanner erfassen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer Materialfluss mit Hubwagen/Stapler; Bestandsbuchung per Barcode ist klassische Software. Fahrerlose Transportsysteme gibt es, sie sind in typischen CH-Betrieben aber nicht für ≥ 50 % dieser Arbeit einsetzbar."
+      },
+      {
+        "name": "HACCP-Kontrollpunkte, Temperaturen, Chargen und Reinigungen in Checklisten oder im MES dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Vor allem Messwerte und Häkchen erfassen, generative KI spart hier wenig. Automatische Datenerfassung durch Sensoren und digitale Checklisten im MES (klassische Software) kann den Grossteil übernehmen."
+      },
+      {
+        "name": "Störungen, Abweichungen und Schichtereignisse als Freitext im Schichtbuch oder MES beschreiben",
+        "zeitanteil_pct": 2,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Spracheingabe bei Maschinenlärm und Schweizerdeutsch für die kurzen Einträge wirklich 50 % spart; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Per Spracheingabe in einer Schichtbuch- oder MES-App erstellt die KI den Eintrag aus Stichworten; die bedienende Person prüft und ergänzt jeden Eintrag. Lärm und Dialekt erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Schichtübergabe durchführen und sich mit Schichtleitung, Instandhaltung und Qualitätssicherung absprechen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Abstimmung vor Ort an der Linie; Präsenztätigkeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: angelernte bzw. Sekundär-II-Fachkraft an einer Produktions- und Abfülllinie eines mittelgrossen Schweizer Lebensmittel- oder Getränkebetriebs im Schichtbetrieb. Der ESCO-Input passt gut; «ethische Ernährungsgewohnheiten fördern» wurde als Rauschen nicht übernommen. Unsicher sind vor allem die P-Werte für Dosieren und Verpacken (abhängig vom Automatisierungsgrad des Betriebs) und die Spracheingabe für Schichtbucheinträge.",
+    "zusammenfassung": {
+      "haupt_risiko": "Generative KI betrifft praktisch nur die kurzen Freitext-Einträge zu Störungen und Abweichungen im Schichtbuch (Spracheingabe). Die physische Arbeit an der Linie ist nicht betroffen.",
+      "begruendung": "Nur ein sehr kleiner Teil der Arbeitszeit (rund 2 %) ist gegenüber generativer KI exponiert, und zwar delegierend: Die KI formuliert Einträge, die Bedienperson prüft jeden. Den Kern des Berufs bilden Einrichten, Überwachen, Beschicken und Reinigen der Anlagen vor Ort. Hier wirken eher klassische Automatisierung (Dosier-, Verpackungs- und Palettierroboter) und Sensorik als LLMs; Maschinenlärm und Schweizerdeutsch erschweren die Spracheingabe.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

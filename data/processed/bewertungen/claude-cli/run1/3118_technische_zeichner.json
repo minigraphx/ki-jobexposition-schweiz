@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "2ef43947be97fec2c43ba6c9f4cdfb45f6ae3e23fe52f914759bdd45b5fe8530",
+    "isco_code": "3118",
+    "beruf": "Technische Zeichner",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:50:31+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4043,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5024,
+      "api_aequivalent_usd": 0.1401622
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4043,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5024,
+        "output_tokens_details": {
+          "thinking_tokens": 1445
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4043,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1401622
+      }
+    ],
+    "request_ids": [
+      "611a4384-cfcc-419b-ae6f-1f5cfb5f9313"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3118",
+    "beruf": "Technische Zeichner",
+    "taetigkeiten": [
+      {
+        "name": "Ausführungs- und Werkpläne (Grundrisse, Schnitte, Ansichten) im CAD/BIM-Modell zeichnen und modellieren",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI-Funktionen in CAD/BIM-Software (Assistenten, Befehlsvorschläge) sparen heute keine 50 % beim massgenauen, normgerechten Modellieren und Zeichnen. Parametrische BIM-Software ist bereits das Arbeitswerkzeug und ersetzt die Person nicht."
+      },
+      {
+        "name": "Konstruktions- und Anschlussdetails (z. B. Fenster, Dach, Sockel) ausarbeiten und bemassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dafür braucht es bauphysikalisches und konstruktives Wissen und präzise Geometrie; generative KI erstellt solche Detailpläne nicht in brauchbarer Qualität. Detailbibliotheken sind nur Hilfsmittel."
+      },
+      {
+        "name": "Planänderungen und Revisionen nach Vorgaben von Architekten und Fachplanern einarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Vorgaben aus Skizzen und Besprechungen ins Modell zu übertragen bleibt CAD-Handarbeit; die KI spart dabei weniger als 50 %."
+      },
+      {
+        "name": "Entwurfsskizzen und Planvarianten von Hand oder im CAD erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bemasste, konstruktiv stimmige Varianten kann ein Bildgenerator nicht liefern; Ideen und Abstimmung bleiben beim Menschen."
+      },
+      {
+        "name": "3D-Visualisierungen und Renderings für Präsentationen und Baueingaben erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Renderfunktionen in BIM-/Visualisierungssoftware erzeugen aus dem Modell schnell fotorealistische Bilder und Stimmungen. Die Zeichnerin steuert, wählt aus und prüft jedes Bild auf Übereinstimmung mit dem Projekt."
+      },
+      {
+        "name": "Ausmasse, Flächen-/Volumenberechnungen (SIA 416) und Mengenlisten aus dem Modell ableiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Mengen- und Flächenauswertung übernimmt die klassische BIM-/CAD-Software automatisch; dafür braucht es kein LLM."
+      },
+      {
+        "name": "Baubeschriebe, Texte zum Baugesuch und Begleitberichte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten und Projektdaten erstellt ein Chat-LLM den Textentwurf. Die Zeichnerin prüft jeden Text auf Projektstimmigkeit und auf die kantonalen Vorgaben."
+      },
+      {
+        "name": "Baureglemente, SIA-Normen und Vorschriften für die Planung nachschlagen und anwenden",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Viele Normen (SIA) sind kostenpflichtig und nicht frei durchsuchbar, und kommunale Reglemente sind sehr verschieden; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent findet und fasst einschlägige Bestimmungen mit Quellen zusammen (Abstände, Höhen, Ausnützung). Die Zeichnerin wendet sie selbst an und verifiziert jede Angabe."
+      },
+      {
+        "name": "Pläne kontrollieren, Planlisten führen und Pläne über Projektplattformen verteilen und archivieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Planlisten, Versionierung und Verteilung erledigen klassische Planmanagement- und CDE-Plattformen. Die fachliche Plankontrolle bleibt beim Menschen."
+      },
+      {
+        "name": "Bestandsaufnahmen und Aufmasse vor Ort durchführen, Pläne auf der Baustelle überprüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert Präsenz vor Ort und Messen. Laserscanner sind Hilfsmittel, die Person bedient sie selbst."
+      },
+      {
+        "name": "Planungsfragen mit Architekten, Fachplanern und Unternehmern besprechen und koordinieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung im direkten Gespräch, an Sitzungen und am Telefon; die persönliche Koordination steht im Vordergrund."
+      },
+      {
+        "name": "E-Mails, Aktennotizen und Planbegleitschreiben verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten entwirft ein Chat-LLM Standardkorrespondenz und Notizen; die Person sichtet kurz und versendet."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Zeichner/in EFZ Fachrichtung Architektur (Hochbauzeichner/in) in einem Architektur- oder Planungsbüro (KMU), das mit CAD/BIM arbeitet. Der Input aus ESCO ist knapp und mischt Hochbau, Elektro- und Maschinenzeichnen; der Tätigkeitskatalog folgt dem häufigsten CH-Setting. Die grösste Unsicherheit liegt bei der Frage, wie stark generative KI-Funktionen in BIM-Software bis Oktober 2026 das eigentliche Planzeichnen beschleunigen. Bewertet ist es als E0, weil die Ersparnis unter 50 % liegt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Renderings (KI-Renderfunktionen), Baubeschriebe und Korrespondenz (Chat-LLM) sowie Vorschriftenrecherche (Recherche-Agent), nicht aber das Kerngeschäft des Plan- und Detailzeichnens im CAD/BIM.",
+      "begruendung": "Rund ein Fünftel der Arbeitszeit ist exponiert. Meist arbeitet die KI delegierend: Sie erstellt Renderings und Texte, die Zeichnerin prüft jedes Ergebnis. Die Vorschriftenrecherche ist unterstützend, nur Standardkorrespondenz ersetzend. Kantonal und kommunal unterschiedliche Baureglemente sowie kostenpflichtige SIA-Normen begrenzen den Nutzen von KI-Recherchen, und viele kleine Büros führen solche Werkzeuge nur zögerlich ein.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

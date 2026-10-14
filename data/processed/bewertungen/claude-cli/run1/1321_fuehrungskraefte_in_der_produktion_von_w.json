@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "fb7237e5b431d9ac8ba562b93ef693def4644dd545ada826ea7598da613e2346",
+    "isco_code": "1321",
+    "beruf": "Führungskräfte in der Produktion von Waren",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:28:24+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3902,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4835,
+      "api_aequivalent_usd": 0.1352542
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3902,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4835,
+        "output_tokens_details": {
+          "thinking_tokens": 1379
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3902,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1352542
+      }
+    ],
+    "request_ids": [
+      "aef56685-131e-4a80-bc2b-a000de0931df"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1321",
+    "beruf": "Führungskräfte in der Produktion von Waren",
+    "taetigkeiten": [
+      {
+        "name": "Produktion vor Ort überwachen, Rundgänge in der Fertigung machen und Störungen an Linien und Anlagen mit dem Team lösen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz in der Fertigung, Beurteilung vor Ort und sofortige Entscheide; generative KI spart dabei kaum Zeit. Maschinenüberwachungssysteme melden Störungen, ersetzen aber die Problemlösung nicht."
+      },
+      {
+        "name": "Mitarbeitende und Teamleitende führen: Mitarbeitergespräche, Personalentscheide, Bewerbungsgespräche, Konflikte klären",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führungs- und Beziehungstätigkeit von Angesicht zu Angesicht; keine Exposition."
+      },
+      {
+        "name": "Produktionsprogramm, Kapazitäten und Schichten im ERP/APS planen und bei Engpässen anpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Grobplanung und Kapazitätsrechnung übernimmt klassische ERP-/APS-Software (Feinplanung, Schichtplanungstools). Die Führungskraft priorisiert bei Konflikten nach Ermessen; ein LLM spart dabei keine 50 %."
+      },
+      {
+        "name": "Produktionskennzahlen (OEE, Ausschuss, Liefertreue, Kosten) auswerten und Monatsberichte für die Geschäftsleitung erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Agent bzw. KI in Excel/BI wertet die exportierten Daten aus und entwirft Bericht und Kommentar. Die Führungskraft prüft jede Interpretation und ergänzt den Kontext. Dashboards liefern zwar Kennzahlen, aber nicht die Berichtsarbeit."
+      },
+      {
+        "name": "Prozessanalysen und Lean-/Optimierungsprojekte in Workshops und am Arbeitsplatz leiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Arbeit liegt in Beobachtung vor Ort, Workshops mit dem Team und Umsetzungsentscheiden. KI liefert höchstens Ideen, spart aber keine 50 %."
+      },
+      {
+        "name": "Investitionsanträge und Business Cases für Anlagen und Projekte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Führungskraft liefert Eckdaten und Offerten als Text, das LLM entwirft Antrag, Wirtschaftlichkeitsrechnung und Argumentation. Die Führungskraft prüft jede Zahl und jede Annahme."
+      },
+      {
+        "name": "Produktionsbudget erstellen und Kostenabweichungen beurteilen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zahlen kommen weitgehend aus Controlling und ERP. Die Arbeit der Führungskraft besteht aus Ermessen, Annahmen und Abstimmung mit dem Controlling; KI-Hilfe bleibt unter der 50 %-Schwelle."
+      },
+      {
+        "name": "Arbeitsanweisungen, Produktionsrichtlinien, Qualitätsvorgaben und Sicherheitsweisungen verfassen und überarbeiten",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt aus Stichworten und bestehenden Dokumenten strukturierte Vorgaben und übersetzt sie bei Bedarf. Die Führungskraft prüft jede Fassung fachlich und gibt sie im QM-System frei."
+      },
+      {
+        "name": "Termine, Prioritäten und Probleme mit Verkauf, Einkauf, Logistik, Qualitätssicherung und Engineering in Sitzungen abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung und Verhandlung in Sitzungen und direkten Gesprächen; dafür ist Präsenz nötig."
+      },
+      {
+        "name": "E-Mail-Korrespondenz mit Kunden und Lieferanten zu Lieferterminen, Mengen und Reklamationen führen",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Die KI im Mailprogramm entwirft Antworten aus dem Mailverlauf und übersetzt sie (DE/FR/EN). Die Führungskraft prüft Zusagen zu Terminen und Mengen in jeder Mail."
+      },
+      {
+        "name": "Abweichungs- und Reklamationsberichte (z. B. 8D) und Massnahmenpläne dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM strukturiert Befunde und Notizen zum 8D-Bericht. Die Ursachenanalyse wurde vorher vor Ort erarbeitet; die Führungskraft prüft und verantwortet jeden Bericht."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Produktionsleiter/in in einem Schweizer Industrie-KMU (z. B. Maschinen-, Metall- oder Kunststoffindustrie) mit 30–150 Mitarbeitenden in der Fertigung. Der ESCO-Input ist allgemein; die Zeitanteile sind grob geschätzt. Die grössten Unsicherheiten liegen bei der Berichts- und Budgetarbeit, die je nach Grösse des Controllings unterschiedlich viel Zeit beansprucht.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Schreib- und Auswertungsarbeiten: Kennzahlenberichte, Investitionsanträge, Arbeitsanweisungen, 8D-Berichte und Korrespondenz. Sie entstehen mit Chat-LLM, Datenanalyse-Agenten und KI in Office-Software, während Führung, Präsenz in der Fertigung und Abstimmung nicht exponiert sind.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert, durchwegs im Modus delegierend: Die KI erstellt Entwürfe und Auswertungen, die Führungskraft prüft und verantwortet jedes Ergebnis. Der Kern des Berufs bleibt Führung, Präsenz in der Fertigung und Entscheide nach Ermessen. In der Schweiz bremsen vor allem die mehrsprachige Korrespondenz und der Einführungsaufwand in KMU, regulatorische Hürden sind gering.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

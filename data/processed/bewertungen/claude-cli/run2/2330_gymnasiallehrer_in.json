@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "f24f76991e4c2456d49738facd2fe61913b83b624afe7a32e12a72f8e34d1bc1",
+    "isco_code": "2330",
+    "beruf": "Gymnasiallehrer/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T01:02:03+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 1307,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5174,
+      "api_aequivalent_usd": 0.12127419999999997
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 1307,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5174,
+        "output_tokens_details": {
+          "thinking_tokens": 2186
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 1307,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.12127419999999997
+      }
+    ],
+    "request_ids": [
+      "053bd4e3-b98f-42bd-874b-62ba4a8d2342"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2330",
+    "beruf": "Gymnasiallehrer/in",
+    "taetigkeiten": [
+      {
+        "name": "Lektionen vor der Klasse halten (Inputs, Diskussionen, Übungen, Experimente anleiten)",
+        "zeitanteil_pct": 40,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unterricht im Klassenzimmer ist eine Präsenz- und Beziehungstätigkeit; keine Technik übernimmt sie."
+      },
+      {
+        "name": "Unterrichtseinheiten und Semesterplanung didaktisch konzipieren (Lernziele, Ablauf, Methodenwahl)",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Lehrperson plant selbst mit Blick auf Klasse und Lehrplan; das Chat-LLM schlägt Abläufe, Lernziele und Methoden vor und beschleunigt die Planung deutlich."
+      },
+      {
+        "name": "Unterrichtsmaterialien erstellen (Arbeitsblätter, Aufgabensammlungen, Folien, Lösungsblätter)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt Arbeitsblätter, Aufgaben und Lösungen nach Vorgabe; die Lehrperson prüft jede Ausgabe fachlich und passt sie an Niveau und Klasse an."
+      },
+      {
+        "name": "Prüfungen und Tests entwerfen inkl. Bewertungsraster",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft Aufgaben, Varianten und Bewertungsraster; die Lehrperson prüft Korrektheit, Schwierigkeitsgrad und Lehrplanbezug jeder Prüfung."
+      },
+      {
+        "name": "Schriftliche Prüfungen, Aufsätze und Hausarbeiten korrigieren und benoten",
+        "zeitanteil_pct": 14,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Handschrifterkennung und KI-Fehlermarkierung könnten bei Aufsätzen knapp 50 % sparen; E2 unterstützend (30-50) ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Lehrperson muss jede (meist handschriftliche) Arbeit selbst lesen und notenrelevant beurteilen; KI-Markierungen sparen nach bester Einschätzung knapp unter 50 % der Zeit."
+      },
+      {
+        "name": "Maturaarbeiten betreuen, Betreuungsgespräche führen und Arbeiten begutachten",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Individuelle Begleitung im Gespräch und fachliche Beurteilung inkl. Präsentation sind Präsenz- und Ermessenstätigkeiten; KI hilft nur punktuell."
+      },
+      {
+        "name": "Klassenlehrerarbeit: Gespräche mit Schülerinnen, Schülern und Eltern führen, Klassenprobleme lösen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Gespräche und Beziehungsarbeit; der Wert liegt in der Anwesenheit."
+      },
+      {
+        "name": "An Fachschaftssitzungen, Konferenzen und Schulentwicklungsprojekten mitarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung und Entscheidfindung im Kollegium in Präsenz."
+      },
+      {
+        "name": "E-Mails und Mitteilungen an Eltern, Schülerinnen und Schulleitung verfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Das LLM formuliert Mitteilungen aus Stichworten; die Lehrperson prüft jede Nachricht wegen heikler Inhalte (Noten, Verhalten) vor dem Versand."
+      },
+      {
+        "name": "Exkursionen, Studien- und Sonderwochen begleiten und Aufsicht führen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Begleitung und Präsenzverantwortung vor Ort."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Lehrperson mit zwei Fächern an einem kantonalen Gymnasium in der Deutschschweiz, Vollpensum, teilweise Klassenlehrerfunktion. Es gibt keine ESCO-Kompetenzliste; die Tätigkeiten und Zeitanteile sind aus der Beschreibung und aus Berufswissen abgeleitet und nur grob geschätzt. Der wichtigste Grenzfall ist das Korrigieren handschriftlicher Arbeiten: Es liegt nahe an der 50-%-Schwelle und ist je nach Fach eher E0 oder E2.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Erstellen von Unterrichtsmaterialien und Prüfungen, die Unterrichtsplanung und die schriftliche Kommunikation, die mit einem Chat-LLM entworfen werden; der Unterricht selbst und die Beziehungsarbeit sind nicht betroffen.",
+      "begruendung": "Rund ein Viertel der Arbeitszeit ist exponiert. Dort arbeitet die KI meist delegierend: Sie entwirft Materialien und Prüfungen, und die Lehrperson prüft jedes Ergebnis fachlich. Die Planung bleibt unterstützend. Die Präsenz im Klassenzimmer, das Korrigieren und Benoten sowie die Betreuung von Jugendlichen bleiben beim Menschen; kantonale Datenschutzvorgaben und die Erwartung persönlicher Kommunikation mit Eltern bremsen nur am Rand.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

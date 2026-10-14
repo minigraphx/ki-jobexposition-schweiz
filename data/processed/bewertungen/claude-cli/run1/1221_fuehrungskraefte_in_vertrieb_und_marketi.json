@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "41ae19ed03dfb92cd7fce48d91a51df1578cf09e7c8000b0c2521b03a64acf09",
+    "isco_code": "1221",
+    "beruf": "Führungskräfte in Vertrieb und Marketing",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:04:48+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5288,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5210,
+      "api_aequivalent_usd": 0.15384219999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 5288,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5210,
+        "output_tokens_details": {
+          "thinking_tokens": 1776
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5288,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.15384219999999998
+      }
+    ],
+    "request_ids": [
+      "76fc8f42-d9fc-48be-9fd6-b397353c76cf"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1221",
+    "beruf": "Führungskräfte in Vertrieb und Marketing",
+    "taetigkeiten": [
+      {
+        "name": "Verkaufs- und Marketingteam führen: Mitarbeitergespräche, Coaching, Motivation, Rekrutierung",
+        "zeitanteil_pct": 18,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bei Führung, Motivation und Personalgesprächen zählt die persönliche Präsenz und Beziehung. Generative KI spart hier keine relevante Zeit."
+      },
+      {
+        "name": "Schlüsselkunden und Partner persönlich betreuen, Verhandlungen führen, Netzwerk pflegen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandeln von Angesicht zu Angesicht und Beziehungspflege sind Präsenztätigkeiten. Ihr Wert liegt in der persönlichen Anwesenheit."
+      },
+      {
+        "name": "Pipeline-Reviews und Verkaufsmeetings leiten, Leads und Verkaufsaktivitäten priorisieren und beaufsichtigen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit fliesst vor allem in Besprechungen und Steuerung des Teams, also in Präsenz und Ermessen. Lead-Scoring im CRM unterstützt nur einen kleinen Teil."
+      },
+      {
+        "name": "Strategische Vertriebs- und Marketingentscheide treffen und in der Geschäftsleitung abstimmen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es geht um Entscheide mit Ermessen und Verantwortung sowie um Abstimmung in Sitzungen. Die Vorbereitung ist als eigene Tätigkeit erfasst."
+      },
+      {
+        "name": "Marketing- und Vertriebspläne, Strategiepapiere, Zielvorgaben und GL-Präsentationen ausarbeiten",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Eckpunkten, Zahlen und Analysen entwirft das LLM Planstruktur, Texte und Folieninhalte. Die Führungskraft gibt den Inhalt vor, prüft jede Fassung fachlich und passt sie an."
+      },
+      {
+        "name": "Verkaufs-, Umsatz-, Rentabilitäts- und KPI-Berichte aus CRM/ERP erstellen, visualisieren und kommentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Datenanalyse mit Code-Ausführung bzw. KI-Funktionen im CRM/BI erstellt Auswertungen, Grafiken und Kommentare. Die Führungskraft prüft jede Auswertung auf Plausibilität. Standardberichte und Dashboards sind schon mit klassischer BI-/CRM-Software automatisierbar (P1)."
+      },
+      {
+        "name": "Markt-, Wettbewerbs- und Kaufverhaltensanalysen sowie Kundenumfragen auswerten",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten und KI-Datenanalyse fassen Quellen zusammen und werten Umfrage-Freitexte und -Daten aus. Die Führungskraft gibt Fragestellungen vor und verifiziert die Ergebnisse."
+      },
+      {
+        "name": "Jährliches Marketingbudget und Umsatzprognosen erstellen und Budgetverbrauch überwachen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit liegt in Priorisierung, Ermessen und Abstimmung mit der Finanzabteilung. Die Rechenarbeit läuft schon in Excel bzw. im ERP, LLM-Hilfe spart weniger als 50 %."
+      },
+      {
+        "name": "Kampagnen mit Agenturen und internen Stellen koordinieren, Marketinginhalte beurteilen und freigeben",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Hier dominieren Abstimmungssitzungen und die Beurteilung von Inhalten nach Marke und Strategie. Eine KI-Vorprüfung beschleunigt die Freigabe kaum um 50 %."
+      },
+      {
+        "name": "Kampagnenbriefings, Kampagnenpläne und Verkaufsargumentarien verfassen",
+        "zeitanteil_pct": 7,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Zielen, Zielgruppe und Produktinfos entwirft das LLM Briefings, Pläne und Argumentarien als Text. Die Führungskraft prüft und schärft jede Fassung."
+      },
+      {
+        "name": "E-Mail-Korrespondenz, interne Mitteilungen und Sitzungsprotokolle erstellen",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in der Office-Suite entwerfen E-Mails und Mitteilungen und erstellen Protokolle aus Aufnahmen. Die Führungskraft prüft und passt jede Ausgabe an, weil viele Nachrichten Kontext und Feingefühl verlangen."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Leiter/in Verkauf und Marketing in einem Schweizer KMU oder mittelgrossen Unternehmen mit eigenem Team. Die Branchenangabe «Verwaltung» im ch_kontext passt nur bedingt; bewertet wird die typische Funktion in der Privatwirtschaft. Grenzfälle sind die Strategiepapiere, das Reporting und die E-Mail-Korrespondenz, die nahe an der 50 %-Schwelle liegen; die Zeitanteile sind grob geschätzt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Strategiepapiere, Briefings und Argumentarien (Chat-LLM), KPI- und Verkaufsberichte sowie Markt- und Umfrageanalysen (KI-Datenanalyse, Recherche-Agenten) und die Korrespondenz (KI in der Office-Suite).",
+      "begruendung": "Rund zwei Fünftel der Arbeitszeit sind exponiert, durchwegs delegierend: Die KI erstellt Entwürfe und Auswertungen, die Führungskraft gibt den Inhalt vor und prüft jedes Ergebnis. Der grössere Teil des Berufs, nämlich Teamführung, Kundenverhandlungen und strategische Entscheide, bleibt Präsenz- und Ermessensarbeit. Wesentliche CH-Hemmnisse gibt es kaum; die Adoption hängt vor allem davon ab, ob KMU KI-Funktionen in CRM und Office-Suite einführen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

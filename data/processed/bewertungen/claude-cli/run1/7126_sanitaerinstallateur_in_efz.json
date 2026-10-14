@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "6f5d3d0c1b81f80f15722982d4b85b5678c9587d7de511bac1e2dfbe80ed797c",
+    "isco_code": "7126",
+    "beruf": "Sanitärinstallateur/in EFZ",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:00:02+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3442,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4440,
+      "api_aequivalent_usd": 0.1236742
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3442,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4440,
+        "output_tokens_details": {
+          "thinking_tokens": 1306
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3442,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1236742
+      }
+    ],
+    "request_ids": [
+      "31b71aa9-87d5-429e-af58-d93f2d034d6f"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "7126",
+    "beruf": "Sanitärinstallateur/in EFZ",
+    "taetigkeiten": [
+      {
+        "name": "Rohrleitungen für Trinkwasser, Abwasser und Gas zuschneiden, biegen, verbinden (Pressen, Schweissen, Kleben) und montieren",
+        "zeitanteil_pct": 28,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montagearbeit auf der Baustelle bzw. im Gebäude; keine Robotik für die Installation vor Ort verfügbar."
+      },
+      {
+        "name": "Vorwandinstallationen und Montagesysteme setzen, Wandschlitze und Befestigungen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Arbeit am Bau mit Werkzeug; Vorfertigung in der Werkstatt ändert die Montage vor Ort nicht wesentlich."
+      },
+      {
+        "name": "Sanitärapparate, Armaturen und Wassererwärmer montieren und anschliessen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montage von WC, Lavabos, Duschen, Boilern; keine Exposition gegenüber generativer KI oder Robotik."
+      },
+      {
+        "name": "Druck- und Dichtheitsprüfungen durchführen, Leitungen spülen und Anlagen in Betrieb nehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Messen und Prüfen vor Ort mit Prüfgeräten; digitale Druckprüfgeräte protokollieren, ersetzen aber die Arbeit am Objekt nicht."
+      },
+      {
+        "name": "Störungen bei Kunden suchen und beheben, Armaturen auswechseln, Abflüsse reinigen (Service/Reparatur)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Diagnose und Reparatur am Objekt sind physisch und situativ; KI liefert hier keine Zeitersparnis von 50 %."
+      },
+      {
+        "name": "Installationspläne (2D/3D) lesen, Masse übertragen und Leitungsführung anreissen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit liegt im Einmessen und Anzeichnen vor Ort (Schlagschnur, Laser); Planlesen selbst ist kurz und an die Baustellensituation gebunden."
+      },
+      {
+        "name": "Material und Werkzeug zur Baustelle transportieren, Arbeitsplatz einrichten, Oberflächen schützen und aufräumen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeiten ohne verfügbare Automatisierung auf typischen Baustellen."
+      },
+      {
+        "name": "Materialbedarf ermitteln und Material beim Grosshändler bestellen bzw. Lieferungen kontrollieren",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bestellung läuft über Händler-Webshops/Scanner-Apps (klassische Software), der Bedarf ergibt sich aus Plan und Baustellenbegehung; LLM spart hier kaum 50 %. Lieferkontrolle ist physisch."
+      },
+      {
+        "name": "Arbeits-, Regie- und Servicerapporte mit Arbeitsbeschrieb, Material und Stunden erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe bzw. Fotos in einer Rapport-App erzeugen den Rapport-Entwurf; der Monteur prüft und ergänzt jeden Rapport. Dialekt und Baustellenlärm erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Kundschaft vor Ort informieren und sich mit Bauleitung und anderen Gewerken absprechen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Absprachen und Erklärungen vor Ort; Präsenztätigkeit."
+      },
+      {
+        "name": "Ersatzteile und technische Angaben anhand Herstellerunterlagen und Fotos von Typenschildern recherchieren",
+        "zeitanteil_pct": 3,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Bilderkennung und Recherche-Agent gegenüber Händler-Katalog und Telefonanfrage wirklich 50 % sparen; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Monteur sucht selbst; ein multimodales LLM mit Websuche identifiziert Armatur bzw. Ersatzteil aus Foto und fasst Montageanleitungen zusammen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Sanitärinstallateur/in EFZ als Monteur/in in einem Haustechnik-KMU mit Neubau, Umbau und Service. ESCO passt gut; administrative Aufgaben (Rapporte, Bestellungen) sind klein. Grenzfälle sind die Rapporterstellung per Spracheingabe (Dialekt/Lärm) und die Ersatzteilrecherche per Foto.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur die Arbeits- und Servicerapporte (Spracheingabe in Rapport-Apps) und die Ersatzteilrecherche (Bilderkennung mit Recherche-Agent); die Installations- und Reparaturarbeit selbst ist nicht betroffen.",
+      "begruendung": "Nur rund 8 % der Arbeitszeit sind exponiert: Bei den Rapporten arbeitet die KI delegierend (die App erstellt den Entwurf, der Monteur prüft jeden Rapport), bei der Ersatzteilrecherche unterstützend. Der Kern des Berufs ist physische Montage auf Schweizer Baustellen und bei Kunden; Schweizerdeutsch und Baustellenlärm erschweren die Spracheingabe, und viele kleine Installationsbetriebe führen solche Apps nur langsam ein.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

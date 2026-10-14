@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "828d07b17a9ade681151c1c1fcd0d54f3f43a2c7f673b202c2394b4eadd332ae",
+    "isco_code": "7223",
+    "beruf": "Werkzeugmaschineneinrichter und -bediener",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:41:05+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 40420,
+      "output_tokens": 6036,
+      "api_aequivalent_usd": 0.12881199999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 40420,
+        "output_tokens": 6036,
+        "output_tokens_details": {
+          "thinking_tokens": 2339
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.12881199999999998
+      }
+    ],
+    "request_ids": [
+      "45621739-ed41-43d8-9b4b-bd8657553abb"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "7223",
+    "beruf": "Werkzeugmaschineneinrichter und -bediener",
+    "taetigkeiten": [
+      {
+        "name": "CNC-Maschine einrichten: Spannmittel montieren, Werkzeuge einsetzen, Nullpunkte und Werkzeugkorrekturen vermessen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Arbeit wird von Hand an der Maschine erledigt. Werkzeugvoreinstellgeräte und Messtaster helfen dabei, übernehmen aber nicht die Hälfte der Rüstzeit."
+      },
+      {
+        "name": "Rohteile einlegen, bearbeitete Werkstücke entnehmen und Ausschussteile aussortieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit. Roboter-Beladezellen, Palettenwechsler und Stangenlader sind in der Schweizer Industrie im Serieneinsatz und übernehmen bei Serienteilen den Grossteil der Arbeit."
+      },
+      {
+        "name": "Maschinenlauf überwachen und Parameter (Vorschub, Drehzahl, Korrekturwerte) an der Steuerung nachstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Person muss an der Maschine sein, hören und sehen. Prozessüberwachungssysteme melden Abweichungen, ersetzen aber die Eingriffe am Steuerpult nicht zu 50 %."
+      },
+      {
+        "name": "Bestehende CNC-Programme an der Steuerung anpassen und einfache Programme mit Zyklen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Anpassungen werden direkt an der Steuerung in Dialog- oder Zyklenprogrammierung gemacht, mit Bezug auf das reale Werkstück. Ein Chat-LLM bringt wegen des Übertragens und des hohen Kollisionsrisikos wenig Zeitgewinn."
+      },
+      {
+        "name": "Bearbeitungsprogramme mit CAM-Software aus 3D-Modellen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "KI-Assistenten in CAM-Systemen, die Strategien und Werkzeugwege vorschlagen, sind im Kommen. E2 mit Modus delegierend und Restzeit 30-50 ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Klassische CAM-Software mit Feature-Erkennung ist heute schon Standard. Ob generative KI die verbleibende Programmierzeit inklusive Simulation und Prüfung um mindestens die Hälfte senkt, ist für typische Teile nicht belegt."
+      },
+      {
+        "name": "Testlauf durchführen und Erstteil einfahren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Person fährt das Programm vorsichtig an der Maschine ab, beobachtet den Lauf und korrigiert. Das ist physisch und braucht Präsenz."
+      },
+      {
+        "name": "Werkstücke mit Präzisionsmessgeräten (Mikrometer, Messuhr, Lehren) prüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gemessen wird von Hand an der Maschine. Koordinatenmessmaschinen und In-Prozess-Messung gibt es, sie übernehmen in typischen Schweizer KMU aber nicht die Hälfte der Prüfungen durch die Bedienperson."
+      },
+      {
+        "name": "Messwerte, Prüfprotokolle und Auftragsrückmeldungen im CAQ/BDE-System erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es werden vor allem Zahlen und Klicks erfasst, eine LLM-Leistung ist kaum nötig. Funkmessmittel mit direkter CAQ-Übertragung und automatische BDE/MES-Rückmeldung (klassische Software) übernehmen den Grossteil."
+      },
+      {
+        "name": "Fertigungszeichnungen lesen und Bearbeitungsreihenfolge sowie Werkzeugwahl festlegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Person interpretiert Toleranzen und Masse und plant die Arbeit mit Wissen über Maschine und Werkzeugbestand. Bildverstehen von Zeichnungen spart hier keine 50 % Zeit bei gleicher Zuverlässigkeit."
+      },
+      {
+        "name": "Maschinenstörungen und Bearbeitungsfehler (Masshaltigkeit, Oberfläche) suchen und beheben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Diagnose läuft über Inspektion an der Maschine und das Verhalten des Werkstücks; die Behebung ist physisch. Die Nachschlagehilfe ist separat erfasst."
+      },
+      {
+        "name": "Maschine warten: reinigen, Späne entsorgen, Kühlschmierstoff und Schmierung kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit. Späneförderer und Zentralschmierung sind bereits vorhanden, die übrige Arbeit bleibt Handarbeit."
+      },
+      {
+        "name": "Steuerungshandbücher, Fehlercodes und Schnittdatenempfehlungen der Werkzeughersteller nachschlagen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Dokumenten-Assistent über die PDF-Handbücher und Kataloge (oder der Chatbot des Herstellers) findet die passenden Stellen deutlich schneller. Die Fachperson entscheidet weiterhin selbst und prüft die Angaben gegen die Quelle."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Produktionsmechaniker/in EFZ bzw. Polymechaniker/in als Einrichter/in und Bediener/in von CNC-Fräs- und Drehmaschinen in einem Schweizer Zulieferbetrieb (KMU) mit Klein- und Mittelserien. Der Beruf ist heterogen: Reine Bedienpersonen beschicken mehr, Einrichter programmieren mehr. Der grösste Grenzfall ist die CAM-Programmierung, bei der KI-Assistenten im CAM eine E2-Einstufung ebenso plausibel machen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen ist im Wesentlichen nur das Nachschlagen in Handbüchern, Fehlercodes und Schnittdatenkatalogen per Dokumenten-Assistent; Einrichten, Bedienen, Messen und Warten an der Maschine sind nicht exponiert.",
+      "begruendung": "Nur etwa ein Zwanzigstel der Arbeitszeit ist gegenüber generativer KI exponiert, und zwar unterstützend: Die Fachperson entscheidet weiterhin selbst, die KI findet nur die Informationen schneller. Der Kern des Berufs ist physische Arbeit an der Maschine. Stärker betroffen ist der Beruf durch klassische Automatisierung wie Roboter-Beladezellen und automatische Messdatenerfassung als durch Sprachmodelle.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

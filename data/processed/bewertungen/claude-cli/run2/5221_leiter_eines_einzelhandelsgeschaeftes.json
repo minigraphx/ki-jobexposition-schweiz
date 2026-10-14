@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "fbd41a9add901aac61eafbd9d588caf1afef69689bee9205d831fafce113bb63",
+    "isco_code": "5221",
+    "beruf": "Leiter eines Einzelhandelsgeschäftes",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:35:27+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 40203,
+      "output_tokens": 4961,
+      "api_aequivalent_usd": 0.10726859999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 40203,
+        "output_tokens": 4961,
+        "output_tokens_details": {
+          "thinking_tokens": 1553
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.10726859999999999
+      }
+    ],
+    "request_ids": [
+      "1db787c2-9f88-475a-8d2e-f58f9bfd9aab"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5221",
+    "beruf": "Leiter eines Einzelhandelsgeschäftes",
+    "taetigkeiten": [
+      {
+        "name": "Kundschaft im Laden beraten, bedienen und Reklamationen vor Ort behandeln",
+        "zeitanteil_pct": 22,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Beratung findet persönlich im Laden statt und ist eine Präsenz- und Beziehungstätigkeit, deren Wert in der Kundennähe liegt."
+      },
+      {
+        "name": "An der Kasse kassieren und den täglichen Kassenabschluss machen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit mit klassischem Kassensystem, eine LLM-Leistung ist dafür nicht nötig. Selbstbedienungskassen und Kassensysteme mit automatischem Abschluss sind kommerziell verfügbar, in kleinen Fachgeschäften aber weniger verbreitet."
+      },
+      {
+        "name": "Waren annehmen, auf Lieferung und Qualität prüfen, einräumen und Warenpräsentation gestalten",
+        "zeitanteil_pct": 18,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit im Laden und im Lager. Für das Einräumen und Dekorieren gibt es in Ladengeschäften keine verbreitete Robotik."
+      },
+      {
+        "name": "Waren nachbestellen und Lagerbestand im Warenwirtschaftssystem disponieren",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Bestellvorschläge kommen regelbasiert aus Warenwirtschafts- und Kassensystemen (automatische Disposition), also aus klassischer Software ohne LLM. Die Sortimentsauswahl bleibt Ermessen."
+      },
+      {
+        "name": "Mitarbeitende führen, anleiten, Einsatzpläne festlegen und Vorstellungsgespräche führen",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung und Anleitung finden überwiegend persönlich im Laden statt. Die Einsatzplanung ist ein kleiner Teil und läuft über klassische Planungstools."
+      },
+      {
+        "name": "Mit Lieferanten und Vertretern verhandeln, Konditionen und Kaufverträge abschliessen, neue Lieferanten suchen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit geht überwiegend in persönliche Verhandlungen, Messebesuche und Beziehungspflege. Ein Recherche-Agent spart bei der Lieferantensuche weniger als 50 % der Gesamtzeit."
+      },
+      {
+        "name": "Sortiment, Preise und Geschäftsentwicklung festlegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es handelt sich um unternehmerische Ermessensentscheide mit Kenntnis der lokalen Kundschaft. Die vorbereitende Datenanalyse ist separat erfasst."
+      },
+      {
+        "name": "Umsatz-, Margen- und Kostenzahlen auswerten und Berichte oder Budgets erstellen",
+        "zeitanteil_pct": 6,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Werkzeug mit Code-Ausführung wertet die Exporte aus Kasse und Buchhaltung aus und erstellt Übersicht und Kommentar; die leitende Person prüft jede Auswertung. Standardreports aus dem Kassensystem decken als klassische Software bereits einen grossen Teil ab."
+      },
+      {
+        "name": "Eingangsrechnungen, Spesen und Kassenbelege für die Buchhaltung erfassen und Zahlungen vorbereiten",
+        "zeitanteil_pct": 6,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Belegerkennung in KMU-Buchhaltungssoftware erfasst und kontiert die Belege; der Mensch bearbeitet nur markierte Ausnahmen. Auch klassische QR-Rechnungs- und Formularerkennung übernimmt einen grossen Teil (P1 software)."
+      },
+      {
+        "name": "Werbeaktionen planen sowie Social-Media-Posts, Newsletter und Flyer mit Bildern erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM und Bildgenerierung bzw. Bildbearbeitung erstellen Texte und Visuals; die leitende Person gibt Aktion und Stil vor, wählt aus und prüft jeden Post."
+      },
+      {
+        "name": "E-Mails an Lieferanten und Kundschaft, schriftliche Reklamationsantworten und Stelleninserate verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM entwirft aus Stichworten fertige Texte; die leitende Person prüft jeden Text kurz auf Inhalt und Ton, bevor sie ihn versendet."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Inhaber/in oder Leiter/in eines kleinen bis mittleren Fachgeschäfts im Schweizer Detailhandel mit wenigen Mitarbeitenden und hohem Anteil eigener Verkaufs- und Ladenarbeit. Die ESCO-Beschreibung ist sehr knapp, deshalb sind die Zeitanteile grob aus der Kompetenzliste und typischem Berufswissen geschätzt. Grenzfälle sind die Zahlenauswertung (Abgrenzung zu klassischen Kassenreports) und P1 beim Kassieren in kleinen Läden.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Büroarbeiten: Belegerfassung (KI-Dokumentenerkennung in der Buchhaltungssoftware), Zahlenauswertungen (Datenanalyse-Werkzeuge), Marketingmaterial (Text- und Bildgenerierung) sowie geschäftliche Korrespondenz (Chat-LLM).",
+      "begruendung": "Nur rund ein Fünftel der Arbeitszeit ist exponiert, denn der Kern des Berufs bleibt Verkauf, Warenbewirtschaftung im Laden und Personalführung vor Ort. Die KI arbeitet meist delegierend: Sie erstellt Auswertungen, Posts und Texte, und die leitende Person prüft jedes Ergebnis. Nur die Belegerfassung läuft weitgehend ersetzend. Wesentliche CH-Hemmnisse gibt es kaum; die Einführung bremsen vor allem die vielen kleinen, verstreuten Betriebe mit wenig Zeit für neue Werkzeuge.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

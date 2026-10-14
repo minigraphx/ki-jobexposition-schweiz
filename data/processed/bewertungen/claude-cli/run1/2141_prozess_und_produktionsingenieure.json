@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "0e327a3afb8898fb268c1393c525e5b3d0cdb07ff561c66836fd87cadc164a24",
+    "isco_code": "2141",
+    "beruf": "Prozess- und Produktionsingenieure",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:42:04+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2858,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4495,
+      "api_aequivalent_usd": 0.12010219999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2858,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4495,
+        "output_tokens_details": {
+          "thinking_tokens": 1218
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2858,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.12010219999999998
+      }
+    ],
+    "request_ids": [
+      "1dbb6229-5b84-4ee1-a57e-d83c9fa6ba9f"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2141",
+    "beruf": "Prozess- und Produktionsingenieure",
+    "taetigkeiten": [
+      {
+        "name": "Produktionsdaten (OEE, Ausschuss, Zykluszeiten, Stillstände) aus MES/ERP auswerten und leistungsschwache Prozesse identifizieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Agent mit Code-Ausführung erstellt aus exportierten Daten Auswertungen, Pareto- und Trendanalysen; die Ingenieurin gibt Fragestellung und Kontext vor und prüft jede Analyse auf Plausibilität. Standard-KPIs liefert das MES bereits, die Ursachensuche in Rohdaten bleibt aber Arbeit der Person."
+      },
+      {
+        "name": "Prozesse in der Fertigung vor Ort beobachten, Störungen an Anlagen mit Linienpersonal analysieren (Gemba)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz in der Produktion, Beobachten an der Maschine und Gespräche mit Mitarbeitenden; keine LLM-Exposition und keine Robotik dafür."
+      },
+      {
+        "name": "Prozessverbesserungen und Optimierungsmassnahmen konzipieren (Lean, Layout, Taktung, Automatisierungsgrad)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kern ist ingenieurtechnisches Urteil mit implizitem Anlagen- und Betriebswissen; LLM-Ideen und Vergleiche sparen deutlich weniger als 50 % der Zeit."
+      },
+      {
+        "name": "Versuche und Testläufe an Anlagen durchführen, Prozessparameter einstellen und neue Prozesse in Betrieb nehmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Arbeit an der Anlage vor Ort mit physischer Präsenz; Versuchsauswertung ist Teil der Datenanalyse-Tätigkeit."
+      },
+      {
+        "name": "Arbeitspläne, Arbeitsanweisungen, FMEA- und Prozessdokumentation erstellen und nachführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten, bestehenden Vorlagen und Prozessbeschrieben entwirft das LLM Anweisungen und FMEA-Einträge; die Ingenieurin prüft jedes Dokument fachlich und ergänzt anlagenspezifische Details."
+      },
+      {
+        "name": "Konstruktionszeichnungen von Vorrichtungen, Anlagen und Layouts im CAD anpassen, prüfen und freigeben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative KI-Funktionen in CAD sind für präzise Konstruktionsänderungen und Freigabeprüfungen 2026 noch nicht verlässlich genug, um 50 % Zeit zu sparen."
+      },
+      {
+        "name": "Wirtschaftlichkeitsrechnungen und Investitionsanträge für Anlagen und Massnahmen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mit eingefügten Kosten- und Mengendaten erstellt das LLM Berechnungsstruktur (Payback, NPV) und Antragstext; die Ingenieurin prüft Annahmen und Zahlen jedes Antrags."
+      },
+      {
+        "name": "Projekte koordinieren und Sitzungen mit Produktion, Qualität, Einkauf und Lieferanten führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung, Verhandlung und Führung von Angesicht zu Angesicht; Präsenz- und Beziehungstätigkeit."
+      },
+      {
+        "name": "Projektberichte, Statusberichte und Präsentationen für Management verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in der Office-Suite erstellen Berichte und Folien aus Notizen und Daten; die Person prüft und korrigiert jede Fassung."
+      },
+      {
+        "name": "Technische Recherche zu Fertigungsverfahren, Normen, Maschinen und Anbietern durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche fassen Quellen und Anbieter zusammen; die Ingenieurin bewertet und verifiziert die Ergebnisse selbst."
+      },
+      {
+        "name": "Mitarbeitende in neue Prozesse und Arbeitsabläufe einweisen und schulen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Instruktion an der Linie in persönlicher Präsenz."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Prozess-/Produktionsingenieur/in FH/ETH in einem mittelgrossen Schweizer Industriebetrieb (MEM- oder Medtech-Industrie). Der ESCO-Input passt gut, ist aber knapp. Die Zeitanteile sind geschätzt. Grenzfälle sind die Datenanalyse (je nach Datenqualität und MES-Export E2 oder E0) und die CAD-Arbeit (generative CAD-Funktionen noch unreif).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Auswertung von Produktionsdaten mit Datenanalyse-Agenten, das Erstellen von Prozessdokumentation, Investitionsanträgen und Berichten per LLM sowie die technische Recherche; die Arbeit in der Fertigung, an Anlagen und im CAD bleibt weitgehend unberührt.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind exponiert, überwiegend im Modus delegierend: Die KI erstellt Analysen, Dokumente und Berichte, die Ingenieurin prüft jede Ausgabe fachlich; bei der Recherche wirkt die KI unterstützend. Wesentliche CH-Hemmnisse fehlen weitgehend. Gebremst wird die Einführung vor allem durch den Zugang zu MES-/ERP-Daten und durch firmeninterne Vorgaben zur Vertraulichkeit von Produktionsdaten.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

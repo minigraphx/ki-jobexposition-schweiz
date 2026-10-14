@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "f4c1b606359e77a5a498e0f4fd8a2d67ceccd924619b35360cfd6579f4750c1b",
+    "isco_code": "4311",
+    "beruf": "Sachbearbeiter/in Buchhaltung",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:23:42+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 38984,
+      "output_tokens": 6170,
+      "api_aequivalent_usd": 0.1312048
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 38984,
+        "output_tokens": 6170,
+        "output_tokens_details": {
+          "thinking_tokens": 2243
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1312048
+      }
+    ],
+    "request_ids": [
+      "5268f8e5-3ec4-4241-a42a-2b9d065a246c"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "4311",
+    "beruf": "Sachbearbeiter/in Buchhaltung",
+    "taetigkeiten": [
+      {
+        "name": "Kreditorenrechnungen (PDF/Papier/QR-Rechnung) erfassen, kontieren und im ERP verbuchen",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Belegerkennung mit Kontierungsvorschlag in der Buchhaltungssoftware erstellt die Buchung; die Person bearbeitet nur markierte Ausnahmen und Stichproben. P1, weil QR-Rechnungs-Scan und klassische OCR-Belegerfassung den Grossteil der Erfassung schon übernehmen können."
+      },
+      {
+        "name": "Ausgangsrechnungen und Gutschriften aus Aufträgen, Rapporten und Kundenangaben erstellen und versenden",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Standardfakturierung aus Aufträgen läuft über den Fakturalauf im ERP (klassische Software, P1). Für den manuellen Rest mit Freitext-Rapporten und E-Mails erstellt eine KI-Funktion im ERP den Rechnungsentwurf, und die Person prüft jede Rechnung vor dem Versand."
+      },
+      {
+        "name": "Unklare Zahlungseingänge zuordnen und offene Debitorenposten bereinigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die automatische Zuordnung über QR-Referenz und camt.054 ist klassische Software (P1). Bei Teilzahlungen und Freitext-Mitteilungen schlägt die KI im ERP die Zuordnung vor, und die Person bestätigt jeden Vorschlag einzeln."
+      },
+      {
+        "name": "Zahlungsläufe für Kreditoren vorbereiten, kontrollieren und zur Freigabe einreichen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Den Zahlungslauf mit pain.001-Datei und E-Banking-Übermittlung übernimmt Standard-Buchhaltungssoftware. Die Kontrolle ist regelbasiert, ein LLM ist dafür nicht nötig."
+      },
+      {
+        "name": "Mahnlauf durchführen und monatliche Debitoren-Kontoauszüge versenden",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mahnlauf und Kontoauszüge erledigt klassische Buchhaltungssoftware regelbasiert, einschliesslich E-Mail-Versand. Das ist keine KI-Exposition."
+      },
+      {
+        "name": "Säumige Kundinnen und Kunden telefonisch kontaktieren und Zahlungsvereinbarungen aushandeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Verhandlungsgespräch mit Ermessen und Kundenbeziehung, oft auf Schweizerdeutsch. Voicebots erreichen hier die geforderte Qualität nicht."
+      },
+      {
+        "name": "Rückfragen von Kunden und Lieferanten zu Rechnungen, Zahlungen und Kontoständen per E-Mail beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein KI-Assistent im Mail-Programm oder ERP holt die Kontodaten und entwirft die Antwort, auch auf Französisch oder Italienisch. Die Person prüft Fakten und Wortlaut jeder Antwort. Das Abklären strittiger Fälle hält die Restzeit hoch."
+      },
+      {
+        "name": "Kunden- und Lieferantenstammdaten sowie Kreditinformationen (Bonität, Limiten, Bankverbindungen) pflegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Weil geänderte Bankverbindungen wegen Betrugsrisiko manuell verifiziert werden müssen, ist die 50-%-Schwelle unsicher; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die KI zieht Mutationen aus Freitext-Mails und Bonitätsauskünften heraus und erstellt die Änderung. Die Person verifiziert jede Mutation, vor allem Bankdaten."
+      },
+      {
+        "name": "Kreditoren-, Debitoren- und Bankkonten mit dem Hauptbuch abstimmen und Monatsabschluss sowie MWST-Abrechnung vorbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Person klärt Differenzen und beurteilt Abgrenzungen selbst. Ein Analysewerkzeug bzw. eine KI-Funktion im ERP gleicht Listen ab, markiert Differenzen und schlägt Buchungen vor."
+      },
+      {
+        "name": "Spesenabrechnungen und Belege von Mitarbeitenden prüfen und verbuchen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Eine Spesen-App mit KI-Belegerkennung und Prüfung gegen das Spesenreglement erstellt die Buchung; die Person bearbeitet markierte Ausnahmen. Klassische Spesensoftware mit OCR und Regelprüfung deckt bereits den Grossteil ab (P1)."
+      },
+      {
+        "name": "Buchhaltungsbelege scannen, ordnen und revisionssicher archivieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Tätigkeit ist teils physisch (Papier sortieren, scannen) und teils regelbasierte Ablage. DMS und Buchhaltungssoftware verknüpfen Belege automatisch mit der Buchung (klassische Software)."
+      },
+      {
+        "name": "Rücksprachen mit Vorgesetzten, Treuhand, Revision und Fachabteilungen führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung im Team und Klärung von Einzelfällen im direkten Kontakt."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Sachbearbeiter/in Buchhaltung (Kreditoren, Debitoren, Fakturierung) in einem Schweizer KMU mit Standard-ERP wie Abacus, Bexio oder Sage. ESCO beschreibt mit «Fakturist/in» nur einen Ausschnitt; ergänzt wurden deshalb die Kreditorenbuchhaltung und Abschlussarbeiten. Grösste Unsicherheit ist die Abgrenzung zwischen klassischer Automatisierung (QR-Rechnung, camt-Abgleich, Mahnlauf) und LLM-Leistung sowie die Restzeiten in Fakturierung und Korrespondenz.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Kreditorenerfassung, Spesenverbuchung, Rechnungsentwürfe, die Zuordnung unklarer Zahlungen, E-Mail-Korrespondenz und Stammdatenpflege, und zwar durch KI-Belegerkennung, KI-Funktionen im ERP und Mail-Assistenten.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind exponiert. Erfassung und Spesen laufen weitgehend ersetzend, Fakturierung, Korrespondenz und Zahlungszuordnung delegierend mit Prüfung jeder Ausgabe; bei Abstimmungen und Abschluss unterstützt die KI nur. Viele Routinen (Zahlungslauf, Mahnlauf, QR-Abgleich) sind schon klassisch automatisiert. In der Schweiz bremsen vor allem die Einführung in KMU-ERP-Systemen und bei Korrespondenz die Mehrsprachigkeit; Datenschutz spielt eine geringere Rolle als in Spital oder Verwaltung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

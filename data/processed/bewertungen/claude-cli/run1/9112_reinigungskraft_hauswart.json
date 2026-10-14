@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "8a08f2260a5eff5006b6d95e460e01ef9424921632346e6c61e4b6dc5dea56ab",
+    "isco_code": "9112",
+    "beruf": "Reinigungskraft / Hauswart",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:02:43+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2066,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 3993,
+      "api_aequivalent_usd": 0.10372619999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2066,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3993,
+        "output_tokens_details": {
+          "thinking_tokens": 1143
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2066,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.10372619999999999
+      }
+    ],
+    "request_ids": [
+      "6ada74e6-5d26-4ff8-879f-a640fe2486d7"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "9112",
+    "beruf": "Reinigungskraft / Hauswart",
+    "taetigkeiten": [
+      {
+        "name": "Böden in Büros, Hotelzimmern und Gängen saugen und feucht wischen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Reinigungsarbeit vor Ort. Saugroboter scheitern an möblierten, verwinkelten Räumen und übernehmen keine 50 % dieser Arbeit."
+      },
+      {
+        "name": "Grosse freie Bodenflächen (Hallen, Korridore, Eingangsbereiche) maschinell reinigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit ohne Bezug zu generativer KI. Autonome Scheuersaugmaschinen sind kommerziell verfügbar und für grosse freie Flächen in CH-Gebäuden im Einsatz."
+      },
+      {
+        "name": "Toiletten, Duschen und Sanitäranlagen reinigen und desinfizieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Detailreinigung in engen Räumen; dafür gibt es keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Möbel, Arbeitsflächen, Türen und Glasflächen abstauben und reinigen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Arbeit an unterschiedlichen Objekten; Fensterroboter decken nur einen Bruchteil ab."
+      },
+      {
+        "name": "Betten machen und Gästezimmer aufräumen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit im Hotelzimmer; keine verfügbare Robotik."
+      },
+      {
+        "name": "Abfallbehälter leeren, Abfall trennen und entsorgen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Einsammeln und Tragen im Gebäude; nicht automatisiert."
+      },
+      {
+        "name": "Verbrauchsmaterial (Seife, Papier, Hygieneartikel, Minibar-Artikel) auffüllen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Nachfüllen vor Ort; Füllstandssensoren erleichtern höchstens die Planung."
+      },
+      {
+        "name": "Schmutzwäsche einsammeln, sortieren und Wäschebetrieb (Waschen, Falten) betreuen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer Umgang mit Wäsche und Maschinen. Faltautomaten gibt es nur in Grosswäschereien, nicht im typischen Betrieb."
+      },
+      {
+        "name": "Reinigungsmittel dosieren, Reinigungswagen und Geräte vorbereiten und pflegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Vorbereitungsarbeit. Dosiersysteme verkürzen nur einen kleinen Teil davon."
+      },
+      {
+        "name": "Anliegen und Beschwerden von Kundschaft oder Gästen vor Ort entgegennehmen und weiterleiten",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurzer persönlicher Kontakt vor Ort; es ist eine Präsenztätigkeit."
+      },
+      {
+        "name": "Reinigungsnachweise und Checklisten abhaken, Schäden und Materialbedarf melden",
+        "zeitanteil_pct": 2,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dauert nur wenige Minuten pro Tag (Abhaken, kurze Meldung per App oder Zettel), deshalb spart generative KI nichts Relevantes."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Reinigungskraft ohne Ausbildung in der Unterhaltsreinigung (Reinigungsfirma, Büros und Hotel-Housekeeping). Hauswart-Aufgaben wie Technik oder Umgebungspflege kommen beim ESCO-Profil kaum vor und sind deshalb nicht modelliert. Die ESCO-Beschreibung ist knapp, die Tätigkeiten sind aber eindeutig physisch. Grenzfall ist nur die autonome Bodenreinigung (P1).",
+    "zusammenfassung": {
+      "haupt_risiko": "Keine wesentliche Tätigkeit ist durch generative KI exponiert; nur die Reinigung grosser freier Bodenflächen kann von autonomen Scheuersaugmaschinen (nicht-generative Robotik) übernommen werden.",
+      "begruendung": "Der Beruf besteht fast vollständig aus physischer Reinigungs- und Aufräumarbeit vor Ort, sodass praktisch kein Anteil der Arbeitszeit durch generative KI exponiert ist und kein KI-Modus zum Tragen kommt. Die administrativen Anteile wie Checklisten und Meldungen sind in Schweizer Reinigungsbetrieben minimal. Automatisierungsdruck entsteht höchstens durch Bodenreinigungsroboter in grossen Gebäuden, nicht durch Sprachmodelle.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

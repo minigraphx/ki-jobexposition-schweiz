@@ -1,0 +1,194 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "7a1069bb84f23661dd1b38134cf0f007a508c916b62831d8e2da3683cb892271",
+    "isco_code": "9412",
+    "beruf": "Küchenhilfe",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:17:00+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3208,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 3807,
+      "api_aequivalent_usd": 0.1091422
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3208,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3807,
+        "output_tokens_details": {
+          "thinking_tokens": 1050
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3208,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1091422
+      }
+    ],
+    "request_ids": [
+      "59191c7e-3ffc-4cd2-9962-fffab76c504f"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "9412",
+    "beruf": "Küchenhilfe",
+    "taetigkeiten": [
+      {
+        "name": "Gemüse, Obst, Fleisch und andere Zutaten rüsten, waschen und schneiden (Mise en place)",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Arbeit mit Messern und Küchengeräten; Gemüseschneidemaschinen werden von der Person selbst bedient und übernehmen in typischen Gastrobetrieben nicht ≥ 50 % der Zeit."
+      },
+      {
+        "name": "Einfache kalte und warme Speisen nach Rezept und Anweisung zubereiten und in Standardportionen anrichten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Zubereitung an der Station (Salate, Sandwiches, Beilagen); Koch- oder Anrichteroboter sind in Schweizer Gastrobetrieben nicht im regulären Einsatz."
+      },
+      {
+        "name": "Geschirr, Besteck, Töpfe und Bleche abwaschen, Spülmaschine beschicken und ausräumen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit; die Spülmaschine ist bereits eingesetzt, Vorabräumen, Beschicken, Topfwäsche und Einräumen bleiben manuell, Spülroboter nur vereinzelt in Grossküchen."
+      },
+      {
+        "name": "Arbeitsflächen, Kochgeräte und Küchenmaschinen mit Reinigungsmitteln reinigen und desinfizieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Reinigung vieler unterschiedlicher Oberflächen und Geräte; keine Robotik in relevantem Umfang verfügbar."
+      },
+      {
+        "name": "Küchenböden und Nebenräume (Kühlräume, Lager) reinigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisch; enge, verwinkelte Küchenräume mit Abläufen und Möbeln eignen sich kaum für autonome Bodenreinigungsroboter."
+      },
+      {
+        "name": "Warenlieferungen entgegennehmen, auf Menge, Qualität und Temperatur prüfen und in Kühlräume und Lager einräumen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sichtkontrolle und Tragen/Einräumen vor Ort; physische Tätigkeit ohne relevante Automatisierung in Gastrobetrieben."
+      },
+      {
+        "name": "Vorräte in Kühlräumen und Lager kontrollieren, nach FIFO umschichten und Fehlbestände der Küchenleitung melden",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zählen, Sichten und Umschichten vor Ort; die eigentliche Bestellung macht die Küchenleitung, KI spart beim kurzen mündlichen oder schriftlichen Melden keine relevante Zeit."
+      },
+      {
+        "name": "Küchenabfälle und Speisereste trennen, entsorgen und Abfallbehälter reinigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit; Food-Waste-Waagen erfassen Mengen, nehmen aber das Trennen und Entsorgen nicht ab."
+      },
+      {
+        "name": "Kühltemperaturen ablesen und HACCP-Kontroll- und Reinigungslisten abhaken",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurzes Ablesen und Abhaken, kein Text, bei dem ein LLM relevant Zeit spart; Funk-Temperatursensoren mit automatischer HACCP-Aufzeichnung sind kommerziell verfügbar und können das Ablesen weitgehend übernehmen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Küchenhilfe ohne Ausbildung in einem Schweizer Restaurant oder Hotel mittlerer Grösse (à la carte bzw. Bankett), Schwerpunkt Mise en place, Abwasch und Reinigung. Die ESCO-Beschreibung ist knapp, die Kompetenzliste passt aber gut. Den Skill «Indikatoren für Lebensmittelabfälle konzipieren» habe ich als ESCO-Rauschen nicht übernommen. Grenzfälle gibt es nur bei P (Spülroboter, HACCP-Sensoren), nicht bei der KI-Exposition.",
+    "zusammenfassung": {
+      "haupt_risiko": "Keine Tätigkeit ist wesentlich durch generative KI exponiert. Rüsten, Zubereiten, Abwaschen, Reinigen und Warenhandling sind physische Arbeiten vor Ort.",
+      "begruendung": "Praktisch die gesamte Arbeitszeit einer Küchenhilfe in Schweizer Gastrobetrieben besteht aus Handarbeit in der Küche. Deshalb gibt es weder einen ersetzenden noch einen delegierenden oder unterstützenden KI-Modus mit relevanter Zeitersparnis. Automatisierung ist allenfalls über klassische Technik wie HACCP-Temperatursensoren in kleinem Umfang möglich, nicht über Sprachmodelle.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

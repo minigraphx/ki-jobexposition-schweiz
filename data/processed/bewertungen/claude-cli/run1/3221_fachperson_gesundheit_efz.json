@@ -1,0 +1,198 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "5d9b10cede78b17a1ac4e07245394ecfd16502bbe029e7e5ec9a16b380641899",
+    "isco_code": "3221",
+    "beruf": "Fachperson Gesundheit EFZ (FaGe)",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:49:52+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4900,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4007,
+      "api_aequivalent_usd": 0.1266782
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4900,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4007,
+        "output_tokens_details": {
+          "thinking_tokens": 1100
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4900,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1266782
+      }
+    ],
+    "request_ids": [
+      "0915f761-a18f-4159-901b-2a21af4ee789"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3221",
+    "beruf": "Fachperson Gesundheit EFZ (FaGe)",
+    "taetigkeiten": [
+      {
+        "name": "Bewohnende bei Körperpflege, Ankleiden, Ausscheidung unterstützen sowie mobilisieren und lagern",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körpernahe Pflege mit Händen und Präsenz am Bett. Keine Robotik übernimmt 50 % dieser Arbeit; Lifter sind nur Hilfsmittel."
+      },
+      {
+        "name": "Vitalzeichen, Blutzucker und Gewicht messen sowie Zustand beobachten und Veränderungen erkennen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Messen und Beobachten geschieht vor Ort am Patienten. Kontinuierliches Monitoring ist in Heim und Bettenstation nicht verbreitet, deshalb unter 50 %."
+      },
+      {
+        "name": "Medizinaltechnische Verrichtungen ausführen: Medikamente richten und verabreichen, Injektionen, Wundversorgung, Blutentnahmen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeiten am Körper. Verblisterung durch Apotheken erleichtert das Richten, übernimmt aber nicht 50 % der Gesamttätigkeit."
+      },
+      {
+        "name": "Mahlzeiten verteilen, beim Essen und Trinken unterstützen und Zimmer instand halten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Hilfe und Präsenz. Servierroboter für Mahlzeiten sind in CH-Pflegeinstitutionen nicht im regulären Einsatz."
+      },
+      {
+        "name": "Gespräche mit Bewohnenden und Angehörigen führen, Alltag gestalten und emotional begleiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beziehungs- und Präsenztätigkeit, deren Wert in der persönlichen Anwesenheit liegt."
+      },
+      {
+        "name": "Pflegedokumentation führen: Verlaufsberichte schreiben, Beobachtungen und Massnahmen im Pflegedokumentationssystem erfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Per Spracheingabe (auch Schweizerdeutsch im Einzeldiktat) erstellt eine KI-Funktion im Dokumentationssystem den Eintrag; die FaGe prüft und verantwortet jeden Eintrag. Dialekt und Fachjargon erhöhen den Korrekturaufwand; die Leistungserfassung bleibt grösstenteils Klickarbeit."
+      },
+      {
+        "name": "Pflegeplanung mitgestalten: Pflegeziele und Massnahmen formulieren und anpassen, Assessments (RAI/BESA) vorbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob ein Entwurf aus kopierten Verlaufseinträgen bei der kurzen, strukturierten Planung wirklich 50 % spart; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Verlaufseinträge werden als Text kopiert, das LLM entwirft Pflegeziele und Massnahmen. Die FaGe prüft jeden Entwurf am Einzelfall und stimmt ihn mit der Pflegefachperson HF ab."
+      },
+      {
+        "name": "Rapporte und Übergaben im Team mündlich durchführen und sich mit Pflegefachpersonen und Ärzten absprechen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Abstimmung und Präsenz im Team; KI-Zusammenfassungen verkürzen die Übergabe nicht um 50 %."
+      },
+      {
+        "name": "Pflegematerial und Medikamente bewirtschaften, Hilfsmittel und Geräte reinigen und Hygienemassnahmen umsetzen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physisch: Material auffüllen und reinigen. Barcode-Bestellsysteme verkürzen nur einen kleinen Teil der Arbeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommen ist eine FaGe EFZ in einem Alters- und Pflegeheim (Langzeitpflege), ähnlich wie auf einer Bettenstation im Spital. Die ESCO-Zuordnung zur Krankenpflege (ISCO 5321/2221) passt nur teilweise, deshalb sind die Tätigkeiten nach dem Berufsbild FaGe EFZ abgeleitet. Grenzfälle sind die Pflegeplanung (E1 oder E0) und der Korrekturaufwand bei schweizerdeutschem Diktat in der Dokumentation.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur die Pflegedokumentation über Spracheingabe bzw. KI-Funktionen im Dokumentationssystem und das Entwerfen der Pflegeplanung mit einem Chat-LLM; die körpernahe Pflege ist nicht betroffen.",
+      "begruendung": "Rund 15 % der Arbeitszeit sind exponiert, durchwegs delegierend: Die KI entwirft Verlaufseinträge bzw. Pflegeziele, die FaGe prüft und verantwortet jeden Eintrag. Berufsgeheimnis, Datenschutz und Cloud-Vorgaben in Heimen und Spitälern sowie schweizerdeutsches Diktat bremsen die Umsetzung; der Kern des Berufs ist physische Pflege und Präsenz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

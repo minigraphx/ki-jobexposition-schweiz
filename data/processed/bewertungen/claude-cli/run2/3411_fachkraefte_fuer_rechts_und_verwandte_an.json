@@ -1,0 +1,232 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "36cf0d4da6ed1827cfb8174c6ed3c73943fc0ae53a5b5331a4362b8d179e7ae5",
+    "isco_code": "3411",
+    "beruf": "Fachkräfte für Rechts- und verwandte Angelegenheiten",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:15:48+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 39135,
+      "output_tokens": 6147,
+      "api_aequivalent_usd": 0.13077499999999997
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 39135,
+        "output_tokens": 6147,
+        "output_tokens_details": {
+          "thinking_tokens": 2285
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.13077499999999997
+      }
+    ],
+    "request_ids": [
+      "f5171bb7-e0e0-4429-a1b7-2fe73ad799bb"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3411",
+    "beruf": "Fachkräfte für Rechts- und verwandte Angelegenheiten",
+    "taetigkeiten": [
+      {
+        "name": "Eingehende Eingaben, Urteile und Beilagen (Post, E-Mail, Scans) sichten, im Geschäftsverwaltungssystem registrieren und dem Dossier zuordnen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung im DMS/Kanzleisystem extrahiert Parteien, Aktenzeichen, Dokumentart und fristauslösende Daten; wegen Fristrelevanz kontrolliert die Sachbearbeiterin jede Erfassung. Klassische Formularerkennung reicht bei heterogenen Rechtsdokumenten nicht."
+      },
+      {
+        "name": "Fristen und Termine im Fristenkalender führen, Wiedervorlagen und Verfahrensstand überwachen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fristberechnung, Wiedervorlagen und Pendenzenlisten sind regelbasierte Funktionen der Kanzlei-/Gerichtssoftware (klassische Software); das Erkennen fristauslösender Ereignisse ist bei der Eingangserfassung erfasst."
+      },
+      {
+        "name": "Verfahrensakten auf Vollständigkeit und formelle Korrektheit prüfen (Zustellnachweise, Vollmachten, Kostenvorschüsse, Verfahrensschritte)",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Sachbearbeiterin prüft jede Akte selbst; eine KI-Funktion im DMS gleicht Aktenbestand mit Checklisten ab und markiert fehlende oder unstimmige Dokumente. Nahe der Schwelle, da Verantwortung für Rechtmässigkeit eine eigene Durchsicht verlangt."
+      },
+      {
+        "name": "Standardkorrespondenz und prozessleitende Schreiben (Vorladungen, Fristansetzungen, Begleit- und Zustellschreiben) aus Falldaten und Vorlagen erstellen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM erstellt die Schreiben aus eingefügten Falldaten und Vorlagen; wegen Daten, Fristen und Adressaten prüft die Sachbearbeiterin jedes Schreiben vor Unterschrift durch Richter/Anwalt. Textbausteine allein (klassisch) decken die Fallanpassung nicht ab."
+      },
+      {
+        "name": "Rechtsschriften, Verträge und Eingaben nach Diktat oder Entwurf der Anwältin/des Gerichtsschreibers schreiben, korrigieren und formatieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracherkennung mit LLM-Nachbearbeitung erstellt aus dem (meist hochdeutschen) Diktat den formatierten Text; die Sachbearbeiterin liest jedes Dokument gegen und korrigiert Fachbegriffe und Zitate. Hemmnis: Anwaltsgeheimnis und Cloud-Restriktionen."
+      },
+      {
+        "name": "Rechtsdokumente zusammenstellen: Beilagen- und Aktenverzeichnisse, Dossiers für Gericht, Akteneinsicht und Weiterleitung erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktion im DMS liest die PDF-Akten, benennt, ordnet und erstellt Verzeichnisse; die Sachbearbeiterin kontrolliert jedes Verzeichnis auf Vollständigkeit und Reihenfolge."
+      },
+      {
+        "name": "Physische Akten führen: kopieren, paginieren, versenden, Zustellungen auslösen und Akten nach Abschluss archivieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Handhabung von Papierakten; Scanner und Frankiermaschinen helfen, ersetzen die Tätigkeit aber nicht zu 50 %."
+      },
+      {
+        "name": "Gesetzesbestimmungen und Rechtsprechung recherchieren und Aktennotizen bzw. Sachverhaltszusammenfassungen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Recherche-KI in juristischen Datenbanken liefert Fundstellen und Entwürfe der Zusammenfassung; jede Quelle wird wegen Halluzinationsrisiko einzeln verifiziert."
+      },
+      {
+        "name": "Verhandlungen, Einvernahmen und Besprechungen protokollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Mehrpersonengespräche in Mundart mit Fachjargon sind fehleranfällig und Protokolle müssen inhaltlich exakt sein; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Transkription und Protokollentwurf aus der Aufnahme; die protokollführende Person korrigiert jeden Abschnitt gegen das Gehörte, Protokoll wird vorgelesen/unterzeichnet."
+      },
+      {
+        "name": "Anfragen von Klientschaft, Parteien, Anwälten und Behörden telefonisch und am Schalter beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönlicher Kontakt mit Identitätsprüfung, Vertraulichkeitsabwägung und oft emotional belasteten Parteien in Mundart; Voicebots erreichen hier die Qualität nicht."
+      },
+      {
+        "name": "Leistungen erfassen, Kostenvorschüsse überwachen und Honorar- bzw. Gerichtskostenrechnungen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Leistungserfassung, Tarifberechnung und Rechnungsstellung erledigt die Kanzlei-/Gerichtssoftware regelbasiert; kein LLM nötig."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Als Setting angenommen sind Rechtsassistent/innen bzw. Kanzleisachbearbeitende mit Sekundär-II-Abschluss in einer Anwaltskanzlei oder Gerichts-/Behördenkanzlei, die Verfahren administrativ begleiten. Der ESCO-Input passt gut, ist aber knapp; die Zeitanteile sind geschätzt und der Anteil von Diktat bzw. Protokollführung schwankt stark je nach Setting. Grenzfälle sind die formelle Aktenprüfung (nahe an der 50-%-Schwelle) und das Protokollieren in Mundart.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Eingangserfassung, Standard- und prozessleitende Korrespondenz, Schreiben nach Diktat, Zusammenstellen von Akten/Verzeichnissen sowie Recherche und Protokolle, die durch Dokumentenerkennung, Spracherkennung, Chat-LLM und KI-Funktionen im DMS übernommen werden.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind exponiert, überwiegend delegierend: Die KI erstellt Schreiben, Verzeichnisse und Erfassungen, die Sachbearbeiterin prüft wegen Fristen- und Haftungsrelevanz jedes Ergebnis; bei der formellen Aktenprüfung wirkt die KI nur unterstützend. Anwalts- und Amtsgeheimnis, Datenschutz- und Cloud-Vorgaben der Justiz sowie die laufende, kantonal unterschiedliche Digitalisierung der Justiz (Justitia 4.0) bremsen die Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

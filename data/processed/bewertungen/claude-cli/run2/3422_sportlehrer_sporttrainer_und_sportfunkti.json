@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "bfce6390ef18c1c7a0774194ac52c938d861709f5ae8776228e6108b6f59b6ad",
+    "isco_code": "3422",
+    "beruf": "Sportlehrer, Sporttrainer und Sportfunktionäre",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:34:00+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 41153,
+      "output_tokens": 4511,
+      "api_aequivalent_usd": 0.09845860000000001
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 41153,
+        "output_tokens": 4511,
+        "output_tokens_details": {
+          "thinking_tokens": 1379
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.09845860000000001
+      }
+    ],
+    "request_ids": [
+      "b8f0d215-d3e4-42fc-9658-bc18ef7c334b"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3422",
+    "beruf": "Sportlehrer, Sporttrainer und Sportfunktionäre",
+    "taetigkeiten": [
+      {
+        "name": "Trainings- und Unterrichtslektionen vor Ort leiten, Übungen vorzeigen und Gruppen anleiten",
+        "zeitanteil_pct": 38,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Präsenz- und Unterrichtstätigkeit in Halle, Platz, Piste oder Bad; keine Technik übernimmt das Anleiten in relevantem Umfang."
+      },
+      {
+        "name": "Bewegungsausführung beobachten, individuell korrigieren und Feedback geben",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Beobachtung und Korrektur am Menschen, oft mit Hilfestellung; Videoanalyse-Apps unterstützen höchstens punktuell."
+      },
+      {
+        "name": "Sicherheit während des Trainings gewährleisten, Risiken beurteilen, Aufsicht über Anlage und Garderoben führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aufsicht und Eingreifen vor Ort, inkl. Erste Hilfe; Präsenz zwingend."
+      },
+      {
+        "name": "Leistungsstand und körperlichen Zustand der Teilnehmenden mit Tests und Eingangsgesprächen erheben",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Durchführung von Fitness-/Techniktests und Gesprächen erfolgt persönlich vor Ort; KI spart hier keine 50 %."
+      },
+      {
+        "name": "Trainingsprogramme, Saison- und Lektionspläne erstellen und an Zielgruppe anpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM erstellt aus Vorgaben (Niveau, Alter, Ziel, Infrastruktur) Lektions- und Trainingspläne; die Trainerin prüft und passt jeden Plan an die Gruppe an."
+      },
+      {
+        "name": "Trainings- und Fitnessdaten auswerten und Fortschritt der Teilnehmenden dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in Trainings-/Wearable-Plattformen bzw. Datenanalyse-Agent fassen Daten zusammen und entwerfen Fortschrittsberichte; Trainer interpretiert und prüft jede Auswertung."
+      },
+      {
+        "name": "Kursausschreibungen, Teilnehmerinformationen und E-Mails an Teilnehmende oder Eltern verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Ausschreibungen und Mitteilungen aus Stichworten (auch in FR/IT/EN); die Person liest jede Mitteilung durch und versendet sie."
+      },
+      {
+        "name": "Anmeldungen, Präsenzlisten und Kursabrechnungen (z. B. J+S) verwalten",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Strukturierte Datenpflege, die Buchungs-/Vereinsverwaltungssoftware und die J+S-Datenbank (klassische Software) weitgehend erledigen; kein LLM nötig."
+      },
+      {
+        "name": "Sportgeräte, Material und Trainingsanlage bereitstellen, kontrollieren und instand halten",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit vor Ort; keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Teilnehmende motivieren und persönliche Gespräche mit Athleten und Eltern führen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beziehungs- und Präsenztätigkeit, deren Wert in der persönlichen Anwesenheit liegt."
+      },
+      {
+        "name": "Teilnehmende an Wettkämpfen, Prüfungen und Sportanlässen begleiten und betreuen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Betreuung und Coaching vor Ort am Anlass; Präsenztätigkeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Sportlehrer/in bzw. Trainer/in im Freizeit- und Breitensport (Sportschule, Verein, Fitness-/Kurszentrum, z. B. Ski-, Tennis- oder Schwimmlehrer/in, J+S-Leitende). Die im ISCO-Titel genannten Sportfunktionäre (Verbandsadministration, Schiedsrichter) sind im ESCO-Input kaum abgebildet und nicht gesondert modelliert; mit ihnen läge die Exposition höher. Zeitanteile sind grob geschätzt; Grenzfälle sind Trainingsplanung und Datenauswertung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Erstellung von Trainings- und Lektionsplänen, die Auswertung von Trainingsdaten und das Verfassen von Ausschreibungen und Teilnehmermitteilungen durch Chat-LLM und KI-Funktionen in Trainingsplattformen; der Unterricht selbst ist nicht betroffen.",
+      "begruendung": "Nur rund ein Fünftel der Arbeitszeit ist exponiert, durchwegs delegierend: Die KI entwirft Pläne, Auswertungen und Texte, die Trainerin prüft und passt jedes Ergebnis an die Gruppe an. Der Kern des Berufs ist Anleiten, Korrigieren und Beaufsichtigen vor Ort; wesentliche CH-Hemmnisse bestehen für die exponierten Teile kaum, die Adoption wird eher durch die vielen kleinen Vereine und Sportschulen sowie nebenberufliche Tätigkeit gebremst.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

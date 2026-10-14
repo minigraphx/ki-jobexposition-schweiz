@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "ff21d90072f7b74efe507fe5bfe4a40bddd27ffd26bdf38d37015e36b1981bfc",
+    "isco_code": "7214",
+    "beruf": "Baumetallverformer und Metallbauer",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T06:39:44+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 1569,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 1569
+        }
+      ],
+      "prompt_token_count": 22198,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22198
+        }
+      ],
+      "thoughts_token_count": 4311,
+      "total_token_count": 28078
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1569,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1569
+          }
+        ],
+        "prompt_token_count": 22198,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22198
+          }
+        ],
+        "thoughts_token_count": 4311,
+        "total_token_count": 28078
+      }
+    ],
+    "request_ids": [
+      "nrnOapHEK7Gcz7IPp7a2sQ4"
+    ],
+    "versuche": 1,
+    "status": "fehlgeschlagen",
+    "fehler": [
+      "Versuch 1: (root): Additional properties are not allowed ('5-10 Jahre', 'Betroffen ist einzig das Erfassen von Arbeits-, Regie- und Montageprotokollen mittels Sprach- und Bilderkennung in mobilen Rapport-Apps; die handwerkliche Werkstattfertigung und die Baustellenmontage sind nicht exponiert.', 'Lediglich rund 5 % der Arbeitszeit sind gegenüber generativer KI exponiert, und zwar im delegierenden Modus: Eine KI-gestützte App erstellt aus Spracheingaben und Baustellenfotos den Rapportentwurf, den der Metallbauer oder Vorgesetzte jeweils fachlich prüft. Die übrigen 95 % bestehen aus physischer Metallbearbeitung, Schweissen und Montage vor Ort, wobei auf der Baustelle zusätzlich Lärm und Mundart die Einführung von Sprach-KI verlangsamen.', 'begruendung', 'ch_hemmnis', 'modus', 'name', 'p_art', 'physisch_automatisierbar', 'restzeit_mensch', 'sicherheit', 'sicherheit_begruendung', 'stufe', 'zeitanteil_pct' were unexpected); taetigkeiten: ['name', 'Metallprofile, Bleche und Stahlbauteile in der Werkstatt zuschneiden, bohren und umformen', 'zeitanteil_pct', 20, 'stufe', 'E0', 'modus', None, 'restzeit_mensch', None, 'physisch_automatisierbar', 'P0', 'p_art', None, 'sicherheit', 'mittel', 'sicherheit_begruendung', None, 'ch_hemmnis', 'begruendung', 'Physische Bearbeitung an Säge-, Bohr- und Umformmaschinen in der Werkstatt. CNC-Stabbearbeitungszentren und Laserschneidanlagen automatisieren zwar Teilschritte, im typischen Schweizer Metallbau-KMU mit Einzel- und Kleinserienfertigung überwiegen jedoch das manuelle Rüsten, Materialhandling und Umformen.'] is too long; taetigkeiten/0: 'name' is not of type 'object'; taetigkeiten/1: 'Metallprofile, Bleche und Stahlbauteile in der Werkstatt zuschneiden, bohren und umformen' is not of type 'object'; taetigkeiten/2: 'zeitanteil_pct' is not of type 'object'; taetigkeiten/3: 20 is not of type 'object'; taetigkeiten/4: 'stufe' is not of type 'object'; taetigkeiten/5: 'E0' is not of type 'object'; taetigkeiten/6: 'modus' is not of type 'object'; taetigkeiten/7: None is not of type 'object'"
+    ],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "custom_id": "r1-7214_baumetallverformer_und_metallbauer",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": "validierung",
+    "probleme": [
+      "(root): Additional properties are not allowed ('5-10 Jahre', 'Betroffen ist einzig das Erfassen von Arbeits-, Regie- und Montageprotokollen mittels Sprach- und Bilderkennung in mobilen Rapport-Apps; die handwerkliche Werkstattfertigung und die Baustellenmontage sind nicht exponiert.', 'Lediglich rund 5 % der Arbeitszeit sind gegenüber generativer KI exponiert, und zwar im delegierenden Modus: Eine KI-gestützte App erstellt aus Spracheingaben und Baustellenfotos den Rapportentwurf, den der Metallbauer oder Vorgesetzte jeweils fachlich prüft. Die übrigen 95 % bestehen aus physischer Metallbearbeitung, Schweissen und Montage vor Ort, wobei auf der Baustelle zusätzlich Lärm und Mundart die Einführung von Sprach-KI verlangsamen.', 'begruendung', 'ch_hemmnis', 'modus', 'name', 'p_art', 'physisch_automatisierbar', 'restzeit_mensch', 'sicherheit', 'sicherheit_begruendung', 'stufe', 'zeitanteil_pct' were unexpected)",
+      "taetigkeiten: ['name', 'Metallprofile, Bleche und Stahlbauteile in der Werkstatt zuschneiden, bohren und umformen', 'zeitanteil_pct', 20, 'stufe', 'E0', 'modus', None, 'restzeit_mensch', None, 'physisch_automatisierbar', 'P0', 'p_art', None, 'sicherheit', 'mittel', 'sicherheit_begruendung', None, 'ch_hemmnis', 'begruendung', 'Physische Bearbeitung an Säge-, Bohr- und Umformmaschinen in der Werkstatt. CNC-Stabbearbeitungszentren und Laserschneidanlagen automatisieren zwar Teilschritte, im typischen Schweizer Metallbau-KMU mit Einzel- und Kleinserienfertigung überwiegen jedoch das manuelle Rüsten, Materialhandling und Umformen.'] is too long",
+      "taetigkeiten/0: 'name' is not of type 'object'",
+      "taetigkeiten/1: 'Metallprofile, Bleche und Stahlbauteile in der Werkstatt zuschneiden, bohren und umformen' is not of type 'object'",
+      "taetigkeiten/2: 'zeitanteil_pct' is not of type 'object'",
+      "taetigkeiten/3: 20 is not of type 'object'",
+      "taetigkeiten/4: 'stufe' is not of type 'object'",
+      "taetigkeiten/5: 'E0' is not of type 'object'",
+      "taetigkeiten/6: 'modus' is not of type 'object'",
+      "taetigkeiten/7: None is not of type 'object'",
+      "taetigkeiten/8: 'restzeit_mensch' is not of type 'object'",
+      "taetigkeiten/9: None is not of type 'object'",
+      "taetigkeiten/10: 'physisch_automatisierbar' is not of type 'object'",
+      "taetigkeiten/11: 'P0' is not of type 'object'",
+      "taetigkeiten/12: 'p_art' is not of type 'object'",
+      "taetigkeiten/13: None is not of type 'object'",
+      "taetigkeiten/14: 'sicherheit' is not of type 'object'",
+      "taetigkeiten/15: 'mittel' is not of type 'object'",
+      "taetigkeiten/16: 'sicherheit_begruendung' is not of type 'object'",
+      "taetigkeiten/17: None is not of type 'object'",
+      "taetigkeiten/18: 'ch_hemmnis' is not of type 'object'",
+      "taetigkeiten/19: 'begruendung' is not of type 'object'",
+      "taetigkeiten/20: 'Physische Bearbeitung an Säge-, Bohr- und Umformmaschinen in der Werkstatt. CNC-Stabbearbeitungszentren und Laserschneidanlagen automatisieren zwar Teilschritte, im typischen Schweizer Metallbau-KMU mit Einzel- und Kleinserienfertigung überwiegen jedoch das manuelle Rüsten, Materialhandling und Umformen.' is not of type 'object'",
+      "zusammenfassung: 'haupt_risiko' is not of type 'object'"
+    ],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": null,
+  "rohantwort": "{\"isco_code\":\"7214\",\"beruf\":\"Baumetallverformer und Metallbauer\",\"taetigkeiten\":[\n  \"name\",\"Metallprofile, Bleche und Stahlbauteile in der Werkstatt zuschneiden, bohren und umformen\",\"zeitanteil_pct\",20,\"stufe\",\"E0\",\"modus\",null,\"restzeit_mensch\",null,\"physisch_automatisierbar\",\"P0\",\"p_art\",null,\"sicherheit\",\"mittel\",\"sicherheit_begruendung\",null,\"ch_hemmnis\",\n  \"begruendung\",\"Physische Bearbeitung an Säge-, Bohr- und Umformmaschinen in der Werkstatt. CNC-Stabbearbeitungszentren und Laserschneidanlagen automatisieren zwar Teilschritte, im typischen Schweizer Metallbau-KMU mit Einzel- und Kleinserienfertigung überwiegen jedoch das manuelle Rüsten, Materialhandling und Umformen.\"\n],\"unsicherheit\":\"niedrig\",\"kommentar\":\"Angenommenes Setting: Metallbauer/in EFZ (Metall- und Stahlbau) in einem typischen Schweizer KMU mit Arbeit in der Werkstatt und Montage auf der Baustelle. Die in ESCO genannten Bewehrungsarbeiten fallen in der Schweiz überwiegend in den Hochbau (Maurer/Eisenleger), wurden aber bei Zuschnitt und Montage mitberücksichtigt; offensichtliches ESCO-Rauschen («Staub von Kraftfahrzeugen entfernen») wurde ignoriert.\",\"zusammenfassung\":\n  \"haupt_risiko\",\"Betroffen ist einzig das Erfassen von Arbeits-, Regie- und Montageprotokollen mittels Sprach- und Bilderkennung in mobilen Rapport-Apps; die handwerkliche Werkstattfertigung und die Baustellenmontage sind nicht exponiert.\"\n  :\"begruendung\",\"Lediglich rund 5 % der Arbeitszeit sind gegenüber generativer KI exponiert, und zwar im delegierenden Modus: Eine KI-gestützte App erstellt aus Spracheingaben und Baustellenfotos den Rapportentwurf, den der Metallbauer oder Vorgesetzte jeweils fachlich prüft. Die übrigen 95 % bestehen aus physischer Metallbearbeitung, Schweissen und Montage vor Ort, wobei auf der Baustelle zusätzlich Lärm und Mundart die Einführung von Sprach-KI verlangsamen.\"\n  :\"zeitrahmen\",\"5-10 Jahre\"\n  :\"taetigkeiten\",\n  \"name\":\"Metallbauteile in der Werkstatt ausrichten, heften und verschweissen\",\"zeitanteil_pct\":25,\"stufe\":\"E0\",\"modus\":null,\"restzeit_mensch\":null,\"physisch_automatisierbar\":\"P0\",\"p_art\":null,\"sicherheit\":\"hoch\",\"sicherheit_begruendung\":null,\"ch_hemmnis\":[],\"begruendung\":\"Rein handwerkliche und physische Tätigkeit am Schweisstisch (Lichtbogen-, MAG/WIG- und Punktschweissen). Schweissroboter sind für die im Schweizer Metallbau übliche Einzelanfertigung (Treppen, Geländer, Spezialkonstruktionen) nicht zu mindestens 50 % der Zeit wirtschaftlich einsetzbar.\"\n  ,\"name\":\"Stahl- und Metallbaukonstruktionen auf der Baustelle ausrichten, befestigen und montieren\",\"zeitanteil_pct\":20,\"stufe\":\"E0\",\"modus\":null,\"restzeit_mensch\":null,\"physisch_automatisierbar\":\"P0\",\"p_art\":null,\"sicherheit\":\"hoch\",\"sicherheit_begruendung\":null,\"ch_hemmnis\":[],\"begruendung\":\"Physische Montagearbeit vor Ort auf der Baustelle inklusive Arbeit in grossen Höhen, Anschlagen von Lasten am Kran sowie Verschrauben, Nieten und Baustellenschweissen.\"\n  ,\"name\":\"2D- und 3D-Pläne lesen, Naturmasse auf der Baustelle aufnehmen und Werkstücke anreissen\",\"zeitanteil_pct\":10,\"stufe\":\"E0\",\"modus\":null,\"restzeit_mensch\":null,\"physisch_automatisierbar\":\"P0\",\"p_art\":null,\"sicherheit\":\"mittel\",\"sicherheit_begruendung\":null,\"ch_hemmnis\":[],\"begruendung\":\"Der Zeitaufwand liegt im Ausmessen am Rohbau vor Ort und im Übertragen der Masse auf die physischen Bauteile in der Werkstatt; Sprachmodelle sparen hierbei keine relevante Zeit.\"\n  ,\"name\":\"Metalloberflächen schleifen, reinigen und Korrosionsschutzmittel auftragen\",\"zeitanteil_pct\":5,\"stufe\":\"E0\",\"modus\":null,\"restzeit_mensch\":null,\"physisch_automatisierbar\":\"P0\",\"p_art\":null,\"sicherheit\":\"hoch\",\"sicherheit_begruendung\":null,\"ch_hemmnis\":[],\"begruendung\":\"Manuelle Oberflächenbearbeitung (Verschleifen von Schweissnähten, Entfetten, Grundieren mit Spritzpistole oder Pinsel) an individuellen Werkstücken und Montagestellen.\"\n  ,\"name\":\"Werkstücke und Schweissnähte auf Masshaltigkeit und Unvollkommenheiten prüfen\",\"zeitanteil_pct\":5,\"stufe\":\"E0\",\"modus\":null,\"restzeit_mensch\":null,\"physisch_automatisierbar\":\"P0\",\"p_art\":null,\"sicherheit\":\"hoch\",\"sicherheit_begruendung\":null,\"ch_hemmnis\":[],\"begruendung\":\"Sicht- und Massprüfung direkt am gefertigten Metallbauteil in der Werkstatt oder auf der Baustelle.\"\n  ,\"name\":\"Türen, Fenster, Verglasungen und Beschläge einsetzen sowie defekte Komponenten ersetzen\",\"zeitanteil_pct\":5,\"stufe\":\"E0\",\"modus\":null,\"restzeit_mensch\":null,\"physisch_automatisierbar\":\"P0\",\"p_art\":null,\"sicherheit\":\"hoch\",\"sicherheit_begruendung\":null,\"ch_hemmnis\":[],\"begruendung\":\"Physische Einbau-, Einstell- und Reparaturarbeiten auf der Baustelle oder bei der Kundschaft vor Ort.\"\n  ,\"name\":\"Material, Werkzeuge und Bauteile rüsten, zur Baustelle transportieren und Maschinen pflegen\",\"zeitanteil_pct\":5,\"stufe\":\"E0\",\"modus\":null,\"restzeit_mensch\":null,\"physisch_automatisierbar\":\"P0\",\"p_art\":null,\"sicherheit\":\"hoch\",\"sicherheit_begruendung\":null,\"ch_hemmnis\":[],\"begruendung\":\"Physische Logistik-, Verlade- und Fahrtätigkeit sowie manuelle Wartung von Säge-, Schweiss- und Bearbeitungsmaschinen.\"\n  ,\"name\":\"Arbeits-, Regie- und Montageprotokolle sowie Materialmeldungen erfassen\",\"zeitanteil_pct\":5,\"stufe\":\"E2\",\"modus\":\"delegierend\",\"restzeit_mensch\":\"30-50\",\"physisch_automatisierbar\":\"P0\",\"p_art\":null,\"sicherheit\":\"mittel\",\"sicherheit_begruendung\":null,\"ch_hemmnis\":[],\"begruendung\":\"Per Spracheingabe und Fotoaufnahme in einer Rapport-App erstellt die KI den Regie- oder Montagerapport; der Metallbauer oder Projektleiter prüft und visiert jeden Rapport. Umgebungsgeräusche und Dialekt erhöhen den Korrekturaufwand.\"\n}"
+}

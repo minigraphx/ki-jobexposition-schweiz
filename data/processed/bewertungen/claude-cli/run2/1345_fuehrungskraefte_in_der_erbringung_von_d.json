@@ -1,0 +1,229 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "a2d1904fbb6017161d97fee75a85b9741c44266d7bdb2d95d6c45e25b6a914a1",
+    "isco_code": "1345",
+    "beruf": "Führungskräfte in der Erbringung von Dienstleistungen des Bildungswesens",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:48:44+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3938,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 6843,
+      "api_aequivalent_usd": 0.17570220000000003
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3938,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 6843,
+        "output_tokens_details": {
+          "thinking_tokens": 3226
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3938,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.17570220000000003
+      }
+    ],
+    "request_ids": [
+      "b162ffad-a045-4407-b07d-dc7c84ec5283"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1345",
+    "beruf": "Führungskräfte in der Erbringung von Dienstleistungen des Bildungswesens",
+    "taetigkeiten": [
+      {
+        "name": "Lehrpersonen führen: Unterrichtsbesuche, Mitarbeitenden- und Bewerbungsgespräche durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Personalführung, Beobachtung im Unterricht und Gespräche leben von persönlicher Präsenz und Urteil. Es gibt keine nicht-generative Technik, die das übernimmt."
+      },
+      {
+        "name": "Mitarbeitendenbeurteilungen und Gesprächsprotokolle aus Notizen schriftlich ausformulieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Schulleiterin gibt Stichworte und Beobachtungen ein, das LLM formuliert Beurteilung oder Protokoll, und sie prüft jede Formulierung, weil die Texte personalrechtlich relevant sind. Hemmnis: Personaldatenschutz im öffentlichen Dienst."
+      },
+      {
+        "name": "Stellenausschreibungen verfassen und Bewerbungsdossiers vorsichten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die KI entwirft die Ausschreibung und erstellt aus PDF-Dossiers Kurzprofile mit Abgleich zum Anforderungsprofil. Die Schulleitung prüft jedes Profil und entscheidet selbst über die Einladung."
+      },
+      {
+        "name": "Gespräche mit Eltern und Schülerinnen/Schülern führen, Konflikte und Disziplinarfälle klären",
+        "zeitanteil_pct": 13,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Konfliktgespräche von Angesicht zu Angesicht sind eine Präsenz- und Beziehungstätigkeit."
+      },
+      {
+        "name": "Konferenzen, Steuergruppen und Schulentwicklungsprojekte leiten, mit Schulbehörde und Fachstellen zusammenarbeiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sitzungsleitung, Abstimmung und strategische Steuerung mit Behörden und Fachstellen beruhen auf Präsenz, Verhandlung und Ermessen."
+      },
+      {
+        "name": "Pensen, Klassenzuteilungen und Stundenplan planen und mit Lehrpersonen abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Stundenplan-Optimierung erledigt bereits klassische Software (z. B. Untis). Die verbleibende Zeit besteht aus Aushandeln von Pensen und Abwägen von Personal- und Klassenkonstellationen, wo ein LLM keine 50 % spart."
+      },
+      {
+        "name": "Schulbudget erarbeiten, Ausgaben überwachen und Anschaffungen beantragen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Budgetkommentare und Hochrechnungen aus exportierten Zahlen per Chat-LLM 50 % sparen; E1 (unterstützend, 30-50) ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Der Aufwand liegt im Einholen der Bedürfnisse, im Priorisieren und in der Abstimmung mit der Gemeinde. Die Zahlen kommen aus der Finanzsoftware der Gemeinde."
+      },
+      {
+        "name": "Schulprogramm, Konzepte, Jahres- und Evaluationsberichte verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Schulleitung gibt Eckpunkte, Vorlagen und Daten ein, das LLM entwirft Konzept oder Bericht. Sie steuert die inhaltliche Ausrichtung und prüft und überarbeitet jeden Entwurf."
+      },
+      {
+        "name": "Elternbriefe, Mitteilungen und E-Mail-Anfragen von Eltern, Lehrpersonen und Behörden beantworten",
+        "zeitanteil_pct": 12,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Die in die Office-Suite bzw. das E-Mail-Programm integrierte KI entwirft Briefe und Antworten aus dem Mailverlauf, und die Schulleitung prüft jede Nachricht, weil Ton und Inhalt heikel sein können. Hemmnisse: Datenschutz bei Schülerdaten und die Erwartung der Eltern an eine persönliche Antwort."
+      },
+      {
+        "name": "Anträge und Verfügungen zur Schullaufbahn (Übertritt, Dispensation, Massnahmen) vorbereiten und verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM entwirft die Verfügung samt Begründung aus Falldaten und eingefügten kantonalen Bestimmungen. Da ein menschlicher Einzelfallentscheid mit Rechtsmittelbelehrung vorgeschrieben ist, ist höchstens «delegierend» möglich: Die Schulleitung prüft jede Verfügung."
+      },
+      {
+        "name": "Im Schulhaus präsent sein, Krisensituationen bewältigen und Schulanlässe begleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die physische Präsenz und das Handeln vor Ort sind der Kern dieser Tätigkeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Schulleitung einer öffentlichen Volksschule oder Sekundarstufe II in der Deutschschweiz, ohne nennenswertes eigenes Unterrichtspensum. Deshalb wird «Studierende bewerten» aus ESCO nicht als eigene Tätigkeit geführt. Die ESCO-Finanzkompetenzen sind für CH-Volksschulen überzeichnet, weil die Gemeinde die Finanzen weitgehend führt. Grenzfälle sind die Budgetarbeit und der Anteil der Korrespondenz, die KI-Entwürfe wirklich um ≥ 50 % verkürzen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Schreibarbeiten: Berichte, Konzepte, Beurteilungen, Verfügungen, Elternkorrespondenz und das Vorsichten von Bewerbungsdossiers. Diese entwirft ein Chat-LLM oder eine in Office integrierte KI.",
+      "begruendung": "Gut ein Drittel der Arbeitszeit ist exponiert, durchwegs im delegierenden Modus: Die KI erstellt Entwürfe, die Schulleitung prüft und verantwortet jeden Text. Der Kern des Berufs (Personalführung, Eltern- und Konfliktgespräche, Sitzungen und Zusammenarbeit mit Behörden) bleibt Präsenzarbeit. Bremsend wirken in der Schweiz der Datenschutz bei Schüler- und Personaldaten, kantonale Vorgaben zu Cloud-Diensten, die Verfügungspflicht und die Erwartung der Eltern an persönliche Kommunikation.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

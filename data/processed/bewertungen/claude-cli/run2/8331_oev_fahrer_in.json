@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "0c4727f9fe32e4871e365783db613c7a8c70822429b0c0741a6c72afde02585c",
+    "isco_code": "8331",
+    "beruf": "ÖV-Fahrer/in (Bus/Tram)",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:39:02+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4097,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4079,
+      "api_aequivalent_usd": 0.12169419999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4097,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4079,
+        "output_tokens_details": {
+          "thinking_tokens": 919
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4097,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.12169419999999999
+      }
+    ],
+    "request_ids": [
+      "c9e118fe-9325-42e4-a779-4966ed14cb00"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "8331",
+    "beruf": "ÖV-Fahrer/in (Bus/Tram)",
+    "taetigkeiten": [
+      {
+        "name": "Bus oder Tram im städtischen und regionalen Linienverkehr fahrplangemäss und defensiv fahren",
+        "zeitanteil_pct": 65,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Fahrtätigkeit im Mischverkehr. Autonome Busse und Trams gibt es in der Schweiz nur in Pilotprojekten und nicht im regulären Linienbetrieb, daher P0."
+      },
+      {
+        "name": "Haltestellen bedienen: Fahrgastwechsel überwachen, Türen steuern, Rampe für Rollstuhlfahrende auslegen und mobilitätseingeschränkten Fahrgästen helfen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Tätigkeit ist physisch und verlangt Präsenz vor Ort. Die Sicherheitsverantwortung beim Fahrgastwechsel bleibt bei der Fahrperson."
+      },
+      {
+        "name": "Fahrgästen an der Tür oder Haltestelle Auskunft zu Anschlüssen, Tarifen und Umleitungen geben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze mündliche Auskünfte von Angesicht zu Angesicht während des Betriebs. Fahrplan-Apps gibt es bereits; sie entlasten die Fahrperson aber nicht messbar um 50 % ihrer heutigen Auskunftszeit."
+      },
+      {
+        "name": "Billette verkaufen, Bargeld einnehmen und Kasse am Dienstende abrechnen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Kassiertätigkeit. Billettautomaten, Mobile-Ticketing-Apps (z. B. EasyRide) und bargeldlose Bordgeräte können den Verkauf weitgehend übernehmen; in städtischen Netzen ist das bereits verbreitet."
+      },
+      {
+        "name": "Abfahrtskontrolle am Fahrzeug durchführen (Bremsen, Licht, Türen, Bordrechner) und Mängel an die Werkstatt melden",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Sicht- und Funktionsprüfung erfolgt physisch am Fahrzeug. Die Ferndiagnose meldet zwar Fehler, ersetzt aber die vorgeschriebene Kontrolle durch die Fahrperson nicht."
+      },
+      {
+        "name": "Mit der Leitstelle per Funk und Bordrechner kommunizieren, Störungen melden und Umleitungen oder Anschlusssicherungen umsetzen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Echtzeitkommunikation während der Fahrt. Statusmeldungen laufen bereits über das klassische Rechnergestützte Betriebsleitsystem (RBL); generative KI spart hier keine relevante Zeit."
+      },
+      {
+        "name": "Konflikte mit Fahrgästen deeskalieren, in Notfällen Erste Hilfe leisten und Fahrgäste evakuieren",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare zwischenmenschliche Präsenz und physisches Eingreifen in Ausnahmesituationen."
+      },
+      {
+        "name": "Ereignis-, Unfall- und Schadenmeldungen nach Vorfällen verfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar ist, ob die meist kurzen Formularmeldungen mit Spracheingabe auf Schweizerdeutsch wirklich ≥ 50 % Zeit sparen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Fahrperson diktiert den Ablauf in eine Melde-App, die mit Transkription und LLM den Bericht samt Formular erstellt. Die Fahrperson prüft jede Meldung auf Richtigkeit, weil sie haftungsrelevant ist."
+      },
+      {
+        "name": "Dienst antreten und übergeben, Ablösungen gemäss Dienstplan wahrnehmen und Arbeitszeit erfassen",
+        "zeitanteil_pct": 2,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit- und Dienstplanerfassung übernehmen klassische Dienstplan-Software und das Login am Bordrechner. Generative KI ist dafür nicht nötig."
+      },
+      {
+        "name": "Fahrzeug im Depot abstellen, Innenraum grob reinigen und Fahrzeug laden oder betanken",
+        "zeitanteil_pct": 2,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeiten im Depot. Waschanlagen übernehmen nur die Aussenreinigung, die heute ohnehin nicht der Fahrperson obliegt."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Annahme: Bus- oder Tramfahrer/in in einem städtischen oder regionalen Verkehrsbetrieb (z. B. städtische Verkehrsbetriebe, PostAuto), die vor allem im Linienverkehr fährt. Die ESCO-Beschreibung ist knapp, die Kompetenzliste deckt den Alltag aber gut ab. Der einzige Grenzfall sind die kurzen Ereignismeldungen, die per Spracheingabe auf Schweizerdeutsch erstellt werden.",
+    "zusammenfassung": {
+      "haupt_risiko": "Von generativer KI betroffen sind nur die gelegentlichen Ereignis- und Schadenmeldungen, die per Spracheingabe und LLM erstellt werden könnten; das Fahren und die Fahrgastbetreuung selbst sind nicht exponiert.",
+      "begruendung": "Nur rund 3 % der Arbeitszeit sind exponiert, und zwar delegierend: Die KI erstellt die Meldung, die Fahrperson prüft jede einzelne. Der Kern des Berufs ist Fahren im Schweizer Mischverkehr und die Präsenz bei den Fahrgästen. Autonome Busse gibt es nur als Pilotprojekte, und das Billettgeschäft wird bereits von Automaten und Apps statt von generativer KI abgelöst.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

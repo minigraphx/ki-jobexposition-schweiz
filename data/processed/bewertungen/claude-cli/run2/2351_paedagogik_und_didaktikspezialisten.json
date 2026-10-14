@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "45f8f2bb96419e05d874aefadc052aa9bfa62d4d02ddae1e3527d90e2eadb54d",
+    "isco_code": "2351",
+    "beruf": "Pädagogik- und Didaktikspezialisten",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:31:35+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2606,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4579,
+      "api_aequivalent_usd": 0.11976619999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2606,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4579,
+        "output_tokens_details": {
+          "thinking_tokens": 1365
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2606,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11976619999999999
+      }
+    ],
+    "request_ids": [
+      "cdcf9f7d-e503-417d-8cdc-4b036629d380"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2351",
+    "beruf": "Pädagogik- und Didaktikspezialisten",
+    "taetigkeiten": [
+      {
+        "name": "Lehrplan- und Kompetenztexte (Fachbereichslehrpläne, Bildungspläne, Kompetenzraster) entwerfen und überarbeiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Aus Vorgaben, Rahmenlehrplan und Arbeitsgruppenentscheiden entwirft das LLM Kompetenzformulierungen und Textfassungen; die Fachperson spezifiziert, prüft jede Fassung fachdidaktisch und stimmt sie ab. Parallel geführte Sprachfassungen (DE/FR/IT) erschweren die Abstimmung organisatorisch."
+      },
+      {
+        "name": "Bestehende Lehrpläne und Bildungsprogramme analysieren und mit Normen, Zielen und Vergleichsdokumenten abgleichen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Fachperson beurteilt Qualität und Kohärenz selbst; das LLM vergleicht eingefügte Dokumente, markiert Lücken, Überschneidungen und Progressionsbrüche und spart so einen Grossteil der Lesearbeit."
+      },
+      {
+        "name": "Erhebungen zu Bildungsbedarf und Lehrplanumsetzung konzipieren und quantitativ/qualitativ auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Datenanalyse-Agent mit Code-Ausführung erstellt Auswertungen und kodiert offene Antworten; die Fachperson legt das Design fest und prüft jede Auswertung. Datenschutz bei Schul- und Personendaten in der Verwaltung bremst."
+      },
+      {
+        "name": "Unterrichtsbesuche, Interviews und Fokusgruppen an Schulen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz vor Ort und Gesprächsführung mit Lehrpersonen und Schulleitungen."
+      },
+      {
+        "name": "Lehrpersonen und Schulleitungen zu Lehrmethoden und Unterrichtsplanung beraten und Weiterbildungen leiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beratung und Kursleitung von Angesicht zu Angesicht; Wert liegt in Präsenz und Beziehung."
+      },
+      {
+        "name": "Fachkommissionen und Arbeitsgruppen leiten sowie mit Bildungsbehörden, Verbänden und Hochschulen verhandeln",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Moderation, Konsensfindung und Beziehungspflege mit Behörden und Fachleuten; keine relevante Zeitersparnis durch KI."
+      },
+      {
+        "name": "Evaluationsberichte, Stellungnahmen und Vernehmlassungsantworten zur Lehrplanentwicklung verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Auswertungen, Notizen und Gliederung entwirft das LLM den Bericht; die Fachperson prüft Aussagen und Wertungen in jedem Bericht und verantwortet ihn."
+      },
+      {
+        "name": "Bildungspolitische Entwicklungen und Forschungsliteratur recherchieren und synthetisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agent sucht und fasst Studien und Berichte zusammen; die Fachperson liest Schlüsselquellen selbst, verifiziert und zieht die Schlüsse."
+      },
+      {
+        "name": "Umsetzungshilfen, Handreichungen und Weiterbildungsmaterialien für Schulen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM erstellt Handreichungen, Aufgabenbeispiele und Kursunterlagen nach Vorgabe; die Fachperson prüft und passt jede Unterlage an Stufe und Kontext an."
+      },
+      {
+        "name": "Sitzungsprotokolle, Projektplanung und Korrespondenz erledigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Transkription von Sitzungen mit mehreren schweizerdeutsch sprechenden Personen ist fehleranfällig; Restzeit 10-30 mit Modus ersetzend bei Hochdeutsch ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Transkriptions- und Protokolltools sowie Office-KI erstellen Protokolle und Korrespondenz; die Person prüft und korrigiert jede Ausgabe, wegen Dialekt mit erhöhtem Aufwand."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: wissenschaftliche Mitarbeitende in einem kantonalen Bildungsdepartement, einer Pädagogischen Hochschule oder einer interkantonalen Fachstelle (z. B. Lehrplanentwicklung und -umsetzung). Der ESCO-Input passt gut, der Beruf ist aber heterogen (Beratung vs. Konzeptarbeit), deshalb sind die Zeitanteile grob geschätzt. Am unsichersten ist, ob Analyse und Berichte die 50-%-Schwelle sicher erreichen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind das Entwerfen von Lehrplantexten, Berichten und Handreichungen durch Chat-LLMs, die Auswertung von Erhebungen mit Datenanalyse-Agenten sowie die Dokumentenanalyse und Recherche, die von LLM-Werkzeugen unterstützt wird.",
+      "begruendung": "Gut die Hälfte der Arbeitszeit ist exponiert. Meist ist das delegierend: Die KI entwirft Texte und Auswertungen, die Fachperson prüft jedes Ergebnis. Bei Analyse und Recherche ist es unterstützend. Beratung, Weiterbildung und Gremienarbeit bleiben persönlich. Bremsend wirken Datenschutz- und Cloud-Vorgaben der kantonalen Verwaltungen und die Abstimmung paralleler Sprachfassungen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

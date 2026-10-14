@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "7ce55ed6edea33110377fb4b34f42f9fa276f319731ae0da735a2d9a4193da7b",
+    "isco_code": "4419",
+    "beruf": "Bürokräfte und verwandte Berufe, anderweitig nicht genannt",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:59:18+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2232,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5256,
+      "api_aequivalent_usd": 0.1303142
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2232,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5256,
+        "output_tokens_details": {
+          "thinking_tokens": 1793
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2232,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1303142
+      }
+    ],
+    "request_ids": [
+      "807d20ee-d8f3-4938-a156-29d277031ccb"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "4419",
+    "beruf": "Bürokräfte und verwandte Berufe, anderweitig nicht genannt",
+    "taetigkeiten": [
+      {
+        "name": "Korrespondenz und E-Mails verfassen und beantworten (Anfragen, Standardbriefe, Bestätigungen)",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Chat-LLM entwirft Antworten und Briefe aus eingefügter Anfrage und Stichworten. Die Bürokraft gibt Kontext, prüft jeden Entwurf auf Fall- und Faktenbezug und versendet ihn; reine Standardbriefe würden nur noch freigegeben."
+      },
+      {
+        "name": "Telefonanrufe entgegennehmen, Standardauskünfte geben und weiterverbinden",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Die Voicebot-Qualität bei Schweizerdeutsch und bei unstrukturierten Anliegen ist wenig belegt; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Voicebot mit Systemzugriff beantwortet Standardfragen (Öffnungszeiten, Zuständigkeit, Status) und leitet weiter. Die Bürokraft übernimmt nur weitergeleitete Spezialfälle."
+      },
+      {
+        "name": "Besucherinnen und Kundschaft am Empfang/Schalter persönlich empfangen und betreuen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare persönliche Präsenz. Check-in-Terminals ersetzen die persönliche Betreuung nicht in relevantem Umfang."
+      },
+      {
+        "name": "Eingehende Post öffnen, sortieren, scannen und verteilen sowie Postausgang frankieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physisches Hantieren mit Papier. Externe digitale Poststellen und Frankiermaschinen gibt es, in typischen KMU und Verwaltungsstellen übernehmen sie aber nicht ≥ 50 % der Arbeit."
+      },
+      {
+        "name": "Daten aus Formularen, Belegen und Meldungen in Fachapplikation/ERP erfassen und Dossiers mutieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die KI-Dokumentenverarbeitung extrahiert Daten aus Scans, PDFs und Freitext-E-Mails und überträgt sie ins System. Die Bürokraft bearbeitet markierte Ausnahmen und macht Stichproben; Datenschutz und Amtsgeheimnis bremsen Cloud-Lösungen."
+      },
+      {
+        "name": "Rechnungen ausstellen und Zahlungseingänge/offene Posten kontrollieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fakturierung aus dem ERP, QR-Rechnung, Zahlungsabgleich per QR-Referenz und Mahnlauf erledigt klassische Buchhaltungssoftware. Generative KI ist dafür nicht nötig."
+      },
+      {
+        "name": "Daten zusammenstellen und Auswertungen, Statistiken und Berichte (z. B. Verkaufsberichte) erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Datenanalyse (Code-Ausführung, Tabellenkalkulations-Copilot) erstellt Auswertungen, Diagramme und Berichtstext aus Exporten. Die Bürokraft spezifiziert die Auswertung und prüft jede Zahl auf Plausibilität."
+      },
+      {
+        "name": "Termine, Sitzungen und Raumreservationen koordinieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die kurze Abstimmung mit mehreren Personen dominiert, und Kalender- und Buchungstools sind schon im Einsatz. Generative KI spart hier kaum 50 % zusätzlich."
+      },
+      {
+        "name": "Sitzungsprotokolle und Aktennotizen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI transkribiert die Aufnahme und erstellt das Protokoll; die protokollführende Person liest gegen und gibt frei. Bei Schweizerdeutsch in der Gruppe steigt der Korrekturaufwand."
+      },
+      {
+        "name": "Informationen recherchieren, Offerten einholen und Anbieter vergleichen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent mit Websuche sammelt Informationen und stellt einen Offertvergleich zusammen. Die Bürokraft prüft die Quellen und jede Zusammenstellung."
+      },
+      {
+        "name": "Akten ablegen und archivieren sowie Büromaterial bestellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Teils physische Ablage, teils kurze Routinen in DMS und Webshop. Generative KI spart dabei keine relevante Zeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Annahme: allgemeine Bürokraft (Sekundär II) in einer öffentlichen Verwaltung oder einem Dienstleistungs-KMU, mit Empfang, Post, Datenerfassung, Korrespondenz und einfachen Auswertungen. Die ESCO-Zuordnung (Verkaufssachbearbeitung) passt nur teilweise; die Tätigkeiten sind deshalb stark aus CH-Berufswissen abgeleitet. Grösste Unsicherheiten: der Voicebot am Telefon (Dialekt, unstrukturierte Anliegen) und die Zeitanteile in diesem heterogenen Sammelberuf.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Korrespondenz (Chat-LLM), Datenerfassung aus Belegen und Formularen (KI-Dokumentenverarbeitung), telefonische Standardauskünfte (Voicebot), Protokolle (Transkription) sowie Auswertungen und Recherchen (Datenanalyse- und Recherche-Agenten).",
+      "begruendung": "Rund 60 % der Arbeitszeit sind exponiert. Bei Datenerfassung, Telefonauskünften und Protokollen arbeitet die KI weitgehend ersetzend; bei Korrespondenz, Berichten und Recherchen delegierend, mit Prüfung jeder Ausgabe. In der Verwaltung bremsen Datenschutz und Amtsgeheimnis (Cloud-Restriktionen), am Telefon die Erwartung eines menschlichen Gesprächs in Mundart; Empfang und Post bleiben physisch bzw. Präsenzarbeit.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

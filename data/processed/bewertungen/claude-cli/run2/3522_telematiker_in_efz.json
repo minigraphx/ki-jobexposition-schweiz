@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "e0719f2ea37a58d903d69b4a80199379a70a67f2c7a4303abdaabde5b054c6e3",
+    "isco_code": "3522",
+    "beruf": "Telematiker/in EFZ",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:20:43+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 40405,
+      "output_tokens": 4828,
+      "api_aequivalent_usd": 0.10464899999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 40405,
+        "output_tokens": 4828,
+        "output_tokens_details": {
+          "thinking_tokens": 1574
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.10464899999999999
+      }
+    ],
+    "request_ids": [
+      "f89ea1d3-45ae-43eb-b171-d9e16fd04eb7"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3522",
+    "beruf": "Telematiker/in EFZ",
+    "taetigkeiten": [
+      {
+        "name": "Kommunikations- und Datenkabel (Kupfer, Glasfaser) in Gebäuden verlegen, anschliessen, spleissen und Anschlussdosen sowie Verteiler montieren",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Arbeit vor Ort auf Baustellen und in Gebäuden; keine Robotik für Kabelzug oder Spleissen im regulären Einsatz."
+      },
+      {
+        "name": "Netzwerk-, Telefonie-, Video- und Zutrittsgeräte (Router, Switches, Access Points, IP-Telefone, Kameras) beim Kunden montieren und anschliessen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montage an Ort und Stelle; keine verfügbare Automatisierung."
+      },
+      {
+        "name": "Telefonanlagen, Session Border Controller, Router, VLAN und WLAN konfigurieren sowie Firmware aktualisieren",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Konfiguration erfolgt meist über Hersteller-GUIs und Vorlagen mit Kontext vor Ort; LLM-Hilfe bei Einzelfragen spart deutlich unter 50 %. Controller-gestützte Updates entlasten nur einen Teil."
+      },
+      {
+        "name": "Messungen und Systemtests durchführen (Kupfer-/Glasfaserzertifizierung, OTDR, WLAN-Ausleuchtung, Funktionstests)",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bedienen von Messgeräten vor Ort; die Messgeräte automatisieren die Auswertung bereits, die Zeit liegt im Anschliessen und Durchführen."
+      },
+      {
+        "name": "Störungen an Netzwerk- und Kommunikationsanlagen vor Ort oder per Fernzugriff diagnostizieren und beheben",
+        "zeitanteil_pct": 13,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fehlersuche mischt physische Prüfung (Kabel, Ports, Geräte) mit Analyse; LLM-Hilfe bei Logs beschleunigt nur Teile, Schwelle 50 % typischerweise nicht erreicht."
+      },
+      {
+        "name": "Mess- und Abnahmeprotokolle, Netzpläne und Rangierlisten für die Anlagendokumentation erstellen",
+        "zeitanteil_pct": 6,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Messexporte, Fotos und Spracheingabe werden von KI-Funktionen in Dokumentations-/Office-Software zum Protokoll und zur Liste verarbeitet; die Telematikerin prüft jedes Dokument fachlich."
+      },
+      {
+        "name": "Skripte zur Konfiguration und Automatisierung von Netzwerkgeräten schreiben",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM erstellt Skripte nach Beschreibung; die Fachperson prüft und testet jedes Skript vor dem Einsatz."
+      },
+      {
+        "name": "Anwenderinnen und Anwender vor Ort in neue Telefonie- und Netzwerksysteme einführen und beraten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Instruktion und Beratung beim Kunden; Präsenztätigkeit."
+      },
+      {
+        "name": "Arbeitsrapporte mit Arbeitsbeschrieb, Material und Stunden erfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe in der Rapport-App erstellt den Rapport; die Person prüft jeden Rapport. Dialekt und Umgebungslärm erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Herstellerdokumentationen, Datenblätter und Anleitungen auswerten, um Installationen und Lösungen vorzubereiten",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Fachperson arbeitet die Lösung selbst aus; ein LLM fasst eingefügte Handbücher zusammen und beantwortet gezielte Fragen dazu."
+      },
+      {
+        "name": "Systemwechsel und Migrationen (z. B. Umstellung auf All-IP) mit Kunden und Team planen und koordinieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung mit Kunden, Begehungen und Ablaufkoordination dominieren; KI-Unterstützung bei Planungsdokumenten spart weniger als die Hälfte."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Telematiker/in EFZ in einem Schweizer Installations-/Telematikbetrieb (KMU), der Kommunikations- und Datennetze, Telefonie und Gebäudetechnik bei Kunden installiert und betreut. Die ESCO-Zuordnung passt nur teilweise (Maschinenbau-/Entwicklungsaspekte nicht übernommen) und wurde durch Berufswissen ergänzt. Grenzfälle sind die Konfiguration und die Fehlersuche, die bei stärker remote-orientierten Stellen näher an E2 liegen könnten.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur Protokolle, Anlagendokumentation, Arbeitsrapporte, Skripte und das Auswerten von Herstellerunterlagen, die von Chat-LLM, Spracheingabe und KI-Dokumentationsfunktionen übernommen werden; Installation, Konfiguration vor Ort und Fehlersuche bleiben nicht exponiert.",
+      "begruendung": "Rund ein Fünftel der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI erstellt Protokolle, Rapporte und Skripte, die Fachperson prüft jedes Ergebnis. Bei Herstellerunterlagen ist sie nur unterstützend. Der Kern des Berufs bleibt handwerkliche Arbeit beim Kunden, und Schweizerdeutsch sowie Lärm auf Baustellen erschweren die Spracheingabe.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

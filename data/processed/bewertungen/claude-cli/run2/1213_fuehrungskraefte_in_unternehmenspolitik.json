@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "9adbc5f9adb816787bb47c6e0a89d600cd78d254fa3960d9d10a405d07700de6",
+    "isco_code": "1213",
+    "beruf": "Führungskräfte in Unternehmenspolitik und -planung",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:30:50+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3832,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5072,
+      "api_aequivalent_usd": 0.13943419999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3832,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5072,
+        "output_tokens_details": {
+          "thinking_tokens": 1619
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3832,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.13943419999999998
+      }
+    ],
+    "request_ids": [
+      "93567f50-df39-4320-bb5d-ffc4caadc59a"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1213",
+    "beruf": "Führungskräfte in Unternehmenspolitik und -planung",
+    "taetigkeiten": [
+      {
+        "name": "Strategieprozesse leiten und Strategie-Workshops mit Geschäftsleitung bzw. Amtsleitung moderieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Moderieren, Aushandeln von Prioritäten und strategische Entscheiden geschehen in persönlicher Präsenz und nach eigenem Ermessen; KI spart hier nicht 50 % der Zeit."
+      },
+      {
+        "name": "Umfeld-, Markt- und Politikanalysen als Grundlagenpapiere für die Strategie erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche und Datenanalyse erstellen Analyse und Entwurf. Die Führungskraft gibt Fragestellung und internen Kontext vor, prüft Quellen und Schlussfolgerungen jedes Papiers und schärft sie nach."
+      },
+      {
+        "name": "Gesetzgebung, Vernehmlassungen und politische Entwicklungen beobachten und Briefings dazu verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Monitoring- bzw. Recherche-Agent durchsucht Geschäfte von Bund und Kantonen, fasst sie zusammen und entwirft das Briefing. Die Person beurteilt Relevanz und Einschätzung bei jedem Briefing."
+      },
+      {
+        "name": "Positionspapiere, Stellungnahmen und Vernehmlassungsantworten entwerfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Das LLM entwirft die Stellungnahme aus der eingefügten Vorlage und den Kernpositionen. Die Führungskraft prüft jede Argumentation, Tonalität und politische Wirkung und überarbeitet sie; oft braucht es abgestimmte DE- und FR-Fassungen."
+      },
+      {
+        "name": "Interne Richtlinien, Policies und Verhaltenskodizes (z. B. Nachhaltigkeit, Compliance) formulieren und aktualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt den Richtlinientext aus Vorgaben, eingefügten Rechtsgrundlagen und bestehenden Dokumenten. Die Person prüft jede Fassung auf Passung zur Organisation und auf Rechtskonformität."
+      },
+      {
+        "name": "Kampagnen- und Interessenvertretungsmaterial erstellen (Argumentarien, Factsheets, Social-Media-Texte)",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Das LLM schreibt Argumentarien und Texte aus Kernbotschaften und Positionspapier. Die Führungskraft prüft und gibt jedes Material frei, oft in mehreren Landessprachen."
+      },
+      {
+        "name": "Gespräche mit Parlamentarier/innen, Behörden, Verbänden und Stakeholdern führen (Lobbying, Allianzen)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beziehungspflege und Verhandlung von Angesicht zu Angesicht sind Präsenztätigkeiten."
+      },
+      {
+        "name": "Team führen, Mitarbeitende anleiten und Abteilungs- bzw. Bereichsleitende koordinieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Personalführung und Koordination sind Beziehungs- und Präsenzarbeit."
+      },
+      {
+        "name": "Fachbereiche bei der Umsetzung der Strategie und bei Effizienzverbesserungen beraten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Beratung findet überwiegend im Gespräch statt und braucht Wissen über die Organisation; KI kann die Vorbereitung unterstützen, spart aber keine 50 %."
+      },
+      {
+        "name": "Strategie-Controlling: Kennzahlen und Umsetzungsstand auswerten und Berichte für GL bzw. Verwaltungsrat verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Werkzeug mit Code-Ausführung wertet KPI-Exporte aus und entwirft den Bericht samt Kommentar. Die Person prüft Interpretation und Massnahmen jedes Berichts. BI-Dashboards liefern zwar Kennzahlen, übernehmen aber nicht die Kommentierung, die den Grossteil der Zeit ausmacht (deshalb P0)."
+      },
+      {
+        "name": "Entscheidungsvorlagen und Präsentationen für Geschäftsleitung bzw. Gremien erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in der Office-Suite erstellen Vorlage und Folien aus den Grundlagenpapieren. Die Führungskraft prüft jede Vorlage auf Kernaussage und Gremientauglichkeit und passt sie an."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Leiter/in Strategie, Unternehmenspolitik bzw. Public Affairs in einer grösseren Organisation, etwa einem Unternehmen, Verband oder einer öffentlichen Verwaltung. Der ESCO-Input ist generisch, die Zeitanteile sind deshalb grob geschätzt. Die Grenzfälle betreffen die Schreib- und Analysetätigkeiten: Es ist unsicher, ob strategische Texte mit hohem Kontextbedarf wirklich die 50 %-Schwelle erreichen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Umfeld- und Politikanalysen, das Gesetzgebungsmonitoring, Stellungnahmen, Richtlinien, Kampagnenmaterial und Gremienvorlagen: Diese erstellen Chat-LLMs, Recherche-Agenten und KI-Funktionen in Office und Analysetools.",
+      "begruendung": "Gut zwei Fünftel der Arbeitszeit sind exponiert, durchwegs delegierend: Die KI erstellt Entwürfe und Analysen, die Führungskraft gibt den Kontext vor und prüft jedes Ergebnis politisch und fachlich. Strategieentwicklung, Lobbying und Führung bleiben Präsenzarbeit. In der Schweiz bremsen vor allem parallele DE/FR-Fassungen und in der Verwaltung Datenschutz- und Cloud-Vorgaben die Umsetzung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

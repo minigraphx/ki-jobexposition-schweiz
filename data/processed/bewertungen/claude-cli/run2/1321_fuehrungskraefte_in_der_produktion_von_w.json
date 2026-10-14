@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "fb7237e5b431d9ac8ba562b93ef693def4644dd545ada826ea7598da613e2346",
+    "isco_code": "1321",
+    "beruf": "Führungskräfte in der Produktion von Waren",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:25:52+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 40553,
+      "output_tokens": 5161,
+      "api_aequivalent_usd": 0.11133859999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 40553,
+        "output_tokens": 5161,
+        "output_tokens_details": {
+          "thinking_tokens": 1561
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11133859999999998
+      }
+    ],
+    "request_ids": [
+      "41b4723b-c711-4798-95cc-d0fc064f5df3"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1321",
+    "beruf": "Führungskräfte in der Produktion von Waren",
+    "taetigkeiten": [
+      {
+        "name": "Produktion vor Ort überwachen: Rundgänge, Shopfloor-Meetings, Störungen und Engpässe direkt an der Linie lösen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Tätigkeit verlangt Präsenz im Betrieb und Entscheide an Ort und Stelle. Maschinendaten-Monitoring ersetzt den Rundgang und die Problemlösung nicht."
+      },
+      {
+        "name": "Mitarbeitende und Teamleitende führen: Mitarbeitergespräche, Beurteilungen, Rekrutierung, Konflikte klären",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung ist eine zwischenmenschliche Präsenz- und Beziehungstätigkeit. KI hilft nur bei Textbausteinen, was keine 50 % Zeitersparnis bringt."
+      },
+      {
+        "name": "Produktions-, Kapazitäts- und Schichtplanung im ERP/PPS festlegen und bei Störungen anpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Planung übernimmt klassische Software (ERP/PPS, APS-Feinplanung, Personaleinsatzplanung). Prioritäten setzt die Führungskraft; ein LLM bringt dabei keine 50 % Zeitersparnis."
+      },
+      {
+        "name": "Produktionskennzahlen (OEE, Ausschuss, Termintreue, Kosten) auswerten und Monats- bzw. Management-Reportings mit Kommentar erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Werkzeug mit Code-Ausführung oder eine KI-Funktion in BI/Office wertet Exporte aus und entwirft Bericht und Abweichungskommentar. Die Führungskraft prüft jede Aussage gegen ihr Betriebswissen. Klassische Dashboards liefern nur die Zahlen, nicht die Interpretation."
+      },
+      {
+        "name": "Produktionsprozesse analysieren und Verbesserungsprojekte (Lean, KVP) mit Workshops leiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit fliesst vor allem in Prozessbeobachtung vor Ort, Workshops mit dem Team und Umsetzung. KI-Ideen für Massnahmen sparen keine 50 %."
+      },
+      {
+        "name": "Produktionsbudget planen, Kostenabweichungen beurteilen und Massnahmen festlegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gefragt sind Ermessensentscheide und Abstimmung mit Controlling und Geschäftsleitung. Die Zahlen liefert die Kostenrechnung im ERP. Eine KI-Vorbereitung bringt unter 50 % Zeitersparnis."
+      },
+      {
+        "name": "Investitionsanträge, Konzepte und Präsentationen für die Geschäftsleitung ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten, Offerten und Zahlen Antragstext, Gliederung und Wirtschaftlichkeitsargumentation. Die Führungskraft prüft und schärft jeden Antrag inhaltlich."
+      },
+      {
+        "name": "Herstellungsvorgaben, Arbeitsanweisungen, Produktionsrichtlinien und Qualitätskriterien schriftlich festlegen und aktualisieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft Anweisungen, Richtlinien und Prüfkriterien aus Stichworten, bestehenden Dokumenten und Normtexten und übersetzt sie für mehrsprachige Belegschaften. Die Führungskraft prüft jede Vorgabe fachlich und gibt sie frei."
+      },
+      {
+        "name": "Koordinationssitzungen mit Einkauf, Logistik, Verkauf, Qualität und Unterhalt leiten, Lieferungen und Termine abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung, Verhandlung und Priorisierung finden im direkten Gespräch statt. KI-Protokolle sparen nur einen kleinen Teil der Zeit."
+      },
+      {
+        "name": "E-Mail-Korrespondenz mit Lieferanten, Kunden und internen Stellen zu Terminen, Reklamationen und Lieferengpässen führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Eine KI-Funktion im Mailprogramm fasst Verläufe zusammen und entwirft Antworten, auch auf Französisch oder Englisch. Die Führungskraft prüft jede Antwort, weil Zusagen zu Terminen und Kulanz verbindlich sind."
+      },
+      {
+        "name": "Arbeitssicherheit, Umweltschutz und Qualitätsaudits sicherstellen: Begehungen durchführen, Audits begleiten, Abweichungen behandeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Begehungen und Audits erfordern Präsenz, und die Verantwortung für Massnahmen bleibt bei der Führungskraft. Die Dokumentation ist ein kleiner Teil der Tätigkeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Produktionsleiter/in in einem Schweizer Industrie-KMU (z. B. Maschinen-, Metall- oder Lebensmittelindustrie) mit Führungsverantwortung für mehrere Teams. Der ESCO-Input passt gut, ist aber generisch; die Zeitanteile sind grob geschätzt. Die wichtigsten Grenzfälle sind Reporting/Kennzahlenanalyse und Prozessdokumentation (nahe der 50 %-Schwelle) sowie die Abgrenzung der Produktionsplanung zwischen klassischer APS-Software und LLM.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Schreib- und Analysearbeit der Produktionsleitung: Reportings und Kennzahlenkommentare, Herstellungsvorgaben und Arbeitsanweisungen, Investitionsanträge sowie die Korrespondenz. Die Technik dafür sind Chat-LLM, Datenanalyse-Werkzeuge und KI-Funktionen in Office und Mailprogramm.",
+      "begruendung": "Rund 30 % der Arbeitszeit sind exponiert, durchwegs delegierend: Die KI entwirft Berichte, Vorgaben und Texte, die Führungskraft prüft jedes Ergebnis fachlich und verantwortet es. Den Kern des Berufs bilden Führung, Präsenz im Betrieb, Koordination und Ermessensentscheide; diese bleiben unberührt. Wesentliche CH-Hemmnisse fehlen, gebremst wird die Adoption vor allem durch die Einführung in vielen Industrie-KMU.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

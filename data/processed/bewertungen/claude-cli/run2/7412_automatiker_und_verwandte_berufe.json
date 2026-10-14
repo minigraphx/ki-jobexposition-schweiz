@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "aa2631486e66df9b851adb7519a7da95f72676bdf8f6aaa5e5edaa73bb7efc5c",
+    "isco_code": "7412",
+    "beruf": "Automatiker und verwandte Berufe",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:13:21+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 40158,
+      "output_tokens": 4602,
+      "api_aequivalent_usd": 0.1000796
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 40158,
+        "output_tokens": 4602,
+        "output_tokens_details": {
+          "thinking_tokens": 1340
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1000796
+      }
+    ],
+    "request_ids": [
+      "bef993b5-02b6-4f8c-a8e9-695a38ecadeb"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "7412",
+    "beruf": "Automatiker und verwandte Berufe",
+    "taetigkeiten": [
+      {
+        "name": "Schaltschränke und Steuerungen nach Elektroschema bestücken und verdrahten",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Montage- und Verdrahtungsarbeit. Drahtkonfektionierautomaten übernehmen das Ablängen, Abisolieren und Beschriften der Drähte; das Verdrahten selbst bleibt aber Handarbeit, deshalb unter 50 % und P0."
+      },
+      {
+        "name": "Elektromechanische Komponenten (Antriebe, Sensoren, Pneumatik, Kabel) an Maschinen und Anlagen montieren und anschliessen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit vor Ort an der Anlage; es gibt keine Robotik für diese wechselnden Montagearbeiten."
+      },
+      {
+        "name": "SPS-Programme und HMI-Visualisierungen erstellen bzw. an bestehende Anlagen anpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Assistenten im Engineering-Tool (z. B. TIA-Portal-Copilot) bei typischen Anpassungen mit Hardwarebezug und Sicherheitsfunktionen wirklich 50 % sparen; E0 ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Ein KI-Copilot im Engineering-Tool erzeugt Bausteine und Code in Strukturiertem Text bzw. KOP/FUP. Der Automatiker spezifiziert, prüft jede Änderung und testet sie an der Anlage."
+      },
+      {
+        "name": "Anlagen in Betrieb nehmen: Signale und Funktionen testen, Parameter einstellen, Sensoren und Antriebe kalibrieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Arbeit findet an der realen Anlage statt, mit Messgeräten und Sichtkontrolle; die Zeit wird für Prüfen und Justieren vor Ort gebraucht."
+      },
+      {
+        "name": "Störungen an Maschinen und Anlagen vor Ort diagnostizieren und beheben",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Fehlersuche läuft mit Messgeräten und Sinneswahrnehmung direkt an der Anlage, danach wird repariert. KI-Hinweise zur Fehlerursache sparen deutlich weniger als 50 % der Zeit."
+      },
+      {
+        "name": "Präventive Wartung durchführen und defekte Komponenten ersetzen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Instandhaltungsarbeit. Zustandsüberwachung (Condition Monitoring) unterstützt die Planung, ersetzt aber nicht die Arbeit vor Ort."
+      },
+      {
+        "name": "Elektrische Sicherheitsprüfungen und Messungen durchführen (Isolation, Schutzleiter, Not-Halt-Funktionen)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Messgeräte anschliessen und Prüfpunkte vor Ort abarbeiten ist physisch. Automatische Prüfgeräte übernehmen nur die Messauswertung."
+      },
+      {
+        "name": "Prüf-, Inbetriebnahme- und Serviceprotokolle erstellen und Anlagendokumentation nachführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Messwerten, Fotos und Spracheingabe erstellt eine Service- oder Formular-App mit KI das Protokoll; der Automatiker prüft und unterschreibt jedes Protokoll. Bei Hallenlärm steigt der Korrekturaufwand."
+      },
+      {
+        "name": "Handbücher, Datenblätter und Herstellerunterlagen nach Fehlerursachen, Parametern und Ersatzteilen durchsuchen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI fasst lange PDF-Handbücher mit Bildern und Tabellen zusammen und findet die passenden Stellen. Der Automatiker beurteilt selbst, welche Information zutrifft, und prüft sie an der Quelle."
+      },
+      {
+        "name": "Arbeitsaufträge und Schemas lesen, Arbeitsablauf planen, Material bereitstellen und bestellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Planung ist eng mit der Arbeit vor Ort verknüpft, und Material wird physisch bereitgestellt. Bestellungen laufen über das ERP (klassische Software), KI spart hier kaum Zeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Automatiker/in EFZ in einem Industriebetrieb (Maschinen- und Anlagenbau bzw. Schaltanlagenbau), der Schaltschränke baut, Anlagen in Betrieb nimmt und Service leistet. ESCO (Elektromechaniker) deckt den Teil SPS-Programmierung kaum ab; dieser wurde aus dem Schweizer Berufsbild ergänzt. Der grösste Grenzfall ist die SPS-Programmierung (E2 oder E0); die Zeitanteile schwanken je nach Betrieb (Schaltschrankbau oder Service) stark.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur die SPS-Programmierung (KI-Copilot im Engineering-Tool), die Protokollierung (Service-App mit Spracheingabe) und das Durchsuchen von Herstellerunterlagen; Montage, Verdrahtung, Inbetriebnahme und Fehlersuche vor Ort nicht.",
+      "begruendung": "Rund ein Fünftel der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI erstellt Code oder Protokolle, der Automatiker prüft und testet jedes Ergebnis an der Anlage; bei der Recherche in Unterlagen arbeitet die KI unterstützend. Der Kern des Berufs bleibt physische Arbeit an Maschinen. Wesentliche Schweizer Hemmnisse fehlen weitgehend; die Einführung bremsen eher die Sicherheitsanforderungen an Steuerungscode und die vielen KMU mit unterschiedlichen Engineering-Tools.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

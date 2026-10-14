@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "43e3f7ce854e5f2141d55c98ee7fd91fde0bf7bb38ed7c82ebea9dbb66861608",
+    "isco_code": "4221",
+    "beruf": "Reiseverkehrsfachkräfte",
+    "lauf": 3,
+    "reihenfolge_seed": 20261016,
+    "timestamp": "2026-10-14T01:13:29+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 40652,
+      "output_tokens": 5494,
+      "api_aequivalent_usd": 0.11801839999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 40652,
+        "output_tokens": 5494,
+        "output_tokens_details": {
+          "thinking_tokens": 2036
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11801839999999998
+      }
+    ],
+    "request_ids": [
+      "cd9fa429-8100-404d-aec5-4c006544dc47"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "4221",
+    "beruf": "Reiseverkehrsfachkräfte",
+    "taetigkeiten": [
+      {
+        "name": "Kundinnen und Kunden im Reisebüro und am Telefon zu Reisezielen beraten, Bedürfnisse klären und Zusatzleistungen (Versicherung, Mietwagen) verkaufen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Beratungs- und Verkaufsgespräch; sein Wert liegt in Präsenz, Vertrauen und Verkaufsgeschick, nicht in einem Textprodukt."
+      },
+      {
+        "name": "Schriftliche Kundenanfragen per E-Mail beantworten und Offerten mit Leistungsbeschrieb verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Fachperson fügt Anfrage, Preise und Verfügbarkeiten aus dem Buchungssystem als Text ein, das LLM erstellt Antwort bzw. Offerte. Sie prüft jede Offerte auf Preise und Konditionen."
+      },
+      {
+        "name": "Individuelle Reiserouten recherchieren und zusammenstellen (Verbindungen, Hotels, Ausflüge vergleichen)",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent mit Websuche schlägt Routen, Unterkünfte und Programmpunkte vor. Die Fachperson prüft Machbarkeit, Verfügbarkeit und Preise jedes Vorschlags gegen die Buchungssysteme, deshalb liegt die Restzeit an der Bandgrenze."
+      },
+      {
+        "name": "Buchungen in GDS (z. B. Amadeus) und Veranstaltersystemen erfassen, ändern und stornieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Transaktionen in proprietären Buchungssystemen; Computer-Use-Agenten sind dafür heute nicht verlässlich. Komplexe kombinierte Buchungen bleiben trotz Online-Buchungsmaschinen grösstenteils Handarbeit."
+      },
+      {
+        "name": "Einreise-, Visa- und Gesundheitsbestimmungen abklären und Kundschaft schriftlich informieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent fasst die Bestimmungen aus Quellen zusammen und entwirft die Kundeninformation. Wegen Haftungsrelevanz prüft die Fachperson jede Angabe gegen offizielle Quellen."
+      },
+      {
+        "name": "Detaillierte Reiseprogramme und Kundeninformationen (Tagesablauf, Hinweise) ausformulieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus den eingefügten Buchungsdaten erstellt das LLM ein formuliertes Reiseprogramm. Die Fachperson kontrolliert Daten und Zeiten in jedem Programm."
+      },
+      {
+        "name": "Reisedokumente ausstellen und versenden, Rechnungen erstellen und Zahlungen verbuchen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ticketing, Voucher, Rechnungsstellung und Zahlungsabgleich laufen über klassische Mid-/Back-Office-Software und Zahlungsterminals, nicht über ein LLM."
+      },
+      {
+        "name": "Reklamationen schriftlich bearbeiten: Stellungnahmen der Leistungsträger einholen und Antworten an Kunden verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Das LLM fasst den eingefügten Schriftverkehr zusammen und entwirft Antwort- und Forderungsschreiben. Die Fachperson entscheidet über Kulanz und prüft jedes Schreiben."
+      },
+      {
+        "name": "Reisende bei Problemen unterwegs betreuen (Annullationen, Umbuchungen, Notfälle) per Telefon",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zeitkritische Krisenbetreuung im direkten Gespräch mit Kunden und Leistungsträgern, die Ermessen erfordert."
+      },
+      {
+        "name": "Kontakte zu Veranstaltern, Hotels und Leistungsträgern pflegen und an Produktschulungen teilnehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beziehungspflege, Verhandlungen und Studienreisen leben von persönlichem Kontakt."
+      },
+      {
+        "name": "Newsletter, Social-Media-Beiträge und Schaufenster-/Werbetexte für Reiseangebote erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Text und Bild entstehen mit generativer KI (Bildgenerierung/-bearbeitung). Die Person wählt aus und prüft jeden Beitrag vor der Publikation."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Reiseberater/in (Kaufmann/-frau EFZ Reisen) in einem Schweizer Filial- oder KMU-Reisebüro mit Beratung am Schalter, per Telefon und per E-Mail. Die ESCO-Beschreibung ist knapp, die Tätigkeiten stützen sich deshalb auf die Kompetenzliste und Berufswissen. Die Zeitanteile sind grob geschätzt. Grenzfälle: Wie stark Recherche-Agenten die Routenplanung beschleunigen und ob sich Buchungen im GDS agentisch erledigen lassen (heute bewertet als E0).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Offerten und E-Mail-Korrespondenz, die Recherche und Zusammenstellung von Reiserouten, Einreiseinformationen, Reiseprogramme, Reklamationsschreiben und Werbetexte; sie werden durch Chat-LLM, Recherche-Agenten und Bildgeneratoren erstellt.",
+      "begruendung": "Etwa die Hälfte der Arbeitszeit ist exponiert, durchwegs im delegierenden Modus: Die KI entwirft Offerten, Routen und Texte, die Fachperson prüft Preise, Verfügbarkeiten und haftungsrelevante Angaben in jedem Fall. Den Kern des Berufs bilden das persönliche Beratungs- und Verkaufsgespräch, Buchungen in proprietären Systemen und die Betreuung bei Problemen. Viele Kundinnen und Kunden wählen das Reisebüro gerade wegen des persönlichen Kontakts, was die sichtbare Nutzung von KI im Kundenkontakt bremst (Vertrauen).",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

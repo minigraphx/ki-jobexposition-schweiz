@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "6ee1c6a6438be56924ae54d2df406ef75cd1838b3b5ec8bd0c5b4904bbcf167a",
+    "isco_code": "3211",
+    "beruf": "Medizintechniker im Bereich bildgebende Verfahren und Therapiegeräte",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:55:47+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6774,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5920,
+      "api_aequivalent_usd": 0.17993019999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 6774,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5920,
+        "output_tokens_details": {
+          "thinking_tokens": 2481
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6774,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.17993019999999998
+      }
+    ],
+    "request_ids": [
+      "b0da1e34-2480-4dd4-b8a6-b7fae6ac9f8f"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3211",
+    "beruf": "Medizintechniker im Bereich bildgebende Verfahren und Therapiegeräte",
+    "taetigkeiten": [
+      {
+        "name": "Patientinnen und Patienten empfangen, über den Ablauf informieren, für die Untersuchung vorbereiten, lagern und währenddessen betreuen",
+        "zeitanteil_pct": 22,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Lagerung und persönliche Betreuung (Beruhigen, Notfälle erkennen) am Gerät; keine verfügbare Robotik."
+      },
+      {
+        "name": "Röntgen-, CT- und MRI-Untersuchungen am Gerät durchführen, Aufnahmeparameter einstellen und Bildgebung auslösen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bedienung der Modalität mit Patient vor Ort; Automatisierungsfunktionen der Geräte (Auto-Positionierung, Belichtungsautomatik) ersetzen die Fachperson nicht zu 50 %."
+      },
+      {
+        "name": "Venenzugang legen, Kontrastmittel bzw. Radiopharmaka vorbereiten und applizieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Tätigkeit am Patienten; Kontrastmittelinjektoren übernehmen nur die Injektion, nicht Zugang und Überwachung."
+      },
+      {
+        "name": "Zuweisungen prüfen, Rechtfertigung klären und Untersuchungsprotokoll bzw. Technik festlegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze fachliche Beurteilung pro Fall mit Rücksprache Radiologie; ein LLM-Protokollvorschlag spart kaum 50 % der ohnehin kurzen Zeit, Verantwortung bleibt."
+      },
+      {
+        "name": "Bilder nachbearbeiten (Rekonstruktionen, MPR, 3D), auf Qualität prüfen und ins PACS senden",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Keine LLM-Leistung; automatische Rekonstruktions- und Reformat-Funktionen der Gerätehersteller-Software (Auto-MPR, Deep-Learning-Rekonstruktion) übernehmen Standardnachbearbeitungen weitgehend."
+      },
+      {
+        "name": "Bestrahlungsplanung am Planungssystem vorbereiten (Konturierung, Dosisberechnung) in der Radio-Onkologie",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Auto-Konturierung und Auto-Planning sind nicht-generative Planungssoftware, die in CH-Kliniken den Grossteil der Routinekonturierung übernimmt; kein LLM nötig."
+      },
+      {
+        "name": "Strahlendosis dokumentieren und Strahlenschutzmassnahmen einhalten und kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dosiswerte werden von Dosismanagement-Software (DICOM-Dose-Reports) automatisch erfasst; Schutzmassnahmen vor Ort sind physisch."
+      },
+      {
+        "name": "Untersuchungs- und Leistungsdaten im RIS/KIS erfassen und Besonderheiten vermerken",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Strukturierte Klick-Erfassung, weitgehend über Modality-Worklist/MPPS automatisierbar (klassische Software); kurze Freitextnotizen bieten kaum LLM-Ersparnis."
+      },
+      {
+        "name": "Geräte auf Funktion prüfen, Konstanzprüfungen durchführen, Störungen melden und mit Lieferanten-Service koordinieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Messungen mit Phantomen am Gerät und Absprachen mit Technikern; physisch und vor Ort."
+      },
+      {
+        "name": "Untersuchungen mit Radiologie, Stationen und Notfall absprechen und Abläufe koordinieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurzfristige mündliche Abstimmung im interdisziplinären Team, Präsenz und Echtzeit."
+      },
+      {
+        "name": "Studierende und Lernende am Gerät anleiten und begleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Praktische Anleitung in Präsenz am Patienten und Gerät."
+      },
+      {
+        "name": "Arbeitsanweisungen, Untersuchungsabläufe und Patienteninformationen schriftlich ausarbeiten",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM entwirft SOP- oder Informationstexte aus Stichworten und Vorlagen; die Fachperson prüft jeden Text fachlich und passt ihn an die Abteilung an."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Fachperson für medizinisch-technische Radiologie HF (MTRA) in der Radiologie eines Akutspitals (Röntgen, CT, MRI), mit kleinen Anteilen in Radio-Onkologie und Nuklearmedizin. ESCO passt nur teilweise, Inhalte wie Forschung oder Befundung durch Ärzte wurden nicht übernommen. Der grösste Grenzfall sind KI-Bildfunktionen (Rekonstruktion, Auto-Konturierung): Sie wurden als nicht-generative Software eingestuft (P1) und gelten nicht als LLM-Exposition.",
+    "zusammenfassung": {
+      "haupt_risiko": "Generative KI betrifft fast nur das Verfassen von Arbeitsanweisungen und Patienteninformationen per Chat-LLM; die Arbeit am Patienten und am Gerät ist nicht betroffen.",
+      "begruendung": "Nur ein sehr kleiner Teil der Arbeitszeit (rund 3 %) ist gegenüber generativer KI exponiert, und zwar im delegierenden Modus: Die KI entwirft Texte, die MTRA prüft jeden Text fachlich. Den Kern des Berufs bilden Lagerung, Betreuung, Gerätebedienung und Kontrastmittelgabe in Präsenz; Nachbearbeitung, Dosiserfassung und Bestrahlungsplanung werden eher durch klassische bzw. nicht-generative Herstellersoftware automatisiert. Datenschutz und Spital-IT-Vorgaben bremsen die Einführung zusätzlich.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

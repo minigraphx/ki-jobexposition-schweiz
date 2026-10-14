@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "e683caf4fe63d2acc78e0060ff4a47dfb7216e146907713f2e3ecd0e89b02d5d",
+    "isco_code": "5412",
+    "beruf": "Polizisten (ohne Polizeikommissare)",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T01:00:50+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3174,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4900,
+      "api_aequivalent_usd": 0.1307302
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3174,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4900,
+        "output_tokens_details": {
+          "thinking_tokens": 1498
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3174,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1307302
+      }
+    ],
+    "request_ids": [
+      "da415de2-c233-4eca-bc5d-455775225aec"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5412",
+    "beruf": "Polizisten (ohne Polizeikommissare)",
+    "taetigkeiten": [
+      {
+        "name": "Patrouille im Einsatzgebiet fahren und gehen, Präsenz zeigen und Auffälligkeiten beobachten",
+        "zeitanteil_pct": 22,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz und Beobachtung vor Ort. Weder autonome Fahrzeuge noch Überwachungstechnik ersetzen die Patrouille in relevantem Umfang."
+      },
+      {
+        "name": "Einsätze auf Meldung bewältigen (Streit, häusliche Gewalt, Ruhestörung) und Lage vor Ort beruhigen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zwischenmenschliche Präsenz, Deeskalation und Ermessen unter Zeitdruck. Generative KI kann das nicht übernehmen."
+      },
+      {
+        "name": "Personen kontrollieren, durchsuchen, anhalten und festnehmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Zwangsmassnahmen und Präsenztätigkeit, die nur mit Polizeibefugnis erlaubt sind."
+      },
+      {
+        "name": "Verkehrskontrollen durchführen, Verkehr regeln und Ordnungsbussen ausstellen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Arbeit auf der Strasse mit Anhalten und Kontrollieren von Personen. Stationäre Radaranlagen sind bereits im Einsatz und kosten keine Zeit des Polizisten; die verbleibende Kontrollarbeit ist nicht automatisierbar."
+      },
+      {
+        "name": "Unfall- und Tatorte absperren, sichern sowie Spuren und Beweismittel erfassen und sicherstellen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit vor Ort: Absperren, Fotografieren und Sichern der Beweiskette."
+      },
+      {
+        "name": "Zeugen, Geschädigte und Beschuldigte befragen und Einvernahmen protokollieren",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Gesprächsführung von Angesicht zu Angesicht dominiert. Die Transkription von Gesprächen mit mehreren Personen in Dialekt ist noch zu fehleranfällig. Das Protokoll wird während der Einvernahme erstellt und dann vorgelesen und unterschrieben."
+      },
+      {
+        "name": "Polizeirapporte, Anzeigen an die Staatsanwaltschaft und Einsatzberichte im Rapportsystem verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Der Polizist gibt Stichworte zum Sachverhalt ein, das LLM entwirft den Rapport in der juristisch üblichen Form. Der Polizist prüft jeden Rapport auf Richtigkeit und Beweiswert, korrigiert ihn und unterschreibt. Wegen Amtsgeheimnis und Datenschutz sind nur Lösungen auf eigenen Servern oder zugelassene Lösungen erlaubt."
+      },
+      {
+        "name": "Anzeigen und Meldungen am Schalter des Polizeipostens entgegennehmen und Auskünfte erteilen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Hier dominiert der persönliche Kontakt mit oft aufgewühlten Personen. Online-Anzeigen (Suisse ePolice) decken nur einen kleinen Teil der Fälle ab."
+      },
+      {
+        "name": "Sichergestellte Daten und Unterlagen auswerten (Chatverläufe, Dokumente, Abfrageergebnisse) und Zusammenhänge darstellen",
+        "zeitanteil_pct": 3,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob uniformierte Polizisten Zugang zu KI-Auswertungstools haben und ob die Ersparnis 50 % erreicht; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Der Polizist wertet selbst aus und beurteilt die Beweisrelevanz. Ein KI-Analysewerkzeug fasst grosse Mengen an Text und Daten zusammen und markiert relevante Stellen."
+      },
+      {
+        "name": "Schriftliche Anfragen beantworten und kurze Stellungnahmen an Behörden und Bürger verfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM entwirft die Antwort aus Stichworten und Falldaten; der Polizist prüft jede Antwort inhaltlich, bevor sie verschickt wird."
+      },
+      {
+        "name": "Schiess-, Einsatz- und Selbstverteidigungstraining sowie Ersthilfe-Ausbildung absolvieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliches Training mit Präsenz, das nicht automatisierbar ist."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Polizist/in mit eidg. Fachausweis bei einer Kantons- oder Stadtpolizei, Sicherheits- und Verkehrspolizei im Schichtdienst; spezialisierte Kriminalpolizei und Fachdienste wie Taucher oder Reiterstaffel sind nicht abgebildet. Die Zeitanteile für die Schreibarbeit (Rapporte) sind geschätzt und variieren je nach Korps stark. Grenzfälle sind die Rapporterstellung (Nähe zur 50 %-Schwelle wegen Prüfaufwand und Beweiswert) und die Protokollierung von Einvernahmen (Dialekt, mehrere Personen).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Verfassen von Polizeirapporten, Anzeigen und Korrespondenz per Chat-LLM sowie am Rand die Datenauswertung mit KI-Analysewerkzeugen; die Arbeit auf Patrouille und im Einsatz bleibt unberührt.",
+      "begruendung": "Nur rund ein Fünftel der Arbeitszeit ist exponiert. Die KI entwirft dort meist Rapporte und Schreiben, der Polizist prüft und verantwortet jedes Dokument (delegierend); bei Auswertungen unterstützt sie nur. Die Umsetzung bremsen vor allem Amtsgeheimnis, Datenschutz und Cloud-Restriktionen in den kantonalen Korps sowie die strengen Anforderungen an die Beweisverwertbarkeit.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

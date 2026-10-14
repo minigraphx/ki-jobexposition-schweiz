@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "d6277c636900b78cd56ead35394e9754da7a70db7a78edd3306544aeeeda59d1",
+    "isco_code": "4412",
+    "beruf": "Postverteiler und -sortierer",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T01:05:40+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2566,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4878,
+      "api_aequivalent_usd": 0.1254262
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2566,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4878,
+        "output_tokens_details": {
+          "thinking_tokens": 1793
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2566,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1254262
+      }
+    ],
+    "request_ids": [
+      "cb9f45b9-d565-442f-ae77-cf40f9257216"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "4412",
+    "beruf": "Postverteiler und -sortierer",
+    "taetigkeiten": [
+      {
+        "name": "Sortieranlagen in Brief- oder Paketzentren mit Sendungen beschicken und sortierte Behälter entnehmen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit an der Anlage. Die Sortierung selbst ist bereits automatisiert; Roboter zum Beschicken und Entnehmen übernehmen heute keine 50 % dieser Restarbeit."
+      },
+      {
+        "name": "Nicht maschinenfähige Briefe und Pakete von Hand nach Zielort bzw. Gangfolge sortieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Handsortieren von Sendungen, die die Maschine nicht verarbeiten kann (Format, Gewicht, Verpackung). Für genau diese Restmenge gibt es keine verfügbare Automatik."
+      },
+      {
+        "name": "Postsendungen auf der Zustelltour verteilen und an Empfänger übergeben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Zustellung vor Ort mit Kundenkontakt. Zustellroboter und autonome Fahrzeuge sind in der Schweiz nicht im Regelbetrieb."
+      },
+      {
+        "name": "Eingeschriebene und Spezialsendungen scannen, quittieren lassen und im Sendungsinformationssystem erfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Barcode-Scannen und Erfassen mit dem Handscanner ist klassische Software, keine LLM-Leistung. Der Zeitaufwand liegt in der physischen Einzelhandhabung, die nicht automatisiert ist."
+      },
+      {
+        "name": "Sendungen auf Beschädigung prüfen, beschädigte nachverpacken und Unzustellbare aussondern",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sichtprüfung und Handarbeit an der Sendung. Generative KI spart dabei keine relevante Zeit."
+      },
+      {
+        "name": "Unleserliche oder fehlerhafte Adressen am Bildschirm (Videocodierung) bzw. per Adressdatenbank klären",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob multimodale LLMs die Fälle, an denen die klassische OCR scheitert, zuverlässig genug lösen; E0 ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Multimodale KI liest handschriftliche und beschädigte Adressbilder und gleicht sie mit der Adressdatenbank ab; der Mensch bearbeitet nur die markierten Restfälle. Die verbleibenden Fälle sind die, an denen die klassische OCR bereits gescheitert ist, deshalb P0."
+      },
+      {
+        "name": "Ladelisten, Frachtpapiere und Begleitdokumente für ein- und ausgehende Sendungen führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Strukturierte Daten aus Scans und Behälterkennzeichnungen erzeugt die klassische Logistiksoftware (Sendungsverfolgung, automatische Ladelisten) – keine LLM-Exposition."
+      },
+      {
+        "name": "Rollbehälter bereitstellen sowie Fahrzeuge und Wechselbehälter be- und entladen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Lade- und Transportarbeit. Fahrerlose Transportsysteme decken heute keine 50 % dieser Tätigkeit ab."
+      },
+      {
+        "name": "Nachforschungsaufträge und Kundenrückmeldungen schriftlich dokumentieren und beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Das LLM formuliert aus Stichworten und kopierten Sendungsdaten die Aktennotiz bzw. die Antwort; die Mitarbeiterin prüft jeden Text auf die Fakten. Je nach Region sind Antworten in mehreren Landessprachen nötig."
+      },
+      {
+        "name": "Arbeitsabläufe, Prioritäten und Schichtübergaben mit Team und Transportunternehmen absprechen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Abstimmung vor Ort im laufenden Betrieb, also Präsenztätigkeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Mitarbeiter/in Logistik in einem Brief- oder Paketzentrum bzw. einer Zustellbasis der Schweizerischen Post oder eines privaten Paketdienstes, mit kleinem Anteil Zustellung. ESCO betont stark die Aufzeichnungen. In der Praxis erledigt diese die klassische Scan- und Sendungssoftware, und die Arbeit ist überwiegend physisch. Grösste Unsicherheit: ob multimodale KI die Videocodierung schwer lesbarer Adressen tatsächlich übernimmt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur die Klärung unleserlicher Adressen (multimodale KI mit Abgleich in der Adressdatenbank) und die schriftliche Dokumentation von Nachforschungsaufträgen (Chat-LLM); das physische Sortieren, Laden und Zustellen ist nicht betroffen.",
+      "begruendung": "Nur etwa ein Zehntel der Arbeitszeit ist exponiert. Bei der Videocodierung übernimmt die KI die Arbeit (ersetzend), bei der Kundendokumentation entwirft sie die Texte und der Mensch prüft jeden einzelnen (delegierend). Der Kern des Berufs bleibt Handarbeit in teils bereits stark mit klassischer Technik automatisierten Zentren; einziges Hemmnis ist die Mehrsprachigkeit in der Korrespondenz.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

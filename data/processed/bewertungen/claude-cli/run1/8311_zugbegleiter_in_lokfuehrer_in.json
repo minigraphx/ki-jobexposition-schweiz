@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "13bd650e7c9ef464b09bf72577d0fd6342aa33cffe5fde7cedc7ab5ea673bf53",
+    "isco_code": "8311",
+    "beruf": "Zugbegleiter/in / Lokführer/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:49:16+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3692,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4619,
+      "api_aequivalent_usd": 0.12925419999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3692,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4619,
+        "output_tokens_details": {
+          "thinking_tokens": 1433
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3692,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.12925419999999999
+      }
+    ],
+    "request_ids": [
+      "7c10a735-827c-4bf4-a08c-35b99fb292db"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "8311",
+    "beruf": "Zugbegleiter/in / Lokführer/in",
+    "taetigkeiten": [
+      {
+        "name": "Zug auf der Strecke führen: Signale und Streckenvorschriften beachten, Geschwindigkeit regeln, Fahrweg beobachten, fahrplangerecht halten",
+        "zeitanteil_pct": 55,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sicherheitskritisches Führen des Fahrzeugs in Echtzeit im Führerstand; generative KI spielt keine Rolle. ETCS und Zugsicherung unterstützen, fahrerloser Betrieb auf dem Schweizer Normalspurnetz ist aber weder zugelassen noch verfügbar."
+      },
+      {
+        "name": "Vorbereitungs- und Abschlussdienst durchführen: Fahrzeug inbetriebnehmen, Sichtkontrolle, Bremsprobe, Abstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Prüfungen am Fahrzeug vor Ort. Automatische Bremsproben gibt es nur bei einzelnen Fahrzeugtypen; sie übernehmen nicht 50 % der Tätigkeit."
+      },
+      {
+        "name": "Rangieren, Kuppeln und Entkuppeln von Fahrzeugen sowie Zugbildung in Abstell- und Rangieranlagen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit im Gleisfeld und Bedienung des Fahrzeugs. Automatische Kupplungen und fernbediente Rangierloks sind nicht so verbreitet, dass sie 50 % übernehmen."
+      },
+      {
+        "name": "Mit Fahrdienstleitung, Zugverkehrsleitung und Zugpersonal per Funk/GSM-R und Telefon kommunizieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sicherheitsrelevante Echtzeitkommunikation nach festgelegtem Wortlaut während des Betriebs; KI spart hier keine Zeit."
+      },
+      {
+        "name": "Fahrgäste per Lautsprecherdurchsage informieren, besonders bei Verspätungen und Störungen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spontane, kurze Durchsagen während der Fahrt; Standarddurchsagen laufen bereits über das automatische Kundeninformationssystem und kosten keine Zeit mehr. Für den Rest spart generative KI kaum Zeit."
+      },
+      {
+        "name": "Fahrzeugstörungen nach Störungsbehebungsanleitung beheben und Ereignisse auf der Strecke bewältigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fehlersuche und Massnahmen am Fahrzeug unter Zeitdruck, oft mit telefonischem Support. Ein LLM-Assistent für Anleitungen würde nur einen kleinen Teil beschleunigen und spart keine 50 %."
+      },
+      {
+        "name": "Fahrplan, Fahrordnung, Langsamfahrstellen und Weisungen auf dem Tablet (LEA) konsultieren und vor Dienstbeginn studieren",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Unterlagen werden bereits über klassische Software bereitgestellt. Der Lokführer muss die verbindlichen Vorgaben selbst lesen und kennen, eine KI-Zusammenfassung ersetzt das nicht."
+      },
+      {
+        "name": "Rapporte, Ereignis- und Störungsmeldungen sowie Verspätungsgründe verfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Viele Meldungen bestehen aus kurzen Formularfeldern, bei denen ein LLM kaum 50 % spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten entwirft ein LLM den Freitext des Ereignis- oder Störungsrapports. Der Lokführer prüft jeden Rapport fachlich und gibt ihn ab."
+      },
+      {
+        "name": "Periodische Weiterbildungen, Simulatortrainings und Prüfungen absolvieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Lernen und gesetzlich vorgeschriebene Prüfungen (Fahrberechtigung nach VTE). Diese Zeit lässt sich nicht an KI abgeben."
+      },
+      {
+        "name": "Aspirantinnen und Aspiranten auf dem Führerstand begleiten und in die Zugführung einführen",
+        "zeitanteil_pct": 2,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Praktische Anleitung in Präsenz während der Fahrt."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Annahme: Lokführer/in Kat. B im Personen- und Güterverkehr eines Schweizer Eisenbahnverkehrsunternehmens (z. B. SBB, BLS, SOB), passend zum ISCO-Code 8311. Die Berufsbezeichnung enthält auch Zugbegleiter/in; deren Kundenkontakt und Billettkontrolle wären zusätzlich zu bewerten, wären aber ebenfalls weitgehend Präsenzarbeit. Die ESCO-Kompetenzen zum Frachtrangieren wurden in einer Rangiertätigkeit zusammengefasst. Unsicher ist vor allem die Rapportarbeit (E1 gegenüber E0).",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert ist nur das Verfassen von Rapporten und Ereignismeldungen, das ein Chat-LLM aus Stichworten erledigen kann; das Führen des Zuges und die Arbeit am Fahrzeug sind nicht betroffen.",
+      "begruendung": "Nur rund 3 % der Arbeitszeit sind gegenüber generativer KI exponiert, und zwar delegierend: Die KI entwirft den Rapport, der Lokführer prüft jeden. Der Kern des Berufs ist sicherheitskritisches Fahren in Echtzeit. Fahrerloser Betrieb ist auf dem Schweizer Normalspurnetz nicht zugelassen, und die Betriebsvorschriften (FDV) verlangen die persönliche Verantwortung des Lokführers.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

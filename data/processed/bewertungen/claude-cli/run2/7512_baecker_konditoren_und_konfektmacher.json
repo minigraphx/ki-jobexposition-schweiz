@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "48a32b78c388056d81544e4227d3341be821d2c91e563096510e847f53b106df",
+    "isco_code": "7512",
+    "beruf": "Bäcker, Konditoren und Konfektmacher",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:17:12+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 41932,
+      "output_tokens": 5256,
+      "api_aequivalent_usd": 0.1135144
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 41932,
+        "output_tokens": 5256,
+        "output_tokens_details": {
+          "thinking_tokens": 2188
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1135144
+      }
+    ],
+    "request_ids": [
+      "5ea2ad63-7aa4-48d7-b50d-55fe927ccfd7"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "7512",
+    "beruf": "Bäcker, Konditoren und Konfektmacher",
+    "taetigkeiten": [
+      {
+        "name": "Rohstoffe abwiegen, dosieren und Teige/Vorteige in der Knetmaschine mischen und kneten",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Produktionsarbeit, generative KI spart hier keine Zeit. Automatische Mehl- und Wasserdosieranlagen mit Silos und programmierbaren Knetern sind kommerziell verfügbar und können den Grossteil des Abwiegens und Mischens übernehmen."
+      },
+      {
+        "name": "Teig teilen, aufarbeiten und von Hand oder mit Maschinen formen (Brote, Gipfeli, Zöpfe)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche, physische Tätigkeit. Teil- und Wirkmaschinen werden schon genutzt, das verbleibende Formen von Hand (Zopf, Spezialbrote) ist in gewerblichen Betrieben nicht zu ≥ 50 % automatisierbar."
+      },
+      {
+        "name": "Gärprozess überwachen, Öfen beschicken, backen und Backgrad/Farbe kontrollieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit an Gärschrank und Ofen mit Sinneskontrolle. Gärautomaten und Backprogramme sind schon im Einsatz, das Beschicken und Beurteilen bleibt in typischen Betrieben aber Handarbeit."
+      },
+      {
+        "name": "Konditorei- und Confiserieprodukte herstellen und dekorieren (Cremen, Torten, Pralinés)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Feinmotorische, gestalterische Handarbeit. Es gibt keine Robotik, die diese Arbeit in relevantem Umfang übernimmt."
+      },
+      {
+        "name": "Maschinen, Geräte und Arbeitsplätze reinigen und Hygienevorschriften umsetzen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Reinigung von Knetern, Blechen und Arbeitsflächen. Reinigungsroboter übernehmen hier keine 50 %."
+      },
+      {
+        "name": "Backwaren abkühlen, schneiden, verpacken, etikettieren und für Filialen/Kunden bereitstellen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit. Brotschneide- und Verpackungsmaschinen sowie Etikettierwaagen sind verfügbar und können den Grossteil des Verpackens übernehmen."
+      },
+      {
+        "name": "Rohstofflieferungen annehmen, kontrollieren und fachgerecht lagern",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Waren tragen, prüfen und einräumen ist physische Arbeit. Mehlsilos übernehmen nur einen Teil."
+      },
+      {
+        "name": "HACCP-Kontrollen durchführen und Temperaturen/Reinigung in Checklisten dokumentieren",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es geht um kurze Kontrollen vor Ort und Zahleneinträge, wo KI nichts Relevantes spart. Funk-Temperatursensoren mit automatischer Aufzeichnung können die Temperaturdokumentation übernehmen."
+      },
+      {
+        "name": "Produktions- und Backlisten aus Filial- und Kundenbestellungen zusammenstellen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Listen entstehen regelbasiert aus den Bestellungen. Standard-Bäckereisoftware erzeugt Back- und Rüstlisten automatisch (klassische Software, kein LLM)."
+      },
+      {
+        "name": "Rezepturen umrechnen und Produktinformationen (Zutaten-/Allergendeklaration, Produktbeschriebe) schriftlich erstellen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus der eingefügten Rezeptur entwirft ein Chat-LLM den Deklarationstext und die Produktbeschriebe. Die Fachperson prüft jede Deklaration gegen das Lebensmittelrecht. Rezeptur- und Deklarationssoftware (klassisch) kann das Umrechnen und die Allergenlisten ebenfalls übernehmen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Bäcker-Konditor-Confiseur EFZ in einer gewerblichen Bäckerei-Konditorei bzw. einem kleineren Produktionsbetrieb (KMU). In grossindustriellen Betrieben überwiegt das Überwachen von Anlagen, das wäre aber ebenfalls E0. Der Beruf ist fast nur physisch. Grenzfälle betreffen vor allem das Feld P (Dosieranlagen, Verpackungsmaschinen) und die kleine Schreibarbeit zu Rezepturen und Deklarationen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Generative KI betrifft nur die kleine Schreibarbeit, nämlich Produktinformationen und Deklarationstexte, die ein Chat-LLM entwerfen kann; die Herstellung von Backwaren selbst ist nicht exponiert.",
+      "begruendung": "Nur rund 3 % der Arbeitszeit sind exponiert, und zwar delegierend: Die KI entwirft Deklarations- und Produkttexte, und die Fachperson prüft jede Deklaration. Lebensmittelrechtliche Deklarationspflichten bremsen den Einsatz. Der Kern des Berufs ist handwerkliche Produktion, die allenfalls durch klassische Maschinen (Dosieranlagen, Verpackungsmaschinen) und nicht durch generative KI verändert wird.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

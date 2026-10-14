@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "9c1c0c02f98932578282f5f4c513183f187f89319e138e11d3878dd08d1f0a15",
+    "isco_code": "5222",
+    "beruf": "Verkaufsaufsichtskräfte in Handelsgeschäften",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T06:39:44+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 321,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 321
+        }
+      ],
+      "prompt_token_count": 21275,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21275
+        }
+      ],
+      "thoughts_token_count": 7040,
+      "total_token_count": 28636
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 321,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 321
+          }
+        ],
+        "prompt_token_count": 21275,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21275
+          }
+        ],
+        "thoughts_token_count": 7040,
+        "total_token_count": 28636
+      }
+    ],
+    "request_ids": [
+      "nrnOasHPKLG1_PUPj86l4AU"
+    ],
+    "versuche": 1,
+    "status": "fehlgeschlagen",
+    "fehler": [
+      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten/0: 'Verkaufspersonal auf der Ladenfläche im Tagesgeschäft anleiten und Verkaufsabläufe überwachen' is not of type 'object'; taetigkeiten/1: 'Warenpräsentation, Produkthandhabung sowie Einhaltung von Hygiene- und Sicherheitsvorschriften im Laden kontrollieren' is not of type 'object'; taetigkeiten/2: 'Kundenreklamationen, Umtausche und Eskalationen im persönlichen Kontakt im Geschäft bearbeiten' is not of type 'object'; taetigkeiten/3: 'Neues Verkaufspersonal und Lernende im Ladenbetrieb praktisch einarbeiten und schulen' is not of type 'object'; taetigkeiten/4: 'Vorstellungs- und Qualifikationsgespräche mit Bewerbenden und Mitarbeitenden führen' is not of type 'object'; taetigkeiten/5: 'Warenbewegungen, Lagerbestände und Nachbestellungen im Warenwirtschaftssystem prüfen und auslösen' is not of type 'object'; taetigkeiten/6: 'Kassenabrechnungen, Tageseinnahmen und Zahlungsvorgänge kontrollieren und abrechnen' is not of type 'object'"
+    ],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "custom_id": "r1-5222_verkaufsaufsichtskraefte_in_handelsgesch",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": "validierung",
+    "probleme": [
+      "(root): 'unsicherheit' is a required property",
+      "(root): 'kommentar' is a required property",
+      "(root): 'zusammenfassung' is a required property",
+      "taetigkeiten/0: 'Verkaufspersonal auf der Ladenfläche im Tagesgeschäft anleiten und Verkaufsabläufe überwachen' is not of type 'object'",
+      "taetigkeiten/1: 'Warenpräsentation, Produkthandhabung sowie Einhaltung von Hygiene- und Sicherheitsvorschriften im Laden kontrollieren' is not of type 'object'",
+      "taetigkeiten/2: 'Kundenreklamationen, Umtausche und Eskalationen im persönlichen Kontakt im Geschäft bearbeiten' is not of type 'object'",
+      "taetigkeiten/3: 'Neues Verkaufspersonal und Lernende im Ladenbetrieb praktisch einarbeiten und schulen' is not of type 'object'",
+      "taetigkeiten/4: 'Vorstellungs- und Qualifikationsgespräche mit Bewerbenden und Mitarbeitenden führen' is not of type 'object'",
+      "taetigkeiten/5: 'Warenbewegungen, Lagerbestände und Nachbestellungen im Warenwirtschaftssystem prüfen und auslösen' is not of type 'object'",
+      "taetigkeiten/6: 'Kassenabrechnungen, Tageseinnahmen und Zahlungsvorgänge kontrollieren und abrechnen' is not of type 'object'",
+      "taetigkeiten/7: 'Dienst- und Schichtpläne erstellen sowie Absenzen und Stundenkontrollen bearbeiten' is not of type 'object'",
+      "taetigkeiten/8: 'Aktionspreise, Preisauszeichnungen und Kassensystem-Vorgaben bei Werbeverkäufen kontrollieren' is not of type 'object'",
+      "taetigkeiten/9: 'Verkaufszahlen, Ausgaben und Filial-KPIs auswerten sowie Wochen- und Monatsberichte verfassen' is not of type 'object'",
+      "taetigkeiten/10: 'Bewerbungsdossiers vorprüfen sowie Arbeitszeugnisse, Gesprächsprotokolle und schriftliche Korrespondenz erstellen' is not of type 'object'"
+    ],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": null,
+  "rohantwort": "{\"isco_code\":\"5222\",\"beruf\":\"Verkaufsaufsichtskräfte in Handelsgeschäften\",\"taetigkeiten\":[\n  \"Verkaufspersonal auf der Ladenfläche im Tagesgeschäft anleiten und Verkaufsabläufe überwachen\",\n  \"Warenpräsentation, Produkthandhabung sowie Einhaltung von Hygiene- und Sicherheitsvorschriften im Laden kontrollieren\",\n  \"Kundenreklamationen, Umtausche und Eskalationen im persönlichen Kontakt im Geschäft bearbeiten\",\n  \"Neues Verkaufspersonal und Lernende im Ladenbetrieb praktisch einarbeiten und schulen\",\n  \"Vorstellungs- und Qualifikationsgespräche mit Bewerbenden und Mitarbeitenden führen\",\n  \"Warenbewegungen, Lagerbestände und Nachbestellungen im Warenwirtschaftssystem prüfen und auslösen\",\n  \"Kassenabrechnungen, Tageseinnahmen und Zahlungsvorgänge kontrollieren und abrechnen\",\n  \"Dienst- und Schichtpläne erstellen sowie Absenzen und Stundenkontrollen bearbeiten\",\n  \"Aktionspreise, Preisauszeichnungen und Kassensystem-Vorgaben bei Werbeverkäufen kontrollieren\",\n  \"Verkaufszahlen, Ausgaben und Filial-KPIs auswerten sowie Wochen- und Monatsberichte verfassen\",\n  \"Bewerbungsdossiers vorprüfen sowie Arbeitszeugnisse, Gesprächsprotokolle und schriftliche Korrespondenz erstellen\"\n]}"
+}

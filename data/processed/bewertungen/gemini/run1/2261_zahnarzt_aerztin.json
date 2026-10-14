@@ -1,0 +1,183 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "122c7d0b00fa9f75c91866584e9ecef53488802b102ee0ec1ee51964c5e58828",
+    "isco_code": "2261",
+    "beruf": "Zahnarzt/-ärztin",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T06:39:44+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 969,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 969
+        }
+      ],
+      "prompt_token_count": 25898,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 25898
+        }
+      ],
+      "thoughts_token_count": 6289,
+      "total_token_count": 33156
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 969,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 969
+          }
+        ],
+        "prompt_token_count": 25898,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 25898
+          }
+        ],
+        "thoughts_token_count": 6289,
+        "total_token_count": 33156
+      }
+    ],
+    "request_ids": [
+      "nrnOavraJpPtz7IPkMfZ0QI"
+    ],
+    "versuche": 1,
+    "status": "fehlgeschlagen",
+    "fehler": [
+      "Versuch 1: taetigkeiten: ['Klinische zahnärztliche Untersuchungen, Anamnese und Befundaufnahme am Patienten durchführen', 15, 'E0', None, None, 'P0', None, 'hoch', None, None, 'Körperliche Untersuchung der Mundhöhle und unmittelbares Anamnesegespräch am Behandlungsstuhl erfordern physische Präsenz.', 'Röntgenbilder und intraorale Scans beurteilen sowie zahnmedizinische Diagnosen und Therapiepläne festlegen', 5, 'E0', None, None, 'P0', None, 'mittel', None, None, 'Obwohl KI-Bildanalyse Verdachtsstellen (z. B. Karies, apikale Läsionen) markieren kann, muss die Zahnärztin jedes Bild vollständig selbst prüfen und den klinischen Therapieentscheid treffen, sodass keine 50 % Zeitersparnis erreicht werden.', 'Konservierende und endodontische Zahnbehandlungen durchführen (Lokalanästhesie, Kariestherapie, Füllungen, Wurzelkanalbehandlungen)', 25, 'E0', None, None, 'P0', None, 'hoch', None, None, 'Rein physisch-manuelle Präzisionsarbeit im Mund der Patientinnen und Patienten; keine Robotik für den Praxisbetrieb verfügbar.', 'Prothetische und restaurative Behandlungen durchführen (Zahnpräparation, Abformung/Intraoralscan, Eingliederung von Zahnersatz)', 15, 'E0', None, None, 'P0', None, 'hoch', None, None, 'Manuelle Präparation und Anpassung direkt am Patienten; CAD/CAM-Fräsen im Praxislabor betrifft die zahntechnische Fertigung, ersetzt aber nicht die klinische Behandlungszeit am Stuhl.', 'Oralchirurgische, parodontale und kieferorthopädische Eingriffe sowie Notfallbehandlungen durchführen', 15, 'E0', None, None, 'P0', None, 'hoch', None, None, 'Physische Eingriffe am Patienten (z. B. Extraktionen, Parodontaltherapie, Schmerzbehandlung, Apparaturen anpassen) ohne relevante Automatisierbarkeit.', 'Patientinnen und Patienten über Befunde, Behandlungsoptionen, Kosten, Risiken und Prävention aufklären und beraten', 10, 'E0', None, None, 'P0', None, 'hoch', None, None, 'Persönliches Aufklärungs- und Vertrauensgespräch am Behandlungsstuhl inklusive Umgang mit Zahnarztangst und Einholen der Einwilligung.', 'Behandlungsverlauf, Befunde und zahntechnische Aufträge im Praxisinformationssystem dokumentieren', 5, 'E2', 'delegierend', '30-50', 'P0', None, 'mittel', None, None, 'Spracheingabe bzw. Diktat mit LLM-Integration im Praxisverwaltungssystem erstellt den strukturierten Verlaufseintrag; die Zahnärztin prüft und verantwortet jeden Eintrag fachlich.', 'Überweisungsschreiben, Berichte an Versicherungen (UVG, KVG, IV) und schriftliche Therapieerläuterungen verfassen', 5, 'E1', 'delegierend', '30-50', 'P0', None, 'mittel', None, None, 'Aus kopierten Verlaufsnotizen und Stichworten entwirft ein Chat-LLM Berichte an Versicherer oder Fachkollegen; die Zahnärztin prüft und visiert jedes Dokument inhaltlich.', 'Praxisteam führen, delegierte Behandlungen supervidieren und Hygiene- sowie Strahlenschutzstandards überwachen', 5, 'E0', None, None, 'P0', None, 'hoch', None, None, 'Personalführung vor Ort, klinische Nachkontrollen am Stuhl (z. B. bei Dentalhygiene) und physische Überwachung der Praxissicherheit.'] is too long; taetigkeiten/0: 'Klinische zahnärztliche Untersuchungen, Anamnese und Befundaufnahme am Patienten durchführen' is not of type 'object'; taetigkeiten/1: 15 is not of type 'object'; taetigkeiten/2: 'E0' is not of type 'object'; taetigkeiten/3: None is not of type 'object'; taetigkeiten/4: None is not of type 'object'; taetigkeiten/5: 'P0' is not of type 'object'; taetigkeiten/6: None is not of type 'object'; taetigkeiten/7: 'hoch' is not of type 'object'; taetigkeiten/8: None is not of type 'object'"
+    ],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "custom_id": "r1-2261_zahnarzt_aerztin",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": "validierung",
+    "probleme": [
+      "taetigkeiten: ['Klinische zahnärztliche Untersuchungen, Anamnese und Befundaufnahme am Patienten durchführen', 15, 'E0', None, None, 'P0', None, 'hoch', None, None, 'Körperliche Untersuchung der Mundhöhle und unmittelbares Anamnesegespräch am Behandlungsstuhl erfordern physische Präsenz.', 'Röntgenbilder und intraorale Scans beurteilen sowie zahnmedizinische Diagnosen und Therapiepläne festlegen', 5, 'E0', None, None, 'P0', None, 'mittel', None, None, 'Obwohl KI-Bildanalyse Verdachtsstellen (z. B. Karies, apikale Läsionen) markieren kann, muss die Zahnärztin jedes Bild vollständig selbst prüfen und den klinischen Therapieentscheid treffen, sodass keine 50 % Zeitersparnis erreicht werden.', 'Konservierende und endodontische Zahnbehandlungen durchführen (Lokalanästhesie, Kariestherapie, Füllungen, Wurzelkanalbehandlungen)', 25, 'E0', None, None, 'P0', None, 'hoch', None, None, 'Rein physisch-manuelle Präzisionsarbeit im Mund der Patientinnen und Patienten; keine Robotik für den Praxisbetrieb verfügbar.', 'Prothetische und restaurative Behandlungen durchführen (Zahnpräparation, Abformung/Intraoralscan, Eingliederung von Zahnersatz)', 15, 'E0', None, None, 'P0', None, 'hoch', None, None, 'Manuelle Präparation und Anpassung direkt am Patienten; CAD/CAM-Fräsen im Praxislabor betrifft die zahntechnische Fertigung, ersetzt aber nicht die klinische Behandlungszeit am Stuhl.', 'Oralchirurgische, parodontale und kieferorthopädische Eingriffe sowie Notfallbehandlungen durchführen', 15, 'E0', None, None, 'P0', None, 'hoch', None, None, 'Physische Eingriffe am Patienten (z. B. Extraktionen, Parodontaltherapie, Schmerzbehandlung, Apparaturen anpassen) ohne relevante Automatisierbarkeit.', 'Patientinnen und Patienten über Befunde, Behandlungsoptionen, Kosten, Risiken und Prävention aufklären und beraten', 10, 'E0', None, None, 'P0', None, 'hoch', None, None, 'Persönliches Aufklärungs- und Vertrauensgespräch am Behandlungsstuhl inklusive Umgang mit Zahnarztangst und Einholen der Einwilligung.', 'Behandlungsverlauf, Befunde und zahntechnische Aufträge im Praxisinformationssystem dokumentieren', 5, 'E2', 'delegierend', '30-50', 'P0', None, 'mittel', None, None, 'Spracheingabe bzw. Diktat mit LLM-Integration im Praxisverwaltungssystem erstellt den strukturierten Verlaufseintrag; die Zahnärztin prüft und verantwortet jeden Eintrag fachlich.', 'Überweisungsschreiben, Berichte an Versicherungen (UVG, KVG, IV) und schriftliche Therapieerläuterungen verfassen', 5, 'E1', 'delegierend', '30-50', 'P0', None, 'mittel', None, None, 'Aus kopierten Verlaufsnotizen und Stichworten entwirft ein Chat-LLM Berichte an Versicherer oder Fachkollegen; die Zahnärztin prüft und visiert jedes Dokument inhaltlich.', 'Praxisteam führen, delegierte Behandlungen supervidieren und Hygiene- sowie Strahlenschutzstandards überwachen', 5, 'E0', None, None, 'P0', None, 'hoch', None, None, 'Personalführung vor Ort, klinische Nachkontrollen am Stuhl (z. B. bei Dentalhygiene) und physische Überwachung der Praxissicherheit.'] is too long",
+      "taetigkeiten/0: 'Klinische zahnärztliche Untersuchungen, Anamnese und Befundaufnahme am Patienten durchführen' is not of type 'object'",
+      "taetigkeiten/1: 15 is not of type 'object'",
+      "taetigkeiten/2: 'E0' is not of type 'object'",
+      "taetigkeiten/3: None is not of type 'object'",
+      "taetigkeiten/4: None is not of type 'object'",
+      "taetigkeiten/5: 'P0' is not of type 'object'",
+      "taetigkeiten/6: None is not of type 'object'",
+      "taetigkeiten/7: 'hoch' is not of type 'object'",
+      "taetigkeiten/8: None is not of type 'object'",
+      "taetigkeiten/9: None is not of type 'object'",
+      "taetigkeiten/10: 'Körperliche Untersuchung der Mundhöhle und unmittelbares Anamnesegespräch am Behandlungsstuhl erfordern physische Präsenz.' is not of type 'object'",
+      "taetigkeiten/11: 'Röntgenbilder und intraorale Scans beurteilen sowie zahnmedizinische Diagnosen und Therapiepläne festlegen' is not of type 'object'",
+      "taetigkeiten/12: 5 is not of type 'object'",
+      "taetigkeiten/13: 'E0' is not of type 'object'",
+      "taetigkeiten/14: None is not of type 'object'",
+      "taetigkeiten/15: None is not of type 'object'",
+      "taetigkeiten/16: 'P0' is not of type 'object'",
+      "taetigkeiten/17: None is not of type 'object'",
+      "taetigkeiten/18: 'mittel' is not of type 'object'",
+      "taetigkeiten/19: None is not of type 'object'",
+      "taetigkeiten/20: None is not of type 'object'",
+      "taetigkeiten/21: 'Obwohl KI-Bildanalyse Verdachtsstellen (z. B. Karies, apikale Läsionen) markieren kann, muss die Zahnärztin jedes Bild vollständig selbst prüfen und den klinischen Therapieentscheid treffen, sodass keine 50 % Zeitersparnis erreicht werden.' is not of type 'object'",
+      "taetigkeiten/22: 'Konservierende und endodontische Zahnbehandlungen durchführen (Lokalanästhesie, Kariestherapie, Füllungen, Wurzelkanalbehandlungen)' is not of type 'object'",
+      "taetigkeiten/23: 25 is not of type 'object'",
+      "taetigkeiten/24: 'E0' is not of type 'object'",
+      "taetigkeiten/25: None is not of type 'object'",
+      "taetigkeiten/26: None is not of type 'object'",
+      "taetigkeiten/27: 'P0' is not of type 'object'",
+      "taetigkeiten/28: None is not of type 'object'",
+      "taetigkeiten/29: 'hoch' is not of type 'object'",
+      "taetigkeiten/30: None is not of type 'object'",
+      "taetigkeiten/31: None is not of type 'object'",
+      "taetigkeiten/32: 'Rein physisch-manuelle Präzisionsarbeit im Mund der Patientinnen und Patienten; keine Robotik für den Praxisbetrieb verfügbar.' is not of type 'object'",
+      "taetigkeiten/33: 'Prothetische und restaurative Behandlungen durchführen (Zahnpräparation, Abformung/Intraoralscan, Eingliederung von Zahnersatz)' is not of type 'object'",
+      "taetigkeiten/34: 15 is not of type 'object'",
+      "taetigkeiten/35: 'E0' is not of type 'object'",
+      "taetigkeiten/36: None is not of type 'object'",
+      "taetigkeiten/37: None is not of type 'object'",
+      "taetigkeiten/38: 'P0' is not of type 'object'",
+      "taetigkeiten/39: None is not of type 'object'",
+      "taetigkeiten/40: 'hoch' is not of type 'object'",
+      "taetigkeiten/41: None is not of type 'object'",
+      "taetigkeiten/42: None is not of type 'object'",
+      "taetigkeiten/43: 'Manuelle Präparation und Anpassung direkt am Patienten; CAD/CAM-Fräsen im Praxislabor betrifft die zahntechnische Fertigung, ersetzt aber nicht die klinische Behandlungszeit am Stuhl.' is not of type 'object'",
+      "taetigkeiten/44: 'Oralchirurgische, parodontale und kieferorthopädische Eingriffe sowie Notfallbehandlungen durchführen' is not of type 'object'",
+      "taetigkeiten/45: 15 is not of type 'object'",
+      "taetigkeiten/46: 'E0' is not of type 'object'",
+      "taetigkeiten/47: None is not of type 'object'",
+      "taetigkeiten/48: None is not of type 'object'",
+      "taetigkeiten/49: 'P0' is not of type 'object'",
+      "taetigkeiten/50: None is not of type 'object'",
+      "taetigkeiten/51: 'hoch' is not of type 'object'",
+      "taetigkeiten/52: None is not of type 'object'",
+      "taetigkeiten/53: None is not of type 'object'",
+      "taetigkeiten/54: 'Physische Eingriffe am Patienten (z. B. Extraktionen, Parodontaltherapie, Schmerzbehandlung, Apparaturen anpassen) ohne relevante Automatisierbarkeit.' is not of type 'object'",
+      "taetigkeiten/55: 'Patientinnen und Patienten über Befunde, Behandlungsoptionen, Kosten, Risiken und Prävention aufklären und beraten' is not of type 'object'",
+      "taetigkeiten/56: 10 is not of type 'object'",
+      "taetigkeiten/57: 'E0' is not of type 'object'",
+      "taetigkeiten/58: None is not of type 'object'",
+      "taetigkeiten/59: None is not of type 'object'",
+      "taetigkeiten/60: 'P0' is not of type 'object'",
+      "taetigkeiten/61: None is not of type 'object'",
+      "taetigkeiten/62: 'hoch' is not of type 'object'",
+      "taetigkeiten/63: None is not of type 'object'",
+      "taetigkeiten/64: None is not of type 'object'",
+      "taetigkeiten/65: 'Persönliches Aufklärungs- und Vertrauensgespräch am Behandlungsstuhl inklusive Umgang mit Zahnarztangst und Einholen der Einwilligung.' is not of type 'object'",
+      "taetigkeiten/66: 'Behandlungsverlauf, Befunde und zahntechnische Aufträge im Praxisinformationssystem dokumentieren' is not of type 'object'",
+      "taetigkeiten/67: 5 is not of type 'object'",
+      "taetigkeiten/68: 'E2' is not of type 'object'",
+      "taetigkeiten/69: 'delegierend' is not of type 'object'",
+      "taetigkeiten/70: '30-50' is not of type 'object'",
+      "taetigkeiten/71: 'P0' is not of type 'object'",
+      "taetigkeiten/72: None is not of type 'object'",
+      "taetigkeiten/73: 'mittel' is not of type 'object'",
+      "taetigkeiten/74: None is not of type 'object'",
+      "taetigkeiten/75: None is not of type 'object'",
+      "taetigkeiten/76: 'Spracheingabe bzw. Diktat mit LLM-Integration im Praxisverwaltungssystem erstellt den strukturierten Verlaufseintrag; die Zahnärztin prüft und verantwortet jeden Eintrag fachlich.' is not of type 'object'",
+      "taetigkeiten/77: 'Überweisungsschreiben, Berichte an Versicherungen (UVG, KVG, IV) und schriftliche Therapieerläuterungen verfassen' is not of type 'object'",
+      "taetigkeiten/78: 5 is not of type 'object'",
+      "taetigkeiten/79: 'E1' is not of type 'object'",
+      "taetigkeiten/80: 'delegierend' is not of type 'object'",
+      "taetigkeiten/81: '30-50' is not of type 'object'",
+      "taetigkeiten/82: 'P0' is not of type 'object'",
+      "taetigkeiten/83: None is not of type 'object'",
+      "taetigkeiten/84: 'mittel' is not of type 'object'",
+      "taetigkeiten/85: None is not of type 'object'",
+      "taetigkeiten/86: None is not of type 'object'",
+      "taetigkeiten/87: 'Aus kopierten Verlaufsnotizen und Stichworten entwirft ein Chat-LLM Berichte an Versicherer oder Fachkollegen; die Zahnärztin prüft und visiert jedes Dokument inhaltlich.' is not of type 'object'",
+      "taetigkeiten/88: 'Praxisteam führen, delegierte Behandlungen supervidieren und Hygiene- sowie Strahlenschutzstandards überwachen' is not of type 'object'",
+      "taetigkeiten/89: 5 is not of type 'object'",
+      "taetigkeiten/90: 'E0' is not of type 'object'",
+      "taetigkeiten/91: None is not of type 'object'",
+      "taetigkeiten/92: None is not of type 'object'",
+      "taetigkeiten/93: 'P0' is not of type 'object'",
+      "taetigkeiten/94: None is not of type 'object'",
+      "taetigkeiten/95: 'hoch' is not of type 'object'",
+      "taetigkeiten/96: None is not of type 'object'",
+      "taetigkeiten/97: None is not of type 'object'",
+      "taetigkeiten/98: 'Personalführung vor Ort, klinische Nachkontrollen am Stuhl (z. B. bei Dentalhygiene) und physische Überwachung der Praxissicherheit.' is not of type 'object'",
+      "zusammenfassung: None is not of type 'object'"
+    ],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": null,
+  "rohantwort": "{\"isco_code\":\"2261\",\"beruf\":\"Zahnarzt/-ärztin\",\"taetigkeiten\":[\"Klinische zahnärztliche Untersuchungen, Anamnese und Befundaufnahme am Patienten durchführen\",15,\"E0\",null,null,\"P0\",null,\"hoch\",null,null,\"Körperliche Untersuchung der Mundhöhle und unmittelbares Anamnesegespräch am Behandlungsstuhl erfordern physische Präsenz.\",\"Röntgenbilder und intraorale Scans beurteilen sowie zahnmedizinische Diagnosen und Therapiepläne festlegen\",5,\"E0\",null,null,\"P0\",null,\"mittel\",null,null,\"Obwohl KI-Bildanalyse Verdachtsstellen (z. B. Karies, apikale Läsionen) markieren kann, muss die Zahnärztin jedes Bild vollständig selbst prüfen und den klinischen Therapieentscheid treffen, sodass keine 50 % Zeitersparnis erreicht werden.\",\"Konservierende und endodontische Zahnbehandlungen durchführen (Lokalanästhesie, Kariestherapie, Füllungen, Wurzelkanalbehandlungen)\",25,\"E0\",null,null,\"P0\",null,\"hoch\",null,null,\"Rein physisch-manuelle Präzisionsarbeit im Mund der Patientinnen und Patienten; keine Robotik für den Praxisbetrieb verfügbar.\",\"Prothetische und restaurative Behandlungen durchführen (Zahnpräparation, Abformung/Intraoralscan, Eingliederung von Zahnersatz)\",15,\"E0\",null,null,\"P0\",null,\"hoch\",null,null,\"Manuelle Präparation und Anpassung direkt am Patienten; CAD/CAM-Fräsen im Praxislabor betrifft die zahntechnische Fertigung, ersetzt aber nicht die klinische Behandlungszeit am Stuhl.\",\"Oralchirurgische, parodontale und kieferorthopädische Eingriffe sowie Notfallbehandlungen durchführen\",15,\"E0\",null,null,\"P0\",null,\"hoch\",null,null,\"Physische Eingriffe am Patienten (z. B. Extraktionen, Parodontaltherapie, Schmerzbehandlung, Apparaturen anpassen) ohne relevante Automatisierbarkeit.\",\"Patientinnen und Patienten über Befunde, Behandlungsoptionen, Kosten, Risiken und Prävention aufklären und beraten\",10,\"E0\",null,null,\"P0\",null,\"hoch\",null,null,\"Persönliches Aufklärungs- und Vertrauensgespräch am Behandlungsstuhl inklusive Umgang mit Zahnarztangst und Einholen der Einwilligung.\",\"Behandlungsverlauf, Befunde und zahntechnische Aufträge im Praxisinformationssystem dokumentieren\",5,\"E2\",\"delegierend\",\"30-50\",\"P0\",null,\"mittel\",null,null,\"Spracheingabe bzw. Diktat mit LLM-Integration im Praxisverwaltungssystem erstellt den strukturierten Verlaufseintrag; die Zahnärztin prüft und verantwortet jeden Eintrag fachlich.\",\"Überweisungsschreiben, Berichte an Versicherungen (UVG, KVG, IV) und schriftliche Therapieerläuterungen verfassen\",5,\"E1\",\"delegierend\",\"30-50\",\"P0\",null,\"mittel\",null,null,\"Aus kopierten Verlaufsnotizen und Stichworten entwirft ein Chat-LLM Berichte an Versicherer oder Fachkollegen; die Zahnärztin prüft und visiert jedes Dokument inhaltlich.\",\"Praxisteam führen, delegierte Behandlungen supervidieren und Hygiene- sowie Strahlenschutzstandards überwachen\",5,\"E0\",null,null,\"P0\",null,\"hoch\",null,null,\"Personalführung vor Ort, klinische Nachkontrollen am Stuhl (z. B. bei Dentalhygiene) und physische Überwachung der Praxissicherheit.\"],\"unsicherheit\":\"niedrig\",\"kommentar\":\"Angenommenes Setting: Allgemeinzahnärztin/Allgemeinzahnarzt in einer typischen Schweizer Zahnarztpraxis (KMU), wobei der ISCO-Code auch spezialisierte Bereiche wie Kieferorthopädie und Oralchirurgie umfasst. Die Arbeit wird zu rund 85 % durch manuelle klinische Tätigkeit am Behandlungsstuhl und direkte Patientenkommunikation geprägt. Grenzfälle bestehen bei der KI-gestützten Röntgenbildanalyse, die als Zweitmeinung dient, aber die klinische Befundung und Therapieentscheidung zeitlich um weniger als 50 % verkürzt.\",\"zusammenfassung\":null}"
+}

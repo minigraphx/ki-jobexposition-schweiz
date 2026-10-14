@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "24f9bca0e7effbd91ad85534b1d1ccc41f383dbf9296ba7450019180fd21a273",
+    "isco_code": "4416",
+    "beruf": "Sachbearbeiter/in HR",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T06:39:44+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2006,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2006
+        }
+      ],
+      "prompt_token_count": 21716,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21716
+        }
+      ],
+      "thoughts_token_count": 8364,
+      "total_token_count": 32086
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2006,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2006
+          }
+        ],
+        "prompt_token_count": 21716,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21716
+          }
+        ],
+        "thoughts_token_count": 8364,
+        "total_token_count": 32086
+      }
+    ],
+    "request_ids": [
+      "nrnOasKfK4rH_PUPjJmG8QU"
+    ],
+    "versuche": 1,
+    "status": "fehlgeschlagen",
+    "fehler": [
+      "Versuch 1: (root): Additional properties are not allowed ('begruendung', 'ch_hemmnis', 'modus', 'name', 'p_art', 'physisch_automatisierbar', 'restzeit_mensch', 'sicherheit', 'sicherheit_begruendung', 'stufe', 'zeitanteil_pct' were unexpected); (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: ['name', 'Stelleninserate und Anforderungsprofile nach Vorgaben entwerfen und ausschreiben', 'zeitanteil_pct', 10, 'stufe', 'E1', 'modus', 'delegierend', 'restzeit_mensch', '10-30', 'physisch_automatisierbar', 'P0', 'p_art', None, 'sicherheit', 'hoch', 'sicherheit_begruendung', None, 'ch_hemmnis', 'begruendung', 'Ein Chat-LLM erstellt aus Stichworten der Linie und Firmenbausteinen vollständige Stelleninserate; die HR-Sachbearbeiterin steuert die Vorgaben, prüft jeden Text auf Stimmigkeit und schaltet das Inserat auf.'] is too long; taetigkeiten/0: 'name' is not of type 'object'; taetigkeiten/1: 'Stelleninserate und Anforderungsprofile nach Vorgaben entwerfen und ausschreiben' is not of type 'object'; taetigkeiten/2: 'zeitanteil_pct' is not of type 'object'; taetigkeiten/3: 10 is not of type 'object'; taetigkeiten/4: 'stufe' is not of type 'object'"
+    ],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "custom_id": "r1-4416_sachbearbeiter_in_hr",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": "validierung",
+    "probleme": [
+      "(root): Additional properties are not allowed ('begruendung', 'ch_hemmnis', 'modus', 'name', 'p_art', 'physisch_automatisierbar', 'restzeit_mensch', 'sicherheit', 'sicherheit_begruendung', 'stufe', 'zeitanteil_pct' were unexpected)",
+      "(root): 'unsicherheit' is a required property",
+      "(root): 'kommentar' is a required property",
+      "(root): 'zusammenfassung' is a required property",
+      "taetigkeiten: ['name', 'Stelleninserate und Anforderungsprofile nach Vorgaben entwerfen und ausschreiben', 'zeitanteil_pct', 10, 'stufe', 'E1', 'modus', 'delegierend', 'restzeit_mensch', '10-30', 'physisch_automatisierbar', 'P0', 'p_art', None, 'sicherheit', 'hoch', 'sicherheit_begruendung', None, 'ch_hemmnis', 'begruendung', 'Ein Chat-LLM erstellt aus Stichworten der Linie und Firmenbausteinen vollständige Stelleninserate; die HR-Sachbearbeiterin steuert die Vorgaben, prüft jeden Text auf Stimmigkeit und schaltet das Inserat auf.'] is too long",
+      "taetigkeiten/0: 'name' is not of type 'object'",
+      "taetigkeiten/1: 'Stelleninserate und Anforderungsprofile nach Vorgaben entwerfen und ausschreiben' is not of type 'object'",
+      "taetigkeiten/2: 'zeitanteil_pct' is not of type 'object'",
+      "taetigkeiten/3: 10 is not of type 'object'",
+      "taetigkeiten/4: 'stufe' is not of type 'object'",
+      "taetigkeiten/5: 'E1' is not of type 'object'",
+      "taetigkeiten/6: 'modus' is not of type 'object'",
+      "taetigkeiten/7: 'delegierend' is not of type 'object'",
+      "taetigkeiten/8: 'restzeit_mensch' is not of type 'object'",
+      "taetigkeiten/9: '10-30' is not of type 'object'",
+      "taetigkeiten/10: 'physisch_automatisierbar' is not of type 'object'",
+      "taetigkeiten/11: 'P0' is not of type 'object'",
+      "taetigkeiten/12: 'p_art' is not of type 'object'",
+      "taetigkeiten/13: None is not of type 'object'",
+      "taetigkeiten/14: 'sicherheit' is not of type 'object'",
+      "taetigkeiten/15: 'hoch' is not of type 'object'",
+      "taetigkeiten/16: 'sicherheit_begruendung' is not of type 'object'",
+      "taetigkeiten/17: None is not of type 'object'",
+      "taetigkeiten/18: 'ch_hemmnis' is not of type 'object'",
+      "taetigkeiten/19: 'begruendung' is not of type 'object'",
+      "taetigkeiten/20: 'Ein Chat-LLM erstellt aus Stichworten der Linie und Firmenbausteinen vollständige Stelleninserate; die HR-Sachbearbeiterin steuert die Vorgaben, prüft jeden Text auf Stimmigkeit und schaltet das Inserat auf.' is not of type 'object'"
+    ],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": null,
+  "rohantwort": "{\"isco_code\":\"4416\",\"beruf\":\"Sachbearbeiter/in HR\",\"taetigkeiten\":[\n      \"name\", \"Stelleninserate und Anforderungsprofile nach Vorgaben entwerfen und ausschreiben\",\n      \"zeitanteil_pct\", 10,\n      \"stufe\", \"E1\",\n      \"modus\", \"delegierend\",\n      \"restzeit_mensch\", \"10-30\",\n      \"physisch_automatisierbar\", \"P0\",\n      \"p_art\", null,\n      \"sicherheit\", \"hoch\",\n      \"sicherheit_begruendung\", null,\n      \"ch_hemmnis\",\n      \"begruendung\", \"Ein Chat-LLM erstellt aus Stichworten der Linie und Firmenbausteinen vollständige Stelleninserate; die HR-Sachbearbeiterin steuert die Vorgaben, prüft jeden Text auf Stimmigkeit und schaltet das Inserat auf.\"\n    ],\n    \"name\": \"Eingegangene Bewerbungsdossiers sichten, mit Anforderungsprofilen abgleichen und vorselektieren\",\n      \"zeitanteil_pct\": 15,\n      \"stufe\": \"E2\",\n      \"modus\": \"delegierend\",\n      \"restzeit_mensch\": \"30-50\",\n      \"physisch_automatisierbar\": \"P0\",\n      \"p_art\": null,\n      \"sicherheit\": \"mittel\",\n      \"sicherheit_begruendung\": null,\n      \"ch_hemmnis\": [\"regulatorisch\",\"vertrauen\"],\n      \"begruendung\": \"KI-Funktionen im Bewerbermanagementsystem extrahieren Informationen aus Lebensläufen, Diplomen und Arbeitszeugnissen und erstellen ein Matching-Profil; die Fachperson prüft jede Einschätzung vor der Weiterleitung an die Linie.\"\n    ,\n    \"name\": \"Bewerbungskorrespondenz führen und Vorstellungstermine mit Kandidatinnen und Linie koordinieren\",\n      \"zeitanteil_pct\": 10,\n      \"stufe\": \"E2\",\n      \"modus\": \"ersetzend\",\n      \"restzeit_mensch\": \"10-30\",\n      \"physisch_automatisierbar\": \"P1\",\n      \"p_art\": \"software\",\n      \"sicherheit\": \"hoch\",\n      \"sicherheit_begruendung\": null,\n      \"ch_hemmnis\": [],\n      \"begruendung\": \"Im Bewerbermanagementsystem integrierte KI-Assistenten versenden Einladungen, Zwischenbescheide und Absagen und koordinieren Termine weitgehend selbständig, während der Mensch nur Ausnahmen bearbeitet; klassische Bewerberportale mit Vorlagen und Buchungslinks leisten dies ebenfalls (P1).\"\n    ,\n    \"name\": \"Arbeitsverträge, Vertragszusätze und arbeitsrechtliche Bestätigungen ausarbeiten\",\n      \"zeitanteil_pct\": 10,\n      \"stufe\": \"E1\",\n      \"modus\": \"delegierend\",\n      \"restzeit_mensch\": \"10-30\",\n      \"physisch_automatisierbar\": \"P1\",\n      \"p_art\": \"software\",\n      \"sicherheit\": \"mittel\",\n      \"sicherheit_begruendung\": null,\n      \"ch_hemmnis\": [\"regulatorisch\"],\n      \"begruendung\": \"Ein Chat-LLM generiert aus Vorlagen und Falldaten vollständige Verträge oder Sonderklauseln, die vor Unterschrift einzeln rechtlich geprüft werden; für Standardverträge erreichen auch klassische Dokumentengeneratoren im HR-System über 50 % Zeitersparnis.\"\n    ,\n    \"name\": \"Zwischen- und Arbeitszeugnisse auf Basis von Führungsbeurteilungen entwerfen\",\n      \"zeitanteil_pct\": 10,\n      \"stufe\": \"E1\",\n      \"modus\": \"delegierend\",\n      \"restzeit_mensch\": \"10-30\",\n      \"physisch_automatisierbar\": \"P0\",\n      \"p_art\": null,\n      \"sicherheit\": \"hoch\",\n      \"sicherheit_begruendung\": null,\n      \"ch_hemmnis\": [\"regulatorisch\"],\n      \"begruendung\": \"Aus dem kopierten Beurteilungsbogen und Stellenprofil formuliert das Chat-LLM ein vollständiges Zeugnis in Schweizer Zeugnissprache; die HR-Fachperson prüft und überarbeitet jedes Zeugnis hinsichtlich Wahrheits- und Wohlwollenspflicht.\"\n    ,\n    \"name\": \"Personalstammdaten, Absenzen sowie Ein- und Austrittsmutationen im HR-System erfassen und Dossiers führen\",\n      \"zeitanteil_pct\": 15,\n      \"stufe\": \"E2\",\n      \"modus\": \"ersetzend\",\n      \"restzeit_mensch\": \"10-30\",\n      \"physisch_automatisierbar\": \"P1\",\n      \"p_art\": \"software\",\n      \"sicherheit\": \"mittel\",\n      \"sicherheit_begruendung\": null,\n      \"ch_hemmnis\": [\"regulatorisch\"],\n      \"begruendung\": \"Dokumentenerkennung mit Systemintegration liest Personalblätter, Ausweise, Arztzeugnisse und Freitext-Meldungen aus und überträgt sie ins HR-System, wobei der Mensch primär markierte Ausnahmen und Stichproben bearbeitet; klassische Employee-Self-Service-Portale automatisieren die Datenerfassung ebenfalls zu über 50 %.\"\n    ,\n    \"name\": \"Monatlichen Lohnlauf sowie Sozialversicherungs- und Quellensteuerabrechnungen im Lohnsystem durchführen\",\n      \"zeitanteil_pct\": 10,\n      \"stufe\": \"E0\",\n      \"modus\": null,\n      \"restzeit_mensch\": null,\n      \"physisch_automatisierbar\": \"P1\",\n      \"p_art\": \"software\",\n      \"sicherheit\": \"hoch\",\n      \"sicherheit_begruendung\": null,\n      \"ch_hemmnis\": [],\n      \"begruendung\": \"Die regelbasierte Lohnabrechnung und elektronische Übermittlung an Sozialversicherungen und Steuerämter (ELM/Swissdec) erfolgt über klassische Lohnsoftware ohne generative KI.\"\n    ,\n    \"name\": \"Anfragen von Mitarbeitenden und Vorgesetzten zu Personalreglementen, Ferien, Spesen und Sozialversicherungen beantworten\",\n      \"zeitanteil_pct\": 10,\n      \"stufe\": \"E2\",\n      \"modus\": \"delegierend\",\n      \"restzeit_mensch\": \"30-50\",\n      \"physisch_automatisierbar\": \"P0\",\n      \"p_art\": null,\n      \"sicherheit\": \"mittel\",\n      \"sicherheit_begruendung\": null,\n      \"ch_hemmnis\": [\"vertrauen\",\"mehrsprachigkeit\"],\n      \"begruendung\": \"Ein an Reglemente und das HR-System angebundener KI-Assistent entwirft fallbezogene Antworten auf schriftliche und telefonische Anfragen; die HR-Sachbearbeiterin prüft jede Auskunft inhaltlich vor der Herausgabe.\"\n    ,\n    \"name\": \"Personalstatistiken, Kennzahlen (Fluktuation, Absenzen, Stellenplan) und HR-Berichte für die Leitung erstellen\",\n      \"zeitanteil_pct\": 5,\n      \"stufe\": \"E2\",\n      \"modus\": \"delegierend\",\n      \"restzeit_mensch\": \"10-30\",\n      \"physisch_automatisierbar\": \"P1\",\n      \"p_art\": \"software\",\n      \"sicherheit\": \"hoch\",\n      \"sicherheit_begruendung\": null,\n      \"ch_hemmnis\": [],\n      \"begruendung\": \"KI-gestützte Datenanalyse-Werkzeuge in Tabellen- oder HR-Systemen werten Personaldaten aus und verfassen den Berichtskommentar, den die Fachperson auf Plausibilität prüft; Standardkennzahlen lassen sich auch über klassische BI-Dashboards automatisieren.\"\n    ,\n    \"name\": \"Neue Mitarbeitende am ersten Arbeitstag empfangen, einführen und persönliche Gespräche begleiten\",\n      \"zeitanteil_pct\": 5,\n      \"stufe\": \"E0\",\n      \"modus\": null,\n      \"restzeit_mensch\": null,\n      \"physisch_automatisierbar\": \"P0\",\n      \"p_art\": null,\n      \"sicherheit\": \"hoch\",\n      \"sicherheit_begruendung\": null,\n      \"ch_hemmnis\": [],\n      \"begruendung\": \"Der persönliche Empfang am Arbeitsplatz, Rundgänge und die Begleitung von Mitarbeitendengesprächen erfordern physische Präsenz und zwischenmenschlichen Kontakt.\"\n    }"
+}

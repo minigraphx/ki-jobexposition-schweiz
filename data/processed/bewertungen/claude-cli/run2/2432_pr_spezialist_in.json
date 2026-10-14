@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "3257cba5fe59864a34b595e0df7e9ec80739bda1e0cde62670002ddc86c75fbc",
+    "isco_code": "2432",
+    "beruf": "PR-Spezialist/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:47:20+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4016,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5035,
+      "api_aequivalent_usd": 0.1401662
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4016,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5035,
+        "output_tokens_details": {
+          "thinking_tokens": 1853
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4016,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1401662
+      }
+    ],
+    "request_ids": [
+      "fd53d6ae-faa3-4c5c-bb5f-cbb92c6311b5"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2432",
+    "beruf": "PR-Spezialist/in",
+    "taetigkeiten": [
+      {
+        "name": "Medienmitteilungen, Statements und Stellungnahmen aus Briefings und Hintergrundmaterial verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft aus eingefügten Fakten, Zitaten und Kernbotschaften die Mitteilung; die PR-Fachperson prüft jede Mitteilung auf Fakten, Tonalität und Reputationsrisiken und holt die Freigaben ein."
+      },
+      {
+        "name": "Medienmitteilungen und Kommunikationstexte in weitere Landessprachen übersetzen und adaptieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Das LLM übersetzt DE/FR/IT auf hohem Niveau; da die Texte publiziert werden, revidiert die Fachperson bzw. ein Muttersprachler jede Fassung. Parallel geführte Sprachfassungen erfordern zusätzliche Abstimmung."
+      },
+      {
+        "name": "Digitale Inhalte für Website, Social Media, Newsletter und Blog mit Bildern erstellen und publizieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Text wäre E1, Bilderzeugung/-bearbeitung und Formatadaption brauchen generative Zusatzsoftware; die KI erstellt Posts und Varianten, die Person wählt aus und prüft jeden Beitrag vor Publikation."
+      },
+      {
+        "name": "Präsentationen, Factsheets, Q&A-Dokumente und Sprachregelungen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in der Office-Suite erstellen Folien und Unterlagen aus Quelldokumenten; die Fachperson prüft Inhalt, Botschaften und CI-Treue jeder Unterlage."
+      },
+      {
+        "name": "Medien und öffentliches Umfeld beobachten, Medienresonanz auswerten und Reports erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Monitoring-Plattformen mit LLM-Zusammenfassung und Recherche-Agenten erstellen Clipping-Analysen und Resonanzberichte; die Person prüft Einordnung und Schlussfolgerungen jedes Reports. Klassische Clipping-Dienste sammeln nur, die Auswertung bleibt sonst manuell (P0)."
+      },
+      {
+        "name": "Kommunikations- und PR-Strategien sowie Massnahmenpläne konzipieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die KI-Hilfe bei Strategiearbeit, die stark auf Stakeholder-Wissen und Abstimmung beruht, wirklich 50 % Zeit spart; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Fachperson entwickelt Analyse, Positionierung und Prioritäten selbst; das LLM liefert Stakeholder-Analysen, Gliederungen, Massnahmenvorschläge und Formulierungen für das Konzeptpapier."
+      },
+      {
+        "name": "Medienanfragen entgegennehmen, Antworten intern abstimmen und Journalistenkontakte persönlich pflegen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beziehungsarbeit am Telefon und im persönlichen Kontakt sowie interne Abstimmung unter Zeitdruck dominieren; das Formulieren schriftlicher Antworten ist nur ein kleiner Teil."
+      },
+      {
+        "name": "Geschäftsleitung bzw. Kunden zu Image, Positionierung und Krisenkommunikation beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung, Vertrauensbeziehung und Ermessensentscheide in heiklen Situationen; KI spart hier keine 50 %."
+      },
+      {
+        "name": "Medienkonferenzen und Medienanlässe organisieren und vor Ort durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Koordination von Beteiligten, Logistik und Präsenz vor Ort; Unterlagen dazu sind unter anderen Tätigkeiten erfasst."
+      },
+      {
+        "name": "Interviews geben, als Mediensprecher/in auftreten und Präsentationen halten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönlicher Auftritt und unmittelbare Interaktion mit Medien und Publikum."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommen ist eine PR-Fachperson in der Kommunikationsabteilung eines mittelgrossen Schweizer Unternehmens oder in einer PR-Agentur, die mehrsprachig (DE/FR) arbeitet. Der ESCO-Input passt gut, die Zeitanteile sind aber grob geschätzt. Die grössten Grenzfälle sind die Strategiekonzeption (E1 unterstützend vs. E0) und die Frage, ob schriftliche Medienanfragen als eigene exponierte Tätigkeit zu werten wären.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Verfassen und Übersetzen von Medienmitteilungen, Social-Media- und Webinhalte, Präsentationsunterlagen sowie Medienmonitoring-Reports, die Chat-LLMs, Bildgeneratoren, Office-KI und Monitoring-Plattformen mit KI-Zusammenfassung grösstenteils erstellen können.",
+      "begruendung": "Rund zwei Drittel der Arbeitszeit sind exponiert, fast durchwegs delegierend: Die KI erstellt die Texte, Bilder und Berichte, die PR-Fachperson prüft aber wegen der Reputationsrisiken jede Publikation. Die Strategiearbeit wird nur unterstützt, Beratung, Medienbeziehungen und Auftritte bleiben menschlich. Ein CH-Hemmnis ist vor allem die Abstimmung paralleler Sprachfassungen; die regulatorischen Hürden sind gering.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

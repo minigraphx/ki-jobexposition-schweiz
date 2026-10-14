@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "b3f8c0882ce53316ffefb72a6a00e4ce82bfe7930b46c37d027b7de554a3a83e",
+    "isco_code": "2423",
+    "beruf": "Berufsberater und -analytiker und vergleichbare Spezialisten der Personalwesen",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T06:39:44+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 54,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 54
+        }
+      ],
+      "prompt_token_count": 22563,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22563
+        }
+      ],
+      "thoughts_token_count": 6287,
+      "total_token_count": 28904
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 54,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 54
+          }
+        ],
+        "prompt_token_count": 22563,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22563
+          }
+        ],
+        "thoughts_token_count": 6287,
+        "total_token_count": 28904
+      }
+    ],
+    "request_ids": [
+      "nrnOaqb1Lbzi_uMP6aHG6Ag"
+    ],
+    "versuche": 1,
+    "status": "fehlgeschlagen",
+    "fehler": [
+      "Versuch 1: (root): Additional properties are not allowed ('taetigkeitenMaz' was unexpected); (root): 'taetigkeiten' is a required property; (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property"
+    ],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "custom_id": "r1-2423_berufsberater_und_analytiker_und_verglei",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": "validierung",
+    "probleme": [
+      "(root): Additional properties are not allowed ('taetigkeitenMaz' was unexpected)",
+      "(root): 'taetigkeiten' is a required property",
+      "(root): 'unsicherheit' is a required property",
+      "(root): 'kommentar' is a required property",
+      "(root): 'zusammenfassung' is a required property"
+    ],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": null,
+  "rohantwort": "{\"isco_code\":\"2423\",\"beruf\":\"Berufsberater und -analytiker und vergleichbare Spezialisten der Personalwesen\",\"taetigkeitenMaz\":null}"
+}

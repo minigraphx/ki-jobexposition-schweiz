@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "991537039867bcc6bb9646c245f982399faa8b2eb9485a64bc8a62cd27b66546",
+    "isco_code": "3313",
+    "beruf": "Fachkräfte im Rechnungswesen",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T01:05:11+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3080,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5648,
+      "api_aequivalent_usd": 0.1449382
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3080,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5648,
+        "output_tokens_details": {
+          "thinking_tokens": 2078
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3080,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1449382
+      }
+    ],
+    "request_ids": [
+      "bd27e50e-12d7-4475-a770-3dc369ea3c77"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3313",
+    "beruf": "Fachkräfte im Rechnungswesen",
+    "taetigkeiten": [
+      {
+        "name": "Kreditorenrechnungen (PDF/Papier) erfassen, kontieren und im Buchhaltungssystem verbuchen",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Belegerkennung mit Integration in die Buchhaltungssoftware extrahiert und kontiert die Belege; die Fachkraft bearbeitet nur markierte Ausnahmen und Stichproben. P1, weil QR-Rechnungs-Einlesen, eBill und klassische Formularerkennung mit Kontierungsvorlagen pro Lieferant den Grossteil abdecken."
+      },
+      {
+        "name": "Ausgangsrechnungen erstellen, Zahlungseingänge verbuchen und Mahnläufe durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fakturierung aus dem ERP, Abgleich per QR-Referenz und Mahnlauf übernimmt klassische Buchhaltungssoftware; ein LLM ist dafür nicht nötig."
+      },
+      {
+        "name": "Unklare Zahlungen und offene Posten abklären und den richtigen Belegen zuordnen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Eine KI-Funktion im Buchhaltungssystem schlägt anhand von Freitext-Zahlungsmitteilungen und offenen Posten die Zuordnungen vor; die Fachkraft prüft jeden Vorschlag und klärt die Restfälle. Die Fälle, die der klassische Abgleich nicht löst, braucht Ermessen."
+      },
+      {
+        "name": "Hauptbuchkonten abstimmen, Fehlbuchungen ermitteln und Korrekturbuchungen vornehmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Agent mit Codeausführung auf exportierten Kontoblättern markiert Auffälligkeiten (doppelte Buchungen, falsche Konten, MWST-Codes); die Fachkraft beurteilt und korrigiert jede Position selbst."
+      },
+      {
+        "name": "Monatsabschluss: transitorische Abgrenzungen, Rückstellungen und Abschreibungen ermitteln und buchen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM liefert aus der exportierten Saldenliste und der Belegliste Berechnungen und Buchungsvorschläge; die Fachkraft beurteilt jede Position selbst (Ermessen). Planmässige Abschreibungen laufen über die Anlagebuchhaltung."
+      },
+      {
+        "name": "Jahresabschluss nach OR vorbereiten: Probebilanz, Abschlussbuchungen, Anhang und Unterlagen für Revision/Treuhand",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft die Anhangtexte, Checklisten und Kontennachweise aus exportierten Salden; die Fachkraft erarbeitet die Abschlussbuchungen und Bewertungen selbst. Bilanz und Erfolgsrechnung erzeugt die Buchhaltungssoftware."
+      },
+      {
+        "name": "MWST-Abrechnung erstellen und Umsätze abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die MWST-Abrechnung und die elektronische Einreichung (ePortal ESTV) erzeugt klassische Buchhaltungssoftware aus den Steuercodes; die Abstimmung ist regelbasiert."
+      },
+      {
+        "name": "Lohnlauf durchführen und Sozialversicherungs-Abrechnungen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Lohnsoftware mit ELM/Swissdec erledigt Lohnlauf und Meldungen (klassische Software); Mutationen aus Freitext sind zeitlich unbedeutend."
+      },
+      {
+        "name": "E-Mail-Anfragen von Lieferanten, Kunden, Revisor und Steuerverwaltung beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft die Antwort aus der eingefügten Anfrage und den kopierten Kontodaten; die Fachkraft prüft die Fakten und den Inhalt jeder Antwort."
+      },
+      {
+        "name": "Monatsreporting und Auswertungen für die Geschäftsleitung mit Kommentaren erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Analyse-Agent bzw. die KI-Funktion in Office/ERP erstellt aus den Exporten die Tabellen, Grafiken und Abweichungskommentare; die Fachkraft prüft jeden Bericht inhaltlich."
+      },
+      {
+        "name": "Kassenbuch führen, Bargeld zählen sowie Belege ordnen und archivieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bargeld zählen und Papier ordnen ist physisch; die digitale Archivierung übernehmen Scanner und Dokumentenmanagement-Software (klassische Software), die den Grossteil dieser Arbeit abdecken."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Buchhalter/in in einem Schweizer KMU oder Treuhandbüro (Kaufmann/-frau EFZ mit Weiterbildung Finanz- und Rechnungswesen), Buchhaltungssoftware wie Abacus, Bexio oder Sage. ESCO passt gut; die Zeitanteile sind grob geschätzt. Grenzfälle sind Kontenabstimmung und Abschlussarbeiten (unterstützend oder E0 nahe der Schwelle) sowie die Abgrenzung von klassischer Automatisierung (QR-Rechnung, eBill) und LLM-Belegerkennung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Erfassung von Kreditorenbelegen, die Zuordnung unklarer Zahlungen, Kontenabstimmungen, Abschlussvorbereitung, Reporting und Korrespondenz – durch KI-Belegerkennung in der Buchhaltungssoftware, Analyse-Agenten und Chat-LLMs.",
+      "begruendung": "Rund zwei Drittel der Arbeitszeit sind exponiert: Die Belegerfassung ist weitgehend ersetzend, Zahlungszuordnung, Reporting und Korrespondenz sind delegierend, Kontenabstimmung und Abschlussarbeiten bleiben unterstützend, weil das Ermessen bei der Fachkraft liegt. Lohnlauf, Mahnwesen und MWST sind bereits klassisch automatisiert. Besondere Schweizer Hemmnisse gibt es kaum; die Verbreitung hängt vor allem davon ab, wann KMU-Buchhaltungssoftware die KI-Funktionen standardmässig enthält.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

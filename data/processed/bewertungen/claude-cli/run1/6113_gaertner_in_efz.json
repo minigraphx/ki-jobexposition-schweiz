@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "b0f0ff0e980b8648033de8874859f7e0c61d99819a9ef9ba4a3db7ec48f78799",
+    "isco_code": "6113",
+    "beruf": "Gärtner/in EFZ",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:42:48+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4293,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4129,
+      "api_aequivalent_usd": 0.12426219999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4293,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4129,
+        "output_tokens_details": {
+          "thinking_tokens": 1012
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4293,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.12426219999999999
+      }
+    ],
+    "request_ids": [
+      "2245f018-7511-4f85-b8f1-12488e4b10b9"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "6113",
+    "beruf": "Gärtner/in EFZ",
+    "taetigkeiten": [
+      {
+        "name": "Gartenanlagen bauen: Wege, Plätze, Treppen, Mauern und Natursteinelemente versetzen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Bauarbeit vor Ort in wechselndem Gelände; für solche Baustellen gibt es keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Boden vorbereiten, Erdarbeiten mit Kleinbagger und Dumper ausführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Maschinen werden vor Ort bedient und der Boden wird von Hand bearbeitet; autonome Kleinbagger sind im regulären CH-Betrieb nicht verfügbar."
+      },
+      {
+        "name": "Bäume, Sträucher und Stauden pflanzen, Rasen ansäen oder verlegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Pflanzarbeit vor Ort; keine verfügbare Automatisierung in Gärten und Grünanlagen."
+      },
+      {
+        "name": "Hecken, Sträucher und Bäume schneiden und auslichten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Schnittarbeit, bei der die Person laufend selbst beurteilt, was geschnitten wird; keine Robotik verfügbar."
+      },
+      {
+        "name": "Rasenflächen mähen und Rasenpflege durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit. Mähroboter (auch GPS-gesteuerte für grössere Flächen) sind in der Schweiz verbreitet und könnten den Grossteil des Mähens übernehmen."
+      },
+      {
+        "name": "Unkraut jäten, Laub räumen und Beete im Unterhalt pflegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Pflegearbeit in kleinteiligen, gemischten Beeten; Jätroboter sind für solche Pflanzungen nicht praxistauglich."
+      },
+      {
+        "name": "Pflanzenschutz- und Düngemassnahmen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Schadbilder werden vor Ort erkannt und Mittel von Hand ausgebracht. Bild-Apps helfen bei der Bestimmung, sparen aber nicht 50 % der Zeit."
+      },
+      {
+        "name": "Zäune, Bewässerungsanlagen und Ausstattungselemente montieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montagearbeit vor Ort."
+      },
+      {
+        "name": "Material, Pflanzen und Maschinen laden, transportieren und Geräte warten",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Logistik- und Wartungsarbeit, zum Teil mit Fahren im Strassenverkehr; keine Automatisierung verfügbar."
+      },
+      {
+        "name": "Arbeits- und Regierapporte mit Arbeitsbeschrieb, Material und Stunden erstellen",
+        "zeitanteil_pct": 3,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Per Spracheingabe in einer Rapport-App erstellt die KI den Rapport; der Gärtner bzw. der Vorarbeiter prüft jeden Rapport. Dialekt und Lärm im Freien erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Kundschaft vor Ort zu Pflege und Ausführung beraten und Arbeiten absprechen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Gespräch vor Ort im Garten."
+      },
+      {
+        "name": "Material- und Pflanzenbedarf für Arbeiten ermitteln",
+        "zeitanteil_pct": 2,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob das Chat-LLM gegenüber Faustregeln und Erfahrung wirklich 50 % Zeit spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Person tippt Flächen und Masse ein, das LLM berechnet Kies, Erde, Platten und Pflanzenzahl; der Gärtner prüft jedes Ergebnis."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Gärtner/in EFZ der Fachrichtung Garten- und Landschaftsbau in einem KMU, mit Neubau, Umbau und Unterhalt von Privatgärten und Grünanlagen. Die ESCO-Beschreibung ist knapp, die Kompetenzliste deckt die physische Arbeit aber gut ab. Grenzfälle sind die kleinen administrativen Anteile (Rapporte, Mengenberechnung) und der P-Wert beim Mähen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur die Arbeitsrapporte (Spracheingabe in einer Rapport-App) und die Berechnung des Materialbedarfs (Chat-LLM); die gärtnerische Bau- und Pflegearbeit selbst ist nicht exponiert.",
+      "begruendung": "Nur rund 5 % der Arbeitszeit sind exponiert, und zwar delegierend: Die KI erstellt den Rapport oder die Mengenrechnung, die Fachperson prüft jedes Ergebnis. Der Kern des Berufs ist körperliche Arbeit im Freien. Dialekt und Lärm erschweren die Spracheingabe, und viele kleine Betriebe führen solche Werkzeuge nur langsam ein.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

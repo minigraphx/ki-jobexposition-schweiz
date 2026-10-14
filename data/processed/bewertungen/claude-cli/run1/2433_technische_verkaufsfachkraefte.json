@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "d40f28820cbf14fdfff68f73b04567d1687d60f1067429dc4ae9a92e2a890402",
+    "isco_code": "2433",
+    "beruf": "Technische Verkaufsfachkräfte (ohne Informations- und Kommunikationstechnologie)",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-14T00:02:30+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 8943,
+      "cache_read_input_tokens": 77075,
+      "output_tokens": 8598,
+      "api_aequivalent_usd": 0.25893499999999997
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 8943,
+        "cache_read_input_tokens": 77075,
+        "output_tokens": 8598,
+        "output_tokens_details": {
+          "thinking_tokens": 1317
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 8943,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.25893499999999997
+      }
+    ],
+    "request_ids": [
+      "b9463cbf-13cf-42fa-8607-0f52cdfc880d"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2433",
+    "beruf": "Technische Verkaufsfachkräfte (ohne Informations- und Kommunikationstechnologie)",
+    "taetigkeiten": [
+      {
+        "name": "Kunden vor Ort besuchen, technischen Bedarf klären und Verkaufs- und Preisverhandlungen führen",
+        "zeitanteil_pct": 22,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Präsenz, Beziehungspflege und Verhandlung von Angesicht zu Angesicht machen den Kern aus; generative KI ersetzt das nicht."
+      },
+      {
+        "name": "Produkte und technische Funktionsweise beim Kunden, im Showroom oder an Messen vorführen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Vorführung an Geräten und Maschinen in Anwesenheit der Kundschaft; keine Automatisierung in relevantem Umfang."
+      },
+      {
+        "name": "Technische Offerten und Antworten auf Ausschreibungen (Lastenhefte, Angebotsanfragen) erstellen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI extrahiert Anforderungen aus PDF-Lastenheften, gleicht sie mit Produktdaten ab und entwirft Offerttext und Erfüllungsmatrix; die Verkaufsfachkraft prüft jede Position technisch und kalkuliert den Preis. Klassische CPQ-Konfiguratoren decken nur Standardprodukte ab, daher P0."
+      },
+      {
+        "name": "Schriftliche technische Kundenanfragen per E-Mail beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Anfrage und Datenblatt/Produktdoku einfügen, LLM entwirft die Antwort (auch in FR/IT/EN); die Fachkraft prüft jede Antwort auf technische Korrektheit, da falsche Angaben haftungsrelevant sein können."
+      },
+      {
+        "name": "Kunden telefonisch beraten und Folgedienstleistungen (Reklamationen, Service, Ersatzteile) koordinieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Live-Gespräche mit bestehenden Kunden zu individuellen technischen Problemen, oft in Mundart; Beziehungspflege und Problemlösung bleiben beim Menschen, KI spart hier weniger als 50 %."
+      },
+      {
+        "name": "Besuchsberichte und Kundeninteraktionen im CRM dokumentieren",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sprachnotiz nach dem Besuch (Einzeldiktat, auch Schweizerdeutsch) wird von der KI-Funktion im CRM zu einem strukturierten Bericht mit Aufgaben verarbeitet; die Fachkraft sichtet kurz und gibt frei. Dialekt erhöht etwas den Korrekturaufwand."
+      },
+      {
+        "name": "Potenzielle Neukunden recherchieren und Leads qualifizieren",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agent mit Websuche erstellt Firmenprofile, Ansprechpartner und Bedarfshypothesen; die Fachkraft prüft jede Liste und entscheidet über die Ansprache."
+      },
+      {
+        "name": "Akquise-E-Mails und Nachfassschreiben nach Offerten oder Besuchen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "LLM schreibt personalisierte Nachfass- und Akquisetexte aus Stichworten; die Fachkraft sichtet kurz und versendet. Persönlicher Ton gegenüber Stammkunden ist ein Akzeptanzthema."
+      },
+      {
+        "name": "Verkaufszahlen auswerten und Verkaufsberichte bzw. Forecasts erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, wie viel der Standardberichte bereits CRM-/BI-Dashboards abdecken; P0 und E2 mit Restzeit 10-30 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Datenanalyse-Funktion wertet CRM-/ERP-Exporte aus und kommentiert Abweichungen; die Fachkraft prüft und ergänzt die Markteinschätzung. Standardauswertungen liefern klassische CRM-/BI-Dashboards (P1 Software)."
+      },
+      {
+        "name": "Besuchstouren, Termine und Messeauftritte planen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Terminabstimmung mit Kunden und Abwägung von Prioritäten; generative KI spart kaum 50 %, Kalender- und Routensoftware unterstützen nur teilweise."
+      },
+      {
+        "name": "Intern mit Technik, Produktion und Logistik Machbarkeit, Liefertermine und Sonderlösungen abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung im Gespräch, Klärung von Machbarkeit und Prioritäten im Team; Präsenz- und Koordinationsarbeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: technische Verkaufsfachkraft (Sales Engineer, Aussendienst mit Innendienstanteil) in einem Schweizer B2B-Industrie- oder Handelsunternehmen (Maschinen, Komponenten, Anlagen). Die ESCO-Beschreibung ist sehr knapp; Zeitanteile stützen sich auf die Kompetenzliste und Berufswissen. Grenzfälle sind vor allem die Offerterstellung (je nach Standardisierungsgrad) und die Verkaufsberichte (Abgrenzung zu klassischen BI-Dashboards).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Erstellung technischer Offerten und Ausschreibungsantworten, schriftliche Kundenanfragen, CRM-Besuchsberichte, Lead-Recherche, Nachfass-E-Mails und Verkaufsberichte – durch Dokumentenverarbeitung, Chat-LLM, CRM-KI-Funktionen mit Spracheingabe und Recherche-Agenten.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit ist exponiert, überwiegend im Modus delegierend: Die KI erstellt Offertentwürfe, Antworten und Analysen, die Fachkraft prüft jede Ausgabe technisch; nur CRM-Dokumentation und Nachfassschreiben sind weitgehend ersetzend. Der Kern des Berufs – Kundenbesuche, Vorführungen und Verhandlungen – bleibt Präsenzarbeit; in der Schweiz bremsen vor allem die Erwartung persönlicher Kundenbeziehungen und die Haftung für technische Angaben.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

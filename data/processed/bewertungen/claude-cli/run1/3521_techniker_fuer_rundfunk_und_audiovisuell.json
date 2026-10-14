@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "a111d5dabb17cfcf8752f50b6dfdfdaeeb1427577a7ac5a71e585d6de9fb56ad",
+    "isco_code": "3521",
+    "beruf": "Techniker für Rundfunk und audiovisuelle Medien",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T22:58:42+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2783,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4682,
+      "api_aequivalent_usd": 0.1232422
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2783,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4682,
+        "output_tokens_details": {
+          "thinking_tokens": 1694
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2783,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1232422
+      }
+    ],
+    "request_ids": [
+      "aacaefe6-bf87-44b4-8514-09a34d8cb58e"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3521",
+    "beruf": "Techniker für Rundfunk und audiovisuelle Medien",
+    "taetigkeiten": [
+      {
+        "name": "Ton-, Video-, Licht- und Sendeanlagen im Studio oder am Veranstaltungsort aufbauen, verkabeln, sichern und wieder abbauen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit vor Ort (Rigging, Verkabelung, Sicherheitschecks); keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Tonmischpult bei Live-Sendungen und Veranstaltungen bedienen, Pegel und Klangqualität regeln",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Echtzeit-Bedienung mit Gehör und Reaktion auf das Geschehen; Automixer helfen punktuell, übernehmen aber keine 50 %."
+      },
+      {
+        "name": "Kameras, Bildmischer und Videogeräte während Aufzeichnungen und Live-Produktionen einrichten und bedienen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Praktische Echtzeit-Bedienung; ferngesteuerte PTZ-Kameras und Studioautomation gibt es in einzelnen Newsstudios, in typischen Produktionen aber nicht für ≥ 50 % der Zeit."
+      },
+      {
+        "name": "Sendeablauf, Signalwege und Übertragungsleitungen (IP, Satellit, Streaming) überwachen und bei Störungen eingreifen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Playout-Automation und Monitoring-Software (klassisch) sind bereits Standard; verbleibende Arbeit ist Überwachung und schnelles Eingreifen, das LLMs nicht übernehmen."
+      },
+      {
+        "name": "Audiovisuelle und elektronische Geräte warten, Fehler suchen, kalibrieren und reparieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Hands-on-Arbeit mit Messgeräten und Werkzeug; LLM-Hilfe bei der Fehlersuche spart deutlich unter 50 %."
+      },
+      {
+        "name": "Rohmaterial ingestieren, auf Server übertragen, sichern und transcodieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dateitransfer und Transcodierung sind klassische Aufgaben von MAM-/Ingest-Software mit Watch-Folders; kein LLM nötig."
+      },
+      {
+        "name": "Aufnahmen und Produktionen technisch planen: Equipmentlisten, Kanalbelegungen, Signalflusspläne und technische Ablaufpläne erstellen",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus eingefügtem Technical Rider und Ablauf erstellt das LLM Equipment- und Kanallisten sowie Ablaufentwürfe; der Techniker prüft jede Liste gegen Bestand und Location. Grafische Signalflusspläne bleiben teilweise Handarbeit."
+      },
+      {
+        "name": "Aufgezeichnete Ton- und Bildaufnahmen nachbearbeiten (Störgeräusche entfernen, Pegel angleichen, Rohschnitt)",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in Audio-/Schnittsoftware (Sprachverbesserung, Rauschentfernung, transkriptbasierter Schnitt) erledigen den Grossteil; der Techniker steuert und hört bzw. sieht jedes Ergebnis ab."
+      },
+      {
+        "name": "Störungsrapporte, Wartungsprotokolle und technische Dokumentation schreiben",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM formuliert Rapport bzw. Dokumentation aus Stichworten und Messwerten; der Techniker prüft jeden Text auf technische Korrektheit."
+      },
+      {
+        "name": "Technische Absprachen mit Regie, Redaktion, Künstlern und Kunden vor Ort führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Abstimmung und Briefings in Präsenz, oft unter Zeitdruck."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: AV- bzw. Rundfunktechniker/in bei einem Radio-/TV-Sender (z. B. SRG-Unternehmenseinheit, Regionalsender) oder einem Eventtechnik-Dienstleister. Der ESCO-Input passt gut; die Zeitanteile schwanken je nach Schwerpunkt (Studio/Live-Event vs. Sendebetrieb) stark. Grenzfälle sind die KI-gestützte Nachbearbeitung und die technische Planung, beide nahe an der 50-%-Schwelle.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Nachbearbeitung von Aufnahmen (durch KI-Funktionen in Audio- und Schnittsoftware) sowie die technische Planung und Dokumentation (durch Chat-LLMs); Aufbau, Live-Bedienung und Wartung sind nicht exponiert.",
+      "begruendung": "Nur rund ein Fünftel der Arbeitszeit ist exponiert, und zwar durchwegs delegierend: Die KI erstellt Listen, Rapporte und bereinigte Aufnahmen, der Techniker prüft jedes Ergebnis. Den Kern des Berufs bilden die physische Arbeit und die Echtzeit-Bedienung vor Ort; wesentliche CH-spezifische Hemmnisse gibt es kaum.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

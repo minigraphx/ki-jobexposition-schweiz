@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "afb538562942c20d2798a4db4a8d1a803eecb154858cc594dace36b5f54d4b5a",
+    "isco_code": "2413",
+    "beruf": "Finanzanalyst/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T01:05:52+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3413,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4777,
+      "api_aequivalent_usd": 0.1301822
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3413,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4777,
+        "output_tokens_details": {
+          "thinking_tokens": 1282
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3413,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1301822
+      }
+    ],
+    "request_ids": [
+      "c0edf652-bb6f-45cd-aec0-4d7e0aac16c1"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2413",
+    "beruf": "Finanzanalyst/in",
+    "taetigkeiten": [
+      {
+        "name": "Finanz- und Marktdaten aus Datenbanken, Geschäftsberichten und Unternehmensmeldungen beschaffen und für die Analyse aufbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Dokumentenextraktion aus PDF-Berichten und ein Datenanalyse-Agent erstellen die bereinigten Datentabellen. Die Analystin prüft Kennzahlen und Sonderposten Stichprobe für Stichprobe gegen die Quelle. Standardisierte Datenfeeds (Bloomberg, Refinitiv) decken nur einen Teil ab; die Restzeit liegt bei nicht standardisierten Angaben."
+      },
+      {
+        "name": "Jahresabschlüsse und Geschäftsberichte auswerten, Kennzahlen zu Rentabilität, Liquidität und Solvenz berechnen und interpretieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Eine KI mit PDF-Verarbeitung und Code-Ausführung liest die Abschlüsse, berechnet Kennzahlen und entwirft die Interpretation. Die Analystin prüft jede Auswertung auf Bilanzierungseffekte (Swiss GAAP FER/IFRS) und Einmaleffekte und korrigiert sie."
+      },
+      {
+        "name": "Finanzmodelle, Bewertungen (z. B. DCF, Multiples) und Prognoseszenarien in Excel erstellen und aktualisieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen und Agenten in Excel bauen die Modellstruktur, aktualisieren Zahlen und rechnen Szenarien durch. Die Annahmen setzt die Analystin selbst, und sie prüft jede Formel und jedes Ergebnis, weil Modellfehler teuer sind. Das liegt nahe an der Schwelle."
+      },
+      {
+        "name": "Branchen-, Wettbewerbs- und Konjunkturrecherche durchführen und zusammenfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche erstellen Branchenübersichten mit Quellen. Die Analystin gibt die Fragestellung vor und verifiziert die zentralen Fakten und Zahlen jeder Zusammenfassung."
+      },
+      {
+        "name": "Analyseberichte, Research-Notes und Investitions- bzw. Finanzierungsempfehlungen verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM schreibt den Bericht aus eingefügten Analyseergebnissen, Modellzahlen und Kernaussagen. Die Analystin prüft jede Aussage und verantwortet die Empfehlung. Die Vorgaben zu Finanzanalysen (FIDLEG, Compliance-Freigabe) und die Vertraulichkeit sind Hemmnisse."
+      },
+      {
+        "name": "Präsentationen, Charts und Unterlagen für Management, Kreditkomitee oder Investment-Komitee erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in Office erstellen Folien und Grafiken aus Bericht und Modell. Die Analystin passt sie an das Corporate Design an und prüft jede Folie inhaltlich."
+      },
+      {
+        "name": "Unternehmensmeldungen, Earnings Calls und Marktnachrichten verfolgen und Kurzkommentare (z. B. Morning Notes) verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Transkription und Zusammenfassung von Calls sowie ein News-Monitoring mit LLM entwerfen die Kurzkommentare. Die Analystin liest jeden Kommentar gegen und ergänzt ihre Einschätzung."
+      },
+      {
+        "name": "Standard-Reportings und Kennzahlen-Dashboards periodisch aktualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die periodische Aktualisierung übernehmen klassische BI- und Reporting-Software (z. B. Power BI, automatisierte Datenfeeds) ohne LLM. Das ist keine KI-Exposition."
+      },
+      {
+        "name": "Finanzielles Risiko, Tragfähigkeit und Investitionsalternativen beurteilen und eine Empfehlung festlegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Hier geht es um Ermessen und das fachliche Urteil mit Verantwortung. Die Vorbereitung ist in den anderen Tätigkeiten erfasst; das Urteil selbst wird durch KI nicht um 50 % schneller."
+      },
+      {
+        "name": "Ergebnisse mit Management, Portfoliomanagern, Kundenberatern oder Kunden besprechen und Empfehlungen vertreten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das sind Präsenz- und Abstimmungsgespräche: Der Wert liegt im persönlichen Austausch und im Vertreten der eigenen Empfehlung."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Finanzanalyst/in in einer Schweizer Bank, bei einem Vermögensverwalter oder in der Finanzabteilung eines grösseren Unternehmens, mit Fokus auf Fundamental- und Unternehmensanalyse. Der Beruf ist heterogen (Equity Research, Kreditanalyse, Corporate Finance/FP&A), die Zeitanteile sind grob geschätzt. Die grösste Unsicherheit betrifft die Finanzmodellierung und die Auswertung von Abschlüssen: Ob die 50 %-Schwelle bei gleicher Qualität erreicht wird, hängt stark von der Komplexität ab.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Datenaufbereitung, Abschlussanalyse, Finanzmodellierung, Recherche, Berichte, Präsentationen und News-Kommentare. Die Technik dafür sind Dokumentenextraktion, Datenanalyse- und Recherche-Agenten, KI-Funktionen in Excel und Office sowie Chat-LLMs für das Schreiben.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind exponiert, fast durchwegs delegierend: Die KI erstellt Auswertungen, Modelle und Berichtsentwürfe, und die Analystin spezifiziert die Annahmen und prüft jedes Ergebnis, weil sie für die Empfehlung verantwortlich bleibt. Urteil, Risikobeurteilung und Gespräche bleiben beim Menschen. In der Schweiz bremsen vor allem die regulatorischen Vorgaben: FINMA- und FIDLEG-Anforderungen, Bankgeheimnis, Datenschutz und Cloud-Restriktionen in Banken.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

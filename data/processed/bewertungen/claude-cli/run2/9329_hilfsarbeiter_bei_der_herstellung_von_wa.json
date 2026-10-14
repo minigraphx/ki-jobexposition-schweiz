@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "9b07ae1c1b53b0e7f295b8aae8eb9fdfe983ba08989adbe5719fd4e05992e2df",
+    "isco_code": "9329",
+    "beruf": "Hilfsarbeiter bei der Herstellung von Waren, anderweitig nicht genannt",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:37:32+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 38845,
+      "output_tokens": 4303,
+      "api_aequivalent_usd": 0.093837
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 38845,
+        "output_tokens": 4303,
+        "output_tokens_details": {
+          "thinking_tokens": 1369
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.093837
+      }
+    ],
+    "request_ids": [
+      "8a31cd6e-71e9-46a1-8327-d3400031467a"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "9329",
+    "beruf": "Hilfsarbeiter bei der Herstellung von Waren, anderweitig nicht genannt",
+    "taetigkeiten": [
+      {
+        "name": "Produktionsmaschinen mit Rohteilen und Material beschicken und Fertigteile entnehmen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit an der Maschine, generative KI spart hier keine Zeit. Roboter und Cobots zum Be- und Entladen sowie Stangenlader und Zuführautomaten sind in der Schweizer Industrie regulär im Einsatz."
+      },
+      {
+        "name": "Maschinenbedienern und Monteuren zuarbeiten: Teile bereitlegen, einfache Hilfsmontagen ausführen, Anweisungen am Arbeitsplatz absprechen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Wechselnde, körperliche Handreichungen und direkte Absprachen vor Ort. Es gibt keine Robotik, die diese unstrukturierte Arbeit in relevantem Umfang übernimmt."
+      },
+      {
+        "name": "Material, Werkzeuge und Verbrauchsmaterial aus dem Lager holen und an den Arbeitsplätzen nachfüllen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer Transport und Nachfüllen. Autonome Transportroboter (AMR) gibt es zwar, in typischen KMU mit gemischtem Material übernehmen sie aber keine 50 % dieser Arbeit."
+      },
+      {
+        "name": "Maschinen und Geräte reinigen und einfache Wartung ausführen (schmieren, Filter und Späne entfernen)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handarbeit an den Maschinen. Zentrale Schmieranlagen decken nur einen kleinen Teil davon ab."
+      },
+      {
+        "name": "Hallenböden und Gänge mit Reinigungsmaschinen reinigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Reinigung, generative KI spielt keine Rolle. Autonome Scheuersaugmaschinen für grosse freie Hallenflächen sind kommerziell verfügbar."
+      },
+      {
+        "name": "Arbeitsplätze und Oberflächen aufräumen und reinigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kleinteilige Reinigung von Hand an verwinkelten Arbeitsplätzen. Diese Arbeit übernimmt kein Roboter in relevantem Umfang."
+      },
+      {
+        "name": "Fertigwaren verpacken, etikettieren und palettieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit. Verpackungsmaschinen, Etikettierautomaten und Palettierroboter sind in der Industrie Standard und kommerziell verfügbar."
+      },
+      {
+        "name": "Teile auf sichtbare Fehler prüfen, sortieren und Ausschuss aussortieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob klassische Bildverarbeitung mit Sortierautomaten bei den wechselnden Teilen typischer Betriebe ≥ 50 % übernimmt; P0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Prüfung geschieht physisch am Teil. Kamerasysteme mit klassischer Bildverarbeitung und Sortierweichen sind für Serienteile verfügbar."
+      },
+      {
+        "name": "Abfälle, Späne und Leergut entsorgen sowie Behälter wechseln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit. Späneförderer gibt es nur teilweise, das Wechseln und Entsorgen bleibt Handarbeit."
+      },
+      {
+        "name": "Stückzahlen, Ausschuss und Störungen am Terminal oder auf dem Laufzettel erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es werden nur kurze Zahlen und Codes eingetragen, generative KI spart dabei nichts Relevantes. Klassische Betriebs- und Maschinendatenerfassung (BDE/MDE) zählt die Stückzahlen automatisch."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: ungelernte Hilfsperson in einem Schweizer Industrie-KMU (z. B. Metall-, Kunststoff- oder Lebensmittelverarbeitung) im Schichtbetrieb. Die ESCO-Beschreibung passt gut; die Zeitanteile sind grob geschätzt. Unsicher ist vor allem das Feld P (Be- und Entladeroboter, AMR, Bildverarbeitung). Bei der KI-Exposition gibt es keine echten Grenzfälle.",
+    "zusammenfassung": {
+      "haupt_risiko": "Keine wesentliche Tätigkeit ist durch generative KI exponiert. Das Automatisierungsrisiko kommt von klassischer Robotik: Maschinenbeschickung, Palettierung, Bodenreinigung und Sichtprüfung.",
+      "begruendung": "Praktisch die ganze Arbeitszeit besteht aus körperlicher Arbeit in der Werkhalle, darum gibt es keinen relevanten Modus der generativen KI. Schreib- oder Textarbeit kommt kaum vor. Schweizer Hemmnisse spielen bei diesem Beruf keine Rolle. Den Beruf verändern vor allem Investitionen in Robotik und Automaten.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

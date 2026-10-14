@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "ba71369f7ff91e2bf74493865f028af780d422cfc0406e547878aae01e4019a2",
+    "isco_code": "9333",
+    "beruf": "Frachtarbeiter und verwandte Berufe",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T06:39:44+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 51,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 51
+        }
+      ],
+      "prompt_token_count": 22126,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22126
+        }
+      ],
+      "thoughts_token_count": 5123,
+      "total_token_count": 27300
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 51,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 51
+          }
+        ],
+        "prompt_token_count": 22126,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22126
+          }
+        ],
+        "thoughts_token_count": 5123,
+        "total_token_count": 27300
+      }
+    ],
+    "request_ids": [
+      "nrnOaoDSK7vUz7IP8dOuIQ"
+    ],
+    "versuche": 1,
+    "status": "fehlgeschlagen",
+    "fehler": [
+      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: [] is too short"
+    ],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "custom_id": "r1-9333_frachtarbeiter_und_verwandte_berufe",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": "validierung",
+    "probleme": [
+      "(root): 'unsicherheit' is a required property",
+      "(root): 'kommentar' is a required property",
+      "(root): 'zusammenfassung' is a required property",
+      "taetigkeiten: [] is too short"
+    ],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": null,
+  "rohantwort": "{\"isco_code\":\"9333\",\"beruf\":\"Frachtarbeiter und verwandte Berufe\",\"taetigkeiten\":[\n  ]\n}"
+}

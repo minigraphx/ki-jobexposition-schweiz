@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "e0cba34c8d6e4a6f095758977c11d11a7a8c010724af4276f33e1cc3436de9e6",
+    "isco_code": "3212",
+    "beruf": "Medizintechniker im Bereich Labor und Pathologie",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:52:46+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4337,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5116,
+      "api_aequivalent_usd": 0.1443542
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4337,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5116,
+        "output_tokens_details": {
+          "thinking_tokens": 1863
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4337,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1443542
+      }
+    ],
+    "request_ids": [
+      "23ec114c-66a6-4ffa-af68-02581e899e93"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3212",
+    "beruf": "Medizintechniker im Bereich Labor und Pathologie",
+    "taetigkeiten": [
+      {
+        "name": "Eingehende Proben auspacken, Identität und Begleitangaben prüfen, beschriften und sortieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Proben werden von Hand geprüft und sortiert; generative KI spart hier keine Zeit. Präanalytische Sortiersysteme gibt es nur in Grosslabors, typische Labors übernehmen damit keine 50 % dieser Arbeit."
+      },
+      {
+        "name": "Papier-Laboraufträge und Begleitscheine im Laborinformationssystem erfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung mit LLM liest auch handschriftliche Auftragsscheine und füllt die Auftragsdaten im LIS vor. Wegen der Patientensicherheit prüft die Person die Identifikations- und Analysenfelder in jedem Auftrag. Klassische Belegleser für Ankreuzformulare (OMR/OCR) leisten einen grossen Teil davon bereits ohne generative KI."
+      },
+      {
+        "name": "Proben für die Analyse vorbereiten: zentrifugieren, aliquotieren, Reagenzien und Lösungen ansetzen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handarbeit am Labortisch. Aliquotier- und Decapper-Module stehen nur in grossen automatisierten Labors und übernehmen in typischen Betrieben keine 50 % der Zeit."
+      },
+      {
+        "name": "Routineanalysen an automatisierten Analysegeräten durchführen: beladen, starten, Lauf überwachen, Störungen beheben",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Geräte werden vor Ort bedient und beaufsichtigt, das ist keine LLM-Aufgabe. Die Analytik selbst ist schon automatisiert; was bleibt, ist Beladen, Überwachen und Störungsbehebung von Hand. Volle Laborstrassen gibt es nur in wenigen Grosslabors."
+      },
+      {
+        "name": "Manuelle Tests und mikroskopische Untersuchungen durchführen (Blutausstrich, Urinsediment, Liquor-Zellzählung)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präparate werden von Hand hergestellt und mikroskopisch beurteilt; generative Bild-KI erreicht hier keine diagnostische Qualität. Digitale Zellmorphologie-Systeme klassifizieren Zellen vor, decken aber Liquor, Sediment und manuelle Tests nicht zu 50 % ab."
+      },
+      {
+        "name": "Laborgeräte warten, reinigen, kalibrieren und interne Qualitätskontrollen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Wartung und Kalibrierung am Gerät. Die QC-Auswertung nach Westgard-Regeln übernimmt klassische Software; sie ist aber nur ein kleiner Teil der Zeit."
+      },
+      {
+        "name": "Messresultate technisch plausibilisieren, markierte Werte nachprüfen und im LIS freigeben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Autovalidierung im LIS (Grenzwerte, Delta-Checks) ist klassische Software und erledigt den Grossteil. Die markierten Fälle verlangen Wiederholungsmessungen oder Rücksprache und sind kaum LLM-exponiert."
+      },
+      {
+        "name": "Reagenzien- und Materialbestand kontrollieren und Nachbestellungen auslösen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mindestbestands- und Chargenverwaltung in ERP/LIS sowie Kanban-Systeme sind klassische Software. Das physische Kontrollieren und Einräumen bleibt beim Menschen."
+      },
+      {
+        "name": "Proben verpacken und an Fremdlabors versenden, Blutkonserven transportieren, Proben archivieren und entsorgen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit nach Gefahrgut- und Kühlkettenvorschriften. Rohrpost deckt nur interne Transporte teilweise ab."
+      },
+      {
+        "name": "Abweichungs- und Fehlerprotokolle, Wartungsnachweise und Labordokumentation schriftlich verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Person gibt Stichworte ein, das Chat-LLM formuliert daraus das Protokoll im QM-Format. Die Person prüft jeden Eintrag auf fachliche Richtigkeit, weil er für die Akkreditierung relevant ist."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Laborassistenz (Sekundär II) in einem Spitallabor oder einem mittelgrossen medizinischen Privatlabor in der Schweiz, unter Aufsicht der BMA HF. Pathologie-spezifische Arbeiten (Zuschnitt, Färbungen) sind als Teil der manuellen Laborarbeit mitgedacht. Einziger nennenswerter Grenzfall ist die Erfassung von Papieraufträgen; hier ist offen, wie verbreitet Papieraufträge überhaupt noch sind und wie gross der Anteil klassischer Belegleser ist.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur zwei Tätigkeiten: Papier-Laboraufträge erfasst eine LLM-Dokumentenerkennung, Abweichungs- und Wartungsprotokolle schreibt ein Chat-LLM; die physische Probenbearbeitung und Analytik bleiben unberührt.",
+      "begruendung": "Nur rund 15 % der Arbeitszeit sind exponiert, durchwegs delegierend: Die KI erstellt Auftragserfassung bzw. Protokoll, die Person prüft jedes Ergebnis wegen Patientensicherheit und Akkreditierung. Datenschutz und Berufsgeheimnis im Spital sowie die nötige Integration ins Laborinformationssystem bremsen die Einführung. Den Grossteil der Automatisierung übernehmen weiterhin klassische Laborautomation und Software.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

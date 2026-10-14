@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "c3857a58c311fbf9d710c7220c3b8c16329b9ab9b21b9d28ab3694621ac6f08c",
+    "isco_code": "1324",
+    "beruf": "Führungskräfte in der Beschaffung, Logistik und in verwandten Bereichen",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:32:51+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 41080,
+      "output_tokens": 4794,
+      "api_aequivalent_usd": 0.10410399999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 41080,
+        "output_tokens": 4794,
+        "output_tokens_details": {
+          "thinking_tokens": 1316
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.10410399999999999
+      }
+    ],
+    "request_ids": [
+      "418e54d2-8d53-4fe3-b5cd-7e0b3c965059"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1324",
+    "beruf": "Führungskräfte in der Beschaffung, Logistik und in verwandten Bereichen",
+    "taetigkeiten": [
+      {
+        "name": "Team in Einkauf, Lager und Logistik führen: Mitarbeitergespräche, Einsatzabsprachen, Rekrutierung und Schulung",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung von Mitarbeitenden ist eine Präsenz- und Beziehungstätigkeit; keine nicht-generative Technik übernimmt sie."
+      },
+      {
+        "name": "Konditionen und Verträge mit Lieferanten, Spediteuren und Kunden verhandeln und Beziehungen pflegen (Gespräche, Besuche)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandeln und Beziehungspflege von Angesicht zu Angesicht bzw. am Telefon; der Wert liegt in der persönlichen Interaktion und im Urteil."
+      },
+      {
+        "name": "Mit Geschäftsleitung, Produktion und Verkauf in Sitzungen abstimmen und Logistikprojekte (z. B. WMS-Einführung) leiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung, Priorisierung und Projektsteuerung im direkten Austausch; KI spart hier keine 50 %."
+      },
+      {
+        "name": "Lagerbestände überwachen und Nachbestellungen im ERP auslösen bzw. freigeben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Meldebestand-/MRP-Disposition im ERP ist klassische regelbasierte Software; kein LLM nötig, daher E0 und P1 (software)."
+      },
+      {
+        "name": "Bedarfs- und Absatzprognosen erstellen und Lager-, Transport- und Produktionskapazitäten planen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Statistische Prognose- und APS-Module (klassische Software) liefern die Rechnung; die verbleibende Arbeit ist Ermessen über Annahmen und Kapazitätsentscheide, wo generative KI keine 50 % spart."
+      },
+      {
+        "name": "Supply-Chain-Kennzahlen (Lieferperformance, Bestände, Kosten) auswerten und Berichte/Präsentationen für die Geschäftsleitung erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Datenanalyse-Agent mit Code-Ausführung bzw. Office-KI wertet ERP-Exporte aus und erstellt Auswertungen, Grafiken und Präsentationsentwurf; die Führungskraft spezifiziert, prüft jede Zahl und Aussage und ergänzt die Interpretation."
+      },
+      {
+        "name": "Lieferantenrisiken, Markt- und Preistrends recherchieren und in Risikoeinschätzungen zusammenfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agent mit Websuche erstellt Lieferanten- und Marktdossiers mit Quellen; die Führungskraft prüft jede Einschätzung auf Plausibilität und Quellen und zieht die Schlüsse."
+      },
+      {
+        "name": "Ausschreibungen und Offertanfragen erstellen, eingehende Angebote vergleichen und Vertragsentwürfe prüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Pflichtenheft/RFQ und extrahiert Konditionen aus PDF-Offerten in eine Vergleichsmatrix, markiert Vertragsklauseln; die Führungskraft prüft jeden Vergleich und jede Klausel selbst."
+      },
+      {
+        "name": "Operative Störungen lösen: Lieferverzüge, Engpässe, Transportschäden und Eskalationen bearbeiten und entscheiden",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ad-hoc-Problemlösung unter Zeitdruck mit Telefonaten, Ermessensentscheiden und Kontextwissen im Kopf; KI spart keine 50 %."
+      },
+      {
+        "name": "Prozessbeschriebe, Weisungen und Dokumentation für Managementsystem und Rückverfolgbarkeit (z. B. ISO 9001) verfassen und aktualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM erstellt aus Stichworten und bestehenden Dokumenten Prozessbeschriebe und Weisungen; die Führungskraft prüft jede Fassung auf Übereinstimmung mit dem tatsächlichen Ablauf."
+      },
+      {
+        "name": "Schriftliche Korrespondenz mit Lieferanten, Spediteuren und internen Stellen führen (E-Mails, Reklamationen, Bestätigungen)",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "KI-Funktion im E-Mail-Client entwirft Antworten und Übersetzungen (DE/FR/IT/EN) aus dem Verlauf; die Führungskraft liest und passt jede Nachricht vor dem Versand an."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Leiter/in Supply Chain bzw. Logistik/Einkauf in einem mittleren Schweizer Industrie-, Handels- oder Transportunternehmen mit eigenem Team. ESCO (Supply-Chain-Manager) passt gut, die Zeitanteile sind jedoch grob geschätzt und je nach Betriebsgrösse sehr unterschiedlich. Grenzfälle: Prognose/Kapazitätsplanung (klassische Software vs. LLM-Agent) und Angebotsvergleich/Reporting nahe der 50 %-Schwelle.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Kennzahlenauswertung und Reporting, Lieferanten- und Marktrecherchen, Ausschreibungs- und Angebotsvergleiche, Prozessdokumentation und Korrespondenz – durch Datenanalyse- und Recherche-Agenten, Dokumentenextraktion und Chat-LLMs.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert, durchwegs delegierend: Die KI erstellt Auswertungen, Dossiers, Vergleichsmatrizen und Entwürfe, die Führungskraft prüft jedes Ergebnis und entscheidet. Der Kern des Berufs – Führung, Verhandlungen, Abstimmung und Störungsmanagement – bleibt beim Menschen; in der Schweiz bremsen vor allem mehrsprachige Lieferantenbeziehungen und die heterogene ERP-Landschaft in KMU, weniger die Regulierung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

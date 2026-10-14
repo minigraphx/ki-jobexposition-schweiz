@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "7c5b2954c1d49acb8bedadf48d17b63631eb9f5e05c39567279548d61e1d7d80",
+    "isco_code": "2264",
+    "beruf": "Physiotherapeut/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:19:37+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 46447,
+      "output_tokens": 3629,
+      "api_aequivalent_usd": 0.08187739999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 46447,
+        "output_tokens": 3629,
+        "output_tokens_details": {
+          "thinking_tokens": 775
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.08187739999999999
+      }
+    ],
+    "request_ids": [
+      "34801796-b627-4eb5-b3d6-a914b970f396"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2264",
+    "beruf": "Physiotherapeut/in",
+    "taetigkeiten": [
+      {
+        "name": "Befund erheben: Anamnesegespräch, Inspektion, manuelle Untersuchung und Funktionstests durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Untersuchung und persönliches Gespräch mit der Patientin; der Wert liegt in Präsenz und Palpation. Keine Robotik verfügbar."
+      },
+      {
+        "name": "Manuelle Therapie, Mobilisation, Massage und physikalische Massnahmen am Patienten durchführen",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Behandlung am Körper; Geräte wie Elektrotherapie ersetzen die manuelle Arbeit nicht in relevantem Umfang."
+      },
+      {
+        "name": "Übungen und Trainingstherapie anleiten und Bewegungsabläufe korrigieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Bewegungsanleitung mit unmittelbarer Korrektur; Trainingsgeräte und Apps ersetzen die Anleitung nicht zu 50 %."
+      },
+      {
+        "name": "Patienten und Angehörige zu Prävention, Ergonomie und Therapiewirkung beraten und aufklären",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Beratungsgespräch während der Behandlung; Wert liegt in der Beziehung und Anpassung an die Person."
+      },
+      {
+        "name": "Behandlungsplan erstellen, Therapieziele festlegen und Verlauf evaluieren und anpassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Therapeutin plant und entscheidet je Patient selbst; ein Chat-LLM schlägt aus eingefügten Befundnotizen evidenzbasierte Ziele und Progressionen vor. Nahe an der 50 %-Schwelle."
+      },
+      {
+        "name": "Verlaufsdokumentation führen und Berichte an Ärzte und Versicherer verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Diktat (auch Schweizerdeutsch, Einzelperson) oder Stichworte werden per Spracherkennung und KI-Funktion in der Praxissoftware zum Bericht; die Therapeutin prüft und verantwortet jeden Eintrag. Berufsgeheimnis/revDSG als Hemmnis."
+      },
+      {
+        "name": "Heimprogramme und schriftliche Patienteninformationen zusammenstellen",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM erstellt Übungsbeschriebe und Erklärtexte nach Vorgabe (auch in anderen Sprachen); die Therapeutin prüft die patientenspezifische Auswahl."
+      },
+      {
+        "name": "Termine verwalten, Verordnungen erfassen und Leistungen nach Tarif abrechnen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Online-Terminbuchung und Tarifabrechnung in der Praxissoftware sind klassische Software; kein LLM nötig."
+      },
+      {
+        "name": "Fälle mit Ärzten und Team besprechen sowie Studierende und Praktikanten anleiten",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Interprofessionelle Abstimmung und praktische Anleitung in Präsenz bzw. am Telefon."
+      },
+      {
+        "name": "Behandlungsraum vorbereiten, Geräte und Material reinigen und instand halten",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit im Raum; keine Robotik in relevantem Umfang."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommen wird ein/e Physiotherapeut/in FH in einer ambulanten Praxis (KMU), dem häufigsten Setting in der Schweiz. Der ESCO-Input passt gut; Forschung, Strategie und Politikberatung sind bei der typischen Person nicht zeitrelevant und wurden darum nicht übernommen. Die Grenzfälle sind die Behandlungsplanung (nahe an der 50 %-Schwelle) und die Qualität der Diktaterkennung auf Schweizerdeutsch bei der Dokumentation.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Verlaufsdokumentation und Berichte (Spracherkennung und KI in der Praxissoftware) sowie Heimprogramme und die Behandlungsplanung (Chat-LLM); die Behandlung am Patienten ist nicht betroffen.",
+      "begruendung": "Etwa ein Fünftel der Arbeitszeit ist exponiert, meist im delegierenden Modus: Die KI erstellt Berichte und Übungsblätter, die Therapeutin prüft und verantwortet jedes Ergebnis; bei der Behandlungsplanung unterstützt die KI nur. Den Kern des Berufs bilden körperliche Untersuchung, manuelle Therapie und Trainingsanleitung in Präsenz. Berufsgeheimnis und revDSG bremsen in kleinen Schweizer Praxen den Einsatz von Cloud-KI für Patientendaten.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

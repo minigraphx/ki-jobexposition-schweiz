@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "08d1d57c896b855eb06d9b23cb8630662156f5a6f31eb7e9ca5b262a3aa7bd2f",
+    "isco_code": "2330",
+    "beruf": "Sekundarlehrer/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T22:59:07+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4734,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5049,
+      "api_aequivalent_usd": 0.1461902
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4734,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5049,
+        "output_tokens_details": {
+          "thinking_tokens": 1857
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4734,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1461902
+      }
+    ],
+    "request_ids": [
+      "5a266918-3556-41fb-8e48-11576bb7ff11"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2330",
+    "beruf": "Sekundarlehrer/in",
+    "taetigkeiten": [
+      {
+        "name": "Lektionen vor der Klasse halten, Inhalte erklären und vorzeigen, Klasse führen und Disziplin durchsetzen",
+        "zeitanteil_pct": 45,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Beziehungstätigkeit im Klassenzimmer; Klassenführung und Erklären im Moment lassen sich nicht an KI abgeben. Keine Technik übernimmt das in relevantem Umfang."
+      },
+      {
+        "name": "Unterricht planen: Semester-, Themen- und Lektionsplanung nach Lehrplan 21 erstellen",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Lehrperson gibt Lehrplanziele, Lehrmittel und Klassensituation ein, das LLM entwirft Grob- und Lektionsplanung; sie prüft jede Planung und passt sie an die Klasse an. Ob die Ersparnis über 50 % liegt, ist knapp, weil viele Lehrpersonen auf bestehende Planungen und Lehrmittel zurückgreifen."
+      },
+      {
+        "name": "Arbeitsblätter, Übungsaufgaben, Hausaufgaben und Prüfungen erstellen und differenzieren",
+        "zeitanteil_pct": 9,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt Aufgaben, Texte, Lösungen und Niveauvarianten; die Lehrperson prüft jedes Blatt auf fachliche Richtigkeit und passt es an die Klasse an."
+      },
+      {
+        "name": "Schriftliche Prüfungen und Arbeiten korrigieren, bewerten und mit Feedback versehen",
+        "zeitanteil_pct": 9,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Handschrifterkennung und KI-Vorkorrektur bei gemischten Sek-Arbeiten (Aufsätze, Rechenwege) im typischen Fall 50 % sparen; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Handschrifterkennung und Fehlermarkierung bzw. Feedback-Entwürfe; die Lehrperson liest und bewertet jede Arbeit selbst. Notengebung bleibt ihre Verantwortung; Schülerdaten unterliegen kantonalem Datenschutz."
+      },
+      {
+        "name": "Schülerinnen und Schüler individuell begleiten, fördern und im Berufswahlprozess beraten",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Gespräche, Coaching und Lernbegleitung in Anwesenheit; der Wert liegt in der Beziehung zu den Jugendlichen."
+      },
+      {
+        "name": "Eltern-, Standort- und Beurteilungsgespräche führen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gespräche von Angesicht zu Angesicht mit Eltern, Schülern und Fachpersonen; Präsenz- und Beziehungstätigkeit."
+      },
+      {
+        "name": "Elternbriefe, E-Mails, Lernberichte und Zeugnisbemerkungen verfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM formuliert Briefe und Berichte aus Stichworten; die Lehrperson prüft jeden Text, besonders schülerbezogene Einschätzungen. Kantonale Datenschutzvorgaben schränken die Eingabe von Schülerdaten in Cloud-Dienste ein."
+      },
+      {
+        "name": "In Teamsitzungen, Fachschaften und mit Heilpädagogik und Schulsozialarbeit zusammenarbeiten",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Absprachen, Sitzungen und Fallbesprechungen sind Präsenz- und Abstimmungsarbeit; KI spart hier nicht 50 %."
+      },
+      {
+        "name": "Pausenaufsicht, Exkursionen, Klassenlager und Schulanlässe begleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Anwesenheit und Verantwortung für die Sicherheit der Jugendlichen."
+      },
+      {
+        "name": "Absenzen, Noten und Schülerdaten in der Schulverwaltungssoftware erfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze Dateneingabe in klassische Schulsoftware (z. B. LehrerOffice/Scolaris); generative KI spart dabei kaum Zeit, und die Software rechnet bereits automatisch."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Fach- und Klassenlehrperson an einer öffentlichen Sekundarschule (Sek I, Zyklus 3) mit Vollpensum; Unterrichtszeit und Zeitanteile sind grob nach dem Berufsauftrag geschätzt. Der ESCO-Input passt gut. Grenzfälle sind die Korrektur handschriftlicher Arbeiten (E2 oder E0) und die Unterrichtsplanung, die nahe an der 50-%-Schwelle liegt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Vor- und Nachbereitung, nämlich das Erstellen von Arbeitsblättern und Prüfungen, die Unterrichtsplanung, Elternbriefe und Lernberichte (Chat-LLM) sowie die Vorkorrektur schriftlicher Arbeiten (Handschrifterkennung). Der Unterricht selbst ist nicht betroffen.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert. Meist arbeitet die KI delegierend: Sie entwirft Material, Planungen und Texte, und die Lehrperson prüft und passt jedes Ergebnis an. Beim Korrigieren unterstützt die KI nur. Der Kern des Berufs bleibt der Präsenzunterricht mit Beziehungsarbeit; kantonale Datenschutzvorgaben für Schülerdaten und unterschiedliche ICT-Regeln der Schulgemeinden bremsen den Einsatz, vor allem beim Korrigieren und bei Berichten.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

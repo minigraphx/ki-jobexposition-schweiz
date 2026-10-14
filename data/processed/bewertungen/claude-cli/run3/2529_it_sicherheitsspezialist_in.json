@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "7da7fe321a7460650d2952165efb824368221dd1a8db1d8d53b5a8ba07697710",
+    "isco_code": "2529",
+    "beruf": "IT-Sicherheitsspezialist/in",
+    "lauf": 3,
+    "reihenfolge_seed": 20261016,
+    "timestamp": "2026-10-14T01:12:40+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 40434,
+      "output_tokens": 6038,
+      "api_aequivalent_usd": 0.1288548
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 40434,
+        "output_tokens": 6038,
+        "output_tokens_details": {
+          "thinking_tokens": 2128
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1288548
+      }
+    ],
+    "request_ids": [
+      "9e74b9d0-e440-4849-ad3b-4116a397e941"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2529",
+    "beruf": "IT-Sicherheitsspezialist/in",
+    "taetigkeiten": [
+      {
+        "name": "Sicherheitsalarme und Logs im SIEM/EDR sichten, triagieren und bewerten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die KI-Funktionen im SIEM/XDR (Security-Copilots, Triage-Agenten) fassen Alarme zusammen, korrelieren Ereignisse und schlagen eine Einstufung vor. Die Fachperson prüft jede Einstufung, bevor sie eskaliert oder schliesst. Klassische Korrelationsregeln und SOAR übernehmen keine 50 % der verbleibenden Analysezeit."
+      },
+      {
+        "name": "Sicherheitsvorfälle untersuchen, eindämmen und Systeme wiederherstellen (Incident Response)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Arbeit läuft unter Zeitdruck, ist hands-on in vielen Systemen und verlangt Abstimmung mit Betrieb und Management. KI hilft punktuell bei Abfragen und Analysen, spart aber über den ganzen Vorfall keine 50 %."
+      },
+      {
+        "name": "Schwachstellenscans auswerten, Risiken bewerten und Behebung priorisieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen im Schwachstellenmanagement werten die Scanresultate im Kontext der Assets aus und erstellen eine priorisierte Liste mit Massnahmen. Die Fachperson prüft jede Priorisierung gegen die eigene Umgebung. Der Scan selbst läuft bereits automatisch."
+      },
+      {
+        "name": "Firewalls, VPN, Endpoint-Schutz, Backups und Systemhärtung einrichten und warten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Konfiguration läuft meist in Herstellerkonsolen mit Change-Management und Tests in der Produktivumgebung. Ein LLM liefert nur Konfigurationsvorschläge, die Zeitersparnis bleibt unter 50 %. Baselines und Richtlinien (z. B. Intune/GPO) sind bereits im Einsatz."
+      },
+      {
+        "name": "Benutzerkonten, Rollen und Zugriffsrechte verwalten und rezertifizieren (IAM)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Provisionierung, Rollenzuweisung und Rezertifizierungskampagnen übernehmen klassische IAM-/IGA-Workflows, ganz ohne generative KI. Beim Menschen bleiben Ausnahmen und Ermessensentscheide."
+      },
+      {
+        "name": "Sicherheitsrichtlinien, Weisungen und Sicherheitskonzepte (ISMS, ISO 27001, revDSG) verfassen und aktualisieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus eingefügten Normanforderungen und Firmenvorgaben entwirft das LLM Richtlinien und Konzepte. Die Fachperson spezifiziert, passt jedes Dokument an die Organisation an und prüft es."
+      },
+      {
+        "name": "Interne Audits und Compliance-Prüfungen vorbereiten, durchführen und Nachweise dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar ist, ob die KI-gestützte Gap-Analyse und Nachweissammlung gegenüber Interviews und Kontrollen vor Ort wirklich 50 % spart. E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Fachperson prüft selbst. Compliance-Tools mit LLM gleichen Nachweise mit Kontrollanforderungen ab, markieren Lücken und entwerfen Auditnotizen. Bei Regulierten (FINMA, Bund) gelten strenge Vorgaben an die Prüfung."
+      },
+      {
+        "name": "Skripte für Automatisierung, Sicherheitsprüfungen und SIEM-Abfragen schreiben",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM schreibt PowerShell-/Python-Skripte und KQL-Abfragen nach Beschreibung. Die Fachperson testet und prüft jedes Skript vor dem Einsatz."
+      },
+      {
+        "name": "Sicherheitsmeldungen, Advisories und Threat-Intelligence (z. B. BACS, CVE) auswerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus eingefügten Advisories erstellt das LLM Zusammenfassungen und eine Relevanzeinschätzung für die eigene Systemlandschaft. Die Fachperson prüft jede Einschätzung und entscheidet über Massnahmen."
+      },
+      {
+        "name": "Awareness-Schulungen und Phishing-Simulationen für Mitarbeitende vorbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt Schulungsunterlagen, Quizfragen und realistische Phishing-Mails, auch in mehreren Landessprachen. Die Fachperson prüft und passt jede Unterlage an."
+      },
+      {
+        "name": "Sicherheitsanforderungen mit IT-Teams, Fachbereichen und Lieferanten abstimmen und Projekte beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gespräche, Verhandlung und Beratung, deren Wert in der persönlichen Abstimmung und im Ermessen liegt."
+      },
+      {
+        "name": "Sicherheitsberichte und Incident-Reports für Management und Behörden erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Funktionen in SIEM und Office erstellen Berichte aus Dashboard-Daten und Fallnotizen. Die Fachperson prüft jeden Bericht inhaltlich. Meldepflichten (z. B. ans BACS, FINMA) verlangen Sorgfalt."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: IT-Sicherheitsspezialist/in in einem mittelgrossen Unternehmen oder bei einem IT-Dienstleister, mit gemischter Rolle aus Betrieb, Monitoring und ISMS. Der ESCO-Input ist knapp, deshalb stützen sich die Tätigkeiten stark auf die optionalen Kompetenzen und auf Berufswissen. Die grössten Grenzfälle sind Alert-Triage und Schwachstellenbewertung (nahe an der 50 %-Schwelle) sowie Audits und Konfigurationsarbeit.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Alert-Triage, Schwachstellenbewertung, Richtlinien, Skripte, Threat-Intelligence-Auswertung, Schulungsunterlagen und Berichte – durch Security-Copilots in SIEM/XDR, Chat-LLM und KI-Funktionen in Compliance- und Office-Software.",
+      "begruendung": "Gut die Hälfte der Arbeitszeit ist exponiert, fast durchwegs delegierend: Die KI erstellt Triage, Priorisierung, Texte und Code, die Fachperson prüft jede Ausgabe und verantwortet sie. Incident Response, Konfigurationsarbeit und Abstimmungen bleiben beim Menschen. In der Schweiz bremsen vor allem Vertraulichkeits- und Datenschutzvorgaben die Nutzung von Cloud-KI mit Log- und Vorfalldaten (revDSG, FINMA-Outsourcing, Bundesvorgaben).",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

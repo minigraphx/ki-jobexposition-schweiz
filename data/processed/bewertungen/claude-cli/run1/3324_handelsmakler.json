@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "36ccccba2a4a6740e25e8e9f1463e858888511bbdbda5dcd3472a60148d6b128",
+    "isco_code": "3324",
+    "beruf": "Handelsmakler",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-14T00:04:17+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2620,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4854,
+      "api_aequivalent_usd": 0.1253782
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2620,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4854,
+        "output_tokens_details": {
+          "thinking_tokens": 1657
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2620,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1253782
+      }
+    ],
+    "request_ids": [
+      "cf919942-a080-4c51-b383-f3fa8cc5ca59"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3324",
+    "beruf": "Handelsmakler",
+    "taetigkeiten": [
+      {
+        "name": "Käufer und Verkäufer per Telefon und Broker-Chat kontaktieren, Kauf-/Verkaufsinteressen und Gebote abgleichen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Echtzeit-Kommunikation mit Gegenparteien, deren Wert in Beziehung, Diskretion und Marktgefühl liegt; KI spart hier keine 50 %. Elektronische Handelsplattformen ersetzen den Makler bei physischen Rohstoffen nicht in relevantem Umfang."
+      },
+      {
+        "name": "Preise, Mengen und Lieferkonditionen mit Käufern und Verkäufern verhandeln und Geschäfte abschliessen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandeln und Abschliessen ist zwischenmenschliche Ermessens- und Vertrauensarbeit in Echtzeit; generative KI erreicht die Schwelle nicht."
+      },
+      {
+        "name": "Marktbedingungen recherchieren: Nachrichten, Preisdaten, Branchenberichte und Konjunkturdaten zu Waren auswerten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche und Datenanalyse fassen Nachrichten und Berichte zusammen und werten Preisreihen aus; der Makler bildet seine Markteinschätzung weiterhin selbst und verifiziert Fakten."
+      },
+      {
+        "name": "Markt- und Preisberichte bzw. Kommentare für Kunden verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus eingefügten Preisdaten, Notizen und Stichworten entwirft das LLM den Bericht; der Makler prüft Zahlen und Einschätzungen jedes Berichts vor dem Versand."
+      },
+      {
+        "name": "Offerten erstellen und Transaktionskosten (Fracht, Versicherung, Gebühren, Provision) kalkulieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM rechnet aus eingegebenen Parametern die Kostenaufstellung und formuliert das Angebot; der Makler prüft jede Kalkulation und Konditionen. Kalkulationsvorlagen in Excel sind bereits vorhanden, decken aber Formulierung und Sonderfälle nicht ab."
+      },
+      {
+        "name": "Geschäftsbestätigungen und Kaufvertragsentwürfe nach Abschluss erstellen",
+        "zeitanteil_pct": 7,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM erstellt Bestätigung bzw. Vertragsentwurf aus Deal-Eckdaten und Standardklauseln; der Makler prüft jedes Dokument auf korrekte Konditionen."
+      },
+      {
+        "name": "Transaktionen erfassen und Abwicklung verfolgen (Zahlungen, Akkreditive, Liefer- und Frachtdokumente)",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Dokumentenerkennung bei heterogenen Handelsdokumenten (Konnossemente, Akkreditive) die Abwicklungsarbeit wirklich halbiert; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "KI-Dokumentenverarbeitung extrahiert Daten aus Belegen und gleicht sie mit Deal-Daten ab; die Person prüft jede Abweichung, klärt mit Banken und Spediteuren."
+      },
+      {
+        "name": "Kunden zu Marktlage, Preisrisiken und Absicherungsmöglichkeiten beraten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung im Gespräch mit Ermessen und Vertrauen; Vorbereitung ist in der Marktrecherche erfasst."
+      },
+      {
+        "name": "Bonität und Gegenparteirisiko prüfen, KYC-Unterlagen neuer Geschäftspartner sichten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI extrahiert Daten aus Registerauszügen und Finanzberichten und markiert Auffälligkeiten (Recherche-Agent); die Risikobeurteilung trifft der Makler selbst. Sorgfaltspflichten (GwG) verlangen menschliche Verantwortung."
+      },
+      {
+        "name": "Geschäftsbeziehungen pflegen: Kundenbesuche, Branchenanlässe, Messen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Beziehungstätigkeit; nicht durch KI ersetzbar."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Makler/in für physische Rohstoffe bzw. Waren in einem kleinen Maklerbüro oder bei einem Handelshaus (Rohstoffplatz Genf/Zug/Lugano); Immobilien- und Viehmakler sind seltener und anders strukturiert. ESCO-Kompetenzen sind stark finanzmarktlastig und nur ergänzend genutzt. Grösste Unsicherheiten: Zeitanteil der Echtzeit-Kommunikation sowie der Nutzen von Dokumenten-KI bei der Abwicklung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Marktrecherche, Marktberichte, Offerten, Geschäftsbestätigungen sowie Teile der Abwicklung und der KYC-Prüfung, die Chat-LLM, Recherche-Agenten und Dokumenten-KI übernehmen oder beschleunigen.",
+      "begruendung": "Gut die Hälfte der Arbeitszeit ist exponiert, überwiegend delegierend (KI entwirft Berichte, Offerten und Bestätigungen, der Makler prüft jedes Dokument) und bei Recherche und Risikoprüfung unterstützend. Der Kern des Berufs – Kontakt, Verhandlung und Abschluss mit Gegenparteien – bleibt beim Menschen; bremsend wirken Diskretions- und Sorgfaltspflichten (GwG) im Schweizer Rohstoffhandel.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

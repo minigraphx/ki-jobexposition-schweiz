@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "cbc21f55beb17350ec0d20644c2807b3a41f84c72b29a84e343459ab0c5aa73f",
+    "isco_code": "5120",
+    "beruf": "Köche",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:55:04+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3126,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4510,
+      "api_aequivalent_usd": 0.1225462
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3126,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4510,
+        "output_tokens_details": {
+          "thinking_tokens": 1563
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3126,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1225462
+      }
+    ],
+    "request_ids": [
+      "b5369b3e-4286-4b1b-b8cf-7a17933f799a"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5120",
+    "beruf": "Köche",
+    "taetigkeiten": [
+      {
+        "name": "Mise en place: Gemüse, Fleisch, Fisch und weitere Zutaten rüsten, schneiden und vorbereiten",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handarbeit am Posten. Gemüseschneidemaschinen helfen bei Teilschritten, übernehmen aber nicht die Hälfte der vielfältigen Vorbereitungsarbeit in einer typischen Restaurantküche."
+      },
+      {
+        "name": "Speisen kochen, braten, garen, Saucen und Suppen herstellen (à la minute und Vorproduktion)",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kerntätigkeit physisch und sensorisch (Abschmecken, Garpunkt) am Herd. Programmierbare Kombisteamer unterstützen, Kochroboter sind im Schweizer Gastgewerbe nicht im regulären Einsatz."
+      },
+      {
+        "name": "Gerichte portionieren, anrichten und während des Service am Pass ausgeben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische, zeitkritische Handarbeit im Service; keine verfügbare Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Arbeitsplatz, Küchengeräte und Vorbereitungsbereich reinigen und an die nächste Schicht übergeben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Reinigung von Posten, Geräten und Flächen; Selbstreinigungsprogramme von Kombisteamern decken nur einen kleinen Teil ab."
+      },
+      {
+        "name": "Warenlieferungen entgegennehmen, auf Qualität und Menge prüfen und fachgerecht einlagern",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sinnesprüfung der Ware und Einräumen in Kühlräume und Lager sind physisch und vor Ort."
+      },
+      {
+        "name": "HACCP-Selbstkontrollen durchführen: Temperaturen von Kühlgeräten und Speisen messen und protokollieren",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Messen und Eintragen von Zahlen; generative KI spart hier nichts Relevantes. Funk-Temperatursensoren mit automatischer HACCP-Protokollsoftware sind kommerziell verfügbar und übernehmen den Grossteil."
+      },
+      {
+        "name": "Lagerbestand am Posten prüfen und Bestellungen bei Lieferanten aufgeben",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zeit liegt im Kontrollieren der Bestände vor Ort; die Bestellung selbst geht schnell über Lieferantenportal oder Telefon, ein LLM spart keine 50 %."
+      },
+      {
+        "name": "Tagesmenüs und Menüvorschläge unter Berücksichtigung von Saison, Lagerbestand und Kosten planen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob LLM-Menüvorschläge gegenüber der Erfahrung der Köchin wirklich 50 % Zeit sparen; E0 oder unterstützend ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Koch gibt Lagerliste, Saison und Vorgaben ein, das LLM erstellt Menüplan-Varianten; der Koch prüft und passt jeden Vorschlag fachlich an."
+      },
+      {
+        "name": "Rezepturen, Menükartentexte und Allergen-/Deklarationsangaben schriftlich erstellen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM formuliert Rezepturen, Menütexte (auch FR/EN) und leitet Allergenlisten aus Zutaten ab; der Koch prüft jede Angabe, da Allergeninformation lebensmittelrechtlich korrekt sein muss."
+      },
+      {
+        "name": "Arbeiten im Küchenteam absprechen und Lernende bzw. Hilfskräfte anleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Präsenz und Vorzeigen in der Küche."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Koch/Köchin EFZ als Postenkoch in einem Schweizer Restaurant- oder Hotelbetrieb (KMU), teils Gemeinschaftsgastronomie. Die ESCO-Beschreibung ist knapp, die Kompetenzliste deckt die Arbeit aber gut ab. Grenzfälle sind nur die kleinen administrativen Anteile (Menüplanung, Rezepturen/Allergene), die meist eher bei Küchenchef oder Chef de partie liegen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur kleine Schreib- und Planungsanteile wie Menüvorschläge, Rezepturen, Menükartentexte und Allergenangaben, die ein Chat-LLM entwerfen kann; die eigentliche Küchenarbeit ist nicht exponiert.",
+      "begruendung": "Nur rund 6 % der Arbeitszeit sind exponiert, und zwar durchwegs delegierend: Das LLM entwirft Menüs, Texte und Allergenlisten, der Koch prüft jede Ausgabe. Der Kern des Berufs ist physische, sensorische Handarbeit unter Zeitdruck. Bei den Allergenangaben bremst die lebensmittelrechtliche Verantwortung den Einsatz ohne Kontrolle.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

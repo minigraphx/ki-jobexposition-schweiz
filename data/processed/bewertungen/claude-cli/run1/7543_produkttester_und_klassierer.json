@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "af5eb5c933785336f7a48fb5a769f3932dfc7ef19cb0139f2607d9d53ff12af0",
+    "isco_code": "7543",
+    "beruf": "Produkttester und -klassierer (ohne Nahrungsmittel und Getränke)",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:47:19+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3537,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5213,
+      "api_aequivalent_usd": 0.13989419999999997
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3537,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5213,
+        "output_tokens_details": {
+          "thinking_tokens": 1705
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3537,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.13989419999999997
+      }
+    ],
+    "request_ids": [
+      "7a965351-2c21-49c7-9ae9-eb427cf44001"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "7543",
+    "beruf": "Produkttester und -klassierer (ohne Nahrungsmittel und Getränke)",
+    "taetigkeiten": [
+      {
+        "name": "Teile und Produkte in Wareneingang, Fertigung und Endkontrolle visuell und haptisch prüfen (Sichtprüfung nach Grenzmuster)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Prüfung findet physisch am Teil statt. Kamera- und Bildverarbeitungssysteme gibt es zwar, bei den kleinen Serien und vielen verschiedenen Teilen typischer CH-KMU übernehmen sie aber nicht ≥ 50 % der verbleibenden manuellen Sichtprüfung."
+      },
+      {
+        "name": "Masse und Eigenschaften mit Messmitteln messen (Messschieber, Mikrometer, Lehren, Koordinatenmessmaschine, Härteprüfer)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Person misst physisch an den Teilen, spannt sie auf und bedient die Messgeräte. Automatisierte Messzellen gibt es, typisch wird aber noch mit Handmessmitteln und manuell bestückter KMM gemessen."
+      },
+      {
+        "name": "Funktions-, Dichtheits- und Leistungstests an Prüfständen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Prüflinge werden physisch eingelegt und angeschlossen. Automatisierte End-of-Line-Prüfstände mit Handling sind in der Industrie kommerziell verbreitet und können den Grossteil des Prüfablaufs übernehmen."
+      },
+      {
+        "name": "Prüf- und Messergebnisse im CAQ-System bzw. in Prüfprotokollen erfassen und SPC-Kennzahlen nachführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es werden vor allem Zahlen erfasst; ein LLM spart hier nichts Relevantes. Die direkte Messdatenübernahme ins CAQ und automatische SPC-Auswertungen sind klassische Software."
+      },
+      {
+        "name": "Prüfberichte, Fehler- und Abweichungsberichte (z. B. 8D, Reklamationsantworten) verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Person gibt Stichworte, Messwerte und Befunde als Text ein, und das LLM formuliert daraus den Bericht. Die Prüferin kontrolliert jeden Bericht fachlich, weil er Befunde und Ursachen enthält."
+      },
+      {
+        "name": "Prüfanweisungen, Prüfpläne und Kalibrierverfahren erstellen und aktualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI erstellt die Anweisung aus Zeichnung (Bildverständnis), Norm und Vorlage. Die Fachperson legt Merkmale und Prüfmittel fest und prüft jedes Dokument."
+      },
+      {
+        "name": "Prüfmittel kalibrieren, warten und Prüfmittelüberwachung durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer Umgang mit Normalen und Messgeräten. Die Termine plant eine klassische Prüfmittelverwaltung, das spart aber nicht ≥ 50 % der Arbeit."
+      },
+      {
+        "name": "Fehlerhafte Teile kennzeichnen, sperren, aussortieren und defekte Fertigungsausrüstung melden",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer Umgang mit Ware und Meldungen direkt vor Ort in der Produktion."
+      },
+      {
+        "name": "Qualitätsdokumente wie Werkszeugnisse, Lieferantenzertifikate und Prüfprotokolle gegen Spezifikationen prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Bei heterogenen PDF-/Scan-Zeugnissen ist unklar, ob die KI-Extraktion mit Abgleich wirklich ≥ 50 % spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Dokumentenextraktion liest Werte aus PDFs und Scans und markiert Abweichungen von der Spezifikation. Die Prüferin führt die Kontrolle selbst durch und gibt frei."
+      },
+      {
+        "name": "Fehlerursachen mit Produktion und Lieferanten analysieren und Korrekturmassnahmen abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Untersuchung an der Linie und Absprachen von Angesicht zu Angesicht dominieren. Die KI liefert höchstens Ideen, das spart deutlich unter 50 %."
+      },
+      {
+        "name": "Interne Prozess- und Produktaudits vor Ort durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beobachten, Befragen und Begehen vor Ort sind Präsenztätigkeiten. Die Auditdokumentation ist darin ein kleiner Teil."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommen ist ein Qualitätsprüfer bzw. eine Qualitätsprüferin (Sekundär II) in einem Schweizer Industrie-KMU, z. B. MEM, Kunststoff oder Uhren, mit Wareneingangs-, Fertigungs- und Endprüfung. Die ESCO-Kompetenzen sind teils auf QS-Fachkräfte zugeschnitten (Lieferantenbewertung, QMS); deshalb wurden sie auf die operativen Prüftätigkeiten gewichtet. Unsicher sind vor allem die P-Werte für Sicht- und Messprüfung (Bildverarbeitung, automatische Messzellen) und der Nutzen der Dokumentenextraktion bei Werkszeugnissen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Prüf- und Abweichungsberichte (Chat-LLM), Prüfanweisungen und Prüfpläne (LLM mit Bildverständnis von Zeichnungen) sowie die Kontrolle von Werkszeugnissen (Dokumentenextraktion); die eigentliche Prüf- und Messarbeit am Teil ist nicht betroffen.",
+      "begruendung": "Rund ein Fünftel der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI erstellt Berichte und Prüfdokumente, die Prüferin kontrolliert jedes Ergebnis fachlich. Die Kontrolle von Werkszeugnissen bleibt unterstützend. Wesentliche CH-Hemmnisse gibt es kaum; der Kern des Berufs bleibt physisches Prüfen und Messen, wobei automatisierte Prüfstände und CAQ-Software (nicht-generativ) einen Teil übernehmen können.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

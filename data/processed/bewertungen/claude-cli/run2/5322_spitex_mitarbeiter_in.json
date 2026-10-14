@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "643c4db536a1cbb54cb59793b2c3fee7f2cc843832ff901f52fda21043374881",
+    "isco_code": "5322",
+    "beruf": "Spitex-Mitarbeiter/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:22:15+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 40268,
+      "output_tokens": 4168,
+      "api_aequivalent_usd": 0.09142159999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 40268,
+        "output_tokens": 4168,
+        "output_tokens_details": {
+          "thinking_tokens": 1221
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.09142159999999998
+      }
+    ],
+    "request_ids": [
+      "c0d3d4e5-bc88-43e3-aacc-440aad391a6d"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5322",
+    "beruf": "Spitex-Mitarbeiter/in",
+    "taetigkeiten": [
+      {
+        "name": "Körperpflege bei Klientinnen und Klienten zu Hause durchführen (waschen, duschen, an- und auskleiden, Kompressionsstrümpfe anziehen)",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körpernahe, physische Pflege in der Wohnung der Person; keine Robotik, die das in relevantem Umfang übernimmt."
+      },
+      {
+        "name": "Klientinnen und Klienten mobilisieren, beim Transfer (Bett, Stuhl, WC) und beim Gehen unterstützen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit mit Körperkontakt; Hilfsmittel wie Lifter unterstützen, ersetzen die Person aber nicht."
+      },
+      {
+        "name": "Haushalt führen: Räume reinigen, Wäsche waschen und bügeln, Betten machen, Geschirr spülen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Hausarbeit in Privatwohnungen; Saugroboter übernehmen nur einen kleinen Teil, nicht ≥ 50 % der Zeit."
+      },
+      {
+        "name": "Mahlzeiten zubereiten, Diätkost beachten und beim Essen und Trinken helfen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Zubereitung und Unterstützung beim Essen vor Ort; keine LLM-Exposition."
+      },
+      {
+        "name": "Einkäufe erledigen und Klientinnen zu Terminen oder Aktivitäten begleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Begleitung und Einkauf sind physische Präsenz; Online-Lieferdienste ersetzen nur einen Teil der Einkäufe und kaum die Begleitung."
+      },
+      {
+        "name": "Vorgerichtete Medikamente abgeben, Vitalzeichen messen und Befinden beobachten",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abgabe und Beobachtung vor Ort nach Anweisung der Pflegefachperson; Medikamentenspender sind im Spitex-Alltag nicht verbreitet genug, um ≥ 50 % zu übernehmen."
+      },
+      {
+        "name": "Gesellschaft leisten, Gespräche führen und Angehörige im Alltag einbeziehen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beziehungs- und Präsenztätigkeit, deren Wert in der persönlichen Anwesenheit liegt."
+      },
+      {
+        "name": "Pflegeverlauf und Beobachtungen in der Spitex-Software auf dem Tablet/Smartphone dokumentieren",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Einträge sind kurz und Spracheingabe in Schweizerdeutsch (oft im Auto oder bei Klienten) ist fehleranfällig; E0 ist fast ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracheingabe bzw. KI-Funktion in der Spitex-Dokumentationssoftware formuliert den Verlaufseintrag aus Stichworten oder Diktat; die Mitarbeiterin prüft jeden Eintrag fachlich. Hemmnis: Gesundheitsdaten/Datenschutz."
+      },
+      {
+        "name": "Zwischen den Einsätzen bei Klientinnen fahren (Auto, E-Bike, ÖV)",
+        "zeitanteil_pct": 9,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Fortbewegung; autonomes Fahren ist in der Schweiz nicht verfügbar, die Tourenplanung macht die Einsatzplanung."
+      },
+      {
+        "name": "An Übergaben und Teamrapporten mit Pflegefachpersonen teilnehmen und Veränderungen mündlich melden",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Abstimmung im Team, Präsenz; keine relevante Zeitersparnis durch generative KI."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Pflegehelferin SRK bzw. Assistentin Gesundheit/Haushelferin in einer öffentlichen Spitex-Organisation, tätig in Grundpflege und Hauswirtschaft bei Klientinnen und Klienten zu Hause. Die ESCO-Kompetenzen passen gut; die Bedarfsabklärung (RAI-HC) und die Pflegeplanung machen in der Schweiz die Pflegefachpersonen HF und werden hier nicht berücksichtigt. Der einzige Grenzfall ist die Dokumentation per Spracheingabe (kurze Einträge, Dialekt).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen ist nur die Verlaufsdokumentation in der Spitex-Software, die über Spracheingabe oder KI-Formulierungsfunktionen entstehen kann; Pflege, Haushalt und Begleitung sind nicht exponiert.",
+      "begruendung": "Nur ein kleiner Teil der Arbeitszeit (unter 10 %) ist exponiert, und zwar im Modus «delegierend»: Die KI formuliert den Eintrag, die Mitarbeiterin prüft jeden fachlich. Der Kern des Berufs ist körpernahe Pflege und Hausarbeit vor Ort; Datenschutz bei Gesundheitsdaten und die Dialektqualität der Spracheingabe bremsen die Einführung zusätzlich.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

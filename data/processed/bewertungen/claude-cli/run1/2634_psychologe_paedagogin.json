@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "b0b98446c4801fb999880d3e3e080a715274956dc1724c85d9d1806d1f276199",
+    "isco_code": "2634",
+    "beruf": "Psychologe/-pädagogin",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:38:45+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7470,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4542,
+      "api_aequivalent_usd": 0.1579382
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 7470,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4542,
+        "output_tokens_details": {
+          "thinking_tokens": 1213
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 7470,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1579382
+      }
+    ],
+    "request_ids": [
+      "368a9228-d05b-4521-835e-f724c80f450a"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2634",
+    "beruf": "Psychologe/-pädagogin",
+    "taetigkeiten": [
+      {
+        "name": "Psychotherapeutische Sitzungen mit Einzelpersonen, Paaren oder Gruppen durchführen",
+        "zeitanteil_pct": 42,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kern des Berufs ist die therapeutische Beziehung in persönlicher Präsenz; Chatbots ersetzen die Psychotherapie in gleicher Qualität nicht."
+      },
+      {
+        "name": "Erstgespräche, Anamnese und diagnostische Interviews mit Klient/innen führen",
+        "zeitanteil_pct": 9,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Gespräch mit Beobachtung von Verhalten und Affekt, es geht um Präsenz und Vertrauensaufbau."
+      },
+      {
+        "name": "Psychologische Tests und Fragebögen durchführen und auswerten",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Testvorgabe in Präsenz bzw. computergestützt; die Auswertung (Normwerte, Profile) erledigen klassische Testsysteme (z. B. Hogrefe-Testsystem, Online-Fragebögen) regelbasiert, ganz ohne LLM."
+      },
+      {
+        "name": "Testergebnisse interpretieren, Diagnose stellen und Fallkonzeption/Behandlungsplan erarbeiten",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Klinische Urteilsbildung, die auf dem persönlichen Eindruck vom Einzelfall beruht; ein LLM kann Hypothesen vorschlagen, spart aber kaum 50 % der Denk- und Entscheidungszeit."
+      },
+      {
+        "name": "Sitzungsnotizen und Verlaufsdokumentation im Praxis- bzw. Kliniksystem erstellen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Per Diktat (auch Schweizerdeutsch, Einzelperson) oder ambienter Dokumentation erstellt die KI den Verlaufseintrag, und die Psychologin prüft und korrigiert jeden Eintrag fachlich. Hemmnis: Berufsgeheimnis und Gesundheitsdaten (revDSG), Aufnahmen von Sitzungen sind heikel."
+      },
+      {
+        "name": "Berichte an Krankenversicherer (Kostengutsprache), zuweisende Ärzte, IV und Gerichte verfassen",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus eingefügten Notizen, Testergebnissen und Diagnosen entwirft das LLM den Bericht, die Psychologin prüft jeden Bericht gegen die Akte und verantwortet ihn. Bei forensischen Gutachten ist der Anteil an Eigenleistung höher; Hemmnis: Berufsgeheimnis/Datenschutz."
+      },
+      {
+        "name": "Suizid- und Gefährdungsrisiko einschätzen und Kriseninterventionen durchführen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Akutsituation, die unmittelbare Präsenz und Verantwortung erfordert und eine hohe Schadensfolge hat."
+      },
+      {
+        "name": "Fallbesprechungen, Intervision/Supervision und Absprachen mit Ärzten, Angehörigen und Fachstellen führen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gemeinsame fachliche Abstimmung im Gespräch, interprofessionelle Koordination."
+      },
+      {
+        "name": "Psychoedukative Materialien, Arbeitsblätter und Übungsanleitungen für Klient/innen erstellen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Nach Vorgabe erstellt das LLM Informationstexte und Übungsblätter (auch in mehreren Sprachen); die Psychologin prüft jedes Blatt auf fachliche Richtigkeit und Passung zum Klienten."
+      },
+      {
+        "name": "Fachliteratur und Leitlinien lesen, Fort- und Weiterbildungen besuchen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Weiterbildungen sind Präsenzveranstaltungen und Lesen dient dem eigenen Lernen; Recherche-Agenten helfen beim Finden, sparen aber keine 50 % der Zeit."
+      },
+      {
+        "name": "Termine verwalten und Leistungen nach Tarif in der Praxissoftware abrechnen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Online-Terminbuchung und Tarifabrechnung in der Praxissoftware sind klassische Software, ein LLM ist dafür nicht nötig."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: psychologische Psychotherapeutin/Psychologin in einer ambulanten Praxis oder psychiatrischen Klinik (Anordnungsmodell seit 2022). Die Forschungskompetenzen von ESCO (Publikationen, Forschungsmittel, Open Source) gehören zum Setting Hochschule und sind für die typische Berufsausübung kaum relevant; «Medikamente verschreiben» ist in der Schweiz ärztliche Vorbehaltstätigkeit und wurde als ESCO-Rauschen ausgelassen. Grenzfälle sind die Diagnostik/Fallkonzeption (E0 vs. unterstützend) und der Anteil an Berichten und Gutachten.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Verlaufsdokumentation, Berichte an Versicherer und Ärzte sowie psychoedukative Unterlagen, die per Diktat/ambienter Dokumentation bzw. Chat-LLM entworfen werden; die Therapie selbst ist nicht exponiert.",
+      "begruendung": "Nur knapp ein Fünftel der Arbeitszeit ist exponiert, durchwegs delegierend: Die KI entwirft Notizen, Berichte und Materialien, die Psychologin prüft jedes Ergebnis fachlich und verantwortet es. Der Kern des Berufs bleibt die therapeutische Beziehung in Präsenz; in der Schweiz bremsen vor allem Berufsgeheimnis und Datenschutz bei Gesundheitsdaten (Cloud, Gesprächsaufnahmen) die Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

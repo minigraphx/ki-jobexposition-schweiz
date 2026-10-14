@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "ab222a2a77f2cadd8bcecac8fdc91b6a8391a7d995e27fc3141faba6184feff0",
+    "isco_code": "1323",
+    "beruf": "Führungskräfte in der Produktion im Bau",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:59:42+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4029,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5783,
+      "api_aequivalent_usd": 0.15523019999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4029,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5783,
+        "output_tokens_details": {
+          "thinking_tokens": 2407
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4029,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.15523019999999998
+      }
+    ],
+    "request_ids": [
+      "162933dd-2f0c-40a9-9129-ed0d73969556"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1323",
+    "beruf": "Führungskräfte in der Produktion im Bau",
+    "taetigkeiten": [
+      {
+        "name": "Baustelle begehen, Ausführung, Qualität, Arbeitssicherheit und Bauvorschriften vor Ort kontrollieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kontrolle an Ort und Stelle mit Augenschein und unmittelbaren Anweisungen; keine nicht-generative Technik übernimmt dies in relevantem Umfang."
+      },
+      {
+        "name": "Bausitzungen leiten, Unternehmer, Subunternehmer und Poliere koordinieren und führen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz-, Führungs- und Verhandlungstätigkeit von Angesicht zu Angesicht."
+      },
+      {
+        "name": "Bausitzungsprotokolle und Baustellenberichte mit Pendenzenlisten erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Transkription und KI-Zusammenfassung erstellen Protokoll und Pendenzen; die Bauleitung prüft jedes Protokoll, da es vertragsrelevant ist. Mehrere Sprecher, Schweizerdeutsch und Fachjargon erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Ausmass, Mengen und Materialbedarf aus Plänen und BIM-Modellen ermitteln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mengenermittlung erfolgt über CAD/BIM-Ausmassfunktionen und Bausoftware (klassische Software); LLM-Planlesen erreicht die geforderte Genauigkeit nicht."
+      },
+      {
+        "name": "Kosten schätzen, Kostenvoranschläge kalkulieren und Baukosten laufend kontrollieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kalkulation und Kostenkontrolle laufen in klassischer Bausoftware; die verbleibende Zeit ist Erfahrungs- und Ermessensarbeit (Risiken, Preise), bei der generative KI keine 50 % spart."
+      },
+      {
+        "name": "Ausschreibungsunterlagen/Devis erstellen, Offerten einholen und Offertvergleiche erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Extraktion aus Offert-PDFs und Textvorschläge für Vorbemerkungen gegenüber NPK-Software wirklich 50 % sparen; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Bauleitung stellt Devis und Vergabeantrag selbst zusammen; KI extrahiert Positionen und Preise aus Offerten, markiert Abweichungen und entwirft Vorbemerkungen."
+      },
+      {
+        "name": "Werkverträge aufsetzen, Nachtragsofferten, Regierapporte und Unternehmerrechnungen prüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Prüfung erfordert viel Baustellenwissen und Ermessen; ob Dokumentenabgleich mit Vertrag 50 % spart, ist unsicher, E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Bauleitung beurteilt jeden Nachtrag und jede Rechnung selbst; KI gleicht Rechnungen/Rapporte mit Werkvertrag und Devis ab, markiert Abweichungen und entwirft Verträge aus Vorlagen (SIA/KBOB)."
+      },
+      {
+        "name": "Bauprogramm/Terminplan erstellen und nachführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Terminplanung erfolgt in klassischer Planungssoftware; der Zeitaufwand liegt in Abstimmung und Erfahrungsentscheiden, wo LLMs keine 50 % sparen."
+      },
+      {
+        "name": "Korrespondenz mit Bauherrschaft, Architekten, Behörden und Unternehmern verfassen (E-Mails, Mängelrügen, Aktennotizen)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Schreiben aus Stichworten und eingefügtem Kontext; die Bauleitung prüft jedes Schreiben, da viele vertrags- und haftungsrelevant sind."
+      },
+      {
+        "name": "Bauherrschaft zu Bedürfnissen, Varianten und Baumaterialien persönlich beraten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung und Beziehungspflege mit der Bauherrschaft."
+      },
+      {
+        "name": "Mängel mit Fotos erfassen, Abnahmeprotokolle und Mängellisten erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe und Bildverständnis in der Mängel-App erstellen Einträge und Protokoll; die Bauleitung prüft jeden Eintrag vor dem Versand an die Unternehmer."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Bauleiter/in bzw. Projektleiter/in (HF/FH) in einer mittelgrossen Bauunternehmung oder einem Bauleitungsbüro, Hochbau. Der ESCO-Input passt gut; die Zeitanteile sind grob geschätzt. Grenzfälle sind Offertvergleich und Rechnungs-/Nachtragsprüfung, wo klassische NPK-Bausoftware und KI-Dokumentenabgleich nahe an der 50 %-Schwelle liegen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Korrespondenz, Sitzungs- und Mängelprotokolle sowie die Auswertung von Offerten, Nachträgen und Rechnungen, die mit Chat-LLM, Transkription und Dokumentenerkennung entstehen bzw. vorgeprüft werden.",
+      "begruendung": "Rund 45 % der Arbeitszeit sind exponiert: Korrespondenz und Protokolle delegierend (KI entwirft, Bauleitung prüft jedes Dokument wegen Vertrags- und Haftungsrelevanz), Offert- und Rechnungsprüfung unterstützend. Der Kern bleibt Präsenz auf der Baustelle, Koordination und Ermessen; in der Schweiz bremsen Schweizerdeutsch in Bausitzungen, viele KMU und die Bindung an NPK/SIA-Standardsoftware die Umsetzung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

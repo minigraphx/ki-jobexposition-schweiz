@@ -1,0 +1,260 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "8c17a2f0bb179a0adc84b07efc1dce1cd425dddb7cf99f075ce4bbe0df1b073d",
+    "isco_code": "2654",
+    "beruf": "Regisseure und Produzenten im Film- und Bühnenbereich sowie in verwandten Bereichen",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:33:21+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 6,
+      "cache_creation_input_tokens": 10681,
+      "cache_read_input_tokens": 116425,
+      "output_tokens": 13400,
+      "api_aequivalent_usd": 0.376757
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 3598,
+        "cache_read_input_tokens": 79774,
+        "output_tokens": 9414,
+        "output_tokens_details": {
+          "thinking_tokens": 2012
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3598,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.2330348
+      },
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 7083,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3986,
+        "output_tokens_details": {
+          "thinking_tokens": 153
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 7083,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1437222
+      }
+    ],
+    "request_ids": [
+      "84f69820-d3b9-437d-9800-a21e6a3d6eb0",
+      "eb56b0df-0b41-4afb-881d-d3f2df40e85e"
+    ],
+    "versuche": 2,
+    "status": "ok",
+    "fehler": [
+      "Versuch 1: Zeitanteile summieren auf 105, nicht exakt 100"
+    ],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2654",
+    "beruf": "Regisseure und Produzenten im Film- und Bühnenbereich sowie in verwandten Bereichen",
+    "taetigkeiten": [
+      {
+        "name": "Eingereichte Drehbücher und Stoffe sichten, zusammenfassen und Lektoratsberichte erstellen",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Drehbuch wird als Text ins LLM geladen, das LLM erstellt Synopse und Script-Report (Coverage). Die Produzentin prüft jeden Bericht und liest vielversprechende Stoffe selbst; der Auswahlentscheid bleibt bei ihr."
+      },
+      {
+        "name": "Mit Autorinnen und Autoren an Stoffentwicklung und Drehbuchfassungen arbeiten (Besprechungen, dramaturgisches Feedback)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kreativer Dialog und künstlerische Steuerung in persönlichen Gesprächen; KI-Feedback zu Fassungen spart nicht die Hälfte dieser Zeit."
+      },
+      {
+        "name": "Förder- und Finanzierungsgesuche verfassen (BAK, regionale Filmförderungen, SRG-Pacte, Koproduktionsfonds)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Projektunterlagen, Treatment und Reglement entwirft das LLM Gesuchstexte sowie Regie- und Produktionskonzepte. Die Produzentin steuert die Entwürfe und prüft und überarbeitet jeden Antrag inhaltlich."
+      },
+      {
+        "name": "Budgets, Finanzierungspläne und Kalkulationen erstellen und finanzielle Tragfähigkeit beurteilen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zahlen beruhen auf Verhandlungen, Erfahrungswerten und Marktkenntnis; Budget-Software und LLM-Hilfe beschleunigen nur Teile, nicht um 50 %. Klassische Budget-Software übernimmt die Beurteilung nicht."
+      },
+      {
+        "name": "Mit Kapitalgebern, Förderstellen, Sendern, Koproduzenten und Verleihern verhandeln und das Netzwerk pflegen (inkl. Festivals und Märkte)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlung und Beziehungspflege von Angesicht zu Angesicht; der Wert liegt in der persönlichen Präsenz und im Vertrauen."
+      },
+      {
+        "name": "Verträge zu Rechten, Koproduktion, Cast und Crew entwerfen und prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM entwirft Verträge aus Vorlagen und Verhandlungsergebnissen und markiert Abweichungen in Gegenentwürfen; die Produzentin prüft jeden Vertrag, heikle Fälle gehen an Juristen. Haftung und Urheberrecht machen die vollständige Prüfung nötig."
+      },
+      {
+        "name": "Cast und künstlerisches Team auswählen (Castings, Vorsprechen, Bewerbungsgespräche)",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beurteilung von Schauspielenden und Teammitgliedern vor Ort; künstlerisches Ermessen."
+      },
+      {
+        "name": "Dreharbeiten bzw. Proben leiten und die Produktion vor Ort überwachen, mit Regie und Produktionsleitung absprechen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz am Set oder auf der Probebühne, Führung von Team und Ensemble, Entscheidungen in Echtzeit."
+      },
+      {
+        "name": "Drehbuch-Breakdown, Drehpläne und Projektzeitpläne erstellen und anpassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM-basierte Breakdown- und Planungstools extrahieren Szenen, Rollen, Motive und Requisiten aus dem Drehbuch und schlagen einen Drehplan vor; der Mensch prüft und passt jeden Plan an Verfügbarkeiten an. Klassische Planungssoftware erledigt das Breakdown nicht."
+      },
+      {
+        "name": "Postproduktion begleiten: Rohschnitte abnehmen und dem Schnitt- und Tonteam Feedback geben",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Künstlerische Beurteilung des Materials in Sichtungen und Gesprächen mit dem Team; KI spart hier keine 50 %."
+      },
+      {
+        "name": "Synopsen, Pressetexte, Pitch-Decks und Festivaleinreichungen für Marketing und Vertrieb erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI erstellt Texte, Übersetzungen (DE/FR/EN) und Präsentationen mit generativen Layout- und Bildfunktionen; die Produzentin wählt aus und prüft jede Unterlage."
+      },
+      {
+        "name": "Produktionskosten kontrollieren und Abrechnungen an Förderstellen und Koproduzenten erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Abgleich von Kosten und Budget läuft in klassischer Buchhaltungs- bzw. Kostenkontroll-Software; die verbleibende Zeit liegt in der Klärung von Abweichungen mit dem Team und spart mit LLM keine 50 %. Die Software übernimmt die Interpretation nicht, daher P0."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Annahme: Produzentin bzw. Regisseur-Produzent in einer kleinen unabhängigen Schweizer Produktionsfirma (Film, TV, Werbung), mit wenig Anteil Bühne. Der ISCO-Code umfasst Regie und Produktion für Film, Bühne und Radio und ist damit heterogen; reine Bühnenregie wäre noch weniger exponiert. Grenzfälle sind Budgetierung und Script-Coverage an der 50-%-Schwelle.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Textarbeiten wie Förder- und Finanzierungsgesuche, Script-Reports, Vertragsentwürfe sowie Pitch-Decks und Pressetexte (durch Chat-LLM und generative Präsentationswerkzeuge) und Drehbuch-Breakdown bzw. Drehplanung (durch LLM-basierte Planungstools), nicht aber Verhandlung, Casting und die künstlerische Leitung.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert, durchwegs delegierend: Die KI entwirft Gesuche, Berichte, Verträge und Pläne, die Produzentin prüft und verantwortet jedes Ergebnis. Der Kern des Berufs bleibt Beziehungsarbeit, Verhandlung und künstlerische Führung vor Ort. Bei Verträgen bremsen Urheberrecht und Haftung die Umsetzung; die vielen Kleinstfirmen der Schweizer Filmbranche führen die Werkzeuge informell, aber rasch ein.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

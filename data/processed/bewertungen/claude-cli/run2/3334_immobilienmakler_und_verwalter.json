@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "c0792e36660fa89fea93a01c25639a4bcae78fb13e88f4376b84feb38079e7cb",
+    "isco_code": "3334",
+    "beruf": "Immobilienmakler und -verwalter",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:36:21+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3917,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5939,
+      "api_aequivalent_usd": 0.1574542
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3917,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5939,
+        "output_tokens_details": {
+          "thinking_tokens": 2329
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3917,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1574542
+      }
+    ],
+    "request_ids": [
+      "a6381ee4-9c10-4688-8205-80aa28efcb24"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3334",
+    "beruf": "Immobilienmakler und -verwalter",
+    "taetigkeiten": [
+      {
+        "name": "Schriftliche Korrespondenz mit Mietern, Eigentümern und Handwerkern führen (E-Mails, Briefe, Mieteranfragen beantworten)",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Anfrage und Stichworte einfügen, das LLM entwirft die Antwort inkl. mietrechtlicher Standardformulierungen; die Bewirtschafterin prüft jede Antwort auf Fallbezug und Rechtslage. Bei Routineanfragen kurze Sichtung, bei heiklen Fällen mehr Prüfaufwand."
+      },
+      {
+        "name": "Telefonische Anliegen von Mietern entgegennehmen und Nachbarschaftskonflikte schlichten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Schlichten und Beruhigen am Telefon oder vor Ort ist eine Beziehungstätigkeit; Voicebots bewältigen emotionale Konflikte in Mundart nicht in gleicher Qualität."
+      },
+      {
+        "name": "Wohnungsabnahmen und -übergaben beim Mieterwechsel vor Ort durchführen, Mängel feststellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz in der Wohnung, Begutachtung von Schäden und Gespräch mit Mietparteien; das Protokoll entsteht direkt in der Tablet-App."
+      },
+      {
+        "name": "Liegenschaften begehen, Zustand kontrollieren und Handwerkerarbeiten vor Ort abnehmen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Begehung und Beurteilung vor Ort; keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Offerten für Reparaturen und Unterhalt einholen, vergleichen und Aufträge vergeben",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI extrahiert Positionen aus PDF-Offerten, erstellt Vergleichstabelle und Anfrageschreiben; die Bewirtschafterin beurteilt und vergibt selbst. Nahe an der 50 %-Schwelle, da Handwerkerauswahl Erfahrung erfordert."
+      },
+      {
+        "name": "Mietinserate verfassen und Bewerbungsdossiers von Mietinteressenten vorselektieren",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI erstellt Inseratetexte aus Objektdaten/Fotos und wertet Bewerbungsunterlagen inkl. Betreibungsauszüge (Scans) aus; die Person prüft jede Vorauswahl. Hemmnis: Datenschutz (revDSG) bei Bewerberdaten."
+      },
+      {
+        "name": "Wohnungsbesichtigungen mit Interessenten durchführen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Präsenz vor Ort; virtuelle Rundgänge ersetzen die Besichtigung in der Praxis nicht."
+      },
+      {
+        "name": "Mietverträge aus Vorlagen erstellen, Mietzinsinkasso, Mahnwesen und Nebenkostenabrechnungen in der Immobiliensoftware abwickeln",
+        "zeitanteil_pct": 14,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Vorlagenbasierte Verträge, QR-Zahlungsabgleich, Mahnlauf und Heiz-/Nebenkostenverteilung sind klassische Funktionen der Bewirtschaftungssoftware (z. B. Abacus, Rimo, ImmoTop) → P1 software, keine LLM-Exposition."
+      },
+      {
+        "name": "Eigentümerberichte, Liegenschaftsbudgets und Ertragsanalysen erstellen und kommentieren",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Datenanalyse auf ERP-Exporten erstellt Auswertungen, Budgetentwurf und Kommentartexte; die Bewirtschafterin prüft jede Zahl und Einschätzung vor dem Versand an den Eigentümer."
+      },
+      {
+        "name": "Stockwerkeigentümerversammlungen leiten und Eigentümer persönlich beraten",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Versammlungsleitung, Moderation und persönliche Beratung sind Präsenz- und Beziehungstätigkeiten."
+      },
+      {
+        "name": "Einladungen, Traktandenlisten und Versammlungsprotokolle für Eigentümerversammlungen erstellen",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Transkription und Zusammenfassung der Versammlung erstellen das Protokoll, Einladungen entstehen aus Vorlagen per LLM; die Verwalterin prüft Beschlüsse und Abstimmungsresultate in jedem Protokoll. Mundart-Diskussionen mehrerer Personen erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Hauswarte und Reinigungspersonal führen sowie mit Behörden (Bauamt, Feuerpolizei) abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Personalführung und Abstimmung mit Behörden erfolgen im persönlichen Kontakt."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Immobilienbewirtschafter/in in einer Schweizer Verwaltungsfirma (Mietliegenschaften und Stockwerkeigentum), Vermarktung nur als Teilaufgabe; ESCO-Kompetenzen zu Finanzmarkttrends und Sozialversicherungsanträgen wurden als Rauschen nicht übernommen. Unsicher sind vor allem die Zeitanteile und die Frage, ob Offertvergleich und Korrespondenz die 50-%-Schwelle sicher erreichen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die schriftliche Korrespondenz, Inserate und die Vorselektion von Bewerbungen, Eigentümerreporting, Offertvergleiche sowie Versammlungsprotokolle – durch Chat-LLM, Dokumentenextraktion, Datenanalyse und Transkription.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind exponiert, überwiegend im delegierenden Modus: Die KI entwirft Antworten, Berichte und Protokolle, die Bewirtschafterin prüft jedes Ergebnis; beim Offertvergleich unterstützt die KI nur. Der Kern aus Wohnungsabnahmen, Besichtigungen, Konfliktschlichtung und Versammlungsleitung bleibt Präsenzarbeit, und Datenschutz bei Bewerberdaten (revDSG) bremst einen Teil der Umsetzung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

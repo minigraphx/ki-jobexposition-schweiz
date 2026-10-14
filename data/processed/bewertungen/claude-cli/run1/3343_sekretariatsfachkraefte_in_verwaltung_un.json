@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "c942096a87eaaa3f98e6fa22ea3f3debf04a75ba6e78c5f9cb1f725077df2c64",
+    "isco_code": "3343",
+    "beruf": "Sekretariatsfachkräfte in Verwaltung und Geschäftsleitung",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:18:50+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3694,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 7097,
+      "api_aequivalent_usd": 0.17883020000000002
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3694,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 7097,
+        "output_tokens_details": {
+          "thinking_tokens": 3276
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3694,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.17883020000000002
+      }
+    ],
+    "request_ids": [
+      "f3083bb6-4b60-4069-a7df-350e799c7e5f"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3343",
+    "beruf": "Sekretariatsfachkräfte in Verwaltung und Geschäftsleitung",
+    "taetigkeiten": [
+      {
+        "name": "Geschäftskorrespondenz und E-Mails aus Stichworten der Vorgesetzten verfassen (DE/FR/EN)",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt Briefe und E-Mails aus den Stichworten, auch in Fremdsprachen; die Assistenz sichtet kurz und gibt sie zur Unterschrift weiter. Bei heiklen Schreiben an Behörden oder Verwaltungsräte ist der Prüfaufwand grösser."
+      },
+      {
+        "name": "Postfach der Vorgesetzten sichten, priorisieren und Standardanfragen beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die in Outlook integrierte KI (z. B. Copilot) fasst Nachrichten zusammen, priorisiert sie und entwirft Antworten. Die Assistenz prüft jede Antwort und beurteilt die Dringlichkeit; das Amtsgeheimnis und Cloud-Vorgaben bremsen den Einsatz."
+      },
+      {
+        "name": "Termine vereinbaren und Kalender der Vorgesetzten führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Terminassistenten den Abstimmungsaufwand mit Externen und die Priorisierung wirklich um 50 % senken; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen im Kalender schlagen Termine vor und erledigen den E-Mail-Austausch mit den Beteiligten. Die Assistenz entscheidet über Prioritäten und Verschiebungen und prüft jeden Termin."
+      },
+      {
+        "name": "Sitzungen vorbereiten: Einladungen, Traktandenlisten und Sitzungsunterlagen erstellen und versenden",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI in der Office-Suite entwirft Einladung und Traktandenliste aus früheren Sitzungen und stellt die Unterlagen zusammen. Die Assistenz prüft jedes Ergebnis, fordert fehlende Beiträge nach und reserviert Räume."
+      },
+      {
+        "name": "Sitzungsprotokolle (Beschluss- und Verlaufsprotokolle) erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die KI erstellt das Protokoll aus Aufnahme bzw. Transkript und Notizen; die Assistenz prüft jeden Beschluss genau. Gespräche in Mundart mit mehreren Personen erhöhen den Korrekturaufwand; Aufzeichnungen sind bei Vertraulichkeit und Amtsgeheimnis heikel."
+      },
+      {
+        "name": "Präsentationen, Berichte und Tabellen für die Geschäftsleitung aufbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in PowerPoint und Excel erstellen Folien, Auswertungen und Formeln aus den Vorlagen. Die Assistenz prüft jede Fassung auf Zahlen und CI und passt sie an."
+      },
+      {
+        "name": "Entwürfe der Vorgesetzten gegenlesen, korrigieren und übersetzen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM korrigiert die Texte und übersetzt sie in Landessprachen bzw. Englisch. Die Assistenz prüft jede Korrektur und Übersetzung vollständig, bevor sie den Text weitergibt."
+      },
+      {
+        "name": "Geschäftsbezogene Informationen recherchieren und für Vorgesetzte zusammenstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent mit Websuche erstellt eine Zusammenstellung mit Quellen. Die Assistenz prüft die Fakten und gibt das Dossier weiter."
+      },
+      {
+        "name": "Geschäftsreisen und Anlässe organisieren (Buchungen, Lieferanten, Logistik vor Ort)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Buchungsagenten sind 2026 nicht verlässlich genug. Abklärungen am Telefon, Absprachen mit Lieferanten und die Betreuung vor Ort überwiegen. Online-Buchungstools beschleunigen nur einen Teil der Arbeit."
+      },
+      {
+        "name": "Akten und Dokumente im GEVER/DMS ablegen und Verzeichnisse (Adressen, Aktienbuch) nachführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, wie verbreitet und verlässlich KI-Klassifikation in GEVER-/DMS-Produkten ist; E0 mit manueller Ablage ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Funktionen im DMS klassieren eingehende Dokumente und erfassen Mutationen aus E-Mails. Die Assistenz bearbeitet nur markierte Ausnahmen."
+      },
+      {
+        "name": "Anrufe entgegennehmen, Besuchende empfangen und Anliegen triagieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Präsenz und eine vertrauliche Filterfunktion für die Geschäftsleitung sind entscheidend. Gespräche laufen meist in Mundart; ein Voicebot ist dafür nicht geeignet."
+      },
+      {
+        "name": "Büro organisieren, Material bestellen und neue Mitarbeitende einführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Arbeit ist physisch und organisatorisch vor Ort, ebenso das persönliche Anleiten. Generative KI spart hier kaum Zeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommen ist eine Direktions- bzw. Geschäftsleitungsassistenz in der öffentlichen Verwaltung oder einem mittelgrossen Unternehmen mit Microsoft-365-Umgebung. Der ESCO-Input passt gut, die Zeitanteile sind grob geschätzt. Die grössten Grenzfälle sind die Kalenderführung (KI-Terminassistenten), die KI-gestützte Ablage im GEVER sowie Protokolle von Mundart-Sitzungen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Korrespondenz, Postfachbearbeitung, Sitzungsvorbereitung und Protokolle, Präsentationen, Recherchen und Übersetzungen; diese übernehmen Chat-LLMs und KI-Funktionen in Office, Outlook und DMS.",
+      "begruendung": "Rund vier Fünftel der Arbeitszeit sind exponiert, meist delegierend: Die KI erstellt Texte, Protokolle und Folien, die Assistenz prüft jedes Ergebnis. Bei Standardkorrespondenz und Ablage arbeitet die KI weitgehend ersetzend. In der Verwaltung bremsen Amtsgeheimnis, Datenschutz und Cloud-Vorgaben die Einführung; Mundart-Sitzungen erhöhen den Korrekturaufwand bei Protokollen, und Empfang sowie Organisation vor Ort bleiben beim Menschen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

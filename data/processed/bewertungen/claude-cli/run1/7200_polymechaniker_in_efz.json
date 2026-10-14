@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "75586ac2f9c7de598c06b678833d9b260ceaefa97ab3efcfb91010f2509bf53e",
+    "isco_code": "7200",
+    "beruf": "Polymechaniker/in EFZ",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:11:09+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 8709,
+      "cache_read_input_tokens": 75829,
+      "output_tokens": 9334,
+      "api_aequivalent_usd": 0.2715338
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 8709,
+        "cache_read_input_tokens": 75829,
+        "output_tokens": 9334,
+        "output_tokens_details": {
+          "thinking_tokens": 2519
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 8709,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.2715338
+      }
+    ],
+    "request_ids": [
+      "83fc91ce-4f81-4db9-bc7a-be55eb02fbbb"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "7200",
+    "beruf": "Polymechaniker/in EFZ",
+    "taetigkeiten": [
+      {
+        "name": "CNC-Dreh- und Fräsmaschinen einrichten: Spannmittel und Werkzeuge einsetzen, Nullpunkte und Werkzeugkorrekturen setzen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit direkt an der Maschine. Bei Einzelteilen und Kleinserien übernehmen Werkzeugvoreinstellung und Nullpunktspannsysteme keine 50 % der Einrichtzeit."
+      },
+      {
+        "name": "CNC-Programme im CAM-System oder an der Steuerung erstellen, simulieren und optimieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "KI-Assistenzfunktionen in CAM-Systemen für Werkzeugwege und Strategien entwickeln sich schnell; E2 im Modus delegierend mit 30–50 % Restzeit ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Programmierung hängt an Zeichnungsgeometrie, Spannsituation, Kollisionsfreiheit und Erfahrungswerten. LLM-basierte Code-Erzeugung spart einschliesslich Simulation und Einfahren typischerweise keine 50 %. Das CAM selbst ist bereits heutiger Standard."
+      },
+      {
+        "name": "Werkstücke auf CNC-Maschinen fertigen: Rohteile einlegen, Bearbeitung überwachen, Werkzeuge wechseln, Späne entfernen",
+        "zeitanteil_pct": 18,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Maschinenbedienung. Roboter-Beladezellen und Palettensysteme sind verfügbar, lohnen sich aber vor allem bei Serien; in typischen Betrieben mit Einzelteilen und Kleinserien übernehmen sie keine 50 % der Zeit."
+      },
+      {
+        "name": "Teile konventionell und von Hand bearbeiten: bohren, Gewinde schneiden, entgraten, schleifen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Arbeit mit Werkzeugen und konventionellen Maschinen. Bei wechselnden Teilen gibt es keine Automatisierung in relevantem Umfang."
+      },
+      {
+        "name": "Werkstücke mit Messmitteln und Koordinatenmessmaschine messen, prüfen und Messwerte protokollieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit fällt beim physischen Messen an; Protokolle erzeugt bereits die Messsoftware. Automatisierte KMG-Messabläufe und In-Prozess-Messtaster helfen bei Serien, decken bei Einzelteilen aber keine 50 % ab."
+      },
+      {
+        "name": "Baugruppen, Vorrichtungen und Maschinen montieren, justieren und in Betrieb nehmen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montage- und Justierarbeit mit Feingefühl. Robotik für wechselnde Montageaufgaben gibt es nicht in relevantem Umfang."
+      },
+      {
+        "name": "Maschinen und Anlagen warten, Störungen suchen und reparieren",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Fehlersuche und Reparatur finden vor Ort an der Maschine statt. KI kann bei der Diagnose Hinweise geben, spart aber keine 50 % der Zeit."
+      },
+      {
+        "name": "Technische Zeichnungen lesen und Fertigungsablauf, Spannkonzept und Werkzeugwahl planen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Planung beruht auf Erfahrung, den vorhandenen Maschinen und Spannmitteln und geschieht weitgehend im Kopf. Bildverständnis von Zeichnungen spart hier keine 50 % der Zeit."
+      },
+      {
+        "name": "Einfache Bauteile und Vorrichtungen im CAD konstruieren und zeichnen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative CAD-Funktionen erreichen bei massgenauen, fertigungsgerechten Vorrichtungen noch nicht die 50 %-Schwelle."
+      },
+      {
+        "name": "Einrichteblätter, Arbeitsanweisungen, Montageanleitungen und Störungsrapporte verfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten erstellt das Chat-LLM strukturierte Anweisungen und Rapporte. Die Fachperson prüft jedes Dokument auf technische Korrektheit und ergänzt Masse und Werte."
+      },
+      {
+        "name": "Lernende anleiten und Aufträge mit AVOR, Konstruktion und Montage absprechen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Abstimmungstätigkeit in der Werkstatt."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Polymechaniker/in in einem Schweizer KMU der Maschinen-, Werkzeug- oder Präzisionsindustrie mit CNC-Fertigung von Einzelteilen und Kleinserien sowie Montage. ESCO (Zerspanungsmechaniker) deckt nur die Zerspanung ab; Montage, Wartung und CAD habe ich aus dem Berufswissen zur EFZ-Ausbildung ergänzt. Der grösste Grenzfall ist die CNC-Programmierung, falls KI-Assistenz im CAM die 50 %-Schwelle erreicht. Unsicher ist ausserdem, wie verbreitet Roboter-Beladezellen sind (Feld P).",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert ist nur das Verfassen von Einrichteblättern, Arbeitsanweisungen und Störungsrapporten per Chat-LLM; Zerspanung, Einrichten, Messen und Montage sind nicht exponiert.",
+      "begruendung": "Nur rund 4 % der Arbeitszeit sind exponiert, durchwegs im Modus delegierend: Die KI erstellt das Dokument, die Fachperson prüft jedes technisch. Der Kern des Berufs ist physische Arbeit an Werkzeugmaschinen und in der Montage. Eine Ausweitung ist am ehesten über KI-Funktionen im CAM für die CNC-Programmierung denkbar; wesentliche CH-Hemmnisse bestehen nicht.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

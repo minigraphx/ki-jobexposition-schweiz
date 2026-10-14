@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "36cf0d4da6ed1827cfb8174c6ed3c73943fc0ae53a5b5331a4362b8d179e7ae5",
+    "isco_code": "3411",
+    "beruf": "Fachkräfte für Rechts- und verwandte Angelegenheiten",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-14T00:01:24+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2484,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5070,
+      "api_aequivalent_usd": 0.12861019999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2484,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5070,
+        "output_tokens_details": {
+          "thinking_tokens": 1832
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2484,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.12861019999999998
+      }
+    ],
+    "request_ids": [
+      "83801fda-7b20-4d1c-a265-32c0d2fd1ce5"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3411",
+    "beruf": "Fachkräfte für Rechts- und verwandte Angelegenheiten",
+    "taetigkeiten": [
+      {
+        "name": "Posteingang (Gerichtsverfügungen, Eingaben der Gegenpartei) sichten, dem Dossier zuordnen und Fristen im Kanzleisystem erfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung mit Integration in die Kanzleisoftware extrahiert Verfahren, Zustelldatum und Frist und schlägt den Eintrag vor; wegen Haftung bei Fristversäumnis prüft die Person jeden Eintrag. Klassische Formularerkennung reicht bei frei formulierten Gerichtsschreiben nicht."
+      },
+      {
+        "name": "Verhandlungs- und Besprechungstermine mit Gerichten, Klienten und Gegenparteien koordinieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Viel telefonische Abstimmung mit Gerichtskanzleien und mehreren Beteiligten; KI spart hier weniger als die Hälfte der Zeit."
+      },
+      {
+        "name": "Rechtsschriften, Eingaben und Briefe nach Diktat oder Entwurf der Anwältin erstellen und formatieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracherkennung transkribiert das Diktat (Hochdeutsch bzw. Einzeldiktat), KI-Funktionen in Word/Kanzleisoftware formatieren nach Vorlage; die Person prüft jedes Dokument auf Rubrum, Beilagen und Formalien. Hemmnis: Anwaltsgeheimnis und Cloud-Restriktionen."
+      },
+      {
+        "name": "Standardkorrespondenz verfassen (Begleitschreiben, Terminbestätigungen, Kostenvorschuss-Anforderungen, Unterlagen nachfordern)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "<10",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM erstellt Standardbriefe aus Stichworten und Falldaten; Person sichtet kurz und gibt frei."
+      },
+      {
+        "name": "Verfahrensakten physisch und im Dokumentenmanagementsystem führen, scannen, paginieren und ablegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend manuelles Handling von Papierakten und Beilagen; Scanner und DMS sind klassische Hilfsmittel, ersetzen das Ordnen aber nicht zu 50 %."
+      },
+      {
+        "name": "Akten- und Beilagenverzeichnisse für Rechtsschriften und Aktenzustellungen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumentenerkennung liest Datum, Absender und Art der Beilagen aus den PDFs und erstellt das Verzeichnis; die Person korrigiert markierte Unklarheiten."
+      },
+      {
+        "name": "Verfahrensakten auf Vollständigkeit und Formalien prüfen (Vollmachten, Unterschriften, Beilagen, Zustellnachweise)",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Vorprüfung gescannter Akten den Prüfaufwand wirklich halbiert; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Person führt die Formalprüfung selbst durch; KI-Dokumentenanalyse markiert fehlende Unterschriften, Beilagen oder Abweichungen."
+      },
+      {
+        "name": "Leistungen erfassen und Kostennoten bzw. Honorarabrechnungen in der Kanzleisoftware erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zeiterfassung und tarifbasierte Rechnungsstellung erledigt klassische Kanzlei-/Abrechnungssoftware; kein LLM nötig."
+      },
+      {
+        "name": "Telefonische und schriftliche Anfragen von Klienten, Gerichten und Behörden beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend Telefon und vertrauliche, situative Auskünfte zum Verfahrensstand; Voicebots sind in Kanzleien wegen Vertraulichkeit und Dialekt nicht tauglich."
+      },
+      {
+        "name": "Rechtsprechung, Gesetzestexte und Unterlagen für die Anwältin recherchieren und zusammenstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Juristische Recherche-Agenten mit Zugriff auf Entscheiddatenbanken liefern Fundstellen und Zusammenfassungen; die Person prüft jede Fundstelle auf Richtigkeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Anwaltsassistent/in bzw. juristische Sachbearbeitung (Sekundär II, kaufmännisch) in einer Schweizer Anwaltskanzlei mit Prozessführung; Gerichtskanzleien und Notariate sind ähnlich. ESCO passt gut, die Zeitanteile sind geschätzt. Grenzfälle sind die Formalprüfung der Akten und das Fristenmanagement, wo der Prüfaufwand wegen Haftungsrisiken hoch bleibt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind das Erstellen von Rechtsschriften nach Diktat, Standardkorrespondenz, die Fristerfassung aus dem Posteingang, Beilagenverzeichnisse und Recherchen; die Technik dafür sind Spracherkennung, Chat-LLMs, Dokumentenerkennung und Recherche-Agenten.",
+      "begruendung": "Rund 60 % der Arbeitszeit sind exponiert, überwiegend im Modus delegierend: Die KI erstellt Dokumente und Einträge, und wegen Haftung und Fristrisiken prüft die Person jedes Ergebnis. Ersetzend ist die KI nur bei Standardbriefen und Verzeichnissen. Wesentliches CH-Hemmnis ist das Anwaltsgeheimnis mit Cloud- und Datenschutzauflagen, was in vielen kleinen Kanzleien die Einführung bremst.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

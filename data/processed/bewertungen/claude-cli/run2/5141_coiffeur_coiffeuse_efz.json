@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "5d9ef2064c4c67a286e4a4d0868f652c8d48ead58d5ef5f90264f4d2479e28a6",
+    "isco_code": "5141",
+    "beruf": "Coiffeur/Coiffeuse EFZ",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:18:21+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 4874,
+      "cache_read_input_tokens": 79330,
+      "output_tokens": 7658,
+      "api_aequivalent_usd": 0.208034
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 4874,
+        "cache_read_input_tokens": 79330,
+        "output_tokens": 7658,
+        "output_tokens_details": {
+          "thinking_tokens": 1454
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4874,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.208034
+      }
+    ],
+    "request_ids": [
+      "5bd6def0-aa91-48b8-a2e5-8843a6dcbb71"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5141",
+    "beruf": "Coiffeur/Coiffeuse EFZ",
+    "taetigkeiten": [
+      {
+        "name": "Kundschaft zu Frisurwunsch beraten sowie Haar und Kopfhaut begutachten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Gespräch am Stuhl mit Betasten des Haars; der Wert liegt in der Präsenz und im fachlichen Blick. Virtuelle Frisur-Apps ersetzen höchstens einen kleinen Teil."
+      },
+      {
+        "name": "Haare mit Schere und Maschine schneiden, Bart und Konturen trimmen",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein manuelle Arbeit am Kopf der Kundin oder des Kunden; Schneideroboter gibt es nicht im regulären Einsatz."
+      },
+      {
+        "name": "Farben mischen und auftragen, Strähnen und Dauerwellen ausführen",
+        "zeitanteil_pct": 18,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische chemische Behandlung am Haar. Automatische Farbdosiergeräte gibt es zwar, sie übernehmen aber nur einen kleinen Teil der Zeit, weil das Auftragen manuell bleibt."
+      },
+      {
+        "name": "Haare waschen, Pflege- und Kopfhautbehandlungen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körpernahe Dienstleistung mit Massage. Automatische Waschliegen sind in Schweizer Salons kaum verbreitet."
+      },
+      {
+        "name": "Haare föhnen, frisieren und Hochsteckfrisuren gestalten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Styling mit Föhn, Rundbürste und Eisen; physisch und nicht automatisierbar."
+      },
+      {
+        "name": "Pflege- und Stylingprodukte empfehlen und im Salon verkaufen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beratung von Angesicht zu Angesicht während oder nach der Behandlung; der Verkauf lebt von der persönlichen Beziehung."
+      },
+      {
+        "name": "Arbeitsplatz reinigen, Werkzeuge desinfizieren und Geräte warten",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Reinigungs- und Pflegearbeit in einem kleinen, verstellten Raum; Reinigungsroboter übernehmen davon nicht die Hälfte."
+      },
+      {
+        "name": "Termine telefonisch und am Empfang vereinbaren und Agenda führen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Ein Voicebot für Terminbuchungen mit Kalenderzugriff (E2, ersetzend) ist denkbar, für Schweizerdeutsch am Telefon in Kleinsalons aber wenig belegt; E2 ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Online-Buchungstools und Salonsoftware (klassische Software) übernehmen einen Grossteil der Terminvereinbarung; der verbleibende Telefonanteil ist kurz und läuft auf Mundart."
+      },
+      {
+        "name": "Dienstleistungen kassieren und Kundenkartei mit Farbrezepturen nachführen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze Abläufe mit Kassensystem und Kartenterminal; mit generativer KI lässt sich hier nichts Relevantes sparen. Selbstbedienungskassen sind in Salons nicht üblich, deshalb P0."
+      },
+      {
+        "name": "Social-Media-Beiträge mit Fotos von Frisuren erstellen",
+        "zeitanteil_pct": 2,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI bearbeitet das Bild (Retusche, Hintergrund) und schreibt Bildtext und Hashtags; die Coiffeuse fotografiert, wählt aus und prüft jeden Post. Das braucht Bildbearbeitung, also E2."
+      },
+      {
+        "name": "Warenbestand kontrollieren und Produkte beim Lieferanten nachbestellen",
+        "zeitanteil_pct": 2,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bestandsführung und Nachbestellvorschläge in der Salon- oder Kassensoftware (klassische Software) bzw. Lieferanten-Webshops; ein LLM spart hier nichts Wesentliches."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: angestellte Coiffeuse EFZ in einem typischen Schweizer Damen- und Herrensalon (KMU, 2–6 Mitarbeitende). Der ESCO-Input passt gut. Der Beruf besteht fast vollständig aus physischer Präsenzarbeit am Kunden. Ein Grenzfall ist die telefonische Terminvereinbarung (Voicebot auf Mundart).",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind nur Social-Media-Beiträge, die mit generativer Bildbearbeitung und Textgenerierung entstehen; Schneiden, Färben, Waschen, Styling und Beratung am Stuhl sind nicht betroffen.",
+      "begruendung": "Nur ein sehr kleiner Teil der Arbeitszeit (rund 2 %) ist gegenüber generativer KI exponiert, und zwar delegierend: Die KI bearbeitet Fotos und schreibt Texte, die Coiffeuse wählt aus und prüft jeden Beitrag. Der Kern des Berufs ist manuelle, körpernahe Dienstleistung mit persönlicher Kundenbeziehung, oft auf Mundart. Terminbuchung und Lager werden eher von klassischer Salonsoftware übernommen als von KI.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

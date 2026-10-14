@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "59404dfd9d3528133aa60afecc331e2c9018e8e03542fb3fe002b8b1363295ca",
+    "isco_code": "2131",
+    "beruf": "Biologen, Botaniker, Zoologen und verwandte Berufe",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T06:39:44+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 205,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 205
+        }
+      ],
+      "prompt_token_count": 23514,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 23514
+        }
+      ],
+      "thoughts_token_count": 4915,
+      "total_token_count": 28634
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 205,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 205
+          }
+        ],
+        "prompt_token_count": 23514,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 23514
+          }
+        ],
+        "thoughts_token_count": 4915,
+        "total_token_count": 28634
+      }
+    ],
+    "request_ids": [
+      "6rnOarueOpyCqtsPnsuBoAk"
+    ],
+    "versuche": 1,
+    "status": "fehlgeschlagen",
+    "fehler": [
+      "Versuch 1: taetigkeiten: ['Laborexperimente, Zellkulturen und molekularbiologische Analysen durchführen'] is too short; taetigkeiten/0: 'Laborexperimente, Zellkulturen und molekularbiologische Analysen durchführen' is not of type 'object'; zusammenfassung: 'haupt_risiko' is not of type 'object'"
+    ],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "custom_id": "r1-2131_biologen_botaniker_zoologen_und_verwandt",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": "validierung",
+    "probleme": [
+      "taetigkeiten: ['Laborexperimente, Zellkulturen und molekularbiologische Analysen durchführen'] is too short",
+      "taetigkeiten/0: 'Laborexperimente, Zellkulturen und molekularbiologische Analysen durchführen' is not of type 'object'",
+      "zusammenfassung: 'haupt_risiko' is not of type 'object'"
+    ],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": null,
+  "rohantwort": "{\"isco_code\":\"2131\",\"beruf\":\"Biologen, Botaniker, Zoologen und verwandte Berufe\",\"taetigkeiten\":[\n    \"Laborexperimente, Zellkulturen und molekularbiologische Analysen durchführen\"\n   ],\"unsicherheit\":\"mittel\",\"kommentar\":\"Der Beruf umfasst in der Schweiz sowohl Biologinnen und Biologen in der industriellen Forschung und Entwicklung (Pharma, Biotech, Diagnostik) als auch in akademischen Instituten (ETH, Universitäten, Forschungsanstalten wie WSL/Eawag/Agroscope) und Umweltbüros. Für die Bewertung wurde ein gemischtes Forschungs- und Praxisprofil mit Schwerpunkt auf Labor-/Feldforschung, Datenanalyse und wissenschaftlicher Dokumentation angenommen; je nach Spezialisierung verschieben sich die Zeitanteile zwischen Labor, Freiland und Schreibtischarbeit.\",\"zusammenfassung\":\n    \"haupt_risiko\"}"
+}

@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "bac63db781d5723e9907fd6f71f0912985231a0da6d4e020ca455bc3c6f2a167",
+    "isco_code": "1212",
+    "beruf": "HR-Manager/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:51:47+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5158,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5067,
+      "api_aequivalent_usd": 0.1499422
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 5158,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5067,
+        "output_tokens_details": {
+          "thinking_tokens": 1589
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5158,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1499422
+      }
+    ],
+    "request_ids": [
+      "adebd35f-2526-4b4f-9d34-67ee4df0e017"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1212",
+    "beruf": "HR-Manager/in",
+    "taetigkeiten": [
+      {
+        "name": "Stellenprofile und Stelleninserate erstellen und Rekrutierungskanäle festlegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft Stellenprofil und Inserat aus Stichworten und Vorlagen; die HR-Managerin prüft Anforderungen, Tonalität und Lohnangaben jedes Inserats."
+      },
+      {
+        "name": "Bewerbungsdossiers sichten, vorselektieren und Shortlists erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Funktionen im Bewerbermanagement extrahieren Lebensläufe (PDF) und gleichen sie mit dem Profil ab; die HR-Managerin beurteilt jedes Dossier selbst und entscheidet über die Shortlist. Datenschutz und Diskriminierungsrisiken bremsen."
+      },
+      {
+        "name": "Vorstellungsgespräche und Assessments mit Kandidierenden führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Gesprächsführung und Eindrucksbildung; der Wert liegt in der Präsenz."
+      },
+      {
+        "name": "Arbeitsverträge, Arbeitszeugnisse und Kündigungsschreiben entwerfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM erstellt Vertrag bzw. Zeugnis aus Vorlagen, Beurteilungsnotizen und Falldaten; jede Ausgabe wird auf Zeugniscodes, Wohlwollens- und Wahrheitspflicht sowie Personalrecht geprüft."
+      },
+      {
+        "name": "Lohn- und Vertragsverhandlungen, Kündigungs- und Konfliktgespräche mit Mitarbeitenden führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandeln und heikle Gespräche von Angesicht zu Angesicht; Vertrauen und Ermessen stehen im Zentrum."
+      },
+      {
+        "name": "Linienvorgesetzte in Personalfällen (Leistung, Absenzen, Konflikte) persönlich beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beratung im Gespräch mit Ermessen und Kenntnis der Personen; KI spart hier keine 50 %."
+      },
+      {
+        "name": "Arbeitsrechtliche Fragen abklären und schriftliche Stellungnahmen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Personalgesetz/OR-Artikel und Sachverhalt einfügen, LLM erstellt die Stellungnahme; die HR-Managerin prüft jede Aussage gegen die Rechtsgrundlagen."
+      },
+      {
+        "name": "Personalreglemente, Weisungen und Mitarbeiterinformationen verfassen und aktualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "LLM entwirft bzw. überarbeitet Reglementstexte und Informationen und übersetzt sie; jede Fassung wird fachlich geprüft und abgestimmt, teils parallel in mehreren Landessprachen."
+      },
+      {
+        "name": "HR-Kennzahlen, Personalkostenbudget und Lohnanalysen erstellen und auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Datenanalyse-Agent mit Code-Ausführung wertet HR-Exporte aus und kommentiert sie; die HR-Managerin prüft jede Auswertung. Standard-Reporting in HRIS/BI und Lohngleichheitsanalyse (Logib) sind bereits klassische Software (P1)."
+      },
+      {
+        "name": "Weiterbildungs-, Entwicklungs- und Beurteilungsprogramme konzipieren und evaluieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM erstellt Konzepte, Beurteilungsformulare und Auswertungen von Feedbackbögen (Text); die HR-Managerin spezifiziert, passt an die Organisation an und prüft jedes Ergebnis."
+      },
+      {
+        "name": "Personalstrategie, Personalplanung und Kulturmassnahmen mit der Geschäftsleitung erarbeiten und vertreten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Strategische Abstimmung in Gremien, Ermessen und Einfluss dominieren; KI liefert höchstens Vorschläge und spart keine 50 %."
+      },
+      {
+        "name": "HR-Team führen, Aufgaben koordinieren und Sitzungen leiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung von Mitarbeitenden ist Präsenz- und Beziehungstätigkeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Leiter/in Personal in einer mittelgrossen öffentlichen Verwaltung bzw. einem grösseren Betrieb mit kleinem HR-Team; der operative Lohnlauf liegt bei Sachbearbeitenden bzw. in der Lohnsoftware. Der ESCO-Input passt gut, die Zeitanteile sind aber grob geschätzt. Grenzfälle sind die Dossiervorselektion (unterstützend oder E0) sowie die Konzept- und Stellungnahmetexte nahe der 50 %-Schwelle.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Schreib- und Analysearbeiten: Inserate, Verträge, Arbeitszeugnisse, Reglemente, Stellungnahmen und Programmkonzepte durch Chat-LLMs sowie Dossiervorselektion und HR-Auswertungen durch KI-Funktionen im Bewerbermanagement und Datenanalyse-Agenten.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit ist exponiert. Dort erstellt die KI überwiegend Entwürfe, die die HR-Managerin einzeln prüft (delegierend); bei der Bewerbervorselektion bleibt sie unterstützend. Der Kern aus Gesprächen, Verhandlungen, Beratung und Führung bleibt beim Menschen; in der Verwaltung bremsen vor allem Datenschutz bei Personaldaten, das Personalrecht und die Mehrsprachigkeit von Dokumenten.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

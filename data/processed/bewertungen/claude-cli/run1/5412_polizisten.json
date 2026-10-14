@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "e683caf4fe63d2acc78e0060ff4a47dfb7216e146907713f2e3ecd0e89b02d5d",
+    "isco_code": "5412",
+    "beruf": "Polizisten (ohne Polizeikommissare)",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:36:04+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3174,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4952,
+      "api_aequivalent_usd": 0.13177019999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3174,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4952,
+        "output_tokens_details": {
+          "thinking_tokens": 1874
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3174,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.13177019999999998
+      }
+    ],
+    "request_ids": [
+      "21bd5bb2-083a-4b37-a113-b86395df79d1"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5412",
+    "beruf": "Polizisten (ohne Polizeikommissare)",
+    "taetigkeiten": [
+      {
+        "name": "Patrouille zu Fuss und im Fahrzeug fahren, Präsenz zeigen und Gebiet überwachen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Arbeit findet vor Ort statt und lebt von der körperlichen Präsenz. Videoüberwachung ersetzt Patrouillen nicht in relevantem Umfang."
+      },
+      {
+        "name": "Bei Notrufen intervenieren (Streit, häusliche Gewalt, Ruhestörung), Lage beruhigen und Personen festnehmen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Vor Ort wird deeskaliert, notfalls mit Zwang. Die Polizistin ist physisch und persönlich anwesend und entscheidet sofort selbst."
+      },
+      {
+        "name": "Verkehrs- und Personenkontrollen durchführen, Ausweise prüfen und Ordnungsbussen erteilen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kontrolle vor Ort mit direktem Kontakt zu Personen. Stationäre Radaranlagen gibt es zwar, sie ersetzen aber nicht die Kontrollen durch Polizisten."
+      },
+      {
+        "name": "Verkehrsunfälle aufnehmen, Unfallstelle sichern und Verkehr regeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit an der Unfallstelle: sichern, vermessen, Verkehr lenken."
+      },
+      {
+        "name": "Tatorte absperren, Spuren und Beweismittel sichern und asservieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spuren und Beweismittel werden vor Ort von Hand gesichert. Die Beweiskette muss eingehalten werden."
+      },
+      {
+        "name": "Einvernahmen und Befragungen von Beschuldigten, Geschädigten und Zeugen durchführen und protokollieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Befragung findet von Angesicht zu Angesicht statt, mit Gesprächsführung. Das Protokoll muss vorgelesen und unterschrieben werden. Transkription von Mehrpersonen-Gesprächen in Mundart spart heute keine 50 %."
+      },
+      {
+        "name": "Polizeirapporte, Strafanzeigen und Journaleinträge im Polizeisystem verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Stichworten zum Sachverhalt formuliert das LLM den Rapport- bzw. Anzeigetext. Die Polizistin prüft jeden Rapport auf Richtigkeit und Beweisrelevanz und verantwortet ihn. Strukturierte Felder bleiben Handarbeit; Amtsgeheimnis und Datenschutz verlangen geschützte Lösungen."
+      },
+      {
+        "name": "Amts- und Kurzberichte an Staatsanwaltschaft, KESB und Strassenverkehrsamt verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM entwirft Berichte aus eingefügten Abklärungsergebnissen. Die Polizistin prüft jeden Bericht fachlich und unterzeichnet ihn."
+      },
+      {
+        "name": "Opfer betreuen sowie Bevölkerung am Postenschalter und vor Ort beraten und informieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Betreuung und Beratung, deren Wert in der Anwesenheit liegt."
+      },
+      {
+        "name": "Ordnungsdienst bei Veranstaltungen und Demonstrationen leisten und Menschenmengen lenken",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer Einsatz mit Präsenz vor Ort."
+      },
+      {
+        "name": "Schiess-, Selbstverteidigungs- und Ersthilfetrainings absolvieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliches Training; die Polizistin muss selbst üben."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommen ist ein Polizist bzw. eine Polizistin mit eidgenössischem Fachausweis im Frontdienst einer Kantons- oder Stadtpolizei (Sicherheits- und Verkehrspolizei). Die Zeitanteile für Schreibarbeit sind grob geschätzt und schwanken je nach Korps stark. Grenzfälle: Rapportschreiben (E1 oder E2 per Spracheingabe) und die Protokollierung von Einvernahmen, die bei besserer Mundart-Transkription exponiert werden könnte.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen ist vor allem das Verfassen von Polizeirapporten, Strafanzeigen und Amtsberichten, das ein LLM aus Stichworten entwerfen kann; die Einsatz- und Präsenzarbeit nicht.",
+      "begruendung": "Rund ein Fünftel der Arbeitszeit ist exponiert, durchwegs delegierend: Die KI entwirft Rapporte und Berichte, die Polizistin prüft und verantwortet jeden Text. Der Kern des Berufs bleibt physisch und persönlich: Patrouille, Intervention, Kontrollen und Einvernahmen. Amtsgeheimnis, Datenschutz und Beweisverwertbarkeit bremsen die Einführung; nötig sind geschützte, ins Polizeisystem integrierte Lösungen, die kantonal beschafft werden müssen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

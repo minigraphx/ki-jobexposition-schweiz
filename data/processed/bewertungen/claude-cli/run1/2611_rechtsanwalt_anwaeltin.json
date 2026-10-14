@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "2b87c7ea05a84c87661ad9194c23ad07076c44df28b423c19235db5b5333f6fa",
+    "isco_code": "2611",
+    "beruf": "Rechtsanwalt/-anwältin",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:11:54+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3046,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5255,
+      "api_aequivalent_usd": 0.1368062
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3046,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5255,
+        "output_tokens_details": {
+          "thinking_tokens": 1897
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3046,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1368062
+      }
+    ],
+    "request_ids": [
+      "0893c39c-eed2-4226-a5e0-f2fef6ac1c29"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2611",
+    "beruf": "Rechtsanwalt/-anwältin",
+    "taetigkeiten": [
+      {
+        "name": "Mandantengespräche führen: Sachverhalt aufnehmen, Bedürfnisse klären und mündlich beraten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung und Vertrauensbeziehung von Angesicht zu Angesicht oder am Telefon; der Wert liegt in der Präsenz und im Urteil der Anwältin."
+      },
+      {
+        "name": "Juristische Recherche zu Gesetzen, Bundesgerichts- und kantonaler Rechtsprechung sowie Literatur durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Recherche-Agenten bzw. KI-Funktionen in juristischen Datenbanken erstellen eine Übersicht mit Fundstellen; die Anwältin steuert und prüft jede Fundstelle wegen Halluzinationsrisiko selbst nach. Hemmnis: Berufsgeheimnis bei Eingabe von Mandatsdetails."
+      },
+      {
+        "name": "Akten, Verträge, Korrespondenz und Beweismittel sichten, zusammenfassen und auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenanalyse-Tools (inkl. Scans/PDF) erstellen Chronologien, Zusammenfassungen und markieren relevante Stellen; die Beweiswürdigung nimmt die Anwältin weiterhin selbst vor."
+      },
+      {
+        "name": "Rechtsschriften entwerfen (Klagen, Beschwerden, Stellungnahmen, Eingaben an Behörden)",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Sachverhalt, Rechercheergebnissen und Argumentationslinie als Text erstellt das LLM den Entwurf; die Anwältin gibt die Strategie vor, prüft und überarbeitet jede Schrift und unterzeichnet sie. Nahe an der Schwelle bei komplexen Fällen."
+      },
+      {
+        "name": "Verträge, AGB und weitere Rechtsdokumente entwerfen und prüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM erstellt Vertragsentwürfe aus Vorlagen und Eckpunkten bzw. markiert Risiken in Gegenentwürfen; die Anwältin prüft jede Klausel fachlich und passt an den Einzelfall an."
+      },
+      {
+        "name": "Schriftliche Rechtsauskünfte und Beratungsschreiben an Mandanten verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM formuliert Memo bzw. Beratungs-E-Mail aus Stichworten und rechtlicher Einschätzung; die Anwältin prüft jede Aussage, da sie haftet."
+      },
+      {
+        "name": "Standardkorrespondenz mit Gerichten, Behörden und Gegenpartei erstellen (Fristerstreckungen, Akteneinsicht, Begleitschreiben)",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Standardschreiben entstehen aus Falldaten per LLM; die Anwältin sichtet kurz und unterzeichnet."
+      },
+      {
+        "name": "Mandanten an Gerichtsverhandlungen, Einvernahmen und vor Behörden vertreten und plädieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Präsenz vor Gericht, Anwaltsmonopol; mündliches Vortragen und Reagieren in Echtzeit."
+      },
+      {
+        "name": "Vergleichs- und Vertragsverhandlungen mit Gegenpartei führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandeln von Angesicht zu Angesicht bzw. am Telefon; Ermessen und Taktik."
+      },
+      {
+        "name": "Prozessstrategie festlegen und Erfolgsaussichten sowie Prozessrisiken beurteilen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ermessensentscheid mit Verantwortung gegenüber Mandant; KI liefert allenfalls Denkanstösse, spart aber keine 50 %."
+      },
+      {
+        "name": "Honorar vereinbaren, Leistungen erfassen, Honorarnoten erstellen und Fristen kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Leistungserfassung, Fakturierung und Fristenkontrolle übernimmt klassische Kanzleisoftware; Honorargespräch ist persönliche Verhandlung."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: selbständige/r oder angestellte/r Rechtsanwalt/-anwältin in einer KMU-Kanzlei mit gemischter Beratungs- und Prozesspraxis (Zivil-, Vertrags-, Verwaltungsrecht). Der ESCO-Input passt gut; Zeitanteile sind grob geschätzt und variieren stark zwischen Prozess- und Wirtschaftskanzleien. Grösste Unsicherheit: ob bei komplexen Rechtsschriften und Recherchen die 50 %-Schwelle wegen des Prüfaufwands (Halluzinationen) im typischen Fall erreicht wird.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind juristische Recherche, Aktenauswertung sowie das Entwerfen von Rechtsschriften, Verträgen, Beratungsschreiben und Standardkorrespondenz durch Chat-LLMs, Recherche-Agenten und Dokumentenanalyse-Tools.",
+      "begruendung": "Rund 60 % der Arbeitszeit sind exponiert, überwiegend delegierend: Die KI erstellt Entwürfe und Rechercheübersichten, die Anwältin steuert, prüft jede Ausgabe und trägt die Verantwortung; nur Standardkorrespondenz läuft ersetzend. Mandantengespräche, Gerichtsauftritte und Verhandlungen bleiben unberührt; wesentliches CH-Hemmnis ist das anwaltliche Berufsgeheimnis (Art. 321 StGB, BGFA) mit Anforderungen an Datenhaltung und Cloud-Nutzung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

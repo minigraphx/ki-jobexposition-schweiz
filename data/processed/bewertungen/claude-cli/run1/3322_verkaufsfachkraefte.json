@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "4308a3a33344b2a53b6be75362a6eb2b517bd1b857e24d6f9ae8cac5fdb7891c",
+    "isco_code": "3322",
+    "beruf": "Verkaufsfachkräfte",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:09:40+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4375,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4881,
+      "api_aequivalent_usd": 0.13995819999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4375,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4881,
+        "output_tokens_details": {
+          "thinking_tokens": 1455
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4375,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.13995819999999998
+      }
+    ],
+    "request_ids": [
+      "674aa375-be74-4207-9de4-f02a3fdc095b"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3322",
+    "beruf": "Verkaufsfachkräfte",
+    "taetigkeiten": [
+      {
+        "name": "Geschäftskunden im Aussendienst besuchen, Bedarf klären, Produkte vorführen und beraten",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Verkaufsgespräch und Produktvorführung vor Ort. Der Wert liegt in der Präsenz und in der Kundenbeziehung."
+      },
+      {
+        "name": "Kunden telefonisch oder per Video kontaktieren, Termine vereinbaren und Konditionen verhandeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandeln und Beziehungspflege im direkten Gespräch. Generative KI spart hier keine 50 % der Zeit."
+      },
+      {
+        "name": "Mit dem Auto zu Kunden und Terminen im Verkaufsgebiet fahren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit. Autonomes Fahren ist in der Schweiz nicht zugelassen."
+      },
+      {
+        "name": "Potenzielle Neukunden und regionale Aufträge recherchieren und Leads qualifizieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent mit Websuche erstellt Firmenprofile und Leadlisten. Die Verkäuferin prüft und priorisiert jeden Lead selbst."
+      },
+      {
+        "name": "Offerten erstellen und Angebotsanfragen bzw. Ausschreibungsunterlagen beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein LLM mit Zugriff auf Produktunterlagen, Preislisten und CRM/ERP erstellt Offerttexte und Antworten auf Ausschreibungen. Die Fachkraft prüft Preise, Konditionen und die Einhaltung der Vorgaben in jeder Offerte."
+      },
+      {
+        "name": "Kundenanfragen per E-Mail zu Produkten, Preisen und Lieferterminen beantworten",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein KI-Assistent in Mail/CRM entwirft Antworten mit Produkt- und Lieferdaten aus den Systemen. Wegen der verbindlichen Preis- und Terminangaben prüft die Verkäuferin jede Antwort vor dem Versand."
+      },
+      {
+        "name": "Besuchsberichte und Kundeninteraktionen im CRM dokumentieren",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Verkäufer diktiert nach dem Besuch im Auto (auch Schweizerdeutsch), die CRM-KI erstellt den strukturierten Bericht mit Folgeaufgaben. Er prüft und ergänzt jeden Eintrag; der Dialekt erhöht den Korrekturaufwand."
+      },
+      {
+        "name": "Nachfass-E-Mails und Erinnerungen nach Besuchen und Offerten versenden",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Chat-LLM schreibt Follow-up-Mails aus Stichworten zum Gespräch. Die Fachkraft sichtet sie kurz und gibt sie frei."
+      },
+      {
+        "name": "Verkaufszahlen auswerten und Verkaufsberichte bzw. Forecasts erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Tool mit LLM wertet CRM-/ERP-Exporte aus und formuliert den Bericht; die Verkäuferin prüft Zahlen und Interpretation. Klassische CRM-/BI-Dashboards erledigen die Zahlenaufbereitung bereits weitgehend (P1, software)."
+      },
+      {
+        "name": "Bestellungen und Kundenstammdaten im ERP/CRM erfassen und pflegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI-Dokumentenverarbeitung liest Bestellungen aus E-Mails und PDFs aus und überträgt sie ins ERP; der Mensch bearbeitet markierte Ausnahmen. B2B-Shops und EDI können strukturierte Bestellungen ohne generative KI übernehmen (P1, software)."
+      },
+      {
+        "name": "An Verkaufssitzungen und Messen teilnehmen, sich mit Innendienst und Lieferanten abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz, Abstimmung und Beziehungspflege sowie Standbetreuung an Messen. Generative KI spart hier keine 50 % der Zeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Aussendienstmitarbeiterin bzw. Handelsvertreter im B2B-Verkauf (Grosshandel, Industrie oder Dienstleistungen) in einem Schweizer KMU mit CRM und ERP. Die ESCO-Beschreibung ist sehr knapp, deshalb stützen sich die Tätigkeiten auf die Kompetenzliste und auf eigenes Berufswissen. Die Zeitanteile für Besuche und Fahrzeit schwanken je nach Gebiet stark. Am unsichersten sind Grenzfälle wie Offerten und Ausschreibungen sowie die Frage, wie stark klassische CRM-/BI-Software bereits greift.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die administrativen Verkaufstätigkeiten, die KI-Assistenten in CRM/ERP, Recherche-Agenten, Diktat-Funktionen und Chat-LLMs übernehmen: Offerten und Ausschreibungen, E-Mail-Antworten, Besuchsberichte, Nachfassmails, Leadrecherche, Verkaufsberichte und die Erfassung von Bestellungen.",
+      "begruendung": "Gut zwei Fünftel der Arbeitszeit sind exponiert, überwiegend im Modus delegierend: Die KI erstellt Offerten, Mails und Berichte, die Verkaufsfachkraft prüft wegen verbindlicher Preise und Konditionen jede Ausgabe; nur Nachfassmails und die Erfassung von Bestellungen laufen weitgehend ersetzend. Der Kern des Berufs bleibt das persönliche Kundengespräch und der Aussendienst, wo Schweizer B2B-Kunden auf persönliche Beziehung setzen. Wesentliche Hemmnisse sind die verstreuten KMU-Strukturen und das teils noch wenig integrierte CRM.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "fdd096958c0098ff1ef2d7b608075f1a78b51f7149fef08ac4e33bc758b9c9a2",
+    "isco_code": "1346",
+    "beruf": "Führungskräfte in der Erbringung von Finanz- und Versicherungsdienstleistungen",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:48:45+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4423,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4746,
+      "api_aequivalent_usd": 0.1376422
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4423,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4746,
+        "output_tokens_details": {
+          "thinking_tokens": 1569
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4423,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1376422
+      }
+    ],
+    "request_ids": [
+      "d404246a-b013-423c-810d-3f158182f53e"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1346",
+    "beruf": "Führungskräfte in der Erbringung von Finanz- und Versicherungsdienstleistungen",
+    "taetigkeiten": [
+      {
+        "name": "Mitarbeitende führen: Zielvereinbarungs- und Beurteilungsgespräche, Coaching, Teamsitzungen und Vermittlung der Geschäftsziele",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung lebt von persönlicher Präsenz, Beziehung und Verantwortung; generative KI spart hier keine 50 % der Zeit."
+      },
+      {
+        "name": "Bewerbungsgespräche führen und Stellen im Team besetzen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zeit liegt in Interviews und Auswahlentscheid; Inserate und Dossier-Vorselektion erledigt meist HR, der Anteil der Führungskraft ist Präsenzarbeit."
+      },
+      {
+        "name": "Schlüsselkunden betreuen, Konditionen verhandeln und Geschäftsbeziehungen pflegen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beziehung, Verhandlung von Angesicht zu Angesicht und Vertrauen dominieren."
+      },
+      {
+        "name": "Finanz- und Ertragskennzahlen des Bereichs (MIS-Reports, Budget-Ist-Vergleich) analysieren und kommentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Datenanalyse bzw. Copilot im Reporting-Tool fasst Abweichungen zusammen, markiert Auffälligkeiten und entwirft Kommentare; die Führungskraft interpretiert und zieht die Schlüsse selbst. Bankgeheimnis/Cloud-Vorgaben bremsen."
+      },
+      {
+        "name": "Budget, Finanz- und Geschäftsplan für den Verantwortungsbereich erarbeiten",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Planung besteht stark aus Abstimmung und Ermessen; ob KI in Excel/Planungstool wirklich 50 % spart, ist unsicher, E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "KI in Office-/Planungssoftware erstellt Szenarien, Hochrechnungen und Plantexte; die Führungskraft setzt Annahmen und Ziele selbst und verantwortet den Plan."
+      },
+      {
+        "name": "Kreditanträge, Risikopositionen und Ausnahmen im Rahmen der Kompetenzordnung beurteilen und genehmigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Anträge sind von Mitarbeitenden vorbereitet; die verbleibende Zeit der Führungskraft ist Ermessensentscheid mit persönlicher Verantwortung, kaum 50 % Einsparung."
+      },
+      {
+        "name": "An Geschäftsleitungs- und Gremiensitzungen strategische Entscheide vorbereiten, diskutieren und fällen",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sitzungspräsenz, Abstimmung und strategischer Ermessensentscheid; KI spart hier keine 50 %."
+      },
+      {
+        "name": "Anträge, Berichte und Präsentationen für Geschäftsleitung, Verwaltungsrat und Revision verfassen",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Stichworten, Zahlen und Vorlagen entwirft das LLM Antrag bzw. Bericht; die Führungskraft prüft jede Aussage und schärft die Argumentation. Vertraulichkeit/Bankgeheimnis als Hemmnis."
+      },
+      {
+        "name": "Neue regulatorische Vorgaben (FINMA-Rundschreiben, GwG, interne Weisungen) auswerten und Umsetzungsmassnahmen festlegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM fasst eingefügte Regeltexte zusammen und listet Auswirkungen auf den Bereich; die Führungskraft beurteilt die Relevanz und legt die Massnahmen selbst fest."
+      },
+      {
+        "name": "E-Mails und interne Mitteilungen an Team, Fachstellen und Partner bearbeiten und beantworten",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI im Mailprogramm fasst Verläufe zusammen und entwirft Antworten; die Führungskraft prüft jede Nachricht inhaltlich, da viele Kontext oder Entscheid enthalten."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Bereichs- oder Niederlassungsleiter/in bei einer Kantonal-/Regionalbank oder Versicherung mit 10–40 Mitarbeitenden. ESCO beschreibt den Bankmanager; die ISCO-Gruppe umfasst auch Versicherungskader, die Tätigkeitsstruktur ist aber ähnlich. Grenzfälle sind die Budgetplanung und die Kennzahlenanalyse, die nahe an der 50 %-Schwelle liegen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Verfassen von Anträgen, Berichten und E-Mails, die Kommentierung von Finanzkennzahlen, die Budgetplanung und die Auswertung neuer Regulierung, und zwar durch Chat-LLM, Copilot-Funktionen in Office und KI-Datenanalyse.",
+      "begruendung": "Gut ein Drittel der Arbeitszeit ist exponiert. Bei Texten arbeitet die KI meist delegierend (sie entwirft, die Führungskraft prüft jede Aussage), bei Analyse, Planung und Regulierung eher unterstützend. Der Kern bleibt menschlich: Führung, Kundenbeziehungen, Kreditentscheide und Gremienarbeit. Bankgeheimnis, FINMA-Auslagerungsvorgaben und Cloud-Restriktionen bremsen die Einführung in Schweizer Instituten.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

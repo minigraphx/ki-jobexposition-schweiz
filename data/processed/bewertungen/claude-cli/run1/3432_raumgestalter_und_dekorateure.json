@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "75e00de1d5d470b8cb436455b9e97444d02af9a63589b150a8ef192fa3da7a2c",
+    "isco_code": "3432",
+    "beruf": "Raumgestalter und Dekorateure",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:15:24+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3107,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4768,
+      "api_aequivalent_usd": 0.12755419999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3107,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4768,
+        "output_tokens_details": {
+          "thinking_tokens": 1428
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3107,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.12755419999999998
+      }
+    ],
+    "request_ids": [
+      "58dbf3d9-e8cc-46aa-90f5-36cd97724c84"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3432",
+    "beruf": "Raumgestalter und Dekorateure",
+    "taetigkeiten": [
+      {
+        "name": "Kundinnen und Kunden vor Ort oder im Showroom beraten, Bedürfnisse aufnehmen und Räume ausmessen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung von Angesicht zu Angesicht mit Muster- und Stoffvorlagen sowie Aufmass vor Ort. Präsenz und Handarbeit dominieren."
+      },
+      {
+        "name": "Gestaltungskonzepte mit Farb-, Material-, Licht- und Möblierungsvorschlägen entwickeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Ideenfindung bezieht sich auf den konkreten Raum, das Budget und den Geschmack der Kundschaft. Dafür braucht es Vor-Ort-Eindrücke und Abstimmung, und KI-Vorschläge sparen keine 50 %. Die Produktion von Varianten ist separat erfasst."
+      },
+      {
+        "name": "Moodboards, Raumvisualisierungen und Gestaltungsvarianten erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bildgeneratoren und KI-Funktionen für Raumvisualisierung erzeugen Moodboards und Varianten aus Fotos des Raums und Vorgaben. Die Raumgestalterin steuert, wählt aus und prüft jede Variante auf Umsetzbarkeit und reale Produkte."
+      },
+      {
+        "name": "Grundrisse, Arbeitszeichnungen und Detailpläne für die Innenausstattung in CAD erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präzise, massgenaue Pläne verlangen exakte Werte. Generative KI-Funktionen in CAD erreichen heute keine 50 % Zeitersparnis bei gleicher Qualität. Die CAD-Software selbst ist das bestehende Werkzeug."
+      },
+      {
+        "name": "Offerttexte, Kundenkorrespondenz und Projektbeschriebe verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten erstellt ein Chat-LLM Begleitbriefe, Leistungsbeschriebe und E-Mails. Die Person prüft jeden Text auf Inhalt und Konditionen."
+      },
+      {
+        "name": "Material-, Arbeits- und Kostenbedarf kalkulieren und Kostenvoranschläge berechnen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Klassische Branchen- und Kalkulationssoftware berechnet die Mengen und Preise aus Aufmass und Artikelstamm, etwa Stoffverbrauch und Bodenbeläge. Ein LLM ist dafür nicht nötig."
+      },
+      {
+        "name": "Entwürfe der Kundschaft präsentieren und Änderungswünsche besprechen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Präsentation und Abstimmung finden persönlich statt und beruhen auf Überzeugung und Beziehung."
+      },
+      {
+        "name": "Stoffe, Möbel und Material bei Lieferanten bestellen und Arbeiten mit Handwerkern koordinieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Telefonische und persönliche Absprachen mit Lieferanten und Handwerkern sowie Terminabstimmung auf der Baustelle dominieren. Die Bestellungen über Lieferantenportale sind bereits Routine, und KI spart hier keine 50 %."
+      },
+      {
+        "name": "Vorhänge, Polster und Dekorationen anfertigen, montieren und Räume vor Ort einrichten",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handwerks- und Montagearbeit in Werkstatt und Kundenräumen. Robotik ist dafür nicht in relevantem Umfang verfügbar."
+      },
+      {
+        "name": "Trends, neue Materialien und Referenzbilder recherchieren und das Portfolio pflegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Recherche-Agenten und Bildbearbeitung bei Messe- und Lieferantenrecherche sowie Portfoliopflege wirklich 50 % sparen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten fassen Trends und Produktinformationen zusammen, KI-Bildbearbeitung und Textgenerierung helfen beim Portfolio. Die Person kuratiert und gestaltet weiterhin selbst."
+      },
+      {
+        "name": "Mitarbeitende und Lernende anleiten und Arbeiten im Team verteilen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung und Anleitung in Präsenz."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommen wird eine Raumgestalterin bzw. ein Innendekorateur (Sekundär II) in einem Schweizer Innendekorations-KMU, das Beratung, Konzept und Ausführung abdeckt. Die ESCO-Beschreibung betont eher die gestalterisch-planende Innenarchitektur. Der Beruf ist in der Schweiz heterogen: Er reicht von handwerklich geprägten Innendekorateur/innen bis zu planerisch tätigen Raumgestalter/innen. Grenzfälle sind die Visualisierung mit Bildgeneratoren sowie die Trendrecherche und Portfoliopflege.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Erstellung von Moodboards und Raumvisualisierungen durch Bildgeneratoren sowie Offert- und Korrespondenztexte per Chat-LLM. Bei der Trend- und Materialrecherche helfen Recherche-Agenten nur unterstützend.",
+      "begruendung": "Rund ein Fünftel der Arbeitszeit ist exponiert, meist delegierend: Die KI erzeugt Varianten und Texte, die Fachperson steuert, wählt aus und prüft jedes Ergebnis. Beratung vor Ort, Aufmass, Präsentation und die handwerkliche Ausführung bleiben beim Menschen. In der Schweiz bremsen vor allem die kleinen Betriebsgrössen und die persönliche Kundenbeziehung die Einführung, weniger die Regulierung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

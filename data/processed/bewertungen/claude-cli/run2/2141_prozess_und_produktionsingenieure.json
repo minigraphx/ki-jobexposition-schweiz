@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "0e327a3afb8898fb268c1393c525e5b3d0cdb07ff561c66836fd87cadc164a24",
+    "isco_code": "2141",
+    "beruf": "Prozess- und Produktionsingenieure",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:32:12+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 39509,
+      "output_tokens": 4817,
+      "api_aequivalent_usd": 0.1042498
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 39509,
+        "output_tokens": 4817,
+        "output_tokens_details": {
+          "thinking_tokens": 1392
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1042498
+      }
+    ],
+    "request_ids": [
+      "9628e872-9d9e-4aad-808f-d70c28e01751"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2141",
+    "beruf": "Prozess- und Produktionsingenieure",
+    "taetigkeiten": [
+      {
+        "name": "Produktions- und Prozessdaten (OEE, Ausschuss, Zykluszeiten) auswerten und Schwachstellen identifizieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Werkzeug mit Code-Ausführung bereinigt exportierte MES-/SPC-Daten, rechnet und visualisiert Auswertungen; die Ingenieurin gibt Fragestellung und Prozesswissen vor und prüft jede Auswertung auf Plausibilität. MES-Dashboards liefern nur Standard-KPIs, die eigentliche Analyse bleibt Handarbeit → P0."
+      },
+      {
+        "name": "Prozesse in der Fertigung vor Ort beobachten, Zeitaufnahmen machen und Störungen an Anlagen untersuchen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz am Shopfloor und Untersuchung an der Maschine; der Wert liegt in der Beobachtung vor Ort."
+      },
+      {
+        "name": "Technische Verbesserungslösungen und Lean-Massnahmen (Layout, Materialfluss, Rüstprozesse) konzipieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Lösungsfindung beruht auf implizitem Anlagen- und Betriebswissen und Abstimmung; LLM-Ideen sparen keine 50 % der Zeit."
+      },
+      {
+        "name": "Wirtschaftlichkeitsrechnungen und Investitionsanträge für Anlagen und Projekte erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ingenieur liefert Kosten, Mengen und Annahmen als Text/Tabelle, LLM erstellt Rechnung (Payback, NPV) und Antragstext; jede Annahme und Zahl wird geprüft."
+      },
+      {
+        "name": "Vorrichtungen, Anlagenlayouts und Konstruktionspläne in CAD anpassen sowie Zeichnungen prüfen und freigeben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative Funktionen in CAD-Software reichen 2026 für präzise, fertigungsgerechte Geometrie und verantwortete Freigaben nicht aus, um 50 % zu sparen."
+      },
+      {
+        "name": "Arbeitspläne, Arbeitsanweisungen, FMEA und Prozess-/Validierungsdokumentation verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM erstellt aus Stichworten, Vorlagen und bestehenden Dokumenten die Entwürfe; der Ingenieur prüft jede Anweisung fachlich und gibt sie im QM-System frei. In GMP-/Medtech-Betrieben verlangen Validierung und Dokumentenlenkung zusätzliche Kontrollen."
+      },
+      {
+        "name": "Neue Produkte und Anlagen in die Fertigung einführen, Versuche und Inbetriebnahmen begleiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Arbeit an der Anlage mit Testläufen, Einstellungen und Abstimmung vor Ort."
+      },
+      {
+        "name": "Mit Produktion, Instandhaltung, Qualität und Lieferanten abstimmen, Projektsitzungen leiten und Mitarbeitende schulen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zwischenmenschliche Abstimmung, Führung und Schulung in Präsenz."
+      },
+      {
+        "name": "Projektstatusberichte, Präsentationen und Korrespondenz für Management und Partner erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM formuliert Berichte und Folientexte aus Stichworten und Zahlen; die Ingenieurin prüft Aussagen und passt sie an."
+      },
+      {
+        "name": "Abweichungs- und 8D-Berichte zu Qualitätsproblemen dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Notizen und Analyseergebnissen erstellt das LLM den strukturierten Bericht; die Ursachenanalyse selbst wurde vorher vom Menschen gemacht, und jeder Bericht wird fachlich geprüft."
+      },
+      {
+        "name": "Fertigungsverfahren und Maschinen recherchieren sowie Lieferantenangebote vergleichen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent fasst Quellen zusammen, und die Dokumentenextraktion stellt PDF-Angebote in eine Vergleichstabelle; der Ingenieur prüft Quellen und Angaben bei jedem Vergleich."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Prozess-/Produktionsingenieur/in FH/ETH in einem Industriebetrieb (MEM-, Medtech- oder Pharmaindustrie), mit gemischter Arbeit zwischen Büro und Shopfloor. Der ESCO-Input ist knapp; die Zeitanteile sind grob aus dem typischen Arbeitsalltag geschätzt. Grenzfälle sind die Datenanalyse (wie stark die Interpretation dominiert) und die CAD-Arbeit, bei der generative Funktionen schnell besser werden.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Datenauswertungen (durch Analyse-Werkzeuge mit Code-Ausführung), Prozessdokumentation, Berichte, Wirtschaftlichkeitsrechnungen und Recherche/Angebotsvergleich (durch Chat-LLM, Recherche-Agenten und Dokumentenextraktion); Shopfloor-Arbeit, Inbetriebnahmen, Lösungsfindung und CAD-Konstruktion bleiben beim Menschen.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit ist exponiert, durchwegs delegierend: Die KI erstellt Auswertungen, Dokumente und Berichte, die Ingenieurin oder der Ingenieur prüft jedes Ergebnis fachlich. In GMP- und Medtech-Betrieben bremsen Validierungs- und Dokumentenlenkungspflichten sowie Vorgaben zum Datenschutz und zu Cloud-Diensten die Einführung; in KMU der MEM-Industrie ist es eher eine Frage der Gewohnheit und der Datenexporte aus MES/ERP.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

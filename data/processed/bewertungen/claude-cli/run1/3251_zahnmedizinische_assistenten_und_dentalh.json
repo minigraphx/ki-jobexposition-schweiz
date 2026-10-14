@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "6c5a0ac84f787e8f674618d0610172fce1c7e9c922d310302c99cfc9415e4cf0",
+    "isco_code": "3251",
+    "beruf": "Zahnmedizinische Assistenten und Dentalhygieniker",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:25:30+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4774,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5066,
+      "api_aequivalent_usd": 0.1468502
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4774,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5066,
+        "output_tokens_details": {
+          "thinking_tokens": 1499
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4774,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1468502
+      }
+    ],
+    "request_ids": [
+      "0832c4f8-538b-4154-9f7b-c4eb144d06e3"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3251",
+    "beruf": "Zahnmedizinische Assistenten und Dentalhygieniker",
+    "taetigkeiten": [
+      {
+        "name": "Zahnärztin/Zahnarzt am Behandlungsstuhl assistieren: Instrumente anreichen, absaugen, Material anmischen, Patient beobachten",
+        "zeitanteil_pct": 35,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit in Echtzeit direkt am Patienten, oft mit ängstlichen Patienten. Es gibt keine Assistenzrobotik in relevantem Umfang."
+      },
+      {
+        "name": "Behandlungszimmer und Patienten für Eingriffe vorbereiten und nachbereiten (Tray-Setup, Abdecken, Lagerung)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Vorbereitung vor Ort und persönliche Betreuung des Patienten."
+      },
+      {
+        "name": "Instrumente aufbereiten: reinigen, desinfizieren, verpacken, sterilisieren und Arbeitsplatz desinfizieren",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Hygienearbeit. Thermodesinfektor und Autoklav sind bereits Standard; die verbleibende Arbeit (Sortieren, Kontrollieren, Verpacken, Flächendesinfektion) ist manuell."
+      },
+      {
+        "name": "Röntgenaufnahmen (Bissflügel, Einzelbilder, OPT) anfertigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dazu gehören das Positionieren von Patient und Sensor sowie das Auslösen unter Strahlenschutz, also physische Arbeit am Patienten."
+      },
+      {
+        "name": "Abformungen und Intraoralscans für Modelle und Provisorien herstellen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Arbeit im Mund des Patienten. Auch der Scanner muss von Hand geführt werden."
+      },
+      {
+        "name": "Patienten in Mundhygiene instruieren und zur Prävention beraten",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Instruktion mit praktischem Vorzeigen am Patienten, also Präsenztätigkeit."
+      },
+      {
+        "name": "Patienten am Empfang begrüssen, Personalien aufnehmen und Anliegen klären",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönlicher Kontakt vor Ort. Digitale Anamnese-Formulare entlasten nur einen kleinen Teil."
+      },
+      {
+        "name": "Termine telefonisch und per E-Mail vereinbaren, verschieben und bestätigen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unsicher ist, wie gut Voicebots Schweizerdeutsch am Telefon verstehen und wie viele Anrufe medizinische Triage brauchen (z. B. Schmerzfälle); E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Voicebot und E-Mail-Assistent mit Zugriff auf die Agenda der Praxissoftware buchen Standardtermine. Die Dentalassistentin übernimmt nur weitergeleitete Spezialfälle. Online-Buchungstools (klassische Software) decken heute weniger als die Hälfte ab."
+      },
+      {
+        "name": "Zahnbefunde und Behandlungsschritte nach Diktat der Zahnärztin in der Praxissoftware dokumentieren",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar ist, ob Spracherkennung mit Zahnschema-Integration für schweizerdeutsche Diktate während der Behandlung zuverlässig genug ist; E0 ist ebenfalls plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracheingabe mit KI-Funktion in der Praxissoftware füllt Zahnstatus und Behandlungseintrag aus. Die Assistentin bzw. die Zahnärztin prüft jeden Eintrag. Hemmnis: Patientendaten und Berufsgeheimnis."
+      },
+      {
+        "name": "Leistungen nach Zahnarzttarif erfassen, Rechnungen und Kostenvoranschläge erstellen, Zahlungen überwachen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Tarifabrechnung, Kostenvoranschlag, Mahnlauf und Zahlungsabgleich laufen über die klassische Praxis- und Abrechnungssoftware; ein LLM ist nicht nötig."
+      },
+      {
+        "name": "Korrespondenz verfassen: Überweisungen, Berichte an Versicherer/IV, Patienteninformationen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM erstellt Briefe und Infotexte aus Stichworten und kopierten Falldaten. Die Assistentin prüft jedes Schreiben inhaltlich, die Zahnärztin unterschreibt."
+      },
+      {
+        "name": "Verbrauchsmaterial kontrollieren, bestellen und einräumen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bestandskontrolle und Einräumen sind überwiegend physisch. Die Bestellung über Lieferantenportale braucht nur wenig Zeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Annahme: Dentalassistentin EFZ in einer privaten Zahnarztpraxis (KMU). Die Dentalhygienikerin HF mit eigenständiger Parodontalbehandlung gehört auch zu ISCO 3251, ist aber weniger häufig; ihre Exposition wäre ähnlich gering. Die ESCO-Kompetenzen passen gut. Grenzfälle sind die telefonische Terminvereinbarung per Voicebot und die Befunddokumentation per Spracheingabe, beide wegen Schweizerdeutsch unsicher.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur kleine administrative Anteile: telefonische Terminvereinbarung (Voicebot), Befunddokumentation nach Diktat (Spracherkennung in der Praxissoftware) und Korrespondenz (Chat-LLM). Die Kernarbeit am Behandlungsstuhl ist nicht exponiert.",
+      "begruendung": "Nur rund 15 % der Arbeitszeit sind exponiert. Die Terminvereinbarung wäre ersetzend, Dokumentation und Korrespondenz delegierend, weil die Assistentin oder die Zahnärztin jeden Eintrag prüft. In der Schweiz bremsen Berufsgeheimnis und Datenschutz bei Patientendaten, die Erwartung der Patienten an persönlichen Telefonkontakt in Mundart sowie die vielen kleinen Einzelpraxen mit begrenztem Einführungsaufwand.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

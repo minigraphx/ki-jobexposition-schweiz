@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "aa2631486e66df9b851adb7519a7da95f72676bdf8f6aaa5e5edaa73bb7efc5c",
+    "isco_code": "7412",
+    "beruf": "Automatiker und verwandte Berufe",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:51:53+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3507,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4575,
+      "api_aequivalent_usd": 0.12689419999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3507,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4575,
+        "output_tokens_details": {
+          "thinking_tokens": 1370
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3507,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.12689419999999998
+      }
+    ],
+    "request_ids": [
+      "f88d140d-51c7-413b-8f71-7a2652a33cd6"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "7412",
+    "beruf": "Automatiker und verwandte Berufe",
+    "taetigkeiten": [
+      {
+        "name": "Schaltschränke und Steuerungen mechanisch aufbauen und verdrahten",
+        "zeitanteil_pct": 22,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handarbeit (Montageplatten bestücken, Drähte konfektionieren und anschliessen). Automaten für die Drahtkonfektion gibt es zwar, sie übernehmen aber keine 50 % der Verdrahtungszeit im typischen KMU-Schaltanlagenbau."
+      },
+      {
+        "name": "Sensoren, Aktoren, Antriebe und Kabel an Maschinen und Anlagen montieren und anschliessen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Installation vor Ort an der Anlage; keine verfügbare Robotik in relevantem Umfang."
+      },
+      {
+        "name": "SPS- und Steuerungsprogramme erstellen und anpassen (z. B. im TIA Portal)",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Copilots in der Engineering-Software (z. B. Industrial Copilot) bzw. LLMs erzeugen SCL-Code, Bausteine und Kommentare aus Vorgaben; der Automatiker spezifiziert, prüft jede Änderung und testet an der Anlage. Wegen Sicherheitsrelevanz und Inbetriebnahme-Tests bleibt viel Restzeit."
+      },
+      {
+        "name": "Anlagen in Betrieb nehmen: Funktionen testen, messen, parametrieren und kalibrieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Arbeit an der realen Anlage mit Messgeräten und Sicherheitsprüfungen; Präsenz und Handlung vor Ort dominieren."
+      },
+      {
+        "name": "Störungen an Maschinen und Anlagen diagnostizieren und beheben",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fehlersuche erfolgt vor Ort mit Messungen, Online-Diagnose und Austausch von Komponenten; ein LLM kann Hinweise zu Fehlercodes liefern, spart aber keine 50 % der Zeit."
+      },
+      {
+        "name": "Elektromechanische Anlagen präventiv warten und defekte Komponenten ersetzen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Instandhaltungsarbeit an Maschinen; keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Elektroschemas lesen und Änderungen im CAE-System (z. B. EPLAN) nachführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Planlesen ist an die Arbeit vor Ort gebunden; das Nachführen von Änderungen in der CAE-Software ist präzise Einzelarbeit, bei der generative KI heute kaum 50 % spart."
+      },
+      {
+        "name": "Mess-, Prüf- und Inbetriebnahmeprotokolle sowie Servicerapporte erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Messwerte und Beobachtungen per Spracheingabe, Foto oder Formular-App; die App erstellt Protokoll bzw. Rapport, der Automatiker prüft und unterschreibt jedes Dokument. Lärm und Dialekt erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Anlagendokumentation und Bedienhinweise für Kunden verfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten und Funktionsbeschrieb erstellt ein Chat-LLM die Texte; der Automatiker prüft jede Beschreibung fachlich gegen die Anlage."
+      },
+      {
+        "name": "Material und Komponenten gemäss Stückliste bereitstellen und kontrollieren",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physisches Rüsten und Sichtprüfen von Material; Bestellwesen läuft über klassische ERP-Software beim Einkauf."
+      },
+      {
+        "name": "Betreiber und Bedienpersonal vor Ort instruieren und sich mit Kunden absprechen",
+        "zeitanteil_pct": 2,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Instruktion an der Anlage, Präsenztätigkeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Automatiker/in EFZ in einem Industrie-KMU (Schaltanlagen- bzw. Maschinenbau) mit Montage, Verdrahtung, Inbetriebnahme und Service. Die ESCO-Beschreibung (Elektromechaniker) deckt die SPS-Programmierung und den Schaltschrankbau des CH-Berufs nur teilweise ab; sie wurden aus Berufswissen ergänzt. Der grösste Grenzfall ist die SPS-Programmierung (Zeitanteil je Betrieb stark unterschiedlich, und die Copilot-Qualität für grafische Sprachen ist unsicher).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die SPS-Programmierung (KI-Copilots in der Engineering-Software) sowie Protokolle, Rapporte und Anlagendokumentation (Spracheingabe, Formular-Apps, Chat-LLM); die Montage-, Verdrahtungs- und Inbetriebnahmearbeit selbst ist nicht betroffen.",
+      "begruendung": "Nur knapp ein Fünftel der Arbeitszeit ist exponiert, durchwegs im delegierenden Modus: Die KI erzeugt Code oder Dokumente, der Automatiker prüft jede Ausgabe und testet sie an der realen Anlage. Der Kern des Berufs bleibt physische Arbeit vor Ort. Bremsend wirken Sicherheitsanforderungen an Steuerungen, die Verbreitung von Copilot-Lizenzen in KMU sowie Lärm und Dialekt bei der Spracheingabe.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

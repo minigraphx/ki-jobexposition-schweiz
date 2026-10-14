@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "08d1d57c896b855eb06d9b23cb8630662156f5a6f31eb7e9ca5b262a3aa7bd2f",
+    "isco_code": "2330",
+    "beruf": "Sekundarlehrer/in",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T06:39:44+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "cache_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 19492
+        }
+      ],
+      "cached_content_token_count": 19492,
+      "candidates_token_count": 143,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 143
+        }
+      ],
+      "prompt_token_count": 23094,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 23094
+        }
+      ],
+      "thoughts_token_count": 4785,
+      "total_token_count": 28022
+    },
+    "usage_je_versuch": [
+      {
+        "cache_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 19492
+          }
+        ],
+        "cached_content_token_count": 19492,
+        "candidates_token_count": 143,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 143
+          }
+        ],
+        "prompt_token_count": 23094,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 23094
+          }
+        ],
+        "thoughts_token_count": 4785,
+        "total_token_count": 28022
+      }
+    ],
+    "request_ids": [
+      "nrnOat2zKqDpz7IPm8ufkAQ"
+    ],
+    "versuche": 1,
+    "status": "fehlgeschlagen",
+    "fehler": [
+      "Versuch 1: (root): 'unsicherheit' is a required property; (root): 'kommentar' is a required property; (root): 'zusammenfassung' is a required property; taetigkeiten: ['name'] is too short; taetigkeiten/0: 'name' is not of type 'object'"
+    ],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "custom_id": "r1-2330_sekundarlehrer_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": "validierung",
+    "probleme": [
+      "(root): 'unsicherheit' is a required property",
+      "(root): 'kommentar' is a required property",
+      "(root): 'zusammenfassung' is a required property",
+      "taetigkeiten: ['name'] is too short",
+      "taetigkeiten/0: 'name' is not of type 'object'"
+    ],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": null,
+  "rohantwort": "{\"isco_code\":\"2330\",\"beruf\":\"Sekundarlehrer/in\",\"taetigkeiten\":[\n    \"name\",\n  \"zeitanteil_pct\",\n  \"stufe\",\n  \"modus\",\n  \"restzeit_mensch\",\n  \"physisch_automatisierbar\",\n  \"p_art\",\n  \"sicherheit\",\n  \"sicherheit_begruendung\",\n  \"ch_hemmnis\",\n  \"begruendung\"\n  ], \"taetigkeiten\": [\n    \"name\"\n    ]\n}"
+}

@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "65bede2c536491255aa8c8262fb6a9d7ccc387679bcfc6f07ef15af991c713a6",
+    "isco_code": "2422",
+    "beruf": "Versicherungsexperte/-expertin",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:08:58+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3839,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4545,
+      "api_aequivalent_usd": 0.1289502
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3839,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4545,
+        "output_tokens_details": {
+          "thinking_tokens": 1156
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3839,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1289502
+      }
+    ],
+    "request_ids": [
+      "8e11ebe9-5471-4cb1-9bbe-e2c402b4f1dd"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2422",
+    "beruf": "Versicherungsexperte/-expertin",
+    "taetigkeiten": [
+      {
+        "name": "Antragsunterlagen, Finanzberichte, Inspektions- und Schadenhistorien sichten und Risikodaten ins Underwriting-System übertragen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumentenverarbeitung mit LLM extrahiert Daten aus heterogenen PDFs/Scans und befüllt das System; der Mensch bearbeitet markierte Ausnahmen und Lücken. Heterogene Unterlagen sind mit klassischer Formularerkennung allein nicht zu ≥50 % abzudecken."
+      },
+      {
+        "name": "Risiko eines Firmenkunden analysieren (Finanzlage, Schadenverlauf, Risikoberichte, Branche) und beurteilen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Expertin beurteilt das Risiko selbst; Analyse- und Recherche-Werkzeuge fassen Jahresabschlüsse und Berichte zusammen, berechnen Kennzahlen und markieren Auffälligkeiten. Nahe an der 50 %-Schwelle."
+      },
+      {
+        "name": "Zeichnungsentscheid treffen: Antrag annehmen, ablehnen oder Konditionen, Selbstbehalte und Ausschlüsse festlegen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ermessensentscheid mit Zeichnungskompetenz und Verantwortung für das Risiko; KI spart beim Entscheid selbst keine 50 %."
+      },
+      {
+        "name": "Prämie im Tarif- bzw. Rating-Tool berechnen und Tarifierung plausibilisieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Tarif- und Rating-Engines (klassische Software) übernehmen die Berechnung weitgehend; kein LLM nötig."
+      },
+      {
+        "name": "Offerten, Policen und Sonderbedingungen/Klauseln für Firmenkunden formulieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Offerttext und Klauseln aus Konditionen und Musterbedingungen; die Expertin prüft jede Formulierung rechtlich und fachlich, da haftungsrelevant."
+      },
+      {
+        "name": "Underwriting-Memo bzw. Risikobericht zur Dokumentation und Antragstellung an höhere Zeichnungsinstanz verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus eingefügten Fakten und Stichworten erstellt das LLM den Bericht; die Expertin prüft jede Einschätzung inhaltlich und ergänzt."
+      },
+      {
+        "name": "Konditionen mit Brokern und Firmenkunden in Meetings und am Telefon verhandeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlung und Beziehungspflege mit Brokern sind Präsenz- und Beziehungsarbeit."
+      },
+      {
+        "name": "Schriftliche Korrespondenz mit Brokern und Kunden führen (Rückfragen, Unterlagen nachfordern, Bestätigungen)",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Standard-E-Mails aus Stichworten bzw. Falldaten erstellt das LLM, auch in FR/IT; die Expertin gibt nach kurzer Sichtung frei."
+      },
+      {
+        "name": "Versicherungsbestand bei Erneuerungen und Portfolio-Reviews auswerten (Schadenquoten, Sanierungsbedarf)",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Datenanalyse mit Code-Ausführung erstellt Auswertungen und Grafiken aus Bestandsexporten; die Expertin interpretiert und leitet Massnahmen selbst ab."
+      },
+      {
+        "name": "Zeichnungsrichtlinien, Produktbedingungen und interne Fachunterlagen erarbeiten und aktualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Inhaltliche Abstimmung mit Aktuariat, Recht und Produktmanagement könnte den Grossteil der Zeit ausmachen; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "LLM entwirft Richtlinien- und Bedingungstexte aus Vorgaben und Vorversionen; die Expertin prüft jede Fassung fachlich; Dokumente oft parallel in DE/FR/IT."
+      },
+      {
+        "name": "Risikobesichtigungen bei Firmenkunden vor Ort durchführen und Massnahmen besprechen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz im Betrieb des Kunden und persönliches Gespräch."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: dipl. Versicherungsexperte/-expertin (HFP) als Underwriter/in im Firmenkunden-Sachgeschäft bei einem Schweizer Versicherer. Die ESCO-Zuordnung (Underwriter, mit Darlehens- und Immobilienelementen) passt nur teilweise; Kredit-/Darlehensaufgaben wurden als ESCO-Rauschen weggelassen. Grenzfälle sind die Risikoanalyse (nahe der 50 %-Schwelle) und die Arbeit an den Richtlinien.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Erfassung von Antragsunterlagen (Dokumentenerkennung), das Formulieren von Offerten, Klauseln, Memos und Korrespondenz (Chat-LLM) sowie die Risiko- und Bestandsanalyse (KI-Analysewerkzeuge), nicht aber Zeichnungsentscheid, Verhandlung und Besichtigung.",
+      "begruendung": "Rund 60 % der Arbeitszeit sind exponiert, überwiegend delegierend oder unterstützend: Die KI entwirft Texte und Analysen, die Expertin prüft und verantwortet jedes Ergebnis; ersetzend sind nur Datenerfassung und Standardkorrespondenz. Schweizer Versicherer führen KI-Werkzeuge zügig ein, Datenschutz-, Cloud- und FINMA-Governance-Anforderungen sowie mehrsprachige Bedingungswerke bremsen die Umsetzung jedoch etwas.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

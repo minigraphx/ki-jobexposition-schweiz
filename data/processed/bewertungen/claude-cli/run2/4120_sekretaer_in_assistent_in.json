@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "5de4c7d5dba29161b0fedd66ddb40117719ff02cbc79ea249d907813e8d7ea1b",
+    "isco_code": "4120",
+    "beruf": "Sekretär/in / Assistent/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T01:00:07+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3415,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5578,
+      "api_aequivalent_usd": 0.1462182
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3415,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5578,
+        "output_tokens_details": {
+          "thinking_tokens": 1988
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3415,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1462182
+      }
+    ],
+    "request_ids": [
+      "1f0b9747-cc90-4ae7-8a39-9f9ff3e88b78"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "4120",
+    "beruf": "Sekretär/in / Assistent/in",
+    "taetigkeiten": [
+      {
+        "name": "Telefonanrufe entgegennehmen, Anliegen klären, weiterverbinden und Telefonnotizen erfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Ein Voicebot mit Kalender- und Systemzugriff könnte Standardanrufe übernehmen; wegen vielfältiger Anliegen und Schweizerdeutsch am Telefon ist E2 (ersetzend, 10-30) aber fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Sekretariatsanrufe sind sehr heterogen (Triage, Rückfragen, Beziehungspflege) und meist in Mundart; Voicebots erreichen hier nach bester Einschätzung noch keine 50 % Zeitersparnis bei gleicher Qualität. Telefonanlagen/IVR ersetzen keine 50 % der Zeit."
+      },
+      {
+        "name": "Geschäftliche E-Mails und Briefe nach Vorgaben bzw. Stichworten verfassen und beantworten",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Reiner Text: Das LLM erstellt Korrespondenz aus Stichworten oder eingefügter Anfrage, die Assistentin sichtet kurz und gibt frei. Standardtexte erfordern keine fachliche Einzelprüfung."
+      },
+      {
+        "name": "Terminkalender führen sowie Termine und Sitzungen mit mehreren Beteiligten vereinbaren und verschieben",
+        "zeitanteil_pct": 12,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Assistenten in Outlook/M365 die Koordination inkl. Prioritäten der Vorgesetzten und telefonischer Absprachen wirklich um 50 % verkürzen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Kalenderintegrierte KI-Assistenten schlagen Termine vor, entwerfen Einladungen und Verschiebungsmails; die Assistentin steuert nach Prioritäten und prüft jeden Vorschlag. Klassische Terminumfragetools ersetzen keine 50 % der Zeit."
+      },
+      {
+        "name": "Sitzungen und Anlässe logistisch vorbereiten, Räume einrichten, Catering organisieren und Besucher empfangen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Arbeit vor Ort und persönlicher Empfang; Präsenztätigkeit."
+      },
+      {
+        "name": "Sitzungsprotokolle und Aktennotizen erstellen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Transkription und KI-Zusammenfassung (oder Ausformulierung aus Stichwortnotizen) erstellen das Protokoll; wegen Schweizerdeutsch in Gruppengesprächen prüft und korrigiert die Assistentin jedes Protokoll inhaltlich. Hemmnis: Amtsgeheimnis/Datenschutz bei Aufzeichnungen in der Verwaltung."
+      },
+      {
+        "name": "Ein- und Ausgangspost öffnen, sortieren, verteilen, frankieren und Papierablage führen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer Umgang mit Papierpost und Akten. Frankiermaschinen und externe Scan-Dienste decken in typischen Betrieben keine 50 % dieser Zeit ab."
+      },
+      {
+        "name": "Digitale Dokumente benennen, klassifizieren und in Geschäftsverwaltung/DMS ablegen",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Funktionen im DMS erkennen Dokumentart, extrahieren Metadaten und schlagen Ablageort vor; die Assistentin bearbeitet nur unklare Fälle. Hemmnis: Aktenführungs- und Archivvorschriften in der Verwaltung."
+      },
+      {
+        "name": "Adresslisten, Datenbanken und Excel-Listen pflegen sowie Formulare ausfüllen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Extraktion aus E-Mails/PDFs und KI in Excel/Office übertragen Daten und füllen Formulare vor; die Assistentin kontrolliert jede Mutation."
+      },
+      {
+        "name": "Dokumente, Präsentationen und Berichte in Word und PowerPoint erstellen und formatieren",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in der Office-Suite erstellen Präsentationen und Dokumente aus Vorlagen und Text; die Assistentin prüft jede Fassung und korrigiert das Layout nach CI."
+      },
+      {
+        "name": "Interne Mitteilungen, Rundschreiben und Intranet-Beiträge verfassen und verteilen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Das LLM entwirft und übersetzt Mitteilungen aus Stichworten; die Assistentin prüft jede Mitteilung vor dem Versand. Mitteilungen müssen in mehrsprachigen Organisationen parallel in mehreren Landessprachen erscheinen."
+      },
+      {
+        "name": "Absenzen erfassen, Büromaterial bestellen und Reisen für Mitarbeitende buchen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zeiterfassungs-/HR-Software mit Self-Service, Bestellportale und Online-Buchungstools (klassische Software) übernehmen den Grossteil; das LLM bringt keinen relevanten zusätzlichen Nutzen."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Annahme: Sekretär/in in einer öffentlichen Verwaltung oder einem Dienstleistungs-KMU mit Microsoft-365-Umgebung und Geschäftsverwaltung/DMS. Der ESCO-Input passt gut. Die grössten Grenzfälle sind das Telefon (Voicebot und Mundart) und die Terminkoordination, die beide nahe an der 50-%-Schwelle liegen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Korrespondenz, Protokolle, digitale Ablage, Datenpflege, Dokumenterstellung und Terminkoordination, die Chat-LLMs, Transkription, DMS-Klassifikation und KI-Funktionen in der Office-Suite weitgehend übernehmen.",
+      "begruendung": "Rund 60 % der Arbeitszeit sind exponiert. Die KI arbeitet dabei überwiegend delegierend (die Assistentin prüft jedes Ergebnis), bei Standardkorrespondenz und Ablage auch ersetzend. Datenschutz und Amtsgeheimnis in der Verwaltung, Schweizerdeutsch in Sitzungen und am Telefon sowie mehrsprachige Mitteilungen bremsen die Umsetzung. Die physische Logistik, die Post und der persönliche Empfang bleiben beim Menschen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

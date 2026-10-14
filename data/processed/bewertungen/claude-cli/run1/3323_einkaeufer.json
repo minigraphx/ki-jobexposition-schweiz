@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "2da5245220864a14a9d38861abe71c1182f90e7c80a446ba07a81144fae958bf",
+    "isco_code": "3323",
+    "beruf": "Einkäufer",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:58:47+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3130,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5699,
+      "api_aequivalent_usd": 0.1463582
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3130,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5699,
+        "output_tokens_details": {
+          "thinking_tokens": 1969
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3130,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1463582
+      }
+    ],
+    "request_ids": [
+      "7ccb0ea3-d11c-4b71-b75f-ec97e68982d9"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3323",
+    "beruf": "Einkäufer",
+    "taetigkeiten": [
+      {
+        "name": "Bestellvorschläge prüfen und Bestellungen im ERP auslösen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Standardbeschaffung läuft über die Disposition im ERP (Bestellvorschläge, Mindestbestände, Kanban, E-Procurement-Kataloge). Das ist klassische Software, ein LLM ist dafür nicht nötig."
+      },
+      {
+        "name": "Auftragsbestätigungen, Liefertermine und Lieferantenrechnungen mit Bestellungen abgleichen und Abweichungen klären",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Dokumentenerkennung im ERP liest die Auftragsbestätigungen (PDF/E-Mail) aus und gleicht sie mit der Bestellung ab. Die Einkäuferin bearbeitet nur markierte Abweichungen. EDI gibt es in KMU nur mit wenigen Lieferanten, deshalb P0."
+      },
+      {
+        "name": "Anfragen und Ausschreibungsunterlagen (RFQ, Pflichtenheft) erstellen und an Lieferanten versenden",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus eingefügten Spezifikationen und Vorlagen entwirft ein Chat-LLM Anfrage, Pflichtenheft und Begleitschreiben, auch mehrsprachig. Die Einkäuferin prüft jede Ausschreibung fachlich auf technische und kommerzielle Anforderungen."
+      },
+      {
+        "name": "Eingegangene Offerten vergleichen und Angebotsvergleich erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Offerten in verschiedenen Formaten kommen als PDF. Die KI extrahiert Preise, Konditionen und Lieferbedingungen und erstellt eine Vergleichsmatrix mit Auffälligkeiten. Die Einkäuferin prüft jeden Vergleich gegen die Offerten und gewichtet selbst."
+      },
+      {
+        "name": "Neue Lieferanten und Bezugsquellen recherchieren und Longlists erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent mit Websuche erstellt Lieferantenlisten mit Profilen. Die Einkäuferin verifiziert jeden Eintrag, weil Fakten halluziniert sein können, und filtert die Liste."
+      },
+      {
+        "name": "Preise und Konditionen mit Lieferanten verhandeln",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlungen am Telefon oder persönlich verlangen Taktik, Ermessen und Beziehungsarbeit. Die KI kann nur bei der Vorbereitung helfen."
+      },
+      {
+        "name": "Lieferantengespräche, Jahresgespräche und Lieferantenbesuche durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bei dieser Beziehungspflege und den Besuchen vor Ort zählt die persönliche Präsenz."
+      },
+      {
+        "name": "Lieferantenleistung und Lieferantenrisiken beurteilen (Bewertung, Bonität, Compliance)",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die Ersparnis über die bereits klassisch berechneten Liefertreue-Kennzahlen hinaus 50 % erreicht. E0 ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Einkäuferin beurteilt jeden Lieferanten selbst. Recherche- und Analysewerkzeuge fassen News, Bonitätsinformationen und ERP-Kennzahlen zusammen und markieren Risiken."
+      },
+      {
+        "name": "Rahmen- und Lieferverträge entwerfen, gegen AGB prüfen und verwalten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein LLM entwirft Vertragsklauseln aus Vorlagen und gleicht Lieferanten-AGB mit den eigenen Einkaufsbedingungen ab. Die Einkäuferin prüft jeden Vertrag und klärt heikle Punkte mit dem Rechtsdienst. Die Fristenüberwachung ist klassische Software."
+      },
+      {
+        "name": "Korrespondenz mit Lieferanten führen (Terminmahnungen, Rückfragen, Reklamationen) und Preisänderungen intern kommunizieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM verfasst die E-Mails aus Stichworten bzw. Falldaten in DE, FR, IT oder EN. Die Einkäuferin sichtet sie kurz und versendet sie. Heikle Reklamationen schreibt sie selbst."
+      },
+      {
+        "name": "Bedarf mit internen Fachabteilungen klären und Einkaufsaktivitäten koordinieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Für die Abstimmung in Gesprächen und Sitzungen braucht es implizites Wissen über Produktion und Projekte."
+      },
+      {
+        "name": "Preistrends und Beschaffungsmarkt beobachten und Einkaufsberichte erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent fasst Marktinformationen zusammen, die Datenanalyse erstellt Auswertungen zum Einkaufsvolumen. Die Einkäuferin prüft und interpretiert jeden Bericht."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Einkäufer/in im operativen und taktischen Einkauf eines Schweizer KMU, mit ERP und mehrsprachigem Lieferantenkontakt. Der öffentliche Einkauf mit Submissionsrecht ist nicht im Fokus. Die ESCO-Beschreibung ist knapp, die Zeitanteile sind deshalb aus dem Berufsalltag geschätzt. Grenzfälle sind die Lieferantenbewertung und die Frage, wie stark die Bestellabwicklung schon klassisch automatisiert ist.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Offertvergleiche, Ausschreibungsunterlagen, Vertragsentwürfe, Lieferantenkorrespondenz, Auftragsbestätigungs-Abgleich und Marktrecherche: Chat-LLM, Dokumentenerkennung im ERP und Recherche-Agenten übernehmen sie weitgehend.",
+      "begruendung": "Rund 70 % der Arbeitszeit sind exponiert. Meist arbeitet die KI delegierend (die Einkäuferin prüft jeden Entwurf und jeden Vergleich), bei Korrespondenz und Belegabgleich ersetzend. Der Kern mit Verhandlungen, Lieferantenbeziehungen und interner Abstimmung bleibt beim Menschen. Wesentliche CH-Hemmnisse gibt es kaum. Die Umsetzung bremsen vor allem der Integrationsaufwand in KMU-ERP-Systemen und Datenschutzfragen bei Lieferantendaten.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "9a8fa26e549e88e15741d815f6a84f71f8f78df22f1ec847251c9cc3d94f0fca",
+    "isco_code": "3344",
+    "beruf": "Sekretariatsfachkräfte im Gesundheitswesen",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T06:39:44+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2528,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2528
+        }
+      ],
+      "prompt_token_count": 21583,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21583
+        }
+      ],
+      "thoughts_token_count": 7114,
+      "total_token_count": 31225
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2528,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2528
+          }
+        ],
+        "prompt_token_count": 21583,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21583
+          }
+        ],
+        "thoughts_token_count": 7114,
+        "total_token_count": 31225
+      }
+    ],
+    "request_ids": [
+      "nrnOauy_J7zi_uMP6aHG6Ag"
+    ],
+    "versuche": 1,
+    "status": "fehlgeschlagen",
+    "fehler": [
+      "Versuch 1: (root): Additional properties are not allowed ('\"haupt_risiko\":\"Das Erstellen von Arztberichten ab Diktat, die schriftliche Korrespondenz, die Zuordnung eingehender Befunde im KIS sowie die telefonische Anfrageannahme werden durch Spracherkennung, Chat-LLMs, Dokumentenextraktion und Telefonassistenten stark beschleunigt.\",,  \"begruendung\":\"Rund zwei Drittel der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die Technik durchwegs delegierend eingesetzt wird: Die KI erstellt Berichtsentwürfe, Korrespondenz, Formulareinträge und strukturierte Telefonnotizen, während die Sekretariatsfachkraft jedes Ergebnis aus Gründen der Patientensicherheit fachlich kontrolliert. Zusätzlich lassen sich Terminplanung und Tarifabrechnung durch klassische Praxis- und Kliniksoftware weitgehend automatisieren. Gebremst wird die Umsetzung in der Schweiz durch strenge Vorgaben beim Datenschutz und Berufsgeheimnis (revDSG), das Bedürfnis kranker Menschen nach persönlichem Kontakt sowie die Verständigung in Mundart und Fremdsprachen.\",,  \"zeitrahmen\":\"3-5 Jahre\"} }' was unexpected); taetigkeiten: ['{'] is too short; taetigkeiten/0: '{' is not of type 'object'; zusammenfassung: '{' is not of type 'object'"
+    ],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "custom_id": "r1-3344_sekretariatsfachkraefte_im_gesundheitswe",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": "validierung",
+    "probleme": [
+      "(root): Additional properties are not allowed ('\"haupt_risiko\":\"Das Erstellen von Arztberichten ab Diktat, die schriftliche Korrespondenz, die Zuordnung eingehender Befunde im KIS sowie die telefonische Anfrageannahme werden durch Spracherkennung, Chat-LLMs, Dokumentenextraktion und Telefonassistenten stark beschleunigt.\",,  \"begruendung\":\"Rund zwei Drittel der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die Technik durchwegs delegierend eingesetzt wird: Die KI erstellt Berichtsentwürfe, Korrespondenz, Formulareinträge und strukturierte Telefonnotizen, während die Sekretariatsfachkraft jedes Ergebnis aus Gründen der Patientensicherheit fachlich kontrolliert. Zusätzlich lassen sich Terminplanung und Tarifabrechnung durch klassische Praxis- und Kliniksoftware weitgehend automatisieren. Gebremst wird die Umsetzung in der Schweiz durch strenge Vorgaben beim Datenschutz und Berufsgeheimnis (revDSG), das Bedürfnis kranker Menschen nach persönlichem Kontakt sowie die Verständigung in Mundart und Fremdsprachen.\",,  \"zeitrahmen\":\"3-5 Jahre\"} }' was unexpected)",
+      "taetigkeiten: ['{'] is too short",
+      "taetigkeiten/0: '{' is not of type 'object'",
+      "zusammenfassung: '{' is not of type 'object'"
+    ],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": null,
+  "rohantwort": "{\"isco_code\":\"3344\",\"beruf\":\"Sekretariatsfachkräfte im Gesundheitswesen\",\"taetigkeiten\":[\n    \"{\",\n  \"\\\"name\\\":\\\"Arztberichte, Befunde und medizinische Korrespondenz ab Diktat oder Stichworten erstellen und formatieren\\\",\",\n  \"\\\"zeitanteil_pct\\\":20,\",\n  \"\\\"stufe\\\":\\\"E2\\\",\",\n  \"\\\"modus\\\":\\\"delegierend\\\",\",\n  \"\\\"restzeit_mensch\\\":\\\"10-30\\\",\",\n  \"\\\"physisch_automatisierbar\\\":\\\"P0\\\",\",\n  \"\\\"p_art\\\":null,\",\n  \"\\\"sicherheit\\\":\\\"hoch\\\",\",\n  \"\\\"sicherheit_begruendung\\\":null,\",\n  \"\\\"ch_hemmnis\\\":[\\\"regulatorisch\\\"],\",\n  \"\\\"begruendung\\\":\\\"Spracherkennung und LLM-gestützte Diktatfunktionen im KIS wandeln gesprochene Notizen oder Stichworte direkt in strukturierte Berichtsentwürfe um; die Sekretariatsfachkraft prüft jeden Bericht fachlich und sprachlich vor der Visierung durch die Ärztin oder den Arzt.\\\"\",\n  \"},\",\n  \"{\",\n  \"\\\"name\\\":\\\"Sprechstunden-, Untersuchungs- und Eingriffstermine im Praxis- oder Kliniksystem planen und umbuchen\\\",\",\n  \"\\\"zeitanteil_pct\\\":15,\",\n  \"\\\"stufe\\\":\\\"E0\\\",\",\n  \"\\\"modus\\\":null,\",\n  \"\\\"restzeit_mensch\\\":null,\",\n  \"\\\"physisch_automatisierbar\\\":\\\"P1\\\",\",\n  \"\\\"p_art\\\":\\\"software\\\",\",\n  \"\\\"sicherheit\\\":\\\"mittel\\\",\",\n  \"\\\"sicherheit_begruendung\\\":null,\",\n  \"\\\"ch_hemmnis\\\":[],\",\n  \"\\\"begruendung\\\":\\\"Die Terminvergabe lässt sich zu über 50 % durch klassische Online-Terminbuchungsportale und regelbasierte Ressourcenplanung in der Praxis- oder Kliniksoftware automatisieren, ohne dass dafür generative KI erforderlich ist.\\\"\",\n  \"},\",\n  \"{\",\n  \"\\\"name\\\":\\\"Telefonische Anfragen von Patienten und Zuweisern entgegennehmen, Anliegen strukturieren und Auskünfte erteilen\\\",\",\n  \"\\\"zeitanteil_pct\\\":15,\",\n  \"\\\"stufe\\\":\\\"E2\\\",\",\n  \"\\\"modus\\\":\\\"delegierend\\\",\",\n  \"\\\"restzeit_mensch\\\":\\\"30-50\\\",\",\n  \"\\\"physisch_automatisierbar\\\":\\\"P0\\\",\",\n  \"\\\"p_art\\\":null,\",\n  \"\\\"sicherheit\\\":\\\"tief\\\",\",\n  \"\\\"sicherheit_begruendung\\\":\\\"Die Erkennungsqualität bei Schweizerdeutsch, starken Akzenten und emotional belasteten Patientinnen und Patienten am Telefon ist unsicher, sodass E0 ebenso plausibel ist.\\\",\",\n  \"\\\"ch_hemmnis\\\":[\\\"vertrauen\\\",\\\"mehrsprachigkeit\\\"],\",\n  \"\\\"begruendung\\\":\\\"KI-Telefonassistenten nehmen Standardanliegen (Terminwünsche, Rezeptbestellungen, Rückrufbitten) auf und legen strukturierte Tickets im System an; die Fachkraft prüft jedes Anliegen auf medizinische Dringlichkeit und bearbeitet komplexe Gespräche selbst.\\\"\",\n  \"},\",\n  \"{\",\n  \"\\\"name\\\":\\\"Patientinnen und Patienten am Empfang begrüssen, Stammdaten aufnehmen und Fragen vor Ort beantworten\\\",\",\n  \"\\\"zeitanteil_pct\\\":10,\",\n  \"\\\"stufe\\\":\\\"E0\\\",\",\n  \"\\\"modus\\\":null,\",\n  \"\\\"restzeit_mensch\\\":null,\",\n  \"\\\"physisch_automatisierbar\\\":\\\"P0\\\",\",\n  \"\\\"p_art\\\":null,\",\n  \"\\\"sicherheit\\\":\\\"hoch\\\",\",\n  \"\\\"sicherheit_begruendung\\\":null,\",\n  \"\\\"ch_hemmnis\\\":[],\",\n  \"\\\"begruendung\\\":\\\"Unmittelbare Präsenz- und Beziehungstätigkeit am Schalter, bei der persönlicher Empfang, Beruhigung und Orientierung im Vordergrund stehen.\\\"\",\n  \"},\",\n  \"{\",\n  \"\\\"name\\\":\\\"Elektronische Behandlungsakten pflegen sowie eingehende Befunde, Laborberichte und Zuweisungen im KIS erfassen\\\",\",\n  \"\\\"zeitanteil_pct\\\":10,\",\n  \"\\\"stufe\\\":\\\"E2\\\",\",\n  \"\\\"modus\\\":\\\"delegierend\\\",\",\n  \"\\\"restzeit_mensch\\\":\\\"10-30\\\",\",\n  \"\\\"physisch_automatisierbar\\\":\\\"P0\\\",\",\n  \"\\\"p_art\\\":null,\",\n  \"\\\"sicherheit\\\":\\\"mittel\\\",\",\n  \"\\\"sicherheit_begruendung\\\":null,\",\n  \"\\\"ch_hemmnis\\\":[\\\"regulatorisch\\\"],\",\n  \"\\\"begruendung\\\":\\\"LLM-basierte Dokumentenverarbeitung liest heterogene PDFs, Scans und Zuweisungsschreiben aus und schlägt Patientenzuordnung sowie Kategorisierung im KIS vor; die Fachkraft kontrolliert jede Zuordnung wegen der Patientensicherheit.\\\"\",\n  \"},\",\n  \"{\",\n  \"\\\"name\\\":\\\"Schriftliche Anfragen per E-Mail beantworten und administrative Standardkorrespondenz verfassen\\\",\",\n  \"\\\"zeitanteil_pct\\\":10,\",\n  \"\\\"stufe\\\":\\\"E1\\\",\",\n  \"\\\"modus\\\":\\\"delegierend\\\",\",\n  \"\\\"restzeit_mensch\\\":\\\"10-30\\\",\",\n  \"\\\"physisch_automatisierbar\\\":\\\"P0\\\",\",\n  \"\\\"p_art\\\":null,\",\n  \"\\\"sicherheit\\\":\\\"hoch\\\",\",\n  \"\\\"sicherheit_begruendung\\\":null,\",\n  \"\\\"ch_hemmnis\\\":[\\\"regulatorisch\\\"],\",\n  \"\\\"begruendung\\\":\\\"Ein Chat-LLM entwirft aus Stichworten oder eingefügten Anfragen Aufgebote, Vorbereitungshinweise und Antworten in verschiedenen Sprachen; die Sekretariatsfachkraft prüft jede Nachricht vor dem Versand.\\\"\",\n  \"},\",\n  \"{\",\n  \"\\\"name\\\":\\\"Leistungsabrechnungen nach Tarif kontrollieren, Rechnungen erstellen und Versicherungsrückfragen bearbeiten\\\",\",\n  \"\\\"zeitanteil_pct\\\":5,\",\n  \"\\\"stufe\\\":\\\"E0\\\",\",\n  \"\\\"modus\\\":null,\",\n  \"\\\"restzeit_mensch\\\":null,\",\n  \"\\\"physisch_automatisierbar\\\":\\\"P1\\\",\",\n  \"\\\"p_art\\\":\\\"software\\\",\",\n  \"\\\"sicherheit\\\":\\\"mittel\\\",\",\n  \"\\\"sicherheit_begruendung\\\":null,\",\n  \"\\\"ch_hemmnis\\\":[],\",\n  \"\\\"begruendung\\\":\\\"Tarifprüfung (TARDOC/SwissDRG), Rechnungslauf und elektronischer Versand an Krankenversicherer erfolgen überwiegend über regelbasierte Abrechnungsmodule der klassischen Praxis- und Kliniksoftware.\\\"\",\n  \"},\",\n  \"{\",\n  \"\\\"name\\\":\\\"Kostengutsprachen, Überweisungen und Versicherungsformulare vorbereiten und einreichen\\\",\",\n  \"\\\"zeitanteil_pct\\\":5,\",\n  \"\\\"stufe\\\":\\\"E2\\\",\",\n  \"\\\"modus\\\":\\\"delegierend\\\",\",\n  \"\\\"restzeit_mensch\\\":\\\"30-50\\\",\",\n  \"\\\"physisch_automatisierbar\\\":\\\"P0\\\",\",\n  \"\\\"p_art\\\":null,\",\n  \"\\\"sicherheit\\\":\\\"mittel\\\",\",\n  \"\\\"sicherheit_begruendung\\\":null,\",\n  \"\\\"ch_hemmnis\\\":[\\\"regulatorisch\\\"],\",\n  \"\\\"begruendung\\\":\\\"Im KIS integrierte KI-Funktionen extrahieren Diagnosen und Verlaufsdaten aus der Akte und befüllen Formulare für Versicherer; die Fachkraft und das Ärzteteam prüfen jeden Antrag inhaltlich vor der Einreichung.\\\"\",\n  \"},\",\n  \"{\",\n  \"\\\"name\\\":\\\"Interne Sitzungen, Rapporte und Fortbildungen organisieren sowie Protokolle erstellen\\\",\",\n  \"\\\"zeitanteil_pct\\\":5,\",\n  \"\\\"stufe\\\":\\\"E2\\\",\",\n  \"\\\"modus\\\":\\\"delegierend\\\",\",\n  \"\\\"restzeit_mensch\\\":\\\"30-50\\\",\",\n  \"\\\"physisch_automatisierbar\\\":\\\"P0\\\",\",\n  \"\\\"p_art\\\":null,\",\n  \"\\\"sicherheit\\\":\\\"mittel\\\",\",\n  \"\\\"sicherheit_begruendung\\\":null,\",\n  \"\\\"ch_hemmnis\\\":[],\",\n  \"\\\"begruendung\\\":\\\"Spracherkennung und LLM erstellen aus Audioaufnahmen strukturierte Sitzungsprotokolle und entwerfen Einladungen; die Sekretariatsfachkraft redigiert jedes Protokoll und koordiniert die Teilnehmenden.\\\"\",\n  \"},\",\n  \"{\",\n  \"\\\"name\\\":\\\"Praxis- und Büromaterial bestellen sowie den Versand von Laborproben und physischer Post abwickeln\\\",\",\n  \"\\\"zeitanteil_pct\\\":5,\",\n  \"\\\"stufe\\\":\\\"E0\\\",\",\n  \"\\\"modus\\\":null,\",\n  \"\\\"restzeit_mensch\\\":null,\",\n  \"\\\"physisch_automatisierbar\\\":\\\"P0\\\",\",\n  \"\\\"p_art\\\":null,\",\n  \"\\\"sicherheit\\\":\\\"hoch\\\",\",\n  \"\\\"sicherheit_begruendung\\\":null,\",\n  \"\\\"ch_hemmnis\\\":[],\",\n  \"\\\"begruendung\\\":\\\"Überwiegend physische Tätigkeiten wie das Verpacken und Etikettieren von Laborproben, die Postverarbeitung und das Verräumen von Material.\\\"\",\n  \"}\"\n],\"unsicherheit\":\"mittel\",\"kommentar\":\"Angenommenes Setting: Medizinische Sekretärin / Arztsekretärin in einer Spitalambulanz oder grösseren Gruppenpraxis (rein administratives Profil gemäss ISCO 3344, abgegrenzt von der klinisch tätigen MPA in ISCO 3256). Grenzfälle bestehen bei der telefonischen Patientenkommunikation (Dialekt, verunsicherte Patienten) sowie bei der Abgrenzung zwischen klassischer Praxissoftware (Terminbuchung, Tarifabrechnung) und generativer KI.\",\"zusammenfassung\":\n  \"{\",\n  \"\\\"haupt_risiko\\\":\\\"Das Erstellen von Arztberichten ab Diktat, die schriftliche Korrespondenz, die Zuordnung eingehender Befunde im KIS sowie die telefonische Anfrageannahme werden durch Spracherkennung, Chat-LLMs, Dokumentenextraktion und Telefonassistenten stark beschleunigt.\\\",,  \\\"begruendung\\\":\\\"Rund zwei Drittel der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die Technik durchwegs delegierend eingesetzt wird: Die KI erstellt Berichtsentwürfe, Korrespondenz, Formulareinträge und strukturierte Telefonnotizen, während die Sekretariatsfachkraft jedes Ergebnis aus Gründen der Patientensicherheit fachlich kontrolliert. Zusätzlich lassen sich Terminplanung und Tarifabrechnung durch klassische Praxis- und Kliniksoftware weitgehend automatisieren. Gebremst wird die Umsetzung in der Schweiz durch strenge Vorgaben beim Datenschutz und Berufsgeheimnis (revDSG), das Bedürfnis kranker Menschen nach persönlichem Kontakt sowie die Verständigung in Mundart und Fremdsprachen.\\\",,  \\\"zeitrahmen\\\":\\\"3-5 Jahre\\\"} }\"\n  : 3344, \"beruf\": \"Sekretariatsfachkräfte im Gesundheitswesen\", \"taetigkeiten\": [\n    \"{\"\n  ]\n}"
+}

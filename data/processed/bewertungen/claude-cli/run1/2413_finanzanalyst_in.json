@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "afb538562942c20d2798a4db4a8d1a803eecb154858cc594dace36b5f54d4b5a",
+    "isco_code": "2413",
+    "beruf": "Finanzanalyst/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:21:30+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3413,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4488,
+      "api_aequivalent_usd": 0.12440219999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3413,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4488,
+        "output_tokens_details": {
+          "thinking_tokens": 1662
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3413,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.12440219999999998
+      }
+    ],
+    "request_ids": [
+      "2e7b22eb-ba1f-406a-a7ae-d9973cccfcd4"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2413",
+    "beruf": "Finanzanalyst/in",
+    "taetigkeiten": [
+      {
+        "name": "Unternehmens-, Branchen- und Wirtschaftsdaten aus Geschäftsberichten, Datenbanken und Publikationen recherchieren und zusammentragen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche und Dokumentenverarbeitung erstellen Recherchedossiers und Peer-Übersichten; die Analystin gibt den Auftrag und prüft jede Zahl und Quelle wegen Halluzinationsrisiko."
+      },
+      {
+        "name": "Jahresabschlüsse auslegen und Kennzahlen zu Rentabilität, Liquidität und Solvenz berechnen und vergleichen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI extrahiert Bilanz-, ER- und Cashflow-Daten aus PDF-Berichten, berechnet Kennzahlen per Code-Ausführung und kommentiert Auffälligkeiten; die Analystin prüft Bereinigungen und Interpretation jedes Abschlusses."
+      },
+      {
+        "name": "Finanzmodelle, Bewertungen (DCF, Multiples) und Prognosen mit Szenarien in Excel aufbauen und aktualisieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Agenten in Excel bauen Modellstruktur, Formeln und Sensitivitäten nach Vorgabe; die Analystin setzt die Annahmen, steuert und prüft jedes Modell auf Logik- und Formelfehler."
+      },
+      {
+        "name": "Analyseberichte, Research-Notes und Präsentationen mit Grafiken verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Text wäre E1, Folien und Charts aus Modelldaten brauchen Office-Integration; KI entwirft Bericht und Präsentation, die Analystin prüft Aussagen, Zahlen und Offenlegungen vor der Publikation (Research-Richtlinien, Haftung)."
+      },
+      {
+        "name": "Märkte, Kurse, Unternehmensnews und Earnings Calls laufend beobachten und auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Newsfeeds und Transkript-Zusammenfassungen filtern und verdichten den Informationsfluss; die Analystin beurteilt die Relevanz für ihre Titel weiterhin selbst."
+      },
+      {
+        "name": "Anlage-, Kredit- oder Investitionsempfehlung festlegen (Rating, Kursziel, Entscheidungsvorschlag)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ermessensentscheid mit Verantwortung und Reputationsrisiko; die Vorbereitung ist in anderen Tätigkeiten erfasst, der Entscheid selbst spart keine 50 %."
+      },
+      {
+        "name": "Empfehlungen vor Management, Anlagekomitee oder Kundenberatern präsentieren und diskutieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz, Argumentation und Rückfragen im direkten Austausch."
+      },
+      {
+        "name": "Gespräche mit Unternehmensleitungen, Investor Relations und Fachstellen führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Gespräche und Beziehungspflege; Wert liegt im direkten Nachfragen."
+      },
+      {
+        "name": "Periodische Standardreports und Dashboards mit Markt- und Portfoliodaten aktualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Datenfeeds (Bloomberg/Refinitiv-Schnittstellen) und BI-Dashboards aktualisieren Reports regelbasiert; klassische Software, kein LLM nötig."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Finanzanalyst/in im Research oder Investment-/Kreditanalyse einer Schweizer Bank bzw. eines Vermögensverwalters (auch Corporate-Finance-Abteilungen sind ähnlich). ESCO passt gut, die Zeitanteile sind aber grob geschätzt. Grösste Unsicherheiten: Restzeit beim Modellbau mit Excel-Agenten (10-30 vs. 30-50) und ob die Marktbeobachtung die 50 %-Schwelle erreicht.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Recherche, Auswertung von Jahresabschlüssen, Modellbau in Excel, Berichterstattung und Marktbeobachtung – durch Recherche-Agenten, Dokumentenextraktion, KI-Funktionen in Excel/Office und News-Zusammenfassungen.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind exponiert, überwiegend delegierend: Die KI erstellt Datensammlungen, Modelle und Berichtsentwürfe, die Analystin setzt Annahmen und prüft jede Ausgabe; Empfehlung, Präsentation und Managementgespräche bleiben beim Menschen. In der Schweiz bremsen vor allem FINMA-Vorgaben, Bankgeheimnis bzw. Cloud-Restriktionen und Haftung für publiziertes Research die Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

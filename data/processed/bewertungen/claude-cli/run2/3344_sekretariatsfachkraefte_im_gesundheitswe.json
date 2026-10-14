@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "9a8fa26e549e88e15741d815f6a84f71f8f78df22f1ec847251c9cc3d94f0fca",
+    "isco_code": "3344",
+    "beruf": "Sekretariatsfachkräfte im Gesundheitswesen",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:25:08+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 39503,
+      "output_tokens": 5194,
+      "api_aequivalent_usd": 0.11178859999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 39503,
+        "output_tokens": 5194,
+        "output_tokens_details": {
+          "thinking_tokens": 1939
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11178859999999999
+      }
+    ],
+    "request_ids": [
+      "4d5f3919-85c2-4f0a-aa82-727bd3c3be99"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3344",
+    "beruf": "Sekretariatsfachkräfte im Gesundheitswesen",
+    "taetigkeiten": [
+      {
+        "name": "Ärztliche Diktate (Austritts-, Sprechstunden-, Operationsberichte) schreiben, formatieren und zur Visierung bereitstellen",
+        "zeitanteil_pct": 30,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracherkennung mit LLM-Nachbearbeitung im KIS erstellt den formatierten Bericht aus dem Diktat; die Sekretärin hört gegen bzw. liest jeden Bericht auf Fachbegriffe, Medikamente und Namen Korrektur. Klassische Spracherkennung allein übernimmt Formatierung und Strukturierung nicht zu ≥ 50 %."
+      },
+      {
+        "name": "Telefonate von Patientinnen, Zuweisenden und Abteilungen entgegennehmen, Auskünfte geben und Anliegen weiterleiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Voicebots mit KIS-Zugriff könnten Standardanfragen übernehmen, Qualität bei Schweizerdeutsch, älteren Patienten und heiklen medizinischen Anliegen ist aber wenig belegt; E2 ersetzend ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Gespräche sind oft unstrukturiert, medizinisch heikel und in Mundart; Einschätzung der Dringlichkeit und Beruhigung bleiben beim Menschen."
+      },
+      {
+        "name": "Sprechstunden-, Untersuchungs- und Operationstermine im KIS planen, vergeben und verschieben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ressourcenplanung in der Agenda ist klassische Software; Abstimmung von Prioritäten, Ärzten und Geräten verlangt Absprachen, generative KI spart keine 50 %. Online-Buchung deckt im Spital nur einen kleinen Teil ab."
+      },
+      {
+        "name": "Standardkorrespondenz verfassen (Aufgebote, Eingangsbestätigungen, Kostengutsprachegesuche, Unterlagen anfordern)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Falldaten aus dem KIS kopieren, LLM erstellt den Brief bzw. das Gesuch; Sekretärin sichtet kurz und gibt frei. Hemmnis: Patientendaten/Berufsgeheimnis bei Cloud-LLMs."
+      },
+      {
+        "name": "Eingehende Befunde, Berichte und Dokumente scannen, dem Patientendossier zuordnen und im KIS ablegen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Dokumentenerkennung klassifiziert, extrahiert Patient und Dokumenttyp und legt ab; Mensch bearbeitet markierte Ausnahmen und das physische Scannen."
+      },
+      {
+        "name": "Patientenpersonalien, Versicherungs- und Zuweisungsdaten erfassen und aktualisieren",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Extraktion aus Zuweisungsschreiben, Formularen und Ausweisen per Dokumenten-KI ins KIS; Mensch prüft Ausnahmen. Kartenleser für die Versichertenkarte deckt nur einen Teil ab, daher P0."
+      },
+      {
+        "name": "Patientinnen am Empfang begrüssen, anmelden und Fragen vor Ort beantworten",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare zwischenmenschliche Präsenz am Schalter."
+      },
+      {
+        "name": "Ambulante Leistungen erfassen und Abrechnungen bzw. Kostengutsprachen kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Leistungserfassung und Tarifregeln (TARDOC/Pauschalen) werden von klassischer Abrechnungssoftware mit Regelprüfung abgedeckt; kein LLM nötig."
+      },
+      {
+        "name": "Laborproben und Unterlagen versenden, Post bearbeiten, Büromaterial bestellen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Handhabung von Proben und Post."
+      },
+      {
+        "name": "Sitzungen und Rapporte organisieren, Protokolle verfassen und Statistiken in Excel führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Automatische Protokolle aus Aufnahmen und KI-Funktionen in Office erstellen Protokoll und Auswertungen; Sekretärin prüft jedes Ergebnis und koordiniert Termine selbst."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Arztsekretärin in einem Akutspital (Kliniksekretariat), wo das Schreiben ärztlicher Diktate den grössten Zeitanteil ausmacht; die MPA in der Arztpraxis gehört zu einer anderen Berufsgruppe. Die ESCO-Beschreibung ist knapp, deshalb stützen sich die Zeitanteile stark auf CH-Praxiswissen. Die grössten Unsicherheiten sind die telefonische Kommunikation (Voicebot vs. E0) und die Restzeit beim Korrekturlesen der Diktate.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Schreiben ärztlicher Diktate, die Standardkorrespondenz, das Zuordnen eingehender Dokumente und das Erfassen von Patientendaten. Die Technik dahinter sind generative Spracherkennung, Chat-LLMs und Dokumenten-KI im KIS.",
+      "begruendung": "Rund 60 % der Arbeitszeit sind exponiert. Beim Berichtschreiben arbeitet die KI delegierend: Die Sekretärin liest jeden Bericht Korrektur. Bei Korrespondenz, Dokumentablage und Datenerfassung arbeitet sie überwiegend ersetzend. In Schweizer Spitälern bremsen vor allem Berufsgeheimnis, revDSG und Cloud-Restriktionen sowie die nötige Integration ins KIS; Telefon und Empfang bleiben wegen Mundart und persönlichem Kontakt beim Menschen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

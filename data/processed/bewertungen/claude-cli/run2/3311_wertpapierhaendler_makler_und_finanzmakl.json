@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "2f15034451b9deec97e3d5c0ace26ed88e42480789c1939773312055102e23e4",
+    "isco_code": "3311",
+    "beruf": "Wertpapierhändler, -makler und Finanzmakler",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:28:26+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 6530,
+      "cache_read_input_tokens": 78950,
+      "output_tokens": 9671,
+      "api_aequivalent_usd": 0.261466
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 6530,
+        "cache_read_input_tokens": 78950,
+        "output_tokens": 9671,
+        "output_tokens_details": {
+          "thinking_tokens": 2730
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6530,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.261466
+      }
+    ],
+    "request_ids": [
+      "3151b1a8-af90-40f4-aedd-923c32852db4"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3311",
+    "beruf": "Wertpapierhändler, -makler und Finanzmakler",
+    "taetigkeiten": [
+      {
+        "name": "Kundenaufträge telefonisch oder per Händler-Chat von Kundenberatern und Kunden entgegennehmen, Preise stellen und bestätigen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gespräch in Echtzeit, aufgezeichnet und haftungsrelevant; Preisstellung und Bestätigung bleiben beim Händler. Einzelne Chat-Orders könnten automatisch erfasst werden, das spart aber nicht 50 % der Tätigkeit."
+      },
+      {
+        "name": "Wertpapieraufträge im Handelssystem erfassen und über Börsen, Handelsplätze oder Broker ausführen (Algo-Wahl, Care Orders)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Ausführung erfolgt mit klassischer Software (OMS/EMS, Smart Order Routing, VWAP-/TWAP-Algorithmen, Straight-Through-Processing) und braucht kein LLM, daher E0. Diese Technik kann einen Grossteil der Ausführung übernehmen, deshalb P1."
+      },
+      {
+        "name": "Kurse, Orderbücher, Positionen und Limiten am Bildschirm laufend überwachen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Überwachung in Echtzeit mit sofortiger Reaktion hat keinen Text-Output, den ein LLM erstellen könnte. Regelbasierte Alarme und Limitensysteme helfen, ersetzen die Aufmerksamkeit des Händlers aber nicht zu 50 %."
+      },
+      {
+        "name": "Handels- und Absicherungsentscheide treffen und Positionen im Rahmen der Limiten eingehen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ermessens- und Risikoentscheid mit persönlicher Verantwortung; generative KI spart hier keine 50 %."
+      },
+      {
+        "name": "Marktnews, Research und Wirtschaftsdaten sichten und zu Marktübersicht oder Morgenkommentar zusammenfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in Terminals (z. B. News-Zusammenfassungen) und Recherche-Agenten fassen viele Quellen zusammen und entwerfen die Übersicht. Der Händler prüft Fakten und Zahlen jedes Mal und ergänzt die eigene Einschätzung."
+      },
+      {
+        "name": "Markt- und Konjunkturtrends, Kennzahlen und Bewertungen anhand von Charts und Datenreihen analysieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Datenanalyse-Agenten gegenüber den bestehenden Terminal-Analysetools wirklich 50 % Zeit sparen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Der Händler analysiert und interpretiert selbst. Ein LLM-Datenanalysewerkzeug mit Code-Ausführung rechnet Kennzahlen, erstellt Auswertungen und schlägt Lesarten vor."
+      },
+      {
+        "name": "Kundenberater und Kunden mündlich zu Marktlage, Finanzprodukten und Ausführungsmöglichkeiten beraten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Gespräch in Echtzeit, dessen Wert in Vertrauen und unmittelbarer Fachauskunft liegt."
+      },
+      {
+        "name": "Schriftliche Produktinformationen, kurze Marktkommentare und Kundenanfragen per E-Mail oder Chat beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft die Antworten aus eingefügten Termsheets und Marktdaten; der Händler prüft jede Antwort fachlich (FIDLEG-Informationspflichten, Bankgeheimnis)."
+      },
+      {
+        "name": "Geschäfte nachbearbeiten: Trade-Abgleich, Bestätigungen und Transaktionsaufzeichnungen im System kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Strukturierte Daten lassen sich regelbasiert abgleichen; Matching- und Confirmation-Systeme sowie automatische Transaktionsmeldungen sind klassische Software."
+      },
+      {
+        "name": "Abwicklungsdifferenzen und Fehltrades mit Back Office und Gegenparteien klären",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Fehlersuche läuft über mehrere Systeme und Telefonate mit Gegenparteien. Ein LLM hilft höchstens beim Formulieren von E-Mails und spart keine 50 %."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Wertschriftenhändlerin oder Execution-/Sales-Trader in einer Schweizer Kantonal- oder Privatbank, die Kunden- und Beraterorders ausführt und in kleinem Umfang Positionen führt. Die ESCO-Kompetenzen zur Finanzberatung gehören eher zum Kundenberater und sind hier nur am Rand berücksichtigt. Die grössten Unsicherheiten sind die 50 %-Schwelle bei der Marktanalyse und der P-Wert der Ausführung, weil der Algo-Handel je nach Bank unterschiedlich verbreitet ist.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Zusammenfassung von Marktnews und Research (KI-Funktionen in Terminals, Recherche-Agenten), die Datenanalyse mit LLM-Analysewerkzeugen sowie schriftliche Kundenantworten per Chat-LLM; Kerntätigkeiten wie Ausführung, Überwachung und Handelsentscheid sind nicht betroffen.",
+      "begruendung": "Nur rund ein Viertel der Arbeitszeit ist gegenüber generativer KI exponiert, meist delegierend (KI entwirft Marktübersichten und Antworten, der Händler prüft jede) und bei der Analyse unterstützend. Die Ausführung von Orders ist eher durch klassische Algo- und STP-Software automatisierbar als durch LLMs. In der Schweiz bremsen Bankgeheimnis, FINMA-Vorgaben zu Cloud und Auslagerung sowie FIDLEG-Pflichten die Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

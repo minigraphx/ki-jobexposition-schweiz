@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "b62758165723254d6974792f6d5a4ccddf4874a1470f212159ac362543e8b2bd",
+    "isco_code": "2342",
+    "beruf": "Kindergärtnerin/-gärtner",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:43:49+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 40988,
+      "output_tokens": 4591,
+      "api_aequivalent_usd": 0.10002559999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 40988,
+        "output_tokens": 4591,
+        "output_tokens_details": {
+          "thinking_tokens": 1337
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.10002559999999998
+      }
+    ],
+    "request_ids": [
+      "b7de69ab-75e0-4a13-ac38-50d8a2f20a8d"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2342",
+    "beruf": "Kindergärtnerin/-gärtner",
+    "taetigkeiten": [
+      {
+        "name": "Geführte Lern- und Spielsequenzen im Kreis und in Gruppen durchführen (Zahlen, Buchstaben, Lieder, Geschichten, Bewegung)",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unterricht mit 4- bis 6-jährigen Kindern vor Ort ist eine reine Präsenz- und Beziehungstätigkeit; keine Robotik oder Software übernimmt diese Arbeit."
+      },
+      {
+        "name": "Freispiel und Lernwerkstätten begleiten, einzelne Kinder individuell fördern und ermutigen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Individuelle Begleitung im Spiel lebt von der persönlichen Interaktion; nicht durch KI oder Technik übernehmbar."
+      },
+      {
+        "name": "Kinder in Pause, Garderobe, Znüni, Turnen und auf Ausflügen beaufsichtigen, Konflikte schlichten, bei Verletzungen helfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aufsicht, Sicherheit und Konfliktlösung erfordern körperliche Präsenz; keine verfügbare Technik ersetzt dies."
+      },
+      {
+        "name": "Kinder im Alltag beobachten und Entwicklungsstand (motorisch, sozial, sprachlich) einschätzen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Beobachtung findet live im Kindergartenalltag statt und beruht auf fachlichem Urteil; KI spart hier keine relevante Zeit."
+      },
+      {
+        "name": "Jahres-, Themen- und Wochenplanung sowie Lektionen nach Lehrplan 21 vorbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM entwirft Themeneinheiten, Aktivitäten, Verse und Ablaufpläne passend zu den Kompetenzen des Lehrplans 21; die Lehrperson gibt Klassenkontext vor, prüft und passt jeden Plan an. Nahe an der 50 %-Schwelle, da viel Planung auf Erfahrung und Kenntnis der Klasse beruht."
+      },
+      {
+        "name": "Bildkarten, Arbeitsblätter, Bastelvorlagen und Geschichten für den Unterricht gestalten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kindergartenmaterial ist bildlastig; erst mit Bildgeneratoren und KI-Layoutfunktionen erstellt die KI Vorlagen und Bildkarten, die Lehrperson wählt aus und prüft jedes Blatt auf Eignung."
+      },
+      {
+        "name": "Spielmaterial bereitstellen, Lernumgebung und Raum einrichten, Material basteln und aufräumen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit im Kindergartenraum; keine Robotik in relevantem Umfang verfügbar."
+      },
+      {
+        "name": "Beobachtungen dokumentieren und Standort- bzw. Beurteilungsberichte für Elterngespräche und Übertritt verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Beobachtungsnotizen formuliert ein LLM den Bericht; die Lehrperson prüft jede Aussage zum Kind und verantwortet den Bericht. Datenschutz bei Kinderdaten (kantonale Vorgaben) bremst die Nutzung."
+      },
+      {
+        "name": "Elterngespräche, Elternabende und Gespräche mit Fachstellen führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Gespräche von Angesicht zu Angesicht mit Eltern; Präsenz- und Beziehungstätigkeit."
+      },
+      {
+        "name": "Elternbriefe, Mitteilungen und Einladungen verfassen und für fremdsprachige Eltern übersetzen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt Briefe aus Stichworten und übersetzt sie in Herkunftssprachen; die Lehrperson liest jeden Brief vor dem Versand durch."
+      },
+      {
+        "name": "Mit Team, Schulischer Heilpädagogik, DaZ-Lehrperson und Schulleitung absprechen und an Sitzungen teilnehmen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Absprache und Zusammenarbeit im Team erfordern Präsenz und Abstimmung; KI spart keine relevante Zeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommen wird eine Lehrperson Kindergarten (PH-Bachelor) an einem öffentlichen Kindergarten der Volksschule mit zweijährigem Zyklus 1 und Lehrplan 21. Der ESCO-Input passt gut; die Zeitanteile sind grob geschätzt. Grenzfälle sind Unterrichtsplanung und Materialgestaltung nahe der 50 %-Schwelle, da viel Planung auf Erfahrung beruht und viel Material von Hand entsteht.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur Unterrichtsplanung, die Gestaltung von Bild- und Arbeitsmaterial, Beurteilungsberichte und Elternbriefe, die Chat-LLMs und Bildgeneratoren entwerfen; die Arbeit mit den Kindern selbst nicht.",
+      "begruendung": "Rund ein Viertel der Arbeitszeit ist exponiert, durchwegs delegierend: Die KI entwirft Pläne, Material, Berichte und Briefe, die Lehrperson passt jedes Ergebnis an die Klasse an und verantwortet es. Der Kern des Berufs (Unterricht, Begleitung, Aufsicht, Elternkontakt) ist Präsenzarbeit; kantonale Datenschutzvorgaben bremsen vor allem KI-gestützte Berichte über Kinder.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

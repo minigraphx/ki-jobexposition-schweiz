@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "711da9656544eb8dc22b8161fcb0429cd746f8992440db0c0e68c234d71645f3",
+    "isco_code": "2113",
+    "beruf": "Naturwissenschaftler/in (Biologie/Chemie)",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T01:06:54+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 12292,
+      "cache_read_input_tokens": 79937,
+      "output_tokens": 8766,
+      "api_aequivalent_usd": 0.2896594
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 12292,
+        "cache_read_input_tokens": 79937,
+        "output_tokens": 8766,
+        "output_tokens_details": {
+          "thinking_tokens": 1812
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 12292,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.2896594
+      }
+    ],
+    "request_ids": [
+      "a91a264c-4200-42a6-9692-ab00fb2535d2"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2113",
+    "beruf": "Naturwissenschaftler/in (Biologie/Chemie)",
+    "taetigkeiten": [
+      {
+        "name": "Synthesen und Experimente im Labor durchführen (Ansätze, Reaktionen, Aufreinigung, Zellkultur/Biochemie)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Laborarbeit mit Händen und Schutzausrüstung. Synthese- und Laborroboter gibt es nur für eng standardisierte Abläufe; sie übernehmen keine 50 % der typischen F&E-Arbeit."
+      },
+      {
+        "name": "Proben vorbereiten, Analysen an HPLC/GC/MS/NMR durchführen und Laborgeräte kalibrieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit am Gerät. Autosampler und Pipettierroboter sind verbreitet, decken bei wechselnden F&E-Proben aber keine 50 % der verbleibenden Handarbeit ab."
+      },
+      {
+        "name": "Messdaten (Chromatogramme, Spektren, Assays) interpretieren und fachliche Schlussfolgerungen ziehen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Peakintegration erledigt bereits klassische CDS-Software. Für die Strukturaufklärung und das Fachurteil reicht die Zuverlässigkeit generativer KI nicht für 50 % Zeitersparnis bei gleicher Qualität."
+      },
+      {
+        "name": "Messdaten statistisch auswerten und Auswerteskripte (Python/R) schreiben",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Agent mit Code-Ausführung erstellt Auswertungen, Plots und Skripte aus den Rohdaten. Die Wissenschaftlerin spezifiziert die Auswertung und prüft jedes Ergebnis auf Plausibilität."
+      },
+      {
+        "name": "Analyseergebnisse im elektronischen Laborjournal/LIMS dokumentieren und Prüfberichte erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Funktionen in ELN/LIMS bzw. Spracheingabe erstellen die Einträge und Berichtsentwürfe aus Gerätedaten. Die Fachperson prüft unter GMP/Datenintegrität jeden Eintrag und visiert ihn."
+      },
+      {
+        "name": "Technische Berichte, SOPs, Spezifikationen und Verfahrensbeschreibungen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM entwirft Bericht oder SOP aus eingefügten Ergebnissen, Stichworten und Vorlagen. Die Wissenschaftlerin prüft jeden Text fachlich; GMP-Dokumente durchlaufen eine formale Freigabe."
+      },
+      {
+        "name": "Literatur- und Patentrecherche durchführen und Stand der Technik zusammenfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Zugriff auf Literatur- und Patentdatenbanken erstellen Übersichten mit Quellen. Wegen des Halluzinationsrisikos verifiziert die Fachperson jede zentrale Quelle."
+      },
+      {
+        "name": "Versuchspläne, Forschungsprotokolle und Projektpläne entwerfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die Protokoll- und DoE-Vorschläge gegenüber der fachlichen Konzeptarbeit wirklich 50 % Zeit sparen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Wissenschaftlerin konzipiert die Versuche selbst. Das LLM liefert Protokollentwürfe, DoE-Vorschläge und Checklisten in Textform."
+      },
+      {
+        "name": "Publikationen, Präsentationen und Projektanträge verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt Textentwürfe, Abstracts und Foliengliederungen aus Ergebnissen und Stichworten. Die Autorin prüft und überarbeitet jede Ausgabe inhaltlich."
+      },
+      {
+        "name": "Projektbesprechungen führen und mit Produktion, Qualitätssicherung und Kunden abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zwischenmenschliche Abstimmung, Verhandlung und fachliche Beratung von Angesicht zu Angesicht oder in Sitzungen."
+      },
+      {
+        "name": "Laborant/innen anleiten, Arbeiten überwachen und Laborsicherheit durchsetzen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung und Instruktion vor Ort sind eine Präsenztätigkeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Chemiker/in oder Biolog/in mit Hochschulabschluss in Forschung & Entwicklung bzw. Analytik der Schweizer Chemie- und Pharmaindustrie (z. B. Raum Basel), oft unter GMP. ESCO bildet vor allem den akademischen Chemiker ab; für die Industrie wurden Publikation und Fördermittel tiefer gewichtet. Grenzfälle sind die Interpretation von Messdaten (E0 vs. E2 unterstützend) und das Entwerfen von Versuchsplänen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Dokumentation in ELN/LIMS, technische Berichte und SOPs, statistische Auswertungen, Literaturrecherche sowie Publikations- und Präsentationsentwürfe, die von Chat-LLMs, Datenanalyse- und Recherche-Agenten sowie KI-Funktionen im Laborsystem erstellt werden.",
+      "begruendung": "Etwa zwei Fünftel der Arbeitszeit sind exponiert, fast durchwegs im delegierenden Modus: Die KI entwirft, die Fachperson prüft jedes Ergebnis, da Fehler in Daten und Berichten nicht tolerierbar sind. Die praktische Laborarbeit, die Interpretation von Messdaten und die Abstimmung mit anderen Personen bleiben beim Menschen. In der Schweizer Pharma- und Chemieindustrie bremsen vor allem GMP-Anforderungen, Validierungspflichten für computergestützte Systeme und der Schutz vertraulicher F&E-Daten die Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

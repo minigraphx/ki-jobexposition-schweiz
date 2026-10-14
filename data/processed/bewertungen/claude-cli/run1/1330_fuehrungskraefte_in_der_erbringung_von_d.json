@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "388b1505ac6d56efae09fdbb2ecfa67a832d78b08cfcd91882558b2f4232e745",
+    "isco_code": "1330",
+    "beruf": "Führungskräfte in der Erbringung von Dienstleistungen im Bereich Informations- und Kommunikationstechnologie",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:06:17+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3510,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5144,
+      "api_aequivalent_usd": 0.13829819999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3510,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5144,
+        "output_tokens_details": {
+          "thinking_tokens": 1453
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3510,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.13829819999999998
+      }
+    ],
+    "request_ids": [
+      "35a097b4-cb14-4a08-a155-148da45c235b"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1330",
+    "beruf": "Führungskräfte in der Erbringung von Dienstleistungen im Bereich Informations- und Kommunikationstechnologie",
+    "taetigkeiten": [
+      {
+        "name": "IT-Mitarbeitende führen: Mitarbeitergespräche, Zielvereinbarungen, Personalauswahl und Teamsitzungen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung und Personalentscheide sind Präsenz- und Beziehungsarbeit; der Wert liegt in der persönlichen Interaktion."
+      },
+      {
+        "name": "IT-Prioritäten und Strategie mit Geschäftsleitung und Fachbereichen in Sitzungen abstimmen und entscheiden",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung, Überzeugungsarbeit und strategische Entscheide im Gremium; generative KI spart hier keine 50 %."
+      },
+      {
+        "name": "IT-Strategiepapiere, Roadmaps, GL-/VR-Anträge und Präsentationen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten, Vorgaben und Eckdaten entwirft das LLM Strategiepapier bzw. Antrag; die IT-Leitung prüft jede Aussage inhaltlich und schärft die Argumentation. Nahe an der Schwelle, weil Inhalte stark betriebsspezifisch sind."
+      },
+      {
+        "name": "Technologietrends, Marktangebote und Lösungsoptionen recherchieren und bewerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche fassen Marktberichte, Produktinfos und Trends zusammen; die Bewertung für den eigenen Betrieb leistet die Führungskraft selbst und verifiziert Quellen."
+      },
+      {
+        "name": "Pflichtenhefte und Ausschreibungen erstellen sowie Lieferantenofferten vergleichen und auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Pflichtenheft aus Anforderungen und extrahiert/vergleicht Offerten aus PDFs in einer Bewertungsmatrix; die IT-Leitung prüft jede Anforderung und jede Bewertung fachlich."
+      },
+      {
+        "name": "Verträge und Konditionen mit IT-Lieferanten und Dienstleistern verhandeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlung im persönlichen Gespräch; Vorbereitung ist kleiner Teil und spart keine 50 % der Gesamtzeit."
+      },
+      {
+        "name": "IT-Budget planen, Kosten und Lizenzen überwachen und Abweichungen beurteilen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zahlen kommen aus ERP/Controlling (klassische Software); Zeit liegt in Priorisierung und Abstimmung mit Finanzen, wo KI keine 50 % spart. Datenaufbereitung allein reicht nicht für P1."
+      },
+      {
+        "name": "IT-Richtlinien, Risikoanalysen, Sicherheits- und Notfallkonzepte (BCP) erstellen und aktualisieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM entwirft Richtlinien, Risikoregister und BCP-Kapitel aus Vorlagen, Standards (ISO 27001, revDSG) und eingefügten Systembeschreibungen; die IT-Leitung prüft jede Fassung auf Passung und Vollständigkeit. Hemmnis: Aufsichts- und Datenschutzvorgaben (z. B. FINMA, revDSG) verlangen nachweisbare menschliche Verantwortung."
+      },
+      {
+        "name": "IT-Projekte und Betrieb steuern: Steuerungsausschüsse leiten, Ressourcen zuteilen, Projektleitende coachen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Koordination, Ressourcenentscheide und Führung in Sitzungen; Präsenz- und Ermessenstätigkeit."
+      },
+      {
+        "name": "Status- und Management-Reportings zu Projekten, Service-Levels und Sicherheit erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in Projekt-/Ticketsystemen und Office fassen Kennzahlen und Status zu einem Bericht zusammen; die IT-Leitung prüft und kommentiert jeden Bericht. Dashboards selbst sind klassische Software, ersetzen aber nicht den Kommentar."
+      },
+      {
+        "name": "Bei schweren Störungen und Sicherheitsvorfällen Krisenmanagement leiten und entscheiden",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Entscheide unter Zeitdruck, Koordination von Teams und Kommunikation mit Geschäftsleitung; Verantwortung und Ermessen dominieren."
+      },
+      {
+        "name": "E-Mails, interne Mitteilungen zu IT-Änderungen und Antworten an Fachbereiche verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Mitteilungen und Antworten aus Stichworten, auch in mehreren Landessprachen; die Führungskraft liest jeden Text vor dem Versand und passt Ton/Inhalt an."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: IT-Leiter/in eines mittelgrossen Schweizer Unternehmens oder IT-Dienstleisters mit eigenem Team (ca. 10–50 Mitarbeitende). ESCO passt gut; die Zeitanteile zwischen Führung, Sitzungen und Dokumentenarbeit sind grob geschätzt und je nach Betriebsgrösse sehr unterschiedlich. Grenzfälle sind Strategiepapiere und Richtlinien (stark betriebsspezifisch, nahe an der 50-%-Schwelle) sowie die Budgetplanung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Verfassen von Strategiepapieren, Richtlinien, Sicherheits- und Notfallkonzepten, Pflichtenheften, Reportings und Korrespondenz durch Chat-LLM bzw. KI-Funktionen in Office- und Projektsoftware sowie die Marktrecherche mit Recherche-Agenten.",
+      "begruendung": "Rund 45 % der Arbeitszeit sind exponiert, überwiegend delegierend: Die KI erstellt die Entwürfe, die IT-Leitung prüft jedes Dokument fachlich und verantwortet es; die Recherche bleibt unterstützend. Führung, Abstimmung mit der Geschäftsleitung, Verhandlungen und Krisenentscheide bleiben menschlich; als CH-Hemmnis wirken vor allem Aufsichts- und Datenschutzvorgaben (revDSG, branchenspezifische Regulierung wie FINMA) bei Sicherheits- und Risikodokumenten.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

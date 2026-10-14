@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "86d951de9b3d56b2bb5282be0d9849e11cd3288fde0f876b9f7d3afab2a73b4c",
+    "isco_code": "3122",
+    "beruf": "Produktionsleiter bei der Herstellung von Waren",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:07:04+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5250,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5248,
+      "api_aequivalent_usd": 0.1542982
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 5250,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5248,
+        "output_tokens_details": {
+          "thinking_tokens": 1646
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5250,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1542982
+      }
+    ],
+    "request_ids": [
+      "756892c2-3780-4d9d-ac4b-cc260157e967"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3122",
+    "beruf": "Produktionsleiter bei der Herstellung von Waren",
+    "taetigkeiten": [
+      {
+        "name": "Produktion in der Halle überwachen, Rundgänge machen, Störungen und Qualitätsabweichungen an den Linien vor Ort klären",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz in der Halle, Begutachten von Maschinen und Teilen und Entscheide vor Ort; Maschinenüberwachung im MES liefert nur Signale, die Klärung bleibt beim Menschen."
+      },
+      {
+        "name": "Mitarbeitende führen, anleiten, Schichtübergaben und Mitarbeitergespräche durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung und zwischenmenschliche Präsenz; keine relevante Zeitersparnis durch generative KI."
+      },
+      {
+        "name": "Produktions- und Maschinenbelegungsplan im ERP/PPS erstellen und bei Eilaufträgen oder Ausfällen anpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Feinplanung ist Domäne klassischer APS-/PPS-Software mit Planungstafel und Optimierung (P1 software); LLMs spart für die Abwägung von Kapazitäten und Prioritäten keine 50 %."
+      },
+      {
+        "name": "Schicht- und Personaleinsatzpläne erstellen, Absenzen und Ferien einplanen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Personaleinsatzplanungs-Software erstellt Schichtpläne nach Qualifikation und Verfügbarkeit (P1 software); keine LLM-Leistung nötig."
+      },
+      {
+        "name": "Produktionsberichte und Kennzahlenauswertungen (Output, OEE, Ausschuss) aus ERP/MES-Daten erstellen und kommentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Datenanalyse mit Code-Ausführung bzw. Copilot in Excel/BI erstellt Auswertung, Grafiken und Kommentar aus exportierten Daten; der Produktionsleiter prüft jede Zahl und Interpretation. Klassische MES-/BI-Dashboards decken die reine Kennzahlenaufbereitung ebenfalls ab (P1 software)."
+      },
+      {
+        "name": "Abweichungs-, Störungs- und 8D-Reklamationsberichte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten und Messdaten formuliert ein Chat-LLM den strukturierten Bericht; der Produktionsleiter prüft Ursachenanalyse und Massnahmen in jedem Bericht."
+      },
+      {
+        "name": "Produktionsprozesse analysieren und Verbesserungsmassnahmen (KVP, Lean-Workshops) mit dem Team erarbeiten und umsetzen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beobachtung vor Ort, Workshops und Umsetzung an den Anlagen dominieren; KI liefert nur Ideen und Methodenhilfe, deutlich unter 50 % Zeitersparnis."
+      },
+      {
+        "name": "Material- und Anlagenverfügbarkeit mit Einkauf, Lager und Instandhaltung abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Absprachen und Priorisierung im Gespräch; Bestandsüberwachung läuft bereits über ERP-Disposition und kostet kaum noch Zeit."
+      },
+      {
+        "name": "Arbeitsanweisungen, Sicherheitsunterweisungen und Gefährdungsbeurteilungen schriftlich ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM entwirft Anweisungen und Unterweisungsunterlagen aus Prozessbeschrieb und EKAS/SUVA-Vorgaben; der Produktionsleiter prüft jede Fassung auf die konkrete Anlage."
+      },
+      {
+        "name": "Kostenstellen- und Budgetabweichungen analysieren und Investitionsanträge begründen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die KI-Hilfe bei Abweichungsanalyse und Antragstext insgesamt 50 % spart; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Der Produktionsleiter beurteilt die Abweichungen und Investitionen selbst; ein LLM liefert Berechnungen aus exportierten Zahlen und formuliert Antragstexte vor."
+      },
+      {
+        "name": "Sitzungen mit Geschäftsleitung, Verkauf und Logistik zu Terminen und Kapazitäten führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung und Verhandlung im Gespräch; Präsenztätigkeit."
+      },
+      {
+        "name": "Interne E-Mails, Informationen an Mitarbeitende und schriftliche Mitarbeiterbeurteilungen formulieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM formuliert Texte aus Stichworten; bei Beurteilungen und heiklen Mitteilungen prüft und passt der Produktionsleiter jeden Text an."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Produktionsleiter/Werkmeister (z. B. Produktionsfachmann BP) in einem KMU der MEM- oder Kunststoffindustrie, der eine Abteilung mit 15–40 Mitarbeitenden im Schichtbetrieb führt. Die ESCO-Beschreibung passt gut. Die Zeitanteile sind grob geschätzt. Grenzfälle sind die Kennzahlenberichte (E2 vs. klassisches BI) und die Budget-/Investitionsarbeit (E1 vs. E0); Planungsarbeit ist klassischer APS-Software zugeordnet und nicht der generativen KI.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Produktionsberichte, Störungs- und 8D-Berichte, Arbeitsanweisungen und interne Texte, die KI-Datenanalyse und Chat-LLMs entwerfen; die Führung und die Präsenz in der Halle sind nicht betroffen.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert, fast durchwegs delegierend: Die KI erstellt Berichte und Dokumente, der Produktionsleiter prüft jedes Ergebnis fachlich, bei Budgetfragen arbeitet er nur unterstützt. Wesentliche CH-Hemmnisse fehlen weitgehend; die Planung liegt bei klassischer ERP/APS-Software, und der Kern des Berufs bleiben Führung und Problemlösung vor Ort.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

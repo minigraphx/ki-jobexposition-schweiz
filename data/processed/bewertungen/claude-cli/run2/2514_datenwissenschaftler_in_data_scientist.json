@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "abdb96b8a838422d478920bb0b20a397ee820b07e5cc5d123376af19020b73ce",
+    "isco_code": "2514",
+    "beruf": "Datenwissenschaftler/in / Data Scientist",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:12:20+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7259,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4543,
+      "api_aequivalent_usd": 0.15627019999999997
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 7259,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4543,
+        "output_tokens_details": {
+          "thinking_tokens": 1328
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 7259,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.15627019999999997
+      }
+    ],
+    "request_ids": [
+      "720eb839-cf24-4743-980f-0436353ebca8"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2514",
+    "beruf": "Datenwissenschaftler/in / Data Scientist",
+    "taetigkeiten": [
+      {
+        "name": "Fragestellungen und Anforderungen mit Fachbereichen in Workshops und Meetings klären",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Tätigkeit besteht aus direkter Abstimmung und dem Verständnis der Geschäftsprobleme im Gespräch. KI spart hier keine 50 % der Zeit."
+      },
+      {
+        "name": "Daten aus Datenbanken und Data Warehouse per SQL/Python abfragen und zusammenführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Data Scientistin fügt Schema und Anforderung ein, das LLM schreibt die Abfragen und Join-Logik. Sie führt jede Abfrage aus, prüft die Resultate auf Plausibilität und korrigiert sie. Bei Banken und Versicherungen bremsen Datenschutz und Cloud-Restriktionen."
+      },
+      {
+        "name": "Datensätze bereinigen, normalisieren und Datenqualitätsprüfungen durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein KI-Assistent im Notebook mit Code-Ausführung inspiziert die Daten und schreibt Bereinigungs- und Prüfcode. Die Data Scientistin entscheidet über Ausreisser und Regeln und prüft jeden Schritt. Regelbasierte ETL-Tools decken ad-hoc-Bereinigung nicht zu 50 % ab."
+      },
+      {
+        "name": "Explorative Datenanalysen und statistische Auswertungen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Agent mit Code-Ausführung erstellt Auswertungen, Tests und Grafiken. Der Mensch steuert die Hypothesen, prüft jedes Ergebnis statistisch und interpretiert es."
+      },
+      {
+        "name": "Statistische und Machine-Learning-Modelle entwickeln, trainieren und validieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Coding-Agent im Repository bzw. Notebook schreibt Feature-Engineering, Trainings- und Evaluationscode. Die Data Scientistin wählt den Ansatz, prüft Validierung, Leakage und Bias. AutoML (nicht generativ) übernimmt nur Teile wie das Tuning, keine 50 %."
+      },
+      {
+        "name": "Datenpipelines und Modell-Code für den produktiven Einsatz entwickeln und warten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Coding-Agent setzt Änderungen über mehrere Dateien inklusive Tests um. Die Data Scientistin spezifiziert und reviewt jede Änderung vor dem Merge."
+      },
+      {
+        "name": "Visualisierungen und Dashboards in BI-Tools erstellen",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in BI- und Notebook-Umgebungen erzeugen Grafiken und Dashboard-Entwürfe aus Beschreibungen. Der Mensch prüft jede Darstellung auf Korrektheit und Aussagekraft und passt das Layout an."
+      },
+      {
+        "name": "Analyseberichte und technische Dokumentation verfassen",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft Bericht und Dokumentation aus eingefügten Resultaten, Code und Stichworten. Die Data Scientistin prüft jede Aussage fachlich und verantwortet den Inhalt."
+      },
+      {
+        "name": "Ergebnisse vor Stakeholdern präsentieren und Handlungsempfehlungen diskutieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Tätigkeit lebt von Präsentation und Diskussion vor Ort und von der Überzeugungsarbeit. KI hilft höchstens bei den Folien, und diese Hilfe ist marginal."
+      },
+      {
+        "name": "Projekte koordinieren, sich im Team abstimmen und Junior-Mitarbeitende anleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es handelt sich um Präsenz-, Führungs- und Abstimmungsarbeit. KI spart dabei keine 50 % der Zeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Data Scientist in einem Schweizer Unternehmen, zum Beispiel einer Bank, Versicherung, Pharmafirma, im Detailhandel oder in der IT-Beratung, nicht in der akademischen Forschung. Die forschungsbezogenen ESCO-Kompetenzen (Publizieren, Forschungsmittel, Open Access) wurden deshalb weitgehend als Rauschen behandelt. Die grössten Unsicherheiten sind die Restzeit-Bänder bei der Modellentwicklung und der Datenbereinigung (zwischen 10-30 und 30-50) und die Frage, ob nicht-generatives AutoML die Modellentwicklung zu ≥ 50 % übernehmen kann (eingeschätzt als P0).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Datenabfrage, die Datenbereinigung, explorative Analysen, die Modellentwicklung, Produktionscode, Dashboards und Berichte, die Coding- und Datenanalyse-Agenten, KI-Assistenten in Notebooks und BI-Tools sowie Chat-LLMs weitgehend erstellen.",
+      "begruendung": "Rund 80 % der Arbeitszeit sind exponiert, durchwegs im Modus delegierend: Die KI schreibt Code, Analysen und Texte, die Data Scientistin spezifiziert, steuert und prüft jedes Ergebnis fachlich. Nicht exponiert bleiben Anforderungsklärung, Präsentation und Teamarbeit. In der Schweiz bremsen vor allem Datenschutz (revDSG), Bankgeheimnis und FINMA-Anforderungen an Cloud-Lösungen bei sensiblen Daten.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

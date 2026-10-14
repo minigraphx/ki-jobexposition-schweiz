@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "9c011f2bb65725e3a0868f2ae65a0c6d70fed4b5120caae1f5b4b79cc264cb3e",
+    "isco_code": "3115",
+    "beruf": "Maschinenbautechniker, Techniker im Bereich Systemtechnik, Automation und Unternehmensprozesse",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:17:55+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 39305,
+      "output_tokens": 5061,
+      "api_aequivalent_usd": 0.10908899999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 39305,
+        "output_tokens": 5061,
+        "output_tokens_details": {
+          "thinking_tokens": 1506
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.10908899999999999
+      }
+    ],
+    "request_ids": [
+      "7d2a6c1a-d461-4c8f-89cd-aaa227fbbd96"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3115",
+    "beruf": "Maschinenbautechniker, Techniker im Bereich Systemtechnik, Automation und Unternehmensprozesse",
+    "taetigkeiten": [
+      {
+        "name": "Bauteile und Baugruppen im 3D-CAD konstruieren und modellieren",
+        "zeitanteil_pct": 22,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative CAD-Funktionen (Copilots, Topologieoptimierung) liefern bisher nur Teilvorschläge; die konstruktive Lösung im Kontext bestehender Maschinen erarbeitet die Fachperson selbst, Ersparnis klar unter 50 %."
+      },
+      {
+        "name": "Fertigungszeichnungen ableiten und bestehende Konstruktionspläne nach Änderungswünschen anpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zeichnungsableitung erledigt das parametrische CAD bereits; die verbleibende Arbeit (Bemassung, Toleranzen, Änderungen im Modell) spart mit generativer KI heute keine 50 %."
+      },
+      {
+        "name": "Anforderungen an Bauteile definieren und Spezifikationen bzw. Lastenhefte verfassen",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten, Normenauszügen und Vorgängerdokumenten entwirft das Chat-LLM die Spezifikation; der Techniker prüft und korrigiert jede Anforderung fachlich."
+      },
+      {
+        "name": "Auslegungsberechnungen durchführen (Festigkeit, Antriebe, Toleranzketten)",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Berechnungen laufen in klassischer Berechnungs-/FEM-Software; LLM-Unterstützung beim Aufsetzen spart wegen nötiger Verifikation keine 50 %. Die Software übernimmt den Rechenteil bereits, Modellbildung bleibt beim Menschen."
+      },
+      {
+        "name": "Prototypen, Tests und Testläufe an Maschinen und Prüfständen durchführen und Messungen vornehmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit an Prototyp und Prüfstand; automatische Messdatenerfassung ersetzt Aufbau und Durchführung nicht zu 50 %."
+      },
+      {
+        "name": "Testdaten auswerten und Prüfberichte erstellen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Datenanalyse-Agent mit Code-Ausführung wertet Messreihen aus, erstellt Diagramme und Berichtsentwurf; der Techniker prüft Auswertung und Schlussfolgerungen jedes Berichts."
+      },
+      {
+        "name": "Störungen und Fehler an Maschinen und Anlagen vor Ort suchen und beheben",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fehlersuche erfolgt vor Ort mit Messgeräten und Händen; KI-Hinweise beschleunigen nur punktuell."
+      },
+      {
+        "name": "Steuerungsprogramme (SPS) für Anlagen erstellen und anpassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Qualität von LLM-generiertem SPS-Code (Structured Text, Engineering-Copilots) in typischer KMU-Praxis wenig belegt; E0 ebenso plausibel, da Inbetriebnahme an der Anlage viel Zeit bindet.",
+        "ch_hemmnis": [],
+        "begruendung": "Engineering-Copilots bzw. LLM erzeugen Bausteine in Structured Text nach Spezifikation; der Techniker prüft, simuliert und testet jede Änderung."
+      },
+      {
+        "name": "Technische Dokumentation und Betriebs-/Wartungsanleitungen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "LLM entwirft Anleitungstexte und Übersetzungen aus Stichworten und Vorlagen; der Techniker prüft jede Fassung auf technische Korrektheit und Sicherheitshinweise. Anleitungen oft parallel in mehreren Landessprachen."
+      },
+      {
+        "name": "Stücklisten und Artikelstammdaten im PDM/ERP pflegen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Stücklisten werden per klassischer CAD-PDM-ERP-Schnittstelle automatisch übertragen; kein LLM nötig."
+      },
+      {
+        "name": "Produktionsprozesse analysieren und Verbesserungsvorschläge ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beobachtung in der Fertigung, Gespräche und Ermessen dominieren; KI hilft bei Auswertung und Formulierung, spart insgesamt aber keine 50 %."
+      },
+      {
+        "name": "Konstruktionslösungen mit Ingenieuren, Fertigung und Lieferanten absprechen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Besprechungen und Abstimmung von Angesicht zu Angesicht bzw. am Telefon; Präsenz- und Abstimmungstätigkeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: dipl. Techniker/in HF Maschinenbau bzw. Systemtechnik in einem Schweizer Maschinen- oder Anlagenbau-KMU, Schwerpunkt Konstruktion/Entwicklung mit Test und Automation. Der ESCO-Input passt gut, deckt Automation (SPS) und Unternehmensprozesse aber nur über optionale Kompetenzen ab. Die grössten Grenzfälle sind CAD-Konstruktion (generative CAD-Funktionen noch unter der Schwelle) und SPS-Programmierung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Spezifikationen, Prüfberichte samt Testdatenauswertung, technische Dokumentation und teilweise SPS-Code; KI übernimmt diese über Chat-LLM, Datenanalyse-Agenten und Engineering-Copilots, während CAD-Konstruktion, Tests und Fehlersuche weitgehend nicht exponiert sind.",
+      "begruendung": "Rund ein Viertel der Arbeitszeit ist exponiert, durchwegs delegierend: Die KI erstellt die Entwürfe, der Techniker prüft jedes Ergebnis fachlich. Der Kern des Berufs (Konstruieren im CAD, Prototypen testen, Fehlersuche vor Ort, Abstimmung) bleibt beim Menschen; in der Schweiz bremsen vor allem die Mehrsprachigkeit der Dokumentation und die vorsichtige Einführung in KMU mit sensiblem Konstruktions-Know-how.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

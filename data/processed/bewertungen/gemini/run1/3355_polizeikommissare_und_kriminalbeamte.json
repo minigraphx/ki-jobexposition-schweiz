@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "c035f9c44cc5b25262658ba9bf6cff837cbc999b06aa5e30a9b6d15793463c8e",
+    "isco_code": "3355",
+    "beruf": "Polizeikommissare und Kriminalbeamte",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T06:39:44+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 640,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 640
+        }
+      ],
+      "prompt_token_count": 21485,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21485
+        }
+      ],
+      "thoughts_token_count": 4965,
+      "total_token_count": 27090
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 640,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 640
+          }
+        ],
+        "prompt_token_count": 21485,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21485
+          }
+        ],
+        "thoughts_token_count": 4965,
+        "total_token_count": 27090
+      }
+    ],
+    "request_ids": [
+      "nrnOapjEKbi-_PUPrrqE6QQ"
+    ],
+    "versuche": 1,
+    "status": "fehlgeschlagen",
+    "fehler": [
+      "Versuch 1: (root): Additional properties are not allowed ('Rund 60 % der Arbeitszeit entfallen auf text- und datenintensive Dokumentations-, Recherche- und Auswertungsaufgaben, bei denen KI delegierend (Berichte, Protokolle und Journale mit zwingender fachlicher Einzelprüfung) oder unterstützend (Beweismittelanalyse und Recherchen) wirkt. Die operativen Kerntätigkeiten wie persönliche Einvernahmen, Tatortarbeit, Observationen und Festnahmen erfordern zwingend menschliche Präsenz. In der Schweiz bremsen strenge formelle Vorgaben der Strafprozessordnung (StPO), das Amtsgeheimnis, hohe Datenschutz- und Sicherheitsanforderungen (lokaler Betrieb ohne Cloud-Abfluss) sowie die kantonal fragmentierte Polizei-IT eine rasche Umsetzung.' was unexpected); taetigkeiten/0: 'Einvernahmen von Beschuldigten, Zeugen und Auskunftspersonen persönlich durchführen' is not of type 'object'; taetigkeiten/1: 'Einvernahmeprotokolle erstellen und zur Unterzeichnung vorlegen' is not of type 'object'; taetigkeiten/2: 'Ermittlungs-, Amts- und Schlussberichte sowie Anträge auf Zwangsmassnahmen verfassen' is not of type 'object'; taetigkeiten/3: 'Schriftliche und digitale Beweismittel (Bankbelege, Kommunikationsdaten, Akten) auswerten' is not of type 'object'; taetigkeiten/4: 'Tatorte untersuchen, Spuren sichern und physische Beweismittel handhaben' is not of type 'object'; taetigkeiten/5: 'Operative Ermittlungen im Feld durchführen (Observationen, Hausdurchsuchungen, Festnahmen)' is not of type 'object'; taetigkeiten/6: 'Recherchen in Polizeidatenbanken und offenen Quellen (OSINT) durchführen' is not of type 'object'; taetigkeiten/7: 'Ermittlungsstrategie planen und Verfahren mit Staatsanwaltschaft und Fachdiensten abstimmen' is not of type 'object'; taetigkeiten/8: 'Aktenführung, Falljournal und Beweismittelverzeichnis im Polizeisystem pflegen' is not of type 'object'"
+    ],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "custom_id": "r1-3355_polizeikommissare_und_kriminalbeamte",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": "validierung",
+    "probleme": [
+      "(root): Additional properties are not allowed ('Rund 60 % der Arbeitszeit entfallen auf text- und datenintensive Dokumentations-, Recherche- und Auswertungsaufgaben, bei denen KI delegierend (Berichte, Protokolle und Journale mit zwingender fachlicher Einzelprüfung) oder unterstützend (Beweismittelanalyse und Recherchen) wirkt. Die operativen Kerntätigkeiten wie persönliche Einvernahmen, Tatortarbeit, Observationen und Festnahmen erfordern zwingend menschliche Präsenz. In der Schweiz bremsen strenge formelle Vorgaben der Strafprozessordnung (StPO), das Amtsgeheimnis, hohe Datenschutz- und Sicherheitsanforderungen (lokaler Betrieb ohne Cloud-Abfluss) sowie die kantonal fragmentierte Polizei-IT eine rasche Umsetzung.' was unexpected)",
+      "taetigkeiten/0: 'Einvernahmen von Beschuldigten, Zeugen und Auskunftspersonen persönlich durchführen' is not of type 'object'",
+      "taetigkeiten/1: 'Einvernahmeprotokolle erstellen und zur Unterzeichnung vorlegen' is not of type 'object'",
+      "taetigkeiten/2: 'Ermittlungs-, Amts- und Schlussberichte sowie Anträge auf Zwangsmassnahmen verfassen' is not of type 'object'",
+      "taetigkeiten/3: 'Schriftliche und digitale Beweismittel (Bankbelege, Kommunikationsdaten, Akten) auswerten' is not of type 'object'",
+      "taetigkeiten/4: 'Tatorte untersuchen, Spuren sichern und physische Beweismittel handhaben' is not of type 'object'",
+      "taetigkeiten/5: 'Operative Ermittlungen im Feld durchführen (Observationen, Hausdurchsuchungen, Festnahmen)' is not of type 'object'",
+      "taetigkeiten/6: 'Recherchen in Polizeidatenbanken und offenen Quellen (OSINT) durchführen' is not of type 'object'",
+      "taetigkeiten/7: 'Ermittlungsstrategie planen und Verfahren mit Staatsanwaltschaft und Fachdiensten abstimmen' is not of type 'object'",
+      "taetigkeiten/8: 'Aktenführung, Falljournal und Beweismittelverzeichnis im Polizeisystem pflegen' is not of type 'object'",
+      "zusammenfassung: 'Vor allem das Verfassen von Ermittlungs- und Schlussberichten, die Erstellung von Einvernahmeprotokollen, die Auswertung digitaler und schriftlicher Beweismittel sowie Datenbank- und OSINT-Recherchen sind durch Sprachmodelle, Spracherkennung und KI-gestützte Analysewerkzeuge betroffen.' is not of type 'object'"
+    ],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": null,
+  "rohantwort": "{\"isco_code\":\"3355\",\"beruf\":\"Polizeikommissare und Kriminalbeamte\",\"taetigkeiten\":[\n  \"Einvernahmen von Beschuldigten, Zeugen und Auskunftspersonen persönlich durchführen\",\n  \"Einvernahmeprotokolle erstellen und zur Unterzeichnung vorlegen\",\n  \"Ermittlungs-, Amts- und Schlussberichte sowie Anträge auf Zwangsmassnahmen verfassen\",\n  \"Schriftliche und digitale Beweismittel (Bankbelege, Kommunikationsdaten, Akten) auswerten\",\n  \"Tatorte untersuchen, Spuren sichern und physische Beweismittel handhaben\",\n  \"Operative Ermittlungen im Feld durchführen (Observationen, Hausdurchsuchungen, Festnahmen)\",\n  \"Recherchen in Polizeidatenbanken und offenen Quellen (OSINT) durchführen\",\n  \"Ermittlungsstrategie planen und Verfahren mit Staatsanwaltschaft und Fachdiensten abstimmen\",\n  \"Aktenführung, Falljournal und Beweismittelverzeichnis im Polizeisystem pflegen\"\n],\"unsicherheit\":\"mittel\",\"kommentar\":\"Angenommenes Setting: Kriminalbeamtin/Kriminalbeamter (Detektiv/in bzw. Sachbearbeiter/in Kriminalpolizei) bei einer kantonalen oder städtischen Polizei in der Schweiz. Die Arbeit teilt sich in rund 40 % Präsenz- und Feldarbeit (Einvernahmen, Tatort, Observation/Zugriff, Absprachen) und rund 60 % Schreib-, Recherche- und Auswertungsarbeit am Arbeitsplatz. Grenzfälle bestehen vor allem bei der Protokollierung von Einvernahmen (Mundart, Mehrpersonengespräche, sofortige Unterzeichnung nach StPO) sowie bei der Auswertung heterogener digitaler Beweismittel.\",\"zusammenfassung\":\n  \"Vor allem das Verfassen von Ermittlungs- und Schlussberichten, die Erstellung von Einvernahmeprotokollen, die Auswertung digitaler und schriftlicher Beweismittel sowie Datenbank- und OSINT-Recherchen sind durch Sprachmodelle, Spracherkennung und KI-gestützte Analysewerkzeuge betroffen.\",\n  \"Rund 60 % der Arbeitszeit entfallen auf text- und datenintensive Dokumentations-, Recherche- und Auswertungsaufgaben, bei denen KI delegierend (Berichte, Protokolle und Journale mit zwingender fachlicher Einzelprüfung) oder unterstützend (Beweismittelanalyse und Recherchen) wirkt. Die operativen Kerntätigkeiten wie persönliche Einvernahmen, Tatortarbeit, Observationen und Festnahmen erfordern zwingend menschliche Präsenz. In der Schweiz bremsen strenge formelle Vorgaben der Strafprozessordnung (StPO), das Amtsgeheimnis, hohe Datenschutz- und Sicherheitsanforderungen (lokaler Betrieb ohne Cloud-Abfluss) sowie die kantonal fragmentierte Polizei-IT eine rasche Umsetzung.\"\n  :\"5-10 Jahre\"}"
+}

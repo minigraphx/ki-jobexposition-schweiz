@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "87627e348e3bd16bbdb6d5644c48eb519155781742eb76d0e924ccbd3c5819f3",
+    "isco_code": "3512",
+    "beruf": "ICT-Supporter/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:44:08+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3067,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4884,
+      "api_aequivalent_usd": 0.12955419999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3067,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4884,
+        "output_tokens_details": {
+          "thinking_tokens": 1801
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3067,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.12955419999999998
+      }
+    ],
+    "request_ids": [
+      "884dca5a-2bc8-4e77-a992-ede7ea172a8c"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3512",
+    "beruf": "ICT-Supporter/in",
+    "taetigkeiten": [
+      {
+        "name": "Telefonische Supportanfragen entgegennehmen und Probleme im Gespräch mit Anwendenden klären und lösen (1st Level)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Echtzeit-Dialog mit oft wenig versierten Anwendenden in Mundart, Rückfragen und Anleiten am Telefon; Voicebots decken nur einen kleinen Teil der Standardfälle ab, Passwort-Resets laufen bereits über Self-Service."
+      },
+      {
+        "name": "Schriftliche Anfragen per E-Mail, Chat oder Ticketportal beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktion im Ticketsystem entwirft die Antwort aus Ticketverlauf und Wissensdatenbank; der Supporter prüft jede Antwort fachlich und passt sie an, bevor sie rausgeht."
+      },
+      {
+        "name": "Tickets erfassen, kategorisieren, priorisieren und an 2nd Level oder Lieferanten weiterleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM-gestützte Triage im Ticketsystem klassifiziert Freitext-Meldungen, setzt Priorität und schlägt die Zuweisung vor; der Mensch korrigiert nur auffällige Fälle. Regelbasiertes Routing allein deckt Freitext nicht zu 50 % ab."
+      },
+      {
+        "name": "Störungen per Fernwartung auf Clients diagnostizieren und beheben",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Interaktive Arbeit am Gerät der Anwendenden; Computer-Use-Agenten sind für heterogene Fehlerbilder heute nicht verlässlich genug, um 50 % Zeit zu sparen."
+      },
+      {
+        "name": "Hardware am Arbeitsplatz vor Ort einrichten, austauschen und Peripherie anschliessen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit vor Ort (Geräte verkabeln, tauschen, Drucker einrichten); keine Robotik verfügbar."
+      },
+      {
+        "name": "Clients und Software ausrollen, konfigurieren sowie Benutzerkonten und Berechtigungen verwalten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Weitgehend mit klassischer Software automatisierbar (MDM/Intune, Softwareverteilung, Autopilot, IAM-Workflows für On-/Offboarding); keine LLM-Leistung nötig."
+      },
+      {
+        "name": "Fehlermeldungen und Logs analysieren und Lösungswege recherchieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fehlermeldungen und Logauszüge ins Chat-LLM kopieren liefert Ursachenhypothesen und Lösungsschritte deutlich schneller als Forensuche; der Supporter beurteilt und testet die Lösung selbst."
+      },
+      {
+        "name": "Tickets dokumentieren, Lösungen festhalten und Wissensdatenbankeinträge pflegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI im Ticketsystem fasst Verlauf und Lösung zusammen und erstellt KB-Artikel-Entwürfe; der Supporter prüft und ergänzt jeden Eintrag."
+      },
+      {
+        "name": "Anleitungen und Benutzerinformationen (FAQ, How-tos) verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM schreibt die Anleitung aus Stichworten und Schrittfolge; der Supporter prüft jede Anleitung auf Korrektheit für die eigene Umgebung und ergänzt Screenshots."
+      },
+      {
+        "name": "Anwendende vor Ort einweisen sowie Termine und Eskalationen im Team absprechen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Instruktion und Abstimmung im Team; Präsenz- und Koordinationstätigkeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: ICT-Supporter/in im 1st/2nd-Level-Support eines KMU-IT-Dienstleisters oder einer internen IT-Abteilung, mit Mischung aus Telefon, Tickets, Fernwartung und Einsätzen vor Ort. Der ESCO-Titel (Helpdesk-Manager) passt inhaltlich, das Niveau ist aber auf Sekundär II angepasst. Die grössten Grenzfälle sind telefonischer Support (Voicebot vs. Mensch, Mundart) und Fernwartung (Computer-Use-Agenten noch nicht verlässlich).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind schriftliche Ticketantworten, Ticket-Triage, Dokumentation und Wissensdatenbank (KI-Funktionen im Ticketsystem) sowie Fehleranalyse und Anleitungen (Chat-LLM); telefonischer Support, Fernwartung und Arbeit vor Ort bleiben weitgehend beim Menschen.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI entwirft Antworten, Zusammenfassungen und Anleitungen, der Supporter prüft jede Ausgabe; bei der Fehleranalyse unterstützt sie nur, bei der Triage ersetzt sie die Handarbeit weitgehend. Die ICT-Branche übernimmt KI-Funktionen in Ticketsystemen rasch, wesentliche CH-Hemmnisse fallen kaum ins Gewicht; Mundart am Telefon und das Arbeiten vor Ort begrenzen die Exposition.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

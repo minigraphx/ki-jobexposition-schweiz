@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "31ed6941d321c1a3bd2d6bb3496eb70ffa43901217a6937400dda7deab95b4c4",
+    "isco_code": "3312",
+    "beruf": "Versicherungskaufmann/-frau",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T06:39:44+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 445,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 445
+        }
+      ],
+      "prompt_token_count": 21533,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21533
+        }
+      ],
+      "thoughts_token_count": 5028,
+      "total_token_count": 27006
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 445,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 445
+          }
+        ],
+        "prompt_token_count": 21533,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21533
+          }
+        ],
+        "thoughts_token_count": 5028,
+        "total_token_count": 27006
+      }
+    ],
+    "request_ids": [
+      "nrnOapr5LLi-_PUPrrqE6QQ"
+    ],
+    "versuche": 1,
+    "status": "fehlgeschlagen",
+    "fehler": [
+      "Versuch 1: taetigkeiten/0: 'Anträge, Vertragsänderungen und Kündigungen prüfen und im Bestandesführungssystem verarbeiten' is not of type 'object'; taetigkeiten/1: 'Versicherungsofferten und Deckungsvorschläge nach Kundenvorgaben ausarbeiten' is not of type 'object'; taetigkeiten/2: 'Schadenmeldungen und Leistungsbelege sichten und Daten ins Schadensystem übertragen' is not of type 'object'; taetigkeiten/3: 'Versicherungsdeckung und Leistungsanspruch anhand von Police und AVB vorprüfen' is not of type 'object'; taetigkeiten/4: 'Schriftliche Kundenanfragen beantworten und Standardkorrespondenz verfassen' is not of type 'object'; taetigkeiten/5: 'Telefonische Standardauskünfte zu Policen, Prämien und Schadenstatus erteilen' is not of type 'object'; taetigkeiten/6: 'Kunden bei komplexem Versicherungsbedarf persönlich oder telefonisch beraten' is not of type 'object'; taetigkeiten/7: 'Prämienabrechnungen, Zahlungsabgleiche, Mahnläufe und Standardauszahlungen im System abwickeln' is not of type 'object'; taetigkeiten/8: 'Komplexe Risiko-, Kulanz- und Schadenfälle mit Underwriting, Aussendienst oder Gutachtern abklären und entscheiden' is not of type 'object'; taetigkeiten/9: 'Aktennotizen, Gesprächsprotokolle und interne Fallzusammenfassungen verfassen' is not of type 'object'"
+    ],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/enq7yklin7a8jtcft072ulbmeyc7h1411pme",
+    "custom_id": "r1-3312_versicherungskaufmann_frau",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": "validierung",
+    "probleme": [
+      "taetigkeiten/0: 'Anträge, Vertragsänderungen und Kündigungen prüfen und im Bestandesführungssystem verarbeiten' is not of type 'object'",
+      "taetigkeiten/1: 'Versicherungsofferten und Deckungsvorschläge nach Kundenvorgaben ausarbeiten' is not of type 'object'",
+      "taetigkeiten/2: 'Schadenmeldungen und Leistungsbelege sichten und Daten ins Schadensystem übertragen' is not of type 'object'",
+      "taetigkeiten/3: 'Versicherungsdeckung und Leistungsanspruch anhand von Police und AVB vorprüfen' is not of type 'object'",
+      "taetigkeiten/4: 'Schriftliche Kundenanfragen beantworten und Standardkorrespondenz verfassen' is not of type 'object'",
+      "taetigkeiten/5: 'Telefonische Standardauskünfte zu Policen, Prämien und Schadenstatus erteilen' is not of type 'object'",
+      "taetigkeiten/6: 'Kunden bei komplexem Versicherungsbedarf persönlich oder telefonisch beraten' is not of type 'object'",
+      "taetigkeiten/7: 'Prämienabrechnungen, Zahlungsabgleiche, Mahnläufe und Standardauszahlungen im System abwickeln' is not of type 'object'",
+      "taetigkeiten/8: 'Komplexe Risiko-, Kulanz- und Schadenfälle mit Underwriting, Aussendienst oder Gutachtern abklären und entscheiden' is not of type 'object'",
+      "taetigkeiten/9: 'Aktennotizen, Gesprächsprotokolle und interne Fallzusammenfassungen verfassen' is not of type 'object'",
+      "zusammenfassung: 'Policen- und Schadenverarbeitung, Deckungsvorprüfungen, Offertenerstellung sowie schriftliche und telefonische Standardkundenkontakte werden weitgehend durch Dokumentenerkennung, Chat-LLMs und Voicebots übernommen.' is not of type 'object'"
+    ],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": null,
+  "rohantwort": "{\"isco_code\":\"3312\",\"beruf\":\"Versicherungskaufmann/-frau\",\"taetigkeiten\":[\n  \"Anträge, Vertragsänderungen und Kündigungen prüfen und im Bestandesführungssystem verarbeiten\",\n  \"Versicherungsofferten und Deckungsvorschläge nach Kundenvorgaben ausarbeiten\",\n  \"Schadenmeldungen und Leistungsbelege sichten und Daten ins Schadensystem übertragen\",\n  \"Versicherungsdeckung und Leistungsanspruch anhand von Police und AVB vorprüfen\",\n  \"Schriftliche Kundenanfragen beantworten und Standardkorrespondenz verfassen\",\n  \"Telefonische Standardauskünfte zu Policen, Prämien und Schadenstatus erteilen\",\n  \"Kunden bei komplexem Versicherungsbedarf persönlich oder telefonisch beraten\",\n  \"Prämienabrechnungen, Zahlungsabgleiche, Mahnläufe und Standardauszahlungen im System abwickeln\",\n  \"Komplexe Risiko-, Kulanz- und Schadenfälle mit Underwriting, Aussendienst oder Gutachtern abklären und entscheiden\",\n  \"Aktennotizen, Gesprächsprotokolle und interne Fallzusammenfassungen verfassen\"\n],\"unsicherheit\":\"niedrig\",\"kommentar\":\"Angenommenes Setting: Kaufmännische Sachbearbeitung im Innendienst einer Schweizer Versicherungsgesellschaft oder grösseren Generalagentur (Vertragsverwaltung, Kundenservice und Schaden-/Leistungsabwicklung). Die ESCO-Zuordnung ist sehr allgemein gehalten, wurde aber anhand des typischen Berufsbilds Kauffrau/Kaufmann EFZ Privatversicherung bzw. Versicherungssachbearbeitung in der Schweiz präzisiert. Der wichtigste Grenzfall betrifft telefonische Auskünfte per Voicebot wegen der Schweizerdeutschen Mundart.\",\"zusammenfassung\":\n  \"Policen- und Schadenverarbeitung, Deckungsvorprüfungen, Offertenerstellung sowie schriftliche und telefonische Standardkundenkontakte werden weitgehend durch Dokumentenerkennung, Chat-LLMs und Voicebots übernommen.\"\n}"
+}

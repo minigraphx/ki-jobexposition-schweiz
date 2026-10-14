@@ -1,0 +1,227 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "bac63db781d5723e9907fd6f71f0912985231a0da6d4e020ca455bc3c6f2a167",
+    "isco_code": "1212",
+    "beruf": "HR-Manager/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:50:37+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5158,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5367,
+      "api_aequivalent_usd": 0.1559422
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 5158,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5367,
+        "output_tokens_details": {
+          "thinking_tokens": 1873
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5158,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1559422
+      }
+    ],
+    "request_ids": [
+      "67199f0c-7ad7-437f-afdb-90514da74ac0"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1212",
+    "beruf": "HR-Manager/in",
+    "taetigkeiten": [
+      {
+        "name": "Personalstrategie und Massnahmen (Mitarbeiterbindung, Gleichstellung, Inklusion, Kultur) mit Geschäftsleitung entwickeln und in Workshops abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Grossteil der Zeit fliesst in Abstimmung, Verhandlung und Ermessensentscheide mit der Geschäftsleitung; KI-Ideen und -Konzeptentwürfe sparen keine 50 % der Zeit."
+      },
+      {
+        "name": "Personalbedarf, Personalkostenbudget und Lohnrunde planen (Lohnsimulationen, Einreihungen, Budgetüberwachung)",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Lohnsimulationen und Einreihungen nach Lohnsystem laufen regelbasiert in HR-/Lohnsoftware (z. B. Abacus, SAP HCM) bzw. Excel; die eigentlichen Budget- und Lohnentscheide sind Ermessen."
+      },
+      {
+        "name": "HR-Kennzahlen (Fluktuation, Absenzen, Stellenbesetzung) auswerten und Reportings mit Kommentar erstellen",
+        "zeitanteil_pct": 6,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Datenanalyse-Agent mit Code-Ausführung wertet Exporte aus und entwirft Grafiken und Kommentar; die HR-Managerin prüft jede Auswertung. Standard-Dashboards der HR-Software liefern die Kennzahlen bereits regelbasiert (P1 software)."
+      },
+      {
+        "name": "Anforderungsprofile und Stelleninserate verfassen",
+        "zeitanteil_pct": 6,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM erstellt Inserat und Profil aus Stichworten und alter Stellenbeschreibung; die HR-Managerin prüft jeden Text inhaltlich und stimmt ihn mit der Linie ab."
+      },
+      {
+        "name": "Bewerbungsdossiers sichten, vergleichen und Kandidierende vorselektionieren",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "KI-Funktionen im Bewerbermanagement extrahieren und fassen Dossiers (PDF) zusammen und gleichen sie mit dem Profil ab; die Auswahl trifft die HR-Fachperson selbst. Datenschutz (revDSG) und Fairness-/Diskriminierungsbedenken bremsen."
+      },
+      {
+        "name": "Vorstellungsgespräche und Assessments führen, Anstellungskonditionen aushandeln",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Gespräche und Verhandlungen von Angesicht zu Angesicht; Wert liegt in der Präsenz und Beurteilung."
+      },
+      {
+        "name": "Arbeitsverträge, Arbeitszeugnisse, Vertragsänderungen, Kündigungsschreiben und HR-Korrespondenz erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM entwirft Zeugnisse (inkl. Schweizer Zeugnissprache) und Verträge aus Stichworten, Beurteilungen und Vorlagen; jedes Dokument wird wegen Haftung und Personalrecht fachlich geprüft. Datenschutz bei Personaldaten ist Hemmnis."
+      },
+      {
+        "name": "Führungskräfte und Mitarbeitende in Personalfragen beraten (Konflikte, Leistungsprobleme, Trennungen, Wiedereingliederung)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beratungs- und Konfliktgespräche leben von Vertrauen und persönlicher Präsenz; Ermessen im Einzelfall."
+      },
+      {
+        "name": "Arbeitsrechtliche und personalrechtliche Fragen abklären sowie Personalreglemente und Weisungen entwerfen",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Mit eingefügten Rechtstexten (OR, kantonales Personalgesetz, GAV) beantwortet das LLM Fragen und entwirft Reglemente; die HR-Managerin prüft jede Aussage gegen die Quellen, da Fehler haftungsrelevant sind."
+      },
+      {
+        "name": "Weiterbildungsprogramme und Mitarbeiterbeurteilungsprozess konzipieren, Schulungsunterlagen erstellen und Schulungsfeedback auswerten",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM erstellt Programmkonzepte, Formulare, Leitfäden und Auswertungen von Freitext-Feedback; die HR-Managerin passt an die Organisation an und prüft jedes Ergebnis."
+      },
+      {
+        "name": "HR-Team führen, an Geschäftsleitungssitzungen teilnehmen und mit Sozialpartnern bzw. Personalverbänden verhandeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung, Sitzungen und Verhandlungen sind Präsenz- und Beziehungstätigkeiten."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Leitung oder Senior-HR-Funktion in einer mittleren bis grösseren Verwaltungsorganisation (öffentliche Verwaltung oder Dienstleistungsbetrieb) mit eigener HR-Abteilung. ESCO passt gut. Die Zeitanteile sind grob geschätzt; Grenzfälle sind die Vorselektion von Dossiers (E2 unterstützend vs. E0) sowie Weiterbildungskonzepte und Reglemente nahe der 50-%-Schwelle.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Verfassen von Verträgen, Arbeitszeugnissen, Inseraten, Reglementen und Weiterbildungskonzepten durch Chat-LLMs sowie die Dossiervorselektion und Kennzahlen-Auswertung mit KI-Funktionen in Bewerbermanagement- und Analysewerkzeugen.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI erstellt Texte und Auswertungen, die HR-Managerin prüft jedes Dokument; die Vorselektion von Bewerbungen bleibt unterstützend. Beratung, Gespräche, Verhandlungen und Führung bleiben menschlich, und revDSG, kantonales Personalrecht sowie Vorbehalte gegenüber KI in der Personalauswahl bremsen die Umsetzung in der Verwaltung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

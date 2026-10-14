@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "4c454eab51cc8552e3e08eca6acd0e384557205cb82ac557f73585aadb779db9",
+    "isco_code": "3341",
+    "beruf": "Sekretariatsleiter",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:44:01+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 8929,
+      "cache_read_input_tokens": 76265,
+      "output_tokens": 9324,
+      "api_aequivalent_usd": 0.273181
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 8929,
+        "cache_read_input_tokens": 76265,
+        "output_tokens": 9324,
+        "output_tokens_details": {
+          "thinking_tokens": 2080
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 8929,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.273181
+      }
+    ],
+    "request_ids": [
+      "087ecfd7-0f3f-4c84-9daa-ef170c317973"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3341",
+    "beruf": "Sekretariatsleiter",
+    "taetigkeiten": [
+      {
+        "name": "Sekretariatsmitarbeitende führen, Aufgaben zuweisen, anleiten und deren Arbeit kontrollieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führungs- und Präsenztätigkeit im direkten Austausch mit dem Team; KI spart hier keine 50 % der Zeit."
+      },
+      {
+        "name": "Einsatz-, Ferien- und Stellvertretungsplanung erstellen und Personalkapazität beurteilen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abwägen von Auslastung, Präferenzen und Prioritäten im kleinen Team; Planungsübersicht in Excel/Zeitsystem ist klassische Software und übernimmt die Abstimmung nicht zu ≥ 50 %."
+      },
+      {
+        "name": "Schriftverkehr und Entwürfe von Mitarbeitenden und Vorgesetzten gegenlesen, korrigieren und freigeben",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Leiterin prüft selbst; ein LLM markiert in eingefügten Texten Fehler, Unstimmigkeiten und Tonalität und schlägt Korrekturen vor, wodurch das Gegenlesen gezielter wird."
+      },
+      {
+        "name": "Briefe, E-Mails, Einladungen und Mitteilungen aus Stichworten verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das Chat-LLM erstellt die Texte aus Stichworten und eingefügtem Kontext; da sie im Namen der Verwaltung nach aussen gehen, wird jeder Text geprüft und angepasst."
+      },
+      {
+        "name": "Sitzungsprotokolle und Aktennotizen erstellen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Transkription und KI-Zusammenfassung (z. B. Teams/Copilot) erstellen den Protokollentwurf; die Leiterin liest ihn gegen und bereinigt ihn, Mundart in Sitzungen erhöht den Korrekturaufwand."
+      },
+      {
+        "name": "Tätigkeitsberichte, Auswertungen und Entscheidungsgrundlagen für Vorgesetzte verfassen",
+        "zeitanteil_pct": 7,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft Bericht und Kommentar aus exportierten Zahlen und Notizen; die Leiterin liefert den Kontext, prüft Zahlen und Aussagen und verantwortet das Ergebnis."
+      },
+      {
+        "name": "Eingehende E-Mail-Anfragen triagieren, beantworten und an zuständige Stellen weiterleiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Funktionen im Mailprogramm fassen zusammen und schlagen Zuständigkeit und Antwortentwurf vor; die Leiterin prüft jede Antwort vor dem Versand."
+      },
+      {
+        "name": "Telefonische und persönliche Auskünfte erteilen, Anliegen von Vorgesetzten und Besuchenden direkt klären",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare, situative Kommunikation mit Vorgesetzten, Bürgerinnen und Bürgern sowie Partnern, meist in Mundart; Voicebots decken diese heterogenen Anliegen nicht zu ≥ 50 % ab."
+      },
+      {
+        "name": "Termine, Sitzungen und Raumbelegungen koordinieren und Agenden der Vorgesetzten führen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung von Prioritäten und Verfügbarkeiten mit mehreren Beteiligten; Kalender- und Raumbuchungssoftware hilft, KI-Assistenten sparen in typischer Praxis aber noch keine 50 %."
+      },
+      {
+        "name": "Dokumente im GEVER-/Ablagesystem erfassen, klassifizieren und Ablageordnung pflegen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Klassifikation und Metadatenvorschläge in den in CH-Verwaltungen üblichen GEVER-Lösungen schon standardmässig verfügbar sind; E0 oder delegierend ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung mit LLM schlägt Dossier, Ordnungsposition und Metadaten vor; die Leiterin bearbeitet nur markierte Unklarheiten und prüft stichprobenweise."
+      },
+      {
+        "name": "Büromaterial und Bürogeräte bestellen, Bestellungen prüfen und genehmigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bestellung über Rahmenverträge, E-Procurement-Shops mit Bestelllisten und Genehmigungsworkflows ist klassische Software; generative KI bringt keinen relevanten Zusatznutzen."
+      },
+      {
+        "name": "Weisungen, Prozessbeschriebe und Vorlagen für das Sekretariat erarbeiten und Abläufe verbessern",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft Prozessbeschriebe, Checklisten und Vorlagen aus Stichworten und bestehenden Dokumenten; die Leiterin stimmt sie ab, prüft und passt jede Fassung an."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Leiter/in eines Sekretariats bzw. einer Kanzlei in einer kantonalen oder kommunalen Verwaltung, die ein kleines Team von 3–8 Mitarbeitenden führt und die Amts- oder Departementsleitung unterstützt. Der ESCO-Input passt gut, die Zeitanteile sind grob geschätzt. Grenzfälle sind die GEVER-Ablage (ob es KI-Funktionen im Verwaltungs-GEVER gibt) und die Terminkoordination.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Korrespondenz, E-Mail-Bearbeitung, Protokolle, Berichte, Vorlagen und die Dokumentenablage: Chat-LLMs, KI-Funktionen in Office und Mail, Transkription und KI-Klassifikation im Ablagesystem übernehmen diese Aufgaben.",
+      "begruendung": "Rund zwei Drittel der Arbeitszeit sind exponiert, überwiegend delegierend: Die KI entwirft Texte, Antworten und Protokolle, die Leiterin prüft jedes Ergebnis. Unterstützend wirkt die KI beim Gegenlesen fremder Entwürfe, ersetzend allenfalls bei der Ablage. Führung, Planung, persönliche Auskünfte und Koordination bleiben beim Menschen; in der Schweizer Verwaltung bremsen vor allem Amtsgeheimnis, Datenschutz und Cloud-Restriktionen (regulatorisch).",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

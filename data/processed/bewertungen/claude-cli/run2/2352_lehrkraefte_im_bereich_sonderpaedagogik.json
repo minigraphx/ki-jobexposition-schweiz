@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "443aa37fb9713fa249e1cecd9acc3851bd3ec9cc75b3ff2c8f37ad3d67d6ec16",
+    "isco_code": "2352",
+    "beruf": "Lehrkräfte im Bereich Sonderpädagogik",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:49:20+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4737,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4229,
+      "api_aequivalent_usd": 0.1298142
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4737,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4229,
+        "output_tokens_details": {
+          "thinking_tokens": 1126
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4737,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1298142
+      }
+    ],
+    "request_ids": [
+      "a4ec13f8-44d8-480a-bca6-7ad1c585d274"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2352",
+    "beruf": "Lehrkräfte im Bereich Sonderpädagogik",
+    "taetigkeiten": [
+      {
+        "name": "Förderunterricht in Einzel- und Kleingruppensettings mit Lernenden mit besonderem Bildungsbedarf durchführen",
+        "zeitanteil_pct": 32,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unterricht in Präsenz mit enger Beziehungsarbeit, Motivation und laufender Anpassung an das Kind; keine Technik übernimmt das."
+      },
+      {
+        "name": "Im Klassenunterricht (Teamteaching) Lernende mit Beeinträchtigung begleiten, assistieren und bei Pflege, Hilfsmitteln und Sicherheit unterstützen",
+        "zeitanteil_pct": 13,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische und zwischenmenschliche Präsenz im Schulzimmer (Begleitung, Pflegehandlungen, Gerätebedienung, Krisenintervention)."
+      },
+      {
+        "name": "Lernstand und Entwicklung mit Förderdiagnostik, Tests und Beobachtung erheben",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Testdurchführung und Beobachtung erfolgen direkt mit dem Kind; die Auswertung standardisierter Tests ist klassisch und kurz, KI spart hier keine 50 %."
+      },
+      {
+        "name": "Individuelle Förderpläne mit Förderzielen (ICF-orientiert) formulieren und fortschreiben",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus eingegebenen Beobachtungen und Testergebnissen entwirft das LLM Förderziele und Massnahmen; die SHP prüft und passt jeden Plan fachlich an. Hemmnis: Datenschutz besonders schützenswerter Schülerdaten."
+      },
+      {
+        "name": "Angepasste Lernmaterialien erstellen und adaptieren (vereinfachte Texte, Leichte Sprache, differenzierte Arbeitsblätter)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM vereinfacht Texte und erstellt differenzierte Aufgaben nach Vorgabe; die Lehrperson prüft jedes Blatt und passt es an das einzelne Kind an. Haptisches/visuelles Material bleibt teils Handarbeit."
+      },
+      {
+        "name": "Förderlektionen planen und Unterrichtssequenzen vorbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Planung stark kindspezifisch und erfahrungsbasiert; ob KI-Vorschläge 50 % sparen ist unsicher, E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Lehrperson plant selbst; das LLM schlägt Abläufe, Übungsprogressionen und Methoden vor."
+      },
+      {
+        "name": "Lern- und Standortberichte sowie Anträge für verstärkte Massnahmen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM entwirft Berichte aus Stichworten, Förderplan und Beobachtungen; die SHP prüft jeden Bericht inhaltlich und verantwortet ihn. Hemmnis: Datenschutz und Amtsgeheimnis bei Schülerdaten."
+      },
+      {
+        "name": "Beobachtungen, Lernverlauf und Gesprächsprotokolle dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Stichworten formuliert das LLM Verlaufseinträge und Protokolle; die Lehrperson prüft jeden Eintrag. Aufnahmen von Mundart-Gesprächen mehrerer Personen sind wenig verlässlich, daher Stichwortbasis."
+      },
+      {
+        "name": "Standort- und Elterngespräche führen und Eltern beraten",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Gesprächsführung und Beziehungsarbeit mit Eltern, oft in heiklen Situationen."
+      },
+      {
+        "name": "Mit Klassenlehrpersonen, Therapeut/innen, Schulpsychologischem Dienst und Schulleitung absprechen und an Teamsitzungen teilnehmen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Interdisziplinäre Abstimmung und Fallbesprechungen in Präsenz."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Schulische Heilpädagogin/Schulischer Heilpädagoge (Master) in der integrativen Förderung der Volksschule bzw. an einer Sonderschule. ESCO deckt die Präsenzarbeit gut ab, die Schweizer Administrativarbeit (Förderplanung, Standortgespräche, Berichte) wurde aus Berufswissen ergänzt. Grenzfälle sind Lektionsplanung und Materialadaption, deren Zeitersparnis stark vom Förderbedarf abhängt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Förderplanung, Materialadaption, Berichte und Dokumentation, die ein Chat-LLM aus Stichworten und Beobachtungen entwerfen kann; der Förderunterricht und die Begleitung der Kinder selbst sind nicht betroffen.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert, überwiegend im delegierenden Modus: Die KI entwirft Förderpläne, Berichte und angepasste Materialien, die Heilpädagogin prüft und individualisiert jedes Ergebnis. Der Kern des Berufs bleibt Präsenz- und Beziehungsarbeit mit Kindern, Eltern und Fachpersonen. In der Schweiz bremsen vor allem Datenschutzvorgaben der Kantone für besonders schützenswerte Schülerdaten und fehlende freigegebene KI-Tools in Schulen die Umsetzung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

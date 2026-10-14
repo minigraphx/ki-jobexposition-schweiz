@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "af79ee26388989298f80263d478bbf004577f5a851502f7d96f05358bc06e493",
+    "isco_code": "2146",
+    "beruf": "Qualitätsmanager/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:06:18+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2933,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5794,
+      "api_aequivalent_usd": 0.14668219999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2933,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5794,
+        "output_tokens_details": {
+          "thinking_tokens": 2422
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2933,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.14668219999999998
+      }
+    ],
+    "request_ids": [
+      "90e01804-9912-4204-8537-71d7aa6e18e7"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2146",
+    "beruf": "Qualitätsmanager/in",
+    "taetigkeiten": [
+      {
+        "name": "QM-Dokumentation erstellen und pflegen (Prozessbeschreibungen, Arbeits- und Prüfanweisungen, QM-Handbuch)",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft Anweisungen und Prozessbeschreibungen aus Stichworten, bestehenden Dokumenten und Normauszügen. Die Qualitätsmanagerin prüft jedes Dokument gegen den realen Ablauf und gibt es frei; der Abgleich mit der Praxis hält die Restzeit hoch."
+      },
+      {
+        "name": "Interne Audits und Lieferantenaudits vor Ort durchführen sowie Zertifizierungs- und Kundenaudits begleiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Begehungen, Interviews und Nachweisprüfung vor Ort erfordern persönliche Präsenz und Urteilsvermögen."
+      },
+      {
+        "name": "Audit- und Kontrollberichte mit Feststellungen und Massnahmenplänen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Auditnotizen und Checklisten erstellt das LLM den Bericht und schlägt Massnahmen vor. Die Auditorin prüft jede Feststellung und Formulierung fachlich und verantwortet den Bericht."
+      },
+      {
+        "name": "Prüf- und Messdaten statistisch auswerten (SPC, Prozessfähigkeit, Trend- und Fehleranalysen)",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Agent mit Code-Ausführung führt die Ad-hoc-Auswertungen samt Grafiken durch; die Qualitätsmanagerin spezifiziert die Analyse und prüft jedes Ergebnis auf Plausibilität. Standardkennzahlen (Cpk, Regelkarten) liefern auch klassische CAQ- und Statistiksoftware wie Minitab → P1."
+      },
+      {
+        "name": "Erstmuster, Wareneingang und Produkte prüfen bzw. Messungen an Teilen begleiten und freigeben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Prüfung am Teil und Freigabeentscheid an der Linie. Koordinatenmessmaschinen und Bildverarbeitung übernehmen Messungen, nicht aber die Tätigkeit der Qualitätsmanagerin in relevantem Umfang."
+      },
+      {
+        "name": "Ursachenanalysen, FMEA und Verbesserungsprojekte mit Produktion und Entwicklung im Team erarbeiten und abstimmen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Moderierte Workshops (Ishikawa, 5-Why, FMEA), Begehungen in der Produktion und Abstimmung mit Fachbereichen dominieren. KI-Vorschläge für Fehlerursachen oder Fehlermöglichkeiten sparen deutlich weniger als 50 % der Zeit."
+      },
+      {
+        "name": "Reklamationen dokumentieren und 8D-Berichte, Stellungnahmen an Kunden und Lieferantenreklamationen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Falldaten und Analyseergebnissen formuliert das LLM 8D-Bericht und Kundenschreiben, auch in Englisch oder Französisch. Die Qualitätsmanagerin prüft jede Aussage wegen der Haftungsrelevanz inhaltlich."
+      },
+      {
+        "name": "Normen, gesetzliche und Kundenanforderungen analysieren und Gap-Analysen zum eigenen QM-System erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Normtexte, Kundenspezifikationen und eigene Verfahren werden eingefügt; das LLM erstellt den Abgleich mit Lücken und Massnahmenvorschlägen. Jede Abweichung wird fachlich geprüft. Hemmnis: Konformität und Haftung, z. B. bei Medizinprodukten."
+      },
+      {
+        "name": "Management-Review und Qualitätsberichte für die Geschäftsleitung vorbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus exportierten Kennzahlen, Auditergebnissen und Reklamationsdaten entwirft das LLM Bericht und Präsentationstexte. Die Qualitätsmanagerin prüft jede Bewertung und ergänzt sie um die Zielsetzung."
+      },
+      {
+        "name": "Mitarbeitende in Qualitätsthemen und neuen Verfahren schulen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenzschulung in der Produktion und am Arbeitsplatz; der Wert liegt in der persönlichen Vermittlung."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Qualitätsmanager/in in einem Schweizer Industrie-KMU (Maschinen-, Metall- oder Medtech-Zulieferer) mit einem QM-System nach ISO 9001, teils ISO 13485 oder IATF. ESCO («Qualitätsingenieur») passt nur teilweise und betont operative Inspektionen; deshalb wurden Audit-, Dokumentations- und Reklamationsarbeit nach CH-Berufswissen ergänzt. Grenzfälle sind die Datenauswertung (E2 bzw. klassische CAQ-Software) und die FMEA, die hier wegen der Workshop-Dominanz als E0 bewertet wurde.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind QM-Dokumentation, Audit- und 8D-Berichte, Gap-Analysen, Management-Review-Berichte und Ad-hoc-Datenauswertungen: Chat-LLMs und Datenanalyse-Agenten erstellen diese Ergebnisse.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit ist exponiert, durchwegs im delegierenden Modus: Die KI erstellt Dokumente, Berichte und Auswertungen, die Qualitätsmanagerin prüft jede Ausgabe gegen die betriebliche Realität und verantwortet sie. Audits vor Ort, Teamarbeit an Ursachenanalysen, Produktprüfungen und Schulungen bleiben menschlich. Regulatorische Anforderungen (Medtech-Konformität, Haftung) und Datenschutzvorgaben in KMU bremsen die Einführung nur moderat.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "5e1fb1dffd4fae0e4f94632f2d8d5daf2196b76d650392245585e7643b4fa0da",
+    "isco_code": "3321",
+    "beruf": "Versicherungsvertreter",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:42:49+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3331,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4908,
+      "api_aequivalent_usd": 0.1321462
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3331,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4908,
+        "output_tokens_details": {
+          "thinking_tokens": 1845
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3331,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1321462
+      }
+    ],
+    "request_ids": [
+      "3fa65b64-2ac0-475d-9d63-6a121b0e761f"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3321",
+    "beruf": "Versicherungsvertreter",
+    "taetigkeiten": [
+      {
+        "name": "Neue Kundinnen und Kunden akquirieren: Telefonakquise, Empfehlungen nutzen, Beratungstermine vereinbaren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Wert liegt im persönlichen Kontakt und im Netzwerk des Beraters; KI-Leadlisten oder Skripte sparen keine 50 % der Akquisezeit."
+      },
+      {
+        "name": "Beratungsgespräche beim Kunden oder in der Agentur führen: Versicherungs- und Vorsorgebedarf erfragen, Produkte erklären",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung von Angesicht zu Angesicht mit Vertrauensaufbau; Präsenztätigkeit."
+      },
+      {
+        "name": "Abschlussgespräche führen, Lösungen aushandeln und Anträge mit Kunden unterzeichnen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verkaufsverhandlung und Abschluss in persönlicher Präsenz; Einwandbehandlung und Vertrauen dominieren."
+      },
+      {
+        "name": "Offerten und Prämien im Offert- bzw. Tarifrechnersystem der Gesellschaft berechnen und Varianten erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Prämienberechnung ist regelbasierte Tarifsoftware (klassische Software) und kein LLM-Anwendungsfall; Dateneingabe bleibt, generative KI spart hier keine 50 %."
+      },
+      {
+        "name": "Bestehende Policen und Fremdofferten (PDF/Scan) auswerten und Deckungsvergleich bzw. Vorsorgeanalyse vorbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenextraktion aus Policen-PDFs und LLM-Vergleich erstellen die Deckungsübersicht; der Berater prüft jede Analyse auf Lücken und Richtigkeit. Hemmnis: Datenschutz bei Kundendokumenten."
+      },
+      {
+        "name": "Beratungsprotokolle und Gesprächsnotizen gemäss Informations- und Dokumentationspflichten (VAG) im CRM erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Diktat oder Stichworte nach dem Gespräch werden per Spracherkennung/LLM zum Protokoll; der Berater prüft jedes Protokoll, da es haftungsrelevant ist."
+      },
+      {
+        "name": "Kundenkorrespondenz verfassen: Offertbegleitschreiben, Nachfass- und Antwort-E-Mails",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM erstellt Briefe und E-Mails aus Stichworten; der Berater sichtet kurz, ergänzt Persönliches und versendet."
+      },
+      {
+        "name": "Schadenmeldungen und Vertragsmutationen von Kunden entgegennehmen, im System erfassen und weiterleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, wie viel der Zeit auf das persönliche Telefongespräch entfällt; E0 ebenso plausibel, P1 über Kundenportale ebenfalls denkbar.",
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "KI-Extraktion aus E-Mails, Formularen und Fotos erfasst Meldungen im Bestandssystem; der Berater bearbeitet markierte Ausnahmen."
+      },
+      {
+        "name": "Bestandskunden betreuen: Jahres- und Überprüfungsgespräche führen, Kündigungen abwenden, Fragen am Telefon beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beziehungspflege im persönlichen bzw. telefonischen Gespräch; der Wert liegt in der Kundennähe."
+      },
+      {
+        "name": "Verkaufsaktionen planen und Marketingtexte erstellen (Mailings, Social-Media-Beiträge, Einladungen)",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM entwirft Mailings und Posts nach Vorgabe; der Berater prüft jeden Text auf Compliance-Vorgaben der Gesellschaft."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: angestellter Versicherungsberater im Aussendienst einer Generalagentur einer Schweizer Versicherungsgesellschaft (Privatkunden Sach/Vorsorge, VBV-registriert). ESCO beschreibt den Makler, die Tätigkeiten sind aber weitgehend übertragbar. Grenzfälle: Mutations- und Schadenerfassung (Anteil Telefon vs. Schriftliches) und die Offerterstellung, die hauptsächlich klassische Tarifsoftware ist.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Policenvergleiche, Beratungsprotokolle, Korrespondenz, Marketingtexte und die Erfassung von Mutationen. Die Technik dahinter sind Dokumentenextraktion, Spracherkennung und Chat-LLM.",
+      "begruendung": "Rund 30 % der Arbeitszeit sind exponiert. Meist arbeitet die KI delegierend (Analysen und Protokolle prüft der Berater einzeln), bei Standardkorrespondenz und Mutationserfassung ersetzend. Der Kern des Berufs, also persönliche Akquise, Beratung und Abschluss, bleibt menschlich. Gebremst wird die Einführung durch Datenschutz und die VAG-Dokumentationspflichten sowie durch die Erwartung der Kundschaft an eine persönliche Beziehung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

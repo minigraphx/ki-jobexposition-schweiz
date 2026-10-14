@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "1126a0249d5abfb739ee563436427d6fe92294832ef8418f41d96002a092f0ed",
+    "isco_code": "8342",
+    "beruf": "Führer von Erdbewegungs- und verwandten Maschinen, Strassenbau und Baumaschinen",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:10:27+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 39557,
+      "output_tokens": 3556,
+      "api_aequivalent_usd": 0.0790394
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 39557,
+        "output_tokens": 3556,
+        "output_tokens_details": {
+          "thinking_tokens": 765
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.0790394
+      }
+    ],
+    "request_ids": [
+      "fa88d9bc-6ef3-46cf-aba2-1ad8c1a9311d"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "8342",
+    "beruf": "Führer von Erdbewegungs- und verwandten Maschinen, Strassenbau und Baumaschinen",
+    "taetigkeiten": [
+      {
+        "name": "Bagger und Radlader für Aushub, Erdbewegung und Grabenarbeiten bedienen",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Arbeit besteht darin, die Maschine vor Ort zu führen. Autonome Bagger gibt es nur in Pilotprojekten, 3D-Maschinensteuerung unterstützt den Fahrer nur."
+      },
+      {
+        "name": "Erdoberfläche und Planum mit Planierraupe oder Grader nach Höhenvorgaben und Gefälle ebnen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Maschinenarbeit. Die GNSS-/3D-Maschinensteuerung regelt zwar das Schild, fahren und überwachen muss aber weiterhin die Person, deshalb kein Wegfall von ≥ 50 % der Zeit."
+      },
+      {
+        "name": "Fundations-, Frostschutz- und Tragschichten einbauen und mit Walzen verdichten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Material einbauen und Maschinen führen ist physische Arbeit. Autonome Walzen sind auf Schweizer Baustellen nicht im regulären Einsatz."
+      },
+      {
+        "name": "Asphaltbelag mit Fertiger und Walze einbauen und Einbauqualität sichtprüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Arbeit mit heissem Material an Ort und Stelle; Temperatur und Ebenheit werden am Material vor Ort geprüft. Keine autonome Einbautechnik im regulären Betrieb."
+      },
+      {
+        "name": "Maschinen, Geräte und Material per Tieflader oder Lastwagen zur Baustelle transportieren, auf- und abladen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fahren und Verladen sind physische Tätigkeiten. Fahrerlose Lastwagen sind in der Schweiz nicht zugelassen."
+      },
+      {
+        "name": "Entwässerungsleitungen und Schächte verlegen sowie bestehende Werkleitungen vor Ort orten und freilegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handarbeit und Maschinenarbeit im Graben, vorsichtiges Arbeiten bei Versorgungsleitungen."
+      },
+      {
+        "name": "Baumaschinen täglich kontrollieren, schmieren, reinigen und kleine Reparaturen ausführen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Wartung an der Maschine. Zentralschmieranlagen nehmen nur einen kleinen Teil davon ab."
+      },
+      {
+        "name": "Baustelle absichern, provisorische Signalisation und Abschrankungen aufstellen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Material vor Ort aufstellen ist physische Arbeit."
+      },
+      {
+        "name": "Pläne und Werkleitungspläne lesen, Höhen kontrollieren und Arbeitsablauf mit Polier abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit fällt vor allem für Kontrollen vor Ort und mündliche Absprachen an. Generative KI spart dabei kaum die Hälfte der Zeit."
+      },
+      {
+        "name": "Maschinen- und Regierapporte mit Stunden, Arbeitsbeschrieb und Material erfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Person spricht in die Rapport-App, die KI erstellt daraus den Rapport, und Maschinist oder Polier prüft jeden Rapport. Dialekt und Lärm in der Kabine erhöhen den Korrekturaufwand."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Baumaschinenführer/in in einer Schweizer Tief- und Strassenbauunternehmung (KMU) mit Bagger, Raupe, Walze und Fertiger. Der ESCO-Input passt gut und zeigt einen fast ausschliesslich physischen Beruf. Grenzfall ist die 3D-Maschinensteuerung: Sie automatisiert zwar die Schildführung, ersetzt aber nicht die Fahrzeit der Person, deshalb P0.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen ist einzig das Erfassen von Maschinen- und Regierapporten per Spracheingabe in Rapport-Apps; das Führen der Maschinen und der Einbau selbst sind nicht exponiert.",
+      "begruendung": "Nur rund 3 % der Arbeitszeit sind exponiert, und zwar delegierend: Die App erstellt den Rapport aus der Spracheingabe, die Person prüft jeden Rapport. Der Kern des Berufs ist physische Maschinenarbeit auf Schweizer Baustellen, wo schweizerdeutscher Dialekt und Lärm die Spracheingabe erschweren.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}
