@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "2366bb40609eb87188a87c6c954923e5845e3a9c40c56c2563dbca9a43c2f6db",
+    "isco_code": "2512",
+    "beruf": "Softwareentwickler",
+    "lauf": 3,
+    "reihenfolge_seed": 20261016,
+    "timestamp": "2026-10-13T22:47:09+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 40260,
+      "output_tokens": 4915,
+      "api_aequivalent_usd": 0.10636
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 40260,
+        "output_tokens": 4915,
+        "output_tokens_details": {
+          "thinking_tokens": 1419
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.10636
+      }
+    ],
+    "request_ids": [
+      "b9e99302-fd83-448c-af8c-96d89f7e2672"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2512",
+    "beruf": "Softwareentwickler",
+    "taetigkeiten": [
+      {
+        "name": "Anforderungen mit Fachbereich, Kundschaft und Product Owner in Workshops und Gesprächen klären",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Klärung im direkten Austausch mit Menschen: Rückfragen, Abwägen, Abstimmen. Ihr Wert liegt in der Interaktion, deshalb spart KI hier nicht 50 %."
+      },
+      {
+        "name": "User Stories und Spezifikationen analysieren und technische Anforderungen schriftlich ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus eingefügten Workshop-Notizen und Stories schreibt das LLM die technischen Anforderungen und Akzeptanzkriterien. Die Entwicklerin prüft jede Fassung inhaltlich und ergänzt sie um Systemwissen."
+      },
+      {
+        "name": "Softwarearchitektur und Komponentendesign entwerfen und Entwurfsentscheide treffen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Entwurfsentscheide verlangen Abwägungen mit Wissen über Betrieb, Altsysteme und Organisation. Das LLM liefert Varianten, spart aber kaum 50 % der Zeit."
+      },
+      {
+        "name": "Neue Features in bestehender Codebasis implementieren, inkl. Unit- und Integrationstests",
+        "zeitanteil_pct": 25,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Coding-Agent mit Repo-Zugriff schreibt Code und Tests über mehrere Dateien. Die Entwicklerin spezifiziert, steuert und reviewt jede Änderung vor dem Merge. In Banken und Verwaltung bremsen Cloud- und Geheimhaltungsvorgaben."
+      },
+      {
+        "name": "Softwarefehler analysieren, reproduzieren und beheben (Debugging)",
+        "zeitanteil_pct": 12,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Erst ein Coding-Agent mit Repo-Zugriff, Logs und Testausführung bringt ≥ 50 % Ersparnis. Der Entwickler steuert die Fehlersuche und prüft jeden Fix; schwer reproduzierbare Fehler in Produktionsumgebungen bleiben aufwendig."
+      },
+      {
+        "name": "Pull Requests von Teammitgliedern reviewen und kommentieren",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Reviewer prüft weiterhin selbst. Ein KI-Review-Bot in der Git-Plattform fasst die Änderung zusammen und markiert mögliche Probleme, sodass gezielter geprüft werden kann."
+      },
+      {
+        "name": "Prototypen und Proof-of-Concepts für neue Funktionen oder Technologien entwickeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Coding-Agenten erzeugen lauffähige Prototypen aus kurzer Beschreibung sehr schnell; die Qualitätsanforderungen sind tiefer als im Produktivcode. Die Entwicklerin steuert, testet und beurteilt das Ergebnis."
+      },
+      {
+        "name": "Schnittstellen (APIs) und Systemkomponenten integrieren sowie Datenmigrationsskripte erstellen",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Agent schreibt Adapter, Mappings und Migrationsskripte anhand von API-Dokumentation und Datenschemata. Die Entwicklerin prüft jede Änderung und testet gegen die Umsysteme; Abklärungen mit Drittsystemen bleiben ihr."
+      },
+      {
+        "name": "Build-, CI/CD-Pipelines und Deployment-Konfigurationen erstellen und pflegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Pipeline- und Infrastruktur-Konfigurationen (YAML, Dockerfiles) schreibt ein Agent mit Repo-Zugriff, die Entwicklerin prüft jede Änderung. Der automatische Ablauf von Builds und Deployments ist bereits klassische Automatisierung und kostet keine Zeit mehr."
+      },
+      {
+        "name": "Technische Dokumentation, Code-Kommentare und Flussdiagramme erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Agent mit Repo-Zugriff erstellt Dokumentation, README-Dateien und Diagramme als Text (z. B. Mermaid) aus dem Code. Die Entwicklerin prüft jede Fassung auf Richtigkeit."
+      },
+      {
+        "name": "An Team-Meetings teilnehmen (Daily, Planning, Retro) und Aufwände schätzen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung und Schätzung im Team sind Präsenz- und Koordinationstätigkeiten. KI spart hier keine relevante Zeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Softwareentwickler/in (FH/ETH oder Informatiker/in EFZ mit Berufserfahrung) in einem agilen Team eines Schweizer Softwarehauses oder einer IT-Abteilung, das überwiegend bestehende Systeme weiterentwickelt. Die ESCO-Kompetenzen «Bauprojekte leiten» und «Software für technisches Zeichnen verwenden» habe ich als Rauschen weggelassen. Am unsichersten sind die Restzeit-Bänder beim Implementieren und Debuggen: Sie hängen stark von Codebasis-Qualität, Altlasten und Vorgaben ab. Grenzfall bleibt die Architekturarbeit (E0, mittel).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Implementieren, Debuggen, Integration, Prototyping, Pipeline-Konfiguration und Dokumentation durch Coding-Agenten mit Repo-Zugriff; Code-Reviews unterstützen KI-Review-Bots.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind exponiert, überwiegend delegierend: Coding-Agenten erstellen Code, Tests und Doku, die Entwicklerin spezifiziert, steuert und prüft jede Änderung. Klärung mit Fachbereichen, Architekturentscheide und Teamabstimmung bleiben beim Menschen. In der Schweiz bremsen vor allem Geheimhaltungs- und Cloud-Vorgaben bei Banken, Versicherungen und Verwaltung (regulatorisch) den Einsatz; in der ICT-Branche selbst ist die Adoption bereits weit fortgeschritten.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

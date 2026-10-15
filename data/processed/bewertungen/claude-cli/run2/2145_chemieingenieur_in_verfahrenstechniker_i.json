@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "6fb2e4a671615df8a55f40a29ea255518c02d08c31cc8613d741df14c686e72f",
+    "isco_code": "2145",
+    "beruf": "Chemieingenieur/in / Verfahrenstechniker/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:57:40+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3556,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4864,
+      "api_aequivalent_usd": 0.1330662
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3556,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4864,
+        "output_tokens_details": {
+          "thinking_tokens": 1244
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3556,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1330662
+      }
+    ],
+    "request_ids": [
+      "d2a3c271-4665-4fe1-8dcc-aaecf7b6be54"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2145",
+    "beruf": "Chemieingenieur/in / Verfahrenstechniker/in",
+    "taetigkeiten": [
+      {
+        "name": "Verfahren auslegen: Stoff- und Energiebilanzen rechnen, Prozesse simulieren und Apparate dimensionieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Kernarbeit läuft in klassischer Simulationssoftware (z. B. Aspen) und hängt stark vom Ermessen der Ingenieurin ab; ein LLM hilft beim Rechnen und Skripten, spart aber typischerweise keine 50 %. Die Simulationssoftware ist ein Werkzeug, das die Auslegung nicht selbst übernimmt."
+      },
+      {
+        "name": "Labor- und Pilotversuche zur Prozess- und Trennverfahrensentwicklung planen und durchführen, Proben ziehen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit mit Chemikalien im Labor und in der Pilotanlage. Laborautomation deckt nur Teilschritte ab, keine 50 % der Zeit."
+      },
+      {
+        "name": "Versuchs- und Prozessdaten statistisch auswerten (DoE, Trends, Ausbeuten) und visualisieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Agent mit Code-Ausführung erstellt aus exportierten Daten die Auswertungen und Grafiken; die Ingenieurin gibt die Fragestellung vor und prüft jede Auswertung fachlich. Klassische Statistiksoftware übernimmt die Arbeit nicht ohne manuelle Bedienung."
+      },
+      {
+        "name": "Produktion und Scale-up begleiten, Prozessstörungen vor Ort analysieren und Inbetriebnahmen durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz in der Anlage, die Beurteilung erfolgt am realen Prozess und in Absprache mit dem Betriebspersonal. Das Prozessleitsystem ist bereits vorhanden und ersetzt diese Arbeit nicht."
+      },
+      {
+        "name": "Technische Berichte, Prozessbeschreibungen, Herstellvorschriften und Validierungsdokumente verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus eingefügten Daten, Stichworten und Vorlagen entwirft das LLM die Dokumente; die Ingenieurin prüft jedes Dokument inhaltlich und verantwortet es. Hemmnis: GMP-Dokumentationspflichten und Vertraulichkeit von Prozess-Know-how."
+      },
+      {
+        "name": "Sicherheits- und Risikoanalysen (HAZOP, FMEA) im interdisziplinären Team moderieren und durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Wert liegt in der moderierten Teamdiskussion und im Expertenurteil zur konkreten Anlage. KI-Vorschläge für Fehlermöglichkeiten sparen keine 50 % der Zeit."
+      },
+      {
+        "name": "Umweltauswirkungen und Einhaltung von Umwelt- und Sicherheitsvorschriften beurteilen (Emissionen, Abfälle, Bewilligungsunterlagen)",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die KI-Hilfe bei der anlagenspezifischen Beurteilung wirklich 50 % spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Ingenieurin beurteilt selbst; das LLM fasst eingefügte Vorschriften (z. B. LRV, StFV) zusammen, gleicht sie mit den Prozessdaten ab und entwirft Textbausteine. Hemmnis: kantonale Bewilligungsverfahren und Haftung."
+      },
+      {
+        "name": "Konstruktionspläne und R&I-Schemata prüfen, Änderungen anordnen und Konstruktionen freigeben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Planprüfung erfordert detailliertes Verständnis der Anlage, und die Freigabe ist verantwortungsgebunden. Das Bildverständnis für komplexe R&I-Schemata reicht 2026 nicht für 50 % Zeitersparnis."
+      },
+      {
+        "name": "Literatur-, Patent- und Technologierecherchen zu Verfahren und Stofftrennung durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent sucht und fasst Publikationen und Patente zusammen; die Ingenieurin wählt aus, verifiziert die Quellen und zieht die Schlüsse selbst."
+      },
+      {
+        "name": "Projekte mit Produktion, Engineering, QS und Lieferanten in Besprechungen abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zwischenmenschliche Abstimmung und Verhandlung, bei der die Präsenz zählt."
+      },
+      {
+        "name": "Wirtschaftlichkeits-, Kosten- und Risikoabschätzungen für Verfahrensvarianten erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus eingefügten Kostendaten und Annahmen erstellt das LLM Kalkulationsmodelle und Risikoübersichten; die Ingenieurin prüft Annahmen und Ergebnisse jeder Abschätzung."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Annahme: Chemieingenieur/in in der Chemie- oder Pharmaindustrie (z. B. Region Basel), tätig in Prozessentwicklung, Scale-up und Produktionsbetreuung. Der ESCO-Input passt gut; die Zeitanteile sind grob geschätzt und je nach Stelle (F&E vs. Betrieb vs. Engineering) sehr unterschiedlich. Grenzfälle sind die Datenauswertung, die Umweltbeurteilung und die Verfahrensauslegung mit Simulationssoftware.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Datenauswertung, technische Dokumentation, Wirtschaftlichkeitsrechnungen und Recherchen, die durch Datenanalyse-Agenten, Chat-LLMs und Recherche-Agenten übernommen bzw. beschleunigt werden; Verfahrensauslegung, Versuche und Anlagenbetreuung bleiben weitgehend beim Menschen.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert, überwiegend delegierend (KI erstellt Auswertungen und Dokumententwürfe, die Ingenieurin prüft jede Ausgabe) und teils unterstützend bei Recherche und Compliance-Beurteilung. In der Schweizer Chemie- und Pharmaindustrie bremsen vor allem GMP-Dokumentationspflichten, der Schutz von vertraulichem Prozess-Know-how (Cloud-Restriktionen) und kantonale Bewilligungsverfahren.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

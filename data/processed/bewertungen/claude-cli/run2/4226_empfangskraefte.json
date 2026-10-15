@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "20ab63ff4e3dbb3275df5b734bb84526662716d61488c050190f30a97ba0d494",
+    "isco_code": "4226",
+    "beruf": "Empfangskräfte (allgemein)",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:06:31+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 39242,
+      "output_tokens": 4640,
+      "api_aequivalent_usd": 0.1006564
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 39242,
+        "output_tokens": 4640,
+        "output_tokens_details": {
+          "thinking_tokens": 1461
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1006564
+      }
+    ],
+    "request_ids": [
+      "e2982a6c-5051-4a57-bd5c-1eb4bbbf3b1b"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "4226",
+    "beruf": "Empfangskräfte (allgemein)",
+    "taetigkeiten": [
+      {
+        "name": "Besucherinnen, Besucher und Kundschaft am Empfang persönlich begrüssen, anmelden und an zuständige Personen weiterleiten",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare zwischenmenschliche Präsenz als Visitenkarte des Betriebs; generative KI ersetzt das persönliche Empfangen nicht."
+      },
+      {
+        "name": "Besucher registrieren, Badges und Zutrittskarten ausstellen und zurücknehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Formular- und Ausweisroutine ohne LLM-Bedarf; Self-Check-in-Terminals mit Besuchermanagementsystem und Badge-Druck sind kommerziell verfügbar und übernehmen den Grossteil."
+      },
+      {
+        "name": "Telefonanrufe entgegennehmen, Standardauskünfte geben und an die richtige Stelle weiterverbinden",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Qualität von Voicebots bei Schweizerdeutsch, Namen und Durchwahlen am Telefon wenig belegt; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Voicebot mit Zugriff auf Telefonverzeichnis und FAQ beantwortet Standardfragen und verbindet weiter; die Empfangskraft übernimmt weitergeleitete Spezialfälle. Klassische IVR-Menüs erreichen die gleiche Qualität nicht."
+      },
+      {
+        "name": "Persönliche Auskünfte, Wegbeschreibungen und Anliegen am Schalter klären",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gespräch von Angesicht zu Angesicht, oft mit unklaren Anliegen; Wert liegt in der persönlichen Präsenz."
+      },
+      {
+        "name": "Termine und Sitzungszimmer im Kalender- bzw. Raumbuchungssystem koordinieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend Eintragen und Abgleichen in klassischen Kalender- und Raumbuchungssystemen mit Online-Selbstbuchung; LLM spart darüber hinaus kaum 50 %."
+      },
+      {
+        "name": "E-Mails und schriftliche Anfragen an die allgemeine Adresse beantworten oder an Zuständige weiterleiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Funktion im Mailsystem klassiert eingehende Nachrichten, schlägt Weiterleitung vor und entwirft Standardantworten; die Empfangskraft gibt frei und bearbeitet unklare Fälle. In der Verwaltung bremsen Datenschutz- und Cloud-Vorgaben."
+      },
+      {
+        "name": "Telefon- und Gesprächsnotizen erfassen sowie interne Mitteilungen verfassen und verteilen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gesprächszusammenfassung aus Telefonie-Transkription bzw. Mitteilungsentwurf aus Stichworten; die Empfangskraft sichtet kurz und versendet. Dialekt erhöht den Korrekturaufwand."
+      },
+      {
+        "name": "Post und Pakete entgegennehmen, sortieren, verteilen und Ausgangspost frankieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handhabung von Sendungen; Frankiermaschinen sparen nur einen kleinen Teil, Sortieren und Verteilen bleibt manuell."
+      },
+      {
+        "name": "Empfangsbereich und Sitzungszimmer aufräumen, Getränke und Unterlagen bereitstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit vor Ort; keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Einfache Administrationsaufgaben erledigen: Adresslisten und Verzeichnisse pflegen, Formulare erfassen, Dokumente ablegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Aufgaben sehr heterogen und kleinteilig; unklar, ob Dokumentenextraktion und Office-KI typischerweise 50 % sparen, E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Dokumentenextraktion und KI in Office-Suite übertragen Formular- und Listendaten; die Empfangskraft prüft jeden Eintrag und legt ab."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Empfang einer mittelgrossen Verwaltung bzw. eines Dienstleistungsbetriebs mit Telefonzentrale und Besucherempfang. Der ESCO-Match passt gut; die Zeitanteile zwischen Telefon und persönlichem Empfang schwanken je nach Betrieb stark. Der wichtigste Grenzfall ist die Telefonie: Ob Voicebots Schweizerdeutsch am Telefon zuverlässig genug verarbeiten, entscheidet über einen grossen Teil der Exposition.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Telefonzentrale mit Standardauskünften und Weiterverbinden (Voicebot), das Beantworten und Weiterleiten der Sammel-E-Mails (KI im Mailsystem) sowie Notizen und Mitteilungen (Transkription bzw. LLM).",
+      "begruendung": "Rund 40 % der Arbeitszeit sind exponiert, überwiegend ersetzend: Voicebot und Mail-KI erledigen Standardfälle, und die Empfangskraft übernimmt Ausnahmen; der persönliche Empfang, Post und Präsenz am Schalter bleiben unberührt. In der Schweiz bremsen die Qualität bei Schweizerdeutsch am Telefon, die Erwartung der Anrufenden an einen menschlichen Kontakt (vertrauen) sowie Datenschutz- und Cloud-Vorgaben in der Verwaltung die Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

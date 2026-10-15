@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "316c3b05202adf7a2f7424e5a9019d04995d1e4bd29106177a4dbb35970d59aa",
+    "isco_code": "1412",
+    "beruf": "Führungskräfte in Restaurants",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2118,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2118
+        }
+      ],
+      "prompt_token_count": 23216,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 23216
+        }
+      ],
+      "thoughts_token_count": 5678,
+      "total_token_count": 31012
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2118,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2118
+          }
+        ],
+        "prompt_token_count": 23216,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 23216
+          }
+        ],
+        "thoughts_token_count": 5678,
+        "total_token_count": 31012
+      }
+    ],
+    "request_ids": [
+      "xD_Pasa7CMf_qtsPt4yCmQ4"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-1412_fuehrungskraefte_in_restaurants",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "1412",
+    "beruf": "Führungskräfte in Restaurants",
+    "taetigkeiten": [
+      {
+        "name": "Service- und Küchenabläufe im Tagesgeschäft vor Ort leiten und Gäste persönlich betreuen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Präsenz im Gastraum und in der Küche, Koordination während der Stosszeiten sowie persönlicher Gästekontakt und Beschwerdebehandlung vor Ort sind nicht durch KI substituierbar."
+      },
+      {
+        "name": "Mitarbeitende im laufenden Betrieb führen, schulen und Bewerbungsgespräche durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zwischenmenschliche Führungsarbeit, praktische Instruktion am Arbeitsplatz (z. B. Serviceabläufe, Vermeidung von Food Waste) sowie persönliche Vorstellungsgespräche und Schnuppereinsätze erfordern menschliche Präsenz."
+      },
+      {
+        "name": "Dienst- und Schichtpläne nach L-GAV-Vorgaben erstellen sowie Arbeitszeiten kontrollieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Schichtplanung und Stundenkontrolle unter Einhaltung der Arbeits- und Ruhezeiten des Schweizer L-GAV wird durch klassische, regelbasierte Einsatzplanungssoftware (z. B. Mirus, Gastromatic) automatisiert; generative KI ist dafür nicht erforderlich."
+      },
+      {
+        "name": "Hygiene-, Qualitäts- und Sicherheitskontrollen (HACCP) durchführen sowie Gerätewartung veranlassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Kontrollgänge in Küche, Kühlräumen und Gastraum zur Überprüfung von Lebensmittelsicherheit, Portionsgrössen, Speisequalität und Funktionstüchtigkeit der Infrastruktur."
+      },
+      {
+        "name": "Lagerbestände physisch kontrollieren, mit Lieferanten verhandeln und Waren bestellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit entfällt überwiegend auf die physische Inventur und Frischekontrolle im Lager sowie auf persönliche Konditionsverhandlungen mit Lieferanten; Bestellportale erleichtern nur die Eingabe."
+      },
+      {
+        "name": "Lieferantenrechnungen prüfen sowie Umsätze, Warenkosten (Food Cost) und Finanzkennzahlen auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumentenerkennung und KI-Analysefunktionen in Buchhaltungs- und Kassensystemen erfassen heterogene Lieferscheine/Rechnungen und erstellen Abweichungs- und Margenanalysen; die Führungskraft prüft die Auswertungen und gibt Zahlungen frei."
+      },
+      {
+        "name": "Offerten für Bankette und Sonderveranstaltungen erstellen sowie schriftliche Gästeanfragen und Online-Bewertungen beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus wenigen Stichworten individuelle Bankettofferten, E-Mail-Antworten und mehrsprachige Reaktionen auf Online-Rezensionen; die Führungskraft spezifiziert die Eckdaten und prüft jeden Text vor dem Versand."
+      },
+      {
+        "name": "Speise- und Getränkekarten planen, Rezepturen kalkulieren und Verkaufspreise festlegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Führungskraft entscheidet selbst über das kulinarische Angebot und die Preisstrategie; ein Chat-LLM unterstützt mit Ideen für saisonale Angebote, Massnahmen gegen Food Waste und Deckungsbeitragsberechnungen auf Basis eingefügter Einkaufspreise."
+      },
+      {
+        "name": "Speisekarten betexten und übersetzen sowie Werbematerial und Social-Media-Beiträge erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sprachmodelle und generative Grafikwerkzeuge erstellen ansprechende Menübeschreibungen, Übersetzungen in Landessprachen/Englisch sowie bebilderte Social-Media-Posts; die Führungskraft kontrolliert jede Ausgabe auf korrekte Deklaration und Stil."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Betriebsleiter/in bzw. Geschäftsführer/in eines mittelgrossen Schweizer Restaurants (KMU). Die ESCO-Kompetenzen bilden das Berufsbild gut ab; rein ausführende Details wie 'Geschirr vorbereiten' wurden als Teil der allgemeinen Serviceaufsicht gewertet. Die Gesamt-Unsicherheit ist mittel, da das Verhältnis zwischen operativer Mitarbeit an der Front und administrativer Führungsarbeit je nach Betriebsgrösse (inhabergeführter Gasthof vs. grössere System- oder Hotelgastronomie) merklich variiert.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die kaufmännischen und kommunikativen Bürotätigkeiten wie das Verfassen von Bankettofferten und Gästeantworten, das Betexten und Übersetzen von Speisekarten sowie die Rechnungsprüfung und Kennzahlenanalyse.",
+      "begruendung": "Rund 30 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus (Entwurf von Offerten, Korrespondenz, Menütexten und Finanzanalysen mit menschlicher Endkontrolle) sowie unterstützend bei der Angebotskalkulation. Der Kern des Berufs (70 %) besteht aus Präsenz im Service, Personalführung, Hygienekontrollen und Einkauf vor Ort und ist nicht durch KI ersetzbar. Als Hemmnis wirkt in der Schweizer Gastronomie der hohe Anspruch der Gäste an eine persönliche, authentische Gastgeberkultur.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

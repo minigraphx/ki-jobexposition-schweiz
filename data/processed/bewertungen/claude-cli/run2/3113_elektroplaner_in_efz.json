@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "4db377574037ec7356ad3e285f326a0687da30e531df6e0595baca5413c2dc09",
+    "isco_code": "3113",
+    "beruf": "Elektroplaner/in EFZ",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:56:13+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4005,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 6574,
+      "api_aequivalent_usd": 0.17085820000000002
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4005,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 6574,
+        "output_tokens_details": {
+          "thinking_tokens": 3287
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4005,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.17085820000000002
+      }
+    ],
+    "request_ids": [
+      "d84e2f5b-4420-49f2-b83a-295d38b165f4"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3113",
+    "beruf": "Elektroplaner/in EFZ",
+    "taetigkeiten": [
+      {
+        "name": "Elektroinstallationspläne (Stark- und Schwachstrom) im CAD/BIM zeichnen und als Ausführungs- und Revisionspläne nachführen",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative KI-Funktionen in Elektro-CAD/BIM (z. B. automatische Platzierung von Geräten) sind heute nicht so verlässlich, dass sie die Planbearbeitung bei gleicher Qualität um ≥ 50 % verkürzen. Symbolbibliotheken und Makros sind bereits im Einsatz und übernehmen keine weiteren 50 %."
+      },
+      {
+        "name": "Prinzip- und Verteilschemas für Haupt- und Unterverteilungen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Schemaerstellung in Schema-CAD erfordert projektspezifische technische Entscheide; LLM-Unterstützung erreicht die 50 %-Schwelle nicht verlässlich. Die Schema-Software ist bereits im Einsatz."
+      },
+      {
+        "name": "Leitungen, Schutzorgane und Beleuchtung mit Berechnungssoftware dimensionieren (Spannungsabfall, Kurzschluss, Selektivität, Lichtberechnung)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Berechnung selbst erledigt bereits klassische Software (z. B. Lichtplanungs- und Netzberechnungsprogramme); die verbleibende Zeit ist Modellieren und fachliches Beurteilen, wo generative KI keine 50 % spart."
+      },
+      {
+        "name": "Material- und Apparatelisten sowie Kostenschätzungen aus CAD-Auszügen ermitteln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mengenauszüge und Apparatelisten lassen sich aus CAD/BIM-Modellen per klassischer Software generieren und mit Kennwerten kalkulieren; kein LLM nötig."
+      },
+      {
+        "name": "Leistungsverzeichnisse (Devis) nach NPK erstellen und Unternehmerofferten im Offertvergleich auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, wie weit LLM-Funktionen in AVA-Software (NPK-Positionsvorschläge, Extraktion aus PDF-Offerten) die Zeit heute schon halbieren; E2 delegierend ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Positionswahl aus dem NPK-Katalog und Offertvergleich via SIA-451-Datenaustausch laufen bereits in klassischer AVA-Software; die verbleibende Zeit ist fachliche Auswahl und Bewertung."
+      },
+      {
+        "name": "Technische Beschriebe, Elektrokonzepte und Projektberichte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM erstellt Beschriebe und Konzepttexte aus Stichworten und Projektdaten; der Elektroplaner prüft jeden Text fachlich und ergänzt projektspezifische Angaben."
+      },
+      {
+        "name": "E-Mail-Korrespondenz, Aktennotizen und Sitzungsprotokolle schreiben",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM formuliert Mails, Notizen und Protokolle aus Stichworten; die Person prüft jede Ausgabe auf technische Richtigkeit und versendet sie."
+      },
+      {
+        "name": "Normen, Werkvorschriften und Brandschutzvorgaben (NIV, NIN, Werkvorschriften) für Projektfragen nachschlagen und klären",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Eingefügte Normauszüge lassen sich gut erklären, doch Halluzinationsrisiko und Prüfaufwand sind hoch; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Planer klärt die Normfrage selbst; LLM erklärt eingefügte Normtexte und findet relevante Passagen, jede Aussage wird an der Quelle verifiziert. Normtexte sind urheberrechtlich geschützt und haftungsrelevant."
+      },
+      {
+        "name": "Koordinationssitzungen mit Architektur, Fachplanern und Bauherrschaft führen und Lösungen abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung und Verhandlung im persönlichen Austausch; Präsenz- und Beziehungstätigkeit."
+      },
+      {
+        "name": "Baustellen begehen, Ausführung kontrollieren und Ausmass vor Ort aufnehmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz auf der Baustelle mit Kontrolle vor Ort; keine relevante Automatisierung."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Elektroplaner/in EFZ im Ingenieurbüro für Gebäudetechnik bzw. in der Planungsabteilung eines Elektroinstallationsunternehmens (Hochbau). Der ESCO-Input (Elektrotechniker, Montage/Löten/Prüfen in der Fertigung) passt nur schlecht; die Tätigkeiten stammen daher überwiegend aus eigenem Berufswissen zur Schweizer Berufsausübung. Die grössten Grenzfälle sind generative CAD-/AVA-Funktionen (Devis, Offertvergleich, Planerstellung), deren Reife für die Praxis noch unklar ist.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem das Verfassen technischer Beschriebe, die Korrespondenz und Protokolle sowie das Nachschlagen von Normen per Chat-LLM; die Kernarbeit im Elektro-CAD bleibt nicht exponiert, ebenso Koordination und Baustelle.",
+      "begruendung": "Nur rund 15 % der Arbeitszeit sind exponiert, überwiegend delegierend: Die KI entwirft Texte, der Planer prüft jeden Text fachlich. Bei Normfragen arbeitet die KI nur unterstützend. Bremsend wirken die Haftung für normkonforme Planung und der Urheberschutz der NIN; die zentrale Planungsarbeit in CAD/BIM und mit Berechnungssoftware hängt von klassischer Software ab, nicht von generativer KI.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "d7f80d65b6ba00b508234ca7648d37d0775538f652dd3cae946787629f35d877",
+    "isco_code": "7233",
+    "beruf": "Landmaschinen- und Industriemaschinenmechaniker und -schlosser",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:07:10+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2462,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4434,
+      "api_aequivalent_usd": 0.11571419999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2462,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4434,
+        "output_tokens_details": {
+          "thinking_tokens": 1500
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2462,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11571419999999999
+      }
+    ],
+    "request_ids": [
+      "4ab8d893-1b72-46e1-a798-9da6eb714533"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "7233",
+    "beruf": "Landmaschinen- und Industriemaschinenmechaniker und -schlosser",
+    "taetigkeiten": [
+      {
+        "name": "Landmaschinen und Traktoren periodisch warten (Öl- und Filterwechsel, Schmieren, Einstellen, Verschleissteile ersetzen)",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handarbeit an sehr unterschiedlichen Maschinen in der Werkstatt; keine Robotik, die das in relevantem Umfang übernimmt."
+      },
+      {
+        "name": "Motoren, Getriebe, Hydraulik- und Antriebskomponenten zerlegen, instand setzen und wieder zusammenbauen",
+        "zeitanteil_pct": 22,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Reparaturarbeit mit Werkzeug an Einzelstücken; weder generative KI noch Robotik übernehmen das."
+      },
+      {
+        "name": "Störungen an Motor-, Kraftstoff-, Elektrik- und Hydrauliksystemen mit Diagnosegerät und Messungen eingrenzen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zeit liegt im Messen, Prüfen und Ausprobieren an der Maschine; ein LLM kann Fehlercodes erklären, spart aber deutlich unter 50 %. Herstellerdiagnosesoftware ist bereits Werkzeug, ersetzt die Fehlersuche aber nicht."
+      },
+      {
+        "name": "Pannen und Reparaturen vor Ort auf dem Hof oder Feld beheben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit unter Feldbedingungen, oft unter Zeitdruck in der Saison; keine Automatisierung möglich."
+      },
+      {
+        "name": "Neue Maschinen und Anbaugeräte montieren, ausrüsten und beim Kunden in Betrieb nehmen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Montage und Einstellen an der Maschine sowie Einweisung vor Ort sind physisch bzw. Präsenz."
+      },
+      {
+        "name": "Metallteile schweissen, anfertigen und Bleche reparieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Einzelanfertigung und Reparaturschweissen; Schweissroboter lohnen sich nur in der Serienfertigung."
+      },
+      {
+        "name": "Maschinen überführen, Probefahrten durchführen und Fahrzeuge auf dem Werkstattgelände manövrieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fahren ist physisch; autonomes Fahren von Traktoren/Lkw im Strassenverkehr ist in der Schweiz nicht zugelassen."
+      },
+      {
+        "name": "Arbeits- und Serviceberichte mit Befund, ausgeführten Arbeiten, Material und Stunden erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe/Fotos in einer Werkstatt- oder Rapport-App erstellen den Bericht samt Arbeitsbeschrieb; der Mechaniker prüft und ergänzt jeden Rapport. Dialekt und Werkstattlärm erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Ersatzteile in Herstellerkatalogen bestimmen und bestellen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Teilebestimmung erfolgt über elektronische Herstellerkataloge (klassische Software, bereits im Einsatz) und Abgleich an der Maschine; ein LLM spart hier keine 50 %."
+      },
+      {
+        "name": "Kundschaft über Befund, Reparaturumfang und Bedienung der Maschinen informieren",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Gespräch an der Maschine oder am Telefon mit Landwirten; Wert liegt in Präsenz und Vertrauen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Landmaschinenmechaniker/in EFZ (Landtechnik) in einer KMU-Werkstatt mit Service vor Ort; Industriemaschinenmechanik ist ähnlich physisch geprägt. Die ESCO-Beschreibung ist knapp, die Tätigkeiten stützen sich daher auf die Kompetenzliste und den typischen Werkstattalltag. Grenzfälle sind die Fehlerdiagnose (KI-Hilfe beim Deuten von Fehlercodes, aber unter der Schwelle) und die Rapporterstellung per Spracheingabe.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen ist nur das Erstellen von Arbeits- und Serviceberichten per Spracheingabe in Rapport-Apps. Wartung, Reparatur, Diagnose an der Maschine und Einsätze vor Ort sind nicht exponiert.",
+      "begruendung": "Nur etwa 5 % der Arbeitszeit sind exponiert, und zwar delegierend: Die KI erstellt den Rapport, die Mechanikerin oder der Mechaniker prüft jeden Bericht. Der Kern des Berufs ist physische Werkstatt- und Feldarbeit. In den vielen kleinen Schweizer Landtechnik-Werkstätten setzen sich digitale Rapport-Apps nur langsam durch, und Schweizerdeutsch sowie Werkstattlärm erschweren die Spracheingabe.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

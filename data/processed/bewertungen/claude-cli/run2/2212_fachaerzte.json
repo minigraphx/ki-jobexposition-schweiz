@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "dac1dcf2cbdb35ab66f7d8a8b5a0c4356aaaa66a13642001b47218b96d90fd49",
+    "isco_code": "2212",
+    "beruf": "Fachärzte",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T01:04:02+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 16785,
+      "cache_read_input_tokens": 73302,
+      "output_tokens": 4181,
+      "api_aequivalent_usd": 0.23257640000000002
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 16785,
+        "cache_read_input_tokens": 73302,
+        "output_tokens": 4181,
+        "output_tokens_details": {
+          "thinking_tokens": 1148
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 16785,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.23257640000000002
+      }
+    ],
+    "request_ids": [
+      "d30441b9-dbf2-461f-9317-a2cb77ea432d"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2212",
+    "beruf": "Fachärzte",
+    "taetigkeiten": [
+      {
+        "name": "Anamnese erheben, Diagnosen und Therapieoptionen mit Patientinnen und Angehörigen besprechen und Patienten aufklären",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Arzt-Patienten-Gespräch mit Vertrauen, Empathie und rechtlich geforderter Aufklärung; der Wert liegt in der Präsenz."
+      },
+      {
+        "name": "Patienten körperlich untersuchen und Visiten auf der Station durchführen",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Untersuchung und Präsenz am Bett; keine Technik übernimmt dies in relevantem Umfang."
+      },
+      {
+        "name": "Operative und interventionelle Eingriffe durchführen (z. B. Endoskopie, Bronchoskopie, Chirurgie, Laser, Sonografie)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle, hochspezialisierte Tätigkeit; OP-Roboter sind vom Arzt gesteuerte Werkzeuge und ersetzen dessen Zeit nicht."
+      },
+      {
+        "name": "Diagnostische Befunde interpretieren (Labor, Bildgebung, EKG, EMG, Funktionstests)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative KI spart bei der verantwortlichen Befundinterpretation im typischen Fall keine 50 % bei gleicher Qualität; spezialisierte (nicht-generative) Bild-KI und automatische EKG-Auswertung sind nur Zweitmeinung und übernehmen keine 50 %."
+      },
+      {
+        "name": "Differenzialdiagnose stellen, Therapieentscheid treffen und Medikation verordnen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ärztlicher Einzelfallentscheid mit Ermessen und Verantwortung; LLM-Vorschläge beschleunigen den Entscheid selbst nicht um 50 %."
+      },
+      {
+        "name": "Konsultationen und Verlaufseinträge im Klinik-/Praxisinformationssystem dokumentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ambiente Dokumentation bzw. Diktat mit Spracherkennung erstellt den Eintrag im KIS; die Ärztin prüft und verantwortet jeden Eintrag. Schweizerdeutsche Gespräche erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Austrittsberichte, Zuweiserbriefe und Berichte an Versicherer verfassen",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Verlaufseinträge und Befunde lassen sich als Text kopieren; das LLM entwirft den Bericht, die Fachärztin prüft ihn gegen die Akte und visiert ihn. Berufsgeheimnis/Datenschutz bremsen."
+      },
+      {
+        "name": "Fachliteratur und Leitlinien zu klinischen Fragestellungen recherchieren und Fortbildungen nachbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Ärztin beurteilt die Evidenz selbst; Recherche-Agenten mit Quellenangaben finden und fassen Studien und Leitlinien zusammen, Quellen werden verifiziert."
+      },
+      {
+        "name": "Interdisziplinäre Rapporte und Tumorboards leiten, Assistenzärzte und Pflegeteam anleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz-, Führungs- und Abstimmungstätigkeit im Team."
+      },
+      {
+        "name": "Kostengutsprachegesuche und Anfragen von Krankenkassen schriftlich beantworten",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM formuliert Gesuch bzw. Antwort aus eingefügten Falldaten und Indikation; die Ärztin prüft jede medizinische Begründung und unterschreibt."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Fachärztin/Facharzt (Oberarzt/Kaderarzt im Spital oder Spezialarztpraxis), gemittelt über konservative und operative Fächer; die ESCO-Kompetenzliste ist ein Sammelsurium aus vielen Spezialitäten, daher Zeitanteile grob geschätzt. Grösste Unsicherheiten: Zeitersparnis der ambienten Dokumentation bei Schweizerdeutsch sowie Anteil der Dokumentation, der je nach Fach (operativ vs. konservativ) stark schwankt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die klinische Dokumentation, Arzt- und Austrittsberichte, Versichererkorrespondenz und die Literaturrecherche, die durch ambiente Dokumentation/Spracherkennung, Chat-LLM und Recherche-Agenten weitgehend vorbereitet werden.",
+      "begruendung": "Rund ein Viertel der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI entwirft Einträge und Berichte, die Fachärztin prüft und verantwortet jedes Dokument; bei der Recherche bleibt die KI unterstützend. Der Kern des Berufs – Patientengespräch, Untersuchung, Eingriffe und ärztlicher Entscheid – bleibt unberührt. Berufsgeheimnis, Datenschutz (revDSG, Cloud-Restriktionen in Spitälern) und Integration in KIS/Praxissoftware bremsen die Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

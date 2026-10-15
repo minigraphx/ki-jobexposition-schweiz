@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "ff21d90072f7b74efe507fe5bfe4a40bddd27ffd26bdf38d37015e36b1981bfc",
+    "isco_code": "7214",
+    "beruf": "Baumetallverformer und Metallbauer",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2047,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2047
+        }
+      ],
+      "prompt_token_count": 22159,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22159
+        }
+      ],
+      "thoughts_token_count": 4601,
+      "total_token_count": 28807
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2047,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2047
+          }
+        ],
+        "prompt_token_count": 22159,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22159
+          }
+        ],
+        "thoughts_token_count": 4601,
+        "total_token_count": 28807
+      }
+    ],
+    "request_ids": [
+      "XTzPavfmBbDtz7IPofG1mAw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-7214_baumetallverformer_und_metallbauer",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "7214",
+    "beruf": "Baumetallverformer und Metallbauer",
+    "taetigkeiten": [
+      {
+        "name": "2D- und 3D-Werkstatt- und Montagepläne lesen, Masse prüfen und auf Werkstücke übertragen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Lesen der Pläne ist unmittelbar mit dem Ausmessen, Anreissen und Prüfen am physischen Werkstück in der Werkstatt oder auf der Baustelle verbunden; Sprachmodelle sparen hier keine 50 % der Zeit."
+      },
+      {
+        "name": "Metallprofile, Bleche und Stahlträger zuschneiden, sägen, brennen und bohren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Materialbearbeitung ohne Exposition gegenüber generativer KI. Kommerziell verfügbare CNC-Säge-Bohr-Anlagen, Stabbearbeitungszentren und Laserschneidanlagen können über 50 % der manuellen Zuschnitt- und Bohrarbeit übernehmen."
+      },
+      {
+        "name": "Bleche, Profile und Bewehrungs- oder Konstruktionsstahl kanten, biegen, richten und umformen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Umform- und Richtarbeit an Abkantpressen, Walzen oder mittels Flammrichten; im durch Einzelstücke und Kleinserien geprägten Schweizer Metallbau übernimmt Robotik keine 50 % der Arbeitszeit."
+      },
+      {
+        "name": "Bauteile in der Werkstatt ausrichten, heften und durch Schweiss-, Niet- oder Schraubverbindungen fügen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Kerntätigkeit am Schweisstisch (Ausrichten, Spannen, Heften, Lichtbogen- und Punktschweissen, Nieten); aufgrund wechselnder Konstruktionen und kleiner Losgrössen auch durch Schweissroboter im typischen KMU nicht zu 50 % automatisierbar."
+      },
+      {
+        "name": "Schweissnähte verputzen, Oberflächen schleifen und Korrosionsschutz mit Spritzpistole auftragen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Nachbearbeitung und Beschichtung an individuellen Stahl- und Metallbauteilen."
+      },
+      {
+        "name": "Stahl- und Metallbaukonstruktionen sowie Bauelemente auf der Baustelle unter Höhen- und Arbeitssicherheit montieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montagearbeit vor Ort inkl. Anschlagen von Lasten, Einweisen von Kränen, Ausrichten und Befestigen von Tragwerken, Fassaden oder Fenstern."
+      },
+      {
+        "name": "Bauteile, Schweissnähte und Werkstoffe auf Masshaltigkeit, Korrosion und Unvollkommenheiten prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sicht- und Massprüfung unmittelbar am gefertigten oder montierten Bauteil in der Werkstatt und auf dem Bau."
+      },
+      {
+        "name": "Sägemaschinen, Schweissgeräte und Werkzeuge pflegen sowie Material für den Baustellentransport bereitstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Reinigen und Warten des Maschinenparks sowie Kommissionieren und Sichern von Ladungen für die Montage."
+      },
+      {
+        "name": "Arbeitsfortschritt, Regierapporte, Materialverbrauch und Montageprotokolle erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Per Spracheingabe und Fotos in einer Rapport- oder Branchen-App erstellt die KI den Arbeits- oder Abnahmerapport; der Metallbauer prüft und korrigiert jeden Eintrag vor der Freigabe. Werkstatt- und Baustellenlärm sowie Dialekt erhöhen den Korrekturaufwand."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Metallbauer/in EFZ (Metall- und Stahlbau) in einem typischen Schweizer KMU mit Arbeit in der Werkstatt und auf der Baustelle (Montage). Die Konstruktions- und CAD-Planung liegt in der Schweiz primär beim separaten Beruf Metallbaukonstrukteur/in EFZ. Die ESCO-Fehlzuordnung «Staub von Kraftfahrzeugen entfernen» wurde als Rauschen ignoriert; Arbeiten mit Bewehrungsstahl spielen im Schweizer Metallbau gegenüber Profil- und Blechkonstruktionen eine untergeordnete Rolle.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert ist einzig die Erfassung von Regierapporten, Arbeitsfortschritt und Montageprotokollen per Spracheingabe und Foto-Dokumentation; die handwerkliche Fertigung und Montage sind nicht betroffen.",
+      "begruendung": "Nur rund 5 % der Arbeitszeit entfallen auf administrative Dokumentationsaufgaben, bei denen KI im delegierenden Modus aus Sprachnotizen und Fotos Rapporte erstellt, die der Metallbauer jeweils fachlich prüft. Die übrigen 95 % der Arbeit in Werkstatt und auf der Baustelle erfordern physische Präsenz und handwerkliches Geschick beim Zuschneiden, Umformen, Schweissen und Montieren. Nennenswerte regulatorische CH-Hemmnisse bestehen nicht, jedoch verlangsamen Werkstatt- und Baustellenlärm, Mundart sowie die kleinteilige KMU-Struktur der Schweizer Metallbaubranche die Einführung.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

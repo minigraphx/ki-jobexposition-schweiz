@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "abdb96b8a838422d478920bb0b20a397ee820b07e5cc5d123376af19020b73ce",
+    "isco_code": "2514",
+    "beruf": "Datenwissenschaftler/in / Data Scientist",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2129,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2129
+        }
+      ],
+      "prompt_token_count": 25400,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 25400
+        }
+      ],
+      "thoughts_token_count": 5626,
+      "total_token_count": 33155
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2129,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2129
+          }
+        ],
+        "prompt_token_count": 25400,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 25400
+          }
+        ],
+        "thoughts_token_count": 5626,
+        "total_token_count": 33155
+      }
+    ],
+    "request_ids": [
+      "XTzPaqH8A_7oz7IP17yB4Qw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r2-2514_datenwissenschaftler_in_data_scientist",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2514",
+    "beruf": "Datenwissenschaftler/in / Data Scientist",
+    "taetigkeiten": [
+      {
+        "name": "Fachliche Fragestellungen mit Fachabteilungen klären und in analytische Use Cases übersetzen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Klärung von Geschäftsprozessen, Zielen und Datenverfügbarkeit erfordert persönliche Abstimmung und Verhandlung mit Stakeholdern; KI-Formulierungshilfen sparen hier keine 50 % der Zeit."
+      },
+      {
+        "name": "Daten aus Datenbanken und Quellsystemen abfragen, zusammenführen und bereinigen (SQL/Python)",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Coding- und Daten-Agenten mit Schema-Zugriff und Code-Ausführung erstellen die SQL-Abfragen und Bereinigungsskripte; die Fachperson spezifiziert die Logik und prüft jede Transformation anhand der Datenverteilung."
+      },
+      {
+        "name": "Explorative Datenanalyse (EDA) und statistische Auswertungen durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Assistenten in Notebooks generieren und starten Auswertungsskripte, Hypothesentests und Verteilungsplots; der Data Scientist steuert die Untersuchung und prüft jedes statistische Ergebnis fachlich."
+      },
+      {
+        "name": "Merkmale konstruieren (Feature Engineering) sowie Machine-Learning- und statistische Modelle entwickeln",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Coding-Agenten schreiben den Code für Feature-Pipelines, Modelltraining und Hyperparameter-Tuning über mehrere Dateien; der Mensch gibt die Modellierungsstrategie vor und kontrolliert jede Implementierung."
+      },
+      {
+        "name": "Modelle validieren, auf Robustheit und Verzerrungen (Bias) prüfen sowie fachlich beurteilen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-generierte Diagnoseskripte bei komplexen Modellen mindestens 50 % der Zeit sparen, da die inhaltliche Prüfung auf Data Leakage und Fachlogik aufwendig bleibt; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Fachperson führt die inhaltliche Modellbeurteilung und Fehleranalyse selbst durch, während Coding-Agenten Diagnoseskripte, SHAP-Analysen und Subgruppen-Auswertungen als Teilergebnisse liefern."
+      },
+      {
+        "name": "Daten- und Modell-Pipelines in Produktivsysteme integrieren, testen und überwachen (MLOps)",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Coding-Agenten im Repository erstellen API-Endpunkte, Unit-Tests, Docker-Konfigurationen und Monitoring-Skripte; die Fachperson steuert den Agenten und reviewt jede Codeänderung vor dem Deployment."
+      },
+      {
+        "name": "Datenvisualisierungen, Dashboards und Ergebnispräsentationen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Agenten und integrierte KI-Funktionen in BI- und Office-Software generieren interaktive Plots, Dashboard-Code und Folienentwürfe; der Data Scientist gibt die Kernaussagen vor und prüft jede Darstellung."
+      },
+      {
+        "name": "Technische Dokumentation, Modellkarten und Methodenberichte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Bereits ein Chat-LLM entwirft aus eingefügtem Code, Metriken und Stichworten vollständige Dokumentationen und Methodenberichte; die Fachperson prüft jeden Text inhaltlich auf Korrektheit."
+      },
+      {
+        "name": "Analyseergebnisse und Handlungsempfehlungen vor Entscheidungsträgern präsentieren und beraten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Überzeugungsarbeit, Einordnung von Unsicherheiten und Beratung des Managements erfordern persönliche Präsenz und Vertrauensaufbau im direkten Gespräch."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Data Scientist in einem Schweizer Dienstleistungs-, Finanz- oder Industrieunternehmen (ISCO 2514). Das ESCO-Profil weist einen starken Fokus auf akademische Grundlagenforschung (Forschungsgelder beantragen, wissenschaftliche Publikationen) auf, der zugunsten der typischen betrieblichen Praxis in der Schweiz (Datenaufbereitung, ML-Modellierung, MLOps, Stakeholder-Beratung) bereinigt wurde. Der wichtigste Grenzfall liegt bei der fachlichen Modellvalidierung, bei der die Code-Erstellung für Diagnosen stark beschleunigt wird, die methodische Beurteilung jedoch beim Menschen bleibt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Datenaufbereitung, explorative Analysen, Feature Engineering, Modellentwicklung, MLOps-Integration, Visualisierung sowie Dokumentation werden durch Coding-Agenten, Notebook-KI und Chat-LLMs stark beschleunigt.",
+      "begruendung": "Rund 80 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus (Coding- und Daten-Agenten erstellen Skripte, Pipelines, Plots und Berichte, während der Data Scientist spezifiziert und jedes Ergebnis fachlich prüft) sowie teils unterstützend bei der Modellvalidierung. In der Schweiz bremsen vor allem regulatorische Anforderungen (revDSG, Bankkundengeheimnis, FINMA-Modellgovernance) den direkten Zugriff Cloud-basierter KI-Agenten auf produktive Personendaten.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

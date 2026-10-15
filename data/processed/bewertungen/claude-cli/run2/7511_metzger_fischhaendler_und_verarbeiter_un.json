@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "d9a621bd963f2e9fb70e40611787fa1a4e400a128b3f15db526a564546de939a",
+    "isco_code": "7511",
+    "beruf": "Metzger, Fischhändler und -verarbeiter und verwandte Berufe",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:09:45+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 41835,
+      "output_tokens": 4847,
+      "api_aequivalent_usd": 0.10531499999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 41835,
+        "output_tokens": 4847,
+        "output_tokens_details": {
+          "thinking_tokens": 1513
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.10531499999999999
+      }
+    ],
+    "request_ids": [
+      "d3cc86b0-60eb-48c2-99f4-fcec478708a9"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "7511",
+    "beruf": "Metzger, Fischhändler und -verarbeiter und verwandte Berufe",
+    "taetigkeiten": [
+      {
+        "name": "Schlachtkörper und Fleischstücke zerlegen, entbeinen, parieren und zuschneiden",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Messerarbeit am Produkt. Automatische Zerlegelinien gibt es fast nur in der Geflügel-Grossindustrie; für Rind- und Schweinezerlegung in typischen CH-Betrieben nicht in relevantem Umfang."
+      },
+      {
+        "name": "Wurstwaren, Brät und Fleischspezialitäten nach Rezeptur herstellen (Wolf, Kutter, Füller, Räuchern, Kochen)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Produktion und Maschinenbedienung vor Ort. Die Maschinen sind bereits vorhanden, aber Beschicken, Einstellen und sensorische Kontrolle bleiben beim Menschen."
+      },
+      {
+        "name": "Fleisch portionieren, abpacken und an Wiege- und Etikettiermaschinen auszeichnen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit, keine LLM-Exposition. Automatische Portionierer, Slicer mit Einlegesystem, Tiefzieh- bzw. Schalenverpacker und Wiege-Preisauszeichner sind kommerziell verfügbar und übernehmen den Grossteil der Arbeit."
+      },
+      {
+        "name": "Fleisch an der Theke verkaufsfertig präsentieren und Kundschaft bedienen und beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bedienung von Angesicht zu Angesicht mit Aufschneiden und Abwägen ist Präsenz- und Handarbeit. Bediente Theken lassen sich nicht durch Automaten ersetzen."
+      },
+      {
+        "name": "Wareneingang kontrollieren: Fleisch und Rohstoffe auf Farbe, Geruch und Temperatur prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sensorische und physische Prüfung vor Ort. Generative KI spart hier keine relevante Zeit."
+      },
+      {
+        "name": "Arbeitsplatz, Maschinen und Kühlräume nach Hygieneplan reinigen und desinfizieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Reinigung verwinkelter Maschinen und Räume. Schaumanlagen unterstützen nur, Roboter übernehmen keine 50 %."
+      },
+      {
+        "name": "HACCP-Kontrollen durchführen: Temperaturen messen, Kontrollblätter und Chargen-Rückverfolgbarkeit erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es geht um Messen und Erfassen von Zahlen; ein LLM spart nichts Relevantes. Funk-Temperatursensoren mit automatischer Protokollierung und Chargenverwaltung per Barcode (klassische Software) können den Grossteil übernehmen."
+      },
+      {
+        "name": "Lagerbestände überwachen und Ware bei Lieferanten nachbestellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bestände werden physisch im Kühlraum kontrolliert, die Bestellung ist kurz. Warenwirtschaftssysteme mit Mindestbestand und automatischen Bestellvorschlägen sind klassische Software."
+      },
+      {
+        "name": "Rezepturen, Produktspezifikationen sowie Deklarations- und Etikettentexte (Zutaten, Allergene) erstellen und pflegen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Rezeptur als Text einfügen; das LLM entwirft Zutatenliste, Allergenkennzeichnung und Spezifikationsblatt. Die Fachperson prüft jede Deklaration gegen das Lebensmittelrecht (Haftung)."
+      },
+      {
+        "name": "Kundenbestellungen (Partyservice, Gastronomie) per Telefon und E-Mail entgegennehmen und erfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Telefonbestellungen in Schweizerdeutsch mit Rückfragen sind für Voicebots schwierig; E0 ist fast ebenso plausibel, wenn Bestellungen überwiegend telefonisch eingehen.",
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "KI-Extraktion aus E-Mails und Transkription erstellt den Bestellauftrag im System; die Person prüft jede Bestellung und klärt Sonderwünsche."
+      },
+      {
+        "name": "Absprachen im Produktionsteam treffen und Lernende anleiten",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz und Anleitung am Arbeitsplatz."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Fleischfachperson EFZ in einem gewerblichen bis mittelgrossen Fleischverarbeitungsbetrieb mit Laden bzw. Theke. In der Grossindustrie (z. B. Geflügel) wären Zerlegung und Verpackung stärker automatisiert. Fischverarbeitung ist ein kleiner Teil der Kategorie und ähnlich physisch. Die Grenzfälle sind die kleinen administrativen Tätigkeiten (Bestellannahme, Deklarationstexte).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur kleine Nebentätigkeiten: Deklarations- und Spezifikationstexte (Chat-LLM) sowie die Erfassung von Kundenbestellungen per E-Mail-Extraktion und Transkription; die Fleischverarbeitung selbst ist nicht exponiert.",
+      "begruendung": "Weniger als ein Zehntel der Arbeitszeit ist gegenüber generativer KI exponiert. Dort arbeitet die KI delegierend, die Fachperson prüft also jede Deklaration und jede Bestellung. Bremsend wirken in der Schweiz das Lebensmittelrecht (Haftung für Deklarationen) und die Erwartung der Kundschaft, Bestellungen persönlich und in Mundart aufzugeben. Für die Verpackung ist klassische Automatisierung relevanter als KI.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

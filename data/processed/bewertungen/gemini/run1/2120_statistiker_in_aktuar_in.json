@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "d6bc29c3f25a7a666ec96604886a7b9e1332e588f90264cca498e7307f884ef5",
+    "isco_code": "2120",
+    "beruf": "Statistiker/in / Aktuar/in",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2140,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2140
+        }
+      ],
+      "prompt_token_count": 21375,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21375
+        }
+      ],
+      "thoughts_token_count": 6486,
+      "total_token_count": 30001
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2140,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2140
+          }
+        ],
+        "prompt_token_count": 21375,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21375
+          }
+        ],
+        "thoughts_token_count": 6486,
+        "total_token_count": 30001
+      }
+    ],
+    "request_ids": [
+      "XTzParv9CbDtz7IPofG1mAw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-2120_statistiker_in_aktuar_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2120",
+    "beruf": "Statistiker/in / Aktuar/in",
+    "taetigkeiten": [
+      {
+        "name": "Versicherungs-, Schaden- und Finanzdaten aus Datenbanken abfragen, bereinigen und aufbereiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Coding- und Datenanalyse-Agenten erstellen und testen SQL-, R- oder Python-Skripte zur Datenbereinigung direkt auf den Datenbeständen; die Fachperson spezifiziert die Regeln und prüft jede Transformation sowie die Datenqualität."
+      },
+      {
+        "name": "Statistische und aktuarielle Modelle in Skriptsprachen (R, Python) entwickeln, erweitern und kalibrieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Coding-Agenten programmieren Modellcode, führen Schätzungen durch und erstellen Diagnoseplots über mehrere Skripte hinweg; Aktuarinnen und Statistiker steuern die Modellierung und prüfen jede Codeänderung und Kalibrierung fachlich."
+      },
+      {
+        "name": "Modellmethodik konzipieren und versicherungsmathematische Annahmen festlegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Festlegung langfristiger Parameter (z. B. Zins-, Sterblichkeits- oder Grossschadenannahmen) und die Methodenwahl erfordern hohes fachliches Ermessen und persönliche Verantwortung; generative KI spart hier keine 50 % der Zeit."
+      },
+      {
+        "name": "Periodische Rückstellungs-, Solvenz- und Vorsorgeberechnungen in Fachapplikationen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelmässige Bewertungs- und Solvenzläufe (z. B. SST, IFRS 17, BVG-Deckungskapitalien) erfolgen über klassische, regelbasierte Aktuar- und Bestandesführungssoftware ohne generative KI."
+      },
+      {
+        "name": "Rechenergebnisse plausibilisieren und Abweichungsanalysen (Analysis of Change) durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Fachperson beurteilt und interpretiert die Treiber von Bestandes- und Reserveveränderungen selbst; KI-Analysewerkzeuge in Tabellen- und Statistiksoftware gleichen Ausgabetabellen ab und markieren Ausreisser."
+      },
+      {
+        "name": "Versicherungsmathematische Gutachten, Berichte und Modelldokumentationen verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft auf Basis eingefügter Ergebnistabellen und Stichworte Berichte (z. B. Bericht des verantwortlichen Aktuars, BVG-Expertise, Validierungsbericht); die Fachperson prüft und verantwortet jeden Abschnitt inhaltlich."
+      },
+      {
+        "name": "Finanzmarkttrends, Fachliteratur und regulatorische Vorgaben recherchieren und zusammenfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten durchsuchen Marktberichte, wissenschaftliche Publikationen und Aufsichtsrundschreiben und erstellen strukturierte Zusammenfassungen; die Fachperson steuert die Suche und prüft die Kernaussagen gegen die Originalquellen."
+      },
+      {
+        "name": "Präsentationen und grafische Entscheidungsgrundlagen für Gremien erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in Office- und Statistiksoftware erzeugen aus Analyseergebnissen Folienentwürfe und Visualisierungen; der Aktuar gibt die Kernaussagen vor und prüft jede Folie auf fachliche Präzision."
+      },
+      {
+        "name": "Geschäftsleitung, Stiftungsräte, Fachbereiche und Aufsichtsbehörden persönlich beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die persönliche Beratung von Entscheidungsträgern (z. B. Tarifentscheide, Sanierungsmassnahmen bei Pensionskassen, Risikostrategie) sowie Verhandlungen mit Revision und Aufsicht erfordern unmittelbare Präsenz und Überzeugungsarbeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Aktuar/in bzw. quantitative/r Statistiker/in in einer Schweizer Versicherung, Pensionskassenberatung oder Bank. Die Tätigkeiten sind stark daten-, code- und textbasiert und daher hoch exponiert, unterliegen aber strengen regulatorischen Prüf- und Zeichnungspflichten (FINMA, OAK BV).",
+    "zusammenfassung": {
+      "haupt_risiko": "Stark exponiert sind die Datenaufbereitung, die Programmierung statistischer Modelle in R oder Python, die Fachrecherche sowie das Verfassen aktuarieller Berichte und Präsentationen durch Coding- und Datenanalyse-Agenten sowie Chat-LLMs.",
+      "begruendung": "Rund 70 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die Technik überwiegend delegierend und bei der Ergebnisplausibilisierung unterstützend wirkt, da Aktuarinnen und Statistiker jede Modelländerung, Berechnung und jeden Bericht im Detail fachlich prüfen müssen. Nicht durch generative KI exponiert bleiben die Festlegung langfristiger Modellannahmen, die persönliche Beratung von Führungsgremien sowie standardisierte Rechenläufe in klassischer Aktuarsoftware. In der Schweiz bremsen strenge regulatorische Anforderungen (FINMA-Vorgaben zu Modellrisiken, OAK BV, revDSG) und die gesetzliche Verantwortung als verantwortlicher Aktuar oder Pensionskassenexperte einen ungeprüften Einsatz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "b0f0ff0e980b8648033de8874859f7e0c61d99819a9ef9ba4a3db7ec48f78799",
+    "isco_code": "6113",
+    "beruf": "Gärtner/in EFZ",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2382,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2382
+        }
+      ],
+      "prompt_token_count": 22938,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22938
+        }
+      ],
+      "thoughts_token_count": 5812,
+      "total_token_count": 31132
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2382,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2382
+          }
+        ],
+        "prompt_token_count": 22938,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22938
+          }
+        ],
+        "thoughts_token_count": 5812,
+        "total_token_count": 31132
+      }
+    ],
+    "request_ids": [
+      "XTzPas3JE7Dtz7IPofG1mAw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-6113_gaertner_in_efz",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "6113",
+    "beruf": "Gärtner/in EFZ",
+    "taetigkeiten": [
+      {
+        "name": "Boden bearbeiten, Planie erstellen und Substrate einbringen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Erdarbeiten vor Ort mit Handwerkzeugen und Kleinmaschinen wie Bodenfräse oder Kleinbagger; in wechselnden Kundengärten nicht durch Robotik automatisierbar."
+      },
+      {
+        "name": "Wege, Plätze, Gartenmauern und Zäune nach Plan einmessen, bauen und instand halten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerklich-physische Bautätigkeit im Gelände (Pflästerungen, Plattenbeläge, Natursteinmauern, Zaunbau) inklusive Abstecken vor Ort; keine relevante Automatisierung verfügbar."
+      },
+      {
+        "name": "Bäume, Sträucher, Stauden und Wechselflor pflanzen sowie Grünflächen anlegen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Pflanz- und Ansaatarbeiten auf Baustellen sowie in bestehenden Gärten und Parkanlagen; erfordert manuelle Ausführung am jeweiligen Standort."
+      },
+      {
+        "name": "Hecken, Sträucher und Bäume fachgerecht schneiden, auslichten und pflegen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Schnitt- und Baumpflegearbeiten im Freien mit Schere, Säge und Heckenschere; Wuchsbeurteilung und Schnittführung erfolgen unmittelbar an der Pflanze."
+      },
+      {
+        "name": "Rasenflächen mähen, vertikutieren und düngen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Pflegearbeit ohne Exposition gegenüber generativer KI. Kommerziell verbreitete Mähroboter (inkl. GPS-gestützter Grossflächenmäher) können den zeitintensiven Rasenschnitt zu über 50 % übernehmen, während Kanten, Vertikutieren und komplexe Kleinflächen manuell bleiben."
+      },
+      {
+        "name": "Rabatten und Pflanzflächen pflegen (Unkraut jäten, hacken, mulchen und bewässern)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend manuelle Pflegearbeit in durchmischten Zier- und Staudenrabatten; autonome Hackroboter aus dem landwirtschaftlichen Reihenanbau sind in vielfältigen Gärten nicht einsetzbar."
+      },
+      {
+        "name": "Schadbilder an Pflanzen kontrollieren und Krankheits- sowie Schädlingsbekämpfung durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Bestandeskontrolle vor Ort sowie das Abmischen und Ausbringen von biologischen oder chemischen Pflanzenschutzmitteln sind physische Arbeiten; eine allfällige Foto-Diagnose per App spart auf die Gesamttätigkeit bezogen weit unter 50 % der Zeit."
+      },
+      {
+        "name": "Baustelle einrichten und sichern, Material transportieren sowie Maschinen und Geräte warten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Logistik-, Absicherungs- und Unterhaltsarbeiten im Werkhof und auf den Gartenbaustellen."
+      },
+      {
+        "name": "Pflanzen- und Materialbedarf ermitteln sowie einfache Bepflanzungsvorschläge und Pflegehinweise erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob ein Chat-LLM gegenüber bestehenden Baumschul-Sortimentslisten und Faustregeln im Alltag tatsächlich 50 % Zeit spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Aus Standortangaben und Flächenmassen erstellt ein Chat-LLM Entwürfe für Pflanzenlisten, Stückzahlen, Substratmengen und Kunden-Pflegehinweise; die Fachperson prüft jede Auswahl auf Standortgerechtigkeit und Verfügbarkeit."
+      },
+      {
+        "name": "Tages- und Regierapporte mit Arbeitsbeschrieb, Material, Pflanzen und Stunden erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Per Spracheingabe und Fotoerfassung in der Rapport-App erstellt die KI den strukturierten Tages- oder Regierapport; der Gärtner bzw. Vorarbeiter prüft und bestätigt jeden Eintrag. Dialekt und Baustellenlärm erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Kundschaft im Garten beraten, sich im Team absprechen und Lernende anleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare persönliche Präsenz- und Kommunikationstätigkeit mit Kundschaft und Team direkt am Objekt."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting ist Gärtner/in EFZ in der in der Schweiz weitaus häufigsten Fachrichtung Garten- und Landschaftsbau (Neuanlage, Umbau und Unterhalt von Privatgärten und öffentlichen Grünflächen in einem typischen KMU), was sich exakt mit dem ESCO-Profil deckt. Die Tätigkeiten sind stark physisch und ortsgebunden geprägt; Grenzfälle bestehen lediglich beim geringen administrativen Anteil (Rapporte und einfache Mengen-/Pflanzenlisten).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind einzig das Erfassen von Tages- und Regierapporten per Spracheingabe sowie das Zusammenstellen von Material-, Mengen- und Pflanzenlisten per Chat-LLM, während die gärtnerische und bauliche Arbeit im Freien unberührt bleibt.",
+      "begruendung": "Nur rund 10 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI ausschliesslich im delegierenden Modus Entwürfe für Rapporte oder Pflanz- und Mengenlisten erstellt, die jedes Mal fachlich geprüft werden. Der Berufskern besteht aus physischer Handwerks- und Pflegearbeit vor Ort; in kleinstrukturierten Schweizer Gartenbau-KMU bremsen zudem Baustellenlärm und Mundart beim Diktieren die rasche Einführung im Arbeitsalltag.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

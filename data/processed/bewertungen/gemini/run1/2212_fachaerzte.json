@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "dac1dcf2cbdb35ab66f7d8a8b5a0c4356aaaa66a13642001b47218b96d90fd49",
+    "isco_code": "2212",
+    "beruf": "Fachärzte",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2345,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2345
+        }
+      ],
+      "prompt_token_count": 25989,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 25989
+        }
+      ],
+      "thoughts_token_count": 7151,
+      "total_token_count": 35485
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2345,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2345
+          }
+        ],
+        "prompt_token_count": 25989,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 25989
+          }
+        ],
+        "thoughts_token_count": 7151,
+        "total_token_count": 35485
+      }
+    ],
+    "request_ids": [
+      "XTzPatPqCtXoz7IPnKSMuAw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-2212_fachaerzte",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2212",
+    "beruf": "Fachärzte",
+    "taetigkeiten": [
+      {
+        "name": "Fachspezifische Anamnese erheben und klinische Untersuchungen am Patienten durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Untersuchung (z. B. neurologisch, gynäkologisch, dermatologisch oder präoperativ) und persönliches Anamnesegespräch erfordern unmittelbare Präsenz und manuelle Ausführung."
+      },
+      {
+        "name": "Apparative Diagnostik und Funktionsuntersuchungen am Patienten durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Untersuchungen wie Sonografie, Endoskopie, Bronchoskopie oder Spaltlampenuntersuchung sind physische Tätigkeiten direkt am Patienten; keine autonome Robotik verfügbar."
+      },
+      {
+        "name": "Chirurgische, interventionelle oder lokal-apparative Eingriffe vornehmen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Tätigkeit im Operationssaal oder Eingriffsraum; OP-Robotik (z. B. Telemanipulatoren) wird durch die Fachärztin gesteuert und arbeitet nicht autonom."
+      },
+      {
+        "name": "Diagnostische Tests, Messkurven und Bilddaten fachärztlich auswerten und interpretieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Obwohl Mustererkennung in Teilbereichen (z. B. Bildgebung, EKG/EMG) Hinweise liefert, muss der Facharzt Aufnahmen und Messdaten für eine haftungssichere Befundung selbst prüfen, sodass im Schnitt keine 50 % Zeitersparnis erreicht werden."
+      },
+      {
+        "name": "Differentialdiagnosen stellen und fachärztliche Therapie- und Behandlungspläne festlegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Klinische Urteilsbildung, Abwägung von Operations- und Therapierisiken sowie individuelle Medikations- und Onkologieplanung liegen in der ärztlichen Kernverantwortung; KI-Vorschläge sparen beim eigentlichen Entscheid keine 50 % der Zeit."
+      },
+      {
+        "name": "Patientendossiers, externe Vorbefunde und medizinische Fachliteratur sichten und aufbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenextraktion im KIS/PIS und medizinische Recherche-Agenten fassen umfangreiche PDF-Vorakten zusammen und liefern Leitlinienstellen; die Fachärztin beurteilt die klinische Relevanz und verifiziert kritische Originalbefunde selbst."
+      },
+      {
+        "name": "Patienten und Angehörige über Diagnosen, Behandlungsoptionen und Eingriffsrisiken aufklären",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Aufklärungs- und Beratungsgespräche (z. B. vor Operationen oder bei schweren Diagnosen) erfordern menschliche Präsenz, Empathie und rechtlich ein persönliches Arzt-Patienten-Gespräch."
+      },
+      {
+        "name": "Laufende Konsultations- und Verlaufsdokumentation im KIS oder PIS erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracherkennung bzw. ambiente Dokumentation mit KIS/PIS-Integration erstellt strukturierte Verlaufseinträge aus Diktat oder Gespräch; der Facharzt prüft und korrigiert jeden Eintrag fachlich."
+      },
+      {
+        "name": "Ärztliche Berichte (Konsiliar-, Operations-, Austrittsberichte) und Kostengutsprachen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus kopierten Verlaufseinträgen und Befunden (Klärung D) entwirft ein Chat-LLM strukturierte Arzt-, OP- und Austrittsberichte sowie Kostengutsprachegesuche; die Fachärztin prüft jeden Bericht inhaltlich gegen die Akte und visiert ihn."
+      },
+      {
+        "name": "Interdisziplinäre Fallbesprechungen (z. B. Tumorboard, Visite) leiten und klinisches Team anweisen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führungs-, Koordinations- und Lehrtätigkeit im klinischen Alltag (Anleitung von Assistenzärzten und Pflege, interdisziplinärer Diskurs), die auf Präsenz und direkter Abstimmung beruht."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Klinisch tätige/r Facharzt/Fachärztin FMH (im Akutspital oder in einer spezialisierten Facharztpraxis) mit diagnostischen und invasiven/chirurgischen Aufgaben, gemittelt über die Fachrichtungen. Da ISCO 2212 sehr heterogene Spezialisierungen (von Chirurgie über Innere Spezialdisziplinen bis Radiologie/Pathologie) umfasst, variieren die Zeitanteile zwischen manuellen Eingriffen und reiner Befundung je nach Fachgebiet deutlich.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind das Verfassen von Konsiliar-, Operations- und Austrittsberichten sowie Kostengutsprachen (Chat-LLM), die laufende Verlaufsdokumentation (Spracherkennung/Ambient Scribe im KIS/PIS) und das Aufbereiten von Vorakten und Fachliteratur (Dokumentenextraktion und Recherche-Agenten), während Untersuchung, Eingriffe und Therapieentscheide beim Menschen bleiben.",
+      "begruendung": "Rund 20 % der Arbeitszeit sind gegenüber generativer KI exponiert, konzentriert auf Dokumentation, Berichtswesen und Aktenaufbereitung. Die KI arbeitet dabei überwiegend delegierend (Erstellen von Berichts- und Dossiereinträgen mit zwingender fachärztlicher Einzelprüfung) und unterstützend bei der Vorakten- und Literaturanalyse. In der Schweiz bremsen hohe regulatorische Hürden – insbesondere das ärztliche Berufsgeheimnis, das revidierte Datenschutzgesetz (revDSG) und die persönliche Haftungs- und Visumspflicht – den Einsatz nicht-integrierter Cloud-Lösungen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

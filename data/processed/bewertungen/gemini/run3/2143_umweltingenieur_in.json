@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "f381842dee4d572f1b9269a5a0988f2c0ffac5ce5f017dd0718a55774c15d0dc",
+    "isco_code": "2143",
+    "beruf": "Umweltingenieur/in",
+    "lauf": 3,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T09:24:56+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2458,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2458
+        }
+      ],
+      "prompt_token_count": 24472,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 24472
+        }
+      ],
+      "thoughts_token_count": 8057,
+      "total_token_count": 34987
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2458,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2458
+          }
+        ],
+        "prompt_token_count": 24472,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 24472
+          }
+        ],
+        "thoughts_token_count": 8057,
+        "total_token_count": 34987
+      }
+    ],
+    "request_ids": [
+      "e0jPapfdJLeBz7IPmfKIqA4"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/bymfj1fwg9dh18pztlts5y5houlusrocgzrj",
+    "custom_id": "r3-2143_umweltingenieur_in",
+    "anfrage_typ": "dritter_lauf",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2143",
+    "beruf": "Umweltingenieur/in",
+    "taetigkeiten": [
+      {
+        "name": "Feldaufnahmen, Standortbegehungen, Probenahmen und Umweltbaubegleitung (UBB) vor Ort durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Präsenz- und Kontrolltätigkeit im Gelände, auf Baustellen oder in Industrieanlagen; weder generative KI noch heute verfügbare Robotik können diese Vor-Ort-Begehungen zu mindestens 50 % übernehmen."
+      },
+      {
+        "name": "Umwelt-, Mess- und Geodaten (Boden, Wasser, Luft, Lärm) aufbereiten und statistisch auswerten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Datenanalyse- und Coding-Agenten erstellen Auswertungsskripte (z. B. in Python/R), bereinigen Messreihen und erzeugen Grafiken; die Ingenieurin spezifiziert die Methodik und prüft jede Auswertung fachlich auf Plausibilität."
+      },
+      {
+        "name": "Umweltverträglichkeitsberichte (UVB), Fachgutachten und Sanierungsberichte verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus eingefügten Projektdaten, Messresultaten und Gesetzestexten die Berichtskapitel; die Fachperson steuert die Gliederung, prüft jeden Abschnitt inhaltlich gegen die Aktenlage und verantwortet das Gutachten gegenüber den Behörden."
+      },
+      {
+        "name": "Technische Sanierungs-, Entwässerungs- und Schutzkonzepte entwickeln und dimensionieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Standortspezifische Ingenieurkonzepte und hydraulische oder verfahrenstechnische Dimensionierungen erfordern komplexes Fachermessen und klassische Berechnungsmodelle; generative KI spart hier über den Gesamtprozess weniger als 50 % der Zeit."
+      },
+      {
+        "name": "Technische Pläne, Schemata und thematische Karten in CAD- und GIS-Software erstellen und anpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das massstabsgetreue Konstruieren von Sanierungs- und Entwässerungsplänen sowie das Aufbereiten komplexer GIS-Karten erfordert hohe geometrische Präzision, bei der heutige generative KI die 50-%-Schwelle nicht erreicht."
+      },
+      {
+        "name": "Bauprojekte, Materialien und Stofflisten auf Einhaltung von Umwelt- und Stoffvorschriften (USG, ChemRRV, REACH) prüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM-gestützte Dokumenten- und Datenbankwerkzeuge gleichen Sicherheitsdatenblätter, Materiallisten und Projektunterlagen mit Stoffverboten und Grenzwerten ab und markieren Risiken; der Ingenieur führt die fachliche Compliance-Beurteilung selbst durch."
+      },
+      {
+        "name": "Ökobilanzen (LCA), Energie- und Stoffflussanalysen modellieren und auswerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-gestütztes Zuordnen von Stücklisten zu Ökobilanz-Datenbanken über die gesamte Analyse hinweg bereits mindestens 50 % Zeit spart; E0 ist wegen des hohen Anteils klassischer Fachsoftware ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Fachperson modelliert und beurteilt die Bilanz selbst in der LCA-Software, während KI-Werkzeuge unstrukturierte Bau- und Materialdaten vorstrukturieren, passenden Emissionsfaktoren zuordnen und Auswertungstabellen vorbereiten."
+      },
+      {
+        "name": "Fachliteratur, Vollzugshilfen (BAFU/Kantone), historische Akten und Umweltdatenbanken recherchieren und zusammenfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten und Dokumentenerkennung extrahieren aus gescannten Bauarchiven (z. B. für historische Altlastenuntersuchungen) sowie behördlichen Richtlinien strukturierte Zusammenfassungen; die Ingenieurin prüft jede Quelle im Detail."
+      },
+      {
+        "name": "Bauherrschaft, Behörden und Planungsteams in Umwelt- und Sanierungsfragen beraten sowie Projektsitzungen leiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Interdisziplinäre Koordination, Verhandlungen mit kantonalen Fachstellen und persönliche Beratung der Bauherrschaft erfordern unmittelbare zwischenmenschliche Präsenz und Überzeugungsarbeit."
+      },
+      {
+        "name": "Offerten, Pflichtenhefte, Untersuchungsprogramme und behördliche Gesuche ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Projektbeschrieben, Kundenanforderungen und Referenzprojekten erstellt ein Chat-LLM den Entwurf von Offerten und Untersuchungsprogrammen; die Fachperson kalkuliert den Aufwand und prüft alle technischen Vorgaben."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting ist ein typisches Schweizer Ingenieur- und Umweltbüro (Planung, Begutachtung, Altlasten, Umweltbaubegleitung und Nachhaltigkeitsberatung). Die ESCO-Kompetenzen passen gut zum Schweizer Berufsbild (Umweltingenieur/in FH/ETH). Grenzfälle bestehen vor allem bei der Ökobilanzierung sowie bei der Datenauswertung, wo klassische Fach- und GIS-Software eng mit neuen KI-Analysewerkzeugen zusammenspielt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem das Verfassen von Umweltberichten, Gutachten und Offerten, die Akten- und Literaturrecherche, die Compliance-Prüfung von Stoffen sowie die skriptgestützte Auswertung von Umweltdaten durch Chat-LLMs und Analyse-Agenten.",
+      "begruendung": "Gut die Hälfte der Arbeitszeit (55 %) ist gegenüber generativer KI exponiert, wobei die KI überwiegend delegierend (Berichte, Datenauswertung, Recherche, Offerten) oder unterstützend (Compliance-Prüfung, Ökobilanzen) eingesetzt wird und wegen der hohen Prüf- und Nacharbeitsanforderungen jeweils 30–50 % Restzeit beim Menschen verbleiben. Feldarbeit wie die Umweltbaubegleitung, CAD-/GIS-Planung, Ingenieurdimensionierung und Behördenverhandlungen bleiben nicht exponiert, während strenge regulatorische Vorgaben (USG, BAFU-Vollzugshilfen, Haftung bei Gutachten) eine ungeprüfte Übernahme von KI-Ergebnissen ausschliessen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

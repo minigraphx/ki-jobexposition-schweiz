@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "015c1c52e9c558fff725da73531c6422e3ac3efce3d6a87c2abd37c43eb9948d",
+    "isco_code": "4415",
+    "beruf": "Posthalter/in / Logistiker/in Post",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2416,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2416
+        }
+      ],
+      "prompt_token_count": 21261,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21261
+        }
+      ],
+      "thoughts_token_count": 7235,
+      "total_token_count": 30912
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2416,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2416
+          }
+        ],
+        "prompt_token_count": 21261,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21261
+          }
+        ],
+        "thoughts_token_count": 7235,
+        "total_token_count": 30912
+      }
+    ],
+    "request_ids": [
+      "xD_PaoCmB5zwqtsPnJ2H2AM"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-4415_posthalter_in_logistiker_in_post",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "4415",
+    "beruf": "Posthalter/in / Logistiker/in Post",
+    "taetigkeiten": [
+      {
+        "name": "Briefe, Pakete und Einschreibesendungen am Schalter annehmen, wiegen, frankieren und erfassen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Entgegennahme, Wiegen und Etikettieren am Schalter sind nicht durch Sprachmodelle exponiert. Über Selbstbedienungs- und Aufgabeautomaten (z. B. My Post 24, Frankierautomaten) sowie Online-Frankierung lassen sich jedoch über 50 % der Standardaufgaben automatisieren."
+      },
+      {
+        "name": "Eingehende und ausgehende Postsendungen im Backoffice scannen, sortieren und für Postfächer oder Transport bereitstellen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Logistiktätigkeit beim Entladen von Rollbehältern, Einsortieren in Postfächer und Bereitstellen von Abholsendungen in der Filiale; im Gegensatz zu Grossverteilzentren ist die Feinsortierung vor Ort heute nicht wirtschaftlich durch Roboter automatisierbar."
+      },
+      {
+        "name": "Ein- und Auszahlungen, QR-Rechnungszahlungen und Kontotransaktionen am Schalter abwickeln",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Bargeld- und Kartenabwicklung am Schalter sowie klassische Beleglesung ohne Bedarf an generativer KI. Ein- und Auszahlungsautomaten (Postomaten), Selbstbedienungsterminals mit QR-Scanner und E-Banking können mehr als die Hälfte dieser Transaktionen übernehmen."
+      },
+      {
+        "name": "Avisierte Pakete, Einschreiben und Abholsendungen gegen Ausweiskontrolle am Schalter aushändigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Holen und Übergeben der Sendungen am Schalter. Durch Paketautomaten (My Post 24) mit QR-Abholcode und digitaler Empfangsbestätigung kann der Grossteil der Abholungen ohne Schalterpersonal abgewickelt werden."
+      },
+      {
+        "name": "Kundinnen und Kunden am Schalter zu Versandarten, Tarifen und PostFinance-Basisprodukten persönlich beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare persönliche Beratung von Angesicht zu Angesicht am Schalter, deren Wert für die Kundschaft in der menschlichen Präsenz und Interaktion vor Ort liegt."
+      },
+      {
+        "name": "Zustelltouren vorbereiten und Postsendungen an Zustellpersonal übergeben oder lokal zustellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Bereitstellung, Übergabe und lokale Zustellung von Sendungen; autonome Zustellroboter sind in der Schweiz über Pilotversuche hinaus nicht im regulären Flächeneinsatz."
+      },
+      {
+        "name": "Handelswaren, Briefmarken, Vignetten und Drittprodukte am Schalter verkaufen und kassieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Warenübergabe und Kassiertätigkeit am Schalter. Selbstbedienungskassen, Wertzeichenautomaten und digitale Kanäle (E-Vignette, Online-Tickets) können über 50 % dieser Verkäufe übernehmen."
+      },
+      {
+        "name": "Tagesabschluss, Kassenabrechnung, Bargeldbestandsprüfung und Inventur durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kombination aus physischem Bargeldzählen und regelbasiertem Kassenabgleich im POS-System ohne Nutzen generativer KI. Automatische Cash-Recycling-Systeme (geschlossene Bargeldkreisläufe) und automatisierte Bestandesführung reduzieren den manuellen Zähl- und Abrechnungsaufwand um mindestens die Hälfte."
+      },
+      {
+        "name": "Zolldokumente, Handelsrechnungen und Begleitpapiere für internationale Sendungen prüfen und erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung mit LLM-Integration liest heterogene Handelsrechnungen und Zollinhaltserklärungen aus, schlägt Zolltarifnummern vor und gleicht Ländervorschriften ab; die Schaltermitarbeitenden prüfen und bestätigen jede Deklaration fachlich."
+      },
+      {
+        "name": "Reklamationen, Nachforschungsaufträge und Schadenmeldungen dokumentieren sowie schriftliche Kundenantworten verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus kopierten Sendungsverlaufsdaten und Stichworten zum Schadenshergang erstellt ein Chat-LLM strukturierte Schadensprotokolle, Nachforschungsaufträge und Antwortentwürfe; die Fachperson prüft jeden Fall inhaltlich vor der Freigabe."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting ist eine typische Schweizer Postfiliale, in der Schalterdienst (Kundenbedienung, Zahlungsverkehr) und Filial-Logistik (Sendungssortierung, Postfächer, Abholsendungen, Übergabe an Zustellung) kombiniert anfallen. Die ESCO-Vorlage bildet nur den reinen Schalterdienst ab und wurde um die logistischen Kerntätigkeiten in Schweizer Poststellen ergänzt. Die Hauptautomatisierung in diesem Berufsfeld erfolgt nicht über generative KI, sondern über physische Selbstbedienungsautomaten (My Post 24, Postomaten) und Online-Vorfrankierung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Durch generative KI betroffen sind lediglich die Prüfung und Erfassung von Zolldokumenten mittels Dokumentenerkennung sowie die Dokumentation von Reklamationen und Schadenfällen per Chat-LLM, während das Schalter- und Logistikgeschäft physisch geprägt bleibt.",
+      "begruendung": "Nur rund 10 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI im delegierenden Modus Zolldeklarationen vorstrukturiert und Schadenmeldungen entwirft, die im Einzelfall fachlich geprüft werden. Das Postgeheimnis, Datenschutzvorgaben (revDSG) und zollrechtliche Vorschriften bremsen den Einsatz offener KI-Systeme in der Schweiz. Der eigentliche Strukturwandel im Beruf erfolgt nicht durch Sprachmodelle, sondern durch physische Automatisierung wie Paket- und Einzahlungsautomaten (My Post 24, Postomaten) sowie digitale Selbstbedienung.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

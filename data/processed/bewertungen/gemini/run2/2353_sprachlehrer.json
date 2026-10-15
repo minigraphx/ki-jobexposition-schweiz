@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "cabb3108273281058f7c26c5a6f81ff04e31adaae6d5e756a5b0dbbe06d82e9f",
+    "isco_code": "2353",
+    "beruf": "Sprachlehrer",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2134,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2134
+        }
+      ],
+      "prompt_token_count": 22646,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22646
+        }
+      ],
+      "thoughts_token_count": 4647,
+      "total_token_count": 29427
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2134,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2134
+          }
+        ],
+        "prompt_token_count": 22646,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22646
+          }
+        ],
+        "thoughts_token_count": 4647,
+        "total_token_count": 29427
+      }
+    ],
+    "request_ids": [
+      "XTzPaoa_BP7oz7IP17yB4Qw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r2-2353_sprachlehrer",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2353",
+    "beruf": "Sprachlehrer",
+    "taetigkeiten": [
+      {
+        "name": "Sprachunterricht im Klassenzimmer oder live online leiten, Grammatik und Wortschatz erklären sowie Gruppenarbeiten steuern",
+        "zeitanteil_pct": 35,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Präsenz- und Beziehungstätigkeit mit der Lerngruppe; der Wert eines Sprachkurses liegt in der direkten pädagogischen Interaktion und Gruppendynamik."
+      },
+      {
+        "name": "Mündliche Sprachpraxis, Ausspracheübungen und Rollenspiele für Alltagssituationen anleiten und direkt korrigieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Live-Konversation, situative Ermutigung und spontane mündliche Fehlerkorrektur in der Gruppe erfordern menschliche Präsenz und pädagogisches Feingefühl."
+      },
+      {
+        "name": "Kurs- und Lektionspläne passend zu Sprachniveau (GER/fide) und Lernzielen der Zielgruppe entwerfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus Angaben zu Sprachniveau, Lehrmittelkapitel und Gruppenprofil strukturierte Lektionsentwürfe; die Lehrperson spezifiziert die Vorgaben und prüft sowie adaptiert jeden Plan fachlich."
+      },
+      {
+        "name": "Arbeitsblätter, niveaugerechte Lesetexte, Dialoge und schriftliche Prüfungsaufgaben erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Chat-LLM generiert Übungssätze, Lückentexte, Rollenspielkarten und Prüfungsfragen auf dem gewünschten GER-Niveau; die Lehrperson steuert die Aufgabentypen und prüft jedes Blatt vor dem Einsatz."
+      },
+      {
+        "name": "Schriftliche Texte, Hausaufgaben und Sprachtests korrigieren sowie konstruktives Feedback verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Multimodale LLMs (inkl. Handschrifterkennung bei Papierprüfungen) markieren Grammatik- und Wortschatzfehler und schlagen Feedback nach GER-Kriterien vor; die Lehrperson liest und bewertet jede Arbeit weiterhin selbst."
+      },
+      {
+        "name": "Mündliche Einstufungsgespräche und mündliche Lernzielkontrollen durchführen und bewerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Prüfungs- und Einstufungsgespräche erfordern spontanes Nachfragen im direkten Dialog; insbesondere bei offiziellen Sprach- und fide-Prüfungen beurteilen Prüfende die Leistung persönlich."
+      },
+      {
+        "name": "Kursteilnehmende individuell zum Lernfortschritt beraten, motivieren und bei Lernschwierigkeiten unterstützen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Lernberatung, Abbau von Sprechhemmungen und interkulturelle Begleitung erfordern ein vertrauensvolles Gespräch von Angesicht zu Angesicht."
+      },
+      {
+        "name": "Lernstandsberichte, Kursbeurteilungen und Teilnahmebestätigungen für Lernende, Firmenkunden oder Behörden verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Stichworten zu Stärken, Schwächen und erreichtem Sprachniveau formuliert das Chat-LLM den Beurteilungstext; die Lehrperson prüft und verantwortet jeden Bericht einzeln. Bei behördlich geförderten Integrationskursen gelten Datenschutz- und Nachweispflichten."
+      },
+      {
+        "name": "Anwesenheitslisten führen, Kursdaten im Schulverwaltungssystem pflegen und Materialien auf der Lernplattform bereitstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Digitale Präsenzkontrolle, Kurseinschreibung und automatisierte Materialfreigabe werden durch klassische Lernplattformen (LMS) und Schulverwaltungssoftware ohne generative KI übernommen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Sprachlehrperson in einer privaten Schweizer Sprachschule oder Institution der Erwachsenenbildung (z. B. Fremdsprachenkurse GER A1–C2 sowie Deutsch als Zweitsprache / fide-Integrationskurse). Das ESCO-Profil bildet dieses Tätigkeitsfeld sehr präzise ab. Während Vor- und Nachbereitungsarbeiten stark von Sprachmodellen profitieren, bleibt die Hauptarbeitszeit im direkten Gruppenunterricht davon unberührt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Unterrichtsvorbereitung, das Erstellen niveaugerechter Arbeitsblätter und Prüfungen, das Verfassen von Lernstandsberichten (per Chat-LLM) sowie die Vorkorrektur schriftlicher Arbeiten (mittels multimodaler KI), während der eigentliche Sprachunterricht im Kursraum nicht exponiert ist.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit entfällt auf Vor- und Nachbereitungsaufgaben, bei denen die KI überwiegend delegierend (Entwurf von Lektionsplänen, Übungsmaterialien und Berichten mit anschliessender Fachprüfung) oder unterstützend (Fehlermarkierung bei Textkorrekturen) eingesetzt wird. Der Kern des Berufs in Schweizer Sprachschulen und Integrationskursen (DaZ/fide) bleibt die persönliche Interaktion, Konversationspraxis und Lernbegleitung vor Ort oder im Live-Online-Unterricht. Datenschutzvorgaben (revDSG) und behördliche Nachweispflichten bei geförderten Kursen erfordern zudem eine menschliche Endkontrolle der Leistungsbeurteilungen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

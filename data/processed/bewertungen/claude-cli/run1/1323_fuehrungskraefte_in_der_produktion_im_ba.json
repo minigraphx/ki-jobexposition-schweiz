@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "ab222a2a77f2cadd8bcecac8fdc91b6a8391a7d995e27fc3141faba6184feff0",
+    "isco_code": "1323",
+    "beruf": "Führungskräfte in der Produktion im Bau",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:35:19+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4029,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 6192,
+      "api_aequivalent_usd": 0.1634102
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4029,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 6192,
+        "output_tokens_details": {
+          "thinking_tokens": 2566
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4029,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1634102
+      }
+    ],
+    "request_ids": [
+      "2214a546-d2ad-4ab0-98b3-9c2a06a1aa2a"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1323",
+    "beruf": "Führungskräfte in der Produktion im Bau",
+    "taetigkeiten": [
+      {
+        "name": "Baustelle begehen, Ausführung, Qualität, Arbeitssicherheit und Baufortschritt kontrollieren, Abnahmen durchführen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Kontrolle geschieht vor Ort und braucht Augenschein, Fachurteil und Präsenz. Keine nicht-generative Technik übernimmt das in relevantem Umfang."
+      },
+      {
+        "name": "Bausitzungen leiten, Unternehmer und Subunternehmer koordinieren, Baustellenpersonal instruieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung, Abstimmung und Konfliktlösung von Angesicht zu Angesicht; der Wert liegt in der persönlichen Präsenz."
+      },
+      {
+        "name": "Bauherrschaft beraten, Kundenbedürfnisse aufnehmen und mit Architekten und Fachplanern abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beratungs- und Abstimmungsgespräche mit Ermessen und Vertrauensbeziehung; generative KI spart hier keine 50 %."
+      },
+      {
+        "name": "Baukosten schätzen, Budget erstellen und Kosten laufend überwachen (Soll-Ist-Vergleich)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kalkulation und Kostenkontrolle laufen in Bau- und AVA-Software (klassische Software, bereits genutzt); die verbleibende Zeit ist Erfahrungsurteil zu Preisen und Risiken, wo ein LLM keine 50 % spart."
+      },
+      {
+        "name": "Ausmass und Baustoffbedarf aus Plänen ermitteln und Material bestellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mengenermittlung aus Plänen ist durch BIM-Mengenauszug und digitale Ausmasssoftware abgedeckt (klassische Software, P1). Generatives Bildverständnis von Plänen ist für exakte Mengen nicht verlässlich genug."
+      },
+      {
+        "name": "Ausschreibungstexte, Vorbemerkungen und Werkvertragsentwürfe verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft aus Projektangaben und Vorlagen die Vorbemerkungen, besonderen Bestimmungen und Vertragsklauseln. Die Führungskraft prüft jeden Entwurf gegen SIA-Normen und das Projekt; NPK-Positionen kommen ohnehin aus der AVA-Software."
+      },
+      {
+        "name": "Unternehmerofferten prüfen, vergleichen und Vergabeantrag erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumentenextraktion aus PDF-Offerten und KI-Analyse markieren Abweichungen, Vorbehalte und Lücken. Die Führungskraft beurteilt und vergleicht weiterhin selbst und entscheidet über die Vergabe."
+      },
+      {
+        "name": "Nachträge und Mehrkosten prüfen und mit Unternehmern verhandeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Beurteilung von Nachforderungen und die Verhandlung verlangen Ermessen, Projektkenntnis und persönliche Präsenz; die KI spart weniger als 50 %."
+      },
+      {
+        "name": "Bauprogramm und Terminplan erstellen und nachführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Terminplanung geschieht in klassischer Planungssoftware (Gantt) und braucht Erfahrungswissen über Abläufe und Ressourcen. Ein LLM spart kaum 50 %, und die Planungssoftware nimmt die Planungsentscheide nicht ab."
+      },
+      {
+        "name": "Sitzungsprotokolle, Baujournal und Bauherrenberichte verfassen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Transkription bzw. Diktat, Fotos und LLM erstellen Protokoll und Bericht; die Führungskraft prüft jede Ausgabe, weil Pendenzen und Verantwortlichkeiten vertragsrelevant sind. Bei schweizerdeutschen Mehrpersonen-Sitzungen fällt mehr Korrekturaufwand an."
+      },
+      {
+        "name": "Korrespondenz mit Bauherrschaft, Behörden und Unternehmern führen (E-Mails, Mängelrügen, Abmahnungen)",
+        "zeitanteil_pct": 7,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM formuliert Briefe und E-Mails aus Stichworten. Wegen der rechtlichen Relevanz (Fristen, Mängelrügen) prüft die Führungskraft jedes Schreiben inhaltlich, bevor sie es versendet."
+      },
+      {
+        "name": "Sicherheitskonzepte, QS-Pläne und Checklisten nach Normen und Bewilligungsauflagen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft aus eingefügten Auflagen, Normtexten und Projektangaben die Konzepte und Checklisten. Die Führungskraft passt jedes Dokument an die Baustelle an und verantwortet es."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Projektleiter/in bzw. Bauleiter/in mit Führungsfunktion in einer mittelgrossen Schweizer Bauunternehmung oder Generalunternehmung (Hochbau). Der ESCO-Input passt gut. Grenzfälle sind die Kostenplanung und die Mengenermittlung: Diese laufen bereits stark über klassische AVA- und BIM-Software, und unklar ist, ob generative KI darüber hinaus 50 % spart. Die Zeitanteile sind grob geschätzt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Protokolle, Bauberichte, Korrespondenz, Ausschreibungs- und Vertragstexte, Sicherheits- und QS-Dokumente sowie die Offertprüfung, durch Chat-LLM, Transkription und Dokumentenextraktion.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI entwirft Texte und Dokumente, die Führungskraft prüft und verantwortet jedes Ergebnis, weil es vertrags- und haftungsrelevant ist. Bei der Offertprüfung unterstützt die KI nur. Der Kern des Berufs bleibt Präsenzarbeit auf der Baustelle und in Sitzungen; schweizerdeutsche Mehrpersonen-Sitzungen erhöhen den Korrekturaufwand bei Protokollen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

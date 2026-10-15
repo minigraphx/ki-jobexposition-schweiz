@@ -1,0 +1,229 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "26e8f651c45e5e01a1b297a2b2e43c4ba3a9e811c3c1ced7f4b558fc34b87773",
+    "isco_code": "3213",
+    "beruf": "Pharmazeutische Techniker und Assistenten",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2420,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2420
+        }
+      ],
+      "prompt_token_count": 23621,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 23621
+        }
+      ],
+      "thoughts_token_count": 6705,
+      "total_token_count": 32746
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2420,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2420
+          }
+        ],
+        "prompt_token_count": 23621,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 23621
+          }
+        ],
+        "thoughts_token_count": 6705,
+        "total_token_count": 32746
+      }
+    ],
+    "request_ids": [
+      "XTzPaobSNPSAz7IP5t2zgAs"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-3213_pharmazeutische_techniker_und_assistente",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3213",
+    "beruf": "Pharmazeutische Techniker und Assistenten",
+    "taetigkeiten": [
+      {
+        "name": "Kundinnen und Kunden am Schalter zu Selbstmedikation, Gesundheitsfragen und Sanitätsartikeln beraten",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare persönliche Präsenz- und Beratungstätigkeit von Angesicht zu Angesicht am Apothekenschalter; erfordert empathisches Zuhören und Abklärung von Symptomen vor Ort."
+      },
+      {
+        "name": "Ärztliche Rezepte im Apothekensystem erfassen, Dosierungsetiketten erstellen und Verschreibungsangaben vorprüfen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Multimodale Dokumentenerkennung mit LLM-Integration im Apothekensystem liest Papierrezepte inklusive Freitext-Posologie aus und erstellt den Etikettenentwurf; die Fachperson prüft jede Erfassung und Dosierung zwingend gegen das Originalrezept."
+      },
+      {
+        "name": "Medikamente am Schalter mit Etiketten versehen, kontrollieren und mit Einnahmehinweisen abgeben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handhabung der Packungen und persönliche Übergabe mit mündlicher Instruktion am Schalter; keine Übernahme durch generative KI oder Robotik am Kundenschalter."
+      },
+      {
+        "name": "Warenlieferungen kontrollieren, Medikamente einlagern sowie Verfallsdaten und Lagerbedingungen prüfen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Logistiktätigkeit im Backoffice der Apotheke (E0); automatische Kommissionierautomaten (Apothekenroboter mit vollautomatischer Einlagerung und Verfallsdatenüberwachung) sind in der Schweiz verbreitet und übernehmen über 50 % dieser Arbeit."
+      },
+      {
+        "name": "Lagerbestände überwachen sowie Nachbestellungen und Retouren im Warenwirtschaftssystem abwickeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Bestandsführung und elektronische Bestellabwicklung beim Grossisten werden durch klassische Warenwirtschaftssoftware (ERP der Apotheke) automatisiert, nicht durch generative KI."
+      },
+      {
+        "name": "Waren an der Kasse scannen, Zahlungen abwickeln und Tagesabrechnung erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer Kassiervorgang am Apothekenschalter; wegen der heilmittelrechtlichen Abgabekategorien und Beratungspflichten in Schweizer Apotheken sind Selbstbedienungskassen für den Grossteil des Sortiments nicht einsetzbar."
+      },
+      {
+        "name": "Krankenversicherungsansprüche, Kostengutsprachen und Rückweisungen bearbeiten sowie mit Kassen und Arztpraxen korrespondieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM prüft eingefügte Limitatio-Texte (Spezialitätenliste/MiGeL) und entwirft Schreiben für Kostengutsprachen oder Rückweisungsklärungen; die Fachperson kontrolliert und verantwortet jedes Schreiben vor dem Versand."
+      },
+      {
+        "name": "Telefonische Kundenanfragen, Medikamentenvorbestellungen und Rückfragen entgegennehmen und bearbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Sprach-KI bei Schweizerdeutsch, älterer Kundschaft und komplexen Medikamentennamen im Apothekenalltag die 50-%-Schwelle erreicht; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Ein Voicebot mit Systemanbindung nimmt Standardanfragen zur Verfügbarkeit sowie Vorbestellungen auf und leitet Beratungsgespräche weiter; jede aufgenommene Medikamentenbestellung wird vor der Bereitstellung fachlich geprüft."
+      },
+      {
+        "name": "Patientendossiers pflegen sowie Beratungs- und Qualitätssicherungsdokumentationen führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracheingabe- und KI-Funktionen in der Apothekensoftware erstellen strukturierte Dossiereinträge und QS-Protokolle aus Stichworten; die Fachperson prüft jeden Eintrag inhaltlich auf Richtigkeit."
+      },
+      {
+        "name": "Medikamente umfüllen und Wochendosiersysteme (Dosett/Blister) für Patientinnen und Patienten richten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle, physische Tätigkeit beim Abfüllen und Richten von Medikamenten (E0); kommerziell verfügbare Blisterautomaten übernehmen in der Schweiz über 50 % des Richtens von Wochendosiersystemen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Pharma-Assistent/in EFZ in einer öffentlichen Schweizer Offizinapotheke. Die ESCO-Beschreibung betont stark die kaufmännisch-logistische Seite (analog PKA in Deutschland), während in der Schweiz die Kundenberatung am Schalter unter Aufsicht der Apothekerin / des Apothekers einen zentralen Teil des Berufsalltags ausmacht. Physische Automatisierung (Apothekenroboter, Blisterautomaten) und klassische Warenwirtschaftssoftware sind in der Branche bereits stark relevant und separat unter P ausgewiesen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Rezepterfassung und Etikettenerstellung, die Korrespondenz bei Krankenkassenrückweisungen, telefonische Standardanfragen sowie die Dossier- und Qualitätsdokumentation durch multimodale KI-Integration im Apothekensystem, Chat-LLMs und Voicebots.",
+      "begruendung": "Rund 30 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI durchwegs im delegierenden Modus arbeitet: Sie extrahiert Rezeptdaten, entwirft Etiketten, Korrespondenzen oder Dossiereinträge, während die Fachperson jedes Ergebnis zwingend kontrolliert. Der Kern des Berufs – die persönliche Beratung am Schalter sowie die physische Medikamentenabgabe und -bewirtschaftung – bleibt von generativer KI unberührt. In der Schweiz bremsen strenge heilmittel- und datenschutzrechtliche Vorgaben (HMG, revDSG) sowie das Bedürfnis der Kundschaft nach persönlichem Vertrauenskontakt eine rasche Umsetzung.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

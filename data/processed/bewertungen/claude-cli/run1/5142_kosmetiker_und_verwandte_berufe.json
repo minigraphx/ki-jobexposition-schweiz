@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "607191f41a9aa46ea7a8414bd180d45d4a79a6ca2923a9c46e82fce3cdc8727e",
+    "isco_code": "5142",
+    "beruf": "Kosmetiker und verwandte Berufe",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:53:19+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3159,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 3657,
+      "api_aequivalent_usd": 0.10575019999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3159,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3657,
+        "output_tokens_details": {
+          "thinking_tokens": 896
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3159,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.10575019999999999
+      }
+    ],
+    "request_ids": [
+      "e89002e4-7d7b-4879-b464-ccdd6f336cb6"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5142",
+    "beruf": "Kosmetiker und verwandte Berufe",
+    "taetigkeiten": [
+      {
+        "name": "Gesichtsbehandlungen durchführen (Reinigen, Peeling, Ausreinigen, Masken, Gesichtsmassage)",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Behandlung direkt am Kunden; es gibt keine Robotik, die solche Behandlungen in relevantem Umfang übernimmt."
+      },
+      {
+        "name": "Unerwünschte Haare mit Wachs, Zuckerpaste, Pinzette oder IPL/Laser entfernen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle bzw. gerätegestützte Behandlung am Körper; die Kosmetikerin führt auch die Lasergeräte selbst, eine Automatisierung ist nicht verfügbar."
+      },
+      {
+        "name": "Haut analysieren, Hauttyp bestimmen und Kundenwünsche im Gespräch erfassen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Haut wird vor Ort mit Lupe und Tastsinn begutachtet und im persönlichen Gespräch beurteilt; Hautanalyse-Apps liefern höchstens Ergänzungen und sparen keine 50 %."
+      },
+      {
+        "name": "Massagen und Körperbehandlungen wie Wraps durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Behandlung am Körper; Massagegeräte und -liegen ersetzen die manuelle Behandlung im Studio nicht."
+      },
+      {
+        "name": "Make-up für Anlässe auftragen, Wimpern und Augenbrauen färben und formen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Arbeit im Gesicht der Kundin; virtuelle Make-up-Vorschau ersetzt das Auftragen nicht."
+      },
+      {
+        "name": "Kundschaft zu Pflegeprodukten beraten und Kosmetika verkaufen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung im Studio, die auf Vertrauen und der Hautbeurteilung beruht; ihr Wert liegt in der Präsenz."
+      },
+      {
+        "name": "Termine verwalten, Leistungen kassieren und Produkte nachbestellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dafür gibt es klassische Software, die nicht auf generativer KI beruht: Online-Buchungssysteme mit Erinnerungen, Kassensysteme mit TWINT/Karte und Bestellportale der Lieferanten. Diese übernehmen den Grossteil der Arbeit."
+      },
+      {
+        "name": "Behandlungsräume, Geräte und Instrumente reinigen, desinfizieren und warten",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Hygiene- und Wartungsarbeit in kleinen Räumen; Sterilisatoren helfen nur bei Teilschritten."
+      },
+      {
+        "name": "Social-Media-Beiträge, Werbetexte und Kundennewsletter mit Bildern erstellen",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI erstellt Texte und bearbeitet Vorher-nachher-Fotos oder Bilder mit generativen Tools. Die Kosmetikerin gibt Thema und Angebot vor und prüft jeden Beitrag vor der Veröffentlichung."
+      },
+      {
+        "name": "Kundenkartei mit Behandlungsnotizen führen und Heimpflegeempfehlungen notieren",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es sind kurze Stichwortnotizen direkt nach der Behandlung; eine KI-Formulierung spart dabei kaum relevante Zeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommen ist eine Kosmetikerin EFZ in einem kleinen Kosmetikstudio, oft selbständig oder mit 1–3 Mitarbeitenden. Der ESCO-Input passt gut. Der Beruf besteht überwiegend aus physischen Behandlungen am Körper. Grenzfälle sind nur die Marketing-Inhalte und die kurzen Karteinotizen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen ist nur das Erstellen von Social-Media-Beiträgen, Werbetexten und Newslettern mit generativer Text- und Bild-KI; die Behandlungen selbst sind nicht exponiert.",
+      "begruendung": "Nur ein sehr kleiner Teil der Arbeitszeit ist exponiert, nämlich das Marketing. Dort arbeitet die KI delegierend: Sie erstellt Texte und Bilder, die Kosmetikerin prüft jeden Beitrag. Der Kern des Berufs besteht aus Behandlungen am Körper und persönlicher Beratung im Studio. Bei der Beratung erwartet die Stammkundschaft eine persönliche Beziehung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

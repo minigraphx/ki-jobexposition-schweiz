@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "0e43e6b8f740eb2919fc5628b42ed2974906e58dd4fa480c858a1aba409302c2",
+    "isco_code": "2211",
+    "beruf": "Arzt/Ärztin (Allgemeinmedizin)",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T21:44:50+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 65536,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 3658,
+      "prompt_token_count": 55446,
+      "thoughts_token_count": 6665,
+      "total_token_count": 65769
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1828,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1828
+          }
+        ],
+        "prompt_token_count": 23463,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 23463
+          }
+        ],
+        "thoughts_token_count": 6607,
+        "total_token_count": 31898
+      },
+      {
+        "candidates_token_count": 1830,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1830
+          }
+        ],
+        "prompt_token_count": 31983,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 31983
+          }
+        ],
+        "thoughts_token_count": 58,
+        "total_token_count": 33871
+      }
+    ],
+    "request_ids": [
+      "1KXOasC7OvGW28oPu7uSuQk",
+      "P6bOatj4I6P7xN8PoobuoQc"
+    ],
+    "versuche": 2,
+    "status": "ok",
+    "fehler": [
+      "Versuch 1: isco_code/beruf weichen vom Input ab: erwartet 2211 / Arzt/Ärztin (Allgemeinmedizin), erhalten 2211 / Arzt/Ärztin (Allgemeinmedizin) "
+    ],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2211",
+    "beruf": "Arzt/Ärztin (Allgemeinmedizin)",
+    "taetigkeiten": [
+      {
+        "name": "Anamnesegespräche mit Patientinnen und Patienten in der Sprechstunde führen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das persönliche Ärztin-Patienten-Gespräch vor Ort lebt von unmittelbarer Präsenz, Empathie und der Beobachtung nonverbaler Signale und ist durch KI nicht in gleicher Qualität substituierbar."
+      },
+      {
+        "name": "Körperliche Untersuchungen, apparative Diagnostik am Patienten und kleine Eingriffe durchführen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeiten am Patienten wie Auskultation, Palpation, Sonografie, Wundversorgung oder Injektionen erfordern manuelle Ausführung vor Ort; relevante Robotik existiert dafür nicht."
+      },
+      {
+        "name": "Patientinnen und Patienten über Diagnosen aufklären, Therapieoptionen besprechen und gesundheitlich beraten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gemeinsame Therapieentscheidungen (Shared Decision Making), das Überbringen schwieriger Diagnosen und die Begleitung chronisch Kranker sind ausgeprägte Präsenz- und Beziehungstätigkeiten."
+      },
+      {
+        "name": "Haus- und Pflegeheimbesuche bei immobilen Patientinnen und Patienten durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Mobilität sowie Untersuchung und Betreuung direkt am Krankenbett im Heim oder zu Hause sind nicht automatisierbar."
+      },
+      {
+        "name": "Konsultations- und Verlaufsdokumentation im Praxisinformationssystem erfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Spracherkennung (Einzeldiktat oder Ambient Scribe mit Praxissystem-Integration) erstellt strukturierte Verlaufseinträge auf Hochdeutsch; die Ärztin bzw. der Arzt prüft und verantwortet jeden Eintrag fachlich. Korrekturaufwand durch Schweizerdeutsch und Fachbegriffe fliesst in die Restzeit ein."
+      },
+      {
+        "name": "Überweisungsschreiben, Arztberichte und Berichte für Sozial- und Privatversicherungen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus kopierten Verlaufseinträgen und Befunden entwirft ein Chat-LLM Überweisungsbriefe sowie strukturierte Berichte für IV, UVG oder Krankentaggeldversicherer; die Ärztin bzw. der Arzt steuert die Angaben und prüft jeden Bericht inhaltlich vor der Unterschrift."
+      },
+      {
+        "name": "Eingehende Spital- und Facharztberichte auswerten und Diagnosen sowie Medikation im Dossier nachführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenanalyse-Funktionen im Praxisinformationssystem fassen mehrseitige PDF-Austrittsberichte zusammen und markieren neue Diagnosen sowie Medikationsänderungen; die Ärztin bzw. der Arzt beurteilt die klinische Relevanz jedes Befundes weiterhin selbst."
+      },
+      {
+        "name": "Medizinische Leitlinien recherchieren und komplexe Differentialdiagnosen sowie Therapiepläne abklären",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Medizinische Recherche-Agenten mit Zugriff auf aktuelle Leitlinien und Fachliteratur liefern rasch strukturierte Übersichten zu Differentialdiagnosen, Dosierungsanpassungen und Interaktionen; die klinische Beurteilung und Therapieentscheidung bleibt vollständig bei der Ärztin bzw. beim Arzt."
+      },
+      {
+        "name": "Erbrachte Leistungen nach Tarif im Praxissystem erfassen und Abrechnungen kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Leistungserfassung über vordefinierte Leistungsblöcke und regelbasierte Tarifprüfungen (TARDOC/TARMED) wird durch klassische Praxisabrechnungssoftware ohne generative KI weitgehend automatisiert."
+      },
+      {
+        "name": "Medizinische Praxisassistentinnen (MPA) anleiten und Patientenbehandlungen mit Fachärzten oder Spitex koordinieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung des Praxisteams, kurze Fallbesprechungen bei Triage-Fragen und direkte telefonische Abstimmungen mit Spezialisten oder der Spitex erfordern persönliche Kommunikation und klinisches Ermessen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Facharzt/Fachärztin für Allgemeine Innere Medizin in einer ambulanten Schweizer Hausarzt- bzw. Gruppenpraxis. Die ESCO-Kompetenzen enthalten starkes Rauschen (z. B. Open-Source-Software entwickeln, Forschungsdaten verwalten), weshalb die Tätigkeiten gemäss Datenlage-Hinweis primär aus dem typischen Schweizer Praxisalltag abgeleitet wurden. Die Kernarbeit am Patienten ist klar E0; exponiert sind die erheblichen Dokumentations- und Berichtspflichten.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Konsultationsdokumentation, das Verfassen von Überweisungs- und Versicherungsberichten sowie die Auswertung eingehender Fachberichte und Leitlinienrecherchen durch Spracherkennung, Chat-LLMs und KI-Funktionen im Praxisinformationssystem.",
+      "begruendung": "Rund 30 % der Arbeitszeit entfallen auf Dokumentation, Berichtswesen und medizinische Recherche, wobei die KI überwiegend delegierend (Entwurf von Verlaufseinträgen und Arzt-/Versicherungsberichten) oder unterstützend (Befundauswertung, Leitlinienrecherche) eingesetzt wird, während die direkte Patientenbetreuung nicht exponiert ist. Wegen der ärztlichen Sorgfalts- und Haftungspflicht muss jede Ausgabe fachlich geprüft werden. In der Schweiz bremsen das strenge Berufsgeheimnis (Art. 321 StGB), Datenschutzanforderungen (revDSG) und die nötige Integration in verschiedene Praxisinformationssysteme die breite Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

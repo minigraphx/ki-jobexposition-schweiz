@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "50aec918f2851a25aa0d1dd356af150095873da34ea0b34bcd4322ed16848642",
+    "isco_code": "7231",
+    "beruf": "Kraftfahrzeugmechaniker und -schlosser",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:45:58+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 10496,
+      "cache_read_input_tokens": 78334,
+      "output_tokens": 8665,
+      "api_aequivalent_usd": 0.2729508
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 10496,
+        "cache_read_input_tokens": 78334,
+        "output_tokens": 8665,
+        "output_tokens_details": {
+          "thinking_tokens": 1795
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 10496,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.2729508
+      }
+    ],
+    "request_ids": [
+      "fe8e7e9d-1c93-4df7-b4b9-681b7ef8d4f2"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "7231",
+    "beruf": "Kraftfahrzeugmechaniker und -schlosser",
+    "taetigkeiten": [
+      {
+        "name": "Fahrzeuge nach Serviceplan warten (Ölwechsel, Filter, Flüssigkeiten, Verschleissteile prüfen)",
+        "zeitanteil_pct": 19,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit am Fahrzeug auf der Hebebühne. Für gemischte Garagenarbeit gibt es keine Robotik, die einen relevanten Teil übernimmt."
+      },
+      {
+        "name": "Mechanische Reparaturen an Bremsen, Fahrwerk, Lenkung, Motor und Getriebe ausführen",
+        "zeitanteil_pct": 22,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Demontage, Austausch und Montage von Teilen mit Werkzeug sind physische Arbeit. Robotik für Reparaturen ist nicht verfügbar."
+      },
+      {
+        "name": "Reifen und Räder wechseln, montieren, auswuchten und einlagern",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit. Montier- und Auswuchtmaschinen sind Hilfsmittel und ersetzen die Person nicht zu 50 %."
+      },
+      {
+        "name": "Fehlerdiagnose am Fahrzeug mit Diagnosetester und Messgeräten durchführen",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit geht ins Anschliessen, Messen und Prüfen am Fahrzeug. Die geführte Fehlersuche im Tester ist klassische Software und ersetzt die Messarbeit vor Ort nicht."
+      },
+      {
+        "name": "Elektrische und elektronische Systeme instand setzen sowie Fahrerassistenzsysteme kalibrieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Arbeit an Kabelbäumen, Steuergeräten und Hochvoltsystemen sowie das Ausrichten von Kalibriertafeln geschehen von Hand am Fahrzeug."
+      },
+      {
+        "name": "Probefahrten, Funktionstests und Endkontrollen durchführen, Fahrzeuge für die MFK vorbereiten",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fahren und sinnliche Prüfung (Geräusche, Fahrverhalten) sind Präsenzarbeit. Prüfstände sind nur Hilfsmittel."
+      },
+      {
+        "name": "Arbeitsrapporte, Befunde und Fehlerbeschriebe für Garantiefälle in der Werkstattsoftware erfassen",
+        "zeitanteil_pct": 6,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe bzw. KI-Funktion in der Garagen-/Werkstattsoftware erstellt Arbeitsbeschrieb und Befundtext; der Mechaniker prüft und korrigiert jeden Eintrag. Lärm und Dialekt erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Technische Unterlagen, Schaltpläne und Reparaturanleitungen in Hersteller- und Reparaturinfosystemen nachschlagen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Assistenten in Reparaturinfosystemen fahrzeugspezifische Daten heute verlässlich genug liefern; E2 unterstützend mit Restzeit 30-50 ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Fahrzeugspezifische Sollwerte und Pläne müssen aus OEM-Quellen stammen. Ein allgemeines LLM halluziniert hier, und der Prüfaufwand frisst die Zeitersparnis weitgehend auf."
+      },
+      {
+        "name": "Kundschaft oder Serviceberater mündlich über Befund, nötige Reparaturen und Kosten informieren",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Gespräch in der Werkstatt, oft direkt am Fahrzeug."
+      },
+      {
+        "name": "Ersatzteile anhand der Fahrgestellnummer bestimmen und bestellen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Teileidentifikation läuft über elektronische Teilekataloge (klassische Software, bereits im Einsatz). Die restliche Zeit ist kurze Bedienung, die ein LLM kaum verkürzt."
+      },
+      {
+        "name": "Arbeitsplatz reinigen, Werkzeuge und Geräte pflegen, Altöl und Sonderabfälle entsorgen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit in der Werkstatt. Für den kleinräumigen Werkstattbetrieb gibt es keine Automatisierung in relevantem Umfang."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Automobil-Mechatroniker/in bzw. Automobil-Fachmann/-frau EFZ in einer Schweizer Markengarage oder freien Garage (KMU), vor allem Personenwagen. Der Beruf ist klar umrissen und überwiegend physisch. Grenzfälle sind die Recherche in Reparaturinfosystemen (E0 vs. E2 unterstützend) und die Rapporterfassung per Spracheingabe bei Werkstattlärm und Dialekt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen ist im Wesentlichen nur das Erfassen von Arbeitsrapporten, Befunden und Garantie-Fehlerbeschrieben per Spracheingabe bzw. KI-Funktion in der Werkstattsoftware; Wartung, Reparatur und Diagnose am Fahrzeug bleiben unberührt.",
+      "begruendung": "Nur ein kleiner Teil der Arbeitszeit (rund 6 %) ist exponiert, und zwar delegierend: Die KI erstellt den Rapporttext, der Mechaniker prüft jeden Eintrag. Den Kern des Berufs bildet physische Arbeit an Fahrzeugen in kleinen Schweizer Garagen. Werkstattlärm und Schweizerdeutsch erschweren die Spracheingabe, und viele KMU-Garagen führen neue Software nur langsam ein.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

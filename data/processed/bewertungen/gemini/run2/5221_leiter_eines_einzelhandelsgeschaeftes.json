@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "fbd41a9add901aac61eafbd9d588caf1afef69689bee9205d831fafce113bb63",
+    "isco_code": "5221",
+    "beruf": "Leiter eines Einzelhandelsgeschäftes",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2211,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2211
+        }
+      ],
+      "prompt_token_count": 22243,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22243
+        }
+      ],
+      "thoughts_token_count": 5736,
+      "total_token_count": 30190
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2211,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2211
+          }
+        ],
+        "prompt_token_count": 22243,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22243
+          }
+        ],
+        "thoughts_token_count": 5736,
+        "total_token_count": 30190
+      }
+    ],
+    "request_ids": [
+      "xD_PavXHCLvL_PUPs93BqAU"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-5221_leiter_eines_einzelhandelsgeschaeftes",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "5221",
+    "beruf": "Leiter eines Einzelhandelsgeschäftes",
+    "taetigkeiten": [
+      {
+        "name": "Kundschaft im Laden beraten, Verkaufsgespräche führen und Reklamationen vor Ort lösen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung, Aufbau von Kundenbeziehungen und Kulanzentscheide im Verkaufsraum erfordern unmittelbare menschliche Präsenz vor Ort."
+      },
+      {
+        "name": "Warenpräsentation im Verkaufsraum gestalten, Lieferungen prüfen und Ladenbestand pflegen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeiten im Ladenlokal wie Wareneingangskontrolle, Dekoration, Cross-Merchandising und Regalpflege sind weder durch Sprachmodelle noch durch im KMU-Detailhandel wirtschaftliche Robotik zu mindestens 50 % automatisierbar."
+      },
+      {
+        "name": "Mitarbeitende im Verkaufsalltag einteilen, anleiten und vor Ort führen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Personalführung, Coaching auf der Verkaufsfläche und Vorstellungsgespräche sind zwischenmenschliche Präsenztätigkeiten."
+      },
+      {
+        "name": "Sortiment zusammenstellen und Einkaufskonditionen sowie Verträge mit Lieferanten verhandeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Messebesuche, Bemusterung von Waren und persönliche Preis- und Konditionenverhandlungen mit Lieferanten beruhen auf Beziehungsarbeit und unternehmerischem Ermessen."
+      },
+      {
+        "name": "Warenbestellungen auslösen und Lagerbestände im Warenwirtschaftssystem disponieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bestandsführung und Nachbestellungen nach Mindestbeständen und Abverkaufsregeln werden durch klassische Warenwirtschafts- und ERP-Software automatisiert, benötigen aber keine generative KI."
+      },
+      {
+        "name": "Waren an der Kasse abrechnen und Tageskasse abschliessen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kassiervorgänge sind physische Routinen vor Ort (E0), lassen sich jedoch im Schweizer Detailhandel durch Selbstbedienungskassen (Self-Checkout) und automatische Zahlungsterminals zu über 50 % übernehmen."
+      },
+      {
+        "name": "Umsatz-, Abverkaufs- und Kundendaten auswerten sowie Preise und Margen kalkulieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Datenanalyse-Werkzeuge werten Kassendaten, Ladenhüter und Kundenbedürfnisse aus und liefern Preis- und Szenariovorschläge; die Geschäftsleitung beurteilt die Ergebnisse und legt die Preisstrategie selbst fest."
+      },
+      {
+        "name": "Finanzübersichten bearbeiten, Lieferantenrechnungen prüfen und Ausgaben kontrollieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "In die Buchhaltungssoftware integrierte Dokumentenerkennung und KI-Funktionen erfassen Eingangsrechnungen, gleichen sie mit Bestellungen ab und erstellen Finanz- und Budgetübersichten; die Geschäftsleitung prüft die Auswertungen und gibt Zahlungen frei."
+      },
+      {
+        "name": "Lokale Marketingkampagnen planen sowie Werbemittel und Social-Media-Beiträge erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative Text- und Bildwerkzeuge entwerfen Aktionspläne, Newsletter, Plakatvorlagen und Social-Media-Posts; die Ladenleitung gibt das Thema vor, wählt aus und prüft jeden Beitrag vor der Veröffentlichung."
+      },
+      {
+        "name": "Geschäftskorrespondenz, Lieferantenanfragen und Stelleninserate verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten Entwürfe für Kunden- und Lieferanten-E-Mails, Vertragsanfragen oder Stellenausschreibungen; die Ladenleitung prüft und finalisiert jedes Schreiben."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Inhaber/in bzw. Geschäftsleiter/in eines kleineren bis mittleren selbständigen Detailhandelsgeschäfts (Fachgeschäft/KMU) in der Schweiz gemäss ISCO 5221, bei dem aktive Mitarbeit im Verkauf und unternehmerische Geschäftsführung kombiniert werden. Die Hauptunsicherheit liegt in den Zeitanteilen zwischen Verkaufsfläche und Büroarbeit, die je nach Betriebsgrösse und Branche variieren.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die kaufmännischen und administrativen Aufgaben im Hintergrund – insbesondere Umsatz- und Preisanalysen, die Verarbeitung von Lieferantenrechnungen und Finanzübersichten, die Gestaltung von Werbemitteln sowie die Geschäftskorrespondenz mittels Chat-LLMs und KI-gestützter Buchhaltungs- und Analysewerkzeuge.",
+      "begruendung": "Rund 30 % der Arbeitszeit entfallen auf exponierte Büro-, Analyse- und Marketingtätigkeiten, bei denen die KI überwiegend delegierend (Entwurf von Werbemitteln, Korrespondenz und Finanzübersichten mit anschliessender Einzelprüfung) sowie unterstützend bei der Preis- und Sortimentsanalyse eingesetzt wird. Der Kern des Berufs (70 % der Zeit) besteht aus persönlicher Kundenberatung, Warenpräsentation, Personalführung im Laden und Lieferantenverhandlungen und bleibt von generativer KI unberührt; zudem erwarten Kundinnen und Kunden im lokalen Fachhandel persönlichen Kontakt und Authentizität.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

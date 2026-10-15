@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "61b7e6da63df6791fdadbf3565a22b75599bd76f7746b589b1b60874566d55a4",
+    "isco_code": "2320",
+    "beruf": "Berufsschullehrer/in",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2205,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2205
+        }
+      ],
+      "prompt_token_count": 21647,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21647
+        }
+      ],
+      "thoughts_token_count": 5844,
+      "total_token_count": 29696
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2205,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2205
+          }
+        ],
+        "prompt_token_count": 21647,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21647
+          }
+        ],
+        "thoughts_token_count": 5844,
+        "total_token_count": 29696
+      }
+    ],
+    "request_ids": [
+      "xD_Pat2gELi8_PUP5dCjsQI"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2320_berufsschullehrer_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2320",
+    "beruf": "Berufsschullehrer/in",
+    "taetigkeiten": [
+      {
+        "name": "Präsenzunterricht im Klassenzimmer durchführen, Fachtheorie vermitteln und Gruppenarbeiten moderieren",
+        "zeitanteil_pct": 35,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unterrichten vor der Klasse sowie Klassenführung sind unmittelbare Präsenz- und Beziehungstätigkeiten, die nicht durch KI übernommen werden können."
+      },
+      {
+        "name": "Praktische Übungen, Demonstrationen und Fachanwendungen im Labor oder Fachraum anleiten und Sicherheit gewährleisten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Anleiten an Geräten und die Überwachung der Arbeitssicherheit im Fachzimmer erfordern physische Präsenz und Eingreifbereitschaft vor Ort."
+      },
+      {
+        "name": "Lernende individuell beim Lernen beraten, coachen und mündliches Feedback geben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Pädagogische Einzelgespräche, Lernbegleitung bei Projekten und Motivationsarbeit beruhen auf persönlicher Beziehung und Empathie."
+      },
+      {
+        "name": "Semester- und Lektionsplanung nach Bildungsplan erstellen sowie Lehrinhalte an den Arbeitsmarkt anpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Lehrperson plant die didaktische Progression und den Praxisbezug weiterhin selbst, nutzt aber ein Chat-LLM mit eingefügten Leistungszielen des Bildungsplans für Strukturvorschläge und Methodenideen."
+      },
+      {
+        "name": "Unterrichtsmaterialien, Arbeitsblätter, Praxis-Fallbeispiele und Präsentationen ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt auf Basis von Themenvorgaben und Leistungszielen vollständige Arbeitsblätter, Fallstudien und Erklärtexte; die Lehrperson prüft jedes Material fachlich und passt es an das Klassenniveau an."
+      },
+      {
+        "name": "Schriftliche Prüfungen, Lernkontrollen und Musterlösungen entwerfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI generiert aus den Unterrichtsunterlagen Prüfungsfragen, Punkteverteilungen und Musterlösungen; die Lehrperson steuert die Schwierigkeit und kontrolliert jede Aufgabe im Detail."
+      },
+      {
+        "name": "Prüfungen, schriftliche Arbeiten und Vertiefungsarbeiten korrigieren und bewerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die KI-Vorprüfung über alle Prüfungsformen hinweg inklusive der zwingenden Einzelkontrolle durch die Lehrperson mindestens 50 % Zeit spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Multimodale KI-Werkzeuge (Texterkennung und Abgleich mit Bewertungsrastern im LMS) markieren Fehler und schlagen Punktzahlen vor, während die Lehrperson jede Arbeit selbst liest, bewertet und die Note verantwortet."
+      },
+      {
+        "name": "Absenzen, Noten und Qualifikationsdaten im Schulverwaltungssystem erfassen und Lernplattform verwalten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Klassische Schulverwaltungssoftware und Lernplattformen automatisieren Notenberechnungen und Absenzenmeldungen an Lehrbetriebe regelbasiert ohne generative KI."
+      },
+      {
+        "name": "Standortgespräche und Absprachen mit Berufsbildnern in Lehrbetrieben, Eltern und Behörden führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Austausch mit Lehrbetrieben bei Leistungs- oder Disziplinarproblemen erfordert persönliche Gespräche, Verhandlungsgeschick und pädagogisches Ermessen."
+      },
+      {
+        "name": "An Fachschaftssitzungen, Lehrerkonferenzen, Schulentwicklung und Weiterbildungen teilnehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Teamabstimmung im Kollegium, Koordination von Qualifikationsverfahren und eigene Weiterbildung sind an persönliche Teilnahme und Austausch gebunden."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Berufsfachschullehrperson für Berufskunde oder Allgemeinbildung (ABU) an einer Schweizer Berufsfachschule im dualen System (EFZ/EBA). ESCO enthält in den optionalen Kompetenzen sehr spezifische praktische Fahr- und Seefahrtskompetenzen, die für den typischen Schweizer Berufsschulalltag ausgeblendet wurden. Grösster Grenzfall ist die Korrektur von Prüfungen und Vertiefungsarbeiten (E2 nahe an der 50-%-Schwelle).",
+    "zusammenfassung": {
+      "haupt_risiko": "Vorbereitung von Unterrichtsmaterialien, Entwurf von Prüfungen und Lektionsplanung werden durch Chat-LLMs beschleunigt, während die Korrektur von Prüfungen und Vertiefungsarbeiten durch multimodale KI-Werkzeuge unterstützt wird.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit rund um Unterrichtsvorbereitung, Materialerstellung und Korrekturen ist exponiert, wobei die KI teils delegierend Entwürfe liefert und teils unterstützend bei Planung und Bewertung zuarbeitet. Der Kern des Berufs an Schweizer Berufsfachschulen – der Präsenzunterricht, praktische Übungen und die individuelle Begleitung der Lernenden – bleibt jedoch menschliche Beziehungs- und Präsenzarbeit. Bei der Leistungsbewertung bremsen zudem kantonale Datenschutzvorgaben und die rechtliche Anfechtbarkeit von Erfahrungsnoten im Qualifikationsverfahren den KI-Einsatz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

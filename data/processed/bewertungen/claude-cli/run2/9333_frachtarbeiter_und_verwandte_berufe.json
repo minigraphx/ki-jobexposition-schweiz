@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "ba71369f7ff91e2bf74493865f028af780d422cfc0406e547878aae01e4019a2",
+    "isco_code": "9333",
+    "beruf": "Frachtarbeiter und verwandte Berufe",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:46:35+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3399,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4178,
+      "api_aequivalent_usd": 0.1180902
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3399,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4178,
+        "output_tokens_details": {
+          "thinking_tokens": 1319
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3399,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1180902
+      }
+    ],
+    "request_ids": [
+      "7a3aec4c-5dbf-407e-bb8f-634a0d5d3141"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "9333",
+    "beruf": "Frachtarbeiter und verwandte Berufe",
+    "taetigkeiten": [
+      {
+        "name": "Lastwagen, Wechselbehälter und Bahnwagen von Hand und mit Hubwagen be- und entladen",
+        "zeitanteil_pct": 28,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein körperliche Arbeit an der Rampe. Automatische Be- und Entladesysteme gibt es nur für Sonderfälle mit einheitlichen Ladungen, nicht für gemischte Fracht."
+      },
+      {
+        "name": "Paletten und Güter mit Stapler oder Hubwagen im Lager umschlagen und einlagern",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Fahren und Einlagern. Fahrerlose Transportsysteme und automatische Hochregallager sind kommerziell verfügbar und in grösseren CH-Lagern im Einsatz."
+      },
+      {
+        "name": "Bestellte Waren nach Auftrag kommissionieren und zum Versand bereitstellen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit. Lagerroboter, automatische Kleinteilelager und Ware-zur-Person-Systeme sind kommerziell verfügbar."
+      },
+      {
+        "name": "Waren auf Paletten stapeln, verpacken, umreifen und Ladung sichern",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit. Palettierroboter und Wickelautomaten eignen sich nur für einheitliche Güter; gemischte Fracht und Ladungssicherung im Fahrzeug bleiben Handarbeit."
+      },
+      {
+        "name": "Wareneingang gegen Lieferschein kontrollieren und Güter auf Schäden prüfen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit fällt beim Zählen, Anschauen und Hantieren mit der Ware vor Ort an; generative KI spart hier keine 50 %."
+      },
+      {
+        "name": "Packstücke mit Handscanner erfassen, etikettieren und Bewegungen im Lagersystem quittieren",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Scannen per Barcode ist klassische Technik und an das Hantieren mit der Ware gebunden. Scan-Tunnel und RFID-Tore übernehmen in typischen Betrieben keine 50 % dieser Zeit."
+      },
+      {
+        "name": "Bestände zählen und Inventuren im Lager durchführen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Zählen vor Ort. Inventurdrohnen und RFID-Lösungen sind in typischen CH-Betrieben noch Nischenlösungen."
+      },
+      {
+        "name": "Verpackungsabfälle sortieren, entsorgen und Lagerflächen reinigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit. Autonome Reinigungsmaschinen decken nur einen kleinen Teil davon ab."
+      },
+      {
+        "name": "Schaden- und Abweichungsmeldungen mit Foto und Kurzbeschrieb in der Lager-App erfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Meldungen sind oft nur kurze Formulareinträge, sodass KI kaum 50 % spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Aus Foto und gesprochener Notiz (Spracheingabe, Bildverständnis) erstellt die App den Meldungstext. Die Person prüft und ergänzt jede Meldung; Lärm und Dialekt erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Arbeitsaufträge mit Disponenten und Chauffeuren mündlich oder per Funk abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze Absprachen in Echtzeit vor Ort an der Rampe; generative KI spart dabei keine relevante Zeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Annahme: Hilfskraft ohne Berufsausbildung im Güterumschlag, z. B. bei einem Logistikdienstleister, einem Speditionslager oder einem Bahn-Umschlagterminal. ESCO beschreibt den Lagerarbeiter und passt gut; Kompetenzen zu Baustoffen sind Branchenrauschen und wurden allgemein gefasst. Grenzfälle sind die P-Bewertungen für Kommissionieren und innerbetrieblichen Transport, weil die Automatisierung stark von der Betriebsgrösse abhängt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Generative KI betrifft nur das Erfassen von Schaden- und Abweichungsmeldungen per Foto und Spracheingabe; der physische Güterumschlag ist nicht exponiert.",
+      "begruendung": "Nur ein sehr kleiner Teil der Arbeitszeit ist KI-exponiert, und zwar im Modus delegierend: Die App erstellt die Meldung, die Person prüft sie. Der Kern des Berufs ist körperliche Arbeit an Rampe und Lager. Relevanter als generative KI sind Lagerautomation und fahrerlose Transportsysteme, die vor allem in grösseren Schweizer Logistikzentren eingesetzt werden.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

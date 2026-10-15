@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "316a96a363f7345013a3b9fa69cd21f74037debf3119e5fa23976b2ada15277f",
+    "isco_code": "5111",
+    "beruf": "Reisebegleiter und Stewards",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:41:04+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2875,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4917,
+      "api_aequivalent_usd": 0.1286782
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2875,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4917,
+        "output_tokens_details": {
+          "thinking_tokens": 1860
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2875,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1286782
+      }
+    ],
+    "request_ids": [
+      "229ca1c6-4382-4033-9f71-175ea7286499"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5111",
+    "beruf": "Reisebegleiter und Stewards",
+    "taetigkeiten": [
+      {
+        "name": "Am Crew-Briefing teilnehmen und vor dem Flug Notfallausrüstung, Kabine und Galley kontrollieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Ausrüstung wird körperlich an Bord geprüft, das Briefing findet in Präsenz statt. Für die Sichtkontrolle in der Kabine gibt es keine Automatisierungstechnik."
+      },
+      {
+        "name": "Fahr- und Fluggäste beim Ein- und Aussteigen begrüssen, Bordkarten prüfen und beim Verstauen des Gepäcks helfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Tätigkeit besteht aus persönlicher Präsenz und körperlicher Hilfe in der Kabine. Das automatische Boarding am Gate betrifft nicht die Arbeit an Bord."
+      },
+      {
+        "name": "Sicherheitsvorführung durchführen, Kabine für Start und Landung sichern, Sicherheit überwachen und in Notfällen Erste Hilfe leisten",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Tätigkeit ist körperlich und sicherheitskritisch und verlangt Präsenz. Ein Sicherheitsvideo ersetzt nur einen kleinen Teil, nicht das Kontrollieren der Kabine und das Eingreifen im Notfall."
+      },
+      {
+        "name": "Speisen und Getränke in der Galley vorbereiten und am Platz oder mit dem Trolley servieren",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Service mit Aufwärmen, Anrichten und Servieren am Gast ist physisch. In Flugzeug- und Zugkabinen sind keine Serviceroboter im regulären Einsatz."
+      },
+      {
+        "name": "Speisen, Getränke und Duty-free-Artikel an Bord verkaufen und Zahlungen am Kartenterminal abwickeln",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verkauf und Übergabe der Ware finden direkt am Gast statt. Vorbestell-Apps und Kartenterminals sind klassische Technik und übernehmen weniger als die Hälfte der Zeit."
+      },
+      {
+        "name": "Gäste während der Reise betreuen, Auskünfte zu Anschlüssen geben und Gäste mit besonderen Bedürfnissen begleiten (UM, PRM)",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Betreuung von Angesicht zu Angesicht mit körperlicher Hilfe. Ihr Wert liegt in der persönlichen Anwesenheit an Bord."
+      },
+      {
+        "name": "Beschwerden von Gästen entgegennehmen und Konflikte an Bord deeskalieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Deeskalation und Beschwerden werden direkt im Gespräch vor Ort gelöst. Das ist Präsenz- und Beziehungsarbeit."
+      },
+      {
+        "name": "Galley und Kabine aufräumen, Abfall trennen sowie Bord- und Verkaufsbestände zählen und übergeben",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aufräumen und Zählen sind physisch. Die Bestandsführung im Verkaufsgerät ist klassische Software, die das Zählen und Verräumen nicht übernimmt."
+      },
+      {
+        "name": "Kabinen- und Zwischenfallberichte (Cabin Reports, Occurrence Reports) auf dem Tablet verfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Viele Berichte bestehen aus Formularfeldern und kurzen Einträgen, sodass ein LLM womöglich keine 50 % Zeit spart; E0 ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Crew gibt Stichworte zum Vorfall ein, ein LLM formuliert den Bericht. Die Crew prüft jeden Bericht inhaltlich auf Richtigkeit, bevor sie ihn einreicht."
+      },
+      {
+        "name": "An wiederkehrenden Schulungen und praktischen Notfallübungen teilnehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Evakuierungs-, Brand- und Erste-Hilfe-Übungen sind praktisch und vorgeschrieben und finden in Präsenz statt."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Flugbegleiter/in bei einer Schweizer Airline (Swiss, Edelweiss). Minibar- und Speisewagenpersonal im Zug sowie Stewards auf Schiffen haben eine ähnliche Aufgabenstruktur mit mehr Verkauf und weniger Sicherheitsaufgaben. Die ESCO-Beschreibung ist knapp; die Tätigkeiten wurden aus den Kompetenzen und aus Berufswissen abgeleitet. Einziger Grenzfall ist das Verfassen von Berichten.",
+    "zusammenfassung": {
+      "haupt_risiko": "Generative KI betrifft nur das Verfassen von Kabinen- und Zwischenfallberichten (Chat-LLM formuliert aus Stichworten); Service, Sicherheit und Gästebetreuung an Bord sind nicht wesentlich exponiert.",
+      "begruendung": "Nur ein sehr kleiner Teil der Arbeitszeit (rund 4 %) ist exponiert, und dort delegierend: Die KI formuliert den Bericht, die Crew prüft jeden Bericht. Der Kern des Berufs ist physischer Service sowie sicherheitskritische und persönliche Präsenz an Bord, die durch die Luftfahrtvorschriften zur Mindestbesatzung zusätzlich abgesichert ist.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "0c4727f9fe32e4871e365783db613c7a8c70822429b0c0741a6c72afde02585c",
+    "isco_code": "8331",
+    "beruf": "ÖV-Fahrer/in (Bus/Tram)",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:34:22+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4097,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4508,
+      "api_aequivalent_usd": 0.13027419999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4097,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4508,
+        "output_tokens_details": {
+          "thinking_tokens": 1375
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4097,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.13027419999999998
+      }
+    ],
+    "request_ids": [
+      "85ed623b-f3d6-40a0-a45e-743aaf22cb7d"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "8331",
+    "beruf": "ÖV-Fahrer/in (Bus/Tram)",
+    "taetigkeiten": [
+      {
+        "name": "Bus oder Tram im städtischen und regionalen Linienverkehr nach Fahrplan fahren, inkl. Haltestellenbetrieb und Türbedienung",
+        "zeitanteil_pct": 65,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Fahren im Mischverkehr mit hoher Verantwortung. Autonome Busse und Trams gibt es in der Schweiz nur als Pilotprojekte, im regulären Linienbetrieb sind sie nicht zugelassen."
+      },
+      {
+        "name": "Fahrzeug bei Dienstantritt übernehmen, Abfahrtskontrolle durchführen und Mängel melden",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rundgang ums Fahrzeug, Sicht- und Funktionsprüfung vor Ort. Die Fahrzeugdiagnose zeigt nur einen Teil der Mängel an und ersetzt die Kontrolle nicht."
+      },
+      {
+        "name": "Fahrgästen mit eingeschränkter Mobilität helfen (Rampe ausklappen, Rollstuhl, Kinderwagen)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Hilfe und Präsenz an der Tür. Manuelle Rampen bleiben verbreitet, automatische Rampen übernehmen die Betreuung nicht."
+      },
+      {
+        "name": "Fahrgästen an der Tür Auskunft zu Verbindungen, Anschlüssen und Tarifen geben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze Gespräche von Angesicht zu Angesicht während des Haltestellenbetriebs; KI würde den Fahrer hier nicht entlasten. Fahrgast-Apps gibt es zwar, die Fragen an den Fahrer kommen aber gerade dann, wenn sie nicht genutzt werden."
+      },
+      {
+        "name": "Billette verkaufen und Bargeld einnehmen (v. a. Regional- und Postautolinien)",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kassieren ist eine physische Transaktion. Billettautomaten an Haltestellen und im Fahrzeug sowie Apps (Check-in/out) sind in der Schweiz verbreitet und können den Verkauf übernehmen."
+      },
+      {
+        "name": "Mit der Leitstelle per Funk bzw. Betriebsleitsystem kommunizieren (Verspätungen, Störungen, Umleitungen)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze Funksprüche und Statusmeldungen in Echtzeit während der Fahrt; ein LLM spart dabei keine relevante Zeit. Statusmeldungen laufen bereits über klassische Betriebsleitsysteme."
+      },
+      {
+        "name": "Bei Störungen Durchsagen an Fahrgäste machen und Fahrgäste in Notlagen leiten",
+        "zeitanteil_pct": 2,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Situative Live-Durchsagen und Lenkung von Fahrgästen vor Ort. Die Standard-Haltestellenansagen sind schon automatisiert und deshalb nicht mitgezählt."
+      },
+      {
+        "name": "Konflikte mit Fahrgästen deeskalieren und bei Unfällen oder medizinischen Notfällen Erste Hilfe leisten",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare zwischenmenschliche Präsenz und körperliches Eingreifen."
+      },
+      {
+        "name": "Ereignis-, Unfall- und Schadenmeldungen mit Sachverhaltsbeschreibung verfassen",
+        "zeitanteil_pct": 2,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob bei kurzen, formularbasierten Meldungen 50 % Zeit gespart werden; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten des Fahrers formuliert ein LLM die Sachverhaltsbeschreibung. Der Fahrer prüft jede Meldung auf Richtigkeit, weil sie haftungsrelevant ist."
+      },
+      {
+        "name": "Fahrzeuginnenraum kontrollieren, Grobreinigung und Fundgegenstände abgeben",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit im Fahrzeug. Die Hauptreinigung macht die Waschanlage im Depot ausserhalb dieser Tätigkeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Bus- oder Tramfahrer/in eines städtischen oder regionalen Verkehrsbetriebs (z. B. VBZ, BERNMOBIL, PostAuto) im Schichtbetrieb. Die ESCO-Beschreibung ist knapp; die Tätigkeiten wurden aus der Kompetenzliste und Berufswissen abgeleitet. Billettverkauf und Zeitanteile unterscheiden sich stark zwischen Stadt- und Regionalverkehr. Einziger KI-Grenzfall sind die schriftlichen Ereignismeldungen mit kleinem Zeitanteil.",
+    "zusammenfassung": {
+      "haupt_risiko": "Fast nichts Wesentliches ist exponiert: Nur das Verfassen von Ereignis- und Schadenmeldungen könnte mit einem Chat-LLM erledigt werden. Fahren, Fahrgastbetreuung und Notfallhandeln bleiben unberührt.",
+      "begruendung": "Nur rund 2 % der Arbeitszeit sind gegenüber generativer KI exponiert, und zwar delegierend: Das LLM formuliert die Meldung, der Fahrer prüft sie. Den Kern des Berufs bilden das physische Fahren im Mischverkehr und die persönliche Präsenz gegenüber Fahrgästen. Autonome Busse und Trams sind in der Schweiz nicht im Regelbetrieb zugelassen, Billettautomaten und Apps betreffen nur den Verkauf.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

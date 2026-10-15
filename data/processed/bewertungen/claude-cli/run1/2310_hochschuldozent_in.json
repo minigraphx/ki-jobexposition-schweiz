@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "28ca8d78f3c44d4f82e3f31beca8cc2717652afeb9149829ade807497b0a0446",
+    "isco_code": "2310",
+    "beruf": "Hochschuldozent/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:05:33+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4570,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5370,
+      "api_aequivalent_usd": 0.1512982
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4570,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5370,
+        "output_tokens_details": {
+          "thinking_tokens": 1541
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4570,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1512982
+      }
+    ],
+    "request_ids": [
+      "fbe43cf5-c0b7-47a6-9208-bc8617a8d1d6"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2310",
+    "beruf": "Hochschuldozent/in",
+    "taetigkeiten": [
+      {
+        "name": "Vorlesungen, Seminare und Übungen vor Ort halten und Diskussionen mit Studierenden leiten",
+        "zeitanteil_pct": 22,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Unterricht findet vor Ort und im direkten Austausch mit den Studierenden statt, sein Wert liegt in der Präsenz. Vorlesungsaufzeichnungen ersetzen die Lehrperson nicht."
+      },
+      {
+        "name": "Lehrveranstaltungsunterlagen (Folien, Skripte, Übungsaufgaben, Fallbeispiele) erstellen und aktualisieren",
+        "zeitanteil_pct": 12,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten, Literatur und alten Unterlagen erstellen das LLM und die KI-Funktionen in der Office-Suite die Skripttexte, Übungen und Foliensätze. Die Dozentin gibt Lernziele und Aufbau vor und prüft jede Unterlage auf fachliche Richtigkeit und Niveau."
+      },
+      {
+        "name": "Prüfungen und Prüfungsfragen konzipieren, Musterlösungen und Bewertungsraster erstellen",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM entwirft aus eingefügten Lernzielen und Kursinhalten Fragen, Lösungen und Raster. Der Dozent prüft jede Frage auf Korrektheit, Schwierigkeit und Passung zum Unterricht."
+      },
+      {
+        "name": "Prüfungen, Seminar- und Abschlussarbeiten korrigieren, benoten und schriftlich begutachten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die KI-Vorkorrektur bei anspruchsvollen Arbeiten und handschriftlichen Prüfungen wirklich 50 % Zeit spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Dozentin liest jede Arbeit selbst und entscheidet über die Note. Die KI mit Dokumentenverarbeitung gleicht Antworten mit Musterlösung und Raster ab, markiert Lücken und entwirft Feedback- bzw. Gutachtentexte. Prüfungsentscheide sind anfechtbar und müssen begründet werden."
+      },
+      {
+        "name": "Studierende und Doktorierende in Sprechstunden und Feedbackgesprächen betreuen und beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Betreuung und Mentoring, deren Wert in der Beziehung und im Gespräch liegt."
+      },
+      {
+        "name": "Forschungsprojekte durchführen: Experimente, Erhebungen oder Feldarbeit planen, leiten und Laborarbeit anleiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Arbeit findet in Labor oder Feld statt und umfasst wissenschaftliche Entscheidungen sowie die Anleitung von Mitarbeitenden. Generative KI spart hier keine 50 %, und Laborautomation übernimmt nicht den Grossteil dieser Tätigkeit."
+      },
+      {
+        "name": "Forschungsdaten aufbereiten, statistisch auswerten und visualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse- bzw. Coding-Agent mit Code-Ausführung schreibt und startet die Auswertungsskripte und erstellt die Grafiken. Die Forscherin spezifiziert die Analysen und prüft jedes Ergebnis methodisch."
+      },
+      {
+        "name": "Fachliteratur recherchieren, sichten und zusammenfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten suchen Quellen und fassen Papers zusammen. Der Dozent liest die relevanten Arbeiten weiterhin selbst und prüft die Quellen, weil die KI halluzinieren kann."
+      },
+      {
+        "name": "Wissenschaftliche Publikationen und Konferenzbeiträge verfassen und überarbeiten",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die KI bei originären wissenschaftlichen Texten mit eigener Argumentation 50 % Zeit spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Forscherin entwickelt die Argumentation und schreibt den Kern des Texts selbst. Das LLM formuliert Abschnitte aus Notizen vor, glättet das Englisch, kürzt und passt den Text an die Vorgaben der Zeitschrift an."
+      },
+      {
+        "name": "Forschungsanträge (z. B. SNF, Innosuisse) und Projektberichte verfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Projektidee, Vorarbeiten und Ausschreibungstext entwirft das LLM die stark standardisierten Antragsteile und Berichte. Der Dozent prüft und schärft jeden Abschnitt fachlich."
+      },
+      {
+        "name": "In Gremien, Kommissionen und Fachkonferenzen mitwirken und sich mit Fachkollegen austauschen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung, Verhandlung und Netzwerkpflege in Sitzungen und an Konferenzen sind Präsenztätigkeiten."
+      },
+      {
+        "name": "E-Mail-Anfragen von Studierenden beantworten und Kursorganisation im Lernmanagementsystem erledigen",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI-Funktionen im E-Mail- bzw. Office-System entwerfen Antworten und Kursmitteilungen aus dem Kontext. Die Dozentin prüft jede Nachricht kurz und passt sie an."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Dozent/in an einer Schweizer Universität oder Fachhochschule mit Lehre und Forschung, eher lehrlastig; die Zeitanteile schwanken je nach Hochschultyp und Fach stark. Die grössten Grenzfälle sind das Korrigieren und Begutachten von Arbeiten sowie das Verfassen von Publikationen: Bei beiden ist unklar, ob die 50 %-Schwelle erreicht wird.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Erstellen von Lehrunterlagen und Prüfungen, Forschungsanträge, Datenauswertung, Literaturrecherche, Korrespondenz sowie (als Grenzfall) Korrektur und Publikationsschreiben, und zwar durch Chat-LLMs, Office-KI, Datenanalyse- und Recherche-Agenten.",
+      "begruendung": "Gut die Hälfte der Arbeitszeit ist exponiert, überwiegend im Modus delegierend: Die KI entwirft Unterlagen, Anträge und Analysen, die Dozentin prüft jedes Ergebnis fachlich. Bei Korrektur, Recherche und Publikationen ist die KI nur unterstützend, Präsenzlehre und Betreuung bleiben unberührt. Als Hemmnisse wirken die Begründungs- und Anfechtungsregeln bei Prüfungsentscheiden, der Datenschutz an öffentlichen Hochschulen und die Integritätsrichtlinien von Hochschulen und Fachzeitschriften.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "6ee1c6a6438be56924ae54d2df406ef75cd1838b3b5ec8bd0c5b4904bbcf167a",
+    "isco_code": "3211",
+    "beruf": "Medizintechniker im Bereich bildgebende Verfahren und Therapiegeräte",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:40:28+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 43425,
+      "output_tokens": 5715,
+      "api_aequivalent_usd": 0.12299299999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 43425,
+        "output_tokens": 5715,
+        "output_tokens_details": {
+          "thinking_tokens": 2233
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.12299299999999998
+      }
+    ],
+    "request_ids": [
+      "f08467d3-f4bc-4310-adfc-724660eeadae"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3211",
+    "beruf": "Medizintechniker im Bereich bildgebende Verfahren und Therapiegeräte",
+    "taetigkeiten": [
+      {
+        "name": "Patientinnen und Patienten empfangen, identifizieren, über die Untersuchung informieren und Kontraindikationen (z. B. MRI-Sicherheitsfragebogen) abfragen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Gespräch und Identitätskontrolle am Patienten, oft mit verunsicherten oder kranken Menschen; Präsenztätigkeit."
+      },
+      {
+        "name": "Patienten lagern, Venenzugang legen und Kontrastmittel bzw. Radiopharmaka applizieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit am Patienten; Kontrastmittelinjektoren übernehmen nur die Injektion, nicht Lagerung und Zugang."
+      },
+      {
+        "name": "Untersuchungen an Röntgen-, CT- und MRI-Geräten durchführen: Parameter einstellen, Aufnahmen auslösen, Patient überwachen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gerätebedienung in Anwesenheit des Patienten mit laufender Anpassung an die Situation; Automatik-Funktionen (Auto-Positionierung, Belichtungsautomatik) ersetzen die Fachperson nicht zu 50 %."
+      },
+      {
+        "name": "Untersuchungsanfragen prüfen und Untersuchungstechnik bzw. Protokoll festlegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze fachliche Beurteilung im Arbeitsfluss, oft in Absprache mit dem Radiologen; ein LLM-Protokollvorschlag spart wegen Prüfaufwand und Kürze der Tätigkeit keine 50 %."
+      },
+      {
+        "name": "Bilder nachbearbeiten (Rekonstruktionen, MPR, 3D, Messungen) und ans PACS senden",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Keine generative KI nötig; automatische Rekonstruktions- und Reformatierungsfunktionen der Hersteller-Software (regelbasiert bzw. nicht-generative Bildverarbeitung) und Auto-Routing ans PACS übernehmen einen Grossteil."
+      },
+      {
+        "name": "Strahlendosis erfassen, kontrollieren und Strahlenschutzmassnahmen dokumentieren",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dosiswerte werden von Dosismanagement-Software (DICOM-Dosisberichte) automatisch erfasst und mit Referenzwerten verglichen; klassische Software, keine LLM-Leistung."
+      },
+      {
+        "name": "Bestrahlungsplanung in der Radioonkologie erstellen (Konturierung, Dosisberechnung im Planungssystem)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Auto-Konturierung und wissensbasierte Auto-Planung in typischen CH-Planungsabläufen ≥ 50 % der Zeit übernehmen; P0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Planungssysteme mit Auto-Konturierung und wissensbasierter Auto-Planung (nicht-generativ) sind kommerziell verfügbar; generative KI bringt keinen Zusatznutzen über der Schwelle."
+      },
+      {
+        "name": "Untersuchungen und Leistungen im RIS/KIS erfassen und Besonderheiten vermerken",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Leistungserfassung erfolgt weitgehend automatisch über Modality Worklist/MPPS und RIS-Regeln; die kurzen Freitext-Vermerke sparen mit KI kaum Zeit."
+      },
+      {
+        "name": "Qualitätskontrollen und Konstanzprüfungen an Geräten durchführen, Störungen beheben bzw. melden",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Messungen mit Phantomen und Handhabung an den Geräten vor Ort; physische Tätigkeit."
+      },
+      {
+        "name": "Mit Radiologen, Stationen und Notfall abstimmen und Untersuchungsreihenfolge organisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurzfristige mündliche Absprachen und Priorisierung im laufenden Betrieb, insbesondere bei Notfällen."
+      },
+      {
+        "name": "Studierende und neue Mitarbeitende an den Geräten anleiten",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Praktische Anleitung in Präsenz am Patienten und Gerät."
+      },
+      {
+        "name": "Arbeitsanweisungen, Untersuchungsprotokoll-Beschreibungen und Patienteninformationen verfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM erstellt aus Stichworten und bestehenden Vorlagen den Text; die Fachperson prüft jeden Text fachlich und passt ihn an die Abteilungsstandards an."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Fachperson für medizinisch-technische Radiologie (MTR HF) in einer Spital-Radiologie (Röntgen, CT, MRI), mit kleinem Anteil Radioonkologie/Nuklearmedizin. Die ESCO-Zuordnung passt nur teilweise; Diagnostik und Forschung (ESCO) gehören in der Schweiz zu Ärzten bzw. Physikern. Die grösste Unsicherheit liegt bei den P-Werten für Bildnachbearbeitung und Bestrahlungsplanung (nicht-generative Bild-KI), nicht bei der Stufe.",
+    "zusammenfassung": {
+      "haupt_risiko": "Generative KI betrifft nur das Verfassen von Arbeitsanweisungen und Patienteninformationen mit dem Chat-LLM; die Kernarbeit am Patienten und an den Geräten ist nicht wesentlich exponiert.",
+      "begruendung": "Nur rund 3 % der Arbeitszeit sind exponiert, und zwar delegierend: Die KI entwirft Texte, die Fachperson prüft jeden einzelnen. Der Beruf besteht überwiegend aus Patientenbetreuung, Lagerung, Gerätebedienung und Strahlenschutz vor Ort. Rationalisierung kommt eher von nicht-generativer Bildverarbeitungs- und Planungssoftware der Gerätehersteller als von LLMs.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

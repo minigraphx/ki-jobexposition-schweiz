@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "323f5deaae27d43c9b41d1eca890d6b5c082039f7681c8561a10fb59b3a9c271",
+    "isco_code": "2412",
+    "beruf": "Finanz- und Anlageberater",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2289,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2289
+        }
+      ],
+      "prompt_token_count": 22215,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22215
+        }
+      ],
+      "thoughts_token_count": 7116,
+      "total_token_count": 31620
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2289,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2289
+          }
+        ],
+        "prompt_token_count": 22215,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22215
+          }
+        ],
+        "thoughts_token_count": 7116,
+        "total_token_count": 31620
+      }
+    ],
+    "request_ids": [
+      "xT_PapPSD6St_PUPotaH2QY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2412_finanz_und_anlageberater",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2412",
+    "beruf": "Finanz- und Anlageberater",
+    "taetigkeiten": [
+      {
+        "name": "Persönliche Anlage-, Vorsorge- und Finanzberatungsgespräche mit Kundinnen und Kunden führen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Beratungsgespräch von Angesicht zu Angesicht oder per Video ist eine Präsenz- und Beziehungstätigkeit, deren Wert im Vertrauensaufbau, im Erfassen subtiler Kundenbedürfnisse und in der persönlichen Überzeugungsarbeit liegt."
+      },
+      {
+        "name": "Kundenunterlagen (Steuerdaten, Vorsorgeausweise, Jahresabschlüsse) auswerten und finanzielle Tragfähigkeit sowie Risikoprofil analysieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Dokumentenverarbeitung liest heterogene Belege wie Steuererklärungen, Pensionskassenausweise oder KMU-Bilanzen aus und entwirft die Tragfähigkeits- und Risikoanalyse; die Beratungsperson prüft jedes Dossier fachlich im Detail."
+      },
+      {
+        "name": "Individuelle Anlagevorschläge sowie Finanz- und Vorsorgepläne ausarbeiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "In die Beratungs- und Finanzplanungssoftware integrierte Sprachmodelle erstellen auf Basis von Kundenprofil und Hausmeinung massgeschneiderte Anlagekonzepte samt Begründungstext; der Berater steuert die Szenarien und prüft jeden Vorschlag auf FIDLEG-Eignung."
+      },
+      {
+        "name": "Kundenportfolios überwachen, Risikokennzahlen kontrollieren und Rebalancing-Transaktionen auslösen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die laufende Überwachung von Anlagegrenzen, Bandbreiten und Portfoliorisiken sowie das Generieren von Umschichtungsvorschlägen (Rebalancing) wird durch regelbasierte Portfolio-Management-Systeme (klassische Software) übernommen."
+      },
+      {
+        "name": "Finanzmärkte (Aktien-, Zins- und Devisenmärkte), Research-Berichte und Unternehmensdaten beobachten und auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Recherche-Agenten und Marktdaten-Systeme fassen Marktkommentare, Unternehmensabschlüsse und Finanznachrichten gezielt zusammen; der Berater wertet die aufbereiteten Informationen selbst aus, um für Kundengespräche auskunftsfähig zu sein."
+      },
+      {
+        "name": "Kundenkorrespondenz, Marktkommentare und verständliche Erklärungen zu Finanzprodukten verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus Stichworten kundengerechte E-Mails, Performance-Erläuterungen und verständliche Erklärungen zu Finanzinstrumenten; die Beratungsperson prüft jede Nachricht vor dem Versand auf fachliche Richtigkeit und persönliche Tonalität."
+      },
+      {
+        "name": "Beratungsprotokolle (FIDLEG) sowie KYC- und GwG-Dokumentation erstellen und nachführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Gesprächsnotizen und Kundenangaben formuliert ein Sprachmodell strukturierte FIDLEG-Beratungsprotokolle und KYC-Berichte zur Mittelherkunft; der Berater prüft und verantwortet jeden Eintrag einzeln."
+      },
+      {
+        "name": "Neukunden akquirieren, bestehende Kundenbeziehungen pflegen und Netzwerk-Anlässe wahrnehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Akquisition und Beziehungspflege im Finanz- und Vermögensgeschäft basieren auf persönlichem Vertrauen, Weiterempfehlungen und physischer Präsenz bei Kundenterminen und Veranstaltungen."
+      },
+      {
+        "name": "Komplexe Kundenfälle mit internen Spezialisten (Steuern, Vorsorge, Kredite, Portfoliomanagement) abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die interdisziplinäre Abstimmung und Strukturierung komplexer Finanzierungs-, Vorsorge- oder Nachfolgelösungen mit Fachspezialisten erfordert den direkten Dialog und gemeinsames fachliches Ermessen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Kundenberater/in Anlage und Vermögen (Affluent / Private Banking / Finanzplanung) bei einer Schweizer Bank oder einem unabhängigen Vermögensverwalter. Obwohl die CH-ISCO-19-Gruppe 2412 auch 'Compliance Officer' als Synonym aufführt, beschreibt das ESCO-Profil klar die Anlage- und Vermögensberatung; Compliance-Aufgaben (KYC/GwG, FIDLEG) sind im Umfang ihrer Bedeutung für die Kundenberatung berücksichtigt. Wichtig ist die Abgrenzung zwischen regelbasierter Portfolioüberwachung (klassische Software, P1) und der generativen Erstellung von Analysen, Vorschlägen und Protokollen (E1/E2).",
+    "zusammenfassung": {
+      "haupt_risiko": "Die Auswertung von Kundenunterlagen, die Ausarbeitung von Anlage- und Vorsorgevorschlägen, die Markt- und Research-Analyse sowie das Verfassen von Kundenkorrespondenz und FIDLEG-/KYC-Protokollen werden durch Chat-LLMs und in Beratungssysteme integrierte KI-Werkzeuge stark beschleunigt.",
+      "begruendung": "Gut die Hälfte der Arbeitszeit (55 %) ist gegenüber generativer KI exponiert, wobei die KI überwiegend delegierend (Entwurf von Risikoanalysen, Anlagevorschlägen, Korrespondenz und Beratungsprotokollen mit zwingender Einzelfallprüfung) sowie unterstützend bei der Marktanalyse eingesetzt wird. Das persönliche Beratungsgespräch und die Beziehungspflege bleiben als Vertrauens- und Präsenztätigkeiten beim Menschen, während die quantitative Portfolioüberwachung durch klassische Software abgedeckt wird. Strenge Schweizer Regulierungen (Bankkundengeheimnis, revDSG, FIDLEG-Dokumentations- und Eignungspflichten) sowie die hohe Bedeutung des persönlichen Kundenvertrauens verlangen eine konsequente fachliche Kontrolle durch die Beratungsperson.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

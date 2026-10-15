@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "67f736ea57f692dd9275f8bb647bff77330d970da631b780b36b5ff6eb21edfd",
+    "isco_code": "2149",
+    "beruf": "Projektleiter/in (Technik)",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:07:17+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 41464,
+      "output_tokens": 5275,
+      "api_aequivalent_usd": 0.11380080000000001
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 41464,
+        "output_tokens": 5275,
+        "output_tokens_details": {
+          "thinking_tokens": 1706
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11380080000000001
+      }
+    ],
+    "request_ids": [
+      "ee4a383d-3885-44d4-b159-19fa45335146"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2149",
+    "beruf": "Projektleiter/in (Technik)",
+    "taetigkeiten": [
+      {
+        "name": "Projektteam führen, Projektsitzungen leiten und Arbeitspakete intern koordinieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung, Priorisierung und Abstimmung im Team leben von persönlicher Präsenz und Verantwortung; KI spart hier keine 50 %."
+      },
+      {
+        "name": "Mit Kunden, Lieferanten und Management verhandeln und Konflikte klären (Termine, Umfang, Nachträge)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlung und Stakeholder-Management von Angesicht zu Angesicht bzw. am Telefon; Beziehungs- und Ermessensarbeit."
+      },
+      {
+        "name": "Terminpläne und Ressourcenplanung in der Planungssoftware erstellen und nachführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dauern und Abhängigkeiten müssen mit Fachwissen und Rückmeldungen des Teams geschätzt werden; KI-Vorschläge für Grobpläne sparen in typischen Industrieprojekten keine 50 %. Planungssoftware (MS Project) rechnet nur, ersetzt die Planung nicht."
+      },
+      {
+        "name": "Projektkosten überwachen, Soll-Ist-Vergleiche auswerten und Kostenprognosen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Soll-Ist-Daten liefert das ERP (klassische Software) bereits; die verbleibende Zeit liegt in der Interpretation und Prognose mit Projektwissen, wo generative KI kaum 50 % spart."
+      },
+      {
+        "name": "Projektstatus- und Managementberichte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Projektleiter gibt Stichworte, Kennzahlen und Pendenzen als Text ein, das LLM erstellt den Bericht; jeder Bericht wird inhaltlich geprüft und korrigiert."
+      },
+      {
+        "name": "Sitzungsprotokolle und Pendenzenlisten aus Projektsitzungen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Sitzungen werden oft in Mundart mit mehreren Personen und Fachjargon geführt; Transkriptionsqualität unsicher, E0 ebenso plausibel bzw. bei Hochdeutsch/Englisch eher 10-30.",
+        "ch_hemmnis": [],
+        "begruendung": "Meeting-Transkription und Zusammenfassung (z. B. in Teams) erstellen Protokoll und Pendenzen; der Projektleiter prüft jedes Protokoll und korrigiert Dialekt- und Fachbegriffsfehler."
+      },
+      {
+        "name": "Projektspezifikationen, Lasten-/Pflichtenhefte und Projektunterlagen ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Gliederung und Text der Spezifikation aus eingefügten Anforderungen und Vorlagen; der Projektleiter prüft jede Anforderung fachlich und ergänzt technische Details."
+      },
+      {
+        "name": "Risikoanalysen und Kosten-Nutzen-Analysen für Projekte erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Projektbeschrieb und Kostendaten erstellt das LLM Risikoregister und Analyseentwurf; Projektleiter bewertet Eintrittswahrscheinlichkeiten und Massnahmen für jede Position selbst."
+      },
+      {
+        "name": "Änderungsanträge technisch und kostenmässig beurteilen und entscheiden",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ermessensentscheid mit technischem und kommerziellem Projektwissen; KI-Unterstützung spart keine 50 % der Zeit."
+      },
+      {
+        "name": "Normen und rechtliche Anforderungen (z. B. Maschinenrichtlinie, CE, Arbeitssicherheit) ermitteln und Einhaltung prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Recherche-Agent und Dokumentenanalyse fassen Anforderungen zusammen und gleichen sie mit Projektunterlagen ab; der Projektleiter beurteilt die Konformität selbst und verantwortet sie (Haftung)."
+      },
+      {
+        "name": "Montage, Inbetriebnahme und Abnahmen vor Ort begleiten sowie Lieferungen koordinieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz auf Baustelle/beim Kunden, Problemlösung an der Anlage; keine relevante Automatisierung."
+      },
+      {
+        "name": "Projektkorrespondenz (E-Mails) mit Kunden und Lieferanten verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft E-Mails aus Stichworten, auch in Englisch/Französisch; da sie technische und terminliche Zusagen enthalten, prüft der Projektleiter jede vor dem Versand."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Projektleiter/in mit Ingenieursabschluss (FH) im Maschinen- oder Anlagenbau, verantwortlich für Kundenprojekte von der Spezifikation bis zur Inbetriebnahme. Die ESCO-Zuordnung (generischer Projektmanager) passt nur teilweise; logistische und wartungsbezogene Kompetenzen wurden in Koordination und Vor-Ort-Begleitung zusammengefasst. Die grössten Grenzfälle sind Terminplanung (E0 vs. E2) und Protokolle bei Mundart-Sitzungen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Schreibarbeit – Statusberichte, Spezifikationen, Risikoanalysen, Korrespondenz und Sitzungsprotokolle –, die Chat-LLMs bzw. Meeting-Transkription entwerfen, sowie die Normenrecherche mit Recherche-Agenten.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert. Dort arbeitet die KI überwiegend delegierend: Sie erstellt die Entwürfe, und die Projektleiterin prüft jedes Dokument fachlich. Bei der Normenrecherche bleibt sie unterstützend, weil die Haftung für die Konformität beim Menschen liegt. Die Kernaufgaben Führen, Verhandeln, Entscheiden und Präsenz vor Ort bleiben unberührt; Mundart-Sitzungen bremsen die automatischen Protokolle.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

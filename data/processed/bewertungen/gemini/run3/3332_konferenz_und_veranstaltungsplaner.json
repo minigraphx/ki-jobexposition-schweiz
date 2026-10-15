@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "db7636b4fcf37edfe3eb7535e59411dfc76f400cef3c9ac0ce3ee360df66a375",
+    "isco_code": "3332",
+    "beruf": "Konferenz- und Veranstaltungsplaner",
+    "lauf": 3,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T09:24:56+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2410,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2410
+        }
+      ],
+      "prompt_token_count": 21982,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21982
+        }
+      ],
+      "thoughts_token_count": 6900,
+      "total_token_count": 31292
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2410,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2410
+          }
+        ],
+        "prompt_token_count": 21982,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21982
+          }
+        ],
+        "thoughts_token_count": 6900,
+        "total_token_count": 31292
+      }
+    ],
+    "request_ids": [
+      "e0jPaoLJIsyfz7IP7bi_mAY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/bymfj1fwg9dh18pztlts5y5houlusrocgzrj",
+    "custom_id": "r3-3332_konferenz_und_veranstaltungsplaner",
+    "anfrage_typ": "dritter_lauf",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3332",
+    "beruf": "Konferenz- und Veranstaltungsplaner",
+    "taetigkeiten": [
+      {
+        "name": "Kundenbedürfnisse klären, Auftraggeber beraten und Veranstaltungsziele abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratungs- und Briefinggespräche mit Auftraggebern, Sponsoren oder Programmverantwortlichen erfordern unmittelbare zwischenmenschliche Präsenz und Beziehungsarbeit."
+      },
+      {
+        "name": "Veranstaltungskonzepte, Programminhalte und Kundenofferten ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM entwirft auf Basis von Briefing-Stichworten Konzepttexte, Programmideen und Offertbeschriebe; die Planerin spezifiziert die Eckdaten und prüft sowie überarbeitet jeden Entwurf fachlich."
+      },
+      {
+        "name": "Terminpläne, Regiepläne (Drehbücher) und logistische Checklisten erstellen und nachführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Programm- und Eckdaten generiert ein Chat-LLM strukturierte Ablauftabellen, Regiepläne und Checklisten; die Fachperson steuert die Detailvorgaben und kontrolliert jeden Zeitplan auf logistische Machbarkeit."
+      },
+      {
+        "name": "Veranstaltungsorte besichtigen und Einrichtungen vor Ort inspizieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Begehung von Locations sowie die Prüfung der räumlichen, technischen und sicherheitsrelevanten Gegebenheiten erfordern physische Präsenz vor Ort."
+      },
+      {
+        "name": "Lieferanten und Dienstleister (Catering, Technik, Location) koordinieren und Konditionen verhandeln",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Preis- und Leistungsverhandlungen sowie die laufende Abstimmung technischer und gastronomischer Details mit externen Partnern bestehen überwiegend aus direkter Interaktion und erreichen die 50-%-Schwelle nicht."
+      },
+      {
+        "name": "Verträge mit Dienstleistern sowie Sicherheits- und Bewilligungsunterlagen ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt Vertragsentwürfe, Sicherheitskonzepte und Bewilligungsgesuche anhand von Vorlagen und Veranstaltungsdaten; die Planerin prüft jedes Dokument inhaltlich auf rechtliche und behördliche Vorgaben."
+      },
+      {
+        "name": "Einladungen, Programmhefte, Werbetexte und Teilnehmendeninformationen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM verfasst und übersetzt Einladungs-, Programm- und Website-Texte in den benötigten Landessprachen und Englisch; die Fachperson gibt Stichworte vor und prüft jeden Text vor der Publikation."
+      },
+      {
+        "name": "Teilnehmendenanmeldung verwalten und Standardanfragen von Teilnehmenden beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Klassische Event- und Ticketing-Software automatisiert die Online-Registrierung und Teilnehmerlisten (P1), während integrierte KI-Assistenten und Chatbots Standardanfragen zu Anreise, Programm oder Umbuchungen beantworten und der Mensch nur Ausnahmen bearbeitet."
+      },
+      {
+        "name": "Aufbau, Durchführung und Veranstaltungspersonal vor Ort leiten und überwachen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Regieführung am Veranstaltungstag, das Anleiten des Eventpersonals und das Lösen unvorhergesehener Probleme vor Ort erfordern unmittelbare physische und persönliche Präsenz."
+      },
+      {
+        "name": "Veranstaltungsrechnungen gegen Offerten prüfen und Budgetkontrolle durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Dokumenten- und Tabellenanalyse gleicht PDF-Lieferantenrechnungen mit Offerten und dem Eventbudget ab und markiert Abweichungen; die Planerin kontrolliert und beurteilt die Positionen weiterhin selbst."
+      },
+      {
+        "name": "Teilnehmer-Feedback auswerten und Abschlussberichte zur Veranstaltungsevaluation verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Exportierte Umfragedaten und Freitext-Rückmeldungen werden im Chat-LLM zusammengefasst und zu einem Evaluationsbericht aufbereitet; die Planerin prüft den Bericht inhaltlich vor dem Versand an den Auftraggeber."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Konferenz- und Veranstaltungsplaner/in in einer Schweizer Eventagentur, einem Kongresszentrum oder der Eventabteilung eines Unternehmens (Fokus auf Tagungen, Konferenzen und Firmenanlässe). Das ESCO-Profil bildet die Aufgaben gut ab; Randkompetenzen wie nachhaltiger Tourismus wurden nicht als eigene Kerntätigkeit gewichtet. Grenzfälle bestehen bei der Abgrenzung zwischen schriftlicher Ablaufplanung (E1) und laufender Lieferantenkoordination (E0).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Ausarbeitung von Konzepten, Regieplänen, Verträgen, Einladungstexten und Evaluationsberichten durch Chat-LLMs sowie das Teilnehmermanagement und die Rechnungskontrolle durch integrierte KI-Systeme.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit entfällt auf konzeptionelle, redaktionelle und administrative Planungsaufgaben, die überwiegend im delegierenden Modus (und bei Standardanfragen von Teilnehmenden ersetzend) durch KI beschleunigt werden, während Kundenberatung, Lieferantenverhandlungen und die Leitung vor Ort beim Menschen bleiben. In der Schweiz erfordern kantonal und kommunal unterschiedliche Bewilligungs- und Sicherheitsauflagen sowie die mehrsprachige Veranstaltungskommunikation (DE/FR/IT/EN) eine sorgfältige fachliche Kontrolle.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

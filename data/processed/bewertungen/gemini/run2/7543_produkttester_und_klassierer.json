@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "af5eb5c933785336f7a48fb5a769f3932dfc7ef19cb0139f2607d9d53ff12af0",
+    "isco_code": "7543",
+    "beruf": "Produkttester und -klassierer (ohne Nahrungsmittel und Getränke)",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2339,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2339
+        }
+      ],
+      "prompt_token_count": 22072,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22072
+        }
+      ],
+      "thoughts_token_count": 6217,
+      "total_token_count": 30628
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2339,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2339
+          }
+        ],
+        "prompt_token_count": 22072,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22072
+          }
+        ],
+        "thoughts_token_count": 6217,
+        "total_token_count": 30628
+      }
+    ],
+    "request_ids": [
+      "xj_PasO_Hunc_uMP4Oj0yAY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-7543_produkttester_und_klassierer",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "7543",
+    "beruf": "Produkttester und -klassierer (ohne Nahrungsmittel und Getränke)",
+    "taetigkeiten": [
+      {
+        "name": "Sichtprüfung, Oberflächenkontrolle und Klassierung von gefertigten Bauteilen und Produkten durchführen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Handhaben, Betrachten unter Lupe oder Mikroskop und physisches Sortieren der Werkstücke sind gegenüber Sprachmodellen nicht exponiert. Kommerziell verfügbare automatische optische Inspektionssysteme (AOI) und Sortieranlagen können bei ausreichenden Stückzahlen über 50 % dieser Arbeit übernehmen."
+      },
+      {
+        "name": "Masse, Materialeigenschaften und Funktionen mit Präzisionsmessgeräten und Prüfeinrichtungen messen und Messwerte festhalten",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit an Prüfständen, Koordinatenmessmaschinen, Zugprüfmaschinen oder mit Handmessmitteln (Einlegen, Einspannen, Antasten, zerstörungsfreie Prüfung). In typischen Schweizer KMU mit hoher Variantenvielfalt übernimmt Robotik heute keine 50 % des manuellen Prüfaufwands."
+      },
+      {
+        "name": "Prüfpläne und Prüfanweisungen anhand technischer Zeichnungen und Normvorgaben erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob multimodale KI-Systeme bei komplexen Fertigungszeichnungen mit Form- und Lagetoleranzen inklusive Prüfaufwand heute bereits zuverlässig 50 % Zeit sparen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Multimodale KI-Funktionen in CAQ-Software lesen Masse und Toleranzen aus technischen Zeichnungen (Ballooning) aus und entwerfen den Prüfplan; die Prüffachperson spezifiziert und kontrolliert jedes Prüfmerkmal fachlich gegen Zeichnung und Norm."
+      },
+      {
+        "name": "Qualitätskontrolldokumentation, Messprotokolle und Lieferanten-Werkszeugnisse auf Vorgabeneinhaltung überprüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumenten-KI extrahiert Prüfwerte aus heterogenen PDF-Werkszeugnissen und Erstmusterprüfberichten, gleicht sie mit Sollvorgaben ab und markiert Abweichungen; der Qualitätsprüfer führt die formelle Prüfung und Freigabe anhand der Markierungen selbst durch."
+      },
+      {
+        "name": "Kontrollberichte, Abweichungsmeldungen (Beanstandungsrapporte) und kommentierte Prüfergebnisse verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus eingegebenen Messwerten und Stichworten zum Fehlerbild erstellt ein Chat-LLM strukturierte Kontrollberichte oder Lieferantenbeanstandungen (auch fremdsprachig); die Prüffachperson prüft jeden Bericht inhaltlich und gibt ihn frei."
+      },
+      {
+        "name": "Prüfmittel und Testgeräte kalibrieren, warten sowie Kalibrierungspläne pflegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Tätigkeit an den Messmitteln (Abgleich mit Normalen und Endmassen, Justieren, Reinigen, Etikettieren); die Terminverwaltung erfolgt über klassische Prüfmittelverwaltungssoftware."
+      },
+      {
+        "name": "Laufende Produktion, Fertigungsausrüstung und Sicherheitsstandards vor Ort überwachen sowie interne Audits durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert physische Präsenz und Beobachtung in der Werkhalle (Fertigungsrundgänge, Zustandskontrolle von Anlagen, Überprüfung von Sicherheits- und Hygienevorgaben sowie Auditgespräche vor Ort)."
+      },
+      {
+        "name": "Fehlerursachen bei Qualitätsabweichungen analysieren und Korrekturmassnahmen mit Produktion und Lieferanten abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Ursachenfindung am fehlerhaften Werkstück bzw. an der Produktionsanlage sowie das Aushandeln von Korrektur- und Vorbeugemassnahmen (CAPA) mit Produktionsverantwortlichen und Lieferanten sind stark physisch und interaktiv geprägt."
+      },
+      {
+        "name": "Qualitätskennzahlen und Lieferantenbewertungen auswerten sowie Verfahrensanweisungen im QM-System pflegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Datenanalyse- und Textfunktionen werten Ausschuss- und Lieferantendaten aus und entwerfen Aktualisierungen für QM-Verfahrensanweisungen; die Fachperson steuert die Auswertung und prüft jedes Dokument. Standard-KPI-Berechnungen und Lieferantenscorings lassen sich zudem zu über 50 % mit klassischer CAQ-/BI-Software automatisieren."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Qualitätsprüfer/in bzw. Produkttester/in (Sekundär II) in einem Schweizer Industriebetrieb (z. B. MEM-Industrie, Kunststofftechnik oder Medtech-Zulieferung). Das ESCO-Profil umfasst neben der praktischen Werkstückprüfung auch Aufgaben der Qualitätssicherung (Audits, CAPA, Dokumentation), die in der Praxis je nach Betriebsgrösse unterschiedlich stark gewichtet sind. Grösster Grenzfall ist die KI-gestützte Prüfplanerstellung aus technischen Zeichnungen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Das Verfassen von Kontrollberichten und Abweichungsmeldungen, das Erstellen von Prüfplänen aus Zeichnungen, die Überprüfung von Qualitätszertifikaten sowie die Auswertung von Qualitätskennzahlen werden durch Chat-LLMs, Dokumenten-KI und KI-gestützte CAQ-Systeme beschleunigt.",
+      "begruendung": "Rund 35 % der Arbeitszeit entfallen auf dokumentarische und analytische Qualitätssicherungsaufgaben, bei denen KI überwiegend delegierend (Entwurf von Prüfberichten, Prüfplänen und Auswertungen mit anschliessender Fachkontrolle) sowie unterstützend bei der Zertifikatsprüfung eingesetzt wird. Die physische Kernarbeit — Sichtprüfung, Messen mit Präzisionsinstrumenten, Kalibrieren und Rundgänge in der Produktion — ist gegenüber generativer KI nicht exponiert. In regulierten Schweizer Industriebranchen (z. B. Medizintechnik, Luftfahrt, Pharma-Zulieferer) erfordern Validierungs-, Rückverfolgbarkeits- und Haftungsvorgaben weiterhin eine lückenlose menschliche Freigabe.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

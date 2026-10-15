@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "9adbc5f9adb816787bb47c6e0a89d600cd78d254fa3960d9d10a405d07700de6",
+    "isco_code": "1213",
+    "beruf": "Führungskräfte in Unternehmenspolitik und -planung",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:25:23+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3832,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4736,
+      "api_aequivalent_usd": 0.13271419999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3832,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4736,
+        "output_tokens_details": {
+          "thinking_tokens": 1434
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3832,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.13271419999999998
+      }
+    ],
+    "request_ids": [
+      "f80ff3fc-86e9-49fa-ba33-ff8b89512131"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1213",
+    "beruf": "Führungskräfte in Unternehmenspolitik und -planung",
+    "taetigkeiten": [
+      {
+        "name": "Gesetzgebung, Vernehmlassungen und politische Entwicklungen beobachten und für die Organisation auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent mit Websuche durchsucht Fedlex, Parlamentsgeschäfte und Medien und fasst Relevantes zusammen. Die Führungskraft gibt die Themen vor, prüft jede Auswertung an den Quellen und beurteilt die Relevanz selbst."
+      },
+      {
+        "name": "Positionspapiere, Stellungnahmen und Vernehmlassungsantworten verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Aus eingefügter Vorlage, Kernbotschaften und früheren Positionen entwirft das LLM die Stellungnahme. Die Führungskraft prüft jede Fassung politisch und inhaltlich und passt die Argumentation an; Fassungen in mehreren Landessprachen müssen aufeinander abgestimmt werden."
+      },
+      {
+        "name": "Kampagnen- und Interessenvertretungsmaterial erstellen (Argumentarien, Factsheets, Medienmitteilungen)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Das LLM erstellt Argumentarien und Texte aus festgelegten Positionen und übersetzt sie in DE/FR/IT. Weil die Texte öffentlich und reputationsrelevant sind, wird jede Ausgabe geprüft und angepasst; die Restzeit liegt an der Grenze zu 10-30."
+      },
+      {
+        "name": "Strategieprozesse mit der Geschäftsleitung in Workshops und Sitzungen leiten, Optionen abwägen und Entscheide vorbereiten",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Tätigkeit besteht vor allem aus Moderation, Ermessen, Aushandlung und Verantwortung im persönlichen Austausch mit der Geschäftsleitung. KI spart dabei keine 50 %."
+      },
+      {
+        "name": "Umfeld-, Markt- und Wirkungsanalysen als Entscheidungsgrundlagen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche- und Datenanalyse-Agenten mit Code-Ausführung erstellen Auswertungen, Szenarien und Berichtsentwürfe. Die Führungskraft gibt die Fragestellung vor, prüft Daten und Schlussfolgerungen und verantwortet jede Analyse."
+      },
+      {
+        "name": "Interne Richtlinien, Weisungen und Policies formulieren und aktualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus eingefügten Vorgaben, Gesetzestexten und der bestehenden Richtlinie entwirft das LLM die neue Fassung. Die Führungskraft prüft jede Bestimmung fachlich und juristisch."
+      },
+      {
+        "name": "Umsetzung der Strategie und Einhaltung der Richtlinien verfolgen und Reportings an Geschäftsleitung bzw. Verwaltungsrat verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in Office- und BI-Software erstellen aus Kennzahlen und Statusmeldungen der Bereiche einen Reportingentwurf, den die Führungskraft prüft und kommentiert. Klassische KPI-Dashboards liefern nur die Daten und übernehmen keine 50 % der Arbeit."
+      },
+      {
+        "name": "Präsentationen und Entscheidungsunterlagen für Gremien vorbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in der Office-Suite erstellen Foliensätze aus Strategiepapieren und Analysen. Die Führungskraft prüft Botschaft, Zahlen und die Anpassung an das Corporate Design bei jeder Unterlage."
+      },
+      {
+        "name": "Gespräche mit Politik, Behörden, Verbänden und Stakeholdern führen (Lobbying, Netzwerkpflege)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Wert liegt in der persönlichen Beziehung, im Vertrauen und in der Verhandlung von Angesicht zu Angesicht. Es handelt sich um eine Präsenztätigkeit."
+      },
+      {
+        "name": "Team bzw. Abteilung führen, Mitarbeitende anleiten und Arbeiten priorisieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Führung von Mitarbeitenden ist eine Präsenz- und Beziehungstätigkeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Leiter/in Strategie, Unternehmensentwicklung oder Public Affairs in einem grösseren Unternehmen, Verband oder einer öffentlichen Verwaltung. Die ESCO-Beschreibung passt grundsätzlich, betont aber Interessenvertretung und Nachhaltigkeit stärker als den typischen CH-Planungsalltag. Die Zeitanteile sind grob geschätzt. Bei den Schreib- und Analysetätigkeiten ist offen, ob die Restzeit wegen der hohen politischen Sensibilität eher im oberen oder im unteren Band liegt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Verfassen von Stellungnahmen, Positionspapieren, Kampagnenmaterial und Richtlinien (Chat-LLM) sowie Monitoring, Analysen, Reportings und Präsentationen (Recherche-Agenten, Datenanalyse, Office-KI).",
+      "begruendung": "Rund 60 % der Arbeitszeit sind exponiert, durchwegs delegierend: Die KI erstellt Entwürfe und Analysen, die Führungskraft gibt die Richtung vor und prüft jedes Ergebnis politisch und fachlich. Strategieentscheide, Lobbying und Führung bleiben persönliche Präsenztätigkeiten. In der Schweiz bremsen vor allem die Abstimmung mehrsprachiger Fassungen sowie Vertraulichkeits- und Datenschutzvorgaben in der Verwaltung die Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

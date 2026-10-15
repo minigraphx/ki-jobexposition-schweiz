@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "72c87f1ffae00c655a21de68b65764dab072425f7a94087d4c98bd94c6035029",
+    "isco_code": "3255",
+    "beruf": "Physiotherapeutische Techniker und Assistenten",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:40:08+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5170,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 3955,
+      "api_aequivalent_usd": 0.1277982
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 5170,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3955,
+        "output_tokens_details": {
+          "thinking_tokens": 982
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5170,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1277982
+      }
+    ],
+    "request_ids": [
+      "5665df42-3216-45f8-a70b-da397728b4cd"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3255",
+    "beruf": "Physiotherapeutische Techniker und Assistenten",
+    "taetigkeiten": [
+      {
+        "name": "Übungsprogramme und Gruppentherapien nach Vorgabe der Physiotherapeutin anleiten und überwachen (z. B. MTT, Gangschule)",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Körpertätigkeit: Vorzeigen, Korrigieren und Sichern geschehen am Patienten. Keine verfügbare Technik übernimmt ≥ 50 % davon."
+      },
+      {
+        "name": "Physikalische Massnahmen anwenden (Wärme-/Kältepackungen, Elektrotherapie, Massage, Lymphdrainage-Unterstützung)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Anwendung am Patienten. Die Geräte laufen zwar programmgesteuert, das Anlegen, Überwachen und Massieren bleibt aber beim Menschen."
+      },
+      {
+        "name": "Physiotherapeutin bei Behandlungen assistieren (z. B. Mobilisation in der Schlaganfallrehabilitation)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Mithilfe direkt am Patienten. Gangroboter ersetzen die assistierende Person nicht in relevantem Umfang."
+      },
+      {
+        "name": "Patienten abholen, begleiten, transferieren und lagern",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit mit Sicherheitsverantwortung am Patienten; keine Robotik im regulären Einsatz."
+      },
+      {
+        "name": "Therapieräume und Geräte vorbereiten, reinigen und warten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handarbeit vor Ort: Liegen, Geräte und Material bereitstellen, desinfizieren und kontrollieren."
+      },
+      {
+        "name": "Einfache Messungen und Assessments unter Aufsicht durchführen (Gehtests, Bewegungsumfang, Vitalwerte, Fragebögen)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit fällt beim Messen und Anleiten am Patienten an. Digitale Messgeräte erleichtern die Arbeit, übernehmen aber nicht die Durchführung."
+      },
+      {
+        "name": "Behandlungsverlauf und Beobachtungen in der Klinik- bzw. Praxissoftware dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Die Einträge sind oft kurz und strukturiert, sodass Spracheingabe kaum 50 % sparen könnte; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Per Spracheingabe bzw. ambienter Dokumentation erstellt die KI den Verlaufseintrag; die Assistentin prüft jeden Eintrag. Datenschutz und Berufsgeheimnis im Spital bremsen die Einführung."
+      },
+      {
+        "name": "Patienten über Übungen informieren und Heimprogramme bzw. Informationsblätter zusammenstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt nach Vorgabe der Physiotherapeutin Übungsblätter und Erklärtexte, auch in mehreren Sprachen; die Assistentin prüft jedes Blatt. Das mündliche Erklären bleibt eine Präsenztätigkeit und ist hier ein kleiner Teil."
+      },
+      {
+        "name": "Therapietermine planen und Patienten einteilen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Terminplanung und Ressourcendisposition übernimmt die klassische Planungssoftware im Spital bzw. in der Praxis; dafür ist kein LLM nötig."
+      },
+      {
+        "name": "Sich im interdisziplinären Team und mit der zuständigen Physiotherapeutin absprechen und rapportieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Abstimmung in Präsenz, Rückmeldungen und Instruktionen."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Therapieassistent/in in einer Rehaklinik oder Spitalphysiotherapie, unter Aufsicht diplomierter Physiotherapeut/innen (inkl. medizinischer Masseur/innen). In der Schweiz gibt es dafür keinen einheitlichen EFZ-Beruf, die Zeitanteile sind deshalb grob geschätzt. Ein Grenzfall ist die Verlaufsdokumentation: Sie besteht oft aus kurzen Einträgen, sodass die 50-%-Schwelle unsicher ist.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind nur die Verlaufsdokumentation (Spracheingabe bzw. ambiente Dokumentation im KIS) und das Zusammenstellen von Heimprogrammen und Infoblättern (Chat-LLM); die Arbeit am Patienten ist nicht betroffen.",
+      "begruendung": "Nur rund 10 % der Arbeitszeit sind exponiert, durchwegs im Modus delegierend: Die KI erstellt Einträge und Übungsblätter, die Assistentin prüft jedes Ergebnis. Der Kern des Berufs besteht aus Anleiten, Anwenden und Begleiten am Patienten in Präsenz. Datenschutz und Berufsgeheimnis in Schweizer Spitälern und Kliniken verlangsamen die Einführung von Dokumentations-KI zusätzlich.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

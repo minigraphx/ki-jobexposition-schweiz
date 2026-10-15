@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "1472533c1e137c5fdb760d5d9c150193540c62dac1b9f3c58f5e3dc8fd49a2b7",
+    "isco_code": "5223",
+    "beruf": "Drogist/in",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2149,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2149
+        }
+      ],
+      "prompt_token_count": 20281,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 20281
+        }
+      ],
+      "thoughts_token_count": 11055,
+      "total_token_count": 33485
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2149,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2149
+          }
+        ],
+        "prompt_token_count": 20281,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 20281
+          }
+        ],
+        "thoughts_token_count": 11055,
+        "total_token_count": 33485
+      }
+    ],
+    "request_ids": [
+      "xD_ParOHDKSt_PUPotaH2QY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r1-5223_drogist_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "5223",
+    "beruf": "Drogist/in",
+    "taetigkeiten": [
+      {
+        "name": "Kundschaft zu Gesundheitsfragen, Selbstmedikation (Abgabekategorie D) und Naturheilmitteln persönlich im Laden beraten",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Beratungs- und Triagegespräch von Angesicht zu Angesicht im Verkaufsraum; der Wert liegt in der unmittelbaren Präsenz und Vertrauensbeziehung."
+      },
+      {
+        "name": "Kundschaft zu Kosmetik, Körperpflege, Ernährung und Chemikalien/Sachpflege persönlich im Laden beraten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beratungstätigkeit vor Ort mit Vorführen von Produkten sowie mündlicher Aufklärung über Gefahrenhinweise gemäss Schweizer Chemikalienrecht."
+      },
+      {
+        "name": "Individuelle Rezepturen und Hausspezialitäten (Teemischungen, Spagyrik, Tinkturen, Salben) im Labor herstellen und abfüllen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Tätigkeit im Drogerielabor (Abwiegen, Mischen, Abfüllen, Etikettieren); für individuelle Kleinmengen ist keine wirtschaftliche Robotik verfügbar."
+      },
+      {
+        "name": "Waren an der Kasse scannen, Zahlungen abwickeln und Einkäufe verpacken",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer Kassiervorgang ohne Exposition gegenüber generativer KI; durch Selbstbedienungs- und Self-Scanning-Kassen technisch zu über 50 % automatisierbar."
+      },
+      {
+        "name": "Wareneingang kontrollieren, Verkaufsregale auffüllen und Verfalldaten prüfen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Arbeit im Verkaufsraum und Handlager; für das Bestücken von Freiwahlregalen in Drogerien existiert keine marktreife Robotik."
+      },
+      {
+        "name": "Verkaufsraum, Aktionsflächen und Schaufenster gestalten sowie sauber halten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische und gestalterische Arbeit vor Ort im Ladenlokal."
+      },
+      {
+        "name": "Einfache Gesundheitsdienstleistungen durchführen (z. B. Blutdruck messen, Kompressionsstrümpfe anmessen, Ohrlochstechen)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare physische Tätigkeit am Körper der Kundschaft."
+      },
+      {
+        "name": "Waren im Warenwirtschaftssystem nachbestellen, Bestände abgleichen und Lieferantenretouren abwickeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Disposition über klassische Warenwirtschaftssoftware mit automatischen Bestellvorschlägen und Grossisten-Anbindung (EDI); kein LLM erforderlich."
+      },
+      {
+        "name": "Fachinformationen zu Rezepturen zusammenfassen sowie Herstellprotokolle und Anwendungshinweise verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Rezepturdaten und Fachtexten Entwürfe für Herstellprotokolle, Dosierungsetiketten und Einnahmehinweise; die Fachperson prüft jedes Dokument inhaltlich auf Heilmittel- und Chemikalienrechtskonformität."
+      },
+      {
+        "name": "Schriftliche Kundenanfragen beantworten sowie Newsletter, Gesundheitstipps und Werbetexte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Das Sprachmodell formuliert aus Stichworten Kundenantworten, saisonale Ratgebertexte und Empfehlungskärtchen; die Drogistin oder der Drogist prüft jeden Text vor Veröffentlichung auf unzulässige Heilaussagen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Drogist/in EFZ in einer typischen Schweizer KMU- oder Kettendrogerie (Verkauf von OTC-Arzneimitteln der Abgabekategorie D, Naturheilmitteln, Kosmetik und Sachpflegeprodukten inkl. eigenem Rezepturlabor). Da keine ESCO-Kompetenzliste vorlag, wurden die Tätigkeiten anhand der Schweizer Bildungsverordnung (BiVo Drogist/in EFZ) und des branchenüblichen Praxisalltags abgeleitet.",
+    "zusammenfassung": {
+      "haupt_risiko": "Nur das Verfassen von Herstellprotokollen, Anwendungshinweisen, schriftlichen Kundenantworten und Werbetexten ist durch Sprachmodelle direkt betroffen, während die persönliche Fachberatung im Laden und die Laborarbeit kaum exponiert sind.",
+      "begruendung": "Lediglich rund 10 % der Arbeitszeit entfallen auf Text- und Dokumentationsaufgaben, bei denen generative KI im delegierenden Modus Entwürfe erstellt, die von der Fachperson zwingend geprüft werden. Der Kern des Berufs besteht aus persönlicher Gesundheits- und Produktberatung vor Ort, manueller Rezepturherstellung im Labor sowie Waren- und Regalpflege. Strenge Vorgaben des Schweizer Heilmittel- und Chemikalienrechts (insbesondere zu Heilaussagen und Herstellungsdokumentation) sowie das hohe Vertrauensbedürfnis der Kundschaft begrenzen den unkontrollierten KI-Einsatz zusätzlich.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

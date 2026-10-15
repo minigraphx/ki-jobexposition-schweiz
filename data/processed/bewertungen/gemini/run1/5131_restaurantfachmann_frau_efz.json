@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "34d3a9d22284f09791cd9af9825202aa9ca2020aa2ef88837729770cb9325dde",
+    "isco_code": "5131",
+    "beruf": "Restaurantfachmann/-frau EFZ",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2371,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2371
+        }
+      ],
+      "prompt_token_count": 23162,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 23162
+        }
+      ],
+      "thoughts_token_count": 7434,
+      "total_token_count": 32967
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2371,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2371
+          }
+        ],
+        "prompt_token_count": 23162,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 23162
+          }
+        ],
+        "thoughts_token_count": 7434,
+        "total_token_count": 32967
+      }
+    ],
+    "request_ids": [
+      "XjzPasbtKPSAz7IP5t2zgAs"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-5131_restaurantfachmann_frau_efz",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "5131",
+    "beruf": "Restaurantfachmann/-frau EFZ",
+    "taetigkeiten": [
+      {
+        "name": "Tische eindecken, Servicestationen vorbereiten und Gastraum herrichten (Mise en place)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Vorbereitungsarbeiten im Speisesaal wie Besteck polieren, Tische aufdecken und Servicestationen bestücken, für die weder generative KI noch kommerzielle Robotik verfügbar ist."
+      },
+      {
+        "name": "Gäste begrüssen, platzieren sowie zu Speisen, Weinen und Allergenen beraten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Präsenz- und Beziehungstätigkeit am Gast; der persönliche Empfang und die individuelle Empfehlung vor Ort sind Kern der Gastgeberrolle."
+      },
+      {
+        "name": "Bestellungen am Tisch aufnehmen und im Kassensystem erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Bestellaufnahme am Tisch ist eine Präsenztätigkeit ohne relevante LLM-Zeitersparnis. Über digitale Selbstbedienung (QR-Code-Bestellung am Tisch per Smartphone oder Bestellterminals) lässt sich die reine Bestellerfassung jedoch technisch weitgehend automatisieren."
+      },
+      {
+        "name": "Speisen und Getränke servieren sowie Tische abräumen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit im Gastraum; heutige Serviceroboter dienen höchstens als Transporthilfe zwischen Küche und Servicestation, erreichen aber beim Einstellen und Abräumen am Tisch bei weitem nicht die 50-%-Schwelle."
+      },
+      {
+        "name": "Getränke, Kaffeespezialitäten und einfache Speisen am Buffet zubereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Zubereitung am Buffet wie Offenausschank, Bier zapfen, Drinks mixen und Garnieren; Kaffeevollautomaten sind bereits heutiger Standard, darüber hinaus ist keine wirtschaftliche Automatisierung verfügbar."
+      },
+      {
+        "name": "Gästeabrechnungen erstellen, Zahlungen einkassieren und Tageskasse abrechnen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kassiervorgänge und Tagesabschluss benötigen keine generative KI. Moderne Kassensysteme (POS) mit digitaler Rechnungsteilung, Pay-at-Table-Funktion (QR-Code/TWINT) und automatischem Kassenabschluss übernehmen jedoch über 50 % des Zeitaufwands."
+      },
+      {
+        "name": "Tischreservationen entgegennehmen und Tischzuteilung planen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Qualität von Voicebots bei Schweizerdeutsch und Hintergrundlärm im Restaurant ist unsicher, und klassische Online-Reservationssysteme übernehmen bereits den Grossteil; E0 ist daher ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Voicebots und KI-Assistenten mit Integration ins Reservationssystem nehmen telefonische und schriftliche Reservationen selbständig entgegen; die Fachperson prüft nur Spezialfälle und den finalen Tischplan. Unabhängig davon automatisieren klassische Online-Reservationssysteme mit regelbasierter Tischzuteilung bereits über 50 % der Arbeit."
+      },
+      {
+        "name": "Tageskarten, Menüvorschläge für Anlässe und Übersetzungen verfassen sowie schriftliche Gästeanfragen beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM formuliert aus Stichworten ansprechende Menütexte, übersetzt Speisekarten (DE/FR/IT/EN) und entwirft Antworten auf Bankettanfragen; die Restaurantfachperson gibt die Eckdaten vor und prüft jeden Entwurf auf fachliche Korrektheit, Allergene und Preise."
+      },
+      {
+        "name": "Serviceablauf koordinieren, Team über Tagesangebot informieren und Gästebeschwerden vor Ort lösen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Tägliches Team-Briefing, Koordination der Stationen während Spitzenzeiten, Anleitung von Lernenden und das persönliche Lösen von Reklamationen am Tisch erfordern unmittelbare Präsenz."
+      },
+      {
+        "name": "Getränke- und Materialbestand kontrollieren, Nachbestellungen auslösen und Hygienekontrollen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Bestandskontrolle im Keller und am Buffet, Auffüllen der Kühlschränke sowie Temperaturmessungen gemäss Selbstkontrollkonzept (HACCP) finden vor Ort statt und lassen sich durch KI nicht wesentlich verkürzen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Restaurantfachmann/-frau EFZ in einem typischen Schweizer Gastronomiebetrieb mit Tischservice (KMU-Restaurant oder Hotelrestaurant). Die ESCO-Zuordnung «Oberkellner/Oberkellnerin» betont Führungs- und Aufsichtsaufgaben stärker als der Schweizer Berufsalltag; die Zeitanteile wurden daher auf das reale EFZ-Berufsprofil mit Schwerpunkt auf aktivem Service, Gästebetreuung, Mise en place und Buffetarbeit angepasst. Grenzfälle liegen bei der Zuverlässigkeit von Voicebots für telefonische Reservationen (Dialekt, Umgebungsgeräusche) sowie bei der Akzeptanz von Selbstbedienungs- und Pay-at-Table-Lösungen in der gepflegten Gastronomie.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind lediglich das Verfassen und Übersetzen von Speisekarten sowie die Bearbeitung schriftlicher und telefonischer Reservations- und Gästeanfragen mittels Chat-LLM und Voicebots, während der eigentliche Gästeservice vor Ort unberührt bleibt.",
+      "begruendung": "Nur rund 10 % der Arbeitszeit entfallen auf administrativ-kommunikative Aufgaben, die durch generative KI delegierend (Menütexte, Übersetzungen, Bankettantworten) oder ersetzend (automatisierte Reservationsannahme) bearbeitet werden können. Der Kern des Berufs besteht zu 90 % aus physischer Arbeit und unmittelbarer Präsenz am Gast. In der Schweizer Gastronomie bremsen zudem die Erwartung an persönlichen Gastgeberkontakt (Vertrauen) und die Pflege mehrsprachiger Karten in kleinstrukturierten Betrieben eine rasche Verbreitung integrierter KI-Lösungen.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

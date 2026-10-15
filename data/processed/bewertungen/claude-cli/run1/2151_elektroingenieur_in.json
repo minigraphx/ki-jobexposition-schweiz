@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "138aa988879fbdb26a96902cdedfb89e53f0562e065f08a08594e0c602ea5ea6",
+    "isco_code": "2151",
+    "beruf": "Elektroingenieur/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:49:07+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 10699,
+      "cache_read_input_tokens": 78757,
+      "output_tokens": 8300,
+      "api_aequivalent_usd": 0.26735939999999997
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 10699,
+        "cache_read_input_tokens": 78757,
+        "output_tokens": 8300,
+        "output_tokens_details": {
+          "thinking_tokens": 1498
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 10699,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.26735939999999997
+      }
+    ],
+    "request_ids": [
+      "14848a45-d0c7-446d-91e8-016cc4cede66"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2151",
+    "beruf": "Elektroingenieur/in",
+    "taetigkeiten": [
+      {
+        "name": "Elektrische Systeme, Antriebe und Schaltungen konzipieren und dimensionieren (Berechnung, Variantenvergleich)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Ingenieurin trifft die Entwurfsentscheide mit Erfahrung und Kontext aus dem Produkt. Ein LLM hilft bei Formeln und Ideen, spart aber bei gleicher Qualität deutlich weniger als 50 %."
+      },
+      {
+        "name": "Schaltpläne und Leiterplattenlayouts im ECAD-System erstellen und anpassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative KI-Funktionen in ECAD-Tools sind 2026 noch begrenzt (Bauteilvorschläge, Teilrouting). Autorouter als klassische Software übernehmen keine 50 % der Arbeit bei anspruchsvollen Layouts (EMV, Leistungselektronik)."
+      },
+      {
+        "name": "Energie-, Netz- und elektromagnetische Simulationen (FEM) aufsetzen, rechnen und interpretieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Modellbildung, Randbedingungen und Interpretation in spezialisierter Simulationssoftware bleiben beim Menschen. LLM-Unterstützung beim Skripting spart nur einen kleinen Teil der Zeit."
+      },
+      {
+        "name": "Prototypen aufbauen, in Betrieb nehmen und im Labor messen und testen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Laborarbeit an Hardware mit Messgeräten. Automatisierte Prüfstände übernehmen nur Teile, bei Prototypen nicht ≥ 50 %."
+      },
+      {
+        "name": "Firmware, Steuerungscode und Mess-/Auswerteskripte programmieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Coding-Agent schreibt Code und Skripte im Repository, die Ingenieurin spezifiziert, prüft jede Änderung und testet sie auf der Zielhardware. Die hardwarenahe Fehlersuche hält die Restzeit hoch."
+      },
+      {
+        "name": "Technische Anforderungen und Pflichtenhefte schriftlich spezifizieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Notizen und Kundenvorgaben (als Text eingefügt) entwirft das LLM ein strukturiertes Pflichtenheft. Die Ingenieurin prüft jede Anforderung fachlich und ergänzt sie."
+      },
+      {
+        "name": "Technische Dokumentation, Berichte und Konformitätsnachweise (CE, Normen, RoHS/REACH) verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM erstellt Dokumentations- und Berichtsentwürfe aus eingefügten Daten und Normtexten. Weil die Firma für die Konformität haftet, wird jedes Dokument fachlich geprüft."
+      },
+      {
+        "name": "Testdaten auswerten und Prüfberichte erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Werkzeug mit Code-Ausführung wertet die Messreihen aus und erstellt Diagramme und Berichtsentwurf. Die Ingenieurin prüft jede Auswertung auf Plausibilität."
+      },
+      {
+        "name": "Datenblätter, Normen und Fachliteratur recherchieren und Bauteile auswählen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Es ist unklar, ob Recherche-Agenten mit Datenblattextraktion wegen der nötigen Verifikation wirklich 50 % sparen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent fasst Datenblätter und Normen zusammen und vergleicht Bauteile. Die Ingenieurin verifiziert die Kennwerte und wählt selbst aus."
+      },
+      {
+        "name": "Designreviews durchführen und Konstruktionen freigeben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Beurteilung von Schaltplänen und Konstruktionen im Team mit verantwortlicher Freigabe dominiert. KI-Prüfhilfen für Schaltpläne sparen 2026 noch keine 50 %."
+      },
+      {
+        "name": "Projektbesprechungen mit Kunden, Lieferanten, Fertigung und Team führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung, Verhandlung und Problemlösung in Präsenz oder per Videocall."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Elektroingenieur/in FH/ETH in der Entwicklung eines Schweizer Industrieunternehmens (elektrische Geräte, Antriebe, Energietechnik). Der ESCO-Input ist breit (Smart Grids, Kraftwerke, Kfz-Technik), deshalb wurde auf die typische Entwicklungsarbeit verdichtet. Die grössten Unsicherheiten sind der Reifegrad generativer KI in ECAD- und Simulationstools sowie der Nutzen von Recherche-Agenten für die Bauteilauswahl.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Firmware- und Skriptprogrammierung (Coding-Agenten), technische Dokumentation, Pflichtenhefte und Konformitätsnachweise (Chat-LLM), Testdatenauswertung (Datenanalyse-Agent) und Datenblattrecherche; Entwurf, Layout, Simulation und Laborarbeit kaum.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI erstellt Code, Berichte und Auswertungen, die Ingenieurin prüft jedes Ergebnis fachlich. Bei der Recherche wirkt sie nur unterstützend. Den Kern des Berufs bilden ingenieurmässige Entwurfsentscheide, ECAD-Arbeit und Hardwaretests; bremsend wirken vor allem Haftung bei Konformitätsnachweisen und der Schutz von geistigem Eigentum, also Cloud-Restriktionen in Industriebetrieben.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

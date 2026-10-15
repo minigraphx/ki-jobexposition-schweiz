@@ -1,0 +1,231 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "2b87c7ea05a84c87661ad9194c23ad07076c44df28b423c19235db5b5333f6fa",
+    "isco_code": "2611",
+    "beruf": "Rechtsanwalt/-anwältin",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2304,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2304
+        }
+      ],
+      "prompt_token_count": 21635,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21635
+        }
+      ],
+      "thoughts_token_count": 8832,
+      "total_token_count": 32771
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2304,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2304
+          }
+        ],
+        "prompt_token_count": 21635,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21635
+          }
+        ],
+        "thoughts_token_count": 8832,
+        "total_token_count": 32771
+      }
+    ],
+    "request_ids": [
+      "xD_PatuDDKSt_PUPotaH2QY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2611_rechtsanwalt_anwaeltin",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2611",
+    "beruf": "Rechtsanwalt/-anwältin",
+    "taetigkeiten": [
+      {
+        "name": "Mandantengespräche führen, Sachverhalt erheben und mündlich beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Vertrauens- und Beziehungstätigkeit: Das Erfragen des relevanten Sachverhalts im Gespräch, die mündliche Ersteinschätzung und die Honorarvereinbarung erfordern unmittelbare zwischenmenschliche Präsenz."
+      },
+      {
+        "name": "Akten, Beweismittel und Beilagen sichten sowie Sachverhalt aufbereiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumenten-KI mit Texterkennung über umfangreiche PDF- und Scan-Konvolute extrahiert Chronologien, Fakten und Widersprüche. Die Anwältin würdigt die Schlüsselbeweise weiterhin selbst anhand der Originalakten."
+      },
+      {
+        "name": "Rechtsrecherche in Gesetzgebung, Rechtsprechung und Fachliteratur durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Recherche-Agenten in Schweizer Rechtsdatenbanken durchsuchen Bundesgerichtsentscheide, kantonale Praxis und Kommentare sprachübergreifend und fassen diese zusammen; der Anwalt prüft die einschlägigen Urteile im Volltext und legt das Recht selbst aus."
+      },
+      {
+        "name": "Fall- und Prozessstrategie entwickeln sowie Erfolgsaussichten beurteilen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Taktische Ermessensentscheide, das Abwägen von Beweis- und Prozessrisiken sowie die Wahl des Vorgehens lassen sich durch generative KI nicht bei gleicher Qualität um mindestens 50 % verkürzen."
+      },
+      {
+        "name": "Rechtsschriften, Klagen und Rechtsmittel für Gerichts- und Verwaltungsverfahren verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Auf Basis des aufbereiteten Sachverhalts, der Rechercheergebnisse und der gegnerischen Eingabe entwirft ein Sprachmodell die Rechtsschrift; der Anwalt steuert die Argumentation, prüft jede Behauptung, Bestreitung und Beweisofferte fachlich und unterzeichnet persönlich."
+      },
+      {
+        "name": "Verträge, Vereinbarungen und rechtliche Gutachten entwerfen und prüfen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Eckdaten, Mustern und Gesetzestexten Vertragsentwürfe, Klauselüberarbeitungen oder Gutachtenentwürfe; die Anwältin spezifiziert die Vorgaben und kontrolliert jede Klausel sowie rechtliche Schlussfolgerung im Detail."
+      },
+      {
+        "name": "Schriftliche Rechtsauskünfte erteilen und Korrespondenz mit Verfahrensbeteiligten führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Aus Stichworten und E-Mail-Verläufen formuliert das Sprachmodell Mandantenauskünfte, Mahnschreiben, Fristerstreckungsgesuche und Schreiben an Gegenparteien; jede Nachricht wird vor dem Versand fachlich geprüft."
+      },
+      {
+        "name": "Mandantschaft vor Gerichten, Schlichtungsbehörden und Amtsstellen mündlich vertreten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Plädoyers, Parteibefragungen, Zeugeneinvernahmen und das unmittelbare Reagieren in der Verhandlung erfordern persönliche Präsenz im Gerichtssaal und unterliegen dem Anwaltsmonopol."
+      },
+      {
+        "name": "Vergleichs- und Vertragsverhandlungen mit Gegenparteien führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Führen von Vergleichs- und Vertragsverhandlungen lebt von zwischenmenschlicher Interaktion, Überzeugungskraft und situativer Verhandlungstaktik."
+      },
+      {
+        "name": "Mandatsadministration, Leistungserfassung, Honorarabrechnung und Fristenkontrolle durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fristenberechnung, Interessenkonfliktprüfung und Honorarabrechnung nach Tarif oder Vereinbarung werden primär durch klassische Kanzleisoftware (z. B. Vertec, WinJur) ohne generative KI automatisiert."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Patentierte Rechtsanwältin / patentierter Rechtsanwalt in einer typischen Schweizer Anwaltskanzlei (beratend und prozessierend tätig). ESCO deckt das Berufsbild gut ab; der hohe Anteil schriftlicher Verfahren im Schweizer Prozessrecht (ZPO, VwVG) führt zu einem bedeutenden Zeitanteil bei Rechtsschriften und Aktenarbeit.",
+    "zusammenfassung": {
+      "haupt_risiko": "Besonders betroffen sind das Entwerfen von Rechtsschriften, Verträgen, Gutachten und Korrespondenz mittels Sprachmodellen sowie die Aktenauswertung und Rechtsrecherche durch spezialisierte Legal-Tech-Systeme.",
+      "begruendung": "Rund zwei Drittel der Arbeitszeit sind exponiert, wobei die KI beim Verfassen von Rechtsschriften, Verträgen und Korrespondenz delegierend und bei der Aktenanalyse sowie Rechtsrecherche unterstützend eingesetzt wird. Eine ersetzende Nutzung ohne Einzelfallprüfung ist wegen der Substantiierungslast, des Haftungsrisikos und der persönlichen Berufsverantwortung nach BGFA ausgeschlossen. Wesentliche Schweizer Hemmnisse sind das strafrechtlich geschützte Anwaltsgeheimnis (Art. 321 StGB), strenge Datenschutzvorgaben (revDSG) bei Cloud-Lösungen sowie der Anspruch der Mandantschaft auf persönliche Vertrauensberatung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

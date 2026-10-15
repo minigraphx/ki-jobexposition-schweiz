@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "2cc9473faca5118f69d18f8f0056e3eafbb4f77e31fa5e7120ad67748a66931e",
+    "isco_code": "2631",
+    "beruf": "Ökonom/in / Volkswirt/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:29:10+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 42441,
+      "output_tokens": 4920,
+      "api_aequivalent_usd": 0.1068962
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 42441,
+        "output_tokens": 4920,
+        "output_tokens_details": {
+          "thinking_tokens": 1751
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1068962
+      }
+    ],
+    "request_ids": [
+      "be271084-f300-490c-9ba5-e07e415bad2e"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2631",
+    "beruf": "Ökonom/in / Volkswirt/in",
+    "taetigkeiten": [
+      {
+        "name": "Wirtschafts- und Finanzmarktdaten aus Datenbanken (BFS, SNB, Bloomberg, Refinitiv) beschaffen, bereinigen und aufbereiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Datenanalyse- bzw. Coding-Agent schreibt und führt Abfrage- und Bereinigungsskripte aus; die Ökonomin spezifiziert und prüft jeden Datensatz auf Plausibilität. Wiederkehrende Updates laufen teils schon über klassische Skripte, Ad-hoc-Aufbereitung überwiegt aber (P0)."
+      },
+      {
+        "name": "Ökonometrische Modelle und Prognosemodelle in R, Python oder Stata programmieren und schätzen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Coding-Agent mit Code-Ausführung erstellt Schätz- und Prognosecode und Tests; die Ökonomin wählt Spezifikation und Identifikationsstrategie und prüft jede Schätzung methodisch. Methodische Steuerung hält die Restzeit im oberen Band."
+      },
+      {
+        "name": "Konjunktur- und Markttrends interpretieren und eigene Prognosen bzw. Szenarien festlegen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Expertenurteil über Modellergebnisse, Zusatzinformationen und Risiken mit fachlicher Verantwortung für die Hausmeinung; KI liefert Anregungen, spart aber keine 50 % der Zeit."
+      },
+      {
+        "name": "Research-Berichte, Konjunkturkommentare, Studien und Kosten-Nutzen-Analysen verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "LLM entwirft Text aus eingefügten Ergebnissen, Tabellen und Kernaussagen; die Ökonomin prüft jede Aussage, Zahl und Argumentation und verantwortet die Publikation. Reputationsrisiko bei publizierten Analysen."
+      },
+      {
+        "name": "Fachliteratur, Studien und Policy-Dokumente recherchieren und zusammenfassen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agent mit Websuche sucht Quellen und erstellt Zusammenfassungen; die Ökonomin verifiziert Quellen und Kernaussagen einzeln, da Halluzinationen Prüfaufwand erzeugen."
+      },
+      {
+        "name": "Präsentationen, Grafiken und Charts für Kunden, Management oder Gremien erstellen",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in Office-Suite und Datenanalyse-Tools erzeugen Folien und Charts aus Vorlagen und Daten; die Person prüft jede Folie und passt sie ans Corporate Design an."
+      },
+      {
+        "name": "Kunden, Management, Behörden und Medien mündlich beraten, Vorträge und Interviews halten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Präsenz, Glaubwürdigkeit und spontane Interaktion stehen im Zentrum."
+      },
+      {
+        "name": "An Fachsitzungen, Konferenzen und Netzwerktreffen mit Forschenden und Fachstellen teilnehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zwischenmenschlicher Austausch und Abstimmung von Angesicht zu Angesicht."
+      },
+      {
+        "name": "Analyseprojekte planen, koordinieren und Junior-Ökonom/innen anleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung, Mentoring und Koordination sind Beziehungstätigkeiten; KI spart hier keine 50 %."
+      },
+      {
+        "name": "Analysen und Texte von Kolleg/innen fachlich gegenlesen und beurteilen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Markierungen von Inkonsistenzen und Argumentationslücken die Zeit wirklich halbieren; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Ökonomin liest und beurteilt selbst; das LLM markiert Widersprüche, Zahlenfehler und unklare Passagen im eingefügten Text."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Volkswirt/in in der Economic-Research-Abteilung einer Schweizer Bank bzw. eines Finanzinstituts (analog Bundesverwaltung/Forschungsinstitut), Schwerpunkt Konjunktur- und Marktanalyse. Der ESCO-Input ist stark auf akademische Forschung ausgerichtet (Forschungsmittel, Open Access); diese Teile wurden für das Finanz-Setting nur am Rand berücksichtigt. Grösste Unsicherheiten betreffen die Restzeit bei Modellierung und Berichten sowie die Abgrenzung zwischen Interpretation (E0) und Berichtsentwurf (E1).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Datenaufbereitung und Modellprogrammierung durch Coding- und Datenanalyse-Agenten, Berichtsentwürfe durch Chat-LLMs sowie Literaturrecherche und Präsentationen durch Recherche-Agenten und KI-Funktionen in Office.",
+      "begruendung": "Rund zwei Drittel der Arbeitszeit sind exponiert, überwiegend delegierend: Die KI erstellt Code, Datensätze, Texte und Folien, die Ökonomin spezifiziert, prüft jedes Ergebnis und verantwortet die Hausmeinung. Prognoseentscheid, Beratung und Medienauftritte bleiben beim Menschen; Datenschutz- und Cloud-Restriktionen im Finanzsektor sowie Reputationsrisiken bei publizierten Analysen bremsen die Umsetzung etwas.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

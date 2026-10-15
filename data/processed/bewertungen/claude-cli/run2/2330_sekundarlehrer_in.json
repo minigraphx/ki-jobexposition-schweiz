@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "08d1d57c896b855eb06d9b23cb8630662156f5a6f31eb7e9ca5b262a3aa7bd2f",
+    "isco_code": "2330",
+    "beruf": "Sekundarlehrer/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T01:02:02+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 10552,
+      "cache_read_input_tokens": 78036,
+      "output_tokens": 8964,
+      "api_aequivalent_usd": 0.2793192
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 10552,
+        "cache_read_input_tokens": 78036,
+        "output_tokens": 8964,
+        "output_tokens_details": {
+          "thinking_tokens": 2119
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 10552,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.2793192
+      }
+    ],
+    "request_ids": [
+      "8ff14024-0804-4c57-a23c-f235dc47ef20"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2330",
+    "beruf": "Sekundarlehrer/in",
+    "taetigkeiten": [
+      {
+        "name": "Lektionen vor der Klasse durchführen, Inhalte erklären und vorzeigen, Klasse führen und Disziplin sichern",
+        "zeitanteil_pct": 38,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Beziehungstätigkeit im Klassenzimmer; keine Technik übernimmt die Unterrichtsführung."
+      },
+      {
+        "name": "Unterricht planen: Semester-, Themen- und Lektionsplanung nach Lehrplan 21 und Lehrmittel erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob LLM-Entwürfe von Lektionsabläufen bei der nötigen Anpassung an Klasse und Lehrmittel wirklich 50 % sparen; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Lehrperson plant die Sequenz selbst mit Blick auf ihre Klasse; das Chat-LLM liefert Ablaufentwürfe, Lernziele und Ideen zu Lehrplanbezügen."
+      },
+      {
+        "name": "Arbeitsblätter, Übungen, Lernaufgaben und Prüfungen erstellen und differenzieren",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt Arbeitsblätter, Aufgaben in Niveaustufen und Prüfungsentwürfe in Textform; die Lehrperson prüft jede Vorlage fachlich und passt sie an die Klasse an."
+      },
+      {
+        "name": "Prüfungen, Aufsätze und schriftliche Arbeiten korrigieren und benoten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Handschrifterkennung und Korrekturvorschläge sparen bei Aufsätzen und offenen Aufgaben möglicherweise unter 50 %; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Handschrifterkennung bzw. digitale Abgaben mit KI-Fehlermarkierung und Feedbackvorschlägen; die Lehrperson liest und bewertet jede Arbeit selbst. Der Datenschutz für Schülerdaten ist kantonal geregelt."
+      },
+      {
+        "name": "Schriftliche Lernberichte, Zeugnisbemerkungen und individuelle Rückmeldungen formulieren",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Stichworten der Lehrperson entwirft das LLM die Berichte; jede Formulierung wird geprüft und verantwortet. Hemmnis: Personendaten Minderjähriger."
+      },
+      {
+        "name": "Schülerinnen und Schüler individuell begleiten, Lerncoaching und Gespräche führen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Präsenz und Beziehung zu Jugendlichen stehen im Zentrum."
+      },
+      {
+        "name": "Elterngespräche, Standortgespräche und Elternabende durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gespräche von Angesicht zu Angesicht, oft zu Berufswahl und Laufbahn; Präsenz entscheidend."
+      },
+      {
+        "name": "E-Mails und Informationsschreiben an Eltern, Schulleitung und Fachstellen verfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Das LLM entwirft Elternbriefe und E-Mails aus Stichworten; die Lehrperson liest jede Nachricht wegen heikler Elternbeziehungen inhaltlich gegen."
+      },
+      {
+        "name": "In Teamsitzungen, Fachschaften und Schulentwicklungsprojekten mitarbeiten",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung und Zusammenarbeit im Kollegium, mit Heilpädagogik und Schulsozialarbeit in Präsenz."
+      },
+      {
+        "name": "Pausenaufsicht, Exkursionen, Klassenlager und Schulanlässe betreuen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz und Verantwortung für die Sicherheit der Jugendlichen."
+      },
+      {
+        "name": "Absenzen, Noten und Schülerdaten in der Schulverwaltungssoftware erfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze Dateneingabe in klassische Schulverwaltungssoftware, die Durchschnitte und Zeugnisse bereits berechnet; generative KI spart hier kaum Zeit, die Eingabe selbst bleibt."
+      },
+      {
+        "name": "Fachliche und pädagogische Weiterbildung besuchen und Entwicklungen im Fach verfolgen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurse besuchen und Wissen selbst aufnehmen; KI-Zusammenfassungen ersetzen das eigene Lernen nicht zu 50 %."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Fach- und Klassenlehrperson auf der Sekundarstufe I (Volksschule, Zyklus 3) an einer öffentlichen Schule der Deutschschweiz; die Zeitanteile sind über das Schuljahr gemittelt, inkl. unterrichtsfreier Zeit. Der ESCO-Input passt gut. Die grössten Grenzfälle sind die Korrektur handschriftlicher Arbeiten und die Unterrichtsplanung, die beide nahe an der 50-%-Schwelle liegen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Erstellung von Arbeitsblättern und Prüfungen, die Unterrichtsplanung, Lernberichte und Elternkorrespondenz durch Chat-LLMs sowie das Korrigieren schriftlicher Arbeiten mit Handschrifterkennung und KI-Markierungen; der Unterricht selbst ist nicht betroffen.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert, vor allem Vor- und Nachbereitung des Unterrichts. Die KI arbeitet dort delegierend (Material, Berichte, Briefe) oder unterstützend (Planung, Korrektur), weil die Lehrperson jede Vorlage an ihre Klasse anpasst und jede Beurteilung selbst verantwortet. Gebremst wird die Umsetzung vor allem durch kantonal unterschiedliche Datenschutzvorgaben für Schülerdaten und durch das Vertrauensverhältnis zu den Eltern.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

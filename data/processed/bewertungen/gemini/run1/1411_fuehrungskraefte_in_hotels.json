@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "cf92bc3ad2cc485f2f7a66ab4cd3fe8087e56fe0257fe8e3a7cb2b7d2ce791b8",
+    "isco_code": "1411",
+    "beruf": "Führungskräfte in Hotels",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2219,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2219
+        }
+      ],
+      "prompt_token_count": 21960,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21960
+        }
+      ],
+      "thoughts_token_count": 4800,
+      "total_token_count": 28979
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2219,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2219
+          }
+        ],
+        "prompt_token_count": 21960,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21960
+          }
+        ],
+        "thoughts_token_count": 4800,
+        "total_token_count": 28979
+      }
+    ],
+    "request_ids": [
+      "XTzPas_dBrCsz7IP3NihgQ0"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-1411_fuehrungskraefte_in_hotels",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "1411",
+    "beruf": "Führungskräfte in Hotels",
+    "taetigkeiten": [
+      {
+        "name": "Mitarbeitende im Tagesgeschäft führen, Abteilungsleitende koordinieren und Briefings leiten",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Führung, Koordination zwischen Rezeption, Housekeeping und Gastronomie sowie Mitarbeitendengespräche erfordern unmittelbare Präsenz vor Ort."
+      },
+      {
+        "name": "Gäste vor Ort betreuen, repräsentieren, beim Check-in aushelfen und Beschwerden im Gespräch lösen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Gastgeberrolle, die persönliche Deeskalation bei Reklamationen und das physische Aushelfen an der Front bei Spitzenzeiten beruhen auf zwischenmenschlicher Präsenz."
+      },
+      {
+        "name": "Infrastruktur, Zimmerqualität sowie Einhaltung von Hygiene-, Sicherheits- und Zugänglichkeitsstandards vor Ort kontrollieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kontrollrundgänge durch Zimmer, Küche (HACCP) und öffentliche Bereiche sowie die Koordination des Unterhalts sind physische Vor-Ort-Tätigkeiten."
+      },
+      {
+        "name": "Geschäftsbeziehungen mit Firmenkunden, Reiseveranstaltern, Lieferanten und Tourismusorganisationen pflegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beziehungsaufbau, Vertragsverhandlungen und die Vertretung des Betriebs in lokalen Tourismusgremien erfordern persönlichen Kontakt und Verhandlungsgeschick."
+      },
+      {
+        "name": "Zimmerpreise, Belegungsprognosen und Online-Vertriebskanäle steuern (Revenue Management)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dynamische Preisberechnung, Nachfrageprognosen und Ratenverteilung an Buchungsplattformen werden durch klassische regel- und statistikbasierte Revenue-Management-Systeme und Channel-Manager automatisiert, nicht durch Sprachmodelle."
+      },
+      {
+        "name": "Dienst- und Schichtpläne erstellen sowie Arbeitszeiten und Personalbedarf planen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Schicht- und Einsatzplanung unter Berücksichtigung von Belegung und L-GAV-Vorgaben wird durch klassische Personaleinsatzplanungs-Software übernommen."
+      },
+      {
+        "name": "Finanzkennzahlen, Budgets und Betriebsabrechnungen analysieren, planen und überwachen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Datenanalyse in Tabellenkalkulationen oder ERP-/PMS-Systemen erstellt Abweichungsanalysen und Budgetszenarien; die Führungskraft beurteilt jede Position selbst und trifft die finanzielle Entscheidung."
+      },
+      {
+        "name": "Schriftliche Gästekorrespondenz, komplexe Gruppen-/Eventofferten und Online-Bewertungen beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Ein Chat-LLM formuliert aus Stichworten mehrsprachige Antworten auf Gästebewertungen, Reklamationsschreiben und massgeschneiderte Offerten; die Hotelleitung prüft jeden Text vor dem Versand."
+      },
+      {
+        "name": "Marketingkampagnen, Newsletter, Website-Inhalte und Social-Media-Beiträge konzipieren und erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Generative Text-, Bild- und Layout-Werkzeuge erstellen Entwürfe für Packages, Newsletter und Social-Media-Posts; die Führungskraft gibt die Richtung vor und prüft jeden Beitrag."
+      },
+      {
+        "name": "Interne Richtlinien, Arbeitsabläufe (SOPs), Hygienekonzepte und Stelleninserate ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus kurzen Vorgaben Checklisten, Prozessbeschreibungen und Stelleninserate in den benötigten Arbeitssprachen; die Führungskraft prüft und passt sie an den Betrieb an."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Hoteldirektor/in bzw. Betriebsleiter/in eines typischen Schweizer KMU-Hotels (3- bis 4-Sterne-Stadt- oder Ferienhotel). In sehr kleinen Betrieben ist der operative Anteil an Rezeption und Service noch höher, in grossen Kettenhotels stärker auf Strategie und Controlling fokussiert. Revenue Management und Schichtplanung werden primär durch klassische Fachsoftware (P1) und nicht durch Sprachmodelle automatisiert.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die schriftliche Gästekorrespondenz und das Bewertungsmanagement, die Erstellung von Marketingmaterialien und internen Richtlinien sowie die Analyse von Finanz- und Budgetkennzahlen durch Chat-LLMs und KI-gestützte Office-/Analysewerkzeuge.",
+      "begruendung": "Rund 30 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus bei Text-, Korrespondenz- und Marketingaufgaben sowie unterstützend bei der Finanzanalyse. Der Grossteil der Arbeit bleibt als Präsenz- und Führungsaufgabe vor Ort (Mitarbeitendenführung, persönliche Gästebetreuung, Qualitätskontrollen) nicht exponiert. In der Schweizer Hotellerie erfordert die Mehrsprachigkeit von Gästen und Teams parallele Fassungen, während hohe Ansprüche an persönliche Gastfreundschaft und Vertrauen eine sorgfältige Kontrolle aller KI-Entwürfe bedingen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

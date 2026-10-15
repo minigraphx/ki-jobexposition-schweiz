@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "e0719f2ea37a58d903d69b4a80199379a70a67f2c7a4303abdaabde5b054c6e3",
+    "isco_code": "3522",
+    "beruf": "Telematiker/in EFZ",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:54:00+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3754,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5311,
+      "api_aequivalent_usd": 0.14359019999999997
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3754,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5311,
+        "output_tokens_details": {
+          "thinking_tokens": 2299
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3754,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.14359019999999997
+      }
+    ],
+    "request_ids": [
+      "c060b4ee-83fa-4394-accd-f7fb548a88a6"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3522",
+    "beruf": "Telematiker/in EFZ",
+    "taetigkeiten": [
+      {
+        "name": "Kupfer- und Glasfaserkabel verlegen, anschliessen und in Racks rangieren",
+        "zeitanteil_pct": 22,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Arbeit vor Ort in Gebäuden; keine Robotik für Kabelzug, Spleissen und Rangieren im regulären Einsatz."
+      },
+      {
+        "name": "Netzwerk- und Endgeräte montieren (Switches, Access Points, Telefone, Kameras, Zutrittsleser)",
+        "zeitanteil_pct": 13,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montage beim Kunden vor Ort; nicht automatisierbar."
+      },
+      {
+        "name": "Telefonie-, Netzwerk- und Multimediasysteme vor Ort in Betrieb nehmen und Firmware aktualisieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Inbetriebnahme an der Anlage mit Anschliessen, Prüfen und Abstimmen vor Ort; Firmware-Updates über Controller sind klassische Software, decken aber nicht 50 % der Tätigkeit ab."
+      },
+      {
+        "name": "Konfigurationen und Skripte für Switches, Router, Firewalls, VoIP-Anlagen und Session Border Controller erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM erstellt aus Anforderungen und eingefügten Bestandskonfigurationen CLI-Konfigurationen und Skripte; Telematiker prüft und testet jede Konfiguration vor dem Ausrollen."
+      },
+      {
+        "name": "Messungen und Systemtests durchführen (Kabelzertifizierung, OTDR, WLAN-Ausleuchtung, Funktionstests)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Messgeräte bedienen und vor Ort an Anschlüssen messen ist physisch; Messgeräte automatisieren nur die Auswertung, nicht das Messen selbst."
+      },
+      {
+        "name": "Störungen an Netzwerk-, Telefonie- und Sicherheitsanlagen eingrenzen und beheben",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fehlersuche erfolgt grossteils vor Ort an Hardware und Verkabelung; LLM-Hilfe bei Log-Analyse spart insgesamt deutlich unter 50 %."
+      },
+      {
+        "name": "Mess-, Abnahmeprotokolle und Installationsdokumentation (Netzpläne, Port-Listen) erstellen",
+        "zeitanteil_pct": 6,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI in Dokumentations-/Office-Software erstellt aus Messdateien, Fotos und Stichworten Protokoll und Dokumentation; Telematiker prüft jedes Dokument fachlich."
+      },
+      {
+        "name": "Arbeitsrapporte und Tickets dokumentieren, schriftliche Kundenanfragen beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe bzw. KI im Ticketsystem erstellt Rapport und Antwortentwurf; die Fachperson prüft jeden Eintrag. Dialekt im Feld erhöht den Korrekturaufwand."
+      },
+      {
+        "name": "Kunden und Anwender instruieren, Absprachen mit Bauleitung und anderen Gewerken treffen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Instruktion und Koordination vor Ort; Präsenztätigkeit."
+      },
+      {
+        "name": "Herstellerdokumentationen, Datenblätter und Normen für Installation und Konfiguration auswerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Telematiker sucht die nötigen Angaben weiterhin selbst; LLM fasst eingefügte Handbücher zusammen und beantwortet gezielte Fragen, Angaben werden an der Quelle verifiziert."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Telematiker/in EFZ bei einem ICT-/Elektro-Installationsbetrieb (KMU), der Kommunikations-, Netzwerk-, Telefonie- und Sicherheitsanlagen bei Kunden installiert und betreut. Die ESCO-Zuordnung (Maschinenbautechniker Telekommunikation) passt nur teilweise; Forschungs- und Entwicklungsanteile wurden nicht übernommen, Tätigkeiten aus Berufswissen ergänzt. Grenzfälle sind Konfigurationserstellung (Nähe zur 50 %-Schwelle) und Fehlersuche (Remote-Anteil mit KI-Log-Analyse).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Erstellen von Gerätekonfigurationen und Skripten per Chat-LLM sowie Dokumentation, Rapporte und Ticketantworten über KI in Dokumentations- und Ticketsoftware; die Installations- und Messarbeit vor Ort bleibt unberührt.",
+      "begruendung": "Rund ein Viertel der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI erstellt Konfigurationen, Protokolle und Rapporte, die Fachperson prüft und testet jedes Ergebnis; beim Auswerten von Herstellerdokumentationen wirkt sie nur unterstützend. Der Kern des Berufs ist physische Installation, Messung und Fehlersuche bei Kunden, und in kleinen Installationsbetrieben bremsen fehlende Integration in bestehende Rapport- und Ticketsysteme die Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

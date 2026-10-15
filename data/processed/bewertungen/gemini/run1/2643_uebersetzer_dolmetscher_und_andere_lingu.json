@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "49e99734614fc5116a7d15f62aa4dfcf4d4efefc3aa8de2a2259ace70ff83a80",
+    "isco_code": "2643",
+    "beruf": "Übersetzer, Dolmetscher und andere Linguisten",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T21:52:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 65536,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 1975,
+      "prompt_token_count": 24143,
+      "thoughts_token_count": 6638,
+      "total_token_count": 32756
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1975,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1975
+          }
+        ],
+        "prompt_token_count": 24143,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 24143
+          }
+        ],
+        "thoughts_token_count": 6638,
+        "total_token_count": 32756
+      }
+    ],
+    "request_ids": [
+      "sqfOas_5A4OJvdIP1eCm4QY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2643",
+    "beruf": "Übersetzer, Dolmetscher und andere Linguisten",
+    "taetigkeiten": [
+      {
+        "name": "Fachtexte, Berichte und offizielle Dokumente zur Publikation übersetzen",
+        "zeitanteil_pct": 30,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Sprachmodell erstellt den Übersetzungsentwurf auf hohem sprachlichem Niveau; die Fachperson spezifiziert Kontext sowie Fachterminologie und revidiert jede Übersetzung vollständig (Post-Editing)."
+      },
+      {
+        "name": "Interne Mitteilungen und nicht haftungsrelevante Standardtexte übersetzen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "<10",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bei internen Informationstexten ohne Publikations- oder Haftungsrisiko liefert das Chat-LLM direkt brauchbare Übersetzungen, die der Mensch höchstens kurz sichtet und freigibt."
+      },
+      {
+        "name": "Fremde Übersetzungen nach dem Vier-Augen-Prinzip revidieren und gegenlesen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Revisorin prüft den Zieltext weiterhin selbst gegen den Ausgangstext; das LLM gleicht beide Texte ab und markiert Auslassungen, Sinnfehler sowie Terminologieabweichungen."
+      },
+      {
+        "name": "Werbe-, Marketing- und Kreativtexte für verschiedene Sprachregionen kulturell adaptieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit",
+          "vertrauen"
+        ],
+        "begruendung": "Die Linguistin gestaltet die endgültige Tonalität und Wortwahl selbst, nutzt das LLM aber intensiv für kreative Varianten, Redewendungen und Slogan-Vorschläge je Sprachregion."
+      },
+      {
+        "name": "Formatierte Dokumente, Software-Strings und Tags in CAT-Systemen übersetzen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erst die Integration von LLMs in CAT-Umgebungen (mit Translation Memory und automatischer Tag-Übernahme) erhält Layout und Code-Tags; der Mensch prüft und bestätigt die Segmente im Editor."
+      },
+      {
+        "name": "Terminologiedatenbanken, Fachglossare und Styleguides aufbauen und pflegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Das LLM extrahiert aus Referenztexten zweisprachige Begriffspaare, Definitionen und Kontextbeispiele; die Fachperson prüft und kuratiert jeden Eintrag für die Datenbank."
+      },
+      {
+        "name": "Fach- und Hintergrundrecherchen zu Sachthemen und Paralleltexten durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Übersetzerin klärt komplexe Sachverhalte und verifiziert Quellen selbst; KI-Rechercheagenten mit Websuche liefern rasch Paralleltexte, Rechtsgrundlagen und Zusammenfassungen."
+      },
+      {
+        "name": "Audio- und Videobeiträge transkribieren und übersetzte Untertitel erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Multimodale Untertitelungssoftware erstellt Transkript, Zeitcodes und Rohübersetzung; die Fachperson kontrolliert jeden Untertitel auf Zeichenlimite, Zeilenumbruch und Hörfehler (insb. bei Dialekt)."
+      },
+      {
+        "name": "Verhandlungen, Konferenzen und Behördengespräche mündlich dolmetschen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beim Simultan- und Verhandlungsdolmetschen erreicht Echtzeit-Sprach-KI bei hohem Haftungsrisiko, spontaner Interaktion und Schweizerdeutsch-Anteilen nicht die geforderte Verlässlichkeit."
+      },
+      {
+        "name": "Aufträge und Textrückfragen mit Kundschaft oder Autoren klären und Projekte koordinieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die persönliche Abstimmung zu unklaren Ausgangstexten, Zielgruppenwünschen und Terminen erfordert direkte Kommunikation und spart durch KI keine 50 % der Zeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Sprachendienst in Unternehmen/Verwaltung oder Übersetzungsbüro in der mehrsprachigen Schweiz (DE/FR/IT/EN), ergänzt um einen kleinen Anteil an Dolmetscheinsätzen gemäss ISCO-Berufsgruppe 2643. Die Tätigkeiten im Übersetzungsbereich gehören zu den am direktesten durch LLMs exponierten Aufgaben überhaupt, wobei sich die Arbeit stark von der Erstübersetzung zum Post-Editing (delegierend) verlagert.",
+    "zusammenfassung": {
+      "haupt_risiko": "Das Übersetzen von Fach- und Standardtexten, die Lokalisierung in CAT-Systemen, das Revidieren sowie die Terminologie- und Untertitelerstellung sind direkt durch Sprachmodelle und KI-gestützte Übersetzungssoftware betroffen, während nur das mündliche Dolmetschen und die Kundenabstimmung kaum exponiert sind.",
+      "begruendung": "Rund 90 % der Arbeitszeit sind exponiert: Bei einfachen internen Texten wirkt die KI ersetzend, bei Fachtexten, CAT-Lokalisierung, Terminologie und Untertiteln delegierend (mit vollständiger Fachprüfung bzw. Post-Editing) und bei Revision, Transkreation sowie Recherche unterstützend. In der Schweiz bremsen vor allem strenge Datenschutz- und Geheimhaltungspflichten (z. B. bei Behörden-, Bank- und Rechtstexten) sowie der hohe Anspruch an konsistente, regional passende Texte in den Landessprachen einen ungeprüften KI-Einsatz. Da LLMs bereits Standard in gängigen Übersetzungsumgebungen sind, wandelt sich das Berufsbild in hohem Tempo hin zur Qualitätskontrolle und kulturellen Adaption.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

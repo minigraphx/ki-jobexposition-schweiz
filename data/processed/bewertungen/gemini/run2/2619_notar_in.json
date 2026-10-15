@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "9875f0988ab533a52ae309051275726c939bcbf561ffe5613837c232aed67b0d",
+    "isco_code": "2619",
+    "beruf": "Notar/in",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2348,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2348
+        }
+      ],
+      "prompt_token_count": 21537,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21537
+        }
+      ],
+      "thoughts_token_count": 6670,
+      "total_token_count": 30555
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2348,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2348
+          }
+        ],
+        "prompt_token_count": 21537,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21537
+          }
+        ],
+        "thoughts_token_count": 6670,
+        "total_token_count": 30555
+      }
+    ],
+    "request_ids": [
+      "xj_PasDbHunc_uMP4Oj0yAY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2619_notar_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2619",
+    "beruf": "Notar/in",
+    "taetigkeiten": [
+      {
+        "name": "Klientinnen und Klienten im persönlichen Gespräch rechtlich beraten und Beurkundungswillen ermitteln",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung von Angesicht zu Angesicht zur Ermittlung des Parteiwillens bei Liegenschafts-, Gesellschafts- oder Erbrechtsgeschäften ist eine reine Präsenz- und Vertrauensaufgabe."
+      },
+      {
+        "name": "Öffentliche Urkunden und Verträge nach Parteienwillen und gesetzlichen Vorgaben entwerfen",
+        "zeitanteil_pct": 20,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Sachverhaltsangaben, Registerdaten und Klauselvorlagen den vollständigen Urkundenentwurf (z. B. Grundstückkauf-, Ehe- oder Gründungsvertrag); die Urkundsperson spezifiziert die Vorgaben und prüft jede Klausel rechtlich im Detail."
+      },
+      {
+        "name": "Registerauszüge, Vorurkunden, Pfand- und Finanzierungsdokumente auf rechtliche Zulässigkeit prüfen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM-basierte Dokumentenanalyse extrahiert Angaben aus gescannten Alt-Urkunden, Grundbuchauszügen und Hypothekarbelegen und markiert Unstimmigkeiten; die Notarin führt die rechtliche Prüfung der Übertragbarkeit und Belastungen selbst durch."
+      },
+      {
+        "name": "Förmlichen Beurkundungsakt mit den Parteien durchführen und Unterzeichnung bezeugen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Beurkundungsverfahren (Identitäts- und Urteilsfähigkeitsprüfung, Vorlesen bzw. Erläutern der Urkunde, Bezeugen der Unterschriften) verlangt zwingend die unmittelbare persönliche Präsenz."
+      },
+      {
+        "name": "Unterschriften, Kopien und Registereinträge beglaubigen sowie eidesstattliche Erklärungen und Vereidigungen abnehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Einsichtnahme in Originaldokumente und Ausweise sowie persönliche Abnahme von Eiden und eidesstattlichen Versicherungen vor Ort."
+      },
+      {
+        "name": "Rechtliche Abklärungen zu komplexen Fragen im Sachen-, Gesellschafts-, Ehe- und Erbrecht durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Juristische Recherche-Agenten mit Zugriff auf Schweizer Rechtsdatenbanken, Bundesgerichtspraxis und kantonale Erlasse liefern Quellen und Textbausteine; der Notar legt das Recht selbst aus und verantwortet die Beurteilung."
+      },
+      {
+        "name": "Urkunden ausfertigen und Anmeldungen bei Grundbuchamt, Handelsregisteramt und Steuerbehörden erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM generiert aus dem Urkundentext die Grundbuch- und Handelsregisteranmeldungen, die der Notar vor der amtlichen Unterzeichnung einzeln prüft; zudem automatisieren Fachapplikationen und Plattformen wie Terravis/eGRIS den strukturierten Vollzug."
+      },
+      {
+        "name": "Erbschaftsinventare, Nachlassaufstellungen und Erbteilungsabrechnungen aus Belegen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenverarbeitungs-KI liest Bankbelege, Steuerakten und Schätzungen aus und erstellt den strukturierten Inventarentwurf; die Urkundsperson prüft jede Position anhand der Originalbelege."
+      },
+      {
+        "name": "Laufende Klienten-, Banken- und Behördenkorrespondenz führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Ein Chat-LLM formuliert aus Stichworten Schreiben an Parteien, Finanzierungsbanken und Ämter; der Notar prüft jedes Schreiben inhaltlich vor dem Versand."
+      },
+      {
+        "name": "Treuhänderische Kaufpreisabwicklung und Gebührenabrechnung nach kantonalem Tarif durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Tarifberechnungen, Klientengelderabrechnungen und Zahlungsfreigaben folgen festen Regeln und werden über klassische Notariats- und Bankensoftware abgewickelt, ohne dass ein LLM 50 % Zeit spart."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting ist ein typisches Schweizer Notariat (freier Beruf bzw. Anwaltsnotariat im lateinischen Notariat, ergänzt um allgemeine Beurkundungs- und Nachlassaufgaben). Während die Textredaktion von Urkunden sowie die Beleg- und Rechtsprüfung stark exponiert sind, bleiben die persönliche Beratung und der gesetzlich streng formgebundene Beurkundungsakt vor Ort zwingend menschliche Präsenztätigkeiten.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Entwerfen öffentlicher Urkunden und Verträge, das Erstellen von Registeranmeldungen und Korrespondenz per Chat-LLM sowie die Prüfung von Vorurkunden, Nachlassbelegen und Rechtsfragen mittels KI-gestützter Dokumentenanalyse und Rechtsrecherche.",
+      "begruendung": "Rund 60 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI ausschliesslich delegierend (Urkundenentwürfe, Inventare, Anmeldungen, Korrespondenz) oder unterstützend (Dokumentenprüfung, Rechtsabklärungen) eingesetzt wird, da jede Ausgabe fachlich geprüft werden muss. Der eigentliche Beurkundungsakt, Beglaubigungen und die persönliche Beratung sind als hoheitliche Präsenztätigkeiten nicht exponiert; zudem bremsen strenge kantonale Formvorschriften, die persönliche Haftung und das Berufsgeheimnis einen unkontrollierten KI-Einsatz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

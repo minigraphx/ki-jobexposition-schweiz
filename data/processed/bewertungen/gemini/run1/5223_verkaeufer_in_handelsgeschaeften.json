@@ -1,0 +1,188 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "f2070e6e07fb372502f5eaf4c7362b95e988ee246df297edfc00553b0a26164a",
+    "isco_code": "5223",
+    "beruf": "Verkäufer in Handelsgeschäften",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T22:12:51+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 65536,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 1564,
+      "prompt_token_count": 24254,
+      "thoughts_token_count": 6342,
+      "total_token_count": 32160
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1564,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1564
+          }
+        ],
+        "prompt_token_count": 24254,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 24254
+          }
+        ],
+        "thoughts_token_count": 6342,
+        "total_token_count": 32160
+      }
+    ],
+    "request_ids": [
+      "kKzOavmXK6jzvdIPkoyByQk"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5223",
+    "beruf": "Verkäufer in Handelsgeschäften",
+    "taetigkeiten": [
+      {
+        "name": "Kunden im Verkaufsraum persönlich beraten, Bedürfnisse ermitteln und Produkte vorführen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung von Angesicht zu Angesicht und das physische Vorführen von Waren im Ladenlokal erfordern unmittelbare menschliche Präsenz."
+      },
+      {
+        "name": "Waren an der Kasse scannen, Zahlungen abwickeln und Verkaufsbelege erstellen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Kassiertätigkeit vor Ort ohne Exposition gegenüber Sprachmodellen; durch Selbstbedienungs- und Self-Scanning-Kassen im Schweizer Detailhandel jedoch zu über 50 % physisch automatisierbar."
+      },
+      {
+        "name": "Verkaufsregale auffüllen und Warenpräsentation im Ladenlokal gestalten",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Tätigkeit am Verkaufsregal und auf Aktionsflächen; für das Einräumen heterogener Sortimente im Kundenbereich existiert keine marktreife Robotik."
+      },
+      {
+        "name": "Warenlieferungen entgegennehmen, auf Mängel prüfen und im Filiallager einräumen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Warenannahme, Sichtkontrolle und Einlagerung in der Verkaufsfiliale lassen sich weder durch generative KI noch im typischen Filialbetrieb durch Lagerroboter übernehmen."
+      },
+      {
+        "name": "Verkaufsfläche aufräumen, Waren richten, Preise auszeichnen und Verkaufsraum überwachen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Arbeit im Laden (Ordnung halten, Waren vorziehen, Präsenz zur Diebstahlprävention); elektronische Preisschilder decken nur einen kleinen Teilbereich ab."
+      },
+      {
+        "name": "Retouren, Umtausch und Kundenreklamationen am Kundendienst prüfen und abwickeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert das persönliche Gespräch vor Ort sowie die physische Begutachtung der zurückgebrachten Ware auf Mängel und Gebrauchsspuren."
+      },
+      {
+        "name": "Lagerbestände im Warenwirtschaftssystem überwachen und Nachbestellungen auslösen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bestandsüberwachung und Nachbestellung erfolgen über regelbasierte automatische Disposition im Warenwirtschaftssystem (klassische Software ohne Sprachmodell)."
+      },
+      {
+        "name": "Kundenbestellungen, Reservationen und Reparaturaufträge im System erfassen und nachverfolgen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Strukturierte Erfassung im Kassen- oder ERP-System; über Online-Shops und Click-&-Collect-Systeme (klassische Software) zu mindestens 50 % durch Selbstbedienung der Kundschaft übernehmbar."
+      },
+      {
+        "name": "Telefonische und schriftliche Kundenanfragen zu Sortiment, Verfügbarkeit und Bestellstatus beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Qualität bei Schweizerdeutsch am Telefon sowie der Anteil von Anfragen, die eine physische Kontrolle am Verkaufsregal erfordern, sind unsicher; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Voicebots und Chatbots mit Anbindung an das Warenwirtschaftssystem beantworten Standardfragen zu Filialbeständen und Lieferstatus selbständig; das Verkaufspersonal übernimmt nur weitergeleitete Spezialfälle."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting ist eine Detailhandelsfachperson EFZ bzw. Verkäufer/in im stationären Schweizer Detailhandel (Filialbetrieb oder Fachgeschäft). Der Arbeitsalltag ist stark durch physische Präsenz im Ladenlokal (Beratung, Kasse, Regale) geprägt; das Automatisierungspotenzial liegt vor allem bei nicht-generativer Technik (Self-Checkout, automatische Disposition, Click & Collect).",
+    "zusammenfassung": {
+      "haupt_risiko": "Gegenüber generativer KI sind lediglich telefonische und schriftliche Kundenanfragen zu Produktverfügbarkeit und Bestellstatus durch Voice- und Chatbots mit Warenwirtschaftsanbindung exponiert, während der Kern aus Verkauf, Kasse und Warenbewirtschaftung nicht betroffen ist.",
+      "begruendung": "Nur rund 5 % der Arbeitszeit im stationären Schweizer Detailhandel entfallen auf telefonische oder schriftliche Standardauskünfte, bei denen KI im ersetzenden Modus Anfragen beantwortet und das Personal lediglich Ausnahmen übernimmt. Der weit überwiegende Teil der Arbeit besteht aus persönlicher Beratung im Ladenlokal sowie physischer Waren- und Kassenarbeit (wobei Kasse und Bestellwesen stark durch klassische Selbstbedienungs- und ERP-Systeme automatisierbar sind). Die Einführung von Sprach-Bots im Filialgeschäft wird zudem durch Kundenerwartungen an persönlichen Kontakt (Vertrauen) und die KMU-Struktur im Fachhandel gebremst.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

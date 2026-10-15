@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "db7636b4fcf37edfe3eb7535e59411dfc76f400cef3c9ac0ce3ee360df66a375",
+    "isco_code": "3332",
+    "beruf": "Konferenz- und Veranstaltungsplaner",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:42:37+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3475,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5119,
+      "api_aequivalent_usd": 0.13751819999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3475,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5119,
+        "output_tokens_details": {
+          "thinking_tokens": 1829
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3475,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.13751819999999998
+      }
+    ],
+    "request_ids": [
+      "d4cf2081-7980-4caf-83a0-15ea941c0af8"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3332",
+    "beruf": "Konferenz- und Veranstaltungsplaner",
+    "taetigkeiten": [
+      {
+        "name": "Bedarf und Ziele mit Auftraggebern in Briefing- und Konzeptgesprächen abklären",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Gespräche mit Kundschaft, Erwartungen klären und Vertrauen aufbauen; der Wert liegt in der Interaktion."
+      },
+      {
+        "name": "Veranstaltungskonzept, Programm und Ablauf-/Regiepläne ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Briefing-Stichworten erstellt ein Chat-LLM Konzeptentwurf, Programmvorschlag und Minutenplan; die Planerin passt jeden Entwurf an Location, Budget und Kundenwünsche an und prüft ihn."
+      },
+      {
+        "name": "Locations, Caterer und Dienstleister recherchieren, Offerten einholen und vergleichen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agent mit Websuche erstellt Shortlists, KI entwirft Offertanfragen und extrahiert Offerten-PDFs in eine Vergleichstabelle; die Planerin prüft jede Auswahl und klärt Details telefonisch."
+      },
+      {
+        "name": "Verträge und Vereinbarungen mit Locations und Lieferanten entwerfen und prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Vertragstexte aus Vorlagen und markiert heikle Klauseln (Annullation, Haftung) in eingefügten Verträgen; die Planerin prüft jede Fassung inhaltlich."
+      },
+      {
+        "name": "Eventbudget führen, Kosten überwachen und Lieferantenrechnungen gegen Offerten prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Dokumentenextraktion und Abgleich bei kleinen Rechnungsmengen wirklich 50 % sparen; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "KI extrahiert Rechnungspositionen und gleicht sie mit Offerten und Budget ab, markiert Abweichungen; die Planerin beurteilt jede Position selbst."
+      },
+      {
+        "name": "Einladungen, Teilnehmerinformationen und Teilnehmeranfragen per E-Mail bearbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI im Mail- bzw. Registrierungstool erstellt Einladungs- und Infotexte (DE/FR/EN) und beantwortet Standardanfragen aus den Eventdaten; die Planerin gibt frei und bearbeitet Spezialfälle."
+      },
+      {
+        "name": "Teilnehmerregistrierung, Teilnehmerlisten, Badges und Zimmerkontingente verwalten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Online-Registrierungs- und Eventmanagement-Software (Anmeldeformulare, Listen, Badge-Druck, Check-in) übernimmt das regelbasiert; kein LLM nötig."
+      },
+      {
+        "name": "Mit Dienstleistern, Technik, Personal und Partnern koordinieren und Briefings durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Laufende Abstimmung per Telefon und in Sitzungen, Verhandeln und Instruieren von Personal; Präsenz- und Beziehungsarbeit."
+      },
+      {
+        "name": "Locations besichtigen, Aufbau überwachen und Veranstaltung vor Ort leiten",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Anwesenheit vor Ort, Inspektion, Problemlösung in Echtzeit und Führung des Eventpersonals."
+      },
+      {
+        "name": "Werbetexte, Social-Media-Posts und Kommunikationsmaterial für das Event erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI erstellt Texte und mit Bildgeneratoren/Designfunktionen passende Visuals; die Planerin wählt aus und prüft jeden Post."
+      },
+      {
+        "name": "Feedbackumfragen auswerten und Schlussbericht zur Veranstaltung verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Exportierte Umfrageresultate und Notizen werden eingefügt, das LLM fasst Freitexte zusammen und entwirft den Bericht; die Planerin prüft und ergänzt jede Fassung."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Eventplanerin in einer Schweizer Event-/Kongressagentur oder einer Eventabteilung eines Unternehmens (KMU). Bewilligungs- und Sicherheitsabklärungen sind in die Koordination und die Verträge eingerechnet. Unsicher sind vor allem die Zeitanteile zwischen Büro- und Vor-Ort-Arbeit (stark saisonal und je nach Eventtyp verschieden) sowie der tatsächliche Zeitgewinn beim Budget- und Rechnungsabgleich.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Büroarbeiten: Konzepte und Ablaufpläne, Lieferantenrecherche und Offertvergleich, Vertragsentwürfe, Teilnehmerkorrespondenz, Werbetexte und Schlussberichte. Diese können Chat-LLMs, Recherche-Agenten und KI-Funktionen in Mail- und Eventtools übernehmen.",
+      "begruendung": "Gut die Hälfte der Arbeitszeit ist exponiert. Meist arbeitet die KI delegierend: Sie erstellt Entwürfe, Shortlists oder Berichte, und die Planerin prüft jedes Ergebnis. Ersetzend ist nur die Standardkommunikation mit den Teilnehmenden. Kundengespräche, Koordination mit Dienstleistern und die Leitung vor Ort bleiben menschlich; wesentliche CH-Hemmnisse gibt es kaum, gebremst wird die Einführung vor allem durch viele kleine Agenturen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

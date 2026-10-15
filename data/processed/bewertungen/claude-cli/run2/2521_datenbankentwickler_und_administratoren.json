@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "ba47f04d54614c625e5088214a0eb40bf11f4cb33460158d58074cb673b79f0a",
+    "isco_code": "2521",
+    "beruf": "Datenbankentwickler und -administratoren",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:56:57+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3203,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5077,
+      "api_aequivalent_usd": 0.1345022
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3203,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5077,
+        "output_tokens_details": {
+          "thinking_tokens": 1670
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3203,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1345022
+      }
+    ],
+    "request_ids": [
+      "e5f04f1e-dc23-4ba9-9be6-ba2c24cffb78"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2521",
+    "beruf": "Datenbankentwickler und -administratoren",
+    "taetigkeiten": [
+      {
+        "name": "Anforderungen mit Fachbereichen und Kunden erheben, Aufwand schätzen und Feedback zu Anwendungen einholen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gespräche, Workshops und Abstimmung mit Fachbereichen leben von Präsenz und implizitem Kontext; generative KI spart hier keine 50 %."
+      },
+      {
+        "name": "Logische und physische Datenmodelle entwerfen (Tabellen, Beziehungen, Schemas, DDL)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus eingefügten Anforderungen und bestehendem Schema entwirft das LLM Modell und DDL; die Entwicklerin prüft jede Entität und Beziehung fachlich und passt an. Modellierungsentscheide bleiben beim Menschen, daher Restzeit 30-50."
+      },
+      {
+        "name": "SQL-Abfragen, Views, Stored Procedures und Trigger programmieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mit kopiertem Schema und Spezifikation erzeugt das LLM SQL-Code in hoher Qualität; der Entwickler prüft, testet gegen Daten und integriert jede Änderung. Mit Coding-Agent und Schemazugriff wäre auch 10-30 plausibel."
+      },
+      {
+        "name": "ETL-Strecken und Datenschnittstellen zu Anwendungen entwickeln und pflegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Coding-Agent im Repository erstellt Pipeline-Code, Mappings und Tests über mehrere Dateien; die Entwicklerin spezifiziert und reviewt jede Änderung. Zugriff auf produktive Personendaten (Bank, Versicherung, Verwaltung) ist datenschutzrechtlich eingeschränkt."
+      },
+      {
+        "name": "Datenbank-Performance analysieren und optimieren (Ausführungspläne, Indizes, Ressourcen)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob LLM-Analyse eingefügter Ausführungspläne bei komplexen Lastproblemen wirklich 50 % spart; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Der DBA analysiert und entscheidet selbst; das LLM interpretiert eingefügte Ausführungspläne und Statistiken und schlägt Indizes und Query-Umbauten vor."
+      },
+      {
+        "name": "Backups, Wiederherstellungstests, Patches und Monitoring der Datenbanken betreiben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Routinebetrieb wird durch klassische Backup-, Scheduling- und Monitoring-Software (Wartungspläne, Managed-Cloud-DB) weitgehend automatisiert; keine LLM-Leistung nötig."
+      },
+      {
+        "name": "Zugriffsrechte, Rollen und Sicherheitsrichtlinien auf Datenbanken umsetzen und kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Berechtigungsentscheide und Sicherheitskonfiguration in Produktion erfordern Abklärungen und Verantwortung; Skript-Hilfe durch LLM spart keine 50 % der Gesamtzeit."
+      },
+      {
+        "name": "Abfragen und Datenbankänderungen testen sowie Datenqualität prüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Agent mit Code-Ausführung erzeugt Testfälle, Testdaten und Prüfabfragen und führt sie aus; der Entwickler prüft Abdeckung und Ergebnisse jedes Laufs."
+      },
+      {
+        "name": "Datenbankdokumentation (Datenkatalog, Schemabeschreibungen, Betriebshandbuch) schreiben",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus eingefügter DDL und Code erstellt das LLM die Dokumentation; die Entwicklerin prüft fachliche Richtigkeit und ergänzt Kontext."
+      },
+      {
+        "name": "Störungen und Support-Anfragen zu Datenbanken analysieren und beheben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zeitkritische Fehlersuche in Produktion mit verteiltem Kontext (Logs, Infrastruktur, Anwendungen); LLM-Hilfe bei Fehlermeldungen beschleunigt, erreicht aber typischerweise keine 50 %."
+      },
+      {
+        "name": "Datenauswertungen erstellen und Analyseergebnisse für Fachbereiche aufbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Datenanalyse-Agent erstellt Abfragen, Tabellen, Grafiken und Berichtstext; die Person prüft Zahlen und Interpretation jeder Auswertung."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Datenbankentwickler/in bzw. DBA in der IT-Abteilung eines mittleren bis grossen Schweizer Unternehmens oder bei einem IT-Dienstleister, Mischung aus Entwicklung und Betrieb. Die ESCO-Beschreibung ist sehr knapp, deshalb beruhen die Zeitanteile auf Berufswissen. Grenzfälle sind vor allem Performance-Tuning und Incident-Analyse (E0 oder E1/E2) sowie das Restzeit-Band bei der SQL-Programmierung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind SQL-Programmierung, Datenmodellierung, ETL-Entwicklung, Tests, Dokumentation und Auswertungen, die Chat-LLMs, Coding-Agenten und Datenanalyse-Agenten weitgehend erstellen können.",
+      "begruendung": "Rund zwei Drittel der Arbeitszeit sind exponiert. Die KI arbeitet dort überwiegend delegierend: Sie erstellt Code, Modelle und Dokumentation, die Fachperson prüft jede Änderung. Bei der Performance-Optimierung unterstützt sie nur. Wesentliches CH-Hemmnis sind Datenschutz- und Cloud-Restriktionen bei produktiven Personendaten in Banken, Versicherungen und Verwaltung; Betrieb, Störungsbehebung und Anforderungserhebung bleiben weitgehend menschlich.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

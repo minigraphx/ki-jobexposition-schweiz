@@ -1,0 +1,248 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "16ced589363aea9ab88d23bb92b202414ce047a95ac5214a735a7c98bc3ec158",
+    "isco_code": "6130",
+    "beruf": "Landwirte mit Ackerbau und Tierhaltung (ohne ausgeprägten Schwerpunkt)",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2854,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2854
+        }
+      ],
+      "prompt_token_count": 21735,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21735
+        }
+      ],
+      "thoughts_token_count": 9610,
+      "total_token_count": 34199
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2854,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2854
+          }
+        ],
+        "prompt_token_count": 21735,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21735
+          }
+        ],
+        "thoughts_token_count": 9610,
+        "total_token_count": 34199
+      }
+    ],
+    "request_ids": [
+      "XTzPaqr9GLCsz7IP3NihgQ0"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-6130_landwirte_mit_ackerbau_und_tierhaltung",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "6130",
+    "beruf": "Landwirte mit Ackerbau und Tierhaltung (ohne ausgeprägten Schwerpunkt)",
+    "taetigkeiten": [
+      {
+        "name": "Kühe melken sowie Milchqualität und Melkanlage kontrollieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit am Tier im Melkstand ohne Exposition gegenüber generativer KI. Automatische Melksysteme (Melkroboter) sind auf Schweizer Betrieben kommerziell verfügbar und übernehmen über 50 % der Melkarbeit."
+      },
+      {
+        "name": "Nutztiere füttern, einstreuen, Stallungen entmisten und Weiden unterhalten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Arbeit mit Hoftraktor, Futtermischwagen und von Hand. Obwohl Entmistungs- und Fütterungsroboter für Teilbereiche existieren, decken sie inklusive Futterbergung, Einstreuen und Weidepflege auf typischen Gemischtbetrieben unter 50 % der Zeit ab."
+      },
+      {
+        "name": "Tiergesundheit und Brunst überwachen, Geburten betreuen sowie Klauen- und Tierpflege durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare physische Präsenz- und Pflegearbeit am lebenden Tier im Stall und auf der Weide; Brunst- und Aktivitätssensoren unterstützen nur punktuell und ersetzen die Tierbetreuung nicht zu 50 %."
+      },
+      {
+        "name": "Bodenbearbeitung, Aussaat, Düngung und Pflanzenschutz mit Traktor und Anbaugeräten ausführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Fahren und Bedienen von Landmaschinen auf dem Feld; GPS-Parallelfahrsysteme unterstützen die Spurführung, ersetzen die Fahrperson auf Schweizer Ackerflächen aber nicht."
+      },
+      {
+        "name": "Ackerfrüchte und Raufutter mit Erntemaschinen ernten, transportieren und einlagern",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Maschinenbedienung beim Mähen, Kreiseln, Schwaden, Pressen, Dreschen und Silieren sowie beim Hoftransport."
+      },
+      {
+        "name": "Feldbestände vor Ort auf Reifegrad, Schädlinge, Krankheiten und Verunkrautung kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Begehung der Parzellen und physische Bonitur von Pflanzen und Boden vor Ort; Bestimmungs-Apps auf dem Smartphone sparen bei der Feldbegehung selbst keine 50 % der Zeit."
+      },
+      {
+        "name": "Landwirtschaftliche Maschinen, Geräte und Hofanlagen warten und reparieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Instandhaltungs-, Reinigungs-, Schmier- und Reparaturarbeiten in der Hofwerkstatt sowie an Stall- und Ökonomiegebäuden."
+      },
+      {
+        "name": "Mitarbeitende, Lernende und Familienarbeitskräfte einteilen und auf dem Hof anleiten",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Führung, Instruktion und praktische Ausbildung von Lernenden und Hilfskräften direkt bei der Arbeit auf Hof und Feld."
+      },
+      {
+        "name": "Betriebsmittel einkaufen, Ernteerzeugnisse und Nutzvieh vermarkten sowie Liefertermine absprechen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandlung mit Viehhändlern, Sammelstellen und Landi sowie Koordination von Abhol- und Lieferterminen erfolgen überwiegend mündlich oder vor Ort am Tier bzw. Erntegut."
+      },
+      {
+        "name": "Anbau-, Fruchtfolge- und Fütterungspläne ausarbeiten sowie Sorten- und Pflanzenschutzinformationen recherchieren",
+        "zeitanteil_pct": 2,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-gestützte Recherche und Rations- bzw. Fruchtfolgevorschläge gegenüber klassischen Beratungstabellen (Agridea) und Erfahrungswerten mindestens 50 % der Planungszeit einsparen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "LLM-gestützte Recherchewerkzeuge mit Zugriff auf aktuelle Schweizer Sortenlisten und das Pflanzenschutzmittelverzeichnis liefern Rations- und Fruchtfolgevorschläge; der Landwirt erarbeitet und entscheidet den Plan für seine Parzellen und Herde selbst."
+      },
+      {
+        "name": "Feldkalender, Behandlungsjournal, TVD-Meldungen und ÖLN-Nachweise führen",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Da viele Meldungen in kantonalen Agrarportalen und der TVD bereits über strukturierte Auswahlmenüs laufen, ist unsicher, ob Spracheingabe und Belegextraktion mindestens 50 % Zeit sparen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracheingabe und Fotoextraktion (z. B. Lieferscheine, Medikamentenetiketten) in Agrar-Apps erstellen die Einträge für Feldkalender und Behandlungsjournal, wobei der Betriebsleiter jeden Eintrag wegen der Direktzahlungs- und Heilmittelvorschriften fachlich prüft. Klassische Agrarsoftware (z. B. Barto, Suisse-Bilanz-Rechner, TVD-Schnittstellen) automatisiert bereits weite Teile der Berechnung regelbasiert."
+      },
+      {
+        "name": "Eingangsrechnungen und Hofbelege erfassen sowie Korrespondenz mit Behörden, Abnehmern und Versicherungen erledigen",
+        "zeitanteil_pct": 3,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumentenerkennung kontiert Rechnungen und Quittungen im Buchhaltungssystem und ein LLM entwirft Schreiben an Ämter oder Versicherungen; der Landwirt steuert die Angaben und prüft die Kontierungen sowie jedes Schreiben vor dem Versand. Klassische Buchhaltungssoftware und QR-Rechnungen im E-Banking übernehmen den Zahlungs- und Buchungsprozess bereits weitgehend."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Betriebsleiter/in bzw. Landwirt/in EFZ auf einem typischen Schweizer Familien-Gemischtbetrieb (Acker-/Futterbau und Milchvieh-/Rindviehhaltung). Die ESCO-Angabe «Selbstversorger» trifft auf die Schweizer Berufspraxis nicht zu und wurde zugunsten des marktorientierten ÖLN-Betriebs korrigiert. Die Arbeit ist zu über 90 % physisch und präsenzgebunden; Grenzfälle bestehen einzig bei den wenigen Prozent Büro-, Dokumentations- und Planungsarbeiten.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind ausschliesslich die Büro-, Planungs- und Dokumentationsarbeiten (rund 9 % der Arbeitszeit) wie das Führen von Feldkalender und Behandlungsjournal per Spracheingabe, die Belegerfassung und Korrespondenz sowie die agronomische Recherche, während die Stall-, Feld- und Werkstattarbeit nicht durch generative KI exponiert ist.",
+      "begruendung": "In den exponierten administrativen Aufgaben arbeitet die KI überwiegend delegierend (Belegerfassung, Korrespondenz, Aufzeichnungen für ÖLN und Tierverkehr) sowie unterstützend bei der Anbau- und Fütterungsplanung. Strenge regulatorische Nachweispflichten für Direktzahlungen, Suisse-Bilanz und Tierarzneimittel erfordern eine lückenlose Kontrolle durch die Betriebsleitung. Eine deutlich grössere Rolle als generative KI spielt auf Schweizer Höfen die physische Automatisierung, insbesondere durch Melkroboter im Stall sowie klassische Agrar- und Buchhaltungssoftware.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

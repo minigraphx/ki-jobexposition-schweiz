@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "ba71369f7ff91e2bf74493865f028af780d422cfc0406e547878aae01e4019a2",
+    "isco_code": "9333",
+    "beruf": "Frachtarbeiter und verwandte Berufe",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:45:28+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3399,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4724,
+      "api_aequivalent_usd": 0.1290102
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3399,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4724,
+        "output_tokens_details": {
+          "thinking_tokens": 1712
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3399,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1290102
+      }
+    ],
+    "request_ids": [
+      "61766603-8865-4ba9-ad1d-8569eb12694f"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "9333",
+    "beruf": "Frachtarbeiter und verwandte Berufe",
+    "taetigkeiten": [
+      {
+        "name": "Lastwagen, Wechselbrücken und Container manuell und mit Handhubwagen be- und entladen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit mit gemischten Gütern an der Rampe. Automatische Entladesysteme gibt es nur für Spezialfälle und nicht im regulären Einsatz für Mischladungen."
+      },
+      {
+        "name": "Paletten und Güter mit Stapler oder Elektro-Hubwagen im Lager bewegen und einlagern",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit, darum E0. Fahrerlose Transportsysteme, autonome Stapler und automatische Hochregallager sind in Schweizer Verteilzentren im Einsatz und können in strukturierten Lagern den Grossteil der Palettentransporte übernehmen."
+      },
+      {
+        "name": "Bestellte Waren nach Kommissionierliste oder Scanner zusammenstellen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Kommissionieren, darum E0. Ware-zur-Person-Systeme, automatische Kleinteilelager und Kommissionierroboter sind kommerziell verfügbar."
+      },
+      {
+        "name": "Paletten beladen, Waren stapeln, verpacken und für den Transport sichern",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit mit wechselnden Gütern. Palettierroboter und Wickelmaschinen decken nur einheitliche Ware ab, bei gemischten Sendungen nicht 50 % der Zeit."
+      },
+      {
+        "name": "Wareneingang gegen Lieferschein prüfen, Menge und Zustand kontrollieren und Ware scannen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit fällt beim Zählen und Prüfen der Ware vor Ort an. Das Scannen mit Barcode ist klassische Software; RFID-Tore ersetzen die Sichtkontrolle in typischen Betrieben nicht."
+      },
+      {
+        "name": "Lagerbewegungen im Lagersystem per Handscanner buchen und bei Inventuren zählen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Reine Zahlen- und Scanbuchungen, kein LLM nötig. Lagerverwaltungssoftware mit automatischer Buchung (Scanner, RFID, permanente Inventur) kann den Grossteil übernehmen."
+      },
+      {
+        "name": "Versandetiketten und Begleitpapiere drucken und an Sendungen anbringen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Etikettieren. Print-and-Apply-Etikettiermaschinen mit Etikettendruck aus der Lagerverwaltungssoftware sind kommerziell verbreitet."
+      },
+      {
+        "name": "Abfälle und Verpackungsmaterial sortieren, entsorgen und Lagerflächen reinigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit vor Ort. Reinigungsroboter decken nur grosse freie Flächen ab, nicht das Sortieren und Entsorgen."
+      },
+      {
+        "name": "Schäden und Lieferabweichungen mit Fotos und Kurzbeschreibung im System melden",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Foto- und Spracheingabe bei kurzen Meldungen in lauter Halle und mit Dialekt wirklich 50 % Zeit spart; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Eine Lager- oder Meldeapp mit Bildverständnis und Spracheingabe erstellt die Schadensmeldung. Der Mitarbeiter prüft jede Meldung und ergänzt sie."
+      },
+      {
+        "name": "Übergaben mit Chauffeuren, Disponenten und Teamleitung mündlich absprechen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze mündliche Absprachen vor Ort an der Rampe oder in der Halle."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: angelernte Mitarbeiterin oder angelernter Mitarbeiter im Umschlag- und Lagerbetrieb einer Transport- oder Logistikfirma (KMU bis mittleres Verteilzentrum). Die ESCO-Kompetenzen zum Bauwesen (Baustoffe prüfen) wurden nur als Wareneingangsprüfung berücksichtigt. Grösste Unsicherheiten: die P-Einstufung bei Transport und Kommissionierung (abhängig vom Automatisierungsgrad des Lagers) und die geringfügige Exposition bei Schadensmeldungen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Gegenüber generativer KI ist praktisch nur das Erfassen von Schadens- und Abweichungsmeldungen exponiert, und zwar per Foto- und Spracheingabe in Lagerapps; die körperliche Umschlagsarbeit ist nicht betroffen.",
+      "begruendung": "Rund 5 % der Arbeitszeit sind exponiert, und zwar delegierend: Die App erstellt die Meldung, die Person prüft sie. Lärm in der Halle und Schweizerdeutsch schwächen den Nutzen ab. Grösseren Einfluss hat die klassische Lagerautomation (fahrerlose Transportsysteme, Ware-zur-Person-Kommissionierung, Etikettiermaschinen), die bei Transport und Kommissionierung einen erheblichen Teil übernehmen kann.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "9adbc5f9adb816787bb47c6e0a89d600cd78d254fa3960d9d10a405d07700de6",
+    "isco_code": "1213",
+    "beruf": "Führungskräfte in Unternehmenspolitik und -planung",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2133,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2133
+        }
+      ],
+      "prompt_token_count": 22216,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22216
+        }
+      ],
+      "thoughts_token_count": 6233,
+      "total_token_count": 30582
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2133,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2133
+          }
+        ],
+        "prompt_token_count": 22216,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22216
+          }
+        ],
+        "thoughts_token_count": 6233,
+        "total_token_count": 30582
+      }
+    ],
+    "request_ids": [
+      "xT_PatfHCamx_PUPn6qo-Ac"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-1213_fuehrungskraefte_in_unternehmenspolitik",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "1213",
+    "beruf": "Führungskräfte in Unternehmenspolitik und -planung",
+    "taetigkeiten": [
+      {
+        "name": "Gesetzgebungs-, Regulierungs- und Marktentwicklungen beobachten und auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Recherche-Agenten durchsuchen parlamentarische Vorstösse, Gesetzesentwürfe und Marktberichte und erstellen strukturierte Monitoring-Berichte; die Führungskraft gibt die Suchthemen vor und prüft jede Auswertung auf ihre Relevanz für die Organisation."
+      },
+      {
+        "name": "Strategiepapiere, Szenarioanalysen und Entscheidungsgrundlagen für die Geschäftsleitung ausarbeiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Führungskraft erarbeitet die strategische Stossrichtung und Argumentation weiterhin selbst, nutzt das Chat-LLM aber auf Basis interner Daten für Textbausteine, Strukturvorschläge und Szenarioentwürfe. Geheimhaltungspflichten und Datenschutz bremsen die Nutzung externer Modelle für vertrauliche Strategiedaten."
+      },
+      {
+        "name": "Strategieworkshops leiten sowie Geschäftsleitung und Abteilungsleitende persönlich beraten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Moderation von Klausuren, die Überzeugungsarbeit in Führungsgremien und die persönliche strategische Beratung erfordern unmittelbare zwischenmenschliche Präsenz."
+      },
+      {
+        "name": "Interne Richtlinien, Reglemente und Governance-Vorgaben entwerfen und aktualisieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus gesetzlichen Vorgaben und betrieblichen Eckwerten interne Weisungen etwa zu Compliance, Ethik oder Nachhaltigkeit; die Führungskraft spezifiziert die Anforderungen und prüft jedes Reglement fachlich im Detail."
+      },
+      {
+        "name": "Politische Stellungnahmen, Vernehmlassungsantworten und Positionspapiere verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit",
+          "vertrauen"
+        ],
+        "begruendung": "Auf Basis eingefügter Behördenvorlagen und der eigenen Kernpositionen erstellt das Chat-LLM den Entwurf der Stellungnahme; die Führungskraft gibt die Argumentationslinie vor und redigiert jeden Text vor der Freigabe."
+      },
+      {
+        "name": "Konzepte, Kernbotschaften und Argumentarien für Fürsprache- und Sensibilisierungskampagnen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Das Chat-LLM generiert aus Kampagnenzielen vollständige Entwürfe für Kommunikationskonzepte, Frage-Antwort-Kataloge und Argumentarien; die Führungskraft steuert die Tonalität und prüft alle Ausgaben inhaltlich."
+      },
+      {
+        "name": "Externe Interessenvertretung wahrnehmen und Beziehungen zu Behörden, Verbänden und Politik pflegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Lobbying, Verhandlungen in Kommissionen und der Beziehungsaufbau zu politischen Entscheidungsträgern beruhen auf persönlicher Präsenz und Vertrauen."
+      },
+      {
+        "name": "Umsetzung strategischer Ziele und Einhaltung interner Richtlinien anhand von Berichten und Kennzahlen überprüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Führungskraft beurteilt Zielabweichungen und Richtlinienverstösse weiterhin selbst, während KI-Analysewerkzeuge in Berichts- und Fachsystemen Daten abgleichen, Auffälligkeiten markieren und Berichtsentwürfe liefern."
+      },
+      {
+        "name": "Mitarbeitende im Bereich Unternehmenspolitik und Planung führen sowie Projekte und Budgets steuern",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Personalführung, Mitarbeitendengespräche und die Koordination des Teams sind zwischenmenschliche Präsenz- und Führungsaufgaben."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Leiter/in Unternehmensentwicklung, Public Affairs oder Governance/Nachhaltigkeit in einer grösseren Schweizer Organisation, einem Verband oder der öffentlichen Verwaltung. Die ESCO-Kompetenzen decken das Berufsbild gut ab; eine mittlere Unsicherheit besteht bei den Zeitanteilen, da das Verhältnis zwischen eigener Konzeptarbeit und reiner Gremien-/Führungsarbeit je nach Organisationsgrösse variiert.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Entwerfen von Strategiepapieren, internen Richtlinien, Vernehmlassungsantworten und Kampagnenkonzepten mittels Chat-LLM sowie das regulatorische Monitoring und die Richtlinienkontrolle durch Recherche- und Analyse-Agenten.",
+      "begruendung": "Rund zwei Drittel der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die Technik überwiegend delegierend beim Verfassen von Reglementen, Positionspapieren und Analysen sowie unterstützend bei der Strategieentwicklung und Compliance-Überwachung wirkt. Da jede strategische Vorlage und politische Stellungnahme inhaltlich verantwortet werden muss, kommt der ersetzende Modus nicht vor, und persönliche Führungs-, Beratungs- und Lobbyingaufgaben bleiben nicht exponiert. In der Schweiz bremsen insbesondere die Mehrsprachigkeit bei nationalen Reglementen und Kampagnen sowie Datenschutz- und Geheimhaltungsvorschriften bei vertraulichen Strategiedaten die Umsetzung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

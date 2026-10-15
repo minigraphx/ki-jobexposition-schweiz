@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "28ca8d78f3c44d4f82e3f31beca8cc2717652afeb9149829ade807497b0a0446",
+    "isco_code": "2310",
+    "beruf": "Hochschuldozent/in",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2283,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2283
+        }
+      ],
+      "prompt_token_count": 22780,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22780
+        }
+      ],
+      "thoughts_token_count": 5822,
+      "total_token_count": 30885
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2283,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2283
+          }
+        ],
+        "prompt_token_count": 22780,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22780
+          }
+        ],
+        "thoughts_token_count": 5822,
+        "total_token_count": 30885
+      }
+    ],
+    "request_ids": [
+      "XTzPapO_BP7oz7IP17yB4Qw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-2310_hochschuldozent_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2310",
+    "beruf": "Hochschuldozent/in",
+    "taetigkeiten": [
+      {
+        "name": "Vorlesungen, Seminare, Übungen und Praktika im Hörsaal oder Seminarraum durchführen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Präsenz- und Beziehungstätigkeit in der akademischen Lehre, deren Wert in der direkten Interaktion und Diskussion mit Studierenden liegt."
+      },
+      {
+        "name": "Lehrveranstaltungen, Kursübersichten, Vorlesungsfolien und Übungsaufgaben vorbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt auf Basis von Fachliteratur und Stichworten Entwürfe für Syllabi, Fallstudien, Folienstrukturen und Übungsblätter; die Dozentin spezifiziert die Lernziele und prüft sowie überarbeitet alle Unterlagen fachlich."
+      },
+      {
+        "name": "Prüfungen konzipieren sowie schriftliche Prüfungen, Seminar- und Abschlussarbeiten korrigieren und bewerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob der KI-gestützte Abgleich mit Bewertungsrastern bei anspruchsvollen Seminar- und Abschlussarbeiten inklusive gründlicher eigener Lektüre die 50-%-Schwelle erreicht; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Mit Dokumentenverarbeitung und LMS-Integration werden Prüfungsantworten und Arbeiten gegen Musterlösungen vorgeprüft und Feedback-Bausteine vorgeschlagen; der Dozent liest und beurteilt jede Arbeit weiterhin selbst und verantwortet die Note."
+      },
+      {
+        "name": "Studierende und Doktorierende bei Abschlussarbeiten und im Studium persönlich beraten und betreuen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Mentoring, Betreuungsgespräche und Kolloquien sind zwischenmenschliche Präsenz- und Beziehungstätigkeiten."
+      },
+      {
+        "name": "Wissenschaftliche Literatur recherchieren, sichten und den Forschungsstand aufbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spezialisierte Recherche-Agenten durchsuchen Literaturdatenbanken, extrahieren Kernbefunde aus PDFs und fassen Studien zusammen; die Forscherin steuert die Auswahl, prüft die Primärquellen und erarbeitet die Synthese selbst."
+      },
+      {
+        "name": "Forschungsprojekte konzipieren, empirische oder experimentelle Untersuchungen durchführen und Daten erheben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Originäre Forschungsarbeit im Labor, im Feld oder bei Erhebungen sowie die Entwicklung des Forschungsdesigns erreichen mit generativer KI keine 50 % Zeitersparnis."
+      },
+      {
+        "name": "Forschungsdaten aufbereiten, statistisch oder qualitativ auswerten und Analyseskripte erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Coding- und Datenanalyse-Agenten schreiben Auswertungsskripte (z. B. in R oder Python) und führen Berechnungen direkt auf den Datensätzen aus; der Dozent spezifiziert die Methodik und prüft Code sowie Ergebnisse im Detail."
+      },
+      {
+        "name": "Wissenschaftliche Publikationen, Fachartikel und Konferenzbeiträge verfassen und überarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Dozentin erarbeitet die wissenschaftliche Argumentation und Struktur des Manuskripts selbst, während das Chat-LLM Textabschnitte ausformuliert, fremdsprachige Fachtexte sprachlich überarbeitet und Antworten auf Peer-Reviews vorstrukturiert."
+      },
+      {
+        "name": "Forschungsanträge für Drittmittel sowie Projekt- und Rechenschaftsberichte ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus Projektskizzen und Vorarbeiten Antragsabschnitte, Datenmanagementpläne und Berichte (z. B. für SNF oder Innosuisse); der Dozent steuert die Inhalte und prüft jeden Abschnitt fachlich."
+      },
+      {
+        "name": "An Hochschulgremien und Konferenzen teilnehmen sowie wissenschaftliche Mitarbeitende führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Akademische Selbstverwaltung in Kommissionen, Führung von Forschungsgruppen und persönlicher Austausch an Fachkonferenzen erfordern menschliche Präsenz und Verhandlung."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Dozent/in bzw. Professor/in an einer Schweizer Universität, ETH oder Fachhochschule mit kombiniertem Lehr- und Forschungsauftrag. Die Zeitanteile zwischen Lehre und Forschung variieren je nach Hochschultyp (Universität vs. FH/PH) und Fachbereich; bei der Bewertung studentischer Arbeiten und beim Verfassen von Fachpublikationen liegen die Zeitgewinne nahe an der 50-%-Schwelle.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Vorbereitung von Lehrmaterialien, die Literaturrecherche, die Erstellung von Auswertungsskripten, das Verfassen von Publikationen und Drittmittelanträgen sowie die Vorprüfung studentischer Arbeiten und Prüfungen durch Chat-LLMs, Recherche- und Coding-Agenten.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit ist exponiert, wobei die KI ausschliesslich unterstützend oder delegierend mit einer menschlichen Restzeit von 30 bis 50 % eingesetzt wird, da hohe wissenschaftliche Qualitätsansprüche eine vollständige fachliche Prüfung erfordern. Präsenzlehre, persönliche Betreuung und originäre Datenerhebung bleiben nicht exponiert. Regulatorische Anforderungen bei rechtsverbindlichen Prüfungsentscheiden, Datenschutz sowie Richtlinien zur wissenschaftlichen Integrität (z. B. beim SNF) bremsen den unkontrollierten Einsatz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

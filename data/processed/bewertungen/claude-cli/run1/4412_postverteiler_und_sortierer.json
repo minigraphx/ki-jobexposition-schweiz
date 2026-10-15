@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "d6277c636900b78cd56ead35394e9754da7a70db7a78edd3306544aeeeda59d1",
+    "isco_code": "4412",
+    "beruf": "Postverteiler und -sortierer",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:27:42+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2566,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4618,
+      "api_aequivalent_usd": 0.12022619999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2566,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4618,
+        "output_tokens_details": {
+          "thinking_tokens": 1471
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2566,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.12022619999999999
+      }
+    ],
+    "request_ids": [
+      "c2bc9b66-c4f9-4c5d-b03f-b0c5b1d81b52"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "4412",
+    "beruf": "Postverteiler und -sortierer",
+    "taetigkeiten": [
+      {
+        "name": "Postbehälter und Rollboxen entladen, Sendungen vorsortieren und an Sortieranlagen aufgeben",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Handhabung heterogener Sendungen an der Anlage. Automatische Entlade- und Aufgabesysteme decken nur Teilbereiche ab, nicht 50 % der Arbeitszeit."
+      },
+      {
+        "name": "Nicht maschinenfähige Briefe und Pakete von Hand in Fächer bzw. nach Gangfolge sortieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Sortierarbeit. Maschinenfähige Sendungen laufen bereits über Sortieranlagen, der Rest bleibt von Hand, weil er sperrig oder unförmig ist."
+      },
+      {
+        "name": "Unleserliche oder handschriftliche Adressen am Video-Codierplatz anhand von Sendungsbildern erfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, wie weit multimodale KI mit Abgleich gegen die Adressdatenbank die Restfälle der klassischen OCR verlässlich löst. Auch E0 oder 'delegierend' mit 30-50 sind plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Bildverständnis mit Handschrifterkennung und Abgleich gegen Adressstammdaten liest die meisten Restadressen selbst; der Mensch bearbeitet nur noch die markierten Fälle, die unklar bleiben. Die Fälle sind per Definition schon jene, die die klassische OCR nicht schafft, daher P0."
+      },
+      {
+        "name": "Sortierte Sendungen bündeln, in Behälter verpacken und für den Transport verladen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit mit Behältern und Rollboxen. Fördertechnik unterstützt nur, eine Übernahme von ≥ 50 % ist nicht verbreitet."
+      },
+      {
+        "name": "Eingeschriebene Sendungen und Spezialsendungen scannen und im Sendungsinformationssystem erfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Barcode-Scannen und Quittieren sind klassische Software und körperliche Handhabung; generative KI spart hier nichts Relevantes. Das Scannen selbst bleibt Handarbeit, daher P0."
+      },
+      {
+        "name": "Fehlgeleitete und unzustellbare Sendungen bearbeiten, Nachsendungen und Rücksendungen veranlassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Nachsendeaufträge und Adressabgleich übernimmt klassische Adress- bzw. Nachsendesoftware weitgehend. Die verbleibende Arbeit ist physisches Umleiten, kein Fall für ein LLM."
+      },
+      {
+        "name": "Mengen-, Fracht- und Übergabelisten führen und Abweichungen protokollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Hauptsächlich Zahlen und Scans in Formularen; Mengenzählung und Listen erzeugen Scanner und Sendungssysteme (klassische Software). Generative KI spart nichts Relevantes."
+      },
+      {
+        "name": "Beschädigte Sendungen prüfen, nachverpacken und Schadensmeldung erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend körperliches Prüfen und Nachverpacken. Die kurze Schadensmeldung im System ist ein Formular und macht zeitlich wenig aus."
+      },
+      {
+        "name": "Nachforschungsaufträge und interne Anfragen zu Sendungen schriftlich beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Ein Teil der Nachforschung ist physisches Suchen im Betrieb. Wenn dieser Teil überwiegt, ist E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Eine KI-Funktion im Ticket- bzw. Sendungssystem entwirft die Antwort aus den Tracking-Daten. Die Person prüft jede Antwort gegen den tatsächlichen Sendungsstatus."
+      },
+      {
+        "name": "Übergaben mit Transporteuren und Zustellteams sowie Schichtabsprachen im Team durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Absprache und physische Übergabe vor Ort."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommen ist eine sortierende Person in einem Brief- oder Paketzentrum bzw. in einer Zustellstelle der Schweizerischen Post oder eines privaten Paketdienstes, ohne eigene Zustelltour. Die maschinelle Sortierung ist bereits weitgehend automatisiert und daher keine Tätigkeit der Person mehr. Die ESCO-Kompetenzen betonen Aufzeichnungen stark; in der Praxis sind das vor allem Scans. Grösster Grenzfall ist die Video-Codierung von Adressen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Video-Codierung unleserlicher Adressen durch multimodale KI mit Handschrifterkennung und in kleinem Umfang schriftliche Antworten auf Nachforschungsanfragen im Sendungssystem.",
+      "begruendung": "Nur etwa 15 % der Arbeitszeit sind exponiert. Bei der Adresscodierung arbeitet die KI eher ersetzend: Der Mensch bearbeitet nur noch die Fälle, die die Software als unklar markiert. Bei Anfragen arbeitet sie delegierend mit Prüfung jeder Antwort. Der Kern des Berufs ist körperliche Sortier- und Verladearbeit an Anlagen, die klassische Sortiertechnik bereits weitgehend prägt; wesentliche CH-Hemmnisse bestehen kaum, die Einführung hängt an den Investitionsentscheiden weniger grosser Postbetriebe.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

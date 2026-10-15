@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "06a047362dde5d82cc8354097580cee16d3a56d03ada6c865da5b200081214f8",
+    "isco_code": "5230",
+    "beruf": "Kassierer und Kartenverkäufer",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2236,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2236
+        }
+      ],
+      "prompt_token_count": 21060,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21060
+        }
+      ],
+      "thoughts_token_count": 6835,
+      "total_token_count": 30131
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2236,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2236
+          }
+        ],
+        "prompt_token_count": 21060,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21060
+          }
+        ],
+        "thoughts_token_count": 6835,
+        "total_token_count": 30131
+      }
+    ],
+    "request_ids": [
+      "XTzPatzUD7Dtz7IPofG1mAw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r2-5230_kassierer_und_kartenverkaeufer",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "5230",
+    "beruf": "Kassierer und Kartenverkäufer",
+    "taetigkeiten": [
+      {
+        "name": "Waren an der bedienten Kasse scannen sowie offene Artikel über PLU-Codes erfassen oder abwiegen",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handhabung von Waren am Kassenband ohne Einsatzmöglichkeiten für Sprachmodelle. Selbstbedienungskassen (Self-Checkout) und mobile Self-Scanning-Systeme (Handscanner, Smartphone-Apps) sind im Schweizer Detailhandel breit verfügbar und übernehmen über 50 % dieser Tätigkeit."
+      },
+      {
+        "name": "Zahlungen abwickeln (Bargeld, Karte, Twint, Gutscheine), Wechselgeld herausgeben und Quittungen oder Verkaufsrechnungen erstellen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Entgegennahme von Zahlungsmitteln und Bedienung des Zahlungsterminals ohne Exposition gegenüber generativer KI. Selbstbedienungskassen, Bezahlautomaten und kontaktlose Zahlungsterminals ermöglichen die selbständige Zahlungsabwicklung durch die Kundschaft."
+      },
+      {
+        "name": "Self-Checkout-Zone und Kassenbereich überwachen, Alterskontrollen durchführen, Kassenstörungen beheben und Stichproben zur Diebstahlprävention machen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Kontrolltätigkeit im Laden (Sichtkontrolle von Taschen, Ausweisprüfung, Eingreifen bei Fehlermeldungen am Terminal), die menschliche Anwesenheit vor Ort erfordert und weder durch Sprachmodelle noch durch heute im CH-Alltag eingesetzte Automaten zu mindestens 50 % übernommen werden kann."
+      },
+      {
+        "name": "Eintrittskarten, Billette, Geschenkkarten oder Gebührenmarken verkaufen sowie Kundentreueprogramme und Rabattbons an der Kasse abwickeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bedienung der Kassensoftware und Aushändigung von Karten oder Bons am Schalter ohne Bedarf an generativer KI. Ticketautomaten, Online-Ticketing, Selbstbedienungskassen und digitale Kundenkarten-Apps übernehmen den Grossteil dieser Vorgänge."
+      },
+      {
+        "name": "Retouren, Umtausch, Preisreklamationen und Rückerstattungen am Schalter oder an der Kasse prüfen und bearbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert die physische Prüfung der zurückgebrachten Ware auf Mängel sowie das persönliche Gespräch mit der Kundschaft vor Ort; weder durch Sprachmodelle noch durch Selbstbedienungsautomaten in relevantem Umfang automatisierbar."
+      },
+      {
+        "name": "Kundschaft im Kassenbereich oder am Schalter mündlich zu Preisen, Aktionen, Artikelstandorten oder Tarifen Auskunft geben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare mündliche Kommunikation von Angesicht zu Angesicht an der Kasse (E0). Für einfache Standardauskünfte am Billettschalter existieren zwar Apps und Automaten, im typischen Detailhandels-Kassenalltag überwiegt jedoch die situative Kurzberatung vor Ort (P0)."
+      },
+      {
+        "name": "Bargeldbestand zählen, Wechselgeld nachfüllen sowie Kassenabrechnung und Tagesabschlussprotokolle erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Zählen von Münzen und Noten sowie regelbasierter Kassenabschluss im POS-System ohne generative KI. Automatische Bargeld-Recyclingsysteme (Cash-Management-Automaten) und Zählmaschinen in Verbindung mit der Kassensoftware übernehmen über 50 % des Zeitaufwands."
+      },
+      {
+        "name": "Kassenbereich sauber halten, Tragetaschen nachfüllen sowie Impulswaren im Kassenbereich einräumen und mit Preisschildern auszeichnen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Tätigkeiten (Reinigen des Kassenbands, Einräumen von Kleinstwaren, Anbringen von Preisschildern), die im Detailhandel nicht durch Robotik übernommen werden können."
+      },
+      {
+        "name": "Einkäufe auf Kundenwunsch als Geschenk verpacken, Waren zurücklegen oder zur Abholung am Kundendienst bereitstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle und physische Handhabung verschiedenster Waren vor Ort, für die weder Sprachmodelle noch kommerzielle Automatisierungstechnik im Detailhandel in Frage kommen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Kassierer/in im Schweizer Detailhandel (Supermarkt, Warenhaus) unter Berücksichtigung von Billett-/Kartenverkaufsstellen (Kino, Freizeit, Kultur). Die ESCO-Kompetenzliste bildet die typischen Aufgaben gut ab; im Schweizer Alltag 2026 nimmt zudem die Betreuung von Self-Checkout-Zonen einen wesentlichen Zeitanteil ein. Die Automatisierung betrifft klassische Selbstbedienungstechnik (Feld P), nicht generative KI (Stufe E).",
+    "zusammenfassung": {
+      "haupt_risiko": "Keine Kerntätigkeit dieses Berufs ist gegenüber generativer KI (Sprachmodellen) wesentlich exponiert, da die Arbeit überwiegend aus physischer Warenhandhabung, Präsenz im Kassenbereich und direktem Kundenkontakt vor Ort besteht.",
+      "begruendung": "Alle Kerntätigkeiten sind als E0 eingestuft, weshalb generative KI weder ersetzend noch delegierend oder unterstützend in relevantem Umfang zum Einsatz kommt und keine spezifischen CH-Hemmnisse für Sprachmodelle greifen. Der starke Strukturwandel im Schweizer Detailhandel und Kartenverkauf resultiert nicht aus Sprachmodellen, sondern aus nicht-generativer Automatisierung und Selbstbedienung (65 % der Arbeitszeit sind P1, insbesondere durch Self-Checkout-Kassen, Self-Scanning-Apps, Ticketautomaten und Bargeld-Recyclingsysteme). Beim verbleibenden Personal verlagert sich die Arbeit zunehmend auf die Überwachung von Self-Checkout-Zonen, Diebstahlprävention, Alterskontrollen und persönliche Kundenbetreuung.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

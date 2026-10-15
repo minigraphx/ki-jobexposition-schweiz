@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "0187e6fab7f4873045dfec37e35a88ca56d61c431751ec187f05cfa54a7c629b",
+    "isco_code": "1211",
+    "beruf": "Führungskräfte im Bereich Finanzen",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T01:11:46+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5547,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5758,
+      "api_aequivalent_usd": 0.16687419999999997
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 5547,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5758,
+        "output_tokens_details": {
+          "thinking_tokens": 2036
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5547,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.16687419999999997
+      }
+    ],
+    "request_ids": [
+      "f728551f-6d85-4da3-9624-01960010c655"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1211",
+    "beruf": "Führungskräfte im Bereich Finanzen",
+    "taetigkeiten": [
+      {
+        "name": "Finanz- und Buchhaltungsteam führen, Aufgaben verteilen, Mitarbeitende anleiten und beurteilen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung von Mitarbeitenden ist eine Präsenz- und Beziehungstätigkeit; generative KI spart hier keine 50 %."
+      },
+      {
+        "name": "Buchführung und Abstimmungen des Teams überwachen und Buchungen gezielt prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Finanzleiterin prüft weiterhin selbst; KI-Funktionen in ERP/Buchhaltung markieren Auffälligkeiten und fassen Abweichungen zusammen, wodurch die Prüfung gezielter wird."
+      },
+      {
+        "name": "Jahres- und Zwischenabschlüsse erstellen und Abschlusspositionen (Rückstellungen, Abgrenzungen, Bewertungen) beurteilen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI mit Datenanalyse liefert Berechnungen, Buchungsvorschläge und Anhangsentwürfe aus Salden- und Belegdaten; die Ermessensbeurteilung jeder Position bleibt bei der Fachperson. Haftung und Prüfung durch die Revisionsstelle als Hemmnis."
+      },
+      {
+        "name": "Finanzberichte und Management-Reporting mit Kennzahlenkommentaren verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus exportierten Zahlen und Vorperioden entwirft das LLM Kommentare und Berichtstexte; die Finanzleiterin prüft jede Aussage gegen die Zahlen und gibt frei."
+      },
+      {
+        "name": "Budget bzw. Haushaltsplan erarbeiten und Budgeteingaben der Abteilungen analysieren und konsolidieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Datenanalyse-Agenten und KI in Tabellenkalkulation konsolidieren Eingaben und markieren Abweichungen zum Vorjahr; Priorisierung und Bewertung macht die Führungskraft selbst."
+      },
+      {
+        "name": "Finanzlage analysieren sowie Liquiditätsplanung und Forecasts erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI mit Code-Ausführung erstellt Analysen, Kennzahlen und Szenarien aus exportierten Daten; Annahmen und Interpretation erarbeitet die Person selbst. Klassische Planungssoftware deckt nur Teile ab."
+      },
+      {
+        "name": "Investitionsvorhaben und Geschäftspläne mit Wirtschaftlichkeitsrechnungen beurteilen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Analyse-Agent baut aus Business Plan und Annahmen das Rechenmodell (NPV, Sensitivitäten) samt Kurzbeurteilung; die Finanzleiterin spezifiziert die Annahmen und prüft jedes Modell."
+      },
+      {
+        "name": "Geschäftsleitung bzw. Behördenmitglieder beraten, Finanzthemen in Sitzungen präsentieren und Entscheide vertreten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beratung und Vertretung von Angesicht zu Angesicht mit Ermessen und Verantwortung; Präsenztätigkeit."
+      },
+      {
+        "name": "Mit Revisionsstelle, Banken und Steuerbehörden verhandeln und Rückfragen klären",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gespräche und Verhandlungen mit externen Stellen; Wert liegt in persönlicher Klärung und Verantwortung."
+      },
+      {
+        "name": "Steuererklärungen und Steuerrückstellungen vorbereiten bzw. prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Oft übernimmt ein Treuhänder die Erstellung und die Führungskraft prüft nur, sodass die KI-Ersparnis unter 50 % liegen könnte; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Funktionen in Steuer-/Buchhaltungssoftware bereiten Überleitungen und Formularwerte vor und markieren Risiken; die Person beurteilt Steuerpositionen selbst. MWST-Berechnung selbst ist klassische Software."
+      },
+      {
+        "name": "Finanzrichtlinien, IKS-Prozessbeschreibungen und Weisungen ausarbeiten und aktualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft Richtlinien und Prozessbeschreibungen aus Stichworten und bestehenden Dokumenten; die Führungskraft prüft und passt jede Fassung an die Organisation an."
+      },
+      {
+        "name": "Zahlungsläufe freigeben sowie Bankkonten und Liquidität täglich überwachen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zahlungsverkehr und Kontoübersicht laufen über E-Banking und Cash-Management-Software (klassische Software); die Freigabe ist eine Verantwortungshandlung ohne relevanten LLM-Hebel."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Leiter/in Finanzen in einer mittelgrossen Organisation (KMU-Unternehmen oder öffentliche Verwaltung) mit kleinem Finanzteam. Die ESCO-Beschreibung passt gut. Grösste Unsicherheiten: Bei mehreren analytischen Tätigkeiten (Abschluss, Budget, Forecast, Steuern) liegt die Ersparnis nahe der 50 %-Schwelle, und die Zeitanteile hängen stark von der Organisationsgrösse ab.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Berichts- und Reportingtexte, Richtlinien, Wirtschaftlichkeitsrechnungen sowie analytische Vorarbeiten für Abschluss, Budget und Forecast; dabei kommen Chat-LLM, Datenanalyse-Agenten und KI-Funktionen in ERP und Tabellenkalkulation zum Einsatz.",
+      "begruendung": "Rund zwei Drittel der Arbeitszeit sind exponiert, überwiegend unterstützend: Die Führungskraft beurteilt Abschlusspositionen, Budgets und Forecasts weiterhin selbst. Delegierend arbeitet die KI bei Berichtstexten, Richtlinien und Investitionsrechnungen, die sie entwirft und die jeweils einzeln geprüft werden. Führung, Beratung der Geschäftsleitung und Verhandlungen bleiben menschlich; bremsend wirken in der Schweiz vor allem Haftung, Revisionspflicht und Datenschutz- bzw. Cloud-Vorgaben in der Verwaltung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

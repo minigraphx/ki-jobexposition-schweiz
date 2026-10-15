@@ -1,0 +1,251 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "c035f9c44cc5b25262658ba9bf6cff837cbc999b06aa5e30a9b6d15793463c8e",
+    "isco_code": "3355",
+    "beruf": "Polizeikommissare und Kriminalbeamte",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:30:55+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 6076,
+      "cache_read_input_tokens": 75961,
+      "output_tokens": 8559,
+      "api_aequivalent_usd": 0.2349962
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 39310,
+        "output_tokens": 4896,
+        "output_tokens_details": {
+          "thinking_tokens": 1570
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.10579
+      },
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 6076,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3663,
+        "output_tokens_details": {
+          "thinking_tokens": 234
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6076,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1292062
+      }
+    ],
+    "request_ids": [
+      "bfb00172-26e8-40c9-b3d4-f3024555d3bc",
+      "611b8d8c-52b7-4987-968a-d3c765c7e1b5"
+    ],
+    "versuche": 2,
+    "status": "ok",
+    "fehler": [
+      "Versuch 1: Zeitanteile summieren auf 105, nicht exakt 100"
+    ],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3355",
+    "beruf": "Polizeikommissare und Kriminalbeamte",
+    "taetigkeiten": [
+      {
+        "name": "Tatorte besichtigen, Spuren sichern und Erstmassnahmen vor Ort treffen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Arbeit findet physisch vor Ort statt und verlangt Beobachtung sowie Entscheide über die Spurensicherung. Robotik übernimmt davon keinen relevanten Anteil."
+      },
+      {
+        "name": "Einvernahmen von Beschuldigten, Zeugen und Opfern durchführen und protokollieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Befragung ist eine Präsenz- und Beziehungstätigkeit mit Fragetaktik. Das Protokoll entsteht während der Einvernahme, wird vorgelesen und unterzeichnet; bei mehreren Sprechenden mit Dialekt spart die Transkription keine 50 % der Zeit."
+      },
+      {
+        "name": "Polizeirapporte und Ermittlungsberichte an die Staatsanwaltschaft verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus eingefügten Notizen und Protokollauszügen entwirft ein LLM den Rapport. Die Ermittlerin prüft jeden Bericht gegen die Akten und verantwortet ihn; Amtsgeheimnis und Datenschutz verlangen eine geschützte Umgebung."
+      },
+      {
+        "name": "Sichergestellte Datenträger, Chatverläufe, Videos und Dokumente auswerten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar ist, ob KI-Funktionen in forensischer Auswertungssoftware bei grossen, mundartlichen Chat- und Bilddaten wirklich 50 % sparen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Funktionen in der Auswertungssoftware fassen Chats zusammen, übersetzen, klassifizieren Bilder und markieren relevante Stellen. Die Ermittlerin beurteilt die Beweisrelevanz weiterhin selbst."
+      },
+      {
+        "name": "Personen-, Fahrzeug- und Registerabfragen in Polizeisystemen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es handelt sich um gezielte Abfragen in geschützten Fachsystemen mit klassischer Suchsoftware. Generative KI bringt hier kaum Zeitersparnis, die Abfragen bleiben bei der Ermittlerin."
+      },
+      {
+        "name": "Ermittlungsstrategie festlegen und Fallführung mit der Staatsanwaltschaft absprechen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Tätigkeit besteht aus Ermessensentscheiden und mündlicher Abstimmung über Zwangsmassnahmen und Prioritäten. Ein LLM kann allenfalls Ideen liefern, spart aber nicht 50 %."
+      },
+      {
+        "name": "Festnahmen, Hausdurchsuchungen und Observationen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Diese Einsätze sind physisch, verlangen Präsenz und teilweise Zwangsanwendung. Keine verfügbare Technik übernimmt sie."
+      },
+      {
+        "name": "Beweismittel asservieren, beschriften und an die Kriminaltechnik übergeben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beweismittel werden physisch gehandhabt und die Beweiskette dokumentiert. Barcode-Asservatenverwaltung erleichtert die Arbeit, übernimmt aber keine 50 % davon."
+      },
+      {
+        "name": "Editions- und Auskunftsersuchen, Amts- und Rechtshilfegesuche sowie Korrespondenz verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein LLM erstellt Ersuchen und Schreiben aus Falldaten, auch auf Französisch, Italienisch oder Englisch. Die Ermittlerin prüft jedes Schreiben vor dem Versand fachlich."
+      },
+      {
+        "name": "Fallbesprechungen im Team und Koordination mit anderen Dienststellen führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es geht um mündliche Abstimmung und Präsenz im Team und mit Partnerstellen."
+      },
+      {
+        "name": "Vor Gericht als Zeuge aussagen sowie Schiess- und Einsatztraining absolvieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beides verlangt persönliche Anwesenheit bzw. ist physisches Training."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Ermittler/in einer kantonalen Kriminalpolizei (Sachbearbeitung Delikte gegen Leib und Leben, Vermögen und Betäubungsmittel), Zusammenarbeit mit der Staatsanwaltschaft nach StPO; die Spurensicherung übernimmt weitgehend der Kriminaltechnische Dienst. Der ESCO-Input passt gut, die Zeitanteile sind grob geschätzt. Am unsichersten ist, ob die Auswertung digitaler Beweismittel E2 oder E0 ist und ob sich die Protokollierung von Einvernahmen künftig per Transkription auslagern lässt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Verfassen von Polizeirapporten, Ersuchen und Korrespondenz (Chat-LLM) sowie die Auswertung digitaler Beweismittel (KI-Funktionen in forensischer Software), nicht aber Einvernahmen, Tatortarbeit und Einsätze.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert. Bei Rapporten und Schreiben arbeitet die KI überwiegend delegierend, bei der Auswertung von Datenträgern unterstützend; die Verantwortung für Beweiswürdigung und Bericht bleibt bei der Ermittlerin. Amtsgeheimnis, Datenschutz und Cloud-Restriktionen der kantonalen Polizeikorps bremsen die Einführung deutlich, weil geschützte On-Premises- oder Behördenlösungen nötig sind.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

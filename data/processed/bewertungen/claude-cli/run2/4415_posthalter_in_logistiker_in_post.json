@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "015c1c52e9c558fff725da73531c6422e3ac3efce3d6a87c2abd37c43eb9948d",
+    "isco_code": "4415",
+    "beruf": "Posthalter/in / Logistiker/in Post",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:47:42+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2456,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5922,
+      "api_aequivalent_usd": 0.1454262
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2456,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5922,
+        "output_tokens_details": {
+          "thinking_tokens": 2784
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2456,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1454262
+      }
+    ],
+    "request_ids": [
+      "cf9224cc-0b34-4c33-95d8-1d26e02591f5"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "4415",
+    "beruf": "Posthalter/in / Logistiker/in Post",
+    "taetigkeiten": [
+      {
+        "name": "Briefe und Pakete am Schalter annehmen, wägen, frankieren und im Schaltersystem erfassen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Arbeit am Schalter ist physisch und findet im direkten Kundenkontakt statt; generative KI spart hier keine relevante Zeit. Mit Selbstbedienung (My Post 24-Automaten, Paketaufgabe am Automaten, Online-Frankierung per App) lässt sich ein Grossteil der Standardaufgaben übernehmen."
+      },
+      {
+        "name": "Abholsendungen und Einschreiben aushändigen, Ausweis bzw. Vollmacht prüfen und Empfang quittieren lassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Aushändigung ist physisch und braucht die Person vor Ort. Paketautomaten (My Post 24, PickPost) übernehmen einen grossen Teil der Abholungen; Einschreiben mit Identitätsprüfung bleiben am Schalter."
+      },
+      {
+        "name": "Bareinzahlungen, Auszahlungen und Zahlungen an der Kasse abwickeln (Bargeld, Karte, QR-Rechnung)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kassieren und der Umgang mit Bargeld sind physische Transaktionen; ein LLM bringt hier nichts. Wer heute noch bar am Schalter einzahlt, hat kaum eine Selbstbedienungsalternative, die in der Fläche verbreitet ist."
+      },
+      {
+        "name": "Postprodukte, Verpackungen und Drittprodukte im Kundengespräch verkaufen und aktiv anbieten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verkauf und Beratung von Angesicht zu Angesicht sind eine Präsenztätigkeit."
+      },
+      {
+        "name": "Kundinnen und Kunden am Schalter zu Tarifen, Versandoptionen, Zollformularen und Sendungsverfolgung beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Auskunft geschieht mündlich im persönlichen Kontakt mit der Kundschaft, die bewusst an den Schalter kommt; die Tarife schlägt die Person im Schaltersystem nach. Die vorhandenen Online-Tools nutzt diese Kundschaft nicht."
+      },
+      {
+        "name": "Eingehende Sendungen sortieren, Postfächer bedienen und Zustellung bzw. Abholfächer vorbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle, physische Arbeit. Die maschinelle Sortierung findet bereits zentral in den Verteilzentren statt; was in der Filiale bleibt, ist Handarbeit."
+      },
+      {
+        "name": "Tagesabschluss erstellen, Bargeldbestand zählen und mit dem Kassensystem abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bargeld zählen und abstimmen ist physisch bzw. regelbasiert, ein LLM wird nicht gebraucht. Geldzählmaschinen bzw. Cash-Recycler und die automatische Abrechnung im Kassensystem übernehmen den Grossteil."
+      },
+      {
+        "name": "Warenbestand bewirtschaften, Regale auffüllen und Filiale sauber halten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit im Laden; in kleinen Filialen gibt es keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Reklamationen, Nachforschungsaufträge und Adressänderungen mit der Kundschaft aufnehmen und im System erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit geht vor allem in das Gespräch am Schalter und das Ausfüllen strukturierter Masken; dass ein LLM bei kurzen Freitextfeldern hilft, spart kaum 50 % der Zeit."
+      },
+      {
+        "name": "Einsätze im Filialteam koordinieren und Lernende am Schalter anleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Anleiten und Führen sind Präsenztätigkeiten. Die Einsatzplanung läuft weitgehend im vorgegebenen Planungstool; was die Person dabei an Zeit aufwendet, ist gering."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Mitarbeitende/r bzw. Posthalter/in in einer Postfiliale oder Filiale mit Partner, Schwerpunkt Schalterdienst; Zustellung (Logistiker/in EFZ Distribution) ist nur am Rand berücksichtigt. Die ESCO-Zuordnung passt nur teilweise; Finanzberatung im Sinne von ESCO spielt am Schweizer Postschalter kaum eine Rolle. Die grössten Unsicherheiten liegen beim Feld P: wie weit Paket- und Selbstbedienungsautomaten die Annahme und Aushändigung tatsächlich zu ≥ 50 % übernehmen können.",
+    "zusammenfassung": {
+      "haupt_risiko": "Keine Tätigkeit ist wesentlich gegenüber generativer KI exponiert; Druck entsteht vielmehr durch nicht-generative Selbstbedienung (My Post 24-Automaten, Online-Frankierung, Paketautomaten) bei der Annahme und Aushändigung von Sendungen.",
+      "begruendung": "Der Beruf besteht fast ganz aus physischem Schalterdienst, Kassieren und persönlichem Kundenkontakt in der Filiale; generative KI erreicht hier bei keiner Tätigkeit die 50 %-Schwelle, deshalb entfallen Modus und CH-Hemmnisse. Den Wandel in der Schweiz treiben vor allem Selbstbedienung, Digitalisierung und der Umbau des Filialnetzes, nicht LLMs.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

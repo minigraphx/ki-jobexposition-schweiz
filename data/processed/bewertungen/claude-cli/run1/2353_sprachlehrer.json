@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "cabb3108273281058f7c26c5a6f81ff04e31adaae6d5e756a5b0dbbe06d82e9f",
+    "isco_code": "2353",
+    "beruf": "Sprachlehrer",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:22:31+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4269,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5390,
+      "api_aequivalent_usd": 0.14929019999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4269,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5390,
+        "output_tokens_details": {
+          "thinking_tokens": 2247
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4269,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.14929019999999998
+      }
+    ],
+    "request_ids": [
+      "b42d847b-a09d-4ad7-89fb-e42f98b9e29b"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2353",
+    "beruf": "Sprachlehrer",
+    "taetigkeiten": [
+      {
+        "name": "Sprachunterricht in Gruppen im Kursraum leiten (Sprechübungen, Gruppenarbeit, Erklärungen)",
+        "zeitanteil_pct": 35,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Beziehungstätigkeit: Moderation, Motivation und unmittelbare Korrektur im Klassenraum; der Wert liegt in der Anwesenheit der Lehrperson."
+      },
+      {
+        "name": "Einzel- und Online-Unterricht per Videokonferenz durchführen (Konversation, Business-Sprachkurse)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Synchrone Interaktion mit Lernenden; KI-Konversationspartner ergänzen das Üben, ersetzen die Lektion der Lehrperson aber nicht zu ≥ 50 % bei gleicher Qualität."
+      },
+      {
+        "name": "Lektionen planen: Lernziele, Ablauf und Methoden auf Kursniveau und Gruppe abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Lehrperson plant weiterhin selbst anhand ihrer Kenntnis der Gruppe; ein Chat-LLM liefert Ablaufvorschläge, Aktivitäten und Varianten nach GER-Niveau, was die Planung deutlich beschleunigt."
+      },
+      {
+        "name": "Unterrichtsmaterialien erstellen (Arbeitsblätter, Dialoge, Lesetexte, Wortschatz- und Grammatikübungen)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt niveaugerechte Texte und Übungen in der Zielsprache auf hohem Niveau; die Lehrperson spezifiziert Thema/Niveau und prüft und passt jedes Blatt an."
+      },
+      {
+        "name": "Tests und schriftliche Prüfungen zusammenstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Testaufgaben und Lösungsschlüssel nach Lernzielen; die Lehrperson prüft Schwierigkeit, Eindeutigkeit und Passung zum behandelten Stoff bei jeder Prüfung."
+      },
+      {
+        "name": "Schriftliche Arbeiten der Lernenden korrigieren, bewerten und schriftliches Feedback geben",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI (inkl. Handschrifterkennung bei Papierarbeiten) markiert Fehler, kategorisiert sie und entwirft Feedback; die Lehrperson prüft jede Korrektur und legt die Bewertung fest. Bei rein digital eingereichten Texten wäre E1 ausreichend."
+      },
+      {
+        "name": "Mündliche Prüfungen und Sprechleistungen abnehmen und beurteilen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Prüfungsgespräch in Präsenz mit standardisierter Beurteilung durch lizenzierte Prüfende (z. B. telc, Goethe, fide)."
+      },
+      {
+        "name": "Einstufungsgespräche führen und Lernende zu Lernweg und Kurswahl beraten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Gespräch zur mündlichen Kompetenz und Situation der Lernenden; schriftliche Online-Einstufungstests ergänzen, ersetzen das Gespräch aber nicht."
+      },
+      {
+        "name": "Lernstandsberichte, Kursbestätigungen, Anwesenheiten und E-Mails an Lernende und Schulleitung verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM formuliert Berichte und Mitteilungen aus Stichworten der Lehrperson, die jeden Bericht inhaltlich prüft; Anwesenheitserfassung ist ein kleiner Teil und läuft über die Kursverwaltungssoftware."
+      },
+      {
+        "name": "Sich fachlich weiterbilden und an Teamsitzungen zur Kursplanung teilnehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Eigenes Lernen und Abstimmung im Team; KI kann Inhalte zusammenfassen, spart aber keine 50 % dieser Zeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Sprachlehrer/in an einer privaten Sprachschule bzw. in der Erwachsenenbildung (z. B. Klubschule, Integrations- und Firmenkurse), teils mit Online-Lektionen. Der ESCO-Input passt gut; die Zeitanteile für Vor- und Nachbereitung sind grob geschätzt und hängen stark vom Anstellungsmodell ab (Lektionenlohn). Grenzfälle sind Lektionsplanung (unterstützend vs. delegierend) und die Korrektur schriftlicher Arbeiten (Handschrift → E2, digital → E1).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Vor- und Nachbereitung, also das Erstellen von Unterrichtsmaterialien und Tests, die Lektionsplanung, die Korrektur schriftlicher Arbeiten und das Verfassen von Berichten; dafür reichen Chat-LLMs bzw. KI-Korrektur mit Handschrifterkennung.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind exponiert, überwiegend delegierend: Die KI erstellt Übungen, Tests, Korrekturen und Berichte, und die Lehrperson prüft jedes Ergebnis; bei der Lektionsplanung unterstützt sie nur. Der Kern des Berufs, der Unterricht in Präsenz oder per Video und die mündlichen Prüfungen, bleibt unberührt. Wesentliche CH-Hemmnisse gibt es kaum, da Sprachlehrpersonen generative KI zur Materialerstellung bereits stark selbst nutzen.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

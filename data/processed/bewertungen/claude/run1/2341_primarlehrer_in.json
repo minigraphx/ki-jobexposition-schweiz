@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "claude",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "1767afd364d4a3fbfe2c297c801c1b210cd816533565ec17cc06c60703c8c603",
+    "isco_code": "2341",
+    "beruf": "Primarlehrer/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T21:30:40+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive",
+      "max_tokens": 64000,
+      "fallbacks": "default",
+      "structured_output": "output_config.format"
+    },
+    "stop_reason": "end_turn",
+    "stop_details": null,
+    "usage": {
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 36937,
+      "input_tokens": 4128,
+      "output_tokens": 4917
+    },
+    "usage_je_versuch": [
+      {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 36937,
+        "inference_geo": "global",
+        "input_tokens": 4128,
+        "iterations": [
+          {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 36937,
+            "input_tokens": 4128,
+            "model": null,
+            "output_tokens": 4917,
+            "type": "message"
+          }
+        ],
+        "output_tokens": 4917,
+        "output_tokens_details": {
+          "thinking_tokens": 1867
+        },
+        "service_tier": "standard"
+      }
+    ],
+    "request_ids": [],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2341",
+    "beruf": "Primarlehrer/in",
+    "taetigkeiten": [
+      {
+        "name": "Lektionen vor der Klasse durchführen und die Klasse führen (Mathematik, Deutsch, NMG, Musik, Gestalten)",
+        "zeitanteil_pct": 40,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unterrichten im Klassenzimmer ist Präsenz- und Beziehungsarbeit mit Kindern (Klassenführung, Disziplin, Motivation); keine Technik übernimmt dies in relevantem Umfang."
+      },
+      {
+        "name": "Einzelne Kinder und Kleingruppen bei Lernaufgaben begleiten, differenzieren und Rückmeldungen geben",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare persönliche Lernbegleitung im Schulzimmer; adaptive Lernsoftware ergänzt, ersetzt aber nicht die Hälfte dieser Zeit."
+      },
+      {
+        "name": "Pausenaufsicht halten, Exkursionen, Schulreisen und Schulanlässe begleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz und Aufsichtspflicht für die Sicherheit der Kinder."
+      },
+      {
+        "name": "Jahres-, Quartals- und Lektionsplanung nach Lehrplan 21 erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Planung stützt sich stark auf Lehrmittel und Wissen über die konkrete Klasse im Kopf der Lehrperson; E0 ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Lehrperson plant selbst und entscheidet über Abfolge und Schwerpunkte; ein Chat-LLM liefert Lektionsabläufe, Kompetenzbezüge und Varianten als Vorschläge."
+      },
+      {
+        "name": "Arbeitsblätter, Übungen, Lernkontrollen und Prüfungen erstellen",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt Aufgaben, Texte und Differenzierungsniveaus nach Vorgabe; die Lehrperson prüft jedes Blatt und passt es an Klasse und Lehrmittel an."
+      },
+      {
+        "name": "Schulzimmer einrichten und Material physisch bereitstellen (Kopieren, Werk- und Experimentiermaterial)",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Vorbereitungsarbeit vor Ort."
+      },
+      {
+        "name": "Handschriftliche Schülerarbeiten, Hefte und Prüfungen korrigieren und bewerten",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Bei Rechenübungen und Diktaten könnte Handschrifterkennung mit Fehlermarkierung ≥ 50 % sparen (E2, unterstützend); bei freien Texten jüngerer Kinder kaum.",
+        "ch_hemmnis": [],
+        "begruendung": "Unordentliche Kinderhandschrift, kurze Aufgaben und die pädagogische Einschätzung jeder Arbeit lassen die Zeitersparnis im typischen Mix unter 50 % bleiben; Papierarbeiten verhindern klassische Autokorrektur."
+      },
+      {
+        "name": "Lernberichte, Zeugnisbemerkungen, Förderpläne und Beurteilungsnotizen verfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Stichworten und Beobachtungsnotizen entwirft das LLM die Texte; die Lehrperson prüft und verantwortet jeden Bericht inhaltlich. Hemmnis: Datenschutz bei Schülerdaten (kantonale Vorgaben)."
+      },
+      {
+        "name": "Eltern- und Standortgespräche führen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gespräch von Angesicht zu Angesicht mit Beziehungs- und Vertrauenskern."
+      },
+      {
+        "name": "Elternbriefe, Mitteilungen und E-Mails an Eltern schreiben",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM verfasst Briefe und Übersetzungen für fremdsprachige Eltern aus Stichworten; die Lehrperson liest jede Mitteilung vor dem Versand kurz gegen."
+      },
+      {
+        "name": "Absprachen im Schulteam mit Schulischer Heilpädagogik, DaZ, Schulleitung und Schulsozialarbeit treffen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sitzungen und Abstimmung im Team, Präsenz und gemeinsame Entscheide."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Klassenlehrperson an einer öffentlichen Primarschule (Zyklus 1/2) in der Deutschschweiz mit hohem Pensum. ESCO passt gut; Zeitanteile grob geschätzt. Grenzfälle sind Unterrichtsplanung (E1 vs. E0) und das Korrigieren handschriftlicher Arbeiten (E0 vs. E2).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Erstellen von Arbeitsblättern und Prüfungen, Lernberichte und Elternbriefe sowie teilweise die Unterrichtsplanung, die mit einem Chat-LLM entworfen werden können.",
+      "begruendung": "Rund ein Viertel der Arbeitszeit ist exponiert, überwiegend delegierend (KI entwirft Materialien und Texte, die Lehrperson prüft jedes Ergebnis) bzw. bei der Planung unterstützend. Der Kern des Berufs – Unterrichten, Begleiten und Beaufsichtigen von Kindern sowie Elterngespräche – bleibt Präsenzarbeit. Kantonale Datenschutzvorgaben zu Schülerdaten bremsen den Einsatz bei Berichten und Beurteilungen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

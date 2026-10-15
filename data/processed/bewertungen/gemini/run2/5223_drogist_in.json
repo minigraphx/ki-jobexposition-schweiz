@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "1472533c1e137c5fdb760d5d9c150193540c62dac1b9f3c58f5e3dc8fd49a2b7",
+    "isco_code": "5223",
+    "beruf": "Drogist/in",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2259,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2259
+        }
+      ],
+      "prompt_token_count": 20281,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 20281
+        }
+      ],
+      "thoughts_token_count": 4854,
+      "total_token_count": 27394
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2259,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2259
+          }
+        ],
+        "prompt_token_count": 20281,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 20281
+          }
+        ],
+        "thoughts_token_count": 4854,
+        "total_token_count": 27394
+      }
+    ],
+    "request_ids": [
+      "xD_Pav7LG5zE_PUP6K-UyQg"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-5223_drogist_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "5223",
+    "beruf": "Drogist/in",
+    "taetigkeiten": [
+      {
+        "name": "Kundschaft im Verkaufsgespräch zu Gesundheitsfragen, Selbstmedikation und Naturheilmitteln beraten",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Beratungsgespräch und Triage am Ladentisch erfordern unmittelbare zwischenmenschliche Präsenz und Beobachtung der Kundschaft vor Ort."
+      },
+      {
+        "name": "Kundschaft vor Ort zu Körperpflege, Kosmetik sowie Haushalts- und Gartenprodukten beraten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beratung von Angesicht zu Angesicht im Verkaufsraum inklusive Produktdemonstration und Erklärung von Sicherheitsvorschriften bei Chemikalien."
+      },
+      {
+        "name": "Individuelle Mischungen und Hausspezialitäten im Labor herstellen und abfüllen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Laborarbeit (Abwägen, Mischen und Abfüllen von Tees, Spagyrik, Tinkturen und Salben); für Kleinmengen in KMU-Drogerien existiert keine rentable Robotik."
+      },
+      {
+        "name": "Abgabedokumentation für Heilmittel, Herstellungsprotokolle und individuelle Anwendungshinweise verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob ein Chat-LLM gegenüber bestehenden Textbausteinen in der Branchensoftware bei kurzen Protokollen und Abgabenotizen mindestens 50 % Zeit spart; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Stichworten zu Anamnese oder Rezeptur erstellt das Chat-LLM den Dokumentations- oder Anwendungstext; die Drogistin prüft und verantwortet jeden Eintrag fachlich gemäss Heilmittelrecht."
+      },
+      {
+        "name": "Waren an der Kasse scannen, Zahlungen abwickeln und Quittungen ausstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer Kassiervorgang ohne Exposition gegenüber generativer KI, aber durch Selbstbedienungskassen (Self-Checkout) technisch zu über 50 % automatisierbar."
+      },
+      {
+        "name": "Wareneingang kontrollieren, Verfalldaten prüfen und Produkte in Regale einräumen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Tätigkeit im Verkaufsraum und Lager; Kommissionierautomaten decken in typischen Drogerien die Freiwahl-Regalpflege und Verfalldatenkontrolle am Regal nicht ab."
+      },
+      {
+        "name": "Lagerbestand überwachen und Nachbestellungen beim Grossisten im Warenwirtschaftssystem auslösen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Bestellvorschläge und elektronische Nachbestellung über das klassische Warenwirtschaftssystem (ERP) übernehmen die Routine-Disposition ohne generative KI."
+      },
+      {
+        "name": "Verkaufsfläche, Schaufenster und Aktionsständer gestalten sowie Waren präsentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Dekorieren, Umbauen und Platzieren von Warenträgern direkt im Ladenlokal."
+      },
+      {
+        "name": "Telefonische und schriftliche Standardanfragen zu Produktverfügbarkeit und Vorbestellungen bearbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Qualität bei Schweizerdeutsch am Telefon sowie saubere Abgrenzung zu beratungspflichtigen Gesundheitsanfragen im Alltag unsicher; E0 oder Modus delegierend ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Ein Voicebot bzw. E-Mail-Agent mit Zugriff auf das Kassensystem beantwortet Verfügbarkeitsfragen und nimmt Reservierungen selbständig auf; Fachpersonen übernehmen nur weitergeleitete Beratungsfälle."
+      },
+      {
+        "name": "Social-Media-Beiträge, Kundeninformationen und Aktionsplakate zu Gesundheitsthemen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Text- und Bildwerkzeuge erstellen Entwürfe für Posts, Flyer und Hinweisschilder; die Drogistin steuert das Thema und prüft jeden Beitrag auf Einhaltung der Heilmittel-Werbevorschriften."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Drogist/in EFZ in einer typischen Schweizer KMU-Drogerie (unabhängig oder Teil einer Gruppierung). Da keine ESCO-Kompetenzen vorliegen und die KI-generierte Input-Beschreibung fälschlicherweise eine dreijährige statt der in der Schweiz vierjährigen Berufslehre nennt, wurden die Tätigkeiten anhand des Schweizer Berufsbilds (inkl. Abgabekompetenz nach HMG und Rezepturherstellung) abgeleitet. Grenzfälle bestehen bei der kurzen Abgabedokumentation und bei telefonischen Anfragen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind lediglich administrative und kommunikative Randaufgaben wie das Erstellen von Werbemitteln, Abgabedokumentationen und das Beantworten telefonischer Verfügbarkeitsanfragen durch Chat-LLMs, Bildgeneratoren und Voicebots, während der Kern aus persönlicher Fachberatung und Laborarbeit unberührt bleibt.",
+      "begruendung": "Nur rund 15 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus bei Dokumentation und Marketing sowie ersetzend bei einfachen Verfügbarkeitsauskünften. In der Schweiz bremsen strenge regulatorische Vorgaben des Heilmittelgesetzes (Sorgfalts- und Dokumentationspflicht, Werbebeschränkungen) sowie das hohe Kundenbedürfnis nach persönlichem Vertrauen in der Gesundheitsberatung eine breite Übernahme durch KI.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

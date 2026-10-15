@@ -1,0 +1,229 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "65bede2c536491255aa8c8262fb6a9d7ccc387679bcfc6f07ef15af991c713a6",
+    "isco_code": "2422",
+    "beruf": "Versicherungsexperte/-expertin",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2269,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2269
+        }
+      ],
+      "prompt_token_count": 22265,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22265
+        }
+      ],
+      "thoughts_token_count": 6158,
+      "total_token_count": 30692
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2269,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2269
+          }
+        ],
+        "prompt_token_count": 22265,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22265
+          }
+        ],
+        "thoughts_token_count": 6158,
+        "total_token_count": 30692
+      }
+    ],
+    "request_ids": [
+      "xD_Pasa8DrvL_PUPs93BqAU"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2422_versicherungsexperte_expertin",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2422",
+    "beruf": "Versicherungsexperte/-expertin",
+    "taetigkeiten": [
+      {
+        "name": "Ausschreibungsunterlagen, Risikofragebögen und Inspektionsberichte sichten und aufbereiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumenten- und Bilderkennungs-KI extrahiert Risikodaten und Schadenverläufe aus heterogenen PDFs und Berichten und erstellt eine strukturierte Dossier-Zusammenfassung; die Fachperson prüft jedes Dossier fachlich gegen die Originalbelege."
+      },
+      {
+        "name": "Finanzielle Tragfähigkeit und Jahresabschlüsse von Unternehmenskunden analysieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM-gestützte Analysewerkzeuge lesen Geschäftsberichte aus und entwerfen die Bonitäts- und Kennzahlenbeurteilung, die der Experte im Einzelfall prüft. Klassische Finanzanalyse- und Rating-Software automatisiert bereits über 50 % der standardisierten Kennzahlenberechnung."
+      },
+      {
+        "name": "Komplexe Haftungs- und Sachrisiken bewerten und Zeichnungsentscheide treffen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der eigentliche Zeichnungsentscheid bei komplexen gewerblichen Risiken erfordert Ermessen, Erfahrung und persönliche Verantwortung; da die Datenaufbereitung separat erfasst ist, spart KI beim Entscheid selbst keine 50 %."
+      },
+      {
+        "name": "Risikogerechte Prämien, Selbstbehalte und Deckungslimiten in Tarifierungstools kalkulieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Prämienkalkulation erfolgt über statistisch-aktuarische Modelle und regelbasierte Pricing-Software, nicht über generative KI."
+      },
+      {
+        "name": "Individuelle Versicherungspolicen, Spezialklauseln und Vertragswerke ausarbeiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft auf Basis eingefügter Bedingungen und Risikospezifikationen massgeschneiderte Klauseln und Übersetzungen; der Versicherungsexperte gibt die Deckungsparameter vor und prüft jede Klausel rechtlich und fachlich."
+      },
+      {
+        "name": "Zeichnungsrichtlinien und Versicherungsproduktkonzepte entwickeln und aktualisieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Fachperson erarbeitet die Risikopolitik und Produktlogik selbst; ein Chat-LLM liefert Textbausteine, Marktvergleiche und Strukturierungsvorschläge aus bereitgestellten Unterlagen."
+      },
+      {
+        "name": "Verhandlungen über Konditionen und Deckungsumfang mit Brokern, Grosskunden und Rückversicherern führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Verhandlungs- und Beziehungstätigkeit, bei der Überzeugungskraft und Vertrauensaufbau im direkten Kontakt entscheidend sind."
+      },
+      {
+        "name": "Versicherungsportfolios auf Kumulrisiken, Schadenverlauf und Profitabilität überwachen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Fachperson bewertet die Portfoliorisiken und Steuerungsmassnahmen selbst, während KI-Analysewerkzeuge Auffälligkeiten und Trends zusammenfassen; klassische BI- und Kumulskontroll-Software automatisiert bereits die Standardüberwachung."
+      },
+      {
+        "name": "Komplexe Deckungsfragen prüfen und schriftliche Stellungnahmen für Schadenabteilung oder Broker verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus eingefügtem Sachverhalt und Vertragswerk erstellt ein Chat-LLM den Deckungsabgleich und Antwortentwurf; der Experte prüft jede Stellungnahme inhaltlich gegen Police und Versicherungsvertragsrecht."
+      },
+      {
+        "name": "Risikobesichtigungen vor Ort begleiten und in internen Risikogremien beraten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Begehung von Betriebsanlagen und Immobilien vor Ort sowie mündliche Abstimmung in Fachgremien."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Versicherungsexperte/-expertin auf Tertiärstufe (Senior Underwriter / Fachspezialist/in für Unternehmensversicherungen und Produktkonzepte bei einer Schweizer Versicherungsgesellschaft oder einem Grossbroker). Das ESCO-Profil stammt aus dem angelsächsischen Raum und enthält teils bankenspezifische Hypothekar-/Darlehensaufgaben, die für das Schweizer Versicherungswesen bereinigt und durch die hier üblichen Aufgaben in Risikoprüfung, Wording und Richtlinienentwicklung (ISCO 2422) abgebildet wurden.",
+    "zusammenfassung": {
+      "haupt_risiko": "Besonders betroffen sind die Aufbereitung von Ausschreibungs- und Finanzunterlagen durch KI-gestützte Dokumentenanalyse sowie das Ausarbeiten von Spezialklauseln, Zeichnungsrichtlinien und Deckungsstellungnahmen mittels Chat-LLMs.",
+      "begruendung": "Rund 60 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus (Ausarbeitung von Klauseln, Dossier- und Finanzanalysen) und teils unterstützend (Richtlinien- und Portfolioarbeit), während der eigentliche Zeichnungsentscheid und Verhandlungen beim Menschen bleiben. In der Schweiz bremsen hohe regulatorische Anforderungen (FINMA, VVG, Datenschutz bei Unternehmens- und Personendaten) sowie die rechtssichere Abstimmung von Vertragswerken in mehreren Landessprachen und Englisch eine ungeprüfte Übernahme.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

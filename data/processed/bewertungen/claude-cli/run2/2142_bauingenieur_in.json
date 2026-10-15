@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "6d13935f213521df279bc754bd625424c34098d9c809ec7c7a3fb7c4e48bb9a2",
+    "isco_code": "2142",
+    "beruf": "Bauingenieur/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:42:37+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 41056,
+      "output_tokens": 5228,
+      "api_aequivalent_usd": 0.1127792
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 41056,
+        "output_tokens": 5228,
+        "output_tokens_details": {
+          "thinking_tokens": 1756
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1127792
+      }
+    ],
+    "request_ids": [
+      "a9ddaa87-a607-41ea-b215-4c2ab5353fb2"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2142",
+    "beruf": "Bauingenieur/in",
+    "taetigkeiten": [
+      {
+        "name": "Tragwerks- und Bauwerkskonzepte entwickeln und Varianten im Vorprojekt beurteilen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Konzeption beruht auf Erfahrung, Ortskenntnis, Abwägung von Randbedingungen und Abstimmung mit Architektur und Bauherrschaft; ein LLM kann Ideen liefern, spart aber keine 50 %."
+      },
+      {
+        "name": "Statische Berechnungen und Bemessungen mit Statik-/FE-Software durchführen (SIA-Normen)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Rechenarbeit erledigt bereits klassische Statiksoftware; Modellbildung, Plausibilisierung und Verantwortung für die Tragsicherheit bleiben beim Ingenieur, generative KI spart hier wegen nicht tolerierbarer Fehler und Prüfaufwand keine 50 %."
+      },
+      {
+        "name": "Konstruktions-, Schalungs- und Bewehrungspläne in CAD/BIM erstellen, anpassen und prüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Planbearbeitung und Planprüfung in CAD/BIM erfordert präzise Geometrie und Normkonformität; generative KI-Funktionen in CAD-Software sind dafür noch nicht verlässlich genug, und parametrische Automatisierung (klassisch) übernimmt keine 50 %."
+      },
+      {
+        "name": "Technische Berichte, Nutzungsvereinbarungen, Projektbasis und Machbarkeitsstudien verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten, Berechnungsergebnissen und Vorlagen entwirft das LLM den Bericht; der Ingenieur prüft jeden Bericht fachlich und ergänzt Fachaussagen."
+      },
+      {
+        "name": "Ausschreibungsunterlagen (Devis nach NPK) erstellen und Unternehmerofferten vergleichen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob LLM-Funktionen für Besondere Bestimmungen und Offertprüfung zusammen mit Devis-Software ≥ 50 % sparen; E2 unterstützend ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Positionsauswahl, Ausmass und Offertvergleich laufen bereits in klassischer Devis-Software (NPK); die verbleibende Arbeit ist fachliche Mengen- und Positionsbeurteilung, bei der generative KI nur Textteile beschleunigt."
+      },
+      {
+        "name": "Kostenschätzungen und Kostenvoranschläge erstellen und Kosten überwachen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kostenermittlung stützt sich auf Erfahrungswerte, Mengen und Marktkenntnis in Tabellen bzw. Fachsoftware; ein LLM spart bei geforderter Genauigkeit keine 50 %."
+      },
+      {
+        "name": "Baustellen begehen, Bewehrungsabnahmen und Qualitäts- sowie Sicherheitskontrollen vor Ort durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz und Begutachtung vor Ort; keine verfügbare Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Baustellen- und Sitzungsprotokolle sowie Mängellisten erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Transkription, Fotoerkennung und Mängel-App erstellen Protokoll bzw. Mängelliste; der Ingenieur prüft jeden Eintrag. Mundart in Sitzungen und Baustellenlärm erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Koordinationssitzungen mit Architekten, Bauherrschaft, Behörden und Unternehmern führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung und Verhandlung von Angesicht zu Angesicht; Präsenz- und Beziehungstätigkeit."
+      },
+      {
+        "name": "Werkverträge, Nachtragsforderungen und Regierapporte von Unternehmern prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Ingenieur beurteilt jeden Nachtrag selbst; das LLM gleicht eingefügte Vertragstexte (SIA 118) und Forderungen ab und markiert Abweichungen."
+      },
+      {
+        "name": "Fachliche E-Mail-Korrespondenz und Stellungnahmen an Beteiligte und Behörden verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM formuliert Mails und Stellungnahmen aus Stichworten; der Ingenieur prüft die fachlichen Aussagen jeder Nachricht vor dem Versand."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Bauingenieur/in FH/ETH in einem Schweizer Ingenieurbüro (Tragwerksplanung/Tiefbau) mit Projektierung nach SIA-Phasen und teilweiser Bauleitung. ESCO passt im Kern, einzelne Kompetenzen (Open-Source-Software, Forschungsdaten) wurden als Rauschen ignoriert. Grösste Unsicherheiten: Devis/Offertvergleich und ob generative KI bei Bemessung oder CAD bereits ≥ 50 % spart; die Zeitanteile variieren stark zwischen Projektierung und Bauleitung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem textlastige Arbeiten (technische Berichte, Korrespondenz, Protokolle, Prüfung von Nachträgen), die Chat-LLMs sowie Transkriptions- und Mängel-Apps übernehmen oder beschleunigen; Bemessung, Konzeption, Planung und Bauleitung vor Ort sind kaum betroffen.",
+      "begruendung": "Rund ein Viertel der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI entwirft Berichte, Mails und Protokolle, der Ingenieur prüft wegen Haftung und Normkonformität jedes Ergebnis fachlich; bei Vertrags- und Nachtragsprüfung bleibt sie unterstützend. Der Kern des Berufs (Tragwerksverantwortung, CAD/BIM, Koordination, Baustellenpräsenz) bleibt beim Menschen; Mundart in Sitzungen und Baustellenlärm erhöhen den Korrekturaufwand bei Protokollen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "7da7fe321a7460650d2952165efb824368221dd1a8db1d8d53b5a8ba07697710",
+    "isco_code": "2529",
+    "beruf": "IT-Sicherheitsspezialist/in",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "cache_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 19837
+        }
+      ],
+      "cached_content_token_count": 19837,
+      "candidates_token_count": 2456,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2456
+        }
+      ],
+      "prompt_token_count": 22372,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22372
+        }
+      ],
+      "thoughts_token_count": 9007,
+      "total_token_count": 33835
+    },
+    "usage_je_versuch": [
+      {
+        "cache_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 19837
+          }
+        ],
+        "cached_content_token_count": 19837,
+        "candidates_token_count": 2456,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2456
+          }
+        ],
+        "prompt_token_count": 22372,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22372
+          }
+        ],
+        "thoughts_token_count": 9007,
+        "total_token_count": 33835
+      }
+    ],
+    "request_ids": [
+      "ZzzPat3tItaL_uMP9ombOA"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-2529_it_sicherheitsspezialist_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2529",
+    "beruf": "IT-Sicherheitsspezialist/in",
+    "taetigkeiten": [
+      {
+        "name": "Sicherheitswarnungen und Logdaten in Überwachungssystemen (SIEM/EDR) analysieren und triagieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "In SIEM- und EDR-Systeme integrierte KI-Assistenten korrelieren Logdaten, fassen Alarme zusammen und schlagen Abfragen vor; die Fachperson untersucht und beurteilt jeden relevanten Sicherheitsvorfall weiterhin selbst. Klassische regelbasierte Filterung ist bereits Standard und ersetzt die verbleibende Analyse nicht zu 50 %."
+      },
+      {
+        "name": "Schwachstellenanalysen, Konfigurationsprüfungen und technische Sicherheitsaudits durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM-gestützte Audit- und Cloud-Security-Werkzeuge gleichen Systemkonfigurationen und Scan-Ergebnisse mit Sicherheitsstandards ab und markieren Fehlkonfigurationen; die Fachperson prüft und bewertet die Schwachstellen im Systemkontext selbst. Klassische Schwachstellenscanner liefern nur Rohdaten ohne kontextuelle Auswertung."
+      },
+      {
+        "name": "Firewalls, Netzwerksicherheit, Endpunktschutz und Datenbanksicherheit konfigurieren und härten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Obwohl Sprachmodelle Konfigurationsvorlagen erstellen können, liegt der Hauptaufwand in der Einbettung in die spezifische Systemlandschaft, dem Testen gegen Betriebsausfälle und dem kontrollierten Rollout, sodass die 50-%-Schwelle nicht erreicht wird."
+      },
+      {
+        "name": "Identitäts- und Zugriffsmanagement (IAM) sowie kryptografische Schlüssel und Berechtigungen verwalten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative KI spart bei der laufenden Rechte- und Schlüsselverwaltung keine 50 % der Zeit. Jedoch können klassische Identity-Governance-Systeme (IGA), regelbasierte Provisionierungs-Workflows und automatisiertes Zertifikatsmanagement (PKI/ACME) über die Hälfte des manuellen Administrationsaufwands übernehmen."
+      },
+      {
+        "name": "Akute Sicherheitsvorfälle eindämmen, Ursachen beheben und Systeme wiederherstellen (Incident Response)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die operative Bewältigung akuter Cybervorfälle und Systemstörungen erfordert situative Entscheidungen unter Zeitdruck, Koordination mit Betriebsteams und kontrollierte Systemeingriffe, bei denen generative KI weniger als 50 % der Gesamtzeit einspart."
+      },
+      {
+        "name": "Skripte, Abfragen und Automatisierungsregeln für Sicherheitsprüfungen und Log-Analysen programmieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus einer Anforderungsbeschreibung Skripte (z. B. Python, PowerShell) sowie Erkennungsregeln und Suchabfragen; die Fachperson spezifiziert die Logik und prüft sowie testet jeden Code vor dem produktiven Einsatz."
+      },
+      {
+        "name": "IT-Sicherheitsrichtlinien, Notfallkonzepte, Schulungsunterlagen und Auditberichte verfassen und pflegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Das Sprachmodell entwirft Richtlinien nach Standards (z. B. ISO 27001, NCSC-Grundschutz), Notfallpläne und Berichte aus Stichworten; die Fachperson steuert den Inhalt und prüft jedes Dokument fachlich auf Compliance und technische Richtigkeit."
+      },
+      {
+        "name": "Fachliteratur, Threat-Intelligence-Berichte und neue Schwachstellenmeldungen (CVEs) auswerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM-gestützte Recherche-Agenten und Threat-Intelligence-Tools durchsuchen aktuelle Sicherheitsbulletins, fassen Angriffsmuster zusammen und gleichen sie mit genutzten Technologien ab; die Fachperson beurteilt die Relevanz und Dringlichkeit für die eigene Infrastruktur selbst."
+      },
+      {
+        "name": "Mitarbeitende in IT-Sicherheit schulen und Notfall- sowie Wiederherstellungsübungen leiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Durchführen von Schulungen und das Leiten von Krisen- und Notfallübungen (Tabletop- und Recovery-Tests) lebt von persönlicher Präsenz, Moderation und direkter Interaktion mit den Teams."
+      },
+      {
+        "name": "Fachbereiche, Projektleitungen und Management zu Sicherheitsarchitektur und Compliance beraten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Beratung in IT-Projekten (Security by Design), Risikoabwägungen mit dem Management und Abstimmungen mit Datenschutzverantwortlichen erfordern Überzeugungsarbeit, Verhandlung und kontextspezifisches Urteilsvermögen."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: IT-Sicherheitsspezialist/in in einem mittelgrossen bis grossen Schweizer Unternehmen oder bei einem IT-Dienstleister (Kombination aus operativer Systemsicherheit, Monitoring und Governance/Compliance). Die ESCO-Beschreibung ist sehr knapp, wird aber durch die Kompetenzliste gut präzisiert. Grenzfälle liegen bei der Log-Triage und den technischen Audits (jeweils nahe an der 50-%-Schwelle, da komplexe Systemumgebungen hohen Verifikationsaufwand erfordern).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Programmieren von Sicherheitsskripten und Abfragen, das Verfassen von Richtlinien und Berichten (per Chat-LLM) sowie die Analyse von Logdaten, Schwachstellen und Threat-Intelligence (durch integrierte Security-Copiloten).",
+      "begruendung": "Gut die Hälfte der Arbeitszeit (55 %) ist gegenüber generativer KI exponiert, wobei die KI aufgrund der hohen Sicherheits- und Haftungsrisiken nirgends ersetzend, sondern unterstützend (bei Log-Triage, Audits und Recherchen) oder delegierend mit lückenloser Fachprüfung (bei Skripten und Richtlinien) eingesetzt wird. In der Schweiz bremsen insbesondere strenge Datenschutz- und Geheimhaltungsvorgaben (revDSG, Berufs- und Geschäftsgeheimnis, FINMA-Regulierung) den Einsatz externer Cloud-KI für sensible Log- und Infrastrukturdaten sowie die Mehrsprachigkeit bei Unternehmensrichtlinien.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

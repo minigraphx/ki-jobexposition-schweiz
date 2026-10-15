@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "bb4a59de1dfb2e10772c585788a541947a27f0e0c93a14c6fe44be25365c4164",
+    "isco_code": "3111",
+    "beruf": "Chemo- und Physikotechniker",
+    "lauf": 3,
+    "reihenfolge_seed": 20261016,
+    "timestamp": "2026-10-14T01:16:09+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4029,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5039,
+      "api_aequivalent_usd": 0.14035019999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4029,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5039,
+        "output_tokens_details": {
+          "thinking_tokens": 1748
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4029,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.14035019999999998
+      }
+    ],
+    "request_ids": [
+      "cceb431f-ffa8-4cba-9d4a-9f91fd296bc9"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3111",
+    "beruf": "Chemo- und Physikotechniker",
+    "taetigkeiten": [
+      {
+        "name": "Chemische Proben vorbereiten: einwägen, lösen, verdünnen, extrahieren, derivatisieren",
+        "zeitanteil_pct": 18,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Laborarbeit an der Bank, daher E0. Pipettierroboter und automatische Probenvorbereitung gibt es zwar, in typischen Labors übernehmen sie aber bei wechselnden Probenarten nicht 50 % der Arbeit."
+      },
+      {
+        "name": "Synthesen und chemische Experimente ansetzen, durchführen und aufarbeiten (filtrieren, destillieren, umkristallisieren)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer Umgang mit Chemikalien und Apparaturen im Abzug. Automatisierte Syntheseplattformen sind in typischen Labors nicht in relevantem Umfang im Einsatz."
+      },
+      {
+        "name": "Analysen an Geräten durchführen (HPLC, GC, Titration, Spektroskopie) inkl. Messsequenzen einrichten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Geräte bestücken, einrichten und Läufe beaufsichtigen ist Arbeit vor Ort. Autosampler laufen schon heute automatisch; was bleibt, sind Handarbeit und Störungsbehebung."
+      },
+      {
+        "name": "Messdaten auswerten: Chromatogramme integrieren, Gehalte berechnen, Spezifikationen prüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die automatische Integration und Berechnung in Chromatografie-Datensystemen und validierten Auswertevorlagen ist klassische Software. Prüfen und manuell nachintegrieren braucht Fachurteil, ein LLM spart hier kaum 50 %."
+      },
+      {
+        "name": "Laborjournal bzw. ELN-Einträge und Versuchsprotokolle verfassen",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Viele Einträge sind strukturierte Echtzeit-Eingaben in Formulare (GMP, ALCOA), bei denen ein LLM wenig spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Stichworten und Messwerten formuliert das LLM die Versuchsbeschreibung; die Laborantin prüft jeden Eintrag gegen die Rohdaten und visiert ihn."
+      },
+      {
+        "name": "Analyse-, Prüf- und Abweichungsberichte sowie SOP-Entwürfe schreiben",
+        "zeitanteil_pct": 7,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus eingefügten Ergebnissen und Vorlagen entwirft das LLM den Bericht; die Fachperson prüft jeden Inhalt und verantwortet ihn. GMP-Dokumentationspflichten und Datenschutz in der Pharma bremsen den Einsatz."
+      },
+      {
+        "name": "Laufende Reaktionen und Prozessbedingungen (Temperatur, pH, Druck) überwachen und regulieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beobachten und Eingreifen geschehen vor Ort. Laborreaktorsysteme mit Regelung helfen zwar, ersetzen im typischen Labor aber nicht die Hälfte der Überwachung."
+      },
+      {
+        "name": "Laborgeräte warten, kalibrieren und Systemeignungstests durchführen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Wartungs- und Kalibrierarbeit an den Geräten."
+      },
+      {
+        "name": "Chemikalien und Reagenzien verwalten, Lösungen ansetzen, Abfälle entsorgen, Arbeitsplatz reinigen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer Umgang mit Gefahrstoffen nach Sicherheitsvorschriften. Die Bestandsführung per Barcode ist nur ein kleiner Teil der Tätigkeit."
+      },
+      {
+        "name": "Versuchsvorschriften, Methoden und Sicherheitsdatenblätter recherchieren und Versuche planen",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Bei den meist vorgegebenen SOP-Abläufen spart KI möglicherweise weniger als 50 %; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Laborantin plant selbst. Ein Recherche-Agent fasst Literatur, Sicherheitsdaten und Vorschriften zusammen und schlägt Abläufe vor, die sie einzeln prüft."
+      },
+      {
+        "name": "Ergebnisse und Vorgehen mit Chemikern absprechen, Lernende anleiten",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Abstimmung und Anleitung im Labor."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Chemielaborant/in EFZ in der Schweizer Chemie- oder Pharmaindustrie (Analytik/QC und Synthese, oft unter GMP). Der ESCO-Input passt gut. Grenzfälle sind die Dokumentation, die oft aus strukturierten Echtzeit-Einträgen besteht, und die Versuchsplanung. Auswertungen laufen schon heute weitgehend über klassische Chromatografie-Software.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Laborjournal-Einträge, Analyse- und Abweichungsberichte sowie die Recherche für die Versuchsplanung; diese übernehmen Chat-LLMs und Recherche-Agenten, die Laborarbeit selbst nicht.",
+      "begruendung": "Rund ein Fünftel der Arbeitszeit ist exponiert. Meist arbeitet die KI delegierend: Sie entwirft Protokolle und Berichte, die Fachperson prüft jeden Text gegen die Rohdaten; bei der Recherche wirkt sie nur unterstützend. In der Schweizer Pharma- und Chemieindustrie bremsen GMP-Dokumentationspflichten, die Validierung computergestützter Systeme und Vorgaben zur Datensicherheit die Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

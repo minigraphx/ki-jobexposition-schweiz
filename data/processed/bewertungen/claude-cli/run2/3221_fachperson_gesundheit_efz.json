@@ -1,0 +1,198 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "5d9b10cede78b17a1ac4e07245394ecfd16502bbe029e7e5ec9a16b380641899",
+    "isco_code": "3221",
+    "beruf": "Fachperson Gesundheit EFZ (FaGe)",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:58:13+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4900,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4125,
+      "api_aequivalent_usd": 0.1290382
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4900,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4125,
+        "output_tokens_details": {
+          "thinking_tokens": 1165
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4900,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1290382
+      }
+    ],
+    "request_ids": [
+      "29dd3622-d13b-4fc9-b2e5-348c64ccf028"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3221",
+    "beruf": "Fachperson Gesundheit EFZ (FaGe)",
+    "taetigkeiten": [
+      {
+        "name": "Patientinnen und Bewohner bei Körperpflege, Ankleiden, Ausscheidung und Essen unterstützen sowie mobilisieren und lagern",
+        "zeitanteil_pct": 35,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Pflege am Körper mit unmittelbarer Präsenz; Pflegeroboter übernehmen keinen relevanten Anteil."
+      },
+      {
+        "name": "Medizinaltechnische Verrichtungen ausführen: Vitalzeichen messen, Medikamente richten und verabreichen, Injektionen, Blutentnahmen, Wundversorgung",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle, präsenzgebundene Tätigkeiten; Blisterautomaten und automatische Monitore entlasten nur Teilschritte, nicht ≥ 50 % der Zeit."
+      },
+      {
+        "name": "Zustand von Patientinnen beobachten, Gespräche führen, Bewohner und Angehörige begleiten und den Alltag gestalten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beziehungs- und Präsenztätigkeit; der Wert liegt in der persönlichen Anwesenheit und direkten Beobachtung."
+      },
+      {
+        "name": "Pflegedokumentation erfassen: Verlaufsberichte, Beobachtungen und Massnahmen im KIS bzw. Bewohnerdossier eintragen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracheingabe bzw. ambiente Dokumentation im KIS erstellt den Verlaufseintrag aus Diktat; die FaGe prüft und verantwortet jeden Eintrag. Schweizerdeutsch-Diktat und Stationslärm erhöhen den Korrekturaufwand; Vitalwerte werden teils schon klassisch übernommen."
+      },
+      {
+        "name": "Pflegeplanung für zugeteilte Bewohner mitgestalten: Pflegeziele und Massnahmen formulieren, Bedarfsabklärung (RAI/BESA) vorbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus kopierten Dossiereinträgen und Beobachtungen entwirft ein LLM Pflegeziele und Massnahmen; die FaGe prüft jeden Entwurf am Einzelfall und stimmt ihn mit der Pflegefachperson HF ab. Nähe zur 50 %-Schwelle, da Planung stark auf persönlicher Kenntnis beruht."
+      },
+      {
+        "name": "Rapport und Übergabe im Team sowie Absprachen mit Pflegefachpersonen, Ärzten und Therapien führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Abstimmung in Präsenz; KI-Zusammenfassungen können vorbereiten, verkürzen den Rapport aber nicht um die Hälfte."
+      },
+      {
+        "name": "Mahlzeiten verteilen, Betten machen und Zimmer bzw. Umgebung der Bewohner instand halten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische hauswirtschaftliche Tätigkeit am Patientenzimmer; Transportroboter decken nur Logistik bis zur Station ab, nicht die Verteilung am Bett."
+      },
+      {
+        "name": "Pflegematerial bewirtschaften, Medizinprodukte und Geräte reinigen, desinfizieren und bereitstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physisch; Nachbestellung läuft teils per klassischem Barcode-/Modulsystem, das aber den Grossteil der Zeit (Reinigen, Auffüllen) nicht übernimmt."
+      },
+      {
+        "name": "Lernende FaGe anleiten und Patienten zu Selbstpflege und Hilfsmitteln instruieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Anleitung und Instruktion am Patienten bzw. am Arbeitsplatz in Präsenz."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: FaGe EFZ in einem Alters- und Pflegeheim bzw. auf einer Bettenstation im Akutspital (Langzeit- und Akutpflege gemischt). Die ESCO-Zuordnung (Krankenpflegehelfer, ISCO 5321) passt nur teilweise; Tätigkeiten wurden mit dem Bildungsplan FaGe EFZ ergänzt (medizinaltechnische Verrichtungen, Pflegedokumentation, Hauswirtschaft). Grenzfälle sind die Pflegedokumentation per Spracheingabe (Dialekt, Lärm) und die Mitarbeit an der Pflegeplanung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur die Pflegedokumentation (per Spracheingabe bzw. ambienter Dokumentation im KIS) und Entwürfe für die Pflegeplanung (Chat-LLM); die körperliche Pflege und die medizinaltechnischen Verrichtungen sind nicht exponiert.",
+      "begruendung": "Rund 15 % der Arbeitszeit sind exponiert, durchwegs delegierend: Die KI erstellt Verlaufseinträge und Planungsentwürfe, die FaGe prüft und verantwortet jeden Eintrag. Datenschutz und Berufsgeheimnis bei Patientendaten, die nötige KIS-Integration und viele kleine Heime ohne entsprechende Software bremsen die Einführung in der Schweiz; zudem macht Schweizerdeutsch beim Diktat Korrekturen nötig.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

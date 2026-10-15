@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "898992de0e130aaa05f92426faabc4d24b6cfdb427e98e5f26da78ce75ff5eaa",
+    "isco_code": "7421",
+    "beruf": "Mechatroniker/in EFZ",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:32:18+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 9123,
+      "cache_read_input_tokens": 77572,
+      "output_tokens": 7614,
+      "api_aequivalent_usd": 0.2407944
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 9123,
+        "cache_read_input_tokens": 77572,
+        "output_tokens": 7614,
+        "output_tokens_details": {
+          "thinking_tokens": 1332
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 9123,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.2407944
+      }
+    ],
+    "request_ids": [
+      "a8f6b66c-14d1-4a45-90bc-34b55b1cc29b"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "7421",
+    "beruf": "Mechatroniker/in EFZ",
+    "taetigkeiten": [
+      {
+        "name": "Mechatronische Baugruppen und Anlagenteile nach Montagezeichnung ausrichten, befestigen und verdrahten",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montage- und Verdrahtungsarbeit mit Hand- und Elektrowerkzeugen; bei Einzelstücken und Kleinserien gibt es keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Elektronische Bauteile löten und Kabel bzw. Stecker konfektionieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handlöten an Prototypen, Reparaturen und Kleinserien ist physisch. Lötautomaten übernehmen die Serienfertigung, nicht aber die typische Einzelarbeit dieser Person."
+      },
+      {
+        "name": "Anlagen in Betrieb nehmen, Testläufe fahren und mit Oszilloskop/Multimeter messen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Arbeit findet vor Ort an der Anlage statt: messen, einstellen, beobachten. Automatische Prüfstände gibt es nur für Serienprodukte, nicht für die typische Inbetriebnahme."
+      },
+      {
+        "name": "Störungen an Maschinen und Anlagen vor Ort diagnostizieren und Defekte reparieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fehlersuche und Reparatur erfordern Messungen, Sinneswahrnehmung und Handarbeit an der Anlage. Generative KI verkürzt diese Zeit nicht um die Hälfte."
+      },
+      {
+        "name": "Präventive Wartung ausführen, Sensoren und Aktoren prüfen und kalibrieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Wartungsarbeit an der Anlage. Condition Monitoring meldet zwar den Bedarf, die Arbeit selbst übernimmt es nicht."
+      },
+      {
+        "name": "Technische Zeichnungen und Schaltpläne lesen und Arbeitsschritte vorbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Pläne lesen und die Arbeit im Kopf planen ist eng mit der Ausführung verbunden. Bildverständnis für Schaltpläne spart hier keine 50 % der Zeit."
+      },
+      {
+        "name": "Prüf- und Messprotokolle sowie Service-/Arbeitsrapporte erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Spracheingabe, Fotos und Messwerten erstellt eine Service- oder Formular-App den Rapport bzw. das Protokoll; die Fachperson prüft jedes Dokument und gibt es frei. Werkstattlärm und Dialekt erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Steuerungs- oder Firmware-Codeabschnitte und Parameter nach Vorgabe anpassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob ein LLM bei kleinen Anpassungen in proprietären SPS-Umgebungen 50 % spart, da das Testen an der Anlage dominiert; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erzeugt den SPS-Code (z. B. SCL/ST) oder Firmware-Code aus der Beschreibung; die Fachperson prüft jede Änderung, überträgt sie und testet."
+      },
+      {
+        "name": "Herstellerdokumentation und Handbücher nach Fehlerursachen und Ersatzteilen durchsuchen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Die Zeitersparnis hängt stark davon ab, ob die Dokumentation digital vorliegt und in einem Wissensassistenten erschlossen ist; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Fachperson sucht und beurteilt selbst; ein Assistent mit Dokumentensuche über die PDF-Handbücher liefert passende Stellen und Zusammenfassungen."
+      },
+      {
+        "name": "Mit Ingenieuren, Produktion und Kunden Änderungen und Probleme besprechen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Abstimmung meist vor Ort an der Anlage, also Präsenztätigkeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Mechatroniker/in EFZ in einem Industriebetrieb (Maschinen-/Anlagenbau bzw. Instandhaltung) mit Montage, Inbetriebnahme, Wartung und Reparatur. Die ESCO-Zuordnung (Elektronikmechaniker, ISCO 3113) passt nur teilweise; sie wurde mit Berufswissen ergänzt, und «in wissenschaftlicher Forschung assistieren» wurde nicht übernommen. Grenzfälle sind die SPS-/Firmware-Anpassungen und die Dokumentationsrecherche.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur Nebentätigkeiten: Prüfprotokolle und Rapporte (Spracheingabe/Formular-App), kleine Steuerungs-Codeanpassungen (Chat-LLM) und die Recherche in Herstellerdokumentation (Dokumentensuche); Montage, Inbetriebnahme und Reparatur bleiben unberührt.",
+      "begruendung": "Nur rund 15 % der Arbeitszeit sind exponiert. Dort arbeitet die KI meist delegierend (sie erstellt Rapport oder Code, die Fachperson prüft jedes Ergebnis) oder unterstützend bei der Recherche. Der Kern des Berufs ist physische Arbeit an Anlagen; in Schweizer KMU-Werkstätten bremsen Lärm, Dialekt und fehlende digitale Dokumentation die Einführung zusätzlich.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

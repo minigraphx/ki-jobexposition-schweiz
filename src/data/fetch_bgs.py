@@ -1,358 +1,392 @@
 """
-fetch_bgs.py — Grenzgänger-Anteil pro Branche aus BFS BGS (Grenzgängerstatistik)
+fetch_bgs.py — Grenzgänger-Anteil pro Branche aus der BFS-Grenzgängerstatistik (GGS)
 
-Quelle: BFS Grenzgängerstatistik (BGS), Cube DF_GGS_4
-        „Ausländische Grenzgänger/-innen nach Wirtschaftszweig und Erwerbsstatus"
-        Manueller Download als CSV von stats.swiss:
-        https://stats.swiss/vis?lc=de&df[ds]=ds%3Adisseminate&df[id]=DF_GGS_4&df[ag]=CH1.GGS&df[vs]=1.0.0&dq=..Q&lom=LASTNPERIODS&lo=5
-        (Dataflow CH1.GGS,DF_GGS_4,1.0.0 — Download-Button → CSV)
+Zähler — BFS Grenzgängerstatistik (GGS; im Repo historisch «BGS»), stats.swiss-Dataflow
+    CH1.GGS,DF_GGS_4,1.0.0 «Ausländische Grenzgänger/-innen nach Wirtschaftszweig und
+    Erwerbsstatus», Quartalswerte seit 2002, Datenquelle ZEMIS / AHV.
+    SDMX-REST (öffentlich, ohne Schlüssel):
+        https://disseminate.stats.swiss/rest/data/CH1.GGS,DF_GGS_4,1.0.0/._T.Q?startPeriod=2022-Q1
+        Accept: application/vnd.sdmx.data+csv;version=1.0.0
+    Dimensionen: NOGA (CL_NOGA_DIVISION: Abteilungen 01–99, Abschnitte A–U, Sektoren 1–3,
+    _T), AUFZW (Erwerbsstatus: _T Total, 1 unselbständig, 50 selbständig, -9 unbekannt),
+    FREQ (Q). Verwendet: AUFZW=_T, die 2-stelligen NOGA-Abteilungen. Die Werte sind
+    Personen (auf Basis ZEMIS/AHV hochgerechnet, daher Dezimalstellen), keine VZÄ.
 
-Input:  data/raw/bgs_grenzgaenger_noga.csv  (Rohdaten, 2-stelliger NOGA-Code)
-Output: data/processed/grenzgaenger_anteil_branche.csv
-Spalten: branche, grenzgaenger, beschaeftigte_total, grenzgaenger_anteil
+Nenner — BFS STATENT, PX-Tabelle px-x-0602010000_101 «Arbeitsstätten und Beschäftigte nach
+    Jahr, Kanton, Wirtschaftsabteilung und Beobachtungseinheit», Schweiz total,
+    Beobachtungseinheit «Beschäftigte» (neuestes Jahr, Referenzmonat Dezember).
+    STATENT ist arbeitsortbasiert und erfasst Beschäftigte über den AHV-pflichtigen Lohn
+    (≥ 2'300 CHF/Jahr) — Grenzgänger/-innen sind darin enthalten. Personen mit Verträgen
+    bei mehreren Unternehmen werden mehrfach gezählt.
 
-Berechnung:
-    grenzgaenger_anteil = grenzgaenger_in_branche / beschaeftigte_branche_sake
+Definition:
+    cross_border_share[sector] = Σ GGS-Grenzgänger (NOGA-Abteilungen der Branche)
+                                 / Σ STATENT-Beschäftigte (gleiche NOGA-Abteilungen)
+    Bezugsperiode Zähler: Jahresmittel des neuesten vollständigen Kalenderjahres
+    (Mittel der vier Quartale), zusätzlich das neueste Quartal als eigene Spalte.
+    NOGA 97/98 (private Haushalte) und 99 (exterritoriale Organisationen) fehlen in
+    STATENT und werden daher auch im Zähler nicht berücksichtigt.
 
-Fallback: Falls die Rohdatei fehlt (z.B. in CI), werden realistische
-          Schätzwerte basierend auf bekannten CH-Statistiken verwendet.
+Dateien:
+    data/raw/bgs_df_ggs_4.csv                 SDMX-CSV-Rohdownload (gitignored)
+    data/processed/bgs_grenzgaenger_noga.csv  aufbereitet: noga, period, cross_border, obs_status
+    data/processed/statent_beschaeftigte_noga.csv  year, noga, employed, fte
+    data/processed/grenzgaenger_anteil_branche.csv Ergebnis je interner Branche
+
+Aufruf:
+    python src/data/fetch_bgs.py              # GGS + STATENT online laden, alles neu schreiben
+    python src/data/fetch_bgs.py --offline    # nur die versionierten CSVs verwenden
+    python src/data/fetch_bgs.py --period 2026-Q2   # einzelnes Quartal statt Jahresmittel
+    python src/data/fetch_bgs.py --dry-run    # nichts schreiben, nur Vergleich ausgeben
+
+Historie: Bis Oktober 2026 enthielt dieses Skript hart kodierte Schätzanteile
+(BRANCHE_FALLBACK_ANTEIL) und rechnete mit dem BZ-2008-Nenner aus kmu_anteil_branche.csv.
+Beides ist entfernt; die alten Werte sind nur noch in der Git-Historie.
 """
 
 from __future__ import annotations
 
+import argparse
+import io
 import logging
+import re
 from pathlib import Path
 
 import pandas as pd
 
+from fetch_statent import NOGA_ZU_BRANCHE  # gemeinsames NOGA-Abteilung → Branche-Mapping
+
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
-PROCESSED_DATA_PATH = Path(__file__).parent.parent.parent / "data" / "processed"
-RAW_DATA_PATH = Path(__file__).parent.parent.parent / "data" / "raw"
-SCORES_PATH = PROCESSED_DATA_PATH / "scores.csv"
-KMU_PATH = PROCESSED_DATA_PATH / "kmu_anteil_branche.csv"
-BGS_RAW_PATH = RAW_DATA_PATH / "bgs_grenzgaenger_noga.csv"
+ROOT = Path(__file__).parent.parent.parent
+PROCESSED_DATA_PATH = ROOT / "data" / "processed"
+RAW_DATA_PATH = ROOT / "data" / "raw"
 
-# NOGA-Abteilung (2-stellig) → interne Branche
-# Gleiche Zuordnung wie in fetch_statent.py
-NOGA_ZU_BRANCHE: dict[str, str] = {
-    # Landwirtschaft / Forstwirtschaft / Fischerei
-    "01": "Landwirtschaft",
-    "02": "Landwirtschaft",
-    "03": "Landwirtschaft",
-    # Bergbau → Industrie
-    "05": "Industrie",
-    "06": "Industrie",
-    "07": "Industrie",
-    "08": "Umwelt",
-    "09": "Industrie",
-    # Verarbeitendes Gewerbe
-    "10": "Industrie",
-    "11": "Industrie",
-    "12": "Industrie",
-    "13": "Industrie",
-    "14": "Industrie",
-    "15": "Industrie",
-    "16": "Industrie",
-    "17": "Industrie",
-    "18": "Medien",
-    "19": "Industrie",
-    "20": "Industrie",
-    "21": "Industrie",
-    "22": "Industrie",
-    "23": "Industrie",
-    "24": "Industrie",
-    "25": "Industrie",
-    "26": "ICT",
-    "27": "Industrie",
-    "28": "Industrie",
-    "29": "Industrie",
-    "30": "Industrie",
-    "31": "Industrie",
-    "32": "Industrie",
-    "33": "Industrie",
-    # Energie / Wasser / Abfall
-    "35": "Umwelt",
-    "36": "Umwelt",
-    "37": "Umwelt",
-    "38": "Umwelt",
-    "39": "Umwelt",
-    # Bau
-    "41": "Bau",
-    "42": "Bau",
-    "43": "Bau",
-    # Handel
-    "45": "Detailhandel",
-    "46": "Dienstleistungen",
-    "47": "Detailhandel",
-    # Transport / Logistik
-    "49": "Transport",
-    "50": "Transport",
-    "51": "Transport",
-    "52": "Transport",
-    "53": "Transport",
-    # Gastgewerbe
-    "55": "Gastgewerbe",
-    "56": "Gastgewerbe",
-    # Medien / ICT
-    "58": "Medien",
-    "59": "Medien",
-    "60": "Medien",
-    "61": "ICT",
-    "62": "ICT",
-    "63": "ICT",
-    # Finanz- und Versicherungsdienstleistungen
-    "64": "Finanzen",
-    "65": "Versicherungen",
-    "66": "Finanzen",
-    # Immobilien
-    "68": "Immobilien",
-    # Freiberufliche / wissenschaftliche / technische Tätigkeiten
-    "69": "Recht",
-    "70": "Beratung",
-    "71": "Beratung",
-    "72": "Dienstleistungen",
-    "73": "Medien",
-    "74": "Dienstleistungen",
-    "75": "Gesundheit",
-    # Sonstige wirtschaftliche Dienstleistungen
-    "77": "Dienstleistungen",
-    "78": "Dienstleistungen",
-    "79": "Gastgewerbe",
-    "80": "Sicherheit",
-    "81": "Dienstleistungen",
-    "82": "Dienstleistungen",
-    # Öffentliche Verwaltung
-    "84": "Öff. Verwaltung",
-    # Bildung
-    "85": "Bildung",
-    # Gesundheit / Soziales
-    "86": "Gesundheit",
-    "87": "Soziales",
-    "88": "Soziales",
-    # Kultur / Sport / Unterhaltung
-    "90": "Medien",
-    "91": "Bildung",
-    "92": "Dienstleistungen",
-    "93": "Dienstleistungen",
-    # Interessenvertretungen / persönliche Dienstleistungen
-    "94": "Verwaltung",
-    "95": "Dienstleistungen",
-    "96": "Dienstleistungen",
+BGS_RAW_PATH = RAW_DATA_PATH / "bgs_df_ggs_4.csv"
+BGS_CSV = PROCESSED_DATA_PATH / "bgs_grenzgaenger_noga.csv"
+STATENT_CSV = PROCESSED_DATA_PATH / "statent_beschaeftigte_noga.csv"
+OUTPUT_CSV = PROCESSED_DATA_PATH / "grenzgaenger_anteil_branche.csv"
+
+SDMX_DATA_URL = "https://disseminate.stats.swiss/rest/data/CH1.GGS,DF_GGS_4,1.0.0/._T.Q"
+SDMX_CSV_ACCEPT = "application/vnd.sdmx.data+csv;version=1.0.0"
+BGS_START = "2022-Q1"
+STATENT_URL = (
+    "https://www.pxweb.bfs.admin.ch/api/v1/de/"
+    "px-x-0602010000_101/px-x-0602010000_101.px"
+)
+STATENT_SCHWEIZ = "999"
+STATENT_EINHEIT_BESCHAEFTIGTE = "2"
+STATENT_EINHEIT_VZAE = "5"
+HTTP_HEADERS = {"User-Agent": "ki-jobexposition-schweiz (Forschung, sequenziell, geringe Last)"}
+
+# NOGA-Abteilungen, die STATENT nicht abdeckt → bewusst ohne Branche (Zähler und Nenner)
+NOGA_OHNE_BRANCHE: dict[str, str] = {
+    "97": "Private Haushalte mit Hauspersonal",
+    "98": "Private Haushalte, Eigenbedarf",
+    "99": "Exterritoriale Organisationen",
 }
 
-# Realistische Grenzgänger-Anteile pro interner Branche
-# Basierend auf BFS BGS-Auswertungen (Gesamtbestand ~380'000 Grenzgänger, 2023)
-# Anteil = Grenzgänger / Gesamtbeschäftigte in der Branche (SAKE-Basis)
-BRANCHE_FALLBACK_ANTEIL: dict[str, float] = {
-    "Bau": 0.18,              # Bauhaupt- und Ausbaugewerbe: viele Grenzgänger aus F/I/D
-    "Industrie": 0.15,        # MEM, Pharma, Chemie: hoher Grenzgängeranteil (Genf, Basel, Tessin)
-    "Gastgewerbe": 0.14,      # Gastronomie/Hotellerie: saisonal, Grenzregionen
-    "Transport": 0.11,        # Logistik, Spedition, Strassengüterverkehr
-    "Gesundheit": 0.10,       # Spitäler in Grenzregionen (Genf, Basel): hoher Anteil
-    "Detailhandel": 0.09,     # Einkaufstourismus-Effekt, Grenznahe Läden
-    "Soziales": 0.09,         # Soziale Arbeit, Kinderbetreuung in Grenzregionen
-    "ICT": 0.08,              # Tech-Hubs (Zürich, Genf): internationale Fachkräfte
-    "Dienstleistungen": 0.08, # Heterogener Bereich, moderater Anteil
-    "Landwirtschaft": 0.12,   # Saisonarbeit, v.a. aus Nachbarländern
-    "Finanzen": 0.07,         # Bankensektor: v.a. Genf (Frankreich-Grenze)
-    "Versicherungen": 0.06,   # Strukturierter Sektor, moderater Grenzgängeranteil
-    "Recht": 0.06,            # Anwaltskanzleien, Notariate: eher inländisch
-    "Beratung": 0.06,         # Unternehmensberatung: internationale Fachkräfte
-    "Bildung": 0.05,          # Schulen: meist mit CH-Abschluss
-    "Verwaltung": 0.04,       # Private Verwaltung, Verbände
-    "Öff. Verwaltung": 0.04,  # Öffentlicher Dienst: Bürgerschaftspflicht bei Kantonen
-    "Immobilien": 0.05,       # Immobilienverwaltung, Makler
-    "Umwelt": 0.07,           # Entsorgung, Energie: technische Fachkräfte
-    "Sicherheit": 0.05,       # Bewachung, Schutz: teils Grenzgänger
-    "Medien": 0.04,           # Verlage, TV, Radio: eher inländisch oder Expatriates
-}
+_QUARTAL_RE = re.compile(r"^(\d{4})-Q([1-4])$")
 
 
-def _load_bgs_from_csv(path: Path = BGS_RAW_PATH) -> pd.DataFrame | None:
+# ---------------------------------------------------------------------------
+# Parsing
+# ---------------------------------------------------------------------------
+
+def _code(wert: str) -> str:
+    """SDMX-CSV mit labels=both liefert «01: Landwirtschaft …» → nur den Code behalten."""
+    return str(wert).split(":", 1)[0].strip()
+
+
+def parse_bgs_sdmx_csv(source) -> pd.DataFrame:
     """
-    Lädt BGS-Rohdaten (Cube DF_GGS_4) aus dem manuellen CSV-Download von stats.swiss
-    und aggregiert auf interne Branchen.
+    Liest den SDMX-CSV-Export von DF_GGS_4 (Pfad, Datei-Objekt oder Text-Buffer).
 
-    Das Rohformat hat eine Zeile pro (NOGA-Abteilung, Erwerbsstatus, Quartal):
-        - NOGA                 2-stelliger Code (z.B. "23"), "_T" = Total
-        - AUFZW                Erwerbsstatus ("_T" = Total, sonst Stati)
-        - TIME_PERIOD          z.B. "2025-Q4"
-        - OBS_VALUE            Anzahl Grenzgänger/-innen (VZÄ-normalisiert, Dezimal)
-
-    Wir filtern auf Erwerbsstatus=Total (_T), aggregieren pro NOGA auf das
-    letzte verfügbare Quartal und mappen NOGA → interne Branche.
+    Behält Erwerbsstatus Total (AUFZW=_T), Quartalswerte und die 2-stelligen
+    NOGA-Abteilungen; Abschnitte (A–U), Sektoren (1–3), _T und -9 entfallen.
 
     Returns:
-        DataFrame mit Spalten [branche, grenzgaenger] oder None bei Fehler.
+        DataFrame [noga, period, cross_border, obs_status], sortiert.
+
+    Raises:
+        ValueError: bei fehlenden Pflichtspalten oder ohne verwertbare Zeilen.
     """
-    if not path.exists():
-        return None
+    df = pd.read_csv(source, dtype=str, keep_default_na=False)
+    pflicht = {"NOGA", "AUFZW", "TIME_PERIOD", "OBS_VALUE"}
+    if fehlend := pflicht - set(df.columns):
+        raise ValueError(f"GGS-CSV unvollständig — fehlende Spalten: {sorted(fehlend)}")
 
-    try:
-        df = pd.read_csv(path, dtype={"NOGA": str, "AUFZW": str}, low_memory=False)
-    except Exception as exc:
-        logger.warning(f"Konnte BGS-Rohdatei nicht lesen: {path}: {exc}")
-        return None
+    for spalte in ("NOGA", "AUFZW", "FREQ"):
+        if spalte in df.columns:
+            df[spalte] = df[spalte].map(_code)
+    maske = (df["AUFZW"] == "_T") & df["NOGA"].str.fullmatch(r"\d{2}")
+    if "FREQ" in df.columns:
+        maske &= df["FREQ"] == "Q"
+    df = df[maske]
+    if df.empty:
+        raise ValueError("GGS-CSV enthält keine Quartalszeilen mit AUFZW=_T und NOGA-Abteilung.")
 
-    required_cols = {"NOGA", "AUFZW", "TIME_PERIOD", "OBS_VALUE"}
-    missing = required_cols - set(df.columns)
-    if missing:
-        logger.warning(f"BGS-Rohdatei unvollständig — fehlende Spalten: {missing}")
-        return None
-
-    total_mask = (df["AUFZW"] == "_T") & (df["NOGA"] != "_T")
-    snapshot = df[total_mask].copy()
-    if snapshot.empty:
-        logger.warning("BGS-Rohdatei enthält keine Zeilen mit AUFZW=_T.")
-        return None
-
-    latest_period = sorted(snapshot["TIME_PERIOD"].unique())[-1]
-    latest = snapshot[snapshot["TIME_PERIOD"] == latest_period].copy()
-    latest["branche"] = latest["NOGA"].str.zfill(2).map(NOGA_ZU_BRANCHE)
-    latest = latest.dropna(subset=["branche"])
-
-    result = (
-        latest.groupby("branche", as_index=False)["OBS_VALUE"]
-        .sum()
-        .rename(columns={"OBS_VALUE": "grenzgaenger"})
-    )
-    logger.info(
-        f"BGS CSV geladen: {len(result)} Branchen aggregiert "
-        f"(Quartal {latest_period}, Total: {int(result['grenzgaenger'].sum()):,} Grenzgänger)"
-    )
-    return result
+    out = pd.DataFrame({
+        "noga": df["NOGA"],
+        "period": df["TIME_PERIOD"].str.strip(),
+        "cross_border": pd.to_numeric(df["OBS_VALUE"], errors="coerce"),
+        "obs_status": df["OBS_STATUS"] if "OBS_STATUS" in df.columns else "",
+    })
+    if out["cross_border"].isna().any():
+        n = int(out["cross_border"].isna().sum())
+        logger.warning(f"GGS: {n} Werte nicht numerisch → 0 gesetzt.")
+        out["cross_border"] = out["cross_border"].fillna(0.0)
+    if not out["period"].str.fullmatch(_QUARTAL_RE.pattern).all():
+        raise ValueError("GGS-CSV: TIME_PERIOD nicht im Format JJJJ-Qn.")
+    return out.sort_values(["period", "noga"]).reset_index(drop=True)
 
 
-def _load_sake_beschaeftigte() -> dict[str, float]:
+def parse_statent_pxweb(antwort: dict) -> pd.DataFrame:
     """
-    Lädt die Beschäftigten-Totale pro Branche.
-
-    Bevorzugt STATENT (`kmu_anteil_branche.csv`): sektorweite Gesamtbeschäftigung
-    aller Betriebe gemäss BFS BZ/STATENT — korrekter Nenner für den Grenzgänger-Anteil,
-    weil BGS ebenfalls sektorweit zählt. Fallback: Summe der Beschäftigten der 204
-    Berufe aus `scores.csv` (unvollständig, nur als Notbehelf).
-
-    Returns:
-        dict: branche → Gesamtbeschäftigte (absolute Zahl)
+    Wandelt die PxWeb-JSON-Antwort (Schweiz total, alle Wirtschaftsabteilungen,
+    Beobachtungseinheiten Beschäftigte und VZÄ) in [year, noga, employed, fte].
+    «X» (Datenschutz) und «...» werden zu 0.
     """
-    if KMU_PATH.exists():
-        df = pd.read_csv(KMU_PATH)
-        if "beschaeftigte_total" in df.columns:
-            return dict(zip(df["branche"], df["beschaeftigte_total"].astype(float)))
-        logger.warning(
-            f"{KMU_PATH.name} ohne Spalte 'beschaeftigte_total' — falle auf scores.csv zurück."
-        )
-
-    if not SCORES_PATH.exists():
-        logger.warning(f"Weder {KMU_PATH.name} noch scores.csv gefunden — Nenner fehlt.")
-        return {}
-
-    logger.warning(
-        f"{KMU_PATH.name} nicht vorhanden — verwende SAKE-Beschäftigtenzahl aus scores.csv "
-        "(unterschätzt Sektorgesamtheit, Anteil wird zu hoch)."
+    zeilen = []
+    for d in antwort["data"]:
+        jahr, _kanton, noga, einheit = d["key"]
+        if noga == "999":
+            continue
+        wert = pd.to_numeric(d["values"][0], errors="coerce")
+        zeilen.append({
+            "year": int(jahr),
+            "noga": str(noga).zfill(2),
+            "einheit": einheit,
+            "wert": 0.0 if pd.isna(wert) else float(wert),
+        })
+    if not zeilen:
+        raise ValueError("STATENT-Antwort ohne Daten.")
+    df = pd.DataFrame(zeilen).pivot_table(
+        index=["year", "noga"], columns="einheit", values="wert", aggfunc="sum"
     )
-    df = pd.read_csv(SCORES_PATH)
-    return (
-        df.groupby("branche")["beschaeftigte_1000"]
-        .sum()
-        .mul(1000)
-        .to_dict()
+    df = df.rename(columns={STATENT_EINHEIT_BESCHAEFTIGTE: "employed",
+                            STATENT_EINHEIT_VZAE: "fte"})
+    for spalte in ("employed", "fte"):
+        if spalte not in df.columns:
+            df[spalte] = 0.0
+    df = df[["employed", "fte"]].round(0).astype(int).reset_index()
+    df.columns.name = None
+    return df.sort_values(["year", "noga"]).reset_index(drop=True)
+
+
+# ---------------------------------------------------------------------------
+# Online-Abruf
+# ---------------------------------------------------------------------------
+
+def fetch_bgs_online(start: str = BGS_START, raw_path: Path = BGS_RAW_PATH) -> pd.DataFrame:
+    """Lädt DF_GGS_4 (AUFZW=_T, Quartale ab `start`) als SDMX-CSV; Rohdatei → data/raw/."""
+    import requests
+
+    resp = requests.get(
+        SDMX_DATA_URL,
+        params={"startPeriod": start},
+        headers={**HTTP_HEADERS, "Accept": SDMX_CSV_ACCEPT},
+        timeout=120,
     )
+    resp.raise_for_status()
+    raw_path.parent.mkdir(parents=True, exist_ok=True)
+    raw_path.write_text(resp.text, encoding="utf-8")
+    logger.info(f"GGS-Rohdaten gespeichert: {raw_path} ({len(resp.text):,} Zeichen)")
+    return parse_bgs_sdmx_csv(io.StringIO(resp.text))
 
 
-def compute_grenzgaenger_anteil(use_fallback: bool = False) -> pd.DataFrame:
+def fetch_statent_online() -> pd.DataFrame:
+    """Lädt STATENT-Beschäftigte und -VZÄ je Wirtschaftsabteilung (Schweiz, neuestes Jahr)."""
+    import requests
+
+    meta = requests.get(STATENT_URL, headers=HTTP_HEADERS, timeout=60)
+    meta.raise_for_status()
+    jahr = max(meta.json()["variables"][0]["values"])
+    query = {
+        "query": [
+            {"code": "Jahr", "selection": {"filter": "item", "values": [jahr]}},
+            {"code": "Kanton", "selection": {"filter": "item", "values": [STATENT_SCHWEIZ]}},
+            {"code": "Wirtschaftsabteilung", "selection": {"filter": "all", "values": ["*"]}},
+            {"code": "Beobachtungseinheit", "selection": {
+                "filter": "item",
+                "values": [STATENT_EINHEIT_BESCHAEFTIGTE, STATENT_EINHEIT_VZAE]}},
+        ],
+        "response": {"format": "json"},
+    }
+    resp = requests.post(STATENT_URL, json=query, headers=HTTP_HEADERS, timeout=120)
+    resp.raise_for_status()
+    return parse_statent_pxweb(resp.json())
+
+
+# ---------------------------------------------------------------------------
+# Berechnung
+# ---------------------------------------------------------------------------
+
+def waehle_periode(bgs: pd.DataFrame, periode: str | None = None) -> tuple[pd.Series, str]:
     """
-    Berechnet den Grenzgänger-Anteil pro interner Branche.
+    Wählt die Bezugsperiode des Zählers.
 
     Args:
-        use_fallback: Wenn True, werden direkt die Fallback-Schätzwerte verwendet
-                      (ohne API-Aufruf). Nützlich für Tests.
+        bgs: Ausgabe von parse_bgs_sdmx_csv.
+        periode: None → Jahresmittel des neuesten vollständigen Jahres (4 Quartale);
+                 «JJJJ» → Jahresmittel dieses Jahres; «JJJJ-Qn» → dieses Quartal.
 
     Returns:
-        DataFrame mit Spalten:
-            branche, grenzgaenger, beschaeftigte_total, grenzgaenger_anteil
+        (Grenzgänger je NOGA-Abteilung, Periodenbezeichnung)
     """
-    # Beschäftigtenzahlen aus SAKE
-    sake_beschaeftigte = _load_sake_beschaeftigte()
+    quartale = bgs["period"].drop_duplicates()
+    jahre = quartale.str[:4].value_counts()
+    vollstaendig = sorted(jahre[jahre == 4].index)
 
-    # Alle 21 internen Branchen aus NOGA_ZU_BRANCHE
-    alle_branchen = sorted(set(NOGA_ZU_BRANCHE.values()))
+    if periode is None:
+        if not vollstaendig:
+            raise ValueError("Kein Kalenderjahr mit vier GGS-Quartalen vorhanden.")
+        periode = vollstaendig[-1]
 
-    bgs_df: pd.DataFrame | None = None
-    if not use_fallback:
-        bgs_df = _load_bgs_from_csv()
+    if _QUARTAL_RE.match(periode):
+        sel = bgs[bgs["period"] == periode]
+        if sel.empty:
+            raise ValueError(f"Quartal {periode} nicht in den GGS-Daten.")
+        return sel.set_index("noga")["cross_border"], periode
 
-    if bgs_df is not None:
-        logger.info("Verwende reale BGS-Daten aus stats.swiss CSV (DF_GGS_4).")
-        bgs_map = dict(zip(bgs_df["branche"], bgs_df["grenzgaenger"]))
+    if re.fullmatch(r"\d{4}", periode):
+        if periode not in vollstaendig:
+            raise ValueError(f"Jahr {periode} hat nicht vier GGS-Quartale.")
+        sel = bgs[bgs["period"].str.startswith(periode)]
+        return sel.groupby("noga")["cross_border"].mean(), periode
+
+    raise ValueError(f"Ungültige Periode {periode!r} (erwartet JJJJ oder JJJJ-Qn).")
+
+
+def aggregiere_nach_branche(werte: pd.Series) -> tuple[pd.Series, float]:
+    """
+    Summiert Werte je NOGA-Abteilung auf die internen Branchen.
+
+    Returns:
+        (Summe je Branche über alle 21 Branchen, Summe der bewusst ausgeschlossenen
+        NOGA 97–99)
+
+    Raises:
+        ValueError: wenn eine NOGA-Abteilung weder gemappt noch ausgeschlossen ist.
+    """
+    noga = werte.index.astype(str).str.zfill(2)
+    werte = pd.Series(werte.to_numpy(dtype=float), index=noga)
+    unbekannt = sorted(set(noga) - set(NOGA_ZU_BRANCHE) - set(NOGA_OHNE_BRANCHE))
+    if unbekannt:
+        raise ValueError(f"NOGA-Abteilungen ohne Branchen-Zuordnung: {unbekannt}")
+    ausgeschlossen = float(werte[werte.index.isin(list(NOGA_OHNE_BRANCHE))].sum())
+    gemappt = werte[werte.index.isin(list(NOGA_ZU_BRANCHE))]
+    summe = gemappt.groupby(gemappt.index.map(NOGA_ZU_BRANCHE)).sum()
+    alle = sorted(set(NOGA_ZU_BRANCHE.values()))
+    return summe.reindex(alle, fill_value=0.0), ausgeschlossen
+
+
+def compute_grenzgaenger_anteil(
+    bgs: pd.DataFrame,
+    statent: pd.DataFrame,
+    periode: str | None = None,
+) -> pd.DataFrame:
+    """
+    Grenzgänger-Anteil je interner Branche.
+
+    Returns:
+        DataFrame [sector, cross_border, employed_total, cross_border_share,
+                   cross_border_quarter, cross_border_share_quarter,
+                   ggs_period, ggs_quarter, statent_year], absteigend nach Anteil.
+    """
+    zaehler, label = waehle_periode(bgs, periode)
+    letztes_quartal = bgs["period"].max()
+    zaehler_q, _ = waehle_periode(bgs, letztes_quartal)
+
+    statent_jahr = int(statent["year"].max())
+    nenner_noga = statent[statent["year"] == statent_jahr].set_index("noga")["employed"]
+
+    gg, _ = aggregiere_nach_branche(zaehler)
+    gg_q, _ = aggregiere_nach_branche(zaehler_q)
+    nenner, _ = aggregiere_nach_branche(nenner_noga)
+    if (nenner <= 0).any():
+        raise ValueError(f"STATENT-Nenner fehlt für: {list(nenner[nenner <= 0].index)}")
+
+    df = pd.DataFrame({
+        "sector": gg.index,
+        "cross_border": gg.round(0).astype(int).to_numpy(),
+        "employed_total": nenner.round(0).astype(int).to_numpy(),
+        "cross_border_share": (gg / nenner).round(4).to_numpy(),
+        "cross_border_quarter": gg_q.round(0).astype(int).to_numpy(),
+        "cross_border_share_quarter": (gg_q / nenner).round(4).to_numpy(),
+        "ggs_period": label,
+        "ggs_quarter": letztes_quartal,
+        "statent_year": statent_jahr,
+    })
+    if not df["cross_border_share"].between(0, 1).all():
+        raise ValueError("Grenzgänger-Anteil ausserhalb 0–1 — Zähler/Nenner prüfen.")
+    return df.sort_values("cross_border_share", ascending=False).reset_index(drop=True)
+
+
+def vergleich_mit_bisher(neu: pd.DataFrame, alt_path: Path = OUTPUT_CSV) -> pd.DataFrame | None:
+    """Vergleicht den Anteil je Branche mit der bisher gespeicherten Ergebnisdatei."""
+    if not alt_path.exists():
+        return None
+    alt = pd.read_csv(alt_path)[["sector", "cross_border", "cross_border_share"]]
+    v = alt.merge(neu[["sector", "cross_border", "cross_border_share"]],
+                  on="sector", how="outer", suffixes=("_alt", "_neu"))
+    v["diff_pp"] = ((v["cross_border_share_neu"] - v["cross_border_share_alt"]) * 100).round(1)
+    return v.sort_values("cross_border_share_neu", ascending=False).reset_index(drop=True)
+
+
+# ---------------------------------------------------------------------------
+# CLI
+# ---------------------------------------------------------------------------
+
+def main(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description=__doc__.split("\n")[1])
+    parser.add_argument("--offline", action="store_true",
+                        help="versionierte CSVs in data/processed/ verwenden (kein Netz)")
+    parser.add_argument("--period", dest="periode", metavar="PERIOD", default=None,
+                        help="JJJJ (Jahresmittel) oder JJJJ-Qn; Standard: neuestes volles Jahr")
+    parser.add_argument("--start", default=BGS_START, help="erstes GGS-Quartal beim Abruf")
+    parser.add_argument("--dry-run", action="store_true", help="nichts schreiben")
+    args = parser.parse_args(argv)
+
+    if args.offline:
+        bgs = pd.read_csv(BGS_CSV, dtype={"noga": str, "period": str, "obs_status": str},
+                          keep_default_na=False)
+        statent = pd.read_csv(STATENT_CSV, dtype={"noga": str})
+        logger.info(f"Offline: {BGS_CSV.name} ({len(bgs)} Zeilen), {STATENT_CSV.name}")
     else:
-        if not use_fallback:
-            logger.warning(
-                f"BGS-Rohdaten nicht gefunden unter {BGS_RAW_PATH} — verwende FALLBACK-SCHÄTZWERTE. "
-                "Diese basieren auf bekannten CH-Statistiken (~380'000 Grenzgänger) "
-                "und sind KEINE offiziellen BFS-Zahlen."
-            )
-        bgs_map = None
+        bgs = fetch_bgs_online(args.start)
+        statent = fetch_statent_online()
+        logger.info(f"GGS: {bgs['period'].min()} … {bgs['period'].max()}, "
+                    f"{bgs['noga'].nunique()} NOGA-Abteilungen")
+        logger.info(f"STATENT {statent['year'].max()}: "
+                    f"{int(statent['employed'].sum()):,} Beschäftigte")
+        if not args.dry_run:
+            bgs.to_csv(BGS_CSV, index=False)
+            statent.to_csv(STATENT_CSV, index=False)
 
-    records = []
-    for branche in alle_branchen:
-        # Beschäftigte aus SAKE (absolute Zahl)
-        beschaeftigte_total = sake_beschaeftigte.get(branche, 0.0)
+    df = compute_grenzgaenger_anteil(bgs, statent, args.periode)
 
-        if bgs_map is not None:
-            # Reale Grenzgängerzahl aus PxWeb
-            grenzgaenger = float(bgs_map.get(branche, 0))
-        else:
-            # Fallback: Anteil × Beschäftigte
-            anteil_fallback = BRANCHE_FALLBACK_ANTEIL.get(branche, 0.05)
-            if beschaeftigte_total > 0:
-                grenzgaenger = round(anteil_fallback * beschaeftigte_total)
-            else:
-                # Keine SAKE-Daten: Schätzwert basierend auf CH-Durchschnitt
-                grenzgaenger = 0.0
+    zaehler, label = waehle_periode(bgs, args.periode)
+    _, ausgeschlossen = aggregiere_nach_branche(zaehler)
+    logger.info(
+        f"Zähler GGS {label}: {df['cross_border'].sum():,} Grenzgänger/-innen in 21 Branchen "
+        f"(+{ausgeschlossen:,.0f} in NOGA 97–99, nicht zugeordnet); "
+        f"Nenner STATENT {df['statent_year'].iloc[0]}: {df['employed_total'].sum():,}"
+    )
 
-        if beschaeftigte_total > 0:
-            anteil = grenzgaenger / beschaeftigte_total
-        else:
-            anteil = BRANCHE_FALLBACK_ANTEIL.get(branche, 0.05)
+    vergleich = vergleich_mit_bisher(df)
+    if vergleich is not None:
+        logger.info("\nVergleich mit bisheriger Datei (Anteil alt → neu, Δ in %-Punkten):")
+        for _, r in vergleich.iterrows():
+            logger.info(f"  {r['sector']:18s} {r['cross_border_share_alt']:6.1%} → "
+                        f"{r['cross_border_share_neu']:6.1%}  ({r['diff_pp']:+.1f})")
 
-        records.append(
-            {
-                "branche": branche,
-                "grenzgaenger": int(grenzgaenger),
-                "beschaeftigte_total": int(beschaeftigte_total) if beschaeftigte_total > 0 else 0,
-                "grenzgaenger_anteil": round(anteil, 4),
-            }
-        )
-
-    df = pd.DataFrame(records)
-    return df.sort_values("grenzgaenger_anteil", ascending=False).reset_index(drop=True)
-
-
-def main() -> None:
-    logger.info("Berechne Grenzgänger-Anteil pro Branche …")
-
-    df = compute_grenzgaenger_anteil(use_fallback=False)
-
-    # Vollständigkeitsprüfung
-    expected_branchen = set(NOGA_ZU_BRANCHE.values())
-    found_branchen = set(df["branche"])
-    if missing := expected_branchen - found_branchen:
-        logger.warning(f"Keine Daten für Branchen: {missing}")
-
-    out_path = PROCESSED_DATA_PATH / "grenzgaenger_anteil_branche.csv"
-    df.to_csv(out_path, index=False)
-    logger.info(f"Gespeichert: {out_path}")
-
-    logger.info("\nGrenzgänger-Anteil pro Branche:")
-    for _, row in df.iterrows():
-        bar = "█" * int(row["grenzgaenger_anteil"] * 50)
-        logger.info(
-            f"  {row['branche']:20s} {row['grenzgaenger_anteil']:5.1%}  "
-            f"({row['grenzgaenger']:>7,.0f} Grenzgänger)  {bar}"
-        )
+    if args.dry_run:
+        logger.info("--dry-run: nichts geschrieben.")
+        return
+    df.to_csv(OUTPUT_CSV, index=False)
+    logger.info(f"Gespeichert: {OUTPUT_CSV}")
 
 
 if __name__ == "__main__":

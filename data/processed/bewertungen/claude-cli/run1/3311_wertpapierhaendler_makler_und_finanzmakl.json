@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "2f15034451b9deec97e3d5c0ace26ed88e42480789c1939773312055102e23e4",
+    "isco_code": "3311",
+    "beruf": "Wertpapierhändler, -makler und Finanzmakler",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:36:12+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2824,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 6045,
+      "api_aequivalent_usd": 0.1508302
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2824,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 6045,
+        "output_tokens_details": {
+          "thinking_tokens": 2703
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2824,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1508302
+      }
+    ],
+    "request_ids": [
+      "07ee0c03-5ebf-4d13-a2c6-962a94548299"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3311",
+    "beruf": "Wertpapierhändler, -makler und Finanzmakler",
+    "taetigkeiten": [
+      {
+        "name": "Kunden- und Portfoliomanager-Aufträge im Handelssystem (OMS/EMS) erfassen und am Markt ausführen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Ausführung läuft über Handelssysteme, und der Zeitdruck in Echtzeit lässt keinen LLM-Nutzen zu. Klassische Software wie Ausführungsalgorithmen (VWAP/TWAP), Smart Order Routing und STP kann den Grossteil der Ausführung übernehmen."
+      },
+      {
+        "name": "Kurse, Orderbuch und offene Positionen während der Handelszeit überwachen und auf Marktbewegungen reagieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Überwachung in Echtzeit erfordert ständige Aufmerksamkeit und schnelle Entscheide; generative KI spart hier keine 50 %. Klassische Limit-Alerts übernehmen nur einen Teil der Überwachung."
+      },
+      {
+        "name": "Kunden und Kundenberatern telefonisch und per Bloomberg-Chat Preise stellen, Kursinformationen geben und Orders entgegennehmen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Kommunikation in Echtzeit mit verbindlichen Preisen und Aufträgen beruht auf Beziehung und Verantwortung. Chat-to-Order-Hilfen sparen nicht 50 % der Zeit, und Auto-Quoting ist im typischen CH-Bankenhandel nur begrenzt verbreitet."
+      },
+      {
+        "name": "Finanz- und Wirtschaftsnachrichten, Research und Emittenteninformationen sichten und zusammenfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Zusammenfassungen in Terminals und Recherche-Agenten mit Websuche erstellen Nachrichtenüberblicke und Emittenten-Briefings. Die händlerische Fachperson liest jede Zusammenfassung kritisch und prüft relevante Fakten an der Quelle nach."
+      },
+      {
+        "name": "Finanzmarkt- und Konjunkturtrends analysieren und daraus Handelsideen ableiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Datenanalyse-Agenten bei der eigenen Marktanalyse wirklich 50 % Zeit sparen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die händlerische Fachperson analysiert und urteilt selbst. Datenanalyse-Agenten mit Code-Ausführung erstellen Auswertungen, Charts und Szenarien und fassen Konjunkturdaten zusammen."
+      },
+      {
+        "name": "Entscheide über Eigen- und Absicherungspositionen treffen und Marktrisiken innerhalb der Limiten steuern",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das sind Ermessensentscheide unter Verantwortung und Zeitdruck; generative KI spart hier keine 50 %."
+      },
+      {
+        "name": "Marktkommentare, Morning Notes und Produktinformationen für Kundschaft und Kundenberater verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die händlerische Fachperson liefert Stichworte und Marktdaten als Text, und das LLM entwirft Kommentar oder Produkttext. Die Fachperson prüft jeden Text auf Zahlen und Aussagen. FIDLEG-Vorgaben für Kundeninformationen gelten als Hemmnis."
+      },
+      {
+        "name": "Ausführungsbestätigungen abgleichen und Differenzen mit Back Office und Gegenparteien klären",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Klassische Software übernimmt den Abgleich (Confirmation-Matching-Plattformen, STP-Abstimmung). Die verbleibende Klärung von Differenzen ist Abstimmungsarbeit mit wenig LLM-Nutzen."
+      },
+      {
+        "name": "Pre-Trade-Prüfungen, Best-Execution-Nachweise und Transaktionsmeldungen bearbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Compliance-Checks im OMS und automatisiertes Transaktionsreporting nach FinfraG sind klassische Software und keine LLM-Leistung."
+      },
+      {
+        "name": "Handelsstrategien und Aufträge mit Portfoliomanagern, Research und Kundenberatern absprechen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Abstimmung im Team ist eine Präsenz- und Kommunikationstätigkeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Händler/in im Wertschriftenhandel einer Schweizer Bank (Kantonal- oder Privatbank), die Aufträge von Kundschaft und Portfoliomanagement ausführt und daneben Eigen- und Absicherungspositionen betreut. Der ESCO-Input passt gut, die Beratungskompetenzen liegen aber eher bei Kundenberatern. Die Zeitanteile sind grob geschätzt. Der grösste Grenzfall ist die Marktanalyse; dazu kommt die Frage, ob Chat-to-Order-Werkzeuge die Kundenkommunikation exponieren.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem Informationsverarbeitung und Texte: Recherche-Agenten und Terminal-KI fassen Nachrichten zusammen, Datenanalyse-Agenten unterstützen die Marktanalyse, und Chat-LLMs entwerfen Marktkommentare; die Orderausführung selbst ist Sache klassischer Handelsalgorithmen.",
+      "begruendung": "Rund ein Fünftel der Arbeitszeit ist gegenüber generativer KI exponiert, überwiegend delegierend (KI fasst zusammen oder entwirft, die Fachperson prüft) und bei der Analyse unterstützend. Kern des Berufs bleiben Ausführung, Überwachung in Echtzeit und Kundenkontakt; ein Grossteil der Ausführung und Nachbearbeitung lässt sich mit klassischer Handelssoftware automatisieren. Bremsend wirken in der Schweiz FINMA-Vorgaben, Bankkundengeheimnis und Cloud-Restriktionen, die interne KI-Plattformen voraussetzen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

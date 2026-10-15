@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "8c17a2f0bb179a0adc84b07efc1dce1cd425dddb7cf99f075ce4bbe0df1b073d",
+    "isco_code": "2654",
+    "beruf": "Regisseure und Produzenten im Film- und Bühnenbereich sowie in verwandten Bereichen",
+    "lauf": 3,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T09:24:56+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2328,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2328
+        }
+      ],
+      "prompt_token_count": 21875,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21875
+        }
+      ],
+      "thoughts_token_count": 6479,
+      "total_token_count": 30682
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2328,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2328
+          }
+        ],
+        "prompt_token_count": 21875,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21875
+          }
+        ],
+        "thoughts_token_count": 6479,
+        "total_token_count": 30682
+      }
+    ],
+    "request_ids": [
+      "e0jPariiItXoz7IPnKSMuAw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/bymfj1fwg9dh18pztlts5y5houlusrocgzrj",
+    "custom_id": "r3-2654_regisseure_und_produzenten_im_film_und_b",
+    "anfrage_typ": "dritter_lauf",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2654",
+    "beruf": "Regisseure und Produzenten im Film- und Bühnenbereich sowie in verwandten Bereichen",
+    "taetigkeiten": [
+      {
+        "name": "Drehbücher, Treatments und Stoffe prüfen, zusammenfassen und dramaturgisch bearbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus hochgeladenen Manuskripten Zusammenfassungen (Coverage), Strukturanalysen und Dialogvarianten; Produzentin oder Regisseur liest die engeren Stoffe weiterhin selbst und erarbeitet die dramaturgische Einschätzung."
+      },
+      {
+        "name": "Fördergesuche, Projektbeschriebe und Finanzierungsanträge verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Das Chat-LLM entwirft aus Drehbuch, Regienotizen und Förderrichtlinien (z. B. BAK, Filmstiftungen, SRG) die Antrags- und Dossiertexte; die Fachperson steuert die Argumentation und prüft jedes Gesuch im Detail."
+      },
+      {
+        "name": "Visuelle Regiekonzepte, Moodboards und Pitch-Präsentationen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative Bild- und Layout-Software erzeugt visuelle Referenzbilder, Storyboard-Scribbles und Präsentationsfassungen; Regie bzw. Produktion gibt die künstlerische Richtung vor, wählt aus und prüft jede Folie."
+      },
+      {
+        "name": "Produktionsbudgets kalkulieren, Drehbuchauszüge (Breakdowns) und Drehpläne erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-gestützte Drehbuchauszüge und Kalkulationsentwürfe angesichts komplexer lokaler Drehrestriktionen die 50-%-Schwelle erreichen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Produktionssoftware extrahiert Rollen, Requisiten und Drehorte aus dem Skript und schlägt Drehplan sowie Budget vor; die Produktionsleitung prüft und korrigiert jede Position auf Machbarkeit."
+      },
+      {
+        "name": "Mit Kapitalgebern, Sendern, Verleihern und Rechteinhabern verhandeln sowie Netzwerke pflegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beziehungsarbeit, Pitchings an Festivals und Vertragsverhandlungen mit Finanzierungspartnern erfordern unmittelbare menschliche Präsenz."
+      },
+      {
+        "name": "Castings, Vorsprechen, Crew-Auswahl und Motivsuche vor Ort durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Vorsprechen mit Schauspielenden, Bewerbungsgespräche mit künstlerischen Gewerken und die Besichtigung von Drehorten oder Bühnen sind Präsenz- und Urteilstätigkeiten."
+      },
+      {
+        "name": "Dreharbeiten am Set oder Proben auf der Bühne künstlerisch und organisatorisch leiten",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Führung von Schauspielenden und Crew vor Ort am Set oder im Theater beruht vollständig auf physischer Anwesenheit, Echtzeit-Interaktion und künstlerischer Leitung."
+      },
+      {
+        "name": "Postproduktion (Rohschnitt, Bild- und Tonbearbeitung) künstlerisch begleiten und abnehmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das gemeinsame Sichten von Schnittfassungen in Echtzeit und die Beurteilung von Rhythmus, Schauspiel und Tonmischung im Schneideraum lassen sich durch Sprachmodelle nicht um 50 % verkürzen."
+      },
+      {
+        "name": "Verträge für Cast, Crew und Lizenzen entwerfen sowie Produktionskorrespondenz führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt Vertragsentwürfe (z. B. auf Basis von Branchenvorlagen) und Produktionskorrespondenz aus Eckdaten; der Produzent prüft jeden Vertrag rechtlich und inhaltlich vor Unterschrift."
+      },
+      {
+        "name": "Marktforschung betreiben sowie Marketing-, Festival- und Vertriebskonzepte erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten werten Vergleichsproduktionen, Zielgruppen und Festivaldaten aus und entwerfen Pressemappen sowie Verwertungspläne; die Produktion steuert die Positionierung und prüft alle Ausgaben."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Produzent/in bzw. Regisseur/in in einer Schweizer Film-, TV- oder Bühnenproduktion (typischerweise KMU-Produktionsfirma). Während die ESCO-Beschreibung stark auf Film- und Fernsehproduzenten fokussiert, umfasst der ISCO-Beruf auch die Regie im Film- und Bühnenbereich; die Tätigkeiten bilden daher sowohl die Stoffentwicklungs-, Finanzierungs- und Planungsarbeit als auch die künstlerische Leitung bei Proben, Dreh und Schnitt ab.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Vorbereitungs-, Konzept- und Finanzierungsphasen – namentlich Drehbuchlektorat, Fördergesuche, visuelle Pitch-Decks, Drehbuchauszüge, Vertragsentwürfe und Marketingkonzepte durch Chat-LLMs, Bildgeneratoren und Analyse-Agenten.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit entfällt auf konzeptionelle, planerische und administrative Aufgaben, bei denen die KI überwiegend delegierend (Entwurf von Förderdossiers, Moodboards, Drehplänen und Verträgen mit vollständiger Fachprüfung) sowie unterstützend (Stoffentwicklung) wirkt. Die andere Hälfte der Arbeit – Regie am Set oder auf der Bühne, Castings, Verhandlungen mit Förderern und Abnahmen im Schnitt – erfordert zwingend persönliche Präsenz und künstlerisches Urteil. In der Schweiz erfordern urheber- und arbeitsrechtliche Vorgaben bei Verträgen sowie mehrsprachige Dossiers bei nationalen Koproduktionen eine sorgfältige menschliche Kontrolle.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "cf92bc3ad2cc485f2f7a66ab4cd3fe8087e56fe0257fe8e3a7cb2b7d2ce791b8",
+    "isco_code": "1411",
+    "beruf": "Führungskräfte in Hotels",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:26:57+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3322,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5543,
+      "api_aequivalent_usd": 0.1447742
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3322,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5543,
+        "output_tokens_details": {
+          "thinking_tokens": 1711
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3322,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1447742
+      }
+    ],
+    "request_ids": [
+      "92197a0a-fd38-4e31-ae1b-479f9f723092"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1411",
+    "beruf": "Führungskräfte in Hotels",
+    "taetigkeiten": [
+      {
+        "name": "Mitarbeitende führen: Teamsitzungen leiten, Mitarbeitergespräche und Vorstellungsgespräche führen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung, Motivation und Personalgespräche von Angesicht zu Angesicht sind Präsenz- und Beziehungstätigkeiten."
+      },
+      {
+        "name": "Abteilungen koordinieren und Betriebsrundgänge mit Kontrollen von Qualität, Hygiene, Sicherheit und Zugänglichkeit vor Ort durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Anwesenheit im Betrieb, Inspektion vor Ort und mündliche Abstimmung mit Abteilungsleitenden dominieren."
+      },
+      {
+        "name": "Gäste begrüssen und betreuen, an Rezeption und im Restaurant präsent sein, bei Check-in und operativen Engpässen mithelfen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gastgeberrolle lebt von persönlicher Präsenz; Self-Check-in-Kiosks betreffen vor allem das Rezeptionspersonal, nicht den Hauptteil dieser Präsenzzeit der Direktion."
+      },
+      {
+        "name": "Gästeanfragen, schriftliche Beschwerden und Online-Bewertungen beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "LLM entwirft aus eingefügter Bewertung/Beschwerde und Stichworten eine passende Antwort in DE/FR/IT/EN; die Direktion prüft und personalisiert jede Antwort, da sie die Reputation des Hauses betrifft."
+      },
+      {
+        "name": "Budget und Forecast erstellen, Finanz- und Betriebskennzahlen (Umsatz, RevPAR, Personalkosten) analysieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Direktion plant und beurteilt die Zahlen selbst; KI-Datenanalyse (Code-Ausführung auf PMS-/Buchhaltungsexporte) erstellt Auswertungen, Abweichungsanalysen und Budgetvorlagen und spart so über die Hälfte der Aufbereitungszeit."
+      },
+      {
+        "name": "Monats- und Quartalsberichte mit Kommentaren für Eigentümer, Verwaltungsrat oder Hotelgruppe verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kennzahlentabellen und Stichworte einfügen, LLM formuliert Bericht und Kommentierung; die Direktion prüft jede Aussage gegen die Zahlen und ergänzt Einschätzungen."
+      },
+      {
+        "name": "Zimmerpreise und Raten festlegen, Konkurrenzpreise und Belegungsnachfrage beobachten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Revenue-Management-Systeme und Rate-Shopper (klassische, regelbasierte bzw. prognostische Software) übernehmen Preisvorschläge und Marktbeobachtung; generative KI bringt keinen zusätzlichen Hebel über 50 %."
+      },
+      {
+        "name": "Marketing- und Verkaufsmaterial erstellen: Website-Texte, Newsletter, Social-Media-Posts, Pauschalangebote und Gruppenofferten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Texte wären E1, Bildbearbeitung/-erzeugung und Layout brauchen generative Zusatzsoftware; KI erstellt Text- und Bildvarianten, die Direktion gibt Linie vor, wählt aus und prüft jeden Inhalt. Mehrsprachige Fassungen (DE/FR/IT/EN) müssen parallel abgestimmt werden."
+      },
+      {
+        "name": "Beziehungen zu Firmenkunden, Reiseveranstaltern, Lieferanten und Tourismusorganisationen pflegen und Konditionen verhandeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beziehungspflege, Netzwerkanlässe und Verhandlungen von Angesicht zu Angesicht."
+      },
+      {
+        "name": "Stelleninserate, Arbeitsverträge, Arbeitszeugnisse und Personalschreiben entwerfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM erstellt aus Stichworten und Vorlagen (L-GAV) Inserat, Vertrag oder Zeugnis inkl. Schweizer Zeugnissprache; die Direktion prüft jedes Dokument inhaltlich und rechtlich."
+      },
+      {
+        "name": "Dienstpläne kontrollieren und genehmigen, Arbeitszeiten und Ferien freigeben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Personalplanungs- und Zeiterfassungssoftware (klassisch, regelbasiert mit L-GAV-Regeln) erstellt Pläne und prüft Arbeitszeitvorgaben; kein LLM nötig."
+      },
+      {
+        "name": "Betriebliche Weisungen, Arbeitsabläufe sowie Hygiene-, Sicherheits- und Zugänglichkeitskonzepte ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM entwirft Selbstkontrollkonzept, SOPs und Checklisten aus eingefügten Vorgaben und Betriebsangaben; die Direktion passt sie an den Betrieb an und prüft sie gegen Lebensmittel- und Arbeitssicherheitsrecht."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Direktor/in bzw. Geschäftsführer/in eines mittelgrossen Schweizer Ferien- oder Stadthotels (KMU, ca. 30–80 Mitarbeitende), mit starker operativer Präsenz. Die Zeitanteile sind grob geschätzt und hängen stark von Hotelgrösse und Kette vs. Privathotel ab. In grossen Häusern liegen Marketing, Revenue und Finanzen bei Fachabteilungen, was die Exposition der Direktion senkt. Grenzfälle sind Finanzanalyse (unterstützend, nahe an der Schwelle) und Preissetzung (klassische RMS-Software).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die schriftlichen Führungsaufgaben: Antworten auf Bewertungen und Beschwerden, Eigentümerberichte, Personaldokumente, Konzepte und Weisungen über Chat-LLM sowie Marketingmaterial und Finanzauswertungen über generative Bild- und Datenanalyse-Werkzeuge.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind exponiert. Dort arbeitet die KI meist delegierend: Sie erstellt Texte und Material, die Direktion prüft jede Ausgabe. Bei Budget und Kennzahlen arbeitet sie unterstützend. Der Kern des Berufs bleiben Führung, Gästepräsenz und Beziehungspflege. Bremsend wirken in der Schweiz die Erwartung persönlicher Gastgeberschaft, die mehrsprachige Gästekommunikation und lebensmittelrechtliche Vorgaben bei Konzepten.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

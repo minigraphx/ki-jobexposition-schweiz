@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "c035f9c44cc5b25262658ba9bf6cff837cbc999b06aa5e30a9b6d15793463c8e",
+    "isco_code": "3355",
+    "beruf": "Polizeikommissare und Kriminalbeamte",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2114,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2114
+        }
+      ],
+      "prompt_token_count": 21446,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21446
+        }
+      ],
+      "thoughts_token_count": 7789,
+      "total_token_count": 31349
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2114,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2114
+          }
+        ],
+        "prompt_token_count": 21446,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21446
+          }
+        ],
+        "thoughts_token_count": 7789,
+        "total_token_count": 31349
+      }
+    ],
+    "request_ids": [
+      "XTzPaq-1NvSAz7IP5t2zgAs"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-3355_polizeikommissare_und_kriminalbeamte",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3355",
+    "beruf": "Polizeikommissare und Kriminalbeamte",
+    "taetigkeiten": [
+      {
+        "name": "Einvernahmen von Beschuldigten, Zeugen und Auskunftspersonen durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Befragung von Angesicht zu Angesicht, bei der Vernehmungstaktik, Rechtsbelehrung, Glaubwürdigkeitsbeurteilung und unmittelbare Reaktion auf Aussagen im Zentrum stehen."
+      },
+      {
+        "name": "Einvernahmeprotokolle und Befragungsnotizen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Da Einvernahmen meist im Dialekt oder mit Dolmetschern stattfinden und nach StPO unmittelbar protokolliert und unterzeichnet werden müssen, ist das Erreichen der 50-%-Schwelle unsicher; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracherkennung und LLM-Strukturierung erstellen aus Gesprächsaufzeichnungen oder Notizen den Protokollentwurf; die ermittelnde Person prüft und korrigiert jede Aussage gemeinsam mit der vernommenen Person vor der Unterschrift."
+      },
+      {
+        "name": "Ermittlungsberichte, Schlussrapporte und Anträge auf Zwangsmassnahmen verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus eingefügten Fallnotizen und Protokollauszügen strukturierte Rapporte und Anträge an die Staatsanwaltschaft; die Kriminalbeamtin prüft jeden Bericht detailliert auf Akten- und Rechtskonformität."
+      },
+      {
+        "name": "Beschlagnahmte Dokumente, Kommunikationsdaten und digitale Spuren auswerten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die ermittelnde Person führt die Beweiswürdigung selbst durch, während KI-gestützte Analyse- und Dokumentenwerkzeuge grosse Datenmengen, Chatverläufe und Belege durchsuchen, übersetzen, zusammenfassen und Auffälligkeiten markieren."
+      },
+      {
+        "name": "Tatorte untersuchen sowie physische Spuren und Beweismittel sicherstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz- und Wahrnehmungstätigkeit am Ereignisort inklusive Sicherung, Handhabung und Dokumentation materieller Beweismittel."
+      },
+      {
+        "name": "Observationen, Hausdurchsuchungen, Fahndungen und Festnahmen durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Operative und physische Aussendiensttätigkeit vor Ort, die menschliche Präsenz, situatives Eingreifen und gegebenenfalls polizeilichen Zwang erfordert."
+      },
+      {
+        "name": "Ermittlungstaktik planen, Untersuchungen leiten und mit der Staatsanwaltschaft koordinieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Komplexe strategische Einzelfallentscheide sowie persönliche Abstimmung und Fallführung mit Staatsanwälten und Ermittlungsteams erreichen mit KI keine 50 % Zeitersparnis."
+      },
+      {
+        "name": "Strafanzeigen entgegennehmen und Erstbefragungen von Geschädigten durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare zwischenmenschliche Interaktion zur Sachverhaltsaufnahme und Betreuung von Geschädigten bei komplexeren Delikten."
+      },
+      {
+        "name": "Editionsbegehren, Rechtshilfeersuchen, Vorladungen und behördliche Korrespondenz erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das Chat-LLM erstellt aus Fallangaben und Vorlagen formelle Ersuchen und Schreiben; die Kriminalbeamtin prüft jedes Dokument vor der rechtsverbindlichen Freigabe fachlich."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Kriminalbeamtin / Detektiv bei einer kantonalen oder städtischen Kriminalpolizei in der Schweiz (allgemeine Ermittlungsarbeit zwischen Büro und Aussendienst). Je nach Spezialisierung (z. B. Wirtschaftsdelikte vs. Gewaltdelikte) verschieben sich die Anteile zwischen digitaler Beweisauswertung und operativer Feldarbeit; ein Grenzfall ist die Einvernahmeprotokollierung wegen Mundart und strengen Formvorschriften nach StPO.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Verfassen von Ermittlungsberichten, Zwangsmassnahmenanträgen und behördlicher Korrespondenz mittels Chat-LLM sowie die Protokollierung von Einvernahmen und die Auswertung digitaler und dokumentarischer Beweismittel durch multimodale KI-Werkzeuge.",
+      "begruendung": "Rund 45 % der Arbeitszeit entfallen auf schriftliche Rapportierung, Protokollierung und Beweismittelauswertung, wobei die KI überwiegend delegierend (Entwurf von Berichten, Protokollen und Ersuchen mit zwingender Einzelfallprüfung) und unterstützend (Analyse grosser Daten- und Dokumentenmengen) wirkt. Operative Ermittlungsarbeit vor Ort, Tatortuntersuchungen und die persönliche Führung von Einvernahmen bleiben nicht exponiert. In der Schweiz bremsen strenge regulatorische Vorgaben (Strafprozessordnung, Amtsgeheimnis, Datenschutz und lokale Datenhaltung bei Polizeikorps) sowie der hohe Anteil an Mundartgesprächen bei Einvernahmen eine rasche Umsetzung.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "b0f0ff0e980b8648033de8874859f7e0c61d99819a9ef9ba4a3db7ec48f78799",
+    "isco_code": "6113",
+    "beruf": "Gärtner/in EFZ",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:18:28+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 40944,
+      "output_tokens": 3858,
+      "api_aequivalent_usd": 0.08535679999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 40944,
+        "output_tokens": 3858,
+        "output_tokens_details": {
+          "thinking_tokens": 1084
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.08535679999999998
+      }
+    ],
+    "request_ids": [
+      "f58b9420-c219-4bab-a910-016a66416c74"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "6113",
+    "beruf": "Gärtner/in EFZ",
+    "taetigkeiten": [
+      {
+        "name": "Boden und Pflanzflächen vorbereiten, Erdarbeiten mit Kleinbagger und Dumper ausführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit und Maschinenbedienung vor Ort; autonome Baumaschinen sind im regulären Gartenbau nicht im Einsatz."
+      },
+      {
+        "name": "Wege, Plätze, Mauern, Treppen und Zäune im Garten erstellen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Bauarbeit auf der Baustelle; keine verfügbare Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Bäume, Sträucher und Stauden pflanzen, Rasen ansäen oder Rollrasen verlegen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit mit Pflanzen vor Ort; keine Automatisierung im Garten- und Landschaftsbau verfügbar."
+      },
+      {
+        "name": "Hecken, Bäume und Sträucher schneiden und entästen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handarbeit mit Schnittwerkzeugen und fachlichem Augenmass am Objekt; Schnittroboter nicht im regulären Einsatz."
+      },
+      {
+        "name": "Grünflächen unterhalten: Rasen mähen, Unkraut jäten, Laub entfernen, bewässern",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Unterhaltsarbeit; Mähroboter und automatische Bewässerung übernehmen nur einen Teil, Jäten und Laubarbeiten bleiben manuell, daher unter 50 %."
+      },
+      {
+        "name": "Pflanzenkrankheiten und Schädlinge erkennen, Pflanzenschutzmittel und Dünger ausbringen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Begutachtung und Ausbringung erfolgen am Objekt; eine Bilderkennungs-App hilft zwar bei der Diagnose, spart aber über die ganze Tätigkeit nicht 50 %."
+      },
+      {
+        "name": "Material, Pflanzen und Geräte laden und transportieren, Maschinen reinigen und warten, Baustelle einrichten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Logistik- und Wartungsarbeit an wechselnden Baustellen; keine Automatisierung in relevantem Umfang."
+      },
+      {
+        "name": "Pläne lesen, Flächen und Höhen abstecken und einmessen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit liegt im Messen und Markieren vor Ort; GNSS-Messgeräte unterstützen, ersetzen die Person aber nicht."
+      },
+      {
+        "name": "Mit Kundschaft vor Ort Arbeiten absprechen und zu Pflege beraten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Gespräch im Garten, dessen Wert in der Präsenz und dem Zeigen am Objekt liegt."
+      },
+      {
+        "name": "Arbeits- und Regierapporte mit Arbeitsbeschrieb, Material und Stunden erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Spracheingabe in einer Rapport-App erstellt den Rapport samt Materialliste; die Gärtnerin prüft und korrigiert jeden Rapport. Dialekt und Umgebungslärm erhöhen den Korrekturaufwand."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Gärtner/in EFZ, Fachrichtung Garten- und Landschaftsbau, in einem KMU mit Neuanlagen und Unterhaltsaufträgen. Die ESCO-Beschreibung ist knapp, die Kompetenzliste deckt die physische Arbeit aber gut ab. Planung und Projektleitung (optionale Kompetenzen) gehören eher zu Vorarbeitern oder Gartenbautechnikern und wurden nicht übernommen. Grenzfall ist der Rasenunterhalt wegen der Mähroboter (P0 mit mittlerer Sicherheit).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur die Arbeits- und Regierapporte, die per Spracheingabe in einer Rapport-App entstehen können; die Bau-, Pflanz- und Pflegearbeit im Garten selbst ist nicht exponiert.",
+      "begruendung": "Nur rund 5 % der Arbeitszeit sind exponiert, und zwar delegierend: Die App erstellt den Rapport, die Gärtnerin prüft jeden. Der Kern des Berufs ist körperliche Arbeit im Freien. In der Schweiz erschweren Dialekt und Lärm die Spracheingabe, und viele kleine Gartenbaubetriebe führen solche Werkzeuge nur zögerlich ein.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

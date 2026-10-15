@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "991537039867bcc6bb9646c245f982399faa8b2eb9485a64bc8a62cd27b66546",
+    "isco_code": "3313",
+    "beruf": "Fachkräfte im Rechnungswesen",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2375,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2375
+        }
+      ],
+      "prompt_token_count": 21796,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21796
+        }
+      ],
+      "thoughts_token_count": 6138,
+      "total_token_count": 30309
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2375,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2375
+          }
+        ],
+        "prompt_token_count": 21796,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21796
+          }
+        ],
+        "thoughts_token_count": 6138,
+        "total_token_count": 30309
+      }
+    ],
+    "request_ids": [
+      "xT_PaonaBIaI_uMPpdSFkAY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-3313_fachkraefte_im_rechnungswesen",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3313",
+    "beruf": "Fachkräfte im Rechnungswesen",
+    "taetigkeiten": [
+      {
+        "name": "Eingangsrechnungen, Spesenbelege und Kreditorenbelege prüfen, kontieren und im ERP verbuchen",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Dokumentenerkennung im Buchhaltungssystem liest unstrukturierte PDFs und Belegfotos aus und kontiert sie automatisch; die Fachkraft bearbeitet nur markierte Ausnahmen und Stichproben. Für strukturierte E-Rechnungen und QR-Rechnungen übernimmt dies auch klassische ERP-Software."
+      },
+      {
+        "name": "Ausgangsrechnungen erstellen, Zahlungseingänge abgleichen und Mahnläufe durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fakturierung aus Auftragsdaten, automatischer Zahlungsabgleich per QR-Referenz (camt.054) und regelbasierte Mahnläufe werden durch klassische Buchhaltungssoftware ohne generative KI erledigt."
+      },
+      {
+        "name": "Zahlungsläufe für Kreditoren vorbereiten und Überweisungen im E-Banking bereitstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Erstellen von Zahlungsdateien (pain.001) nach Fälligkeiten und die Übermittlung ins E-Banking zur Kollektivfreigabe erfolgen regelbasiert über klassische ERP- und Banking-Schnittstellen."
+      },
+      {
+        "name": "Hauptbuch- und Nebenbuchkonten abstimmen sowie Fehlbuchungen und Differenzen klären",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Buchhalterin führt die Kontenabstimmung und Differenzbereinigung selbst durch; im ERP integrierte KI-Analysefunktionen gleichen Haupt- und Nebenbücher ab, markieren Ausreisser oder Doppelbuchungen und schlagen Korrekturbuchungen vor."
+      },
+      {
+        "name": "Periodische Abschlüsse durchführen sowie Abgrenzungen und Rückstellungen berechnen und buchen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Beim Monats- und Quartalsabschluss beurteilt die Fachkraft jede Position mit fachlichem Ermessen selbst; KI-Werkzeuge im ERP liefern aus Verträgen, Belegen und Saldenlisten Berechnungs- und Buchungsvorschläge für transitorische Posten und Rückstellungen."
+      },
+      {
+        "name": "Jahresabschluss mit Bilanz, Erfolgsrechnung und Anhang vorbereiten sowie Revisionsunterlagen zusammenstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Auf Basis der ERP-Daten und Vorjahresberichte entwirft die KI den gesetzlichen Anhang sowie Abstimmungsnachweise für die Revisionsmappe; die Fachkraft prüft jede Angabe inhaltlich auf Konformität mit dem Obligationenrecht."
+      },
+      {
+        "name": "Mehrwertsteuerabrechnungen erstellen, Umsatzabstimmungen vornehmen und Steuerdeklarationen vorbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Klassische ERP-Software erstellt das MWST-Formular, während KI-Funktionen die Umsatz- und Vorsteuerabstimmung entwerfen, Belege auf korrekte Steuersätze prüfen und Steuerformulare vorbefüllen; die Fachkraft kontrolliert jede Position fachlich."
+      },
+      {
+        "name": "Lohnläufe durchführen sowie Sozialversicherungs- und Quellensteuerabrechnungen im Lohnsystem erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Lohnberechnungen und die elektronische Übermittlung der Abrechnungen für AHV, UVG, BVG und Quellensteuer erfolgen in der Schweiz über klassische Swissdec-zertifizierte Lohnsoftware (ELM)."
+      },
+      {
+        "name": "Liquiditätsübersichten, Budget-Ist-Vergleiche und kurze Finanzkommentare für die Geschäftsleitung erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Exportierte Salden- und Budgettabellen können in ein Chat-LLM eingefügt werden, das Abweichungsanalysen und Management-Kommentare entwirft; die Fachkraft steuert die Analyse und prüft alle Kennzahlen im Detail."
+      },
+      {
+        "name": "Schriftliche Anfragen von Lieferanten, Kunden, Treuhändern und Revisoren zu Buchungen und Salden beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM formuliert aus kopierten Kontoauszügen und Stichworten präzise Antworten, auch in anderen Landessprachen oder Englisch; die Fachkraft prüft die Zahlenangaben vor dem Versand."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Fachkraft im Finanz- und Rechnungswesen / Buchhalter/in in einem typischen Schweizer KMU (oder Treuhandbetrieb). Stark standardisierte Prozesse wie Zahlungsabgleich per QR-Rechnung, Mahnlauf und Swissdec-Lohnlauf sind klassische Software-Automatisierung (E0/P1), während Belegverarbeitung, Abstimmungen, Abschlussarbeiten und Berichterstattung stark gegenüber generativer KI exponiert sind.",
+    "zusammenfassung": {
+      "haupt_risiko": "Besonders betroffen sind die Prüfung und Kontierung von Eingangsbelegen durch KI-Dokumentenerkennung im ERP sowie Kontenabstimmungen, Abschlussvorbereitungen, Steuerabstimmungen und Finanzkommentare durch spezialisierte ERP-KI und Sprachmodelle.",
+      "begruendung": "Rund 75 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die Belegerfassung überwiegend ersetzend (Ausnahmebearbeitung) und die Vorbereitung von Anhang, Steuerabstimmungen, Finanzberichten und Korrespondenz delegierend bzw. bei Buchhaltungsabstimmungen und Abgrenzungen unterstützend erfolgt. Weitere 25 % der Arbeit entfallen auf Routinen wie Zahlungsabgleich und Lohnläufe, die durch klassische ERP-Software abgedeckt werden. Gesetzliche Vorgaben nach Obligationenrecht und Steuerrecht erfordern jedoch weiterhin eine sorgfältige fachliche Einzelprüfung der Abschlüsse.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

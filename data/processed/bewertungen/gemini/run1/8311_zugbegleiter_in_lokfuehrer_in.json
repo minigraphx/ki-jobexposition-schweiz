@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "13bd650e7c9ef464b09bf72577d0fd6342aa33cffe5fde7cedc7ab5ea673bf53",
+    "isco_code": "8311",
+    "beruf": "Zugbegleiter/in / Lokführer/in",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2243,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2243
+        }
+      ],
+      "prompt_token_count": 22303,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22303
+        }
+      ],
+      "thoughts_token_count": 8738,
+      "total_token_count": 33284
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2243,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2243
+          }
+        ],
+        "prompt_token_count": 22303,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22303
+          }
+        ],
+        "thoughts_token_count": 8738,
+        "total_token_count": 33284
+      }
+    ],
+    "request_ids": [
+      "XTzPaqq8BP7oz7IP17yB4Qw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-8311_zugbegleiter_in_lokfuehrer_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "8311",
+    "beruf": "Zugbegleiter/in / Lokführer/in",
+    "taetigkeiten": [
+      {
+        "name": "Züge im Personen- und Güterverkehr auf der Strecke nach Fahrplan und Signalisierung führen",
+        "zeitanteil_pct": 40,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz- und Steuerungstätigkeit im Führerstand mit direkter Beobachtung von Fahrweg und Signalen. Vollautomatisches fahrerloses Fahren (GoA4) ist auf dem Schweizer Vollbahnnetz weder zugelassen noch im regulären Einsatz; Assistenzsysteme (ETCS/ZUB) ersetzen das Fahrpersonal nicht."
+      },
+      {
+        "name": "Vorbereitungs- und Abschlussdienst am Triebfahrzeug sowie Bremsproben durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Aussen- und Innenkontrolle am Rollmaterial, Aufrüsten und Abrüsten der Fahrzeuge sowie Durchführung der Bremsproben vor Ort am Zug."
+      },
+      {
+        "name": "Triebfahrzeuge und Wagen in Bahnhöfen und Anschlussgleisen rangieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Steuern von Rangierbewegungen auf Sicht in Verschiebebahnhöfen und Anschlussgleisen; autonome Rangierlokomotiven und automatische Kupplungen sind erst in Pilotprojekten."
+      },
+      {
+        "name": "Mit Fahrdienstleitung, Betriebszentrale und Zugpersonal per Betriebsfunk kommunizieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sicherheitskritische Echtzeit-Kommunikation über GSM-R-Betriebsfunk bei Störungen, Rangiermanövern und mündlichen Befehlen erfordert unmittelbare menschliche Situationsbeurteilung und Quittierung."
+      },
+      {
+        "name": "Zugdaten, Wagenlisten und Bremsverhältnisse prüfen sowie in Zugsicherungssysteme eingeben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Berechnung und Überprüfung von Zuggewicht, Zuglänge und Bremshundertsteln erfordert keine generative KI, lässt sich aber durch klassische Bahn-IT (elektronische Bremsrechnung und digitale Zugdatenübermittlung ins Fahrzeugsystem) mehrheitlich automatisieren."
+      },
+      {
+        "name": "Fahrgastwechsel überwachen, Reisende per Durchsage informieren und am Zug Auskunft geben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Visuelle Überwachung des Perrons und der Türschliessung sowie persönliche Auskünfte und situative Durchsagen bei Unregelmässigkeiten erfordern menschliche Präsenz vor Ort."
+      },
+      {
+        "name": "Technische Störungen am Rollmaterial diagnostizieren und Erstmassnahmen vornehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Behebung von Brems-, Tür- oder Traktionsstörungen auf der Strecke besteht überwiegend aus physischen Kontrollen und Eingriffen am Fahrzeug (Resets, Absperrhähne, Überbrückungen) unter Zeitdruck."
+      },
+      {
+        "name": "Ereignis-, Störungs- und Frachtberichte im Betriebssystem erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracheingabe und multimodale Erfassung auf dem Diensttablet erstellen aus Stichworten, Betriebsdaten und Fotos strukturierte Störungs- und Ereignisrapporte; die Triebfahrzeugführenden prüfen und verantworten jeden Bericht fachlich."
+      },
+      {
+        "name": "Betriebliche Weisungen, Fahrdienstvorschriften und Fahrzeugreglemente konsultieren und durcharbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob ein KI-Such- und Zusammenfassungsassistent trotz Pflicht zur persönlichen Kenntnisnahme sicherheitsrelevanter Vorschriften mindestens 50 % der Zeit einspart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Lokführerin erarbeitet und verinnerlicht die Vorschriften selbst; ein ins Diensttablet integrierter KI-Assistent durchsucht umfangreiche Regelwerke (FDV, Fahrzeugreglemente), fasst Weisungsänderungen zusammen und erstellt Übungsfragen."
+      },
+      {
+        "name": "Angehende Lokführer/innen auf Begleitfahrten anleiten und Simulatortrainings absolvieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Praktische Instruktion im Führerstand und Fahrtraining am Simulator sind Präsenz- und Erfahrungstätigkeiten."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Lokführer/in (Triebfahrzeugführer/in Kat. B) im schweizerischen Personen- und Güterverkehr (z. B. SBB, BLS, RhB). Obwohl die Berufsbezeichnung im Input auch «Zugbegleiter/in» nennt, bilden der ISCO-Code 8311 und sämtliche ESCO-Kompetenzen eindeutig die Führung von Schienenfahrzeugen ab; Kundeninformations- und Abfertigungsaufgaben im Personenverkehr sind als eigene Tätigkeit berücksichtigt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind lediglich das Erfassen von Störungs- und Ereignisrapporten sowie das Nachschlagen und Durcharbeiten betrieblicher Vorschriften auf dem Diensttablet, während das Führen und Rangieren der Züge nicht betroffen ist.",
+      "begruendung": "Nur rund 10 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI beim Verfassen von Rapporten delegierend und beim Konsultieren von Regelwerken unterstützend wirkt. Der Berufskern besteht aus physischer, sicherheitskritischer Fahrzeugführung vor Ort; zudem bremsen strenge eisenbahnrechtliche Sicherheits- und Dokumentationsvorgaben des BAV (regulatorisches Hemmnis) den Einsatz.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

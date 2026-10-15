@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "45f18eab8e4280884989d449546fb197ff4a853933a51ab9ac231fddba33a691",
+    "isco_code": "5151",
+    "beruf": "Reinigungs- und Hauswirtschaftleiter und -kräfte in Büros, Hotels und anderen Einrichtungen",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:38:52+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 39973,
+      "output_tokens": 4349,
+      "api_aequivalent_usd": 0.09498259999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 39973,
+        "output_tokens": 4349,
+        "output_tokens_details": {
+          "thinking_tokens": 1411
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.09498259999999999
+      }
+    ],
+    "request_ids": [
+      "b8151f42-d9d4-4b6b-ba18-c15fd3955816"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5151",
+    "beruf": "Reinigungs- und Hauswirtschaftleiter und -kräfte in Büros, Hotels und anderen Einrichtungen",
+    "taetigkeiten": [
+      {
+        "name": "Zimmer, öffentliche Bereiche und Büros auf Sauberkeit kontrollieren und abnehmen (Rundgänge, Checklisten)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sichtkontrolle vor Ort mit Begehung jedes Raums; die digitale Checkliste ist klassische Software und spart nicht die Kontrollzeit."
+      },
+      {
+        "name": "Selbst mitreinigen: Zimmer herrichten, öffentliche Bereiche reinigen, Wäsche versorgen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit in möblierten Räumen; Reinigungsroboter übernehmen nur kleine Teilflächen, keine 50 %."
+      },
+      {
+        "name": "Reinigungspersonal täglich einteilen, instruieren, anleiten und führen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung und Anleitung in persönlicher Präsenz, oft in mehrsprachigen Teams vor Ort."
+      },
+      {
+        "name": "Dienstpläne und tägliche Zimmerzuteilung nach Belegung erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Planung nach Belegung, Präsenzen und Arbeitszeitregeln ist Aufgabe klassischer Software (Personaleinsatzplanung, Housekeeping-Modul im Hotel-PMS); dafür braucht es kein LLM."
+      },
+      {
+        "name": "Lagerbestand an Reinigungsmitteln, Wäsche und Gästeartikeln kontrollieren und Bestellungen auslösen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit liegt im physischen Zählen und Prüfen vor Ort; Bestellung über Lieferantenportal ist kurz, generative KI spart keine 50 %."
+      },
+      {
+        "name": "Neue Mitarbeitende einarbeiten und Schulungen zu Reinigungstechnik, Chemikalien und Hygiene durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Praktisches Vorzeigen und Anleiten am Arbeitsplatz, also Präsenztätigkeit."
+      },
+      {
+        "name": "Arbeitsanweisungen, Reinigungs- und Hygienepläne sowie Schulungsunterlagen verfassen und aktualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Chat-LLM entwirft Anweisungen, Checklisten und Pläne aus Stichworten und eingefügten Vorgaben, auch in den Sprachen des Teams. Die Leiterin prüft jedes Dokument fachlich und passt es an den Betrieb an."
+      },
+      {
+        "name": "Mit Réception, Technik, Küche und Handwerkern koordinieren; Wartungs- und Renovationsarbeiten organisieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Abstimmung läuft überwiegend mündlich und vor Ort, inklusive Begehungen mit Technik und Handwerkern; generative KI spart hier wenig."
+      },
+      {
+        "name": "Gästereklamationen und Gästewünsche (Housekeeping) entgegennehmen und vor Ort lösen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönlicher Gästekontakt und Behebung des Mangels im Zimmer, also Präsenztätigkeit."
+      },
+      {
+        "name": "Kosten und Verbrauch überwachen und Monatsberichte für die Direktion verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus exportierten Kennzahlen und Stichworten erstellt das LLM Auswertung und Berichtstext; die Leiterin prüft Zahlen und Aussagen jedes Berichts. Die Kennzahlenberechnung selbst ist Aufgabe klassischer Software."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Gouvernante bzw. Leiterin Hauswirtschaft in einem mittelgrossen Hotel oder Heim (KMU), die neben der Leitung selbst mitarbeitet. Die ESCO-Beschreibung ist sehr knapp; die Zeitanteile sind geschätzt und hängen stark von der Betriebsgrösse ab (in grossen Häusern mehr Administration, in kleinen mehr Mitreinigen). Grenzfall ist die Dienst- und Zimmerplanung (klassische Software statt LLM).",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind nur das Verfassen von Arbeitsanweisungen, Hygieneplänen, Schulungsunterlagen und Monatsberichten durch ein Chat-LLM; Kontrolle, Mitreinigen und Führung vor Ort sind nicht betroffen.",
+      "begruendung": "Rund 10 % der Arbeitszeit sind exponiert, und zwar delegierend: Die KI entwirft Dokumente und Berichte, die Leiterin prüft und verantwortet jedes Ergebnis. Der Kern des Berufs bleibt physische Arbeit, Kontrolle vor Ort und Führung oft mehrsprachiger Teams. Die Planung wird eher durch klassische Software (PMS-Housekeeping-Module, Einsatzplanung) automatisiert als durch generative KI.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

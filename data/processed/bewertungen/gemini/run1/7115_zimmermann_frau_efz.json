@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "4ff535a5c9e5bde0098003718013e980d08ac68f129a2bb1a5b09de3d3615df7",
+    "isco_code": "7115",
+    "beruf": "Zimmermann/-frau EFZ",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2133,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2133
+        }
+      ],
+      "prompt_token_count": 22385,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22385
+        }
+      ],
+      "thoughts_token_count": 4355,
+      "total_token_count": 28873
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2133,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2133
+          }
+        ],
+        "prompt_token_count": 22385,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22385
+          }
+        ],
+        "thoughts_token_count": 4355,
+        "total_token_count": 28873
+      }
+    ],
+    "request_ids": [
+      "XTzPasPMC8yfz7IP7bi_mAY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-7115_zimmermann_frau_efz",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "7115",
+    "beruf": "Zimmermann/-frau EFZ",
+    "taetigkeiten": [
+      {
+        "name": "Holzbauteile und Holzverbindungen in der Werkstatt zuschneiden, hobeln und fräsen (Abbund)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische und maschinelle Holzbearbeitung in der Zimmerei. Wo der Abbund noch manuell oder an konventionellen Standardmaschinen erfolgt, können kommerziell etablierte CNC-Abbundanlagen (oder Lohnabbundzentren) über 50 % der Zuschnitt- und Fräsarbeit übernehmen."
+      },
+      {
+        "name": "Wand-, Decken- und Dachelemente in der Werkhalle vormontieren, dämmen und beplanken",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montagearbeit am Elementbautisch (Rahmenbau, Einbringen von Dämmstoffen, Beplanken und Verkleben von Folien); automatisierte Multifunktionsbrücken sind für typische Schweizer KMU-Holzbaubetriebe mit geringen Losgrössen wirtschaftlich kaum darstellbar."
+      },
+      {
+        "name": "Tragwerke, Dachstühle und vorgefertigte Holzelemente auf der Baustelle aufrichten und montieren",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Montagearbeit im Freien und in der Höhe (Anschlagen am Kran, Ausrichten, Verschrauben und Einbauen von Holzbeschlägen); keine Robotik verfügbar."
+      },
+      {
+        "name": "Wärmedämmung, Luftdichtheitsschichten, Fassadenbekleidungen und Innenausbau auf der Baustelle anbringen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Montage- und Anpassungsarbeiten vor Ort bei Neubauten sowie Umbau- und Sanierungsprojekten; weder durch generative KI noch durch Robotik automatisierbar."
+      },
+      {
+        "name": "2D- und 3D-Ausführungspläne lesen, Bauteile auf der Baustelle einmessen und anreissen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Zeitaufwand liegt im physischen Einmessen, Prüfen der Masshaltigkeit des Bestandsbaus, Anbringen von Bauprofilen und Anreissen mit Schlagschnur oder Laser vor Ort."
+      },
+      {
+        "name": "Oberflächen von Holzbauteilen schleifen, reinigen und mit Holzschutz- oder Anstrichstoffen behandeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Oberflächenbearbeitung mit Handschleifmaschinen, Reinigung und Auftragen von Anstrichen an individuellen Bauteilen oder direkt auf der Baustelle."
+      },
+      {
+        "name": "Werkzeuge, Maschinen, Baustellensicherung und Materialtransport einrichten und warten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeiten wie Verladen und Sichern von Holzelementen, Einrichten von Absturzsicherungen und Gerüsten, Abfalltrennung sowie Instandhaltung der Säge- und Fräsausrüstung."
+      },
+      {
+        "name": "Materialbedarf, Holzlisten und Zuschnittpläne für Baustellen- und Umbauarbeiten ermitteln",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die Eingabe von Massen in ein Chat-LLM gegenüber geübtem Kopfrechnen und Faustregeln auf der Baustelle mindestens 50 % Zeit spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Bei kleineren Umbauten oder Nachbestellungen gibt die Fachperson Masse und Bauteilvorgaben ein, das LLM berechnet Mengen, Verschnitt sowie Befestigungsmittel und erstellt die Bestellliste; jedes Ergebnis wird fachlich kontrolliert."
+      },
+      {
+        "name": "Regierapporte, Baustellendokumentation und Stunden mit Arbeitsbeschrieb erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Per Spracheingabe und Foto-Upload in einer Baustellen-App erstellt die KI strukturierte Regierapporte und Mängel-/Baufortschrittsnotizen; der Zimmermann oder Polier prüft und visiert jeden Rapport (Lärm und Dialekt erhöhen den Korrekturaufwand)."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Zimmermann/-frau EFZ in einem typischen Schweizer KMU-Holzbaubetrieb (Mischung aus Vorfertigung/Elementbau in der Halle, Aufrichten auf der Baustelle sowie Umbau/Sanierung). Die grössere Arbeitsvorbereitung (3D-CAD-Konstruktion und CNC-Programmierung für Grossprojekte) liegt in der Schweiz meist bei Holzbau-Vorarbeiter/innen, Polier/innen oder Techniker/innen HF, während auf Stufe EFZ die physische Ausführung dominiert.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind lediglich das Erstellen von Regierapporten und Baustellendokumentationen per Spracheingabe sowie die Mengen- und Materialberechnung für kleinere Aufträge per Chat-LLM, während die handwerkliche Holzbau- und Montagearbeit nicht betroffen ist.",
+      "begruendung": "Rund 10 % der Arbeitszeit sind gegenüber generativer KI exponiert, ausschliesslich im delegierenden Modus, da die Fachperson jeden generierten Rapport und jede Mengenberechnung vor Freigabe oder Bestellung inhaltlich prüfen muss. Nennenswerte regulatorische oder kulturelle CH-Hemmnisse bestehen bei diesen internen Dokumentations- und Rechenaufgaben nicht, jedoch verlangsamen Baustellenlärm, Mundart-Diktate und die kleinbetriebliche Struktur der Schweizer Zimmereien den praktischen Zeiteffekt.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

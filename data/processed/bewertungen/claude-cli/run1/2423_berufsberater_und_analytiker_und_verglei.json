@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "b3f8c0882ce53316ffefb72a6a00e4ce82bfe7930b46c37d027b7de554a3a83e",
+    "isco_code": "2423",
+    "beruf": "Berufsberater und -analytiker und vergleichbare Spezialisten der Personalwesen",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:48:03+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4121,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5070,
+      "api_aequivalent_usd": 0.14170619999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4121,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5070,
+        "output_tokens_details": {
+          "thinking_tokens": 1686
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4121,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.14170619999999998
+      }
+    ],
+    "request_ids": [
+      "22b90b99-bce3-4bea-8906-bc27dc78ae90"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2423",
+    "beruf": "Berufsberater und -analytiker und vergleichbare Spezialisten der Personalwesen",
+    "taetigkeiten": [
+      {
+        "name": "Einzelberatungsgespräche zu Berufswahl, Studium und Laufbahn mit Jugendlichen und Erwachsenen führen",
+        "zeitanteil_pct": 31,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Wert liegt im persönlichen Gespräch: zuhören, zur Selbstreflexion anregen, auf Emotionen eingehen. Generative KI ersetzt diese Präsenz- und Beziehungstätigkeit nicht."
+      },
+      {
+        "name": "Interessen- und Eignungstests auswählen, durchführen lassen und Ergebnisse mit Klienten interpretieren",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Online-Testverfahren werten die Tests bereits automatisch aus. Die verbleibende Zeit steckt in der Interpretation im Gespräch, die KI nicht zu 50 % abkürzt; die Test-Software ist schon weitgehend im Einsatz, der Rest ist P0."
+      },
+      {
+        "name": "Beratungsgespräche dokumentieren und Beratungsberichte bzw. Stellungnahmen für Zuweisende (IV, Sozialdienst, Schule) verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Stichworten und Testergebnissen entwirft das LLM die Aktennotiz bzw. den Bericht; die Beraterin prüft jeden Text inhaltlich und verantwortet ihn. Hemmnis: Datenschutz bei Personendaten in der kantonalen Verwaltung."
+      },
+      {
+        "name": "Informationen zu Ausbildungen, Studiengängen, Weiterbildungen und Bildungsfinanzierung (Stipendien) für Klienten recherchieren und zusammenstellen",
+        "zeitanteil_pct": 9,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent mit Websuche stellt Angebote, Zulassungsbedingungen und Fristen zusammen; die Beraterin prüft jede Angabe an den Quellen (z. B. berufsberatung.ch, Hochschulen), weil Halluzinationen möglich sind."
+      },
+      {
+        "name": "Bewerbungsunterlagen (Lebenslauf, Motivationsschreiben) von Klienten prüfen und Überarbeitungsvorschläge machen",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unterlagen und Zielstelle werden eingefügt, das LLM erstellt Feedback und überarbeitete Fassungen; die Beraterin prüft und passt jeden Vorschlag an Person und Stelle an. Die Besprechung mit dem Klienten ist eingerechnet."
+      },
+      {
+        "name": "Berufswahlveranstaltungen, Schulklassenbesuche und Bewerbungsworkshops durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unterrichten und Moderieren vor Gruppen ist eine Präsenztätigkeit."
+      },
+      {
+        "name": "Präsentationen, Merkblätter und Arbeitsmaterialien für Workshops und Informationsanlässe erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt Gliederung, Texte und Übungen; die Beraterin prüft die Inhalte fachlich und passt sie an Zielgruppe und kantonales Bildungssystem an."
+      },
+      {
+        "name": "Mit Schulen, Lehrbetrieben, Eltern, RAV und IV Fälle besprechen und Netzwerke pflegen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung und Netzwerkarbeit leben vom persönlichen Austausch; KI spart hier nicht 50 % der Zeit."
+      },
+      {
+        "name": "Schriftliche Anfragen von Klienten und Eltern per E-Mail beantworten",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft die Antworten aus der eingefügten Anfrage und den Falldaten; weil die Fälle individuell sind, prüft die Beraterin jede Antwort vor dem Versand."
+      },
+      {
+        "name": "Termine koordinieren und Fallführung im Klientensystem nachführen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dafür braucht es kein LLM. Online-Terminbuchung und klassische Fallführungssoftware können den Grossteil übernehmen."
+      },
+      {
+        "name": "Entwicklungen im Bildungswesen und Arbeitsmarkt verfolgen und sich weiterbilden",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bei dieser Tätigkeit geht es um das eigene Lernen (Fachtagungen, Lektüre). KI-Zusammenfassungen helfen, sparen aber kaum 50 % der Zeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Berufs-, Studien- und Laufbahnberater/in an einer kantonalen Berufsberatung (BIZ), entsprechend ESCO und ch_kontext Verwaltung. Andere Fachleute der ISCO-Gruppe 2423 (z. B. HR-Spezialisten, Personalberatende im RAV) sind nicht abgebildet. Die Zeitanteile sind grob geschätzt. Grenzfälle sind die Recherche und die Bearbeitung von Bewerbungsunterlagen; dort liegt die Ersparnis wegen der Prüfpflicht nahe an der 50 %-Schwelle.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Dokumentation und Berichte, die Recherche zu Bildungsangeboten und Finanzierung, das Feedback zu Bewerbungsunterlagen, das Erstellen von Workshop-Material und E-Mail-Antworten; die Technik dafür sind Chat-LLMs und Recherche-Agenten.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert, durchwegs im Modus delegierend: Die KI entwirft Texte und Zusammenstellungen, die Beraterin prüft jede Ausgabe fachlich. Der Kern des Berufs, das persönliche Beratungsgespräch und die Gruppenarbeit, bleibt unberührt. Datenschutz und Cloud-Vorgaben der kantonalen Verwaltung bremsen die Nutzung bei Personendaten.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

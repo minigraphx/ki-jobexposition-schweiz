@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "a606c6f77796e3f911c08d135cb0598cfbbde21791429650297838635ac16129",
+    "isco_code": "7311",
+    "beruf": "Uhrmacher, Uhrenarbeiter, Mikromechaniker",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:24:04+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3003,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5182,
+      "api_aequivalent_usd": 0.1350022
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3003,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5182,
+        "output_tokens_details": {
+          "thinking_tokens": 1979
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3003,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1350022
+      }
+    ],
+    "request_ids": [
+      "f3cdea48-e764-478f-84a6-27b63d8d1c0e"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "7311",
+    "beruf": "Uhrmacher, Uhrenarbeiter, Mikromechaniker",
+    "taetigkeiten": [
+      {
+        "name": "Uhrwerke von Hand montieren (Räderwerk, Federhaus, Hemmung, Komplikationen) mit Pinzette und Lupe",
+        "zeitanteil_pct": 27,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Feinmotorische Handarbeit am Établi; generative KI spart hier keine Zeit. Automatisierte Montagelinien gibt es nur für Grossserien-Kaliber, nicht für die typische manuelle Montage mechanischer Werke."
+      },
+      {
+        "name": "Zifferblätter und Zeiger anbringen und Uhrwerk ins Gehäuse einschalen (Emboîtage)",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präzisionsarbeit mit hohen ästhetischen Anforderungen; halbautomatische Zeigersetzpressen unterstützen, übernehmen aber nicht ≥ 50 % der Arbeit."
+      },
+      {
+        "name": "Uhrwerke ölen, regulieren und Gang auf der Zeitwaage einstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Eingriffe an Unruh/Spirale nach Messwerten der Zeitwaage; kein LLM-Beitrag. Automatische Reguliermaschinen nur in Grossserienfertigung."
+      },
+      {
+        "name": "Fertige Uhren und Werke prüfen: Sichtkontrolle, Gangmessung, Wasserdichtheits- und Funktionstests",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob automatische Prüfstände und Kamerainspektion in typischen Betrieben ≥ 50 % der Prüfzeit übernehmen; P0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Physische Prüfung an Geräten, kein LLM-Anteil; automatisierte Prüfstände (Wasserdichtheit, Chronometrie) und optische Inspektionssysteme sind in der Uhrenindustrie kommerziell verfügbar."
+      },
+      {
+        "name": "Uhren zerlegen, reinigen, defekte Teile ersetzen und revidieren (Rhabillage/Service)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Diagnose und Reparatur am Einzelstück; Reinigungsmaschinen sind bereits Standard und übernehmen nicht den Grossteil der Arbeit."
+      },
+      {
+        "name": "Präzisionsmaschinen bedienen und Mikroteile nacharbeiten oder anpassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Maschinenbedienung und manuelles Nacharbeiten an Teilen; die Bearbeitung selbst ist bereits CNC-automatisiert, die verbleibende Tätigkeit ist physisch."
+      },
+      {
+        "name": "Reparatur-, Prüf- und Fehlerberichte (Non-Conformity) verfassen und im QS-/SAV-System erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe/Fotos und KI-Funktion im QS-System erstellen die Fehlerbeschreibung bzw. den Servicebericht; der Uhrmacher prüft und korrigiert jeden Eintrag fachlich."
+      },
+      {
+        "name": "Kostenvoranschläge für Reparaturen nach Diagnose erstellen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit liegt in der physischen Diagnose; die Positionen stammen aus Servicepreislisten der SAV-Software (klassische Software)."
+      },
+      {
+        "name": "Werkbank und Werkzeuge einrichten, pflegen und Reinraum-/Schutzvorschriften einhalten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit am Arbeitsplatz ohne Bezug zu generativer KI."
+      },
+      {
+        "name": "Fehlerursachen bei Reklamationen am Werk analysieren und technische Unterlagen konsultieren",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Analyse erfolgt überwiegend durch Untersuchung am Werk unter dem Mikroskop; Nachschlagen in Unterlagen mit LLM spart nicht 50 % der Gesamtzeit."
+      },
+      {
+        "name": "Arbeitsabläufe im Team absprechen und Lernende in Montagetechniken anleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Anleitungstätigkeit am Arbeitsplatz."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommen wird ein/e Uhrmacher/in EFZ bzw. Uhrenarbeiter/in in der Montage oder im Kundendienst (SAV) eines Herstellers im Jurabogen; Mikromechaniker mit stärkerem Maschinenanteil sind ähnlich physisch. Der Beruf ist ganz überwiegend feinmotorische Handarbeit; unsicher sind vor allem die P-Werte (Automatisierungsgrad bei Prüfung und Montage unterscheidet sich zwischen Grossserie und Haute Horlogerie stark).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind praktisch nur das Verfassen von Reparatur-, Prüf- und Fehlerberichten, das per Spracheingabe und KI-Funktion im QS-/SAV-System erstellt werden kann; Montage, Regulierung und Reparatur selbst sind nicht exponiert.",
+      "begruendung": "Nur rund 5 % der Arbeitszeit sind exponiert, und zwar delegierend: Die KI erstellt den Bericht, die Fachperson prüft jeden Eintrag. Der Kern des Berufs ist feinmotorische Handarbeit in Schweizer Uhrenmanufakturen und Serviceateliers, wo nicht-generative Automatisierung (Prüfstände, Montagelinien) stärker zählt als generative KI.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "9b53e6694f38648e0134793e667c73e1c865f8787cb76c765ae90382bf890cf7",
+    "isco_code": "9213",
+    "beruf": "Hilfsarbeiter in Ackerbau und Tierhaltung (ohne ausgeprägten Schwerpunkt)",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 1961,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 1961
+        }
+      ],
+      "prompt_token_count": 21616,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21616
+        }
+      ],
+      "thoughts_token_count": 3422,
+      "total_token_count": 26999
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1961,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1961
+          }
+        ],
+        "prompt_token_count": 21616,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21616
+          }
+        ],
+        "thoughts_token_count": 3422,
+        "total_token_count": 26999
+      }
+    ],
+    "request_ids": [
+      "XTzPaoH4F5rVz7IP29KluQo"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r2-9213_hilfsarbeiter_in_ackerbau_und_tierhaltun",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "9213",
+    "beruf": "Hilfsarbeiter in Ackerbau und Tierhaltung (ohne ausgeprägten Schwerpunkt)",
+    "taetigkeiten": [
+      {
+        "name": "Ställe entmisten, einstreuen und Liegeboxen reinigen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Stallarbeit; Spaltenroboter und stationäre Schieber reinigen zwar Laufgänge, ersetzen aber das Einstreuen, Ausmisten von Boxen und die Liegeboxenpflege nicht zu 50 %."
+      },
+      {
+        "name": "Nutztiere füttern, tränken und auf die Weide treiben",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit im Stall und auf der Weide; Fütterungs-, Futterschiebe- und Tränkeautomaten können Teilaufgaben im Stall übernehmen, decken aber inklusive Raufutterhandling und Weidebetreuung auf typischen Schweizer Gemischtbetrieben weniger als 50 % der Zeit ab."
+      },
+      {
+        "name": "Kühe melken und Melkanlage reinigen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit am Tier ohne Exposition gegenüber generativer KI; automatische Melksysteme (Melkroboter mit automatischer Reinigung) sind auf Schweizer Betrieben kommerziell verfügbar und im regulären Einsatz."
+      },
+      {
+        "name": "Feld- und Kulturarbeiten von Hand ausführen (Unkraut hacken, Steine lesen, Kulturen pflegen)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Feldarbeit vor Ort; spezialisierte Hackroboter existieren für einzelne Reihenkulturen, ersetzen aber die vielfältigen manuellen Pflege- und Aufräumarbeiten auf einem Gemischtbetrieb nicht zu 50 %."
+      },
+      {
+        "name": "Erntegut von Hand einbringen und auf Erntemaschinen verlesen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Erntearbeit bei Obst, Gemüse, Hackfrüchten oder Futterbau sowie manuelles Aussortieren von Steinen und Fremdkörpern auf Vollerntern."
+      },
+      {
+        "name": "Traktoren, Hoftrac und einfache Anbaugeräte für Bodenbearbeitung und Transporte fahren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Führen von Fahrzeugen auf Feld, Hof und Strasse; Spurführungssysteme unterstützen auf dem Acker, ersetzen die Fahrperson im Schweizer Betriebskontext aber nicht."
+      },
+      {
+        "name": "Erntegut auf dem Hof sortieren, abpacken und in Lagerräumen oder Silos einlagern",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Lager- und Sortierarbeit auf dem Landwirtschaftsbetrieb; industrielle optische Sortier- und Abpackstrassen sind für einzelne Gemischtbetriebe wirtschaftlich meist nicht darstellbar."
+      },
+      {
+        "name": "Landwirtschaftliche Maschinen, Geräte, Zäune und Stallgebäude reinigen und einfach warten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Reinigungs-, Schmier- und Reparaturarbeiten an Maschinen, Weidezäunen und Hofanlagen vor Ort."
+      },
+      {
+        "name": "Tierbestand und Felder bei Kontrollgängen überwachen sowie Beobachtungen und Arbeitszeiten melden",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kontrollgänge auf Weiden und im Stall erfordern physische Präsenz; Rückmeldungen an die Betriebsleitung erfolgen meist mündlich oder als kurzer Stundeneintrag ohne nennenswerte Zeitersparnis durch Sprachmodelle."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Ungelernte landwirtschaftliche Hilfskraft auf einem typischen Schweizer Gemischtbetrieb (Ackerbau, Futterbau und Nutztierhaltung wie Milchvieh). Die ESCO-Kompetenzliste ist stark auf Pflanzenbau ausgerichtet und enthält dispositive Aufgaben (Fruchtwechsel verwalten, Pflanzen züchten, Tiere besamen), die in der Schweiz durch Landwirt/innen EFZ oder Besamungstechniker/innen ausgeführt werden; diese wurden bereinigt und durch die typischen manuellen Stall- und Hofarbeiten ergänzt.",
+    "zusammenfassung": {
+      "haupt_risiko": "In diesem Beruf sind keine wesentlichen Tätigkeiten gegenüber generativer KI exponiert, da die Arbeit fast ausschliesslich aus körperlichen Verrichtungen im Stall, auf dem Feld und auf dem Hof besteht.",
+      "begruendung": "Hilfsarbeiterinnen und Hilfsarbeiter in Ackerbau und Tierhaltung führen unter Anleitung praktische Arbeiten wie Füttern, Entmisten, Melken, Handernte und einfache Maschinenarbeiten aus, während Planung und Dokumentation bei der Betriebsleitung liegen. Es besteht daher weder im ersetzenden, delegierenden noch im unterstützenden Modus eine relevante Exposition gegenüber Sprachmodellen; Automatisierungspotenzial betrifft ausschliesslich physische Technik wie Melkroboter.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

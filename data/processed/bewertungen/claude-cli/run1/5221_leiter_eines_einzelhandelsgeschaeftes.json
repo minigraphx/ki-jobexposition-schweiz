@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "fbd41a9add901aac61eafbd9d588caf1afef69689bee9205d831fafce113bb63",
+    "isco_code": "5221",
+    "beruf": "Leiter eines Einzelhandelsgeschäftes",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:37:34+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3552,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5224,
+      "api_aequivalent_usd": 0.1402342
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3552,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5224,
+        "output_tokens_details": {
+          "thinking_tokens": 1592
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3552,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1402342
+      }
+    ],
+    "request_ids": [
+      "1679cbdb-8ab0-4031-8908-b3a1b4679d35"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5221",
+    "beruf": "Leiter eines Einzelhandelsgeschäftes",
+    "taetigkeiten": [
+      {
+        "name": "Kundschaft im Laden beraten, bedienen und kassieren",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung von Angesicht zu Angesicht im Laden ist eine Präsenztätigkeit. Selbstbedienungskassen lohnen sich im kleinen Fachgeschäft kaum, und das Kassieren ist nur ein kleiner Teil der Zeit."
+      },
+      {
+        "name": "Waren annehmen, prüfen, einräumen und Verkaufsfläche bzw. Schaufenster gestalten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit vor Ort. Für kleine Ladengeschäfte gibt es keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Mitarbeitende im Verkauf anleiten, beaufsichtigen und Personalgespräche führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Personalführung und Gespräche sind Präsenz- und Beziehungstätigkeiten."
+      },
+      {
+        "name": "Lagerbestände kontrollieren und Nachbestellungen bei Lieferanten auslösen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bestände abzugleichen und Bestellvorschläge zu erzeugen leistet klassische Warenwirtschafts- und Kassensoftware mit Mindestbeständen bzw. EDI-Bestellung. Ein LLM ist dafür nicht nötig."
+      },
+      {
+        "name": "Sortiment planen, Lieferanten suchen und Einkaufskonditionen verhandeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es dominieren Verhandlungen, Messebesuche, das Begutachten von Ware und unternehmerisches Ermessen. Eine KI-Recherche zu Lieferanten spart nicht 50 % der Zeit."
+      },
+      {
+        "name": "Umsatz-, Margen- und Kostenzahlen aus dem Kassensystem auswerten und Preise kalkulieren",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein LLM mit Datenanalyse (Code-Ausführung) wertet die Exporte aus dem Kassensystem aus und erstellt Auswertungen und Preisvorschläge. Die Leitung gibt die Fragestellung vor, prüft jede Auswertung und entscheidet selbst."
+      },
+      {
+        "name": "Eingangsrechnungen und Belege erfassen, Zahlungen vorbereiten und Unterlagen für den Treuhänder zusammenstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Belegerkennung in der KMU-Buchhaltungssoftware erfasst und kontiert die Belege, die Person bearbeitet nur Ausnahmen. Zusätzlich P1: QR-Rechnung, E-Banking und Bankabgleich erledigt klassische Software."
+      },
+      {
+        "name": "Werbeaktionen, Social-Media-Beiträge und Newsletter mit Text und Bild erstellen",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI erstellt Texte und bearbeitet bzw. erzeugt Bilder. Die Leitung gibt Aktion und Stil vor, wählt aus und prüft jeden Beitrag. Die Produktfotos selbst entstehen weiter im Laden."
+      },
+      {
+        "name": "Schriftliche Kundenanfragen, Reklamationen und Kundenbestellungen per E-Mail beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Die Leitung fügt die Anfrage und Stichworte ein, das LLM entwirft die Antwort. Sie prüft jede Antwort auf Kulanz und Fakten zum Einzelfall, weil die persönliche Kundenbeziehung im Fachgeschäft zentral ist."
+      },
+      {
+        "name": "Stelleninserate verfassen und Bewerbungen vorselektieren",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM verfasst das Inserat und fasst die eingefügten Bewerbungsunterlagen zusammen. Die Leitung prüft jedes Ergebnis und entscheidet selbst über Einladungen."
+      },
+      {
+        "name": "Personaleinsatz- und Ferienpläne erstellen und Arbeitszeiten erfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Planungs- und Zeiterfassungssoftware (klassisch, regelbasiert) übernimmt das Planen und Erfassen weitgehend. Ein LLM bringt keinen relevanten Zusatznutzen."
+      },
+      {
+        "name": "Jahresbudget, Businessplan und Unterlagen für Bank- oder Vermietergespräche erstellen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Die Zahlen und Annahmen hängen stark vom Wissen der Inhaberin ab, daher ist unklar, ob 50 % Zeitersparnis erreicht werden; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Leitung erarbeitet Annahmen und Zahlen selbst. Das LLM liefert Struktur, Texte und Tabellenformeln für Businessplan und Budget."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommen ist ein Inhaber oder Filialleiter eines kleinen Fachgeschäfts (KMU, wenige Mitarbeitende), der einen grossen Teil der Zeit selbst im Verkauf steht. Die ESCO-Beschreibung ist sehr knapp; die Zeitanteile sind deshalb aus der Kompetenzliste und aus Berufswissen grob geschätzt. Grenzfälle sind die Datenauswertung und die Budgetplanung, weil Kassensysteme schon Standardreports liefern und das Ermessen der Leitung den Ausschlag gibt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Marketing-Inhalte, schriftliche Kundenkorrespondenz, Belegerfassung, Auswertungen von Verkaufszahlen und Personalinserate; sie werden von Chat-LLMs, Bild-KI, Datenanalyse-Werkzeugen und KI-Belegerkennung übernommen bzw. vorbereitet.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert, meist delegierend: Die KI erstellt Beiträge, Antworten und Auswertungen, die Leitung prüft jedes Ergebnis. Ersetzend ist nur die Belegerfassung. Der Kern des Berufs – Verkauf, Ware und Personalführung im Laden – bleibt Präsenzarbeit; die Kundschaft erwartet persönliche Ansprache (Vertrauen), und kleine Läden führen neue Software zögerlich ein.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

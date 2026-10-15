@@ -1,0 +1,241 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "453bb4d04738913c05e83e0b297499c629dfd2956d7121ccd0fd4c24175f45ab",
+    "isco_code": "3256",
+    "beruf": "Arztpraxisassistent/in",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "cache_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 17787
+        }
+      ],
+      "cached_content_token_count": 17787,
+      "candidates_token_count": 2300,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2300
+        }
+      ],
+      "prompt_token_count": 24193,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 24193
+        }
+      ],
+      "thoughts_token_count": 7673,
+      "total_token_count": 34166
+    },
+    "usage_je_versuch": [
+      {
+        "cache_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 17787
+          }
+        ],
+        "cached_content_token_count": 17787,
+        "candidates_token_count": 2300,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2300
+          }
+        ],
+        "prompt_token_count": 24193,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 24193
+          }
+        ],
+        "thoughts_token_count": 7673,
+        "total_token_count": 34166
+      }
+    ],
+    "request_ids": [
+      "XjzPapbJKPSAz7IP5t2zgAs"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r2-3256_arztpraxisassistent_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3256",
+    "beruf": "Arztpraxisassistent/in",
+    "taetigkeiten": [
+      {
+        "name": "Patienten empfangen, im Sprechzimmer vorbereiten, am Schalter betreuen und Medikamente abgeben",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert unmittelbare persönliche Präsenz am Empfang und im Sprechzimmer sowie physisches Aushändigen und Erklären von Medikamenten (Selbstdispensation)."
+      },
+      {
+        "name": "Telefonische Terminvereinbarungen, Rezeptbestellungen und Standardauskünfte bearbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein KI-Telefonassistent (Voicebot) mit Agenda- und KIS-Anbindung übernimmt Standardanrufe; die Fachperson bearbeitet nur weitergeleitete Ausnahmen und gibt Rezeptvorbereitungen frei. Für P1 übernehmen klassische Online-Terminbuchungs- und Rezeptformulare über 50 % der Standardanfragen."
+      },
+      {
+        "name": "Telefonische Ersteinschätzung (Triage) bei akuten Beschwerden von Patienten durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bei akuten Symptomen sind das persönliche Gespräch, das Hinhören auf klinische Warnzeichen (z. B. Atemnot, Verwirrtheit) und das Beruhigen der Patienten zentral; KI erreicht hier keine 50 % Zeitersparnis bei gleicher Sicherheit."
+      },
+      {
+        "name": "Blutentnahmen, Injektionen, Impfungen und Analysen im Praxislabor durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Tätigkeiten am Patienten (Venenpunktion, Kapillarblut, Injektionen) sowie manuelles Vorbereiten und Bestücken der Point-of-Care-Laborgeräte."
+      },
+      {
+        "name": "Diagnostische Untersuchungen (EKG, Lungenfunktion, Röntgen, Vitalparameter) durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Arbeit und persönliche Anleitung am Patienten vor Ort (Elektroden anbringen, Röntgenpositionierung einstellen, Atemmanöver bei Spirometrie anleiten)."
+      },
+      {
+        "name": "Bei ärztlichen Untersuchungen und Eingriffen assistieren sowie Wunden versorgen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Assistenz am Behandlungsstuhl (Instrumente anreichen, Kleinchirurgie) sowie manuelle Wundversorgung, Verbandswechsel und Fädenziehen."
+      },
+      {
+        "name": "Instrumente sterilisieren, Behandlungsräume desinfizieren und Praxismaterial bewirtschaften",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Reinigung, Flächendesinfektion, Sterilisationsvorbereitung im Autoklaven und physisches Einräumen von Medikamenten und Verbrauchsmaterial."
+      },
+      {
+        "name": "Ärztliche Berichte, Überweisungen, Kostengutsprachen und Korrespondenz ab Diktat oder Vorlagen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracherkennung und im KIS integrierte LLM-Funktionen erstellen aus Diktaten und Verlaufsdaten fertige Berichtsentwürfe; die Praxisassistentin prüft jedes Dokument inhaltlich und formal, fügt Beilagen an und bereitet den Versand vor."
+      },
+      {
+        "name": "Eingehende Befunde, externe Berichte und Patientendaten im Praxisinformationssystem erfassen und zuordnen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Dokumentenverarbeitung im KIS liest eingehende PDF-Berichte und Scans aus, ordnet sie automatisch dem Patientendossier zu und extrahiert Metadaten; der Mensch bearbeitet nur unklare Zuordnungen und Ausnahmen."
+      },
+      {
+        "name": "Leistungsabrechnung nach Tarif kontrollieren, Rechnungen erstellen und Mahnwesen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Tarifprüfung (TARMED/Tardoc), elektronischer Rechnungsversand über MediData, QR-Zahlungsabgleich und Mahnlauf erfolgen über klassische regelbasierte Praxissoftware ohne generative KI."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Bewertet wird das typische Setting einer Medizinischen Praxisassistentin EFZ (MPA, früher Arztpraxisassistentin) in einer ambulanten Schweizer Hausarzt- oder Gruppenpraxis. Offensichtliches ESCO-Rauschen (wie Assistenz bei Epilepsiechirurgie, Ausüben plastischer Chirurgie oder Politikberatung) wurde bereinigt. Die Telefonarbeit wurde in standardisierte Anfragen (Termin/Rezept, E2) und akute medizinische Triage (E0) aufgeteilt, da sich deren KI-Exposition stark unterscheidet.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem die telefonische Termin- und Rezeptannahme, das Schreiben ärztlicher Berichte ab Diktat sowie das Erfassen eingehender Befunde durch Voicebots, Spracherkennung und KIS-integrierte Dokumentenverarbeitung.",
+      "begruendung": "Rund 25 % der Arbeitszeit im administrativen und organisatorischen Bereich sind exponiert, teils ersetzend (Standardtelefonate, Dokumentenzuordnung), teils delegierend (Berichtswesen mit zwingender Einzelprüfung). Der überwiegende Teil des Berufs (75 %) besteht aus unmittelbarer Patientenbetreuung, Blutentnahmen, Diagnostik, Wundversorgung und Praxishygiene vor Ort und bleibt von KI unberührt. In der Schweiz bremsen zudem strenge Datenschutzvorgaben (revDSG, Arztgeheimnis) sowie der Wunsch vieler Patienten nach persönlichem Kontakt in Mundart die rasche Vollautomatisierung am Empfang.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

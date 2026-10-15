@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "fe23b78a0b4a7387af3fc0c9bf0a2d5ac55d215276a2f8e8b348c62ee1747292",
+    "isco_code": "5321",
+    "beruf": "Pflegeassistent/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T01:06:26+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4500,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 3672,
+      "api_aequivalent_usd": 0.1167782
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4500,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3672,
+        "output_tokens_details": {
+          "thinking_tokens": 1019
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4500,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1167782
+      }
+    ],
+    "request_ids": [
+      "3e443e20-66ef-4821-9df1-0399a26bcc32"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5321",
+    "beruf": "Pflegeassistent/in",
+    "taetigkeiten": [
+      {
+        "name": "Bewohnende bzw. Patienten bei Körperpflege, An- und Auskleiden und Ausscheidung unterstützen",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körpernahe, physische Pflege mit direktem Kontakt; keine Robotik, die das in relevantem Umfang übernimmt."
+      },
+      {
+        "name": "Bewohnende mobilisieren, lagern und bei Transfers (Bett–Rollstuhl) unterstützen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit am Menschen; Hebelifte sind Hilfsmittel, ersetzen die Pflegeperson aber nicht."
+      },
+      {
+        "name": "Mahlzeiten und Getränke verteilen, beim Essen unterstützen und Essen eingeben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Hilfe und Präsenz beim Essen; keine verfügbare Automatisierung im Heim- oder Spitalalltag in relevantem Umfang."
+      },
+      {
+        "name": "Vitalzeichen, Gewicht und Blutzucker messen und Zustand beobachten",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Messen am Patienten und Beobachten vor Ort; automatische Messgeräte sind Hilfsmittel, das Anlegen und Beobachten bleibt manuell."
+      },
+      {
+        "name": "Bewohnende im Alltag begleiten, Gespräche führen und Aktivierung gestalten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beziehungs- und Präsenztätigkeit, deren Wert in der persönlichen Anwesenheit liegt."
+      },
+      {
+        "name": "Pflegeleistungen und Beobachtungen in der elektronischen Pflegedokumentation erfassen",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracheingabe in der Pflegedokumentations-App erstellt aus einem kurzen Diktat (auch Schweizerdeutsch) den Verlaufseintrag; die Pflegeassistentin prüft und korrigiert jeden Eintrag. Kurze Einträge und Dialekt halten die Restzeit hoch; Hemmnis Datenschutz/Berufsgeheimnis."
+      },
+      {
+        "name": "Beobachtungen an die Pflegefachperson rapportieren und an Übergaben teilnehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Abstimmung im Team in Präsenz; KI spart hier keine relevante Zeit."
+      },
+      {
+        "name": "Zimmer und Betten herrichten, Wäsche versorgen, Material auffüllen und Hilfsmittel reinigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische hauswirtschaftliche Arbeiten; Steckbeckenspüler übernehmen nur einen kleinen Teil, kein Robotereinsatz in relevantem Umfang."
+      },
+      {
+        "name": "Gerichtete Medikamente nach Anordnung abgeben und Einnahme überwachen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abgabe am Bett und Überwachen der Einnahme ist physisch und präsenzgebunden; das Richten erfolgt durch Fachpersonen bzw. Apotheke."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommen wird eine Pflegeassistentin bzw. ein Pflegehelfer (SRK) oder eine Assistentin Gesundheit und Soziales EBA in einem Alters- und Pflegeheim, die unter Anleitung von Pflegefachpersonen arbeitet. Der ESCO-Input passt gut, ist aber teilweise allgemein formuliert (z. B. Kompetenzen zu Politik und Einwilligung), deshalb wurden diese Kompetenzen nicht als eigene Tätigkeiten übernommen. Der einzige Grenzfall ist die Pflegedokumentation: Die Einträge sind kurz, und die Spracheingabe muss mit Schweizerdeutsch zurechtkommen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen ist im Wesentlichen nur die Pflegedokumentation: Spracheingabe in der Dokumentations-App erstellt die Einträge. Die körpernahe Pflege und die Betreuung sind nicht exponiert.",
+      "begruendung": "Nur rund 7 % der Arbeitszeit sind exponiert, und zwar im Modus delegierend: Die KI erstellt den Dokumentationseintrag, die Pflegeassistentin prüft jeden Eintrag. Der Kern des Berufs ist physische Pflege und persönliche Präsenz bei Bewohnenden. Datenschutz und Berufsgeheimnis sowie die oft knappen IT-Mittel in Heimen bremsen die Einführung.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

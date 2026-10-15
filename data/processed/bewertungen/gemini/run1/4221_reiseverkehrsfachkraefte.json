@@ -1,0 +1,229 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "43e3f7ce854e5f2141d55c98ee7fd91fde0bf7bb38ed7c82ebea9dbb66861608",
+    "isco_code": "4221",
+    "beruf": "Reiseverkehrsfachkräfte",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2676,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2676
+        }
+      ],
+      "prompt_token_count": 22514,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22514
+        }
+      ],
+      "thoughts_token_count": 10425,
+      "total_token_count": 35615
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2676,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2676
+          }
+        ],
+        "prompt_token_count": 22514,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22514
+          }
+        ],
+        "thoughts_token_count": 10425,
+        "total_token_count": 35615
+      }
+    ],
+    "request_ids": [
+      "XTzPatHzCrDtz7IPofG1mAw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-4221_reiseverkehrsfachkraefte",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "4221",
+    "beruf": "Reiseverkehrsfachkräfte",
+    "taetigkeiten": [
+      {
+        "name": "Kundinnen und Kunden im Reisebüro und am Telefon persönlich beraten, Bedürfnisse abklären und Reisen sowie Zusatzleistungen verkaufen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das persönliche Beratungs- und Verkaufsgespräch vor Ort oder am Telefon (inkl. Verkauf von Reiseversicherungen und Zusatzprodukten) ist eine unmittelbare Präsenz- und Beziehungstätigkeit. Einfache Standardbuchungen sind bereits ins Online-Self-Service abgewandert, sodass im Reisebüro die beratungsintensiven Fälle verbleiben."
+      },
+      {
+        "name": "Individuelle Reisepläne, Routenvorschläge und massgeschneiderte Reisepakete (Offerten) ausarbeiten",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Reiseplanungs- und Offertsoftware sowie Recherche-Agenten erstellen aus Kundenwünschen komplette Routenvorschläge und ansprechende Offerttexte. Die Reiseverkehrsfachkraft gibt die Parameter vor und prüft jede Offerte fachlich auf Machbarkeit, Übergangszeiten und Preis-Leistungs-Verhältnis."
+      },
+      {
+        "name": "Flüge, Hotels, Mietwagen und Transfers in globalen Distributionssystemen (GDS) und auf B2B-Buchungsplattformen reservieren und buchen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die verbindliche Buchung in GDS (z. B. Amadeus) und heterogenen Veranstalterportalen ist stark transaktionsorientiert und erreicht mit generativer KI heute keine 50 % Zeitersparnis. Klassische Buchungsmaschinen, NDC-/API-Schnittstellen zwischen Offert- und Reservierungssystemen sowie Selbstbuchungsportale automatisieren diesen Prozess jedoch weitgehend."
+      },
+      {
+        "name": "Schriftliche Kundenanfragen zu Reisezielen, Einreise- und Gesundheitsbestimmungen sowie nachhaltigen Reiseoptionen beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Recherche-Agenten mit Zugriff auf aktuelle Einreise- und Zielgebietsdatenbanken (z. B. TIMATIC) sowie E-Mail-Integration tragen die Fakten zusammen und entwerfen die Antwort in der jeweiligen Fremdsprache. Wegen der Haftung für korrekte Einreiseauskünfte prüft die Fachkraft jede Antwort inhaltlich vor dem Versand."
+      },
+      {
+        "name": "Umbuchungen, Stornierungen und Flugplanänderungen in den Buchungssystemen bearbeiten sowie Reisevorbereitungen überwachen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Umschreiben von Tickets im GDS und Koordinieren geänderter Anschlussleistungen ist ein regelgebundener Transaktionsprozess, bei dem generative KI keine 50 % Zeit spart. Klassische GDS-Automatisierungen (wie Amadeus Ticket Changer und automatisches Queue-Management) übernehmen Tarifberechnungen und Standard-Flugplanänderungen zu über 50 %."
+      },
+      {
+        "name": "Reiseunterlagen, Voucher, Detailprogramme und Begleitbriefe zusammenstellen, prüfen und an die Kundschaft übermitteln",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in der Reisebürosoftware generieren aus den Buchungsdaten automatisch ein personalisiertes Reisedossier mit Tagesprogramm, Zielgebietstipps und Begleitschreiben, welches die Fachkraft vor dem Versand auf Vollständigkeit prüft. Den reinen Zusammenzug und Versand von Vouchern, Tickets und Rechnungen erledigt zudem klassische Mid- und Backoffice-Software."
+      },
+      {
+        "name": "Kundenbeschwerden und Reisemängel abklären sowie Stellungnahmen und Rückforderungen an Leistungsträger verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus kopierten Kundenreklamationen, Buchungsdaten und Stichworten diplomatische Antwortschreiben sowie fremdsprachige Forderungen an ausländische Hotels oder Airlines. Die Reiseverkehrsfachkraft entscheidet über Kulanz oder Preisminderung und prüft jedes Schreiben im Einzelfall."
+      },
+      {
+        "name": "Kundenzahlungen verbuchen sowie Rechnungen und Abrechnungen von Leistungsträgern kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zahlungsabgleich, Kreditkarten- und BSP-Abrechnungen sind strukturierte Buchhaltungsprozesse ohne relevanten Mehrwert durch generative KI. Klassische Reisebüro-Backoffice- und Buchhaltungssoftware automatisiert den Zahlungsabgleich per QR-Referenz und die Kommissionskontrolle."
+      },
+      {
+        "name": "Kundendaten und Reisepräferenzen im CRM-System pflegen sowie personalisierte Nachfass- und Marketingbotschaften erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "In das CRM integrierte KI-Funktionen extrahieren Reisepräferenzen aus der Kommunikationshistorie und generieren personalisierte Rückkehrbriefe sowie Reiseinspirationen. Die Fachkraft gibt die Kampagnen nach kurzer Sichtung oder stichprobenartiger Prüfung frei."
+      },
+      {
+        "name": "Beziehungen zu Leistungsträgern und Veranstaltern pflegen, Konditionen verhandeln und Angebote auf Nachhaltigkeit prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Aufbau eines Partnernetzwerks, Vertragsverhandlungen mit Leistungsträgern sowie Studienreisen und Vor-Ort-Prüfungen sind zwischenmenschliche Präsenz- und Verhandlungstätigkeiten."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Reiseverkehrsfachkraft (Kauffrau/Kaufmann EFZ Reisebüro bzw. Reiseberater/in) in einem Schweizer Reisebüro oder bei einem Reiseveranstalter (KMU oder Filialnetz). Da einfache Punkt-zu-Punkt-Buchungen bereits stark ins Online-Self-Service abgewandert sind, liegt der Schwerpunkt heute auf beratungsintensiven Individual- und Pauschalreisen. Grenzfälle bestehen bei der Buchungs- und Umbuchungsabwicklung in GDS/B2B-Portalen, wo klassische Software-Automatisierung (P1) dominiert, während generative KI vor allem bei der Offert-, Programm- und Texterstellung greift.",
+    "zusammenfassung": {
+      "haupt_risiko": "Das Ausarbeiten individueller Reiseofferten, die schriftliche Beantwortung von Kundenanfragen und Beschwerden sowie die Erstellung personalisierter Reiseunterlagen und CRM-Kampagnen werden durch Recherche-Agenten, Chat-LLMs und KI-gestützte Reisebürosoftware stark beschleunigt.",
+      "begruendung": "Knapp die Hälfte der Arbeitszeit (45 %) ist gegenüber generativer KI exponiert, wobei die KI überwiegend delegierend arbeitet (Erstellung von Offerten, Reiseprogrammen, Auskünften und Beschwerdeantworten mit fachlicher Einzelprüfung) und nur im CRM-Marketing ersetzend wirkt. Während das persönliche Beratungsgespräch im Reisebüro nicht exponiert ist, können viele Buchungs-, Umbuchungs- und Abrechnungsprozesse durch klassische GDS- und Backoffice-Software automatisiert werden. In der Schweiz bremsen insbesondere die Haftung nach dem Pauschalreisegesetz (etwa für korrekte Einreise- und Leistungsangaben), das revidierte Datenschutzgesetz sowie die Kundenerwartung an persönliche Betreuung bei Reklamationen eine ungeprüfte Übernahme von KI-Ausgaben.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "7c5b2954c1d49acb8bedadf48d17b63631eb9f5e05c39567279548d61e1d7d80",
+    "isco_code": "2264",
+    "beruf": "Physiotherapeut/in",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 1645,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 1645
+        }
+      ],
+      "prompt_token_count": 27579,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 27579
+        }
+      ],
+      "thoughts_token_count": 2504,
+      "total_token_count": 31728
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1645,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1645
+          }
+        ],
+        "prompt_token_count": 27579,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 27579
+          }
+        ],
+        "thoughts_token_count": 2504,
+        "total_token_count": 31728
+      }
+    ],
+    "request_ids": [
+      "XTzPaqX-DMyfz7IP7bi_mAY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-2264_physiotherapeut_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2264",
+    "beruf": "Physiotherapeut/in",
+    "taetigkeiten": [
+      {
+        "name": "Befund erheben: Anamnesegespräch, manuelle Untersuchung und Funktionstests durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Untersuchung am Patienten und persönliches Anamnesegespräch vor Ort erfordern unmittelbare physische und zwischenmenschliche Präsenz."
+      },
+      {
+        "name": "Manuelle Therapie, Mobilisation und therapeutische Massage durchführen",
+        "zeitanteil_pct": 35,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Tätigkeit am Körper der Patientinnen und Patienten; es existiert keine kommerziell verfügbare Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Therapeutische Übungen anleiten und Bewegungsabläufe korrigieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Anleiten, Sichern und taktile oder visuelle Korrigieren von Übungen erfordert unmittelbare Präsenz im Therapieraum."
+      },
+      {
+        "name": "Behandlungsplan erstellen und laufend anpassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Therapeutin plant und entscheidet für jeden Patienten selbst, während ein Chat-LLM evidenzbasierte Übungsprogressionen und Therapiebausteine vorschlägt."
+      },
+      {
+        "name": "Verlaufsdokumentation führen und Berichte an Ärzte und Versicherer verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Per Spracheingabe (Einzeldiktat, auch Schweizerdeutsch) erstellt die KI strukturierte Verlaufsnotizen und hochdeutsche Verlaufsberichte; die Fachperson prüft und verantwortet jeden Bericht."
+      },
+      {
+        "name": "Heimprogramme und Patienteninformationen zusammenstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt verständliche Übungsblätter und Erklärtexte (bei Bedarf auch mehrsprachig) nach kurzen Stichworten; die Therapeutin prüft die patientenspezifische Auswahl."
+      },
+      {
+        "name": "Termine verwalten und Leistungen nach Tarif abrechnen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Online-Terminbuchung und elektronische Tarifabrechnung mit Kranken- und Unfallversicherern erfolgen über klassische Praxissoftware ohne Bedarf an generativer KI."
+      },
+      {
+        "name": "Patienten und Angehörige zu Prävention, Ergonomie und Selbstmanagement beraten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung, Aufklärung und Motivationsarbeit im direkten Gespräch mit Patientinnen, Patienten und Angehörigen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Physiotherapeut/in FH in einer ambulanten Praxis in der Schweiz (häufigstes Arbeitsumfeld neben Akutspital und Rehabilitationsklinik). Das ESCO-Profil bildet die Kerntätigkeiten gut ab; für die Schweiz unpassende optionale Kompetenzen wie das Verschreiben von Medikamenten wurden nicht übernommen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Verlaufsdokumentation und Berichterstattung per Spracheingabe sowie das Erstellen von Heimprogrammen und Behandlungsplänen mittels Chat-LLM, während die eigentliche Therapie am Patienten unberührt bleibt.",
+      "begruendung": "Rund 20 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus (Berichte, Heimprogramme) und ergänzend unterstützend bei der Therapieplanung. Der Kern des Berufs besteht aus manueller Behandlung, Befundaufnahme und persönlicher Anleitung vor Ort; bei der Dokumentation bremsen zudem Datenschutzanforderungen (revDSG) und das Berufsgeheimnis die Nutzung externer Cloud-Dienste.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

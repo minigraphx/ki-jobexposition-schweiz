@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "4459663200c88569919491b3a2fb1e37d3f11ae73b0a03bdd3e0d1e0adc7f122",
+    "isco_code": "2431",
+    "beruf": "Fachkräfte in Marketing und Werbung",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T22:36:29+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 9435,
+      "cache_read_input_tokens": 76868,
+      "output_tokens": 9136,
+      "api_aequivalent_usd": 0.2735896
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 9435,
+        "cache_read_input_tokens": 76868,
+        "output_tokens": 9136,
+        "output_tokens_details": {
+          "thinking_tokens": 1992
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 9435,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.2735896
+      }
+    ],
+    "request_ids": [
+      "dcfb2b4e-4e5d-42a0-896e-3732392f192b"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2431",
+    "beruf": "Fachkräfte in Marketing und Werbung",
+    "taetigkeiten": [
+      {
+        "name": "Markt-, Wettbewerbs- und Umfeldanalysen recherchieren und als Bericht aufbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent mit Websuche erstellt Wettbewerbsübersichten, PESTEL-/SWOT-Analysen und Marktberichte; die Fachperson gibt den Auftrag vor und prüft jede Aussage und Quelle, da Halluzinationen bei CH-Marktdaten häufig sind."
+      },
+      {
+        "name": "Kundenbefragungen konzipieren und Ergebnisse (inkl. offene Antworten) auswerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Fragebogen, Datenanalyse-Werkzeuge kodieren offene Antworten und erstellen Auswertungen; die Fachperson prüft Fragebogenlogik und Interpretation jeder Auswertung. Umfragetools automatisieren nur Versand und Basisstatistik, nicht ≥ 50 % der Zeit."
+      },
+      {
+        "name": "Marketingkonzepte und Positionierungspapiere schriftlich ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Briefing, Analysen und Eckpunkten entwirft ein Chat-LLM das strukturierte Konzept (Zielgruppen, Positionierung, Marketingmix); die Fachperson schärft und prüft jedes Dokument fachlich."
+      },
+      {
+        "name": "Marketingstrategie entwickeln und mit Geschäftsleitung, Verkauf und Produktmanagement abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Strategische Ermessensentscheide, Einbindung in die Unternehmensstrategie und Abstimmung in Sitzungen; KI liefert Input, spart aber nicht 50 % der Zeit."
+      },
+      {
+        "name": "Kampagnen, Massnahmenpläne, Mediapläne und Marketingbudgets planen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die stark ermessens- und erfahrungsbasierte Planung (Kanalwahl, Budgetverteilung, Agenturofferten) wirklich ≥ 50 % Zeit spart; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Fachperson plant selbst; das LLM liefert Massnahmenvorschläge, Zeitpläne und Budgettabellen als Entwurf, die sie übernimmt und anpasst."
+      },
+      {
+        "name": "Werbe-, Web- und Newslettertexte sowie Social-Media-Posts verfassen und in Landessprachen adaptieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM schreibt Texte, Varianten und DE/FR/IT-Fassungen aus Briefing und Tonalitätsvorgaben; die Fachperson prüft und korrigiert jeden Text vor Publikation."
+      },
+      {
+        "name": "Werbeagenturen und Dienstleister briefen, Entwürfe beurteilen und Umsetzung koordinieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung in Gesprächen, Feedbackrunden und kreative Beurteilung dominieren; das schriftliche Briefing ist nur ein kleiner Teil, die Schwelle wird insgesamt nicht erreicht."
+      },
+      {
+        "name": "Kampagnen-Performance mit Web- und Social-Analytics auswerten und Reportings erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Datenanalyse bzw. KI-Funktionen in Analytics-Tools werten Daten aus und formulieren Insights; die Fachperson prüft jede Interpretation. P1: automatisierte Dashboards (z. B. Google Analytics, Looker Studio) übernehmen die Datenzusammenstellung."
+      },
+      {
+        "name": "Präsentationen und Entscheidungsgrundlagen für Kunden und Geschäftsleitung erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in Office-Suiten erstellen Foliensätze aus Konzeptdokumenten; die Fachperson passt Layout ans CI an und prüft jede Folie inhaltlich."
+      },
+      {
+        "name": "Kunden bzw. interne Auftraggeber beraten, Konzepte präsentieren und Workshops moderieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung, Bedürfnisermittlung im Gespräch und Moderation leben von der Präsenz und Beziehung."
+      },
+      {
+        "name": "Anfragen per E-Mail beantworten und Projektfortschritt dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI im Mailprogramm entwirft Antworten, Meeting-Assistenten erstellen Protokolle und Statusnotizen; die Fachperson prüft jede Ausgabe kurz vor dem Versand."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Marketingfachperson (Tertiärstufe, z. B. Marketing Manager/in) in einem Schweizer KMU oder einer Agentur mit Konzept-, Kampagnen- und Content-Verantwortung. Der ESCO-Input ist stark beratungs- und strategieorientiert; operative Tätigkeiten (Content, Analytics, Agenturkoordination) wurden aus Berufswissen und optionalen Kompetenzen ergänzt. Grenzfälle: Kampagnen- und Budgetplanung (E1 vs. E0) sowie die Abgrenzung von delegierendem und unterstützendem Modus bei Konzeptarbeit.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Texterstellung und Übersetzung von Marketinginhalten, Markt- und Wettbewerbsrecherchen, Konzeptdokumente, Performance-Reportings und Präsentationen. Diese Arbeiten übernehmen Chat-LLMs, Recherche-Agenten, KI-Datenanalyse und KI-Funktionen in Office-Suiten.",
+      "begruendung": "Rund zwei Drittel der Arbeitszeit sind exponiert, überwiegend im delegierenden Modus: Die KI erstellt Texte, Analysen und Entwürfe, die Fachperson prüft jedes Ergebnis und verantwortet es. Die Kampagnenplanung wird nur unterstützt, strategische Abstimmung, Beratung und Agenturkoordination bleiben beim Menschen. Wesentliche CH-Hemmnisse gibt es kaum, und die Mehrsprachigkeit (DE/FR/IT) wird durch KI eher erleichtert.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

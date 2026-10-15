@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "711da9656544eb8dc22b8161fcb0429cd746f8992440db0c0e68c234d71645f3",
+    "isco_code": "2113",
+    "beruf": "Naturwissenschaftler/in (Biologie/Chemie)",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:48:33+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6635,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4900,
+      "api_aequivalent_usd": 0.1584182
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 6635,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4900,
+        "output_tokens_details": {
+          "thinking_tokens": 1429
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6635,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1584182
+      }
+    ],
+    "request_ids": [
+      "e53fb189-bd98-4355-be60-d86bc0f35251"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2113",
+    "beruf": "Naturwissenschaftler/in (Biologie/Chemie)",
+    "taetigkeiten": [
+      {
+        "name": "Synthesen, Experimente und Versuchsreihen im Labor praktisch durchführen (inkl. Sicherheitsvorschriften, Schutzausrüstung)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Laborarbeit mit Händen an Apparaturen und Reagenzien. Synthese- und Hochdurchsatzroboter decken nur Teilbereiche ab und übernehmen keine 50 % der vielfältigen Forschungsexperimente."
+      },
+      {
+        "name": "Proben vorbereiten, Analysen an Geräten (HPLC, GC, MS, NMR) durchführen und Geräte kalibrieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit an Proben und Geräten. Autosampler und Pipettierroboter verkürzen die Arbeit zwar, die Vorbereitung, Rüstarbeit und Kalibrierung bleiben aber überwiegend Handarbeit, deshalb P0."
+      },
+      {
+        "name": "Chromatogramme, Spektren und Messdaten auswerten und fachlich interpretieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Integration der Peaks erledigt bereits klassische Chromatografie-Software. Die fachliche Interpretation (Strukturaufklärung, Plausibilität, Abweichungen) erfordert Expertise, und multimodale LLMs sparen dabei nicht verlässlich 50 % der Zeit bei gleicher Qualität."
+      },
+      {
+        "name": "Forschungsfragen, Hypothesen und Versuchsdesign für Entwicklungsprojekte festlegen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bei dieser kreativen Kernleistung entscheidet die Fachperson auf Basis von Erfahrung und Betriebskontext. Ein LLM kann Ideen liefern, spart aber keine 50 % der Zeit."
+      },
+      {
+        "name": "Fach- und Patentliteratur recherchieren und Stand der Technik zusammenfassen",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Literatur- und Websuche finden Quellen und fassen sie zusammen. Die Wissenschaftlerin bewertet die Relevanz selbst und überprüft die Kernaussagen an den Originalquellen, wegen des Halluzinationsrisikos."
+      },
+      {
+        "name": "Laborjournal (ELN), Analyse- und Prüfberichte sowie technische Berichte verfassen",
+        "zeitanteil_pct": 12,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus eingefügten Messdaten, Stichworten und Vorlagen entwirft ein LLM den Bericht. Die Fachperson prüft jeden Bericht inhaltlich und unterzeichnet ihn. GMP/GLP-Anforderungen und Vertraulichkeit sind ein Hemmnis."
+      },
+      {
+        "name": "Wissenschaftliche Publikationen, Präsentationen und Erfindungsmeldungen ausarbeiten",
+        "zeitanteil_pct": 7,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Resultaten und einer Gliederung erstellt ein LLM Textentwürfe, Abstracts und Folientexte in Englisch. Die Wissenschaftlerin steuert die Argumentation und prüft und überarbeitet jede Fassung."
+      },
+      {
+        "name": "Forschungsdaten aufbereiten, statistisch auswerten und Auswerteskripte (Python/R) schreiben",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Datenanalyse- und Coding-Agenten mit Code-Ausführung erstellen Skripte, Statistiken und Grafiken. Die Fachperson spezifiziert die Analyse und prüft jedes Ergebnis auf Plausibilität."
+      },
+      {
+        "name": "Projektbesprechungen führen und Fachfragen mit Produktion, QA, Kunden und externen Laboren abstimmen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bei Abstimmung, Beratung und Entscheidungsfindung im Gespräch liegt der Wert in der persönlichen Interaktion."
+      },
+      {
+        "name": "Laborantinnen, Lernende und Nachwuchs anleiten und betreuen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Führungstätigkeit im Labor."
+      },
+      {
+        "name": "Projektanträge, Zeit- und Budgetpläne sowie Statusberichte erstellen",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten und früheren Anträgen entwirft ein LLM Antragstexte und Statusberichte. Die Fachperson ergänzt Zahlen und Ziele und prüft jede Fassung."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Chemikerin/Biologe mit Hochschulabschluss in der F&E bzw. Analytik der Schweizer Chemie- und Pharmaindustrie, mit hohem Laboranteil. Die ESCO-Kompetenzen sind stark auf die akademische Forschung ausgerichtet (Grants, Open Access); für die Industrie wurden sie auf Berichte, Projektanträge und Publikationen reduziert. Die grössten Unsicherheiten betreffen den Laboranteil, der je nach Rolle (Laborleitung vs. Projektleitung) stark variiert, und die Frage, ob LLMs bei der Interpretation von Spektren und Messdaten heute schon 50 % der Zeit sparen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind das Verfassen von Laborberichten, Publikationen und Projektanträgen durch Chat-LLMs sowie die Literaturrecherche und die Datenauswertung durch Recherche- und Datenanalyse-Agenten; die praktische Laborarbeit und die fachliche Interpretation sind nicht betroffen.",
+      "begruendung": "Etwa ein Drittel der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI entwirft Berichte, Texte und Auswerteskripte, und die Wissenschaftlerin prüft und verantwortet jede Ausgabe. Die Recherche bleibt unterstützend. In der Schweizer Pharma- und Chemieindustrie bremsen vor allem GMP/GLP-Dokumentationspflichten, die Validierung von Systemen und die Vertraulichkeit von Forschungsdaten (Cloud-Restriktionen) die Einführung; grosse Konzerne stellen aber bereits interne KI-Plattformen bereit.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

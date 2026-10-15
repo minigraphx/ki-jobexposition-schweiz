@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "d6bc29c3f25a7a666ec96604886a7b9e1332e588f90264cca498e7307f884ef5",
+    "isco_code": "2120",
+    "beruf": "Statistiker/in / Aktuar/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:36:49+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 39195,
+      "output_tokens": 5218,
+      "api_aequivalent_usd": 0.112207
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 39195,
+        "output_tokens": 5218,
+        "output_tokens_details": {
+          "thinking_tokens": 1836
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.112207
+      }
+    ],
+    "request_ids": [
+      "2abf727e-34c5-460b-826c-e92f2056e751"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2120",
+    "beruf": "Statistiker/in / Aktuar/in",
+    "taetigkeiten": [
+      {
+        "name": "Bestands-, Schaden- und Leistungsdaten aus Systemen abfragen, bereinigen und für Analysen aufbereiten (SQL/Python/R)",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Coding-/Datenanalyse-Agent mit Code-Ausführung schreibt Abfragen und Bereinigungsskripte; die Aktuarin spezifiziert und prüft jede Ausgabe auf Datenqualität und Vollständigkeit. Wiederkehrende ETL-Strecken laufen bereits, übrig bleiben Ad-hoc-Fälle mit Klärungsbedarf."
+      },
+      {
+        "name": "Aktuarielle und statistische Modelle (Reservierung, Tarifierung, GLM, Sterbetafeln) programmieren und kalibrieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Coding-Agenten in R/Python-Repositories setzen Modellcode und Tests um; die Aktuarin definiert Methodik, steuert und reviewt jede Änderung fachlich. Methodenwahl und Validierung halten die Restzeit im oberen Band."
+      },
+      {
+        "name": "Berechnungsläufe für technische Rückstellungen und SST in der Aktuarsoftware durchführen und abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Läufe und Abstimmungen sind regelbasierte Berechnungen in klassischer Aktuar- und Projektionssoftware (Chain-Ladder-Tools, Cashflow-Modelle, automatisierte Abstimmungen); kein LLM nötig."
+      },
+      {
+        "name": "Annahmen festlegen und Ergebnisse fachlich plausibilisieren (Diskontsatz, Sterblichkeit, Entwicklungsfaktoren, Expert Judgement)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fachliches Ermessen mit persönlicher Verantwortung (verantwortliche/r Aktuar/in); KI kann Vergleiche liefern, spart aber weniger als 50 % der Zeit."
+      },
+      {
+        "name": "Aktuarberichte, SST-Berichte, Pensionskassen-Gutachten und Memos verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Vorjahresbericht, Ergebnistabellen und Stichworte als Text einfügen; das LLM entwirft den Bericht, die Aktuarin prüft jede Aussage und Zahl und unterzeichnet. FINMA-Vorgaben und Unterschriftsverantwortung erfordern vollständige Prüfung."
+      },
+      {
+        "name": "Statistische Auswertungen und Erfahrungsstudien (Schadenverlauf, Storno, Portfolioentwicklung) durchführen und visualisieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Datenanalyse-Werkzeuge mit Code-Ausführung erstellen Auswertungen, Tests und Grafiken; die Person spezifiziert die Fragestellung und prüft jedes Ergebnis auf statistische Korrektheit und Interpretation."
+      },
+      {
+        "name": "Ad-hoc-Kalkulationen, Prämienberechnungen und Profit-Tests für Produkte und Offerten in Excel erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Viele Kalkulationen laufen in bestehenden Excel-Vorlagen, wo KI-Funktionen in Office kaum 50 % sparen; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in der Tabellenkalkulation bzw. Analyse-Agenten bauen Kalkulationsblätter nach Vorgabe; die Aktuarin prüft jede Berechnung."
+      },
+      {
+        "name": "Ergebnisse vor Geschäftsleitung, Stiftungsrat oder Kunden präsentieren und zu Risiken beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Beratungstätigkeit mit Verantwortung und Vertrauensbeziehung; Wert liegt im persönlichen Austausch."
+      },
+      {
+        "name": "Sich mit Finanz-, Risiko- und Underwriting-Abteilungen, Revision und FINMA in Sitzungen abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zwischenmenschliche Abstimmung und Verhandlung in Meetings."
+      },
+      {
+        "name": "Regulatorische Vorgaben und Fachliteratur (FINMA-Rundschreiben, SAV-Richtlinien, IFRS 17, BVG) auswerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regeltexte einfügen, das LLM fasst zusammen und erklärt Änderungen; die Aktuarin erarbeitet die Auswirkungen auf Modelle selbst und prüft gegen die Quelle."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Aktuar/in (SAV) in einer Schweizer Versicherung oder Pensionskassen-Beratung, mit Reservierung, SST, Tarifierung und Berichterstattung; Statistiker/innen in anderen Branchen sind ähnlich, aber weniger regulatorisch geprägt. Der ESCO-Input passt gut, ist aber stark finanzberatungslastig. Grenzfälle sind die Programmier- und Analysetätigkeiten (Restzeit an der Grenze 30-50/10-30) und die Excel-Kalkulationen (E0 ebenso plausibel).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Datenaufbereitung, Modellprogrammierung, statistische Auswertungen und Berichtsentwürfe: Coding- und Datenanalyse-Agenten sowie Chat-LLMs übernehmen sie; Berechnungsläufe sind schon heute klassische Software.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind exponiert, fast durchwegs delegierend: Die KI erstellt Code, Auswertungen und Berichtsentwürfe, die Aktuarin spezifiziert, prüft jede Ausgabe fachlich und verantwortet die Ergebnisse gegenüber FINMA und Stiftungsrat. In der Schweiz bremsen vor allem Datenschutz, Cloud-Restriktionen in Versicherungen und Pensionskassen sowie Anforderungen an Modellvalidierung; Annahmen, Expert Judgement und Beratung bleiben beim Menschen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

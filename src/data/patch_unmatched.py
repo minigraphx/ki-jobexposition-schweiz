@@ -1,6 +1,15 @@
 """
-Manuelle Korrekturen für die 22 ungematchten Berufe in berufe_ch_esco_verified.csv.
-Verwendet gezielt gewählte Suchbegriffe + ISCO-Gruppen-Suche.
+HISTORISCH — nicht mehr verwenden (ersetzt durch das ESCO-Audit, Issue #52, Okt. 2026).
+
+Ursprünglich: manuelle Korrekturen für 22 ungematchte Berufe in berufe_ch_esco_verified.csv
+mit gezielten Suchbegriffen. Das Skript ist seit Längerem nicht mehr lauffähig (Importe aus
+enrich_with_esco.py und die Spalte `match_score` existieren nicht mehr) und akzeptierte Treffer
+schon bei gleicher 2-stelliger ISCO-Gruppe — eine Ursache falscher Zuordnungen.
+
+Die Zuordnungen aller 179 Einträge sind seit #52 kuratiert (`esco_match_qualitaet`,
+docs/audit_esco_zuordnungen.md). Neue Berufe: `python src/data/enrich_with_esco.py`
+(harte ISCO-Konsistenzprüfung). Die Schlüssel von MANUAL_QUERIES sind Titel vor #51; die
+heutigen Einträge stehen in der Spalte «jetzt Eintrag» von docs/audit_isco_codes.md.
 """
 
 import re
@@ -11,7 +20,6 @@ from pathlib import Path
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).parent))
-from enrich_with_esco import esco_get_occupation, esco_search, get_description
 
 PROCESSED_PATH = Path(__file__).parent.parent.parent / "data" / "processed"
 RATE_LIMIT = 0.5
@@ -62,6 +70,9 @@ def compute_score(beruf_isco: str, esco_isco: str) -> int:
 
 
 def find_match(beruf: str, isco_code: str) -> tuple[str, str, str, int] | None:
+    from enrich_with_esco import esco_get_occupation, get_description
+    from enrich_with_esco import esco_search_text as esco_search
+
     queries = MANUAL_QUERIES.get(beruf, [])
     for query in queries:
         for lang in ("de", "en"):
@@ -122,4 +133,5 @@ def patch() -> None:
 
 
 if __name__ == "__main__":
-    patch()
+    sys.exit("patch_unmatched.py ist historisch (siehe Docstring) — "
+             "neue Berufe mit enrich_with_esco.py zuordnen.")

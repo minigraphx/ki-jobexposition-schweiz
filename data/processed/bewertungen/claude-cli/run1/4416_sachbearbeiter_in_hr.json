@@ -1,0 +1,241 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "24f9bca0e7effbd91ad85534b1d1ccc41f383dbf9296ba7450019180fd21a273",
+    "isco_code": "4416",
+    "beruf": "Sachbearbeiter/in HR",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:02:17+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2999,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 6656,
+      "api_aequivalent_usd": 0.1644502
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2999,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 6656,
+        "output_tokens_details": {
+          "thinking_tokens": 2783
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2999,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1644502
+      }
+    ],
+    "request_ids": [
+      "e98bceef-a066-4001-9993-e848d50bb582"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "4416",
+    "beruf": "Sachbearbeiter/in HR",
+    "taetigkeiten": [
+      {
+        "name": "Stelleninserate nach Anforderungsprofil verfassen und auf Jobportalen publizieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM schreibt das Inserat aus Stichworten und Stellenbeschrieb. Die Sachbearbeiterin prüft jedes Inserat mit der Linie und gibt es frei; das Publizieren selbst ist ein kurzer Klick im System."
+      },
+      {
+        "name": "Bewerbungsdossiers sichten, mit dem Anforderungsprofil abgleichen und eine Vorauswahl erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die KI-Funktion im Bewerbermanagement liest die PDF-Dossiers aus, fasst sie zusammen und ordnet sie dem Profil zu. Die Fachperson prüft jede Einstufung und verantwortet die Shortlist; Datenschutz und Diskriminierungsrisiko sind ein wesentliches Hemmnis."
+      },
+      {
+        "name": "Korrespondenz mit Bewerbenden führen und Vorstellungstermine koordinieren (Eingangsbestätigung, Einladung, Absage)",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Im Bewerbermanagement erstellt die KI individualisierte Mails und Terminvorschläge, die Person gibt sie per Klick frei. Vorlagen-Mails und Self-Scheduling im klassischen Bewerbermanagementsystem decken bereits den Grossteil ab."
+      },
+      {
+        "name": "An Vorstellungsgesprächen teilnehmen und Eindrücke mit der Linie besprechen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Gespräch und Beurteilung der Person; der Wert liegt in der Anwesenheit."
+      },
+      {
+        "name": "Arbeitsverträge, Vertragsänderungen und Anstellungsbestätigungen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt Verträge mit Sonderklauseln aus den Eckdaten und dem eingefügten Mustervertrag. Jeder Vertrag wird auf seine Rechtsgültigkeit geprüft. Standardverträge entstehen schon heute als Serienbrief aus der HR-Software (klassische Software)."
+      },
+      {
+        "name": "Arbeitszeugnisse und Zwischenzeugnisse aus Vorgesetzten-Beurteilungen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM formuliert das Zeugnis aus Beurteilungsbogen und Stellenbeschrieb in üblicher Zeugnissprache. Die Sachbearbeiterin prüft jedes Zeugnis auf Wahrheit und Wohlwollen (Art. 330a OR) und auf Codierungen. Klassische Zeugnisgeneratoren mit Textbausteinen sind verbreitet."
+      },
+      {
+        "name": "Personalmutationen (Ein-/Austritte, Pensen, Absenzen, Arztzeugnisse) aus Formularen und E-Mails im HR-/Lohnsystem erfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung und KI-Extraktion aus Mails und Scans füllen die Mutationen direkt im HR-System aus; der Mensch bearbeitet nur markierte Unklarheiten. Self-Service-Portale und Workflow-Formulare (klassische Software) können strukturierte Mutationen schon heute grösstenteils übernehmen."
+      },
+      {
+        "name": "Lohnlauf vorbereiten, Lohnabrechnungen kontrollieren und Sozialversicherungsmeldungen via Swissdec/ELM übermitteln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Lohnlauf und ELM-Meldungen sind regelbasierte Lohnsoftware und keine LLM-Leistung. Deshalb E0 mit P1 (Software)."
+      },
+      {
+        "name": "Schriftliche Anfragen von Mitarbeitenden zu Reglementen, Ferien, Lohn und Sozialversicherungen beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein KI-Assistent im Ticket- oder Mailsystem mit Zugriff auf Reglemente und Personaldaten entwirft die Antwort. Die Sachbearbeiterin prüft jede personenbezogene Antwort fachlich, bevor sie verschickt wird."
+      },
+      {
+        "name": "Mitarbeitende und Vorgesetzte telefonisch und persönlich in Personalfragen beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Vertrauliche persönliche Gespräche, oft in heiklen Situationen; der Wert liegt in Präsenz und Vertrauen."
+      },
+      {
+        "name": "HR-Auswertungen und Berichte erstellen (Absenzen, Fluktuation, Mitarbeiterumfragen)",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Agent wertet die Exporte aus, codiert Freitext-Antworten und entwirft den Bericht. Die Person prüft Zahlen und Aussagen jedes Berichts."
+      },
+      {
+        "name": "Ein- und Austritte organisatorisch begleiten (Einführungstag, Arbeitsplatz, Austrittsgespräche)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Koordination vor Ort und persönliche Gespräche; die KI spart dabei nicht 50 % der Zeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: HR-Sachbearbeiterin in einer öffentlichen Verwaltung oder einem mittelgrossen Betrieb, mit HR-/Lohnsoftware (z. B. Abacus, SAP) und Bewerbermanagementsystem. Der ESCO-Input passt gut. Lohn und Sozialversicherungen wurden nach CH-Praxis ergänzt. Grenzfälle sind die Vorselektion von Dossiers (Modus, Datenschutz) und die Frage, wie stark klassische Vorlagen- und Self-Service-Software Verträge, Zeugnisse und Mutationen bereits abdeckt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Stelleninserate, Vorselektion von Dossiers, Bewerberkorrespondenz, Verträge, Arbeitszeugnisse, Mutationserfassung, schriftliche Mitarbeiteranfragen und HR-Auswertungen – durch Chat-LLM, Dokumentenerkennung und KI-Funktionen in HR-, Bewerber- und Ticketsystemen.",
+      "begruendung": "Rund 70 % der Arbeitszeit sind exponiert, überwiegend delegierend: Die KI entwirft Verträge, Zeugnisse, Antworten und Vorauswahlen, die Fachperson prüft jedes Ergebnis. Ersetzend arbeitet die KI bei der Mutationserfassung und der Bewerberkorrespondenz. Bremsend wirken in der Schweiz vor allem Datenschutz (revDSG), Cloud-Restriktionen in der Verwaltung und das Diskriminierungsrisiko bei der Kandidatenauswahl. Persönliche Beratung und Gespräche bleiben beim Menschen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

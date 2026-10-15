@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "7da7fe321a7460650d2952165efb824368221dd1a8db1d8d53b5a8ba07697710",
+    "isco_code": "2529",
+    "beruf": "IT-Sicherheitsspezialist/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T01:09:37+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 7455,
+      "cache_read_input_tokens": 77085,
+      "output_tokens": 9746,
+      "api_aequivalent_usd": 0.269993
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 7455,
+        "cache_read_input_tokens": 77085,
+        "output_tokens": 9746,
+        "output_tokens_details": {
+          "thinking_tokens": 2114
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 7455,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.269993
+      }
+    ],
+    "request_ids": [
+      "094d12ff-80e5-48f0-b825-93c735a94d92"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2529",
+    "beruf": "IT-Sicherheitsspezialist/in",
+    "taetigkeiten": [
+      {
+        "name": "Sicherheitsalarme in SIEM/EDR sichten, triagieren und Fehlalarme aussortieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "In SIEM/XDR integrierte Security-Copilots und KI-Triage-Agenten fassen Alarme zusammen, korrelieren sie und schlagen eine Einstufung vor; die Spezialistin prüft jede Einstufung vor dem Schliessen oder Eskalieren. Klassische Korrelationsregeln laufen bereits und übernehmen die verbleibende Bewertung nicht zu ≥ 50 %."
+      },
+      {
+        "name": "Sicherheitsvorfälle untersuchen, eindämmen und Schadsoftware entfernen (Incident Response)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Untersuchung läuft unter Zeitdruck, verteilt über viele Systeme, und verlangt Eindämmungsentscheide und Koordination; KI-Hilfe bei der Log-Analyse spart typischerweise weniger als 50 %. SOAR-Playbooks automatisieren nur einzelne Schritte."
+      },
+      {
+        "name": "Schwachstellenscans auswerten, Befunde priorisieren und Behebungsmassnahmen festlegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen im Vulnerability-Management erklären Befunde, gleichen sie mit dem Asset-Kontext ab und entwerfen Priorisierung und Behebungsanleitungen; die Spezialistin prüft jede Priorisierung. Der Scan selbst ist klassische Software und kostet kaum Zeit."
+      },
+      {
+        "name": "Firewall-Regeln, VPN, Systemhärtung und Sicherheitskonfigurationen umsetzen und testen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Änderungen werden in produktiven Systemen über den Change-Prozess eingespielt, getestet und überwacht; KI-generierte Konfigurationsvorschläge sparen wegen Test- und Prüfaufwand keine 50 %. Klassische Konfigurations- und Patch-Tools sind bereits im Einsatz."
+      },
+      {
+        "name": "Benutzerkonten und Berechtigungen im IAM verwalten, Zugriffsrezertifizierungen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Rollenvergabe sowie Joiner-/Mover-/Leaver-Prozesse lassen sich mit klassischen IAM-/IGA-Workflows (rollenbasiert, regelbasiert) weitgehend automatisieren; ein LLM ist dafür nicht nötig."
+      },
+      {
+        "name": "Skripte und Abfragen (PowerShell, Python, KQL/SIEM-Queries) für Automatisierung und Auswertungen schreiben",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM schreibt Skripte und Queries nach Beschreibung; die Spezialistin prüft und testet jedes Skript vor dem Einsatz."
+      },
+      {
+        "name": "Sicherheitsrichtlinien, Weisungen und Sicherheitskonzepte (z. B. ISDS-, Notfallkonzept) verfassen und aktualisieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft Richtlinien und Konzepte aus Vorgaben, Normtexten und bestehenden Dokumenten; die Spezialistin passt sie an die Organisation an und prüft jeden Abschnitt fachlich."
+      },
+      {
+        "name": "Compliance-Prüfungen und interne IT-Audits durchführen (ISO 27001, revDSG, FINMA, IKT-Minimalstandard) und Nachweise dokumentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob GRC-Tools mit KI die Evidenzsammlung und das Control-Mapping heute verlässlich genug übernehmen, um 50 % zu sparen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Spezialistin prüft die Kontrollen selbst; KI in GRC-Software ordnet Nachweise den Controls zu, markiert Lücken und entwirft Befundtexte."
+      },
+      {
+        "name": "Sicherheitsberichte für Management und Vorfallberichte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus eingefügten Kennzahlen, Ticketverläufen und Notizen erstellt das LLM den Bericht; die Spezialistin prüft Fakten und Bewertung jedes Berichts. Hemmnis: vertrauliche Vorfalldaten dürfen nicht in jedes Cloud-LLM."
+      },
+      {
+        "name": "Threat-Intelligence, Hersteller-Advisories und Fachtexte auswerten und Relevanz für die eigene Umgebung beurteilen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten und Threat-Intel-Copilots sammeln Advisories, fassen sie zusammen und gleichen sie mit dem Inventar ab; die Spezialistin prüft jede Relevanzeinschätzung."
+      },
+      {
+        "name": "Fachbereiche, IT-Betrieb und Projekte zu Sicherheitsanforderungen beraten und Massnahmen abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beratung, Verhandlung und Abstimmung in Sitzungen sind Präsenz- und Beziehungsarbeit mit Ermessensentscheiden."
+      },
+      {
+        "name": "Mitarbeitende zu Informationssicherheit schulen und Awareness-Kampagnen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Zeitanteil liegt überwiegend in Präsenz- oder Live-Schulungen; die Materialerstellung ist ein kleiner Teil und reicht für die Schwelle nicht aus."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: IT-Sicherheitsspezialist/in in der internen IT eines mittleren bis grossen Schweizer Unternehmens oder bei einem IT-Dienstleister (Security Operations, Vulnerability Management, Governance). Die ESCO-Beschreibung ist knapp, deshalb wurden die Tätigkeiten aus der Kompetenzliste und aus Berufswissen abgeleitet. Grenzfälle sind die Alarm-Triage, Incident Response und Audits, weil diese stark vom Reifegrad der eingesetzten Security-Copilots abhängen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Alarm-Triage, die Auswertung von Schwachstellen und Threat-Intelligence, das Schreiben von Skripten sowie das Verfassen von Richtlinien und Berichten, und zwar durch Security-Copilots in SIEM/XDR, Recherche-Agenten und Chat-LLMs.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit ist exponiert, überwiegend im delegierenden Modus: Die KI erstellt Triage-Einstufungen, Priorisierungen, Skripte und Textentwürfe, und die Fachperson prüft jedes Ergebnis. Incident Response, Konfigurationsarbeit und Beratung bleiben beim Menschen. In der Schweiz bremsen vor allem regulatorische Vorgaben die Umsetzung: Datenschutz nach revDSG, FINMA-Anforderungen und Cloud-Restriktionen für sensible Log- und Vorfalldaten.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

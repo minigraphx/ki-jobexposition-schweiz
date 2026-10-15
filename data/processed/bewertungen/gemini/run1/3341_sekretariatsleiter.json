@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "4c454eab51cc8552e3e08eca6acd0e384557205cb82ac557f73585aadb779db9",
+    "isco_code": "3341",
+    "beruf": "Sekretariatsleiter",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2313,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2313
+        }
+      ],
+      "prompt_token_count": 21689,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21689
+        }
+      ],
+      "thoughts_token_count": 7256,
+      "total_token_count": 31258
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2313,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2313
+          }
+        ],
+        "prompt_token_count": 21689,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21689
+          }
+        ],
+        "thoughts_token_count": 7256,
+        "total_token_count": 31258
+      }
+    ],
+    "request_ids": [
+      "XTzPaqKZB7Csz7IP3NihgQ0"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-3341_sekretariatsleiter",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3341",
+    "beruf": "Sekretariatsleiter",
+    "taetigkeiten": [
+      {
+        "name": "Mitarbeitende im Sekretariat führen, einarbeiten und Qualifikationsgespräche führen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Personalführung, Coaching, Einarbeitung und Mitarbeitendengespräche beruhen auf persönlicher Präsenz, Vertrauen und direkter zwischenmenschlicher Interaktion."
+      },
+      {
+        "name": "Arbeitszuteilung sowie Einsatz- und Ferienplanung des Teams erstellen und überwachen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Kapazitäts-, Schicht- und Ferienplanung folgt festen Regeln und Verfügbarkeiten, wobei klassische Personaleinsatzplanungs- und Workflow-Software den Grossteil der Koordination übernimmt."
+      },
+      {
+        "name": "Anspruchsvolle Korrespondenz, interne Weisungen und Textvorlagen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten Entwürfe für komplexe Briefe, Weisungen und Vorlagen; die Sekretariatsleitung gibt den Kontext vor und prüft jeden Text inhaltlich vor der Freigabe."
+      },
+      {
+        "name": "Schriftverkehr, Berichte und Entwürfe von Mitarbeitenden und Vorgesetzten prüfen und redigieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Sekretariatsleitung führt die Qualitätskontrolle der Texte weiterhin selbst durch, nutzt aber ein Chat-LLM, um Stil-, Grammatik- und Logikmängel rasch markieren und umformulieren zu lassen."
+      },
+      {
+        "name": "Sitzungsprotokolle und arbeitsbezogene Tätigkeitsberichte für die Geschäftsleitung erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Transkriptions- und Office-Funktionen erstellen aus Tonaufnahmen, Notizen und Systemdaten vollständige Protokoll- und Berichtsentwürfe, die wegen Vertraulichkeit und Schweizerdeutscheinflüssen jedes Mal fachlich geprüft und nachbearbeitet werden."
+      },
+      {
+        "name": "Zentralen Post- und E-Mail-Eingang triagieren und schriftliche Standardanfragen beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "In E-Mail- und Dokumentenmanagementsysteme integrierte Sprachmodelle klassifizieren Eingänge, leiten sie weiter und beantworten Standardanfragen, sodass die Person nur noch Ausnahmen bearbeitet und Stichprobenkontrollen durchführt."
+      },
+      {
+        "name": "Büroabläufe, Klassifizierungs- und Ablagesysteme konzipieren und dokumentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Sekretariatsleitung analysiert und gestaltet die Büroprozesse selbst, lässt sich jedoch vom Chat-LLM Strukturvorschläge für Ablagesysteme sowie Entwürfe für Prozesshandbücher und Checklisten liefern."
+      },
+      {
+        "name": "Kreditorenrechnungen, Spesenabrechnungen und Sekretariatsbudgets prüfen und freigeben",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Belegerkennung im ERP-System liest Rechnungen und Spesenbelege aus und prüft sie gegen Richtlinien, während die Person nur markierte Abweichungen bearbeitet; bei strukturierten QR-Rechnungen leisten dies bereits klassische Buchhaltungs-Workflows."
+      },
+      {
+        "name": "Bestellungen für Büromaterial, Geräte und externe Dienstleistungen prüfen und genehmigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Überwachung des Bürobedarfs und die Bestellfreigabe erfordern keine generative KI, werden aber durch klassische E-Procurement-Systeme mit Mindestbestandsregeln und Freigabeworkflows weitgehend automatisiert."
+      },
+      {
+        "name": "Komplexe oder eskalierte Anfragen von Kundschaft, Behörden und internen Stellen telefonisch oder persönlich klären",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die persönliche Behandlung von Beschwerden, Eskalationen und heiklen Anliegen erfordert Verhandlungsgeschick, Empathie und verbindliches Auftreten einer Führungsperson."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Sekretariatsleiter/in (Teamleitung Administration / Office Management) in einem mittleren bis grösseren Schweizer Unternehmen, Verband oder in der öffentlichen Verwaltung. Die ESCO-Beschreibung deckt sich gut mit dem Schweizer Berufsbild, das operative Führungsaufgaben mit anspruchsvoller Korrespondenz, Qualitätskontrolle und Prozessorganisation verbindet. Grenzfälle liegen bei der Prozess- und Ablagekonzeption sowie beim Redigieren von Entwürfen, da dort die organisatorische Abstimmung bzw. die inhaltliche Verantwortung den Zeitgewinn nahe an der 50-%-Schwelle hält.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Verfassen und Redigieren von Korrespondenz und Weisungen, die Protokoll- und Berichterstattung, die Dokumentation von Büroprozessen sowie die Post- und Rechnungsvorprüfung durch Chat-LLMs und KI-integrierte Office- und ERP-Systeme.",
+      "begruendung": "Rund 60 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei sich der Einsatz zu gleichen Teilen auf ersetzende Routinen (Posttriage, Belegprüfung), delegierende Texterstellung (Korrespondenz, Protokolle) und unterstützende Qualitäts- und Prozessarbeit verteilt. Die direkten Führungs-, Koordinations- und Eskalationsaufgaben (40 %) bleiben beim Menschen, während in der Schweizer Verwaltung und in KMU vor allem Datenschutzvorgaben (revDSG, Amtsgeheimnis) und die Abstimmung über mehrere Landessprachen die Umsetzung bremsen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

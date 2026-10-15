@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "1c4125a7e9e3a76124d54a659d810603f17b89744cf182986b293adfa99324d5",
+    "isco_code": "8343",
+    "beruf": "Kranführer, Aufzugmaschinisten und Bediener verwandter Hebeeinrichtungen",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 1952,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 1952
+        }
+      ],
+      "prompt_token_count": 21026,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21026
+        }
+      ],
+      "thoughts_token_count": 3230,
+      "total_token_count": 26208
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1952,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1952
+          }
+        ],
+        "prompt_token_count": 21026,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21026
+          }
+        ],
+        "thoughts_token_count": 3230,
+        "total_token_count": 26208
+      }
+    ],
+    "request_ids": [
+      "XTzPauSAFbCsz7IP3NihgQ0"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-8343_kranfuehrer_aufzugmaschinisten_und_bedie",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "8343",
+    "beruf": "Kranführer, Aufzugmaschinisten und Bediener verwandter Hebeeinrichtungen",
+    "taetigkeiten": [
+      {
+        "name": "Kran über Kabinensteuerung oder Funkfernsteuerung bedienen sowie Lasten heben, schwenken und präzise absetzen",
+        "zeitanteil_pct": 45,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Maschinenführung vor Ort auf der Baustelle oder im Werk; autonome Bau- und Fahrzeugkrane sind in der Schweiz nicht im regulären Einsatz."
+      },
+      {
+        "name": "Lasten anschlagen sowie geeignete Anschlagmittel (Ketten, Gurte, Gehänge) auswählen und befestigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle, körperliche Tätigkeit direkt an der Last am Boden oder auf dem Transportfahrzeug; keine Robotik für wechselnde Baustellenlasten verfügbar."
+      },
+      {
+        "name": "Mit Anschlägern, Polieren und Transportarbeitern per Sprechfunk oder Handzeichen kommunizieren und Hübe koordinieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare sicherheitskritische Echtzeit-Koordination und Präsenz auf der Baustelle; durch Sprachmodelle nicht übernehmbar."
+      },
+      {
+        "name": "Tägliche Sicht- und Funktionskontrolle am Kran (Tragseile, Lasthaken, Bremsen, Sicherheitseinrichtungen) durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische und visuelle Prüfung der Krananlage vor Arbeitsbeginn vor Ort; Borddiagnosen ersetzen die manuelle Sicht- und Funktionsprüfung nicht zu 50 %."
+      },
+      {
+        "name": "Gewicht und Schwerpunkt von Ladungen bestimmen sowie zulässige Traglast anhand von Lastdiagramm und Ausladung prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Visuelle Beurteilung des Schwerpunkts am Stückgut vor Ort und Abgleich mit der elektronischen Lastmomentbegrenzung des Krans; generative KI spart hierbei keine 50 % der Zeit."
+      },
+      {
+        "name": "Kran am Einsatzort einrichten, abstützen, umrüsten und bei Arbeitsende sichern (z. B. Windfreigabe)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Rüst- und Sicherungsarbeiten am Kran und Untergrund auf der Baustelle."
+      },
+      {
+        "name": "Gefahrenbereich, Bauablauf, Hindernisse und Wetterbedingungen (insbesondere Windverhältnisse) im Schwenkbereich überwachen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Laufende visuelle Überwachung von Personen, Hindernissen und Witterung auf der Baustelle; Assistenz- und Windmesssysteme ersetzen die menschliche Beobachtung nicht."
+      },
+      {
+        "name": "Wartungs-, Reinigungs-, Schmier- und kleinere Reparaturarbeiten an Kran und Hebezeugen ausführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Instandhaltungs- und Pflegearbeiten direkt an der Maschine und den Anschlagmitteln."
+      },
+      {
+        "name": "Kran-Kontrollbuch, Stunden- und Regierapporte sowie Störungsmeldungen führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe in einer Baustellen- oder Flotten-App erstellt Rapporteinträge und Störungsbeschriebe; der Kranführer prüft und bestätigt jeden Eintrag. Baustellenlärm und Dialekt erhöhen den Korrekturaufwand."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Kranführer/in (insb. Turmdrehkrane Kat. B und Fahrzeugkrane Kat. A mit Suva-Kranführerausweis) im Schweizer Bau- und Transportgewerbe. Die ESCO-Kompetenz «Hebelrahmen für Eisenbahnen bedienen» wurde als offensichtlicher Übersetzungsfehler (ESCO-Rauschen) ignoriert. In hochautomatisierten Containerterminals oder Hochregallagern ist das Automatisierungspotenzial (P1) höher, diese machen jedoch nur einen kleinen Teil der Beschäftigten in dieser Berufsgruppe aus.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen ist lediglich das Führen von Stunden- und Regierapporten sowie Störungsmeldungen per Spracheingabe in Baustellen-Apps; das Steuern und Warten der Krane selbst ist nicht exponiert.",
+      "begruendung": "Nur rund 5 % der Arbeitszeit sind gegenüber generativer KI exponiert, und zwar im delegierenden Modus bei der Dokumentation, wobei der Kranführer jeden Eintrag prüft und verantwortet. Die restlichen 95 % bestehen aus physischer Maschinenbedienung, Lastenhandhabung und sicherheitskritischer Koordination vor Ort gemäss Suva-Kranverordnung; zudem erschweren Dialekt und Baustellenlärm die Spracheingabe.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

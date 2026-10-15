@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "447a7acc3c795aa68778a8fb2c2b8ab48b99d34f89d384026a0fc52527efcc86",
+    "isco_code": "3434",
+    "beruf": "Küchenchefs, stv. Küchenchefs und Souschefs",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:13:50+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 40233,
+      "output_tokens": 5300,
+      "api_aequivalent_usd": 0.11405459999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 40233,
+        "output_tokens": 5300,
+        "output_tokens_details": {
+          "thinking_tokens": 1962
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11405459999999999
+      }
+    ],
+    "request_ids": [
+      "ce5fae87-548d-4c65-88c1-4b90966e81d4"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3434",
+    "beruf": "Küchenchefs, stv. Küchenchefs und Souschefs",
+    "taetigkeiten": [
+      {
+        "name": "Gerichte am Posten und am Pass kochen, abschmecken und anrichten (Mitarbeit im Service)",
+        "zeitanteil_pct": 35,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit am Herd, sensorisches Abschmecken und Anrichten in Echtzeit. Kochroboter werden in der Schweiz nur vereinzelt eingesetzt, nicht im Umfang von 50 % dieser Arbeit."
+      },
+      {
+        "name": "Mise en place vorbereiten: Lebensmittel rüsten, schneiden, marinieren, Fonds und Saucen ansetzen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Vorbereitung. Gemüseschneidemaschinen und Kombisteamer helfen bei Teilschritten, übernehmen aber in einer typischen À-la-carte-Küche keine 50 % der Zeit."
+      },
+      {
+        "name": "Küchenbrigade einteilen, anweisen und während des Service koordinieren; Lernende ausbilden",
+        "zeitanteil_pct": 13,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung, Anleitung und Koordination finden in der Küche vor Ort statt, in direkter Präsenz."
+      },
+      {
+        "name": "Neue Gerichte und saisonale Speisekarten konzipieren, Rezepte in der Küche testen und degustieren",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Den Hauptteil der Zeit beanspruchen das Probekochen und die geschmackliche Abstimmung. Ideen aus einem LLM sparen hier keine 50 %."
+      },
+      {
+        "name": "Rezepte, Speisekartentexte, Allergendeklarationen, Bankettmenü-Offerten und Lieferantenkorrespondenz schriftlich ausarbeiten",
+        "zeitanteil_pct": 6,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten oder eingefügten Zutatenlisten entwirft das Chat-LLM Rezeptblätter, Menütexte (auch FR/EN), Offerten und E-Mails. Der Küchenchef prüft jeden Text, die Allergenangaben kontrolliert er zwingend fachlich."
+      },
+      {
+        "name": "Warenbedarf ermitteln und Bestellungen bei Lieferanten aufgeben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bestellt wird über die Onlineshops der Grosshändler, Mindestbestände und Bestellvorschläge liefert die Warenwirtschaftssoftware. Das ist klassische Software, ein LLM bringt keinen relevanten Zusatznutzen."
+      },
+      {
+        "name": "Lieferungen kontrollieren und Waren fachgerecht einlagern (Kühl-, Tiefkühl-, Trockenlager)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Kontrolle von Qualität und Temperatur sowie Einräumen der Ware nach FIFO."
+      },
+      {
+        "name": "Rezept- und Warenkosten kalkulieren, Inventar führen und Lebensmittelabfälle auswerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kalkulation und Kostenkontrolle laufen über Kalkulationsvorlagen, Gastro-Warenwirtschaft und Waagesysteme zur Abfallerfassung, also klassische Software. Ein LLM spart gegenüber diesen Werkzeugen keine 50 %, und das Inventarzählen ist physisch."
+      },
+      {
+        "name": "HACCP-Selbstkontrolle durchführen: Kühltemperaturen messen, Hygienekontrollen dokumentieren",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Funk-Temperatursensoren mit automatischer Aufzeichnung sind kommerziell verfügbar und ersetzen die manuellen Messungen und Einträge zu einem grossen Teil. Die übrigen Kontrollen finden vor Ort statt."
+      },
+      {
+        "name": "Dienstpläne und Ferienplanung für das Küchenteam erstellen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dafür gibt es Dienstplan- und Zeiterfassungssoftware für die Gastronomie (klassische Software). Ein LLM bringt gegenüber diesen Tools keine 50 % Zeitersparnis."
+      },
+      {
+        "name": "Küche, Arbeitsplätze und Geräte reinigen, warten und an die nächste Schicht übergeben",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit. Selbstreinigende Kombisteamer und Spülmaschinen decken nur einen kleinen Teil ab."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Küchenchef/Souschef in einem mittelgrossen Schweizer Restaurant oder Hotel (À-la-carte und Bankette), der selbst mitkocht. Die ESCO-Beschreibung ist sehr knapp, die Tätigkeiten habe ich aus der Kompetenzliste und aus Kenntnissen der CH-Gastronomie abgeleitet. Grenzfälle sind die Kalkulation und Kostenkontrolle sowie die Dienstplanung: Ich habe sie als klassische Software (E0, P1) eingestuft, ein LLM-Einsatz wäre in Teilen denkbar.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen ist im Wesentlichen nur das Schreiben von Rezepten, Speisekartentexten, Allergenangaben, Bankettofferten und Lieferanten-E-Mails, das ein Chat-LLM übernehmen kann; Kochen, Führen und Warenhandling sind nicht exponiert.",
+      "begruendung": "Nur rund 6 % der Arbeitszeit sind exponiert, und zwar im delegierenden Modus: Das LLM entwirft die Texte, der Küchenchef prüft jeden Text, die Allergendeklaration nach Schweizer Lebensmittelrecht fachlich zwingend. Der Kern des Berufs bleibt physische Küchenarbeit und Teamführung vor Ort. Bestellung, Kalkulation, Dienstplanung und HACCP-Aufzeichnung lassen sich eher mit klassischer Gastro-Software und Sensorik automatisieren.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

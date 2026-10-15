@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "ddf43b3eb55d5f176fca002d09ec1cbc586fc9031a78584c2e5b9cf5bd063a4a",
+    "isco_code": "4312",
+    "beruf": "Bürokräfte in der Statistik, im Finanz- und Versicherungswesen",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:51:04+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2913,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5337,
+      "api_aequivalent_usd": 0.13738219999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2913,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5337,
+        "output_tokens_details": {
+          "thinking_tokens": 1845
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2913,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.13738219999999998
+      }
+    ],
+    "request_ids": [
+      "b0f15a43-afa5-4ee7-9df2-0db5c9b8811f"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "4312",
+    "beruf": "Bürokräfte in der Statistik, im Finanz- und Versicherungswesen",
+    "taetigkeiten": [
+      {
+        "name": "Manuelle Zahlungsaufträge (Papier, PDF) erfassen und Ausnahmen aus der automatischen Zahlungsverarbeitung bearbeiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenextraktion mit Integration ins Kernbankensystem erstellt die Erfassung und Korrekturvorschläge für Repair-Fälle; die Person prüft jede Zahlung wegen Vier-Augen-Prinzip und Betrugsrisiko. Klassische Belegleser/QR-Scanning und STP-Verarbeitung übernehmen standardisierte Aufträge (P1)."
+      },
+      {
+        "name": "Differenzen aus Konto- und Transaktionsabstimmungen untersuchen und bereinigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der automatische Abgleich ist klassische Software und keine Tätigkeit mehr; bei den Differenzen klärt die Person selbst ab, ein Analysewerkzeug gleicht Belege und Buchungslisten ab und schlägt Ursachen vor."
+      },
+      {
+        "name": "Kundenstammdaten und Mutationen (Adressänderungen, Vollmachten, Kontodaten) aus E-Mails, Briefen und Formularen erfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM-Dokumentenverarbeitung extrahiert Mutationen aus Freitext und Scans und erstellt sie im System; die Person bearbeitet markierte Ausnahmen und gibt frei. Heterogene Eingänge sind mit klassischer Formularerkennung allein nicht abgedeckt."
+      },
+      {
+        "name": "Kontoeröffnungs- und KYC-Unterlagen auf Vollständigkeit und Plausibilität prüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI extrahiert Daten aus Ausweisen und Formularen und erstellt die Vollständigkeitsprüfung; wegen GwG/FINMA-Sorgfaltspflichten prüft die Person jedes Dossier inhaltlich."
+      },
+      {
+        "name": "Standardkorrespondenz an Kundschaft und Front-Office verfassen (Bestätigungen, Unterlagen nachfordern)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM erstellt Standardbriefe und E-Mails aus Falldaten auch in DE/FR/IT; die Person sichtet kurz und gibt frei."
+      },
+      {
+        "name": "Schriftliche Anfragen von Kundenberatern und Kundschaft zu Produkten, Konditionen und Auftragsstatus beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI im Ticket-/Mailsystem mit Zugriff auf Produktunterlagen und Auftragsdaten entwirft die Antwort; die Person prüft jede Antwort auf Richtigkeit, da Konditionsauskünfte haftungsrelevant sind."
+      },
+      {
+        "name": "Abläufe mit Front-Office und anderen Abteilungen telefonisch und in Besprechungen koordinieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Abstimmung und Priorisierung im Gespräch; KI spart hier keine 50 %."
+      },
+      {
+        "name": "Dokumente scannen, klassifizieren und im elektronischen Archiv ablegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob der physische Scananteil dominiert und die Klassifizierung bereits klassisch im DMS gelöst ist; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "KI-Klassifizierung und Indexierung im DMS übernimmt die Zuordnung, die Person korrigiert Ausnahmen; klassische DMS-/Barcode-Erkennung deckt standardisierte Dokumente ab (P1)."
+      },
+      {
+        "name": "Listen, Auswertungen und Statistiken in Excel erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI in Excel bzw. Datenanalyse-Agent erstellt Pivot, Formeln und Auswertung aus exportierten Daten; die Person spezifiziert und prüft jedes Resultat."
+      },
+      {
+        "name": "Interne Weisungen und regulatorische Änderungen lesen und Arbeitsanleitungen anpassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM fasst eingefügte Weisungen zusammen und markiert Änderungen; die Person beurteilt die Auswirkungen auf die Abläufe selbst."
+      },
+      {
+        "name": "Verträge und Policen nach Vorlage ausfertigen und Rücklauf sowie Fristen überwachen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Vorlagenbasierte Vertragserstellung und Fristenkontrolle sind klassische Funktionen der Kernbanken-/Bestandssoftware; kein LLM nötig."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Back-Office-Mitarbeiter/in (kaufmännische Grundbildung) in einer Schweizer Bank oder Versicherung, Bereich Zahlungsverkehr/Kundenadministration. Die ISCO-Gruppe ist heterogen (auch Statistik-Bürokräfte); die Zeitanteile sind grob geschätzt. Grenzfälle sind die Ausnahmebearbeitung im Zahlungsverkehr (delegierend vs. ersetzend) und die Archivierung (E2 vs. E0).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Erfassung von Mutationen und Zahlungsaufträgen, KYC-Vollständigkeitsprüfungen, Standardkorrespondenz, schriftliche Auskünfte und Auswertungen, die Dokumentenverarbeitung, Chat-LLM und KI im Ticket- und Kernbankensystem übernehmen.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind exponiert. Meist arbeitet die KI delegierend, weil Vier-Augen-Prinzip und Sorgfaltspflichten eine Einzelprüfung verlangen; ersetzend ist sie bei Mutationen und Standardkorrespondenz, unterstützend bei Abklärungen. Bremsend wirken in der Schweiz vor allem das Bankgeheimnis, die FINMA-Anforderungen an Auslagerung und Cloud sowie das Geldwäschereigesetz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

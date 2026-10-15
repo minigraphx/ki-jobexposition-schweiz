@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "2da5245220864a14a9d38861abe71c1182f90e7c80a446ba07a81144fae958bf",
+    "isco_code": "3323",
+    "beruf": "Einkäufer",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2314,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2314
+        }
+      ],
+      "prompt_token_count": 21885,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21885
+        }
+      ],
+      "thoughts_token_count": 5488,
+      "total_token_count": 29687
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2314,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2314
+          }
+        ],
+        "prompt_token_count": 21885,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21885
+          }
+        ],
+        "thoughts_token_count": 5488,
+        "total_token_count": 29687
+      }
+    ],
+    "request_ids": [
+      "xD_PavfZBpz8qtsP25KVoA4"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-3323_einkaeufer",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3323",
+    "beruf": "Einkäufer",
+    "taetigkeiten": [
+      {
+        "name": "Beschaffungsbedarf mit internen Bedarfsstellen klären und Einkaufsvorgänge koordinieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Abstimmungsgespräche und Rückfragen mit Fachabteilungen, Produktion oder Projektleitung zur Klärung unklarer Anforderungen; der Wert liegt in der zwischenmenschlichen Koordination."
+      },
+      {
+        "name": "Beschaffungsmärkte analysieren, Preistrends verfolgen und potenzielle Lieferanten recherchieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein KI-Recherche-Agent mit Webzugriff erstellt strukturierte Lieferantenübersichten und Marktberichte nach Vorgabe; die Einkäuferin spezifiziert die Suchkriterien und prüft jeden vorgeschlagenen Lieferanten fachlich."
+      },
+      {
+        "name": "Ausschreibungsunterlagen und Angebotsanfragen (RfQ) in Deutsch und Fremdsprachen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM entwirft aus eingefügten Spezifikationen und Vorlagen die Ausschreibungstexte und übersetzt sie bei Bedarf; der Einkäufer kontrolliert jedes Dokument vollständig vor dem Versand."
+      },
+      {
+        "name": "Eingehende Lieferantenangebote inhaltlich und preislich abgleichen sowie auswerten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Dokumentenverarbeitung und Datenanalyse extrahiert Positionen, Preise und Konditionen aus heterogenen PDF- und Excel-Angeboten in einen Preisspiegel; die Fachperson prüft jeden Angebotsvergleich gegen die Originalbelege."
+      },
+      {
+        "name": "Preise, Konditionen und Lieferbedingungen mit Lieferanten verhandeln",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Verhandlungsführung im persönlichen Gespräch, per Video oder Telefon erfordert menschliche Präsenz, Taktik und Beziehungskompetenz."
+      },
+      {
+        "name": "Kauf- und Rahmenverträge entwerfen, auf Richtlinienkonformität prüfen und verwalten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das Chat-LLM entwirft Vertragsklauseln und gleicht Lieferanten-AGB mit den eigenen Einkaufsbedingungen ab; der Einkäufer prüft jede Klausel und Abweichung im Einzelfall fachlich."
+      },
+      {
+        "name": "Bestellungen im ERP-System auslösen, Auftragsbestätigungen abgleichen und Liefertermine überwachen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumenten-KI mit ERP-Integration liest unstrukturierte Auftragsbestätigungen (PDF/E-Mail) aus und gleicht sie automatisch mit den Bestellungen ab, sodass die Person nur markierte Abweichungen bearbeitet. Für P1 übernehmen klassische ERP-Dispositionsläufe, EDI-Anbindungen und regelbasierte Terminmahnungen bereits über 50 % der Routineabwicklung."
+      },
+      {
+        "name": "Lieferantenrisiken, Liefertreue sowie Zoll-, Ausfuhr- und Nachhaltigkeitsvorgaben prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spezialisierte KI-Werkzeuge mit Web- und Dokumentenanalyse werten Zertifikate, Selbstdeklarationen sowie Sanktions- und Risikodaten aus und erstellen den Prüfbericht; der Einkäufer kontrolliert jede Risikobeurteilung fachlich."
+      },
+      {
+        "name": "Lieferantenbeziehungen pflegen sowie Reklamationen und Lieferstörungen klären",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beziehungspflege, Lieferantengespräche und Eskalationsmanagement bei Qualitätsmängeln oder Lieferengpässen beruhen auf direkter zwischenmenschlicher Interaktion."
+      },
+      {
+        "name": "Lieferantenstammdaten und Preisänderungen im ERP-System pflegen sowie intern kommunizieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Extraktionsfunktionen bereiten Preislisten-Updates aus Lieferantendokumenten für das ERP auf und formulieren interne Mitteilungen, wobei der Einkäufer jede Stammdatenänderung vor der Verbuchung prüft. Über klassische Software (P1) lassen sich elektronische Produktkataloge und Preislisten per EDI/CSV-Import regelbasiert einspielen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Operativ-taktische/r Einkäufer/in in einem typischen Schweizer KMU (Handel, Dienstleistung oder Industrie). Die sehr knappe ESCO-Beschreibung wurde durch die detaillierte ESCO-Kompetenzliste und das Schweizer Berufsbild (z. B. Einkaufsfachmann/-frau) konkretisiert. Grenzfälle bestehen bei der Abgrenzung zwischen klassischer ERP-/EDI-Automatisierung (P1) und generativer Dokumenten-KI (E2) in der Bestellabwicklung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Ausschreibungserstellung, Vertragsprüfung, Angebotsvergleiche, Lieferantenrecherchen und der Abgleich von Auftragsbestätigungen werden durch Chat-LLMs, Recherche-Agenten und ERP-integrierte Dokumenten-KI stark beschleunigt.",
+      "begruendung": "Rund 65 % der Arbeitszeit sind gegenüber generativer KI exponiert, während Verhandlungen, interne Bedarfsklärung und Eskalationsgespräche beim Menschen bleiben. Die KI wirkt überwiegend delegierend (und bei der Bestellabwicklung ersetzend), da Angebote, Verträge und Risikoprüfungen wegen kommerzieller Tragweite sowie regulatorischer Vorgaben (Vertrags-, Zoll- und Ausfuhrrecht, Geheimhaltung) im Einzelfall fachlich kontrolliert werden müssen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

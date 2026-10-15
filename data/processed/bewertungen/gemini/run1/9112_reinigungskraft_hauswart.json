@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "8a08f2260a5eff5006b6d95e460e01ef9424921632346e6c61e4b6dc5dea56ab",
+    "isco_code": "9112",
+    "beruf": "Reinigungskraft / Hauswart",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 1883,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 1883
+        }
+      ],
+      "prompt_token_count": 20963,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 20963
+        }
+      ],
+      "thoughts_token_count": 4633,
+      "total_token_count": 27479
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1883,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1883
+          }
+        ],
+        "prompt_token_count": 20963,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 20963
+          }
+        ],
+        "thoughts_token_count": 4633,
+        "total_token_count": 27479
+      }
+    ],
+    "request_ids": [
+      "XTzParz3NvSAz7IP5t2zgAs"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-9112_reinigungskraft_hauswart",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "9112",
+    "beruf": "Reinigungskraft / Hauswart",
+    "taetigkeiten": [
+      {
+        "name": "Böden, Oberflächen und Mobiliar in möblierten Räumen (Büros, Gästezimmer) reinigen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Tätigkeit vor Ort in überstellten Räumen; bestehende Saug- und Wischroboter können das Abstauben von Mobiliar und die Reinigung eng möblierter Flächen nicht zu mindestens 50 % übernehmen."
+      },
+      {
+        "name": "Sanitäranlagen, Toiletten und Nasszellen reinigen und desinfizieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle, körperliche Reinigungs- und Desinfektionsarbeit an Armaturen, Keramik und Trennwänden; keine kommerziell verfügbare Robotik im regulären Gebäudebetrieb."
+      },
+      {
+        "name": "Grosse freie Bodenflächen in Gängen, Foyers und Hallen reinigen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit ohne Exposition gegenüber generativer KI, aber in der Schweiz heute durch kommerziell verfügbare autonome Scheuersaugmaschinen und Kehrroboter zu über 50 % automatisierbar."
+      },
+      {
+        "name": "Abfallbehälter leeren, Wertstoffe trennen und im Sammelbereich bereitstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Sammel- und Transporttätigkeit innerhalb des Gebäudes; keine relevante Automatisierungstechnik im Einsatz."
+      },
+      {
+        "name": "Fenster, Glasflächen, Glastüren und Spiegel reinigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Tätigkeit an unterschiedlichsten Innen- und Aussenglasflächen; Fensterputzroboter erreichen im gewerblichen Unterhalt keine Zeitersparnis von 50 %."
+      },
+      {
+        "name": "Verbrauchsmaterialien kontrollieren, nachfüllen und Räume oder Betten herrichten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Auffüllen von Seife, Papierhandtüchern und Vorräten sowie Aufräumen und Bettenmachen vor Ort."
+      },
+      {
+        "name": "Schmutzwäsche, Mopps und Reinigungstextilien einsammeln, waschen und verräumen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Einsammeln, Sortieren sowie Be- und Entladen der Waschmaschinen und Aufbereiten der Reinigungswagen."
+      },
+      {
+        "name": "Reinigungsmittel sicher dosieren sowie Reinigungsgeräte bereitstellen und warten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Rüsten der Reinigungswagen, Anmischen der Chemie nach Sicherheitsvorgaben und Reinigen der benutzten Geräte nach Schichtende."
+      },
+      {
+        "name": "Anliegen von Gebäudenutzenden entgegennehmen, Gebäudemängel melden und Reinigungslisten führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Besteht überwiegend aus kurzen mündlichen Kontakten vor Ort, Sichtkontrollen und dem Abhaken von Checklisten oder kurzen Foto-Meldungen per App; generative KI spart über die Gesamttätigkeit keine 50 % der Zeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Unterhaltsreinigung und einfache Hauswartungstätigkeiten in Büro-, Gewerbe-, Schul- oder Hotelgebäuden (ISCO 9112, ohne formale Berufsausbildung; in Abgrenzung zum eidg. dipl. Hauswart bzw. Fachmann/-frau Betriebsunterhalt EFZ unter ISCO 5153). Die Arbeit ist nahezu vollständig physisch und ortsgebunden.",
+    "zusammenfassung": {
+      "haupt_risiko": "Keine der Kerntätigkeiten ist in relevantem Umfang gegenüber generativer KI exponiert; eine Teilautomatisierung betrifft einzig die Reinigung grosser freier Bodenflächen durch autonome Scheuersaugmaschinen.",
+      "begruendung": "Die Arbeitszeit besteht fast ausschliesslich aus manuellen Reinigungs-, Aufräum- und Bereitstellungsarbeiten vor Ort, bei denen Sprachmodelle keinen nennenswerten Nutzen stiften. Selbst bei den geringfügigen administrativen und kommunikativen Aufgaben (Checklisten abhaken, Mängel melden, kurzer Direktkontakt) wird die 50-%-Zeitersparnisschwelle nicht erreicht. Technologischer Veränderungsdruck entsteht in Schweizer Betrieben stattdessen durch nicht-generative Reinigungsrobotik auf grossen Korridor- und Hallenflächen.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "6ee1c6a6438be56924ae54d2df406ef75cd1838b3b5ec8bd0c5b4904bbcf167a",
+    "isco_code": "3211",
+    "beruf": "Medizintechniker im Bereich bildgebende Verfahren und Therapiegeräte",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2327,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2327
+        }
+      ],
+      "prompt_token_count": 24905,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 24905
+        }
+      ],
+      "thoughts_token_count": 6334,
+      "total_token_count": 33566
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2327,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2327
+          }
+        ],
+        "prompt_token_count": 24905,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 24905
+          }
+        ],
+        "thoughts_token_count": 6334,
+        "total_token_count": 33566
+      }
+    ],
+    "request_ids": [
+      "xD_PaobiCeOZ6dkP5bep6A8"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-3211_medizintechniker_im_bereich_bildgebende",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3211",
+    "beruf": "Medizintechniker im Bereich bildgebende Verfahren und Therapiegeräte",
+    "taetigkeiten": [
+      {
+        "name": "Patienten empfangen, über den Untersuchungsablauf aufklären, Kontraindikationen abklären und betreuen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Präsenz- und Beziehungstätigkeit vor Ort, insbesondere das Abklären von Implantaten oder Schwangerschaft sowie das Beruhigen ängstlicher Patienten vor MRT- oder Bestrahlungssitzungen."
+      },
+      {
+        "name": "Patienten auf dem Untersuchungs- oder Bestrahlungstisch lagern, immobilisieren und venöse Zugänge legen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Arbeit direkt am Körper des Patienten wie millimetergenaue Positionierung, Anpassen von Lagerungshilfen oder Bestrahlungsmasken sowie Venenpunktion für Kontrastmittel."
+      },
+      {
+        "name": "Bildgebende und therapeutische Grossgeräte (Röntgen, CT, MRT, Linearbeschleuniger) bedienen und Untersuchung durchführen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Steuerung der Anlagen in Echtzeit unter unmittelbarer Überwachung des Patienten; erfordert situatives Eingreifen bei Patientenbewegungen, Kontrastmittelinjektionen oder Zwischenfällen."
+      },
+      {
+        "name": "Strahlenschutzmassnahmen anwenden und tägliche Geräte-Qualitätskontrollen (Konstanzprüfungen) durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physisches Anbringen von Schutzmitteln am Patienten sowie das Positionieren von Messphantomen und Durchführen gesetzlich vorgeschriebener Prüfroutinen an den Geräten."
+      },
+      {
+        "name": "Ärztliche Zuweisungen und klinische Fragestellungen prüfen sowie das passende Untersuchungsprotokoll festlegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Bei kurzen Standardzuweisungen ist die manuelle Protokollwahl bereits sehr schnell, sodass das Erreichen der 50-%-Schwelle über alle Fälle unsicher ist; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein ins RIS/KIS integriertes Sprachmodell liest Zuweisungsschreiben, Vorbefunde und Laborwerte (z. B. Nierenfunktion) aus und schlägt das Untersuchungsprotokoll vor; die Fachperson prüft und bestätigt jeden Einzelfall."
+      },
+      {
+        "name": "Medizinische Bilddaten nachbearbeiten (MPR, 3D-Rekonstruktionen) und technische Bildqualität kontrollieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Beurteilung auf Bewegungsartefakte und diagnostische Verwertbarkeit erfordert menschliche Sichtprüfung; automatische Schnittbild- und 3D-Rekonstruktionen erfolgen über spezialisierte Modalitäten- und PACS-Software ohne Sprachmodelle."
+      },
+      {
+        "name": "Bestrahlungspläne und Organ-Konturierungen in der Radio-Onkologie am Planungssystem erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Keine Exposition gegenüber Sprachmodellen, jedoch übernehmen kommerziell verfügbare Auto-Konturierungs- und Dosisoptimierungsmodule im Bestrahlungsplanungssystem über 50 % der Konturierungs- und Rechenarbeit."
+      },
+      {
+        "name": "Untersuchungsdaten, Dosiswerte und Leistungen im RIS/PACS erfassen und abrechnen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Übernahme von Dosis- und Untersuchungsparametern sowie die Tarifabrechnung erfolgen über klassische DICOM-Schnittstellen, Modality Worklists und regelbasierte Abrechnungssoftware im RIS."
+      },
+      {
+        "name": "Verlaufsnotizen, Zwischenfallberichte sowie interne Untersuchungsprotokolle (SOPs) und Patienteninformationen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten Entwürfe für Zwischenfalldokumentationen (z. B. Kontrastmittelreaktionen), Geräte-SOPs oder mehrsprachige Patientenmerkblätter; die Fachperson prüft jeden Text inhaltlich."
+      },
+      {
+        "name": "Interdisziplinäre Absprachen mit Radiologen, Zuweisern und Pflegepersonal führen sowie bei Notfällen mitwirken",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare mündliche Koordination im Spitalalltag, insbesondere bei akuten Befunden, Protokollanpassungen oder im Schockraum unter hohem Zeitdruck."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Dipl. Radiologiefachfrau/-mann HF in einem Schweizer Spital oder Röntgeninstitut (diagnostische Radiologie, Radio-Onkologie, Nuklearmedizin). Die ESCO-Liste enthält teils ärztliche Vorbehaltstätigkeiten wie «Röntgenbilder analysieren» und «medizinische Bilder interpretieren», die in der Schweiz durch Fachärzte für Radiologie (ISCO 2212) ausgeführt werden und daher hier auf die technische Qualitätskontrolle und Bildnachverarbeitung abgegrenzt wurden.",
+    "zusammenfassung": {
+      "haupt_risiko": "Durch generative KI betroffen sind lediglich das Vorprüfen ärztlicher Zuweisungen zur Protokollwahl im RIS sowie das Verfassen von Verlaufsnotizen, SOPs und Patienteninformationen, während die Arbeit an Patient und Gerät unberührt bleibt.",
+      "begruendung": "Nur rund 10 % der Arbeitszeit sind gegenüber Sprachmodellen exponiert, durchgehend im delegierenden Modus mit obligatorischer fachlicher Einzelfallprüfung. Der Beruf wird von physischer Patientenlagerung, persönlicher Betreuung und der Bedienung von Grossgeräten dominiert, während Bildrekonstruktion, Bestrahlungsplanung und Datenerfassung primär durch spezialisierte nicht-generative Software automatisiert werden. Strenge Vorgaben im Strahlenschutz und Patientendatenschutz (revDSG) bremsen zudem die Einführung im Spitalumfeld.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

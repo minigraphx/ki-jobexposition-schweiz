@@ -1,0 +1,569 @@
+"""
+Löhne auf BFS LSE 2024 umstellen (ersetzt die geschätzte LOHN_MAP).
+
+Quelle Basis: BFS Lohnstrukturerhebung (LSE) 2024, Tabelle T17 «Monatlicher Bruttolohn
+(Zentralwert) nach Berufsgruppen, Lebensalter und Geschlecht — Privater und öffentlicher
+Sektor zusammen», Asset 36355224, Datei je-d-03.04.01.02.47.xlsx (Blatt «2024»):
+https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken.assetdetail.36355224.html
+Die LSE publiziert Berufe nur 2-stellig (CH-ISCO-19-Untergruppen). Der Wert ist der
+standardisierte Monatslohn (Vollzeit, inkl. 1/12 des 13. Monatslohns und 1/12 der
+Sonderzahlungen) → Jahreslohn = Monatslohn × 12.
+
+Methode
+1. Basis (alle Berufe): wage_median_chf = LSE-2024-Median der 2-stelligen Gruppe × 12,
+   wage_source = "LSE2024_2d". Gruppen ohne LSE-Wert (01–03 Armee, 63, 95) fallen auf die
+   1-stellige Hauptgruppe ("LSE2024_1d") bzw. den Gesamtmedian ("LSE2024_total") zurück.
+2. Heterogene Gruppen (11–14, 22, 24, 26): Profilmethode mit BFS Salarium (Lohnrechner auf
+   Basis LSE 2024, nur Privatsektor). Jeder Beruf hat ein festes Profil in
+   data/processed/lohn_profile_salarium.csv (Salarium-Berufsgruppe, NOGA-Abteilung der
+   Hauptbranche, formale Pflichtausbildung). Alle übrigen Merkmale sind für alle Berufe
+   gleich (NORMPROFIL). Kalibrierung auf die LSE je 2-stelliger LSE-Gruppe g:
+
+       lohn_j = LSE_g × 12 × S_j / S̄_g,   S̄_g = Σ_k∈g w_k·S_k / Σ_k∈g w_k
+
+   S_j = Salarium-Median des Profils von Beruf j, als Mittel über die 7 Grossregionen
+   gewichtet mit den Vollzeitäquivalenten der jeweiligen NOGA-Abteilung (BFS STATENT).
+   w_k = employed_k (aus berufe_ch.csv, BFS SE). Damit ist das
+   beschäftigungsgewichtete Mittel der kalibrierten Löhne der Gruppe gleich dem
+   LSE-Gruppenmedian × 12: Salarium verteilt nur um (Branche, Ausbildung), das Niveau
+   stammt aus der LSE. Berufe der Gruppe ohne Salarium-Wert (z. B. 1112, NOGA 84 nicht
+   im Salarium-Modell) erhalten S = S̄_g, also LSE_g × 12, und zählen nicht in S̄_g.
+   wage_source = "LSE2024_2d+Salarium". Für die Führungskräfte (Salarium-Gruppe 10 =
+   ISCO 11–14) wird je LSE-Gruppe 11, 12, 13, 14 separat normiert.
+3. Verhältnis-Overrides (data/processed/lohn_verhaeltnisse.csv, nach der Salarium-
+   Kalibrierung): Für Berufe mit belegter Verhältniszahl f_j zum LSE-Gruppenmedian gilt
+
+       lohn_j = f_j × LSE_g × 12,   wage_source = "LSE2024_2d+Verhaeltnis"
+
+   (derzeit Gruppe 22: dipl. Pflege 0.987 aus der LSE-2018-Spezialauswertung, Ärzte
+   2211/2212 aus Krankenhausstatistik und LSE-Perzentilen — Schätzung mit Band
+   band_low–band_high). Override-Berufe zählen NICHT in S̄_g: die übrigen Salarium-
+   Berufe der Gruppe werden unter sich normiert (ihr gewichtetes Mittel = LSE_g × 12),
+   sonst würde ein Override die Löhne der anderen Berufe verschieben. Zeilen ohne Faktor
+   behalten die Salarium-Kalibrierung; wage_uncertain (True/False) übernimmt die Markierung
+   der Tabelle (Zahnärzte, Apotheker: keine belegte Relation).
+4. scores.csv: die lohnabhängige Spalte adaptability neu berechnen
+   (adaptability_scorer.setze_adaptabilitaet). Expositions-Scores und Texte bleiben unverändert;
+   einen Lohnzuschlag auf den Score gibt es seit der aufgabenbasierten Bewertung nicht mehr.
+
+Dateien (data/processed/, versioniert, damit die Pipeline ohne Rohdaten läuft):
+    lse2024_monatslohn_isco.csv   LSE-2024-Mediane (Total, 1- und 2-stellig) aus T17
+    lohn_profile_salarium.csv     Salarium-Profil je Beruf (manuell gepflegt)
+    lohn_salarium_abfragen.csv    Salarium-Antworten je Profil und Grossregion
+    statent_vzae_grossregion.csv  STATENT-VZÄ je NOGA-Abteilung und Grossregion (Gewichte)
+    lohn_verhaeltnisse.csv        Verhältniszahlen (Faktor zum LSE-Gruppenmedian, Band, Quelle)
+
+Aufruf:
+    python src/data/update_loehne.py --offline            # gespeicherte Salarium-Werte
+    python src/data/update_loehne.py                      # Salarium neu abfragen
+    python src/data/update_loehne.py --offline --dry-run  # nur anzeigen
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import re
+import sys
+import time
+from datetime import date
+from pathlib import Path
+
+import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).parent.parent / "scoring"))
+
+from adaptability_scorer import setze_adaptabilitaet  # noqa: E402
+
+ROOT = Path(__file__).parent.parent.parent
+RAW_PATH = ROOT / "data" / "raw"
+PROCESSED_PATH = ROOT / "data" / "processed"
+
+LSE_RAW = RAW_PATH / "je-d-03.04.01.02.47.xlsx"
+LSE_BLATT = "2024"
+LSE_CSV = PROCESSED_PATH / "lse2024_monatslohn_isco.csv"
+PROFILE_CSV = PROCESSED_PATH / "lohn_profile_salarium.csv"
+SALARIUM_CSV = PROCESSED_PATH / "lohn_salarium_abfragen.csv"
+STATENT_CSV = PROCESSED_PATH / "statent_vzae_grossregion.csv"
+VERHAELTNIS_CSV = PROCESSED_PATH / "lohn_verhaeltnisse.csv"
+
+BASIS_DATEIEN = ["berufe_ch.csv", "berufe_ch_esco.csv", "berufe_ch_esco_verified.csv"]
+SCORES_DATEI = "scores.csv"
+BESCHAEFTIGTE_DATEI = "berufe_ch.csv"  # Quelle der Gewichte w_k (employed_k)
+
+MONATE = 12  # LSE-Monatslohn enthält 13. Monatslohn und Sonderzahlungen bereits anteilig
+
+QUELLE_2D = "LSE2024_2d"
+QUELLE_1D = "LSE2024_1d"
+QUELLE_TOTAL = "LSE2024_total"
+QUELLE_SALARIUM = "LSE2024_2d+Salarium"
+QUELLE_VERHAELTNIS = "LSE2024_2d+Verhaeltnis"
+
+# 2-stellige Gruppen, in denen die Salarium-Profilmethode angewendet wird
+HETEROGENE_GRUPPEN: frozenset[str] = frozenset({"11", "12", "13", "14", "22", "24", "26"})
+
+# Salarium-Ausbildungscodes (GET /api/Data/code/education-levels)
+AUSBILDUNG_CODES: dict[str, int] = {
+    "UNI": 1,   # Universitäre Hochschule (UNI, ETH)
+    "FH": 2,    # Fachhochschule (FH), Pädagogische Hochschule (PH)
+    "HBB": 3,   # Höhere Berufsbildung, Höhere Fachschule (HF)
+    "LS": 4,    # Lehrerseminar
+    "MAT": 5,   # Matura
+    "EFZ": 6,   # Abgeschlossene Berufsausbildung (EFZ)
+    "INT": 7,   # Unternehmensinterne Berufsausbildung
+    "OHNE": 8,  # Ohne abgeschlossene Berufsausbildung
+}
+STANDARD = "STANDARD"  # Salarium-Default der Kombination NOGA × Grossregion × Gruppe
+
+# Für alle Profile identische Merkmale. Alter/Dienstjahre/Arbeitszeit gemäss Issue #45;
+# keine Kader- und keine Sonderzahlungsannahme. Nur das Verhältnis S_j / S̄_g geht in
+# den Lohn ein — das Niveau kommt aus der LSE.
+NORMPROFIL: dict[str, int] = {
+    "ageCode": 42,
+    "workYearCode": 8,
+    "workHourValue": 40,
+    "managementLevelCode": 3,     # ohne Kaderfunktion
+    "genderCode": 0,
+    "permitCode": 1,              # Schweizer/innen
+    "companySizeCode": 3,         # 50 und mehr Beschäftigte
+    "hasBonusCode": 0,
+    "hasThirteenSalaryCode": 1,
+    "hasHourContractCode": 0,     # Monatslohn
+}
+
+# Salarium-Grossregionen (GET /api/Data/code/regions) und zugehörige Kantone (BFS-Nr.)
+GROSSREGIONEN: dict[int, tuple[str, tuple[int, ...]]] = {
+    1: ("Genferseeregion", (22, 23, 25)),
+    2: ("Espace Mittelland", (2, 10, 11, 24, 26)),
+    3: ("Nordwestschweiz", (12, 13, 19)),
+    4: ("Zürich", (1,)),
+    5: ("Ostschweiz", (8, 14, 15, 16, 17, 18, 20)),
+    6: ("Zentralschweiz", (3, 4, 5, 6, 7, 9)),
+    7: ("Tessin", (21,)),
+}
+
+SALARIUM_BASE = "https://www.salarium.bfs.admin.ch"
+SALARIUM_PAUSE_S = 1.2
+STATENT_URL = (
+    "https://www.pxweb.bfs.admin.ch/api/v1/de/"
+    "px-x-0602010000_101/px-x-0602010000_101.px"
+)
+HTTP_HEADERS = {
+    "Accept": "application/json",
+    "User-Agent": "ki-jobexposition-schweiz (Forschung, sequenziell, geringe Last)",
+}
+
+
+# ---------------------------------------------------------------------------
+# LSE 2024
+# ---------------------------------------------------------------------------
+
+def parse_lse_excel(path: Path, blatt: str = LSE_BLATT) -> pd.DataFrame:
+    """T17-Excel lesen → isco_prefix ("" = Total, 1- oder 2-stellig), level, label, median_monthly."""
+    df = pd.read_excel(path, sheet_name=blatt, header=None)
+    rows = []
+    for _, r in df.iterrows():
+        code = "" if pd.isna(r[0]) else str(r[0]).strip()
+        label = "" if pd.isna(r[1]) else str(r[1]).strip()
+        if code == "" and label.upper() == "TOTAL":
+            ebene = 0
+        elif re.fullmatch(r"\d{1,2}", code):
+            ebene = len(code)
+        else:
+            continue
+        wert = r[3]
+        if isinstance(wert, str):
+            m = re.search(r"\d+", wert.replace("'", ""))
+            wert = float(m.group(0)) if m else None
+        rows.append({"isco_prefix": code, "level": ebene, "label": label,
+                     "median_monthly": None if pd.isna(wert) else int(wert)})
+    return pd.DataFrame(rows)
+
+
+def lade_lse(raw: Path = LSE_RAW, csv: Path = LSE_CSV, schreiben: bool = True) -> dict[str, int]:
+    """LSE-Mediane als {präfix: Monatslohn}; Rohdatei bevorzugt, sonst versionierte CSV."""
+    if raw.exists():
+        tab = parse_lse_excel(raw)
+        if schreiben:
+            tab.to_csv(csv, index=False)
+    else:
+        tab = pd.read_csv(csv, dtype={"isco_prefix": str}, keep_default_na=False)
+    tab = tab[tab["median_monthly"].astype(str) != ""]
+    return {str(p): int(float(v)) for p, v in zip(tab["isco_prefix"], tab["median_monthly"])}
+
+
+def lse_basislohn(isco_code: str, lse: dict[str, int]) -> tuple[int, str]:
+    """Jahreslohn und Quelle aus der LSE: 2-stellig → 1-stellig → Total."""
+    code = str(isco_code).strip()
+    if code[:2] in lse:
+        return lse[code[:2]] * MONATE, QUELLE_2D
+    if code[:1] in lse:
+        return lse[code[:1]] * MONATE, QUELLE_1D
+    return lse[""] * MONATE, QUELLE_TOTAL
+
+
+# ---------------------------------------------------------------------------
+# Salarium-Profile
+# ---------------------------------------------------------------------------
+
+def salarium_gruppe(isco_code: str) -> int:
+    """Salarium-Berufsgruppe: 2-stellig, Führungskräfte 11–14 zusammengefasst (10)."""
+    zwei = int(str(isco_code)[:2])
+    return 10 if 11 <= zwei <= 14 else zwei
+
+
+def lade_profile(path: Path = PROFILE_CSV) -> pd.DataFrame:
+    prof = pd.read_csv(path, dtype={"isco_code": str})
+    unbekannt = set(prof["education"]) - set(AUSBILDUNG_CODES) - {STANDARD}
+    if unbekannt:
+        raise ValueError(f"Unbekannte Ausbildung in {path.name}: {sorted(unbekannt)}")
+    falsch = prof[prof["isco_code"].map(salarium_gruppe) != prof["salarium_group"]]
+    if not falsch.empty:
+        raise ValueError(f"salarium_group passt nicht zum ISCO-Code: {falsch['occupation'].tolist()}")
+    return prof
+
+
+def benoetigte_abfragen(profile: pd.DataFrame) -> list[tuple[int, int, str]]:
+    """Alle (salarium_group, noga, education) der Profile, sortiert und eindeutig."""
+    return sorted({(int(r.salarium_group), int(r.noga), str(r.education)) for r in profile.itertuples()})
+
+
+class SalariumClient:
+    """Minimaler, zurückhaltender Client (sequenziell, Pause vor jedem Request)."""
+
+    def __init__(self, pause: float = SALARIUM_PAUSE_S):
+        import requests
+
+        self.pause = pause
+        self.session = requests.Session()
+        self.session.headers.update(HTTP_HEADERS)
+
+    def _get(self, pfad: str):
+        time.sleep(self.pause)
+        r = self.session.get(SALARIUM_BASE + pfad, timeout=30)
+        r.raise_for_status()
+        return r
+
+    def konsistent(self, noga: int, region: int, gruppe: int) -> bool:
+        return self._get(f"/api/Calculation/consistent/{noga}/{region}/{gruppe}").text.strip() == "true"
+
+    def standard(self, noga: int, region: int, gruppe: int) -> dict:
+        return self._get(f"/api/Calculation/default/{noga}/{region}/{gruppe}").json()
+
+    def median(self, body: dict) -> tuple[int | None, int | None]:
+        time.sleep(self.pause)
+        r = self.session.post(SALARIUM_BASE + "/api/Calculation/calculate-salary", json=body, timeout=30)
+        r.raise_for_status()
+        js = r.json()
+        werte = {x["code"]: x["value"] for x in js.get("statisticalResults") or []}
+        return werte.get(50), js.get("quality")
+
+
+def abfragen_salarium(specs: list[tuple[int, int, str]], client: SalariumClient) -> pd.DataFrame:
+    """Salarium-Median je Spezifikation und Grossregion abfragen."""
+    heute = date.today().isoformat()
+    rows, konsistenz, defaults = [], {}, {}
+    for gruppe, noga, ausbildung in specs:
+        for region in GROSSREGIONEN:
+            key = (noga, region, gruppe)
+            if key not in konsistenz:
+                konsistenz[key] = client.konsistent(*key)
+            row = {"salarium_group": gruppe, "noga": noga, "education": ausbildung,
+                   "region": region, "consistent": konsistenz[key], "education_code": None,
+                   "median_monthly": None, "quality": None, "query_date": heute}
+            if konsistenz[key]:
+                if ausbildung == STANDARD:
+                    if key not in defaults:
+                        defaults[key] = client.standard(*key)
+                    code = int(defaults[key]["educationLevelCode"])
+                else:
+                    code = AUSBILDUNG_CODES[ausbildung]
+                body = dict(NORMPROFIL, nogaId=noga, regionCode=region,
+                            occupationalGroupCode=gruppe, educationLevelCode=code)
+                med, qual = client.median(body)
+                row.update(education_code=code, median_monthly=med, quality=qual)
+            rows.append(row)
+            print(f"  Salarium {gruppe}/{noga}/{ausbildung}/R{region}: "
+                  f"{row['median_monthly'] if row['consistent'] else 'nicht konsistent'}", flush=True)
+    df = pd.DataFrame(rows)
+    for spalte in ["education_code", "median_monthly", "quality"]:
+        df[spalte] = df[spalte].astype("Int64")
+    df["norm_profile_id"] = normprofil_id()
+    return df
+
+
+def normprofil_id(profil: dict[str, int] | None = None) -> str:
+    """Kurze Kennung des Normprofils (erkennt veraltete gespeicherte Abfragen)."""
+    text = json.dumps(profil or NORMPROFIL, sort_keys=True)
+    return hashlib.sha256(text.encode()).hexdigest()[:10]
+
+
+# ---------------------------------------------------------------------------
+# STATENT-Gewichte
+# ---------------------------------------------------------------------------
+
+def abfragen_statent() -> pd.DataFrame:
+    """VZÄ je Kanton × NOGA-Abteilung (neuestes STATENT-Jahr) → je Grossregion summiert."""
+    import requests
+
+    meta = requests.get(STATENT_URL, headers=HTTP_HEADERS, timeout=60).json()
+    jahr = max(meta["variables"][0]["values"])
+    kantone = [str(k) for _, (_, ks) in GROSSREGIONEN.items() for k in ks]
+    query = {
+        "query": [
+            {"code": "Jahr", "selection": {"filter": "item", "values": [jahr]}},
+            {"code": "Kanton", "selection": {"filter": "item", "values": kantone}},
+            {"code": "Wirtschaftsabteilung", "selection": {"filter": "all", "values": ["*"]}},
+            {"code": "Beobachtungseinheit", "selection": {"filter": "item", "values": ["5"]}},
+        ],
+        "response": {"format": "json"},
+    }
+    data = requests.post(STATENT_URL, json=query, headers=HTTP_HEADERS, timeout=120).json()["data"]
+    kanton_region = {k: r for r, (_, ks) in GROSSREGIONEN.items() for k in ks}
+    rows = []
+    for d in data:
+        _, kanton, noga, _ = d["key"]
+        if noga == "999":
+            continue
+        # «X» (Datenschutz), «...» u. ä. → 0
+        vzae = pd.to_numeric(d["values"][0], errors="coerce")
+        rows.append({"noga": int(noga), "region": kanton_region[int(kanton)],
+                     "fte": 0.0 if pd.isna(vzae) else float(vzae)})
+    out = pd.DataFrame(rows).groupby(["noga", "region"], as_index=False)["fte"].sum()
+    out["fte"] = out["fte"].round(0).astype(int)
+    out.insert(0, "year", int(jahr))
+    return out
+
+
+def gewichteter_salarium_wert(abfragen: pd.DataFrame, gewichte: pd.DataFrame,
+                              gruppe: int, noga: int, ausbildung: str) -> float | None:
+    """VZÄ-gewichtetes Mittel der Salarium-Mediane über die konsistenten Grossregionen."""
+    sel = abfragen[(abfragen["salarium_group"] == gruppe) & (abfragen["noga"] == noga)
+                   & (abfragen["education"] == ausbildung) & abfragen["median_monthly"].notna()]
+    if sel.empty:
+        return None
+    w = gewichte[gewichte["noga"] == noga].set_index("region")["fte"]
+    gew = sel["region"].map(w).fillna(0.0).astype(float)
+    if gew.sum() <= 0:  # keine Gewichte → ungewichtetes Mittel
+        return float(sel["median_monthly"].astype(float).mean())
+    return float((sel["median_monthly"].astype(float) * gew).sum() / gew.sum())
+
+
+def gruppen_mittel(s_werte: list[float], gewichte_w: list[float]) -> float:
+    """S̄_g = Σ w_k·S_k / Σ w_k (beschäftigungsgewichtetes Mittel der Salarium-Werte)."""
+    summe_w = float(sum(gewichte_w))
+    if summe_w <= 0:  # keine Beschäftigtenzahlen → ungewichtet
+        return float(sum(s_werte)) / len(s_werte)
+    return float(sum(s * w for s, w in zip(s_werte, gewichte_w))) / summe_w
+
+
+def kalibrierter_lohn(lse_monat: float, s_beruf: float, s_mittel: float) -> int:
+    """lohn_j = LSE_g × 12 × S_j / S̄_g, auf 100 CHF gerundet."""
+    return int(round(lse_monat * MONATE * s_beruf / s_mittel / 100.0) * 100)
+
+
+# ---------------------------------------------------------------------------
+# Verhältnis-Overrides
+# ---------------------------------------------------------------------------
+
+def _bool(wert) -> bool:
+    return str(wert).strip().lower() in {"true", "1", "ja"}
+
+
+def lade_verhaeltnisse(path: Path = VERHAELTNIS_CSV) -> pd.DataFrame:
+    """Verhältnistabelle lesen und prüfen; fehlt die Datei → leere Tabelle (keine Overrides).
+
+    factor_to_lse_group leer = kein Override (nur Markierung wage_uncertain).
+    """
+    spalten = ["isco_code", "occupation", "factor_to_lse_group", "band_low", "band_high",
+               "wage_uncertain", "source", "method", "note"]
+    if not path.exists():
+        return pd.DataFrame(columns=spalten)
+    tab = pd.read_csv(path, dtype={"isco_code": str}, keep_default_na=False)
+    fehlend = set(spalten) - set(tab.columns)
+    if fehlend:
+        raise ValueError(f"{path.name}: Spalten fehlen: {sorted(fehlend)}")
+    tab["isco_code"] = tab["isco_code"].str.strip()
+    for spalte in ["factor_to_lse_group", "band_low", "band_high"]:
+        tab[spalte] = pd.to_numeric(tab[spalte].replace("", pd.NA), errors="raise").astype(float)
+    tab["wage_uncertain"] = tab["wage_uncertain"].map(_bool)
+    if tab.duplicated(["isco_code", "occupation"]).any():
+        raise ValueError(f"{path.name}: doppelte Einträge")
+    f, lo, hi = tab["factor_to_lse_group"], tab["band_low"], tab["band_high"]
+    if (f <= 0).any():
+        raise ValueError(f"{path.name}: Faktor muss > 0 sein")
+    falsch = tab[(lo.notna() & ~(lo <= f)) | (hi.notna() & ~(f <= hi)) | (f.isna() & (lo.notna() | hi.notna()))]
+    if not falsch.empty:
+        raise ValueError(f"{path.name}: Band enthält den Faktor nicht: {falsch['occupation'].tolist()}")
+    if (tab["source"].str.strip() == "").any():
+        raise ValueError(f"{path.name}: Quelle fehlt")
+    return tab
+
+
+def verhaeltnis_lohn(lse_monat: float, faktor: float) -> int:
+    """lohn_j = f_j × LSE_g × 12, auf 100 CHF gerundet."""
+    return int(round(faktor * lse_monat * MONATE / 100.0) * 100)
+
+
+# ---------------------------------------------------------------------------
+# Lohn je Beruf
+# ---------------------------------------------------------------------------
+
+def berechne_loehne(df: pd.DataFrame, lse: dict[str, int], profile: pd.DataFrame,
+                    abfragen: pd.DataFrame | None, gewichte: pd.DataFrame | None,
+                    beschaeftigte: dict[tuple[str, str], float] | None = None,
+                    verhaeltnisse: pd.DataFrame | None = None) -> pd.DataFrame:
+    """Je Zeile (occupation, isco_code) → wage_median_chf, wage_source, wage_uncertain.
+
+    beschaeftigte: Gewichte w_k je (isco_code, occupation); Default = Spalte employed_k von df.
+    verhaeltnisse: Tabelle aus lade_verhaeltnisse(); None = keine Overrides.
+    """
+    codes = df["isco_code"].astype(str).str.strip().tolist()
+    berufe = df["occupation"].tolist()
+    if beschaeftigte is None:
+        w_spalte = pd.to_numeric(df.get("employed_k", pd.Series(0.0, index=df.index)),
+                                 errors="coerce").fillna(0.0)
+        beschaeftigte = dict(zip(zip(codes, berufe), w_spalte))
+    prof = {(str(r.isco_code), r.occupation): r for r in profile.itertuples()}
+    verh = {} if verhaeltnisse is None else {
+        (str(r.isco_code), r.occupation): r for r in verhaeltnisse.itertuples()}
+
+    # 1) Basis LSE und Salarium-Wert S_j je Zeile
+    basis, s_j = [], []
+    for code, beruf in zip(codes, berufe):
+        lohn, quelle = lse_basislohn(code, lse)
+        basis.append((lohn, quelle))
+        p = prof.get((code, beruf))
+        s = None
+        if p is not None and quelle == QUELLE_2D and abfragen is not None and gewichte is not None:
+            s = gewichteter_salarium_wert(abfragen, gewichte, int(p.salarium_group),
+                                          int(p.noga), str(p.education))
+            if not s:
+                print(f"  ! Kein Salarium-Wert für {code} {beruf} (Kombination in Salarium "
+                      f"nicht konsistent) → {QUELLE_2D}")
+        elif p is None and code[:2] in HETEROGENE_GRUPPEN:
+            print(f"  ! Kein Salarium-Profil für {code} {beruf} → {QUELLE_2D}")
+        s_j.append(s or None)
+
+    # Verhältnis-Faktor f_j je Zeile (nur mit 2-stelligem LSE-Wert)
+    f_j: list[float | None] = []
+    for code, beruf, (_, quelle) in zip(codes, berufe, basis):
+        v = verh.get((code, beruf))
+        f = None if v is None or pd.isna(v.factor_to_lse_group) else float(v.factor_to_lse_group)
+        if f is not None and quelle != QUELLE_2D:
+            print(f"  ! Verhältnis für {code} {beruf} ignoriert (kein 2-stelliger LSE-Wert)")
+            f = None
+        f_j.append(f)
+
+    # 2) S̄_g je 2-stelliger LSE-Gruppe (nur Berufe mit Salarium-Wert und ohne Override)
+    gruppen: dict[str, tuple[list[float], list[float]]] = {}
+    for code, beruf, s, f in zip(codes, berufe, s_j, f_j):
+        if s and f is None:
+            werte, w = gruppen.setdefault(code[:2], ([], []))
+            werte.append(s)
+            w.append(float(beschaeftigte.get((code, beruf), 0.0) or 0.0))
+    mittel = {g: gruppen_mittel(werte, w) for g, (werte, w) in gruppen.items()}
+
+    # 3) lohn_j = LSE_g × 12 × S_j / S̄_g; ohne S_j bleibt LSE_g × 12
+    # 4) danach Overrides: lohn_j = f_j × LSE_g × 12
+    out = []
+    for code, beruf, (lohn, quelle), s, f in zip(codes, berufe, basis, s_j, f_j):
+        if f is not None:
+            lohn, quelle = verhaeltnis_lohn(lse[code[:2]], f), QUELLE_VERHAELTNIS
+        elif s:
+            lohn, quelle = kalibrierter_lohn(lse[code[:2]], s, mittel[code[:2]]), QUELLE_SALARIUM
+        v = verh.get((code, beruf))
+        out.append({"wage_median_chf": lohn, "wage_source": quelle,
+                    "wage_uncertain": bool(v is not None and v.wage_uncertain)})
+    return pd.DataFrame(out, index=df.index)
+
+
+def _lesen(path: Path) -> pd.DataFrame:
+    """CSV als Text lesen, damit unveränderte Zellen exakt erhalten bleiben."""
+    return pd.read_csv(path, dtype=str, keep_default_na=False)
+
+
+def _lohn_spalten_setzen(text_df: pd.DataFrame, loehne: pd.DataFrame) -> pd.DataFrame:
+    out = text_df.copy()
+    out["wage_median_chf"] = loehne["wage_median_chf"].astype(int).astype(str)
+    if "wage_source" not in out.columns:
+        pos = out.columns.get_loc("wage_median_chf") + 1
+        out.insert(pos, "wage_source", "")
+    out["wage_source"] = loehne["wage_source"]
+    if "wage_uncertain" not in out.columns:
+        out.insert(out.columns.get_loc("wage_source") + 1, "wage_uncertain", "")
+    out["wage_uncertain"] = loehne["wage_uncertain"].map(lambda b: "True" if b else "False")
+    return out
+
+
+def scores_folgespalten(text_df: pd.DataFrame) -> pd.DataFrame:
+    """Lohnabhängige, regelbasierte Spalte adaptability in scores.csv für alle Zeilen neu berechnen.
+
+    Ohne Spalte exposure (scores.csv vor apply_task_scores.py) bleibt die Tabelle unverändert.
+    """
+    if "exposure" not in text_df.columns:
+        return text_df.copy()
+    return setze_adaptabilitaet(text_df)
+
+
+def main(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+    parser.add_argument("--offline", action="store_true",
+                        help="gespeicherte Salarium- und STATENT-Werte verwenden (kein Netz)")
+    parser.add_argument("--dry-run", action="store_true", help="Änderungen nur anzeigen")
+    parser.add_argument("--data-dir", dest="pfad", metavar="DIR", type=Path, default=PROCESSED_PATH,
+                        help="Verzeichnis der CSVs")
+    args = parser.parse_args(argv)
+
+    lse = lade_lse(raw=LSE_RAW, csv=args.pfad / LSE_CSV.name, schreiben=not args.dry_run)
+    print(f"✓ LSE 2024: {len(lse)} Mediane (Total, 1- und 2-stellig)")
+    profile = lade_profile(args.pfad / PROFILE_CSV.name)
+    verhaeltnisse = lade_verhaeltnisse(args.pfad / VERHAELTNIS_CSV.name)
+    n_f = int(verhaeltnisse["factor_to_lse_group"].notna().sum())
+    print(f"✓ Verhältnisse: {n_f} Overrides, {int(verhaeltnisse['wage_uncertain'].sum())} als unsicher markiert")
+
+    statent_path = args.pfad / STATENT_CSV.name
+    salarium_path = args.pfad / SALARIUM_CSV.name
+    if args.offline:
+        gewichte = pd.read_csv(statent_path)
+        abfragen = pd.read_csv(salarium_path)
+        if "norm_profile_id" in abfragen and set(abfragen["norm_profile_id"]) != {normprofil_id()}:
+            raise SystemExit(f"{salarium_path.name} passt nicht zum NORMPROFIL — ohne --offline neu abfragen")
+    else:
+        gewichte = abfragen_statent()
+        print(f"✓ STATENT {gewichte['year'].iloc[0]}: {len(gewichte)} NOGA × Grossregion")
+        abfragen = abfragen_salarium(benoetigte_abfragen(profile), SalariumClient())
+        if not args.dry_run:
+            gewichte.to_csv(statent_path, index=False)
+            abfragen.to_csv(salarium_path, index=False)
+    print(f"✓ Salarium: {len(abfragen)} Abfragen ({int(abfragen['median_monthly'].notna().sum())} mit Wert)")
+
+    # Gewichte w_k für S̄_g einheitlich aus berufe_ch.csv (BFS SE), damit alle CSVs
+    # dieselben Löhne erhalten; fehlt die Datei, nutzt jede CSV ihre eigene Spalte.
+    beschaeftigte = None
+    basis_path = args.pfad / BESCHAEFTIGTE_DATEI
+    b = pd.read_csv(basis_path, dtype={"isco_code": str}) if basis_path.exists() else None
+    if b is not None and "employed_k" in b.columns:
+        beschaeftigte = dict(zip(zip(b["isco_code"].str.strip(), b["occupation"]),
+                                 pd.to_numeric(b["employed_k"], errors="coerce").fillna(0.0)))
+
+    for name in BASIS_DATEIEN + [SCORES_DATEI]:
+        path = args.pfad / name
+        if not path.exists():
+            print(f"– {name}: nicht vorhanden, übersprungen")
+            continue
+        df = _lesen(path)
+        loehne = berechne_loehne(df, lse, profile, abfragen, gewichte, beschaeftigte, verhaeltnisse)
+        alt = pd.to_numeric(df["wage_median_chf"], errors="coerce")
+        geaendert = alt != loehne["wage_median_chf"]
+        print(f"✓ {name}: {int(geaendert.sum())} Zeilen mit neuem Lohn")
+        out = _lohn_spalten_setzen(df, loehne)
+        if name == SCORES_DATEI:
+            out = scores_folgespalten(out)
+        if not args.dry_run:
+            out.to_csv(path, index=False)
+
+
+if __name__ == "__main__":  # pragma: no cover
+    main()

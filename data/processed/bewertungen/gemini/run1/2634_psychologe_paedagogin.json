@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "b0b98446c4801fb999880d3e3e080a715274956dc1724c85d9d1806d1f276199",
+    "isco_code": "2634",
+    "beruf": "Psychologe/-pädagogin",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:20:45+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2220,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2220
+        }
+      ],
+      "prompt_token_count": 25510,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 25510
+        }
+      ],
+      "thoughts_token_count": 6522,
+      "total_token_count": 34252
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2220,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2220
+          }
+        ],
+        "prompt_token_count": 25510,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 25510
+          }
+        ],
+        "thoughts_token_count": 6522,
+        "total_token_count": 34252
+      }
+    ],
+    "request_ids": [
+      "1zHPaqC_D5vv_uMP7IC_2Qw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/n5emuc02ro4ufy1vyf6nfkxyavizsuglfcaq",
+    "custom_id": "r1-2634_psychologe_paedagogin",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2634",
+    "beruf": "Psychologe/-pädagogin",
+    "taetigkeiten": [
+      {
+        "name": "Psychologische Beratungs- und Psychotherapiesitzungen mit Klienten durchführen",
+        "zeitanteil_pct": 35,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Therapie- und Beratungsgespräche beruhen auf unmittelbarer zwischenmenschlicher Präsenz, Empathie, Krisenintervention und therapeutischer Beziehung; Sprachmodelle ersetzen die Fachperson in dieser Interaktion nicht."
+      },
+      {
+        "name": "Klinische Anamnese- und Explorationsgespräche zur Befunderhebung führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Erhebung der Lebens- und Krankheitsgeschichte sowie die Einschätzung akuter Gefährdung erfordern das persönliche Gespräch und die unmittelbare Verhaltensbeobachtung."
+      },
+      {
+        "name": "Standardisierte psychologische Testverfahren mit Klienten durchführen und Verhalten beobachten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Durchführung von Leistungs-, Entwicklungs- und Persönlichkeitstests verlangt persönliche Instruktion und Beobachtung des Arbeitsverhaltens vor Ort; die rein regelbasierte Fragebogenauswertung erfolgt bereits über klassische Testsoftware."
+      },
+      {
+        "name": "Befunde klinisch-diagnostisch zusammenführen, Diagnosen stellen und Behandlungspläne festlegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die klinische Urteilsbildung, Differentialdiagnostik und individuelle Therapieplanung erfordern fachliches Ermessen am Einzelfall; generative KI liefert allenfalls Denkanstösse, spart aber keine 50 % der Zeit."
+      },
+      {
+        "name": "Psychoedukative Unterlagen, Therapieübungen und Informationsblätter für Klienten zusammenstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt nach Vorgabe störungsspezifische Erklärtexte und Arbeitsblätter; die Psychologin wählt die Materialien aus und prüft jedes Dokument auf fachliche Eignung für den Klienten."
+      },
+      {
+        "name": "Sitzungsverläufe und therapeutischen Fortschritt im Praxis- oder Kliniksystem dokumentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Per Spracheingabe (Einzeldiktat nach der Sitzung) oder integrierter KI-Funktion in der Praxis-/Kliniksoftware wird der Verlaufseintrag erstellt; die Fachperson prüft und verantwortet jeden Eintrag. Berufsgeheimnis und Datenschutz (revDSG) sind wesentliche Hürden."
+      },
+      {
+        "name": "Psychologische Abklärungsberichte, Gutachten und Kostengutsprachegesuche verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus kopierten Verlaufsnotizen, Anamnesedaten und Testwerten strukturierte Berichte für Ärzte, Versicherer oder Behörden; die Psychologin prüft und korrigiert jeden Bericht inhaltlich. Berufsgeheimnis, Datenschutz und Unterschriftsverantwortung bremsen den Einsatz."
+      },
+      {
+        "name": "Fallbesprechungen und Koordination mit Ärztinnen, Angehörigen, Schulen oder Behörden führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Interdisziplinäre Fallbesprechungen, Standortgespräche sowie Intervision und Supervision erfordern persönlichen Austausch und Abstimmung."
+      },
+      {
+        "name": "Fachliteratur, klinische Leitlinien und Studien recherchieren und fachlich aufbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Recherche-Werkzeuge suchen und fassen relevante Studien sowie Leitlinien zusammen; die Fachperson beurteilt die Evidenz und überträgt die Erkenntnisse selbst auf komplexe Fälle oder Weiterbildungen."
+      },
+      {
+        "name": "Termine verwalten und Leistungen nach Tarif in der Praxissoftware abrechnen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Online-Terminbuchung und regelbasierte Tarifabrechnung mit Krankenkassen oder Selbstzahlern werden durch klassische Praxissoftware ohne generative KI automatisiert."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Klinische Psychologin / Psychotherapeutin bzw. Beratungspsychologin in ambulanter Praxis, Klinik oder Beratungsstelle in der Schweiz. Das ESCO-Profil enthält unpassende Kompetenzen wie «Medikamente verschreiben» (in der Schweiz Ärztinnen/Psychiatern vorbehalten) und «Open-Source-Software entwickeln» sowie ein starkes Gewicht auf akademischer Forschung; diese wurden zugunsten der typischen klinisch-beratenden Berufspraxis bereinigt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Verfassen psychologischer Berichte und Gutachten, die Sitzungsdokumentation, das Erstellen psychoedukativer Unterlagen sowie die Fachrecherche mittels Chat-LLM, Spracheingabe und Recherche-Tools.",
+      "begruendung": "Rund 30 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus (KI entwirft Berichte, Verlaufsnotizen und Informationsblätter, die Fachperson prüft jedes Ergebnis) sowie unterstützend bei der Literaturrecherche. Der Kern des Berufs – Psychotherapie, Beratung, Anamnese und Testdurchführung im direkten Klientenkontakt – bleibt nicht exponiert. In der Schweiz bremsen das strenge Berufsgeheimnis, der Datenschutz (revDSG) bei besonders schützenswerten Gesundheitsdaten sowie die persönliche Verantwortung für Diagnosen und Gutachten den KI-Einsatz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

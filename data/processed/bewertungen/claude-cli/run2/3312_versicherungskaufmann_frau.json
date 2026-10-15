@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "31ed6941d321c1a3bd2d6bb3496eb70ffa43901217a6937400dda7deab95b4c4",
+    "isco_code": "3312",
+    "beruf": "Versicherungskaufmann/-frau",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:14:57+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 6278,
+      "cache_read_input_tokens": 76091,
+      "output_tokens": 8521,
+      "api_aequivalent_usd": 0.23587819999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 39440,
+        "output_tokens": 5040,
+        "output_tokens_details": {
+          "thinking_tokens": 1642
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.108696
+      },
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 6278,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3481,
+        "output_tokens_details": {
+          "thinking_tokens": 188
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6278,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1271822
+      }
+    ],
+    "request_ids": [
+      "a6e4949d-da55-420e-b4a2-1272c143da22",
+      "a9659bf3-9a0b-4bf9-921e-6f53a41f1a4b"
+    ],
+    "versuche": 2,
+    "status": "ok",
+    "fehler": [
+      "Versuch 1: Zeitanteile summieren auf 110, nicht exakt 100"
+    ],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3312",
+    "beruf": "Versicherungskaufmann/-frau",
+    "taetigkeiten": [
+      {
+        "name": "Versicherungsanträge prüfen, Angaben im Bestandssystem erfassen und Policen ausstellen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumentenerkennung mit Anbindung an das Bestandssystem liest Anträge (PDF/Scan) aus und erfasst sie; die Person bearbeitet nur markierte Ausnahmen wie Gesundheitsfragen oder unvollständige Angaben. Heterogene Papier- und Maklerunterlagen sprechen gegen P1 mit klassischer Formularerkennung."
+      },
+      {
+        "name": "Vertragsmutationen (Adress-, Deckungs-, Fahrzeugwechsel, Kündigungen) aus E-Mails und Briefen im System erfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein LLM im Posteingang bzw. Bestandssystem erkennt das Anliegen in Freitext-Meldungen und bereitet die Mutation vor; die Person gibt frei und bearbeitet Sonderfälle. Klassische Regel-Workflows verstehen keinen Freitext."
+      },
+      {
+        "name": "Offerten und Vertragsvarianten mit dem Tarifrechner erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Prämienberechnung und Offertgenerierung übernimmt klassische Tarifierungs- und Offertsoftware (P1 software). Die verbleibende Zeit liegt in der Klärung der Kundensituation; ein LLM spart dort keine 50 %."
+      },
+      {
+        "name": "Schriftliche Kundenanfragen per E-Mail und Kundenportal zu Policen, Deckungen und Rechnungen beantworten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Die KI-Funktion im Ticket- bzw. CRM-System erstellt mit Zugriff auf Police und AVB die Antwort; weil Deckungsaussagen haftungsrelevant sind, prüft die Person jede Antwort inhaltlich vor dem Versand."
+      },
+      {
+        "name": "Kundinnen und Kunden telefonisch und am Schalter zu Policen, Deckungen und Leistungen beraten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend individuelle Beratung mit Rückfragen in Mundart und persönlichem Kontakt; ein Voicebot deckt nur einen kleinen Teil reiner Statusauskünfte ab."
+      },
+      {
+        "name": "Versicherungsbedarf in Beratungsgesprächen (Agentur, Kundenbesuch) analysieren und Lösungen vorschlagen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beratung von Angesicht zu Angesicht; ihr Wert liegt in persönlicher Präsenz und Vertrauen."
+      },
+      {
+        "name": "Einfache Schadenfälle aufnehmen, Belege erfassen und Deckung vorprüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumenten- und Bilderkennung extrahiert Belegdaten, das LLM entwirft die Deckungsbeurteilung anhand der AVB; die Person prüft jeden Fall fachlich und entscheidet."
+      },
+      {
+        "name": "Prämieninkasso überwachen, Zahlungseingänge abgleichen und Mahnläufe bearbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zahlungsabgleich per QR-Referenz und Mahnlauf übernimmt klassische Inkasso- und Buchhaltungssoftware (P1 software); kein LLM nötig."
+      },
+      {
+        "name": "Standardkorrespondenz (Bestätigungen, Unterlagen nachfordern, Kündigungsbestätigungen) verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "<10",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt Standardbriefe aus den Falldaten, die Person gibt sie per Klick frei."
+      },
+      {
+        "name": "Aktennotizen, Gesprächsnotizen und kurze Berichte für Aussendienst und Underwriting verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM formuliert Notizen und Berichte aus Stichworten; die Person prüft jede Notiz, da sie fachliche Einschätzungen enthält."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Kaufmann/-frau EFZ der Branche Privatversicherung im Innendienst einer Versicherungsgesellschaft oder Generalagentur, mit Bestandsführung, Kundendienst und einfacher Schadenbearbeitung. ESCO bildet den Bürosachbearbeiter (ISCO 4312) ab und passt nur teilweise; die Tätigkeiten habe ich deshalb mit Berufswissen zur Schweiz ergänzt. Grenzfälle sind der Anteil der Telefonberatung gegenüber reinen Standardauskünften und die Abgrenzung zwischen klassischer Tarifsoftware und LLM.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Antragserfassung und Policierung, Vertragsmutationen aus Freitext, die Beantwortung schriftlicher Kundenanfragen, Standardkorrespondenz, Aktennotizen und die Vorprüfung einfacher Schäden; die Technik dafür sind Dokumentenerkennung, KI-Funktionen in Bestands- und CRM-Systemen sowie Chat-LLM.",
+      "begruendung": "Rund 60 % der Arbeitszeit sind exponiert. Bei Antragserfassung, Mutationen und Standardbriefen arbeitet die KI weitgehend ersetzend, bei haftungsrelevanten Kundenantworten, Schadenvorprüfung und Notizen delegierend, wobei jede Ausgabe fachlich geprüft wird. Persönliche Beratung am Telefon, am Schalter und beim Kundenbesuch bleibt beim Menschen; als Hemmnisse wirken das Vertrauen der Kundschaft und der Schutz sensibler Versicherungsdaten.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

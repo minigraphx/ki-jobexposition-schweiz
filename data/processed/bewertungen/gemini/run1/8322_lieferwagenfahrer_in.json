@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "88f264612554c7422f1547b8f1b11734a551a3528fa2c9c41ce5ab3bc2e0f658",
+    "isco_code": "8322",
+    "beruf": "Lieferwagenfahrer/in",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2055,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2055
+        }
+      ],
+      "prompt_token_count": 21502,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21502
+        }
+      ],
+      "thoughts_token_count": 7014,
+      "total_token_count": 30571
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2055,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2055
+          }
+        ],
+        "prompt_token_count": 21502,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21502
+          }
+        ],
+        "thoughts_token_count": 7014,
+        "total_token_count": 30571
+      }
+    ],
+    "request_ids": [
+      "XTzPasWCAv7oz7IP17yB4Qw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-8322_lieferwagenfahrer_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "8322",
+    "beruf": "Lieferwagenfahrer/in",
+    "taetigkeiten": [
+      {
+        "name": "Lieferwagen im Strassen- und Stadtverkehr zu den Zustellorten lenken und parkieren",
+        "zeitanteil_pct": 40,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Fahrtätigkeit im Strassenverkehr; autonom fahrende Lieferwagen sind in der Schweiz 2026 im regulären Verkehr weder zugelassen noch kommerziell verfügbar."
+      },
+      {
+        "name": "Sendungen im Depot auf Unversehrtheit prüfen, nach Tour sortieren und im Laderaum sichern",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Sortieren, Einladen und Sichern verschiedenartiger Pakete und Güter im Kleintransporter; keine marktreife Robotik für die Fahrzeugbeladung im regulären Einsatz."
+      },
+      {
+        "name": "Pakete und Güter am Zielort entladen und bis zur Haustür, Rampe oder Etage transportieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein körperliche Arbeit auf der letzten Meile (Heben, Tragen, Treppensteigen, Sackkarre nutzen), die nicht durch verfügbare Robotik übernommen werden kann."
+      },
+      {
+        "name": "Sendungen persönlich an Kundschaft übergeben, Empfang quittieren lassen sowie Retouren und Zahlungen abwickeln",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Präsenz- und Übergabetätigkeit beim Empfänger vor Ort; Paketautomaten decken nur einen kleinen Teil des gesamten Liefervolumens ab."
+      },
+      {
+        "name": "Pakete mit Handscanner oder Zustell-App scannen und Sendungsstatus im System verbuchen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Barcode-Erfassung am Zustellort mit dem Handscanner; weder generative KI noch weitere nicht-generative Technik spart hier mindestens 50 % der verbleibenden Handgriffe."
+      },
+      {
+        "name": "Tagestour, Zeitfenster und Ausweichrouten bei Verkehrsbehinderungen planen und anpassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Routenberechnung, Reihenfolgeoptimierung und dynamische Stauumfahrung werden durch klassische algorithmische Dispositions- und GPS-Navigationssoftware übernommen, nicht durch Sprachmodelle."
+      },
+      {
+        "name": "Fahrzeug vor Fahrtantritt kontrollieren, betanken oder laden sowie reinigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeiten am Fahrzeug (Sichtkontrolle, Tanken bzw. Einstecken an der Ladesäule, Innenraum- und Aussenreinigung)."
+      },
+      {
+        "name": "Telefonische Rücksprachen mit Disposition und Empfängern bei Lieferhindernissen oder Terminabweichungen führen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze, situative Echtzeit-Absprachen von unterwegs (z. B. verschlossener Zugang, abweichender Abstellort), bei denen die Fahrperson selbst unmittelbar Rückmeldung benötigt."
+      },
+      {
+        "name": "Lieferscheine, Fahrzeugübergabeprotokolle und Schadensmeldungen mit Fotos und Bemerkungen erfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Da viele Meldungen in modernen Zustell-Apps bereits über kurze Standard-Auswahlfelder laufen, ist unsicher, ob generative KI über alle Protokolle hinweg ≥ 50 % Zeit spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Multimodale KI in der Fahrer-App erstellt aus Schadensfotos, gescannten Lieferscheinen und kurzen Spracheingaben strukturierte Meldungen; die Fahrperson prüft jeden Eintrag vor dem Absenden."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Lieferwagenfahrer/in (Kleintransporter bis 3,5 t) im Kurier-, Express- und Paketdienst (KEP) sowie in der allgemeinen Warenauslieferung in der Schweiz. Das ESCO-Profil bildet das Berufsbild gut ab. Der Beruf ist fast vollständig durch physische Fahr-, Lade- und Zustelltätigkeiten geprägt; einziger Grenzfall für generative KI ist die mobile Dokumentation von Schäden und Abweichungen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Von generativer KI betroffen ist lediglich das Erfassen von Schadensmeldungen, Lieferscheinen und Fahrzeugübergabeprotokollen mittels multimodaler Sprach- und Bilderkennung in der Fahrer-App; die eigentliche Fahr- und Zustellarbeit bleibt unberührt.",
+      "begruendung": "Nur rund 3 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI im delegierenden Modus aus Sprachnotizen und Fotos strukturierte Meldungen erstellt, die von der Fahrperson geprüft werden. Über 95 % der Arbeitszeit entfallen auf das physische Führen des Lieferwagens im Schweizer Strassen- und Stadtverkehr, das Be- und Entladen sowie die persönliche Übergabe vor Ort, während die Touren- und Routenoptimierung durch klassische Navigations- und Dispositionssoftware abgedeckt wird. Spezifische regulatorische oder kulturelle CH-Hemmnisse für die geringe exponierte Dokumentation bestehen kaum, jedoch erschweren Umgebungsgeräusche und Dialekt in der Praxis die Spracheingabe.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

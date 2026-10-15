@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "70b65761b26192fa46f25e4fa76fcb5e0b140451737c41ff497a9b6322b0543f",
+    "isco_code": "1420",
+    "beruf": "Filialleiter/in (Detailhandel)",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:16:11+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4148,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5307,
+      "api_aequivalent_usd": 0.1466622
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4148,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5307,
+        "output_tokens_details": {
+          "thinking_tokens": 1923
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4148,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1466622
+      }
+    ],
+    "request_ids": [
+      "32ce2876-316b-47c0-bde2-4ad9dec43344"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1420",
+    "beruf": "Filialleiter/in (Detailhandel)",
+    "taetigkeiten": [
+      {
+        "name": "Mitarbeitende führen, instruieren, Mitarbeitergespräche und Bewerbungsgespräche führen, Lernende betreuen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung, Instruktion und Gespräche finden persönlich auf der Verkaufsfläche statt; ihr Wert liegt in der Präsenz."
+      },
+      {
+        "name": "Im Verkauf mitarbeiten: Kundschaft beraten, bedienen und an der Kasse aushelfen",
+        "zeitanteil_pct": 22,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung und Bedienung vor Ort. Selbstbedienungskassen decken nur einen kleinen Teil davon ab; Beratung überwiegt, daher P0."
+      },
+      {
+        "name": "Kundenreklamationen und Rückgaben im Laden persönlich behandeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Kundschaft wird von Angesicht zu Angesicht beruhigt; Kulanzentscheide werden vor Ort getroffen."
+      },
+      {
+        "name": "Warenannahme kontrollieren, Warenpräsentation, Preisauszeichnung und Aktionen auf der Fläche umsetzen und überwachen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Kontrollrundgänge und Arbeit an Regalen und Ware. Elektronische Preisschilder erleichtern die Auszeichnung, ersetzen aber nicht die Kontrolle der Präsentation."
+      },
+      {
+        "name": "Bestellungen auslösen und Bestände im Warenwirtschaftssystem bewirtschaften",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die automatische Disposition im Warenwirtschaftssystem ist klassische, prognosebasierte Software und erstellt die Bestellvorschläge. Die Person korrigiert nur bei Spezialfällen; ein LLM bringt keine zusätzliche Ersparnis von ≥ 50 %."
+      },
+      {
+        "name": "Personaleinsatz- und Ferienplanung im Einsatzplanungstool erstellen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Workforce-Management-Software (klassische Optimierung nach Frequenz und Verfügbarkeiten) erzeugt die Einsatzpläne. Die Abstimmung mit dem Team bleibt beim Menschen, ist aber keine LLM-Leistung."
+      },
+      {
+        "name": "Umsatz- und Kennzahlen analysieren, Kundenrückmeldungen auswerten und Berichte an die Regionalleitung verfassen",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Viel davon ist das Lesen vorgegebener BI-Dashboards (klassische Software). Ob die KI dabei wirklich ≥ 50 % spart, ist unklar; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Werkzeug mit Code-Ausführung wertet exportierte Verkaufsdaten und Feedbacks aus, und die KI entwirft den Bericht. Die Filialleitung prüft jede Aussage und leitet die Massnahmen selbst ab."
+      },
+      {
+        "name": "Tagesabschluss, Kassenabrechnung und Bargeldbestand kontrollieren",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kassensystem-Abschluss, Bargeldrecycler und Geldzählautomaten übernehmen den Grossteil. Es gibt keine LLM-Exposition."
+      },
+      {
+        "name": "Stelleninserate, Arbeitszeugnisse und Mitarbeiterbeurteilungen formulieren",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten erstellt das Chat-LLM Inserat, Zeugnis oder Beurteilungstext. Die Filialleitung prüft jeden Text, besonders die Zeugnissprache, und passt ihn an die Person an."
+      },
+      {
+        "name": "E-Mails und Mitteilungen an Team, Zentrale und Lieferanten verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Chat-LLM entwirft Mitteilungen und Anfragen aus Stichworten und übersetzt sie bei Bedarf für mehrsprachige Teams. Die Person liest jeden Text kurz durch und passt ihn an."
+      },
+      {
+        "name": "Sicherheit, Diebstahlprävention, Hygiene und Arbeitssicherheit im Laden kontrollieren, Laden öffnen und schliessen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kontrollen vor Ort und Interventionen bei Ladendiebstahl. Videoüberwachung und Warensicherung unterstützen, ersetzen die Präsenz aber nicht."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Filialleiter/in einer Filiale einer Schweizer Detailhandelskette mit 5–20 Mitarbeitenden. Einkauf, Preisbildung und Lieferantenverhandlungen liegen weitgehend bei der Zentrale; die Filialleitung arbeitet selbst im Verkauf mit. Die ESCO-Beschreibung ist sehr knapp, und Kompetenzen wie Einkaufsverhandlungen gelten eher für unabhängige Fachgeschäfte. Den grössten Grenzfall bildet die Kennzahlenanalyse, weil BI-Dashboards klassische Software sind.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur die Büroanteile: Kennzahlenberichte (Datenanalyse-Werkzeug), Personaltexte wie Inserate und Zeugnisse sowie interne Korrespondenz (Chat-LLM). Führung, Verkauf und Arbeit auf der Fläche bleiben unberührt.",
+      "begruendung": "Rund ein Sechstel der Arbeitszeit ist exponiert, durchwegs delegierend: Die KI entwirft Berichte und Texte, die Filialleitung prüft jedes Ergebnis. Bestellwesen, Einsatzplanung und Kassenabschluss sind bereits mit klassischer Software bzw. Automaten automatisierbar und keine LLM-Exposition. Den Kern des Berufs bilden Präsenz, Führung und Arbeit im Laden; wesentliche CH-Hemmnisse gibt es kaum.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

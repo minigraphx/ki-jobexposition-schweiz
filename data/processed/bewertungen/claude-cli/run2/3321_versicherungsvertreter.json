@@ -1,0 +1,241 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "5e1fb1dffd4fae0e4f94632f2d8d5daf2196b76d650392245585e7643b4fa0da",
+    "isco_code": "3321",
+    "beruf": "Versicherungsvertreter",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:15:43+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 39982,
+      "output_tokens": 5200,
+      "api_aequivalent_usd": 0.11200439999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 39982,
+        "output_tokens": 5200,
+        "output_tokens_details": {
+          "thinking_tokens": 1541
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11200439999999999
+      }
+    ],
+    "request_ids": [
+      "4344dda8-a880-4822-a0e9-2ee01e9be284"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3321",
+    "beruf": "Versicherungsvertreter",
+    "taetigkeiten": [
+      {
+        "name": "Beratungs- und Verkaufsgespräche bei Kunden vor Ort führen, Bedarf erfragen und Anträge gemeinsam unterzeichnen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Gespräch von Angesicht zu Angesicht, Vertrauensaufbau und Abschluss. Der Wert liegt in der persönlichen Präsenz."
+      },
+      {
+        "name": "Neue Kunden akquirieren: Telefonakquise, Empfehlungen nachgehen, Termine vereinbaren, an Anlässen netzwerken",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kaltakquise am Telefon und Netzwerken leben vom persönlichen Kontakt. Voicebots für Kaltakquise sind weder in der Qualität noch rechtlich (UWG, Sterneintrag) eine Alternative."
+      },
+      {
+        "name": "Zu Kundenterminen und Anlässen fahren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit. Autonomes Fahren ist in der Schweiz nicht verfügbar."
+      },
+      {
+        "name": "Prämien berechnen und Offerten im Offert- und Beratungssystem der Gesellschaft zusammenstellen, inkl. Vorsorgelückenberechnung",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Tarifierung und Vorsorgelückenrechnung erledigt regelbasierte Offert- und Beratungssoftware (klassische Software). Die verbleibende Eingabe und Variantenwahl spart mit LLM nicht 50 %."
+      },
+      {
+        "name": "Bestehende Policen der Kunden (inkl. Fremdpolicen) auswerten und Deckungsvergleich erstellen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Dokumentenextraktion aus gescannten Policen und AVB erstellt die Deckungsübersicht und den Vergleich. Der Berater prüft jede Gegenüberstellung fachlich. Kundendaten in KI-Tools: Datenschutz."
+      },
+      {
+        "name": "Offertbegleitschreiben, Produktinformationen und Beratungsunterlagen für Kunden verfassen",
+        "zeitanteil_pct": 7,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Chat-LLM entwirft aus Stichworten und Offertdaten verständliche Kundentexte. Der Berater prüft jeden Text auf korrekte Deckungsaussagen und schickt ihn ab."
+      },
+      {
+        "name": "Kundenanfragen und Mutationswünsche von Bestandskunden per E-Mail beantworten und an den Innendienst weiterleiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Die KI-Funktion im E-Mail-Programm bzw. CRM entwirft Antworten mit Vertragsdaten und erstellt Weiterleitungen. Der Berater kontrolliert jede Antwort, weil die persönliche Kundenbeziehung zentral ist."
+      },
+      {
+        "name": "Schadenmeldungen von Kunden aufnehmen, Unterlagen sammeln und an die Schadenabteilung übermitteln",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Ein guter Teil läuft als persönliches Telefonat oder Besuch beim Kunden. E0 ist ebenso plausibel, wenn der Kundenkontakt dominiert.",
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Die KI erfasst Fotos, Belege und Schilderungen über Dokumenten- und Bilderkennung und erstellt die Meldung. Der Berater prüft jede Meldung und begleitet den Kunden."
+      },
+      {
+        "name": "Beratungsprotokolle und Gesprächsnotizen gemäss Dokumentationspflicht (VAG) im CRM erstellen",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Diktat oder Gesprächsaufnahme (Schweizerdeutsch, Korrekturaufwand) erstellt die KI das strukturierte Protokoll. Der Berater prüft jedes Protokoll, da er für die Beratungsdokumentation haftet und Aufnahmen eine Einwilligung brauchen."
+      },
+      {
+        "name": "Termine planen, Kundenbestand im CRM pflegen und Verkaufsaktivitäten rapportieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze Strukturdaten-Eingaben; Terminbuchung, Wiedervorlagen und Verkaufsreports macht klassische CRM-Software. Ein LLM spart hier nichts Relevantes."
+      },
+      {
+        "name": "Mailings und Social-Media-Beiträge zur Kundengewinnung und Kundenbindung erstellen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Chat-LLM erstellt Texte für Mailings und Posts. Der Berater wählt aus und prüft jeden Beitrag auf Compliance."
+      },
+      {
+        "name": "Produktschulungen und Weiterbildungen besuchen (VBV-Rezertifizierung)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Lernen und Präsenzschulung. Den Zeitaufwand gibt die Rezertifizierung vor, KI ersetzt ihn nicht."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Ich gehe von einem Kundenberater oder einer Kundenberaterin im Aussendienst einer Schweizer Versicherungsgesellschaft (Generalagentur) mit VBV-Registrierung aus; ein ungebundener Makler hätte mehr Anteil am Policenvergleich. Die ESCO-Beschreibung (Makler) passt weitgehend. Die Zeitanteile zwischen Aussendienst und Büroarbeit sind grob geschätzt. Grenzfälle sind die Schadenbegleitung und der Policenvergleich.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Büroarbeiten: Policenvergleiche aus gescannten Dokumenten, Kundenkorrespondenz, Beratungsprotokolle, Schadenmeldungen und Marketingtexte, die Dokumentenerkennung, CRM-integrierte LLMs und Transkription übernehmen; Beratung und Verkauf vor Ort bleiben unberührt.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind exponiert, fast durchwegs delegierend: Die KI erstellt Vergleiche, Antworten und Protokolle, der Berater prüft jede Ausgabe, weil die Kundenbeziehung und die Haftung bei ihm liegen. Bremsend wirken in der Schweiz die Beratungs- und Dokumentationspflichten nach revidiertem VAG, der Datenschutz bei Kundendaten und Gesprächsaufnahmen sowie die Erwartung der Kundschaft an einen persönlichen Berater.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

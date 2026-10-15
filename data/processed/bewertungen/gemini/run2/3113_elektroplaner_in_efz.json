@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "4db377574037ec7356ad3e285f326a0687da30e531df6e0595baca5413c2dc09",
+    "isco_code": "3113",
+    "beruf": "Elektroplaner/in EFZ",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2439,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2439
+        }
+      ],
+      "prompt_token_count": 22581,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22581
+        }
+      ],
+      "thoughts_token_count": 8802,
+      "total_token_count": 33822
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2439,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2439
+          }
+        ],
+        "prompt_token_count": 22581,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22581
+          }
+        ],
+        "thoughts_token_count": 8802,
+        "total_token_count": 33822
+      }
+    ],
+    "request_ids": [
+      "xD_Papr8BrvL_PUPs93BqAU"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-3113_elektroplaner_in_efz",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3113",
+    "beruf": "Elektroplaner/in EFZ",
+    "taetigkeiten": [
+      {
+        "name": "Elektroinstallationspläne, Trassepläne, Prinzipschemata und Revisionspläne im CAD/BIM erstellen",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das räumliche Entwerfen, Zeichnen und Nachführen von Stark- und Schwachstromanlagen im 2D/3D-CAD oder BIM-Modell erreicht mit generativer KI heute keine 50 % Zeitersparnis bei normgerechter Qualität. Auch klassische parametrische CAD-Funktionen übernehmen keine 50 % der verbleibenden Modellierarbeit."
+      },
+      {
+        "name": "Beleuchtungs-, Kabelquerschnitts- und Kurzschlussberechnungen in Fachsoftware durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Lichtsimulationen (z. B. Relux/Dialux) sowie Netz- und Selektivitätsberechnungen nach NIN erfolgen über klassische deterministische Berechnungssoftware mit BIM-Anbindung und nicht über Sprachmodelle."
+      },
+      {
+        "name": "Ausschreibungsunterlagen und Leistungsverzeichnisse nach NPK erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Funktionen bei der streng strukturierten NPK-Devisierung inklusive Massenermittlung aus Plänen in der Praxis bereits die 50-%-Schwelle erreichen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in der Bauadministrationssoftware ordnen Projektbeschriebe und Komponentenlisten passenden NPK-Positionen zu und entwerfen das Leistungsverzeichnis; die Fachperson spezifiziert die Anforderungen und prüft jede Position samt Ausmass."
+      },
+      {
+        "name": "Technische Berichte, Projekt- und Baubeschriebe sowie Anlagedokumentationen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus eingegebenen Projektdaten, Kennwerten und Stichworten strukturierte Baubeschriebe, Pflichtenhefte und Phasenberichte; die Elektroplanerin prüft und verantwortet jeden Bericht wegen der Haftung und den Vorgaben nach NIV/ESTI fachlich."
+      },
+      {
+        "name": "Unternehmerofferten technisch und rechnerisch prüfen sowie Vergabeanträge erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Klassische Bauadministrationssoftware liest Offerten über SIA-451-Schnittstellen für den Preisspiegel automatisch ein (P1); für PDF-Offerten, Unternehmervarianten und das Verfassen des Vergabeantrags erstellt eine dokumentenbasierte KI den Vergleichsbericht, den die Fachperson im Detail kontrolliert."
+      },
+      {
+        "name": "Kostenschätzungen, Kostenvoranschläge sowie Ausmass- und Rechnungskontrollen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Kontrolle von Unternehmerausmassen anhand von Plänen und Baufortschritt sowie die Kostenermittlung nach eBKP-H erfordern Plandurchsicht und Erfahrungswerte, wobei generative KI weniger als 50 % der Zeit einspart."
+      },
+      {
+        "name": "Normen (NIN), Werkvorschriften und Herstellerkataloge recherchieren sowie Komponenten auswählen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Recherche-Agenten durchsuchen Normendatenbanken (SN 411000 / NIN, VKF), lokale Werkvorschriften und Herstellerkataloge und liefern passende Auszüge; den technischen Auswahl- und Auslegungsentscheid trifft der Elektroplaner weiterhin selbst."
+      },
+      {
+        "name": "Fachkoordination (HLKKSE) und Planungsbesprechungen mit Architekten, Ingenieuren und Bauherrschaft führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Abstimmung von Trasseführungen, Schächten und Schnittstellen in Planungssitzungen sowie die Beratung der Bauherrschaft erfordern zwischenmenschliche Präsenz und Verhandlung."
+      },
+      {
+        "name": "Sitzungsprotokolle, Projektkorrespondenz und Mängellisten aus Notizen oder Sprachaufnahmen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Transkription und Textgenerierung in Office- oder Bauleitungs-Apps erstellen aus Sprachnotizen, Fotos und Stichworten fertige Protokolle, E-Mails und Mängelberichte; die Fachperson prüft jeden Entwurf auf fachliche und vertragliche Richtigkeit."
+      },
+      {
+        "name": "Baustellenbegehungen, Ausführungskontrollen und Abnahmeprüfungen vor Ort durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die physische Kontrolle von Einlagen, Rohmontagen und Verteilungen auf der Baustelle sowie die Begleitung von Inbetriebnahmen und Abnahmen erfordern die Präsenz vor Ort."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Elektroplaner/in EFZ in einem Schweizer Elektroplanungs- bzw. Ingenieurbüro der Gebäudetechnik. Die ESCO-Vorlage bildet einen allgemeinen industriellen Elektrotechniker (mit Löten und Prototypenbau) ab; für die Bewertung wurde das tatsächliche Schweizer Berufsbild gemäss Bildungsverordnung Elektroplaner/in EFZ im Bauwesen zugrunde gelegt. Grenzfälle bestehen insbesondere bei der NPK-Devisierung und der Offertprüfung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem das Verfassen technischer Berichte und Baubeschriebe per Chat-LLM sowie die Erstellung von NPK-Ausschreibungen, Offertvergleichen, Sitzungsprotokollen und Normenrecherchen mittels KI-gestützter Bauadministrations- und Recherchewerkzeuge, während die CAD/BIM-Planung und die Baustellenkontrollen nicht betroffen sind.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit entfällt auf text-, dokumentations- und ausschreibungsbezogene Aufgaben, bei denen generative KI überwiegend delegierend Entwürfe erstellt oder unterstützend bei der Normen- und Komponentenrecherche hilft. Jedes Ergebnis muss wegen der hohen technischen Anforderungen und der Haftung nach Niederspannungs-Installationsverordnung (NIV) sowie den Schweizer Normen (NIN) fachlich geprüft werden. Zudem bremsen lokal unterschiedliche Werkvorschriften der Verteilnetzbetreiber und die kleinteilige KMU-Struktur der Planungsbüros eine rasche Integration in die Branchensoftware.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

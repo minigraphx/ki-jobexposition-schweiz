@@ -1,0 +1,232 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "d2b0b4893de29cb56e7016d90bdad529e99e4ffc67e65948df69260df003ce05",
+    "isco_code": "3353",
+    "beruf": "Fachkräfte in Sozialverwaltung und -versicherung",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T22:40:32+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2636,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5751,
+      "api_aequivalent_usd": 0.1434462
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2636,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5751,
+        "output_tokens_details": {
+          "thinking_tokens": 1961
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2636,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1434462
+      }
+    ],
+    "request_ids": [
+      "5c2064ea-4789-4c1b-8d4c-0b78364a1bc9"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3353",
+    "beruf": "Fachkräfte in Sozialverwaltung und -versicherung",
+    "taetigkeiten": [
+      {
+        "name": "Eingehende Anmeldungen, Formulare und Belege (Scans, PDFs, Arztzeugnisse) sichten und Falldaten in der Fachapplikation erfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Dokumentenerkennung mit LLM-Extraktion und Integration in die Fachapplikation übernimmt die Erfassung. Der Mensch bearbeitet nur markierte Ausnahmen und unvollständige Unterlagen. Weil die Belege sehr heterogen sind, reicht klassische Formularerkennung allein nicht für 50 % aus."
+      },
+      {
+        "name": "Leistungsanspruch anhand Gesetz, Weisungen und Falldaten prüfen (Voraussetzungen, Fristen, Einkommen, Koordination)",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Eine KI-Funktion mit Zugriff auf Dossier und Weisungen (z. B. Wegleitungen des BSV) erstellt die Anspruchsbeurteilung. Die Fachperson prüft jede Beurteilung gegen die Akten und verantwortet sie. Weil viele Dokumente pro Fall vorliegen, braucht es Integration (E2)."
+      },
+      {
+        "name": "Renten, Ergänzungsleistungen, Taggelder und Zulagen in der Fachapplikation berechnen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Leistungen werden regelbasiert in der Fachapplikation der Ausgleichskasse bzw. Versicherung berechnet. Das ist klassische Software, keine LLM-Exposition."
+      },
+      {
+        "name": "Verfügungen und Entscheide mit individueller Begründung verfassen, insbesondere bei Ablehnung oder Kürzung",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM entwirft Begründung und Verfügungstext aus den eingefügten Falldaten und Rechtsgrundlagen. Weil ein menschlicher Einzelfallentscheid vorgeschrieben ist, ist höchstens «delegierend» möglich; jede Verfügung wird geprüft und visiert."
+      },
+      {
+        "name": "Schriftliche Anfragen von Versicherten, Arbeitgebern und Behörden per Brief und E-Mail beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Die KI erstellt die Antwort aus der Anfrage und den kopierten Falldaten, auch in DE, FR oder IT. Die Fachperson prüft jede Antwort auf fallbezogene Richtigkeit."
+      },
+      {
+        "name": "Telefonische Standardauskünfte erteilen (Fallstatus, fehlende Unterlagen, Auszahlungstermine)",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Die Qualität von Voicebots bei Schweizerdeutsch und älteren Versicherten ist wenig belegt; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Ein Voicebot mit Zugriff auf die Fachapplikation beantwortet Standardfragen. Spezialfälle leitet er an die Fachperson weiter."
+      },
+      {
+        "name": "Versicherte am Schalter, in Terminen oder am Telefon persönlich über Leistungsansprüche und Antragstellung beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung oft verunsicherter Personen in komplexen Lebenslagen. Der Wert liegt im direkten Gespräch."
+      },
+      {
+        "name": "Unterlagen nachfordern, Eingangsbestätigungen versenden und Dokumente an Ärzte, Arbeitgeber und andere Versicherer übermitteln",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "<10",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI-Funktion in der Fachapplikation erstellt die fallspezifischen Begleit- und Nachforderungsschreiben, die Fachperson gibt per Klick frei. Ein grosser Teil läuft bereits über klassische Vorlagen- und Workflowfunktionen der Fachsoftware (P1)."
+      },
+      {
+        "name": "Lohn- und Beitragsmeldungen von Arbeitgebern kontrollieren und Mutationen aus Freitextmeldungen erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Strukturierte Meldungen werden über das einheitliche Lohnmeldeverfahren (ELM/Swissdec) und Plausibilitätsprüfungen schon mit klassischer Software verarbeitet (P1). Mutationen aus Freitext und Scans erfasst eine LLM-Extraktion; der Mensch bearbeitet nur Ausnahmen."
+      },
+      {
+        "name": "Aktennotizen und Falldokumentation nach Gesprächen und Abklärungen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die KI formuliert die Aktennotiz aus Stichworten. Die Fachperson prüft jede Notiz, weil sie Grundlage für spätere Entscheide ist."
+      },
+      {
+        "name": "Abklärungen mit Ärzten, Arbeitgebern, Sozialdiensten und Behörden führen und Termine koordinieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bei Rückfragen, Verhandlungen und Abstimmung mit Dritten im Gespräch liegt der Kern in der Interaktion. Die Terminplanung läuft über klassische Kalendersoftware und braucht wenig Zeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Sozialversicherungs-Fachperson (EFZ bzw. eidg. Fachausweis) in einer kantonalen Ausgleichskasse bzw. SVA (AHV/IV/EL/FAK), Leistungsabteilung. Der ESCO-Input passt gut; «wissenschaftliche Befragung durchführen» wurde als ESCO-Rauschen nicht übernommen. Die grössten Unsicherheiten sind der Grenzfall bei der Anspruchsprüfung (delegierend gegenüber unterstützend), die Qualität von Voicebots auf Schweizerdeutsch und die Abgrenzung zur bereits klassisch automatisierten Leistungsberechnung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Erfassung von Anträgen und Belegen, die Anspruchsprüfung, das Entwerfen von Verfügungen und Korrespondenz sowie telefonische Standardauskünfte – durch Dokumentenerkennung, KI-Funktionen in der Fachapplikation, Chat-LLM und Voicebots.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind exponiert. Erfassung, Standardkorrespondenz und Standardauskünfte sind weitgehend ersetzbar; Anspruchsprüfung und Verfügungen bleiben wegen des vorgeschriebenen menschlichen Einzelfallentscheids delegierend. Gebremst wird die Umsetzung in der Schweiz vor allem durch Amtsgeheimnis, Datenschutz und Cloud-Restriktionen in der öffentlichen Verwaltung, durch die Verfügungs- und Begründungspflicht sowie durch die Abhängigkeit von wenigen Fachapplikations-Anbietern der Ausgleichskassen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

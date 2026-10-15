@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "4ff535a5c9e5bde0098003718013e980d08ac68f129a2bb1a5b09de3d3615df7",
+    "isco_code": "7115",
+    "beruf": "Zimmermann/-frau EFZ",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:22:42+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3795,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4225,
+      "api_aequivalent_usd": 0.12219819999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3795,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4225,
+        "output_tokens_details": {
+          "thinking_tokens": 1091
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3795,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.12219819999999998
+      }
+    ],
+    "request_ids": [
+      "32b302f2-791d-4590-8b4d-b1923a84146f"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "7115",
+    "beruf": "Zimmermann/-frau EFZ",
+    "taetigkeiten": [
+      {
+        "name": "Wand-, Decken- und Dachelemente in der Werkhalle vorfertigen (Ständer setzen, beplanken, dämmen, Folien anbringen)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handwerksarbeit. Multifunktionsbrücken (Nagel-/Klammerbrücken) gibt es zwar, in typischen Holzbau-KMU übernehmen sie aber nicht ≥ 50 % der Zeit, deshalb P0."
+      },
+      {
+        "name": "Abbund: Holzbauteile zuschneiden und Holzverbindungen herstellen, manuell und an der CNC-Abbundanlage",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Bearbeitung des Holzes. CNC-Abbundanlagen (z. B. Hundegger), die Daten direkt aus dem CAD übernehmen, sind in der Schweiz verbreitet und können den Grossteil der Zuschnitte und Verbindungen übernehmen."
+      },
+      {
+        "name": "Holzbauteile und Elemente auf der Baustelle aufrichten, montieren und verbinden (Dachstühle, Holzrahmenbau)",
+        "zeitanteil_pct": 23,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Montage in der Höhe mit Kran. Für diese Arbeit gibt es keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Dämmung, Unterdach, Fassadenverkleidung, Holzbeschläge und Bauteile wie Fenster auf der Baustelle einbauen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Ausbauarbeit vor Ort, die nicht automatisierbar ist."
+      },
+      {
+        "name": "Material, Werkzeuge und Ausrüstung zur Baustelle transportieren, Baustelle einrichten, Gerüst und Absturzsicherung erstellen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Logistik und Sicherheitsarbeit auf der Baustelle."
+      },
+      {
+        "name": "Pläne lesen, Masse übertragen, einmessen, Schnurschlag ziehen und Bauprofile anbringen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit fällt beim Messen und Anreissen vor Ort an. Das Lesen der Pläne ist mit der praktischen Ausführung verbunden, KI spart hier nicht 50 %."
+      },
+      {
+        "name": "Holzoberflächen schleifen, reinigen und Schutzanstriche auftragen; Holz und Baustoffe auf Mängel prüfen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit und Sichtprüfung am Material."
+      },
+      {
+        "name": "Sägen, Maschinen und Handwerkzeuge warten und instand halten",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Wartungsarbeit."
+      },
+      {
+        "name": "Material- und Mengenbedarf für Kleinaufträge und Reparaturen berechnen und Bestellungen vorbereiten",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob das Chat-LLM gegenüber Faustregeln und CAD-Holzlisten wirklich 50 % Zeit spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Der Zimmermann tippt die Masse ein, das LLM berechnet Holz, Platten und Befestigungsmittel und erstellt eine Bestellliste. Er kontrolliert jedes Ergebnis."
+      },
+      {
+        "name": "Arbeits- und Regierapporte mit Arbeitsbeschrieb, Material und Stunden erstellen",
+        "zeitanteil_pct": 3,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Per Spracheingabe in einer Rapport-App wird der Rapport erstellt, der Vorarbeiter prüft jeden. Dialekt und Baustellenlärm erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Arbeiten mit Vorarbeiter, Bauleitung und anderen Gewerken absprechen, Lernende anleiten",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Abstimmung und Anleitung vor Ort."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommen wird ein Zimmermann bzw. eine Zimmerin EFZ in einem Holzbau-KMU, der oder die in der Werkhalle (Elementbau, Abbund) und in der Montage auf der Baustelle arbeitet. Die Arbeitsplanung mit CAD (z. B. Cadwork) liegt meist beim Holzbau-Techniker bzw. Vorarbeiter und ist hier nicht erfasst. Grenzfälle sind die Materialberechnung (E0 oder E1) sowie der P-Wert für Abbund und Elementfertigung, der vom Automatisierungsgrad des Betriebs abhängt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur kleine administrative Arbeiten: Rapporte entstehen per Spracheingabe in Rapport-Apps, Materialberechnungen im Chat-LLM. Die handwerkliche Arbeit in Werkhalle und Montage ist nicht exponiert.",
+      "begruendung": "Nur rund 6 % der Arbeitszeit sind exponiert, durchwegs delegierend: Die KI erstellt Rapport oder Mengenberechnung, die Fachperson prüft jedes Ergebnis. Der Kern des Berufs ist physische Arbeit; Schweizerdeutsch und Baustellenlärm erschweren die Spracheingabe. Bedeutender als generative KI ist die klassische Automatisierung durch CNC-Abbundanlagen.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

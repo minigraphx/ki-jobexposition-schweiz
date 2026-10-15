@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "a3d352d25a88ff8bc9e7ad4a0822bdf73426dae40887b6b9d24113b134cb45c9",
+    "isco_code": "4321",
+    "beruf": "Fachkräfte in der Lagerwirtschaft",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2271,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2271
+        }
+      ],
+      "prompt_token_count": 21157,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21157
+        }
+      ],
+      "thoughts_token_count": 6983,
+      "total_token_count": 30411
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2271,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2271
+          }
+        ],
+        "prompt_token_count": 21157,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21157
+          }
+        ],
+        "thoughts_token_count": 6983,
+        "total_token_count": 30411
+      }
+    ],
+    "request_ids": [
+      "xD_PapPTBpz8qtsP25KVoA4"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-4321_fachkraefte_in_der_lagerwirtschaft",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "4321",
+    "beruf": "Fachkräfte in der Lagerwirtschaft",
+    "taetigkeiten": [
+      {
+        "name": "Waren und Retouren entgegennehmen, abladen und physisch auf Menge sowie Beschädigungen prüfen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit an der Rampe und im Wareneingang; das Abladen und die Sichtkontrolle heterogener Güter auf Transportschäden sind in typischen Schweizer Betrieben nicht automatisiert."
+      },
+      {
+        "name": "Lieferscheine, Packlisten und Retourenbelege erfassen, mit Bestellungen abgleichen und im Lagerverwaltungssystem buchen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Dokumentenerkennung mit ERP-/WMS-Integration liest heterogene Lieferscheine aus und bucht den Wareneingang, wobei die Fachkraft nur markierte Abweichungen bearbeitet. Parallel automatisieren klassische Barcode-/RFID-Scans und EDI-Schnittstellen (P1) bereits grosse Teile der Erfassung."
+      },
+      {
+        "name": "Waren mit Flurförderzeugen einlagern, stapeln und die Sicherheit der Lagerung vor Ort kontrollieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Tätigkeit mit Staplern und Hubwagen sowie visuelle Kontrolle von Regalen, Ladungssicherung und Gefahrgutvorschriften vor Ort."
+      },
+      {
+        "name": "Waren nach Rüstaufträgen im Lager kommissionieren und zusammenstellen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Greif- und Geharbeit im Lager (E0). Nicht-generative Automatisierung durch automatische Kleinteilelager, Behälter-Robotersysteme (z. B. AutoStore) und Fördertechnik ist in der Schweiz kommerziell breit verfügbar."
+      },
+      {
+        "name": "Kommissionierte Waren verpacken, sichern, etikettieren und für den Versand bereitstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Verpackungs- und Bereitstellungsarbeit; abgesehen von Wickel- oder Kartoniermaschinen bei Standardpaketen bleibt das Verpacken heterogener Sendungen überwiegend Handarbeit."
+      },
+      {
+        "name": "Lagerbestände und Mindestbestände im System überwachen sowie reguläre Nachbestellungen disponieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Überwachung von Meldebeständen und das Auslösen von Standard-Nachbestellungen wird durch regelbasierte automatische Disposition in klassischen ERP-/WMS-Systemen übernommen, nicht durch Sprachmodelle."
+      },
+      {
+        "name": "Physische Inventur und unterjährige Stichprobenzählungen im Lager durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Zählen und Kontrollieren der physischen Bestände am Lagerplatz erfordert Arbeit vor Ort und wird nicht durch generative KI übernommen."
+      },
+      {
+        "name": "Bestandsdifferenzen untersuchen, Stammdaten pflegen und Bestandsauswertungen in Tabellenkalkulationen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Datenanalyse in Tabellenkalkulationen oder im ERP gleicht Buchungsjournale ab, identifiziert mögliche Ursachen von Fehlbeständen und erstellt Auswertungen; die Fachkraft steuert die Abfragen und prüft jede Korrekturbuchung fachlich."
+      },
+      {
+        "name": "Versandpapiere, Frachtbriefe und Etiketten im System erstellen sowie Transporte bei Spediteuren anmelden",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Erstellung von Standard-Versanddokumenten, Frachtbriefen und Speditionsavisen aus Auftragsdaten erfolgt über klassische Multi-Carrier-Versandsoftware und ERP-Schnittstellen ohne generative KI."
+      },
+      {
+        "name": "Schriftliche Reklamationen, Schadenmeldungen und Lieferabklärungen mit Lieferanten, Spediteuren und internen Stellen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM formuliert aus Stichworten und kopierten Auftragsdaten Mängelrügen, Transportschadenmeldungen oder Terminrückfragen (auch fremdsprachig); die Fachkraft prüft jede Nachricht vor dem Versand auf sachliche Richtigkeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Logistiker/in EFZ (Fachrichtung Lager) bzw. Lagerist/in in einem Schweizer Industrie-, Handels- oder Logistik-KMU. Während die ESCO-Beschreibung stark auf die administrative Bestandsverwaltung fokussiert, umfasst das Berufsbild in der Schweiz (ISCO 4321) sowohl physische Lagerprozesse als auch die Bewirtschaftung im ERP/WMS. Das Hauptpotenzial zur Automatisierung liegt bei diesem Beruf nicht in generativer KI, sondern in klassischer Lagersoftware (EDI, Barcode, automatische Disposition) und Lagerrobotik.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert gegenüber generativer KI sind lediglich das Erfassen heterogener Lieferscheine, das Auswerten von Bestandsdifferenzen in Tabellenkalkulationen sowie das Verfassen von Reklamationen und Schadenmeldungen.",
+      "begruendung": "Rund 20 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die Belegerfassung im ERP ersetzend und die Datenanalyse sowie Korrespondenz delegierend erfolgen. Der Grossteil der Arbeit besteht aus physischem Warenumschlag sowie regelbasierten Systembuchungen, die nicht durch Sprachmodelle, sondern durch klassische Lagerverwaltungssoftware und Kleinteile-Robotik automatisiert werden. Besondere regulatorische CH-Hemmnisse bestehen kaum, jedoch verzögert die heterogene IT-Landschaft kleinerer Schweizer Lagerbetriebe die Integration.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

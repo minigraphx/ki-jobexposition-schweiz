@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "6c5a0ac84f787e8f674618d0610172fce1c7e9c922d310302c99cfc9415e4cf0",
+    "isco_code": "3251",
+    "beruf": "Zahnmedizinische Assistenten und Dentalhygieniker",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:12:41+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 41425,
+      "output_tokens": 4740,
+      "api_aequivalent_usd": 0.103093
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 41425,
+        "output_tokens": 4740,
+        "output_tokens_details": {
+          "thinking_tokens": 1286
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.103093
+      }
+    ],
+    "request_ids": [
+      "27c5cea1-5cff-4f0d-81b8-9d10e1b49695"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3251",
+    "beruf": "Zahnmedizinische Assistenten und Dentalhygieniker",
+    "taetigkeiten": [
+      {
+        "name": "Zahnarzt/Zahnärztin am Behandlungsstuhl assistieren: Instrumente anreichen, absaugen, Material anmischen, Patient beobachten",
+        "zeitanteil_pct": 33,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Vier-Hand-Assistenz direkt am Patienten; keine Robotik für die Stuhlassistenz verfügbar."
+      },
+      {
+        "name": "Instrumente reinigen, desinfizieren, verpacken und sterilisieren (Instrumentenaufbereitung)",
+        "zeitanteil_pct": 13,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit; Thermodesinfektor und Autoklav sind bereits im Einsatz, die verbleibende Handarbeit (Sortieren, Kontrollieren, Verpacken, Beladen) ist nicht automatisierbar."
+      },
+      {
+        "name": "Behandlungsplatz vorbereiten, nach der Behandlung desinfizieren und Geräte warten",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Hygienearbeit am Behandlungsplatz; keine verfügbare Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Patienten empfangen, für den Eingriff vorbereiten und ängstliche Patienten betreuen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare zwischenmenschliche Präsenz und Beruhigung; Wert liegt in der Anwesenheit."
+      },
+      {
+        "name": "Röntgenaufnahmen erstellen sowie Abdrücke bzw. Intraoralscans anfertigen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Positionieren von Patient, Sensor und Scanner ist Handarbeit am Patienten; die Geräte unterstützen, ersetzen die Person aber nicht."
+      },
+      {
+        "name": "Patienten in Mundhygiene instruieren und zu Prävention beraten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Praktische Anleitung im Mund des Patienten und persönliche Beratung von Angesicht zu Angesicht."
+      },
+      {
+        "name": "Telefonate entgegennehmen, Termine vereinbaren und Recall organisieren",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Voicebots für Praxistelefonie existieren, Qualität bei Schweizerdeutsch und Schmerz-/Notfalltriage ist aber wenig belegt; E2 ersetzend mit Restzeit 10-30 wäre ebenfalls plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Viele Anrufe betreffen Schmerzen, Notfälle und individuelle Absprachen in Mundart; Terminbuchung und Recall-Versand übernehmen Online-Buchungssysteme und Praxissoftware (klassische Software) zu einem grossen Teil."
+      },
+      {
+        "name": "Leistungen nach Zahnarzttarif in der Praxissoftware erfassen, Rechnungen und Mahnungen erstellen, Zahlungen verbuchen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Tarifabrechnung, Rechnungslauf, Mahnlauf und QR-Zahlungsabgleich erledigt die Praxis-/Abrechnungssoftware regelbasiert; kein LLM nötig."
+      },
+      {
+        "name": "Zahnbefund (Zahnschema) und Behandlungsverlauf nach Diktat des Zahnarztes in der Praxissoftware dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Sprachgesteuerte Befundaufnahme mit Schweizerdeutsch und Fachjargon während der Behandlung ist wenig erprobt; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracherkennung mit KI-Funktion in der Praxissoftware erstellt Befund- und Verlaufseinträge aus dem Diktat; die Assistentin kontrolliert und korrigiert jeden Eintrag. Hemmnis: Berufsgeheimnis/Datenschutz bei Cloud-Diensten."
+      },
+      {
+        "name": "Patientenkorrespondenz verfassen: Überweisungen, Kostenvoranschlag-Begleitschreiben, Versicherungsanfragen, Nachsorgeinformationen",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Chat-LLM entwirft Briefe und Merkblätter aus Stichworten bzw. kopierten Falldaten; die Assistentin prüft jeden Brief auf Patientenangaben und Inhalt."
+      },
+      {
+        "name": "Verbrauchsmaterial und Medikamente kontrollieren, bestellen und einräumen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physisches Kontrollieren und Einräumen; Barcode-Bestellsysteme der Dentaldepots beschleunigen nur den Bestellteil, nicht ≥ 50 % der Zeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Dentalassistent/in EFZ in einer privaten Zahnarztpraxis (KMU) mit Stuhlassistenz, Hygiene und Empfangsaufgaben; Dentalhygieniker/innen HF (eigenständige Prophylaxebehandlungen) sind ebenfalls in der ISCO-Gruppe, wären aber ähnlich gering exponiert. Grenzfälle sind die Telefon-/Terminorganisation (Voicebot in Mundart) und die sprachgesteuerte Befunddokumentation; die Zeitanteile für Administration schwanken je nach Praxisgrösse (eigene Empfangsperson oder nicht) deutlich.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur kleine administrative Teile, nämlich die Befunddokumentation per Spracherkennung in der Praxissoftware und die Patientenkorrespondenz per Chat-LLM; die Stuhlassistenz und die Hygienearbeit sind nicht betroffen.",
+      "begruendung": "Nur rund ein Zehntel der Arbeitszeit ist exponiert, und zwar im delegierenden Modus: Die KI erstellt Einträge und Briefe, die Assistentin prüft jede Ausgabe. Der Kern des Berufs ist physische Assistenz, Hygiene und die Betreuung von Patienten; Abrechnung und Terminbuchung laufen über klassische Praxissoftware. Das Berufsgeheimnis, der Datenschutz bei Cloud-Lösungen und die schwierige Erkennung von Schweizerdeutsch bremsen die Einführung in den vielen kleinen Praxen.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

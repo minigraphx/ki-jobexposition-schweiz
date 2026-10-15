@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "323f5deaae27d43c9b41d1eca890d6b5c082039f7681c8561a10fb59b3a9c271",
+    "isco_code": "2412",
+    "beruf": "Finanz- und Anlageberater",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:57:19+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3563,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4616,
+      "api_aequivalent_usd": 0.1281622
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3563,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4616,
+        "output_tokens_details": {
+          "thinking_tokens": 1366
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3563,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1281622
+      }
+    ],
+    "request_ids": [
+      "2d7c3cba-6352-4adc-a064-4f4ab86b6a54"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2412",
+    "beruf": "Finanz- und Anlageberater",
+    "taetigkeiten": [
+      {
+        "name": "Beratungsgespräche mit Privatkunden führen (Bedürfnisse, Risikoprofil, Anlagevorschlag erläutern), persönlich oder per Telefon/Video",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Wert liegt in der persönlichen Beratung, im Vertrauen und in der Gesprächsführung. Generative KI spart hier keine 50 % der Zeit."
+      },
+      {
+        "name": "Neukunden akquirieren und Kundenbeziehungen pflegen (Anlässe, Netzwerk, Kontaktgespräche)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beziehungsarbeit, die von persönlicher Präsenz lebt; keine relevante Zeitersparnis durch KI."
+      },
+      {
+        "name": "Kundengespräche vorbereiten: Kundendossier, Portfolioübersicht, Performance und Marktkommentar zu einer Gesprächsunterlage zusammenstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein in CRM und Portfoliosystem integrierter KI-Assistent erstellt die Gesprächsunterlage aus mehreren Quellen. Die Beraterin prüft und ergänzt jede Unterlage. Hemmnisse sind Bankgeheimnis und Cloud-Restriktionen."
+      },
+      {
+        "name": "Finanzmärkte beobachten sowie Research-Publikationen und Hausmeinung der Bank lesen und auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten und Zusammenfassungen von Research und News verkürzen das Lesen stark. Die eigene Markteinschätzung bildet sich der Berater weiterhin selbst."
+      },
+      {
+        "name": "Kundenportfolios überprüfen und Anlage- bzw. Rebalancing-Vorschläge im Rahmen der Hausmeinung ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Den Abgleich mit Modellportfolios, Abweichungs-Alerts und Rebalancing-Vorschläge erledigen klassische Portfoliomanagement- und Advisory-Tools. Die verbleibende Ermessensbeurteilung spart mit LLM keine 50 %."
+      },
+      {
+        "name": "Finanz- und Vorsorgeplanungen berechnen (Pensionierung, Säule 3a, Einkäufe Pensionskasse, Steuereffekte)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Berechnungen laufen in regelbasierter Finanzplanungssoftware (klassische Software). Ein LLM bringt darüber hinaus keine Zeitersparnis von 50 %."
+      },
+      {
+        "name": "Schriftliche Anlagevorschläge, Produktinformationen und Kunden-E-Mails verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM entwirft Texte und Produkterklärungen aus Stichworten und Factsheets. Weil die Inhalte haftungs- und compliancerelevant sind, prüft der Berater jede Ausgabe fachlich."
+      },
+      {
+        "name": "Beratungsprotokolle und FIDLEG-Dokumentation (Angemessenheit/Eignung) nach Kundengesprächen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Gesprächsaufzeichnung bzw. Diktat und KI-Protokollfunktion erstellen das Protokoll; der Berater prüft jedes Protokoll fachlich. Bei Gesprächen in Schweizerdeutsch steigt der Korrekturaufwand; manche Kundschaft lehnt Aufzeichnungen ab."
+      },
+      {
+        "name": "KYC- und Compliance-Abklärungen durchführen (Kundenprofil aktualisieren, Herkunft der Vermögenswerte plausibilisieren, Belege prüfen)",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenextraktion und KI-gestützte Entwürfe der Plausibilisierung erstellen die Abklärung. Der Berater verantwortet sie gegenüber Compliance und prüft jeden Fall."
+      },
+      {
+        "name": "Aufträge, Mutationen und Kundenadministration im Banksystem erfassen sowie interne Abstimmungen mit Spezialisten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Auftragserfassung und Mutationen laufen über Ordermanagement, E-Banking-Selbstbedienung und Workflows (klassische Software). Die Abstimmungen sind Präsenzarbeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Kundenberater/in Anlage- und Vermögensberatung für Privatkunden bei einer Schweizer Bank (z. B. Kantonal- oder Regionalbank). Die Synonyme «Compliance Officer» und «Wealth Manager» umfassen heterogene Tätigkeiten; bewertet ist die Beratungsrolle. Grenzfälle sind die Portfolioüberprüfung (klassische Tools vs. LLM) und die Protokollierung von Gesprächen auf Schweizerdeutsch.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Gesprächsvorbereitung, Marktrecherche, Kundenkorrespondenz, Beratungsprotokolle und KYC-Abklärungen. Die Technik dafür sind CRM-integrierte KI-Assistenten, Recherche-Agenten, Chat-LLMs und Protokollfunktionen.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit ist exponiert. Meist arbeitet die KI delegierend (sie erstellt Entwürfe, der Berater prüft jede Ausgabe), bei der Marktbeobachtung unterstützend. Der Kern bleibt das persönliche Beratungsgespräch. Bankgeheimnis, FINMA-Vorgaben zu Auslagerung und Cloud sowie FIDLEG-Haftung bremsen die Umsetzung, ebenso die Erwartung der Kundschaft an eine persönliche Beziehung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

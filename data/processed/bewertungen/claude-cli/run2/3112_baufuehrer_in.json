@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "52c84c1dd705b4fe3041cf403df55b8acc821d9641096fc73ec7f3a05a70371d",
+    "isco_code": "3112",
+    "beruf": "Bauführer/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:53:18+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3610,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5565,
+      "api_aequivalent_usd": 0.1475182
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3610,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5565,
+        "output_tokens_details": {
+          "thinking_tokens": 2166
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3610,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1475182
+      }
+    ],
+    "request_ids": [
+      "881b184d-a391-476e-971b-c6be8ca3357c"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3112",
+    "beruf": "Bauführer/in",
+    "taetigkeiten": [
+      {
+        "name": "Baustellen begehen und Ausführung, Qualität, Termine und Arbeitssicherheit vor Ort kontrollieren",
+        "zeitanteil_pct": 18,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Kontrolle findet vor Ort statt und braucht Augenschein, Fachurteil und Präsenz. Keine nicht-generative Technik übernimmt das in relevantem Umfang."
+      },
+      {
+        "name": "Arbeiten mit Polieren, Gruppenführern und Subunternehmern auf der Baustelle koordinieren und Probleme lösen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Abstimmung läuft zwischenmenschlich vor Ort und am Telefon, mit kurzfristigen Ermessensentscheiden unter Zeitdruck."
+      },
+      {
+        "name": "An Bausitzungen mit Bauherrschaft, Bauleitung und Planern teilnehmen und Ausführungsfragen verhandeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz und Verhandlung von Angesicht zu Angesicht. Die Protokollführung liegt meist bei der Bauleitung der Bauherrschaft."
+      },
+      {
+        "name": "Arbeitsvorbereitung: Bauprogramm, Installationsplan sowie Personal- und Geräteeinsatz planen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Planung hängt von Wissen über Baustelle, Gelände und Ressourcen ab, das meist nur im Kopf der Person liegt. LLM-Vorschläge sparen keine 50 %, die Terminplanung selbst läuft in klassischer Planungssoftware."
+      },
+      {
+        "name": "Material, Geräte und Subunternehmerleistungen anfragen, Offerten vergleichen und bestellen",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Eine KI-Dokumentenextraktion liest die PDF-Offerten aus, erstellt den Offertvergleich und entwirft die Anfragen. Die Bauführerin prüft jeden Vergleich fachlich und vergibt selbst."
+      },
+      {
+        "name": "Ausmasse aufnehmen und Akonto- und Schlussrechnungen nach NPK in der Bausoftware aufbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Ausmasse werden vor Ort und auf Plänen ermittelt, die NPK-Abrechnung macht klassische Bausoftware. Ein LLM spart hier keine 50 %, und digitale Plan-Ausmassprogramme decken die tatsächlich ausgeführten Mengen nur teilweise ab."
+      },
+      {
+        "name": "Lieferscheine, Regie- und Stundenrapporte kontrollieren und ins Abrechnungssystem übertragen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI-Belegerkennung liest gescannte oder fotografierte Lieferscheine und Rapporte aus und erfasst sie. Die Bauführerin prüft jeden Rapport darauf, ob er plausibel ist und ob Regie berechtigt war."
+      },
+      {
+        "name": "Nachtragsofferten und Mehrkostenbegründungen sowie Schreiben an die Bauherrschaft verfassen",
+        "zeitanteil_pct": 7,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM entwirft aus Stichworten, Werkvertrag und SIA-118-Auszügen die Begründung und das Schreiben. Die Bauführerin prüft jedes Schreiben inhaltlich und vertraglich."
+      },
+      {
+        "name": "Bautagebuch, Aktennotizen, Mängellisten und Baustellenkorrespondenz führen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Spracheingabe und Fotos erstellt eine Baudokumentations-App die Einträge, die KI formuliert die E-Mails. Die Bauführerin prüft jeden Eintrag; Lärm und Dialekt erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Kosten überwachen: Nachkalkulation, Soll-Ist-Vergleich und Endkostenprognose erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Den Soll-Ist-Vergleich und die Nachkalkulation rechnet die klassische Bau-ERP-Software aus Rapport- und Buchungsdaten. Die Prognose verlangt Ermessen, ein LLM spart hier keine 50 %."
+      },
+      {
+        "name": "Mitarbeitende einsetzen, führen und beurteilen sowie Lernende und Praktikanten begleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Personalführung ist eine Präsenz- und Beziehungstätigkeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Bauführer/in HF bei einer mittelgrossen Schweizer Bauunternehmung (Hochbau/Tiefbau, Unternehmerseite), verantwortlich für mehrere Baustellen. Die ESCO-Zuordnung «Oberbauleiter» passt nur teilweise; die Tätigkeiten habe ich mit Berufswissen ergänzt (Arbeitsvorbereitung, Ausmass/NPK, Nachträge, Rapportwesen). Grenzfälle sind die Arbeitsvorbereitung (E0 statt E2) und die Ausmass-/Abrechnungsarbeit, bei der klassische Software dominiert.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die administrativen Tätigkeiten: Offertvergleiche, Rapport- und Lieferscheinerfassung, Nachtragsschreiben sowie Bautagebuch und Korrespondenz, durch Dokumentenextraktion, Chat-LLM und Spracheingabe in Baudokumentations-Apps.",
+      "begruendung": "Rund ein Viertel der Arbeitszeit ist exponiert, durchwegs delegierend: Die KI erstellt Entwürfe, Vergleiche und Erfassungen, die Bauführerin prüft jedes Ergebnis fachlich und vertraglich. Der Kern des Berufs bleibt Präsenzarbeit: Kontrolle, Koordination und Verhandlung auf der Baustelle. Schweizerdeutsch und Baustellenlärm erschweren die Spracheingabe, und die vielen KMU in der Baubranche führen neue Software eher zögerlich ein.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

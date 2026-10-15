@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "2366bb40609eb87188a87c6c954923e5845e3a9c40c56c2563dbca9a43c2f6db",
+    "isco_code": "2512",
+    "beruf": "Softwareentwickler",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T21:24:13+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 65536,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 1762,
+      "prompt_token_count": 24048,
+      "thoughts_token_count": 7217,
+      "total_token_count": 33027
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1762,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1762
+          }
+        ],
+        "prompt_token_count": 24048,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 24048
+          }
+        ],
+        "thoughts_token_count": 7217,
+        "total_token_count": 33027
+      }
+    ],
+    "request_ids": [
+      "IKHOas2qOe6PvdIPxIy0oAs"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2512",
+    "beruf": "Softwareentwickler",
+    "taetigkeiten": [
+      {
+        "name": "Neue Features und Anwendungslogik in bestehender Codebasis implementieren",
+        "zeitanteil_pct": 25,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Coding-Agent mit Repository-Zugriff schreibt Code und Anpassungen über mehrere Dateien hinweg; die Entwicklerin spezifiziert die Anforderungen, steuert den Agenten und reviewt jede Änderung vor dem Merge."
+      },
+      {
+        "name": "Softwarefehler (Bugs) in Codebasis und Laufzeitumgebung analysieren und beheben",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erst mit einem Coding-Agenten, der im Repository sucht, Logs auswertet und Tests ausführt, wird die 50-%-Schwelle erreicht; der Entwickler steuert die Fehlersuche, reproduziert komplexe Fälle und prüft jeden Fix fachlich."
+      },
+      {
+        "name": "Automatisierte Unit-, Integrations- und End-to-End-Tests erstellen und pflegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Coding-Agent generiert Testfälle sowie Mocks direkt im Projektkontext und führt die Testsuite aus; die Entwicklerin gibt Grenzfälle vor und kontrolliert die Testabdeckung sowie die Assertions."
+      },
+      {
+        "name": "Schnittstellen (APIs), Datenbankabfragen und Datenmigrationen entwickeln und integrieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Bereits ein Chat-LLM erzeugt aus eingefügten Schemadefinitionen und API-Spezifikationen den benötigten Code und SQL-Migrationsskripte; der Entwickler prüft und testet jede Migration sorgfältig, wobei Datenschutzvorgaben (revDSG) den Einsatz produktiver Daten begrenzen."
+      },
+      {
+        "name": "Code-Reviews (Pull Requests) von Teammitgliedern durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Reviewer führt die inhaltliche und architektonische Prüfung weiterhin selbst durch; ein in die Git-Plattform integrierter KI-Review-Bot fasst Änderungen zusammen und markiert potenzielle Fehlerstellen."
+      },
+      {
+        "name": "Kundenbedürfnisse und Fachanforderungen mit Stakeholdern und Product Ownern klären",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Anforderungserhebung im direkten Austausch mit Fachbereichen, Kundschaft und Product Ownern lebt von zwischenmenschlicher Kommunikation, Aushandlung und gemeinsamem Domänenverständnis."
+      },
+      {
+        "name": "Softwarearchitektur konzipieren und technische Systementscheide treffen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Obwohl Sprachmodelle als Sparringspartner für Entwurfsmuster dienen, liegt der Hauptaufwand im Abwägen langfristiger System-, Sicherheits- und Skalierbarkeitsrisiken, sodass keine 50 % Zeitersparnis erreicht werden."
+      },
+      {
+        "name": "Technische Spezifikationen, Schnittstellendokumentation und Flussdiagramme erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten oder kopiertem Code vollständige Dokumentationen und Diagramm-Code (z. B. Mermaid-Flussdiagramme); die Entwicklerin prüft jedes Dokument auf technische Korrektheit."
+      },
+      {
+        "name": "Build-, CI/CD-Pipelines und Deployment-Konfigurationen einrichten und warten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Deklarative Pipeline- und Container-Konfigurationen lassen sich aus Anforderungen und Fehlerlogs im Chat-LLM entwerfen; der Entwickler prüft, testet und verantwortet jede Konfigurationsänderung in der Zielumgebung."
+      },
+      {
+        "name": "Agile Team-Meetings (Sprint Planning, Daily, Retrospektive) und Koordination durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Synchronisation, Aufwandsschätzung und Zusammenarbeit im Entwicklerteam erfordern persönliche bzw. synchrone Präsenz und Abstimmung."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Softwareentwickler/in (Applikationsentwicklung / Full-Stack oder Backend) in einem agilen Entwicklungsteam eines Schweizer ICT-Unternehmens oder einer internen IT-Abteilung. ESCO-Rauschen («Bauprojekte leiten», «Software für technisches Zeichnen verwenden») wurde gemäss Hinweis ignoriert. Die Abgrenzung zwischen E1 und E2 folgt strikt der Regel, ob Textkontext im Chat ausreicht oder erst Repository-Integration und Code-Ausführung (Coding-Agent) die 50-%-Schwelle sichern.",
+    "zusammenfassung": {
+      "haupt_risiko": "Implementierung neuer Features, Testautomatisierung, Fehlerbehebung, API-/Datenbankentwicklung sowie technische Dokumentation und Pipeline-Konfiguration werden weitgehend durch Coding-Agenten und Chat-LLMs erstellt.",
+      "begruendung": "Rund 80 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus (70 % der Gesamtzeit) und beim Code-Review unterstützend (10 %), da Entwicklerinnen und Entwickler jede Code- und Konfigurationsänderung vor der Produktivsetzung fachlich prüfen und verantworten. Nicht exponiert bleiben die Anforderungsklärung mit Stakeholdern, grundlegende Architekturentscheide und die Teamkoordination. In regulierten Schweizer Branchen wie Banken, Versicherungen, Gesundheitswesen und Verwaltung bremsen Datenschutz- und Geheimhaltungsvorgaben (revDSG, Cloud-Restriktionen) vor allem den Umgang mit produktiven Daten, während Entwicklungswerkzeuge bereits rasch adaptiert werden.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

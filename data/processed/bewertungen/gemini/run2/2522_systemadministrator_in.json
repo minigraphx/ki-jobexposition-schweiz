@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "41049df6c5e7f031888ab80bf3dda6b3ee6e25ed5223552361963ff04f454ed6",
+    "isco_code": "2522",
+    "beruf": "Systemadministrator/in",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2639,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2639
+        }
+      ],
+      "prompt_token_count": 22863,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22863
+        }
+      ],
+      "thoughts_token_count": 11940,
+      "total_token_count": 37442
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2639,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2639
+          }
+        ],
+        "prompt_token_count": 22863,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22863
+          }
+        ],
+        "thoughts_token_count": 11940,
+        "total_token_count": 37442
+      }
+    ],
+    "request_ids": [
+      "xD_Pap3DBIaI_uMPpdSFkAY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2522_systemadministrator_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2522",
+    "beruf": "Systemadministrator/in",
+    "taetigkeiten": [
+      {
+        "name": "Server-, Cloud- und Verzeichnisdienste (VMs, Speicher, Berechtigungen) im laufenden Betrieb konfigurieren und verwalten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Assistenten in Admin-Portalen helfen beim Nachschlagen von Einstellungen und Befehlen, doch Anforderungsabklärung, Konfiguration in der Produktivumgebung und Berechtigungskontrolle sparen insgesamt weniger als 50 % der Zeit."
+      },
+      {
+        "name": "Automatisierungsskripte und Infrastructure-as-Code (PowerShell, Bash, Ansible, Terraform) entwickeln und pflegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erzeugt Skripte und Konfigurationscode aus Textvorgaben in einem Bruchteil der Zeit; die Systemadministratorin spezifiziert die Anforderungen, testet jedes Skript in einer Testumgebung und prüft den Code vor dem produktiven Einsatz."
+      },
+      {
+        "name": "Komplexe System-, Netzwerk- und Applikationsstörungen analysieren und beheben (2nd/3rd-Level-Troubleshooting)",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Ob die schnellere Log-Analyse und Fehlerrecherche über den gesamten Entstörungsprozess inklusive Tests am Live-System mindestens 50 % Zeit spart, ist ein Grenzfall; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Der Systemadministrator führt die Fehlersuche und Behebung am System selbst durch, während KI-Werkzeuge mit Log-Analyse und Websuche Fehlermeldungen auswerten, Herstellerdokumentationen durchsuchen und Lösungswege vorschlagen."
+      },
+      {
+        "name": "Netzwerk- und Sicherheitskomponenten (Firewalls, VPN, Endpoint-Security) konfigurieren und Systeme härten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Einrichten von Firewall-Regeln, VPN-Verbindungen und EDR-Richtlinien erfordert präzise Abstimmung auf die Unternehmensarchitektur sowie Verbindungstests; generative KI erreicht hier keine 50 % Zeitersparnis."
+      },
+      {
+        "name": "Systemupdates, Sicherheits-Patches und Software-Releases planen, testen und einspielen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Wartungsfenster, Systemtests nach Updates und Rollbacks werden durch generative KI kaum beschleunigt; die Verteilung und Installation von Routine-Patches lässt sich jedoch über klassische Patch-Management- und RMM-Software weitgehend automatisieren."
+      },
+      {
+        "name": "Systemwechsel, Systemintegrationen und Datenmigrationen planen und durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ablösungen bestehender Systeme, Datenmigrationen und die Integration neuer Komponenten erfordern projektspezifische Planung, Koordination und Abnahmetests am Zielsystem, bei denen KI unter der 50-%-Schwelle bleibt."
+      },
+      {
+        "name": "Systemleistung, Systemlogs und Sicherheitswarnungen im Monitoring überwachen und auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "In Monitoring- und SIEM-Systeme integrierte KI-Assistenten korrelieren Alarme, fassen Log-Anomalien zusammen und generieren Abfragen, während die Fachperson jeden Vorfall selbst beurteilt; zudem automatisiert klassische Monitoring-Software die regelbasierte Schwellenwertüberwachung."
+      },
+      {
+        "name": "Datensicherungen (Backups) verwalten, überwachen und Wiederherstellungstests (Disaster Recovery) durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative KI spart bei Backup-Kontrollen und praktischen Recovery-Tests keine 50 % der Zeit; moderne klassische Backup-Software (z. B. mit automatisierter Restore-Verifikation in Sandbox-Umgebungen) kann den Prüfaufwand jedoch stark reduzieren."
+      },
+      {
+        "name": "Eskalierte IT-Support-Tickets im Ticketsystem bearbeiten und Anwenderinnen und Anwender betreuen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Während KI-Funktionen im Ticketsystem Triage, Wissensdatenbank-Suche und Antwortentwürfe stark beschleunigen, benötigen Fernwartungssitzungen mit Nutzenden weiterhin direkte Interaktion; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Systemadministratorin löst das eskalierte Problem selbst, wird aber durch KI-Integration im ITSM-System (Ticket-Zusammenfassung, Lösungsvorschläge aus früheren Fällen und Antwortentwürfe) erheblich entlastet."
+      },
+      {
+        "name": "Physische Server-, Netzwerk- und Arbeitsplatz-Hardware im Serverraum oder Büro installieren und verkabeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montage-, Einbau- und Verkabelungsarbeiten vor Ort im Rack oder an Arbeitsplätzen sind nicht durch KI exponiert."
+      },
+      {
+        "name": "Technische Systemdokumentationen, Betriebshandbücher und IT-Richtlinien erstellen und pflegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus eingefügten Konfigurationsdateien, Skripten oder Stichworten erstellt ein Chat-LLM strukturierte Dokumentations- und Richtlinienentwürfe; der Mensch steuert den Inhalt und prüft jedes Dokument fachlich auf technische Korrektheit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Systemadministrator/in in einer internen IT-Abteilung eines Schweizer KMU/Grossbetriebs oder bei einem IT-Dienstleister (hybride On-Premises- und Cloud-Umgebung). Das ESCO-Profil bildet den Beruf gut ab; die grösste Unsicherheit besteht bei der Entstörung (Troubleshooting) und beim eskalierten Support, da dort die reine Diagnose- und Schreibarbeit stark durch KI beschleunigt wird, das Testen und Eingreifen am Live-System jedoch menschliche Ausführungszeit bindet.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Entwickeln von Automatisierungsskripten und Systemdokumentationen per Chat-LLM sowie die Störungsanalyse, Log-Auswertung und Ticketbearbeitung durch KI-gestützte Monitoring-, Diagnose- und ITSM-Werkzeuge.",
+      "begruendung": "Rund 45 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI beim Erstellen von Skripten und Dokumentationen delegierend (mit fachlicher Prüfung jedes Ergebnisses) und beim Troubleshooting, Monitoring sowie Ticket-Support unterstützend eingesetzt wird. Operative Kerntätigkeiten wie System- und Sicherheitskonfiguration, Patch-Tests, Migrationen und Hardwareinstallation erreichen die 50-%-Schwelle nicht, werden aber teilweise durch klassische Management- und Backup-Software automatisiert. In der Schweiz bremsen zudem Datenschutz- und Geheimhaltungspflichten (revDSG, Branchenregulierung bei Banken, Spitälern und Verwaltung) die Einspeisung sensibler Systemlogs und Infrastrukturdaten in Cloud-KI-Dienste.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

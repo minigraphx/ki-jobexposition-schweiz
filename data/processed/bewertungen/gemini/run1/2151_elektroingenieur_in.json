@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "138aa988879fbdb26a96902cdedfb89e53f0562e065f08a08594e0c602ea5ea6",
+    "isco_code": "2151",
+    "beruf": "Elektroingenieur/in",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2331,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2331
+        }
+      ],
+      "prompt_token_count": 23741,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 23741
+        }
+      ],
+      "thoughts_token_count": 7507,
+      "total_token_count": 33579
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2331,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2331
+          }
+        ],
+        "prompt_token_count": 23741,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 23741
+          }
+        ],
+        "thoughts_token_count": 7507,
+        "total_token_count": 33579
+      }
+    ],
+    "request_ids": [
+      "XTzPapjZAv7oz7IP17yB4Qw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-2151_elektroingenieur_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2151",
+    "beruf": "Elektroingenieur/in",
+    "taetigkeiten": [
+      {
+        "name": "Technische Anforderungen und Pflichtenhefte für elektrische Systeme ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM entwirft aus Eckdaten, Kundenanforderungen und Stichworten strukturierte Pflichtenhefte und Systemspezifikationen; der Ingenieur gibt die technischen Parameter vor und prüft jede Anforderung fachlich."
+      },
+      {
+        "name": "Elektrische Schaltpläne, Anlagenlayouts und Leiterplatten in CAE-/CAD-Software konstruieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Detailkonstruktion von Stromlaufplänen, Schaltschränken und Platinenlayouts in Fachsoftware (z. B. EPLAN, Altium) erfordert präzise Bauteilauswahl und räumlich-physikalische Auslegung, wobei generative KI keine 50 % Zeitersparnis erreicht."
+      },
+      {
+        "name": "Netz-, Antriebs- und Energiesimulationen am Computer modellieren und berechnen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Aufsetzen physikalischer und elektromagnetischer Simulationsmodelle (z. B. FEM, Simulink, Netzberechnung) sowie die Plausibilisierung der Ergebnisse werden durch numerische Fachsoftware und Ingenieurwissen bestimmt; LLMs sparen hier weniger als 50 % der Gesamtzeit."
+      },
+      {
+        "name": "Steuerungssoftware, Firmware und automatisierte Testroutinen programmieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Coding-Agenten mit Repository-Zugriff erstellen und ändern hardwarenahen Code (C/C++, SPS-Strukturtext, Python-Testskripte); der Elektroingenieur spezifiziert die Hardware-Schnittstellen und prüft sowie testet jede Änderung im Detail."
+      },
+      {
+        "name": "Prototypen, elektrische Maschinen und Versuchsanlagen im Labor aufbauen und testen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Labor- und Prüffeldarbeit (Verdrahten, Bestücken, Messaufbau mit Oszilloskopen und Lastbänken, Durchführen von Belastungstests) erfordert manuelle Ausführung vor Ort."
+      },
+      {
+        "name": "Mess- und Prüfdaten aus Versuchsreihen auswerten und visualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Datenanalyse- und Code-Agenten (z. B. mit Python/MATLAB-Ausführung) verarbeiten Messprotokolle und erzeugen Auswertungen und Grafiken; der Ingenieur definiert die Analysekriterien und kontrolliert jedes Resultat auf physikalische Plausibilität."
+      },
+      {
+        "name": "Inbetriebnahmen, Störungsanalysen und Wartungsprüfungen an elektrischen Anlagen vor Ort durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ortsgebundene Arbeit an Energie- oder Industrieanlagen mit physischen Messungen, Schutzprüfungen und unmittelbarer Sicherheitsverantwortung vor Ort."
+      },
+      {
+        "name": "Normen-, Sicherheits- und Materialkonformität prüfen sowie Konstruktionsfreigaben erteilen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-gestützte Normenrecherche und Dokumentenprüfung bei komplexen elektrischen Sicherheits- und Designprüfungen die 50-%-Zeitersparnis erreicht; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Der Ingenieur prüft Schaltungen und Stücklisten selbst auf Einhaltung von Normen (IEC, NIN, RoHS/REACH) und gibt die Konstruktion frei; KI-Werkzeuge mit Zugriff auf Normendatenbanken und Datenblätter markieren relevante Vorgaben und Abweichungen."
+      },
+      {
+        "name": "Technische Berichte, Machbarkeitsstudien und Sicherheitsdokumentationen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Berechnungsdaten, Messresultaten und Stichworten Entwürfe für Machbarkeitsstudien, Prüfberichte und Konformitätsdokumentationen; die Fachperson prüft und verantwortet jeden Bericht inhaltlich."
+      },
+      {
+        "name": "Projektabstimmungen mit Kunden, Lieferanten und interdisziplinären Fachteams durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Koordination, technische Schnittstellenklärung und Verhandlung im direkten Dialog."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Elektroingenieur/in FH/ETH in einem Schweizer Industrieunternehmen (MEM-Branche, Antriebs-/Automatisierungstechnik oder Energie-/Anlagentechnik). Das Berufsbild ist in der Schweiz breit gefächert; je nach Schwerpunkt variieren die Anteile zwischen Hardware-/Firmware-Entwicklung, Netzplanung und Inbetriebnahme. Grenzfälle liegen insbesondere bei der Normen- und Konformitätsprüfung sowie bei der Ausarbeitung technischer Spezifikationen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Ausarbeiten von Pflichtenheften und technischen Berichten per Chat-LLM sowie die Firmware-Programmierung, Messdatenauswertung und Normenprüfung durch Coding- und Analyse-Agenten.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI überwiegend delegierend (Erstellen von Berichten, Spezifikationen, Code und Auswertungen mit zwingender Fachkontrolle) und bei Konformitätsprüfungen unterstützend wirkt. Die Kernaufgaben in der CAE-Konstruktion, der physikalischen Simulation sowie im Prüffeld und bei Inbetriebnahmen vor Ort bleiben weitgehend unberührt. In der Schweiz verlangen zudem strenge Sicherheits-, Normen- und Haftungsvorschriften (z. B. ESTI, NIN, CE-Konformität) sowie mehrsprachige Dokumentationspflichten eine durchgängige fachliche Prüfung durch Ingenieurinnen und Ingenieure.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

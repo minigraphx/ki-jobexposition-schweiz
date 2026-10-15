@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "f381842dee4d572f1b9269a5a0988f2c0ffac5ce5f017dd0718a55774c15d0dc",
+    "isco_code": "2143",
+    "beruf": "Umweltingenieur/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:32:54+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6185,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4028,
+      "api_aequivalent_usd": 0.1373782
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 6185,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4028,
+        "output_tokens_details": {
+          "thinking_tokens": 838
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6185,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1373782
+      }
+    ],
+    "request_ids": [
+      "3251eb03-5df6-4b56-9718-a8f708434ac7"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2143",
+    "beruf": "Umweltingenieur/in",
+    "taetigkeiten": [
+      {
+        "name": "Feldbegehungen, Standortuntersuchungen und Probenahmen (Boden, Wasser, Luft, Bausubstanz) vor Ort durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Arbeit wird körperlich vor Ort erledigt (Sondierungen, Probenahme, Augenschein). Automatische Messstationen ersetzen die Standortuntersuchung nicht in relevantem Umfang."
+      },
+      {
+        "name": "Mess-, Labor- und Energieverbrauchsdaten auswerten, statistisch analysieren und in Tabellen/Grafiken aufbereiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Agent mit Code-Ausführung liest Laborexporte ein, rechnet die Auswertung und erstellt Grafiken. Die Ingenieurin gibt die Fragestellung vor und prüft jede Auswertung auf Plausibilität, z. B. gegen Grenzwerte."
+      },
+      {
+        "name": "Fachberichte verfassen (Altlastenuntersuchungen, Umweltverträglichkeitsberichte, Gutachten)",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM entwirft Berichtskapitel aus eingefügten Feldnotizen, Resultaten und Vorlagen. Die Ingenieurin prüft jeden Bericht fachlich und unterschreibt ihn, denn er ist Grundlage für behördliche Verfahren."
+      },
+      {
+        "name": "Umweltrechtliche Anforderungen prüfen und Konformität beurteilen (USG, AltlV, VVEA, GSchV, ChemV/REACH)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus eingefügten Verordnungstexten, Vollzugshilfen und Projektdaten erstellt das LLM eine Konformitätsbeurteilung. Die Fachperson prüft sie gegen die Quellen und die kantonale Praxis."
+      },
+      {
+        "name": "Sanierungs- und Schutzkonzepte entwickeln und Varianten technisch abwägen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Hier dominieren standortspezifisches Ingenieurermessen, Erfahrung und Abwägung mit Bauherrschaft und Behörde. KI-Variantenvorschläge sparen keine 50 % der Zeit."
+      },
+      {
+        "name": "Pläne, Situationskarten und technische Zeichnungen in CAD/GIS erstellen und anpassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeichnungsarbeit in CAD/GIS erfordert präzise, standortspezifische Darstellung. Generative Funktionen sparen dort heute keine 50 %, und klassische Software ist bereits das Werkzeug."
+      },
+      {
+        "name": "Projekte mit Fachplanern, Bauherrschaft und Behörden in Sitzungen koordinieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es geht um Abstimmung, Verhandlung und Präsenz in Sitzungen. Den Kern dieser zwischenmenschlichen Arbeit übernimmt keine KI."
+      },
+      {
+        "name": "Bauherrschaften und Betriebe beraten sowie Umweltbaubegleitung auf Baustellen wahrnehmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Beratung geschieht persönlich, auf der Baustelle wird kontrolliert und Massnahmen werden vor Ort angeordnet."
+      },
+      {
+        "name": "Öko-Audits und Energie-/Ressourcenanalysen in Betrieben vor Ort durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Audits bestehen überwiegend aus Begehung, Interviews und Prüfung von Anlagen vor Ort. Die Auswertung danach ist in der Datenanalyse erfasst."
+      },
+      {
+        "name": "Offerten, Kostenschätzungen, Sitzungsprotokolle und Projektkorrespondenz erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt aus Stichworten und Vorlagen Offerttexte, Briefe und Protokolle. Die Ingenieurin prüft Leistungsumfang und Kosten in jeder Ausgabe."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Umweltingenieur/in in einem Schweizer Ingenieur- oder Umweltberatungsbüro (KMU), tätig in Altlasten, Umweltverträglichkeitsprüfung (UVP), Abfall/Rückbau, Gewässerschutz und Umweltbaubegleitung. Der ESCO-Input ist breit und teils auf die EU ausgerichtet (REACH); deshalb wurden die CH-Rechtsgrundlagen ergänzt. Die Zeitanteile sind grob geschätzt. Die wichtigsten Grenzfälle sind Datenauswertung und Rechtsprüfung: Beide liegen nahe der 50-%-Schwelle, weil die Prüfung aufwendig ist.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind das Verfassen von Fachberichten, umweltrechtliche Konformitätsprüfungen, die Auswertung von Mess- und Labordaten sowie Offert- und Projektkorrespondenz, und zwar durch Chat-LLMs und Datenanalyse-Agenten.",
+      "begruendung": "Rund 45 % der Arbeitszeit sind exponiert, durchwegs delegierend: Die KI entwirft Berichte, Beurteilungen und Auswertungen, die Ingenieurin prüft jedes Ergebnis fachlich und verantwortet es. Feldarbeit, Konzeptentwicklung, Beratung und Koordination bleiben beim Menschen. Bremsend wirken die Haftung und Unterschrift bei Gutachten für behördliche Verfahren sowie unterschiedliche kantonale Vollzugspraxis (regulatorisch).",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

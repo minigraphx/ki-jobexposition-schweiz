@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "60ba5cab7a0c6c5273ec5a9455686bb205c143fbf3430e2fee1e4da39b0549e7",
+    "isco_code": "4322",
+    "beruf": "Bürokräfte in der Material- und Fertigungsplanung und verwandte Berufe",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:31:36+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2517,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5130,
+      "api_aequivalent_usd": 0.13007419999999997
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2517,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5130,
+        "output_tokens_details": {
+          "thinking_tokens": 1756
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2517,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.13007419999999997
+      }
+    ],
+    "request_ids": [
+      "ec9025ed-da5b-494f-a843-c8c88fd4c027"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "4322",
+    "beruf": "Bürokräfte in der Material- und Fertigungsplanung und verwandte Berufe",
+    "taetigkeiten": [
+      {
+        "name": "Fertigungsaufträge im ERP terminieren und Maschinen-/Montagekapazitäten einplanen (Feinplanung)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "begruendung": "Die Terminierung und Kapazitätsplanung übernehmen ERP-/APS-Planungsmodule (klassische Software); dazu kommen Abwägungen mit Wissen über die Werkstatt, die ein LLM nicht um 50 % beschleunigt.",
+        "ch_hemmnis": []
+      },
+      {
+        "name": "Materialbedarf ermitteln, Bestellvorschläge aus dem Dispositionslauf prüfen und Material disponieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "begruendung": "MRP-/Dispositionsläufe im ERP erzeugen die Bestellvorschläge regelbasiert (klassische Software); die verbleibende Prüfung braucht Erfahrungswissen und keine LLM-Leistung.",
+        "ch_hemmnis": []
+      },
+      {
+        "name": "Produktionsfortschritt überwachen, Rückmeldungen erfassen und Terminabweichungen nachverfolgen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "begruendung": "Rückmeldungen und Statusüberwachung laufen über Betriebsdatenerfassung (BDE/MES), also klassische Software; generative KI bringt hier keine 50 % Zeitersparnis.",
+        "ch_hemmnis": []
+      },
+      {
+        "name": "Produktionsberichte und Kennzahlenauswertungen (Termintreue, Auslastung, Ausschuss) erstellen und kommentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "begruendung": "Ein Datenanalyse-Werkzeug mit Code-Ausführung oder die KI-Funktion im ERP/Office erstellt aus ERP-Exporten Auswertungen, Grafiken und Kommentartext; die Person prüft jeden Bericht auf Plausibilität. Standardberichte liessen sich auch mit klassischen BI-Dashboards erzeugen.",
+        "ch_hemmnis": []
+      },
+      {
+        "name": "Liefertermine mit Lieferanten, Einkauf und Verkauf per E-Mail abklären und bestätigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "begruendung": "Aus Stichworten und dem eingefügten Auftragsstatus entwirft das LLM Terminanfragen, Mahnungen und Bestätigungen, auch auf FR/IT/EN; die Person prüft jede Mail auf korrekte Termine und Mengen, bevor sie sie verschickt.",
+        "ch_hemmnis": []
+      },
+      {
+        "name": "Produktionsplan mit Meistern und Montageleitern besprechen und an die Werkstatt kommunizieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "begruendung": "Absprache von Angesicht zu Angesicht und kurzfristige Abstimmung in der Werkstatt; der Wert liegt in der persönlichen Präsenz.",
+        "ch_hemmnis": []
+      },
+      {
+        "name": "Störungen und Engpässe (Maschinenausfall, Materialmangel, Eilaufträge) beurteilen und Aufträge umplanen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "begruendung": "Die Entscheide verlangen Ermessen unter Zeitdruck und Wissen über den Betrieb, das oft nur im Kopf vorhanden ist, sowie Abstimmung mit Beteiligten; ein LLM spart hier keine 50 %.",
+        "ch_hemmnis": []
+      },
+      {
+        "name": "Stücklisten und Arbeitspläne im ERP anlegen und pflegen sowie Fertigungspapiere bereitstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob eine KI-gestützte Extraktion aus Zeichnungen und Stücklisten-PDFs bei neuen Teilen 50 % spart; E2 (delegierend) ist ebenfalls plausibel.",
+        "begruendung": "Stücklisten kommen über die CAD/PDM-ERP-Schnittstelle, Fertigungspapiere druckt das ERP (klassische Software); Arbeitsgänge und Vorgabezeiten festzulegen braucht Fertigungswissen.",
+        "ch_hemmnis": []
+      },
+      {
+        "name": "Produktionsabläufe analysieren und Verbesserungsvorschläge ausarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "begruendung": "Die Analyse stützt sich auf Beobachtungen in der Werkstatt und auf Gespräche; KI liefert höchstens Ideen, spart aber keine 50 %.",
+        "ch_hemmnis": []
+      },
+      {
+        "name": "Werkstatt begehen, Materialverfügbarkeit und Vormontagestand vor Ort prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "begruendung": "Physische Präsenz und Augenschein vor Ort.",
+        "ch_hemmnis": []
+      },
+      {
+        "name": "Besprechungsprotokolle, Arbeitsanweisungen und interne Mitteilungen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "begruendung": "Aus Stichworten erstellt das LLM die Protokolle und Anweisungen; die Person prüft jedes Dokument fachlich auf Richtigkeit und passt es an.",
+        "ch_hemmnis": []
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommen ist eine Arbeitsvorbereitung oder Produktionsplanung in einem Schweizer KMU der MEM-Industrie mit ERP-System. Ein grosser Teil der Planungsarbeit läuft über klassische ERP-, MRP- und BDE-Software und zählt deshalb nur für P. Grenzfälle sind die Pflege von Stücklisten und Arbeitsplänen sowie die Frage, ob Berichte schon heute weitgehend über klassische BI-Dashboards laufen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Produktionsberichte und Kennzahlenauswertungen (Datenanalyse-Werkzeuge, KI-Funktion im ERP), die E-Mails zu Lieferterminen sowie interne Protokolle und Anweisungen (Chat-LLM).",
+      "begruendung": "Rund ein Viertel der Arbeitszeit ist exponiert, durchwegs delegierend: Die KI erstellt Berichte und Texte, die Fachperson prüft jedes Ergebnis auf korrekte Termine, Mengen und Zahlen. Die eigentliche Planung und Disposition erledigt bereits klassische ERP-Software. Die Abstimmung in der Werkstatt und Entscheide bei Störungen bleiben beim Menschen; wesentliche CH-spezifische Hemmnisse gibt es kaum.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

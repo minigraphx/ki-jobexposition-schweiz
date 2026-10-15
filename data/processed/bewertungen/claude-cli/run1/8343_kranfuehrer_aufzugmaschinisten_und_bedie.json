@@ -1,0 +1,194 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "1c4125a7e9e3a76124d54a659d810603f17b89744cf182986b293adfa99324d5",
+    "isco_code": "8343",
+    "beruf": "Kranführer, Aufzugmaschinisten und Bediener verwandter Hebeeinrichtungen",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:07:33+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2157,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 3954,
+      "api_aequivalent_usd": 0.1036742
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2157,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3954,
+        "output_tokens_details": {
+          "thinking_tokens": 1345
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2157,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1036742
+      }
+    ],
+    "request_ids": [
+      "90895fb6-92a2-453b-be71-ef1d537faad6"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "8343",
+    "beruf": "Kranführer, Aufzugmaschinisten und Bediener verwandter Hebeeinrichtungen",
+    "taetigkeiten": [
+      {
+        "name": "Lasten mit dem Turmdrehkran (Kabine oder Funkfernsteuerung) heben, verfahren und präzise absetzen",
+        "zeitanteil_pct": 48,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Maschinenbedienung in Echtzeit mit Sichtkontakt und Feingefühl; vollautomatische Baukrane gibt es nur in Pilotprojekten, automatisierte Hallen- und Containerkrane betreffen nicht das typische Baustellensetting."
+      },
+      {
+        "name": "Mit Anschlägern und Polier per Funk und Handzeichen während des Hubs kommunizieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Echtzeit-Abstimmung vor Ort, sicherheitskritisch; keine LLM-Leistung gefragt."
+      },
+      {
+        "name": "Lastgewicht, Schwerpunkt und zulässige Ausladung anhand Lieferpapieren und Lastdiagramm bestimmen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze Einschätzung vor Ort mit Blick auf Last und Diagramm; Lastmomentbegrenzer überwacht bereits (klassische Technik), ersetzt aber die Beurteilung des Schwerpunkts und Anschlagens nicht; Chat-LLM spart kaum Zeit."
+      },
+      {
+        "name": "Stückgut anschlagen, Anschlagmittel wählen und Material am Boden bereitstellen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handarbeit auf der Baustelle; keine verfügbare Robotik."
+      },
+      {
+        "name": "Kran täglich kontrollieren, schmieren, warten und kleine Reparaturen ausführen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sichtkontrollen, Seilprüfung und Schmierarbeiten am Kran sind physisch und vor Ort."
+      },
+      {
+        "name": "Bei Kranmontage, Demontage, Ballastierung und Klettervorgängen mitarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montagearbeit, teils in grosser Höhe."
+      },
+      {
+        "name": "Tagesablauf und Hubaufträge mit Polier und Gewerken abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Absprache vor Ort mit wechselnden Prioritäten; Präsenztätigkeit."
+      },
+      {
+        "name": "Wetter und Wind überwachen, Gefahrenbereich sichern und Sicherheitsverfahren bei Arbeit in der Höhe einhalten",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beobachtung und Handeln vor Ort; Windmesser und Abschaltautomatik sind klassische Technik, ersetzen aber nicht die Sicherungsarbeit."
+      },
+      {
+        "name": "Kranbuch, Kontrollheft und Stunden-/Tagesrapport ausfüllen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend Ankreuzen und Zahleneinträge mit wenigen Minuten pro Tag; generative KI spart hier keine 50 % der Zeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Turmdrehkranführer/in in einer Schweizer Bauunternehmung (Hochbau); Mobilkran-, Hallenkran- und Aufzugsbedienung sind seltener und ähnlich physisch. Der ESCO-Input ist knapp, passt aber zum Kern des Berufs. Grenzfall ist einzig der Rapport-/Kranbuchanteil, der wegen seines geringen Textanteils als E0 bewertet wurde.",
+    "zusammenfassung": {
+      "haupt_risiko": "Keine wesentliche Tätigkeit ist durch generative KI exponiert; Kranbedienung, Anschlagen, Kommunikation und Wartung sind physisch bzw. Echtzeit-Präsenz vor Ort.",
+      "begruendung": "Praktisch die gesamte Arbeitszeit von Kranführerinnen und Kranführern auf Schweizer Baustellen besteht aus Maschinenbedienung, Absprachen per Funk und Handzeichen sowie physischen Kontroll- und Montagearbeiten, bei denen LLMs keine relevante Zeitersparnis bringen. Die wenigen Schreibarbeiten (Kranbuch, Rapport) sind kurze Checklisten-Einträge. Vollautomatische Baukrane gibt es erst in Pilotprojekten, daher besteht auch kaum Automatisierungsdruck durch nicht-generative Technik.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

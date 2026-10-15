@@ -1,0 +1,194 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "f16fa6f3ac55cfed1f90f1c5c321a3633ffca31a61dd069217846eb59bf6edce",
+    "isco_code": "7123",
+    "beruf": "Gipser, Trockenbauer",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:20:09+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2989,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 3234,
+      "api_aequivalent_usd": 0.0959302
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2989,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3234,
+        "output_tokens_details": {
+          "thinking_tokens": 586
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2989,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.0959302
+      }
+    ],
+    "request_ids": [
+      "e9dd35fc-493b-408f-9043-97fd7c9c6e90"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "7123",
+    "beruf": "Gipser, Trockenbauer",
+    "taetigkeiten": [
+      {
+        "name": "Untergründe prüfen und vorbereiten, Flächen abdecken, Schutzfolien und Membranen verlegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit vor Ort (Haftgrund prüfen, grundieren, abkleben); keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Innenputze (Gips-, Kalk-, Zementputz) maschinell und von Hand auftragen, abziehen und glätten",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Kerntätigkeit; Putzmaschinen sind Werkzeuge, ersetzen aber die Arbeit des Gipsers nicht, Putzroboter nur in Pilotprojekten."
+      },
+      {
+        "name": "Trockenbauwände, Vorsatzschalen und abgehängte Decken montieren (Ständerwerk stellen, Platten zuschneiden und beplanken)",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montage auf der Baustelle; keine verfügbare Robotik im regulären CH-Baustellenbetrieb."
+      },
+      {
+        "name": "Fugen und Plattenstösse spachteln, armieren und schleifen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handarbeit mit Spachtel und Schleifgerät; Spachtel-/Schleifroboter nicht im regulären Einsatz."
+      },
+      {
+        "name": "Wärmedämmung und Aussenwärmedämmsysteme anbringen, armieren und mit Deckputz versehen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit, oft auf dem Gerüst in der Höhe; keine Automatisierung verfügbar."
+      },
+      {
+        "name": "Material, Maschinen und Werkzeuge transportieren, Baustelle und Arbeitsgerüste einrichten, aufräumen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Logistik vor Ort; keine relevante Automatisierung auf typischen Baustellen."
+      },
+      {
+        "name": "Pläne lesen, Masse übertragen, Wandverläufe und Höhen mit Laser einmessen, Schlitze und Aussparungen anzeichnen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zeit liegt im Messen und Anzeichnen vor Ort; Linienlaser sind Hilfsmittel, übernehmen die Tätigkeit nicht zu 50 %."
+      },
+      {
+        "name": "Material- und Mengenbedarf (Platten, Profile, Putz) ermitteln und Bestellungen vorbereiten",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die Rechnung im Chat gegenüber Faustregeln und Herstellerrechnern wirklich 50 % spart; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Masse eintippen, LLM berechnet Plattenzahl, Profile und Putzmenge und erstellt die Bestellliste; Gipser prüft jedes Ergebnis."
+      },
+      {
+        "name": "Arbeits- und Regierapporte mit Arbeitsbeschrieb, Material, Ausmass und Stunden erstellen",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe/Fotos in einer Rapport-App erstellen den Rapport; Gipser bzw. Vorarbeiter prüft jeden Rapport. Dialekt und Baustellenlärm erhöhen den Korrekturaufwand."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Gipser/in-Trockenbauer/in EFZ in einem Gipsergeschäft (KMU), Neubau und Umbau, innen und aussen. ESCO-Profil (Stuckateur) passt gut, Trockenbau und Aussenwärmedämmung wurden aus Kompetenzen und CH-Berufsbild ergänzt. Grenzfälle sind nur die kleinen administrativen Anteile (Mengenberechnung, Rapporte).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur Rapporte und Mengenberechnungen, die per Spracheingabe-App bzw. Chat-LLM erstellt werden können; das Verputzen, die Trockenbaumontage und die Dämmarbeiten selbst bleiben unberührt.",
+      "begruendung": "Weniger als ein Zehntel der Arbeitszeit ist exponiert, durchwegs delegierend: Die KI erstellt Rapport oder Mengenrechnung, die Fachperson prüft jedes Ergebnis. Der Kern des Berufs ist physische Arbeit auf Schweizer Baustellen; Dialekt und Lärm erschweren die Spracheingabe, und die vielen kleinen Gipserbetriebe führen solche Werkzeuge nur langsam ein.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

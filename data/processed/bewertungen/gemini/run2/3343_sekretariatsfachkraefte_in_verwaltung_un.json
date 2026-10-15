@@ -1,0 +1,227 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "c942096a87eaaa3f98e6fa22ea3f3debf04a75ba6e78c5f9cb1f725077df2c64",
+    "isco_code": "3343",
+    "beruf": "Sekretariatsfachkräfte in Verwaltung und Geschäftsleitung",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "cache_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 19837
+        }
+      ],
+      "cached_content_token_count": 19837,
+      "candidates_token_count": 2194,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2194
+        }
+      ],
+      "prompt_token_count": 22319,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22319
+        }
+      ],
+      "thoughts_token_count": 7594,
+      "total_token_count": 32107
+    },
+    "usage_je_versuch": [
+      {
+        "cache_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 19837
+          }
+        ],
+        "cached_content_token_count": 19837,
+        "candidates_token_count": 2194,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2194
+          }
+        ],
+        "prompt_token_count": 22319,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22319
+          }
+        ],
+        "thoughts_token_count": 7594,
+        "total_token_count": 32107
+      }
+    ],
+    "request_ids": [
+      "xD_ParnDDOCj_PUP44v1mQ0"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-3343_sekretariatsfachkraefte_in_verwaltung_un",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3343",
+    "beruf": "Sekretariatsfachkräfte in Verwaltung und Geschäftsleitung",
+    "taetigkeiten": [
+      {
+        "name": "Geschäftskorrespondenz, E-Mails und Mitteilungen nach Stichworten oder Anweisungen entwerfen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus kurzen Stichworten oder Anweisungen vollständige E-Mails und Briefe; die Sekretariatsfachkraft gibt den Kontext vor und prüft jeden Entwurf auf Tonalität und inhaltliche Richtigkeit, bevor er im Namen der Geschäftsleitung versendet wird."
+      },
+      {
+        "name": "Fremdsprachige Korrespondenz, Berichte und Entwürfe übersetzen sowie sprachlich überarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Das Sprachmodell übersetzt und redigiert Texte sowie Entwürfe von Führungskräften in den Landessprachen und Englisch auf hohem Niveau; die Fachkraft kontrolliert jede Fassung fachlich und sprachlich."
+      },
+      {
+        "name": "Sitzungen der Geschäftsleitung vorbereiten, Unterlagen zusammenstellen und Protokolle verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Transkriptions- und Office-KI erstellen aus Audioaufnahmen und Notizen den Protokollentwurf samt Pendenzenliste; die Fachkraft prüft und überarbeitet jedes Protokoll eingehend, wobei Mundartbeiträge mehrerer Personen den Korrekturaufwand erhöhen."
+      },
+      {
+        "name": "Terminkalender der Führungskräfte verwalten, Prioritäten abstimmen und Termine koordinieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Kalenderassistenten bei häufigen kurzfristigen Prioritätswechseln und informellen Absprachen auf Geschäftsleitungsebene die 50-%-Schwelle erreichen; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "In Kalender- und E-Mail-Systeme integrierte KI-Assistenten ermitteln freie Zeitfenster, schlagen Termine vor und bereiten Einladungen oder Verschiebungen vor; die Assistenz steuert die Prioritäten und prüft jede Buchung."
+      },
+      {
+        "name": "Präsentationen, Entscheidungsgrundlagen und Recherchen für die Geschäftsleitung aufbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten und KI-Funktionen in Präsentations- und Tabellenprogrammen erstellen Dossiers, Auswertungen und Folienentwürfe; die Fachkraft gibt die Struktur vor, verifiziert die Fakten und passt das Layout an."
+      },
+      {
+        "name": "Geschäftsreisen planen und buchen sowie Spesenbelege prüfen und erfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Reise- und Spesensoftware stellt Reiseoptionen zusammen und liest Belege automatisch aus; die Fachkraft prüft und bucht die Verbindungen nach den Präferenzen der Geschäftsleitung und kontrolliert jede Abrechnung."
+      },
+      {
+        "name": "Dokumente digital ablegen sowie Verzeichnisse (z. B. Aktionärs- oder Vertragsregister) und Stammdaten pflegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung und KI-Integration im Dokumentenmanagement klassifizieren Akten, extrahieren Metadaten und aktualisieren Verzeichnisse weitgehend selbständig, sodass nur Ausnahmen und Stichproben geprüft werden. Klassische DMS- und Register-Workflows mit digitalen Formularen automatisieren ebenfalls über 50 % der Routinepflege."
+      },
+      {
+        "name": "Telefonate und Anfragen für die Geschäftsleitung triagieren sowie Gäste und Anspruchsgruppen persönlich betreuen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Gatekeeping am Telefon, der Empfang von Verwaltungsräten, Kunden und Partnern vor Ort sowie der Aufbau von Vertrauensbeziehungen beruhen auf unmittelbarer menschlicher Präsenz und Diskretion."
+      },
+      {
+        "name": "Veranstaltungen und Anlässe vor Ort koordinieren sowie den täglichen Bürobetrieb und Mitarbeitende anleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Durchführung von Anlässen vor Ort, die laufende Büroorganisation und das Einarbeiten von Mitarbeitenden erfordern physische Anwesenheit und persönliche Abstimmung."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Direktions- bzw. Geschäftsleitungsassistenz in einem mittleren bis grösseren Schweizer Unternehmen oder in der öffentlichen Verwaltung. Die ESCO-Daten decken das Aufgabenprofil sehr gut ab. Der wichtigste Grenzfall liegt bei der Terminkoordination auf Geschäftsleitungsebene, wo KI-Kalenderassistenten zwar viel Routine abnehmen, informelle Prioritätsentscheide aber menschlich bleiben.",
+    "zusammenfassung": {
+      "haupt_risiko": "Stark exponiert sind das Entwerfen und Übersetzen von Korrespondenz per Chat-LLM sowie die Protokollführung, Termin- und Reisekoordination, Präsentationserstellung und digitale Aktenpflege durch in Bürosysteme integrierte KI-Assistenten.",
+      "begruendung": "Rund 85 % der Arbeitszeit entfallen auf kognitive und administrative Aufgaben, bei denen die KI überwiegend delegierend Entwürfe, Protokolle und Planungen erstellt, die von der Fachkraft geprüft und verantwortet werden, während die digitale Akten- und Datenpflege weitgehend ersetzend abläuft. Bremsend wirken in der Schweiz insbesondere Datenschutz- und Geheimhaltungspflichten (revDSG, Amts- und Geschäftsgeheimnis) bei vertraulichen Geschäftsleitungs- und Verwaltungsdokumenten sowie die Abstimmung mehrsprachiger Unterlagen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "323f5deaae27d43c9b41d1eca890d6b5c082039f7681c8561a10fb59b3a9c271",
+    "isco_code": "2412",
+    "beruf": "Finanz- und Anlageberater",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2307,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2307
+        }
+      ],
+      "prompt_token_count": 22215,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22215
+        }
+      ],
+      "thoughts_token_count": 7864,
+      "total_token_count": 32386
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2307,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2307
+          }
+        ],
+        "prompt_token_count": 22215,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22215
+          }
+        ],
+        "thoughts_token_count": 7864,
+        "total_token_count": 32386
+      }
+    ],
+    "request_ids": [
+      "XTzParqoA_7oz7IP17yB4Qw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-2412_finanz_und_anlageberater",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2412",
+    "beruf": "Finanz- und Anlageberater",
+    "taetigkeiten": [
+      {
+        "name": "Persönliche Anlage- und Finanzberatungsgespräche mit Kundinnen und Kunden führen (Anlagestrategie besprechen, Produkte und Fachbegriffe erläutern)",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare zwischenmenschliche Präsenz- und Beziehungstätigkeit, bei der persönliches Vertrauen, Empathie und das Eingehen auf individuelle Lebenssituationen im Zentrum stehen."
+      },
+      {
+        "name": "Kundenbeziehungen pflegen und Neukundschaft akquirieren (Netzwerkanlässe, persönliche Kontaktpflege, Empfehlungsgespräche)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Aufbau von Vertrauensbeziehungen und die Akquisition in der Schweizer Vermögens- und Anlageberatung beruhen auf persönlicher Präsenz und direktem zwischenmenschlichem Kontakt."
+      },
+      {
+        "name": "Kundenunterlagen (Steuererklärungen, Vorsorgeausweise, Jahresabschlüsse) auswerten sowie finanzielle Tragfähigkeit und Risikoprofil ermitteln",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumenten-KI extrahiert Kennzahlen aus heterogenen Kundenbelegen (Steuerdaten, PK-Ausweise, KMU-Jahresabschlüsse) und entwirft die Tragfähigkeits- und Risikoanalyse; die Beratungsperson prüft jede Auswertung fachlich im Detail."
+      },
+      {
+        "name": "Anlagevorschläge, Finanzkalkulationen und Finanzpläne ausarbeiten sowie als Kundenpräsentation aufbereiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Klassische Portfolio- und Finanzplanungssoftware berechnet Allokationen und Vorsorgekalkulationen regelbasiert (P1), während im Beratungssystem integrierte LLMs individualisierte Anlagevorschläge, Begründungen und Präsentationen erstellen, die der Berater je Kunde prüft und anpasst."
+      },
+      {
+        "name": "Bestehende Kundenportfolios überwachen, Anlagerisiken kontrollieren und regelbasierte Umschichtungsvorschläge (Rebalancing) abrufen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die laufende Überwachung von Bandbreiten, Klumpenrisiken und Fälligkeiten sowie die Berechnung von Rebalancing-Transaktionen erfolgen über klassische, regelbasierte Portfolio-Management-Systeme ohne generative KI."
+      },
+      {
+        "name": "Finanz-, Aktien- und Rentenmärkte beobachten sowie Markttrends und Research-Berichte analysieren und zusammenfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Research-Agenten und LLM-Funktionen in Finanzinformationssystemen fassen Marktberichte, Zinsentwicklungen und Unternehmensdaten zusammen; die Beratungsperson analysiert und verinnerlicht die Markteinschätzung weiterhin selbst für ihre Beratungstätigkeit."
+      },
+      {
+        "name": "Beratungsprotokolle (FIDLEG-Dokumentation) und Aktennotizen nach Kundengesprächen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Gesprächsstichworten strukturierte, FIDLEG-konforme Beratungsprotokolle; mit Spracheingabe und CRM-Integration geht es noch schneller, wobei die Beratungsperson jedes Protokoll vor der Ablage inhaltlich prüft und verantwortet."
+      },
+      {
+        "name": "Kundenkorrespondenz führen sowie Informationen über Finanzprodukte und Fachbegriffe schriftlich übermitteln",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus Stichworten und Produktblättern kundengerechte E-Mails und verständliche Produkterläuterungen; die Beratungsperson kontrolliert jede Nachricht vor dem Versand."
+      },
+      {
+        "name": "Kontoeröffnungsunterlagen, Verträge und Compliance-Abklärungen (KYC/GwG-Dokumentation) bearbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Dokumentenverarbeitung und Recherche-Tools im Bankensystem tragen Informationen zur Mittelherkunft (Source of Wealth) zusammen und entwerfen den KYC-Bericht; die Beratungsperson prüft und visiert jeden Einzelfall."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Kundenberater/in in der Anlage- und Vermögensberatung (Affluent / Private Banking bei einer Schweizer Bank oder unabhängigen Vermögensverwaltung). Das im Input aufgeführte Synonym «Compliance Officer» bezeichnet in der Praxis eine eigene Funktion, wird hier aber über die typischen KYC-/GwG- und FIDLEG-Pflichten der Kundenberatung abgebildet. Wichtigster Grenzfall ist die Trennung zwischen klassischer Portfolio-Management- und Finanzplanungssoftware (P1) und generativer KI für Text-, Dokumenten- und Research-Aufgaben (E1/E2).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Auswertung von Kundenunterlagen, das Ausarbeiten von Anlagevorschlägen und Präsentationen, die Marktrecherche, das Verfassen von FIDLEG-Beratungsprotokollen, die Kundenkorrespondenz sowie KYC-Dokumentationen durch Chat-LLMs, Dokumenten-KI und integrierte Recherche-Werkzeuge.",
+      "begruendung": "Rund 55 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus (Entwurf von Finanzanalysen, Anlagevorschlägen, Beratungsprotokollen, Korrespondenz und KYC-Dossiers mit anschliessender Fachprüfung) sowie unterstützend bei der Markt- und Research-Analyse. Das persönliche Beratungsgespräch, die Beziehungspflege und die durch klassische Portfolio-Management-Systeme abgedeckte Portfolioüberwachung sind nicht exponiert. In der Schweiz bremsen strenge regulatorische Vorgaben (Bankkundengeheimnis, revDSG, FIDLEG-Dokumentations- und Eignungspflichten, GwG/FINMA-Regulierung) sowie der hohe Anspruch der Kundschaft an persönliche Vertrauensbeziehungen den ungeprüften KI-Einsatz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "316c3b05202adf7a2f7424e5a9019d04995d1e4bd29106177a4dbb35970d59aa",
+    "isco_code": "1412",
+    "beruf": "Führungskräfte in Restaurants",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:38:26+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4757,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5144,
+      "api_aequivalent_usd": 0.1482742
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4757,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5144,
+        "output_tokens_details": {
+          "thinking_tokens": 1676
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4757,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1482742
+      }
+    ],
+    "request_ids": [
+      "ea7aabcd-0165-40f2-8544-09c166871ad8"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1412",
+    "beruf": "Führungskräfte in Restaurants",
+    "taetigkeiten": [
+      {
+        "name": "Servicebetrieb während der Öffnungszeiten überwachen und an der Front mitarbeiten (Gäste empfangen, platzieren, im Service einspringen)",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit und Präsenz im Gastraum; Serviceroboter übernehmen in CH-Restaurants keine 50 % dieser Arbeit."
+      },
+      {
+        "name": "Mitarbeitende in der Schicht führen, einweisen und schulen (inkl. Vorstellungsgespräche, Mitarbeitergespräche)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung, Anleitung und Gespräche von Angesicht zu Angesicht; Wert liegt in der persönlichen Präsenz."
+      },
+      {
+        "name": "Gäste persönlich betreuen und Reklamationen vor Ort lösen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare zwischenmenschliche Präsenz und Gastgeberrolle; nicht durch KI übernehmbar."
+      },
+      {
+        "name": "Waren bei Lieferanten bestellen, Lieferungen kontrollieren und Inventur durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Warenkontrolle und Inventur sind physisch vor Ort; Bestellungen laufen über Lieferanten-Webshops mit wenig Zeitaufwand, KI spart kaum 50 %. Automatische Nachbestellung ist in typischen Restaurants nicht verbreitet genug für P1."
+      },
+      {
+        "name": "Dienstpläne erstellen und Arbeitszeiten erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Dienstplan- und Zeiterfassungssoftware (z. B. Gastro-Personalplanungstools) übernimmt Planung und Erfassung weitgehend; klassische Software, keine LLM-Exposition."
+      },
+      {
+        "name": "Tagesabschluss der Kasse machen und Einnahmen abrechnen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kassensysteme erstellen Abschluss und Umsatzberichte automatisch, Kartenzahlungen werden automatisch abgeglichen; Bargeldzählen bleibt physisch."
+      },
+      {
+        "name": "Kosten- und Umsatzkennzahlen auswerten, Wareneinsatz kontrollieren und Menüpreise kalkulieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Datenanalyse-Werkzeug mit Code-Ausführung wertet Kassen- und Einkaufsexporte aus und rechnet Kalkulationen; die Führungskraft beurteilt Abweichungen und legt Preise selbst fest."
+      },
+      {
+        "name": "Speisekarte und Angebote mit dem Küchenchef planen und Sortiment festlegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung im Team, Degustation und unternehmerischer Ermessensentscheid; KI-Ideen sparen nicht 50 % der Zeit."
+      },
+      {
+        "name": "Menü-, Weinkarten- und Aktionstexte sowie Social-Media-Posts mit Bildern erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI erstellt Texte (auch mehrsprachig) und bearbeitet Fotos; die Führungskraft gibt Vorgaben und prüft jede Karte bzw. jeden Post auf Richtigkeit (Allergene, Preise, Stil)."
+      },
+      {
+        "name": "Reservations- und Bankettanfragen per E-Mail beantworten, Offerten für Anlässe erstellen und Online-Bewertungen beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Antworten und Offerten aus eingefügter Anfrage, Bankettmappe und Preisliste; die Führungskraft prüft jede Offerte auf Machbarkeit und Preise vor dem Versand."
+      },
+      {
+        "name": "Hygiene- und Sicherheitskontrollen (HACCP-Selbstkontrolle) durchführen und dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kontrollen in Küche und Lager sind physisch; Dokumentation erfolgt über Checklisten mit wenig Text, digitale Temperaturfühler decken nur einen kleinen Teil ab."
+      },
+      {
+        "name": "Stelleninserate verfassen und eingehende Bewerbungen vorselektieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM schreibt das Inserat aus Stichworten und fasst hochgeladene Bewerbungsdossiers gegen das Anforderungsprofil zusammen; die Führungskraft prüft jede Einschätzung und entscheidet über Einladungen."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Restaurantleiter/in bzw. Geschäftsführer/in eines Schweizer KMU-Restaurants, der/die während der Öffnungszeiten im Gastraum präsent ist und mitarbeitet. Der ESCO-Input passt, deckt aber die administrativen Anteile nur grob ab; die Zeitanteile sind geschätzt. Grenzfälle sind die Kennzahlenauswertung (nahe an der 50-%-Schwelle) und die Abgrenzung zwischen klassischer Gastro-Software und LLM-Funktionen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Büroanteile: Gäste- und Bankettkorrespondenz, Offerten, Menü- und Social-Media-Texte, Stelleninserate sowie Kennzahlenauswertungen, die Chat-LLMs, Bildbearbeitung und Datenanalyse-Werkzeuge erledigen können.",
+      "begruendung": "Nur rund ein Fünftel der Arbeitszeit ist exponiert, meist delegierend (die KI entwirft, die Führungskraft prüft jede Offerte bzw. jeden Text) und bei Kalkulationen unterstützend. Der Kern des Berufs – Präsenz im Gastraum, Führung des Teams und Gästebetreuung – bleibt unberührt. Wesentliche CH-Hemmnisse fehlen weitgehend; gebremst wird die Einführung vor allem durch kleine Betriebe mit knappen Zeitreserven.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

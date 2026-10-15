@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "447a7acc3c795aa68778a8fb2c2b8ab48b99d34f89d384026a0fc52527efcc86",
+    "isco_code": "3434",
+    "beruf": "Küchenchefs, stv. Küchenchefs und Souschefs",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:14:28+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3582,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 6842,
+      "api_aequivalent_usd": 0.1728342
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3582,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 6842,
+        "output_tokens_details": {
+          "thinking_tokens": 3094
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3582,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1728342
+      }
+    ],
+    "request_ids": [
+      "5b517266-aaa7-453e-938c-91289a7489f9"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3434",
+    "beruf": "Küchenchefs, stv. Küchenchefs und Souschefs",
+    "taetigkeiten": [
+      {
+        "name": "Speisen zubereiten, kochen und anrichten sowie Mise en place an den Posten mitmachen",
+        "zeitanteil_pct": 38,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Arbeit mit Händen und Geräten an Ort und Stelle. Kochroboter gibt es nur für eng begrenzte Systemgastronomie, im typischen à-la-carte- oder Hotelbetrieb übernehmen sie keine 50 %."
+      },
+      {
+        "name": "Pass führen, Brigade während des Service anweisen, Gerichte kontrollieren und Gästewünsche (Allergien, Sonderwünsche) mit dem Service klären",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Echtzeit-Führung und Qualitätskontrolle in der Küche verlangen Präsenz. Klassische Bondrucker und Küchenmonitore übermitteln die Bestellungen, ersetzen das Führen aber nicht."
+      },
+      {
+        "name": "Neue Gerichte entwickeln, probekochen und degustieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Wert liegt im Ausprobieren, Abschmecken und im sinnlichen Urteil. Ideen aus dem LLM sparen hier keine 50 % der Zeit."
+      },
+      {
+        "name": "Tages-, Wochen- und Saisonmenüs sowie Speisekarten zusammenstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Ein LLM kann aus Warenbestand und Saison Menüvorschläge machen, deshalb ist auch E1 unterstützend (30-50) plausibel; erfahrene Köche planen aber schnell aus dem Kopf.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Chefin oder der Chef stellt die Menüs nach Erfahrung, Warenlage, Kosten und Gästeprofil selbst zusammen. LLM-Vorschläge beschleunigen das nach bester Einschätzung um weniger als 50 %."
+      },
+      {
+        "name": "Speisekartentexte, Rezeptblätter, Allergendeklarationen, Bankettofferten und E-Mails an Lieferanten verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten oder eingefügten Rezepten erstellt das Chat-LLM Kartentexte (auch mehrsprachig), standardisierte Rezeptblätter und Offerten. Die Chefin oder der Chef prüft jede Ausgabe, vor allem die Allergenangaben, denn hier sind keine Fehler tolerierbar."
+      },
+      {
+        "name": "Warenbedarf ermitteln und Bestellungen bei Lieferanten auslösen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Bedarf an Frischware hängt von Reservationen, Wetter und Lagerbestand und damit vom Urteil vor Ort ab. Bestellt wird per Lieferanten-Webshop oder Telefon, ein LLM spart dabei nichts Wesentliches. Automatische Bestellvorschläge decken Frischware im typischen KMU nicht zu 50 % ab."
+      },
+      {
+        "name": "Lieferungen auf Qualität und Temperatur prüfen, Waren einlagern und Inventar aufnehmen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Kontrolle (Sicht, Geruch, Temperatur) und Einlagern vor Ort. Für Kühl- und Trockenlager im Restaurant gibt es keine Lagerautomatisierung in relevantem Umfang."
+      },
+      {
+        "name": "Rezepte und Menüpreise kalkulieren, Warenaufwand und Ausgaben kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rezeptkalkulation und Warenaufwand-Auswertung sind regelbasiert und laufen in Kalkulations- und Warenwirtschaftssoftware oder Excel. Das ist klassische Software, kein LLM nötig."
+      },
+      {
+        "name": "Dienst- und Einsatzpläne für das Küchenteam erstellen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gastro-Personalplanungssoftware erstellt Pläne regelbasiert, berücksichtigt L-GAV-Ruhezeiten und erfasst Abwesenheiten. Das ist klassische Software ohne generative KI."
+      },
+      {
+        "name": "Mitarbeitende führen, einarbeiten und Lernende Koch/Köchin EFZ ausbilden",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung, Vorzeigen am Posten und Feedback geschehen im direkten persönlichen Kontakt."
+      },
+      {
+        "name": "Kühl- und Gartemperaturen kontrollieren und in HACCP-Selbstkontrolllisten dokumentieren",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Messen und Eintragen sind Routine ohne LLM-Nutzen. Funk-Temperatursensoren mit automatischer Aufzeichnung und Alarm sind kommerziell verfügbar und übernehmen den Grossteil der Temperaturkontrolle."
+      },
+      {
+        "name": "Küche und Arbeitsbereiche reinigen lassen, kontrollieren und für die nächste Schicht übergeben, Geräte warten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Kontrolle und Reinigung vor Ort. Für Küchenflächen und Geräte gibt es keine Robotik in relevantem Umfang."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Küchenchef/in oder Souschef/in in einem mittelgrossen Schweizer Restaurant- oder Hotelbetrieb (KMU) mit kleiner Brigade, der oder die selbst mitkocht. Die ESCO-Beschreibung ist sehr knapp, deshalb stützen sich die Tätigkeiten auf die Kompetenzliste und das Berufswissen. Der wichtigste Grenzfall ist die Menüplanung: Je nach Betrieb (z. B. Heim- oder Spitalküche mit Ernährungsvorgaben) wäre sie eher E1.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur die schriftlichen Arbeiten wie Speisekartentexte, Rezeptblätter, Allergendeklarationen und Offerten, die ein Chat-LLM entwirft. Kochen, Führen der Brigade und Warenkontrolle sind nicht exponiert.",
+      "begruendung": "Nur rund 5 % der Arbeitszeit sind exponiert, und zwar im Modus delegierend: Die KI entwirft die Texte, der Küchenchef oder die Küchenchefin prüft jede Ausgabe, besonders die Allergenangaben. Der Kern des Berufs ist handwerkliche Arbeit und Führung in der Küche; Kalkulation, Dienstplanung und Temperaturüberwachung lassen sich eher mit klassischer Software und Sensorik automatisieren als mit generativer KI. Wesentliche CH-Hemmnisse bestehen kaum, aber in kleinen Gastrobetrieben fehlt oft Zeit und Routine für Büroarbeit mit KI.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

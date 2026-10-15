@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "b0b98446c4801fb999880d3e3e080a715274956dc1724c85d9d1806d1f276199",
+    "isco_code": "2634",
+    "beruf": "Psychologe/-pädagogin",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:06:32+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 44121,
+      "output_tokens": 5170,
+      "api_aequivalent_usd": 0.1122322
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 44121,
+        "output_tokens": 5170,
+        "output_tokens_details": {
+          "thinking_tokens": 1667
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1122322
+      }
+    ],
+    "request_ids": [
+      "53c8bbf0-537e-447e-ac81-51f00ee8e589"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2634",
+    "beruf": "Psychologe/-pädagogin",
+    "taetigkeiten": [
+      {
+        "name": "Psychotherapeutische Sitzungen mit Einzelpersonen, Paaren oder Gruppen durchführen",
+        "zeitanteil_pct": 40,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Wert liegt in der therapeutischen Beziehung und der persönlichen Präsenz; generative KI ersetzt die Sitzung nicht."
+      },
+      {
+        "name": "Erstgespräche und Anamnese mit Patientinnen und Patienten führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Gespräch, Vertrauensaufbau und klinische Beobachtung im direkten Kontakt."
+      },
+      {
+        "name": "Psychologische Tests und Fragebögen mit Patienten durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Leistungs- und Intelligenztests werden im direkten Kontakt durchgeführt und beobachtet. Fragebögen lassen sich zwar am Tablet ausfüllen (klassische Testsoftware), das macht aber keine 50 % der Zeit aus."
+      },
+      {
+        "name": "Testergebnisse interpretieren und Diagnose nach ICD stellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die klinische Urteilsbildung beruht auf dem Gesamtbild aus Gespräch und Beobachtung; KI spart dabei kaum 50 % der Zeit. Die Normwerte rechnet heute schon die Testsoftware aus."
+      },
+      {
+        "name": "Berichte an zuweisende Ärzte, Kostengutsprachegesuche und Verlaufsberichte an Krankenversicherer verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Psychologin kopiert Verlaufsnotizen und Testbefunde in ein Chat-LLM, das den Bericht entwirft. Sie prüft jeden Bericht fachlich und verantwortet ihn; Berufsgeheimnis und Datenschutz bremsen die Umsetzung."
+      },
+      {
+        "name": "Sitzungsdokumentation und Verlaufsnotizen im Patientendossier erstellen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Ein Diktat nach der Sitzung (auch Schweizerdeutsch, ruhige Umgebung) oder eine Aufnahme mit Einwilligung wird transkribiert, und die KI erstellt die Notiz. Die Therapeutin prüft und korrigiert jeden Eintrag."
+      },
+      {
+        "name": "Fallkonzeption erarbeiten und Therapieplan erstellen bzw. anpassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die Ideen eines LLM zu Interventionen bei der individuellen Fallkonzeption wirklich 50 % Zeit sparen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Therapeutin konzipiert den Fall selbst. Das LLM schlägt auf Basis anonymisierter Stichworte leitlinienbasierte Interventionen und eine Struktur vor."
+      },
+      {
+        "name": "Psychoedukationsmaterial, Arbeitsblätter und Hausaufgaben für Patienten erstellen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt Erklärtexte und Übungsblätter nach Vorgabe, auch in mehreren Sprachen. Die Therapeutin prüft jedes Blatt auf Passung zur Person."
+      },
+      {
+        "name": "Krisenintervention und Abklärung von Suizidalität bzw. Fremdgefährdung durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Präsenz, Risikobeurteilung und Verantwortung in Akutsituationen."
+      },
+      {
+        "name": "Fälle mit Ärzten, Psychiatern, Angehörigen und Fachstellen besprechen und Patienten weiterleiten",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung im Gespräch und interdisziplinäre Koordination; KI spart dabei keine 50 %."
+      },
+      {
+        "name": "Termine verwalten und Leistungen nach Tarif abrechnen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Online-Terminbuchung und Tarifabrechnung der Praxissoftware sind klassische Software; dafür braucht es kein LLM."
+      },
+      {
+        "name": "An Supervision und Intervision teilnehmen, sich fortbilden und Fachliteratur lesen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Supervision und Intervision sind Präsenz- und Reflexionsarbeit, Lernen bleibt beim Menschen. KI-Zusammenfassungen von Literatur sparen hier keine 50 %."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: psychologische/r Psychotherapeut/in bzw. klinische/r Psychologe/in in ambulanter Praxis (Anordnungsmodell) oder psychiatrischer Klinik. Die ESCO-Kompetenzen sind stark forschungslastig; die Forschung ist für die typische Erwerbsperson in der Schweiz nicht zentral und wurde nicht übernommen. «Medikamente verschreiben» ist für Psychologinnen und Psychologen in der Schweiz nicht zulässig und wurde ebenfalls nicht übernommen. Die grössten Grenzfälle sind die Fallkonzeption und die Dokumentation per Aufnahme bzw. Diktat.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Berichte an Ärzte und Versicherer, Sitzungsdokumentation sowie Psychoedukationsmaterial, die über Chat-LLM und Diktat bzw. Transkription mit KI-Entwurf entstehen; die therapeutische Arbeit selbst ist kaum betroffen.",
+      "begruendung": "Gut ein Viertel der Arbeitszeit ist exponiert, fast durchwegs delegierend: Die KI entwirft Berichte und Notizen, die Psychologin prüft und verantwortet jeden Text; bei der Therapieplanung arbeitet die KI nur unterstützend. In der Schweiz bremsen vor allem das Berufsgeheimnis, das revDSG mit seinen Cloud-Einschränkungen bei sensiblen Gesundheitsdaten und die Skepsis der Patientinnen und Patienten gegenüber Sitzungsaufnahmen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

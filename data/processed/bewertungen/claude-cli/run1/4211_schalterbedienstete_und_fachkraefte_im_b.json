@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "0cbe0ea6ee252e999c7b8420faf854450e9dcd08bf125a2de3d3d753010310f9",
+    "isco_code": "4211",
+    "beruf": "Schalterbedienstete und Fachkräfte im Bereich Finanzdienstleistungen",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:04:46+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2825,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5375,
+      "api_aequivalent_usd": 0.13743819999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2825,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5375,
+        "output_tokens_details": {
+          "thinking_tokens": 1944
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2825,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.13743819999999998
+      }
+    ],
+    "request_ids": [
+      "e3154a87-b738-454a-bdbf-d678561569ad"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "4211",
+    "beruf": "Schalterbedienstete und Fachkräfte im Bereich Finanzdienstleistungen",
+    "taetigkeiten": [
+      {
+        "name": "Bargeld am Schalter ein- und auszahlen, Fremdwährungen wechseln und Checks entgegennehmen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer Bargeldumgang mit Kundenkontakt. Ein-/Auszahlungsautomaten, Cash-Recycler und Sortenautomaten sind in Schweizer Filialen verbreitet und übernehmen den Grossteil."
+      },
+      {
+        "name": "Kundschaft in der Filiale persönlich zu Konten, Karten, Sparen und E-Banking beraten und Basisprodukte verkaufen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beratung und Verkauf von Angesicht zu Angesicht; der Wert liegt in der persönlichen Präsenz und Beziehung."
+      },
+      {
+        "name": "Schriftliche Kundenanfragen (E-Mail, E-Banking-Nachrichten, Briefe) zu Konten, Zahlungen und Karten beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM entwirft die Antwort aus Anfrage und eingefügten Konto-/Produktinfos (mehrsprachig); die Mitarbeiterin prüft jede Antwort auf Richtigkeit, bevor sie versendet wird. Bankgeheimnis und Cloud-Restriktionen bremsen."
+      },
+      {
+        "name": "Telefonische Standardauskünfte geben (Saldo, Kartensperre, Zahlungsstatus, Öffnungszeiten)",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Voicebot-Qualität bei Schweizerdeutsch am Telefon und die nötige Authentifizierung sind wenig belegt; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen",
+          "regulatorisch"
+        ],
+        "begruendung": "Voicebot mit Anbindung an Kernbankensystem beantwortet Standardanliegen; Menschen übernehmen weitergeleitete Spezialfälle."
+      },
+      {
+        "name": "Konten eröffnen, Kundendaten und Mutationen aus Formularen und Ausweisen erfassen inkl. KYC-Unterlagen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung extrahiert Daten aus Ausweisen und Formularen und befüllt die Eröffnungsmaske; die Fachperson prüft Identifikation und KYC-Angaben jedes Falls gemäss GwG/VSB. Klassisches Online-Onboarding deckt den Filialanteil nicht zu ≥ 50 % ab."
+      },
+      {
+        "name": "Zahlungsaufträge, Daueraufträge sowie Karten- und Checkbestellungen erfassen und verarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Dokumentenverarbeitung erfasst auch unstrukturierte Papier- und Freitextaufträge; Mensch bearbeitet markierte Ausnahmen. QR-Rechnungs-Scanner, E-Banking und regelbasierte Zahlungsverarbeitung übernehmen den Standardteil bereits ohne LLM."
+      },
+      {
+        "name": "Unklare Transaktionen nachverfolgen und Reklamationen zu Zahlungen und Karten klären",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Assistenten im Kernbankensystem (Finnova, Avaloq) heute verbreitet genug verfügbar sind, um ≥ 50 % zu sparen; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Mitarbeiterin recherchiert und klärt selbst; ein KI-Assistent fasst Transaktionshistorie zusammen, markiert Auffälligkeiten und entwirft Nachforschungsanfragen."
+      },
+      {
+        "name": "Kasse abschliessen, Bargeldbestand und Tresor verwalten, Schliessfachzugang begleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit unter Vier-Augen-Prinzip. Cash-Recycler mit automatischem Kassenabschluss und vollautomatische Schliessfachanlagen sind verfügbar."
+      },
+      {
+        "name": "Beratungsgespräche und Kundenkontakte im CRM dokumentieren (Aktennotizen, FIDLEG-Protokolle)",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM formuliert Notiz bzw. Gesprächsprotokoll aus Stichworten; die Mitarbeiterin prüft jedes Protokoll fachlich, da es aufsichtsrechtlich relevant ist."
+      },
+      {
+        "name": "Bankbestätigungen, Kontoauszüge und Vertriebsstatistiken aus dem Kernbankensystem erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Standardausgaben und Reports werden von klassischer Bank- und Reporting-Software generiert; kein LLM nötig."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommen ist ein Kundenberater bzw. eine Kundenberaterin im Bereich Schalter/Service einer Schweizer Retailbank (Kantonalbank, Raiffeisen, Regionalbank) mit Abschluss als Bankkaufmann/-frau EFZ. Der ESCO-Input passt gut; die Kompetenz «Finanzbuchhaltung führen» wurde als Kontoführung/Erfassung interpretiert. Grenzfälle: Voicebot bei Schweizerdeutsch und KI-Unterstützung bei Transaktionsrecherchen im Kernbankensystem.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Erfassung von Konto- und Zahlungsaufträgen per KI-Dokumentenverarbeitung, schriftliche und telefonische Standardauskünfte per Chat-LLM bzw. Voicebot sowie die Gesprächsdokumentation.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit ist exponiert. Zahlungserfassung und telefonische Standardauskünfte sind eher ersetzend, Korrespondenz, Kontoeröffnung und Dokumentation delegierend, Transaktionsrecherchen unterstützend. Bargeldverkehr und persönliche Beratung in der Filiale bleiben unberührt. Bankgeheimnis, FINMA-Vorgaben zu Outsourcing und Cloud, Pflichten aus GwG und FIDLEG sowie die Erwartung der Kundschaft an eine persönliche Betreuung in der Mundart bremsen die Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

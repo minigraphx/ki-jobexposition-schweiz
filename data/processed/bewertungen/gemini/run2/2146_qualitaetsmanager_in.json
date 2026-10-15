@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "af79ee26388989298f80263d478bbf004577f5a851502f7d96f05358bc06e493",
+    "isco_code": "2146",
+    "beruf": "Qualitätsmanager/in",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2431,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2431
+        }
+      ],
+      "prompt_token_count": 21657,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21657
+        }
+      ],
+      "thoughts_token_count": 7318,
+      "total_token_count": 31406
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2431,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2431
+          }
+        ],
+        "prompt_token_count": 21657,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21657
+          }
+        ],
+        "thoughts_token_count": 7318,
+        "total_token_count": 31406
+      }
+    ],
+    "request_ids": [
+      "xD_Pasq7CI2ymtkPhcvTkAk"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2146_qualitaetsmanager_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2146",
+    "beruf": "Qualitätsmanager/in",
+    "taetigkeiten": [
+      {
+        "name": "QM-Dokumentation, Prozessbeschreibungen und Arbeitsanweisungen erstellen und aktualisieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Prozessstichworten und Normvorgaben (z. B. ISO 9001/13485) Entwürfe für SOPs und Arbeitsanweisungen; die Qualitätsmanagerin steuert die Inhalte und prüft jedes Dokument fachlich vor der formellen Freigabe."
+      },
+      {
+        "name": "Prüfpläne, Abnahmekriterien und Prüfanweisungen für Wareneingang und Fertigung ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Multimodale KI-Werkzeuge bzw. CAQ-Integrationen extrahieren Prüfmerkmale und Toleranzen aus technischen Zeichnungen und Kundenspezifikationen und erstellen den Prüfplanentwurf; die Fachperson kontrolliert jedes Merkmal und gibt den Plan frei."
+      },
+      {
+        "name": "Interne Prozessaudits und Lieferantenaudits vor Ort durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Audits im Betrieb und bei Lieferanten erfordern physische Begehungen der Produktion, Beobachtung der Arbeitsabläufe vor Ort und persönliche Befragungen der Mitarbeitenden."
+      },
+      {
+        "name": "Auditberichte, 8D-Reports, CAPA-Massnahmenpläne und Management-Reviews verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus eingegebenen Auditnotizen und Befunden formuliert ein Chat-LLM strukturierte Audit-, 8D- und CAPA-Berichte; der Qualitätsmanager prüft und verantwortet jeden Bericht inhaltlich."
+      },
+      {
+        "name": "Qualitäts- und Prüfdaten auswerten sowie Fehlerstatistiken und Kennzahlen (KPIs) aufbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Datenanalyse-Werkzeuge werten exportierte Prüf- und Ausschussdaten statistisch aus und erstellen Grafiken sowie Trendzusammenfassungen, die von der Fachperson einzeln geprüft werden. Standardisierte SPC- und KPI-Auswertungen lassen sich zudem über klassische CAQ- und BI-Software automatisieren."
+      },
+      {
+        "name": "Risikoanalysen (z. B. Prozess- und Design-FMEA) vorbereiten, moderieren und dokumentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die KI-Vorbereitung über die gesamte Tätigkeit inklusive interdisziplinärer Workshop-Moderation die 50-%-Zeitersparnis erreicht; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Qualitätsmanagerin erarbeitet und bewertet die Risiken im Fachteam weiterhin selbst, während das Chat-LLM mögliche Fehlerarten, Ursachen und Wirkungsketten vorschlägt und die FMEA-Tabellen vorstrukturiert."
+      },
+      {
+        "name": "Qualitätsabweichungen, Reklamationen und Sperrlagerfälle vor Ort untersuchen und Massnahmen koordinieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die physische Begutachtung fehlerhafter Bauteile in der Fertigung, die Ursachenforschung mit Produktion und Lieferanten sowie Entscheide über Sonderfreigaben erfordern Präsenz und fachliches Ermessen."
+      },
+      {
+        "name": "KVP-Projekte leiten sowie Prozess- und Produktverbesserungen im Betrieb einführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Moderation von Verbesserungsworkshops (Kaizen/Lean) und die Begleitung von Prozessänderungen an den Produktionslinien beruhen auf persönlicher Präsenz und Führungsarbeit."
+      },
+      {
+        "name": "Mitarbeitende zu Qualitätsstandards, Prüfverfahren und QMS-Vorgaben schulen und anleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Durchführung von Schulungen und die praktische Unterweisung des Prüf- und Produktionspersonals vor Ort sind Präsenz- und Beziehungstätigkeiten."
+      },
+      {
+        "name": "Qualitätsziele mit der Geschäftsleitung festlegen und externe Zertifizierungs- sowie Kundenaudits begleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Strategische Abstimmungen mit der Geschäftsleitung und die persönliche Begleitung externer Auditoren (z. B. SQS, Kunden, Behörden) im Betrieb sind reine Präsenz- und Verhandlungstätigkeiten."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Qualitätsmanager/in bzw. Qualitätsingenieur/in (Tertiärstufe) in einem Schweizer Industriebetrieb (z. B. MEM-Industrie, Medtech, Zulieferindustrie). ESCO vermischt operative Prüfaufgaben teilweise mit dem Management des Qualitätssicherungssystems; für den CH-Beruf auf Tertiärstufe wurden die operativen Werkprüfungen als Prüfplanung, Fehleruntersuchung und Datenauswertung abgebildet. Wichtigster Grenzfall ist die Durchführung von Risikoanalysen (FMEA), bei der der Dokumentationsanteil stark exponiert ist, die Workshop-Moderation jedoch Präsenz erfordert.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Erstellen und Pflegen der QM-Dokumentation, das Verfassen von Audit- und 8D-Berichten sowie die Ausarbeitung von Prüfplänen, Risikoanalysen (FMEA) und Qualitätsdatenauswertungen durch Chat-LLMs und KI-gestützte CAQ-/Analysewerkzeuge.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit entfällt auf dokumentations- und datenintensive Aufgaben, bei denen die KI überwiegend delegierend (Entwurf von SOPs, Berichten, Prüfplänen und Auswertungen mit anschliessender Einzelfallprüfung) und bei FMEA-Analysen unterstützend eingesetzt wird. Die andere Hälfte umfasst Vor-Ort-Audits, physische Fehleruntersuchungen an der Linie, KVP-Workshops und Schulungen und bleibt nicht exponiert. In der stark regulierten Schweizer Exportindustrie (MEM, Medtech, Pharma) erfordern strenge Norm-, Nachweis- und Haftungspflichten (ISO, MDR, Swissmedic) zwingend eine fachliche Kontrolle und formelle Freigabe durch den Menschen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

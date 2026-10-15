@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "82cfe0ac1e07990ee7bb4edca375530d49db595c14aaf6389465c67ddcdf50d3",
+    "isco_code": "3123",
+    "beruf": "Poliere und Vorarbeiter",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:26:10+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3830,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4534,
+      "api_aequivalent_usd": 0.1286582
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3830,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4534,
+        "output_tokens_details": {
+          "thinking_tokens": 1379
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3830,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1286582
+      }
+    ],
+    "request_ids": [
+      "b97fe4ea-f259-4473-8a2b-a3f595d5b356"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3123",
+    "beruf": "Poliere und Vorarbeiter",
+    "taetigkeiten": [
+      {
+        "name": "Mitarbeitende und Lernende auf der Baustelle einteilen, instruieren und führen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Personalführung und Anleitung vor Ort sind Präsenz- und Beziehungsarbeit; dafür gibt es keine Automatisierungstechnik."
+      },
+      {
+        "name": "Ausführung von Maurer- und Betonarbeiten überwachen und Qualität (Masse, Lot, Fugen, Armierung) vor Ort prüfen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Kontrolle erfolgt durch Augenschein und Messen auf der Baustelle; generative KI spart dabei kaum Zeit."
+      },
+      {
+        "name": "Bei Mauer-, Schalungs- und Betonierarbeiten selbst mitarbeiten",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit; Mauerroboter gibt es nur in Pilotprojekten."
+      },
+      {
+        "name": "Pläne lesen, Achsen und Höhen einmessen und Schnurgerüste abstecken",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit fällt beim Messen vor Ort an. Tachymeter und Laser unterstützen, ersetzen aber nicht 50 % der Arbeit der Person."
+      },
+      {
+        "name": "Arbeitssicherheit kontrollieren (Gerüste, Absturzsicherungen, PSA) und Sicherheitsinstruktionen durchführen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Begehungen und Instruktionen vor Ort mit Präsenz und Verantwortung; keine relevante KI-Zeitersparnis."
+      },
+      {
+        "name": "Wochenarbeitsprogramm sowie Personal- und Geräteeinsatz planen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Planung stützt sich auf Wissen über Baufortschritt, Wetter und Equipe, das vor allem im Kopf des Poliers liegt. Ein LLM spart hier kaum 50 % der Zeit."
+      },
+      {
+        "name": "Material- und Gerätebedarf ermitteln und bei Lieferanten bzw. Werkhof bestellen oder abrufen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bestellt wird meist kurz per Telefon oder App, der Bedarf ergibt sich aus dem Baufortschritt vor Ort. KI spart kaum 50 % der Zeit, und klassische Software übernimmt die Disposition nicht."
+      },
+      {
+        "name": "Materiallieferungen und Betonlieferungen entgegennehmen, Lieferscheine und Qualität prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Kontrolle vor Ort, etwa Sichtprüfung oder Ausbreitmass beim Beton."
+      },
+      {
+        "name": "Tagesrapporte, Regierapporte, Stundenrapporte und Bautagebuch führen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Über Spracheingabe und Fotos erstellt eine Rapport-App den Rapport bzw. Tagebucheintrag; der Polier prüft jeden Eintrag. Dialekt und Lärm erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Ausmass-, Nachtrags- und Mängeldokumentation mit Fotos sowie Meldungen an den Bauführer verfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Bildverständnis und Spracheingabe bei Ausmass und Nachträgen verlässlich 50 % sparen, weil das Messen vor Ort bleibt; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "KI mit Bild- und Spracheingabe erstellt aus Fotos und Stichworten Mängel- und Nachtragsmeldungen; der Polier prüft und ergänzt jede Meldung."
+      },
+      {
+        "name": "Mit Bauführer, Bauleitung und Subunternehmern absprechen und an Bausitzungen teilnehmen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Abstimmung vor Ort und am Telefon mit Präsenz und Verhandlung."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommen wird ein Polier im Hochbau einer Schweizer Bauunternehmung (KMU), der zum Teil selbst mitarbeitet. Der ESCO-Treffer «Maurerpolier» passt teilweise; Vorarbeiter arbeiten körperlich mehr mit als Poliere. Die grössten Unsicherheiten betreffen die Zeitanteile der Schreibarbeit und die Frage, ob Rapport- und Dokumentations-Apps mit Spracheingabe unter Baustellenbedingungen wirklich mindestens 50 % Zeit sparen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur die Rapport-, Bautagebuch- und Mängel- bzw. Nachtragsdokumentation, die mit Spracheingabe, Fotoerkennung und Rapport-Apps erstellt werden kann; Führung, Überwachung und Mitarbeit auf der Baustelle sind nicht betroffen.",
+      "begruendung": "Nur rund ein Achtel der Arbeitszeit ist exponiert, und zwar durchwegs delegierend: Die KI entwirft Rapporte und Meldungen, der Polier prüft jede Ausgabe. Den Kern des Berufs bilden Führung, Präsenz und physische Kontrolle auf der Baustelle. Schweizerdeutsch und Baustellenlärm erschweren die Spracheingabe; viele kleine Baufirmen führen digitale Rapportlösungen nur langsam ein.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

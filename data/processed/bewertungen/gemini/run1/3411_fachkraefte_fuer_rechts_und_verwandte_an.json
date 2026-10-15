@@ -1,0 +1,245 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "36cf0d4da6ed1827cfb8174c6ed3c73943fc0ae53a5b5331a4362b8d179e7ae5",
+    "isco_code": "3411",
+    "beruf": "Fachkräfte für Rechts- und verwandte Angelegenheiten",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2605,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2605
+        }
+      ],
+      "prompt_token_count": 21263,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21263
+        }
+      ],
+      "thoughts_token_count": 8226,
+      "total_token_count": 32094
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2605,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2605
+          }
+        ],
+        "prompt_token_count": 21263,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21263
+          }
+        ],
+        "thoughts_token_count": 8226,
+        "total_token_count": 32094
+      }
+    ],
+    "request_ids": [
+      "XTzPauyJB_7oz7IP17yB4Qw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-3411_fachkraefte_fuer_rechts_und_verwandte_an",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3411",
+    "beruf": "Fachkräfte für Rechts- und verwandte Angelegenheiten",
+    "taetigkeiten": [
+      {
+        "name": "Verfahrensakten und Dossiers anlegen sowie Eingänge im Fallführungssystem erfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumenten-KI mit Integration in die Gerichts- oder Kanzleisoftware liest eingehende Rechtsschriften und Belege aus und schlägt Rubrum, Dokumententyp sowie Zuordnung vor; die Fachkraft prüft jede Erfassung vor dem Speichern."
+      },
+      {
+        "name": "Standardisierte Rechtsschriften, Verfügungsentwürfe, Vorladungen und Parteimitteilungen ausarbeiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus kopierten Falldaten und Mustervorlagen den Entwurf für prozessuale Verfügungen oder Eingaben; die Sachbearbeiterin prüft jeden Entwurf inhaltlich und formell vor der Weiterleitung zur Unterschrift."
+      },
+      {
+        "name": "Rechtsdokumente, Beilagenverzeichnisse und Aktenbände für Verhandlungen oder Akteneinsicht zusammenstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM-gestützte Dokumentenwerkzeuge gleichen zitierte Beweismittel mit den Akten ab, erstellen paginierte Beilagenverzeichnisse und schlagen Schwärzungen für die Akteneinsicht vor; die Fachkraft steuert und kontrolliert jede Zusammenstellung und Schwärzung."
+      },
+      {
+        "name": "Gesetzliche und richterliche Fristen berechnen, im Kalender überwachen und Verfahrensablauf kontrollieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Berechnung gesetzlicher Fristen inklusive Fristenstillständen nach ZPO/StPO sowie Erinnerungs-Workflows erfolgen über regelbasierte Fristenrechner in der Kanzlei- oder Gerichtssoftware; generative KI bietet hier keinen relevanten Zeitvorteil."
+      },
+      {
+        "name": "Juristische Recherchen zu Rechtsprechung, Gesetzen und Verfahrensfragen durchführen und zusammenfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Recherchesysteme mit Anbindung an Schweizer Rechtsdatenbanken (z. B. Swisslex, Weblaw, Entscheidsuche) suchen einschlägige Urteile und fassen diese zusammen; die Fachkraft führt die fallbezogene Auswertung selbst durch und verifiziert jede Fundstelle."
+      },
+      {
+        "name": "Verfahrensakten auf formelle Vollständigkeit, Vollmachten und Einhaltung der Prozessvorschriften vorprüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Fachkraft führt die formelle Vorprüfung selbst durch, während eine integrierte Dokumentenanalyse Eingaben gegen Checklisten (z. B. Unterschriften, Handelsregisterauszug, Beilagen) abgleicht und Mängel markiert."
+      },
+      {
+        "name": "Verhandlungen, Einvernahmen und Besprechungen protokollieren sowie Protokolle ausfertigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Bei mehrstimmigen Einvernahmen und Verhandlungen in Schweizerdeutsch oder mit Dolmetschern ist die Spracherkennung fehleranfällig, sodass wegen des Korrekturaufwands auch E0 plausibel ist.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracherkennung und LLM-Strukturierung erstellen aus Audioaufnahmen oder Notizen den Protokollentwurf; die protokollführende Person prüft und korrigiert jede Aussage im Detail auf rechtliche Präzision."
+      },
+      {
+        "name": "Schriftliche Anfragen von Parteien, Rechtsvertretern und Behörden zum Verfahrensstand beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das Chat-LLM entwirft aus dem Dossierstand und der Anfrage das Antwortschreiben; die Fachkraft kontrolliert jede Mitteilung vor dem Versand auf Verfahrensrichtigkeit und Geheimhaltung."
+      },
+      {
+        "name": "Telefonische und persönliche Auskünfte an Parteien, Klienten und Behörden erteilen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gespräche mit oft emotional betroffenen Verfahrensparteien oder Klienten erfordern zwischenmenschliches Geschick, Deeskalation sowie eine sichere Legitimationsprüfung vor jeder Auskunft, weshalb Voicebots die 50-%-Schwelle nicht erreichen."
+      },
+      {
+        "name": "Gerichtskosten, Kostenvorschüsse und Mandatsleistungen im Fachsystem erfassen und abrechnen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gebührenberechnung nach Tarif, Fakturierung und Zahlungsabgleich per QR-Referenz werden durch klassische Kanzlei- und Buchhaltungssoftware automatisiert."
+      },
+      {
+        "name": "Fallabläufe mit Richterinnen, Staatsanwälten oder Anwältinnen besprechen und Kanzleipersonal instruieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare persönliche Abstimmung, Fallübergabe und Anleitung im Team sind Präsenz- und Beziehungstätigkeiten."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Sachbearbeiter/in für Rechtsangelegenheiten bzw. Paralegal an einem Schweizer Gericht, einer Staatsanwaltschaft oder in einer grösseren Anwaltskanzlei. Die ESCO-Beschreibung bildet die Verfahrens- und Aktenführung gut ab; die stärkste Unsicherheit auf Einzeltätigkeitsebene betrifft die Protokollierung mehrstimmiger Verhandlungen in Mundart.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Dossier- und Dokumentenverwaltung, das Entwerfen von Rechtsschriften und Verfügungen, die Aktenaufbereitung, juristische Recherchen sowie die Protokollierung durch Chat-LLMs, Dokumenten-KI und Spracherkennung.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die Technik überwiegend delegierend (Entwürfe von Verfügungen, Korrespondenz, Protokollen und Dossiererfassung) sowie teilweise unterstützend (formelle Aktenvorprüfung und Rechtsprechungsrecherche) eingesetzt wird, da jede Ausgabe wegen der verfahrensrechtlichen Tragweite fachlich geprüft werden muss. In der Schweiz bremsen strenge regulatorische Vorgaben wie das Amts- und Anwaltsgeheimnis, der Datenschutz (revDSG), kantonal unterschiedliche Gerichtssysteme sowie der schrittweise Übergang zur elektronischen Akte (Justitia 4.0) eine rasche flächendeckende Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

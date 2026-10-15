@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "9c1c0c02f98932578282f5f4c513183f187f89319e138e11d3878dd08d1f0a15",
+    "isco_code": "5222",
+    "beruf": "Verkaufsaufsichtskräfte in Handelsgeschäften",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-14T00:00:14+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2469,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4635,
+      "api_aequivalent_usd": 0.11979019999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2469,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4635,
+        "output_tokens_details": {
+          "thinking_tokens": 1523
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2469,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11979019999999999
+      }
+    ],
+    "request_ids": [
+      "067b568a-5310-442f-a261-ef0760ee5cf5"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5222",
+    "beruf": "Verkaufsaufsichtskräfte in Handelsgeschäften",
+    "taetigkeiten": [
+      {
+        "name": "Im Verkauf mitarbeiten: Kundschaft bedienen, an der Kasse aushelfen, Ware auffüllen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit und persönlicher Kontakt auf der Verkaufsfläche. Selbstbedienungskassen decken nur einen Teil ab; Beratung und Auffüllen sind nicht automatisierbar."
+      },
+      {
+        "name": "Verkaufsfläche überwachen sowie Warenpräsentation, Produkthandhabung und Hygiene kontrollieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rundgänge und Kontrollen vor Ort mit sofortigem Eingreifen. Weder generative KI noch Robotik übernehmen das in relevantem Umfang."
+      },
+      {
+        "name": "Mitarbeitende und Lernende instruieren, einarbeiten und am Arbeitsplatz schulen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung und Anleitung vor Ort ist eine Präsenz- und Beziehungstätigkeit."
+      },
+      {
+        "name": "Mitarbeiter-, Qualifikations- und Vorstellungsgespräche führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Gespräche mit Beurteilung und Ermessen; Präsenz steht im Vordergrund."
+      },
+      {
+        "name": "Personaleinsatz- und Ferienpläne erstellen und anpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Klassische Workforce-Management-Software erstellt die Pläne regelbasiert aus Umsatzprognosen und Verfügbarkeiten. Ein LLM bringt darüber hinaus keine 50 % Zeitersparnis, denn Absprachen und Kurzfristiges bleiben beim Menschen."
+      },
+      {
+        "name": "Bestand kontrollieren, Nachbestellungen auslösen und Inventuren durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bestellvorschläge macht die automatische Disposition im Warenwirtschaftssystem (klassische Software). Kontrolle und Zählen erfolgen physisch im Laden, deshalb keine LLM-Exposition."
+      },
+      {
+        "name": "Preisänderungen und Aktionspreise an Regal und Kasse kontrollieren und umsetzen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Preise werden zentral im Kassen- und Warenwirtschaftssystem gepflegt und über elektronische Regaletiketten übertragen (klassische Technik). Was bleibt, sind physische Kontrollen."
+      },
+      {
+        "name": "Kassenabschluss machen, Kassendifferenzen klären und Geld für den Transport vorbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abgleich und Abrechnung laufen über das Kassensystem und über Geldzähl- bzw. Recyclingautomaten. Generative KI wird dafür nicht benötigt."
+      },
+      {
+        "name": "Umsatz-, Kosten- und Budgetkennzahlen auswerten und Berichte an die Filial- oder Bereichsleitung verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Person kopiert die exportierten Kennzahlen in ein Chat-LLM, das Abweichungsanalyse und Berichtstext erstellt. Sie prüft jeden Bericht auf Plausibilität und ergänzt Wissen aus dem Laden."
+      },
+      {
+        "name": "Kundenreklamationen und Konfliktsituationen auf der Verkaufsfläche persönlich behandeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Klärung von Angesicht zu Angesicht mit Kulanzentscheid vor Ort."
+      },
+      {
+        "name": "Interne Mitteilungen, Teaminformationen, Stelleninserate und schriftliche Reklamationsantworten verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten entwirft ein Chat-LLM den Text, auch in einer zweiten Landessprache. Die Person sichtet und passt jeden Text vor dem Versand an."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommen ist eine Rayon- oder Teamleitung bzw. stellvertretende Filialleitung in einer Detailhandelsfiliale (Grossverteiler oder Fachhandel), die stark auf der Verkaufsfläche mitarbeitet. Planung, Disposition, Preispflege und Kassenabrechnung laufen meist über klassische Systeme der Zentrale, daher dort P1 statt LLM-Exposition. Die Zeitanteile sind grob geschätzt; in kleinen Fachgeschäften kann der Büroanteil höher sein.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur die Auswertung von Kennzahlen mit Berichtstexten sowie interne und externe Schreibarbeiten; beides lässt sich mit einem Chat-LLM entwerfen.",
+      "begruendung": "Rund ein Zehntel der Arbeitszeit ist exponiert, und zwar durchwegs delegierend: Die KI erstellt Entwürfe, die Aufsichtsperson prüft jeden Text und jede Auswertung. Der Kern des Berufs ist Präsenz auf der Verkaufsfläche mit Mitarbeit, Kontrolle und Personalführung. Planungs-, Bestell- und Kassenabläufe sind in Schweizer Detailhandelsketten bereits durch klassische zentrale Systeme abgedeckt.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

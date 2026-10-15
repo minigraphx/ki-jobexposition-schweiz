@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "51cf430f6935798782e5bb3c8a44401e40a06ebbb638bc9133985726e78f165d",
+    "isco_code": "8211",
+    "beruf": "Maschinenführer/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:20:47+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 1305,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4089,
+      "api_aequivalent_usd": 0.09955819999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 1305,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4089,
+        "output_tokens_details": {
+          "thinking_tokens": 1181
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 1305,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.09955819999999999
+      }
+    ],
+    "request_ids": [
+      "19444485-2b71-405f-9f89-59899929d426"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "8211",
+    "beruf": "Maschinenführer/in",
+    "taetigkeiten": [
+      {
+        "name": "Maschinen und Anlagen nach Auftrag einrichten und umrüsten (Werkzeuge, Formate wechseln, Parameter einstellen)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit an der Maschine mit Werkzeugwechsel und Feineinstellung vor Ort; automatische Rüstsysteme gibt es nur für einzelne Anlagentypen und übernehmen nicht die Hälfte dieser Arbeit."
+      },
+      {
+        "name": "Produktionsanlagen bedienen und den laufenden Prozess an der Linie überwachen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz an der Anlage, Eingriffe am Bedienpanel und Sinneswahrnehmung (Geräusche, Material) prägen die Tätigkeit; die Steuerung ist bereits klassisch automatisiert, die verbleibende Überwachung bleibt bei der Person."
+      },
+      {
+        "name": "Material und Rohstoffe zuführen, Fertigprodukte abnehmen, verpacken und palettieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handhabung; automatische Zuführsysteme, Palettierroboter und fahrerlose Transportsysteme sind kommerziell verfügbar und könnten den Grossteil übernehmen."
+      },
+      {
+        "name": "Qualität der Erzeugnisse prüfen: Muster ziehen, messen, Sichtkontrolle durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Messen und Prüfen am physischen Teil; klassische Inline-Bildverarbeitung und automatische Messstationen sind verbreitet verfügbar und können den Grossteil der Routineprüfung übernehmen."
+      },
+      {
+        "name": "Einfache Störungen an der Maschine eingrenzen und beheben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fehlersuche und Behebung erfolgen physisch an der Anlage; ein KI-Assistent zu Handbüchern hilft punktuell, spart aber keine 50 % der Zeit."
+      },
+      {
+        "name": "Wartungs-, Schmier- und Reinigungsarbeiten an Maschinen durchführen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit an der Maschine; automatische Reinigungssysteme (z. B. CIP) gibt es nur in einzelnen Branchen und decken nicht die Hälfte ab."
+      },
+      {
+        "name": "Produktionsdaten (Stückzahlen, Ausschuss, Stillstände) im Leit- bzw. BDE-System erfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend Zahlen und Statuscodes; automatische Maschinendatenerfassung in MES/BDE-Systemen (klassische Software) kann das übernehmen, generative KI spart hier nichts Relevantes."
+      },
+      {
+        "name": "Schichtprotokoll und Störungsmeldungen mit Freitext verfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Spracheingabe bei Hallenlärm, Dialekt und kurzen Einträgen wirklich 50 % spart; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Spracheingabe bzw. KI-Funktion im MES erstellt den Eintrag aus gesprochenen Stichworten; die Person prüft und korrigiert jeden Eintrag, Lärm und Dialekt erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Absprachen mit Schichtleitung, Instandhaltung und Folgeschicht bei der Schichtübergabe führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Abstimmung vor Ort an der Anlage; zwischenmenschliche Präsenz."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: angelernte/r oder EBA-Maschinenführer/in im Schichtbetrieb eines Schweizer Industrie-KMU (Kunststoff, Verpackung, Metall oder Lebensmittel). Keine ESCO-Kompetenzliste, die Tätigkeiten und Zeitanteile stammen aus der KI-generierten Beschreibung und aus Berufswissen und sind grob geschätzt. Grenzfälle sind die Freitext-Schichtprotokolle (Spracheingabe bei Lärm) und die P-Einstufung von Materialhandling und Qualitätsprüfung, die stark von der Branche abhängt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur die Freitext-Schichtprotokolle und Störungsmeldungen, die per Spracheingabe bzw. KI-Funktion im MES entstehen können; Einrichten, Bedienen, Prüfen und Warten der Maschinen sind nicht durch generative KI exponiert.",
+      "begruendung": "Nur ein sehr kleiner Teil der Arbeitszeit (rund 3 %) ist exponiert, und zwar delegierend: Die KI erstellt den Protokolleintrag, die Person prüft jeden Eintrag. Der Kern des Berufs ist physische Arbeit an der Anlage, wobei Materialhandling, Qualitätsprüfung und Datenerfassung eher durch klassische Automation (Robotik, Bildverarbeitung, BDE) als durch generative KI betroffen sind. In Schweizer Betrieben bremsen Hallenlärm, Dialekt und mehrsprachige Schichtteams die Einführung der Spracheingabe.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

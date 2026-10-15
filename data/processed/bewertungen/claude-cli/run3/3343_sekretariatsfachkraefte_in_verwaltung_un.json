@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "c942096a87eaaa3f98e6fa22ea3f3debf04a75ba6e78c5f9cb1f725077df2c64",
+    "isco_code": "3343",
+    "beruf": "Sekretariatsfachkräfte in Verwaltung und Geschäftsleitung",
+    "lauf": 3,
+    "reihenfolge_seed": 20261016,
+    "timestamp": "2026-10-14T01:14:27+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 40345,
+      "output_tokens": 6031,
+      "api_aequivalent_usd": 0.128697
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 40345,
+        "output_tokens": 6031,
+        "output_tokens_details": {
+          "thinking_tokens": 2008
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.128697
+      }
+    ],
+    "request_ids": [
+      "72a6bb93-47a1-49a3-a602-2291b74167ad"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3343",
+    "beruf": "Sekretariatsfachkräfte in Verwaltung und Geschäftsleitung",
+    "taetigkeiten": [
+      {
+        "name": "Geschäftskorrespondenz und E-Mails der Geschäftsleitung aus Stichworten oder Diktat verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Chat-LLM erstellt Briefe und E-Mails aus Stichworten in DE/FR/EN. Die Assistenz sichtet kurz und gibt frei, Korrekturen gibt es nur bei heiklen Schreiben."
+      },
+      {
+        "name": "Eingehende E-Mails und Post für die Geschäftsleitung sichten, priorisieren, beantworten oder weiterleiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die KI-Funktion im Mailprogramm (z. B. Copilot in Outlook) fasst Posteingänge zusammen, priorisiert sie und entwirft Antworten. Die Assistenz prüft jede Einordnung und jede Antwort gegen ihr Wissen um die Prioritäten der Geschäftsleitung. Für vertrauliche Post der Geschäftsleitung braucht es Datenschutzlösungen."
+      },
+      {
+        "name": "Termine vereinbaren und Kalender der Geschäftsleitung führen, verschieben und kommunizieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Planungsagenten im Mailprogramm können Termine vorschlagen und Einladungen abwickeln; E2 delegierend ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Bei Kalendern von Führungskräften muss laufend nach unausgesprochenen Prioritäten abgewogen und mit Dritten telefoniert oder verhandelt werden. KI spart hier typischerweise weniger als 50 %. Klassische Planungstools (Terminumfragen, Planungsassistent) übernehmen keine 50 %."
+      },
+      {
+        "name": "Traktandenliste, Einladungen und Sitzungsunterlagen für GL- und VR-Sitzungen zusammenstellen und versenden",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI in der Office-Suite entwirft Traktandenliste und Einladung aus Pendenzenliste und letztem Protokoll und fasst Unterlagen zusammen. Die Assistenz prüft alles und trägt fehlende Beiträge bei Verantwortlichen ein."
+      },
+      {
+        "name": "Sitzungsprotokolle von GL- und VR-Sitzungen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Transkription und automatische Zusammenfassung erstellen den Protokollentwurf. Bei Schweizerdeutsch mehrerer Sprechender und heiklen Beschlussformulierungen prüft und korrigiert die Assistenz jedes Protokoll gründlich. Vertraulichkeit und Aufnahmezustimmung bremsen die Einführung."
+      },
+      {
+        "name": "Sitzungen, Anlässe und Besuche logistisch organisieren und vor Ort betreuen (Räume, Catering, Technik)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Arbeit besteht überwiegend aus Absprachen mit Dienstleistern, Präsenz vor Ort und Improvisation. Einzelne Textbausteine wie Einladungen sparen nicht 50 % der Gesamtzeit."
+      },
+      {
+        "name": "Geschäftsreisen für Führungskräfte buchen und Reiseunterlagen zusammenstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gebucht wird bereits über Online-Buchungstools. Buchungsagenten mit generativer KI arbeiten bei individuellen Präferenzen und Umbuchungen 2026 noch nicht verlässlich genug für 50 % Ersparnis. Die klassischen Tools sind schon im Einsatz und übernehmen den Rest nicht."
+      },
+      {
+        "name": "Präsentationen, Berichte und Dokumente erstellen und nach CI formatieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in PowerPoint und Word erstellen Folien und Berichte aus Vorlagen und Notizen. Die Assistenz prüft jede Ausgabe und korrigiert Inhalt und Layout nach CI."
+      },
+      {
+        "name": "Geschäftsbezogene Recherchen durchführen und Informationen für die Geschäftsleitung aufbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent mit Websuche erstellt Dossiers und Zusammenfassungen. Die Assistenz prüft jede Quelle und jeden Fakt, weil Halluzinationen möglich sind."
+      },
+      {
+        "name": "Akten, Verträge und Register (z. B. Aktienbuch) im Ablagesystem führen und nachführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Arbeit läuft über Mutationen im Dokumentenmanagementsystem bzw. Registerprogramm und über physische Ablage. KI spart dabei wenig. Klassische Dokumentenmanagement-Software ist bereits im Einsatz und übernimmt den verbleibenden Teil nicht zu 50 %."
+      },
+      {
+        "name": "Anrufe und Besuchende für die Geschäftsleitung entgegennehmen, triagieren und interne Abläufe koordinieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Funktion als Anlaufstelle der Geschäftsleitung lebt von persönlicher Präsenz, Diskretion und Beziehungspflege. Ein Voicebot ist dafür kein gleichwertiger Ersatz."
+      },
+      {
+        "name": "Dokumente und Korrespondenz zwischen Deutsch, Französisch und Englisch übersetzen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Das LLM übersetzt, die Assistenz revidiert externe und offizielle Texte vollständig. Interne Texte gehen teils ohne Revision hinaus, darum liegt die Restzeit an der Bandgrenze. In der Schweiz müssen Dokumente oft parallel in mehreren Landessprachen geführt und abgestimmt werden."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Direktions- oder GL-Assistenz in einem Schweizer KMU bzw. einer öffentlichen Verwaltung, mit Microsoft-365-Umgebung und mehrsprachiger Korrespondenz. Die ESCO-Beschreibung (Vorstandsassistenz) passt gut; die Zeitanteile sind grob geschätzt. Der grösste Grenzfall ist die Kalenderführung (E0 vs. E2). Unsicher ist auch die Protokollqualität bei Schweizerdeutsch in Sitzungen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Korrespondenz, Posteingangsbearbeitung, Protokolle, Sitzungsunterlagen, Präsentationen, Recherchen und Übersetzungen, die durch Chat-LLM, KI-Funktionen in Office und Mail, Transkription und Recherche-Agenten übernommen werden.",
+      "begruendung": "Rund zwei Drittel der Arbeitszeit sind exponiert. Standardkorrespondenz ist weitgehend ersetzend, bei Protokollen, Präsentationen, Recherchen und Übersetzungen arbeitet die KI meist delegierend mit Prüfung jeder Ausgabe. Gebremst wird die Umsetzung in der Schweiz durch Vertraulichkeit und Datenschutz bei GL- und VR-Unterlagen, durch Schweizerdeutsch in Sitzungen und durch mehrsprachige Dokumentenführung. Kalenderführung, Anlassorganisation und die persönliche Anlaufstelle bleiben beim Menschen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

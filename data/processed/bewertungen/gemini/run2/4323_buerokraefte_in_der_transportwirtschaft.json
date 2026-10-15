@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "d77fa8a995d72928b2d1f97297dffedade71cfe6ead64761ada12d6ac3ab1eab",
+    "isco_code": "4323",
+    "beruf": "Bürokräfte in der Transportwirtschaft und verwandte Berufe",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2398,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2398
+        }
+      ],
+      "prompt_token_count": 21545,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21545
+        }
+      ],
+      "thoughts_token_count": 7232,
+      "total_token_count": 31175
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2398,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2398
+          }
+        ],
+        "prompt_token_count": 21545,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21545
+          }
+        ],
+        "thoughts_token_count": 7232,
+        "total_token_count": 31175
+      }
+    ],
+    "request_ids": [
+      "xD_Pas7HCOOZ6dkP5bep6A8"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-4323_buerokraefte_in_der_transportwirtschaft",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "4323",
+    "beruf": "Bürokräfte in der Transportwirtschaft und verwandte Berufe",
+    "taetigkeiten": [
+      {
+        "name": "Transportaufträge aus E-Mails und PDF-Dokumenten erfassen und im Transportmanagementsystem anlegen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumentenerkennung mit LLM-Extraktion und Schnittstelle ins Transportmanagementsystem (TMS) übernimmt die Auftragserfassung aus heterogenen PDFs und E-Mails; die Fachperson bearbeitet nur noch markierte Ausnahmen und unklare Angaben."
+      },
+      {
+        "name": "Touren, Routen und Fahrzeugauslastung im Dispositionssystem planen und optimieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kombinatorische Touren-, Kapazitäts- und Routenoptimierung wird durch mathematische Algorithmen in klassischer Dispositions- und Tourenplanungssoftware gelöst, nicht durch Sprachmodelle."
+      },
+      {
+        "name": "Einsatzpläne für das Fahrpersonal unter Einhaltung der Arbeits- und Ruhezeitvorschriften (ARV) erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die regelbasierte Schicht- und Einsatzplanung nach gesetzlichen Lenk- und Ruhezeiten ist eine Aufgabe für klassische Personaleinsatzplanungs- und Dispositionssoftware; generative KI spart hier keine 50 % der Zeit."
+      },
+      {
+        "name": "Frachtbriefe, Ladelisten und Zollanmeldungen erstellen sowie auf Vollständigkeit prüfen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Dokumentenverarbeitung liest Handelsrechnungen und Packlisten aus, schlägt Zolltarifnummern (Tares) vor und befüllt Begleitpapiere im Speditions- bzw. Zollsystem (Passar); wegen der zoll- und gefahrgutrechtlichen Haftung prüft die Fachperson jede Deklaration."
+      },
+      {
+        "name": "Fahrzeugflotte im Tagesbetrieb überwachen und Fahrpersonal bei Störungen telefonisch anweisen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Echtzeit-Koordination mit Fahrern bei Stau, Pannen oder Wartezeiten an der Laderampe erfordert unmittelbare telefonische Verständigung (oft bei Lärm und Sprachbarrieren) sowie rasche operative Einzelentscheide."
+      },
+      {
+        "name": "Kundenkorrespondenz, Abweichungsmeldungen und mehrsprachige Fahreranweisungen verfassen und übersetzen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM formuliert und übersetzt schriftliche Ladeanweisungen, Kundenmitteilungen oder Verspätungsinformationen aus kurzen Stichworten in verschiedene Sprachen; die Disponentin prüft jeden Text kurz vor dem Versand."
+      },
+      {
+        "name": "Standardanfragen zum Sendungsstatus beantworten und Abliefernachweise (POD) bereitstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein ins TMS integrierter KI-Agent beantwortet Statusanfragen und versendet gescannte Abliefernachweise automatisch, sodass der Mensch nur Ausnahmen bearbeitet; alternativ übernehmen klassische Track-and-Trace-Kundenportale diese Aufgabe."
+      },
+      {
+        "name": "Frachtraum auf Frachtbörsen einkaufen und Transportpreise mit Subunternehmern verhandeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Vergabe von Spot-Transporten und das Aushandeln von Tagespreisen mit Frachtführern beruhen auf Verhandlungsgeschick, Vertrauensbeziehungen und kurzfristiger Marktbeurteilung."
+      },
+      {
+        "name": "Transportschäden, Lieferabweichungen und Standgelder abklären sowie Schadensdossiers erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Multimodale KI wertet Frachtbrief-Abschreibungen, Schadensfotos und E-Mail-Verläufe aus und entwirft die Stellungnahme an Kundschaft oder Versicherung; die Fachperson steuert die Abklärung und prüft jeden Fall inhaltlich."
+      },
+      {
+        "name": "Wartungstermine, Motorfahrzeugkontrollen (MFK) und Fahrzeugausrüstung koordinieren und überwachen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Überwachung von Wartungsintervallen, gesetzlichen MFK-Prüfterminen und Fahrzeugausrüstung ist eine regelbasierte Verwaltungsaufgabe, die durch klassische Flottenmanagement-Software automatisiert werden kann."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Frachtdisponent/in bzw. Speditionskaufmann/-frau EFZ in einem Schweizer Transport- oder Logistikunternehmen (Schwerpunkt Strassen- und intermodaler Güterverkehr). Die im ESCO-Profil genannten Schifffahrtskompetenzen sind für die Schweiz (abgesehen von der Rheinschifffahrt in Basel) wenig repräsentativ und wurden zugunsten der typischen Transport- und Speditionsdisposition gewichtet. Ein wichtiger Abgrenzungsfall ist die Touren- und Einsatzplanung, die primär durch klassische Optimierungssoftware (P1) statt durch generative KI (E0) automatisierbar ist.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Erfassung von Transportaufträgen, das Erstellen und Prüfen von Fracht- und Zolldokumenten, Statusauskünfte sowie die mehrsprachige Korrespondenz durch Dokumenten-KI und ins Transportmanagementsystem integrierte Sprachmodelle.",
+      "begruendung": "Knapp die Hälfte der Arbeitszeit (45 %) ist gegenüber generativer KI exponiert, wobei die Auftragserfassung und Standardauskünfte überwiegend ersetzend und die Dokumenten-, Zoll- und Schadensbearbeitung delegierend erfolgen. Die eigentliche Touren-, Schicht- und Flottenplanung ist hingegen eine Domäne klassischer Dispositionssoftware, während die telefonische Echtzeit-Koordination bei Störungen beim Menschen bleibt. In der Schweiz bremsen insbesondere zoll- und gefahrgutrechtliche Haftungsrisiken (Passar, ADR) sowie die kleinteilige KMU-Struktur im Transportgewerbe eine flächendeckende Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

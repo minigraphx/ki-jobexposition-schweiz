@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "provider": "claude",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "ca90d1ed9a64b658c0290d9b930359c16a0fc29a2613c80041a0a74096ae4a5a",
+    "isco_code": "2221",
+    "beruf": "Dipl. Pflegefachperson",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T21:28:16+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive",
+      "max_tokens": 64000,
+      "fallbacks": "default",
+      "structured_output": "output_config.format"
+    },
+    "stop_reason": "end_turn",
+    "stop_details": null,
+    "usage": {
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 36937,
+      "input_tokens": 9279,
+      "output_tokens": 4717
+    },
+    "usage_je_versuch": [
+      {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 36937,
+        "inference_geo": "global",
+        "input_tokens": 9279,
+        "iterations": [
+          {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 36937,
+            "input_tokens": 9279,
+            "model": null,
+            "output_tokens": 4717,
+            "type": "message"
+          }
+        ],
+        "output_tokens": 4717,
+        "output_tokens_details": {
+          "thinking_tokens": 1714
+        },
+        "service_tier": "standard"
+      }
+    ],
+    "request_ids": [],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2221",
+    "beruf": "Dipl. Pflegefachperson",
+    "taetigkeiten": [
+      {
+        "name": "Patientinnen und Patienten bei Körperpflege, Mobilisation, Lagerung, Ernährung und Ausscheidung am Bett unterstützen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Pflege am Körper mit unmittelbarer Präsenz; keine Robotik, die diese Arbeit in relevantem Umfang übernimmt."
+      },
+      {
+        "name": "Behandlungspflege durchführen: Medikamente richten und verabreichen, Infusionen, Wundversorgung, Blutentnahmen, Katheter",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle, verantwortungsvolle Verrichtungen am Patienten; Unit-Dose-Automaten gibt es nur in einzelnen Spitälern und decken nur einen kleinen Teil der Tätigkeit ab."
+      },
+      {
+        "name": "Vitalzeichen messen, Patientenzustand beobachten und klinisch einschätzen, in Notfallsituationen handeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beobachtung und Einschätzung am Bett sowie Notfallhandeln erfordern Präsenz; Monitoring-Geräte unterstützen nur, ersetzen auf der Bettenstation aber nicht die Beurteilung."
+      },
+      {
+        "name": "Pflegedokumentation und Verlaufsberichte im Klinikinformationssystem erfassen",
+        "zeitanteil_pct": 12,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracheingabe bzw. ambiente Dokumentation erstellt den Eintrag im KIS; die Pflegefachperson prüft und verantwortet jeden Eintrag. Dialekt und Stationslärm erhöhen den Korrekturaufwand; Patientendatenschutz als Hemmnis."
+      },
+      {
+        "name": "Pflegeplanung mit Pflegediagnosen, Zielen und Massnahmen erstellen und anpassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus eingefügtem Assessment-Text entwirft ein LLM Pflegediagnosen, Ziele und Massnahmen; die Pflegefachperson prüft jeden Plan gegen den Einzelfall. Nahe an der Schwelle, da Pläne oft mit Katalogen im KIS erstellt werden."
+      },
+      {
+        "name": "Patienten und Angehörige zu Krankheit, Medikamenten, Prävention und Austritt informieren und schulen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung und Anleitung am Bett, deren Wert in der Präsenz liegt."
+      },
+      {
+        "name": "Patienten und Angehörige psychosozial begleiten, auch in Krisen- und Palliativsituationen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beziehungs- und Präsenztätigkeit (Zuhören, Trösten, Begleiten)."
+      },
+      {
+        "name": "An Visiten, Schichtrapporten und interprofessionellen Besprechungen teilnehmen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Abstimmung im Team mit Präsenz; KI-Zusammenfassungen zur Vorbereitung verkürzen die Gesprächszeit nicht um die Hälfte."
+      },
+      {
+        "name": "Pflegerische Überweisungs- und Austrittsberichte für Spitex, Heime oder Reha verfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Verlaufseinträge sind als Text aus dem KIS kopierbar; das LLM entwirft den Bericht, die Pflegefachperson prüft jeden Bericht gegen die Akte und verantwortet ihn."
+      },
+      {
+        "name": "Austritte, Untersuchungen, Transporte und Material organisieren und telefonisch koordinieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurzfristige Koordination per Telefon und vor Ort mit vielen Beteiligten; Auftragsmodule im KIS sind klassische Software und bereits Teil der heutigen Arbeit."
+      },
+      {
+        "name": "Lernende und Pflegepersonal (FaGe, Assistenz) anleiten, Arbeiten delegieren und beaufsichtigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Anleitung und Führung in Präsenz am Arbeitsplatz."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Dipl. Pflegefachperson HF/FH im Akutspital auf einer Bettenstation (Medizin/Chirurgie). ESCO passt gut; Zeitanteile sind grobe Schätzungen. Grösste Unsicherheit bei der Pflegedokumentation (Qualität ambienter Dokumentation mit Schweizerdeutsch und Stationslärm) und der Pflegeplanung (nahe an der 50-%-Schwelle).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Pflegedokumentation, Pflegeplanung und Überweisungsberichte, die per Spracheingabe bzw. KI-Funktionen im KIS oder Chat-LLM entworfen werden; die Pflege am Bett selbst nicht.",
+      "begruendung": "Rund ein Fünftel der Arbeitszeit ist exponiert, durchwegs delegierend: Die KI erstellt Einträge, Pläne und Berichte, die Pflegefachperson prüft und verantwortet jedes Ergebnis. Patientendatenschutz, Berufsgeheimnis und Cloud-Restriktionen in Schweizer Spitälern sowie die nötige KIS-Integration bremsen die Einführung.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

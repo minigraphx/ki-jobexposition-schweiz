@@ -1,0 +1,245 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "af5eb5c933785336f7a48fb5a769f3932dfc7ef19cb0139f2607d9d53ff12af0",
+    "isco_code": "7543",
+    "beruf": "Produkttester und -klassierer (ohne Nahrungsmittel und Getränke)",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:26:16+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 7404,
+      "cache_read_input_tokens": 76839,
+      "output_tokens": 9509,
+      "api_aequivalent_usd": 0.26479579999999997
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 40188,
+        "output_tokens": 5535,
+        "output_tokens_details": {
+          "thinking_tokens": 1762
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11874559999999999
+      },
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 7404,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3974,
+        "output_tokens_details": {
+          "thinking_tokens": 125
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 7404,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1460502
+      }
+    ],
+    "request_ids": [
+      "e3d73b29-f805-44c9-9168-f09080471511",
+      "64950110-7e02-4bf5-b7b4-4f583e02426b"
+    ],
+    "versuche": 2,
+    "status": "ok",
+    "fehler": [
+      "Versuch 1: Zeitanteile summieren auf 105, nicht exakt 100"
+    ],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "7543",
+    "beruf": "Produkttester und -klassierer (ohne Nahrungsmittel und Getränke)",
+    "taetigkeiten": [
+      {
+        "name": "Teile und Produkte visuell und haptisch auf Fehler prüfen und nach Gut/Schlecht bzw. Güteklassen sortieren",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Industrielle Bildverarbeitung bzw. AOI-Anlagen sind kommerziell erhältlich, übernehmen aber bei Kleinserien und anspruchsvollen kosmetischen Prüfungen (z. B. Uhrenteile) oft keine 50 %; P0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Prüfung geschieht von Hand am Teil in der Produktion, deshalb E0. Klassische Bildverarbeitungs- und Sortieranlagen (Machine Vision, AOI) können die Sichtprüfung bei Serienteilen grösstenteils übernehmen."
+      },
+      {
+        "name": "Masse und Toleranzen mit Messschieber, Lehren, Messmikroskop und Koordinatenmessmaschine messen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Messarbeit: Teile werden gespannt, ausgerichtet und gemessen. Programmierte KMG-Messungen sind bereits automatisiert, Inline-Messtechnik mit Roboterbeschickung übernimmt in typischen CH-Betrieben mit gemischten Serien aber keine 50 %."
+      },
+      {
+        "name": "Funktions-, Dichtheits- und Leistungstests an Prüfständen und Prüfeinrichtungen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bestücken, Anschliessen und Beobachten der Prüflinge ist physische Arbeit, daher E0. Automatische End-of-Line-Prüfstände mit Handlingsystemen sind für Serienprodukte kommerziell verfügbar und verbreitet."
+      },
+      {
+        "name": "Prüfdaten und Messwerte in Prüfprotokollen bzw. im CAQ-System erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es werden vor allem Zahlen erfasst, generative KI spart dabei nichts Relevantes. Die direkte Messwertübertragung von digitalen Messmitteln in CAQ- bzw. SPC-Software ist klassische Software."
+      },
+      {
+        "name": "Prüfberichte sowie Fehler- und Abweichungsberichte (Nichtkonformität, 8D) verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt aus Stichworten, Messwerten und Befunden des Prüfers den Bericht in Textform. Der Prüfer kontrolliert jeden Bericht fachlich auf Befund und Bewertung und gibt ihn frei."
+      },
+      {
+        "name": "Qualitätsdokumente prüfen (Werkstoffzeugnisse, Lieferantenzertifikate, Prüfpläne gegen Zeichnung und Spezifikation)",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumentenerkennung in PDFs und Scans liest die Kennwerte aus, gleicht sie mit der Spezifikation ab und markiert Abweichungen. Die Prüferin beurteilt jedes Dokument weiterhin selbst."
+      },
+      {
+        "name": "Fehlerursachen in der Produktion untersuchen und Korrektur- sowie Vorbeugemassnahmen mit Produktion und Lieferanten abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Ursachen werden vor Ort an Maschine und Teil gesucht und die Massnahmen im Gespräch abgestimmt. KI kann Ursachenlisten vorschlagen, spart aber keine 50 % der Zeit."
+      },
+      {
+        "name": "Prüf- und Messmittel kalibrieren, warten und defekte Ausrüstung melden",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit an den Geräten mit Normalen und Einstellmitteln. Die Prüfmittelverwaltung plant nur die Termine, übernimmt die Arbeit aber nicht."
+      },
+      {
+        "name": "Prozess- und Produktaudits in der Fertigung durchführen und Hygiene- und Sicherheitsvorgaben kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beobachten vor Ort, Fragen stellen und Präsenz in der Produktion stehen im Vordergrund."
+      },
+      {
+        "name": "Prüfanweisungen und Arbeitsanweisungen für das QM-System erstellen und aktualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft aus Zeichnungsangaben, Merkmalsliste und bestehenden Vorlagen die Anweisung als Text. Die Fachperson prüft jede Anweisung auf technische Korrektheit."
+      },
+      {
+        "name": "Qualitätskennzahlen (Ausschuss, Reklamationen, SPC-Verläufe) auswerten und Monatsberichte erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Grundauswertungen liefert die SPC- bzw. CAQ-Software oft bereits klassisch; ob der verbleibende Interpretations- und Berichtsteil 50 % spart, ist unsicher, deshalb ist E0 mit P1 (software) ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Agent mit Code-Ausführung wertet exportierte Daten aus und entwirft Grafiken und Kommentar. Die Fachperson prüft jeden Bericht und gibt ihn frei."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Annahme: Qualitätsprüfer/in mit Berufslehre in einem Schweizer Industrie-KMU (MEM, Kunststoff, Uhren/Medtech) mit Wareneingangs-, Fertigungs- und Endprüfung. Die ESCO-Kompetenzen sind teilweise auf QM-Fachleute ausgerichtet (Lieferantenbewertung entwickeln, KPI-Steuerung), daher habe ich die praktische Prüfarbeit stärker gewichtet. Am unsichersten ist die P-Bewertung der Sicht- und Funktionsprüfung (Machine Vision und Prüfstände bei Kleinserien).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Prüf- und Abweichungsberichte, Prüfanweisungen, die Prüfung von Zeugnissen und Zertifikaten sowie Kennzahlenberichte, die mit Chat-LLM, Dokumentenerkennung und Datenanalyse-Agenten erstellt oder vorbereitet werden; das physische Prüfen und Messen selbst ist nicht betroffen.",
+      "begruendung": "Rund ein Viertel der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI entwirft Berichte und Anweisungen, der Prüfer kontrolliert jedes Ergebnis fachlich, während die Dokumentenprüfung unterstützend bleibt. Im Kern besteht der Beruf aus Sicht-, Mess- und Funktionsprüfung am Teil; diese wird eher durch klassische Bildverarbeitung und Prüfstände automatisiert als durch generative KI. Wesentliche CH-Hemmnisse gibt es kaum; die Einführung bremsen vor allem kleine Betriebe und QM-Systeme mit Freigabepflichten.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

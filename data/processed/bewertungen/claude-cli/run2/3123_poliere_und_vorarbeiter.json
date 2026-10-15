@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "82cfe0ac1e07990ee7bb4edca375530d49db595c14aaf6389465c67ddcdf50d3",
+    "isco_code": "3123",
+    "beruf": "Poliere und Vorarbeiter",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:24:22+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 40481,
+      "output_tokens": 4585,
+      "api_aequivalent_usd": 0.09980419999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 40481,
+        "output_tokens": 4585,
+        "output_tokens_details": {
+          "thinking_tokens": 1534
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.09980419999999998
+      }
+    ],
+    "request_ids": [
+      "1329b707-d8bb-4ab7-b765-ef72604f5b32"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3123",
+    "beruf": "Poliere und Vorarbeiter",
+    "taetigkeiten": [
+      {
+        "name": "Equipe auf der Baustelle einteilen, anleiten und beaufsichtigen (inkl. Lernende instruieren)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung vor Ort mit persönlicher Präsenz und raschen Entscheiden; keine relevante Übernahme durch Technik."
+      },
+      {
+        "name": "Selbst auf der Baustelle mitarbeiten (Mauern, Schalen, Armieren, Betonieren)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Bauarbeit; Mauer- oder Schalungsroboter nur in Pilotprojekten."
+      },
+      {
+        "name": "Pläne lesen, Achsen und Höhen einmessen und Bauteile abstecken",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zeit liegt im Messen vor Ort mit Nivellier/Tachymeter; Absteckung durch Geometer oder Robotertachymeter ersetzt die Polierarbeit nicht zu ≥ 50 %."
+      },
+      {
+        "name": "Ausführungsqualität, Baustoffe und Betonlieferungen vor Ort kontrollieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Visuelle und haptische Prüfung am Bauwerk (Lot, Ebenheit, Konsistenz, Lieferschein-Abgleich) mit sofortigem Entscheid vor Ort."
+      },
+      {
+        "name": "Arbeitssicherheit überwachen, Sicherheitsinstruktionen durchführen und Absturzsicherungen kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kontrolle und Instruktion vor Ort (SUVA-Regeln); Präsenztätigkeit."
+      },
+      {
+        "name": "Wochenprogramm, Personal- und Geräteeinsatz planen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Planung beruht auf Baustellenstand, Wetter und Wissen über Leute, das meist nur im Kopf des Poliers existiert; ein LLM spart hier kaum 50 % der Zeit."
+      },
+      {
+        "name": "Material und Geräte abrufen, Lieferungen koordinieren und entgegennehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze Telefonate/App-Bestellungen und Entgegennahme vor Ort; geringe Textarbeit, keine relevante Zeitersparnis durch LLM."
+      },
+      {
+        "name": "Tages-, Regie- und Stundenrapporte sowie Bautagebuch erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe und Fotos in einer Rapport-App erstellen den Rapport bzw. Tagebucheintrag; der Polier prüft jeden Eintrag. Dialekt und Baustellenlärm erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Ausmass und Materialbedarf aus Plänen und Aufmass berechnen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die LLM-Berechnung aus eingetippten Massen gegenüber Erfahrungswerten und Ausmass-Software wirklich 50 % spart; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Masse eingeben, LLM rechnet Mengen, Steine, Mörtel und Beton; der Polier kontrolliert jedes Ergebnis."
+      },
+      {
+        "name": "Mit Bauführung, Subunternehmern und Bauherrschaft vor Ort Abläufe absprechen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Abstimmung und Verhandlung vor Ort bzw. an Bausitzungen."
+      },
+      {
+        "name": "E-Mails, Aktennotizen und Mängellisten an Bauführung schriftlich verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM formuliert aus Stichworten die Nachricht oder Notiz; der Polier prüft jeden Text inhaltlich kurz vor dem Versand."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Polier/Vorarbeiter im Hochbau einer Schweizer Bauunternehmung (KMU), mit teilweiser Mitarbeit auf der Baustelle. ESCO (Maurerpolier) passt nur teilweise; die Zeitanteile für Administration (Rapporte, Ausmass) sind grob geschätzt und je nach Betrieb (Vorarbeiter vs. Polier) sehr unterschiedlich. Grenzfälle sind Mengenberechnung und Wochenplanung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Rapporte und Bautagebuch per Spracheingabe in Rapport-Apps sowie kurze Schreibarbeiten und Mengenberechnungen per Chat-LLM; Führung, Kontrolle und Mitarbeit auf der Baustelle bleiben unberührt.",
+      "begruendung": "Rund ein Fünftel der Arbeitszeit ist exponiert, durchwegs delegierend: Die KI erstellt Rapporte, Texte und Mengenrechnungen, der Polier prüft jedes Ergebnis. Der Kern des Berufs ist Führung und Kontrolle mit Präsenz auf der Baustelle; Schweizerdeutsch und Lärm erschweren die Spracheingabe, und viele kleine Baufirmen führen digitale Rapportlösungen erst langsam ein.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

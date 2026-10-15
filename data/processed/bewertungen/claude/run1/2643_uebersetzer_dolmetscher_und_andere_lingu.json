@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "provider": "claude",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "49e99734614fc5116a7d15f62aa4dfcf4d4efefc3aa8de2a2259ace70ff83a80",
+    "isco_code": "2643",
+    "beruf": "Übersetzer, Dolmetscher und andere Linguisten",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T21:31:25+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive",
+      "max_tokens": 64000,
+      "fallbacks": "default",
+      "structured_output": "output_config.format"
+    },
+    "stop_reason": "end_turn",
+    "stop_details": null,
+    "usage": {
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 36937,
+      "input_tokens": 3180,
+      "output_tokens": 5302
+    },
+    "usage_je_versuch": [
+      {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 36937,
+        "inference_geo": "global",
+        "input_tokens": 3180,
+        "iterations": [
+          {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 36937,
+            "input_tokens": 3180,
+            "model": null,
+            "output_tokens": 5302,
+            "type": "message"
+          }
+        ],
+        "output_tokens": 5302,
+        "output_tokens_details": {
+          "thinking_tokens": 1908
+        },
+        "service_tier": "standard"
+      }
+    ],
+    "request_ids": [],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2643",
+    "beruf": "Übersetzer, Dolmetscher und andere Linguisten",
+    "taetigkeiten": [
+      {
+        "name": "Fachtexte (Geschäfts-, Finanz-, technische, Verwaltungstexte) zur Publikation übersetzen bzw. LLM-Vorübersetzung im CAT-Tool post-editieren",
+        "zeitanteil_pct": 30,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM erstellt die Übersetzung DE/FR/IT/EN auf hohem Niveau; die Fachperson revidiert jedes Segment vollständig gegen den Ausgangstext und verantwortet das Ergebnis. Vertraulichkeit/Cloud-Restriktionen bei Banken und Verwaltung bremsen."
+      },
+      {
+        "name": "Marketing-, Werbe- und kreative Texte übersetzen und kulturell für den Zielmarkt adaptieren (Transkreation)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob bei Wortspielen, Tonalität und literarischen Ansprüchen tatsächlich 50 % Zeit gespart werden; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Die Übersetzerin formuliert den Zieltext weiterhin selbst; das LLM liefert Varianten, Slogans und Formulierungsvorschläge, aus denen sie auswählt und weiterarbeitet."
+      },
+      {
+        "name": "Fremde Übersetzungen revidieren und gegenlesen (Vier-Augen-Prinzip)",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Revisorin revidiert selbst; ein LLM-Abgleich von Ausgangs- und Zieltext markiert Auslassungen, Sinn- und Terminologiefehler, sodass gezielter gelesen wird."
+      },
+      {
+        "name": "Ausgangstext analysieren, Fachbegriffe und Hintergrund in Wörterbüchern, Datenbanken und Paralleltexten recherchieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche fassen Quellen und Begriffsverwendungen zusammen; die Übersetzerin entscheidet über die Terminologie selbst und verifiziert Belege einzeln."
+      },
+      {
+        "name": "Glossare, Terminologiedatenbanken und Translation Memories aufbauen und pflegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM-Funktionen im CAT-/Terminologiesystem extrahieren Termkandidaten mit Definitionen und Äquivalenten aus Korpora; die Fachperson prüft und validiert jeden Eintrag."
+      },
+      {
+        "name": "Juristische und beglaubigte Übersetzungen (Verträge, Urkunden, Gerichtsakten) anfertigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM erstellt den Übersetzungsentwurf, die Übersetzerin prüft jeden Satz auf rechtliche Äquivalenz und haftet mit Beglaubigung/Unterschrift. Hoher Prüfaufwand hält die Restzeit im oberen Band."
+      },
+      {
+        "name": "Konsekutiv- und Simultandolmetschen bei Sitzungen, Behörden- und Gerichtsterminen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Echtzeit-Sprach-KI erreicht die geforderte Qualität bei Dialekt, Fachjargon und hohem Risiko nicht; Präsenztätigkeit."
+      },
+      {
+        "name": "Untertitel und Übertitel aus Audio- und Videoquellen erstellen und übersetzen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Transkription, Übersetzung und Segmentierung erfolgen mit KI-Untertitelungssoftware; die Fachperson prüft jeden Untertitel auf Sinn, Länge und Timing. Schweizerdeutsche Tonspuren erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Übersetzte Dateien formal finalisieren: Tags, Formatierung und automatische QA-Prüfungen im CAT-Tool abarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Tag-Übernahme, Zahlen-, Konsistenz- und Formatprüfungen leisten klassische CAT- und QA-Tools (z. B. regelbasierte QA-Checker) ohne LLM."
+      },
+      {
+        "name": "Aufträge mit Kundschaft abklären, Offerten erstellen, Rückfragen zu Inhalt und Terminologie besprechen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung mit Auftraggebern, Klärung von Absichten und Preisverhandlung; Wortzählung für Offerten ist bereits klassische CAT-Funktion, KI spart am Gespräch keine 50 %."
+      },
+      {
+        "name": "Sprach- und Fachkenntnisse auffrischen, Weiterbildungen besuchen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Lernen und Kompetenzerhalt lassen sich nicht an KI delegieren."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Fachübersetzer/in (tertiär) in einem Sprachdienstleister oder internen Sprachdienst (Unternehmen, Verwaltung) mit DE/FR/IT/EN, CAT-Tool-Arbeit; Dolmetschen als kleiner Anteil, da ESCO nur den Übersetzer abbildet. Grösste Unsicherheiten: Transkreation/kreative Texte (E1 vs. E0) und die genaue Restzeit beim Post-Editing publizierter Texte nahe der Bandgrenze 30 %.",
+    "zusammenfassung": {
+      "haupt_risiko": "Übersetzen von Fach- und juristischen Texten, Revision, Terminologiearbeit, Recherche und Untertitelung werden von LLM-Übersetzung, CAT-Integration, Recherche-Agenten und KI-Untertitelungssoftware übernommen bzw. stark beschleunigt.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind exponiert, überwiegend delegierend (KI übersetzt, Fachperson revidiert jedes Segment) und bei Revision, Recherche und Transkreation unterstützend; nur Dolmetschen, Kundenabklärung und Weiterbildung bleiben unberührt. In der Schweiz ist die Mehrsprachigkeit ein starker Treiber für maschinelle Übersetzung, gebremst wird die Adoption vor allem durch Vertraulichkeits- und Cloud-Vorgaben bei Banken, Versicherungen und Verwaltung sowie Haftung bei beglaubigten Übersetzungen.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

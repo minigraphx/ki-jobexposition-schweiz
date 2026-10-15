@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "828d07b17a9ade681151c1c1fcd0d54f3f43a2c7f673b202c2394b4eadd332ae",
+    "isco_code": "7223",
+    "beruf": "Werkzeugmaschineneinrichter und -bediener",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:59:35+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3769,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5226,
+      "api_aequivalent_usd": 0.1420102
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3769,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5226,
+        "output_tokens_details": {
+          "thinking_tokens": 1945
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3769,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1420102
+      }
+    ],
+    "request_ids": [
+      "ed2acd7b-bcbe-4cbb-b9c6-b690ae1917c3"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "7223",
+    "beruf": "Werkzeugmaschineneinrichter und -bediener",
+    "taetigkeiten": [
+      {
+        "name": "CNC-Maschine einrichten: Spannmittel montieren, Werkstücke spannen, Werkzeuge einsetzen, Nullpunkte setzen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit an der Maschine mit Handwerkzeug und Messtastern; für das wechselnde Einrichten bei kleinen Losgrössen gibt es keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Bearbeitungsprogramme im CAM-System aus 3D-Modellen erstellen (Strategien, Werkzeugwege, Simulation)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Werkzeugweggenerierung ist klassische CAM-Software; der verbleibende Aufwand liegt in Strategiewahl und Erfahrungswissen zu Material, Spannung und Maschine, wo generative KI heute keine 50 % spart. Feature-basierte Automatik in CAM übernimmt bei heterogenen Teilen keine 50 % der Zeit."
+      },
+      {
+        "name": "NC-Programme in DIN/ISO-Code oder Klartext an der Steuerung schreiben und anpassen (Zyklen, Unterprogramme, Parameter)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob gegenüber Dialogprogrammierung und kleinen Korrekturen an der Steuerung wirklich 50 % gespart werden; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM erstellt aus Zeichnungsmassen und Beschreibung Code, Makros und Parameterprogramme; die Fachkraft prüft jedes Programm in der Simulation bzw. beim Einfahren."
+      },
+      {
+        "name": "Erstteil im Testlauf einfahren und Korrekturwerte anpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Arbeit an der laufenden Maschine mit Beobachtung, Messen und sofortigem Eingreifen; keine LLM-Leistung."
+      },
+      {
+        "name": "Serienfertigung überwachen, Maschine mit Rohteilen beschicken und Fertigteile entnehmen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit; Roboter-Beladezellen, Palettenwechsler und Stangenlader sind in Schweizer Zerspanungsbetrieben kommerziell verfügbar und verbreitet."
+      },
+      {
+        "name": "Werkstücke mit Präzisionsmessmitteln prüfen und fehlerhafte Teile aussortieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Messen mit Mikrometer, Messuhr oder Koordinatenmessgerät; automatische Messzellen lohnen sich vor allem bei grossen Serien, nicht im typischen KMU-Mix."
+      },
+      {
+        "name": "Messwerte, Prozessdaten und Auftragsrückmeldungen in SPC-/ERP-System erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend Zahlen und Buchungen, kaum Text; Übernahme erledigen klassische BDE/MDE-Systeme und digitale Messmittelanbindung an SPC-Software."
+      },
+      {
+        "name": "Störungen und Fehler an Maschine und Prozess suchen und beheben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Diagnose an der Maschine durch Beobachten, Hören, Messen; LLM-Hilfe zu Alarmcodes spart deutlich weniger als 50 % der Zeit."
+      },
+      {
+        "name": "Werkzeuge bereitstellen, auf dem Voreinstellgerät vermessen und Verschleissteile wechseln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handhabung von Werkzeugen; Voreinstellgerät ist Hilfsmittel, ersetzt die Person nicht."
+      },
+      {
+        "name": "Maschine reinigen, schmieren und vorbeugende Wartungsarbeiten durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit an der Maschine; keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Fertigungszeichnungen lesen, Arbeitsfolge planen und Schnittdaten aus Unterlagen bestimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze, erfahrungsbasierte Planung im Kopf mit Bezug zur konkreten Maschine; KI-Unterstützung beim Nachschlagen spart nicht 50 %."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Fachkraft an CNC-Fräs- und Drehmaschinen in einem Schweizer Zerspanungs-KMU (Kleinserien, Einrichten und Bedienen, teilweise Programmieren), oft mit Ausbildung Produktionsmechaniker/in oder Polymechaniker/in EFZ. Der ESCO-Input passt gut. Grösster Grenzfall ist die NC-Programmierung an der Steuerung (E1 vs. E0); dazu kommen P-Bewertungen für Beschickung (Roboterzellen) und Messen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen ist nur das Schreiben und Anpassen von NC-Code, Makros und Parameterprogrammen per Chat-LLM; Einrichten, Bedienen, Messen und Störungsbehebung an der Maschine sind nicht exponiert.",
+      "begruendung": "Nur rund ein Zehntel der Arbeitszeit ist gegenüber generativer KI exponiert, und zwar delegierend: Das LLM entwirft den Code, die Fachkraft prüft jedes Programm in Simulation und Testlauf. Der Kern des Berufs bleibt physische Arbeit an der Maschine; die Beschickung lässt sich eher mit klassischer Robotik automatisieren als mit KI. Wesentliche CH-Hemmnisse bestehen kaum, die Einführung bremsen vor allem die vielen kleinen Betriebe und eingespielte Abläufe an der Steuerung.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "ca90d1ed9a64b658c0290d9b930359c16a0fc29a2613c80041a0a74096ae4a5a",
+    "isco_code": "2221",
+    "beruf": "Dipl. Pflegefachperson",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T22:12:45+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 65536,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 1728,
+      "prompt_token_count": 29501,
+      "thoughts_token_count": 5095,
+      "total_token_count": 36324
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1728,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1728
+          }
+        ],
+        "prompt_token_count": 29501,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 29501
+          }
+        ],
+        "thoughts_token_count": 5095,
+        "total_token_count": 36324
+      }
+    ],
+    "request_ids": [
+      "kKzOaoXlM86G28oPrcPJ-Q0"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2221",
+    "beruf": "Dipl. Pflegefachperson",
+    "taetigkeiten": [
+      {
+        "name": "Grundpflege, Körperpflege und Mobilisation bei komplexen Patientensituationen am Bett durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische und zwischenmenschliche Tätigkeit direkt am Patientenbett; technische Hilfsmittel wie Patientenlifter unterstützen nur punktuell, es gibt keine Robotik, die mindestens 50 % der Arbeit übernimmt."
+      },
+      {
+        "name": "Behandlungspflege, Wundversorgung, Infusionen, Blutentnahmen und Medikamentenabgabe durchführen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle, feinmotorische Verrichtungen am Patienten und im Stationszimmer; Verabreichung, Injektionen und Verbandswechsel erfordern physische Präsenz."
+      },
+      {
+        "name": "Patientenzustand überwachen, Vitalzeichen kontrollieren und in Akut- oder Notfallsituationen intervenieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Klinische Krankenbeobachtung vor Ort und unmittelbares physisches Eingreifen bei Notfällen sind an die persönliche Präsenz am Bett gebunden."
+      },
+      {
+        "name": "Eintrittsgespräche führen und klinisches Pflegeassessment am Patienten vornehmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das persönliche Aufnahmegespräch und die körperliche Ersteinschätzung (z. B. Hautzustand, Mobilität, Schmerz) erfordern direkten Patientenkontakt und Vertrauensaufbau."
+      },
+      {
+        "name": "Individuelle Pflegepläne, Pflegediagnosen und Massnahmen im Klinikinformationssystem (KIS) erstellen und anpassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KIS-integrierte KI-Funktionen schlagen aus den Assessmentdaten passende Pflegediagnosen und Massnahmen vor und erstellen den Planentwurf; die Pflegefachperson prüft, adaptiert und verantwortet jeden Pflegeplan fachlich."
+      },
+      {
+        "name": "Laufende Pflegedokumentation und Verlaufsberichte nach Rundgängen und Visiten im KIS führen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracheingabe bzw. ambiente Dokumentation mit KIS-Integration erstellt strukturierte Verlaufseinträge aus gesprochenen Notizen; jeder Eintrag muss von der Pflegefachperson inhaltlich geprüft und visiert werden."
+      },
+      {
+        "name": "Pflege-Übertritts- und Austrittsberichte für Nachsorgeinstitutionen (Spitex, Reha, Langzeitpflege) verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM kann kopierte Verlaufseinträge und Pflegediagnosen zu einem strukturierten Übertrittsbericht zusammenfassen; die Pflegefachperson kontrolliert und korrigiert jeden Bericht vor der Freigabe."
+      },
+      {
+        "name": "Patientinnen, Patienten und Angehörige beraten, in Pflegemassnahmen instruieren und psychologisch begleiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Empathische Gesprächsführung, Krisenbegleitung und praktische Anleitung (z. B. Selbstinjektion, Stomapflege) sind zwingend auf persönliche Präsenz und Beziehung angewiesen."
+      },
+      {
+        "name": "Interdisziplinäre Arztvisiten begleiten sowie mündliche Schichtübergaben und Fallbesprechungen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Abstimmung im interdisziplinären Behandlungsteam und gemeinsame Visite direkt am Patientenbett."
+      },
+      {
+        "name": "Fachpersonen Gesundheit (FaGe), Assistenzpersonal und Studierende im Stationsalltag anleiten und beaufsichtigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Praktische Ausbildungs- und Führungsarbeit auf der Station sowie Überwachung delegierter pflegerischer Verrichtungen vor Ort."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Dipl. Pflegefachperson HF/FH auf einer Bettenstation im Akutspital (häufigstes Einsatzgebiet in der Schweiz; ähnliche Zeitstruktur gilt mit leichten Verschiebungen auch in der Langzeitpflege und Spitex). Die Abgrenzung zwischen physischer/präsentischer Pflegearbeit (E0) und der erheblichen Dokumentations- und Berichtslast im KIS (E1/E2) ist klar und entspricht den Kalibrierungsbeispielen der Rubrik.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die laufende Pflegedokumentation, die Pflegeplanung im KIS sowie das Verfassen von Pflege-Übertritts- und Austrittsberichten durch Spracheingabe, KIS-integrierte KI und Textzusammenfassung.",
+      "begruendung": "Rund ein Viertel der Arbeitszeit entfällt auf Dokumentation, Planung und Berichtswesen und ist im delegierenden Modus exponiert: Die KI erstellt Entwürfe für Verlaufseinträge, Pflegepläne und Austrittsberichte, während die Pflegefachperson jeden Eintrag fachlich prüfen und verantworten muss. Die eigentliche Pflegearbeit am Bett, die Überwachung sowie die Beratung von Patientinnen, Patienten und Angehörigen (rund 75 % der Arbeitszeit) erfordern physische Präsenz und sind nicht exponiert. In Schweizer Spitälern bremsen strenge Datenschutz- und Berufsgeheimnisvorgaben (revDSG, MedBG/GesBG) sowie die notwendige Integration in bestehende Klinikinformationssysteme eine rasche Verbreitung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

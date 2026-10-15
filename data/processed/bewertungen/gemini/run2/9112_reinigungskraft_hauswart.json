@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "8a08f2260a5eff5006b6d95e460e01ef9424921632346e6c61e4b6dc5dea56ab",
+    "isco_code": "9112",
+    "beruf": "Reinigungskraft / Hauswart",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 1992,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 1992
+        }
+      ],
+      "prompt_token_count": 20963,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 20963
+        }
+      ],
+      "thoughts_token_count": 5577,
+      "total_token_count": 28532
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1992,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1992
+          }
+        ],
+        "prompt_token_count": 20963,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 20963
+          }
+        ],
+        "thoughts_token_count": 5577,
+        "total_token_count": 28532
+      }
+    ],
+    "request_ids": [
+      "XTzParDTNLeBz7IPmfKIqA4"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r2-9112_reinigungskraft_hauswart",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "9112",
+    "beruf": "Reinigungskraft / Hauswart",
+    "taetigkeiten": [
+      {
+        "name": "Büros, Gästezimmer und möblierte Räume aufräumen sowie Oberflächen und Mobiliar reinigen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle und physische Reinigungsarbeit in möblierten Räumen; verfügbare Reinigungsroboter können Oberflächen, Möbel und eng überstellte Flächen nicht zu mindestens 50 % übernehmen."
+      },
+      {
+        "name": "Sanitäranlagen, Toiletten und Nasszellen reinigen und desinfizieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Tätigkeit unter hohen Hygieneanforderungen; für Sanitäranlagen existiert im regulären Schweizer Gebäudebetrieb keine kommerziell verbreitete Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Böden in Korridoren, Eingangshallen und grösseren freien Flächen saugen und nass reinigen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit ohne Exposition gegenüber generativer KI. Auf freien Flächen und in langen Gängen können kommerziell verfügbare autonome Scheuersaug- und Kehr-Saug-Roboter mindestens 50 % der Zeit übernehmen."
+      },
+      {
+        "name": "Abfallbehälter leeren, Wertstoffe trennen und an Sammelstellen entsorgen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit beim Einsammeln, Trennen und Transportieren von Abfällen im Gebäude; keine relevante Automatisierung verfügbar."
+      },
+      {
+        "name": "Fenster, Glastüren und innere Glasflächen reinigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Reinigungstätigkeit an unterschiedlichen Glasflächen, Türgriffen und Rahmen; Fensterputzroboter erreichen im normalen Unterhaltsbetrieb keine 50 % Zeitersparnis."
+      },
+      {
+        "name": "Verbrauchsmaterialien kontrollieren, nachfüllen und Reinigungsmittel sicher dosieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Auffüllen von Seife, Papierhandtüchern und Vorräten vor Ort sowie physisches Bereitstellen und Dosieren von Reinigungschemikalien nach Sicherheitsvorgaben."
+      },
+      {
+        "name": "Wäsche, Handtücher und Reinigungstextilien einsammeln, waschen oder für den Wäschedienst bereitstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handhabung von Textilien, Befüllen von Waschmaschinen und Sortieren der Wäsche vor Ort."
+      },
+      {
+        "name": "Kontrollrundgänge in der Liegenschaft durchführen und Anliegen von Mietern oder Gästen vor Ort entgegennehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert physische Präsenz im Gebäude zur Sichtkontrolle von Ordnung und Kleinmängeln sowie unmittelbaren persönlichen Kontakt mit Gästen oder Mieterschaft."
+      },
+      {
+        "name": "Schadensmeldungen, Mängelrapporte und schriftliche Rückmeldungen bei Reklamationen erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Bei vielen Reinigungsstellen beschränkt sich die Dokumentation auf das Abhaken einfacher Checklisten ohne Freitext, weshalb E0 ebenso plausibel ist.",
+        "ch_hemmnis": [],
+        "begruendung": "Per Spracheingabe (auch in Erstsprache oder Dialekt) und Fotoaufnahme in einer App erstellt die KI strukturierte Schadensmeldungen oder Antworten an die Verwaltung; die Person prüft jede Meldung vor dem Absenden."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Reinigungskraft mit einfachen Hauswart-Hilfsaufgaben in der Unterhaltsreinigung von Büro-, Wohn- und Gewerbeliegenschaften sowie Hotels (ISCO 9112, ohne formale Berufsausbildung). Die ESCO-Beschreibung ist sehr knapp, wird aber durch die Kompetenzliste gut ergänzt. Der Beruf ist fast vollständig physisch geprägt; relevante Abgrenzungen bestehen bei autonomen Bodenreinigungsrobotern für grosse Flächen (P1) sowie beim mobilen Erfassen von Mängel- und Schadensmeldungen (E2).",
+    "zusammenfassung": {
+      "haupt_risiko": "Einzig das Erfassen von Schadensmeldungen, Mängelrapporten und schriftlichen Rückmeldungen per Spracheingabe und Foto-App ist durch multimodale KI exponiert, während die eigentliche Reinigungsarbeit nicht von generativer KI betroffen ist.",
+      "begruendung": "Lediglich rund 5 % der Arbeitszeit entfallen auf schriftliche Meldungen und Rapporte, bei denen KI im delegierenden Modus aus Sprachnotizen und Fotos korrekte Texte für die Verwaltung erstellt und die Person jede Meldung prüft. Die übrigen 95 % bestehen aus manueller Reinigung, Materialbewirtschaftung und Kontrollgängen vor Ort, wobei auf grossen freien Bodenflächen nicht-generative Reinigungsroboter unterstützen können. Nennenswerte regulatorische CH-Hemmnisse bestehen nicht, jedoch verlangsamen viele Kleinbetriebe und einfache Checklisten-Abläufe die Einführung.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

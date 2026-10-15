@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "c70a0ed3c29b80ef8569cdb20fb4f1423acdd3102054e7818eee91afa9d3cb4d",
+    "isco_code": "5131",
+    "beruf": "Servicemitarbeiter/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T01:11:39+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3998,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4735,
+      "api_aequivalent_usd": 0.13402219999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3998,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4735,
+        "output_tokens_details": {
+          "thinking_tokens": 1715
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3998,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.13402219999999998
+      }
+    ],
+    "request_ids": [
+      "5caee90f-5418-4a71-9cf3-8242d9be71c3"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5131",
+    "beruf": "Servicemitarbeiter/in",
+    "taetigkeiten": [
+      {
+        "name": "Restaurant für den Betrieb vorbereiten: Tische eindecken, Mise en place an Servicestationen, Servierwagen bereitstellen",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handarbeit im Gastraum; es gibt keine kommerziell verfügbare Robotik, die das Eindecken übernimmt."
+      },
+      {
+        "name": "Gäste begrüssen, platzieren, Speisekarte vorstellen und zu Gerichten, Allergenen und Wein beraten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare zwischenmenschliche Präsenz am Tisch; der Wert liegt in der persönlichen Gastgeberrolle."
+      },
+      {
+        "name": "Essens- und Getränkebestellungen am Tisch aufnehmen und ins Kassensystem (Handheld) eingeben",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob QR-/Tablet-Selbstbestellung im bedienten Restaurant bei gleicher Gastqualität ≥ 50 % der Zeit übernimmt; P0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Präsenztätigkeit am Tisch, keine LLM-Leistung nötig (E0); Selbstbestellung per QR-Code oder Tablet mit Kassenanbindung ist in der Schweiz kommerziell verfügbar und im Einsatz."
+      },
+      {
+        "name": "Speisen aus der Küche holen, am Tisch servieren und abräumen",
+        "zeitanteil_pct": 22,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit; Servierroboter übernehmen in Einzelbetrieben Transportwege, aber nicht ≥ 50 % des Servierens und Abräumens am Tisch."
+      },
+      {
+        "name": "Kaffee, Heissgetränke und alkoholische Getränke zubereiten sowie Getränke und Weine servieren",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Zubereitung und Service am Tisch; Kaffeevollautomaten sind bereits Standard und die verbleibende Arbeit (Bar, Weinservice) ist nicht automatisierbar."
+      },
+      {
+        "name": "Rechnung erstellen und Zahlungen mit Kartenterminal, TWINT oder bar abwickeln",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kassenvorgang mit klassischer Technik, keine LLM-Leistung; Selbstbezahlung per QR-Code am Tisch und Kassensysteme können den Grossteil übernehmen."
+      },
+      {
+        "name": "Sonderwünsche, Reklamationen und Gäste mit besonderen Bedürfnissen (inkl. VIP) vor Ort betreuen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Betreuung und Konfliktlösung von Angesicht zu Angesicht."
+      },
+      {
+        "name": "Tische, Oberflächen, Gläser und Speisesaal reinigen und Sauberkeit kontrollieren",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Reinigungsarbeit in kleinteiligem Gastraum; Gläserspülmaschinen sind bereits Standard, Roboter übernehmen den Rest nicht."
+      },
+      {
+        "name": "Telefonische und schriftliche Reservationen entgegennehmen und im Reservationssystem erfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Qualität von Voicebots bei Schweizerdeutsch am Telefon und mit Hintergrundlärm wenig belegt; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Voicebot bzw. E-Mail-Assistent mit Anbindung ans Reservationssystem nimmt Standardreservationen entgegen; das Personal übernimmt nur weitergeleitete Spezialfälle. Online-Reservationstools (klassische Software) können ebenfalls ≥ 50 % übernehmen."
+      },
+      {
+        "name": "Mit Küche und Team absprechen, Tagesangebot und Allergene abklären, Hygienekontrollen durchführen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Absprachen im laufenden Betrieb und Kontrollen vor Ort; kaum Text, den KI relevant beschleunigen könnte."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Servicemitarbeiter/in in einem bedienten Schweizer Restaurant (KMU, à la carte, teils Hotelrestaurant). Der ESCO-Input passt gut; der Beruf ist fast vollständig physisch und auf Präsenz ausgerichtet. Grenzfälle sind die Reservationsannahme per Voicebot (Dialektqualität) sowie die P-Einstufung von QR-Selbstbestellung und Selbstbezahlung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Generative KI betrifft nur die kleine Tätigkeit der telefonischen und schriftlichen Reservationsannahme (Voicebot/E-Mail-Assistent); Service, Beratung und Getränkezubereitung am Gast sind nicht exponiert.",
+      "begruendung": "Nur rund 4 % der Arbeitszeit sind gegenüber generativer KI exponiert, und zwar ersetzend bei Standardreservationen. Der Kern des Berufs bleibt physischer Service und persönliche Gastbetreuung. Relevanter als LLMs sind klassische Selbstbestell- und Selbstbezahlsysteme per QR-Code. Schweizerdeutsch am Telefon und die Erwartung persönlicher Gastfreundschaft bremsen den Einsatz von Voicebots.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

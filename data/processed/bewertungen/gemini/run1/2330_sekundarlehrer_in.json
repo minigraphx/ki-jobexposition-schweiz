@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "08d1d57c896b855eb06d9b23cb8630662156f5a6f31eb7e9ca5b262a3aa7bd2f",
+    "isco_code": "2330",
+    "beruf": "Sekundarlehrer/in",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2199,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2199
+        }
+      ],
+      "prompt_token_count": 23055,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 23055
+        }
+      ],
+      "thoughts_token_count": 4665,
+      "total_token_count": 29919
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2199,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2199
+          }
+        ],
+        "prompt_token_count": 23055,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 23055
+          }
+        ],
+        "thoughts_token_count": 4665,
+        "total_token_count": 29919
+      }
+    ],
+    "request_ids": [
+      "XTzPaqPAE7Csz7IP3NihgQ0"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-2330_sekundarlehrer_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2330",
+    "beruf": "Sekundarlehrer/in",
+    "taetigkeiten": [
+      {
+        "name": "Fachunterricht im Klassenzimmer durchführen und Klassenführung sicherstellen",
+        "zeitanteil_pct": 35,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unterrichten vor der Klasse, Anleiten von Gruppenarbeiten und Aufrechterhalten der Disziplin erfordern unmittelbare persönliche Präsenz und pädagogische Beziehungsarbeit."
+      },
+      {
+        "name": "Schülerinnen und Schüler individuell beim Lernen, bei Konflikten und bei der Berufswahl begleiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Coaching, Lernbegleitung im Schulzimmer und Unterstützung bei der Lehrstellensuche beruhen auf direktem zwischenmenschlichem Kontakt und Vertrauen."
+      },
+      {
+        "name": "Quartals-, Reihen- und Lektionsplanungen gemäss Lehrplan erarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Lehrperson plant den pädagogischen Aufbau für ihre Klasse weiterhin selbst, nutzt aber ein Chat-LLM für Strukturvorschläge, Ideen und die Abstimmung auf Kompetenzziele des Lehrplans."
+      },
+      {
+        "name": "Arbeitsblätter, Übungsaufgaben und Prüfungen für verschiedene Leistungsniveaus erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Chat-LLM generiert nach Vorgabe der Lehrperson binnendifferenzierte Aufgaben, Lesetexte und Musterlösungen; die Lehrperson prüft jedes Arbeitsblatt fachlich und passt es an die Klasse an."
+      },
+      {
+        "name": "Schriftliche Prüfungen, Aufsätze und Lernkontrollen korrigieren und bewerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die KI-Vorprüfung bei gemischten handschriftlichen und offenen Prüfungsformaten auf Sekundarstufe I im Durchschnitt bereits mindestens 50 % der Korrekturzeit einspart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Multimodale KI-Werkzeuge erkennen Handschrift sowie digitale Texte und markieren Fehler oder schlagen Kriterienpunkte vor; die Lehrperson liest, beurteilt und benotet jede Schülerarbeit weiterhin selbst."
+      },
+      {
+        "name": "Lernberichte, Förderpläne und Beurteilungen zum Arbeits- und Sozialverhalten verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus eingegebenen Beobachtungsnotizen formuliert das Chat-LLM die Berichte; die Lehrperson prüft und überarbeitet jeden Bericht inhaltlich vor der Aufnahme ins Schülerdossier."
+      },
+      {
+        "name": "Standort-, Zeugnis- und Elterngespräche sowie Besprechungen mit Fachdiensten führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gespräche mit Erziehungsberechtigten, Schulischer Heilpädagogik und Schulsozialarbeit verlangen persönliche Präsenz, Empathie und Aushandlung."
+      },
+      {
+        "name": "Elternbriefe, Informationsschreiben und schriftliche Rückmeldungen an Erziehungsberechtigte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten Elternbriefe und Mitteilungen (bei Bedarf auch übersetzt); die Lehrperson kontrolliert jedes Schreiben vor dem Versand."
+      },
+      {
+        "name": "In Konferenzen und Fachschaften mitarbeiten sowie Aufsichten, Exkursionen und Klassenlager leiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Pausenaufsicht, Begleitung von Schulreisen und Lagern sowie die Zusammenarbeit im Kollegium sind an die physische Anwesenheit gebunden."
+      },
+      {
+        "name": "Fachliche und pädagogisch-didaktische Weiterbildungen besuchen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Schulinterne Weiterbildungstage und Hochschulkurse finden überwiegend in Präsenz und im kollegialen Austausch statt."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Sekundarlehrer/in an einer öffentlichen Schweizer Volksschule (Sekundarstufe I, 7.–9. Schuljahr, inkl. Klassenlehrpersonen-Aufgaben). Die Zeitverteilung orientiert sich am kantonalen Berufsauftrag (Unterricht, Vor-/Nachbereitung, Beratung, Schule/Weiterbildung). Der wichtigste Grenzfall ist die Korrektur von Schülerarbeiten, da der Anteil handschriftlicher und offener Formate je nach Unterrichtsfach stark variiert.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind die Unterrichtsvorbereitung, das Erstellen differenzierter Arbeitsblätter und Prüfungen, die schriftliche Berichterstattung und Elternkommunikation (via Chat-LLM) sowie unterstützend die Prüfungskorrektur (via multimodale KI).",
+      "begruendung": "Rund 40 % der Arbeitszeit sind exponiert, wobei die KI beim Erstellen von Lehrmaterialien, Lernberichten und Elternbriefen delegierend und bei der Unterrichtsplanung sowie der Korrektur unterstützend eingesetzt wird. Der Kern des Berufs (60 %) bleibt die Präsenz- und Beziehungsarbeit im Klassenzimmer sowie in Gesprächen mit Jugendlichen und Eltern. Kantonaler Datenschutz bei Schülerdaten, rechtliche Anforderungen an promotionsrelevante Beurteilungen und der Anspruch an persönliche Kommunikation bremsen einen unkontrollierten Einsatz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

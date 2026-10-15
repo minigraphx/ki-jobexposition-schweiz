@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "a6b7d720477b5b80ba26235a9fb6798553781ec91f7b0fff044cc3fd9b86b490",
+    "isco_code": "8131",
+    "beruf": "Bediener von Anlagen und Maschinen für chemische Erzeugnisse",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:05:50+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 38996,
+      "output_tokens": 4791,
+      "api_aequivalent_usd": 0.1036272
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 38996,
+        "output_tokens": 4791,
+        "output_tokens_details": {
+          "thinking_tokens": 1683
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1036272
+      }
+    ],
+    "request_ids": [
+      "403c4592-d859-41f5-9036-7519646339ef"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "8131",
+    "beruf": "Bediener von Anlagen und Maschinen für chemische Erzeugnisse",
+    "taetigkeiten": [
+      {
+        "name": "Reaktoren, Fermenter und Rührkessel nach SOP vorbereiten, Rohstoffe einwägen und zugeben",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit an der Anlage mit Schutzausrüstung. Automatische Dosierstationen gibt es zwar, sie übernehmen aber nicht ≥ 50 % der Tätigkeit (Einwägen, Anschliessen, Gebinde handhaben)."
+      },
+      {
+        "name": "Prozesse (Synthese, Fermentation) am Prozessleitsystem überwachen und Parameter nachregeln",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwachung und Eingriff in validierte Prozesse in Echtzeit; generative KI ist dafür in GMP-Anlagen nicht einsetzbar. Die Regelung selbst übernimmt bereits das Leitsystem, sodass die verbleibende Überwachungsarbeit nicht weiter zu ≥ 50 % automatisierbar ist."
+      },
+      {
+        "name": "Proben ziehen und In-Prozess-Kontrollen durchführen (Dichte, pH, Temperatur, Trübung)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Probenahme und Messung vor Ort. Inline-Sensorik deckt einen Teil ab, ersetzt GMP-Probenahmen aber typischerweise nicht zu ≥ 50 %."
+      },
+      {
+        "name": "Anlagen reinigen, umrüsten und Wartungsarbeiten durchführen (Demontage, CIP/SIP-Vorbereitung)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit. CIP-Zyklen laufen bereits automatisch; Demontage, Sichtkontrolle und Umrüsten bleiben manuell."
+      },
+      {
+        "name": "Zwischen- und Endprodukte abfüllen, etikettieren und ins Lager transportieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handhabung von Gebinden. Halbautomatische Abfüllstationen bestehen schon, das Bedienen, Wechseln und Transportieren bleibt aber überwiegend manuell."
+      },
+      {
+        "name": "Chargenprotokolle (Batch Records) ausfüllen, Werte eintragen und visieren",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es geht um strukturierte Einträge von Messwerten und Unterschriften; ein LLM bringt hier keinen relevanten Zeitgewinn. Elektronische Batch Records im MES mit automatischer Übernahme der Prozessdaten (klassische Software) können ≥ 50 % übernehmen."
+      },
+      {
+        "name": "Abweichungs-, Störungs- und Schichtberichte formulieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Person gibt Stichworte zum Ereignis ein, das LLM erstellt den Berichtstext, die Person prüft jeden Bericht inhaltlich. GMP-Anforderungen an Datenintegrität und validierte Systeme bremsen den Einsatz."
+      },
+      {
+        "name": "Störungen an Anlagen erkennen, Fehler eingrenzen und Instandhaltung beiziehen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Fehlersuche findet vor Ort an der Anlage statt, mit Sinneswahrnehmung und Erfahrung. Ein LLM als Nachschlagehilfe spart keine 50 %."
+      },
+      {
+        "name": "Sicherheits- und Umweltvorschriften umsetzen: Kontrollgänge, Abfälle und Lösungsmittel entsorgen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Kontrollgänge und Handhabung gefährlicher Stoffe vor Ort."
+      },
+      {
+        "name": "Materialbewegungen und Lagerbestände im ERP buchen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Reine Buchungen per Barcode-Scan im ERP/SAP sind klassische Software. Ein LLM spart hier nichts Relevantes."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Produktionsmitarbeiter/in bzw. Chemie- und Pharmatechnologe/-in EFZ im Schichtbetrieb einer Schweizer Chemie- oder Pharmaproduktion (Synthese/Fermentation, GMP-Umfeld). Die ESCO-Zuordnung (Pharmatechnologe) passt nur teilweise und betont die Fermentation; deshalb wurde sie mit allgemeinen Tätigkeiten der Chemieproduktion ergänzt. Unsicher sind vor allem die Zeitanteile und die P-Bewertung bei Abfüllung, In-Prozess-Kontrollen und elektronischen Batch Records, die je nach Automatisierungsgrad des Betriebs stark variieren.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen ist im Wesentlichen nur das Formulieren von Abweichungs-, Störungs- und Schichtberichten durch Chat-LLMs; die Anlagenbedienung, die Probenahme und das Reinigen bleiben menschliche Arbeit vor Ort.",
+      "begruendung": "Nur rund 5 % der Arbeitszeit sind exponiert, und zwar delegierend: Die KI entwirft den Bericht, die Fachperson prüft jeden Bericht inhaltlich. In der Schweizer Pharma- und Chemieindustrie bremsen GMP-Vorgaben, Validierungspflichten und Anforderungen an die Datenintegrität den Einsatz generativer KI in der Produktionsdokumentation. Der Kern des Berufs ist physische, sicherheitskritische Arbeit an der Anlage.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "45f18eab8e4280884989d449546fb197ff4a853933a51ab9ac231fddba33a691",
+    "isco_code": "5151",
+    "beruf": "Reinigungs- und Hauswirtschaftleiter und -kräfte in Büros, Hotels und anderen Einrichtungen",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2115,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2115
+        }
+      ],
+      "prompt_token_count": 21972,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21972
+        }
+      ],
+      "thoughts_token_count": 5637,
+      "total_token_count": 29724
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2115,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2115
+          }
+        ],
+        "prompt_token_count": 21972,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21972
+          }
+        ],
+        "thoughts_token_count": 5637,
+        "total_token_count": 29724
+      }
+    ],
+    "request_ids": [
+      "xD_PaqWfCLvL_PUPs93BqAU"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-5151_reinigungs_und_hauswirtschaftleiter_und",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "5151",
+    "beruf": "Reinigungs- und Hauswirtschaftleiter und -kräfte in Büros, Hotels und anderen Einrichtungen",
+    "taetigkeiten": [
+      {
+        "name": "Zimmer, Aufenthaltsräume und öffentliche Bereiche vor Ort auf Sauberkeit, Hygiene und Einrichtungsmängel kontrollieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert die physische Begehung sowie visuelle und haptische Kontrolle der Räumlichkeiten vor Ort; weder durch Sprachmodelle noch durch Robotik übernehmbar."
+      },
+      {
+        "name": "Reinigungs-, Pflege- und Wäschereiarbeiten in Zimmern und Aufenthaltsbereichen praktisch ausführen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Tätigkeit (Betten machen, Sanitäranlagen und möblierte Räume reinigen, Wäschepflege); Reinigungsroboter können in möblierten Zimmern und Sanitärbereichen keine 50 % der Arbeit übernehmen."
+      },
+      {
+        "name": "Mitarbeitende im Tagesgeschäft vor Ort anleiten, führen und in Reinigungstechniken sowie Hygienevorschriften praktisch schulen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führungs- und Präsenzaufgabe mit praktischer Demonstration am Objekt (Umgang mit Reinigungschemie, Gerätebedienung, Ergonomie), die unmittelbare persönliche Anwesenheit erfordert."
+      },
+      {
+        "name": "Schicht- und Dienstpläne erstellen sowie die tägliche Zimmereinteilung nach Belegung disponieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Dienstplanungssoftware (PEP) und Housekeeping-Module in Property-Management-Systemen (PMS) übernehmen die Zuteilung nach Belegung und Arbeitszeitregeln; das ist klassische Software und keine generative KI."
+      },
+      {
+        "name": "Lagerbestände an Wäsche, Reinigungs- und Gästeartikeln physisch prüfen, Lieferungen kontrollieren und Nachbestellungen auslösen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Hauptaufwand liegt in der physischen Bestandesaufnahme in Etagen- und Hauptlagern sowie der Warenannahme und dem Einräumen vor Ort."
+      },
+      {
+        "name": "Unterhalts-, Reparatur- und Renovierungsarbeiten mit Haustechnik und externen Handwerkern vor Ort koordinieren und abnehmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend mündliche Abstimmung, Begehung und Abnahme von Reparaturen in den Zimmern gemeinsam mit Technikern und Handwerkern; generative KI spart hier keine 50 % der Zeit."
+      },
+      {
+        "name": "Gästewünsche erfüllen und Reklamationen bezüglich Sauberkeit oder Ausstattung direkt vor Ort beheben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Gästebetreuung und unmittelbare praktische Nachbesserung vor Ort (z. B. Nachreinigung, Zusatzwäsche bringen, Zimmerwechsel begleiten)."
+      },
+      {
+        "name": "Arbeitsanweisungen, Hygiene-Checklisten und Schulungsunterlagen erstellen sowie für das Team übersetzen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten strukturierte Reinigungsstandards, HACCP-/Hygienechecklisten und übersetzt sie in die Sprachen des Teams; die Leitungskraft gibt betriebliche Vorgaben ein und prüft die Dokumente vor Aushang."
+      },
+      {
+        "name": "Abteilungsberichte, Kostenübersichten und schriftliche Korrespondenz mit Lieferanten und Geschäftsleitung verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft aus eingetippten Kennzahlen und Stichworten Offertenanfragen, Reklamationsschreiben an Wäschereien/Lieferanten sowie Monatsberichte; die Hauswirtschaftsleitung prüft jede Ausgabe inhaltlich und rechnerisch."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Bereichs-/Teamleitung Hauswirtschaft (Gouvernante) bzw. erfahrene/r Hotelfachfrau/-mann EFZ oder Fachfrau/-mann Hauswirtschaft EFZ mit Koordinationsverantwortung in einem Schweizer Hotel, Heim oder Spital. Während ESCO stark auf die reine Leitungsfunktion fokussiert, arbeiten Berufsleute auf Sekundarstufe II in typischen Schweizer KMU-Betrieben auch praktisch mit; beide Anteile sind berücksichtigt. Die ESCO-Kompetenz zur Verwaltung von Finanzmitteln für soziale Dienste wurde als unpassendes Rauschen ignoriert.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind lediglich das Erstellen und Übersetzen von Arbeitsanweisungen, Hygiene-Checklisten und Schulungsunterlagen sowie das Verfassen von Lieferantenkorrespondenz und Abteilungsberichten mittels Chat-LLM; die physische Kontroll-, Reinigungs- und Führungsarbeit vor Ort bleibt unberührt.",
+      "begruendung": "Rund 10 % der Arbeitszeit entfallen auf schriftliche und konzeptionelle Aufgaben, bei denen generative KI im delegierenden Modus Entwürfe und Übersetzungen erstellt, die von der Hauswirtschaftsleitung fachlich geprüft werden. Der überwiegende Teil des Berufs besteht aus physischen Zimmer- und Hygienekontrollen, praktischer Mitarbeit sowie der direkten Anleitung des Teams vor Ort und ist gegenüber Sprachmodellen nicht exponiert. In Schweizer Betrieben mit stark mehrsprachigen Teams müssen Unterlagen in mehreren Sprachen abgestimmt werden, zudem ist die persönliche Präsenz im Gastgewerbe und Heimwesen zentral.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

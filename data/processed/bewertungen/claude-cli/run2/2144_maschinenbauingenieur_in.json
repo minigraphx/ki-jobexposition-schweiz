@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "65971f247f23eb23a6f54b4c899b564417b4bf33d65b6165da63dccc536be347",
+    "isco_code": "2144",
+    "beruf": "Maschinenbauingenieur/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:53:32+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 11071,
+      "cache_read_input_tokens": 78523,
+      "output_tokens": 9654,
+      "api_aequivalent_usd": 0.2973686
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 11071,
+        "cache_read_input_tokens": 78523,
+        "output_tokens": 9654,
+        "output_tokens_details": {
+          "thinking_tokens": 1575
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 11071,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.2973686
+      }
+    ],
+    "request_ids": [
+      "d6c6424e-c728-4512-b9c8-b7c293c5adbc"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2144",
+    "beruf": "Maschinenbauingenieur/in",
+    "taetigkeiten": [
+      {
+        "name": "Anforderungen und technische Spezifikationen (Lasten-/Pflichtenheft) aus Kunden- und Projektvorgaben ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Ingenieurin gibt Kundenvorgaben, Notizen und Normenauszüge ein, ein Chat-LLM entwirft strukturierte Anforderungslisten und das Pflichtenheft. Sie prüft jede Anforderung fachlich und ergänzt sie; Abklärungen mit Kunden bleiben beim Menschen."
+      },
+      {
+        "name": "Lösungskonzepte und Varianten entwickeln und technisch-wirtschaftlich bewerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kreative Ingenieurarbeit mit Erfahrungswissen, Skizzen und Abwägungen im Team; LLM-Ideen und Bewertungsmatrizen sparen keine 50 % der Zeit."
+      },
+      {
+        "name": "Bauteile und Baugruppen im 3D-CAD konstruieren und Konstruktionen anpassen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die generativen KI-Funktionen in CAD-Systemen (Copilots, generatives Design für Einzelteile) sparen bei typischen Maschinenbaukonstruktionen 2026 keine 50 % der Zeit. Parametrik und Variantenkonfiguratoren decken nur Teilbereiche ab."
+      },
+      {
+        "name": "Fertigungszeichnungen, Toleranzangaben und Stücklisten aus dem CAD-Modell ableiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Ableitung von Ansichten und Stücklisten übernimmt klassische CAD-/PDM-Software (automatische Zeichnungsableitung, BOM-Export) weitgehend. Die Tolerierung bleibt Fachentscheid, und generative KI bringt kaum Zusatznutzen."
+      },
+      {
+        "name": "FEM- und Strömungssimulationen aufsetzen, rechnen und auswerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Vernetzung, Randbedingungen und Plausibilisierung erfolgen in CAE-Software und erfordern Fachurteil; LLM-Assistenten in CAE-Tools reduzieren den Aufwand nicht um die Hälfte."
+      },
+      {
+        "name": "Auslegungs- und Nachweisberechnungen (Festigkeit, Lager, Antriebe, Wärme) durchführen und dokumentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Viele Standardnachweise laufen bereits in klassischer Berechnungssoftware (z. B. KISSsoft), sodass der LLM-Zusatznutzen unter 50 % liegen könnte; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Ein LLM mit Code-Ausführung stellt den Rechengang nach Norm auf, rechnet und erstellt den Berechnungsbericht. Der Ingenieur gibt Lastfälle und Annahmen vor und prüft jedes Ergebnis auf Plausibilität."
+      },
+      {
+        "name": "Prototypen und Versuchsaufbauten in Werkstatt und Labor begleiten, messen und testen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit vor Ort mit Präzisionsmessmitteln und Prüfständen; die Inbetriebnahme bleibt beim Menschen."
+      },
+      {
+        "name": "Versuchs- und Messdaten auswerten und Prüfberichte erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Datenanalyse-Agent mit Code-Ausführung liest Messdateien ein, erstellt Auswertungen und Diagramme und entwirft den Prüfbericht. Die Ingenieurin prüft Interpretation und Schlussfolgerungen jedes Berichts."
+      },
+      {
+        "name": "Technische Dokumentation verfassen (Konstruktionsbericht, Risikobeurteilung CE, Betriebsanleitungsteile)",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Stichworten, Vorlagen und eingefügten Normauszügen entwirft das Chat-LLM die Dokumente; der Ingenieur prüft jede Aussage fachlich. Für Risikobeurteilung und Konformitätserklärung (Maschinenrichtlinie/Maschinenverordnung) trägt er die Haftung."
+      },
+      {
+        "name": "Design Reviews durchführen und Konstruktionen sowie Änderungen freigeben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Beurteilung von 3D-Modellen und Zeichnungen sowie die Freigabeverantwortung erfordern Fachurteil im Team; KI-Prüfhilfen für CAD-Modelle sparen keine 50 %."
+      },
+      {
+        "name": "Projekte koordinieren und Absprachen mit Fertigung, Lieferanten, Kunden und Technikerteams führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sitzungen, Abstimmungen und Führung von Technikerteams beruhen auf Präsenz und Verhandlung; KI-Protokolle sind ein Nebeneffekt."
+      },
+      {
+        "name": "Normen, Zukaufkomponenten, Patente und Stand der Technik recherchieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche fassen Quellen, Datenblätter und Patente zusammen. Die Ingenieurin wählt Komponenten selbst aus und verifiziert die Angaben in den Originalquellen."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommen ist ein/e Maschinenbauingenieur/in FH/ETH in Entwicklung und Konstruktion eines KMU des Schweizer Maschinen- und Anlagenbaus (MEM-Industrie). Der ESCO-Input enthält gebäudetechnische Spezialkompetenzen (solare Absorptionskühlung), die nicht als eigene Tätigkeiten übernommen wurden. Die grössten Unsicherheiten betreffen den LLM-Zusatznutzen bei Auslegungsberechnungen gegenüber klassischer Berechnungssoftware und den Reifegrad generativer CAD-Funktionen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Pflichtenhefte, Berechnungsdokumentation, Auswertungen von Versuchsdaten, technische Dokumentation und Recherche. Diese Tätigkeiten können mit Chat-LLMs, Datenanalyse-Agenten und Recherche-Agenten erledigt werden; die CAD-Konstruktion, Simulation und Versuchsarbeit hingegen nicht.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert, überwiegend im delegierenden Modus: Die KI entwirft Spezifikationen, Berechnungen und Berichte, der Ingenieur prüft jede Ausgabe fachlich. Bei der Recherche ist die KI nur unterstützend. Der Kern des Berufs bleibt kaum exponiert: Konstruktion im CAD, Variantenbewertung, Versuche und Koordination. Bremsend wirken in der Schweiz die Produkthaftung und die CE-Konformitätsverantwortung sowie die Geheimhaltung von Konstruktionsdaten in KMU der MEM-Industrie.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

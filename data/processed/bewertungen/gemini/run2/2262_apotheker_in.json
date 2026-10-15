@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "b64ab281dc758cd8213d2601f05cd55cd22a971afdd87133efd4d0d8fb540265",
+    "isco_code": "2262",
+    "beruf": "Apotheker/in",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2408,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2408
+        }
+      ],
+      "prompt_token_count": 25578,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 25578
+        }
+      ],
+      "thoughts_token_count": 10675,
+      "total_token_count": 38661
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2408,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2408
+          }
+        ],
+        "prompt_token_count": 25578,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 25578
+          }
+        ],
+        "thoughts_token_count": 10675,
+        "total_token_count": 38661
+      }
+    ],
+    "request_ids": [
+      "xD_PavvwC6St_PUPotaH2QY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2262_apotheker_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2262",
+    "beruf": "Apotheker/in",
+    "taetigkeiten": [
+      {
+        "name": "Kundschaft und Patientinnen/Patienten in der Offizin zu Symptomen, Selbstmedikation und Arzneimittelanwendung beraten",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das persönliche Beratungs- und Triagegespräch am Handverkaufstisch oder im Sprechzimmer erfordert unmittelbare zwischenmenschliche Präsenz, Empathie und klinische Beobachtung vor Ort."
+      },
+      {
+        "name": "Ärztliche Rezepte und bereitgestellte Medikamente kontrollieren, klinisch validieren und zur Abgabe visieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Interaktions- und Dosierungschecks erfolgen bereits über klassische Apothekersoftware; die verbleibende Arbeit umfasst die physische Endkontrolle der Packungen und den klinischen Freigabeentscheid, wobei generative KI keine 50 % Zeitersparnis erreicht."
+      },
+      {
+        "name": "Präventions- und Grundversorgungsleistungen am Patienten durchführen (Impfungen, Point-of-Care-Tests, Wundversorgung)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Tätigkeiten direkt am Körper der Patientinnen und Patienten wie Injektionen, Abstriche, kapillare Blutentnahmen oder Blutdruckmessungen erfordern zwingend physische Präsenz."
+      },
+      {
+        "name": "Pharma-Assistentinnen/Assistenten und Lernende im Tagesbetrieb fachlich anleiten und beaufsichtigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führungs-, Aufsichts- und Ausbildungstätigkeit vor Ort in der Offizin, die auf unmittelbarer persönlicher Interaktion und situativer Unterstützung am Schalter beruht."
+      },
+      {
+        "name": "Anamnesen, Abgabeentscheide (z. B. Liste B ohne Rezept), Impfungen und Beratungen im Apothekersystem dokumentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Mittels Spracheingabe (Diktat oder Gesprächsaufzeichnung im Sprechzimmer) und LLM-Integration in die Apothekersoftware werden strukturierte Anamnese- und Abgabeprotokolle erstellt; die Apothekerin prüft und verantwortet jeden Eintrag fachlich."
+      },
+      {
+        "name": "Komplexe Arzneimittelfragen, Interaktionen und Alternativpräparate (z. B. bei Lieferengpässen) recherchieren und Therapieempfehlungen ausarbeiten",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Recherche-Agent mit Zugriff auf Fachinformationen (Swissmedic/Compendium) und Lieferengpass-Datenbanken stellt pharmakologische Vergleiche und Substitutionsvorschläge zusammen; der Apotheker beurteilt die klinische Eignung im Einzelfall selbst und verifiziert jede Dosierungsangabe."
+      },
+      {
+        "name": "Warenlager, Lieferketten und Betäubungsmittelbestand (BTM) überwachen sowie Bestellungen freigeben",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bestandsführung, automatische Bestellvorschläge, digitale Betäubungsmittelbuchführung und Temperaturüberwachung werden durch klassische Warenwirtschafts- und Überwachungssoftware automatisiert, nicht durch generative KI."
+      },
+      {
+        "name": "Magistralrezepturen, individuelle Dosierungen und Spezialpräparate im Labor herstellen und prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Laborarbeit beim Einwiegen, Mischen, Abfüllen und analytischen Prüfen von Ausgangsstoffen und Individualrezepturen vor Ort."
+      },
+      {
+        "name": "Kostengutsprachen, Begründungen bei Kassenrückweisungen und Pharmakovigilanz-Meldungen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus kopierten, anonymisierten Falldaten und Ablehnungsgründen entwirft ein Chat-LLM strukturierte Begründungen für Krankenversicherer oder Nebenwirkungsmeldungen für Swissmedic; die Apothekerin prüft und verantwortet jedes Schreiben inhaltlich."
+      },
+      {
+        "name": "Qualitätsmanagement-Dokumente (SOPs), Arbeitsanweisungen und Patienteninformationen erstellen und aktualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt auf Basis von Vorgaben und Richtlinien Entwürfe für Standardarbeitsanweisungen (SOPs) und Patientenmerkblätter; die Apothekerin prüft jedes Dokument auf Konformität mit den Betriebsabläufen und kantonalen Vorgaben."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting ist das mit Abstand häufigste Berufsfeld in der Schweiz: eidg. dipl. Apotheker/in (FPH Offizinpharmazie) in einer öffentlichen Apotheke. Ein kleinerer Teil arbeitet in Spitalapotheken oder der Pharmaindustrie mit abweichenden Aufgabenprofilen. Die wichtigsten Grenzfälle liegen bei der Rezeptvalidierung (wo klassische, regelbasierte Prüfsoftware bereits den Grossteil der Vorprüfung übernimmt und die physische Packungskontrolle bleibt) sowie bei der Spracheingabe für Beratungsprotokolle im Schweizerdeutschen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem die Dokumentation von Beratungen und Abgabeentscheiden per Spracheingabe, die Recherche komplexer Arzneimittelfragen sowie das Verfassen von Kostengutsprachen, Pharmakovigilanz-Meldungen und QMS-Dokumenten mittels Sprachmodellen.",
+      "begruendung": "Gut ein Viertel der Arbeitszeit in einer Schweizer Offizinapotheke ist gegenüber generativer KI exponiert, während der Kern aus persönlicher Patientenberatung, Impfungen, physischer Rezeptendkontrolle und Teamführung bestehen bleibt. In den exponierten Bereichen arbeitet die KI überwiegend delegierend (Entwurf von Protokollen, Gesuchen und SOPs mit fachlicher Einzelprüfung) sowie unterstützend bei der pharmakologischen Fachrecherche. Strenge regulatorische Vorgaben (Heilmittelgesetz, Berufsgeheimnis, Datenschutz bei Gesundheitsdaten und persönliche Haftung) schliessen einen ungeprüften, ersetzenden Einsatz aus und bremsen die direkte Integration in zertifizierte Apothekersoftware.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

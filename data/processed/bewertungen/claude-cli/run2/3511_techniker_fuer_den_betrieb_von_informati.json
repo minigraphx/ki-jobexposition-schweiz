@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "1ac0dc0ff14c2a7c74053e3c9646a31f993e50c698f576c4409d750c25b9d2ed",
+    "isco_code": "3511",
+    "beruf": "Techniker für den Betrieb von Informations- und Kommunikationstechnologie",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:17:17+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 39193,
+      "output_tokens": 5407,
+      "api_aequivalent_usd": 0.11598660000000001
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 39193,
+        "output_tokens": 5407,
+        "output_tokens_details": {
+          "thinking_tokens": 1929
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11598660000000001
+      }
+    ],
+    "request_ids": [
+      "e4cf4d3d-6e41-4934-856c-13b2278e0e91"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3511",
+    "beruf": "Techniker für den Betrieb von Informations- und Kommunikationstechnologie",
+    "taetigkeiten": [
+      {
+        "name": "Systemleistung und Verfügbarkeit auf Monitoring-Konsolen überwachen und Alarme sichten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Überwachung läuft heute über klassische Monitoring- und Alerting-Software (Schwellenwerte, Dashboards, automatische Benachrichtigung). Die menschliche Zeit liegt im Bereitschaftsdienst und der Erstreaktion, die eine LLM-Zusammenfassung nicht um 50 % verkürzt."
+      },
+      {
+        "name": "Störungen und Incidents analysieren (Logs, Fehlermeldungen) und beheben",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob KI-Loganalyse und AIOps-Assistenten bei produktiven Systemen mit eingeschränktem Zugriff typischerweise 50 % sparen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Technikerin führt die Fehlersuche selbst; LLM-Funktionen im Monitoring-/ITSM-Tool korrelieren Logs, fassen Ursachen zusammen und schlagen Lösungsschritte vor. Hemmnis: Zugriffs- und Datenschutzvorgaben, z. B. in Banken (FINMA) und Verwaltung."
+      },
+      {
+        "name": "Server und Komponenten im Rechenzentrum montieren, tauschen und verkabeln",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit am Rack. Robotik für Hardwaretausch ist im regulären Betrieb in der Schweiz nicht verbreitet."
+      },
+      {
+        "name": "Datenbankleistung analysieren und Abfragen, Indizes und Ressourcen optimieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Technikerin fügt Ausführungspläne, Abfragen und Kennzahlen ins LLM ein, das die Optimierungen (Indizes, umgeschriebenes SQL, Parameter) erstellt. Sie prüft und testet jede Änderung vor der Umsetzung."
+      },
+      {
+        "name": "Datensicherungen kontrollieren und Wiederherstellungstests durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sicherungen und Prüfberichte laufen über klassische Backup-Software mit Zeitplänen und automatischer Verifikation. Ein LLM spart beim verbleibenden Kontrollieren und Testen wenig."
+      },
+      {
+        "name": "Skripte zur Betriebsautomatisierung schreiben (PowerShell, Bash, Ansible)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erzeugt Skripte nach Beschreibung. Die Technikerin spezifiziert, testet und prüft jedes Skript vor dem produktiven Einsatz."
+      },
+      {
+        "name": "Patches und Updates einspielen und Konfigurationsänderungen nach Change-Prozess umsetzen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Ausrollen von Patches läuft über klassische Patch-Management- und Konfigurationswerkzeuge (WSUS, SCCM, Ansible). Die verbleibende Arbeit ist Planung in Wartungsfenstern und Kontrolle."
+      },
+      {
+        "name": "Datenmigrationen vorbereiten (Mapping, Migrationsskripte) und validieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt Mapping und Migrations- bzw. Prüfabfragen aus eingefügten Schemas. Die Technikerin prüft jede Ausgabe und validiert das Ergebnis selbst."
+      },
+      {
+        "name": "Betriebsdokumentation, Runbooks und Notfallpläne erstellen und aktualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft Dokumente aus Stichworten, Konfigurationsauszügen und Vorlagen. Die Technikerin prüft jeden Entwurf auf die spezifische Infrastruktur."
+      },
+      {
+        "name": "Tickets im ITSM-System erfassen, dokumentieren und Rückmeldungen an Anwender schreiben",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI-Funktion im ITSM-Tool (z. B. Ticketzusammenfassung, Antwortentwurf) erstellt Einträge und Rückmeldungen. Die Technikerin prüft und ergänzt jeden Eintrag."
+      },
+      {
+        "name": "Schichtübergaben durchführen, mit Team und Lieferanten vor Ort abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Abstimmung und Begleitung von Technikern vor Ort; der Wert liegt in der Präsenz."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Ich nehme ICT-Betriebstechniker/in (Sekundär II, z. B. Informatiker/in EFZ Plattformentwicklung) im Rechenzentrum bzw. IT-Betrieb eines mittelgrossen Dienstleisters oder Unternehmens an. Das ESCO-Profil (Rechenzentrumsbetreiber) passt; die Datenbank-Kompetenzen sind eher stark gewichtet. Grösste Unsicherheit: ob die KI-gestützte Incident-Analyse unter typischen Zugriffsbeschränkungen die 50 %-Schwelle erreicht.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Incident-Analyse, Datenbankoptimierung, Automatisierungsskripte, Migrationen, Dokumentation und Ticketpflege, die Chat-LLMs und KI-Funktionen in ITSM- und Monitoring-Tools übernehmen oder beschleunigen.",
+      "begruendung": "Rund 60 % der Arbeitszeit sind exponiert, meist delegierend: Die KI erstellt Skripte, SQL-Optimierungen und Dokumente, und die Technikerin prüft und testet jede Ausgabe. Bei der Störungsbehebung ist sie unterstützend, die Fehlersuche bleibt beim Menschen. Hardwarearbeit und klassisch automatisierte Überwachung, Backups und Patching bleiben unexponiert. Wesentliches CH-Hemmnis sind Zugriffs- und Datenschutzvorgaben in regulierten Branchen (Banken, Verwaltung), die den Einsatz von Cloud-LLMs auf produktive Logs und Systeme bremsen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

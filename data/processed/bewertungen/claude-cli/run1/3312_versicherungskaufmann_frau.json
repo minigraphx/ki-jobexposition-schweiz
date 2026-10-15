@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "31ed6941d321c1a3bd2d6bb3496eb70ffa43901217a6937400dda7deab95b4c4",
+    "isco_code": "3312",
+    "beruf": "Versicherungskaufmann/-frau",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:51:13+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2789,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4915,
+      "api_aequivalent_usd": 0.1279502
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2789,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4915,
+        "output_tokens_details": {
+          "thinking_tokens": 1684
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2789,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1279502
+      }
+    ],
+    "request_ids": [
+      "d19a58d6-dced-46a1-bb30-9691a12ed6f2"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3312",
+    "beruf": "Versicherungskaufmann/-frau",
+    "taetigkeiten": [
+      {
+        "name": "Anträge, Vertragsmutationen und Kundendokumente (E-Mails, Formulare, Scans) sichten und ins Bestandessystem übertragen",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumentenerkennung und LLM-Extraktion mit Integration ins Bestandessystem erfassen Standardmutationen; die Person bearbeitet markierte Ausnahmen und Stichproben. Heterogene Freitext-Eingänge reichen für klassische Formularerkennung allein nicht."
+      },
+      {
+        "name": "Einfache Anträge nach Annahmerichtlinien prüfen und Annahme, Zuschlag oder Rückfrage vorbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Antragsdaten und Richtlinien einfügen, das LLM erstellt die Beurteilung mit Begründung; die Sachbearbeiterin prüft jede Beurteilung fachlich. Gesundheitsdaten (Leben/Kranken) sind datenschutzsensibel."
+      },
+      {
+        "name": "Offerten im Tarifsystem berechnen und Policen/Nachträge auslösen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Prämienberechnung und Policierung erfolgen regelbasiert in Tarif- und Bestandessoftware (klassische Software), kein LLM nötig."
+      },
+      {
+        "name": "Standardkorrespondenz verfassen (Eingangsbestätigungen, Unterlagen nachfordern, Kündigungsbestätigungen)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "<10",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM erstellt Standardbriefe aus Falldaten; die Person gibt per Klick frei."
+      },
+      {
+        "name": "Schriftliche Kundenanfragen zu Deckung, Vertrag und Prämien individuell beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "AVB, Vertragsdaten und Anfrage einfügen, das LLM entwirft die Antwort; jede Antwort wird fachlich gegen Police und AVB geprüft, da Deckungsaussagen haftungsrelevant sind."
+      },
+      {
+        "name": "Telefonische Anfragen von Kundschaft und Aussendienst beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Für reine Standardauskünfte wäre ein Voicebot (E2, ersetzend) denkbar, doch Anrufe sind oft komplex und in Mundart; E2 ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Gespräche mit Kundschaft und Agenturen betreffen meist individuelle Vertragsfragen in Schweizerdeutsch; Voicebots erreichen hier die Schwelle kaum."
+      },
+      {
+        "name": "Einfache Schadenfälle prüfen und erledigen (Belege, Deckung, Auszahlung vorbereiten)",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumentenerkennung und LLM-Funktion im Schadensystem extrahieren Belege und schlagen Deckungsentscheid und Betrag vor; die Sachbearbeiterin prüft jeden Fall."
+      },
+      {
+        "name": "Prämieninkasso, Mahnungen und unklare Zahlungseingänge bearbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mahnlauf und Zahlungsabgleich per QR-Referenz erledigt klassische Inkassosoftware; der verbleibende Klärungsaufwand ist gering."
+      },
+      {
+        "name": "Kundschaft persönlich zu Versicherungslösungen beraten (Agentur, Schalter, Termin)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung von Angesicht zu Angesicht, Präsenz- und Beziehungstätigkeit."
+      },
+      {
+        "name": "Aktennotizen, Gesprächsnotizen und kurze Berichte im Kundendossier verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM formuliert die Notiz oder den Bericht aus Stichworten; die Person prüft jede Notiz inhaltlich."
+      },
+      {
+        "name": "Spezialfälle mit Underwritern, Aussendienst und Team besprechen und klären",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung, Ermessen und Verantwortung im direkten Austausch."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Kaufmann/-frau EFZ Branche Privatversicherung im Innendienst einer Versicherungsgesellschaft (Antrags-, Vertrags- und einfache Schadenbearbeitung, Kundenkontakt). Die ESCO-Zuordnung passt nur teilweise (Sekretariatsfokus) und wurde mit CH-Berufswissen ergänzt. Grösste Unsicherheiten: telefonischer Kundendienst (Voicebot in Mundart) und Abgrenzung zur bereits regelbasierten Dunkelverarbeitung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Erfassung von Anträgen und Mutationen, die Standard- und Deckungskorrespondenz, einfache Antrags- und Schadenprüfungen sowie Aktennotizen: Diese übernehmen Dokumentenerkennung mit Systemintegration und Chat-LLMs.",
+      "begruendung": "Rund 70 % der Arbeitszeit sind exponiert: bei Datenerfassung und Standardbriefen ersetzend, bei Deckungsauskünften, Antrags- und Schadenprüfung delegierend mit fachlicher Prüfung jeder Ausgabe. Gebremst wird die Umsetzung vor allem durch Datenschutz bei Gesundheits- und Kundendaten und durch Kundschaft, die am Telefon persönlichen Kontakt in Mundart erwartet; Tarifierung und Inkasso laufen bereits über klassische Software.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

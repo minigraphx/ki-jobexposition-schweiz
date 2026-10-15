@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "711da9656544eb8dc22b8161fcb0429cd746f8992440db0c0e68c234d71645f3",
+    "isco_code": "2113",
+    "beruf": "Naturwissenschaftler/in (Biologie/Chemie)",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2333,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2333
+        }
+      ],
+      "prompt_token_count": 24787,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 24787
+        }
+      ],
+      "thoughts_token_count": 6945,
+      "total_token_count": 34065
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2333,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2333
+          }
+        ],
+        "prompt_token_count": 24787,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 24787
+          }
+        ],
+        "thoughts_token_count": 6945,
+        "total_token_count": 34065
+      }
+    ],
+    "request_ids": [
+      "XTzPapiiEJrVz7IP29KluQo"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-2113_naturwissenschaftler_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2113",
+    "beruf": "Naturwissenschaftler/in (Biologie/Chemie)",
+    "taetigkeiten": [
+      {
+        "name": "Fachliteratur, Patente und Stoffdatenbanken recherchieren und zusammenfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Recherche-Agenten und wissenschaftliche Datenbanken mit LLM-Funktionen erstellen strukturierte Literatur- und Patentübersichten in weniger als der halben Zeit; die Fachperson spezifiziert die Suchstrategie und verifiziert die Primärquellen."
+      },
+      {
+        "name": "Versuchsreihen, Rezepturen und analytische Methoden konzipieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Entwerfen neuer Synthesewege, biologischer Assays oder analytischer Trennmethoden erfordert tiefes Domänenwissen zu Stoffverhalten und Laborgeräten; generative KI liefert zwar Ideen, spart aber bei der fachlichen Konzeption keine 50 % der Zeit."
+      },
+      {
+        "name": "Versuchsprotokolle, Prüfvorschriften (SOPs) und Sicherheitsdokumentationen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus Versuchsparametern und Vorlagen vollständige Arbeitsvorschriften und Sicherheitsanweisungen; die Wissenschaftlerin prüft jeden Arbeitsschritt, jede Konzentration und alle Gefahrenhinweise fachlich vor der Freigabe."
+      },
+      {
+        "name": "Proben präparieren und chemische oder biologische Experimente im Labor durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Tätigkeit an der Laborbank (Synthesen ansetzen, Zellkulturen pflegen, spezielle Proben aufarbeiten); während Routinetests oft durch Laboranten oder Pipettierroboter abgedeckt sind, lassen sich die explorativen Versuche von Wissenschaftlern nicht zu 50 % automatisieren."
+      },
+      {
+        "name": "Instrumentelle Analysen (z. B. Chromatografie, Spektroskopie) an Messgeräten durchführen und Geräte kalibrieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Einrichten, Kalibrieren und Überwachen von Analysegeräten wie HPLC, GC-MS oder NMR vor Ort im Labor."
+      },
+      {
+        "name": "Mess- und Versuchsdaten statistisch auswerten, modellieren und visualisieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Datenanalyse- und Coding-Agenten (z. B. mit Python/R-Ausführung) übernehmen die Datenaufbereitung, statistische Modellierung und Grafikerstellung; der Naturwissenschaftler gibt die Methodik vor und prüft jede Auswertung auf wissenschaftliche Plausibilität."
+      },
+      {
+        "name": "Analyseergebnisse im elektronischen Laborjournal (ELN/LIMS) dokumentieren und prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Funktionen in ELN/LIMS-Systemen strukturieren Rohdaten und Beobachtungen zu fertigen Einträgen, die einzeln fachlich geprüft und visiert werden. Daneben können klassische Schnittstellen zwischen Messgerät und LIMS (P1) den manuellen Datentransfer weitgehend übernehmen."
+      },
+      {
+        "name": "Technische Berichte, Validierungsdokumente und wissenschaftliche Publikationen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Auf Basis bereitgestellter Ergebnistabellen und Stichworte erstellt ein Chat-LLM den Textentwurf für Entwicklungs-, Validierungs- oder Zulassungsberichte; die Fachperson kontrolliert jede Zahl und Schlussfolgerung im Detail."
+      },
+      {
+        "name": "Laborergebnisse in Produktionsverfahren übertragen (Scale-up) und Prozesse im Betrieb begleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Übertragung von Rezepturen ins Technikum oder in die Produktionsanlage erfordert Präsenz an den Anlagen, interdisziplinäre Abstimmung und komplexe Fehlersuche vor Ort."
+      },
+      {
+        "name": "Laborpersonal fachlich anleiten, Laborsicherheit überwachen und Projekte im Team koordinieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führungs-, Betreuungs- und Aufsichtstätigkeit gegenüber Laborantinnen und Laboranten sowie persönliche Abstimmung in Projektgremien."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Akademisch ausgebildete Naturwissenschaftler/innen (Schwerpunkt Chemie/Biologie) in Forschung, Entwicklung, Analytik oder Qualitätssicherung der Schweizer Chemie-, Pharma- und Biotechindustrie. Da der Berufstitel Biologie und Chemie zusammenfasst und die Arbeitspraxis zwischen labornahen F&E-Rollen und stärker dokumentationsgetriebenen QA/Regulatory-Rollen variiert, sind die Zeitanteile ein repräsentativer Mittelwert. Grenzfall ist die Konzeption von Versuchsreihen und Methoden, bei der KI zwar Ideen liefert, die 50-%-Schwelle aufgrund der komplexen Machbarkeitsprüfung aber meist nicht erreicht wird.",
+    "zusammenfassung": {
+      "haupt_risiko": "Literatur- und Patentrecherchen, statistische Datenauswertungen sowie das Verfassen von Prüfvorschriften (SOPs), Laborjournal-Einträgen und technischen Berichten werden durch Recherche- und Datenanalyse-Agenten sowie Text-LLMs stark beschleunigt.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit entfällt auf kognitive Recherche-, Auswertungs- und Dokumentationsaufgaben, die durchwegs im delegierenden Modus exponiert sind, da jede KI-Ausgabe wissenschaftlich und methodisch verifiziert werden muss. Die praktische Labor- und Gerätearbeit, die Versuchsplanung, der Scale-up in die Produktion sowie die Anleitung von Laborpersonal bleiben nicht exponiert. In der Schweizer Chemie-, Pharma- und Biotechindustrie erfordern strenge regulatorische Vorgaben (GMP/GLP, Swissmedic, Datenintegrität) und der Schutz geistigen Eigentums zudem validierte Systeme und eine lückenlose menschliche Endkontrolle.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "65971f247f23eb23a6f54b4c899b564417b4bf33d65b6165da63dccc536be347",
+    "isco_code": "2144",
+    "beruf": "Maschinenbauingenieur/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:40:41+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 6,
+      "cache_creation_input_tokens": 20344,
+      "cache_read_input_tokens": 115174,
+      "output_tokens": 13508,
+      "api_aequivalent_usd": 0.4559708
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 11291,
+        "cache_read_input_tokens": 78523,
+        "output_tokens": 9500,
+        "output_tokens_details": {
+          "thinking_tokens": 1960
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 11291,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.2960486
+      },
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 9053,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4008,
+        "output_tokens_details": {
+          "thinking_tokens": 190
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 9053,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.15992220000000001
+      }
+    ],
+    "request_ids": [
+      "6239d617-f2ca-417f-97fc-0da17dc8db5f",
+      "3d7e0386-8019-4d5c-aa50-5c2cc20a7556"
+    ],
+    "versuche": 2,
+    "status": "ok",
+    "fehler": [
+      "Versuch 1: Zeitanteile summieren auf 105, nicht exakt 100"
+    ],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2144",
+    "beruf": "Maschinenbauingenieur/in",
+    "taetigkeiten": [
+      {
+        "name": "Anforderungen mit Kunden, Produktmanagement und Projektteam in Besprechungen klären",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung im Gespräch, Rückfragen und Aushandeln von Zielkonflikten; der Wert liegt im Austausch zwischen Menschen."
+      },
+      {
+        "name": "Pflichtenhefte, technische Spezifikationen und Konstruktionsvorgaben schriftlich ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Ingenieurin gibt Stichworte, Besprechungsnotizen und frühere Pflichtenhefte als Text ein, das LLM erstellt das strukturierte Dokument. Sie prüft jede Anforderung fachlich und ergänzt Zahlenwerte."
+      },
+      {
+        "name": "Lösungskonzepte entwickeln und Varianten technisch-wirtschaftlich bewerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Konzeptfindung beruht auf Erfahrung, räumlichem Denken und betriebsspezifischem Wissen. Das LLM kann Ideen und Bewertungsmatrizen liefern, spart aber weniger als 50 % der Zeit."
+      },
+      {
+        "name": "Bauteile und Baugruppen im 3D-CAD konstruieren und Konstruktionen anpassen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Generative KI in CAD-Systemen bietet heute nur Assistenzfunktionen und erstellt keine verlässlichen Baugruppen. Klassische Konfiguratoren und parametrische Konstruktion decken nur Variantenprodukte ab, nicht die typische Neu- und Anpassungskonstruktion."
+      },
+      {
+        "name": "Fertigungszeichnungen mit Toleranzen und Stücklisten aus dem CAD-Modell ableiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeichnungsableitung und die Stücklisten aus PDM/ERP sind bereits klassische Software. Die verbleibende Arbeit (fertigungsgerechte Bemassung, Tolerierung) ist mit LLM-Technik nicht zu ≥ 50 % zu leisten."
+      },
+      {
+        "name": "Auslegungsberechnungen und Festigkeitsnachweise (Wellen, Lager, Schraubverbindungen) durchführen und dokumentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Viele Nachweise laufen bereits in spezialisierter Berechnungssoftware (z. B. KISSsoft), wo LLM-Agenten kaum 50 % sparen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Ein LLM mit Code-Ausführung erstellt aus Lastannahmen und Geometrie den Rechengang nach Norm samt Dokumentation. Der Ingenieur prüft jeden Ansatz, jede Annahme und jedes Ergebnis."
+      },
+      {
+        "name": "FEM- und Strömungssimulationen aufsetzen, rechnen und auswerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Modellbildung, Vernetzung und Randbedingungen erfordern Expertise in der CAE-Software. LLM-Assistenten in CAE-Tools sparen heute keine 50 % der Zeit."
+      },
+      {
+        "name": "Prototypen begleiten, Versuche und Messungen an Maschinen durchführen und Störungen analysieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert physische Präsenz in Werkstatt und Prüfstand sowie den Umgang mit Präzisionsmessmitteln. Es gibt keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Technische Berichte, Betriebsanleitungen und Risikobeurteilungen nach Maschinenrichtlinie verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM entwirft Berichte, Anleitungstexte und Gefährdungslisten aus Stichworten, Vorlagen und Normauszügen. Die Ingenieurin prüft jedes Dokument fachlich und verantwortet es; Produkthaftung und CE-Konformität erfordern eine sorgfältige Prüfung."
+      },
+      {
+        "name": "Technikerteams koordinieren, Fertigung und Montage begleiten und sich mit Lieferanten abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führungs- und Abstimmungsarbeit vor Ort und im Gespräch; der Wert liegt in Präsenz und Beziehung."
+      },
+      {
+        "name": "Konstruktionen in Design Reviews prüfen und zur Fertigung freigeben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Für die Prüfung von 3D-Modellen und Zeichnungen auf Funktion, Fertigbarkeit und Kosten fehlt eine verlässliche KI-Vorprüfung. Die Freigabe bleibt ein Ermessensentscheid im Team."
+      },
+      {
+        "name": "Normen, Kaufteile und Stand der Technik recherchieren und zusammenfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche durchsuchen Herstellerkataloge, Fachliteratur und Patente und fassen sie zusammen. Der Ingenieur wählt aus, verifiziert die Quellen und zieht die Schlüsse selbst."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Maschinenbauingenieur/in FH/ETH in der Entwicklung bzw. Konstruktion eines Schweizer Maschinen- oder Anlagenbau-KMU. Die solar- und HLK-spezifischen ESCO-Kompetenzen wurden nicht als eigene Tätigkeiten übernommen, weil sie nur für einen Teil des Berufs gelten. Der grösste Grenzfall sind die Auslegungsberechnungen, die nahe an der 50 %-Schwelle liegen und teils schon in klassischer Berechnungssoftware laufen. CAD-Konstruktion und Simulation sind nach heutigem Stand nicht exponiert.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Pflichtenhefte, technische Dokumentation und Risikobeurteilungen sowie Rechengänge und Recherchen: Diese erstellt bzw. unterstützt ein Chat-LLM oder ein Agent mit Code-Ausführung und Websuche, während Konstruktion, Simulation, Versuche und Koordination nicht exponiert sind.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI entwirft Dokumente und Berechnungen, die Ingenieurin prüft jedes Ergebnis fachlich; die Recherche bleibt unterstützend. Bremsend wirken in der Schweiz vor allem Produkthaftung und CE-Konformität (regulatorisch) sowie Geheimhaltungs- und Cloud-Vorbehalte in exportorientierten KMU.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

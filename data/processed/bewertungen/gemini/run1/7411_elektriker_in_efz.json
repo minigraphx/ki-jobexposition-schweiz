@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "059a1530b48d11796366dc6f2054e8354536e9d51119e4ed8c930887fded79a4",
+    "isco_code": "7411",
+    "beruf": "Elektriker/in EFZ",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T21:50:05+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 65536,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 3471,
+      "prompt_token_count": 55596,
+      "thoughts_token_count": 6962,
+      "total_token_count": 66029
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1742,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1742
+          }
+        ],
+        "prompt_token_count": 23621,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 23621
+          }
+        ],
+        "thoughts_token_count": 6513,
+        "total_token_count": 31876
+      },
+      {
+        "candidates_token_count": 1729,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1729
+          }
+        ],
+        "prompt_token_count": 31975,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 31975
+          }
+        ],
+        "thoughts_token_count": 449,
+        "total_token_count": 34153
+      }
+    ],
+    "request_ids": [
+      "KKfOasbDLI--vdIPtLnL-Qo",
+      "eafOauKwNpy8xN8P1e2RkAw"
+    ],
+    "versuche": 2,
+    "status": "ok",
+    "fehler": [
+      "Versuch 1: taetigkeiten/0/name: 'Rohinstallationen ausführen (Schlitze erstellen, Leerrohre und Kabeltrassen montieren, Einlegearbeiten im Betonbau durchführen, Bauprofile anbringen und Wandschlitze fräsen) – nein, kürzer formulieren' is too long"
+    ],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "7411",
+    "beruf": "Elektriker/in EFZ",
+    "taetigkeiten": [
+      {
+        "name": "Rohinstallationen ausführen (Schlitze erstellen, Leerrohre und Kabeltrassen montieren, Einlegearbeiten im Betonbau durchführen, Dosen setzen) - nein, kurz",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Montage- und Bauarbeit vor Ort auf der Baustelle; es existiert keine kommerziell verfügbare Robotik für Elektro-Rohinstallationen im regulären Baubetrieb."
+      },
+      {
+        "name": "Kabel und Leitungen einziehen, spleissen sowie in Abzweigdosen und Verteilern verdrahten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Feinmotorik- und Montagearbeit direkt im Gebäude, die weder durch generative KI noch durch bestehende Automatisierungstechnik übernommen werden kann."
+      },
+      {
+        "name": "Elektrische Schalter, Steckdosen, Leuchten, Geräte und Sicherungskästen montieren und anschliessen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Endmontage und Verdrahtung vor Ort mit Hand- und Präzisionswerkzeugen; keine relevante Exposition gegenüber KI oder Robotik."
+      },
+      {
+        "name": "Installations- und Schaltpläne lesen, Masse am Bauwerk übertragen und Leitungsführungen einmessen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Zeitaufwand liegt primär im physischen Abgleichen der Pläne mit den Gegebenheiten auf der Baustelle und dem Einmessen vor Ort."
+      },
+      {
+        "name": "Baubegleitende Erstprüfungen und Sicherheitsmessungen mit Messinstrumenten an der Anlage durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Durchführen von Isolations-, Kurzschluss- und Schutzorganmessungen erfordert die physische Bedienung von Prüfgeräten direkt an den Stromkreisen und Steckdosen vor Ort."
+      },
+      {
+        "name": "Störungen und Fehlfunktionen an bestehenden Elektroinstallationen und Geräten vor Ort lokalisieren und beheben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Obwohl ein LLM bei der Recherche in Gerätehandbüchern unterstützen kann, dominieren beim Serviceeinsatz das physische Ausmessen von Stromkreisen, das Öffnen von Klemmstellen und der Komponententausch vor Ort, sodass die 50-%-Schwelle nicht erreicht wird."
+      },
+      {
+        "name": "Materialbedarf auf der Baustelle ermitteln, Elektromaterial nachbestellen und Lieferungen prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Umfasst die physische Warenkontrolle und Bestandsaufnahme auf der Baustelle sowie die Nachbestellung im Grosshandels-Webshop (oft per Barcode-Scan); generative KI spart bei diesem Ablauf keine 50 % der Gesamtzeit."
+      },
+      {
+        "name": "Mess- und Abnahmeprotokolle gemäss NIN/NIV erstellen und Revisionsangaben dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Über Spracheingabe, Fotos und gekoppelte Messgeräte-Apps erstellt KI-gestützte Fachsoftware das Mess- und Prüfprotokoll; der Elektriker prüft jedes Protokoll fachlich und unterschreibt es persönlich."
+      },
+      {
+        "name": "Regie- und Arbeitsrapporte mit Arbeitsbeschrieb, verwendetem Material und Stunden erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Per Spracheingabe in eine mobile Branchen-App generiert die KI aus Stichworten den vollständigen Regierapport; der Monteur prüft und korrigiert jeden Rapport vor der Visierung durch Bauleitung oder Kundschaft."
+      },
+      {
+        "name": "Absprachen mit Bauleitung, anderen Gewerken und Kundschaft vor Ort führen sowie Lernende anleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare zwischenmenschliche Präsenz- und Koordinationstätigkeit auf der Baustelle bzw. bei der Kundschaft vor Ort."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Elektroinstallateur/in EFZ bzw. Montage-Elektriker/in EFZ (im Input als Elektriker/in EFZ geführt) in einem typischen Schweizer Elektroinstallations-KMU mit Neubau-, Umbau- und Servicearbeiten. Die ESCO-Daten decken die handwerklichen und prüftechnischen Kerntätigkeiten gut ab. Die KI-Exposition beschränkt sich auf das Erstellen von Rapporten und Prüfprotokollen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind ausschliesslich die administrativen Dokumentationsarbeiten wie das Erstellen von Mess- und Abnahmeprotokollen sowie von Regie- und Arbeitsrapporten mittels KI-gestützter Sprach- und Formular-Apps, während die handwerkliche Installationsarbeit vor Ort unberührt bleibt.",
+      "begruendung": "Lediglich 10 % der Arbeitszeit entfallen auf exponierte Dokumentationsaufgaben, bei denen die KI im delegierenden Modus Entwürfe aus Spracheingaben, Fotos und Messdaten erstellt und die Fachperson jedes Dokument vor der Freigabe inhaltlich prüft. Die übrigen 90 % der Arbeit erfordern physische Präsenz und handwerkliches Geschick auf Schweizer Baustellen oder bei Serviceeinsätzen. Zudem verlangen die regulatorischen Vorgaben der Niederspannungs-Installationsverordnung (NIV) eine persönliche Prüfung und Unterschrift bei Sicherheitsnachweisen, während Dialekt und Baustellenlärm den Korrekturaufwand bei der Spracheingabe erhöhen.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "4459663200c88569919491b3a2fb1e37d3f11ae73b0a03bdd3e0d1e0adc7f122",
+    "isco_code": "2431",
+    "beruf": "Fachkräfte in Marketing und Werbung",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-13T22:43:25+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 40217,
+      "output_tokens": 5085,
+      "api_aequivalent_usd": 0.1097514
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 40217,
+        "output_tokens": 5085,
+        "output_tokens_details": {
+          "thinking_tokens": 1734
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1097514
+      }
+    ],
+    "request_ids": [
+      "5faa0a26-1bca-4450-bc89-3d1af547026d"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2431",
+    "beruf": "Fachkräfte in Marketing und Werbung",
+    "taetigkeiten": [
+      {
+        "name": "Markt-, Wettbewerbs- und Zielgruppenanalysen recherchieren und in Berichten aufbereiten (Desk Research)",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent mit Websuche stellt Markt-, Wettbewerbs- und Nischenanalysen samt Quellen zusammen und erstellt den Bericht. Die Fachperson spezifiziert die Fragestellung, prüft Fakten und Quellen jedes Berichts (Halluzinationsrisiko) und ergänzt CH-spezifisches Marktwissen."
+      },
+      {
+        "name": "Marketingkonzepte, Positionierungs- und Strategiepapiere schriftlich ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft aus Briefing, Analyseergebnissen und Marketingmodellen (z. B. SWOT, 4P) das Konzeptdokument. Die Marketerin gibt die strategischen Eckpunkte vor, prüft jeden Entwurf fachlich und schärft ihn nach."
+      },
+      {
+        "name": "Strategische Stossrichtungen mit Geschäftsleitung und Kunden in Workshops erarbeiten und abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Moderation, Verhandlung und Abstimmung von Angesicht zu Angesicht sowie Ermessensentscheide zur Einbindung in die Unternehmensstrategie; KI spart hier keine 50 %."
+      },
+      {
+        "name": "Kundenbefragungen konzipieren, durchführen und auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft den Fragebogen, Datenanalyse-Werkzeuge mit Code-Ausführung werten Antworten aus und codieren Freitexte. Die Fachperson spezifiziert das Design, prüft Fragebogen, Auswertung und Interpretation jedes Ergebnisses; Online-Umfragetools übernehmen die Durchführung bereits, aber nicht Konzeption und Auswertung zu ≥ 50 %."
+      },
+      {
+        "name": "Marketing- und Kampagneninhalte erstellen (Website-, Newsletter-, Social-Media-Texte und Visuals)",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Texte wären E1, die zugehörigen Visuals und Varianten erst mit Bildgeneratoren bzw. KI-Funktionen in Design-/Social-Media-Tools; die KI erstellt Inhalte und Sprachversionen, die Fachperson wählt aus und prüft jeden Inhalt auf Markenton und Fakten."
+      },
+      {
+        "name": "Kampagnen planen, Budgets und Zeitpläne koordinieren, mit Agenturen und internen Stellen abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend Koordination, Besprechungen und Steuerung von Dienstleistern; KI hilft bei Briefings und Plänen punktuell, spart aber über die ganze Tätigkeit keine 50 %."
+      },
+      {
+        "name": "Kampagnen- und Web-Performance auswerten und Reportings erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in Analytics-/Reporting-Tools bzw. Datenanalyse-Agenten erstellen Auswertung und Kommentar; die Fachperson prüft Interpretation und Empfehlungen jedes Reports. P1: klassische Dashboards (z. B. Analytics, Looker Studio) automatisieren Datenzusammenzug und Standardreports."
+      },
+      {
+        "name": "Kundenberatungsgespräche führen und Bedürfnisse von Kunden ermitteln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung und Beziehungspflege, deren Wert im Gespräch liegt."
+      },
+      {
+        "name": "Anfragen von Kunden, Partnern und Medien per E-Mail beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Anfrage und Stichworte ins Chat-LLM einfügen, die KI formuliert die Antwort (auch in FR/EN); die Fachperson prüft jede Antwort inhaltlich, da sie oft Angebots- oder Projektinhalte betrifft."
+      },
+      {
+        "name": "Präsentationen und Projektdokumentation (Statusberichte, Protokolle) erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in Office-Suiten erzeugen Foliensätze und Statusberichte aus Dokumenten, Meeting-Tools erstellen Protokolle; die Fachperson steuert Aufbau und Aussagen und prüft jede Präsentation, Layout nach CI erfordert Nacharbeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Marketingfachperson mit Tertiärabschluss in einem Schweizer KMU bzw. einer Agentur, zuständig für Strategie, Analysen, Kampagnen und Content. Der ESCO-Input ist stark strategie- und beratungslastig; operative Content- und Reportingarbeit wurde aus Berufswissen und optionalen Kompetenzen ergänzt. Grösste Unsicherheiten sind die Zeitanteile und die Frage, ob Strategiekonzepte und Recherche die 50 %-Schwelle bei gleicher Qualität tatsächlich erreichen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Desk Research, die Konzeptausarbeitung, die Auswertung von Befragungen, die Erstellung von Content, Reportings, Präsentationen und E-Mail-Antworten, die von Recherche-Agenten, Chat-LLMs, Bildgeneratoren und KI-Funktionen in Analytics- und Office-Software übernommen werden.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind exponiert, durchwegs im delegierenden Modus: Die KI erstellt Analysen, Texte, Visuals und Berichte, die Fachperson spezifiziert, prüft jedes Ergebnis und verantwortet Strategie und Markenführung. Nicht exponiert bleiben Workshops, Kampagnenkoordination und persönliche Kundenberatung; wesentliche CH-Hemmnisse sind gering, Mehrsprachigkeit wird eher durch KI-Übersetzung erleichtert.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

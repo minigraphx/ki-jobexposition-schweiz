@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "d77fa8a995d72928b2d1f97297dffedade71cfe6ead64761ada12d6ac3ab1eab",
+    "isco_code": "4323",
+    "beruf": "Bürokräfte in der Transportwirtschaft und verwandte Berufe",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:19:11+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 39396,
+      "output_tokens": 5440,
+      "api_aequivalent_usd": 0.1166872
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 39396,
+        "output_tokens": 5440,
+        "output_tokens_details": {
+          "thinking_tokens": 1909
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1166872
+      }
+    ],
+    "request_ids": [
+      "495d4716-0642-42b1-94e6-23056370f541"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "4323",
+    "beruf": "Bürokräfte in der Transportwirtschaft und verwandte Berufe",
+    "taetigkeiten": [
+      {
+        "name": "Transportaufträge aus E-Mails, PDF-Bestellungen und Kundenportalen im Transportmanagementsystem (TMS) erfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumenten-Extraktion mit LLM liest freie Auftragsmails und PDFs aus und legt die Aufträge im TMS an; die Disponentin bearbeitet nur markierte Unklarheiten (fehlende Adressen, Zeitfenster). Klassische EDI deckt nur Grosskunden ab, der heterogene Rest braucht LLM-Verständnis → P0."
+      },
+      {
+        "name": "Mit Fahrern, Kunden und Subunternehmern telefonisch Einsätze, Verspätungen und Rückfragen abstimmen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurzfristige Echtzeit-Absprachen in Mundart, oft mit Fahrern in lauter Kabine, mit Verhandlungsanteil; Voicebots erreichen hier die Qualität nicht. Keine nicht-generative Technik ersetzt diese Kommunikation."
+      },
+      {
+        "name": "Touren planen sowie Fahrzeuge, Anhänger und Fahrer den Aufträgen zuteilen (Disposition)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Tourenoptimierung ist eine klassische Optimierungsaufgabe; LLMs sparen hier keine 50 %. Kommerzielle Tourenplanungs- und Dispositionssoftware (Routenoptimierung mit Restriktionen) kann den Grossteil des Planungsvorschlags übernehmen, wird in vielen KMU aber noch nicht voll genutzt."
+      },
+      {
+        "name": "Fahrzeuge und Sendungen per Telematik verfolgen und bei Störungen umdisponieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Tracking liefert Telematik bereits automatisch; die verbleibende Zeit ist situatives Störungsmanagement mit operativen Entscheiden unter Zeitdruck, das weder LLM noch klassische Software zu ≥ 50 % übernimmt."
+      },
+      {
+        "name": "Frachtbriefe (CMR), Lieferscheine und Begleitpapiere aus Auftragsdaten erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dokumente werden aus strukturierten Auftragsdaten per Vorlage generiert – klassische TMS-Funktion ohne LLM-Bedarf."
+      },
+      {
+        "name": "Kundenkorrespondenz per E-Mail verfassen: Offerten, Auftragsbestätigungen, Avisierungen und Verspätungsmeldungen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Chat-LLM erstellt Standardmails aus Stichworten und Auftragsdaten, auch auf Französisch/Italienisch; die Disponentin sichtet sie kurz und versendet. Preise und Konditionen bei Offerten erfordern etwas mehr Kontrolle."
+      },
+      {
+        "name": "Reklamationen und Transportschäden bearbeiten und Schadenfälle dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM fasst den Fall aus eingefügten Mails und Notizen zusammen und entwirft Schadenmeldung und Antwort; die Disponentin prüft jeden Fall inhaltlich (Haftung, Fakten). Abklärungen mit den Beteiligten bleiben bei ihr."
+      },
+      {
+        "name": "Fahrereinsatzpläne erstellen und Arbeits- und Ruhezeiten (ARV, Tachograph) kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Prüfung von Lenk- und Ruhezeiten mit Tachograph-Auslesesoftware sowie Personaleinsatzplanung sind klassische Software; kein LLM nötig."
+      },
+      {
+        "name": "Service-, MFK- und Wartungstermine der Fahrzeugflotte planen und mit Werkstätten koordinieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fristen- und Wartungsüberwachung erledigt Flottenmanagement-Software regelbasiert; die Terminabsprache ist kurz und meist telefonisch, LLM spart keine 50 %."
+      },
+      {
+        "name": "Lieferscheine, Fahrerrapporte und Subunternehmerrechnungen kontrollieren und für die Fakturierung aufbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Dokumentenerkennung liest gescannte, teils handschriftliche Rapporte und Rechnungen, gleicht sie mit den Aufträgen ab und markiert Abweichungen; die Person klärt nur die Ausnahmen."
+      },
+      {
+        "name": "Fahrer mündlich instruieren und Fahrerteam im Tagesbetrieb führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung und persönliche Instruktion sind Präsenz- und Beziehungstätigkeiten."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Disponent/in bzw. Transportsachbearbeiter/in in einem Schweizer Strassentransport-/Logistik-KMU. ESCO (Frachtdisponent) passt gut, schiffsbezogene Kompetenzen wurden als ESCO-Rauschen nicht übernommen. Die Zeitanteile sind grob geschätzt; Grenzfälle sind die Auftragserfassung (Anteil, den EDI schon abdeckt) und die Frage, wie weit klassische Tourenplanungssoftware die Disposition heute übernimmt (P1).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Erfassung von Aufträgen aus E-Mails und PDFs, die Standardkorrespondenz mit Kunden, die Kontrolle von Rapporten und Rechnungen sowie die Bearbeitung von Schadenfällen, und zwar durch LLM-Dokumentenerkennung und Chat-LLMs.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert, meist ersetzend: Die KI erfasst Aufträge, entwirft Mails und gleicht Belege ab, die Disponentin bearbeitet nur die Ausnahmen; Schadenfälle werden delegiert und im Einzelfall geprüft. Den Kern des Berufs bilden aber die Disposition und die laufende telefonische Abstimmung in Mundart, die nicht exponiert sind; wesentliche CH-Hemmnisse fehlen weitgehend. Der Engpass ist die Integration ins TMS in kleinen Transportbetrieben.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

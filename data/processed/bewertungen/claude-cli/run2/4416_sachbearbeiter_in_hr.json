@@ -1,0 +1,247 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "24f9bca0e7effbd91ad85534b1d1ccc41f383dbf9296ba7450019180fd21a273",
+    "isco_code": "4416",
+    "beruf": "Sachbearbeiter/in HR",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:52:29+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2999,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 7604,
+      "api_aequivalent_usd": 0.18341020000000002
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2999,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 7604,
+        "output_tokens_details": {
+          "thinking_tokens": 3496
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2999,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.18341020000000002
+      }
+    ],
+    "request_ids": [
+      "c9f274f3-914a-4999-bb4a-6f127773074f"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "4416",
+    "beruf": "Sachbearbeiter/in HR",
+    "taetigkeiten": [
+      {
+        "name": "Personalstammdaten und Mutationen (Ein-/Austritte, Pensum, Adressen) aus Formularen und E-Mails im HR-System erfassen und Personaldossiers führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung im HR-System liest Mutationen aus Formularen und E-Mails aus und schlägt die Erfassung vor; weil die Daten lohnrelevant sind, prüft die Sachbearbeiterin jede Mutation. P1: Employee-/Manager-Self-Service-Portale mit Workflows (klassische HR-Software) übernehmen einen Grossteil der Erfassung."
+      },
+      {
+        "name": "Lohndaten vorbereiten, Lohnlauf durchführen und Lohnabrechnungen kontrollieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Lohnlauf und die Abweichungskontrollen laufen in klassischer, Swissdec-zertifizierter Lohnsoftware; generative KI spart hier nichts Wesentliches."
+      },
+      {
+        "name": "Meldungen an Sozialversicherungen (AHV, BVG, UVG/KTG, Quellensteuer) erstellen und Absenzen bewirtschaften",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Meldungen sind überwiegend strukturierte Daten und gehen per ELM/Swissdec bzw. Sunet über klassische Software; für Abklärungen in Einzelfällen bleibt kein LLM-Hebel von 50 %."
+      },
+      {
+        "name": "Arbeitsverträge, Vertragsnachträge und Arbeitsbestätigungen aus Vorlagen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus eingefügten Eckdaten und der Vorlage erstellt das LLM Vertrag oder Nachtrag samt Sonderklauseln; wegen der rechtlichen Verbindlichkeit prüft die Sachbearbeiterin jedes Dokument. P1: Vorlagen- und Serienbrieffunktionen der HR-Software."
+      },
+      {
+        "name": "Arbeitszeugnisse und Zwischenzeugnisse aus Beurteilungen der Vorgesetzten entwerfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM formuliert das Zeugnis aus Stichworten und dem Beurteilungsbogen in der üblichen Schweizer Zeugnissprache; die Sachbearbeiterin prüft Wortlaut und Codierung, stimmt mit der vorgesetzten Person ab und verantwortet das Zeugnis (Wahrheits- und Wohlwollenspflicht)."
+      },
+      {
+        "name": "Stelleninserate und Stellenbeschreibungen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt das Inserat aus Anforderungsprofil und Stichworten, auf Wunsch auch auf Französisch; die Sachbearbeiterin prüft und stimmt mit der Linie ab."
+      },
+      {
+        "name": "Eingehende Bewerbungsdossiers sichten, mit dem Anforderungsprofil abgleichen und vorselektionieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Die KI-Funktion im Bewerbermanagement-System extrahiert Angaben aus CV-PDFs, fasst sie zusammen und markiert die Passung; die Vorauswahl trifft die Sachbearbeiterin selbst für jedes Dossier. Hemmnis: revDSG zu automatisierten Entscheiden und Diskriminierungsrisiko."
+      },
+      {
+        "name": "Bewerberkorrespondenz (Eingangsbestätigungen, Absagen, Einladungen) versenden und Interviewtermine koordinieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM im Bewerbermanagement-System erstellt die Standardschreiben aus den Falldaten, die Sachbearbeiterin gibt sie per Klick frei und bearbeitet nur Spezialfälle. P1: Vorlagen-Massenmails und Self-Scheduling-Tools der Rekrutierungssoftware."
+      },
+      {
+        "name": "An Vorstellungsgesprächen teilnehmen und Kandidierende beurteilen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Gespräch und Einschätzung der Person zählen zur zwischenmenschlichen Präsenz."
+      },
+      {
+        "name": "Anfragen von Mitarbeitenden und Vorgesetzten zu Reglementen, Ferien, Lohn und Sozialversicherungen per E-Mail und Telefon beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Ein erheblicher Teil der Anfragen läuft per Telefon oder betrifft persönliche, heikle Situationen; E0 ist fast ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen",
+          "regulatorisch"
+        ],
+        "begruendung": "Ein HR-Assistent mit Zugriff auf Reglemente und Personaldaten entwirft die Antworten auf E-Mail-Anfragen; die Sachbearbeiterin prüft jede Antwort und führt heikle Gespräche selbst."
+      },
+      {
+        "name": "Ein- und Austritte organisieren (Onboarding-Programm, Arbeitsplatz, Austrittsgespräche)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Im Vordergrund stehen Abstimmung mit Linie und IT sowie persönliche Gespräche; Checklisten-Workflows sparen keine 50 %."
+      },
+      {
+        "name": "HR-Auswertungen (Absenzen, Fluktuation, Mitarbeitendenumfragen) erstellen und Berichte für die Personalleitung verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Datenanalyse-Agent mit Code-Ausführung wertet die Exporte und Freitext-Antworten aus und entwirft den Bericht; die Sachbearbeiterin prüft Zahlen und Aussagen."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: HR-Sachbearbeiter/in (HR-Fachfrau/-mann) in der Personalabteilung eines mittelgrossen Unternehmens oder einer Verwaltung, mit Lohnadministration, Rekrutierungsadministration und Personaladministration. Der ESCO-Input passt gut; die Lohn- und Sozialversicherungsadministration ergänzt aus Schweizer Berufswissen. Grösste Unsicherheiten: die Mitarbeiteranfragen (Telefon und persönliche Gespräche) und die Abgrenzung zu klassischer HR-Software (Self-Service, Vorlagen).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Verträge, Arbeitszeugnisse, Stelleninserate, Bewerberkorrespondenz, Dossier-Vorselektion, Mutationserfassung, Antworten auf HR-Anfragen und Auswertungen – durch Chat-LLMs, KI-Funktionen in Bewerbermanagement- und HR-Systemen sowie Datenanalyse-Agenten.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind exponiert. Meist arbeitet die KI delegierend: Sie entwirft Zeugnisse, Verträge, Antworten und Berichte, und die Sachbearbeiterin prüft jedes Ergebnis. Ersetzend ist sie bei der Standardkorrespondenz mit Bewerbenden, unterstützend bei der Vorselektion. Gebremst wird die Umsetzung in der Schweiz vor allem durch revDSG und Vertraulichkeit von Personaldaten, rechtlich heikle Zeugnis- und Vertragsformulierungen und das Bedürfnis der Mitarbeitenden nach einem persönlichen Gegenüber; Lohnlauf und Sozialversicherungsmeldungen sind schon heute klassisch automatisiert.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

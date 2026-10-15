@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "3bd50f52c2def1a68341c680b4907efbee745f2fa41b05705318e4390175b51d",
+    "isco_code": "9111",
+    "beruf": "Reinigungspersonal und Hilfskräfte in Privathaushalten",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 1938,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 1938
+        }
+      ],
+      "prompt_token_count": 21914,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21914
+        }
+      ],
+      "thoughts_token_count": 4849,
+      "total_token_count": 28701
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1938,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1938
+          }
+        ],
+        "prompt_token_count": 21914,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21914
+          }
+        ],
+        "thoughts_token_count": 4849,
+        "total_token_count": 28701
+      }
+    ],
+    "request_ids": [
+      "XTzPaozfH_Gfz7IP68qu-AE"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-9111_reinigungspersonal_und_hilfskraefte_in_p",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "9111",
+    "beruf": "Reinigungspersonal und Hilfskräfte in Privathaushalten",
+    "taetigkeiten": [
+      {
+        "name": "Böden und Teppiche in Wohnräumen staubsaugen und feucht wischen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Tätigkeit vor Ort; handelsübliche Saug- und Wischroboter unterstützen zwar auf freien Flächen, erreichen aber in möblierten Wohnungen mit Ecken, Sockelleisten, Teppichen und Treppen keine 50 % Zeitersparnis bei gleicher Reinigungsqualität."
+      },
+      {
+        "name": "Badezimmer und Toilettenanlagen reinigen, entkalken und desinfizieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Reinigungs- und Hygienearbeit an Sanitäranlagen, Armaturen und Fliesen; weder generative KI noch heute verfügbare Robotik können diese Arbeit übernehmen."
+      },
+      {
+        "name": "Küche, Arbeitsflächen und Küchengeräte reinigen sowie Geschirr spülen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Reinigung von Kochfeld, Backofen, Kühlschrank und Oberflächen sowie Ein-/Ausräumen des Geschirrspülers und Handspülen empfindlicher Teile; Geschirrspülmaschinen sind in Schweizer Haushalten bereits Standard."
+      },
+      {
+        "name": "Möbel und Einrichtungsgegenstände abstauben sowie Oberflächen pflegen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Abstauben, Polieren und Pflegen verschiedenartiger Oberflächen in individuell eingerichteten Wohnräumen erfordert feinmotorische Handarbeit vor Ort."
+      },
+      {
+        "name": "Haushaltswäsche sortieren, waschen, aufhängen und zusammenlegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Waschmaschine und Tumbler sind bereits Standard; die menschliche Arbeitszeit liegt im Sortieren, Vorbehandeln von Flecken, Aufhängen und Falten, wofür keine kommerzielle Haushaltsrobotik verfügbar ist."
+      },
+      {
+        "name": "Kleidung und Haushaltstextilien bügeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Tätigkeit am Bügelbrett; verfügbare Bügelpuppen für Privathaushalte eignen sich nur für einzelne Kleidungsstücke und sparen über die gesamte Bügelwäsche keine 50 % der Zeit."
+      },
+      {
+        "name": "Fenster, Spiegel und andere Glasflächen reinigen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit inklusive Reinigung von Fensterrahmen und Falzen; Fensterputzroboter für den Heimgebrauch müssen pro Scheibe manuell umgesetzt werden und erreichen keine 50 % Zeitersparnis."
+      },
+      {
+        "name": "Betten frisch beziehen und Wohnräume aufräumen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Feinmotorische, körperliche Arbeit im Schlaf- und Wohnbereich, die weder durch KI noch durch Haushaltsrobotik automatisierbar ist."
+      },
+      {
+        "name": "Abfälle entsorgen, Reinigungsmittelbestand kontrollieren, Geräte pflegen und kurze Kundenabsprachen treffen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Routinen (Abfalltrennung, Reinigung von Lappen und Filtern, Sichtkontrolle der Vorräte) mit minimalem Kommunikations- oder Stundenrapport-Anteil, bei dem ein LLM keine 50 % der Gesamtzeit spart."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Reinigungskraft in Schweizer Privathaushalten (direkt angestellt nach NAV Hauswirtschaft oder über eine Reinigungsagentur/Plattform tätig). Die ESCO-Kompetenzen bilden das Berufsbild sehr gut ab. Klassische Haushaltsgeräte (Waschmaschine, Geschirrspüler) sind in Schweizer Haushalten bereits Standard und daher im heutigen Arbeitsablauf vorausgesetzt; Saug- und Wischroboter übernehmen in möblierten Wohnungen vor allem Zwischenreinigungen, ersetzen aber nicht die gründliche Arbeit der Reinigungskraft.",
+    "zusammenfassung": {
+      "haupt_risiko": "In diesem Beruf sind keine wesentlichen Tätigkeiten gegenüber generativer KI exponiert, da die Arbeit fast ausschliesslich aus manuellen Reinigungs- und Haushaltstätigkeiten vor Ort besteht.",
+      "begruendung": "Sämtliche Kerntätigkeiten vom Staubsaugen, Wischen und der Sanitär- und Küchenreinigung bis zur Wäschepflege sind physischer Natur, sodass 0 % der Arbeitszeit durch Sprachmodelle unterstützt, delegiert oder ersetzt werden können. Selbst kurze Absprachen mit der Kundschaft oder Stundenmeldungen per App machen nur wenige Minuten pro Woche aus und sind eng an Vor-Ort-Routinen wie Materialkontrolle und Gerätepflege gekoppelt.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

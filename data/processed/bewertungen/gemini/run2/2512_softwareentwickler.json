@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "2366bb40609eb87188a87c6c954923e5845e3a9c40c56c2563dbca9a43c2f6db",
+    "isco_code": "2512",
+    "beruf": "Softwareentwickler",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-13T22:14:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 65536,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 1826,
+      "prompt_token_count": 24048,
+      "thoughts_token_count": 6267,
+      "total_token_count": 32141
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1826,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1826
+          }
+        ],
+        "prompt_token_count": 24048,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 24048
+          }
+        ],
+        "thoughts_token_count": 6267,
+        "total_token_count": 32141
+      }
+    ],
+    "request_ids": [
+      "46zOav64Mr7dxs0P2MDIgQo"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2512",
+    "beruf": "Softwareentwickler",
+    "taetigkeiten": [
+      {
+        "name": "Neue Anwendungsfunktionen und Module in bestehender Codebasis implementieren",
+        "zeitanteil_pct": 25,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein in die Entwicklungsumgebung integrierter Coding-Agent erstellt Code und Anpassungen über mehrere Dateien hinweg; die Entwicklerin spezifiziert die Anforderungen, steuert den Agenten und prüft jede Änderung fachlich vor der Übernahme."
+      },
+      {
+        "name": "Softwarefehler (Bugs) in der Codebasis analysieren, eingrenzen und beheben",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erst ein Coding-Agent mit Zugriff auf das gesamte Repository, Fehlermeldungen und Testausführung spart mindestens 50 % der Zeit; der Entwickler steuert die Ursachenanalyse und verifiziert jeden Fix im Detail."
+      },
+      {
+        "name": "Programmierschnittstellen (APIs), Datenbankabfragen und Migrationsskripte programmieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Anhand eingefügter Schemata und Schnittstellenspezifikationen generiert ein Chat-LLM Abfragen, Datenmigrationen und API-Clients; die Fachperson prüft und testet jedes Skript gegen die Zieldatenbank. Beim Umgang mit produktiven Personendaten gelten Vorgaben des revDSG."
+      },
+      {
+        "name": "Automatisierte Tests (Unit-, Integrations- und End-to-End-Tests) erstellen und pflegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Coding-Agenten mit Test-Runner-Integration generieren Testfälle samt Mocks und führen sie direkt gegen die Codebasis aus; der Entwickler gibt die Teststrategie vor und kontrolliert die Assertions fachlich."
+      },
+      {
+        "name": "Code-Reviews (Pull Requests) von Teammitgliedern durchführen",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Entwicklerin führt das Code-Review weiterhin selbst durch und verantwortet die Freigabe; ein in die Git-Plattform integrierter Review-Bot fasst Änderungen zusammen und markiert potenzielle Logik- oder Sicherheitsprobleme."
+      },
+      {
+        "name": "Softwareprototypen (Proofs of Concept) und Benutzerschnittstellen-Entwürfe entwickeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Coding-Agenten und generative UI-Werkzeuge erzeugen aus Skizzen oder Textvorgaben lauffähige Prototypen; der Entwickler steuert die Iterationen und prüft die technische Machbarkeit."
+      },
+      {
+        "name": "Technische Anforderungen analysieren und Softwarespezifikationen, Flussdiagramme sowie Dokumentation verfassen",
+        "zeitanteil_pct": 7,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM entwirft aus Stichworten, Fachanforderungen oder Code-Auszügen strukturierte Spezifikationen und Diagramm-Code (z. B. Mermaid/PlantUML); die Fachperson prüft und überarbeitet jedes Dokument inhaltlich."
+      },
+      {
+        "name": "Softwarearchitektur entwerfen und komplexe technische Systementscheide treffen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Übergreifende Architekturentscheide und das Abwägen von Sicherheits-, Betriebs- und Legacy-Restriktionen erfordern menschliches Urteilsvermögen im Einzelfall; KI liefert zwar Denkanstösse, spart beim Entscheidungsprozess selbst aber keine 50 % der Zeit."
+      },
+      {
+        "name": "Kunden- und Fachbereichsanforderungen in Workshops erheben sowie im Team abstimmen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Klären von Kundenbedürfnissen, Einholen von Feedback und Abstimmen in agilen Meetings beruht auf direkter zwischenmenschlicher Kommunikation und Aushandlung."
+      },
+      {
+        "name": "Build-, Deployment- und CI/CD-Pipelines sowie Cloud-Konfigurationen erstellen und warten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Während die Ausführung von Builds und Deployments bereits durch klassische CI/CD-Software automatisiert ist, entwirft ein Chat-LLM die Pipeline- und Infrastruktur-Skripte (YAML, Docker, Terraform); der Entwickler prüft jede Konfiguration vor dem Einsatz."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Softwareentwickler/in (Applikationsentwicklung, FH/Uni oder EFZ mit Berufserfahrung) in einem Schweizer ICT-Unternehmen oder einer internen IT-Abteilung. ESCO-Rauschen («Bauprojekte leiten», «Software für technisches Zeichnen verwenden», «wissenschaftliche Forschung betreiben») wurde gemäss Datenlage-Hinweis ausgeschlossen. Die Trennung zwischen exponierter Spezifikations-/Implementierungsarbeit (E1/E2) und nicht exponierten Architekturentscheiden bzw. Stakeholder-Abstimmungen (E0) bildet die Praxis gut ab.",
+    "zusammenfassung": {
+      "haupt_risiko": "Die Implementierung von Funktionen, Schnittstellen, Migrationen, Prototypen und automatisierten Tests, die Fehlersuche sowie das Erstellen von Spezifikationen und CI/CD-Konfigurationen werden weitgehend durch Coding-Agenten, Review-Bots und Chat-LLMs übernommen oder stark beschleunigt.",
+      "begruendung": "Rund 85 % der Arbeitszeit sind exponiert, wobei die KI überwiegend delegierend arbeitet (sie erstellt Code, Tests, Skripte und Konzeptentwürfe, während die Entwicklerinnen und Entwickler spezifizieren, steuern und jede Ausgabe fachlich prüfen) und bei Code-Reviews unterstützend wirkt. Nicht exponiert bleiben komplexe Architekturentscheide sowie die persönliche Anforderungserhebung und Abstimmung mit Kundschaft und Team. In der Schweiz bremsen regulatorische Vorgaben (revDSG, Bankkunden- und Amtsgeheimnis) den Einsatz von Cloud-KI bei produktiven Daten teilweise, dennoch verläuft die Adoption in der ICT-Branche sehr schnell.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

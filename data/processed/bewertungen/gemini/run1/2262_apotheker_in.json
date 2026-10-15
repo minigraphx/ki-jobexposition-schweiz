@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "b64ab281dc758cd8213d2601f05cd55cd22a971afdd87133efd4d0d8fb540265",
+    "isco_code": "2262",
+    "beruf": "Apotheker/in",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2327,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2327
+        }
+      ],
+      "prompt_token_count": 25578,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 25578
+        }
+      ],
+      "thoughts_token_count": 8932,
+      "total_token_count": 36837
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2327,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2327
+          }
+        ],
+        "prompt_token_count": 25578,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 25578
+          }
+        ],
+        "thoughts_token_count": 8932,
+        "total_token_count": 36837
+      }
+    ],
+    "request_ids": [
+      "XTzPauL9Cf7oz7IP17yB4Qw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-2262_apotheker_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2262",
+    "beruf": "Apotheker/in",
+    "taetigkeiten": [
+      {
+        "name": "Kundinnen und Kunden zu Symptomen, Selbstmedikation und Gesundheitsthemen beraten sowie Triage durchführen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Beratungs- und Abklärungsgespräch von Angesicht zu Angesicht am Schalter oder im Beratungsraum; unmittelbare zwischenmenschliche Präsenz und klinische Beobachtung am Kunden sind zentral."
+      },
+      {
+        "name": "Ärztliche Rezepte auf Dosierung, Interaktionen und Plausibilität prüfen sowie für die Abgabe visieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Interaktions- und Dosierungschecks erfolgen bereits über klassische Apothekensoftware; die verbleibende Arbeit (physischer Abgleich der Packungen mit Rezept und Patientendossier, klinische Plausibilisierung und gesetzlich vorgeschriebenes Visum) lässt sich durch generative KI nicht um mindestens 50 % verkürzen."
+      },
+      {
+        "name": "Rezeptpflichtige Medikamente abgeben und Patientinnen sowie Patienten über Anwendung und Nebenwirkungen instruieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Medikamentenabgabe kombiniert mit persönlicher Instruktion und Rückversicherung zur Förderung der Therapietreue vor Ort."
+      },
+      {
+        "name": "Klinische Dienstleistungen am Patienten durchführen (Impfungen, Blutdruck- und Blutzuckermessung, Abstriche, Wundversorgung)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische und unmittelbare Präsenzarbeit direkt am Körper der Patientinnen und Patienten im Sprechzimmer."
+      },
+      {
+        "name": "Patientendossiers, Beratungsprotokolle (z. B. netCare, Polymedikations-Checks) und Pharmakovigilanz-Meldungen dokumentieren",
+        "zeitanteil_pct": 8,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracherkennung bzw. ambiente Dokumentation mit Integration in die Apotheken- oder Plattformsoftware erstellt aus dem Gespräch oder Diktat strukturierte Protokolle; die Apothekerin prüft und verantwortet jeden Eintrag fachlich."
+      },
+      {
+        "name": "Komplexe Arzneimittelfragen, Interaktionen und Alternativpräparate bei Lieferengpässen recherchieren und beantworten",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein KI-Recherchewerkzeug mit Zugriff auf aktuelle Fachinformationen (Compendium/Swissmedic) und Lieferengpass-Datenbanken liefert Zusammenfassungen und Substitutionsvorschläge; der Apotheker beurteilt den klinischen Einzelfall selbst und kommuniziert die Empfehlung an Ärztinnen oder Pflegeheime."
+      },
+      {
+        "name": "Magistralrezepturen und individuelle Arzneimittelzubereitungen im Labor herstellen, prüfen und abfüllen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Laborarbeit (Einwiegen, Mischen von Salben, Kapseln oder Lösungen sowie Qualitätskontrolle) in der Offizin."
+      },
+      {
+        "name": "Arzneimittellager, Nachbestellungen, Verfalldaten und Betäubungsmittelbestand kontrollieren und bewirtschaften",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Keine Aufgabe für generative KI, aber kommerziell verfügbare Kommissionierroboter (z. B. BD Rowa) in Verbindung mit automatischen Bestellsystemen übernehmen Einlagerung, Bestandsführung und Verfalldatenkontrolle zu über 50 %."
+      },
+      {
+        "name": "Kostengutsprachen, Rückweisungen von Krankenversicherern sowie Korrespondenz mit Ärztinnen und Behörden bearbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus Fallstichworten und Limitatio-Vorgaben Begründungsschreiben für Kostengutsprachen oder Antworten auf Rückweisungen; die Apothekerin prüft jedes Schreiben inhaltlich auf medizinische und tarifliche Korrektheit."
+      },
+      {
+        "name": "Pharma-Assistentinnen und Lernende im Tagesbetrieb fachlich anleiten, beaufsichtigen und das Team führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führungs-, Ausbildungs- und gesetzlich vorgeschriebene Aufsichtstätigkeit vor Ort in der Offizin."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Offizinapotheker/in in einer öffentlichen Schweizer Apotheke (häufigstes Tätigkeitsfeld; Spital- und Industrieapotheker/innen weichen im Aufgabenprofil ab). Standard-Krankenkassenabrechnungen und einfache Interaktionswarnungen laufen bereits regelbasiert über die klassische Apothekensoftware; die Rezeptvalidierung bleibt wegen der physischen Vier-Augen-Kontrolle und der persönlichen Visumspflicht nach HMG/MedBG bei E0.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem die Dokumentation von Beratungsprotokollen und Patientendossiers (mittels Spracheingabe/Fachsystem-KI), die Recherche komplexer Arzneimittel- und Substitutionsfragen (KI-Recherchewerkzeuge) sowie die Korrespondenz mit Versicherern und Ärztinnen (Chat-LLM).",
+      "begruendung": "Rund ein Fünftel der Arbeitszeit ist gegenüber generativer KI exponiert, ausschliesslich im delegierenden und unterstützenden Modus, da jede klinische Dokumentation, Auskunft und Korrespondenz pharmazeutisch geprüft und verantwortet werden muss. Der Kern des Berufs in der Schweizer Offizinapotheke besteht aus persönlicher Beratung, klinischen Dienstleistungen am Patienten, physischer Rezeptkontrolle mit gesetzlicher Visumspflicht sowie Teamaufsicht. Strenge Vorgaben aus Heilmittel- und Medizinalberufegesetz, das Berufsgeheimnis sowie der Datenschutz bei Gesundheitsdaten (revDSG) bremsen zudem den Einsatz externer KI-Dienste.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

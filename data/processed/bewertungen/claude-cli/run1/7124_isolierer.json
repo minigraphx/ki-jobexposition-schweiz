@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "2b2e7e1f92e84a504674640a3a6b7aad57ca5ead0b9cfdd88cc977f42d510865",
+    "isco_code": "7124",
+    "beruf": "Isolierer",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:04:03+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3321,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 3610,
+      "api_aequivalent_usd": 0.10610619999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3321,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3610,
+        "output_tokens_details": {
+          "thinking_tokens": 795
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3321,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.10610619999999998
+      }
+    ],
+    "request_ids": [
+      "ef4af6e0-a55e-45b1-9463-abba27d9e0ed"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "7124",
+    "beruf": "Isolierer",
+    "taetigkeiten": [
+      {
+        "name": "Dämmstoffe (Platten, Rohrschalen, Matten) aufmessen, zuschneiden und anpassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Arbeit vor Ort mit Messer, Säge und Schablonen; Zuschnittautomaten gibt es nur für Serienteile in der Werkstatt, nicht für die überwiegende Anpassarbeit auf der Baustelle."
+      },
+      {
+        "name": "Dämmstoffe an Rohrleitungen, Lüftungskanälen, Wänden, Decken und Böden kleben, stecken und befestigen",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Montagearbeit in oft engen Platzverhältnissen; keine Robotik in relevantem Umfang verfügbar."
+      },
+      {
+        "name": "Blech- und Folienummantelungen, Dampfbremsen und Schutzmembranen anbringen und abdichten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montage und Abdichtung vor Ort; maschinelle Blechbearbeitung in der Werkstatt deckt nur einen kleinen Teil der Zeit ab."
+      },
+      {
+        "name": "Brandschutzabschottungen und Schallschutzmassnahmen an Durchführungen erstellen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Ausführung nach Systemvorgaben direkt am Bauteil."
+      },
+      {
+        "name": "Pläne lesen, Masse vor Ort aufnehmen und Dämmverlauf anreissen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit liegt im Messen und Übertragen an der Anlage; Planverständnis mit KI spart hier keine 50 %."
+      },
+      {
+        "name": "Baustelle einrichten, Material und Werkzeug transportieren, Gerüste/Hebebühnen und Absturzsicherungen einsetzen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit auf wechselnden Baustellen; keine autonome Technik verfügbar."
+      },
+      {
+        "name": "Arbeitsplatz reinigen, Oberflächen schützen und Dämmstoffabfälle entsorgen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit in kleinräumigen, verstellten Baustellenbereichen; Reinigungsroboter nicht einsetzbar."
+      },
+      {
+        "name": "Material- und Mengenbedarf für Dämmarbeiten berechnen und Material bestellen",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob die Berechnung im Chat gegenüber Erfahrungswerten und Lieferantenlisten wirklich 50 % spart; E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Masse und Systemvorgaben eintippen, LLM berechnet Mengen inkl. Verschnitt und formuliert die Bestellung; der Isolierer kontrolliert jedes Ergebnis."
+      },
+      {
+        "name": "Regierapporte, Ausmasse und Arbeitsfortschritt dokumentieren",
+        "zeitanteil_pct": 4,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe und Fotos in einer Rapport-App erstellen Rapport bzw. Ausmass; der Isolierer oder Vorarbeiter prüft jeden Eintrag. Dialekt und Baustellenlärm erhöhen den Korrekturaufwand."
+      },
+      {
+        "name": "Arbeiten mit Vorarbeiter, Bauleitung und anderen Gewerken absprechen, Lernende anleiten",
+        "zeitanteil_pct": 2,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz und direkte Abstimmung vor Ort."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Isolierer/in EFZ in einem KMU der Isolierbranche mit Mischung aus technischer Isolierung (Rohrleitungen, Lüftungskanäle, Blechummantelung, Brandschutz) und Gebäudedämmung; der ESCO-Input bildet hauptsächlich die Gebäudedämmung ab. Zeitanteile sind grob geschätzt. Grenzfall ist die Mengenberechnung (E1 oder E0).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur kleine Administrationsanteile, nämlich Regierapporte und Ausmasse per Spracheingabe in Rapport-Apps sowie Mengenberechnungen per Chat-LLM; die Dämm- und Montagearbeit selbst ist nicht exponiert.",
+      "begruendung": "Weniger als ein Zehntel der Arbeitszeit ist exponiert, und zwar durchwegs delegierend: Die KI erstellt Rapport oder Mengenrechnung, die Fachperson prüft jedes Ergebnis. Der Kern des Berufs bleibt physische Arbeit auf Schweizer Baustellen; Schweizerdeutsch und Baustellenlärm erschweren die Spracheingabe, und die vielen kleinen Betriebe führen solche Apps nur langsam ein.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

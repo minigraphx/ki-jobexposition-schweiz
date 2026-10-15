@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "88f264612554c7422f1547b8f1b11734a551a3528fa2c9c41ce5ab3bc2e0f658",
+    "isco_code": "8322",
+    "beruf": "Lieferwagenfahrer/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:38:59+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2782,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 3908,
+      "api_aequivalent_usd": 0.1077542
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2782,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3908,
+        "output_tokens_details": {
+          "thinking_tokens": 971
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2782,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1077542
+      }
+    ],
+    "request_ids": [
+      "1725e08b-9557-4f6a-b8e0-665d248e56c8"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "8322",
+    "beruf": "Lieferwagenfahrer/in",
+    "taetigkeiten": [
+      {
+        "name": "Lieferwagen im Stadt- und Regionalverkehr zu den Zustelladressen fahren, parkieren",
+        "zeitanteil_pct": 43,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Fahrtätigkeit im realen Verkehr. Autonome Lieferfahrzeuge sind in der Schweiz 2026 weder zugelassen noch im regulären Einsatz."
+      },
+      {
+        "name": "Pakete im Depot übernehmen, nach Tourreihenfolge sortieren und ins Fahrzeug laden",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Heben und Stapeln im Laderaum. Die Grobsortierung übernehmen Sortieranlagen bereits, für das Beladen der Fahrzeuge gibt es aber keine verbreitete Robotik."
+      },
+      {
+        "name": "Pakete zur Haustür tragen, übergeben oder am Ablageort deponieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Zustellung vor Ort. Paketautomaten ersetzen nur einen kleinen Teil der Haustürzustellungen und keine 50 % der Zeit."
+      },
+      {
+        "name": "Sendungen scannen und Zustellstatus, Unterschrift oder Ablagefoto im Handscanner erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze Bedienschritte mit Barcode-Scanner (klassische Technik), generative KI spart hier nichts Relevantes. Die Handlung bleibt manuell, darum P0."
+      },
+      {
+        "name": "Tagestour prüfen, Reihenfolge anpassen und per Navigation Adressen finden",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Tourenoptimierung übernehmen Dispositions- und Navigationssoftware ohne LLM. Darum E0 und P1 (Tourenplanungssoftware, GPS-Navigation)."
+      },
+      {
+        "name": "Mit Empfängerinnen und Empfängern an der Tür sprechen, Fragen beantworten, Reklamationen entgegennehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare persönliche Präsenz beim Kontakt mit der Kundschaft."
+      },
+      {
+        "name": "Kundschaft bei Abwesenheit oder unklarer Adresse telefonisch kontaktieren und mit Disposition abstimmen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze Ad-hoc-Telefonate während der Tour, oft in Mundart. Generative KI spart hier keine 50 % der Zeit, und die Standard-Benachrichtigungen versendet das Sendungssystem bereits automatisch."
+      },
+      {
+        "name": "Abholungen und Retouren entgegennehmen, Nachnahmen einkassieren und im Depot abladen und abrechnen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physisches Hantieren mit Waren. Die Abrechnung geschieht über Scanner und Kassenmodul (klassische Software), die physische Arbeit überwiegt aber."
+      },
+      {
+        "name": "Fahrzeug vor und nach der Tour kontrollieren, tanken bzw. laden und reinigen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Sicht- und Funktionskontrolle sowie Pflege des Fahrzeugs."
+      },
+      {
+        "name": "Schadens-, Unfall- und Abweichungsmeldungen sowie Fahrzeugübergabeprotokolle verfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Firmen-Apps mit Spracheingabe und Fotoauswertung bei den kurzen Formularmeldungen wirklich 50 % sparen; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die KI erstellt die Meldung aus Fotos und gesprochener Beschreibung (Spracheingabe, Bildverständnis), die Fahrerin prüft und ergänzt jede Meldung. Dialekt und Lärm erhöhen den Korrekturaufwand."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Fahrer/in eines Lieferwagens bis 3,5 t bei einem Paket- und Kurierdienst (z. B. Post, privater Paketdienst oder Subunternehmen) in der Deutschschweiz. Der ESCO-Input passt gut. Grenzfälle sind nur die kleinen Dokumentationsanteile (Schadens- und Abweichungsmeldungen); Tourenplanung und Kundenbenachrichtigung laufen über klassische Software.",
+    "zusammenfassung": {
+      "haupt_risiko": "Wesentlich exponiert ist nichts. Betroffen sind nur die gelegentlichen Schadens- und Abweichungsmeldungen, die eine App mit Spracheingabe und Fotoauswertung entwerfen kann; Fahren, Laden und Zustellen bleiben unberührt.",
+      "begruendung": "Nur rund 3 % der Arbeitszeit sind gegenüber generativer KI exponiert, und zwar delegierend: Die App entwirft die Meldung, die Fahrerin prüft jede. Der Beruf besteht überwiegend aus Fahren und physischem Paket-Handling. Autonome Lieferfahrzeuge sind in der Schweiz nicht zugelassen, und Tourenplanung sowie Benachrichtigungen erledigt bereits klassische Software.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

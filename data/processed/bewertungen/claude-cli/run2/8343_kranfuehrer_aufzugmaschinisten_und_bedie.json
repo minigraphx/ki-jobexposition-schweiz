@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "1c4125a7e9e3a76124d54a659d810603f17b89744cf182986b293adfa99324d5",
+    "isco_code": "8343",
+    "beruf": "Kranführer, Aufzugmaschinisten und Bediener verwandter Hebeeinrichtungen",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T01:07:51+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2157,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4688,
+      "api_aequivalent_usd": 0.11835419999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2157,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4688,
+        "output_tokens_details": {
+          "thinking_tokens": 1782
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2157,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11835419999999999
+      }
+    ],
+    "request_ids": [
+      "17455709-4932-4536-ab9d-08f4d080b903"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "8343",
+    "beruf": "Kranführer, Aufzugmaschinisten und Bediener verwandter Hebeeinrichtungen",
+    "taetigkeiten": [
+      {
+        "name": "Lasten mit dem Turmdrehkran aus der Kabine oder per Funkfernsteuerung heben, bewegen und präzise absetzen",
+        "zeitanteil_pct": 45,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Tätigkeit ist physisch und findet vor Ort unter Sichtkontakt statt. Automatische Positionierungsfunktionen bei Turmdrehkranen gibt es nur als Assistenz oder Pilot, sie übernehmen auf CH-Baustellen nicht ≥ 50 % der Zeit."
+      },
+      {
+        "name": "Hubvorgänge mit Anschläger und Polier per Funk und Handzeichen absprechen und Reihenfolge der Hübe koordinieren",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Abstimmung läuft in Echtzeit auf der Baustelle über Funk und Handzeichen. Sie ist sicherheitskritisch und an die Präsenz gebunden, deshalb kein Einsatz für generative KI."
+      },
+      {
+        "name": "Lastgewicht und Schwerpunkt abschätzen und Tragfähigkeit anhand des Lastdiagramms prüfen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Kranführer beurteilt die Last direkt vor Ort und in wenigen Sekunden; ein Chat-LLM würde hier keine 50 % Zeit sparen. Die Lastmomentbegrenzung des Krans überwacht zwar, ersetzt aber die Beurteilung nicht."
+      },
+      {
+        "name": "Anschlagmittel auswählen, auf Schäden prüfen und Lasten anschlagen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handarbeit an der Last mit Sichtprüfung von Ketten und Bändern. Für diese Arbeit gibt es keine verfügbare Robotik."
+      },
+      {
+        "name": "Tägliche Funktionskontrolle des Krans durchführen und Sicherheitseinrichtungen (Endschalter, Bremsen, Lastbegrenzung) testen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Kontrolle wird physisch am Kran gemacht, mit Testbewegungen und Sichtprüfung. Die Kransteuerung zeigt zwar Fehler an, ersetzt die vorgeschriebene Kontrolle aber nicht."
+      },
+      {
+        "name": "Kran schmieren, warten und kleinere Reparaturen ausführen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit an der Maschine, oft in grosser Höhe."
+      },
+      {
+        "name": "Bei Montage, Demontage und Klettern des Krans mithelfen und Ballast einbauen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montagearbeit im Team mit Mobilkran und Monteuren."
+      },
+      {
+        "name": "Wind und Wetter überwachen, Kranbetrieb einstellen und Kran in Windfreistellung bzw. Feierabendstellung bringen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Windmesser warnt automatisch; den Entscheid und das Sichern des Krans übernimmt aber der Kranführer vor Ort. Generative KI spart hier keine relevante Zeit."
+      },
+      {
+        "name": "Hilfsarbeiten auf der Baustelle ausführen (Material abladen, stapeln, Lagerplätze einrichten)",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit auf der Baustelle in den Wartezeiten zwischen den Hüben."
+      },
+      {
+        "name": "Kranbuch bzw. Kontrollheft führen, Stundenrapporte ausfüllen und Mängel melden",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es geht vor allem um Häkchen, Stunden und kurze Vermerke von wenigen Minuten. Spracheingabe oder ein LLM spart davon kaum 50 %; nur Mängelmeldungen mit Freitext wären knapp exponiert."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Turmdrehkranführer/in in einer Schweizer Bauunternehmung (Hochbau), Kranführerausweis nach SUVA. Mobil- und Hallenkranführer sowie Aufzugsmaschinisten sind ähnlich physisch geprägt. Einziger Grenzfall ist die kleine Rapport- und Kranbuchführung (E0 statt E2 mit Spracheingabe).",
+    "zusammenfassung": {
+      "haupt_risiko": "Keine wesentliche Tätigkeit ist durch generative KI exponiert; höchstens die kurze Rapport- und Mängelerfassung könnte per Spracheingabe minimal schneller gehen.",
+      "begruendung": "Der Beruf besteht fast vollständig aus physischer, sicherheitskritischer Kranbedienung, Anschlagen, Kontrollen und Wartung vor Ort auf Schweizer Baustellen. Deshalb gibt es weder ersetzende noch delegierende KI-Anteile von Gewicht. Auch Automatisierung ohne KI ist auf CH-Baustellen heute nicht in relevantem Umfang verfügbar: Automatische Krane gibt es nur als Pilot.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "f24f76991e4c2456d49738facd2fe61913b83b624afe7a32e12a72f8e34d1bc1",
+    "isco_code": "2330",
+    "beruf": "Gymnasiallehrer/in",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2331,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2331
+        }
+      ],
+      "prompt_token_count": 20251,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 20251
+        }
+      ],
+      "thoughts_token_count": 6456,
+      "total_token_count": 29038
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2331,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2331
+          }
+        ],
+        "prompt_token_count": 20251,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 20251
+          }
+        ],
+        "thoughts_token_count": 6456,
+        "total_token_count": 29038
+      }
+    ],
+    "request_ids": [
+      "xD_PapO9EKmx_PUPn6qo-Ac"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2330_gymnasiallehrer_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2330",
+    "beruf": "Gymnasiallehrer/in",
+    "taetigkeiten": [
+      {
+        "name": "Unterricht im Klassenzimmer erteilen und Lernprozesse moderieren",
+        "zeitanteil_pct": 35,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Beziehungstätigkeit im Klassenzimmer (Lehrgespräche führen, Diskussionen leiten, auf Jugendliche eingehen), deren Wert in der unmittelbaren persönlichen Anwesenheit liegt."
+      },
+      {
+        "name": "Lektionen planen sowie Arbeitsblätter, Skripte und Präsentationen erstellen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus Lehrplanvorgaben und Fachtexten Entwürfe für Lektionspläne, Skripte, Übungsaufgaben und Folieninhalte; die Lehrperson spezifiziert die Anforderungen, prüft jedes Material fachlich-didaktisch und passt es an die Klasse an."
+      },
+      {
+        "name": "Schriftliche Prüfungen, Klausuren und Maturaaufgaben samt Bewertungsrastern erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das Chat-LLM entwirft Prüfungsfragen, Fallbeispiele, Musterlösungen und Punkteverteilungen nach Vorgabe; die Lehrperson prüft jede Aufgabe detailliert auf Korrektheit, Niveau und Konformität mit dem Maturitätsreglement."
+      },
+      {
+        "name": "Schriftliche Prüfungen, Aufsätze und Klausuren korrigieren und bewerten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob multimodale KI-Voranalyse bei anspruchsvollen Aufsätzen und mehrschrittigen Lösungswegen auf Gymnasialstufe bereits mindestens 50 % der Korrekturzeit spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Multimodale KI-Werkzeuge (Handschrifterkennung bzw. LMS-Integration) gleichen Schülerantworten mit dem Bewertungsraster ab und markieren Fehler; die Lehrperson liest, beurteilt und benotet jede Arbeit selbst."
+      },
+      {
+        "name": "Mündliche Prüfungen und Maturitätsprüfungen abnehmen und bewerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Präsenz- und Interaktionstätigkeit im Prüfungsgespräch (bei Maturitätsprüfungen gemeinsam mit Expertinnen und Experten), die nicht durch KI übernommen werden kann."
+      },
+      {
+        "name": "Schriftliche Maturaarbeiten und Projektarbeiten begutachten und Beurteilungsberichte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Lehrperson liest und beurteilt die Arbeit selbst; ein Chat-LLM unterstützt durch Kriterienabgleich, Textanalyse und Formulierungshilfen für das schriftliche Gutachten."
+      },
+      {
+        "name": "Schülerinnen und Schüler individuell beraten sowie bei Lernprozessen und Maturaarbeiten im Gespräch begleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Betreuung, Lerncoaching und Besprechungen von Angesicht zu Angesicht leben von der pädagogischen Beziehung und unmittelbaren Präsenz."
+      },
+      {
+        "name": "Gespräche mit Eltern, Schulleitung und Fachstellen führen (Klassenlehrerarbeit)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung, Konfliktlösung und pädagogische Abstimmung bei Schülerfällen erfordern unmittelbare zwischenmenschliche Präsenz."
+      },
+      {
+        "name": "Elternbriefe, Empfehlungsschreiben, Exkursionsprogramme und schulische Korrespondenz verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten fertige Textentwürfe für Briefe, Empfehlungen oder Informationsblätter; die Lehrperson steuert die Inhalte und prüft jedes Schreiben vor dem Versand."
+      },
+      {
+        "name": "An Fachschaftssitzungen, Lehrerkonferenzen, Notenkonferenzen und Schulentwicklung teilnehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gemeinsame Gremienarbeit, pädagogische Diskussionen und kollegiale Entscheidungsfindung vor Ort im Schulhaus."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Gymnasiallehrperson an einer öffentlichen Schweizer Kantonsschule / einem Gymnasium (Sekundarstufe II) mit zwei Unterrichtsfächern. Da keine ESCO-Kompetenzliste vorlag, wurden die Tätigkeiten aus der Berufsbeschreibung und dem typischen Schweizer Berufsauftrag abgeleitet. Die grösste Unsicherheit besteht beim Korrigieren schriftlicher Prüfungen und Aufsätze (15 % der Arbeitszeit), da die Zeitersparnis stark vom Fach (Sprachen vs. MINT) abhängt und nahe an der 50-%-Schwelle liegt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Unterrichtsvorbereitung und Materialerstellung, das Konzipieren und Korrigieren schriftlicher Prüfungen, das Begutachten von Maturaarbeiten sowie die schulische Korrespondenz durch Chat-LLMs und multimodale Korrekturwerkzeuge.",
+      "begruendung": "Rund 45 % der Arbeitszeit sind gegenüber generativer KI exponiert, während der Präsenzunterricht im Klassenzimmer, mündliche Prüfungen und die persönliche Betreuung nicht betroffen sind. Die KI wirkt dabei ausschliesslich delegierend (beim Erstellen von Unterrichtsmaterial, Prüfungsaufgaben und Korrespondenz) oder unterstützend (bei der Korrektur von Klausuren und der Begutachtung von Maturaarbeiten), da die fachliche und pädagogische Verantwortung zwingend bei der Lehrperson bleibt. In der Schweiz bremsen insbesondere kantonale Datenschutzvorgaben für Schülerdaten, rechtliche Anforderungen an promotions- und maturarelevante Bewertungen sowie der Vertrauensanspruch von Jugendlichen und Eltern eine weitergehende Automatisierung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

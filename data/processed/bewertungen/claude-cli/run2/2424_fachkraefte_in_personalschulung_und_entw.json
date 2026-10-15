@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "ea9346461062af90d6d644b1668a284db1ee67b1e9a7d43eb24ef593ec8faf0e",
+    "isco_code": "2424",
+    "beruf": "Fachkräfte in Personalschulung und -entwicklung",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:30:04+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 39506,
+      "output_tokens": 4406,
+      "api_aequivalent_usd": 0.0960292
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 39506,
+        "output_tokens": 4406,
+        "output_tokens_details": {
+          "thinking_tokens": 1051
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.0960292
+      }
+    ],
+    "request_ids": [
+      "c4c6d63c-2818-43b6-9eb3-b33166d0a01a"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2424",
+    "beruf": "Fachkräfte in Personalschulung und -entwicklung",
+    "taetigkeiten": [
+      {
+        "name": "Bildungsbedarf in Gesprächen mit Linienvorgesetzten und Mitarbeitenden erheben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Gespräche und Abstimmung mit Führungskräften; der Wert liegt in Präsenz und Beziehung."
+      },
+      {
+        "name": "Bedarfsanalysen und Kompetenzprofile aus Umfragen, Gesprächsnotizen und Stellenprofilen auswerten und dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Notizen und Umfrageexporte als Text einfügen; das LLM verdichtet sie zu einer Bedarfsanalyse, die Fachperson prüft und gewichtet jede Aussage."
+      },
+      {
+        "name": "Schulungs- und Entwicklungskonzepte, Lernziele und Kursabläufe erarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft aus Vorgaben Lernziele, Ablaufplan und Methodenmix; die Fachperson passt jedes Konzept an Zielgruppe und Unternehmenskontext an und prüft es."
+      },
+      {
+        "name": "Schulungsunterlagen erstellen (Präsentationen, Handouts, Übungen, Fallbeispiele, Tests)",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Texte und Übungen wären E1, die Foliengestaltung gelingt erst mit KI-Funktionen in der Office-Suite; KI erstellt die Unterlagen, die Fachperson prüft Inhalt und Didaktik jeder Unterlage."
+      },
+      {
+        "name": "E-Learning-Module und Lernvideos im Autorentool bzw. LMS produzieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Autorentools generieren Module, Quizfragen, Sprachausgabe und Avatar-Videos aus Vorlagen; die Fachperson steuert und prüft jedes Modul."
+      },
+      {
+        "name": "Präsenz- und Online-Schulungen, Workshops durchführen und moderieren",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unterrichten und Moderieren vor einer Gruppe ist eine Präsenz- und Beziehungstätigkeit."
+      },
+      {
+        "name": "Mitarbeitende und Führungskräfte coachen und Entwicklungsgespräche mit Feedback führen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Coaching und konstruktives Feedback leben von persönlicher Präsenz und Vertrauen."
+      },
+      {
+        "name": "Kursevaluationen und Teilnehmerfeedback auswerten und Wirkungsberichte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Exportierte Evaluationsdaten und Freitextkommentare einfügen; das LLM fasst sie zusammen und entwirft den Bericht, die Fachperson prüft die Aussagen und Schlussfolgerungen."
+      },
+      {
+        "name": "Kurse organisieren und administrieren (Anmeldungen, Räume, Referierende, Teilnahmebestätigungen im LMS)",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend regelbasierte Abläufe; Selbstanmeldung, Raumbuchung, automatische Erinnerungen und Zertifikate über klassische LMS-/Buchungssoftware."
+      },
+      {
+        "name": "Kursausschreibungen, Katalog- und Intranettexte zu Weiterbildungsangeboten verfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM schreibt Ausschreibungstexte aus Stichworten und Konzept; die Fachperson sichtet kurz und gibt frei."
+      },
+      {
+        "name": "Mit HR, Führungskräften und externen Bildungsanbietern Angebote abstimmen und Aufträge verhandeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung, Verhandlung und Beziehungspflege in Sitzungen und Gesprächen."
+      },
+      {
+        "name": "Entwicklungen in Erwachsenenbildung und Arbeitsmarkt verfolgen und Angebot daran anpassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Eigenes Lernen und strategische Beurteilung bleiben beim Menschen; Recherche-Agenten beschleunigen nur Teile, kaum um 50 %."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommen ist eine interne Fachperson für Personalentwicklung in einer grösseren Verwaltung oder Unternehmung mit eigenem Weiterbildungsangebot. Der ESCO-Input passt gut, nur das Item «Darstellern Feedback geben» ist ESCO-Rauschen. Die Zeitanteile zwischen Durchführung und Konzeption/Materialerstellung unterscheiden sich je nach Stelle stark; die Restzeit-Bänder bei der Materialerstellung sind Grenzfälle zwischen 10-30 und 30-50.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Konzeption, Erstellung von Schulungsunterlagen und E-Learning, die Auswertung von Bedarf und Evaluationen sowie Ausschreibungstexte, die Chat-LLMs, KI-Funktionen in Office-Suiten und KI-Autorentools erstellen.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind exponiert, überwiegend delegierend: Die KI erstellt Konzepte, Unterlagen und Berichte, die Fachperson steuert sie und prüft Inhalt und Didaktik; nur Ausschreibungstexte laufen ersetzend. Der Kern (Schulungen durchführen, Coaching, Abstimmung) bleibt Präsenzarbeit; wesentliche CH-Hemmnisse sind gering, in der Verwaltung bremsen vor allem Cloud- und Datenschutzvorgaben bei der Einführung von Office-KI.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

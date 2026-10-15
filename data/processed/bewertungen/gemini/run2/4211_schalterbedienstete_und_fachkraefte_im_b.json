@@ -1,0 +1,221 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "0cbe0ea6ee252e999c7b8420faf854450e9dcd08bf125a2de3d3d753010310f9",
+    "isco_code": "4211",
+    "beruf": "Schalterbedienstete und Fachkräfte im Bereich Finanzdienstleistungen",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2239,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2239
+        }
+      ],
+      "prompt_token_count": 21521,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21521
+        }
+      ],
+      "thoughts_token_count": 6611,
+      "total_token_count": 30371
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2239,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2239
+          }
+        ],
+        "prompt_token_count": 21521,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21521
+          }
+        ],
+        "thoughts_token_count": 6611,
+        "total_token_count": 30371
+      }
+    ],
+    "request_ids": [
+      "xD_Paq71BOOZ6dkP5bep6A8"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-4211_schalterbedienstete_und_fachkraefte_im_b",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "4211",
+    "beruf": "Schalterbedienstete und Fachkräfte im Bereich Finanzdienstleistungen",
+    "taetigkeiten": [
+      {
+        "name": "Bargeldein- und -auszahlungen, Fremdwährungswechsel sowie Edelmetallgeschäfte am Schalter abwickeln",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Entgegennahme, Prüfung und Ausgabe von Noten, Münzen und Edelmetallen am Bankschalter. Moderne Ein- und Auszahlungsbancomaten sowie Fremdwährungsautomaten können über 50 % dieser Transaktionen in Selbstbedienung übernehmen."
+      },
+      {
+        "name": "Kundinnen und Kunden am Schalter und in der Kundenzone persönlich zu Konten, Karten und Basisprodukten beraten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare persönliche Präsenz und Beratungsgespräch von Angesicht zu Angesicht in der Geschäftsstelle."
+      },
+      {
+        "name": "Kontoeröffnungen, Vollmachten, Kartenbestellungen und Stammdatenmutationen im Kernbankensystem erfassen und prüfen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung und KI-Integration im Kernbankensystem lesen Ausweise und Antragsformulare aus und bereiten die Mutation vor; die Fachkraft prüft jedes Dossier auf VSB-Konformität. Zudem übernehmen digitales Onboarding und Self-Service im E-Banking (klassische Software) über 50 % der Standardfälle."
+      },
+      {
+        "name": "Zahlungsaufträge, Überweisungen und Daueraufträge erfassen, kontrollieren und freigeben",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Beleg- und Texterkennung mit Systemintegration extrahiert Zahlungsinstruktionen aus Briefen, Formularen oder E-Mails; die Bankfachkraft prüft und visiert jeden Auftrag. Klassische E-Banking-Selbstbedienung und QR-Belegleser automatisieren bereits den Grossteil standardisierter Zahlungen."
+      },
+      {
+        "name": "Schriftliche Kundenanfragen per E-Mail, E-Banking-Nachricht und Brief zu Konten und Transaktionen beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus kopierten Konto- und Fallangaben präzise Antworten auf Kundenanfragen; die Bankfachkraft prüft jede Nachricht vor dem Versand inhaltlich."
+      },
+      {
+        "name": "Telefonische Kundenanfragen entgegennehmen, Auskünfte zu Kontoständen und Zahlungen erteilen sowie Anliegen triagieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Die Verlässlichkeit von Voicebots bei Schweizerdeutschem Dialekt und strenger telefonischer Kundenauthentifizierung im Bankwesen ist unsicher; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Ein Voicebot mit Systemzugriff beantwortet nach Authentifizierung telefonische Standardauskünfte und nimmt Kartensperrungen vor; Mitarbeitende übernehmen nur weitergeleitete Spezialfälle."
+      },
+      {
+        "name": "Unklare Finanztransaktionen nachverfolgen sowie Geldwäscherei- und Compliance-Abklärungen (GwG/KYC) dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein ins Bankensystem integriertes LLM fasst Transaktionsverläufe sowie eingereichte Kundenbelege zusammen und entwirft den Compliance-Vermerk; die Fachkraft prüft und verantwortet jede Abklärung im Einzelfall."
+      },
+      {
+        "name": "Kassenbestand, Bancomaten und Tresorbestand abrechnen, prüfen und bewirtschaften",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Bewirtschaftung von Geldkassetten, Bancomaten und Schrankfachzugängen vor Ort sowie regelbasierter Kassenabgleich ohne relevanten Nutzen generativer KI."
+      },
+      {
+        "name": "Gesprächsnotizen, Kundenkontakte und Verkaufschancen im CRM dokumentieren sowie interne Auswertungen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus kurzen Stichworten formuliert ein Chat-LLM strukturierte Aktennotizen und Weiterleitungen für die Kundenberatung; die Fachkraft kontrolliert jeden Eintrag vor dem Speichern."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Bankkaufmann/-frau EFZ im Schalter- und Kundendienstbereich (Kundenzone sowie zugehöriges Backoffice) einer Schweizer Retailbank. Während das klassische Schaltergeschäft durch Bancomaten und E-Banking bereits stark zurückgegangen ist, verbleibt eine Mischung aus persönlicher Präsenz am Schalter und administrativer Auftrags-, Anfrage- und Compliance-Bearbeitung. Der wichtigste Grenzfall betrifft den Einsatz von Voicebots bei telefonischen Bankauskünften auf Schweizerdeutsch.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Erfassung von Kontoeröffnungen, Mutationen und Zahlungsaufträgen, die schriftliche und telefonische Kundenkorrespondenz sowie die Dokumentation von Compliance-Abklärungen und Gesprächsnotizen durch Dokumenten-KI, Chat-LLMs und Voicebots.",
+      "begruendung": "Rund 55 % der Arbeitszeit sind gegenüber generativer KI exponiert, während die persönliche Präsenz am Schalter und die physische Bargeld- und Tresorbewirtschaftung nicht betroffen sind. Wegen der hohen Sorgfalts- und Prüfpflichten im Bankgeschäft arbeitet die KI überwiegend delegierend (und nur bei telefonischen Standardauskünften ersetzend), wobei das Bankkundengeheimnis, strenge FINMA- und Geldwäschereivorgaben sowie das Kundenvertrauen wesentliche Schweizer Hemmnisse darstellen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

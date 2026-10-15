@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "9b53e6694f38648e0134793e667c73e1c865f8787cb76c765ae90382bf890cf7",
+    "isco_code": "9213",
+    "beruf": "Hilfsarbeiter in Ackerbau und Tierhaltung (ohne ausgeprägten Schwerpunkt)",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:24:43+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2878,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4246,
+      "api_aequivalent_usd": 0.11528219999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2878,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4246,
+        "output_tokens_details": {
+          "thinking_tokens": 1360
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2878,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11528219999999999
+      }
+    ],
+    "request_ids": [
+      "64f57837-8531-4368-b5ee-a95b85909679"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "9213",
+    "beruf": "Hilfsarbeiter in Ackerbau und Tierhaltung (ohne ausgeprägten Schwerpunkt)",
+    "taetigkeiten": [
+      {
+        "name": "Tiere im Stall füttern, Ställe ausmisten und einstreuen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Fütterungsroboter, Futteranschieber und Entmistungsroboter sind in CH im Einsatz, aber ob sie in typischen Betrieben ≥ 50 % der Zeit übernehmen (Einstreuen, Boxenpflege, Kälber), ist unklar; P0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Stallarbeit, keine Exposition gegenüber generativer KI. Automatische Fütterungssysteme und Entmistungsroboter sind kommerziell verfügbar und können einen grossen Teil übernehmen."
+      },
+      {
+        "name": "Kühe melken und Melkanlage reinigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit am Tier; Melkroboter mit automatischer Reinigung sind auf Schweizer Betrieben im regulären Einsatz."
+      },
+      {
+        "name": "Tiere beobachten, umtreiben, auf die Weide bringen und bei Geburten, Besamung und Behandlungen mithelfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer Umgang mit Tieren vor Ort; keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Felder mit Traktor und Anbaugeräten bearbeiten: pflügen, eggen, säen, Hofdünger ausbringen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fahren und Maschinenbedienung auf dem Feld; GPS-Lenksysteme assistieren nur, autonome Traktoren sind in CH nicht im regulären Einsatz."
+      },
+      {
+        "name": "Manuelle Feldarbeiten ausführen: jäten, hacken, Setzlinge pflanzen, Steine lesen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Handarbeit; Jätroboter gibt es nur in einzelnen Kulturen und Betrieben, nicht für ≥ 50 % dieser Arbeit."
+      },
+      {
+        "name": "Bei der Ernte mitarbeiten: heuen, Getreide, Kartoffeln und Gemüse ernten und abtransportieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit und Maschinenführung; Erntemaschinen sind bereits Stand der Technik, die verbleibende Arbeit ist Bedienen, Transport und Handarbeit."
+      },
+      {
+        "name": "Erntegut einlagern sowie Lager, Silos und Heuboden sauber halten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Ein- und Umlagern und Reinigen; Gebläse und Förderbänder unterstützen, ersetzen die Arbeit aber nicht."
+      },
+      {
+        "name": "Pflanzenschutzmittel und Dünger nach Anweisung ausbringen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spritze vorbereiten und mit dem Traktor ausbringen ist physisch; Sprühdrohnen sind in CH nur in Nischen (Reben) zugelassen und verbreitet."
+      },
+      {
+        "name": "Maschinen und Geräte reinigen, warten und kleine Reparaturen an Zäunen und Gebäuden ausführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Arbeit vor Ort; keine relevante Automatisierung."
+      },
+      {
+        "name": "Felder und Kulturen kontrollieren und Beobachtungen sowie Arbeitsstunden dem Betriebsleiter melden",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zeit liegt im Begehen der Felder und in kurzen mündlichen Absprachen; KI spart bei den wenigen Notizen nichts Relevantes."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommen ist eine angelernte Hilfskraft ohne Ausbildung auf einem gemischten Schweizer Familienbetrieb (Milchvieh und Ackerbau). Planende Aufgaben aus ESCO wie Fruchtfolge verwalten oder Pflanzen züchten liegen beim Betriebsleiter und wurden darum nicht übernommen. Der Beruf ist durchwegs physisch, die Stufe ist also eindeutig. Unsicher ist vor allem das Feld P bei der Stallarbeit (Fütterungs- und Entmistungsroboter).",
+    "zusammenfassung": {
+      "haupt_risiko": "Keine wesentliche Tätigkeit ist gegenüber generativer KI exponiert; ersetzt werden kann einzelne Arbeit nur durch klassische Technik wie Melkroboter und automatische Fütterungs- und Entmistungssysteme.",
+      "begruendung": "Die Arbeit besteht fast ganz aus körperlicher Arbeit im Stall und auf dem Feld. Generative KI spart hier keine relevante Zeit, deshalb gibt es auch keinen Modus. Die wenigen Melde- und Notizaufgaben sind kurz und mündlich, die Planung und die Dokumentation für Behörden liegen beim Betriebsleiter.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

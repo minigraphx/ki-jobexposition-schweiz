@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "ce32de286bbe0948eb049448a6e97d12b94ccd86f5e30ff330662a545a2ce7bb",
+    "isco_code": "2421",
+    "beruf": "Spezialisten im Bereich Management- und Organisationsanalyse",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:33:06+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3933,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 6454,
+      "api_aequivalent_usd": 0.1678822
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3933,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 6454,
+        "output_tokens_details": {
+          "thinking_tokens": 2720
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3933,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1678822
+      }
+    ],
+    "request_ids": [
+      "63ddbe49-196f-4279-9437-346c80f6eed6"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2421",
+    "beruf": "Spezialisten im Bereich Management- und Organisationsanalyse",
+    "taetigkeiten": [
+      {
+        "name": "Interviews und Workshops mit Management und Mitarbeitenden zur Ist-Aufnahme durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gesprächsführung und Moderation in Präsenz; der Wert liegt im persönlichen Kontakt und im Erkennen unausgesprochener Probleme."
+      },
+      {
+        "name": "Interview- und Workshopergebnisse protokollieren und qualitativ auswerten (Themen clustern, Befunde verdichten)",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Transkription und LLM-Auswertung erstellen Protokolle und Themencluster; die Beraterin prüft jede Auswertung gegen ihre Gesprächseindrücke. Schweizerdeutsch in Gruppengesprächen erhöht den Korrekturaufwand; Aufzeichnung von Mitarbeitergesprächen ist datenschutzheikel."
+      },
+      {
+        "name": "Geschäftsprozesse analysieren und als Prozesslandkarten bzw. BPMN-Modelle dokumentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in Prozessmodellierungs-Tools bzw. LLM erzeugen Modelle und Schwachstellenlisten aus Prozessbeschreibungen; der Berater spezifiziert, prüft jedes Modell und ergänzt Wissen aus der Ist-Aufnahme."
+      },
+      {
+        "name": "Finanz-, Kosten- und Kennzahlenanalysen erstellen (Jahresabschlüsse, Benchmarks, Effizienzpotenziale)",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Datenanalyse-Agenten mit Code-Ausführung bereinigen Daten, rechnen Kennzahlen und erstellen Grafiken; die Beraterin steuert die Fragestellung und prüft jede Auswertung auf Plausibilität. Vertrauliche Kundendaten bzw. Verwaltungsdaten unterliegen Cloud-Restriktionen."
+      },
+      {
+        "name": "Markt-, Umfeld- und Benchmark-Recherchen durchführen (Desk Research)",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche erstellen Übersichten mit Quellen; der Berater verifiziert Fakten und Zahlen einzeln, was wegen Halluzinationsrisiko Zeit kostet."
+      },
+      {
+        "name": "Mitarbeitenden- und Kundenumfragen konzipieren und quantitativ auswerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Fragebogen, Datenanalyse-Agent wertet aus inkl. Freitextantworten; die Beraterin prüft Fragebogen und Ergebnisse. Deskriptive Standardauswertung der Umfragetools ist klassisch, deckt aber nicht die Mehrheit der Zeit ab."
+      },
+      {
+        "name": "Lösungsvarianten für Strategie, Organisation und Prozesse entwickeln und mit dem Kunden bewerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kernurteil mit kunden- und kulturspezifischem Kontext, oft im Dialog erarbeitet; LLM-Ideengenerierung beschleunigt, spart aber nach bester Einschätzung keine 50 % bei gleicher Qualität."
+      },
+      {
+        "name": "Berichte, Konzeptpapiere und Präsentationsfolien mit Analyseergebnissen und Empfehlungen erstellen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI in Office-Suiten erstellt Berichtstexte und Foliensätze aus Analysen und Stichworten; der Berater gibt Storyline vor, prüft jede Aussage und überarbeitet Layout nach Kunden-CI."
+      },
+      {
+        "name": "Ergebnisse vor Geschäftsleitung bzw. Lenkungsausschuss präsentieren und Kundenbeziehungen pflegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz, Überzeugungsarbeit und Vertrauensbeziehung zum Management."
+      },
+      {
+        "name": "Umsetzung und Veränderungsprozesse begleiten (Change-Workshops, Coaching von Führungskräften)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zwischenmenschliche Präsenz- und Beziehungsarbeit vor Ort."
+      },
+      {
+        "name": "Projektpläne, Statusberichte und Sitzungsunterlagen für das Beratungsprojekt erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM erstellt Statusbericht, Traktandenliste und Planentwurf aus eingefügten Notizen; die Projektleiterin prüft und ergänzt jeden Entwurf."
+      },
+      {
+        "name": "Offerten und Projektskizzen für Beratungsmandate bzw. Ausschreibungen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Offerte aus Ausschreibungstext, Referenzen und Vorgehensbausteinen; der Berater prüft Vorgehen, Aufwand und Preis jeder Offerte fachlich."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Management-/Organisationsberater/in mit tertiärem Abschluss in einer Beratungsfirma oder internen Organisationsentwicklung (häufig mit Mandaten bzw. Projekten in der öffentlichen Verwaltung). Der ESCO-Input passt gut, die Zeitanteile sind aber grob geschätzt, da der Beruf heterogen ist (Strategie, Prozesse, Business-Analyse). Die grössten Grenzfälle sind Berichte/Folien (CI-Layout) und die Entwicklung von Lösungsvarianten (E0 vs. E1 unterstützend).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Analyse- und Dokumentationsarbeit – Protokolle und qualitative Auswertungen, Prozessmodelle, Finanz- und Umfrageauswertungen, Desk Research, Berichte und Folien, Statusberichte und Offerten. Die Technik dahinter sind Office-integrierte LLMs, Datenanalyse- und Recherche-Agenten sowie Transkription.",
+      "begruendung": "Rund drei Fünftel der Arbeitszeit sind exponiert, fast durchwegs delegierend: Die KI erstellt Analysen, Texte und Folien, die Beraterin steuert und prüft jedes Ergebnis fachlich. Interviews, Präsentationen, Change-Begleitung und das eigentliche Lösungsurteil bleiben menschlich. In der Schweiz bremsen vor allem Vertraulichkeit und Cloud-Restriktionen bei Kunden- und Verwaltungsdaten sowie Datenschutz bei Gesprächsaufzeichnungen.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

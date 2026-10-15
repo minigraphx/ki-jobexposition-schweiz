@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ki-jobexposition-schweiz/pilot/schema-aufgabenbewertung-v2_1.json",
+  "title": "Aufgabenbasierte KI-Expositionsbewertung eines Berufs (Rubrik v2.1, Stand Okt. 2026)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["isco_code", "beruf", "taetigkeiten", "unsicherheit", "kommentar"],
+  "properties": {
+    "isco_code": {
+      "type": "string",
+      "pattern": "^[0-9]{4}$",
+      "description": "4-stelliger CH-ISCO-19-Code, exakt aus dem Input übernommen."
+    },
+    "beruf": {
+      "type": "string",
+      "minLength": 2,
+      "description": "Berufsbezeichnung, exakt aus dem Input übernommen."
+    },
+    "taetigkeiten": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 12,
+      "items": { "$ref": "#/$defs/taetigkeit" }
+    },
+    "unsicherheit": {
+      "type": "string",
+      "enum": ["niedrig", "mittel", "hoch"],
+      "description": "Gesamt-Unsicherheit für den Beruf (Achtung: umgekehrte Richtung als 'sicherheit' je Tätigkeit)."
+    },
+    "kommentar": {
+      "type": "string",
+      "description": "Angenommenes Arbeitssetting, Datenlage, grösste Unsicherheiten. 1–4 Sätze."
+    }
+  },
+  "$defs": {
+    "taetigkeit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "zeitanteil_pct", "stufe", "modus", "restzeit_mensch", "physisch_automatisierbar",
+                   "p_art", "sicherheit", "sicherheit_begruendung", "ch_hemmnis", "begruendung"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 160,
+          "description": "Konkrete, beobachtbare Tätigkeit: Verb + Objekt (+ Kontext)."
+        },
+        "zeitanteil_pct": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 80,
+          "description": "Geschätzter Anteil an der Arbeitszeit in Prozent; Summe über alle Tätigkeiten = 100."
+        },
+        "stufe": {
+          "type": "string",
+          "enum": ["E0", "E1", "E2"],
+          "description": "KI-Expositionsstufe (nur generative KI). E1 = reines Chat-LLM mit Text-Kontext reicht; E2 = erst mit Werkzeugen/Integration/Multimodalität."
+        },
+        "modus": {
+          "type": ["string", "null"],
+          "enum": ["ersetzend", "delegierend", "unterstützend", null],
+          "description": "Nur bei E1/E2: 'ersetzend' (KI führt aus, Mensch gibt höchstens frei/prüft stichprobenartig), 'delegierend' (KI erstellt das Ergebnis, Mensch steuert und prüft jede Ausgabe fachlich), 'unterstützend' (Mensch führt selbst aus, KI liefert Teilergebnisse/Vorschläge). Bei E0 zwingend null. Rechtlich vorgeschriebener menschlicher Einzelfallentscheid → höchstens 'delegierend'."
+        },
+        "restzeit_mensch": {
+          "type": ["string", "null"],
+          "enum": ["<10", "10-30", "30-50", null],
+          "description": "Nur bei E1/E2: verbleibender menschlicher Zeitaufwand für die Tätigkeit in % der heutigen Zeit (inkl. Spezifizieren, Steuern, Prüfen, Korrigieren, Freigeben, Ausnahmen), heute verfügbare Technik, typische CH-Praxis. Nie > 50 (sonst E0). Bei E0 zwingend null."
+        },
+        "physisch_automatisierbar": {
+          "type": "string",
+          "enum": ["P0", "P1"],
+          "description": "P1 = mit heute in der Schweiz kommerziell verfügbarer nicht-generativer Technik (Robotik, Automaten, Selbstbedienung, autonome Technik, klassische Software) zu ≥ 50 % der Zeit übernehmbar; sonst P0. Unabhängig von der Stufe."
+        },
+        "p_art": {
+          "type": ["string", "null"],
+          "enum": ["physisch", "software", null],
+          "description": "Nur bei P1: 'physisch' (Robotik/Automaten/Selbstbedienung/autonom) oder 'software' (klassische Software ohne generative KI). Bei P0 null."
+        },
+        "sicherheit": {
+          "type": "string",
+          "enum": ["hoch", "mittel", "tief"],
+          "description": "Sicherheit der Einschätzung (Stufe, Modus, Restzeit, P) für diese Tätigkeit."
+        },
+        "sicherheit_begruendung": {
+          "type": ["string", "null"],
+          "maxLength": 300,
+          "description": "Pflicht bei sicherheit = 'tief' (1 Satz: was unsicher ist, welche Alternative plausibel ist); sonst null."
+        },
+        "ch_hemmnis": {
+          "type": "array",
+          "uniqueItems": true,
+          "maxItems": 3,
+          "items": { "type": "string", "enum": ["regulatorisch", "mehrsprachigkeit", "vertrauen"] },
+          "description": "Optionale CH-spezifische Umsetzungshemmnisse, nur bei E1/E2; bei E0 leere Liste. Beeinflusst die Stufe NICHT."
+        },
+        "begruendung": {
+          "type": "string",
+          "minLength": 20,
+          "maxLength": 600,
+          "description": "1–2 Sätze: warum diese Stufe/dieser Modus/diese Restzeit/dieser P-Wert (bei P1 Technik nennen)."
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "stufe": { "const": "E0" } } },
+          "then": { "properties": { "modus": { "type": "null" }, "restzeit_mensch": { "type": "null" },
+                                    "ch_hemmnis": { "maxItems": 0 } } },
+          "else": { "properties": { "modus": { "type": "string", "enum": ["ersetzend", "delegierend", "unterstützend"] },
+                                    "restzeit_mensch": { "type": "string", "enum": ["<10", "10-30", "30-50"] } } }
+        },
+        {
+          "if": { "properties": { "physisch_automatisierbar": { "const": "P1" } } },
+          "then": { "properties": { "p_art": { "type": "string", "enum": ["physisch", "software"] } } },
+          "else": { "properties": { "p_art": { "type": "null" } } }
+        },
+        {
+          "if": { "properties": { "sicherheit": { "const": "tief" } } },
+          "then": { "properties": { "sicherheit_begruendung": { "type": "string", "minLength": 15 } } },
+          "else": { "properties": { "sicherheit_begruendung": { "type": "null" } } }
+        }
+      ]
+    }
+  }
+}

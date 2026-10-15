@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "16ced589363aea9ab88d23bb92b202414ce047a95ac5214a735a7c98bc3ec158",
+    "isco_code": "6130",
+    "beruf": "Landwirte mit Ackerbau und Tierhaltung (ohne ausgeprägten Schwerpunkt)",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:03:08+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3038,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5674,
+      "api_aequivalent_usd": 0.14512219999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3038,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5674,
+        "output_tokens_details": {
+          "thinking_tokens": 2349
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3038,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.14512219999999998
+      }
+    ],
+    "request_ids": [
+      "ab1cb6bd-a2db-4408-b4ba-b1b939898394"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "6130",
+    "beruf": "Landwirte mit Ackerbau und Tierhaltung (ohne ausgeprägten Schwerpunkt)",
+    "taetigkeiten": [
+      {
+        "name": "Tiere füttern, Stall ausmisten und einstreuen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Fütterungsautomaten und Entmistungsroboter bzw. Schieberanlagen sind in der Schweiz erhältlich, ob sie für einen typischen kleinen Gemischtbetrieb ≥ 50 % der Zeit wirtschaftlich übernehmen, ist unklar; P0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Physische Stallarbeit, keine Exposition gegenüber generativer KI. Automatische Fütterungssysteme und Entmistungsroboter sind kommerziell verfügbar."
+      },
+      {
+        "name": "Kühe melken und Melkanlage reinigen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit am Tier. Melkroboter mit automatischer Reinigung sind auf Schweizer Betrieben im Einsatz."
+      },
+      {
+        "name": "Tiere beobachten, Gesundheit und Brunst kontrollieren, Klauen pflegen, bei Geburten helfen und Tiere behandeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Arbeit am Tier vor Ort mit Händen und Präsenz. Sensoren wie Brunst-Halsbänder unterstützen nur, sie übernehmen keine 50 % der Zeit."
+      },
+      {
+        "name": "Felder mit Traktor bearbeiten: pflügen, säen, düngen, Pflanzenschutz ausbringen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Maschinenführung auf dem Feld ist physisch. GPS-Lenksysteme assistieren nur, autonome Traktoren sind in der Schweiz nicht im regulären Einsatz."
+      },
+      {
+        "name": "Futter und Ackerkulturen ernten und konservieren (Heu, Silage, Getreide)",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Maschinenarbeit, die wetterabhängig vor Ort erledigt wird. Lohnunternehmer übernehmen zwar Teile davon, doch keine autonome Technik ersetzt die Arbeit."
+      },
+      {
+        "name": "Maschinen, Gebäude und Zäune warten und reparieren, Tiere umweiden",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche und physische Arbeit vor Ort."
+      },
+      {
+        "name": "Tages- und Saisonarbeiten einteilen, Mitarbeitende, Familienmitglieder und Lernende anleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurzfristige Absprachen nach Wetter und Lage, Anleitung findet direkt vor Ort statt."
+      },
+      {
+        "name": "Feldkalender, Behandlungsjournal und Tierverkehrsmeldungen in Apps und Portalen (z. B. Agate/TVD) erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze, strukturierte Einträge in Formular-Apps, bei denen KI kaum 50 % Zeit spart. Die Erfassung läuft bereits über klassische Software, die menschliche Eingabe bleibt."
+      },
+      {
+        "name": "Fruchtfolge, Düngungsplan (Suisse-Bilanz) und Futterrationen planen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Berechnungen laufen über klassische Software (Suisse-Bilanz, Rationsprogramme). Die Zeit liegt in betriebsspezifischen Entscheiden, die ein LLM kaum um 50 % verkürzt."
+      },
+      {
+        "name": "Vorschriften und Merkblätter (ÖLN, Beitragsprogramme) klären, Gesuche, Korrespondenz und Vermarktungstexte verfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Chat-LLM erklärt eingefügte Regeltexte und entwirft Briefe, Begründungen und Hofladen-Texte. Der Landwirt gibt Stichworte vor und prüft jeden Entwurf auf Richtigkeit für seinen Betrieb."
+      },
+      {
+        "name": "Betriebsmittel einkaufen und Produkte abliefern oder im Hofladen verkaufen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Transport, Ablieferung und Kundenkontakt sind physisch bzw. finden in Präsenz statt. Selbstbedienungs-Hofläden decken nur einen Teil ab."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommen ist ein typischer Schweizer Familienbetrieb im Talgebiet mit gemischter Ausrichtung: Milchvieh, Futterbau und etwas Ackerbau, geführt von einem Landwirt bzw. einer Landwirtin EFZ. Weil die ESCO-Beschreibung knapp ist, stammen die Tätigkeiten aus der Kompetenzliste und aus Berufswissen. Die grösste Unsicherheit betrifft das Feld P bei Fütterung und Entmistung (Roboter verfügbar, Wirtschaftlichkeit auf kleinen Betrieben unklar). Die Büroarbeit ist klein und erreicht grösstenteils die 50 %-Schwelle nicht.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert ist nur ein kleiner Teil der Büroarbeit: Ein Chat-LLM kann Vorschriften erklären sowie Gesuche, Korrespondenz und Vermarktungstexte entwerfen; Stall-, Tier- und Feldarbeit sind nicht betroffen.",
+      "begruendung": "Nur rund 3 % der Arbeitszeit sind gegenüber generativer KI exponiert, und zwar delegierend: Die KI entwirft Texte, der Landwirt prüft jeden Entwurf auf seinen Betrieb. Der Kern des Berufs ist physische Arbeit an Tieren, auf dem Feld und an Maschinen; relevanter ist die klassische Automatisierung mit Melk-, Fütterungs- und Entmistungsrobotern. Die verstreuten kleinen Familienbetriebe bremsen die Adoption.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

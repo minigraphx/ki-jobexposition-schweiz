@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "d6277c636900b78cd56ead35394e9754da7a70db7a78edd3306544aeeeda59d1",
+    "isco_code": "4412",
+    "beruf": "Postverteiler und -sortierer",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:20:45+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2223,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2223
+        }
+      ],
+      "prompt_token_count": 21406,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21406
+        }
+      ],
+      "thoughts_token_count": 6347,
+      "total_token_count": 29976
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2223,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2223
+          }
+        ],
+        "prompt_token_count": 21406,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21406
+          }
+        ],
+        "thoughts_token_count": 6347,
+        "total_token_count": 29976
+      }
+    ],
+    "request_ids": [
+      "1zHPaqvCD7vL_PUPs93BqAU"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/n5emuc02ro4ufy1vyf6nfkxyavizsuglfcaq",
+    "custom_id": "r1-4412_postverteiler_und_sortierer",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "4412",
+    "beruf": "Postverteiler und -sortierer",
+    "taetigkeiten": [
+      {
+        "name": "Briefe, Pakete und Sperrgut nach Zustellbezirken und Gangfolge sortieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Sortieren und Stecken von Sendungen am Sortierpult oder an Förderbändern ist eine physische Tätigkeit. Klassische Brief- und Paketsortieranlagen sowie mobile Sortierroboter können über 50 % der heute noch manuell ausgeführten Sortierarbeit übernehmen."
+      },
+      {
+        "name": "Postsendungen und Pakete auf der Zustelltour oder im internen Hausdienst verteilen und zustellen",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Fahren, Gehen und physische Einwerfen oder Übergeben von Sendungen vor Ort erfordert körperliche Präsenz; Zustellroboter und Drohnen sind in der Schweiz nur in Nischen- oder Pilotprojekten im Einsatz."
+      },
+      {
+        "name": "Ein- und ausgehende Sendungen scannen und im Sendungsinformationssystem registrieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handhabung der Sendungen beim Barcodescannen ohne Einsatz generativer KI. Automatische Kamera-Scantunnel und RFID-Gates an Förderbändern und Laderampen können den Grossteil der manuellen Scanvorgänge übernehmen."
+      },
+      {
+        "name": "Rollbehälter, Postsäcke und Transportgebinde be- und entladen sowie an Transportunternehmen übergeben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Umschlagarbeit an Laderampen und Zustellfahrzeugen, für die bei heterogenen Gebinden und Fahrzeugtypen keine wirtschaftlich breit einsetzbare Robotik verfügbar ist."
+      },
+      {
+        "name": "Empfangsbestätigungen, Unterschriften und Abstellgenehmigungen bei der Auslieferung per Mobilgerät aufnehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Interaktion an der Haustür oder am Schalter sowie physische Übergabe gegen Quittung auf dem Handscanner; generative KI spart hier keine relevante Arbeitszeit."
+      },
+      {
+        "name": "Sendungen auf Unversehrtheit und Versandvorschriften prüfen sowie beschädigte Sendungen sichern",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Sicht- und Griffkontrolle von Paketen und Briefen sowie manuelles Nachkleben oder Umverpacken beschädigter Sendungen."
+      },
+      {
+        "name": "Unklare Empfängeradressen recherchieren und Nachsende- oder Retourenaufträge im System bearbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Multimodale KI-Bilderkennung (schwer lesbare Handschrift, beschädigte Etiketten) kombiniert mit einem KI-Abgleich gegen Adress- und Umzugsdatenbanken löst unklare Sendungen weitgehend automatisch auf; Mitarbeitende bearbeiten nur noch markierte Ausnahmefälle."
+      },
+      {
+        "name": "Tägliche Zustellroute, Ladefolge und Prioritäten anhand des Sendungsaufkommens disponieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Berechnung optimaler Zustellrouten und Zeitfenster erfolgt über klassische algorithmische Tourenplanungs- und Dispositionssoftware ohne generative KI."
+      },
+      {
+        "name": "Kundenanfragen bei der Zustellung oder an der Ausgabestelle beantworten und Aufträge entgegennehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Auskunft und Entgegennahme von Anweisungen von Angesicht zu Angesicht auf der Zustelltour oder am Schalter."
+      },
+      {
+        "name": "Schadensmeldungen, Zustellhindernisse und Frachtaufzeichnungen im Logistiksystem dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Per Spracheingabe und Fotoaufnahme auf dem Handscanner erstellt eine integrierte KI-Funktion den strukturierten Schadens- oder Unregelmässigkeitsbericht; die Zustell- oder Sortierkraft prüft jeden Eintrag vor dem Absenden."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Mitarbeitende in der Brief- und Paketsortierung sowie Zustellung (Post- und KEP-Dienstleister sowie grössere interne Poststellen in der Schweiz). Der Beruf ist stark physisch geprägt; das grösste Automatisierungspotenzial liegt bei klassischer Sortier-, Scan- und Tourenplanungs-Technik (Feld P), während generative KI nur Randaufgaben bei der Adressklärung und Schadensdokumentation betrifft.",
+    "zusammenfassung": {
+      "haupt_risiko": "Von generativer KI betroffen sind lediglich das Klären unleserlicher oder fehlerhafter Adressen mittels multimodaler Bilderkennung sowie das Dokumentieren von Schäden und Zustellhindernissen per Spracheingabe und Fotoanalyse; die physische Sortier- und Zustellarbeit bleibt unberührt.",
+      "begruendung": "Nur rund 10 % der Arbeitszeit sind gegenüber generativer KI exponiert, teils ersetzend bei der automatisierten Adressklärung (Videocodierung) und teils delegierend beim Erstellen von Schadens- und Ereignismeldungen auf mobilen Endgeräten. Wesentliche Hürden in der Schweiz sind das gesetzliche Postgeheimnis und der Datenschutz bei Empfängerdaten sowie der Integrationsaufwand in bestehende Handscanner- und Sortiersysteme, während klassische Automatisierung (Sortieranlagen, Scantunnel) den Beruf deutlich stärker verändert.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

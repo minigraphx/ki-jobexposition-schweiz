@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "d40f28820cbf14fdfff68f73b04567d1687d60f1067429dc4ae9a92e2a890402",
+    "isco_code": "2433",
+    "beruf": "Technische Verkaufsfachkräfte (ohne Informations- und Kommunikationstechnologie)",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2376,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2376
+        }
+      ],
+      "prompt_token_count": 22415,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22415
+        }
+      ],
+      "thoughts_token_count": 6469,
+      "total_token_count": 31260
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2376,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2376
+          }
+        ],
+        "prompt_token_count": 22415,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22415
+          }
+        ],
+        "thoughts_token_count": 6469,
+        "total_token_count": 31260
+      }
+    ],
+    "request_ids": [
+      "xD_PasTJCMf_qtsPt4yCmQ4"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2433_technische_verkaufsfachkraefte",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2433",
+    "beruf": "Technische Verkaufsfachkräfte (ohne Informations- und Kommunikationstechnologie)",
+    "taetigkeiten": [
+      {
+        "name": "Technische Kundenbedürfnisse vor Ort analysieren und Lösungsansätze im persönlichen Gespräch beraten",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Bedarfsanalyse und technische Beratung im B2B-Vertrieb finden im direkten Dialog sowie bei Begehungen vor Ort beim Kunden statt und beruhen auf persönlicher Präsenz und Vertrauensaufbau."
+      },
+      {
+        "name": "Produkte und technische Funktionsweisen bei Kunden oder an Fachmessen vorführen und präsentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das physische Vorführen von Geräten, Maschinen oder Mustern sowie die interaktive Präsentation vor Ort erfordern unmittelbare persönliche Anwesenheit."
+      },
+      {
+        "name": "Technische Angebote, Pflichtenheft-Antworten und Produktspezifikationen ausarbeiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit",
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumenten- und Wissensdatenbank-KI (Extraktion aus Kunden-Pflichtenheften, Abgleich mit technischen Katalogen und ERP-Daten) erstellt den Angebotsentwurf samt Anforderungsmatrix; die Verkaufsfachkraft spezifiziert die Lösung und prüft jedes Angebot fachlich und kommerziell."
+      },
+      {
+        "name": "Schriftliche technische Kundenanfragen beantworten und Produktinformationen aufbereiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft auf Basis eingefügter technischer Datenblätter und Kundenfragen präzise, bei Bedarf mehrsprachige Antworten zu Produkteigenschaften und Kompatibilität; die Fachkraft prüft jede Auskunft vor dem Versand."
+      },
+      {
+        "name": "Preis- und Vertragsverhandlungen führen sowie Verkaufsabschlüsse tätigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kommerzielle Verhandlungen mit Einkäufern und Entscheidungsträgern sowie der Vertragsabschluss erfordern zwischenmenschliches Verhandlungsgeschick, Ermessensentscheide und persönliche Verbindlichkeit."
+      },
+      {
+        "name": "Potenzielle Neukunden und Projekte recherchieren sowie Erstkontakt- und Nachfasskorrespondenz verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Web-Recherche-Agenten und CRM-integrierte Sprachmodelle identifizieren Zielkunden bzw. Ausschreibungen und entwerfen personalisierte Anschreiben sowie Nachfass-E-Mails; die Verkaufsfachkraft wählt die Zielkontakte aus und prüft jede Nachricht einzeln."
+      },
+      {
+        "name": "Bestehende Kundenbeziehungen pflegen, technische Reklamationen klären und Nachbetreuung koordinieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die langfristige Beziehungspflege im technischen B2B-Geschäft und die persönliche Problemlösung bei Reklamationen basieren auf Vertrauen und direktem Kundenkontakt."
+      },
+      {
+        "name": "Kundeninteraktionen, Besuchsberichte und Verkaufschancen im CRM-System dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracherkennung (z. B. per Sprachnotiz nach dem Kundenbesuch) und CRM-KI-Integration erstellen strukturierte Besuchsberichte und aktualisieren Kundendaten; die Verkaufsfachkraft kontrolliert und bestätigt jeden Eintrag."
+      },
+      {
+        "name": "Verkaufsberichte, Umsatzprognosen und Marktanalysen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Assistenten im CRM- oder BI-System werten Pipeline- und Verkaufsdaten aus und entwerfen kommentierte Berichte, die die Fachkraft fachlich prüft; klassische BI- und CRM-Reporting-Software übernimmt bereits den Grossteil der Standardauswertungen."
+      },
+      {
+        "name": "Technische Machbarkeit, Sonderlösungen und Liefertermine intern mit Entwicklung und Produktion abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die laufende Koordination und Aushandlung kundenindividueller technischer Lösungen mit internen Fachabteilungen erfordert direkte Abstimmungsgespräche und technisches Urteilsvermögen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Technische/r Verkaufsberater/in bzw. Verkaufsingenieur/in (B2B-Innen- und Aussendienst kombiniert) für technische Investitionsgüter, Industriekomponenten oder Medizinaltechnik in einem Schweizer KMU oder Industrieunternehmen. Die knappe ESCO-Beschreibung wurde anhand der Kompetenzliste und des typischen Schweizer Berufsprofils konkretisiert. Die grösste Abgrenzungsfrage liegt beim Ausarbeiten technischer Angebote, wo der Übergang zwischen reinem Chat-LLM (E1) und dokumenten-/ERP-gestützten KI-Systemen (E2) fliessend ist.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem die schriftliche und konzeptionelle Vertriebsarbeit – insbesondere das Ausarbeiten technischer Angebote und Pflichtenheft-Antworten, das Beantworten technischer Kundenanfragen, die Neukundenrecherche samt Korrespondenz sowie die CRM-Dokumentation und Berichterstattung durch Chat-LLMs und CRM-integrierte KI-Assistenten.",
+      "begruendung": "Rund 45 % der Arbeitszeit entfallen auf exponierte Tätigkeiten, bei denen die KI durchwegs im delegierenden Modus Entwürfe für Angebote, technische Auskünfte, Anschreiben und Berichte erstellt, während die Verkaufsfachkraft jede Ausgabe fachlich und kommerziell verantwortet. Die übrigen 55 % bestehen aus persönlicher Präsenz beim Kunden, Produktvorführungen, Verhandlungen und Beziehungspflege, die nicht durch KI ersetzbar sind. In der Schweiz bremsen hohe Vertrauensanforderungen im B2B-Geschäft, die Abstimmung von Dokumenten über mehrere Landessprachen sowie Datenschutz- und Haftungsfragen bei verbindlichen technischen Spezifikationen eine unkontrollierte Automatisierung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

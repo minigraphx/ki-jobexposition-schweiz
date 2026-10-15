@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "6f3741474926a7140050a2fd3c9a7521ddf27d64f5752ff504d69e72de81fef3",
+    "isco_code": "9214",
+    "beruf": "Hilfsarbeiter im Gartenbau",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:22:06+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3573,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 3809,
+      "api_aequivalent_usd": 0.11210219999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3573,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3809,
+        "output_tokens_details": {
+          "thinking_tokens": 910
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3573,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11210219999999999
+      }
+    ],
+    "request_ids": [
+      "81b3c3e1-2133-482f-9b01-c55e656a54b9"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "9214",
+    "beruf": "Hilfsarbeiter im Gartenbau",
+    "taetigkeiten": [
+      {
+        "name": "Rasenflächen mähen, vertikutieren und mit Rasenpflegegeräten pflegen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit mit Maschinen vor Ort, keine LLM-Exposition. Mähroboter (auch GNSS-gestützte für grössere Flächen) sind in der Schweiz verbreitet und können den Grossteil des Mähens übernehmen; Vertikutieren und Ränder bleiben manuell."
+      },
+      {
+        "name": "Hecken, Sträucher und kleine Bäume mit Hand- und Motorgeräten schneiden",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit mit Heckenschere, Astschere und Motorsäge; keine Robotik für Gehölzschnitt im regulären Einsatz."
+      },
+      {
+        "name": "Unkraut jäten und Beete, Rabatten und Pflanzflächen pflegen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handarbeit an kleinteiligen, gemischten Pflanzflächen; Jätroboter gibt es nur für Feldkulturen, nicht für Gärten und Parks."
+      },
+      {
+        "name": "Boden vorbereiten: umgraben, lockern, Erde und Substrat einbringen, Rasenflächen planieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Erdarbeiten mit Schaufel, Rechen, Fräse oder Kleinbagger; keine autonome Technik in relevantem Umfang."
+      },
+      {
+        "name": "Stauden, Sträucher, Bäume und Rasen nach Anweisung und Pflanzplan setzen bzw. ansäen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Pflanzen ist Handarbeit vor Ort nach Vorgaben des Vorarbeiters; keine Pflanzroboter für Gärten verfügbar."
+      },
+      {
+        "name": "Pflanzen und Rasenflächen giessen bzw. Bewässerung einstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit ohne LLM-Bezug; automatische Bewässerungsanlagen mit Zeit- und Feuchtesteuerung sind kommerziell verbreitet und übernehmen das Giessen weitgehend."
+      },
+      {
+        "name": "Dünger und Pflanzenschutzmittel nach Anweisung ausbringen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Ausbringen mit Streuer oder Rückenspritze nach Vorgabe; Dosierung bestimmt die Fachperson."
+      },
+      {
+        "name": "Laub, Schnittgut und Abfälle zusammennehmen, Material transportieren und Fahrzeuge beladen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Räum- und Transportarbeit mit Laubbläser, Schubkarre und Fahrzeug; keine Robotik in diesem Setting."
+      },
+      {
+        "name": "Bei einfachen Bauarbeiten helfen: Wege, Platten, Zäune, Einfassungen und Trockenmauern",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Hilfsarbeit auf der Baustelle im Garten; keine Automatisierung in relevantem Umfang."
+      },
+      {
+        "name": "Gartengeräte und Maschinen reinigen, warten und einfache Reparaturen ausführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handarbeit in der Werkstatt bzw. auf dem Werkhof; keine LLM-Exposition und keine Automatisierung."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommen ist eine angelernte Hilfskraft in einem Gartenbau- oder Gartenunterhaltsbetrieb (KMU), die in Privatgärten und Parks unter Anleitung einer Fachperson arbeitet. Die ESCO-Beschreibung ist knapp, deshalb stützen sich die Tätigkeiten vor allem auf die Kompetenzliste. Planung, Offerten und Rapporte macht in der Regel der Vorarbeiter; die Stundenerfassung der Hilfskraft ist minimal und deshalb nicht als eigene Tätigkeit erfasst. Am unsichersten ist die Bewertung P1 für das Mähen (Mähroboter) und das Giessen (Bewässerungsautomatik).",
+    "zusammenfassung": {
+      "haupt_risiko": "Keine wesentliche Tätigkeit ist durch generative KI exponiert; teilweise automatisierbar sind nur das Rasenmähen durch Mähroboter und das Giessen durch automatische Bewässerung, also nicht-generative Technik.",
+      "begruendung": "Die ganze Arbeitszeit besteht aus körperlicher Arbeit vor Ort in Gärten und Parks: schneiden, jäten, pflanzen, Boden vorbereiten, transportieren. Dafür bringen Sprachmodelle keinen Zeitgewinn von mindestens 50 %, deshalb gibt es weder einen Modus noch CH-spezifische Hemmnisse. Für den Beruf relevant sind eher Mähroboter und Bewässerungsanlagen, die in Schweizer Gärten bereits verbreitet sind.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "9b2737bf94a8add71c8832b834eec679d9004abc78e3b8e3e9fe062c5aa875e9",
+    "isco_code": "2511",
+    "beruf": "IT-Projektleiter/in",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2343,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2343
+        }
+      ],
+      "prompt_token_count": 22453,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22453
+        }
+      ],
+      "thoughts_token_count": 5692,
+      "total_token_count": 30488
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2343,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2343
+          }
+        ],
+        "prompt_token_count": 22453,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22453
+          }
+        ],
+        "thoughts_token_count": 5692,
+        "total_token_count": 30488
+      }
+    ],
+    "request_ids": [
+      "xD_PaoCtCI3jqtsPtpOG4AE"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-2511_it_projektleiter_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2511",
+    "beruf": "IT-Projektleiter/in",
+    "taetigkeiten": [
+      {
+        "name": "Projektteams fachlich führen, Aufgaben im Alltag koordinieren und Teammeetings moderieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zwischenmenschliche Führungs-, Moderations- und Koordinationsarbeit (z. B. Daily Stand-ups, Sprint-Planung, Coaching im Team) erfordert persönliche Präsenz und soziale Interaktion."
+      },
+      {
+        "name": "Anforderungen mit Stakeholdern erheben, Workshops leiten und Auftraggeber beraten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Interaktive Workshops, Anforderungsgespräche und die Beratung von Fachabteilungen oder Kunden leben vom direkten Dialog und gegenseitigen Aushandeln."
+      },
+      {
+        "name": "Projektspezifikationen, Projektanträge, Pflichtenhefte und User Stories ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus Workshop-Notizen und Stichworten strukturierte Pflichtenhefte, Projektinitialisierungsaufträge oder User Stories mit Akzeptanzkriterien; die Projektleitung spezifiziert die Vorgaben und prüft jedes Dokument fachlich im Detail."
+      },
+      {
+        "name": "Termin-, Meilenstein- und Ressourcenpläne erstellen, abstimmen und in Planungstools nachführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Zeitaufwand liegt vor allem im realistischen Abschätzen von Abhängigkeiten und im Abstimmen von Kapazitäten mit Team- und Linienverantwortlichen; generative KI spart hier neben klassischer PM-Software weniger als 50 % der Zeit."
+      },
+      {
+        "name": "Projektstatusberichte, Entscheidungsvorlagen und Projektabschlussberichte verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus kopierten Projektdaten, Kennzahlen und Stichworten entwirft ein Chat-LLM Status- und Abschlussberichte (z. B. nach HERMES); der Projektleiter steuert den Inhalt und prüft jeden Bericht vor Versand an den Lenkungsausschuss."
+      },
+      {
+        "name": "Sitzungsprotokolle und Pendenzenlisten aus Projektbesprechungen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Transkription und Zusammenfassung in Meeting-Software erstellt Protokolle und Action Items automatisch; die Projektleitung liest kurz gegen und gibt frei, wobei Schweizerdeutsch und IT-Fachjargon den Korrekturaufwand leicht erhöhen."
+      },
+      {
+        "name": "Kosten-Nutzen-Analysen erstellen sowie Projektbudget und Leistungsabrechnungen kontrollieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Projektleitung beurteilt Budgetabweichungen, Prognosen und Business-Case-Annahmen selbst; KI-Datenanalysewerkzeuge (z. B. in Tabellenkalkulation oder ERP/PM-Systemen) werten Stunden- und Kostendaten aus und liefern Berechnungs- sowie Textbausteine."
+      },
+      {
+        "name": "Projektrisiken analysieren, Risikoregister pflegen und rechtliche oder regulatorische Vorgaben abklären",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Einschätzung der Eintrittswahrscheinlichkeit und die Wahl der Massnahmen erfolgen durch die Projektleitung selbst, während ein Chat-LLM mögliche Projektrisiken sowie Datenschutz- oder Compliance-Anforderungen strukturiert aufbereitet und Formulierungshilfen liefert."
+      },
+      {
+        "name": "Projektänderungen (Change Requests), Eskalationen und Lieferantenleistungen mit Entscheidungsträgern verhandeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Verhandeln von Scope-Änderungen, Budgets und Lieferantenverträgen sowie das Lösen von Eskalationen im Lenkungsausschuss erfordern Verhandlungsgeschick, Ermessen und persönliche Überzeugungsarbeit."
+      },
+      {
+        "name": "Abnahmetests (User Acceptance Tests) und System-Rollouts koordinieren sowie Lieferobjekte abnehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Koordination von Fachbereichstests, das Steuern von Go-Live-Aktivitäten und die formelle Abnahme von Projektergebnissen sind operative Steuerungs- und Entscheidungsaufgaben."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: IT-Projektleiter/in in einem Schweizer Dienstleistungs-, Industrie- oder Verwaltungsbetrieb (Methoden wie Agile/Scrum, HERMES oder hybrid). ESCO-Rauschen aus dem Input (insbesondere spezifische Blockchain-Entwicklungskompetenzen sowie disziplinarisches Einstellen von Personal aus ISCO 1330) wurde bereinigt, da der Beruf in CH-ISCO 2511 die fachliche Projektleitung und Spezifikation umfasst.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die schriftliche Ausarbeitung von Projektspezifikationen, Status- und Abschlussberichten sowie Sitzungsprotokolle und Finanz-/Risikoanalysen durch Chat-LLMs und KI-Meeting- bzw. Analysewerkzeuge.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden und unterstützenden Modus, da die inhaltliche Verantwortung für Spezifikationen, Budgets, Risiken und Gremienberichte bei der Projektleitung bleibt (nur Sitzungsprotokolle sind weitgehend ersetzend). Der grössere Teil der Arbeit (Teamführung, Stakeholder-Workshops, Verhandlungen, Rollout-Steuerung) bleibt menschliche Interaktions- und Entscheidungsarbeit. In der Schweiz bremsen vor allem Datenschutz- und Geheimhaltungsvorschriften (revDSG, Bankkunden- und Amtsgeheimnis) die unbeschränkte Nutzung von Cloud-KI-Diensten mit sensiblen Projektdaten.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

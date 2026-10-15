@@ -1,0 +1,264 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "6a341bc97ffd7947f6dacd8935eaa009d45ab261bf69d8789607b404dd8697ce",
+    "isco_code": "1222",
+    "beruf": "Marketing-/Kommunikationsleiter/in",
+    "lauf": 3,
+    "reihenfolge_seed": 20261016,
+    "timestamp": "2026-10-14T01:12:56+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 8416,
+      "cache_read_input_tokens": 78022,
+      "output_tokens": 9030,
+      "api_aequivalent_usd": 0.2635484
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 41371,
+        "output_tokens": 5134,
+        "output_tokens_details": {
+          "thinking_tokens": 1544
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11096219999999998
+      },
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 8416,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3896,
+        "output_tokens_details": {
+          "thinking_tokens": 214
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 8416,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1525862
+      }
+    ],
+    "request_ids": [
+      "562fd35e-da1e-4bd6-8957-2ce3524e47dd",
+      "6e2de7c2-523e-4273-a3ab-17dda716ba1d"
+    ],
+    "versuche": 2,
+    "status": "ok",
+    "fehler": [
+      "Versuch 1: Zeitanteile summieren auf 105, nicht exakt 100"
+    ],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1222",
+    "beruf": "Marketing-/Kommunikationsleiter/in",
+    "taetigkeiten": [
+      {
+        "name": "Direktion bzw. Geschäftsleitung in Sitzungen zu Kommunikation, Image und Krisenfällen beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung, politisches Gespür und Abstimmung von Angesicht zu Angesicht; der Wert liegt in Präsenz und Vertrauensstellung."
+      },
+      {
+        "name": "Kommunikationsstrategien und -konzepte (Ziele, Zielgruppen, Botschaften, Massnahmenplan) schriftlich ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Leiterin erarbeitet Analyse und strategische Linie selbst; das Chat-LLM liefert Gliederungen, Umfeldanalysen aus eingefügten Unterlagen, Massnahmenvorschläge und Formulierungen. Nahe an der Schwelle, da viel Kontext im Kopf der Person liegt."
+      },
+      {
+        "name": "Medienmitteilungen, Stellungnahmen, Reden und Kernbotschaften verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM entwirft den Text aus Stichworten, Beschlüssen und Hintergrundpapieren; die Leiterin prüft jede Aussage auf Richtigkeit, Tonalität und politische Wirkung und korrigiert. Hemmnis: Amtsgeheimnis/Cloud-Vorgaben bei noch nicht öffentlichen Geschäften."
+      },
+      {
+        "name": "Texte von Mitarbeitenden und Agenturen redigieren und Korrektur lesen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Leiterin redigiert selbst; das LLM markiert Rechtschreib-, Stil- und Kohärenzfehler und schlägt Kürzungen vor, sodass sie gezielter liest."
+      },
+      {
+        "name": "Intranet-Beiträge, Mitarbeitenden-Newsletter und interne Mitteilungen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM erstellt Beiträge aus Inputs der Fachabteilungen; die Leiterin prüft jeden Beitrag kurz inhaltlich und publiziert ihn im Intranet. Geringeres Risiko als externe Kommunikation, daher tiefe Restzeit."
+      },
+      {
+        "name": "Inhalte für Website und Social Media inkl. Bildmaterial planen und erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Text wäre E1, Bildbearbeitung/-erzeugung und Redaktionsplanung brauchen generative Zusatzsoftware; KI erstellt Posts und Visuals, die Leiterin wählt aus und prüft jeden Beitrag. Reputationsrisiko bei Behördenkommunikation."
+      },
+      {
+        "name": "Mehrsprachige Fassungen (DE/FR/IT) von Publikationen erstellen und inhaltlich abgleichen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "LLM übersetzt Mitteilungen und Publikationen; jede publizierte Fassung wird von der Leiterin bzw. dem Sprachdienst revidiert. Hemmnis: parallele Führung und Abstimmung in mehreren Landessprachen."
+      },
+      {
+        "name": "Medienanfragen beantworten, Journalistenkontakte pflegen und Interviews geben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend Telefonate, Hintergrundgespräche und Interviews; Beziehungspflege und Spontanität mit Medienschaffenden sind nicht delegierbar."
+      },
+      {
+        "name": "Kommunikationsteam und externe Agenturen führen, Projekte und Budget steuern",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Personalführung, Briefings, Abstimmung und Priorisierung sind Präsenz- und Führungstätigkeiten."
+      },
+      {
+        "name": "Medienresonanz und Kanal-Kennzahlen auswerten und Reportings erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen in Monitoring- und Analysetools fassen Clippings und Kennzahlen zusammen und erstellen den Bericht; die Leiterin prüft und ergänzt die Interpretation. Klassische Dashboards liefern nur Rohzahlen, die Auswertung bleibt, daher P0."
+      },
+      {
+        "name": "Präsentationen für Gremien, Kader und Öffentlichkeit erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktion in der Office-Suite erstellt Folien aus Konzeptpapieren; die Leiterin prüft jede Folie und passt Inhalte und CI-Layout an."
+      },
+      {
+        "name": "Medienkonferenzen und Veranstaltungen organisieren und vor Ort durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Koordination mit Beteiligten, Moderation und Präsenz vor Ort dominieren; schriftliche Einladungen sind ein kleiner Teil."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Leiter/in Kommunikation in einer kantonalen oder städtischen Verwaltung bzw. öffentlichen Organisation mit kleinem Team und externen Agenturen. ESCO passt gut; Zeitanteile sind grob geschätzt. Grenzfälle sind die Strategiearbeit (unterstützend nahe der Schwelle) und der Anteil schriftlicher Medienantworten, der hier dem E0-Posten Medienarbeit zugeordnet ist.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Verfassen von Medienmitteilungen, Intranet- und Social-Media-Inhalten, mehrsprachigen Fassungen, Präsentationen und Reportings, die Chat-LLMs und KI-Funktionen in Office- und Monitoring-Tools grösstenteils entwerfen.",
+      "begruendung": "Gut die Hälfte der Arbeitszeit ist exponiert, überwiegend im delegierenden Modus (KI entwirft, die Leiterin prüft jede Publikation), bei Strategiepapieren und Redigieren unterstützend. Beratung der Führung, Medienkontakte, Teamführung und Veranstaltungen bleiben menschliche Präsenzarbeit. In der Verwaltung bremsen Amtsgeheimnis und Cloud-Vorgaben sowie die parallele Kommunikation in mehreren Landessprachen die Umsetzung.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

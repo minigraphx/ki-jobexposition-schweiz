@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "provider": "claude",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "aeb7aa10a25d77366499bb05a443c566bc42c7ae777e479207dbb699b0b1897c",
+    "isco_code": "9313",
+    "beruf": "Hilfsarbeiter im Hochbau",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T21:31:55+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive",
+      "max_tokens": 64000,
+      "fallbacks": "default",
+      "structured_output": "output_config.format"
+    },
+    "stop_reason": "end_turn",
+    "stop_details": null,
+    "usage": {
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 36937,
+      "input_tokens": 2592,
+      "output_tokens": 3343
+    },
+    "usage_je_versuch": [
+      {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 36937,
+        "inference_geo": "global",
+        "input_tokens": 2592,
+        "iterations": [
+          {
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 36937,
+            "input_tokens": 2592,
+            "model": null,
+            "output_tokens": 3343,
+            "type": "message"
+          }
+        ],
+        "output_tokens": 3343,
+        "output_tokens_details": {
+          "thinking_tokens": 715
+        },
+        "service_tier": "standard"
+      }
+    ],
+    "request_ids": [],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "9313",
+    "beruf": "Hilfsarbeiter im Hochbau",
+    "taetigkeiten": [
+      {
+        "name": "Material, Werkzeuge und Geräte auf der Baustelle transportieren, abladen und an die Arbeitsplätze verteilen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Tätigkeit auf wechselnden, unstrukturierten Baustellen. Kran und Hubgeräte werden bereits genutzt; autonome Transportroboter sind auf CH-Baustellen nicht im regulären Einsatz."
+      },
+      {
+        "name": "Beton und Mörtel mischen, giessen, verdichten und nachbearbeiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handarbeit mit Kübel, Vibrator und Abziehlatte vor Ort. Fertigbeton und Pumpen sind bereits Standard; das Einbringen und Verdichten bleibt manuell."
+      },
+      {
+        "name": "Bei Schalungs- und Armierungsarbeiten zudienen (Schalungen reinigen und ölen, Eisen tragen und binden)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Hilfsarbeit. Armierungs-Bindroboter gibt es nur vereinzelt und nicht in relevantem Umfang auf typischen CH-Hochbaustellen."
+      },
+      {
+        "name": "Gräben und Baugruben von Hand und mit Kleingeräten (Minibagger, Vibroplatte) ausheben und verdichten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit bzw. Maschinenbedienung vor Ort. Autonome Bagger sind nur in Pilotprojekten verfügbar."
+      },
+      {
+        "name": "Maurern zudienen: Steine bereitstellen, Mörtel nachführen, Gerüstlagen bestücken",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Zudienarbeit. Es gibt keine kommerziell eingesetzte Robotik dafür."
+      },
+      {
+        "name": "Baustelle reinigen, Bauschutt räumen und in Mulden getrennt entsorgen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit in unstrukturierter Umgebung. Reinigungsroboter funktionieren nur auf freien Flächen und nicht auf Rohbaustellen."
+      },
+      {
+        "name": "Untergründe für Verputz, Anstrich oder Tapete vorbereiten (abdecken, abschleifen, spachteln, reinigen)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Arbeit am Objekt. Schleif- und Spachtelroboter sind nicht im regulären Einsatz."
+      },
+      {
+        "name": "Abbruch-, Spitz- und Schlitzarbeiten im Umbau ausführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit mit Handmaschinen. Ferngesteuerte Abbruchroboter existieren, übernehmen auf typischen Hochbaustellen aber nicht ≥ 50 % dieser Arbeit."
+      },
+      {
+        "name": "Baustelle einrichten, Abschrankungen und Absturzsicherungen aufstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montage- und Sicherungsarbeiten vor Ort."
+      },
+      {
+        "name": "Arbeitsanweisungen vom Polier entgegennehmen, sich im Team absprechen und Stunden eintragen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mündliche Absprache in Präsenz auf der Baustelle. Das Eintragen der Stunden dauert nur wenige Minuten; KI spart dabei nichts Relevantes."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: ungelernter Bauhilfsarbeiter (Handlanger) in einer Schweizer Hochbauunternehmung (Neubau und Umbau), der Maurern und Polier zudient. Die ESCO-Beschreibung ist knapp, die Kompetenzliste deckt die physischen Tätigkeiten aber gut ab. Schreib- oder Rapportarbeiten fallen typischerweise beim Polier an, nicht beim Hilfsarbeiter.",
+    "zusammenfassung": {
+      "haupt_risiko": "Keine Tätigkeit ist wesentlich durch generative KI exponiert; die Arbeit besteht fast vollständig aus physischer Zudien-, Transport-, Beton- und Reinigungsarbeit auf der Baustelle.",
+      "begruendung": "Praktisch die gesamte Arbeitszeit ist körperliche Arbeit vor Ort und damit E0, ohne relevanten KI-Modus. Auch nicht-generative Automatisierung (Baurobotik, autonome Maschinen) ist auf Schweizer Hochbaustellen nur in Pilotprojekten verfügbar. Allfällige Administration (Stunden, Rapporte) liegt beim Polier.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

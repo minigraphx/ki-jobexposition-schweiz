@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "ba71369f7ff91e2bf74493865f028af780d422cfc0406e547878aae01e4019a2",
+    "isco_code": "9333",
+    "beruf": "Frachtarbeiter und verwandte Berufe",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2158,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2158
+        }
+      ],
+      "prompt_token_count": 22087,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22087
+        }
+      ],
+      "thoughts_token_count": 6732,
+      "total_token_count": 30977
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2158,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2158
+          }
+        ],
+        "prompt_token_count": 22087,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22087
+          }
+        ],
+        "thoughts_token_count": 6732,
+        "total_token_count": 30977
+      }
+    ],
+    "request_ids": [
+      "XTzPauXFBP7oz7IP17yB4Qw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-9333_frachtarbeiter_und_verwandte_berufe",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "9333",
+    "beruf": "Frachtarbeiter und verwandte Berufe",
+    "taetigkeiten": [
+      {
+        "name": "Lkw, Lieferwagen und Container an der Rampe be- und entladen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Tätigkeit an der Verladerampe; automatische Be- und Entladesysteme erfordern Spezialauflieger und sind im allgemeinen Schweizer Frachtverkehr nicht für mindestens 50 % der Arbeit einsetzbar."
+      },
+      {
+        "name": "Güter, Kisten und Baumaterialien auf Paletten stapeln, folieren und für den Transport sichern",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handhabung und Ladungssicherung vor Ort; Wickelmaschinen und Palettierroboter sind zwar verfügbar, übernehmen bei gemischtem Stückgut und sperrigen Materialien aber meist unter 50 % der Gesamttätigkeit."
+      },
+      {
+        "name": "Paletten und Materialien mit Flurförderzeugen im Lager bewegen und einlagern",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Fahren und Rangieren mit Hubwagen oder Stapler (E0); fahrerlose Transportsysteme (FTS/AMR) und automatische Palettenlager sind in der Schweiz kommerziell verfügbar und können über 50 % des internen Transports übernehmen."
+      },
+      {
+        "name": "Bestellte Waren nach Versandauftrag im Lager zusammenstellen (Kommissionieren)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Greifen und Zusammenstellen von Artikeln (E0); automatische Kleinteilelager und Behälter-Robotersysteme (Ware-zur-Person-Systeme) sind im Schweizer Logistikmarkt kommerziell breit verfügbar."
+      },
+      {
+        "name": "Waren für den Versand verpacken, polstern und mit Etiketten beschriften",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Verpacken und Etikettieren am Packtisch; vollautomatische Verpackungsstrassen lohnen sich nur bei sehr hohem, uniformem Paketvolumen und decken heterogene Frachtgüter nicht ab."
+      },
+      {
+        "name": "Eingehende Lieferungen und Materialien auf Vollständigkeit und Transportschäden prüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische und visuelle Eingangskontrolle direkt an der gelieferten Ware vor Ort."
+      },
+      {
+        "name": "Warenbewegungen per Barcode-Scanner buchen und Bestände physisch zählen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Ablaufen der Lagerplätze, Zählen der Artikel und Scannen mit mobilen Datenerfassungsgeräten; die klassische Buchungssoftware ist bereits im Einsatz."
+      },
+      {
+        "name": "Lieferscheine, Frachtpapiere und Schadenmeldungen im Lagersystem erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "In vielen Betrieben werden Begleitpapiere von Frachtarbeitern nur per Barcode quittiert oder ans Büro weitergereicht, weshalb E0 ebenso plausibel ist.",
+        "ch_hemmnis": [],
+        "begruendung": "Multimodale KI-Funktionen in Lager-Apps lesen heterogene Papierlieferscheine per Foto aus und erstellen aus Spracheingaben und Schadenfotos strukturierte Mängelrapporte; die Lagerkraft prüft und bestätigt jeden Eintrag."
+      },
+      {
+        "name": "Verpackungsabfälle und Einwegmaterialien sortieren, pressen und entsorgen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physisches Einsammeln, Trennen von Karton, Folien oder Holz und Beschicken von Ballenpressen oder Mulden."
+      },
+      {
+        "name": "Lagerhalle, Verkehrswege und Verladezonen reinigen und freihalten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Unterhaltsreinigung (E0); autonome Scheuersaugmaschinen und Kehrroboter können die Bodenreinigung grosser freier Hallen- und Gangflächen zu mindestens 50 % übernehmen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Fracht- und Materiallagerarbeiter/in (Hilfskraft ohne formale Berufsausbildung) in einem Schweizer Logistik-, Speditions- oder Baustofflager. Der Beruf ist fast ausschliesslich physisch geprägt; eine Automatisierung findet primär über klassische Lagerrobotik und Fördertechnik (P1) statt, während generative KI höchstens bei der mobilen Erfassung von Papierlieferscheinen und Schadenmeldungen (5 %) greift.",
+    "zusammenfassung": {
+      "haupt_risiko": "Durch generative KI ist lediglich die mobile Erfassung von Lieferscheinen und Schadenmeldungen mittels Bilderkennung und Spracheingabe betroffen, während die physische Verlade- und Lagerarbeit unberührt bleibt.",
+      "begruendung": "Nur rund 5 % der Arbeitszeit sind gegenüber generativer KI exponiert, und zwar im delegierenden Modus, bei dem die KI Belegdaten oder Schadenberichte per App aufbereitet und die Arbeitskraft jeden Eintrag prüft. Der Beruf besteht zu 95 % aus körperlichem Verladen, Stapeln, Transportieren und Kommissionieren, wo nicht-generative Lagerautomatisierung (FTS, Kleinteilelager, Reinigungsroboter) das eigentliche Substitutionspotenzial darstellt.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

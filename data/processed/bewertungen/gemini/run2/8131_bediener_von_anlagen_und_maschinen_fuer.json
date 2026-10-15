@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "a6b7d720477b5b80ba26235a9fb6798553781ec91f7b0fff044cc3fd9b86b490",
+    "isco_code": "8131",
+    "beruf": "Bediener von Anlagen und Maschinen für chemische Erzeugnisse",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2301,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2301
+        }
+      ],
+      "prompt_token_count": 21229,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21229
+        }
+      ],
+      "thoughts_token_count": 5827,
+      "total_token_count": 29357
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2301,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2301
+          }
+        ],
+        "prompt_token_count": 21229,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21229
+          }
+        ],
+        "thoughts_token_count": 5827,
+        "total_token_count": 29357
+      }
+    ],
+    "request_ids": [
+      "XTzPauv2CP7oz7IP17yB4Qw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r2-8131_bediener_von_anlagen_und_maschinen_fuer",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "8131",
+    "beruf": "Bediener von Anlagen und Maschinen für chemische Erzeugnisse",
+    "taetigkeiten": [
+      {
+        "name": "Roh-, Hilfs- und Wirkstoffe bereitstellen, abwiegen und in Produktionsanlagen chargieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handhabung von Gebinden, Fässern und Big-Bags sowie manuelles Abwiegen und Chargieren an den Reaktoren vor Ort; durch generative KI nicht automatisierbar."
+      },
+      {
+        "name": "Produktionsanlagen, Reaktoren, Bioreaktoren und Aufbereitungsapparate einrichten, anfahren und vor Ort bedienen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelles Rüsten der Anlagen, Kuppeln von Schlauch- und Rohrverbindungen, Einsetzen von Filtern und physische Kontrollen direkt an den Apparaten erfordern Präsenz im Produktionsbereich."
+      },
+      {
+        "name": "Chemische und biotechnologische Prozesse am Prozessleitsystem (PLS) überwachen und Prozessparameter nachführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Rezeptsteuerung läuft bereits über klassische Prozessleitsysteme (SCADA/DCS); die verbleibende Arbeit besteht aus Sicherheitsüberwachung, Quittieren von Alarmen und gezieltem Eingreifen bei Prozessschwankungen, wofür Sprachmodelle keine 50 % Zeitersparnis bieten."
+      },
+      {
+        "name": "Inprozesskontrollen (IPK) durchführen: Proben ziehen und physikalisch-chemische Messwerte bestimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Probenahme am Reaktor oder Bioreaktor und anschliessende Messung im Betriebslabor (z. B. Dichte, pH-Wert, Trocknungsverlust); Inline-Sensorik (PAT) deckt nur einen Teil der Prüfparameter ab."
+      },
+      {
+        "name": "Produktionsanlagen, Tanks und Rohrleitungen reinigen, spülen und sterilisieren (manuell sowie via CIP/SIP)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Reinigung von Anlagenteilen, Umbau auf Reinigungsleitungen, Überwachung von CIP-/SIP-Zyklen und visuelle Sauberkeitskontrolle bei Chargenwechseln sind ortsgebundene physische Tätigkeiten."
+      },
+      {
+        "name": "Kleine Wartungs-, Umbau- und Störungsbehebungsarbeiten an Apparaten, Armaturen und Pumpen ausführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Tätigkeit direkt an der Produktionsanlage (Dichtungen und Filter wechseln, Pumpen prüfen, mechanische Störungen beheben)."
+      },
+      {
+        "name": "Standardisierte Chargenprotokolle (Batch Records) und Prüflisten während der Produktion ausfüllen und gegenprüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Eintragen und Vier-Augen-Prüfen von Soll-/Ist-Werten, Zeiten und Signaturen erfordert kein Sprachmodell, lässt sich aber durch klassische Electronic-Batch-Recording-Systeme (eBR/MES) mit direkter Waagen- und PLS-Anbindung zu über 50 % automatisieren."
+      },
+      {
+        "name": "Abweichungsmeldungen (Deviations), Störungsberichte und Schichtbucheinträge verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus eingegebenen Stichworten zu Prozessabweichungen oder Störungen erstellt ein Chat-LLM strukturierte, GMP-gerechte Berichte; die Fachperson prüft jeden Bericht inhaltlich auf korrekte Prozessdaten und visiert ihn."
+      },
+      {
+        "name": "Sicherheits-, Hygiene- und Umweltschutzmassnahmen (Gefahrstoffhandling, PSA, Sonderabfall- und Abwasserbehandlung) umsetzen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Anlegen von Schutzausrüstung, Einschleusen in Reinräume oder Ex-Zonen sowie physisches Trennen, Neutralisieren und Entsorgen von Chemieabfällen erfordern unmittelbare körperliche Ausführung."
+      },
+      {
+        "name": "Mündliche Schichtübergaben durchführen und Abläufe mit Labor, Technik und Schichtleitung abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Übergabegespräche an der Anlage und direkte Koordination im Schichtbetrieb sind Präsenz- und Kommunikationstätigkeiten."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Chemie- und Pharmatechnologe/-technologin EFZ bzw. Produktionsmitarbeiter/in im Schichtbetrieb eines Schweizer Chemie- oder Pharmaunternehmens (Wirkstoffherstellung, Synthese und Biotechnologie). Die ESCO-Beschreibung betont stark die Fermentation; das Aufgabenprofil wurde um die in der Schweiz typische chemische und pharmazeutische Anlagenbedienung nach GMP ergänzt. Die Automatisierung von Prozessabläufen und Chargendokumentation erfolgt primär über klassische Prozessleitsysteme (PLS) und Manufacturing Execution Systems (MES/eBR), nicht über generative KI.",
+    "zusammenfassung": {
+      "haupt_risiko": "Einzig das Verfassen von Abweichungsmeldungen, Störungsberichten und Schichtbucheinträgen in Freitext wird durch Sprachmodelle wesentlich beschleunigt, während die physische Anlagenbedienung und Prozessüberwachung nicht gegenüber generativer KI exponiert sind.",
+      "begruendung": "Lediglich rund 5 % der Arbeitszeit entfallen auf exponierte Textdokumentation, bei der die KI im delegierenden Modus aus Stichworten normgerechte Berichte entwirft und die Bedienperson jede Ausgabe fachlich prüft. Der überwiegende Teil des Berufs besteht aus physischer Arbeit an Reaktoren, Reinigungs- und Rüstprozessen sowie der Überwachung klassischer Prozessleitsysteme. In der stark regulierten Schweizer Pharma- und Chemiebranche bremsen zudem strenge GMP- und Swissmedic-Anforderungen an Datenintegrität und Systemvalidierung den Einsatz.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

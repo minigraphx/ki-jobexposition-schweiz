@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "0c4727f9fe32e4871e365783db613c7a8c70822429b0c0741a6c72afde02585c",
+    "isco_code": "8331",
+    "beruf": "ÖV-Fahrer/in (Bus/Tram)",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2041,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2041
+        }
+      ],
+      "prompt_token_count": 22802,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22802
+        }
+      ],
+      "thoughts_token_count": 7211,
+      "total_token_count": 32054
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2041,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2041
+          }
+        ],
+        "prompt_token_count": 22802,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22802
+          }
+        ],
+        "thoughts_token_count": 7211,
+        "total_token_count": 32054
+      }
+    ],
+    "request_ids": [
+      "XjzPavDiKPSAz7IP5t2zgAs"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-8331_oev_fahrer_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "8331",
+    "beruf": "ÖV-Fahrer/in (Bus/Tram)",
+    "taetigkeiten": [
+      {
+        "name": "Linienbus oder Tram im Strassenverkehr nach Fahrplan steuern und manövrieren",
+        "zeitanteil_pct": 60,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Fahrtätigkeit mit permanenter Verkehrsbeobachtung; fahrerlose Busse oder Trams sind im regulären Schweizer Linienverkehr auf offenen Strassen nicht zugelassen bzw. nur in eng begrenzten Pilotprojekten im Einsatz."
+      },
+      {
+        "name": "Fahrgastwechsel an Haltestellen überwachen und mobilitätseingeschränkten Personen beim Ein- und Ausstieg helfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert physische Präsenz vor Ort (z. B. Klapprampe für Rollstühle bedienen, Hilfestellung leisten) sowie die verantwortliche Sichtkontrolle des Türbereichs."
+      },
+      {
+        "name": "Abfahrtskontrolle durchführen, Betriebsfähigkeit prüfen und Fahrzeuginnenraum an Endhaltestellen kontrollieren",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer Kontrollrundgang am und im Fahrzeug (Beleuchtung, Reifen, Türen, Rampe, grobe Verschmutzungen und Fundgegenstände); Borddiagnosen ersetzen die Sicht- und Funktionsprüfung vor Ort nicht zu 50 %."
+      },
+      {
+        "name": "Fahrgästen mündlich Auskunft zu Verbindungen, Tarifen und Umsteigemöglichkeiten erteilen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Direktes Gespräch von Angesicht zu Angesicht beim Einsteigen; ein grosser Teil dieser Standardauskünfte kann jedoch durch digitale Fahrgastinformationsanzeigen, Automaten und Fahrplan-Apps in Selbstbedienung übernommen werden."
+      },
+      {
+        "name": "Fahrausweise im Fahrzeug verkaufen, kontrollieren und Kasse abrechnen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physischer Kassier- und Kontrollvorgang im Fahrzeug; Billettautomaten und Ticketing-Apps (Selbstbedienung) sind in der Schweiz flächendeckend verfügbar und übernehmen den Billettverkauf zu über 50 %."
+      },
+      {
+        "name": "Mit der Leitstelle per Funk kommunizieren und Massnahmen bei Betriebsstörungen, Pannen oder Notfällen vor Ort ergreifen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbares Handeln vor Ort (Fahrzeug sichern, Erste Hilfe leisten, Fahrgäste in Notlagen anleiten) und Echtzeit-Funkabstimmung mit der Betriebsleitzentrale."
+      },
+      {
+        "name": "Fahrgastdurchsagen bei Verspätungen, Anschlussbrüchen und Umleitungen im Fahrzeug machen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze mündliche Durchsagen der Fahrperson über das Bordmikrofon sparen durch ein LLM keine Zeit; klassische rechnergestützte Betriebsleitsysteme (ITCS) spielen Standard- und Störungsmeldungen jedoch automatisiert im Fahrzeug ab."
+      },
+      {
+        "name": "Konflikte mit Fahrgästen deeskalieren und Einhaltung der Beförderungsbedingungen durchsetzen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Reine Präsenz- und Beziehungstätigkeit zur Deeskalation im Fahrzeug, die persönliches Auftreten erfordert."
+      },
+      {
+        "name": "Ereignis-, Unfall- und Schadenrapporte sowie Mängelmeldungen am Fahrzeug verfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Per Spracheingabe und Fotoaufnahme in der Dienst-App erstellt die KI einen strukturierten Vorfalls-, Schaden- oder Mängelrapport; die Fahrperson prüft jede Meldung inhaltlich und gibt sie frei. Dialekt und Umgebungsgeräusche erhöhen den Korrekturaufwand."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Linienbus- oder Tramfahrer/in bei einem Schweizer Transportunternehmen im Stadt- und Regionalverkehr. Der Beruf wird durch das physische Fahren und die unmittelbare Präsenz im Fahrzeug dominiert; der Billettverkauf durch das Fahrpersonal ist in der Schweiz bereits stark durch Automaten und Apps reduziert, auf Regional- und Postautolinien aber noch Teil des Alltags.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert gegenüber generativer KI ist lediglich das Verfassen von Ereignis-, Schaden- und Mängelrapporten per Spracheingabe und Bilderkennung in Rapport-Apps, während der Fahrbetrieb und die Fahrgastbetreuung nicht betroffen sind.",
+      "begruendung": "Nur rund 3 % der Arbeitszeit sind gegenüber generativer KI exponiert, wobei die KI im delegierenden Modus aus Sprachnotizen und Fotos Rapporte erstellt, die von der Fahrperson inhaltlich geprüft werden. Über 95 % der Arbeit entfallen auf das physische Steuern von Bus oder Tram im Strassenverkehr sowie auf Präsenz- und Betreuungsaufgaben vor Ort. Bei Auskünften, Billettverkauf und Standarddurchsagen entlasten vielmehr klassische Selbstbedienungs- und Leitsysteme als generative KI.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

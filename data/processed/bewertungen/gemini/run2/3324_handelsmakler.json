@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "36ccccba2a4a6740e25e8e9f1463e858888511bbdbda5dcd3472a60148d6b128",
+    "isco_code": "3324",
+    "beruf": "Handelsmakler",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2121,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2121
+        }
+      ],
+      "prompt_token_count": 21426,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21426
+        }
+      ],
+      "thoughts_token_count": 4530,
+      "total_token_count": 28077
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2121,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2121
+          }
+        ],
+        "prompt_token_count": 21426,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21426
+          }
+        ],
+        "thoughts_token_count": 4530,
+        "total_token_count": 28077
+      }
+    ],
+    "request_ids": [
+      "xD_PaufXBI3jqtsPtpOG4AE"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-3324_handelsmakler",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3324",
+    "beruf": "Handelsmakler",
+    "taetigkeiten": [
+      {
+        "name": "Preise, Mengen und Lieferkonditionen zwischen Käufern und Verkäufern verhandeln",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das direkte Aushandeln von Preisen und Konditionen am Telefon oder im persönlichen Gespräch ist eine zwischenmenschliche Verhandlungstätigkeit, bei der generative KI keine 50 % Zeitersparnis erreicht."
+      },
+      {
+        "name": "Käufer und Verkäufer zusammenbringen sowie Geschäftsbeziehungen und Handelsnetzwerke pflegen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beziehungsaufbau, Vertrauenspflege und das persönliche Zusammenbringen von Handelspartnern im B2B-Geschäft erfordern menschliche Präsenz und persönlichen Kontakt."
+      },
+      {
+        "name": "Markt-, Preis- und Konjunkturtrends für gehandelte Waren und Rohstoffe recherchieren und auswerten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten und KI-Datenanalysewerkzeuge tragen Nachrichten, Angebots-/Nachfragedaten und Preisreihen zusammen; der Makler beurteilt die Marktlage und Handelschancen weiterhin selbst."
+      },
+      {
+        "name": "Kunden telefonisch und persönlich zu Marktbedingungen und Handelsstrategien beraten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die individuelle Beratung von Kunden im Direktgespräch lebt von persönlichem Vertrauen und unmittelbarer Interaktion."
+      },
+      {
+        "name": "Handelsangebote erstellen sowie Transaktions-, Transport-, Zoll- und Finanzierungskosten kalkulieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Tabellen- und ERP-Integrationen erstellen Angebotsentwürfe und kalkulieren Fracht-, Zoll- und Nebenkosten aus Tarifdaten, wobei der Makler jede Kalkulation fachlich prüft. Standardisierte Kostenberechnungen lassen sich zudem über klassische ERP- und Handelssoftware (CTRM) abwickeln."
+      },
+      {
+        "name": "Finanzielle Risiken, Gegenparteirisiken und Absicherungsgeschäfte im internationalen Handel analysieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Analysewerkzeuge werten Geschäftsberichte, Bonitätsdaten und Risikoszenarien aus und liefern Entscheidungsgrundlagen; die Risikobeurteilung und Festlegung von Limiten führt der Makler selbst durch."
+      },
+      {
+        "name": "Kaufverträge, Abschlussbestätigungen und Handelsdokumente entwerfen und prüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus den ausgehandelten Eckdaten (Menge, Preis, Incoterms, Spezifikationen) Vertragstexte und Deal Confirmations, die der Makler einzeln auf Richtigkeit prüft. Standardisierte Abschlussbestätigungen können auch durch regelbasierte Vertragsgeneratoren im Handelssystem erstellt werden."
+      },
+      {
+        "name": "Marktberichte, Preisübersichten und schriftliche Kundeninformationen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Aus eingefügten Marktdaten und Stichworten formuliert ein Chat-LLM regelmässige Marktberichte und Kunden-Updates in mehreren Sprachen; der Makler kontrolliert jeden Bericht vor dem Versand."
+      },
+      {
+        "name": "Geschäftsabwicklung, Akkreditive und Lieferdokumente mit Banken und Logistik prüfen und Transaktionen erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung mit Systemintegration liest Frachtbriefe, Ursprungszeugnisse und Akkreditive aus, gleicht sie mit den Vertragsdaten ab und bereitet die Systemerfassung vor; der Makler prüft jede Transaktion und klärt Abweichungen."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Waren- und Rohstoffmakler im B2B-Handel (z. B. Agrarprodukte, Energie, Industriewaren), ein in der Schweiz (u. a. Genf, Zug, Zürich) bedeutender Dienstleistungszweig. Die ESCO-Beschreibung umfasst ein breites Spektrum von Vieh bis Rohstoffen; die Zeitanteile bilden einen typischen B2B-Handelsmakler ab, bei dem Verhandlung und Beziehungspflege knapp die Hälfte und Marktanalyse, Kalkulation sowie Vertrags-/Transaktionsabwicklung gut die Hälfte der Arbeitszeit ausmachen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Markt- und Risikoanalysen, Angebotskalkulationen, Marktberichte sowie das Entwerfen und Prüfen von Handelsverträgen und Lieferdokumenten werden durch Chat-LLMs, Recherche-Agenten und KI-Dokumentenverarbeitung stark beschleunigt.",
+      "begruendung": "Gut die Hälfte der Arbeitszeit ist exponiert, während die eigentliche Preisverhandlung, Kundenberatung und Netzwerkpflege beim Menschen bleiben. Die KI wirkt vor allem delegierend bei Verträgen, Berichten, Kalkulationen und Dokumentenprüfungen sowie unterstützend bei Markt- und Risikoanalysen, da hohe Transaktionswerte eine Einzelfallprüfung erfordern. Regulatorische Vorgaben im internationalen Handel (Geldwäschereigesetz, Vertraulichkeit, Haftung) und die mehrsprachige Kundenkommunikation beeinflussen die Umsetzung in der Schweiz.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

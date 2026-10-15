@@ -1,0 +1,231 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "24f9bca0e7effbd91ad85534b1d1ccc41f383dbf9296ba7450019180fd21a273",
+    "isco_code": "4416",
+    "beruf": "Sachbearbeiter/in HR",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2412,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2412
+        }
+      ],
+      "prompt_token_count": 21677,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21677
+        }
+      ],
+      "thoughts_token_count": 11761,
+      "total_token_count": 35850
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2412,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2412
+          }
+        ],
+        "prompt_token_count": 21677,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21677
+          }
+        ],
+        "thoughts_token_count": 11761,
+        "total_token_count": 35850
+      }
+    ],
+    "request_ids": [
+      "xD_PaqSFCZz8qtsP25KVoA4"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-4416_sachbearbeiter_in_hr",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "4416",
+    "beruf": "Sachbearbeiter/in HR",
+    "taetigkeiten": [
+      {
+        "name": "Stelleninserate und Anforderungsprofile nach Vorgaben der Linie entwerfen und ausschreiben",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus Stichworten der Linienvorgesetzten vollständige Stelleninserate und Anforderungsprofile; die HR-Sachbearbeitung gibt die Eckdaten vor, prüft jeden Entwurf inhaltlich und schaltet das Inserat frei."
+      },
+      {
+        "name": "Eingehende Bewerbungsdossiers prüfen, mit dem Anforderungsprofil abgleichen und Vorauswahl treffen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Dokumenten-KI im Bewerbermanagementsystem extrahiert Angaben aus Lebensläufen sowie gescannten Zeugnissen, fasst Dossiers zusammen und markiert Passung oder Lücken; die Sachbearbeitung beurteilt die geeigneten Kandidierenden weiterhin selbst und trifft die Vorauswahl."
+      },
+      {
+        "name": "Bewerbungskorrespondenz führen und Vorstellungsgespräche mit Beteiligten terminieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Integrierte KI-Funktionen im Bewerbungs- und Kalendersystem übernehmen Eingangsbestätigungen, Einladungen, Absagen und Terminabstimmungen; der Mensch gibt nur noch frei oder klärt Ausnahmen. Klassische Bewerbermanagement-Software mit Vorlagen und Online-Terminbuchung automatisiert diese Abläufe ebenfalls weitgehend."
+      },
+      {
+        "name": "Vorstellungsgespräche begleiten, Bewerbende persönlich beurteilen und neue Mitarbeitende vor Ort einführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Präsenz- und Beziehungstätigkeit beim persönlichen Kennenlernen im Interview sowie beim Empfang und der Einführung neuer Mitarbeitender am ersten Arbeitstag."
+      },
+      {
+        "name": "Arbeitsverträge, Vertragszusätze, Bestätigungen und arbeitsrechtliche Schreiben ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Chat-LLM formuliert aus Vorlagen und Fallangaben Verträge, individuelle Vereinbarungen oder Kündigungsbestätigungen; die HR-Fachperson prüft jedes Dokument im Detail auf arbeitsrechtliche Korrektheit."
+      },
+      {
+        "name": "Zwischen- und Arbeitszeugnisse sowie Gesprächsprotokolle nach Vorgaben und Notizen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus Beurteilungsbögen und Gesprächsnotizen erstellt ein Chat-LLM vollständige Arbeitszeugnisse und Interviewprotokolle; die Sachbearbeitung steuert die Eingaben und revidiert jeden Text nach den Vorgaben des Schweizer Zeugnisrechts."
+      },
+      {
+        "name": "Personalstammdaten, Mutationen sowie Absenzen- und Versicherungsbelege im HR-System erfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung mit HR-Systemintegration liest Daten aus Freitext-Mails, Arztzeugnissen, Unfallscheinen und EO-Formularen aus und trägt sie im System ein; die Sachbearbeitung bearbeitet nur markierte Ausnahmen. Über klassische Employee-Self-Service-Portale (ESS) und Webformulare lässt sich die Datenerfassung ebenfalls zu über 50 % automatisieren."
+      },
+      {
+        "name": "Monatlichen Lohnlauf, Spesen und Sozialversicherungsabrechnungen in der Lohnsoftware durchführen und abstimmen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Berechnung und Übermittlung von Löhnen sowie Sozialversicherungsabzügen erfolgt regelbasiert über klassische Lohnsoftware mit ELM-Schnittstelle; für generative KI bleibt bei der eigentlichen Abrechnung keine relevante Zeitersparnis."
+      },
+      {
+        "name": "Anfragen von Mitarbeitenden und Führungskräften zu Reglementen, Lohn und Sozialversicherungen abklären und beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Auf Basis eingefügter Personalreglemente, GAV-Bestimmungen und Falldaten entwirft ein Chat-LLM Antworten auf schriftliche oder komplexe Anfragen; die Sachbearbeitung prüft jede Auskunft vor der Weitergabe fachlich."
+      },
+      {
+        "name": "HR-Statistiken, Lohnberichte und Mitarbeiterbefragungen auswerten und für die Leitung aufbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Analysefunktionen in Tabellenkalkulationen oder HR-Systemen werten Kennzahlen zu Fluktuation, Absenzen sowie Freitextantworten aus Umfragen aus und erstellen Berichtsentwürfe; die Fachperson kontrolliert alle Zahlen und Schlussfolgerungen."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting ist eine Personalsachbearbeiterin / ein Personalsachbearbeiter (Personalassistent/in) in einem mittleren Schweizer KMU oder Verwaltungsbetrieb, die/der die gesamte operative Personaladministration von der Rekrutierung bis zum Austritt sowie die vorbereitende Lohnadministration betreut. Die ESCO-Beschreibung und Kompetenzen decken sich gut mit dem Schweizer Berufsbild.",
+    "zusammenfassung": {
+      "haupt_risiko": "Stark betroffen sind das Verfassen von Stelleninseraten, Arbeitszeugnissen, Verträgen und Auskünften mittels Chat-LLM sowie die Bewerbungsvorauswahl, Korrespondenz und Belegerfassung durch KI-Funktionen im HR- und Bewerbermanagementsystem.",
+      "begruendung": "Rund 80 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus (Inserate, Verträge, Zeugnisse, Auskünfte, Berichte) sowie teilweise ersetzend bei Standardkorrespondenz und Stammdatenerfassung und unterstützend bei der Dossierprüfung. In der Schweiz bremsen insbesondere der strenge Datenschutz bei Bewerber- und Gesundheitsdaten (revDSG), die arbeitsrechtlichen Anforderungen an Arbeitszeugnisse und Verträge (OR) sowie der Anspruch der Mitarbeitenden auf persönlichen Kontakt die unkontrollierte Automatisierung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

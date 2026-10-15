@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "eb6d3c1360e1215b946c8d0da8fb7c9060441646a94e565746fcd4f080c85abd",
+    "isco_code": "2635",
+    "beruf": "Sozialarbeiter",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2226,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2226
+        }
+      ],
+      "prompt_token_count": 25180,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 25180
+        }
+      ],
+      "thoughts_token_count": 6378,
+      "total_token_count": 33784
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2226,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2226
+          }
+        ],
+        "prompt_token_count": 25180,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 25180
+          }
+        ],
+        "thoughts_token_count": 6378,
+        "total_token_count": 33784
+      }
+    ],
+    "request_ids": [
+      "XTzPapK9Av7oz7IP17yB4Qw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-2635_sozialarbeiter",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "2635",
+    "beruf": "Sozialarbeiter",
+    "taetigkeiten": [
+      {
+        "name": "Beratungs- und Begleitgespräche mit Klientinnen, Klienten und Familien führen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratungs- und Beziehungsarbeit von Angesicht zu Angesicht erfordert unmittelbare menschliche Präsenz, Empathie und Vertrauensaufbau."
+      },
+      {
+        "name": "Lebensumstände, Hilfebedarf und Gefährdungssituationen abklären sowie Hilfepläne festlegen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die diagnostische Einschätzung komplexer psychosozialer Lagen (inkl. Kindes- und Erwachsenenschutz) sowie das Aushandeln von Zielen beruhen auf Vor-Ort-Beobachtung und fachlichem Ermessen; KI erreicht hier keine 50 % Zeitersparnis."
+      },
+      {
+        "name": "Kriseninterventionen durchführen und in akuten Konflikt- oder Notlagen deeskalieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Präsenz- und Interventionstätigkeit in akuten Belastungs-, Konflikt- oder Gefährdungssituationen."
+      },
+      {
+        "name": "Mit Behörden, Schulen, Gesundheitsfachpersonen und Institutionen verhandeln und Hilfen koordinieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Interdisziplinäre Fallkoordination, Standortgespräche und Ruchte-Tisch-Verhandlungen erfordern synchrone menschliche Kommunikation und Überzeugungsarbeit."
+      },
+      {
+        "name": "Aktennotizen und Verlaufsdokumentation im Fallführungssystem verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ein Sprachmodell formuliert aus eingegebenen Stichworten strukturierte Gesprächs- und Verlaufsnotizen; die Sozialarbeiterin prüft jeden Eintrag fachlich auf Korrektheit und Aktenwürdigkeit."
+      },
+      {
+        "name": "Sozial- und Abklärungsberichte, Anträge sowie Stellungnahmen für Behörden, KESB und Versicherungen verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus kopierten Verlaufseinträgen und Fallangaben erstellt das Chat-LLM einen strukturierten Berichtsentwurf; die Fachperson steuert den Aufbau, prüft den Bericht inhaltlich vollständig und verantwortet ihn."
+      },
+      {
+        "name": "Korrespondenz, Kostengutsprachen und Gesuche an Klientel, Vermieterschaften, Stiftungen und Drittstellen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das Sprachmodell verfasst aus wenigen Stichworten Briefe, Bestätigungen oder Unterstützungsgesuche an Stiftungen; die Fachperson kontrolliert jedes Schreiben vor dem Versand."
+      },
+      {
+        "name": "Finanzielle Belege prüfen und Unterstützungs- oder Haushaltsbudgets in der Fallsoftware erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Berechnung von Unterstützungsbudgets nach SKOS-Richtlinien sowie der Belegimport erfolgen über regelbasierte Funktionen in klassischer Fallführungssoftware (z. B. Klib, Tutoris); für den verbleibenden Abklärungsaufwand spart generative KI keine 50 %."
+      },
+      {
+        "name": "Rechtliche Grundlagen, Sozialversicherungsansprüche und Unterstützungsangebote für Einzelfälle recherchieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Recherche-Agent sucht in kantonalen Richtlinien, Sozialversicherungsrecht und Angebotsverzeichnissen nach passenden Grundlagen; die Sozialarbeiterin prüft die Rechtslage und beurteilt die Passung für den Einzelfall selbst."
+      },
+      {
+        "name": "Fallbesprechungen im Team, Intervisionen und Supervisionen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kollegiale Fallreflexion und Supervision leben vom persönlichen Austausch und der gemeinsamen ethisch-fachlichen Urteilsbildung im Team."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Sozialarbeiter/in FH/HF auf einem kommunalen oder regionalen Sozialdienst bzw. in einer Fachberatungsstelle (persönliche und wirtschaftliche Hilfe, Kindes- und Erwachsenenschutz). Im ebenfalls als Synonym genannten Arbeitsfeld der stationären Sozialpädagogik ist der Anteil an unmittelbarer Alltagsbegleitung und Präsenz (E0) noch höher und der Dokumentationsanteil etwas geringer.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem das Verfassen von Aktennotizen, Sozial- und Abklärungsberichten, Korrespondenz und Stiftungsgesuchen mittels Sprachmodellen sowie die Einzelfallrecherche mit KI-Suchwerkzeugen, während die persönliche Beratungs-, Krisen- und Koordinationsarbeit nicht betroffen ist.",
+      "begruendung": "Rund 30 % der Arbeitszeit entfallen auf administrative Text-, Dokumentations- und Rechercheaufgaben, in denen generative KI überwiegend delegierend (Entwurf durch KI mit vollständiger fachlicher Prüfung jeder Ausgabe) und bei Recherchen unterstützend eingesetzt werden kann. Der Kern des Berufs bleibt persönliche Beziehungs-, Beratungs- und Abklärungsarbeit vor Ort; zudem bremsen strenge kantonale Datenschutzvorgaben, das Amts- und Berufsgeheimnis sowie besonders schützenswerte Personendaten (revDSG) den Einsatz externer KI-Dienste.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

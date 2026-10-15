@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "afea5c235e6cab3110a71547d753a525cffed5276da882bed00206c0dec84196",
+    "isco_code": "5153",
+    "beruf": "Hauswarte",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "cache_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 17787
+        }
+      ],
+      "cached_content_token_count": 17787,
+      "candidates_token_count": 2154,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2154
+        }
+      ],
+      "prompt_token_count": 21103,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21103
+        }
+      ],
+      "thoughts_token_count": 6555,
+      "total_token_count": 29812
+    },
+    "usage_je_versuch": [
+      {
+        "cache_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 17787
+          }
+        ],
+        "cached_content_token_count": 17787,
+        "candidates_token_count": 2154,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2154
+          }
+        ],
+        "prompt_token_count": 21103,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21103
+          }
+        ],
+        "thoughts_token_count": 6555,
+        "total_token_count": 29812
+      }
+    ],
+    "request_ids": [
+      "XTzPari_ELDtz7IPofG1mAw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-5153_hauswarte",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "5153",
+    "beruf": "Hauswarte",
+    "taetigkeiten": [
+      {
+        "name": "Innenräume, Treppenhäuser, Sanitäranlagen und Gemeinschaftsbereiche reinigen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Tätigkeit vor Ort. Autonome Reinigungsroboter sind zwar für grosse freie Hallen verfügbar, können aber Treppenhäuser, Sanitäranlagen und Waschküchen in typischen Liegenschaften nicht zu mindestens 50 % übernehmen."
+      },
+      {
+        "name": "Aussenanlagen pflegen, Grünpflege und Winterdienst ausführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit im Freien (Rasen mähen, Hecken schneiden, Laub wischen, Schneeräumen). Mähroboter übernehmen nur das Rasenmähen auf ebenen Flächen, erreichen aber über das ganze Jahr gesehen keine 50 % Zeitersparnis."
+      },
+      {
+        "name": "Kleinreparaturen und Instandhaltungsarbeiten an Gebäuden und Einrichtungen ausführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle handwerkliche Tätigkeit vor Ort (z. B. Leuchtmittel, Türschlösser, Dichtungen oder Beschläge ersetzen), für die weder generative KI noch Robotik verfügbar ist."
+      },
+      {
+        "name": "Haustechnische Anlagen (Heizung, Lüftung, Sanitär, Elektro) überwachen und warten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physische Kontroll- und Wartungsarbeit an den Anlagen im Technikraum (Filter wechseln, Wasserdruck prüfen und nachfüllen, einfache Störungen vor Ort beheben)."
+      },
+      {
+        "name": "Kontrollgänge durchführen sowie Gebäudezustand und Sicherheitsvorschriften prüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Erfordert physische Präsenz und visuelle Kontrolle im Gebäude und auf dem Areal (z. B. Fluchtwege, Brandschutztüren, Notbeleuchtung und Bausubstanz auf Schäden untersuchen)."
+      },
+      {
+        "name": "Anliegen und Reklamationen von Bewohnern vor Ort klären und Hausordnung durchsetzen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zwischenmenschliche Präsenz- und Beziehungstätigkeit im persönlichen Kontakt mit Mieterinnen und Mietern (z. B. Schlichtung bei Lärmbeschwerden oder Nutzungskonflikten in Gemeinschaftsräumen)."
+      },
+      {
+        "name": "Wohnungs- und Raumübergaben begleiten sowie Schlüssel- und Schildermutationen vornehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Findet physisch vor Ort mit den Parteien statt (Räume abgehen, Schlüssel übergeben, Namensschilder an Briefkästen und Sonnerie gravieren sowie montieren)."
+      },
+      {
+        "name": "Externe Handwerker und Reinigungskräfte einteilen, vor Ort einweisen und kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Koordination, Zuganggewährung am Gebäude sowie laufende Qualitätskontrolle der ausgeführten Reinigungs- und Reparaturarbeiten vor Ort."
+      },
+      {
+        "name": "Schadenmeldungen, Zustandsberichte, Arbeitsrapporte und Mieteraushänge verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Per Spracheingabe und Foto-Upload auf dem Smartphone erstellt die KI strukturierte Schadenmeldungen, Rapporte für die Verwaltung oder mehrsprachige Mieteraushänge; der Hauswart prüft und korrigiert jeden Entwurf vor der Freigabe."
+      },
+      {
+        "name": "An- und Abmeldungen, Zählerstände sowie Materialbestellungen in Formularen erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Standardisierte Erfassung von Zahlen und Stammdaten ohne relevanten Zeitgewinn durch Sprachmodelle; klassische Software (digitale Zählerfernauslesung, Bewirtschaftungs-ERP und automatische Nachbestellung) übernimmt jedoch mindestens 50 % des Aufwands."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Hauswart/in (Fachmann/-frau Betriebsunterhalt EFZ oder Hauswart/in mit eidg. Fachausweis) für grössere Wohn- und Geschäftsliegenschaften oder Schulanlagen. Der Beruf ist klar durch physische Reinigungs-, Unterhalts- und Kontrollarbeiten vor Ort geprägt; die ESCO-Kompetenzen bilden dieses Profil gut ab.",
+    "zusammenfassung": {
+      "haupt_risiko": "Einzig das Verfassen von Schadenmeldungen, Arbeitsrapporten und Mieteraushängen ist durch mobile Sprach- und Bilderkennungs-KI betroffen, während die physische Unterhalts- und Reinigungsarbeit unberührt bleibt.",
+      "begruendung": "Lediglich 5 % der Arbeitszeit sind gegenüber generativer KI exponiert: Im delegierenden Modus erstellt die KI aus Sprachnotizen und Fotos Berichte für die Immobilienbewirtschaftung oder Aushänge für die Mieterschaft, die der Hauswart jeweils fachlich prüft. Die übrigen 95 % entfallen auf physische Arbeit am Gebäude, Grünpflege, Kleinreparaturen und direkten Personenkontakt vor Ort, wobei Routineerfassungen wie Zählerstände zunehmend durch klassische Software und Fernauslesung automatisiert werden.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

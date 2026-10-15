@@ -1,0 +1,242 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "323f5deaae27d43c9b41d1eca890d6b5c082039f7681c8561a10fb59b3a9c271",
+    "isco_code": "2412",
+    "beruf": "Finanz- und Anlageberater",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T01:03:33+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3563,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5991,
+      "api_aequivalent_usd": 0.1556622
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3563,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5991,
+        "output_tokens_details": {
+          "thinking_tokens": 2164
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3563,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1556622
+      }
+    ],
+    "request_ids": [
+      "7f062f8a-e2e6-4f81-a210-f478b1d24ce5"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2412",
+    "beruf": "Finanz- und Anlageberater",
+    "taetigkeiten": [
+      {
+        "name": "Beratungsgespräche mit Privatkunden führen (Bedürfnisse, Ziele und Risikobereitschaft klären, Anlagevorschläge erläutern)",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Gespräch von Angesicht zu Angesicht oder per Telefon/Video; der Wert liegt in Vertrauen und Beziehung. Robo-Advisor ersetzen die persönliche Beratung im typischen Kundensegment nicht zu 50 %."
+      },
+      {
+        "name": "Neukunden akquirieren und bestehende Kundenbeziehungen pflegen (Anlässe, Netzwerk, Kontaktgespräche)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beziehungs- und Präsenztätigkeit; KI kann höchstens Kontaktlisten vorbereiten, die Zeit liegt im persönlichen Kontakt."
+      },
+      {
+        "name": "Beratungsgespräche protokollieren und Gesprächsnotizen im CRM erfassen (FIDLEG-Dokumentation)",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Transkription und automatische Protokollerstellung aus dem Gespräch bzw. Diktat erstellt das Beratungsprotokoll im CRM; der Berater prüft jedes Protokoll fachlich, da es haftungsrelevant ist. Schweizerdeutsch in Gesprächen mehrerer Personen erhöht den Korrekturaufwand; Bankkundengeheimnis und Cloud-Restriktionen bremsen."
+      },
+      {
+        "name": "Aktien-, Renten- und Finanzmärkte beobachten sowie hausinternes Research lesen und für Kunden auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Berater bildet sich seine Markteinschätzung weiterhin selbst; Recherche-Agenten und KI-Funktionen in Research-Plattformen fassen Marktberichte, News und Research zusammen und markieren kundenrelevante Ereignisse."
+      },
+      {
+        "name": "Anlagevorschläge, Portfolio-Reviews und Kundenpräsentationen schriftlich ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI in Office- bzw. Beratungssoftware erstellt aus Portfoliodaten und Hausmeinung Begleittext, Begründung und Präsentation; der Berater gibt die Strategie vor und prüft jede Aussage auf Richtigkeit und Eignung (FIDLEG-Haftung)."
+      },
+      {
+        "name": "Kundenportfolios auf Abweichungen von der Anlagestrategie überprüfen und Rebalancing auslösen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abweichungsanalyse und Rebalancing-Vorschläge liefert regelbasierte Portfoliomanagement-Software (klassische Software); kein LLM nötig, verbleibendes Urteil des Beraters spart mit KI kaum 50 %."
+      },
+      {
+        "name": "Finanz- und Vorsorgeplanungen (Pensionierung, Säule 3a, Steuern, Tragbarkeit) in der Planungssoftware berechnen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Berechnungen laufen in klassischen Finanzplanungs- und Tragbarkeitstools; generative KI bringt dabei keine relevante Zeitersparnis."
+      },
+      {
+        "name": "Risikoprofil erheben und Eignung bzw. Angemessenheit von Anlagen prüfen und dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fragebogenbasierte Risikoprofilierung und regelbasierte Eignungsprüfung im Beratungstool (klassische Software); das Ermessensurteil im Einzelfall bleibt beim Berater."
+      },
+      {
+        "name": "Kundenanfragen per E-Mail beantworten, Finanzprodukte und Fachbegriffe schriftlich erklären",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Chat-LLM entwirft Antworten und Produkterklärungen aus Anfrage und Factsheet; der Berater prüft jede Antwort, da sie Anlageberatung enthalten kann. Bankkundengeheimnis und Kundenerwartung an persönliche Kommunikation bremsen."
+      },
+      {
+        "name": "KYC- und Compliance-Unterlagen zusammenstellen und Kundendossier nachführen (Herkunft der Vermögenswerte, Profil)",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenextraktion und Recherche-Funktionen erstellen Entwurf von Kundenprofil und Mittelherkunftsnotiz; der Berater prüft jedes Dossier inhaltlich (GwG-Sorgfaltspflichten)."
+      },
+      {
+        "name": "Wertschriftenaufträge und Kundenmutationen im Banksystem erfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Strukturierte Erfassung in Kernbanken-/Ordersystem und E-Banking (klassische Software, Selbstbedienung durch Kunden); kein LLM-Mehrwert."
+      },
+      {
+        "name": "Fälle mit Spezialisten (Steuer, Kredit, Compliance) abstimmen und an Team- und Weiterbildungsanlässen teilnehmen",
+        "zeitanteil_pct": 2,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung im direkten Austausch und Präsenz-Weiterbildung; keine relevante Zeitersparnis durch KI."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Anlage-/Vermögensberater/in für Privatkunden in einer Schweizer Bank (Kantonal-, Raiffeisen- oder Privatbank) bzw. bei einem unabhängigen Vermögensverwalter, unter FIDLEG/GwG. Das Synonym «Compliance Officer» passt nicht zum Tätigkeitsprofil und wurde nicht berücksichtigt. Grenzfälle sind die Gesprächsprotokollierung (Dialekt-Transkription, Restzeitband) und die Ausarbeitung von Anlagevorschlägen (E1 vs. E2, Anteil der klassischen Software); die Zeitanteile sind grob geschätzt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Gesprächsprotokolle, schriftliche Anlagevorschläge, Kundenkorrespondenz, KYC-Dossiers und die Auswertung von Marktinformationen, die durch Transkription, Chat-LLM, KI-Funktionen in Office-/CRM-Software und Recherche-Agenten weitgehend vorbereitet werden.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind exponiert, überwiegend delegierend (KI entwirft, der Berater prüft jedes haftungsrelevante Dokument) und bei der Marktbeobachtung unterstützend; der Kern, das persönliche Beratungsgespräch und die Beziehungspflege, bleibt beim Menschen. In der Schweiz bremsen Bankkundengeheimnis, FINMA-Anforderungen an Auslagerung und Cloud sowie die Kundenerwartung an persönliche Betreuung die Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

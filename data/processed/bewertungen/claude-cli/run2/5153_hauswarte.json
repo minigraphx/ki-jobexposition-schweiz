@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "afea5c235e6cab3110a71547d753a525cffed5276da882bed00206c0dec84196",
+    "isco_code": "5153",
+    "beruf": "Hauswarte",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:08:37+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 38933,
+      "output_tokens": 4279,
+      "api_aequivalent_usd": 0.09337459999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 38933,
+        "output_tokens": 4279,
+        "output_tokens_details": {
+          "thinking_tokens": 1419
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.09337459999999999
+      }
+    ],
+    "request_ids": [
+      "3f5ab612-be04-4682-a1b0-9de836260c32"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5153",
+    "beruf": "Hauswarte",
+    "taetigkeiten": [
+      {
+        "name": "Treppenhäuser, Eingänge, Waschküchen und Allgemeinräume reinigen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Reinigung in verwinkelten Räumen mit Treppen; Reinigungsroboter übernehmen hier keine 50 % der Arbeit."
+      },
+      {
+        "name": "Umgebung pflegen: Rasen mähen, Hecken schneiden, Laub räumen, Winterdienst leisten",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit im Freien; Mähroboter decken nur das Rasenmähen ab, nicht Heckenschnitt, Laub und Schneeräumung, daher insgesamt unter 50 %."
+      },
+      {
+        "name": "Kleinere Reparaturen ausführen (Leuchtmittel, Türen, Armaturen, Silikonfugen, Storen)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche Arbeit vor Ort; keine verfügbare Robotik."
+      },
+      {
+        "name": "Kontrollrundgänge machen und Haustechnik (Heizung, Warmwasser, Lüftung, Lift, Brandschutz) überwachen und einstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Begehung und Sichtkontrolle vor Ort; Fernüberwachung/Gebäudeleittechnik ist in typischen Wohnliegenschaften nur teilweise vorhanden und ersetzt den Rundgang nicht zu 50 %."
+      },
+      {
+        "name": "Anliegen und Beschwerden von Mietenden vor Ort und am Telefon entgegennehmen und Konflikte schlichten",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönlicher Kontakt und Vermittlung als Ansprechperson im Haus; Wert liegt in der Präsenz."
+      },
+      {
+        "name": "Handwerker und Servicefirmen aufbieten, Termine mit Mietenden abstimmen und Arbeiten begleiten",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurze Telefonate, Zutritt gewähren und Arbeiten vor Ort begleiten dominieren; KI spart bei den wenigen schriftlichen Anteilen keine 50 %."
+      },
+      {
+        "name": "Wohnungsvorabnahmen und -übergaben bei Mieterwechsel durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Begehung der Wohnung, Mängelprüfung und Schlüsselübergabe mit den Mietenden vor Ort."
+      },
+      {
+        "name": "Schadenmeldungen, Zustandsberichte und Arbeitsrapporte mit Fotos an die Verwaltung erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Spracheingabe und Bildverständnis in einer Rapport-/Bewirtschaftungs-App erstellen die Meldung aus Fotos und Stichworten; der Hauswart prüft und ergänzt jede Meldung. Dialekt erhöht den Korrekturaufwand."
+      },
+      {
+        "name": "Aushänge und Informationsschreiben an Mietende verfassen (Hausordnung, Unterbrüche, Termine)",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Chat-LLM erstellt den Aushang aus Stichworten (auch mehrsprachig); der Hauswart sichtet kurz und gibt frei."
+      },
+      {
+        "name": "Abfallentsorgung organisieren: Container bereitstellen, Entsorgungsstellen bewirtschaften, Material bestellen",
+        "zeitanteil_pct": 2,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physisches Bereitstellen und Bewirtschaften; Bestellungen sind minimal."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Hauswart/in (z. B. Fachmann/-frau Betriebsunterhalt EFZ) in Wohnliegenschaften, angestellt bei Verwaltung oder Hauswartungsfirma. Der ESCO-Input passt gut; der Beruf ist stark physisch und auf Präsenz ausgerichtet. Grenzfälle sind die Koordination von Handwerkern (E0, schriftliche Anteile gering) und die Rapporterstellung (E2 über Spracheingabe/Fotos).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur Schadenmeldungen/Rapporte mit Fotos (Spracheingabe und Bildverständnis in Rapport-Apps) und Mieteraushänge (Chat-LLM); Reinigung, Umgebungspflege, Reparaturen und Mieterkontakt bleiben unberührt.",
+      "begruendung": "Weniger als ein Zehntel der Arbeitszeit ist exponiert: Rapporte entstehen delegierend (KI erstellt, Hauswart prüft jede Meldung), Aushänge praktisch ersetzend mit kurzer Freigabe. Der Kern des Berufs ist physische Arbeit und persönliche Präsenz im Haus; Dialekt bei der Spracheingabe und die verstreute, kleinbetriebliche Struktur bremsen die Einführung.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

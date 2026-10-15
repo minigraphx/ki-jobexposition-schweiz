@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "b7b4f9180ef677e994268a59933d9b52023b8aafbd6d38047eda3f3bbf9dc2d1",
+    "isco_code": "2523",
+    "beruf": "Netzwerkingenieur/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:38:24+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3629,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5760,
+      "api_aequivalent_usd": 0.1515702
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3629,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5760,
+        "output_tokens_details": {
+          "thinking_tokens": 2033
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3629,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1515702
+      }
+    ],
+    "request_ids": [
+      "ed4ae7a8-7ace-4edd-9249-2451fdec1e94"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2523",
+    "beruf": "Netzwerkingenieur/in",
+    "taetigkeiten": [
+      {
+        "name": "Anforderungen mit Fachbereichen/Kunden klären und Architekturentscheide für Netzwerke treffen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Arbeit besteht aus Gesprächen, Abwägen von Zielkonflikten (Kosten, Sicherheit, Verfügbarkeit) und verantwortlichen Entscheiden; das LLM spart hier keine 50 % der Zeit."
+      },
+      {
+        "name": "Netzwerkkonzepte und Designdokumente (High-/Low-Level-Design, Segmentierung, Adressplan) verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Anforderungen und Eckwerten erstellt das LLM Struktur und Textentwurf des Konzepts; die Ingenieurin prüft jede Designaussage fachlich und ergänzt Kundenspezifika."
+      },
+      {
+        "name": "Gerätekonfigurationen für Router, Switches, Firewalls, VPN und WLAN erstellen und anpassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM erzeugt herstellerspezifische Konfigurationen (Cisco, Fortinet, Juniper) aus Spezifikation und bestehender Config; jede Zeile wird wegen hohen Ausfallrisikos geprüft. Hemmnis: Weitergabe sensibler Configs an Cloud-LLMs in Banken/Verwaltung."
+      },
+      {
+        "name": "Automatisierungsskripte und Migrationsverfahren entwickeln (Python, Ansible, Infrastructure as Code)",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Coding-Agent schreibt Playbooks, Skripte und Tests im Repository; der Ingenieur spezifiziert, steuert und reviewt jede Änderung vor dem Einsatz."
+      },
+      {
+        "name": "Netzwerk-Changes in Wartungsfenstern ausrollen, testen und verifizieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Live-Arbeit am produktiven Netz mit Echtzeit-Beurteilung, Rollback-Entscheiden und Funktionstests; generative KI spart hier keine 50 %, und klassische Deployment-Tools übernehmen nur das Ausspielen."
+      },
+      {
+        "name": "Netzwerkstörungen mit Diagnosewerkzeugen, Logs und Paketmitschnitten analysieren und beheben",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "KI-Assistenten in Netzwerk-Management-Plattformen und Log-Analyse können die Eingrenzung stark beschleunigen; E2 unterstützend mit Restzeit 30-50 ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Fehlersuche erfordert iteratives Testen am Live-Netz, Hypothesenbildung und Systemkenntnis; LLM-Hilfe bei Log-Interpretation spart im typischen Fall unter 50 % der Zeit."
+      },
+      {
+        "name": "Monitoringdaten zu Leistung und Auslastung auswerten und Kapazitätsbedarf prognostizieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Datenanalyse-Agent wertet exportierte Messreihen aus und entwirft Kapazitätsbericht; Ingenieur prüft jede Aussage. P1: klassische Monitoring-Software (PRTG, SolarWinds) liefert Trends und Schwellwertalarme."
+      },
+      {
+        "name": "Hardware und Software evaluieren, Herstellerangebote vergleichen und Empfehlungen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agent sammelt Datenblätter, vergleicht Features und Preise und entwirft Vergleichstabellen; die Bewertung und Empfehlung erarbeitet der Ingenieur selbst."
+      },
+      {
+        "name": "Firewall-Regelwerke und Sicherheitskonfigurationen auditieren und Massnahmen ableiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Analyse markiert redundante, zu offene oder widersprüchliche Regeln; der Ingenieur prüft und entscheidet selbst über jede Massnahme. Sicherheits- und Datenschutzvorgaben schränken den Einsatz ein."
+      },
+      {
+        "name": "Netzwerkhardware vor Ort installieren, verkabeln und in Betrieb nehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit im Rechenzentrum oder Technikraum; keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Netzwerkdokumentation, Netzpläne und Betriebshandbücher aus Konfigurationen nachführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus exportierten Konfigurationen und Change-Notizen erstellt das LLM Dokumentation und Runbooks; der Ingenieur prüft jede Seite auf Korrektheit."
+      },
+      {
+        "name": "Mit Kunden, Fachbereichen und Lieferanten Tickets, Projekte und Betriebsfragen abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend Meetings, Telefonate und Koordination, deren Wert in der direkten Abstimmung liegt."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Netzwerkingenieur/in in einem Schweizer ICT-Dienstleister bzw. in der IT-Abteilung eines grösseren Unternehmens (Betrieb, Projekte, Security). Der ESCO-Input passt gut, enthält aber Softwareentwicklungs-Kompetenzen, die nur über Automatisierungsskripte berücksichtigt wurden. Den grössten Grenzfall bildet die Störungsbehebung (E0 vs. E2 unterstützend); auch bei der Konfigurationserstellung ist die Restzeit wegen des hohen Prüfaufwands unsicher.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Erstellen von Gerätekonfigurationen, Automatisierungsskripten, Konzept- und Betriebsdokumentation sowie Kapazitätsauswertungen, die Chat-LLMs, Coding-Agenten und Datenanalyse-Agenten weitgehend erstellen.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI erstellt Configs, Skripte und Dokumente, der Ingenieur prüft wegen hohen Ausfall- und Sicherheitsrisikos jede Ausgabe; Evaluation und Firewall-Audits bleiben unterstützend. Kern wie Störungsbehebung, Live-Changes und Architekturentscheide bleibt beim Menschen. In Schweizer Banken, Verwaltung und kritischen Infrastrukturen bremsen Vorgaben zu Datenschutz und Cloud-Nutzung die Weitergabe sensibler Konfigurationen.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "1472533c1e137c5fdb760d5d9c150193540c62dac1b9f3c58f5e3dc8fd49a2b7",
+    "isco_code": "5223",
+    "beruf": "Drogist/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:19:00+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 1416,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4336,
+      "api_aequivalent_usd": 0.10538619999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 1416,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4336,
+        "output_tokens_details": {
+          "thinking_tokens": 1156
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 1416,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.10538619999999999
+      }
+    ],
+    "request_ids": [
+      "95138c4b-9539-4003-a71c-831ee8632c79"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5223",
+    "beruf": "Drogist/in",
+    "taetigkeiten": [
+      {
+        "name": "Kundschaft am Verkaufspunkt zu Selbstmedikation, Gesundheit, Naturheilmitteln und Kosmetik beraten und Arzneimittel abgeben",
+        "zeitanteil_pct": 35,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Beratungsgespräch von Angesicht zu Angesicht mit Abklärung von Symptomen und Abgabeverantwortung; der Wert liegt in der Präsenz."
+      },
+      {
+        "name": "Verkauf an der Kasse abwickeln: Ware scannen, kassieren, verpacken",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit ohne LLM-Bezug; Selbstbedienungs- und Self-Scanning-Kassen sind kommerziell verfügbar, in kleinen Fachdrogerien aber wenig verbreitet."
+      },
+      {
+        "name": "Warenlieferungen annehmen, kontrollieren, auszeichnen und in Regale und Lager einräumen",
+        "zeitanteil_pct": 13,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Lagerarbeit im kleinen Verkaufslokal; Lagerrobotik ist für Drogerien nicht in relevantem Umfang verbreitet."
+      },
+      {
+        "name": "Waren präsentieren, Regale und Schaufenster gestalten, Aktionen im Laden aufbauen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische, gestalterische Arbeit vor Ort."
+      },
+      {
+        "name": "Hausspezialitäten herstellen (Teemischungen, Tinkturen, Salben) und abfüllen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Herstellung im Labor der Drogerie in kleinen Mengen; Automatisierung lohnt sich nicht."
+      },
+      {
+        "name": "Lagerbestände kontrollieren und Nachbestellungen bei Grossisten auslösen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bestellvorschläge auf Basis Mindestbestand erledigt klassische Warenwirtschafts-/Grossistensoftware; kein LLM nötig."
+      },
+      {
+        "name": "Schriftliche Kundenanfragen (E-Mail, Onlineshop, Kontaktformular) zu Produkten und Anwendung beantworten",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Anfrage einfügen, LLM entwirft die Antwort; wegen gesundheitlicher Haftung prüft die Drogistin jede Antwort fachlich und passt sie an."
+      },
+      {
+        "name": "Produkttexte, Aktionsflyer und Social-Media-Beiträge für die Drogerie erstellen",
+        "zeitanteil_pct": 3,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI erstellt Text und Bild (Bildgenerierung/-bearbeitung); die Drogistin wählt aus und prüft jeden Beitrag, auch auf heilmittelrechtlich zulässige Werbeaussagen."
+      },
+      {
+        "name": "Produktschulungen besuchen und Fachwissen zu neuen Präparaten aneignen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Lernen und Schulungsbesuch muss die Person selbst leisten; KI-Zusammenfassungen sparen nicht 50 % der Zeit."
+      },
+      {
+        "name": "Lernende im Verkauf und bei der Beratung anleiten",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Beziehungstätigkeit."
+      },
+      {
+        "name": "Verkaufsfläche, Labor und Kühlschränke reinigen und Hygiene sicherstellen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Reinigung kleiner, möblierter Flächen; Reinigungsroboter übernehmen keine 50 %."
+      },
+      {
+        "name": "Verfalldaten, Temperaturen und Chemikalienlagerung kontrollieren und Qualitätssicherung protokollieren",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kontrolle vor Ort an Regalen und Geräten mit kurzen Formulareinträgen; generative KI spart kaum Zeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Drogist/in EFZ in einer selbständigen Fachdrogerie (KMU) mit Verkauf, Beratung und kleinem Herstellungslabor. Keine ESCO-Kompetenzliste vorhanden, die Tätigkeiten stammen aus der KI-generierten Beschreibung und aus Berufswissen; die Zeitanteile sind grob geschätzt. Grenzfälle sind die schriftlichen Kundenanfragen und die P-Bewertung der Kasse, da Self-Checkout in Drogerien kaum verbreitet ist.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur kleine Randtätigkeiten: Chat-LLMs beantworten schriftliche Kundenanfragen, generative Text- und Bildwerkzeuge erstellen Werbe- und Social-Media-Inhalte; Beratung, Verkauf und Warenbewirtschaftung bleiben unberührt.",
+      "begruendung": "Nur rund 7 % der Arbeitszeit sind exponiert, und zwar durchwegs delegierend: Die KI entwirft Antworten und Werbetexte, die Drogistin prüft jede Ausgabe fachlich und heilmittelrechtlich. Der Kern des Berufs ist die persönliche Gesundheitsberatung mit Abgabeverantwortung sowie physische Ladenarbeit, und die Kundschaft erwartet den persönlichen Kontakt.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

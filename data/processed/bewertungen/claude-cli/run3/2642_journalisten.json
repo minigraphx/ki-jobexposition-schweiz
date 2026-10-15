@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "e4bcd175c88322c7aee72cda38a2a933a6269e1df2e050ec1f3e2100b1735dd6",
+    "isco_code": "2642",
+    "beruf": "Journalisten",
+    "lauf": 3,
+    "reihenfolge_seed": 20261016,
+    "timestamp": "2026-10-13T22:47:25+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 40761,
+      "output_tokens": 6392,
+      "api_aequivalent_usd": 0.13600020000000002
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 40761,
+        "output_tokens": 6392,
+        "output_tokens_details": {
+          "thinking_tokens": 2603
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.13600020000000002
+      }
+    ],
+    "request_ids": [
+      "7de1081a-3ba7-4df9-b809-896b6cfba0e7"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2642",
+    "beruf": "Journalisten",
+    "taetigkeiten": [
+      {
+        "name": "Nachrichtenlage, Agenturmeldungen und soziale Medien laufend verfolgen und auf Themen sichten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Ob KI-Digests und Monitoring-Agenten das eigene Lesen wirklich um die Hälfte verkürzen, ist unklar, weil der Überblick selbst die Arbeit ist; E0 ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Monitoring- und Recherche-Agenten fassen Agenturticker, Medienmitteilungen und Social-Media-Strömungen zusammen und markieren relevante Themen. Die Journalistin beurteilt Relevanz und Themenwahl weiterhin selbst. Klassische Alert-Tools ersetzen keine 50 % der Arbeit."
+      },
+      {
+        "name": "Themen recherchieren in Dokumenten, Archiven, Datenbanken, Geschäftsberichten und im Web",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche sowie Dokumentenanalyse (PDF, Ratsprotokolle, Geschäftsberichte) fassen Quellen zusammen und finden Belege. Die Journalistin recherchiert selbst und verifiziert jede Angabe an der Quelle, weil Halluzinationen geprüft werden müssen."
+      },
+      {
+        "name": "Interviews führen und vor Ort berichten (Medienkonferenzen, Gemeindeversammlungen, Gerichtsverhandlungen, Anlässe)",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Präsenz, Gesprächsführung und Nachfragen vor Ort bzw. am Telefon sind Kern der Tätigkeit und durch keine Technik ersetzbar."
+      },
+      {
+        "name": "Kontakte zu Quellen, Behörden, Parteien und Organisationen knüpfen und pflegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es geht um Beziehungsarbeit und Vertrauen zwischen Menschen (Telefonate, Treffen). Generative KI spart hier keine relevante Zeit."
+      },
+      {
+        "name": "Interviewaufnahmen transkribieren und Gesprächsnotizen auswerten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die Transkriptions-KI erstellt ein Transkript mit Zusammenfassung, auch aus Mundart ins Hochdeutsche. Die Journalistin prüft jedes verwendete Zitat am Audio; Dialekt und Zweiergespräche erhöhen den Korrekturaufwand. Beim Hochladen in die Cloud spielt der Quellenschutz eine Rolle."
+      },
+      {
+        "name": "Kurzmeldungen aus Agenturmeldungen, Medienmitteilungen und Polizeimeldungen verfassen und umschreiben",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Das Chat-LLM schreibt aus der eingefügten Mitteilung eine Meldung im Hausstil. Die Redaktorin prüft jede Meldung auf Fakten, Namen und Wertungen, bevor sie publiziert wird."
+      },
+      {
+        "name": "Hintergrundartikel, Reportagen, Porträts und Kommentare schreiben",
+        "zeitanteil_pct": 20,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Bei Reportagen und Kommentaren mit eigener Stimme ist fraglich, ob ein LLM-Entwurf aus den Notizen wirklich ≥ 50 % Zeit spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Die Journalistin schreibt den Text weiterhin selbst. Das LLM liefert aus eingefügten Notizen und Transkripten Gliederungen, Rohfassungen von Passagen und Formulierungsvarianten. Laut Presserat und Redaktionsrichtlinien ist sie für jeden Satz verantwortlich."
+      },
+      {
+        "name": "Fakten verifizieren, bei Betroffenen Stellungnahmen einholen und Zitate autorisieren lassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Dafür braucht es Rückfragen bei Quellen und Betroffenen (Anhörungsprinzip) und Verhandlungen über die Autorisierung. Die KI kann einzelne Angaben vorprüfen, spart aber insgesamt keine 50 %."
+      },
+      {
+        "name": "Titel, Leads, Bildlegenden, Teaser und Social-Media-Texte verfassen und Artikel für Online/SEO anpassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus dem eingefügten Artikel erzeugt das LLM Varianten für Titel, Lead, Teaser und Posts. Die Redaktorin wählt aus, passt an und prüft jede Variante auf Zuspitzung und Korrektheit."
+      },
+      {
+        "name": "Eigene und fremde Texte redigieren, kürzen, korrigieren und nach Feedback überarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Redaktorin redigiert selbst. Das LLM markiert Fehler, Stilbrüche und Längen, schlägt Kürzungen vor und korrigiert Rechtschreibung nach Schweizer Norm (ss statt ß). Die inhaltliche Gewichtung bleibt beim Menschen."
+      },
+      {
+        "name": "An Redaktionssitzungen teilnehmen, Themen vorschlagen und Produktion absprechen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Abstimmung im Team und redaktionelle Entscheide brauchen Präsenz. Generative KI spart hier keine relevante Zeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Redaktorin bzw. Redaktor einer Schweizer Tages- oder Regionalzeitung mit Print und Online, vorwiegend als Schreibende im Ressort. Der ESCO-Input passt gut. Audio-, Video- und Fotoproduktion sind nicht als eigene Tätigkeit erfasst, weil sie im typischen Printsetting eine kleine Rolle spielen. Der wichtigste Grenzfall ist das Schreiben längerer Artikel (20 %): Hier liegt die Zeitersparnis nahe an der 50-%-Schwelle, und ob E1 oder E0 gilt, beeinflusst das Ergebnis stark.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Kurzmeldungen aus Agentur- und Medienmitteilungen, Titel und Teaser, Transkription von Interviews, Recherche sowie Teile des Artikelschreibens; die Technik dafür sind Chat-LLMs, Recherche-Agenten und Transkriptions-KI.",
+      "begruendung": "Rund drei Viertel der Arbeitszeit sind exponiert. Bei Kurzmeldungen, Titeln und Transkripten arbeitet die KI überwiegend delegierend, bei Recherche, Monitoring und eigenen Artikeln vor allem unterstützend, weil Journalistinnen nach Presserat-Kodex selbst schreiben und jede Angabe verantworten. In der Schweiz bremsen vor allem das Glaubwürdigkeits- und Vertrauensrisiko gegenüber dem Publikum und der Quellenschutz; die grossen Verlagshäuser und die SRG haben KI-Richtlinien und -Werkzeuge aber bereits breit eingeführt.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

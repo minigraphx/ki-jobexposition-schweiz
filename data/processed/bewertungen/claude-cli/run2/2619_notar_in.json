@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "9875f0988ab533a52ae309051275726c939bcbf561ffe5613837c232aed67b0d",
+    "isco_code": "2619",
+    "beruf": "Notar/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:57:36+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2758,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4858,
+      "api_aequivalent_usd": 0.1265622
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2758,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4858,
+        "output_tokens_details": {
+          "thinking_tokens": 1668
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2758,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1265622
+      }
+    ],
+    "request_ids": [
+      "f984df7e-8a07-4c89-a24e-e61dd6047093"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2619",
+    "beruf": "Notar/in",
+    "taetigkeiten": [
+      {
+        "name": "Klientinnen und Klienten zu Liegenschaftskauf, Gesellschaftsgründung, Ehe- und Erbverträgen persönlich beraten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Beratungsgespräch, in dem die Notarin Interessen abklärt und Parteien unparteiisch berät; Wert liegt in Präsenz und Vertrauen."
+      },
+      {
+        "name": "Öffentliche Urkunden (Grundstückkaufverträge, Gründungsurkunden, Statuten, Ehe- und Erbverträge, Testamente) entwerfen",
+        "zeitanteil_pct": 20,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das LLM erstellt aus Vorlagen, Sachverhaltsnotizen und eingefügten Grundbuch-/Registerdaten den Urkundenentwurf; die Notarin prüft jede Klausel fachlich und haftet für die Urkunde. Hemmnis: Berufsgeheimnis, Datenschutz und kantonale Beurkundungsvorschriften."
+      },
+      {
+        "name": "Grundbuch- und Handelsregisterauszüge, Dienstbarkeiten und Vorurkunden prüfen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung fasst teils gescannte, alte Dienstbarkeitsverträge und Belege zusammen und markiert Auffälligkeiten; die Notarin prüft die Rechtslage selbst."
+      },
+      {
+        "name": "Beurkundungsverhandlung durchführen: Identität und Handlungsfähigkeit prüfen, Urkunde vorlesen, Unterzeichnung bezeugen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Gesetzlich vorgeschriebene persönliche Mitwirkung in Anwesenheit der Parteien; Präsenztätigkeit."
+      },
+      {
+        "name": "Unterschriften und Kopien beglaubigen, eidesstattliche Erklärungen entgegennehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Identitätsprüfung und Bezeugung vor Ort; kurze Präsenzhandlung ohne relevanten LLM-Zeitgewinn."
+      },
+      {
+        "name": "Rechtsfragen recherchieren (Güter- und Erbrecht, Gesellschaftsrecht, Grundstückgewinn- und Handänderungssteuern)",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Juristische Recherche-Assistenten mit Quellenzugriff (Gesetze, Rechtsprechung, Kommentare) liefern Fundstellen und Zusammenfassungen; die Notarin verifiziert die Quellen und beurteilt selbst."
+      },
+      {
+        "name": "Anmeldungen an Grundbuch und Handelsregister sowie Steuermeldungen aus der Urkunde erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM extrahiert Angaben aus dem Urkundentext und füllt Anmeldungen aus; jede Anmeldung wird geprüft. Notariatssoftware mit Textbausteinen und elektronischem Grundbuchverkehr (Terravis) übernimmt ohnehin einen Grossteil."
+      },
+      {
+        "name": "Korrespondenz mit Klienten, Banken, Maklern und Behörden führen (Begleitschreiben, Zahlungsinstruktionen, Unterlagen anfordern)",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft Schreiben und E-Mails aus Falldaten; da Zahlungsinstruktionen und Fristen haftungsrelevant sind, prüft die Notarin bzw. das Sekretariat jede Ausgabe."
+      },
+      {
+        "name": "Kostenrechnungen nach kantonalem Gebührentarif und Abrechnungen erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Gebührenberechnung erledigt die Notariatssoftware (klassische Software); kein LLM nötig."
+      },
+      {
+        "name": "Urkundenprotokoll führen, Urkunden ausfertigen und archivieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Protokollführung, Nummerierung und elektronische Archivierung laufen über Notariats- und Archivsoftware; physische Ausfertigung mit Siegel bleibt kurz."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: freiberufliche/r Notar/in im lateinischen Notariat (z. B. BE, VD, GE, BS) in kleinem Büro, Schwerpunkt Immobilien, Gesellschafts-, Ehe- und Erbrecht; Amtsnotariate (ZH) ähnlich. ESCO passt im Kern, Legalisation/Apostille erfolgt in der Schweiz meist durch die Staatskanzlei. Grösster Grenzfall ist der Urkundenentwurf: Vorlagen sind bereits hoch standardisiert, die Restzeit von 30–50 % hängt vom Anteil komplexer Einzelfälle ab.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Entwerfen öffentlicher Urkunden, die Korrespondenz und Registeranmeldungen (Chat-LLM) sowie die Prüfung von Registerauszügen und die Rechtsrecherche (Dokumentenerkennung, juristische Recherche-Assistenten).",
+      "begruendung": "Rund die Hälfte der Arbeitszeit ist exponiert, überwiegend delegierend (KI entwirft Urkunden und Schreiben, die Notarin prüft jede Ausgabe und haftet) oder unterstützend bei Prüfung und Recherche. Beratung, Beurkundungsverhandlung und Beglaubigung bleiben gesetzlich an die persönliche Mitwirkung gebunden. Berufsgeheimnis, Datenschutz und Cloud-Restriktionen sowie die kleinen, eher konservativen Notariatsbüros bremsen die Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

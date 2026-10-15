@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "1c3e4df3489ee41be05648d0bda8d70f7cb27ccf1a0a4e93bd1d5529c9856b9e",
+    "isco_code": "1223",
+    "beruf": "Führungskräfte in Forschung und Entwicklung",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T01:10:57+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4844,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4976,
+      "api_aequivalent_usd": 0.1456102
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4844,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4976,
+        "output_tokens_details": {
+          "thinking_tokens": 1572
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4844,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1456102
+      }
+    ],
+    "request_ids": [
+      "34bea59c-eba9-4856-98a3-62d734f1970a"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "1223",
+    "beruf": "Führungskräfte in Forschung und Entwicklung",
+    "taetigkeiten": [
+      {
+        "name": "F&E-Mitarbeitende führen: Mitarbeitergespräche, Coaching, Rekrutierung und Teamentwicklung",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Personalführung ist eine Präsenz- und Beziehungstätigkeit; ihr Wert liegt im persönlichen Kontakt. Keine nicht-generative Technik übernimmt das."
+      },
+      {
+        "name": "F&E-Projekte steuern: Statusmeetings leiten, Prioritäten setzen, Ressourcen zwischen Projekten zuteilen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit geht in Abstimmung von Angesicht zu Angesicht, Konfliktlösung und Entscheide. KI-Tools für Projektplanung sparen hier keine 50 %."
+      },
+      {
+        "name": "F&E-Strategie und Technologie-Roadmap erarbeiten, Machbarkeit beurteilen und Portfolioentscheide treffen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Tätigkeit wird von strategischem Ermessen, implizitem Wissen über Firma und Technologien und der Abstimmung mit der Geschäftsleitung geprägt. LLM-Vorschläge helfen, sparen aber keine 50 % der Zeit."
+      },
+      {
+        "name": "F&E-Budget planen, Mittel zuteilen und Kostenabweichungen im Controlling überwachen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zahlen liefern ERP und Controlling (klassische Software). Die eigene Zeit geht in Ermessensentscheide und Budgetverhandlungen; generative KI spart weniger als 50 %. P0, weil die Planungsentscheide nicht regelbasiert sind."
+      },
+      {
+        "name": "Markt-, Technologie-, Wettbewerbs- und Patentrecherchen durchführen und auswerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche und Literatur-/Patentzugriff erstellen strukturierte Übersichten. Die Führungskraft gibt den Auftrag und prüft jede Auswertung auf Quellen und Relevanz, auch wegen Halluzinationen."
+      },
+      {
+        "name": "Management-Berichte und Präsentationen zu F&E-Fortschritt und Analyseergebnissen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die KI-Funktionen der Office-Suite erstellen aus Projektdaten und Notizen Berichte und Folien. Die Führungskraft gibt die Kernaussagen vor und prüft und korrigiert jede Fassung."
+      },
+      {
+        "name": "Förderanträge (z. B. Innosuisse, EU) und interne Business Cases für Entwicklungsprojekte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mit eingefügter Ausschreibung, Projektidee und Eckdaten entwirft ein LLM die Antragstexte. Die Führungskraft prüft Inhalt, Zahlen und Argumentation jedes Abschnitts und überarbeitet sie."
+      },
+      {
+        "name": "Technische Berichte, Versuchsergebnisse und Entwicklungsstände der Mitarbeitenden fachlich beurteilen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Im Kern stehen Expertenurteil und Diskussion mit dem Team. Eine KI-Zusammenfassung verkürzt das Lesen, halbiert aber die Beurteilung nicht."
+      },
+      {
+        "name": "Schutzrechte managen: Erfindungen bewerten, Patentstrategie und Anmeldungen mit Patentanwälten abstimmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Tätigkeit wird von Ermessensentscheiden und Abstimmung mit externen Patentanwälten geprägt. Das Verfassen der Anmeldung liegt meist beim Anwalt."
+      },
+      {
+        "name": "Unternehmen extern vertreten und Netzwerke mit Hochschulen, Partnern und Kunden pflegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Tätigkeit beruht auf persönlicher Präsenz an Treffen und Konferenzen und auf Beziehungen."
+      },
+      {
+        "name": "E-Mails beantworten und Sitzungsnotizen bzw. Entscheidprotokolle erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI im Mailprogramm entwirft Antworten, Meeting-Transkription erstellt Protokolle. Die Führungskraft sichtet und korrigiert jede inhaltlich relevante Ausgabe."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Leiter/in F&E in einem Schweizer Industrie- oder Technologieunternehmen (z. B. Medtech, Maschinenbau, Pharma-Zulieferer). Der ch_kontext «Verwaltung» passt nur bedingt, gemeint sind wohl auch F&E-Leitungen in öffentlichen Institutionen. Der Beruf ist heterogen, und die Zeitanteile sind grob geschätzt. Grenzfälle sind die Beurteilung technischer Ergebnisse und die Budgetplanung (beide E0 nahe der Schwelle) sowie Recherche und Berichte (E2 an der 50-%-Schwelle).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Markt-, Technologie- und Patentrecherchen, Management-Berichte und Präsentationen, Förderanträge sowie Korrespondenz und Protokolle. Diese Ergebnisse erstellen Recherche-Agenten, Office-KI und Chat-LLMs.",
+      "begruendung": "Rund ein Drittel der Arbeitszeit ist exponiert, fast durchwegs delegierend: Die KI erstellt Entwürfe, Recherchen und Folien, die Führungskraft gibt den Inhalt vor und prüft jede Ausgabe. Der Kern des Berufs bleibt kaum exponiert: Personalführung, Projektsteuerung, Strategie- und Budgetentscheide sowie die externe Vertretung. In Schweizer F&E-Abteilungen bremst vor allem die Vertraulichkeit von Entwicklungs- und IP-Daten den Einsatz von Cloud-KI.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

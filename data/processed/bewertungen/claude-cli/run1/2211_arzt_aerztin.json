@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "0e43e6b8f740eb2919fc5628b42ed2974906e58dd4fa480c858a1aba409302c2",
+    "isco_code": "2211",
+    "beruf": "Arzt/Ärztin (Allgemeinmedizin)",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T22:36:25+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3369,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4412,
+      "api_aequivalent_usd": 0.12253019999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3369,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4412,
+        "output_tokens_details": {
+          "thinking_tokens": 1200
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3369,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.12253019999999999
+      }
+    ],
+    "request_ids": [
+      "c8725046-55a6-43fb-9dfc-d9ed0fabc17b"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2211",
+    "beruf": "Arzt/Ärztin (Allgemeinmedizin)",
+    "taetigkeiten": [
+      {
+        "name": "Anamnese erheben und Konsultationsgespräch mit Patientinnen und Patienten führen",
+        "zeitanteil_pct": 22,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das persönliche Arzt-Patienten-Gespräch ist eine Präsenz- und Beziehungstätigkeit. Digitale Vorab-Anamnesebögen verkürzen es nicht um 50 %."
+      },
+      {
+        "name": "Patienten körperlich untersuchen und kleine Eingriffe durchführen (Wundversorgung, Injektionen, Infiltrationen, Nähte)",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit am Patienten; dafür gibt es keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Diagnose stellen, Therapie festlegen und Medikamente verordnen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Klinischer Ermessensentscheid im Gespräch mit dem Patienten, der unter ärztlicher Verantwortung bleibt. KI-Differenzialdiagnosen helfen, sparen aber keine 50 % der Zeit."
+      },
+      {
+        "name": "Patienten zu Befunden, Behandlung, Prävention und Lebensstil beraten",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Beratung von Angesicht zu Angesicht lebt vom Vertrauensverhältnis zum Hausarzt."
+      },
+      {
+        "name": "Konsultationen in der elektronischen Krankengeschichte dokumentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Ambient Scribe oder Diktat in Mundart erstellt den strukturierten KG-Eintrag; die Ärztin prüft jeden Eintrag fachlich. Wegen Dialekt im Gespräch zu zweit braucht es zusätzliche Korrekturen."
+      },
+      {
+        "name": "Überweisungsschreiben, Arztberichte, Arbeitsunfähigkeitszeugnisse und Versicherungsberichte (IV, UVG, KK) verfassen",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Die KG-Einträge lassen sich als Text kopieren; das LLM entwirft den Bericht, die Ärztin prüft ihn gegen die Akte, korrigiert und unterschreibt. Berufsgeheimnis und Datenschutz schränken das Kopieren in Cloud-Tools ein."
+      },
+      {
+        "name": "Labor-, EKG- und Bildgebungsresultate sowie externe Spital- und Spezialistenberichte sichten und Folgeschritte festlegen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit liegt im Beurteilen der Befunde für den einzelnen Patienten und im Entscheiden. KI-Zusammenfassungen langer Berichte sparen keine 50 %; Grenzwert-Markierungen sind bereits klassische Software."
+      },
+      {
+        "name": "Hausbesuche und Visiten im Alters- und Pflegeheim durchführen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Anwesenheit und Untersuchung vor Ort sind nötig."
+      },
+      {
+        "name": "Fachfragen zu Leitlinien, Dosierungen und Interaktionen nachschlagen und recherchieren",
+        "zeitanteil_pct": 3,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Bei kurzen Nachschlagevorgängen (Compendium, Leitlinien) ist unklar, ob ein medizinischer Recherche-Assistent mit Quellen inkl. Prüfung tatsächlich 50 % spart; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Medizinische Recherche-Agenten mit Quellenangaben fassen Leitlinien und Studien zusammen; die Ärztin prüft die Quellen und entscheidet selbst."
+      },
+      {
+        "name": "Leistungen nach Tarif (TARDOC) erfassen und abrechnen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Praxissoftware übernimmt Leistungsblöcke, Tarifregeln und elektronische Abrechnung (klassische Software). Ein LLM ist dafür nicht nötig."
+      },
+      {
+        "name": "Fälle mit Spezialisten, Spitex und Spitälern absprechen und MPA-Team anleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Telefonische und persönliche Abstimmung sowie Führung von Mitarbeitenden sind Präsenz- und Beziehungstätigkeiten."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Hausärztin/Hausarzt in einer Schweizer Gruppen- oder Einzelpraxis mit elektronischer KG, MPA-Team und gelegentlichen Hausbesuchen. Die ESCO-Kompetenzen sind teils Rauschen (Open-Source-Software, Forschungsdaten) und wurden durch Berufswissen ersetzt. Grenzfälle sind die KI-Dokumentation bei Mundart-Konsultationen und die Befundsichtung.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Dokumentation der Konsultationen (Ambient Scribe/Diktat), das Verfassen von Berichten, Zeugnissen und Überweisungen (Chat-LLM) sowie die Recherche zu Fachfragen; Untersuchung, Gespräch und Therapieentscheid sind nicht betroffen.",
+      "begruendung": "Etwa ein Fünftel der Arbeitszeit ist exponiert, fast durchwegs delegierend: Die KI entwirft KG-Einträge und Berichte, die Ärztin prüft und verantwortet jeden einzelnen. Berufsgeheimnis, revDSG und Cloud-Vorbehalte bremsen die Einführung; dazu kommt der Korrekturaufwand bei Mundart-Gesprächen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

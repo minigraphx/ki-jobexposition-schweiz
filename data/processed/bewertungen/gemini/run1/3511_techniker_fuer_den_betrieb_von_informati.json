@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "1ac0dc0ff14c2a7c74053e3c9646a31f993e50c698f576c4409d750c25b9d2ed",
+    "isco_code": "3511",
+    "beruf": "Techniker für den Betrieb von Informations- und Kommunikationstechnologie",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2345,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2345
+        }
+      ],
+      "prompt_token_count": 21390,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21390
+        }
+      ],
+      "thoughts_token_count": 8030,
+      "total_token_count": 31765
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2345,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2345
+          }
+        ],
+        "prompt_token_count": 21390,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21390
+          }
+        ],
+        "thoughts_token_count": 8030,
+        "total_token_count": 31765
+      }
+    ],
+    "request_ids": [
+      "XTzPavqoDILrz7IP-_az2Q0"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-3511_techniker_fuer_den_betrieb_von_informati",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3511",
+    "beruf": "Techniker für den Betrieb von Informations- und Kommunikationstechnologie",
+    "taetigkeiten": [
+      {
+        "name": "Physische Server-, Speicher- und Netzwerkhardware im Rechenzentrum einbauen, verkabeln und warten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Montage-, Verkabelungs- und Wartungsarbeit vor Ort am Server-Rack; kommerziell verbreitete Robotik gibt es dafür in Schweizer Rechenzentren nicht."
+      },
+      {
+        "name": "System- und Datenbankleistung überwachen sowie Logdaten und Alarme bei Abweichungen analysieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Assistenten in Observability- und SIEM-Plattformen korrelieren grosse Logmengen und schlagen Störungsursachen vor; die Fachperson untersucht und beurteilt den Systemzustand anhand dieser Hinweise weiterhin selbst."
+      },
+      {
+        "name": "Betriebssysteme, virtuelle Maschinen, Datenbanken und Netzwerkdienste einrichten und konfigurieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Einrichten und Prüfen in den Zielsystemen wird durch generative KI nicht um 50 % verkürzt, lässt sich aber mit klassischer Konfigurationsmanagement- und Provisionierungs-Software (z. B. Ansible, Terraform) weitgehend automatisieren."
+      },
+      {
+        "name": "Störungen an Servern, Datenbanken und Netzwerken im Live-Betrieb eingrenzen und beheben",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Hauptaufwand liegt im kontrollierten Eingreifen ins produktive System, im Neustarten oder Umkonfigurieren von Diensten und im Verifizieren der Stabilität; Sprachmodelle sparen hierbei keine 50 % der Zeit."
+      },
+      {
+        "name": "Skripte, Konfigurationsdateien und Prozeduren für Systembetrieb und Datenmigrationen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erzeugt aus Vorgaben PowerShell-, Bash- oder SQL-Migrationsskripte sowie Konfigurationsdateien; der Techniker spezifiziert die Anforderungen, prüft den Code fachlich und testet ihn in der Testumgebung."
+      },
+      {
+        "name": "Datenbankabfragen, Indizes und Ressourcenauslastung analysieren und optimieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus eingefügten Abfrageplänen und Schema-Definitionen erstellt das Chat-LLM optimierte SQL-Abfragen und Index-Vorschläge; die Fachperson prüft und misst jede Anpassung vor der Übernahme."
+      },
+      {
+        "name": "Sicherheitsupdates, Patches und Zugriffsberechtigungen auf Servern und Datenbanken einspielen und kontrollieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Operative Durchführung von Patch-Zyklen, Wartungsfenstern und Berechtigungsvergaben ohne relevante Zeitersparnis durch Sprachmodelle; klassische Patch-Management-, RMM- und IAM-Software automatisiert diese Abläufe zu über 50 %."
+      },
+      {
+        "name": "Datensicherungen kontrollieren sowie Datenwiederherstellungen durchführen und testen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Praktische Restore-Tests und das Beheben fehlgeschlagener Sicherungsjobs werden durch generative KI kaum beschleunigt; moderne Backup-Software (z. B. Veeam) kann Wiederherstellungstests in Sandbox-Umgebungen jedoch automatisiert durchführen."
+      },
+      {
+        "name": "Störungstickets und Service-Anfragen im Ticketsystem triagieren, schriftlich beantworten und dokumentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Im ITSM-System integrierte KI-Funktionen klassifizieren Tickets, entwerfen Antworten auf Basis der Wissensdatenbank und fassen den Lösungsweg zusammen; der Techniker prüft jede Ausgabe vor dem Absenden."
+      },
+      {
+        "name": "Betriebshandbücher, Systemdokumentationen und Notfallpläne verfassen und aktualisieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Das Chat-LLM entwirft aus Konfigurationsdaten und Stichworten strukturierte Runbooks und Disaster-Recovery-Pläne; der Techniker kontrolliert jedes Dokument im Detail auf technische Richtigkeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: System- und Betriebsinformatiker/in (bzw. ICT-Techniker/in) im Infrastruktur-, Server- und Datenbankbetrieb eines Schweizer KMU, IT-Dienstleisters oder Rechenzentrums. ESCO fokussiert stark auf Rechenzentrums- und Datenbankbetrieb, während ISCO 3511 in der Schweiz breiter den gesamten ICT-Systembetrieb umfasst; beides wurde im Tätigkeitsprofil zusammengeführt. Ein grosser Teil der Routineadministration ist bereits durch klassische IT-Automatisierung (P1) abgedeckt oder davon betroffen, während generative KI vor allem bei Skripting, Log-Analyse, Ticketdokumentation und Runbooks greift.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem das Erstellen von Betriebs- und Migrationsskripten, das Datenbank-Tuning, die Log- und Alarm-Analyse sowie die Ticket- und Systemdokumentation durch Chat-LLMs und in Monitoring- bzw. ITSM-Systeme integrierte KI.",
+      "begruendung": "Knapp die Hälfte der Arbeitszeit (45 %) ist gegenüber generativer KI exponiert, überwiegend im delegierenden Modus (Skripte, SQL-Optimierung, Tickets, Dokumentation) sowie unterstützend bei der Analyse von Systemlogs. Physische Serverarbeiten, Patch-Runden, Backup-Tests und direkte Eingriffe ins Live-System bleiben nicht-exponiert, sind aber teilweise durch klassische Infrastruktur-Software automatisierbar. In der Schweiz bremsen vor allem Datenschutz- und Geheimhaltungsvorgaben (revDSG, Sicherheitsrichtlinien), wenn sensible Log- und Infrastrukturdaten in Cloud-KI-Dienste einfliessen sollen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

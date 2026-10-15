@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "6e042fa09e2db288d2b136a979fd00045e092063c965bb19a714bdeaae102ca2",
+    "isco_code": "2354",
+    "beruf": "Musiklehrer",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:23:16+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4035,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5106,
+      "api_aequivalent_usd": 0.14173819999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4035,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5106,
+        "output_tokens_details": {
+          "thinking_tokens": 1739
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4035,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.14173819999999998
+      }
+    ],
+    "request_ids": [
+      "99505cf2-f181-4786-bc52-c2ee4475f2ce"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2354",
+    "beruf": "Musiklehrer",
+    "taetigkeiten": [
+      {
+        "name": "Instrumental- bzw. Gesangsunterricht im Einzelunterricht erteilen (vorspielen, zuhören, Technik korrigieren, Feedback geben)",
+        "zeitanteil_pct": 45,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Wert liegt in der Anwesenheit und im körperlichen Vormachen; Hören, Korrigieren von Haltung und Klang finden in Echtzeit statt. Keine nicht-generative Technik ersetzt das."
+      },
+      {
+        "name": "Gruppen- und Ensembleunterricht leiten, Proben mit Bands, Chören oder Orchestern durchführen",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Leitungstätigkeit mit Gruppendynamik und musikalischer Führung in Echtzeit."
+      },
+      {
+        "name": "Eigenes Instrument üben und Unterrichtsliteratur sowie Vorspielstücke einstudieren",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit am Instrument; KI kann das Üben nicht übernehmen."
+      },
+      {
+        "name": "Unterricht planen und Literatur bzw. Lernschritte für einzelne Schüler auswählen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Planung beruht stark auf der persönlichen Kenntnis der Schüler und des Repertoires und findet oft kurz und im Kopf statt; ein LLM liefert höchstens Ideen und spart kaum 50 %."
+      },
+      {
+        "name": "Arrangements, Transpositionen und Begleitstimmen für Schüler und Ensembles in Notationssoftware erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Generierte Arrangements (z. B. als MusicXML/ABC) sind für einfache Stufen teils brauchbar; E2 delegierend mit Restzeit 30-50 ist fast ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Stufengerechte, spielbare Arrangements für konkrete Besetzungen erfordern viel musikalische Feinarbeit; generative Musik-/Notationswerkzeuge erreichen die Qualität meist nicht mit 50 % Zeitersparnis. Transponieren erledigt die Notationssoftware bereits, deckt aber nicht die Hälfte der Tätigkeit ab."
+      },
+      {
+        "name": "Übungsblätter, Theorieaufgaben und Übungspläne für Schüler erstellen",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt Theorieaufgaben, Erklärtexte und Wochen-Übungspläne nach Vorgabe; die Lehrperson prüft jedes Blatt und passt es an den Schüler an. Notenbeispiele bleiben teilweise Handarbeit."
+      },
+      {
+        "name": "Schülervorspiele und Konzerte organisieren, Proben koordinieren und Aufführungen technisch betreuen",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend Absprachen, Bühnen- und Technikeinrichtung sowie Präsenz bei Durchlaufproben und Aufführung."
+      },
+      {
+        "name": "Lernstand beurteilen, Stufentests und Prüfungsvorspiele abnehmen",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Beurteilung des Live-Vortrags durch die Fachperson; Ermessen und Präsenz."
+      },
+      {
+        "name": "Schriftliche Lernberichte und Beurteilungen für Schüler und Eltern verfassen",
+        "zeitanteil_pct": 2,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten zum Lernstand formuliert ein Chat-LLM den Bericht; die Lehrperson prüft jeden Bericht inhaltlich und passt ihn an."
+      },
+      {
+        "name": "Elternmitteilungen, Einladungen zu Vorspielen und Konzertprogramme verfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Standardtexte aus Stichworten erstellt ein Chat-LLM; die Lehrperson prüft Daten, Namen und Programmangaben und versendet."
+      },
+      {
+        "name": "Elterngespräche führen, an Teamsitzungen der Musikschule teilnehmen und Stundenplan/Absenzen abstimmen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Gespräche und Abstimmung im Team; administrative Reste laufen bereits über die Musikschulsoftware und kosten kaum Zeit."
+      },
+      {
+        "name": "Instrumente stimmen, kleine Wartungen vornehmen und Unterrichtsraum einrichten",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Handarbeit; Stimmgeräte unterstützen nur, ersetzen die Tätigkeit nicht zu 50 %."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Instrumental- bzw. Gesangslehrperson an einer kommunalen oder regionalen Musikschule in der Schweiz, vorwiegend Einzel- und Kleingruppenunterricht, teils Ensembleleitung. Der ESCO-Input passt gut. Grösster Grenzfall ist das Erstellen von Arrangements und Begleitstimmen: Generative Notations-/Musikwerkzeuge könnten das bei einfachen Stufen bereits leisten.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur schriftliche Nebenarbeiten wie Übungs- und Theorieblätter, Lernberichte und Elternmitteilungen, die ein Chat-LLM entwerfen kann; der Unterricht selbst ist nicht betroffen.",
+      "begruendung": "Weniger als ein Zehntel der Arbeitszeit ist exponiert, und zwar durchwegs delegierend: Die KI entwirft Texte und Blätter, die Lehrperson prüft und passt jedes Ergebnis an den Schüler an. Der Kern des Berufs, Instrumental- und Ensembleunterricht in Präsenz, ist nicht exponiert; wesentliche CH-Hemmnisse bestehen für die exponierten Schreibarbeiten kaum.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "4308a3a33344b2a53b6be75362a6eb2b517bd1b857e24d6f9ae8cac5fdb7891c",
+    "isco_code": "3322",
+    "beruf": "Verkaufsfachkräfte",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "cache_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 19837
+        }
+      ],
+      "cached_content_token_count": 19837,
+      "candidates_token_count": 2352,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2352
+        }
+      ],
+      "prompt_token_count": 22867,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22867
+        }
+      ],
+      "thoughts_token_count": 6454,
+      "total_token_count": 31673
+    },
+    "usage_je_versuch": [
+      {
+        "cache_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 19837
+          }
+        ],
+        "cached_content_token_count": 19837,
+        "candidates_token_count": 2352,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2352
+          }
+        ],
+        "prompt_token_count": 22867,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22867
+          }
+        ],
+        "thoughts_token_count": 6454,
+        "total_token_count": 31673
+      }
+    ],
+    "request_ids": [
+      "xj_Paoa7G-nc_uMP4Oj0yAY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-3322_verkaufsfachkraefte",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3322",
+    "beruf": "Verkaufsfachkräfte",
+    "taetigkeiten": [
+      {
+        "name": "Kunden vor Ort besuchen, Bedürfnisse abklären und persönliche Beratungsgespräche führen",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Präsenz- und Beziehungstätigkeit beim Kunden vor Ort inklusive Reisetätigkeit; der Vertrauensaufbau und die interaktive Bedarfsabklärung im B2B-Vertrieb lassen sich nicht durch KI übernehmen."
+      },
+      {
+        "name": "Produkte und Dienstleistungen vorführen sowie Muster und technische Merkmale präsentieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Demonstration von Handelswaren und Mustern beziehungsweise interaktive Live-Präsentation vor Kunden mit unmittelbarer Reaktion auf technische Rückfragen."
+      },
+      {
+        "name": "Preis-, Konditionen- und Vertragsverhandlungen mit Kunden führen sowie Abschlüsse tätigen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Zwischenmenschliche Verhandlungsführung mit kaufmännischem Ermessen und verbindlicher Einigung von Angesicht zu Angesicht oder im direkten Gespräch."
+      },
+      {
+        "name": "Telefonische Erstkontaktaufnahme (Kaltakquise) und Terminvereinbarung mit potenziellen Kunden durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überzeugungsarbeit im direkten Telefongespräch (in der Schweiz oft in Mundart); Sprachbots erreichen in der B2B-Neukundenakquise weder die geforderte Gesprächsqualität noch die nötige Kundenakzeptanz."
+      },
+      {
+        "name": "Potenzielle Neukunden, regionale Marktchancen und Ausschreibungen recherchieren sowie Leads vorqualifizieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agenten mit Websuche und CRM-Anbindung stellen Firmenprofile, Entscheider und passende Ausschreibungen zusammen; die Verkaufsfachkraft gibt die Suchkriterien vor und prüft jeden Lead fachlich auf Eignung."
+      },
+      {
+        "name": "Offerten, Ausschreibungsantworten (RFPs) und kundenspezifische Angebotsunterlagen unter Beachtung von Vergabebestimmungen ausarbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus eingefügten Kundenanforderungen, Produktdaten und Vorlagen den Angebotsentwurf samt Pflichtenheft-Antworten; die Verkaufsfachkraft kalkuliert die Konditionen und prüft jedes Angebot inhaltlich und rechtlich. In der Schweiz müssen Angebote häufig über mehrere Sprachregionen hinweg abgestimmt werden."
+      },
+      {
+        "name": "Schriftliche Kundenanfragen beantworten und Nachfass-Korrespondenz (Follow-ups) verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Ein Chat-LLM formuliert E-Mail-Antworten und Follow-up-Nachrichten aus kurzen Stichworten oder Produktinformationen; die Verkaufsfachkraft prüft jede Nachricht vor dem Versand. Im B2B-Geschäft erwarten Kunden eine persönliche Kommunikation durch ihre feste Ansprechperson."
+      },
+      {
+        "name": "Besuchsberichte, Gesprächsnotizen und Kundenstammdaten im CRM-System erfassen und pflegen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracheingabe nach dem Kundentermin oder automatische Gesprächstranskription mit CRM-Integration erzeugt strukturierte Besuchsberichte und Datenmutationen; die Verkaufsfachkraft kontrolliert jeden Eintrag inklusive allfälliger Dialektkorrekturen. Personenbezogene Kundendaten unterliegen dem Datenschutz (revDSG)."
+      },
+      {
+        "name": "Verkaufszahlen und Umsätze analysieren sowie periodische Verkaufsberichte erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Analysefunktionen im CRM/BI-System oder LLMs mit Datenanalyse-Werkzeugen werten Verkaufsdaten aus und entwerfen den Bericht, den die Fachkraft fachlich prüft. Standardisierte Verkaufsauswertungen lassen sich zudem über klassische BI- und CRM-Dashboards automatisieren."
+      },
+      {
+        "name": "Auftragsabwicklung überwachen, Liefertermine mit Lieferanten abstimmen und komplexe Reklamationen klären",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Koordination, Eskalationsmanagement und Kulanzabklärung zwischen Kunden, Innendienst und Lieferanten; erfordert situatives Verhandeln und erreicht mit KI keine 50 % Zeitersparnis."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Verkaufsfachkraft im B2B-Vertrieb (kombinierter Aussen- und Innendienst bzw. Account Management in einem Schweizer KMU des Handels-, Industrie- oder Dienstleistungssektors). Die ESCO-Kompetenzliste deckt das Berufsbild gut ab; der Schwerpunkt liegt auf persönlicher Kundenbetreuung und Verhandlung, ergänzt durch administrative und analytische Verkaufsaufgaben.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert sind vor allem die Lead- und Ausschreibungsrecherche, das Ausarbeiten von Offerten und Nachfass-E-Mails sowie die CRM-Dokumentation und Verkaufsberichterstattung durch Chat-LLMs, Recherche-Agenten und CRM-Integrationen.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind gegenüber generativer KI exponiert, während der Kern des Berufs – persönliche Kundenbesuche, Produktvorführungen, telefonische Akquise und Preisverhandlungen – beim Menschen bleibt. In den exponierten administrativen und analytischen Aufgaben arbeitet die KI durchwegs im delegierenden Modus, da die Verkaufsfachkraft jede Offerte, Kunden-E-Mail und CRM-Aufzeichnung inhaltlich prüft und verantwortet. In Schweizer Betrieben bremsen insbesondere die Erwartung persönlicher Kundenbeziehungen (Vertrauen), die Abstimmung von Angeboten über mehrere Sprachregionen hinweg sowie Datenschutzanforderungen (revDSG) bei Kundendaten eine unkontrollierte Automatisierung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

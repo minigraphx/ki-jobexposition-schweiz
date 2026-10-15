@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "1767afd364d4a3fbfe2c297c801c1b210cd816533565ec17cc06c60703c8c603",
+    "isco_code": "2341",
+    "beruf": "Primarlehrer/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-13T22:23:11+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 65536,
+      "temperature": null,
+      "structured_output": "response_mime_type + response_json_schema"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 1791,
+      "prompt_token_count": 24781,
+      "thoughts_token_count": 4699,
+      "total_token_count": 31271
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 1791,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1791
+          }
+        ],
+        "prompt_token_count": 24781,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 24781
+          }
+        ],
+        "thoughts_token_count": 4699,
+        "total_token_count": 31271
+      }
+    ],
+    "request_ids": [
+      "Aq_OasynIL7Zxs0Pxpm40Qk"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2341",
+    "beruf": "Primarlehrer/in",
+    "taetigkeiten": [
+      {
+        "name": "Unterricht im Klassenzimmer durchführen, Lerninhalte vermitteln und Klasse führen",
+        "zeitanteil_pct": 40,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz- und Beziehungstätigkeit im Klassenzimmer; die pädagogische Führung und direkte Instruktion von Primarschulkindern erfordert menschliche Anwesenheit."
+      },
+      {
+        "name": "Schülerinnen und Schüler beim individuellen Lernen, bei Gruppenarbeiten und im Sozialverhalten begleiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare zwischenmenschliche Lernbegleitung, Motivation und Konfliktlösung direkt am Arbeitsplatz der Kinder im Schulzimmer."
+      },
+      {
+        "name": "Arbeitsblätter, differenzierte Übungsaufgaben und schriftliche Lernkontrollen erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt Aufgaben, Lesetexte in verschiedenen Schwierigkeitsstufen und Prüfungsfragen auf Basis von Themenvorgaben; die Lehrperson prüft jedes Arbeitsblatt fachlich und passt es an ihre Klasse an."
+      },
+      {
+        "name": "Quartals-, Wochen- und Lektionsplanungen entlang des Lehrplans entwerfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM entwirft aus Kompetenzstufen des Lehrplans 21 und Rahmenbedingungen komplette Unterrichtsreihen und Lektionsskizzen; die Lehrperson steuert die Vorgaben und prüft jede Planung pädagogisch."
+      },
+      {
+        "name": "Klassenzimmer, Lernumgebungen, Werkstätten und Anschauungsmaterial physisch einrichten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit vor Ort im Schulzimmer wie das Aufbauen von Postenläufen, Bereitstellen von Bastel- und Experimentiermaterial sowie Raumgestaltung."
+      },
+      {
+        "name": "Handschriftliche Schülerarbeiten, Hefte und Prüfungen korrigieren und bewerten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Bei älteren Primarklassen sowie standardisierten Diktat- oder Rechentests per Foto-Scan ist E2 (unterstützend, Restzeit 30-50) ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "In der Primarschule arbeiten Kinder überwiegend handschriftlich in Heften und auf Arbeitsblättern mit Zeichnungen und Erstschrift; der Aufwand für Digitalisierung und Rückübertragung der Rückmeldung verhindert im Durchschnitt eine Zeitersparnis von mindestens 50 %."
+      },
+      {
+        "name": "Lernberichte, Zeugnistexte und Förderplan-Dokumentationen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus anonymisierten Beobachtungsnotizen und Stichworten formuliert das Chat-LLM den Lernbericht oder Förderplan; die Lehrperson prüft und verantwortet jede Beurteilung im Einzelfall."
+      },
+      {
+        "name": "Elternbriefe, Wocheninfos und schriftliche Mitteilungen an Erziehungsberechtigte verfassen",
+        "zeitanteil_pct": 3,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Ein Chat-LLM erstellt aus wenigen Stichworten Elternbriefe oder übersetzt Informationen für fremdsprachige Eltern; die Lehrperson liest jeden Text vor dem Versand gegen."
+      },
+      {
+        "name": "Elterngespräche, schulische Standortgespräche und runde Tische durchführen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Präsenz- und Vertrauensgespräche mit Erziehungsberechtigten, Kindern und Fachstellen vor Ort."
+      },
+      {
+        "name": "Mit Schulischer Heilpädagogik, Fachteams und Schulleitung absprechen sowie an Konferenzen teilnehmen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Interdisziplinäre Koordination, Fallbesprechungen zur integrativen Förderung und Konferenzen beruhen auf direktem Austausch im Kollegium."
+      },
+      {
+        "name": "Pausenaufsicht führen sowie Schulreisen, Exkursionen und Schulanlässe begleiten",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz und Wahrnehmung der Aufsichtspflicht auf dem Schulareal und bei ausserschulischen Aktivitäten."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Klassenlehrperson an einer öffentlichen Schweizer Primarschule (1.–6. Klasse, Lehrplan 21 / PER / Piano di studio). Das Berufsbild ist klar durch die Präsenzzeit mit den Kindern geprägt; ein Grenzfall besteht bei der Korrektur von Schülerarbeiten, die je nach Klassenstufe und Digitalisierungsgrad nahe an E2 liegen kann.",
+    "zusammenfassung": {
+      "haupt_risiko": "Vor allem das Erstellen von Arbeitsblättern, Prüfungen und Unterrichtsplanungen sowie das Verfassen von Lernberichten und Elternbriefen sind durch Text-LLMs exponiert, während die Unterrichts- und Beziehungsarbeit im Klassenzimmer unberührt bleibt.",
+      "begruendung": "Knapp ein Viertel der Arbeitszeit in der Vor- und Nachbereitung sowie Administration ist exponiert, wobei die KI durchwegs im delegierenden Modus Entwürfe für differenzierte Lehrmaterialien, Lektionsplanungen, Lernberichte und Elterninformationen liefert, die von der Lehrperson geprüft und angepasst werden. Der Kern des Berufs an Schweizer Primarschulen besteht aus Unterrichten, Erziehen und persönlicher Begleitung vor Ort und ist nicht durch KI substituierbar. Bei Lernberichten und Schülerdaten bremsen zudem kantonale Datenschutzvorgaben sowie der Anspruch an eine persönliche Beziehung zu den Eltern.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

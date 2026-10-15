@@ -1,0 +1,221 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "0cbe0ea6ee252e999c7b8420faf854450e9dcd08bf125a2de3d3d753010310f9",
+    "isco_code": "4211",
+    "beruf": "Schalterbedienstete und Fachkräfte im Bereich Finanzdienstleistungen",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2272,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2272
+        }
+      ],
+      "prompt_token_count": 21521,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21521
+        }
+      ],
+      "thoughts_token_count": 6958,
+      "total_token_count": 30751
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2272,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2272
+          }
+        ],
+        "prompt_token_count": 21521,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21521
+          }
+        ],
+        "thoughts_token_count": 6958,
+        "total_token_count": 30751
+      }
+    ],
+    "request_ids": [
+      "XTzPar3gD7Dtz7IPofG1mAw"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-4211_schalterbedienstete_und_fachkraefte_im_b",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "4211",
+    "beruf": "Schalterbedienstete und Fachkräfte im Bereich Finanzdienstleistungen",
+    "taetigkeiten": [
+      {
+        "name": "Ein- und Auszahlungen, Sortenwechsel und Edelmetallgeschäfte am Schalter abwickeln",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Bargeld- und Sortenabwicklung am Schalter erfordert Präsenz vor Ort (E0). Ein- und Auszahlungsautomaten sowie Fremdwährungsbancomaten können heute in der Schweiz über 50 % dieser Standardtransaktionen in Selbstbedienung übernehmen (P1)."
+      },
+      {
+        "name": "Kundschaft in der Geschäftsstelle persönlich zu Basisprodukten beraten und bei E-Banking-Fragen unterstützen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung von Angesicht zu Angesicht am Schalter oder in der Kundenzone sowie direkte Unterstützung am Kundengerät sind unmittelbare Präsenz- und Beziehungstätigkeiten."
+      },
+      {
+        "name": "Kontoeröffnungen, Vollmachten, Kartenbestellungen und Stammdatenmutationen im Bankensystem erfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-gestützte Dokumentenextraktion mit Systemintegration übernimmt Daten aus Ausweisen und Formularen ins Kernbankensystem, wobei die Fachkraft jeden Vorgang auf formale Korrektheit prüft. Zudem können klassische Self-Service-Funktionen im E-Banking und digitales Onboarding über 50 % der Standardmutationen übernehmen."
+      },
+      {
+        "name": "Schriftliche Kundenanfragen und Aufträge per E-Mail, E-Banking-Nachricht und Post bearbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Ein Sprachmodell entwirft aus dem eingefügten Anfrage- und Kontokontext präzise Antworten; die Bankfachkraft prüft jede Nachricht vor dem Versand inhaltlich gegen die Kontodaten und gibt sie frei."
+      },
+      {
+        "name": "Telefonische Kundenanfragen zu Konten, Zahlungen, Kartensperrungen und Produkten beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Qualität und Verlässlichkeit von Voicebots bei Schweizerdeutsch und sensiblen Bankauskünften am Telefon sind im Alltag unsicher; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Ein Voicebot mit Anbindung an das Bankensystem beantwortet Standardfragen und führt einfache Aufträge wie Kartensperrungen selbständig aus; Mitarbeitende übernehmen nur weitergeleitete Spezialfälle."
+      },
+      {
+        "name": "Zahlungsaufträge im In- und Ausland erfassen, prüfen und Rückläufer bearbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Belegerkennung und integrierte Ausnahmebearbeitung lesen unstrukturierte Zahlungsinstruktionen aus, sodass der Mensch nur markierte Ausnahmen und Limitenfreigaben bearbeitet. Gleichzeitig übernehmen klassische Zahlungsverkehrs-Software, QR-Rechnung und E-Banking den Grossteil standardisierter Zahlungen."
+      },
+      {
+        "name": "Transaktionen und Kundenbeziehungen nach Geldwäscherei- und Compliance-Richtlinien (GwG/KYC) vorprüfen und dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Integrierte KI-Funktionen fassen Transaktionshistorien sowie eingereichte Kundenbelege zusammen und entwerfen die GwG-Plausibilisierungsnotiz; die Fachkraft prüft und verantwortet jeden Fall einzeln."
+      },
+      {
+        "name": "Tresorbestände, Kassenabstimmung, Bancomaten-Bewirtschaftung und Kundenschrankfächer verwalten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das physische Befüllen von Bancomaten, die Tresorbewirtschaftung vor Ort und die persönliche Begleitung bzw. Zutrittskontrolle zu Schrankfächern sind ortsgebundene, manuelle Tätigkeiten."
+      },
+      {
+        "name": "Gesprächsnotizen im CRM erfassen sowie Bankbestätigungen und interne Transaktionsübersichten erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus kurzen Stichworten nach dem Kundenkontakt oder aus Datenexporten formuliert das Sprachmodell vollständige CRM-Einträge und Bankbestätigungen, die von der Fachkraft gegengelesen und freigegeben werden."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Bankkaufmann/-frau bzw. Mitarbeitende in der Kundenzone / am Schalter einer Schweizer Retail- oder Regionalbank (z. B. Kantonalbank, Raiffeisen, PostFinance). Veraltete ESCO-Elemente wie Scheckverkehr wurden auf den heutigen Schweizer Bankalltag (QR-Zahlungen, E-Banking-Support, Bancomaten, GwG-Vorprüfung) übertragen.",
+    "zusammenfassung": {
+      "haupt_risiko": "Stammdatenmutationen, Zahlungsverkehrsabwicklung, schriftliche und telefonische Kundenanfragen sowie CRM- und Compliance-Dokumentationen werden durch Dokumentenextraktion, Sprachmodelle und Voicebots stark beschleunigt, während der physische Schalterdienst und die persönliche Beratung vor Ort beim Menschen bleiben.",
+      "begruendung": "Knapp über die Hälfte der Arbeitszeit ist gegenüber generativer KI exponiert, wobei der Modus überwiegend delegierend (bei Kontoeröffnungen, Kundenkorrespondenz und GwG-Vorprüfungen) und bei telefonischen Standardauskünften sowie im Zahlungsverkehr ersetzend ist. Zusätzlich verlagern Bancomaten und klassische E-Banking-Selbstbedienung einen erheblichen Teil der früheren Schaltertransaktionen. In der Schweiz bremsen jedoch strenge regulatorische Vorgaben (Bankkundengeheimnis, FINMA-Richtlinien, Geldwäschereigesetz) und das Kundenbedürfnis nach persönlichem Vertrauen eine ungeprüfte Vollautomatisierung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

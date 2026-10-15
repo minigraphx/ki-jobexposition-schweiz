@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "60ba5cab7a0c6c5273ec5a9455686bb205c143fbf3430e2fee1e4da39b0549e7",
+    "isco_code": "4322",
+    "beruf": "Bürokräfte in der Material- und Fertigungsplanung und verwandte Berufe",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2297,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2297
+        }
+      ],
+      "prompt_token_count": 21250,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21250
+        }
+      ],
+      "thoughts_token_count": 6527,
+      "total_token_count": 30074
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2297,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2297
+          }
+        ],
+        "prompt_token_count": 21250,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21250
+          }
+        ],
+        "thoughts_token_count": 6527,
+        "total_token_count": 30074
+      }
+    ],
+    "request_ids": [
+      "xD_PapqXCYaI_uMPpdSFkAY"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-4322_buerokraefte_in_der_material_und_fertigu",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "4322",
+    "beruf": "Bürokräfte in der Material- und Fertigungsplanung und verwandte Berufe",
+    "taetigkeiten": [
+      {
+        "name": "Fertigungsaufträge im ERP-/PPS-System terminieren, einplanen und für die Produktion freigeben",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Durchlaufterminierung und Kapazitätsplanung folgt mathematischen und regelbasierten Logiken, bei denen Sprachmodelle keine 50 % Zeitersparnis bringen. Klassische ERP- und APS-Systeme (Advanced Planning and Scheduling) übernehmen diese Feinplanung jedoch in hohem Mass automatisiert."
+      },
+      {
+        "name": "Materialbedarf disponieren, Bestellvorschläge im ERP prüfen und Materialabrufe auslösen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Bedarfsrechnung (MRP-Lauf) und das Auslösen regulärer Abrufe sind klassische, regelbasierte Funktionen im ERP-System ohne Bedarf an generativer KI. Über automatische Dispositionsregeln und EDI-Schnittstellen lässt sich die Routineabwicklung weitgehend durch klassische Software erledigen."
+      },
+      {
+        "name": "Auftragsbestätigungen prüfen sowie Liefertermine und Mahnungen mit Lieferanten schriftlich abklären",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-gestützte Dokumentenerkennung mit ERP-Integration liest heterogene Auftragsbestätigungen und Lieferanten-E-Mails aus, gleicht Mengen und Termine ab und versendet Standardmahnungen; die Fachperson bearbeitet nur noch markierte Abweichungen. Klassische Formularerkennung reicht wegen der vielfältigen Belegformate und Freitext-E-Mails nicht aus."
+      },
+      {
+        "name": "Stücklisten, Arbeitspläne und Fertigungsunterlagen im ERP-System anlegen und pflegen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Mit multimodalen KI-Funktionen im ERP-Umfeld lassen sich Stammdaten, Arbeitsfolgen und Begleitpapiere aus Konstruktionsänderungen und Zeichnungen als Entwurf generieren; die AVOR-Fachkraft steuert den Vorgang und prüft jeden Eintrag fachlich. Zudem übernehmen klassische CAD-/PLM-ERP-Schnittstellen die strukturierte Stücklistenübernahme."
+      },
+      {
+        "name": "Bei Störungen, Materialengpässen und Eilaufträgen mit Fertigung, Montage und Einkauf vor Ort umplanen und koordinieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kurzfristige Problemlösung an den Montagelinien, Shopfloor-Besprechungen und das Aushandeln von Prioritäten zwischen Werkstattleitung, Einkauf und Vertrieb erfordern persönliche Präsenz und situatives Ermessen."
+      },
+      {
+        "name": "Arbeitsfortschritt, Betriebsdaten-Rückmeldungen (BDE) und Bestände überwachen sowie Buchungsfehler klären",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Kontrolle des Fertigungsfortschritts und das Klären fehlerhafter Rückmeldungen mit den Mitarbeitenden in der Halle sind nicht sinnvoll durch Sprachmodelle lösbar. Klassische Betriebsdatenerfassung (BDE-Terminals, Barcode-/RFID-Scans, MES-Anbindung) automatisiert jedoch die Fortschrittserfassung weitgehend."
+      },
+      {
+        "name": "Berichte über Produktionsergebnisse, Liefertreue, Kapazitätsauslastung und Ausschuss erstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Assistenten in Tabellenkalkulationen und BI-Systemen werten Produktionsdaten aus und erstellen komplette Managementberichte inklusive Abweichungskommentar; die Sachbearbeitung gibt die Fragestellung vor und prüft jeden Bericht vor Weitergabe. Standardisierte Kennzahlenberichte lassen sich zudem über klassische BI-Dashboards automatisieren."
+      },
+      {
+        "name": "Produktionsprozesse, Durchlaufzeiten und Vorgabezeiten zwecks Optimierung analysieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Fachperson analysiert Engpässe, Losgrössen und Soll-/Ist-Zeiten weiterhin selbst und beurteilt die Umsetzbarkeit im Betrieb; KI-Datenanalysewerkzeuge liefern dazu Auswertungen über grosse Rückmeldedatenmengen und Vorschläge zur Parameteranpassung."
+      },
+      {
+        "name": "Abweichungs-, Störungs- und Kontrollberichte sowie Arbeitsanweisungen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten und Prüfnotizen erstellt ein Chat-LLM strukturierte Qualitäts- und Abweichungsberichte sowie verständliche Fertigungsanweisungen; die Fachkraft prüft jedes Dokument inhaltlich auf Einhaltung der betrieblichen Vorschriften."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Sachbearbeiter/in Arbeitsvorbereitung (AVOR) und Produktionsplanung/-steuerung (PPS) in einem typischen Schweizer Industrie- bzw. Maschinenbau-KMU. Ein grosser Teil der Kerntätigkeiten (Terminierung, MRP-Disposition, BDE-Überwachung) unterliegt der Automatisierung durch klassische ERP-, APS- und MES-Software (hoher P1-Anteil), während generative KI vor allem bei der unstrukturierten Lieferantenkommunikation, Stammdaten-/Unterlagenpflege und im Reporting greift.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Prüfung von Auftragsbestätigungen und schriftliche Lieferantenabklärungen, die Pflege von Fertigungsunterlagen, das Produktionsreporting sowie das Verfassen von Abweichungsberichten durch ERP-integrierte Sprachmodelle, Dokumentenerkennung und Datenanalyse-Tools.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus (Stammdatenpflege, Produktions- und Kontrollberichte) sowie teils ersetzend bei der Verarbeitung von Auftragsbestätigungen und unterstützend bei Prozessanalysen. Die eigentliche Fertigungsterminierung und Materialdisposition wird hingegen primär durch klassische ERP- und APS-Software bestimmt; spezifische regulatorische CH-Hemmnisse sind gering, jedoch bremst die erforderliche Integration in heterogene ERP-Landschaften kleiner und mittlerer Schweizer Industriebetriebe die Einführung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

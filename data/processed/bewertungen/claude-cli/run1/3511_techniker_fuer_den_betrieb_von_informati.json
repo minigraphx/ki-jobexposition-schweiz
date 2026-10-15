@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "1ac0dc0ff14c2a7c74053e3c9646a31f993e50c698f576c4409d750c25b9d2ed",
+    "isco_code": "3511",
+    "beruf": "Techniker für den Betrieb von Informations- und Kommunikationstechnologie",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:41:26+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 2542,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5144,
+      "api_aequivalent_usd": 0.13055419999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 2542,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5144,
+        "output_tokens_details": {
+          "thinking_tokens": 1628
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2542,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.13055419999999998
+      }
+    ],
+    "request_ids": [
+      "a2fd8c4e-b0d2-434b-927f-35f170204dae"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3511",
+    "beruf": "Techniker für den Betrieb von Informations- und Kommunikationstechnologie",
+    "taetigkeiten": [
+      {
+        "name": "Systemleistung und Verfügbarkeit über Monitoring-Konsolen überwachen und Alarme erstbeurteilen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Überwachung läuft schwellwertbasiert über klassische Monitoring-Software (z. B. Zabbix, PRTG) mit automatischer Alarmierung; die Erstbeurteilung eines Alarms ist kurz und braucht Systemkenntnis. Generative KI spart hier keine 50 %."
+      },
+      {
+        "name": "Störungen analysieren (Logs, Fehlermeldungen, Incident-Tickets) und beheben",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob LLM-Loganalyse und AIOps-Assistenten bei typischen, oft umgebungsspezifischen Störungen wirklich ≥ 50 % Zeit sparen; E0 ebenso plausibel.",
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Der Techniker führt Fehlersuche und Behebung selbst aus; KI-Funktionen im Monitoring-/Ticketsystem fassen Logs zusammen, korrelieren Ereignisse und schlagen Ursachen und Befehle vor. Hemmnis: Logs mit Kundendaten dürfen in Banken/Verwaltung oft nicht in Cloud-LLMs."
+      },
+      {
+        "name": "Server-Hardware im Rechenzentrum einbauen, austauschen und verkabeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit im Rack (Disks, Netzteile, Kabel); keine Robotik in relevantem Umfang im regulären Betrieb."
+      },
+      {
+        "name": "Server und Betriebssysteme patchen, aktualisieren und Standardkonfigurationen ausrollen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Patch-Management und Konfigurationsmanagement (WSUS, SCCM, Ansible, Puppet) sind klassische Software und können den Grossteil übernehmen; die Restarbeit (Wartungsfenster, Kontrolle) spart mit LLM keine 50 %."
+      },
+      {
+        "name": "Automatisierungsskripte (PowerShell, Bash, Ansible-Playbooks) schreiben und anpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM schreibt das Skript nach Beschreibung im Chat; der Techniker gibt Umgebungskontext, prüft und testet jedes Skript vor dem Produktiveinsatz."
+      },
+      {
+        "name": "Datenbanken betreuen: Abfragen und Indizes optimieren, Ressourcen und Berechtigungen anpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Tuning hängt stark von Beobachtung des Live-Systems ab; ob exportierte Ausführungspläne im Chat ≥ 50 % sparen, ist unsicher, E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Der Techniker führt das Tuning selbst durch; das LLM analysiert eingefügte Ausführungspläne und Statistiken und schlägt Indizes, Query-Umformulierungen und Parameter vor."
+      },
+      {
+        "name": "Datensicherungen überwachen und Wiederherstellungen durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Backup-Software (z. B. Veeam) führt Sicherungen und Prüfungen automatisch durch; Restore-Arbeit ist kurz und systemgebunden."
+      },
+      {
+        "name": "Datenmigrationen planen, Mapping- und Migrationsskripte erstellen und durchführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus eingefügten Schemas erstellt das LLM Mapping und Migrationsskripte; der Techniker prüft jedes Skript, testet und überwacht die Migration selbst."
+      },
+      {
+        "name": "Betriebsdokumentation, Runbooks, Notfallpläne und Incident-Berichte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt aus Stichworten, Konfigurationsauszügen und Ticketverlauf die Dokumente; der Techniker prüft jede technische Angabe auf Richtigkeit."
+      },
+      {
+        "name": "Sicherheitseinstellungen pflegen: Firewall-Regeln, Benutzerkonten, VPN und Virenschutz konfigurieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Einzelne Änderungen in Admin-Konsolen nach Antrag sind kurz und sicherheitskritisch; ein LLM spart dabei keine 50 % der Zeit."
+      },
+      {
+        "name": "Tickets dokumentieren und Anwender sowie Lieferanten über Störungen und Wartungen informieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "KI-Funktionen im Ticketsystem (z. B. ServiceNow, Jira Service Management) fassen den Verlauf zusammen und entwerfen Statusmeldungen; der Techniker prüft und versendet jede Meldung."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Techniker/in für ICT-Betrieb (z. B. Informatiker/in EFZ Plattformentwicklung) im Rechenzentrum bzw. Betrieb eines Schweizer IT-Dienstleisters oder einer grösseren internen IT. ESCO passt gut, ist aber datenbanklastig; die Zeitanteile sind grob geschätzt. Die grössten Grenzfälle sind die Störungsbehebung und das Datenbank-Tuning, beide nahe an der 50-%-Schwelle.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Skripterstellung, Migrationsskripte, Betriebsdokumentation und Ticketkommunikation per Chat-LLM und KI im Ticketsystem sowie, unterstützend, Störungsanalyse und Datenbank-Tuning.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit ist exponiert, überwiegend delegierend (KI erstellt Skripte und Dokumente, der Techniker prüft und testet jedes Ergebnis) und bei Störungsanalyse und Tuning unterstützend. Überwachung, Patching und Backup sind schon heute weitgehend klassische Automatisierung, die Hardwarearbeit bleibt physisch. Bremsend wirken in der Schweiz vor allem Datenschutz- und Auslagerungsvorgaben bei Rechenzentren für Banken, Versicherungen und die Verwaltung (z. B. FINMA, revDSG), die den Einsatz von Cloud-LLMs mit Logs und Konfigurationsdaten einschränken.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

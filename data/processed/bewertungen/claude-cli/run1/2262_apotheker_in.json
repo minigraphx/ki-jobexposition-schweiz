@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "b64ab281dc758cd8213d2601f05cd55cd22a971afdd87133efd4d0d8fb540265",
+    "isco_code": "2262",
+    "beruf": "Apotheker/in",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:26:16+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7462,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5844,
+      "api_aequivalent_usd": 0.1839142
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 7462,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5844,
+        "output_tokens_details": {
+          "thinking_tokens": 2167
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 7462,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1839142
+      }
+    ],
+    "request_ids": [
+      "6976e694-b6b1-4064-8ee0-31946c2d76ef"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2262",
+    "beruf": "Apotheker/in",
+    "taetigkeiten": [
+      {
+        "name": "Kundinnen und Kunden zur Selbstmedikation am HV-Tisch beraten, triagieren und bei Bedarf an Ärzte weiterleiten",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Beratungsgespräch von Angesicht zu Angesicht mit Anamnese und Triage; der Wert liegt in der Präsenz und im Fachurteil."
+      },
+      {
+        "name": "Ärztliche Verordnungen pharmazeutisch validieren (Dosierung, Interaktionen, Kontraindikationen) und Arzneimittel mit Einnahmeberatung abgeben",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Interaktions- und Dosischecks laufen bereits über klassische Datenbanken im Apothekensystem; das verbleibende Fachurteil und die Abgabeberatung im Gespräch spart mit LLM keine 50 %. Klassische Software übernimmt nur einen Teil der Prüfung, nicht ≥ 50 % der Zeit."
+      },
+      {
+        "name": "Papierrezepte und e-Rezepte im Apothekensystem erfassen und Patientendossier nachführen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung (auch Handschrift) mit Abgleich gegen Artikelstamm erstellt die Erfassung; die Apothekerin kontrolliert jede erfasste Verordnung gegen das Original (Vier-Augen-Prinzip). Strukturierte e-Rezepte decken heute nur einen Teil ab."
+      },
+      {
+        "name": "Pharmazeutische Dienstleistungen durchführen (Impfen, Blutdruck-/Blutzuckermessung, Schnelltests, Wundversorgung)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit am Menschen mit persönlicher Präsenz; keine Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Medikationsanalysen (Polymedikations-Check, Heimbewohnende) auswerten und schriftliche Empfehlungen an Ärzte verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Medikationsliste und Befunde als Text einfügen; LLM erstellt Analyse mit Problemen und Empfehlungsschreiben, die Apothekerin prüft jede Empfehlung fachlich und verantwortet sie. Hemmnis: Berufsgeheimnis und Datenschutz bei Patientendaten."
+      },
+      {
+        "name": "Fachliche Arzneimittelanfragen von Ärzten, Heimen und Pflegepersonal recherchieren und beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agent mit Quellenangaben (Fachinformationen, Literatur) erstellt die Antwort; die Apothekerin verifiziert die Angaben an den Quellen, da Halluzinationen bei Dosierungen nicht tolerierbar sind."
+      },
+      {
+        "name": "Magistralrezepturen und Kleinchargen im Labor herstellen, prüfen und Herstellungsprotokolle führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend manuelle Laborarbeit (Abwiegen, Mischen, Abfüllen); Protokollierung erfolgt über Vorlagen und ist zeitlich klein."
+      },
+      {
+        "name": "Wochendosiersysteme richten bzw. vom Personal gerichtete Dosetten kontrollieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "physisch",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit; automatische Blisterautomaten bzw. Blisterzentren sind in der Schweiz kommerziell im Einsatz und übernehmen das Richten weitgehend."
+      },
+      {
+        "name": "Lager bewirtschaften, Bestellungen auslösen, Verfalldaten und Lagerbedingungen kontrollieren und Lieferengpässe überbrücken",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Automatische Bestellvorschläge im Apothekensystem, Kommissionierautomaten und Temperaturüberwachung sind klassische Technik; Ersatz bei Engpässen ist Fachurteil mit Rücksprache."
+      },
+      {
+        "name": "Abrechnungen mit Krankenversicherern kontrollieren und Rückweisungen klären",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Tarifierung (LOA) und elektronische Abrechnung über Clearingstellen laufen regelbasiert in der Apothekensoftware; Klärung einzelner Rückweisungen erfolgt telefonisch und spart mit LLM wenig."
+      },
+      {
+        "name": "Pharma-Assistentinnen und Lernende anleiten, Einsätze planen und Team führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Führung und Ausbildung in persönlicher Präsenz."
+      },
+      {
+        "name": "QMS-Dokumente, Arbeitsanweisungen, Pharmakovigilanzmeldungen und Schulungsunterlagen verfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM entwirft SOPs, Meldetexte und Schulungsunterlagen aus Stichworten und Vorlagen; die Apothekerin prüft jeden Text fachlich und passt ihn an den Betrieb an."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: angestellte/r Apotheker/in in einer öffentlichen Offizinapotheke (KMU oder Kette), keine Spital- oder Industrieapotheke. Der ESCO-Input passt gut, die Zeitanteile sind aber grob geschätzt. Den wichtigsten Grenzfall bildet die Rezeptvalidierung: Weil klassische Interaktionsdatenbanken einen Teil schon abdecken, ist sie hier E0 bewertet. Bei Rezepterfassung und Arzneimittelanfragen ist offen, ob die Zeitersparnis die 50 %-Schwelle wirklich erreicht.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind die Rezepterfassung per Dokumentenerkennung sowie schriftliche Medikationsanalysen, Antworten auf Arzneimittelanfragen und QMS- und Meldetexte per Chat-LLM bzw. Recherche-Agent; Beratung, Abgabe und Dienstleistungen sind nicht betroffen.",
+      "begruendung": "Nur rund ein Fünftel der Arbeitszeit ist exponiert, und zwar durchwegs delegierend: Die KI erstellt Entwürfe bzw. Erfassungen, die Apothekerin prüft jede Ausgabe fachlich, weil Fehler bei Arzneimitteln nicht tolerierbar sind. Bremsend wirken in der Schweiz das Berufsgeheimnis und der Datenschutz bei Patientendaten (revDSG) sowie die persönliche Verantwortung bei der Abgabe.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

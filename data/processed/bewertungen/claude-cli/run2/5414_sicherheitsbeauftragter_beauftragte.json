@@ -1,0 +1,194 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "25610e964abd0ee0ca276738bdef4805cb22a10e261831140b0b977dbd68f060",
+    "isco_code": "5414",
+    "beruf": "Sicherheitsbeauftragter/-beauftragte",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T01:08:15+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3451,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4124,
+      "api_aequivalent_usd": 0.11742619999999998
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3451,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4124,
+        "output_tokens_details": {
+          "thinking_tokens": 1270
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3451,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11742619999999998
+      }
+    ],
+    "request_ids": [
+      "7d6429dd-5f68-449d-95f7-0ecc14ccf09c"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "5414",
+    "beruf": "Sicherheitsbeauftragter/-beauftragte",
+    "taetigkeiten": [
+      {
+        "name": "Kontroll- und Patrouillenrundgänge in Gebäuden und auf Arealen abgehen (Türen, Fenster, Brandschutz, Auffälligkeiten prüfen)",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Präsenz vor Ort. Patrouillenroboter und Drohnen gibt es nur vereinzelt; sie übernehmen keine 50 % der Rundgänge."
+      },
+      {
+        "name": "Zutritt an Eingängen kontrollieren: Ausweise, Badges und Tickets prüfen, Personen abweisen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz und Ermessen bei der Kontrolle von Personen. Drehkreuze und Badge-Leser sind meist schon vorhanden; die verbleibende menschliche Arbeit betrifft Ausnahmen, Ansprache und Abweisung."
+      },
+      {
+        "name": "Alarm-, Zutritts- und Videoüberwachungssysteme in der Loge oder Leitstelle überwachen und auf Meldungen reagieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit besteht aus Bereitschaft, Beurteilung von Situationen und Einleiten von Massnahmen; generative KI verkürzt diese Präsenzzeit nicht um 50 %. Klassische Videoanalytik filtert Alarme, ersetzt aber die überwachende Person nicht."
+      },
+      {
+        "name": "Personen-, Taschen- und Gepäckkontrollen sowie Leibesvisitationen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Kontrolle von Angesicht zu Angesicht. Durchleuchtungsgeräte und Metalldetektoren unterstützen nur, die Kontrolle durch die Person bleibt."
+      },
+      {
+        "name": "Bei Alarmen und Zwischenfällen eingreifen: aggressive Personen deeskalieren, festhalten, Erste Hilfe leisten, Polizei beiziehen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Intervention und unmittelbare zwischenmenschliche Präsenz in Notsituationen."
+      },
+      {
+        "name": "Vorfallsberichte, Rapporte und Wachbuch-/Übergabeeinträge verfassen",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Person gibt Stichworte zum Hergang ein, das LLM formuliert einen sachlichen Bericht. Weil der Bericht als Beweismittel für Polizei oder Auftraggeber dienen kann, prüft die Person jeden Bericht auf Fakten. Spracheingabe in Guard-Tour-Apps würde zusätzlich helfen."
+      },
+      {
+        "name": "Besucher empfangen, Auskünfte geben, Besucher begleiten sowie Schlüssel und Fundsachen verwalten",
+        "zeitanteil_pct": 7,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenztätigkeit am Empfang mit physischer Ausgabe und Begleitung. Schlüsselschränke und Besucher-Terminals übernehmen nur einen Teil der Arbeit."
+      },
+      {
+        "name": "Sicherheitstechnik auf Funktion prüfen (Kameras, Türen, Brandmelder, Notbeleuchtung) und Störungen melden",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Funktionsprüfungen werden vor Ort von Hand gemacht. Die Selbstüberwachung der Anlagen meldet nur einen Teil der Störungen."
+      },
+      {
+        "name": "Per Funk und Telefon mit Einsatzzentrale, Polizei und Kolleginnen kommunizieren sowie Schicht übergeben",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Echtzeit-Abstimmung in Einsatzsituationen und mündliche Übergabe vor Ort; generative KI spart hier keine 50 % der Zeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommen wird eine Sicherheitsfachperson bei einem privaten Sicherheitsdienst in der Schweiz (z. B. Objektschutz, Empfang/Loge, Revierdienst, gelegentlich Veranstaltungen). Der ESCO-Input passt gut. Grenzfälle sind die Leitstellen-Überwachung, bei der klassische Videoanalytik zunimmt, und die Frage, wie viel KI beim Verfassen von Rapporten tatsächlich spart.",
+    "zusammenfassung": {
+      "haupt_risiko": "Exponiert ist nur das Verfassen von Vorfallsberichten, Rapporten und Wachbucheinträgen: Ein Chat-LLM oder die KI-Funktion einer Rapport-App erstellt den Text aus Stichworten. Rundgänge, Kontrollen und Interventionen sind nicht exponiert.",
+      "begruendung": "Weniger als ein Zehntel der Arbeitszeit ist exponiert, und zwar im Modus delegierend: Die KI formuliert den Bericht, die Sicherheitsfachperson prüft jeden Bericht auf die Fakten, weil er als Beweismittel dienen kann. Der Kern des Berufs ist physische Präsenz, Kontrolle von Personen und Eingreifen vor Ort; wesentliche CH-Hemmnisse bestehen für den exponierten Teil kaum.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

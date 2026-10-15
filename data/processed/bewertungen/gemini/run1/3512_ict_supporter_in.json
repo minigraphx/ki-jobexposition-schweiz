@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "87627e348e3bd16bbdb6d5644c48eb519155781742eb76d0e924ccbd3c5819f3",
+    "isco_code": "3512",
+    "beruf": "ICT-Supporter/in",
+    "lauf": 1,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:32:59+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2363,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2363
+        }
+      ],
+      "prompt_token_count": 21820,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21820
+        }
+      ],
+      "thoughts_token_count": 11572,
+      "total_token_count": 35755
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2363,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2363
+          }
+        ],
+        "prompt_token_count": 21820,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21820
+          }
+        ],
+        "thoughts_token_count": 11572,
+        "total_token_count": 35755
+      }
+    ],
+    "request_ids": [
+      "XTzPatDhELCsz7IP3NihgQ0"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/z948xmxxtkf5gow3keabw8r2c2qvm7xgy8y2",
+    "custom_id": "r1-3512_ict_supporter_in",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3512",
+    "beruf": "ICT-Supporter/in",
+    "taetigkeiten": [
+      {
+        "name": "Eingehende Support-Tickets sichten, kategorisieren und nach Priorität zuweisen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Funktionen im Ticketsystem (ITSM) analysieren Freitext-Meldungen sowie Anhänge und weisen Kategorie, Priorität und Team automatisch zu; der Mensch bearbeitet nur markierte Ausnahmen."
+      },
+      {
+        "name": "Schriftliche Standardanfragen zu Softwarebedienung, Einstellungen und Zugriffsrechten per Ticket oder Chat beantworten",
+        "zeitanteil_pct": 15,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus dem kopierten Tickettext komplette Schritt-für-Schritt-Anleitungen und Antworten; die Supportperson prüft jede Antwort kurz auf Übereinstimmung mit der internen Systemumgebung."
+      },
+      {
+        "name": "Telefonische Störungsmeldungen entgegennehmen, Problem im Gespräch eingrenzen und Anwender telefonisch anleiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Unklar, ob Voicebots und Echtzeit-Sprachassistenten bei telefonischen Supportgesprächen mit Schweizerdeutschem Dialekt und IT-Fachjargon bereits 50 % Zeitersparnis erreichen; E2 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die interaktive Fehlereingrenzung am Telefon mit oft unpräzisen Schilderungen der Anwender in Mundart und das schrittweise Anleiten erreichen mit heutiger Sprach-KI nicht die gleiche Qualität bei halbiertem Zeitaufwand."
+      },
+      {
+        "name": "Software-, Betriebssystem- und Netzwerkprobleme per Fernwartung auf Endgeräten diagnostizieren und beheben",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Zeit entfällt überwiegend auf die Live-Sitzung per Remote-Desktop, das Nachstellen des Fehlers mit dem Anwender sowie Neustarts und Systemprozesse; Computer-Use-Agenten sind dafür heute nicht verlässlich genug."
+      },
+      {
+        "name": "Arbeitsplatz-Hardware, Peripheriegeräte und Drucker physisch einrichten, verkabeln und vor Ort warten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Rein physische Tätigkeit am Arbeitsplatz oder im Geräteraum (Aufstellen, Verkabeln, Komponententausch, Beheben von Hardwarestörungen vor Ort)."
+      },
+      {
+        "name": "Benutzerkonten, Passwörter, Zugriffsrechte und Lizenzen im Verzeichnisdienst verwalten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Standardmutationen im Active Directory oder Entra ID benötigen keine generative KI, lassen sich aber zu über 50 % durch klassische Self-Service-Passwortportale (SSPR) und regelbasierte IAM-Workflows automatisieren."
+      },
+      {
+        "name": "Betriebssystem-Images, Softwarepakete, VPN und Sicherheitsprogramme auf Endgeräten bereitstellen und konfigurieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Softwareverteilung und Gerätekonfiguration wird nicht durch Sprachmodelle, sondern durch klassische Endpoint-Management- und MDM-Software (z. B. Microsoft Intune, Autopilot, Baramundi) weitgehend automatisiert."
+      },
+      {
+        "name": "Falldokumentation im Ticketsystem nachführen und Lösungsanleitungen für die Wissensdatenbank verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten oder kopierten Ticketverläufen erstellt ein Chat-LLM vollständige Lösungsnotizen und strukturierte Knowledge-Base-Artikel; die Supportperson prüft jeden Beitrag fachlich vor dem Speichern."
+      },
+      {
+        "name": "Komplexe Fehlerprotokolle analysieren, Eskalationsberichte für den 3rd-Level-Support erstellen und offene Fälle nachverfolgen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Durch Einfügen von Log-Auszügen und Fallnotizen in ein Chat-LLM werden Fehlermuster rasch isoliert und strukturierte Eskalationsberichte (oft auf Englisch für Hersteller) entworfen; jede Analyse wird fachlich verifiziert."
+      },
+      {
+        "name": "Anwenderinnen und Anwender bei der Geräteübergabe persönlich einführen und in IT-Sicherheit sowie Datenschutz schulen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die persönliche Instruktion bei der Hardwareübergabe und das direkte Beantworten von Sicherheitsfragen leben von der unmittelbaren Präsenz und Demonstration am Gerät."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: ICT-Supporter/in (1st- und 2nd-Level-Support) im internen IT-Dienst eines Schweizer KMU oder bei einem IT-Dienstleister. Der ESCO-Titel «IT-Helpdesk-Manager» ist eine ungenaue Übersetzung für operative Support-Fachkräfte; die ESCO-Kompetenzen passen jedoch gut zum Schweizer Berufsalltag (z. B. ICT-Fachmann/-frau EFZ). Die grösste Unsicherheit besteht beim telefonischen Support, da der Einsatz von Voicebots stark von der Dialekt- und Fachjargonerkennung abhängt.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem die Ticket-Triage durch ITSM-KI sowie das Beantworten schriftlicher Standardanfragen, die Falldokumentation, das Erstellen von Wissensdatenbank-Artikeln und die Aufbereitung von Fehlerprotokollen durch Chat-LLMs.",
+      "begruendung": "Rund 40 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus (KI entwirft Ticketantworten, Dokumentationen und Eskalationsberichte, die Fachperson prüft) sowie teilweise ersetzend bei der automatischen Ticket-Zuweisung. Fernwartungssitzungen, physische Hardwarearbeiten vor Ort und telefonische Fehlerbehebung in Mundart bleiben kaum exponiert, während klassische Software (IAM, MDM) weitere Routineaufgaben bei Konten und Gerätebereitstellung übernimmt. Datenschutzvorgaben (revDSG) können den Einsatz von Cloud-KI bei sensiblen Ticket- und Logdaten einschränken.",
+      "zeitrahmen": "1-2 Jahre"
+    }
+  }
+}

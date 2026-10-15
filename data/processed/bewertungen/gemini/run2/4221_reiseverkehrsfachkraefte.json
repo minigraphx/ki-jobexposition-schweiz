@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "43e3f7ce854e5f2141d55c98ee7fd91fde0bf7bb38ed7c82ebea9dbb66861608",
+    "isco_code": "4221",
+    "beruf": "Reiseverkehrsfachkräfte",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2303,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2303
+        }
+      ],
+      "prompt_token_count": 22514,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 22514
+        }
+      ],
+      "thoughts_token_count": 7290,
+      "total_token_count": 32107
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2303,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2303
+          }
+        ],
+        "prompt_token_count": 22514,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 22514
+          }
+        ],
+        "thoughts_token_count": 7290,
+        "total_token_count": 32107
+      }
+    ],
+    "request_ids": [
+      "xD_PapLoG5zE_PUP6K-UyQg"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-4221_reiseverkehrsfachkraefte",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "4221",
+    "beruf": "Reiseverkehrsfachkräfte",
+    "taetigkeiten": [
+      {
+        "name": "Kundinnen und Kunden persönlich im Reisebüro oder telefonisch beraten, Bedürfnisse abklären und Reisen verkaufen",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das persönliche Beratungs- und Verkaufsgespräch inklusive Bedarfsermittlung und Verkauf von Zusatzleistungen wie Reiseversicherungen lebt von menschlicher Präsenz und Vertrauensbildung."
+      },
+      {
+        "name": "Schriftliche Kundenanfragen beantworten und touristische Auskünfte zu Destinationen, Einreisebestimmungen und Nachhaltigkeit erteilen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen",
+          "regulatorisch"
+        ],
+        "begruendung": "Ein LLM mit Websuche oder Anbindung an Datenbanken (z. B. für aktuelle Einreise- und Visabestimmungen) entwirft die Antwort; die Fachperson prüft jede Auskunft aufgrund der Haftungspflicht inhaltlich."
+      },
+      {
+        "name": "Individuelle Reiseprogramme, Routenvorschläge und massgeschneiderte Offerten recherchieren und ausarbeiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "KI-gestützte Recherche- und Reiseplanungstools erstellen aus Kundenwünschen komplette Routenvorschläge und Offerttexte; die Reiseberaterin steuert die Auswahl und prüft jede Offerte auf Machbarkeit und Preis."
+      },
+      {
+        "name": "Flüge, Hotels, Mietwagen und Pauschalreisen in Buchungssystemen (GDS, CRS, Veranstalterportale) reservieren und buchen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Klassische Online-Buchungsplattformen und automatisierte Buchungsstrecken (Mid-/Backoffice-Systeme) übernehmen Standardbuchungen ohne generative KI; bei komplexen Bausteinbuchungen im GDS erreicht generative KI noch keine 50 % Zeitersparnis."
+      },
+      {
+        "name": "Reiseunterlagen, Detailprogramme und kundenbezogene Reiseinformationen aufbereiten und zusammenstellen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus kopierten Buchungsdaten übersichtliche Detailprogramme und Begleitschreiben, die vor dem Versand einzeln kontrolliert werden; zudem generieren klassische Reisebüro-Softwaresysteme Standard-Reisedossiers regelbasiert."
+      },
+      {
+        "name": "Schriftliche Leistungsanfragen und Detailabklärungen mit internationalen Hotels und Zielgebietsagenturen in Fremdsprachen führen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das Chat-LLM verfasst und übersetzt fremdsprachige Anfragen an ausländische Partner aus wenigen Stichworten; die Fachperson prüft jede Nachricht vor dem Versand auf fachliche Richtigkeit."
+      },
+      {
+        "name": "Kurzfristige Umbuchungen, Annullationen und Flugplanänderungen bei Störungen abwickeln",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unregelmässigkeiten erfordern zeitkritische Koordination mit Airlines, Leistungsträgern und Reisenden sowie komplexe Tarif- und Ticketanpassungen im GDS, bei denen LLMs keine 50 % der Zeit einsparen."
+      },
+      {
+        "name": "Kundenbeschwerden und Reklamationen nach der Reise prüfen und beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "vertrauen"
+        ],
+        "begruendung": "Aus Kundenschreiben und Stellungnahmen der Veranstalter entwirft das Chat-LLM eine rechtlich und sprachlich passende Antwort; die Fachperson legt das Kulanz- oder Entschädigungsangebot fest und prüft jedes Schreiben."
+      },
+      {
+        "name": "Kundendaten im CRM pflegen, Rechnungen erstellen und Zahlungen verarbeiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Fakturierung, Zahlungsabgleich und Stammdatenübernahme aus Buchungssystemen werden durch klassische Mid- und Backoffice-Software automatisiert."
+      },
+      {
+        "name": "Beziehungen zu Reiseveranstaltern und Leistungsträgern pflegen sowie Produktneuheiten sichten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der persönliche Netzwerkaufbau mit Partnern, Veranstaltern und Destinationen an Events oder Studienreisen ist eine reine Beziehungs- und Präsenztätigkeit."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Reiseberater/in (Kauffrau/mann EFZ Reisebüro bzw. Tourismusfachperson) in einem Schweizer Reisebüro oder bei einem Spezialveranstalter (KMU oder Filialnetz). Da einfache Standardbuchungen bereits stark auf klassische Online-Plattformen abgewandert sind, konzentriert sich die heutige Arbeit auf beratungsintensive Individual- und Pauschalreisen. Eine Abgrenzungsunsicherheit besteht bei der Zusammenstellung massgeschneiderter Offerten zwischen E2 und E0 je nach Spezialisierungsgrad.",
+    "zusammenfassung": {
+      "haupt_risiko": "Schriftliche Kundenauskünfte, das Ausarbeiten individueller Reiseprogramme und Offerten, das Aufbereiten von Reiseunterlagen sowie fremdsprachige Korrespondenz und Beschwerdeantworten werden durch Chat-LLMs und KI-gestützte Recherchetools stark beschleunigt.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit entfällt auf schriftliche und konzeptionelle Aufgaben, die durchwegs im delegierenden Modus exponiert sind: Die KI erstellt Routenvorschläge, Offerttexte und Korrespondenz, während die Reiseverkehrsfachkraft jedes Ergebnis fachlich prüft. Gebremst wird der Einsatz in der Schweiz durch den hohen Anspruch der Kundschaft an persönliche Beratung und Vertrauen sowie durch Haftungspflichten gemäss Pauschalreisegesetz (z. B. bei Einreisebestimmungen und Reisemängeln).",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

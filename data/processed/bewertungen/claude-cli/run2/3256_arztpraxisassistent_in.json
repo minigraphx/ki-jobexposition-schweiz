@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "453bb4d04738913c05e83e0b297499c629dfd2956d7121ccd0fd4c24175f45ab",
+    "isco_code": "3256",
+    "beruf": "Arztpraxisassistent/in",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:14:11+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6031,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 5725,
+      "api_aequivalent_usd": 0.1700862
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 6031,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 5725,
+        "output_tokens_details": {
+          "thinking_tokens": 2106
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6031,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1700862
+      }
+    ],
+    "request_ids": [
+      "a05e5ac7-0636-4e2e-a419-6ffe1b015c1f"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3256",
+    "beruf": "Arztpraxisassistent/in",
+    "taetigkeiten": [
+      {
+        "name": "Patientinnen und Patienten am Empfang begrüssen, Personalien und Versicherungsdaten aufnehmen, Fragen vor Ort beantworten",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare zwischenmenschliche Präsenz am Empfang; Check-in-Terminals sind in CH-Hausarztpraxen kaum verbreitet und würden keine 50 % übernehmen."
+      },
+      {
+        "name": "Telefonate entgegennehmen, Dringlichkeit einschätzen (Telefontriage) und Termine vergeben",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Medizinische Dringlichkeitseinschätzung im Dialektgespräch mit oft älteren, kranken Personen; Voicebots erreichen hier die Qualität nicht bei ≥50 % Zeitersparnis. Online-Terminbuchung (klassische Software) deckt nur einen kleinen Teil ab."
+      },
+      {
+        "name": "Blutentnahmen, Injektionen, Impfungen und Wundversorgung/Verbandwechsel durchführen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit am Patienten; keine Robotik im regulären Einsatz."
+      },
+      {
+        "name": "Laboranalysen im Praxislabor durchführen (Blutbild, Urinstatus, CRP, Gerinnung) inkl. Qualitätskontrolle",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Probenvorbereitung, Gerätebedienung und QUALAB-Kontrollen sind physisch; die Analysegeräte sind bereits automatisiert, die verbleibende Handarbeit nicht."
+      },
+      {
+        "name": "Diagnostische Untersuchungen durchführen: EKG, Lungenfunktion, Röntgenaufnahmen unter Strahlenschutz",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Patientenlagerung, Elektroden anlegen, Anleitung und Gerätebedienung sind physisch und präsenzgebunden."
+      },
+      {
+        "name": "Bei kleinen Eingriffen assistieren, Instrumente aufbereiten und sterilisieren, Praxishygiene sicherstellen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit; Autoklav und Thermodesinfektor sind bereits Standard, Bestücken und Kontrollieren bleibt Handarbeit."
+      },
+      {
+        "name": "Eingehende Berichte, Befunde und Korrespondenz (PDF, Scans, HIN-Mail) zuordnen und in der elektronischen Krankengeschichte ablegen",
+        "zeitanteil_pct": 6,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "KI-Dokumentenerkennung im Praxisinformationssystem erkennt Patient, Dokumenttyp und Absender und legt ab; MPA bearbeitet nur markierte Unklarheiten. Hemmnis: Patientendaten/Berufsgeheimnis und Cloud-Restriktionen."
+      },
+      {
+        "name": "Ärztliche Berichte, Zuweisungen und Kostengutsprachegesuche nach Diktat oder Stichworten schreiben",
+        "zeitanteil_pct": 7,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracherkennung (Einzeldiktat, auch Schweizerdeutsch) und LLM erstellen den Bericht bzw. das Gesuch aus KG-Daten; MPA und Arzt prüfen jedes Schreiben inhaltlich. Hemmnis: Berufsgeheimnis/Datenschutz."
+      },
+      {
+        "name": "Leistungen nach Tarif erfassen, Rechnungen erstellen und Mahnwesen führen",
+        "zeitanteil_pct": 6,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Tarifabrechnung (TARDOC/Pauschalen), elektronischer Versand an Versicherer und Mahnlauf erledigt die Praxissoftware regelbasiert – klassische Software, keine LLM-Exposition."
+      },
+      {
+        "name": "Schriftliche Patientenanfragen (E-Mail, Portal) beantworten und Rezept-/Zeugniswünsche für den Arzt vorbereiten",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM entwirft Antworten aus eingefügter Anfrage und Praxisinformationen; MPA prüft jede Antwort wegen medizinischem Kontext vor dem Versand."
+      },
+      {
+        "name": "Patienten instruieren (Blutzuckermessung, Medikamenteneinnahme, Vorbereitung auf Untersuchungen)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Anleitung mit Demonstration am Gerät; Präsenztätigkeit."
+      },
+      {
+        "name": "Medikamente und Verbrauchsmaterial bestellen, Lager bewirtschaften, Medikamente abgeben (Selbstdispensation)",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Überwiegend physisches Einräumen, Kontrollieren und Abgeben; Bestellvorschläge der Praxissoftware (klassisch) decken nur einen kleinen Zeitanteil ab."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Setting: Medizinische Praxisassistentin EFZ in einer Hausarztpraxis (KMU, oft mit Selbstdispensation, Praxislabor und Röntgen). ESCO-Rauschen (Epilepsiechirurgie, plastische Chirurgie, politische Entscheidungsträger informieren) nicht übernommen. Grösste Grenzfälle: Telefontriage per Voicebot (Dialekt, medizinische Verantwortung) und Umfang der Schreibarbeit, der je nach Praxis variiert.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur die Ablage eingehender Dokumente, das Schreiben von Berichten und Gesuchen nach Diktat sowie die Beantwortung schriftlicher Patientenanfragen, die durch Dokumentenerkennung, Spracherkennung und LLM-Funktionen im Praxisinformationssystem erledigt werden können.",
+      "begruendung": "Nur knapp ein Fünftel der Arbeitszeit ist exponiert; die Ablage läuft weitgehend ersetzend, Berichte und Antworten delegierend mit Prüfung jedes Schreibens. Der Kern des Berufs – Labor, Blutentnahmen, Diagnostik, Empfang und Telefontriage – bleibt physisch bzw. präsenz- und dialektgebunden. Wichtigstes CH-Hemmnis sind Berufsgeheimnis und Datenschutz bei Patientendaten, was die Adoption an die KI-Funktionen der Schweizer Praxissoftware-Anbieter bindet.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

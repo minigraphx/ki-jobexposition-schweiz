@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "provider": "gemini",
+    "model_requested": "gemini-4-argon",
+    "model_served": "gemini-4-argon",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "9a8fa26e549e88e15741d815f6a84f71f8f78df22f1ec847251c9cc3d94f0fca",
+    "isco_code": "3344",
+    "beruf": "Sekretariatsfachkräfte im Gesundheitswesen",
+    "lauf": 2,
+    "reihenfolge_seed": null,
+    "timestamp": "2026-10-14T08:48:15+00:00",
+    "einstellungen": {
+      "thinking_level": "high",
+      "max_output_tokens": 32768,
+      "temperature": null,
+      "structured_output": "response_mime_type (Schema nur im System-Prompt)",
+      "modus": "batch"
+    },
+    "stop_reason": "STOP",
+    "stop_details": null,
+    "usage": {
+      "candidates_token_count": 2321,
+      "candidates_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 2321
+        }
+      ],
+      "prompt_token_count": 21544,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 21544
+        }
+      ],
+      "thoughts_token_count": 7005,
+      "total_token_count": 30870
+    },
+    "usage_je_versuch": [
+      {
+        "candidates_token_count": 2321,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2321
+          }
+        ],
+        "prompt_token_count": 21544,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 21544
+          }
+        ],
+        "thoughts_token_count": 7005,
+        "total_token_count": 30870
+      }
+    ],
+    "request_ids": [
+      "xD_PavS2BI2ymtkPhcvTkAk"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": [],
+    "modus": "batch",
+    "batch_id": "batches/cn80hb15wcdq912af0lhrci3ir4fzo6r9t2j",
+    "custom_id": "r2-3344_sekretariatsfachkraefte_im_gesundheitswe",
+    "anfrage_typ": "neu",
+    "batch_ergebnis": "succeeded",
+    "fehler_art": null,
+    "probleme": [],
+    "zuordnung": "custom_id"
+  },
+  "bewertung": {
+    "isco_code": "3344",
+    "beruf": "Sekretariatsfachkräfte im Gesundheitswesen",
+    "taetigkeiten": [
+      {
+        "name": "Medizinische Berichte, Arztbriefe und Gutachten ab Diktat oder Stichworten erstellen und formatieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Spracherkennung mit LLM-Integration im Klinik- oder Praxisinformationssystem erstellt aus Diktaten oder Verlaufsnotizen strukturierte Berichtsentwürfe; die Sekretariatsfachkraft prüft und korrigiert jeden Bericht fachlich und formal vor der ärztlichen Visierung."
+      },
+      {
+        "name": "Sprechstunden-, Untersuchungs- und Behandlungstermine planen sowie Kalender des Fachpersonals verwalten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Standardbuchungen und Terminerinnerungen lassen sich über klassische Online-Terminbuchungsplattformen und regelbasierte Kalenderfunktionen im Praxissystem zu über 50 % automatisieren (P1); die verbleibende Koordination komplexer Untersuchungsabfolgen und Notfälle erreicht mit generativer KI die Schwelle nicht."
+      },
+      {
+        "name": "Telefonische Patientenanfragen entgegennehmen, Auskünfte erteilen und Anliegen triagieren",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Die Erkennungsqualität und Akzeptanz von Voicebots bei Schweizerdeutsch sowie bei verunsicherten oder älteren Patientinnen und Patienten ist im medizinischen Alltag unsicher; E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein KI-gestützter Telefonassistent mit Systemanbindung nimmt Routineanliegen (Terminwünsche, Rezeptbestellungen, Standardfragen zur Untersuchungsvorbereitung) selbständig entgegen, während die Sekretariatsfachkraft nur weitergeleitete Spezial- und Notfälle übernimmt."
+      },
+      {
+        "name": "Patienten am Empfang persönlich begrüssen, aufnehmen und im Praxis- oder Klinikablauf betreuen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Unmittelbare Präsenz- und Beziehungstätigkeit am Schalter (Empfangen, Beruhigen, Orientierung geben), die persönliche Anwesenheit erfordert."
+      },
+      {
+        "name": "Eingehende Überweisungen, auswärtige Befunde und Patientenformulare erfassen und im Patientendossier zuordnen",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "LLM-basierte Dokumentenverarbeitung liest heterogene PDFs, Scans und Zuweisungsschreiben aus, extrahiert Stammdaten sowie Diagnosen und ordnet sie im KIS zu; die Fachkraft gibt nur per Klick frei oder bearbeitet markierte Ausnahmen."
+      },
+      {
+        "name": "Schriftliche Korrespondenz mit Patienten, Zuweisern, Versicherungen und Behörden verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch",
+          "mehrsprachigkeit"
+        ],
+        "begruendung": "Ein Chat-LLM entwirft aus Stichworten oder kopierten Fallangaben Aufgebote, Kostengutsprachegesuche und Antworten auf E-Mail-Anfragen (auch fremdsprachig); die Sekretariatsfachkraft prüft jedes Schreiben inhaltlich vor dem Versand."
+      },
+      {
+        "name": "Leistungsabrechnungen prüfen, Rechnungen zuordnen und Rückfragen von Krankenversicherern bearbeiten",
+        "zeitanteil_pct": 10,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Klassische Praxis- und Kliniksoftware mit Tarif-Regelwerken (TARMED/TARDOC, DRG, Sumex) automatisiert den Grossteil des regulären Rechnungslaufs (P1). Für Rechnungsrückweisungen und komplexe Tarifprüfungen entwirft eine ins KIS integrierte KI anhand der Krankenakte die Begründung, die im Einzelfall fachlich kontrolliert wird."
+      },
+      {
+        "name": "Laborproben für den Versand vorbereiten sowie Büromaterial und Praxisbedarf bewirtschaften",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Manuelle Tätigkeit vor Ort (Probenröhrchen verpacken, etikettieren, Kurierdienst übergeben, Material einräumen), die weder durch Sprachmodelle noch in typischen Betrieben durch Robotik übernommen wird."
+      },
+      {
+        "name": "Statistiken, Listen und Personalpläne in Tabellenkalkulationen führen sowie interne Anlässe und Reisen koordinieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Sekretariatsfachkraft führt die Tabellen und koordiniert Anlässe oder Dienstreisen selbst, nutzt das Chat-LLM jedoch für Auswertungsformeln, Textbausteine, Programme und Checklisten."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Medizinische/r Sekretär/in bzw. Chefarzt- oder Praxissekretär/in in einem Spitalambulatorium oder einer grösseren Gemeinschaftspraxis in der Schweiz. Im Unterschied zur Medizinischen Praxisassistentin (MPA EFZ) liegt der Schwerpunkt auf Administration, Berichtswesen und Koordination statt auf klinischer Assistenz und Blutentnahme. Die grösste Unsicherheit besteht beim Einsatz von Voicebots für telefonische Patientenanliegen in Schweizerdeutsch.",
+    "zusammenfassung": {
+      "haupt_risiko": "Stark betroffen sind das Verfassen medizinischer Berichte ab Diktat, die Erfassung eingehender Befunde und Überweisungen, die allgemeine Korrespondenz, die telefonische Erstannahme sowie die Abrechnungsprüfung durch Spracherkennung, Dokumentenextraktion, Chat-LLMs und Voicebots.",
+      "begruendung": "Rund 70 % der Arbeitszeit sind gegenüber generativer KI exponiert, überwiegend im delegierenden Modus (Berichtswesen, Korrespondenz, Abrechnungskontrolle) sowie teilweise ersetzend bei der Dokumentenzuordnung und telefonischen Standardanfragen. Präsenzgebundene Aufgaben wie der persönliche Patientenempfang und der Laborversand bleiben beim Menschen, während die Terminbuchung zunehmend durch klassische Online-Software abgedeckt wird. In der Schweiz bremsen das ärztliche Berufsgeheimnis und strenge Datenschutzvorgaben (revDSG), das Bedürfnis der Patientinnen und Patienten nach persönlicher Betreuung sowie die Mehrsprachigkeit und Mundart am Telefon eine rasche Umsetzung.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

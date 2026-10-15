@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "e376214aa215e886fe1e517a6714fbc2eecd02be8abca997ec8744df2ae89bcd",
+    "isco_code": "3423",
+    "beruf": "Trainer und Betreuer im Bereich Fitness und Erholung",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:37:40+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3012,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4554,
+      "api_aequivalent_usd": 0.12251419999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 3012,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4554,
+        "output_tokens_details": {
+          "thinking_tokens": 1386
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 3012,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.12251419999999999
+      }
+    ],
+    "request_ids": [
+      "3c605fef-c96b-4f06-b290-21a6826cb6b7"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "3423",
+    "beruf": "Trainer und Betreuer im Bereich Fitness und Erholung",
+    "taetigkeiten": [
+      {
+        "name": "Mitglieder auf der Trainingsfläche betreuen, Übungsausführung beobachten und fehlerhafte Bewegungsabläufe korrigieren",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz und körperliche Korrektur vor Ort, oft mit Handkontakt. Kamerabasierte Bewegungsanalyse gibt es nur vereinzelt an Geräten und ersetzt die Betreuung nicht zu 50 %."
+      },
+      {
+        "name": "Gruppenkurse (z. B. Rückenfit, Zirkeltraining, Indoor Cycling) vorbereiten und vor Ort leiten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Vorzeigen, Anleiten und Motivieren der Gruppe in Präsenz. Virtuelle Kurse auf Video gibt es, sie ersetzen Live-Kurse aber nicht in relevantem Umfang."
+      },
+      {
+        "name": "Personal Training und Geräteeinführungen mit Einzelkunden durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Anleitung, Sicherung und Motivation am Gerät, bei der die Präsenz den Wert ausmacht."
+      },
+      {
+        "name": "Eintrittsgespräche führen, Gesundheitszustand und Ziele erfragen, Fitnesstests (Kraft, Ausdauer, Körperzusammensetzung) durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliches Gespräch und Tests am Körper. Körperanalysewaagen und Messgeräte unterstützen nur einzelne Messungen, nicht die Mehrheit der Zeit."
+      },
+      {
+        "name": "Individuelle Trainingspläne nach Zielen und Einschränkungen erstellen und anpassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Trainerin gibt Ziele, Testwerte und Einschränkungen als Text ein, das LLM erstellt einen strukturierten Plan mit Progression. Sie prüft jeden Plan auf die Person und die verfügbaren Geräte und passt ihn an. Regelbasierte Gerätesteuerung (z. B. Zirkelsysteme) deckt nur einen Teil ab."
+      },
+      {
+        "name": "Trainings- und Testdaten der Mitglieder auswerten und Fortschritts-/Verlaufsnotizen dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Exportierte Messwerte und Stichworte werden eingefügt, das LLM wertet den Verlauf aus und formuliert die Notiz bzw. die Rückmeldung an das Mitglied. Die Trainerin prüft jede Auswertung fachlich."
+      },
+      {
+        "name": "Informationsmaterial zu Training, Ernährung und gesunder Lebensweise sowie Social-Media-/Newsletter-Texte erstellen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Das LLM erstellt Merkblätter und Posts aus Stichworten. Die Trainerin prüft jeden Text auf fachliche Richtigkeit und Tonalität des Studios."
+      },
+      {
+        "name": "An der Theke Mitglieder empfangen, zu Abos und Angeboten beraten und Mitgliedschaften verkaufen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Persönliche Beratung und Verkauf von Angesicht zu Angesicht. Check-in per Badge und Online-Abschluss gibt es bereits, die verbleibende Zeit liegt aber in der Beratung."
+      },
+      {
+        "name": "Schriftliche Kundenanfragen (E-Mail, App-Chat) zu Abos, Kursen und Terminen beantworten",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Bei Standardanfragen entwirft das LLM bzw. ein Chatbot in der Studiosoftware die Antwort; die Person gibt frei oder übernimmt Spezialfälle wie Kündigungen und Kulanz. Online-Buchung erledigt die Terminvergabe bereits teilweise."
+      },
+      {
+        "name": "Trainingsgeräte und Trainingsfläche reinigen, kontrollieren, aufräumen und kleine Wartungen durchführen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit an Geräten und Hanteln. Reinigungsroboter eignen sich kaum für eine mit Geräten verstellte Fläche."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Angenommenes Setting: Fitnessinstruktor/in in einem Schweizer Fitnesscenter (KMU oder Kette) mit Flächenbetreuung, Kursen, Personal Training und Thekendienst. Die Zeitanteile sind grob geschätzt und schwanken stark je nach Studio (Kursinstruktor vs. Flächentrainer). Der wichtigste Grenzfall ist die Trainingsplanerstellung: Ob ein LLM inkl. Prüfung ≥ 50 % spart, hängt davon ab, wie standardisiert die Pläne heute schon sind.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind Trainingspläne, Auswertungen und Verlaufsnotizen, Infomaterial und Social-Media-Texte sowie schriftliche Standardanfragen; diese können per Chat-LLM bzw. Chatbot erstellt werden, die Arbeit auf der Fläche und in den Kursen nicht.",
+      "begruendung": "Rund ein Viertel der Arbeitszeit ist exponiert, meist delegierend: Die KI erstellt Pläne und Texte, die Trainerin prüft jeden auf das Mitglied. Nur Standardantworten an Kunden laufen ersetzend. Der Kern des Berufs ist körperliche Anleitung, Korrektur und Motivation vor Ort; wesentliche CH-Hemmnisse gibt es bei den exponierten Tätigkeiten kaum.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "c043a29bd06586bb84b49d7d339be046904d7a82d077d6b302ae017ac7d3929a",
+    "isco_code": "9312",
+    "beruf": "Hilfsarbeiter im Tiefbau",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T01:08:21+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 4038,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 3547,
+      "api_aequivalent_usd": 0.11058219999999999
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 4038,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 3547,
+        "output_tokens_details": {
+          "thinking_tokens": 647
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4038,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.11058219999999999
+      }
+    ],
+    "request_ids": [
+      "f0b837aa-5f73-4700-a955-c60d628164a4"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "9312",
+    "beruf": "Hilfsarbeiter im Tiefbau",
+    "taetigkeiten": [
+      {
+        "name": "Leitungsgräben und Baugruben von Hand und mit Kleingeräten ausheben, nachprofilieren und sichern",
+        "zeitanteil_pct": 20,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Arbeit vor Ort im Graben. Keine Robotik verfügbar, die diese Handarbeit in relevantem Umfang übernimmt."
+      },
+      {
+        "name": "Rohrbettungen herstellen, Rohrleitungen und Entwässerungsleitungen verlegen und einsanden",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Montage- und Handarbeit im Graben. Keine automatisierte Verlegetechnik für typische CH-Tiefbaustellen."
+      },
+      {
+        "name": "Fundations- und Tragschichten einbringen, planieren und mit Vibroplatte oder Walze verdichten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Arbeit mit handgeführten Geräten. Autonome Verdichtungstechnik ist auf kleinen Baustellen nicht im regulären Einsatz."
+      },
+      {
+        "name": "Strassenbelag aufbrechen und abtragen, Asphalt von Hand einbauen und abziehen",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Körperliche Handarbeit beim Belagsbau (Handeinbau, Anschlüsse, Flickstellen), keine generative KI relevant. Fertiger und Fräsen werden von Maschinisten bedient und ersetzen den Handeinbau nicht."
+      },
+      {
+        "name": "Material, Werkzeuge und Geräte auf der Baustelle transportieren, Baustelle einrichten, räumen und reinigen",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physische Tätigkeit auf wechselnden, unstrukturierten Baustellen. Keine verfügbare Robotik in relevantem Umfang."
+      },
+      {
+        "name": "Baustelle absichern: Signalisation, Abschrankungen, Absturzsicherungen aufstellen und Verkehr regeln",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Physisches Aufstellen und Präsenz bei der Verkehrsregelung. Mobile Baustellenampeln ersetzen nur einen Teil der Verkehrsregelung, nicht das Aufstellen der Signalisation."
+      },
+      {
+        "name": "Baggerführer und Maschinisten einweisen und bei Maschinenarbeiten mithelfen (Anschlagen, Lotsen)",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz und Handzeichen direkt an der Maschine, sicherheitskritisch. Keine generative KI relevant."
+      },
+      {
+        "name": "Randsteine setzen, Pflästerungen erstellen, Beton mischen und einbringen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Handwerkliche, körperliche Arbeit. Für Kleinmengen auf Tiefbaustellen gibt es keine Automatisierung in relevantem Umfang."
+      },
+      {
+        "name": "Abflüsse, Belag, Gleise und Signale visuell kontrollieren und Mängel dem Vorarbeiter melden",
+        "zeitanteil_pct": 3,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Sichtkontrolle vor Ort während der Arbeit, mündliche Meldung. KI-Bildanalyse spart hier kaum Zeit."
+      },
+      {
+        "name": "Stunden und Tagesrapport ausfüllen, Arbeitsabsprachen mit Polier und Team",
+        "zeitanteil_pct": 2,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Nur wenige Minuten pro Tag mit Zahlen und mündlicher Abstimmung vor Ort. Den Arbeitsrapport erstellt meist der Polier, daher spart KI hier nichts Relevantes."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommenes Setting: Hilfsarbeiter ohne Ausbildung in einer Schweizer Tiefbauunternehmung (Werkleitungs-, Strassen- und Kanalisationsbau, KMU). Die ESCO-Beschreibung ist knapp, daher stützen sich die Tätigkeiten auf die Kompetenzliste und typisches Berufswissen. Spezialisierte Tätigkeiten wie Gleisbaumaschinen, Drohnen oder Mobilkräne sind für Hilfskräfte untypisch und wurden nicht übernommen. Schriftliche Rapporte erstellt meist der Polier, nicht die Hilfskraft.",
+    "zusammenfassung": {
+      "haupt_risiko": "Keine wesentliche Tätigkeit ist gegenüber generativer KI exponiert: Graben, Leitungen verlegen, Verdichten, Belagsarbeiten, Transport und Absicherung sind körperliche Arbeiten auf der Baustelle.",
+      "begruendung": "Praktisch die gesamte Arbeitszeit ist physische Handarbeit oder Präsenz auf wechselnden Tiefbaustellen, daher gibt es keinen exponierten Anteil und keinen Modus. Die wenigen schriftlichen Aufgaben (Rapporte) liegen in Schweizer Betrieben meist beim Polier. Auch klassische Robotik übernimmt diese Arbeiten auf typischen CH-Baustellen heute nicht in relevantem Umfang.",
+      "zeitrahmen": ">10 Jahre"
+    }
+  }
+}

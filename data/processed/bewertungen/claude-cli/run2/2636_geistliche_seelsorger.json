@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "b56b85771ad3734c27ed75b1ee15a983d48f691707a08bba8d0833733965ea27",
+    "isco_code": "2636",
+    "beruf": "Geistliche Seelsorger",
+    "lauf": 2,
+    "reihenfolge_seed": 20261015,
+    "timestamp": "2026-10-14T00:22:48+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 38961,
+      "output_tokens": 4144,
+      "api_aequivalent_usd": 0.0906802
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 38961,
+        "output_tokens": 4144,
+        "output_tokens_details": {
+          "thinking_tokens": 971
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.0906802
+      }
+    ],
+    "request_ids": [
+      "363a6705-6d6b-4e37-a36d-d9aaf784222a"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2636",
+    "beruf": "Geistliche Seelsorger",
+    "taetigkeiten": [
+      {
+        "name": "Seelsorgerliche Einzelgespräche mit Patientinnen, Bewohnenden oder Insassen am Bett bzw. im Zimmer führen",
+        "zeitanteil_pct": 30,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Der Wert liegt in der persönlichen Präsenz und Beziehung, also unmittelbare zwischenmenschliche Präsenz. Es gibt keine nicht-generative Technik, die das übernehmen könnte."
+      },
+      {
+        "name": "Angehörige in Krisen begleiten, Sterbebegleitung und Krisenintervention leisten",
+        "zeitanteil_pct": 15,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Trösten, Beistehen und Begleiten am Sterbebett sind reine Präsenz- und Beziehungstätigkeiten."
+      },
+      {
+        "name": "Gottesdienste, Andachten, Segnungen und Rituale (z. B. Krankensalbung, Abschiedsfeiern) durchführen",
+        "zeitanteil_pct": 12,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Die Feier wird vor Ort und in Gemeinschaft geleitet; ihre Wirkung beruht auf der Präsenz der Seelsorgeperson."
+      },
+      {
+        "name": "Predigten, Andachten und Ritualtexte vorbereiten und schreiben, inkl. Auslegung biblischer Texte",
+        "zeitanteil_pct": 8,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Predigten sind stark persönlich und situativ, deshalb ist offen, ob die Person einen LLM-Entwurf übernimmt oder weiter selbst schreibt; unterstützend oder E0 ist ebenso plausibel.",
+        "ch_hemmnis": [
+          "vertrauen"
+        ],
+        "begruendung": "Aus Bibelstelle, Anlass und Stichworten kann ein Chat-LLM Exegese-Skizze und Predigtentwurf liefern. Die Seelsorgeperson prüft und überarbeitet jeden Text inhaltlich und persönlich."
+      },
+      {
+        "name": "An interdisziplinären Rapporten, Fallbesprechungen und Ethikberatungen mit Pflege und Ärzteschaft teilnehmen",
+        "zeitanteil_pct": 8,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es geht um Abstimmung und ethische Abwägung im Gespräch, also um eine Präsenztätigkeit."
+      },
+      {
+        "name": "Seelsorgebesuche und Gesprächsnotizen im Klinikinformationssystem dokumentieren",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Per Diktat (auch Schweizerdeutsch, Einzelperson) erstellt die KI den Eintrag. Die Seelsorgeperson prüft jeden Eintrag und filtert, was unter das Seelsorgegeheimnis fällt. Hemmnis: Berufsgeheimnis und Datenschutz."
+      },
+      {
+        "name": "Schriftliche Anfragen beantworten und Korrespondenz mit Angehörigen, Kirchgemeinden und Institutionen erledigen",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Aus Stichworten entwirft ein Chat-LLM E-Mails und Briefe. Wegen sensibler Inhalte prüft und personalisiert die Seelsorgeperson jede Antwort."
+      },
+      {
+        "name": "Freiwillige Besuchsdienste rekrutieren, anleiten und begleiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Anleiten und Begleiten von Menschen ist eine Präsenz- und Führungstätigkeit."
+      },
+      {
+        "name": "Schulungen zu Spiritual Care, Trauer und Palliative Care für Personal und Freiwillige durchführen",
+        "zeitanteil_pct": 4,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Es handelt sich um Unterricht und Diskussion vor Ort, also um eine Präsenztätigkeit."
+      },
+      {
+        "name": "Bildungsunterlagen, Informationsflyer und Beiträge für Hauszeitung oder Kirchenblatt verfassen",
+        "zeitanteil_pct": 4,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Ein Chat-LLM erstellt aus Vorgaben Text und Gliederung. Die Seelsorgeperson prüft Inhalt und Ton jedes Beitrags und passt ihn an."
+      },
+      {
+        "name": "An Supervision, Intervision und theologischer Weiterbildung teilnehmen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Reflexion im Austausch mit anderen; generative KI spart hier keine relevante Zeit."
+      }
+    ],
+    "unsicherheit": "niedrig",
+    "kommentar": "Angenommen ist eine reformierte oder katholische Spital- bzw. Heimseelsorgerin mit Theologiestudium und CPT-Ausbildung, angestellt bei Landeskirche oder Spital. Der ESCO-Input passt gut, die Zeitanteile sind grob geschätzt. Der wichtigste Grenzfall ist die Predigtvorbereitung (delegierend oder unterstützend bzw. E0).",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind nur die Schreibarbeiten: Predigt- und Ritualtexte, Korrespondenz, Informationstexte (Chat-LLM) sowie die Besuchsdokumentation (Spracheingabe im KIS). Die seelsorgerliche Begleitung selbst ist nicht betroffen.",
+      "begruendung": "Etwa ein Fünftel der Arbeitszeit ist exponiert, durchwegs im Modus delegierend: Die KI entwirft Texte und Notizen, die Seelsorgeperson prüft und personalisiert jedes Ergebnis. Der Kern des Berufs sind Gespräche, Sterbebegleitung und Rituale in persönlicher Präsenz. Seelsorgegeheimnis und Datenschutz im Spital sowie Vorbehalte gegenüber KI-generierten Predigten bremsen die Nutzung.",
+      "zeitrahmen": "5-10 Jahre"
+    }
+  }
+}

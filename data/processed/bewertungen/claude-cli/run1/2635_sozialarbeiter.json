@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "provider": "claude-cli",
+    "model_requested": "claude-opus-5-5",
+    "model_served": "claude-opus-5-5",
+    "fallback": null,
+    "rubrik_version": "2.2",
+    "input_hash": "eb6d3c1360e1215b946c8d0da8fb7c9060441646a94e565746fcd4f080c85abd",
+    "isco_code": "2635",
+    "beruf": "Sozialarbeiter",
+    "lauf": 1,
+    "reihenfolge_seed": 20261014,
+    "timestamp": "2026-10-13T23:30:15+00:00",
+    "einstellungen": {
+      "effort": "high",
+      "thinking": "adaptive (Claude Code)",
+      "structured_output": "--json-schema",
+      "zugang": "claude -p (Abo)",
+      "cli_version": "2.1.296 (Claude Code)",
+      "tools": "keine",
+      "fallbacks": null
+    },
+    "stop_reason": "tool_use",
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7581,
+      "cache_read_input_tokens": 36651,
+      "output_tokens": 4811,
+      "api_aequivalent_usd": 0.1642062
+    },
+    "usage_je_versuch": [
+      {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 7581,
+        "cache_read_input_tokens": 36651,
+        "output_tokens": 4811,
+        "output_tokens_details": {
+          "thinking_tokens": 1359
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 7581,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "speed": "standard",
+        "fallback_credit": null,
+        "api_aequivalent_usd": 0.1642062
+      }
+    ],
+    "request_ids": [
+      "b55443bf-34e2-40c7-a02a-4aab93978b82"
+    ],
+    "versuche": 1,
+    "status": "ok",
+    "fehler": [],
+    "hinweise": []
+  },
+  "bewertung": {
+    "isco_code": "2635",
+    "beruf": "Sozialarbeiter",
+    "taetigkeiten": [
+      {
+        "name": "Beratungsgespräche mit Klient/innen und Familien führen (Ressourcen klären, Ziele vereinbaren, motivieren)",
+        "zeitanteil_pct": 25,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Kern der Arbeit ist die persönliche Beratungs- und Beziehungsarbeit von Angesicht zu Angesicht; der Wert liegt in der Präsenz."
+      },
+      {
+        "name": "Lebenssituation vor Ort abklären, Hausbesuche machen und in Krisen intervenieren",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz vor Ort, Beobachtung und unmittelbares Handeln in Krisen; generative KI kann das nicht übernehmen."
+      },
+      {
+        "name": "Gesprächs- und Aktennotizen sowie Verlaufsdokumentation im Fallführungssystem verfassen",
+        "zeitanteil_pct": 15,
+        "stufe": "E2",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Diktat nach dem Gespräch (auch Schweizerdeutsch, Einzelperson) bzw. Stichworte werden per Spracherkennung und LLM zur strukturierten Notiz; die Sozialarbeiterin prüft jede Notiz fachlich. Hemmnis: Amtsgeheimnis/Datenschutz im Sozialdienst."
+      },
+      {
+        "name": "Sozialberichte, Abklärungsberichte und Anträge (z. B. an KESB, Sozialbehörde, IV, Stiftungen) verfassen",
+        "zeitanteil_pct": 10,
+        "stufe": "E1",
+        "modus": "delegierend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Aus kopierten Aktennotizen und Stichworten entwirft das LLM Bericht bzw. Antrag; die Fachperson prüft Einschätzungen und Fakten gegen die Akte und verantwortet jeden Bericht."
+      },
+      {
+        "name": "Unterstützungsbudget nach SKOS-Richtlinien berechnen und Leistungen in der Fachapplikation erfassen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P1",
+        "p_art": "software",
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Regelbasierte Budgetberechnung und Auszahlung erledigt die Sozialhilfe-Fachapplikation (klassische Software), kein LLM nötig."
+      },
+      {
+        "name": "Eingereichte Unterlagen (Lohnabrechnungen, Mietverträge, Rechnungen, Kontoauszüge) sichten und Daten ins Fallsystem übertragen",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [
+          "regulatorisch"
+        ],
+        "begruendung": "Dokumentenerkennung extrahiert Daten aus Scans/PDFs und überträgt sie; die Person bearbeitet markierte Unklarheiten. Heterogene Belege → klassische Formularerkennung allein reicht nicht."
+      },
+      {
+        "name": "Standardkorrespondenz verfassen (Unterlagen nachfordern, Terminbestätigungen, Kostengutsprachegesuche, Informationsschreiben)",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "ersetzend",
+        "restzeit_mensch": "10-30",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "LLM erstellt Standardschreiben aus Falldaten, auch in einfacher Sprache oder Fremdsprachen; die Person gibt nach kurzer Sichtung frei."
+      },
+      {
+        "name": "Massnahmen mit Fachstellen, Behörden, Arbeitgebern, Ärzten und Schulen koordinieren (Telefonate, Rundtischgespräche)",
+        "zeitanteil_pct": 10,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Verhandeln, Vernetzen und Abstimmen mit Beteiligten im direkten Austausch; KI spart hier keine 50 %."
+      },
+      {
+        "name": "Hilfepläne und Zielvereinbarungen erstellen und periodisch überprüfen",
+        "zeitanteil_pct": 5,
+        "stufe": "E1",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "tief",
+        "sicherheit_begruendung": "Ziele werden mit Klient/innen gemeinsam erarbeitet; ob KI-Vorschläge und Formulierung wirklich 50 % sparen, ist unklar, E0 ebenso plausibel.",
+        "ch_hemmnis": [],
+        "begruendung": "Die Fachperson plant und beurteilt selbst; das LLM strukturiert Ziele, formuliert Massnahmen und schlägt Überprüfungskriterien aus den Gesprächsnotizen vor."
+      },
+      {
+        "name": "Ansprüche und Rechtsgrundlagen (Sozialversicherungen, SKOS, Stipendien, Angebote) recherchieren und für Klient/innen aufbereiten",
+        "zeitanteil_pct": 5,
+        "stufe": "E2",
+        "modus": "unterstützend",
+        "restzeit_mensch": "30-50",
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "mittel",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Recherche-Agent mit Websuche fasst Rechtsgrundlagen und Angebote zusammen und erstellt verständliche Erklärtexte; die Fachperson beurteilt den Einzelfall selbst und verifiziert Quellen."
+      },
+      {
+        "name": "Fälle im Team besprechen, Intervision/Supervision und Entscheide (z. B. Gefährdungsmeldung) fällen",
+        "zeitanteil_pct": 5,
+        "stufe": "E0",
+        "modus": null,
+        "restzeit_mensch": null,
+        "physisch_automatisierbar": "P0",
+        "p_art": null,
+        "sicherheit": "hoch",
+        "sicherheit_begruendung": null,
+        "ch_hemmnis": [],
+        "begruendung": "Präsenz, fachliche Abwägung und Verantwortung bei ethisch heiklen Entscheiden wie Kindeswohlgefährdung."
+      }
+    ],
+    "unsicherheit": "mittel",
+    "kommentar": "Setting: Sozialarbeiter/in FH in einem kommunalen oder regionalen Sozialdienst (wirtschaftliche und persönliche Sozialhilfe, teils Abklärungen für die KESB). Der Beruf ist sehr heterogen (Schulsozialarbeit, Spital, Jugendarbeit). Dort ist der Anteil an Präsenzarbeit meist höher. Die Zeitanteile für Dokumentation und Berichte sind grob geschätzt und die wichtigste Unsicherheit.",
+    "zusammenfassung": {
+      "haupt_risiko": "Betroffen sind vor allem Gesprächsnotizen, Verlaufsdokumentation, Sozialberichte, Anträge und Standardkorrespondenz sowie die Erfassung eingereichter Belege durch Spracherkennung, Chat-LLM und Dokumentenerkennung; die Beratungs- und Beziehungsarbeit ist nicht betroffen.",
+      "begruendung": "Rund die Hälfte der Arbeitszeit ist exponiert, überwiegend delegierend: Die KI entwirft Notizen und Berichte, die Fachperson prüft und verantwortet jeden Text. Ersetzend ist die KI nur bei Standardbriefen und Belegerfassung. Die Umsetzung in Schweizer Sozialdiensten bremsen vor allem Amtsgeheimnis, Datenschutz (revDSG) und kantonale Cloud-Restriktionen in der Verwaltung sowie fehlende KI-Funktionen in den Fallführungssystemen.",
+      "zeitrahmen": "3-5 Jahre"
+    }
+  }
+}
